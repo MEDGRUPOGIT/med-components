@@ -1,0 +1,1 @@
+import{r as o,h as s,H as t}from"./p-aea38759.js";const r=class{constructor(s){o(this,s)}render(){return s(t,null,s("h1",null,"MED-BUTTON"))}};r.style={ios:":host h1{font-size:25px;color:#fff}",md:":host h1{font-size:25px;color:#fff}"};export{r as med_button}
