@@ -97,6 +97,7 @@ export const createAnimation = (animationId) => {
    * the animation's elements.
    */
   const cleanUpElements = () => {
+    debugger;
     if (supportsWebAnimations) {
       webAnimations.forEach(animation => {
         animation.cancel();

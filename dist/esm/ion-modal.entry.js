@@ -1,8 +1,8 @@
 import { r as registerInstance, e as createEvent, c as writeTask, h, H as Host, i as getElement } from './index-3ccd7557.js';
 import { b as getIonMode, c as config } from './ionic-global-cc7644a8.js';
 import { j as clamp } from './helpers-83546701.js';
-import { c as createAnimation } from './animation-e3d87e79.js';
-import { e as deepReady } from './index-be1366d0.js';
+import { c as createAnimation } from './animation-55154c8b.js';
+import { e as deepReady } from './index-f999792f.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-c3ea3c34.js';
 import './gesture-controller-cb973372.js';
 import { createGesture } from './index-a148eeb5.js';
