@@ -39,7 +39,7 @@
     "./components/list/list.js",
     "./components/list-header/list-header.js",
     "./components/loading/loading.js",
-    "./components/med-button/button.js",
+    "./components/medgrupo/med-navbar/med-navbar.js",
     "./components/menu/menu.js",
     "./components/menu-button/menu-button.js",
     "./components/menu-toggle/menu-toggle.js",

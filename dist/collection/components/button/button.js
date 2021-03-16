@@ -116,23 +116,24 @@ export class Button {
         'ion-activatable': true,
         'ion-focusable': true,
       }) },
-      h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes),
-        h("span", { class: "button-inner" },
-          h("slot", { name: "icon-only" }),
-          h("slot", { name: "start" }),
-          h("slot", null),
-          h("slot", { name: "end" })),
-        mode === 'md' && h("ion-ripple-effect", { type: this.rippleType }))));
+      h("div", { class: "center" },
+        h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes),
+          h("span", { class: "button-inner" },
+            h("slot", { name: "icon-only" }),
+            h("slot", { name: "start" }),
+            h("slot", null),
+            h("slot", { name: "end" })),
+          mode === 'md' && h("ion-ripple-effect", { type: this.rippleType })))));
   }
   static get is() { return "ion-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["button.ios.scss"],
-    "md": ["button.md.scss"]
+    "ios": ["./med/med-button.scss"],
+    "md": ["./med/med-button.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["button.ios.css"],
-    "md": ["button.md.css"]
+    "ios": ["./med/med-button.css"],
+    "md": ["./med/med-button.css"]
   }; }
   static get properties() { return {
     "color": {
@@ -152,7 +153,7 @@ export class Button {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -205,7 +206,7 @@ export class Button {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\nwithout left and right borders."
+        "text": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\r\nwithout left and right borders."
       },
       "attribute": "expand",
       "reflect": true
@@ -222,7 +223,7 @@ export class Button {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Set to `\"clear\"` for a transparent button, to `\"outline\"` for a transparent\nbutton with a border, or to `\"solid\"`. The default style is `\"solid\"` except inside of\na toolbar, where the default is `\"clear\"`."
+        "text": "Set to `\"clear\"` for a transparent button, to `\"outline\"` for a transparent\r\nbutton with a border, or to `\"solid\"`. The default style is `\"solid\"` except inside of\r\na toolbar, where the default is `\"clear\"`."
       },
       "attribute": "fill",
       "reflect": true
@@ -244,7 +245,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`."
+        "text": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`."
       },
       "attribute": "router-direction",
       "reflect": false,
@@ -267,7 +268,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`."
+        "text": "When using a router, it specifies the transition animation when navigating to\r\nanother page using `href`."
       }
     },
     "download": {
@@ -282,7 +283,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+        "text": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
       },
       "attribute": "download",
       "reflect": false
@@ -299,7 +300,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+        "text": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
       },
       "attribute": "href",
       "reflect": false
@@ -316,7 +317,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+        "text": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
       },
       "attribute": "rel",
       "reflect": false
@@ -385,7 +386,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+        "text": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
       },
       "attribute": "target",
       "reflect": false

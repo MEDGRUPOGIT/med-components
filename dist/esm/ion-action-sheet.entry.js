@@ -1,7 +1,7 @@
 import { r as registerInstance, e as createEvent, f as readTask, h, H as Host, i as getElement } from './index-3ccd7557.js';
 import { b as getIonMode } from './ionic-global-cc7644a8.js';
 import './helpers-83546701.js';
-import { c as createAnimation } from './animation-55154c8b.js';
+import { c as createAnimation } from './animation-e3d87e79.js';
 import './gesture-controller-cb973372.js';
 import './index-a148eeb5.js';
 import './hardware-back-button-3fda9f12.js';

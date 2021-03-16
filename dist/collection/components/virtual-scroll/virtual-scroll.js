@@ -283,7 +283,7 @@ export class VirtualScroll {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "It is important to provide this\nif virtual item height will be significantly larger than the default\nThe approximate height of each virtual item template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered."
+        "text": "It is important to provide this\r\nif virtual item height will be significantly larger than the default\r\nThe approximate height of each virtual item template's cell.\r\nThis dimension is used to help determine how many cells should\r\nbe created when initialized, and to help calculate the height of\r\nthe scrollable area. This height value can only use `px` units.\r\nNote that the actual rendered size of each cell comes from the\r\napp's CSS, whereas this approximation is used to help calculate\r\ninitial dimensions before the item has been rendered."
       },
       "attribute": "approx-item-height",
       "reflect": false,
@@ -301,7 +301,7 @@ export class VirtualScroll {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The approximate height of each header template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered."
+        "text": "The approximate height of each header template's cell.\r\nThis dimension is used to help determine how many cells should\r\nbe created when initialized, and to help calculate the height of\r\nthe scrollable area. This height value can only use `px` units.\r\nNote that the actual rendered size of each cell comes from the\r\napp's CSS, whereas this approximation is used to help calculate\r\ninitial dimensions before the item has been rendered."
       },
       "attribute": "approx-header-height",
       "reflect": false,
@@ -319,7 +319,7 @@ export class VirtualScroll {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The approximate width of each footer template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered."
+        "text": "The approximate width of each footer template's cell.\r\nThis dimension is used to help determine how many cells should\r\nbe created when initialized, and to help calculate the height of\r\nthe scrollable area. This height value can only use `px` units.\r\nNote that the actual rendered size of each cell comes from the\r\napp's CSS, whereas this approximation is used to help calculate\r\ninitial dimensions before the item has been rendered."
       },
       "attribute": "approx-footer-height",
       "reflect": false,
@@ -342,7 +342,7 @@ export class VirtualScroll {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Section headers and the data used within its given\ntemplate can be dynamically created by passing a function to `headerFn`.\nFor example, a large list of contacts usually has dividers between each\nletter in the alphabet. App's can provide their own custom `headerFn`\nwhich is called with each record within the dataset. The logic within\nthe header function can decide if the header template should be used,\nand what data to give to the header template. The function must return\n`null` if a header cell shouldn't be created."
+        "text": "Section headers and the data used within its given\r\ntemplate can be dynamically created by passing a function to `headerFn`.\r\nFor example, a large list of contacts usually has dividers between each\r\nletter in the alphabet. App's can provide their own custom `headerFn`\r\nwhich is called with each record within the dataset. The logic within\r\nthe header function can decide if the header template should be used,\r\nand what data to give to the header template. The function must return\r\n`null` if a header cell shouldn't be created."
       }
     },
     "footerFn": {
@@ -362,7 +362,7 @@ export class VirtualScroll {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Section footers and the data used within its given\ntemplate can be dynamically created by passing a function to `footerFn`.\nThe logic within the footer function can decide if the footer template\nshould be used, and what data to give to the footer template. The function\nmust return `null` if a footer cell shouldn't be created."
+        "text": "Section footers and the data used within its given\r\ntemplate can be dynamically created by passing a function to `footerFn`.\r\nThe logic within the footer function can decide if the footer template\r\nshould be used, and what data to give to the footer template. The function\r\nmust return `null` if a footer cell shouldn't be created."
       }
     },
     "items": {
@@ -377,7 +377,7 @@ export class VirtualScroll {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The data that builds the templates within the virtual scroll.\nIt's important to note that when this data has changed, then the\nentire virtual scroll is reset, which is an expensive operation and\nshould be avoided if possible."
+        "text": "The data that builds the templates within the virtual scroll.\r\nIt's important to note that when this data has changed, then the\r\nentire virtual scroll is reset, which is an expensive operation and\r\nshould be avoided if possible."
       }
     },
     "itemHeight": {
@@ -397,7 +397,7 @@ export class VirtualScroll {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "An optional function that maps each item within their height.\nWhen this function is provides, heavy optimizations and fast path can be taked by\n`ion-virtual-scroll` leading to massive performance improvements.\n\nThis function allows to skip all DOM reads, which can be Doing so leads\nto massive performance"
+        "text": "An optional function that maps each item within their height.\r\nWhen this function is provides, heavy optimizations and fast path can be taked by\r\n`ion-virtual-scroll` leading to massive performance improvements.\r\n\r\nThis function allows to skip all DOM reads, which can be Doing so leads\r\nto massive performance"
       }
     },
     "headerHeight": {
@@ -452,7 +452,7 @@ export class VirtualScroll {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "NOTE: only JSX API for stencil.\n\nProvide a render function for the items to be rendered. Returns a JSX virtual-dom."
+        "text": "NOTE: only JSX API for stencil.\r\n\r\nProvide a render function for the items to be rendered. Returns a JSX virtual-dom."
       }
     },
     "renderHeader": {
@@ -467,7 +467,7 @@ export class VirtualScroll {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "NOTE: only JSX API for stencil.\n\nProvide a render function for the header to be rendered. Returns a JSX virtual-dom."
+        "text": "NOTE: only JSX API for stencil.\r\n\r\nProvide a render function for the header to be rendered. Returns a JSX virtual-dom."
       }
     },
     "renderFooter": {
@@ -482,7 +482,7 @@ export class VirtualScroll {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "NOTE: only JSX API for stencil.\n\nProvide a render function for the footer to be rendered. Returns a JSX virtual-dom."
+        "text": "NOTE: only JSX API for stencil.\r\n\r\nProvide a render function for the footer to be rendered. Returns a JSX virtual-dom."
       }
     },
     "nodeRender": {
@@ -570,7 +570,7 @@ export class VirtualScroll {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "This method marks a subset of items as dirty, so they can be re-rendered. Items should be marked as\ndirty any time the content or their style changes.\n\nThe subset of items to be updated can are specifing by an offset and a length.",
+        "text": "This method marks a subset of items as dirty, so they can be re-rendered. Items should be marked as\r\ndirty any time the content or their style changes.\r\n\r\nThe subset of items to be updated can are specifing by an offset and a length.",
         "tags": []
       }
     },
@@ -586,7 +586,7 @@ export class VirtualScroll {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "This method marks the tail the items array as dirty, so they can be re-rendered.\n\nIt's equivalent to calling:\n\n```js\nvirtualScroll.checkRange(lastItemLen);\n```",
+        "text": "This method marks the tail the items array as dirty, so they can be re-rendered.\r\n\r\nIt's equivalent to calling:\r\n\r\n```js\r\nvirtualScroll.checkRange(lastItemLen);\r\n```",
         "tags": []
       }
     }

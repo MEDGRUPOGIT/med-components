@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const index = require('./index-2a75be79.js');
 const ionicGlobal = require('./ionic-global-450feda2.js');
 const helpers = require('./helpers-7fea0dcc.js');
-const index$1 = require('./index-f166231e.js');
+const index$1 = require('./index-1f100a33.js');
 const cubicBezier = require('./cubic-bezier-6f49c00a.js');
 const frameworkDelegate = require('./framework-delegate-d37dc787.js');
 

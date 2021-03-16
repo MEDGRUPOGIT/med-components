@@ -9,6 +9,7 @@ import { ActionSheetButton, AlertButton, AlertInput, AnimationBuilder, Autocompl
 import { IonicSafeString } from "./utils/sanitization";
 import { NavigationHookCallback } from "./components/route/route-interface";
 import { SelectCompareFn } from "./components/select/select-interface";
+import { navbarResizeEventDetail } from "./components/medgrupo/med-navbar/med-navbar-interface";
 export namespace Components {
     interface IonActionSheet {
         /**
@@ -2706,7 +2707,7 @@ export namespace Components {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
-    interface MedButton {
+    interface MedNavbar {
     }
 }
 declare global {
@@ -3232,11 +3233,11 @@ declare global {
         prototype: HTMLIonVirtualScrollElement;
         new (): HTMLIonVirtualScrollElement;
     };
-    interface HTMLMedButtonElement extends Components.MedButton, HTMLStencilElement {
+    interface HTMLMedNavbarElement extends Components.MedNavbar, HTMLStencilElement {
     }
-    var HTMLMedButtonElement: {
-        prototype: HTMLMedButtonElement;
-        new (): HTMLMedButtonElement;
+    var HTMLMedNavbarElement: {
+        prototype: HTMLMedNavbarElement;
+        new (): HTMLMedNavbarElement;
     };
     interface HTMLElementTagNameMap {
         "ion-action-sheet": HTMLIonActionSheetElement;
@@ -3326,7 +3327,7 @@ declare global {
         "ion-toggle": HTMLIonToggleElement;
         "ion-toolbar": HTMLIonToolbarElement;
         "ion-virtual-scroll": HTMLIonVirtualScrollElement;
-        "med-button": HTMLMedButtonElement;
+        "med-navbar": HTMLMedNavbarElement;
     }
 }
 declare namespace LocalJSX {
@@ -5948,7 +5949,8 @@ declare namespace LocalJSX {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
-    interface MedButton {
+    interface MedNavbar {
+        "onMedResize"?: (event: CustomEvent<navbarResizeEventDetail>) => void;
     }
     interface IntrinsicElements {
         "ion-action-sheet": IonActionSheet;
@@ -6038,7 +6040,7 @@ declare namespace LocalJSX {
         "ion-toggle": IonToggle;
         "ion-toolbar": IonToolbar;
         "ion-virtual-scroll": IonVirtualScroll;
-        "med-button": MedButton;
+        "med-navbar": MedNavbar;
     }
 }
 export { LocalJSX as JSX };
@@ -6132,7 +6134,7 @@ declare module "@stencil/core" {
             "ion-toggle": LocalJSX.IonToggle & JSXBase.HTMLAttributes<HTMLIonToggleElement>;
             "ion-toolbar": LocalJSX.IonToolbar & JSXBase.HTMLAttributes<HTMLIonToolbarElement>;
             "ion-virtual-scroll": LocalJSX.IonVirtualScroll & JSXBase.HTMLAttributes<HTMLIonVirtualScrollElement>;
-            "med-button": LocalJSX.MedButton & JSXBase.HTMLAttributes<HTMLMedButtonElement>;
+            "med-navbar": LocalJSX.MedNavbar & JSXBase.HTMLAttributes<HTMLMedNavbarElement>;
         }
     }
 }

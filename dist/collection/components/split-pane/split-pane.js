@@ -174,7 +174,7 @@ export class SplitPane {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "When the split-pane should be shown.\nCan be a CSS media query expression, or a shortcut expression.\nCan also be a boolean expression."
+        "text": "When the split-pane should be shown.\r\nCan be a CSS media query expression, or a shortcut expression.\r\nCan also be a boolean expression."
       },
       "attribute": "when",
       "reflect": false,

@@ -5,16 +5,16 @@ Object.defineProperty(exports, '__esModule', { value: true });
 require('./index-2a75be79.js');
 const ionicGlobal = require('./ionic-global-450feda2.js');
 const helpers = require('./helpers-7fea0dcc.js');
-const animation = require('./animation-2422f348.js');
-const index$2 = require('./index-f166231e.js');
-const ios_transition = require('./ios.transition-796d110c.js');
-const md_transition = require('./md.transition-6798af6a.js');
+const animation = require('./animation-fca56712.js');
+const index$2 = require('./index-1f100a33.js');
+const ios_transition = require('./ios.transition-888c272d.js');
+const md_transition = require('./md.transition-afa46949.js');
 const cubicBezier = require('./cubic-bezier-6f49c00a.js');
 require('./gesture-controller-bcfe01ec.js');
 const index = require('./index-adf3c519.js');
 const index$1 = require('./index-099f2bcb.js');
 require('./hardware-back-button-e370df1e.js');
-const index$3 = require('./index-68bdd365.js');
+const index$3 = require('./index-e855147c.js');
 const overlays = require('./overlays-3aa80d92.js');
 
 const setupConfig = (config) => {
