@@ -53,7 +53,7 @@
   overflow: hidden;
   display: block;
   position: relative;
-  width: calc(100% + 4px);
+  width: 100%;
   outline: none;
   line-height: 1;
   contain: layout style;
@@ -161,13 +161,13 @@
   }
 }
 :host(.button) {
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  padding: 0;
-  min-width: auto;
-  min-height: auto;
+  margin: 0px !important;
+  border: 0px !important;
+  border-radius: 0px !important;
+  background-color: transparent !important;
+  padding: 0px !important;
+  min-width: auto !important;
+  min-height: auto !important;
 }
 
 :host([secondary]) {
