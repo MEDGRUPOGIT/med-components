@@ -34,13 +34,6 @@
   vertical-align: -webkit-baseline-middle;
   pointer-events: auto;
   font-kerning: none;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  padding: 0;
-  min-width: auto;
-  min-height: auto;
 }
 :host .button-native {
   -moz-osx-font-smoothing: grayscale;
@@ -167,6 +160,16 @@
     background: var(--background-hover);
   }
 }
+:host(.button) {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  min-width: auto;
+  min-height: auto;
+}
+
 :host([secondary]) {
   --background: transparent;
   --background-hover: #3aa8b9;
