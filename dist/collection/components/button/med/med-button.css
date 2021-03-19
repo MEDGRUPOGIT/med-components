@@ -160,14 +160,14 @@
     background: var(--background-hover);
   }
 }
-:host(.button) {
-  margin: 0px !important;
-  border: 0px !important;
-  border-radius: 0px !important;
-  background-color: transparent !important;
-  padding: 0px !important;
-  min-width: auto !important;
-  min-height: auto !important;
+:host(.fix-ionic-1.button) {
+  margin: 0px;
+  border: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  padding: 0px;
+  min-width: auto;
+  min-height: auto;
 }
 
 :host([secondary]) {
