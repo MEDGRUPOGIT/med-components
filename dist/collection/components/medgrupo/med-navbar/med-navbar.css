@@ -1,20 +1,25 @@
 :host {
   --padding: 8px 16px;
-  --background: var(--med-global-background, #141414);
-  --title-color: var(--med-global-color, #fafafa);
+  --background: var(--med-theme-background, #141414);
+  --title-color: var(--med-theme-color, #fafafa);
   --title-font-size: 16px;
   --title-line-height: 100%;
   --title-font-weight: 600;
-  --subtitle-color: var(--global-color, #fafafa);
+  --subtitle-color: var(--med-theme-color, #fafafa);
   --subtitle-font-size: 12px;
   --subtitle-line-height: 16px;
   --subtitle-font-weight: 600;
   --center-padding: 8px;
-  --slotted-color: var(--med-global-color, #fafafa);
+  --slotted-color: var(--med-theme-color, #fafafa);
   --slotted-spacing: 16px;
 }
 :host .header {
   background: var(--background);
+}
+@media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait), (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait), (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  :host .header {
+    padding-top: 48px !important;
+  }
 }
 :host .header__container {
   padding: var(--padding);
@@ -103,6 +108,14 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+:host-context(.platform-ios) .header {
+  padding-top: 28px !important;
+}
+
+:host-context(.platform-macintel) .header {
+  padding-top: 23px !important;
 }
 
 :host-context(body.dark),

@@ -101,7 +101,7 @@ export class Button {
     if (fill === undefined) {
       fill = this.inToolbar || this.inListHeader ? 'clear' : 'solid';
     }
-    return (h(Host, { ragatanga: true, onClick: this.handleClick, "aria-disabled": disabled ? 'true' : null, class: createColorClasses(color, {
+    return (h(Host, { onClick: this.handleClick, "aria-disabled": disabled ? 'true' : null, class: createColorClasses(color, {
         [mode]: true,
         [buttonType]: true,
         [`${buttonType}-${expand}`]: expand !== undefined,
@@ -116,7 +116,7 @@ export class Button {
         'ion-activatable': true,
         'ion-focusable': true,
       }) },
-      h("div", { class: "center" },
+      h("div", { class: "tertiary-tap" },
         h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes),
           h("span", { class: "button-inner" },
             h("slot", { name: "icon-only" }),
