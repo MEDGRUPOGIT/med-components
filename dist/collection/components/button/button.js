@@ -72,6 +72,11 @@ export class Button {
     this.inItem = !!this.el.closest('ion-item') || !!this.el.closest('ion-item-divider');
     this.inheritedAttributes = inheritAttributes(this.el, ['aria-label']);
   }
+  componentDidLoad() {
+    if (this.el.classList.contains('button')) {
+      this.el.classList.remove('button');
+    }
+  }
   get hasIconOnly() {
     return !!this.el.querySelector('[slot="icon-only"]');
   }
