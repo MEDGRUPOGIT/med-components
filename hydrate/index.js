@@ -9289,9 +9289,6 @@ class Button {
     if (this.el.classList.contains('button')) {
       this.el.classList.remove('button');
     }
-    if (this.el.classList.contains('button-disabled')) {
-      this.el.classList.remove('button-disabled');
-    }
   }
   get hasIconOnly() {
     return !!this.el.querySelector('[slot="icon-only"]');
@@ -9333,7 +9330,6 @@ class Button {
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
         'button-has-icon-only': hasIconOnly,
-        'button-disabled': disabled,
         'ion-activatable': true,
         'ion-focusable': true,
       }) }, hAsync("div", { class: "tertiary-tap" }, hAsync(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes), hAsync("span", { class: "button-inner" }, hAsync("slot", { name: "icon-only" }), hAsync("slot", { name: "start" }), hAsync("slot", null), hAsync("slot", { name: "end" })), mode === 'md' && hAsync("ion-ripple-effect", { type: this.rippleType })))));
