@@ -146,6 +146,27 @@
   border-radius: 0;
 }
 
+@media (any-hover: hover) {
+  :host(:hover) .button-native {
+    border-color: var(--border-color-hover);
+    color: var(--color-hover);
+    transition: var(--transition);
+  }
+  :host(:hover) .button-native::before {
+    opacity: 1;
+    background: var(--background-hover);
+    transition: var(--transition);
+  }
+
+  :host([disabled]:hover:not([disabled=false]):hover) .button-native {
+    border-color: var(--border-color-disabled);
+    color: var(--color-disable);
+  }
+  :host([disabled]:hover:not([disabled=false]):hover) .button-native::before {
+    background: var(--background-disabled);
+    opacity: 1;
+  }
+}
 :host([disabled]:not([disabled=false])),
 :host([disabled].ion-activated:not([disabled=false].ion-activated)),
 :host([disabled].ion-focused:not([disabled=false].ion-focused)) {
@@ -183,27 +204,6 @@
   opacity: 1;
 }
 
-@media (any-hover: hover) {
-  :host(:hover) .button-native {
-    border-color: var(--border-color-hover);
-    color: var(--color-hover);
-    transition: var(--transition);
-  }
-  :host(:hover) .button-native::before {
-    opacity: 1;
-    background: var(--background-hover);
-    transition: var(--transition);
-  }
-
-  :host([disabled]:hover:not([disabled=false]):hover) .button-native {
-    border-color: var(--border-color-disabled);
-    color: var(--color-disable);
-  }
-  :host([disabled]:hover:not([disabled=false]):hover) .button-native::before {
-    background: var(--background-disabled);
-    opacity: 1;
-  }
-}
 ion-ripple-effect {
   --ripple-color: var(--button-ripple-color);
   --ripple-opacity: var(--button-ripple-opacity);
