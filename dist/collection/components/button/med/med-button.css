@@ -195,11 +195,11 @@
     transition: var(--transition);
   }
 
-  :host([disabled]:hover) .button-native {
+  :host([disabled]:hover:not([disabled=false]):hover) .button-native {
     border-color: var(--border-color-disabled);
     color: var(--color-disable);
   }
-  :host([disabled]:hover) .button-native::before {
+  :host([disabled]:hover:not([disabled=false]):hover) .button-native::before {
     background: var(--background-disabled);
     opacity: 1;
   }
