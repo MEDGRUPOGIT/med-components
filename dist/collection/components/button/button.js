@@ -76,6 +76,9 @@ export class Button {
     if (this.el.classList.contains('button')) {
       this.el.classList.remove('button');
     }
+    if (this.el.classList.contains('button-disabled')) {
+      this.el.classList.remove('button-disabled');
+    }
   }
   get hasIconOnly() {
     return !!this.el.querySelector('[slot="icon-only"]');
