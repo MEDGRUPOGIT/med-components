@@ -183,33 +183,20 @@
   } */
 }
 :host([disabled]:not([disabled=false])),
-:host([disabled].ion-activated:not([disabled=false].ion-activated)),
-:host([disabled].ion-focused:not([disabled=false].ion-focused)) {
+:host([disabled].ion-activated:not([disabled=false])),
+:host([disabled].ion-focused:not([disabled=false])) {
   cursor: default;
   pointer-events: none;
 }
 :host([disabled]:not([disabled=false])) .button-native,
-:host([disabled].ion-activated:not([disabled=false].ion-activated)) .button-native,
-:host([disabled].ion-focused:not([disabled=false].ion-focused)) .button-native {
+:host([disabled].ion-activated:not([disabled=false])) .button-native,
+:host([disabled].ion-focused:not([disabled=false])) .button-native {
   border-color: var(--border-color-disabled);
   color: var(--color-disable);
 }
 :host([disabled]:not([disabled=false])) .button-native::before,
-:host([disabled].ion-activated:not([disabled=false].ion-activated)) .button-native::before,
-:host([disabled].ion-focused:not([disabled=false].ion-focused)) .button-native::before {
-  background: var(--background-disabled);
-  opacity: 1;
-}
-
-:host(.disable) {
-  cursor: default;
-  pointer-events: none;
-}
-:host(.disable) .button-native {
-  border-color: var(--border-color-disabled);
-  color: var(--color-disable);
-}
-:host(.disable) .button-native::before {
+:host([disabled].ion-activated:not([disabled=false])) .button-native::before,
+:host([disabled].ion-focused:not([disabled=false])) .button-native::before {
   background: var(--background-disabled);
   opacity: 1;
 }
