@@ -118,14 +118,6 @@
   padding-top: 23px !important;
 }
 
-:host-context(body.dark),
-:host-context(data-theme[dark]) {
-  --background: var(--med-global-background, #141414);
-  --title-color: var(--med-global-color, #fafafa);
-  --subtitle-color: var(--global-color, #fafafa);
-  --slotted-color: var(--med-global-color, #fafafa);
-}
-
 :host-context(body.light),
 :host-context(data-theme[light]) {
   --background: var(--med-global-background, #fafafa);
