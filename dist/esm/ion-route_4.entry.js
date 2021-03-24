@@ -1,6 +1,6 @@
 import { r as registerInstance, e as createEvent, i as getElement, h, H as Host } from './index-3ccd7557.js';
 import { b as getIonMode } from './ionic-global-cc7644a8.js';
-import { c as componentOnReady, n as debounce } from './helpers-83546701.js';
+import { c as componentOnReady, n as debounce } from './helpers-6b411283.js';
 import { o as openURL, c as createColorClasses } from './theme-0269729a.js';
 
 const Route = class {
@@ -325,17 +325,10 @@ const matchesPath = (inputPath, chain) => {
   }
   return chain;
 };
+// Merges the route parameter objects.
+// Returns undefined when both parameters are undefined.
 const mergeParams = (a, b) => {
-  if (!a && b) {
-    return b;
-  }
-  else if (a && !b) {
-    return a;
-  }
-  else if (a && b) {
-    return Object.assign(Object.assign({}, a), b);
-  }
-  return undefined;
+  return a || b ? Object.assign(Object.assign({}, a), b) : undefined;
 };
 const routerIDsToChain = (ids, chains) => {
   let match = null;

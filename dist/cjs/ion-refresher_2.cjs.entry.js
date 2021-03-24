@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-2a75be79.js');
 const ionicGlobal = require('./ionic-global-450feda2.js');
-const helpers = require('./helpers-7fea0dcc.js');
-const animation = require('./animation-fca56712.js');
+const helpers = require('./helpers-ab0db03b.js');
+const animation = require('./animation-dadce649.js');
 const cubicBezier = require('./cubic-bezier-6f49c00a.js');
 const index$1 = require('./index-099f2bcb.js');
 const haptic = require('./haptic-3d9360f0.js');
@@ -431,6 +431,7 @@ const Refresher = class {
       canStart: () => this.state !== 8 /* Refreshing */ && this.state !== 32 /* Completing */ && this.scrollEl.scrollTop === 0,
       onStart: (ev) => {
         ev.data = { animation: undefined, didStart: false, cancelled: false };
+        this.state = 2 /* Pulling */;
       },
       onMove: (ev) => {
         if ((ev.velocityY < 0 && this.progress === 0 && !ev.data.didStart) || ev.data.cancelled) {
@@ -439,16 +440,13 @@ const Refresher = class {
         }
         if (!ev.data.didStart) {
           ev.data.didStart = true;
-          this.state = 2 /* Pulling */;
-          index.writeTask(() => {
-            const animationType = getRefresherAnimationType(contentEl);
-            const animation = createPullingAnimation(animationType, pullingRefresherIcon);
-            ev.data.animation = animation;
-            this.scrollEl.style.setProperty('--overflow', 'hidden');
-            animation.progressStart(false, 0);
-            this.ionStart.emit();
-            this.animations.push(animation);
-          });
+          index.writeTask(() => this.scrollEl.style.setProperty('--overflow', 'hidden'));
+          const animationType = getRefresherAnimationType(contentEl);
+          const animation = createPullingAnimation(animationType, pullingRefresherIcon);
+          ev.data.animation = animation;
+          animation.progressStart(false, 0);
+          this.ionStart.emit();
+          this.animations.push(animation);
           return;
         }
         // Since we are using an easing curve, slow the gesture tracking down a bit

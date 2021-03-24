@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-2a75be79.js');
 const ionicGlobal = require('./ionic-global-450feda2.js');
-const helpers = require('./helpers-7fea0dcc.js');
+const helpers = require('./helpers-ab0db03b.js');
 const theme = require('./theme-04439550.js');
 
 const Route = class {
@@ -329,17 +329,10 @@ const matchesPath = (inputPath, chain) => {
   }
   return chain;
 };
+// Merges the route parameter objects.
+// Returns undefined when both parameters are undefined.
 const mergeParams = (a, b) => {
-  if (!a && b) {
-    return b;
-  }
-  else if (a && !b) {
-    return a;
-  }
-  else if (a && b) {
-    return Object.assign(Object.assign({}, a), b);
-  }
-  return undefined;
+  return a || b ? Object.assign(Object.assign({}, a), b) : undefined;
 };
 const routerIDsToChain = (ids, chains) => {
   let match = null;

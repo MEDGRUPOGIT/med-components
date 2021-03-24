@@ -1,6 +1,6 @@
 import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-3ccd7557.js';
 import { b as getIonMode } from './ionic-global-cc7644a8.js';
-import { d as getAriaLabel, e as renderHiddenInput } from './helpers-83546701.js';
+import { d as getAriaLabel, e as renderHiddenInput } from './helpers-6b411283.js';
 import { c as hapticSelection } from './haptic-3835cb22.js';
 import { c as createColorClasses, h as hostContext } from './theme-0269729a.js';
 

@@ -2275,7 +2275,7 @@
       "attributes": [
         {
           "name": "content-id",
-          "description": "The content's id the menu should use."
+          "description": "The `id` of the main content. When using\r\na router this is typically `ion-router-outlet`.\r\nWhen not using a router, this is typically\r\nyour main view's `ion-content`. This is not the\r\nid of the `ion-content` inside of your `ion-menu`."
         },
         {
           "name": "disabled",
@@ -2659,7 +2659,7 @@
       "name": "ion-progress-bar",
       "description": {
         "kind": "markdown",
-        "value": "ion-progress-bar is a horizontal progress bar to visualize the progression of an operation and activity. You can choose between two types: `determinate` and `indeterminate`."
+        "value": "Progress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`."
       },
       "attributes": [
         {
@@ -2990,7 +2990,7 @@
       "attributes": [
         {
           "name": "type",
-          "description": "Sets the type of ripple-effect:\n\n- `bounded`: the ripple effect expands from the user's click position\n- `unbounded`: the ripple effect expands from the center of the button and overflows the container.\n\nNOTE: Surfaces for bounded ripples should have the overflow property set to hidden,\nwhile surfaces for unbounded ripples should have it set to visible.",
+          "description": "Sets the type of ripple-effect:\r\n\r\n- `bounded`: the ripple effect expands from the user's click position\r\n- `unbounded`: the ripple effect expands from the center of the button and overflows the container.\r\n\r\nNOTE: Surfaces for bounded ripples should have the overflow property set to hidden,\r\nwhile surfaces for unbounded ripples should have it set to visible.",
           "values": [
             {
               "name": "bounded"
@@ -3894,7 +3894,7 @@
       "attributes": [
         {
           "name": "content-id",
-          "description": "The content `id` of the split-pane's main content."
+          "description": "The `id` of the main content. When using\r\na router this is typically `ion-router-outlet`.\r\nWhen not using a router, this is typically\r\nyour main view's `ion-content`. This is not the\r\nid of the `ion-content` inside of your `ion-menu`."
         },
         {
           "name": "disabled",

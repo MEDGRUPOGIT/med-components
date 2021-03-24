@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-2a75be79.js');
 const ionicGlobal = require('./ionic-global-450feda2.js');
-const helpers = require('./helpers-7fea0dcc.js');
-const animation = require('./animation-fca56712.js');
+const helpers = require('./helpers-ab0db03b.js');
+const animation = require('./animation-dadce649.js');
 require('./hardware-back-button-e370df1e.js');
-const overlays = require('./overlays-3aa80d92.js');
+const overlays = require('./overlays-e57c4340.js');
 const haptic = require('./haptic-3d9360f0.js');
 const theme = require('./theme-04439550.js');
 

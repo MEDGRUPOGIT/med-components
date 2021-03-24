@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-2a75be79.js');
 const ionicGlobal = require('./ionic-global-450feda2.js');
-const helpers = require('./helpers-7fea0dcc.js');
+const helpers = require('./helpers-ab0db03b.js');
 const haptic = require('./haptic-3d9360f0.js');
 const theme = require('./theme-04439550.js');
 

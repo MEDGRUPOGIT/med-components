@@ -244,8 +244,8 @@
   --padding: 8px 32px;
   --transition: background 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out;
   --width: calc(100% - 4px);
-  --button-ripple-color: #3aa8b9;
-  --button-ripple-opacity: 0.16;
+  --button-ripple-color: transparent;
+  --button-ripple-opacity: 0;
 }
 :host([secondary]) ion-ripple-effect {
   --ripple-color: var(--button-ripple-color);
@@ -348,11 +348,8 @@
   --height: 40px;
   --width: 40px;
   --fill: #fafafa;
-  --button-ripple-color: #292929;
-  --button-ripple-opacity: 1;
-}
-:host([icon-only]) svg {
-  fill: var(--fill);
+  --button-ripple-color: transparent;
+  --button-ripple-opacity: 0;
 }
 :host([icon-only]) ion-ripple-effect {
   --ripple-color: var(--button-ripple-color);

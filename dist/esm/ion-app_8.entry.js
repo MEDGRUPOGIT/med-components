@@ -1,10 +1,10 @@
 import { r as registerInstance, h, H as Host, i as getElement, e as createEvent, f as readTask, j as forceUpdate, c as writeTask } from './index-3ccd7557.js';
 import { b as getIonMode, c as config, a as isPlatform } from './ionic-global-cc7644a8.js';
-import { j as clamp } from './helpers-83546701.js';
-import { t as transition } from './index-be1366d0.js';
+import { j as clamp } from './helpers-6b411283.js';
+import { t as transition } from './index-d7773fab.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-c3ea3c34.js';
 import { c as createColorClasses, h as hostContext } from './theme-0269729a.js';
-import { a as attachComponent, d as detachComponent } from './framework-delegate-e7a08fc3.js';
+import { a as attachComponent, d as detachComponent } from './framework-delegate-0ff5b9dc.js';
 
 const appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html.plt-mobile ion-app [contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
 
@@ -17,13 +17,13 @@ const App = class {
       rIC(async () => {
         const isHybrid = isPlatform(window, 'hybrid');
         if (!config.getBoolean('_testing')) {
-          import('./tap-click-294e2de1.js').then(module => module.startTapClick(config));
+          import('./tap-click-6c05711b.js').then(module => module.startTapClick(config));
         }
         if (config.getBoolean('statusTap', isHybrid)) {
-          import('./status-tap-8aafd62d.js').then(module => module.startStatusTap());
+          import('./status-tap-6b4765c8.js').then(module => module.startStatusTap());
         }
         if (config.getBoolean('inputShims', needInputShims())) {
-          import('./input-shims-7c730a0c.js').then(module => module.startInputShims(config));
+          import('./input-shims-0ded056d.js').then(module => module.startInputShims(config));
         }
         const hardwareBackButtonModule = await import('./hardware-back-button-3fda9f12.js');
         if (config.getBoolean('hardwareBackButton', isHybrid)) {
@@ -714,7 +714,7 @@ const RouterOutlet = class {
     }
   }
   async connectedCallback() {
-    this.gesture = (await import('./swipe-back-c761b89a.js')).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
+    this.gesture = (await import('./swipe-back-46d403de.js')).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
       if (this.ani) {
         this.animationEnabled = false;
         this.ani.onFinish(() => {

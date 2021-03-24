@@ -5,6 +5,11 @@ import { clamp } from '../../utils/helpers';
 import { createColorClasses } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
+ *
+ * @part progress - The progress bar that shows the current value when `type` is `"determinate"` and slides back and forth when `type` is `"indeterminate"`.
+ * @part stream - The animated circles that appear while buffering. This only shows when `buffer` is set and `type` is `"determinate"`.
+ * @part track - The track bar behind the progress bar. If the `buffer` property is set and `type` is `"determinate"` the track will be the
+ * width of the `buffer` value.
  */
 export class ProgressBar {
   constructor() {
@@ -150,18 +155,17 @@ export class ProgressBar {
   }; }
 }
 const renderIndeterminate = () => {
-  return [
+  return (h("div", { part: "track", class: "progress-buffer-bar" },
     h("div", { class: "indeterminate-bar-primary" },
-      h("span", { class: "progress-indeterminate" })),
+      h("span", { part: "progress", class: "progress-indeterminate" })),
     h("div", { class: "indeterminate-bar-secondary" },
-      h("span", { class: "progress-indeterminate" }))
-  ];
+      h("span", { part: "progress", class: "progress-indeterminate" }))));
 };
 const renderProgress = (value, buffer) => {
   const finalValue = clamp(0, value, 1);
   const finalBuffer = clamp(0, buffer, 1);
   return [
-    h("div", { class: "progress", style: { transform: `scaleX(${finalValue})` } }),
+    h("div", { part: "progress", class: "progress", style: { transform: `scaleX(${finalValue})` } }),
     /**
      * Buffer circles with two container to move
      * the circles behind the buffer progress
@@ -171,7 +175,7 @@ const renderProgress = (value, buffer) => {
      */
     h("div", { class: { 'buffer-circles-container': true, 'ion-hide': finalBuffer === 1 }, style: { transform: `translateX(${finalBuffer * 100}%)` } },
       h("div", { class: "buffer-circles-container", style: { transform: `translateX(-${finalBuffer * 100}%)` } },
-        h("div", { class: "buffer-circles" }))),
-    h("div", { class: "progress-buffer-bar", style: { transform: `scaleX(${finalBuffer})` } }),
+        h("div", { part: "stream", class: "buffer-circles" }))),
+    h("div", { part: "track", class: "progress-buffer-bar", style: { transform: `scaleX(${finalBuffer})` } }),
   ];
 };

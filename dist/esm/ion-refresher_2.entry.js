@@ -1,7 +1,7 @@
 import { c as writeTask, r as registerInstance, e as createEvent, f as readTask, h, i as getElement, H as Host } from './index-3ccd7557.js';
 import { a as isPlatform, b as getIonMode, c as config } from './ionic-global-cc7644a8.js';
-import { c as componentOnReady, j as clamp, g as getElementRoot, r as raf } from './helpers-83546701.js';
-import { c as createAnimation } from './animation-e3d87e79.js';
+import { c as componentOnReady, j as clamp, g as getElementRoot, r as raf } from './helpers-6b411283.js';
+import { c as createAnimation } from './animation-f0f182d7.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-c3ea3c34.js';
 import { s as sanitizeDOMString } from './index-504c5ae5.js';
 import { d as hapticImpact } from './haptic-3835cb22.js';
@@ -427,6 +427,7 @@ const Refresher = class {
       canStart: () => this.state !== 8 /* Refreshing */ && this.state !== 32 /* Completing */ && this.scrollEl.scrollTop === 0,
       onStart: (ev) => {
         ev.data = { animation: undefined, didStart: false, cancelled: false };
+        this.state = 2 /* Pulling */;
       },
       onMove: (ev) => {
         if ((ev.velocityY < 0 && this.progress === 0 && !ev.data.didStart) || ev.data.cancelled) {
@@ -435,16 +436,13 @@ const Refresher = class {
         }
         if (!ev.data.didStart) {
           ev.data.didStart = true;
-          this.state = 2 /* Pulling */;
-          writeTask(() => {
-            const animationType = getRefresherAnimationType(contentEl);
-            const animation = createPullingAnimation(animationType, pullingRefresherIcon);
-            ev.data.animation = animation;
-            this.scrollEl.style.setProperty('--overflow', 'hidden');
-            animation.progressStart(false, 0);
-            this.ionStart.emit();
-            this.animations.push(animation);
-          });
+          writeTask(() => this.scrollEl.style.setProperty('--overflow', 'hidden'));
+          const animationType = getRefresherAnimationType(contentEl);
+          const animation = createPullingAnimation(animationType, pullingRefresherIcon);
+          ev.data.animation = animation;
+          animation.progressStart(false, 0);
+          this.ionStart.emit();
+          this.animations.push(animation);
           return;
         }
         // Since we are using an easing curve, slow the gesture tracking down a bit

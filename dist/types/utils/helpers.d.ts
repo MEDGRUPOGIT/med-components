@@ -1,5 +1,17 @@
 import { EventEmitter } from '../stencil-public-runtime';
 import { Side } from '../interface';
+/**
+ * Waits for a component to be ready for
+ * both custom element and non-custom element builds.
+ * If non-custom element build, el.componentOnReady
+ * will be used.
+ * For custom element builds, we wait a frame
+ * so that the inner contents of the component
+ * have a chance to render.
+ *
+ * Use this utility rather than calling
+ * el.componentOnReady yourself.
+ */
 export declare const componentOnReady: (el: any, callback: any) => void;
 /**
  * Elements inside of web components sometimes need to inherit global attributes

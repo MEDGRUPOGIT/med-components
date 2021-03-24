@@ -93,6 +93,10 @@
   transform-origin: right top;
 }
 
+:host-context(.item-textarea).label-floating {
+  transform: translateY(185%);
+}
+
 :host(.label-stacked),
 :host(.label-floating) {
   margin-left: 0;
@@ -102,6 +106,7 @@
 }
 
 :host-context(.item-has-focus).label-floating,
+:host-context(.item-has-placeholder:not(.item-input)).label-floating,
 :host-context(.item-has-value).label-floating {
   transform: translateY(50%) scale(0.75);
 }

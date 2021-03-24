@@ -1,9 +1,9 @@
 :host {
   /**
-  * @prop --background:  Same as --buffer-background when using a determinate progress bar, otherwise it styles the background of the ion-progress-bar itself.
-  * @prop --progress-background: Color of the progress bar
-  * @prop --buffer-background: Color of the buffer bar
-  */
+   * @prop --background: Background of the progress track, or the buffer bar if `buffer` is set
+   * @prop --progress-background: Background of the progress bar representing the current value
+   * @prop --buffer-background: DEPRECATED, use `--background` instead
+   */
   --background: rgba(var(--ion-color-primary-rgb, 56, 128, 255), 0.3);
   --progress-background: var(--ion-color-primary, #3880ff);
   --buffer-background: var(--background);
@@ -13,15 +13,6 @@
   contain: strict;
   direction: ltr;
   overflow: hidden;
-}
-
-:host(.ion-color) {
-  --progress-background: var(--ion-color-base);
-  --buffer-background: rgba(var(--ion-color-base-rgb), 0.3);
-}
-
-:host(.progress-bar-indeterminate) {
-  background: var(--buffer-background);
 }
 
 .progress,
@@ -106,8 +97,12 @@
 }
 
 .buffer-circles {
-  background: radial-gradient(ellipse at center, var(--buffer-background) 0%, var(--buffer-background) 30%, transparent 30%) repeat-x 5px center;
+  background-image: radial-gradient(ellipse at center, var(--buffer-background) 0%, var(--buffer-background) 30%, transparent 30%);
+  /* stylelint-disable property-blacklist */
+  background-repeat: repeat-x;
+  background-position: 5px center;
   background-size: 10px 10px;
+  /* stylelint-enable property-blacklist */
   z-index: 0;
   animation: buffering 450ms infinite linear;
 }
@@ -120,6 +115,19 @@
 :host(.progress-paused) .indeterminate-bar-primary,
 :host(.progress-paused) .buffer-circles {
   animation-play-state: paused;
+}
+
+:host(.ion-color) .progress-buffer-bar {
+  background: rgba(var(--ion-color-base-rgb), 0.3);
+}
+
+:host(.ion-color) .buffer-circles {
+  background-image: radial-gradient(ellipse at center, rgba(var(--ion-color-base-rgb), 0.3) 0%, rgba(var(--ion-color-base-rgb), 0.3) 30%, transparent 30%);
+}
+
+:host(.ion-color) .progress,
+:host(.ion-color) .progress-indeterminate {
+  background: var(--ion-color-base);
 }
 
 @keyframes primary-indeterminate-translate {
