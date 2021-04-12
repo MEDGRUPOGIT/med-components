@@ -21,7 +21,7 @@ jobs:
         title: "Novo commit detectado na master do ionic-framework. Trazendo o código para a master de med-components"
         body: ":*PR Automático*"      
         base: main
-        branch: sync                
+        branch: sync-to-main                
         draft: false
         
     
