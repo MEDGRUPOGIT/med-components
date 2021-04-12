@@ -1,10 +1,10 @@
-#cria um pull request da branch sync para a master.
-name: Sync to Master
+#cria um pull request da branch sync para a main.
+name: Sync to main
 
 on:
   push:
     branches:
-    - "sync"    
+    - sync    
   workflow_dispatch:
 
 jobs:
@@ -14,14 +14,16 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: main
+    - name: reset-sync-branch
+      run: |
+        git fetch origin sync:sync
+        git reset --hard sync
     - name: pull-request
       uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: "Novo commit detectado na master do ionic-framework. Trazendo o código para a master de med-components"
         body: ":*PR Automático*"      
-        base: main
-        branch: sync-to-main                
-        draft: false
+        branch: sync-to-main  
         
     
