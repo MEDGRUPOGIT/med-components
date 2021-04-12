@@ -12,11 +12,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: pull-request
-      uses: repo-sync/pull-request@v2
+      uses: peter-evans/create-pull-request@v3
       with:
-        source_branch: "sync"                               
-        destination_branch: "main"                      
-        pr_title: "Pulling ${{ github.ref }} into master"
-        pr_body: ":crown: *An automated PR*"             
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "Novo commit detectado na master do ionic-framework. Trazendo o código para a master de med-components"
+        body: ":*PR Automático*"      
+        branch: sync
+        delete-branch: true                   
+        draft: false
+        
     
