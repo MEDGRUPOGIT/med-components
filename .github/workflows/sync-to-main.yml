@@ -17,8 +17,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: "Novo commit detectado na master do ionic-framework. Trazendo o código para a master de med-components"
         body: ":*PR Automático*"      
-        branch: sync
-        delete-branch: true                   
+        branch: sync                
         draft: false
         
     
