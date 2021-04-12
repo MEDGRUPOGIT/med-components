@@ -1,0 +1,22 @@
+#cria e aprova um pull request da branch sync para a master.
+name: Sync to Master
+
+on:
+  push:
+    branches:
+    - "sync"
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        source_branch: "sync"                               
+        destination_branch: "main"                      
+        pr_title: "Pulling ${{ github.ref }} into master"
+        pr_body: ":crown: *An automated PR*"             
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    
