@@ -1,4 +1,4 @@
-#cria e aprova um pull request da branch sync para a master.
+#cria um pull request da branch sync para a master.
 name: Sync to Master
 
 on:
