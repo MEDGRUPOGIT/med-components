@@ -4,7 +4,8 @@ name: Sync to Master
 on:
   push:
     branches:
-    - "sync"
+    - "sync"    
+  workflow_dispatch:
 
 jobs:
   pull-request:
