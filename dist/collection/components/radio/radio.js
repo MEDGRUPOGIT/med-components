@@ -83,7 +83,7 @@ export class Radio {
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     return (h(Host, { "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, "aria-labelledby": label ? labelId : null, role: "radio", tabindex: buttonTabindex, onFocus: this.onFocus, onBlur: this.onBlur, class: createColorClasses(color, {
         [mode]: true,
-        'in-item': hostContext('ion-item', el),
+        'in-item': hostContext('ion-item', el) || hostContext('med-option', el),
         'interactive': true,
         'radio-checked': checked,
         'radio-disabled': disabled,
@@ -97,12 +97,12 @@ export class Radio {
   static get is() { return "ion-radio"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["radio.ios.scss"],
-    "md": ["radio.md.scss"]
+    "ios": ["./med/med-radio.scss"],
+    "md": ["./med/med-radio.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["radio.ios.css"],
-    "md": ["radio.md.css"]
+    "ios": ["./med/med-radio.css"],
+    "md": ["./med/med-radio.css"]
   }; }
   static get properties() { return {
     "color": {

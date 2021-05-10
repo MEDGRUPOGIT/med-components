@@ -1,9 +1,9 @@
 {
-  "timestamp": "2021-03-24T20:09:40",
+  "timestamp": "2021-05-10T13:31:01",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.4.0",
-    "typescriptVersion": "4.1.3"
+    "version": "2.5.0",
+    "typescriptVersion": "4.2.3"
   },
   "components": [
     {
@@ -1655,6 +1655,68 @@
           "required": false
         },
         {
+          "name": "dsName",
+          "type": "\"icon-label\" | \"icon-only\" | \"primary\" | \"secondary\" | \"tertiary\"",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "icon-label",
+              "type": "string"
+            },
+            {
+              "value": "icon-only",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "dsSize",
+          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\"",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            },
+            {
+              "value": "xs",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
           "name": "expand",
           "type": "\"block\" | \"full\" | undefined",
           "mutable": false,
@@ -1946,7 +2008,123 @@
         }
       ],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--background",
+          "annotation": "prop",
+          "docs": "Background of the button"
+        },
+        {
+          "name": "--background-activated",
+          "annotation": "prop",
+          "docs": "Background of the button when pressed. Note: setting this will interfere with the Material Design ripple."
+        },
+        {
+          "name": "--background-activated-opacity",
+          "annotation": "prop",
+          "docs": "Opacity of the button when pressed"
+        },
+        {
+          "name": "--background-focused",
+          "annotation": "prop",
+          "docs": "Background of the button when focused with the tab key"
+        },
+        {
+          "name": "--background-focused-opacity",
+          "annotation": "prop",
+          "docs": "Opacity of the button when focused with the tab key"
+        },
+        {
+          "name": "--background-hover",
+          "annotation": "prop",
+          "docs": "Background of the button on hover"
+        },
+        {
+          "name": "--background-hover-opacity",
+          "annotation": "prop",
+          "docs": "Opacity of the background on hover"
+        },
+        {
+          "name": "--border-color",
+          "annotation": "prop",
+          "docs": "Border color of the button"
+        },
+        {
+          "name": "--border-radius",
+          "annotation": "prop",
+          "docs": "Border radius of the button"
+        },
+        {
+          "name": "--border-style",
+          "annotation": "prop",
+          "docs": "Border style of the button"
+        },
+        {
+          "name": "--border-width",
+          "annotation": "prop",
+          "docs": "Border width of the button"
+        },
+        {
+          "name": "--box-shadow",
+          "annotation": "prop",
+          "docs": "Box shadow of the button"
+        },
+        {
+          "name": "--color",
+          "annotation": "prop",
+          "docs": "Text color of the button"
+        },
+        {
+          "name": "--color-activated",
+          "annotation": "prop",
+          "docs": "Text color of the button when pressed"
+        },
+        {
+          "name": "--color-focused",
+          "annotation": "prop",
+          "docs": "Text color of the button when focused with the tab key"
+        },
+        {
+          "name": "--color-hover",
+          "annotation": "prop",
+          "docs": "Text color of the button when hover"
+        },
+        {
+          "name": "--opacity",
+          "annotation": "prop",
+          "docs": "Opacity of the button"
+        },
+        {
+          "name": "--padding-bottom",
+          "annotation": "prop",
+          "docs": "Bottom padding of the button"
+        },
+        {
+          "name": "--padding-end",
+          "annotation": "prop",
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button"
+        },
+        {
+          "name": "--padding-start",
+          "annotation": "prop",
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button"
+        },
+        {
+          "name": "--padding-top",
+          "annotation": "prop",
+          "docs": "Top padding of the button"
+        },
+        {
+          "name": "--ripple-color",
+          "annotation": "prop",
+          "docs": "Color of the button ripple effect"
+        },
+        {
+          "name": "--transition",
+          "annotation": "prop",
+          "docs": "Transition of the button"
+        }
+      ],
       "slots": [
         {
           "name": "",
@@ -4214,7 +4392,7 @@
         },
         {
           "name": "pickerOptions",
-          "type": "undefined | { columns?: PickerColumn[] | undefined; buttons?: PickerButton[] | undefined; cssClass?: string | string[] | undefined; showBackdrop?: boolean | undefined; backdropDismiss?: boolean | undefined; animated?: boolean | undefined; mode?: \"ios\" | \"md\" | undefined; keyboardClose?: boolean | undefined; id?: string | undefined; enterAnimation?: AnimationBuilder | undefined; leaveAnimation?: AnimationBuilder | undefined; }",
+          "type": "undefined | { columns?: PickerColumn[] | undefined; buttons?: PickerButton[] | undefined; cssClass?: string | string[] | undefined; showBackdrop?: boolean | undefined; backdropDismiss?: boolean | undefined; animated?: boolean | undefined; mode?: Mode | undefined; keyboardClose?: boolean | undefined; id?: string | undefined; enterAnimation?: AnimationBuilder | undefined; leaveAnimation?: AnimationBuilder | undefined; }",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "Any additional options that the picker interface can accept.\r\nSee the [Picker API docs](../picker) for the picker options.",
@@ -4245,11 +4423,7 @@
               "type": "undefined; animated?: boolean"
             },
             {
-              "type": "undefined; mode?: \"ios\""
-            },
-            {
-              "value": "md",
-              "type": "string"
+              "type": "undefined; mode?: Mode"
             },
             {
               "type": "undefined; keyboardClose?: boolean"
@@ -11233,6 +11407,23 @@
           "required": false
         },
         {
+          "name": "percentage",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "percentage",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "reversed",
           "type": "boolean",
           "mutable": false,
@@ -11324,9 +11515,15 @@
           "docs": "The track bar behind the progress bar. If the `buffer` property is set and `type` is `\"determinate\"` the track will be the\r\nwidth of the `buffer` value."
         }
       ],
-      "dependents": [],
+      "dependents": [
+        "med-alternativas"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-alternativas": [
+          "ion-progress-bar"
+        ]
+      }
     },
     {
       "filePath": "./src/components/radio/radio.tsx",
@@ -11469,28 +11666,7 @@
         }
       ],
       "listeners": [],
-      "styles": [
-        {
-          "name": "--border-radius",
-          "annotation": "prop",
-          "docs": "Border radius of the radio"
-        },
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Color of the radio"
-        },
-        {
-          "name": "--color-checked",
-          "annotation": "prop",
-          "docs": "Color of the checked radio"
-        },
-        {
-          "name": "--inner-border-radius",
-          "annotation": "prop",
-          "docs": "Border radius of the inner checked radio"
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [
         {
@@ -11503,11 +11679,15 @@
         }
       ],
       "dependents": [
-        "ion-select-popover"
+        "ion-select-popover",
+        "med-alternativas"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "ion-select-popover": [
+          "ion-radio"
+        ],
+        "med-alternativas": [
           "ion-radio"
         ]
       }
@@ -11602,11 +11782,15 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "ion-select-popover"
+        "ion-select-popover",
+        "med-alternativas"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "ion-select-popover": [
+          "ion-radio-group"
+        ],
+        "med-alternativas": [
           "ion-radio-group"
         ]
       }
@@ -12608,17 +12792,14 @@
       "props": [
         {
           "name": "beforeEnter",
-          "type": "(() => boolean | NavigationHookOptions | Promise<NavigationHookResult>) | undefined",
+          "type": "(() => NavigationHookResult | Promise<NavigationHookResult>) | undefined",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "A navigation hook that is fired when the route tries to enter.\r\nReturning `true` allows the navigation to proceed, while returning\r\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\r\nobject causes the router to redirect to the path specified.",
           "docsTags": [],
           "values": [
             {
-              "type": "(() => boolean"
-            },
-            {
-              "type": "NavigationHookOptions"
+              "type": "(() => NavigationHookResult"
             },
             {
               "type": "Promise<NavigationHookResult>)"
@@ -12632,17 +12813,14 @@
         },
         {
           "name": "beforeLeave",
-          "type": "(() => boolean | NavigationHookOptions | Promise<NavigationHookResult>) | undefined",
+          "type": "(() => NavigationHookResult | Promise<NavigationHookResult>) | undefined",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "A navigation hook that is fired when the route tries to leave.\r\nReturning `true` allows the navigation to proceed, while returning\r\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\r\nobject causes the router to redirect to the path specified.",
           "docsTags": [],
           "values": [
             {
-              "type": "(() => boolean"
-            },
-            {
-              "type": "NavigationHookOptions"
+              "type": "(() => NavigationHookResult"
             },
             {
               "type": "Promise<NavigationHookResult>)"
@@ -18379,7 +18557,327 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/med-navbar/med-navbar.tsx",
+      "filePath": "./src/components/medgrupo/team/med-alternativas/med-alternativas.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-alternativas",
+      "readme": "# med-alternativas\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alternativaSelecionada",
+          "type": "string",
+          "mutable": true,
+          "attr": "alternativa-selecionada",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "alternativas",
+          "type": "any",
+          "mutable": false,
+          "attr": "alternativas",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "keyAlternativa",
+          "type": "string",
+          "mutable": false,
+          "attr": "key-alternativa",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'Alternativa'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "keyEnunciado",
+          "type": "string",
+          "mutable": false,
+          "attr": "key-enunciado",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'Enunciado'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "keyImagem",
+          "type": "string",
+          "mutable": false,
+          "attr": "key-imagem",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'Imagem'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "keyPorcentagem",
+          "type": "string",
+          "mutable": false,
+          "attr": "key-porcentagem",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'Porcentagem'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mostraResposta",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "mostra-resposta",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "respostaCorreta",
+          "type": "string",
+          "mutable": true,
+          "attr": "resposta-correta",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "medChange",
+          "detail": "MedAlternativaInterface",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "medGalleryRequest",
+          "detail": "MedAlternativaInterface",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-radio-group",
+        "med-option",
+        "ion-radio",
+        "ion-progress-bar"
+      ],
+      "dependencyGraph": {
+        "med-alternativas": [
+          "ion-radio-group",
+          "med-option",
+          "ion-radio",
+          "ion-progress-bar"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/medgrupo/team/med-cartao-resposta/med-cartao-resposta-item.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-cartao-resposta-item",
+      "readme": "# med-cartao-resposta\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/medgrupo/team/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-cartao-resposta-lista",
+      "readme": "# med-cartao-resposta-listas\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/medgrupo/team/med-enunciado/med-enunciado.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-enunciado",
+      "readme": "# med-enunciado\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "imagens",
+          "type": "string | string[]",
+          "mutable": true,
+          "attr": "imagens",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "medGalleryRequest",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/medgrupo/global/med-header/med-header.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-header",
+      "readme": "# med-header\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [
+        {
+          "event": "medResize",
+          "detail": "headerResizeEventDetail",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/medgrupo/global/med-navbar/med-navbar.tsx",
       "encapsulation": "shadow",
       "tag": "med-navbar",
       "readme": "# med-navbar\r\n\r\n\r\n\r",
@@ -18399,6 +18897,104 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/medgrupo/team/med-option/med-option.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-option",
+      "readme": "# med-option\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "med-alternativas"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "med-alternativas": [
+          "med-option"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/medgrupo/global/med-rate-bar/med-rate-bar.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-rate-bar",
+      "readme": "# med-rate-bar\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/medgrupo/global/med-rate-like/med-rate-like.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-rate-like",
+      "readme": "# med-rate-like\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [
+        {
+          "event": "medChange",
+          "detail": "\"dislike\" | \"like\"",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-rate-like": [
+          "ion-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/medgrupo/global/med-toolbar/med-toolbar.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-toolbar",
+      "readme": "# med-toolbar\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
       "listeners": [],
       "styles": [],
       "slots": [],

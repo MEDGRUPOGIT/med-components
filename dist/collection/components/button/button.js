@@ -18,6 +18,8 @@ export class Button {
     this.inListHeader = false;
     this.inToolbar = false;
     this.inheritedAttributes = {};
+    this.iconOnly = false;
+    this.iconLabel = false;
     /**
      * The type of button.
      */
@@ -106,40 +108,98 @@ export class Button {
     if (fill === undefined) {
       fill = this.inToolbar || this.inListHeader ? 'clear' : 'solid';
     }
+    switch (this.dsName) {
+      case 'primary':
+        fill = 'solid';
+        break;
+      case 'secondary':
+        fill = 'outline';
+        break;
+      case 'tertiary':
+        fill = 'clear';
+        break;
+      case 'icon-only':
+        this.iconOnly = true;
+        fill = 'clear';
+        break;
+      case 'icon-label':
+        this.iconLabel = true;
+        fill = 'clear';
+        break;
+      default:
+        break;
+    }
     return (h(Host, { onClick: this.handleClick, "aria-disabled": disabled ? 'true' : null, class: createColorClasses(color, {
         [mode]: true,
-        [buttonType]: true,
+        [`med-${buttonType}`]: true,
         [`${buttonType}-${expand}`]: expand !== undefined,
         [`${buttonType}-${finalSize}`]: finalSize !== undefined,
         [`${buttonType}-${shape}`]: shape !== undefined,
-        [`${buttonType}-${fill}`]: true,
+        [`med-${buttonType}-${fill}`]: true,
         [`${buttonType}-strong`]: strong,
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
-        'button-has-icon-only': hasIconOnly,
+        'button-has-icon-only': hasIconOnly || this.iconOnly,
+        'med-button-disabled': disabled,
         'ion-activatable': true,
         'ion-focusable': true,
+        'in-med-navbar': hostContext('med-navbar', this.el),
+        'in-med-toolbar': hostContext('med-toolbar', this.el),
+        'button-icon-label': this.iconLabel
       }) },
-      h("div", { class: "tertiary-tap" },
-        h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes),
-          h("span", { class: "button-inner" },
-            h("slot", { name: "icon-only" }),
-            h("slot", { name: "start" }),
-            h("slot", null),
-            h("slot", { name: "end" })),
-          mode === 'md' && h("ion-ripple-effect", { type: this.rippleType })))));
+      h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes),
+        h("span", { class: "button-inner" },
+          h("slot", { name: "icon-only" }),
+          h("slot", { name: "start" }),
+          h("slot", null),
+          h("slot", { name: "end" })),
+        mode === 'md' && h("ion-ripple-effect", { type: this.rippleType }))));
   }
   static get is() { return "ion-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["./med/med-button.scss"],
-    "md": ["./med/med-button.scss"]
+    "ios": ["./button.md.scss"],
+    "md": ["./button.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["./med/med-button.css"],
-    "md": ["./med/med-button.css"]
+    "ios": ["button.md.css"],
+    "md": ["button.md.css"]
   }; }
   static get properties() { return {
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'primary' | 'secondary' | 'tertiary' | 'icon-only' | 'icon-label'",
+        "resolved": "\"icon-label\" | \"icon-only\" | \"primary\" | \"secondary\" | \"tertiary\"",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
+    "dsSize": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\"",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "ds-size",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,

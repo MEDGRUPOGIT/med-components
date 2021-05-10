@@ -13,6 +13,7 @@ import { createColorClasses } from '../../utils/theme';
  */
 export class ProgressBar {
   constructor() {
+    this.percentage = false;
     /**
      * The state of the progress bar, based on if the time the process takes is known or not.
      * Default options are: `"determinate"` (no animation), `"indeterminate"` (animate from left to right).
@@ -35,12 +36,13 @@ export class ProgressBar {
     this.buffer = 1;
   }
   render() {
-    const { color, type, reversed, value, buffer } = this;
+    const { color, type, reversed, value, buffer, percentage } = this;
     const paused = config.getBoolean('_testing');
     const mode = getIonMode(this);
     return (h(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: createColorClasses(color, {
         [mode]: true,
         [`progress-bar-${type}`]: true,
+        'percentage': percentage,
         'progress-paused': paused,
         'progress-bar-reversed': document.dir === 'rtl' ? !reversed : reversed
       }) }, type === 'indeterminate'
@@ -50,14 +52,32 @@ export class ProgressBar {
   static get is() { return "ion-progress-bar"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["progress-bar.ios.scss"],
-    "md": ["progress-bar.md.scss"]
+    "ios": ["progress-bar.med.scss"],
+    "md": ["progress-bar.med.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["progress-bar.ios.css"],
-    "md": ["progress-bar.md.css"]
+    "ios": ["progress-bar.med.css"],
+    "md": ["progress-bar.med.css"]
   }; }
   static get properties() { return {
+    "percentage": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "percentage",
+      "reflect": false,
+      "defaultValue": "false"
+    },
     "type": {
       "type": "string",
       "mutable": false,
@@ -162,10 +182,16 @@ const renderIndeterminate = () => {
       h("span", { part: "progress", class: "progress-indeterminate" }))));
 };
 const renderProgress = (value, buffer) => {
-  const finalValue = clamp(0, value, 1);
+  const finalValue = value !== 0 ? (value * 100) : 8;
+  const unit = value !== 0 ? '%' : 'px';
   const finalBuffer = clamp(0, buffer, 1);
+  const renderedNumber = value * 100;
   return [
-    h("div", { part: "progress", class: "progress", style: { transform: `scaleX(${finalValue})` } }),
+    h("div", { class: "progress-container" },
+      h("div", { part: "progress", class: `progress ${finalValue === 100 ? 'progress--correct' : ''}`, style: { width: `${finalValue}${unit}` } }),
+      h("span", { class: "progress__percentage" },
+        renderedNumber.toFixed(),
+        "%")),
     /**
      * Buffer circles with two container to move
      * the circles behind the buffer progress
@@ -176,6 +202,6 @@ const renderProgress = (value, buffer) => {
     h("div", { class: { 'buffer-circles-container': true, 'ion-hide': finalBuffer === 1 }, style: { transform: `translateX(${finalBuffer * 100}%)` } },
       h("div", { class: "buffer-circles-container", style: { transform: `translateX(-${finalBuffer * 100}%)` } },
         h("div", { part: "stream", class: "buffer-circles" }))),
-    h("div", { part: "track", class: "progress-buffer-bar", style: { transform: `scaleX(${finalBuffer})` } }),
+    h("div", { part: "track", class: "progress-buffer-bar", style: { transform: `translateX(${finalBuffer})` } }),
   ];
 };

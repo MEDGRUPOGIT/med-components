@@ -73,10 +73,10 @@ export class RippleEffect {
   static get is() { return "ion-ripple-effect"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "$": ["./med/med-ripple-effect.scss"]
+    "$": ["./ripple-effect.scss"]
   }; }
   static get styleUrls() { return {
-    "$": ["./med/med-ripple-effect.css"]
+    "$": ["ripple-effect.css"]
   }; }
   static get properties() { return {
     "type": {

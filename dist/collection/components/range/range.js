@@ -371,11 +371,11 @@ export class Range {
   static get is() { return "ion-range"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["range.ios.scss"],
+    "ios": ["range.md.scss"],
     "md": ["range.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["range.ios.css"],
+    "ios": ["range.md.css"],
     "md": ["range.md.css"]
   }; }
   static get properties() { return {

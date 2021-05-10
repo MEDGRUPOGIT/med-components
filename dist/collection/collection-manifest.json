@@ -39,7 +39,16 @@
     "./components/list/list.js",
     "./components/list-header/list-header.js",
     "./components/loading/loading.js",
-    "./components/medgrupo/med-navbar/med-navbar.js",
+    "./components/medgrupo/global/med-header/med-header.js",
+    "./components/medgrupo/global/med-navbar/med-navbar.js",
+    "./components/medgrupo/global/med-rate-bar/med-rate-bar.js",
+    "./components/medgrupo/global/med-rate-like/med-rate-like.js",
+    "./components/medgrupo/global/med-toolbar/med-toolbar.js",
+    "./components/medgrupo/team/med-alternativas/med-alternativas.js",
+    "./components/medgrupo/team/med-cartao-resposta/med-cartao-resposta-item.js",
+    "./components/medgrupo/team/med-cartao-resposta-lista/med-cartao-resposta-lista.js",
+    "./components/medgrupo/team/med-enunciado/med-enunciado.js",
+    "./components/medgrupo/team/med-option/med-option.js",
     "./components/menu/menu.js",
     "./components/menu-button/menu-button.js",
     "./components/menu-toggle/menu-toggle.js",
@@ -91,8 +100,8 @@
   ],
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.4.0",
-    "typescriptVersion": "4.1.3"
+    "version": "2.5.0",
+    "typescriptVersion": "4.2.3"
   },
   "collections": [
     {

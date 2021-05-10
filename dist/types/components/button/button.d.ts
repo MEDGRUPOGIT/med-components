@@ -17,6 +17,10 @@ export declare class Button implements ComponentInterface, AnchorInterface, Butt
   private inToolbar;
   private inheritedAttributes;
   el: HTMLElement;
+  dsName: 'primary' | 'secondary' | 'tertiary' | 'icon-only' | 'icon-label';
+  dsSize: 'xs' | 'sm' | 'md' | 'lg';
+  private iconOnly;
+  private iconLabel;
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

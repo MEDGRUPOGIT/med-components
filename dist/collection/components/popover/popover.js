@@ -118,11 +118,11 @@ export class Popover {
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "ios": ["popover.ios.scss"],
-    "md": ["popover.md.scss"]
+    "md": ["popover.ios.scss"]
   }; }
   static get styleUrls() { return {
     "ios": ["popover.ios.css"],
-    "md": ["popover.md.css"]
+    "md": ["popover.ios.css"]
   }; }
   static get properties() { return {
     "delegate": {

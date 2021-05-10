@@ -15,11 +15,11 @@ export class Badge {
   static get is() { return "ion-badge"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["badge.ios.scss"],
+    "ios": ["badge.md.scss"],
     "md": ["badge.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["badge.ios.css"],
+    "ios": ["badge.md.css"],
     "md": ["badge.md.css"]
   }; }
   static get properties() { return {

@@ -2,20 +2,20 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-require('./index-2a75be79.js');
-const ionicGlobal = require('./ionic-global-450feda2.js');
-const helpers = require('./helpers-ab0db03b.js');
 const animation = require('./animation-dadce649.js');
-const index$2 = require('./index-70e531cf.js');
-const ios_transition = require('./ios.transition-eeb269c7.js');
-const md_transition = require('./md.transition-944a4bcf.js');
+const ios_transition = require('./ios.transition-0153bb6e.js');
+const md_transition = require('./md.transition-559b98c6.js');
 const cubicBezier = require('./cubic-bezier-6f49c00a.js');
-require('./gesture-controller-bcfe01ec.js');
 const index = require('./index-adf3c519.js');
+const ionicGlobal = require('./ionic-global-926d5da1.js');
+const helpers = require('./helpers-ab0db03b.js');
 const index$1 = require('./index-099f2bcb.js');
+const index$2 = require('./index-fb3f70cd.js');
+const index$3 = require('./index-ffeb9370.js');
+const overlays = require('./overlays-a806c884.js');
+require('./gesture-controller-bcfe01ec.js');
+require('./index-a0a08b2a.js');
 require('./hardware-back-button-e370df1e.js');
-const index$3 = require('./index-62ec669a.js');
-const overlays = require('./overlays-e57c4340.js');
 
 const setupConfig = (config) => {
   const win = window;
@@ -42,21 +42,21 @@ const getMode = () => {
   return 'md';
 };
 
+exports.createAnimation = animation.createAnimation;
+exports.iosTransitionAnimation = ios_transition.iosTransitionAnimation;
+exports.mdTransitionAnimation = md_transition.mdTransitionAnimation;
+exports.getTimeGivenProgression = cubicBezier.getTimeGivenProgression;
+exports.createGesture = index.createGesture;
 exports.getPlatforms = ionicGlobal.getPlatforms;
 exports.initialize = ionicGlobal.initialize;
 exports.isPlatform = ionicGlobal.isPlatform;
 exports.componentOnReady = helpers.componentOnReady;
-exports.createAnimation = animation.createAnimation;
+exports.IonicSafeString = index$1.IonicSafeString;
 exports.LIFECYCLE_DID_ENTER = index$2.LIFECYCLE_DID_ENTER;
 exports.LIFECYCLE_DID_LEAVE = index$2.LIFECYCLE_DID_LEAVE;
 exports.LIFECYCLE_WILL_ENTER = index$2.LIFECYCLE_WILL_ENTER;
 exports.LIFECYCLE_WILL_LEAVE = index$2.LIFECYCLE_WILL_LEAVE;
 exports.LIFECYCLE_WILL_UNLOAD = index$2.LIFECYCLE_WILL_UNLOAD;
-exports.iosTransitionAnimation = ios_transition.iosTransitionAnimation;
-exports.mdTransitionAnimation = md_transition.mdTransitionAnimation;
-exports.getTimeGivenProgression = cubicBezier.getTimeGivenProgression;
-exports.createGesture = index.createGesture;
-exports.IonicSafeString = index$1.IonicSafeString;
 exports.menuController = index$3.menuController;
 exports.actionSheetController = overlays.actionSheetController;
 exports.alertController = overlays.alertController;

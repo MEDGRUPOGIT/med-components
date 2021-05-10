@@ -86,10 +86,10 @@ export class Col {
   static get is() { return "ion-col"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "$": ["col.scss"]
+    "$": ["./med/med-col.scss"]
   }; }
   static get styleUrls() { return {
-    "$": ["col.css"]
+    "$": ["./med/med-col.css"]
   }; }
   static get properties() { return {
     "offset": {

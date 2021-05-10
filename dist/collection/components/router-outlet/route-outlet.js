@@ -153,7 +153,7 @@ export class RouterOutlet {
       "type": "string",
       "mutable": true,
       "complexType": {
-        "original": "\"ios\" | \"md\"",
+        "original": "\"md\" | \"ios\"",
         "resolved": "\"ios\" | \"md\"",
         "references": {}
       },

@@ -18,10 +18,10 @@ export class Grid {
   static get is() { return "ion-grid"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "$": ["grid.scss"]
+    "$": ["./med/med-grid.scss"]
   }; }
   static get styleUrls() { return {
-    "$": ["grid.css"]
+    "$": ["./med/med-grid.css"]
   }; }
   static get properties() { return {
     "fixed": {

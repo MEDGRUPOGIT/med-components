@@ -287,6 +287,45 @@
           "description": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
         },
         {
+          "name": "ds-name",
+          "description": "",
+          "values": [
+            {
+              "name": "icon-label"
+            },
+            {
+              "name": "icon-only"
+            },
+            {
+              "name": "primary"
+            },
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "tertiary"
+            }
+          ]
+        },
+        {
+          "name": "ds-size",
+          "description": "",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            },
+            {
+              "name": "xs"
+            }
+          ]
+        },
+        {
           "name": "expand",
           "description": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\r\nwithout left and right borders.",
           "values": [
@@ -2683,6 +2722,10 @@
           ]
         },
         {
+          "name": "percentage",
+          "description": ""
+        },
+        {
           "name": "reversed",
           "description": "If true, reverse the progress bar direction."
         },
@@ -4490,6 +4533,119 @@
       ]
     },
     {
+      "name": "med-alternativas",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "alternativa-selecionada",
+          "description": ""
+        },
+        {
+          "name": "alternativas",
+          "description": ""
+        },
+        {
+          "name": "key-alternativa",
+          "description": ""
+        },
+        {
+          "name": "key-enunciado",
+          "description": ""
+        },
+        {
+          "name": "key-imagem",
+          "description": ""
+        },
+        {
+          "name": "key-porcentagem",
+          "description": ""
+        },
+        {
+          "name": "mostra-resposta",
+          "description": ""
+        },
+        {
+          "name": "resposta-correta",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/team/med-alternativas/med-alternativas.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-cartao-resposta-item",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "color",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/team/med-cartao-resposta/med-cartao-resposta-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-cartao-resposta-lista",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/team/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-enunciado",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "imagens",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/team/med-enunciado/med-enunciado.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-header",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-header/med-header.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-navbar",
       "description": {
         "kind": "markdown",
@@ -4499,7 +4655,63 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/med-navbar/med-navbar.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-navbar/med-navbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-option",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/team/med-option/med-option.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-rate-bar",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-rate-bar/med-rate-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-rate-like",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-rate-like/med-rate-like.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-toolbar",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-toolbar/med-toolbar.tsx"
         }
       ]
     }

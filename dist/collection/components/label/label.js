@@ -59,11 +59,11 @@ export class Label {
   static get is() { return "ion-label"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "ios": ["label.ios.scss"],
+    "ios": ["label.md.scss"],
     "md": ["label.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["label.ios.css"],
+    "ios": ["label.md.css"],
     "md": ["label.md.css"]
   }; }
   static get properties() { return {
