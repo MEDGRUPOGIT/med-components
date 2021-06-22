@@ -423,3 +423,59 @@
   height: 30px;
   background-size: 22px;
 }
+
+:host {
+  --spacing: 8px 16px;
+  --background: #fafafa;
+  --height: 48px;
+  --border-radius: 8px;
+  --border-width: 1px;
+  --border-color: #adadad;
+  --border-style: solid;
+  --color: #5c5c5c;
+  --placeholder-spacing: 4px;
+  --placeholder-font-size: 16px;
+  --placeholder-line-height: 100%;
+  --padding-end: 16px;
+  --placeholder-color: #c2c2c2;
+  --placeholder-font-weight: 400;
+  padding: var(--spacing);
+  padding-right: 56px;
+  background: var(--background);
+  height: var(--height);
+  border-style: var(--border-style);
+  border-radius: var(--border-radius);
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+  text-align: left;
+  color: var(--color);
+}
+:host::placeholder {
+  margin: var(--placeholder-spacing);
+  font-size: var(--placeholder-font-size);
+  font-weight: var(--placeholder-font-weight);
+  line-height: var(--placeholder-line-height);
+  color: var(--placeholder-color);
+}
+
+:host(.has-focus) {
+  --border-width: 2px;
+}
+
+:host([success]) {
+  --border-color: #3bb84b;
+  --color: #5c5c5c;
+  --padding-end: 56px;
+}
+
+:host([error]) {
+  --border-color: #b8433b;
+}
+
+::slotted(ion-icon) {
+  position: absolute;
+  right: 16px;
+  fill: #3bb84b;
+  width: 24px;
+  height: 24px;
+}

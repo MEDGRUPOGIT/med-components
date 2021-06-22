@@ -260,10 +260,13 @@
   color: var(--color);
   transition: color 300ms;
 }
-:host .button_like .rate {
+:host .button--disabled {
+  pointer-events: none;
+}
+:host .button--like .rate {
   color: var(--color-like);
 }
-:host .button_dislike .rate {
+:host .button--dislike .rate {
   color: var(--color-dislike);
 }
 

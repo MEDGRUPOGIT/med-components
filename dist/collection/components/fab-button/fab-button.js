@@ -77,20 +77,55 @@ export class FabButton {
       h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur, onClick: (ev) => openURL(href, ev, this.routerDirection, this.routerAnimation) }),
         h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "close-icon", lazy: false }),
         h("span", { class: "button-inner" },
-          h("slot", null)),
+          h("slot", null),
+          h("slot", { name: "label" })),
         mode === 'md' && h("ion-ripple-effect", null))));
   }
   static get is() { return "ion-fab-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["fab-button.ios.scss"],
+    "ios": ["fab-button.md.scss"],
     "md": ["fab-button.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["fab-button.ios.css"],
+    "ios": ["fab-button.md.css"],
     "md": ["fab-button.md.css"]
   }; }
   static get properties() { return {
+    "dsSize": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "ds-size",
+      "reflect": false
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'label' | 'icon-label'",
+        "resolved": "\"icon-label\" | \"label\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,

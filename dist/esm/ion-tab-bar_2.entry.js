@@ -9,7 +9,9 @@ const tabBarMdCss = ":root{--med-color-brand-primary-darkest:#074953;--med-color
 const TabBar = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    this.medResize = createEvent(this, "medResize", 7);
     this.ionTabBarChanged = createEvent(this, "ionTabBarChanged", 7);
+    this.hostHeight = 0;
     this.keyboardVisible = false;
     /**
      * If `true`, the tab bar will be translucent.
@@ -27,6 +29,7 @@ const TabBar = class {
   }
   componentWillLoad() {
     this.selectedTabChanged();
+    this.setSize();
   }
   connectedCallback() {
     if (typeof window !== 'undefined') {
@@ -49,9 +52,25 @@ const TabBar = class {
       this.keyboardWillShowHandler = this.keyboardWillHideHandler = undefined;
     }
   }
+  /**
+   * Med Resize
+   *
+   */
+  setSize() {
+    this.medResize.emit({ height: 1 });
+    this.hostResizeObserver = new ResizeObserver(() => {
+      let newHostHeight = Number(this.el.getBoundingClientRect().height);
+      if (newHostHeight !== this.hostHeight) {
+        this.medResize.emit({ height: newHostHeight });
+        this.hostHeight = newHostHeight;
+      }
+    });
+    this.hostResizeObserver.observe(this.el);
+  }
   render() {
     const { color, translucent, keyboardVisible } = this;
     const mode = getIonMode(this);
+    this.medResize.emit({ height: 1 });
     return (h(Host, { role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, class: createColorClasses(color, {
         [mode]: true,
         'tab-bar-translucent': translucent,

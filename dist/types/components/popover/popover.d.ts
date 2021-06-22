@@ -8,6 +8,7 @@ export declare class Popover implements ComponentInterface, OverlayInterface {
   presented: boolean;
   lastFocus?: HTMLElement;
   el: HTMLIonPopoverElement;
+  dsName: 'tooltip';
   /** @internal */
   delegate?: FrameworkDelegate;
   /** @internal */

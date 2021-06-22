@@ -7,3 +7,6 @@ export interface TabButtonClickEventDetail {
   selected: boolean;
   href?: string;
 }
+export interface TabBarResizeEventDetail {
+  height: number;
+}

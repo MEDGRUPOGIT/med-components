@@ -354,3 +354,18 @@
   right: unset;
   right: 0;
 }
+
+:host(.fab-list-active) {
+  min-height: 40px;
+  min-width: 40px;
+}
+
+:host([ds-size=md].fab-list-active) {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+:host([ds-size=lg].fab-list-active) {
+  min-height: 56px;
+  min-width: 56px;
+}

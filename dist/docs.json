@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-05-10T13:31:01",
+  "timestamp": "2021-06-22T13:53:34",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -1480,6 +1480,54 @@
           "required": false
         },
         {
+          "name": "dsSize",
+          "type": "\"lg\" | \"md\" | \"sm\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "fill",
+          "type": "\"outline\" | undefined",
+          "mutable": false,
+          "attr": "fill",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "outline",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -1656,7 +1704,7 @@
         },
         {
           "name": "dsName",
-          "type": "\"icon-label\" | \"icon-only\" | \"primary\" | \"secondary\" | \"tertiary\"",
+          "type": "\"icon-label\" | \"icon-only\" | \"primary\" | \"secondary\" | \"tertiary\" | undefined",
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": false,
@@ -1682,14 +1730,17 @@
             {
               "value": "tertiary",
               "type": "string"
+            },
+            {
+              "type": "undefined"
             }
           ],
-          "optional": false,
-          "required": true
+          "optional": true,
+          "required": false
         },
         {
           "name": "dsSize",
-          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\"",
+          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | undefined",
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
@@ -1711,10 +1762,17 @@
             {
               "value": "xs",
               "type": "string"
+            },
+            {
+              "value": "xxs",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
             }
           ],
-          "optional": false,
-          "required": true
+          "optional": true,
+          "required": false
         },
         {
           "name": "expand",
@@ -2149,13 +2207,22 @@
           "docs": "The native HTML button or anchor element that wraps all child elements."
         }
       ],
-      "dependents": [],
+      "dependents": [
+        "med-image-zoom",
+        "med-tooltip"
+      ],
       "dependencies": [
         "ion-ripple-effect"
       ],
       "dependencyGraph": {
         "ion-button": [
           "ion-ripple-effect"
+        ],
+        "med-image-zoom": [
+          "ion-button"
+        ],
+        "med-tooltip": [
+          "ion-button"
         ]
       }
     },
@@ -3988,9 +4055,15 @@
           "docs": "The scrollable container of the content."
         }
       ],
-      "dependents": [],
+      "dependents": [
+        "med-image-zoom"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-image-zoom": [
+          "ion-content"
+        ]
+      }
     },
     {
       "filePath": "./src/components/datetime/datetime.tsx",
@@ -4871,6 +4944,54 @@
           "required": false
         },
         {
+          "name": "dsName",
+          "type": "\"icon-label\" | \"label\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "icon-label",
+              "type": "string"
+            },
+            {
+              "value": "label",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"lg\" | \"md\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "href",
           "type": "string | undefined",
           "mutable": false,
@@ -5265,6 +5386,30 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"lg\" | \"md\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -8071,6 +8216,30 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"helper\" | \"stacked\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "helper",
+              "type": "string"
+            },
+            {
+              "value": "stacked",
               "type": "string"
             },
             {
@@ -11040,6 +11209,23 @@
           "required": false
         },
         {
+          "name": "dsName",
+          "type": "\"tooltip\"",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "tooltip",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
           "name": "enterAnimation",
           "type": "((baseEl: any, opts?: any) => Animation) | undefined",
           "mutable": false,
@@ -12202,9 +12388,15 @@
           "docs": "An active tick mark."
         }
       ],
-      "dependents": [],
+      "dependents": [
+        "med-font-zoom"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-font-zoom": [
+          "ion-range"
+        ]
+      }
     },
     {
       "filePath": "./src/components/refresher/refresher.tsx",
@@ -13857,7 +14049,7 @@
           "reflectToAttr": false,
           "docs": "Set the input's placeholder.\r\n`placeholder` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
           "docsTags": [],
-          "default": "'Search'",
+          "default": "'Pesquisar'",
           "values": [
             {
               "type": "string"
@@ -15162,9 +15354,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "med-image-zoom"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-image-zoom": [
+          "ion-slide"
+        ]
+      }
     },
     {
       "filePath": "./src/components/slides/slides.tsx",
@@ -15669,9 +15867,15 @@
       ],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "med-image-zoom"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-image-zoom": [
+          "ion-slides"
+        ]
+      }
     },
     {
       "filePath": "./src/components/spinner/spinner.tsx",
@@ -16105,7 +16309,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "medResize",
+          "detail": "TabBarResizeEventDetail",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [
         {
@@ -18729,6 +18943,7 @@
         "ion-radio-group",
         "med-option",
         "ion-radio",
+        "ion-icon",
         "ion-progress-bar"
       ],
       "dependencyGraph": {
@@ -18736,12 +18951,143 @@
           "ion-radio-group",
           "med-option",
           "ion-radio",
+          "ion-icon",
           "ion-progress-bar"
         ]
       }
     },
     {
-      "filePath": "./src/components/medgrupo/team/med-cartao-resposta/med-cartao-resposta-item.tsx",
+      "filePath": "./src/components/medgrupo/global/med-autocomplete/med-autocomplete.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-autocomplete",
+      "readme": "# med-autocomplete\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "list",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "list",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-autocomplete": [
+          "ion-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/medgrupo/global/med-banner/med-banner.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-banner",
+      "readme": "# med-banner\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "btnLeft",
+          "type": "string",
+          "mutable": false,
+          "attr": "btn-left",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "btnRight",
+          "type": "string",
+          "mutable": false,
+          "attr": "btn-right",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "header",
+          "type": "string",
+          "mutable": false,
+          "attr": "header",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "btnLeftClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "btnRightClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/medgrupo/team/med-cartao-resposta-item/med-cartao-resposta-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-cartao-resposta-item",
       "readme": "# med-cartao-resposta\r\n\r\n\r\n\r",
@@ -18848,6 +19194,127 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/medgrupo/team/med-enunciado-discursiva/med-enunciado-discursiva.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-enunciado-discursiva",
+      "readme": "# med-enunciado-discursiva\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "imagens",
+          "type": "string | string[]",
+          "mutable": true,
+          "attr": "imagens",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "medGalleryRequest",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/medgrupo/global/med-font-zoom/med-font-zoom.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-font-zoom",
+      "readme": "# med-font-zoom\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "emitter",
+          "type": "{ emit: (value: MedFontSize) => void; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ emit: (value: MedFontSize) => void; }"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "value",
+          "type": "MedFontSize.MD | MedFontSize.SM | MedFontSize.XS | MedFontSize.XXS | MedFontSize.XXXS",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "MedFontSize.XS",
+          "values": [
+            {
+              "type": "MedFontSize.MD"
+            },
+            {
+              "type": "MedFontSize.SM"
+            },
+            {
+              "type": "MedFontSize.XS"
+            },
+            {
+              "type": "MedFontSize.XXS"
+            },
+            {
+              "type": "MedFontSize.XXXS"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-range",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-font-zoom": [
+          "ion-range",
+          "ion-icon"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/medgrupo/global/med-header/med-header.tsx",
       "encapsulation": "shadow",
       "tag": "med-header",
@@ -18872,9 +19339,84 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "med-image-zoom"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-image-zoom": [
+          "med-header"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/medgrupo/global/med-image-zoom/med-image-zoom.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-image-zoom",
+      "readme": "# med-image-zoom\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "imagens",
+          "type": "any",
+          "mutable": true,
+          "attr": "imagens",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "ionSlideDidChange",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ionSlidesDidLoad",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "med-header",
+        "med-navbar",
+        "ion-button",
+        "ion-icon",
+        "ion-content",
+        "ion-slides",
+        "ion-slide"
+      ],
+      "dependencyGraph": {
+        "med-image-zoom": [
+          "med-header",
+          "med-navbar",
+          "ion-button",
+          "ion-icon",
+          "ion-content",
+          "ion-slides",
+          "ion-slide"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
     },
     {
       "filePath": "./src/components/medgrupo/global/med-navbar/med-navbar.tsx",
@@ -18901,9 +19443,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "med-image-zoom"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-image-zoom": [
+          "med-navbar"
+        ]
+      }
     },
     {
       "filePath": "./src/components/medgrupo/team/med-option/med-option.tsx",
@@ -18957,12 +19505,35 @@
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "status",
+          "type": "RateStatus.DISLIKE | RateStatus.LIKE | undefined",
+          "mutable": true,
+          "attr": "status",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "RateStatus.DISLIKE"
+            },
+            {
+              "type": "RateStatus.LIKE"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [
         {
           "event": "medChange",
-          "detail": "\"dislike\" | \"like\"",
+          "detail": "RateStatus.DISLIKE | RateStatus.LIKE",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -19002,6 +19573,99 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/medgrupo/global/med-tooltip/med-tooltip.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-tooltip",
+      "readme": "# med-tooltip\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "buttonLeft",
+          "type": "{ label: string; icon: string; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ label: string; icon: string; }"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "buttonRight",
+          "type": "{ label: string; icon: string; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ label: string; icon: string; }"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "mutable": false,
+          "attr": "content",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "header",
+          "type": "string",
+          "mutable": false,
+          "attr": "header",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-button",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-tooltip": [
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
     }
   ]
 }

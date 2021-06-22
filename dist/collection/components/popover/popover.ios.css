@@ -356,38 +356,57 @@
     backdrop-filter: saturate(180%) blur(20px);
   }
 }
-:host {
+:host(.med-popover) {
+  --box-shadow: 0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);
   color: #fafafa;
 }
-
-.popover-content {
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);
-  --width: 224px;
-}
-@media (min-width: 768px) {
-  .popover-content {
-    --width: 280px;
-  }
-}
-@media (min-width: 992px) {
-  .popover-content {
-    --width: 400px;
-  }
-}
-
-.popover-arrow::after {
+:host(.med-popover) .popover-arrow::after {
   left: 1px;
   top: 4px;
   border-radius: 7px;
   width: 18px;
   height: 18px;
 }
+:host(.med-popover) .popover-content {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);
+  --width: 224px;
+}
+@media (min-width: 768px) {
+  :host(.med-popover) .popover-content {
+    --width: 280px;
+  }
+}
+@media (min-width: 992px) {
+  :host(.med-popover) .popover-content {
+    --width: 400px;
+  }
+}
 
 @supports (backdrop-filter: blur(0)) {
-  :host(.popover-translucent) .popover-content,
-:host(.popover-translucent) .popover-arrow::after {
+  :host(.med-popover) .popover-content,
+:host(.med-popover) .popover-arrow::after {
     background: #292929;
   }
+}
+:host(.med-tooltip) {
+  --background: #474747;
+  --box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --width: auto;
+  --max-width: 280px;
+}
+:host(.med-tooltip) .popover-arrow::after {
+  left: 6px;
+  top: 5px;
+  border-radius: 0;
+  width: 8px;
+  height: 8px;
+}
+:host(.med-tooltip) .popover-content {
+  border-radius: 2px;
+}
+
+:host-context(.light-mode):host(.med-tooltip) {
+  --background: #fafafa;
 }

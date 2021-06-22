@@ -151,7 +151,7 @@ export class Toast {
       'toast-wrapper': true,
       [`toast-${this.position}`]: true
     };
-    return (h(Host, { style: {
+    return (h(Host, { "from-stencil": true, style: {
         zIndex: `${60000 + this.overlayIndex}`,
       }, class: createColorClasses(this.color, Object.assign(Object.assign({ [mode]: true }, getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler },
       h("div", { class: wrapperClass },

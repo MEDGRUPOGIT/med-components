@@ -239,17 +239,9 @@
 }
 
 :host {
-  --alternativa-spacing: 32px;
-  --alternativa-color: #7a7a7a;
-  --alternativa-font-size: 16px;
-  --alternativa-font-weight: 400;
-  --alternativa-line-height: 24px;
-  --alternativa-text-align: justify;
-  --alternativa-text-spacing: 16px;
-  --alternativa-image-spacing: 16px;
-  --background-correto: #3bb84b;
-  --background-incorreto: #b8433b;
-  --progess-background: #73e582;
+  --riscar-flex-direction: column;
+  --riscar-icon-margin: 0 0 2px 0;
+  --font-size: 16px;
 }
 :host .alternativas {
   list-style: none;
@@ -261,6 +253,9 @@
     display: flex;
     flex-wrap: wrap;
   }
+}
+:host .alternativas--imagem .alternativa {
+  align-items: flex-start;
 }
 :host .alternativas--imagem .alternativa:nth-of-type(odd) {
   margin-right: auto;
@@ -283,15 +278,24 @@
   }
 }
 :host .alternativa {
+  padding: 16px;
   display: flex;
-}
-:host .alternativa:not(:last-child) {
-  padding-bottom: var(--alternativa-spacing);
+  align-items: start;
+  /* &:not(:last-child) {
+    padding-bottom: $med-spacing-stack-xs;
+  } */
 }
 :host .alternativa .image-container {
   position: relative;
 }
-:host .alternativa .image-container__overlay {
+@media (any-hover: hover) {
+  :host .alternativa .image-container:hover .overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 300ms ease;
+  }
+}
+:host .alternativa .overlay {
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -305,17 +309,27 @@
   align-items: center;
   justify-content: center;
 }
+:host .alternativa .overlay__content {
+  display: flex;
+  align-items: center;
+}
+:host .alternativa .overlay__label {
+  margin: 0 10px 0 0;
+}
+:host .alternativa .overlay ion-icon {
+  font-size: 24px;
+}
 :host .alternativa__right {
+  margin-left: 16px;
   flex: 1;
-  margin-left: var(--alternativa-text-spacing);
   overflow: hidden;
 }
 :host .alternativa__text {
-  text-align: var(--alternativa-text-align);
-  color: var(--alternativa-color);
-  font-size: var(--alternativa-font-size);
-  font-weight: var(--alternativa-font-weight);
-  line-height: var(--alternativa-line-height);
+  color: #7a7a7a;
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: calc(var(--font-size) * 1.3);
+  text-align: justify;
   margin: 0;
 }
 :host .alternativa__image {
@@ -326,10 +340,20 @@
   position: relative;
 }
 :host .alternativa--correta med-option {
-  --background: var(--background-correto);
+  --background: #3bb84b;
 }
 :host .alternativa--incorreto med-option {
-  --background: var(--background-incorreto);
+  --background: #b8433b;
+}
+:host .alternativa--pressed {
+  background-color: #ebebeb;
+}
+:host .alternativa--riscada {
+  opacity: 0.5;
+  pointer-events: none;
+}
+:host .alternativa--riscada .alternativa__text {
+  text-decoration: line-through;
 }
 :host .ion-progress-bar {
   transition: all 300ms ease;
@@ -341,11 +365,22 @@
   transform: translateX(0);
 }
 :host .ion-progress-bar--100 {
-  --progress-background: var(--progess-background);
+  --progress-background: $med-color-feedback-success-light;
 }
-
-:host-context(.plt-desktop) .image-container:hover .image-container__overlay {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 300ms ease;
+:host .riscar {
+  flex-direction: var(--riscar-flex-direction);
+  margin-left: 48px;
+  display: flex;
+  align-items: center;
+}
+:host .riscar ion-icon {
+  margin: var(--riscar-icon-margin);
+  color: #7a7a7a;
+  font-size: 32px;
+}
+:host .riscar__label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #7a7a7a;
+  line-height: 100%;
 }

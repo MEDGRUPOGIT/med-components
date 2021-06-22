@@ -669,6 +669,10 @@ ion-ripple-effect {
   }
 }
 :host {
+  --border-radius: 31.25em;
+  --box-shadow: none;
+  --color: #fafafa;
+  --transition: background var(--transition-timing) ease-out, color var(--transition-timing) ease-out, border-color var(--transition-timing) ease-out, opacity var(--transition-timing) ease-out;
   --padding: 8px 32px;
   --min-height: 48px;
   --min-width: auto;
@@ -676,11 +680,7 @@ ion-ripple-effect {
   --font-weight: 600;
   --text-transform: uppercase;
   --line-height: 100%;
-  --border-radius: 31.25em;
-  --color: #fafafa;
-  --box-shadow: none;
   --transition-timing: 300ms;
-  --transition: background var(--transition-timing) ease-out, color var(--transition-timing) ease-out, border-color var(--transition-timing) ease-out, opacity var(--transition-timing) ease-out;
   min-height: var(--min-height);
   min-width: var(--min-width);
   height: auto;
@@ -701,28 +701,91 @@ ion-ripple-effect {
   transition: var(--transition);
 }
 
+:host(.ion-color) {
+  --ion-color-contrast: #fff !important;
+}
+
 :host(.med-button-disabled) {
   opacity: 1;
 }
 
+/* :host(.ion-color.med-button-disabled) {
+  --ion-color-contrast: #fff !important;
+} */
 :host(.med-button-solid) {
-  --background: linear-gradient(to right, #3aa8b9, #137585);
-  --background-hover: #3aa8b9;
+  --background: $med-color-brand-primary-gradient;
+  --background-hover: var(--ion-color-primary-medium, #3aa8b9);
   --background-hover-opacity: 1;
   --background-focused: #3aa8b9;
   --background-focused-opacity: 1;
+  --background-activated: #137585;
+  --background-activated-opacity: 1;
   --ripple-color: #137585;
+}
+
+:host([expand=full].med-button-solid) {
+  --min-height: 48px;
+  --font-size: 14px;
+  --padding: 8px 32px;
+}
+
+:host([expand=block].med-button-solid) {
+  --min-height: 48px;
+  --font-size: 14px;
+  --padding: 8px 32px;
+}
+
+:host([ds-size=sm].med-button-solid) {
+  --min-height: 40px;
+}
+
+:host([ds-size=xs].med-button-solid) {
+  --min-height: 32px;
+  --font-size: 12px;
+  --padding: 8px 24px;
+}
+
+:host([ds-size=xxs].med-button-solid) {
+  --min-height: 24px;
+  --font-size: 10px;
+  --padding: 0 16px;
 }
 
 :host(.med-button-solid.med-button-disabled) .button-native {
   background: #c2c2c2;
 }
 
+:host(.ion-color.med-button-solid.ion-activated) {
+  --background-activated: current-color(shade);
+}
+
 :host(.med-button-outline) {
+  --background-hover: transparent;
+  --background-focused: transparent;
+  --background-activated: transparent;
   --border-width: 2px;
   --border-color: #73d6e5;
   --color: #73d6e5;
   --ripple-color: transparent;
+  --background-activated-opacity: 0;
+  --background-focused-opacity: 0;
+  --background-hover-opacity: 0;
+}
+
+:host([ds-size=sm].med-button-outline) {
+  --min-height: 40px;
+}
+
+:host([ds-size=xs].med-button-outline) {
+  --min-height: 32px;
+  --font-size: 12px;
+  --padding: 8px 24px;
+}
+
+:host([ds-size=xxs].med-button-outline) {
+  --min-height: 24px;
+  --font-size: 10px;
+  --padding: 0 16px;
 }
 
 @media (any-hover: hover) {
@@ -731,6 +794,11 @@ ion-ripple-effect {
     --color: #3aa8b9;
   }
 }
+:host(.med-button-outline.med-hovered) {
+  --border-color: #3aa8b9;
+  --color: #3aa8b9;
+}
+
 :host(.med-button-outline.ion-activated) {
   --border-color: #137585;
   --color: #137585;
@@ -742,79 +810,77 @@ ion-ripple-effect {
 }
 
 :host(.med-button-outline.med-button-disabled) {
-  --border-color: var(--background-disabled);
-  --color: #c2c2c2;
-}
-
-:host-context(.light-mode):host(.med-button-outline) {
-  --border-color: #3aa8b9;
-  --color: #3aa8b9;
-}
-
-@media (any-hover: hover) {
-  :host-context(.light-mode):host(.med-button-outline:hover) {
-    --border-color: #137585;
-    --color: #137585;
-  }
-}
-:host-context(.light-mode):host(.med-button-outline.ion-activated) {
-  --border-color: #73d6e5;
-  --color: #73d6e5;
-}
-
-:host-context(.light-mode):host(.med-button-outline.ion-focused) {
-  --border-color: #137585;
-  --color: #137585;
-}
-
-:host-context(.light-mode):host(.med-button-outline.med-button-disabled) {
   --border-color: #adadad;
   --color: #adadad;
 }
 
+:host(.ion-color.med-button-outline.med-button-disabled) {
+  --ion-color-base: #adadad !important;
+}
+
 :host(.med-button-clear) {
-  --padding: 8px;
-  --color: #fafafa;
-  --min-height: 32px;
   --background-hover: #3aa8b9;
   --background-hover-opacity: 0.16;
   --background-focused: #3aa8b9;
   --background-focused-opacity: 0.16;
   --ripple-color: rgba(58, 168, 185, 0.16);
   --border-radius: 4px;
-}
-
-:host(.med-button-clear.med-button-disabled) {
-  --color: #adadad;
-}
-
-:host([ds-size=md].med-button-clear) {
-  --min-height: 48px;
+  --padding: 8px;
+  --color: #fafafa;
+  --min-height: 32px;
 }
 
 :host([expand=full].med-button-clear) {
   --min-height: 48px;
+  --font-size: 14px;
 }
 
-:host-context(.light-mode):host(.med-button-clear) {
-  --color: #7a7a7a;
+:host([expand=block].med-button-clear) {
+  --min-height: 32px;
+  --font-size: 14px;
 }
 
-:host-context(.light-mode):host(.med-button-clear.med-button-disabled) {
+:host([ds-size=sm].med-button-clear) {
+  --min-height: 40px;
+}
+
+:host([ds-size=xs].med-button-clear) {
+  --min-height: 32px;
+  --font-size: 12px;
+  --padding: 8px 24px;
+}
+
+:host([ds-size=xxs].med-button-clear) {
+  --min-height: 24px;
+  --font-size: 10px;
+  --padding: 0 16px;
+}
+
+:host(.med-button-clear.med-button-disabled) {
   --color: #adadad;
+  --ion-color-base: #adadad !important;
+}
+
+:host(.ion.med-button-clear.med-button-disabled) {
+  --ion-color-base: #adadad !important;
 }
 
 :host(.button-has-icon-only) {
+  --border-radius: 50%;
+  --background-hover: #adadad;
+  --background-hover-opacity: 0.08;
+  --background-focused: #adadad;
+  --background-focused-opacity: 0.08;
+  --ripple-color: rgba(173, 173, 173, 0.08);
   --padding: 0;
   --color: #fafafa;
   --min-height: 32px;
   --min-width: 32px;
   font-size: 32px;
-  --background-hover: transparent;
-  --background-hover-opacity: transparent;
-  --background-focused: transparent;
-  --background-focused-opacity: transparent;
-  --ripple-color: transparent;
+}
+
+:host(.ion-color.button-has-icon-only) ::slotted(ion-icon[slot=icon-only]) {
+  color: var(--ion-color-base);
 }
 
 ::slotted(ion-icon) {
@@ -826,10 +892,6 @@ ion-ripple-effect {
   font-size: 1em;
 }
 
-:host(.button-has-icon-only.ion-activated) ::slotted(ion-icon[slot=icon-only]) {
-  opacity: 0.5;
-}
-
 :host(.button-has-icon-only.med-button-disabled) ::slotted(ion-icon[slot=icon-only]) {
   opacity: 0.32;
 }
@@ -837,101 +899,117 @@ ion-ripple-effect {
 :host([ds-size=xs].button-has-icon-only) {
   --min-height: 16px;
   --min-width: 16px;
+  --padding: 0;
   font-size: 16px;
 }
 
 :host([ds-size=sm].button-has-icon-only) {
   --min-height: 24px;
   --min-width: 24px;
+  --padding: 0;
   font-size: 24px;
 }
 
-:host([ds-size=md].button-has-icon-only) {
+/* :host([ds-size="xs"].button-has-icon-only) {
+  --min-height: 24px;
+  --min-width: 24px;
+  --padding: 0;
+  font-size: 16px;
+}
+
+:host([ds-size="sm"].button-has-icon-only) {
   --min-height: 32px;
   --min-width: 32px;
+  --padding: 0;
+  font-size: 24px;
+}
+
+:host([ds-size="md"].button-has-icon-only) {
+  --min-height: 40px;
+  --min-width: 40px;
+  --padding: 0;
   font-size: 32px;
 }
 
-:host-context(.light-mode) ::slotted(ion-icon[slot=icon-only]) {
-  color: #7a7a7a;
-}
-
-:host-context(.plt-desktop):host(.button-has-icon-only) {
+:host([ds-size="lg"].button-has-icon-only) {
+  --min-height: 48px;
+  --min-width: 48px;
+  --padding: 0;
+  font-size: 32px;
+} */
+/* :host-context(.plt-desktop):host(.button-has-icon-only) {
   --padding: 4px;
   --min-height: 40px;
   --min-width: 40px;
+
   --background-hover: #adadad;
   --background-hover-opacity: 0.08;
   --border-radius: 50%;
   --ripple-color: rgba(173, 173, 173, 0.08);
-}
-
-:host-context(.plt-desktop) :host(.button-has-icon-only.ion-activated) ::slotted(ion-icon[slot=icon-only]) {
+} */
+/* :host-context(.plt-desktop) :host(.button-has-icon-only.ion-activated) ::slotted(ion-icon[slot="icon-only"]) {
   opacity: 1;
-}
-
-:host-context(.plt-desktop.light-mode):host(.button-has-icon-only) {
+} */
+/* :host-context(.plt-desktop.light-mode):host(.button-has-icon-only) {
   --background-hover: #7a7a7a;
   --background-hover-opacity: 0.08;
   --border-radius: 50%;
   --ripple-color: rgba(122, 122, 122, 0.08);
-}
-
-:host-context(.plt-desktop):host([ds-size=xs].button-has-icon-only) {
+} */
+/* :host-context(.plt-desktop):host([ds-size="xs"].button-has-icon-only) {
   --min-height: 24px;
   --min-width: 24px;
   font-size: 16px;
-}
-
-:host-context(.plt-desktop):host([ds-size=sm].button-has-icon-only) {
+} */
+/* :host-context(.plt-desktop):host([ds-size="sm"].button-has-icon-only) {
   --min-height: 32px;
   --min-width: 32px;
   font-size: 24px;
-}
-
-:host-context(.plt-desktop):host([ds-size=md].button-has-icon-only) {
+} */
+/* :host-context(.plt-desktop):host([ds-size="md"].button-has-icon-only) {
   --min-height: 40px;
   --min-width: 40px;
   font-size: 32px;
-}
-
-:host-context(.plt-desktop):host([ds-size=lg].button-has-icon-only) {
+} */
+/* :host-context(.plt-desktop):host([ds-size="lg"].button-has-icon-only) {
   --padding: 8px;
   --min-height: 48px;
   --min-width: 48px;
   font-size: 32px;
-}
-
+} */
 :host(.in-med-navbar.button-has-icon-only) {
   --min-height: 24px;
   --min-width: 24px;
   font-size: 24px;
 }
 
-:host-context(.plt-desktop):host(.in-med-navbar.button-has-icon-only) {
+/* :host-context(.plt-desktop):host(.in-med-navbar.button-has-icon-only) {
   --min-height: 32px;
   --min-width: 32px;
   font-size: 24px;
-}
-
-:host-context(.light-mode):host(.in-med-navbar.button-has-icon-only) ::slotted(ion-icon[slot=icon-only]) {
-  color: #141414;
-}
-
-:host-context(.med-navbar[ds-name=secondary]):host(.in-med-navbar.button-has-icon-only) ::slotted(ion-icon[slot=icon-only]) {
-  color: #141414;
-}
-
-:host-context(.dark-mode):host-context(.med-navbar[ds-name=transparent][ds-theme=dark]):host(.in-med-navbar.button-has-icon-only) ::slotted(ion-icon[slot=icon-only]),
-:host-context(.dark-mode):host-context(.med-navbar[ds-name=transparent][ds-theme=dark]):host(.in-med-navbar.button-has-icon-only) ::slotted(ion-icon[slot=icon-only]) {
-  color: #141414;
-}
-
-:host-context(.light-mode):host-context(.med-navbar[ds-name=transparent][ds-theme=light]):host(.in-med-navbar.button-has-icon-only) ::slotted(ion-icon[slot=icon-only]),
-:host-context(.light-mode):host-context(.med-navbar[ds-name=transparent][ds-theme=light]):host(.in-med-navbar.button-has-icon-only) ::slotted(ion-icon[slot=icon-only]) {
-  color: #fafafa;
-}
-
+} */
+/* :host-context(.light-mode):host(.in-med-navbar.button-has-icon-only) {
+  ::slotted(ion-icon[slot="icon-only"]) {
+    color: $med-color-neutral-dark-prime;
+  }
+} */
+/* :host-context(.med-navbar[ds-name="secondary"]):host(.in-med-navbar.button-has-icon-only) {
+  ::slotted(ion-icon[slot="icon-only"]) {
+    color: $med-color-neutral-dark-prime;
+  }
+} */
+/* :host-context(.dark-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="dark"]):host(.in-med-navbar.button-has-icon-only),
+:host-context(.dark-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="dark"]):host(.in-med-navbar.button-has-icon-only) {
+  ::slotted(ion-icon[slot="icon-only"]) {
+    color: $med-color-neutral-dark-prime;
+  }
+} */
+/* :host-context(.light-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="light"]):host(.in-med-navbar.button-has-icon-only),
+:host-context(.light-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="light"]):host(.in-med-navbar.button-has-icon-only) {
+  ::slotted(ion-icon[slot="icon-only"]) {
+    color: $med-color-neutral-light-prime;
+  }
+} */
 :host(.in-med-toolbar.button-has-icon-only) {
   --min-height: 32px;
   --min-width: 32px;
@@ -945,12 +1023,11 @@ ion-ripple-effect {
   margin-right: 24px;
 }
 
-:host-context(.plt-desktop):host(.in-med-toolbar.button-has-icon-only) {
+/* :host-context(.plt-desktop):host(.in-med-toolbar.button-has-icon-only) {
   --min-height: 32px;
   --min-width: 32px;
   font-size: 24px;
-}
-
+} */
 :host(.button-icon-label) {
   --padding: 0;
   --color: #fafafa;
@@ -977,10 +1054,9 @@ ion-ripple-effect {
   font-size: 24px;
 }
 
-:host-context(.light-mode):host(.button-icon-label) {
-  --color: #7a7a7a;
-}
-
+/* :host-context(.light-mode):host(.button-icon-label) {
+  --color: $med-color-neutral-dark-10;
+} */
 :host(.button-icon-label.ion-activated) {
   opacity: 0.5;
 }
@@ -989,24 +1065,21 @@ ion-ripple-effect {
   opacity: 0.32;
 }
 
-:host-context(.light-mode):host(.in-med-navbar.button-icon-label) {
-  color: #141414;
+/* :host-context(.light-mode):host(.in-med-navbar.button-icon-label) {
+  color: $med-color-neutral-dark-prime;
+} */
+/* :host-context(.med-navbar[ds-name="secondary"]):host(.in-med-navbar.button-icon-label) {
+  color: $med-color-neutral-dark-prime;
+} */
+/* :host-context(.dark-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="dark"]):host(.in-med-navbar.button-icon-label),
+:host-context(.dark-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="dark"]):host(.in-med-navbar.button-icon-label) {
+  color: $med-color-neutral-dark-prime;
+} */
+/* :host-context(.light-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="light"]):host(.in-med-navbar.button-icon-label),
+:host-context(.light-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="light"]):host(.in-med-navbar.button-icon-label) {
+  color: $med-color-neutral-light-prime;
 }
-
-:host-context(.med-navbar[ds-name=secondary]):host(.in-med-navbar.button-icon-label) {
-  color: #141414;
-}
-
-:host-context(.dark-mode):host-context(.med-navbar[ds-name=transparent][ds-theme=dark]):host(.in-med-navbar.button-icon-label),
-:host-context(.dark-mode):host-context(.med-navbar[ds-name=transparent][ds-theme=dark]):host(.in-med-navbar.button-icon-label) {
-  color: #141414;
-}
-
-:host-context(.light-mode):host-context(.med-navbar[ds-name=transparent][ds-theme=light]):host(.in-med-navbar.button-icon-label),
-:host-context(.light-mode):host-context(.med-navbar[ds-name=transparent][ds-theme=light]):host(.in-med-navbar.button-icon-label) {
-  color: #fafafa;
-}
-
+ */
 :host(.in-med-toolbar.button-icon-label) {
   color: #adadad;
 }
@@ -1018,6 +1091,10 @@ ion-ripple-effect {
   display: none;
 }
 
+:host(.med-hovered) .button-native::after {
+  display: none;
+}
+
 @media (any-hover: hover) {
   :host(:hover) .button-native::after {
     display: none;
@@ -1026,6 +1103,12 @@ ion-ripple-effect {
 :host(.med-button-solid.ion-color.ion-focused) .button-native::after,
 :host(.med-button-clear.ion-color.ion-focused) .button-native::after,
 :host(.med-button-outline.ion-color.ion-focused) .button-native::after {
+  display: none;
+}
+
+:host(.med-hovered.med-button-solid.ion-color) .button-native::after,
+:host(.med-hovered.med-button-clear.ion-color) .button-native::after,
+:host(.med-hovered.med-button-outline.ion-color) .button-native::after {
   display: none;
 }
 
@@ -1068,29 +1151,42 @@ ion-ripple-effect {
 }
 :host(.med-button-solid.ion-color.ion-focused) .button-native::before {
   background: var(--ion-color-contrast);
-  opacity: 0.24;
 }
 
-:host(.med-button-clear.ion-color.ion-focused) .button-native::before,
 :host(.med-button-outline.ion-color.ion-focused) .button-native::before {
   background: var(--ion-color-base);
-  opacity: 0.12;
+}
+
+:host(.med-button-clear.ion-color.ion-focused) .button-native::before {
+  background: var(--ion-color-base);
 }
 
 @media (any-hover: hover) {
   :host(.med-button-solid.ion-color:hover) .button-native::before {
-    background: var(--ion-color-contrast);
-    opacity: 0.08;
+    background: var(--ion-color-base);
   }
 
-  :host(.med-button-clear.ion-color:hover) .button-native::before,
-:host(.med-button-outline.ion-color:hover) .button-native::before {
+  :host(.med-button-outline.ion-color:hover) .button-native::before {
     background: var(--ion-color-base);
-    opacity: 0.04;
+  }
+
+  :host(.med-button-clear.ion-color:hover) .button-native::before {
+    background: var(--ion-color-base);
   }
 }
-/* @include media-breakpoint-down('xs', $med-grid-breakpoints) {
-  :host(.med-button-clear[icon-label]) {
-    font-size: 14px;
-  }
-} */
+:host(.med-hovered) .button-native::before {
+  background: var(--background-hover);
+  opacity: var(--background-hover-opacity);
+}
+
+:host(.med-hovered.med-button-solid.ion-color) .button-native::before {
+  background: var(--ion-color-base);
+}
+
+:host(.med-hovered.med-button-clear.ion-color) .button-native::before {
+  background: var(--ion-color-base);
+}
+
+:host(.med-hovered.med-button-outline.ion-color) .button-native::before {
+  background: var(--ion-color-base);
+}

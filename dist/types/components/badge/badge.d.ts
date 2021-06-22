@@ -4,6 +4,8 @@ import { Color } from '../../interface';
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export declare class Badge implements ComponentInterface {
+  dsSize?: 'sm' | 'md' | 'lg';
+  fill?: 'outline';
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

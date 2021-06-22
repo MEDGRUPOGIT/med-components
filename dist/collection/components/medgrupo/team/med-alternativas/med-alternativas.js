@@ -51,11 +51,14 @@ export class MedAlternativas {
             alternativa[this.keyEnunciado] && h("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }),
             h("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) },
               alternativa[this.keyImagem] && h("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }),
-              h("div", { class: 'image-container__overlay' }, "Clique para ampliar")),
-            h("ion-progress-bar", { class: `
+              h("div", { class: 'overlay' },
+                h("div", { class: "overlay__content" },
+                  h("p", { class: "overlay__label" }, "clique para ampliar"),
+                  h("ion-icon", { name: "med-expand" })))),
+            h("ion-progress-bar", { percentage: true, class: `
                     ion-progress-bar
                     ${this.mostraResposta && this.alternativaSelecionada ? 'ion-progress-bar--toggle' : ''}
-                    ${alternativa[this.keyPorcentagem] === 100 ? 'ion-progress-bar--100' : ''}`, value: alternativa[this.keyPorcentagem] })))))))));
+                    ${alternativa[this.keyPorcentagem] === 1 ? 'ion-progress-bar--100' : ''}`, value: alternativa[this.keyPorcentagem] })))))))));
   }
   static get is() { return "med-alternativas"; }
   static get encapsulation() { return "shadow"; }

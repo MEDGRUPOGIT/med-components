@@ -9,6 +9,8 @@ import { AnchorInterface, ButtonInterface } from '../../utils/element-interface'
  */
 export declare class FabButton implements ComponentInterface, AnchorInterface, ButtonInterface {
   el: HTMLElement;
+  dsSize?: 'md' | 'lg';
+  dsName?: 'label' | 'icon-label';
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

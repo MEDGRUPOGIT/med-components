@@ -1,7 +1,8 @@
 import { EventEmitter } from '../../../../stencil-public-runtime';
-export declare class MedAvalicao {
-  clicked: 'like' | 'dislike';
-  medChange: EventEmitter<'like' | 'dislike'>;
+import { RateStatus } from './med-rate-like.enum';
+export declare class MedRateLike {
+  status?: RateStatus;
+  medChange: EventEmitter<RateStatus>;
   private onClick;
   render(): any;
 }

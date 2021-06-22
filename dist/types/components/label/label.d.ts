@@ -6,6 +6,7 @@ import { Color, StyleEventDetail } from '../../interface';
 export declare class Label implements ComponentInterface {
   private inRange;
   el: HTMLElement;
+  dsName?: 'stacked' | 'helper' | undefined;
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

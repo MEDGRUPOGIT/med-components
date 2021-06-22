@@ -171,11 +171,11 @@ export class Button {
       "mutable": false,
       "complexType": {
         "original": "'primary' | 'secondary' | 'tertiary' | 'icon-only' | 'icon-label'",
-        "resolved": "\"icon-label\" | \"icon-only\" | \"primary\" | \"secondary\" | \"tertiary\"",
+        "resolved": "\"icon-label\" | \"icon-only\" | \"primary\" | \"secondary\" | \"tertiary\" | undefined",
         "references": {}
       },
-      "required": true,
-      "optional": false,
+      "required": false,
+      "optional": true,
       "docs": {
         "tags": [],
         "text": ""
@@ -187,12 +187,12 @@ export class Button {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'xs' | 'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\"",
+        "original": "'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | undefined",
         "references": {}
       },
-      "required": true,
-      "optional": false,
+      "required": false,
+      "optional": true,
       "docs": {
         "tags": [],
         "text": ""

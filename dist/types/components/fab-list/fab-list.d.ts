@@ -1,5 +1,6 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
 export declare class FabList implements ComponentInterface {
+  dsSize?: 'md' | 'lg';
   el: HTMLIonFabElement;
   /**
    * If `true`, the fab list will show all fab buttons in the list.

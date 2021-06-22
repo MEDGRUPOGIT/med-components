@@ -521,3 +521,78 @@
     background-color: rgba(var(--ion-background-color-rgb, 255, 255, 255), 0.08);
   }
 }
+:host {
+  --width: 100%;
+  --start: 0;
+  --end: 0;
+  --border-radius: 0;
+  --background: #292929;
+  --spacing: 16px;
+  border-radius: 4px;
+}
+:host .toast-container {
+  padding: var(--spacing);
+}
+:host .toast-header {
+  font-weight: 600;
+}
+:host .toast-content {
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #fafafa;
+}
+:host .toast-button-group-end,
+:host .toast-button-group-start {
+  margin: 0;
+}
+:host .toast-button-group-start .toast-button {
+  padding: 0;
+  margin-right: 8px;
+}
+:host .toast-button-group-end .toast-button {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #3aa8b9;
+}
+:host .toast-button:hover,
+:host .toast-button-cancel:hover {
+  background-color: transparent;
+}
+:host .toast-icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+:host(.ion-toast--rows) .toast-content {
+  padding-top: 2px;
+}
+:host(.ion-toast--rows) .toast-container {
+  display: block;
+}
+:host(.ion-toast--rows) .toast-button-group-start {
+  float: left;
+}
+:host(.ion-toast--rows) .toast-button-group-end {
+  padding-top: 16px;
+  justify-content: flex-end;
+}
+
+:host(.ion-toast--float) {
+  --width: auto;
+  --start: 8px;
+  --end: 8px;
+  --border-radius: 4px;
+}
+:host(.ion-toast--float) .toast-message {
+  padding-left: 4px;
+}
+:host(.ion-toast--float) .toast-wrapper.toast-bottom {
+  bottom: calc(8px + var(--ion-safe-area-bottom, 0px)) !important;
+}
+:host(.ion-toast--float) .toast-wrapper.toast-top {
+  top: calc(8px + var(--ion-safe-area-bottom, 0px)) !important;
+}

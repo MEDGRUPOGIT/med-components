@@ -10,7 +10,8 @@ export class Badge {
     return (h(Host, { class: createColorClasses(this.color, {
         [mode]: true,
       }) },
-      h("slot", null)));
+      h("span", { class: "inner" },
+        h("slot", null))));
   }
   static get is() { return "ion-badge"; }
   static get encapsulation() { return "shadow"; }
@@ -23,6 +24,40 @@ export class Badge {
     "md": ["badge.md.css"]
   }; }
   static get properties() { return {
+    "dsSize": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "ds-size",
+      "reflect": false
+    },
+    "fill": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'outline'",
+        "resolved": "\"outline\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "fill",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,

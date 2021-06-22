@@ -1,11 +1,14 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { Color, TabBarChangedEventDetail } from '../../interface';
+import { Color, TabBarChangedEventDetail, TabBarResizeEventDetail } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export declare class TabBar implements ComponentInterface {
   private keyboardWillShowHandler?;
   private keyboardWillHideHandler?;
+  private hostHeight;
+  private hostResizeObserver;
+  medResize: EventEmitter<TabBarResizeEventDetail>;
   el: HTMLElement;
   keyboardVisible: boolean;
   /**
@@ -30,5 +33,10 @@ export declare class TabBar implements ComponentInterface {
   componentWillLoad(): void;
   connectedCallback(): void;
   disconnectedCallback(): void;
+  /**
+   * Med Resize
+   *
+   */
+  private setSize;
   render(): any;
 }

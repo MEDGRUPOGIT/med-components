@@ -545,3 +545,68 @@ ion-ripple-effect {
     background: var(--ion-color-contrast);
   }
 }
+:host {
+  --background: #292929;
+  --padding-bottom: 8px;
+  --padding-end: 8px;
+  --padding-start: 8px;
+  --padding-top: 8px;
+  --border-radius: 31.25em;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+  --background-activated-opacity: 0.32;
+  --background-hover-opacity: 0.16;
+  --ripple-color: transparent;
+  height: 40px;
+  min-width: 40px;
+  width: auto;
+  max-width: 100%;
+}
+:host .button-native {
+  contain: none;
+}
+:host .button-inner {
+  position: relative;
+}
+
+:host(.fab-button-disabled) {
+  opacity: 0.8;
+  --background: #c2c2c2;
+}
+:host(.fab-button-disabled) ::slotted(ion-icon) {
+  fill: #fafafa;
+}
+
+::slotted(ion-label) {
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 100%;
+  color: #fafafa;
+}
+
+:host(.fab-button-close-active) ::slotted(ion-label) {
+  display: none;
+}
+
+:host([ds-size=md]) {
+  height: 48px !important;
+  min-width: 48px !important;
+}
+:host([ds-size=md]) ::slotted(ion-label) {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+:host([ds-size=lg]) {
+  height: 56px !important;
+  min-width: 56px !important;
+}
+:host([ds-size=lg]) ::slotted(ion-label) {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+:host(.fab-button-close-active) ::slotted([slot=label]) {
+  transform: scale(0.4) rotateZ(-45deg);
+}

@@ -244,6 +244,30 @@
           "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
+          "name": "ds-size",
+          "description": "",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            }
+          ]
+        },
+        {
+          "name": "fill",
+          "description": "",
+          "values": [
+            {
+              "name": "outline"
+            }
+          ]
+        },
+        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -322,6 +346,9 @@
             },
             {
               "name": "xs"
+            },
+            {
+              "name": "xxs"
             }
           ]
         },
@@ -1105,6 +1132,30 @@
           "description": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
         },
         {
+          "name": "ds-name",
+          "description": "",
+          "values": [
+            {
+              "name": "icon-label"
+            },
+            {
+              "name": "label"
+            }
+          ]
+        },
+        {
+          "name": "ds-size",
+          "description": "",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            }
+          ]
+        },
+        {
           "name": "href",
           "description": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
         },
@@ -1193,6 +1244,18 @@
         {
           "name": "activated",
           "description": "If `true`, the fab list will show all fab buttons in the list."
+        },
+        {
+          "name": "ds-size",
+          "description": "",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            }
+          ]
         },
         {
           "name": "side",
@@ -2093,6 +2156,18 @@
           "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
+          "name": "ds-name",
+          "description": "",
+          "values": [
+            {
+              "name": "helper"
+            },
+            {
+              "name": "stacked"
+            }
+          ]
+        },
+        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -2657,6 +2732,15 @@
         {
           "name": "css-class",
           "description": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
+        },
+        {
+          "name": "ds-name",
+          "description": "",
+          "values": [
+            {
+              "name": "tooltip"
+            }
+          ]
         },
         {
           "name": "event",
@@ -4580,6 +4664,52 @@
       ]
     },
     {
+      "name": "med-autocomplete",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "list",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-autocomplete/med-autocomplete.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-banner",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "btn-left",
+          "description": ""
+        },
+        {
+          "name": "btn-right",
+          "description": ""
+        },
+        {
+          "name": "header",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-banner/med-banner.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-cartao-resposta-item",
       "description": {
         "kind": "markdown",
@@ -4594,7 +4724,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/team/med-cartao-resposta/med-cartao-resposta-item.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/team/med-cartao-resposta-item/med-cartao-resposta-item.tsx"
         }
       ]
     },
@@ -4632,6 +4762,44 @@
       ]
     },
     {
+      "name": "med-enunciado-discursiva",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "imagens",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/team/med-enunciado-discursiva/med-enunciado-discursiva.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-font-zoom",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "value",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-font-zoom/med-font-zoom.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-header",
       "description": {
         "kind": "markdown",
@@ -4642,6 +4810,25 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-header/med-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-image-zoom",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "imagens",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-image-zoom/med-image-zoom.tsx"
         }
       ]
     },
@@ -4693,7 +4880,12 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": [],
+      "attributes": [
+        {
+          "name": "status",
+          "description": ""
+        }
+      ],
       "references": [
         {
           "name": "Source code",
@@ -4712,6 +4904,29 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-toolbar/med-toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-tooltip",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "content",
+          "description": ""
+        },
+        {
+          "name": "header",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-tooltip/med-tooltip.tsx"
         }
       ]
     }

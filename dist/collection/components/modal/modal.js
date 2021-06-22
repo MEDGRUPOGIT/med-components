@@ -166,11 +166,11 @@ export class Modal {
   static get is() { return "ion-modal"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "ios": ["modal.ios.scss"],
+    "ios": ["modal.md.scss"],
     "md": ["modal.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["modal.ios.css"],
+    "ios": ["modal.md.css"],
     "md": ["modal.md.css"]
   }; }
   static get properties() { return {

@@ -67,6 +67,23 @@ export class Label {
     "md": ["label.md.css"]
   }; }
   static get properties() { return {
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'stacked' | 'helper' | undefined",
+        "resolved": "\"helper\" | \"stacked\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,

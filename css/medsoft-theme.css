@@ -1,0 +1,175 @@
+:root .dark-mode {
+  --on-surface: #fff;
+  --surface: #121212;
+}
+:root .dark-mode ion-content {
+  --background: #141414;
+}
+
+:root .light-mode {
+  --on-surface: #121212;
+  --surface: #fff;
+}
+:root .light-mode ion-content {
+  --background: #fafafa;
+}
+
+:root .theme-gold {
+  --ion-color-primary-darkest: #7e6c3d;
+  --ion-color-primary-darkest-rgb: list-color-rgb(#7e6c3d);
+  --ion-color-primary-darkest-contrast: #fff;
+  --ion-color-primary-darkest-contrast-rgb: list-color-rgb(#fff);
+  --ion-color-primary-darkest-shade: get-color-shade(#7e6c3d);
+  --ion-color-primary-darkest-tint: get-color-tint(#7e6c3d);
+  --ion-color-primary-dark: #8d7942;
+  --ion-color-primary-dark-rgb: list-color-rgb(#8d7942);
+  --ion-color-primary-dark-contrast: #fff;
+  --ion-color-primary-dark-contrast-rgb: list-color-rgb(#fff);
+  --ion-color-primary-dark-shade: get-color-shade(#8d7942);
+  --ion-color-primary-dark-tint: get-color-tint(#8d7942);
+  --ion-color-primary-medium: #b89d58;
+  --ion-color-primary-medium-rgb: list-color-rgb(#b89d58);
+  --ion-color-primary-medium-contrast: #fff;
+  --ion-color-primary-medium-contrast-rgb: list-color-rgb(#fff);
+  --ion-color-primary-medium-shade: get-color-shade(#b89d58);
+  --ion-color-primary-medium-tint: get-color-tint(#b89d58);
+  --ion-color-primary-light: #baa87b;
+  --ion-color-primary-light-rgb: list-color-rgb(#baa87b);
+  --ion-color-primary-light-contrast: #000;
+  --ion-color-primary-light-contrast-rgb: list-color-rgb(#000);
+  --ion-color-primary-light-shade: get-color-shade(#baa87b);
+  --ion-color-primary-light-tint: get-color-tint(#baa87b);
+  --ion-color-primary-lightest: #bbad8a;
+  --ion-color-primary-lightest-rgb: list-color-rgb(#bbad8a);
+  --ion-color-primary-lightest-contrast: #000;
+  --ion-color-primary-lightest-contrast-rgb: list-color-rgb(#000);
+  --ion-color-primary-lightest-shade: get-color-shade(#bbad8a);
+  --ion-color-primary-lightest-tint: get-color-tint(#bbad8a);
+}
+
+.theme-gold .ion-color-primary-darkest {
+  --ion-color-base: var(--ion-color-primary-darkest, #7e6c3d) !important;
+  --ion-color-base-rgb: var(--ion-color-primary-darkest-rgb, list-color-rgb(#7e6c3d)) !important;
+  --ion-color-contrast: var(--ion-color-primary-darkest-contrast, #fff) !important;
+  --ion-color-contrast-rgb: var(--ion-color-primary-darkest-contrast-rgb, list-color-rgb(#fff)) !important;
+  --ion-color-shade: var(--ion-color-primary-darkest-shade, get-color-shade(#7e6c3d)) !important;
+  --ion-color-tint: var(--ion-color-primary-darkest-tint, get-color-tint(#7e6c3d)) !important;
+}
+.theme-gold .ion-color-primary-dark {
+  --ion-color-base: var(--ion-color-primary-dark, #8d7942) !important;
+  --ion-color-base-rgb: var(--ion-color-primary-dark-rgb, list-color-rgb(#8d7942)) !important;
+  --ion-color-contrast: var(--ion-color-primary-dark-contrast, #fff) !important;
+  --ion-color-contrast-rgb: var(--ion-color-primary-dark-contrast-rgb, list-color-rgb(#fff)) !important;
+  --ion-color-shade: var(--ion-color-primary-dark-shade, get-color-shade(#8d7942)) !important;
+  --ion-color-tint: var(--ion-color-primary-dark-tint, get-color-tint(#8d7942)) !important;
+}
+.theme-gold .ion-color-primary-medium {
+  --ion-color-base: var(--ion-color-primary-medium, #b89d58) !important;
+  --ion-color-base-rgb: var(--ion-color-primary-medium-rgb, list-color-rgb(#b89d58)) !important;
+  --ion-color-contrast: var(--ion-color-primary-medium-contrast, #fff) !important;
+  --ion-color-contrast-rgb: var(--ion-color-primary-medium-contrast-rgb, list-color-rgb(#fff)) !important;
+  --ion-color-shade: var(--ion-color-primary-medium-shade, get-color-shade(#b89d58)) !important;
+  --ion-color-tint: var(--ion-color-primary-medium-tint, get-color-tint(#b89d58)) !important;
+}
+.theme-gold .ion-color-primary-light {
+  --ion-color-base: var(--ion-color-primary-light, #baa87b) !important;
+  --ion-color-base-rgb: var(--ion-color-primary-light-rgb, list-color-rgb(#baa87b)) !important;
+  --ion-color-contrast: var(--ion-color-primary-light-contrast, #000) !important;
+  --ion-color-contrast-rgb: var(--ion-color-primary-light-contrast-rgb, list-color-rgb(#000)) !important;
+  --ion-color-shade: var(--ion-color-primary-light-shade, get-color-shade(#baa87b)) !important;
+  --ion-color-tint: var(--ion-color-primary-light-tint, get-color-tint(#baa87b)) !important;
+}
+.theme-gold .ion-color-primary-lightest {
+  --ion-color-base: var(--ion-color-primary-lightest, #bbad8a) !important;
+  --ion-color-base-rgb: var(--ion-color-primary-lightest-rgb, list-color-rgb(#bbad8a)) !important;
+  --ion-color-contrast: var(--ion-color-primary-lightest-contrast, #000) !important;
+  --ion-color-contrast-rgb: var(--ion-color-primary-lightest-contrast-rgb, list-color-rgb(#000)) !important;
+  --ion-color-shade: var(--ion-color-primary-lightest-shade, get-color-shade(#bbad8a)) !important;
+  --ion-color-tint: var(--ion-color-primary-lightest-tint, get-color-tint(#bbad8a)) !important;
+}
+
+@media (any-hover: hover) {
+  body.light-mode ion-button[ds-name=secondary]:hover {
+    --border-color: #8d7942;
+    --color: #8d7942;
+  }
+}
+body.light-mode ion-button[ds-name=secondary].med-hovered {
+  --border-color: #8d7942;
+  --color: #8d7942;
+}
+body.light-mode ion-button[ds-name=secondary].ion-activated {
+  --border-color: #baa87b;
+  --color: #baa87b;
+}
+body.light-mode ion-button[ds-name=secondary].ion-focused {
+  --border-color: #8d7942;
+  --color: #8d7942;
+}
+
+body.light-mode ion-button[ds-name=tertiary] {
+  --color: #7a7a7a;
+}
+@media (any-hover: hover) {
+  body.light-mode ion-button[ds-name=tertiary]:hover {
+    --background-hover: #b89d58;
+    --background-hover-opacity: 0.16;
+  }
+}
+body.light-mode ion-button[ds-name=tertiary].med-hovered {
+  --background-hover: #b89d58;
+  --background-hover-opacity: 0.16;
+}
+body.light-mode ion-button[ds-name=tertiary].med-button-disabled {
+  --color: #adadad;
+  --ion-color-base: #adadad !important;
+}
+body.light-mode ion-button[ds-name=tertiary].med-button-disabled {
+  --ion-color-base: #adadad !important;
+}
+
+body.light-mode ion-button[ds-name=icon-only] ion-icon[slot=icon-only] {
+  color: #7a7a7a;
+}
+@media (any-hover: hover) {
+  body.light-mode ion-button[ds-name=icon-only]:hover {
+    --background-hover: #b89d58;
+    --background-hover-opacity: 0.16;
+  }
+}
+body.light-mode ion-button[ds-name=icon-only].med-hovered {
+  --background-hover: #b89d58;
+  --background-hover-opacity: 0.16;
+}
+
+.plt-electron.plt-desktop ion-button[ds-size=xs].button-has-icon-only {
+  --min-height: 24px;
+  --min-width: 24px;
+  --padding: 0;
+  font-size: 16px;
+}
+.plt-electron.plt-desktop ion-button[ds-size=sm].button-has-icon-only {
+  --min-height: 32px;
+  --min-width: 32px;
+  --padding: 0;
+  font-size: 24px;
+}
+.plt-electron.plt-desktop ion-button[ds-size=md].button-has-icon-only {
+  --min-height: 40px;
+  --min-width: 40px;
+  --padding: 0;
+  font-size: 32px;
+}
+.plt-electron.plt-desktop ion-button[ds-size=lg].button-has-icon-only {
+  --min-height: 48px;
+  --min-width: 48px;
+  --padding: 0;
+  font-size: 32px;
+}
+
+.plt-electron.plt-desktop med-alternativas {
+  --riscar-flex-direction: row;
+  --riscar-icon-margin: 0 2px 0 0;
+}
+
+/*# sourceMappingURL=medsoft-theme.css.map */

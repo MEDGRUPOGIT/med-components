@@ -239,7 +239,7 @@
 }
 
 :host(.med-navbar) {
-  --padding: 8px 16px;
+  --padding: var(--ion-safe-area-top, 0) 16px 0 16px;
   --background: #141414;
   --title-color: #fafafa;
   --title-font-size: 16px;
@@ -256,11 +256,6 @@
 }
 :host(.med-navbar) .header {
   background: var(--background);
-}
-@media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait), (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait), (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-  :host(.med-navbar) .header {
-    padding-top: 48px !important;
-  }
 }
 :host(.med-navbar) .header__container {
   padding: var(--padding);

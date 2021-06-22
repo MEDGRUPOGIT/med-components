@@ -6,6 +6,7 @@ import { createColorClasses } from '../../utils/theme';
  */
 export class TabBar {
   constructor() {
+    this.hostHeight = 0;
     this.keyboardVisible = false;
     /**
      * If `true`, the tab bar will be translucent.
@@ -23,6 +24,7 @@ export class TabBar {
   }
   componentWillLoad() {
     this.selectedTabChanged();
+    this.setSize();
   }
   connectedCallback() {
     if (typeof window !== 'undefined') {
@@ -45,9 +47,25 @@ export class TabBar {
       this.keyboardWillShowHandler = this.keyboardWillHideHandler = undefined;
     }
   }
+  /**
+   * Med Resize
+   *
+   */
+  setSize() {
+    this.medResize.emit({ height: 1 });
+    this.hostResizeObserver = new ResizeObserver(() => {
+      let newHostHeight = Number(this.el.getBoundingClientRect().height);
+      if (newHostHeight !== this.hostHeight) {
+        this.medResize.emit({ height: newHostHeight });
+        this.hostHeight = newHostHeight;
+      }
+    });
+    this.hostResizeObserver.observe(this.el);
+  }
   render() {
     const { color, translucent, keyboardVisible } = this;
     const mode = getIonMode(this);
+    this.medResize.emit({ height: 1 });
     return (h(Host, { role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, class: createColorClasses(color, {
         [mode]: true,
         'tab-bar-translucent': translucent,
@@ -128,6 +146,26 @@ export class TabBar {
     "keyboardVisible": {}
   }; }
   static get events() { return [{
+      "method": "medResize",
+      "name": "medResize",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "complexType": {
+        "original": "TabBarResizeEventDetail",
+        "resolved": "TabBarResizeEventDetail",
+        "references": {
+          "TabBarResizeEventDetail": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      }
+    }, {
       "method": "ionTabBarChanged",
       "name": "ionTabBarChanged",
       "bubbles": true,

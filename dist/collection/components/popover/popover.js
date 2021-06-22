@@ -125,6 +125,23 @@ export class Popover {
     "md": ["popover.ios.css"]
   }; }
   static get properties() { return {
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'tooltip'",
+        "resolved": "\"tooltip\"",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
     "delegate": {
       "type": "unknown",
       "mutable": false,

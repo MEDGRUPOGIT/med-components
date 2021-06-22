@@ -1,22 +1,24 @@
-import { Component, Host, h, State, Event } from '@stencil/core';
-export class MedAvalicao {
+import { Component, Host, h, Event, Prop } from '@stencil/core';
+import { RateStatus } from './med-rate-like.enum';
+export class MedRateLike {
   constructor() {
-    this.onClick = (button) => {
-      if (button === 'like' && this.clicked !== 'like') {
-        this.clicked = 'like';
+    this.onClick = (status) => {
+      if (this.status) {
+        return;
       }
-      if (button === 'dislike' && this.clicked !== 'dislike') {
-        this.clicked = 'dislike';
-      }
-      this.medChange.emit((this.clicked === 'like') ? 'like' : 'dislike');
-      console.log(this.clicked);
+      this.status = status;
+      this.medChange.emit(this.status);
     };
   }
   render() {
     return (h(Host, { "from-stencil": true },
-      h("button", { class: `button ${this.clicked === 'like' ? 'button_like' : ''}`, onClick: () => this.onClick('like') },
+      h("button", { class: `button
+          ${this.status === RateStatus.LIKE ? 'button--like' : ''}
+          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(RateStatus.LIKE) },
         h("ion-icon", { name: "med-like", class: "rate" })),
-      h("button", { class: `button ${this.clicked === 'dislike' ? 'button_dislike' : ''}`, onClick: () => this.onClick('dislike') },
+      h("button", { class: `button
+          ${this.status === RateStatus.DISLIKE ? 'button--dislike' : ''}
+          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(RateStatus.DISLIKE) },
         h("ion-icon", { name: "med-dislike", class: "rate" }))));
   }
   static get is() { return "med-rate-like"; }
@@ -27,8 +29,29 @@ export class MedAvalicao {
   static get styleUrls() { return {
     "$": ["med-rate-like.css"]
   }; }
-  static get states() { return {
-    "clicked": {}
+  static get properties() { return {
+    "status": {
+      "type": "string",
+      "mutable": true,
+      "complexType": {
+        "original": "RateStatus",
+        "resolved": "RateStatus.DISLIKE | RateStatus.LIKE | undefined",
+        "references": {
+          "RateStatus": {
+            "location": "import",
+            "path": "./med-rate-like.enum"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "status",
+      "reflect": true
+    }
   }; }
   static get events() { return [{
       "method": "medChange",
@@ -41,9 +64,14 @@ export class MedAvalicao {
         "text": ""
       },
       "complexType": {
-        "original": "'like' | 'dislike'",
-        "resolved": "\"dislike\" | \"like\"",
-        "references": {}
+        "original": "RateStatus",
+        "resolved": "RateStatus.DISLIKE | RateStatus.LIKE",
+        "references": {
+          "RateStatus": {
+            "location": "import",
+            "path": "./med-rate-like.enum"
+          }
+        }
       }
     }]; }
 }

@@ -50,7 +50,7 @@ export class Searchbar {
      *
      * For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
      */
-    this.placeholder = 'Search';
+    this.placeholder = 'Pesquisar';
     /**
      * Sets the behavior for the cancel button. Defaults to `"never"`.
      * Setting to `"focus"` shows the cancel button on focus.
@@ -354,11 +354,11 @@ export class Searchbar {
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "ios": ["searchbar.ios.scss"],
-    "md": ["searchbar.md.scss"]
+    "md": ["searchbar.ios.scss"]
   }; }
   static get styleUrls() { return {
     "ios": ["searchbar.ios.css"],
-    "md": ["searchbar.md.css"]
+    "md": ["searchbar.ios.css"]
   }; }
   static get properties() { return {
     "color": {
@@ -581,7 +581,7 @@ export class Searchbar {
       },
       "attribute": "placeholder",
       "reflect": false,
-      "defaultValue": "'Search'"
+      "defaultValue": "'Pesquisar'"
     },
     "searchIcon": {
       "type": "string",

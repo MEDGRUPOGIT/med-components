@@ -29,11 +29,11 @@ export class Chip {
   static get is() { return "ion-chip"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["chip.ios.scss"],
+    "ios": ["chip.md.scss"],
     "md": ["chip.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["chip.ios.css"],
+    "ios": ["chip.md.css"],
     "md": ["chip.md.css"]
   }; }
   static get properties() { return {
