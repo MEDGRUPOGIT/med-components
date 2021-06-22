@@ -4632,6 +4632,10 @@
           "description": ""
         },
         {
+          "name": "is-desktop",
+          "description": ""
+        },
+        {
           "name": "key-alternativa",
           "description": ""
         },
@@ -4649,6 +4653,10 @@
         },
         {
           "name": "mostra-resposta",
+          "description": ""
+        },
+        {
+          "name": "pode-riscar",
           "description": ""
         },
         {

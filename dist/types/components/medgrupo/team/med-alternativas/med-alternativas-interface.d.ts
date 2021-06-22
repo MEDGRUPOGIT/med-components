@@ -3,6 +3,7 @@ export interface MedAlternativaInterface {
   Enunciado: string;
   Imagem: string;
   Porcentagem: number;
+  Riscada: boolean;
 }
 export interface MedAlternativasInterface {
   alternativas: MedAlternativaInterface[] | any[];

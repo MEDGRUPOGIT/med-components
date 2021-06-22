@@ -257,41 +257,12 @@
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
-  width: 10vw;
-  min-height: 80px;
+  width: 20%;
+  max-width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-@media (max-width: 1199.98px) {
-  :host {
-    width: 10vw;
-    height: 10vw;
-  }
-}
-@media (max-width: 991.98px) {
-  :host {
-    width: 13vw;
-    height: 13vw;
-  }
-}
-@media (max-width: 767.98px) {
-  :host {
-    width: 14vw;
-    height: 14vw;
-  }
-}
-@media (max-width: 575.98px) {
-  :host {
-    width: 17vw;
-    height: 17vw;
-  }
-}
-@media (max-width: 379.98px) {
-  :host {
-    width: 19vw;
-    height: 19vw;
-  }
 }
 :host .container {
   position: relative;

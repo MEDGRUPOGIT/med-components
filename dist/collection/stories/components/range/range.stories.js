@@ -2,11 +2,12 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Global/SearchBar',
+  title: 'Components/Global/Range',
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({}) => {
+const TemplateDefault = () => {
+
   return html`
   <ion-app class="storybook-only">
     <div class="storybook-only__container">
@@ -27,6 +28,6 @@ export const Range = TemplateDefault.bind({});
 Range.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=2200%3A0',
+    url: '',
   },
-};
+}

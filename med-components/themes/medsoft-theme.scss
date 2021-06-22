@@ -25,15 +25,8 @@ $med-color-brand-primary-dark: #8d7942;
 $med-color-brand-primary-medium: #b89d58;
 $med-color-brand-primary-light: #baa87b;
 $med-color-brand-primary-lightest: #bbad8a;
-$med-color-brand-primary-gradient: linear-gradient(to right, $med-color-brand-primary-medium, $med-color-brand-primary-dark);
 
 $colors: (
-  /* primary-gradient: (
-    base:             $med-color-brand-primary-gradient,
-    contrast:         #fff,
-    shade:            $med-color-brand-primary-medium,
-    tint:             $med-color-brand-primary-medium
-  ), */
   primary-darkest: (
     base:             $med-color-brand-primary-darkest,
     contrast:         #fff,

@@ -2725,11 +2725,13 @@ export namespace Components {
     interface MedAlternativas {
         "alternativaSelecionada": string;
         "alternativas": MedAlternativaInterface | any;
+        "isDesktop": boolean;
         "keyAlternativa": string;
         "keyEnunciado": string;
         "keyImagem": string;
         "keyPorcentagem": string;
         "mostraResposta": boolean;
+        "podeRiscar": boolean;
         "respostaCorreta": string;
     }
     interface MedAutocomplete {
@@ -6136,6 +6138,7 @@ declare namespace LocalJSX {
     interface MedAlternativas {
         "alternativaSelecionada": string;
         "alternativas"?: MedAlternativaInterface | any;
+        "isDesktop": boolean;
         "keyAlternativa"?: string;
         "keyEnunciado"?: string;
         "keyImagem"?: string;
@@ -6143,6 +6146,7 @@ declare namespace LocalJSX {
         "mostraResposta": boolean;
         "onMedChange"?: (event: CustomEvent<MedAlternativaInterface>) => void;
         "onMedGalleryRequest"?: (event: CustomEvent<MedAlternativaInterface>) => void;
+        "podeRiscar": boolean;
         "respostaCorreta": string;
     }
     interface MedAutocomplete {

@@ -713,8 +713,8 @@ ion-ripple-effect {
   --ion-color-contrast: #fff !important;
 } */
 :host(.med-button-solid) {
-  --background: $med-color-brand-primary-gradient;
-  --background-hover: var(--ion-color-primary-medium, #3aa8b9);
+  --background: var(--ion-color-primary-medium, #3aa8b9);
+  --background-hover: #3aa8b9;
   --background-hover-opacity: 1;
   --background-focused: #3aa8b9;
   --background-focused-opacity: 1;
@@ -1162,10 +1162,6 @@ ion-ripple-effect {
 }
 
 @media (any-hover: hover) {
-  :host(.med-button-solid.ion-color:hover) .button-native::before {
-    background: var(--ion-color-base);
-  }
-
   :host(.med-button-outline.ion-color:hover) .button-native::before {
     background: var(--ion-color-base);
   }

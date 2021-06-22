@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Event } from '@stencil/core';
+import { Component, Host, h, Prop, Event, State } from '@stencil/core';
 export class MedAlternativas {
   constructor() {
     this.alternativas = [];
@@ -6,32 +6,108 @@ export class MedAlternativas {
     this.keyEnunciado = 'Enunciado';
     this.keyImagem = 'Imagem';
     this.keyPorcentagem = 'Porcentagem';
+    this.tempoLongPress = 2000;
+  }
+  onTouchStart(alternativaPressionada) {
+    if (!this.isDesktop) {
+      this.dataStart = new Date();
+      this.timer = setTimeout(() => {
+        this.dataEnd = new Date();
+        const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
+        if (tempoTotal >= this.tempoLongPress) {
+          if (this.permiteRiscar(alternativaPressionada)) {
+            for (const alternativa of this.alternativas) {
+              if (alternativa.Alternativa != alternativaPressionada.Alternativa) {
+                alternativa.Pressionada = false;
+              }
+            }
+            alternativaPressionada.Pressionada = !alternativaPressionada.Pressionada;
+            this.alternativaPressionada = { alternativaPressionada };
+          }
+        }
+      }, this.tempoLongPress);
+    }
+  }
+  onTouchEnd() {
+    clearTimeout(this.timer);
   }
   cssClassAlternativa(alternativa) {
+    this.podeRiscar = true;
+    let objAlternativa = this.getAlternativa(alternativa);
     let classe = 'alternativa';
-    if (this.mostraResposta && this.alternativaSelecionada) {
-      if (alternativa === this.respostaCorreta) {
-        classe += ' alternativa--correta';
+    if (!objAlternativa.Riscada) {
+      if (this.mostraResposta && this.alternativaSelecionada) {
+        if (alternativa === this.respostaCorreta) {
+          classe += ' alternativa--correta';
+        }
+        else if (alternativa === this.alternativaSelecionada) {
+          classe += ' alternativa--incorreto';
+        }
       }
-      else if (alternativa === this.alternativaSelecionada) {
-        classe += ' alternativa--incorreto';
+    }
+    classe += this.getCssClassAlternativaRiscada(objAlternativa);
+    return classe;
+  }
+  cssClassOption(alternativa) {
+    let classe = 'alternativa__option';
+    if (alternativa.Riscada) {
+      classe += ' alternativa__option--riscada';
+    }
+    return classe;
+  }
+  getCssClassAlternativaRiscada(objAlternativa) {
+    let classe = '';
+    if (this.podeRiscar && objAlternativa) {
+      if (!this.isDesktop && objAlternativa.Pressionada) {
+        classe += ' alternativa--pode-riscar-mobile';
+      }
+      else if (this.isDesktop) {
+        classe += ' alternativa--pode-riscar';
+      }
+      if (objAlternativa && objAlternativa.Riscada) {
+        classe += ' alternativa--riscada';
       }
     }
     return classe;
   }
   respostaAlterada(alternativa) {
     this.alternativaSelecionada = alternativa;
+    let objAlternativa = this.getAlternativa(alternativa);
+    if (objAlternativa && !objAlternativa.Riscada) {
+      this.medChange.emit(objAlternativa);
+    }
+  }
+  imageRequest(alternativa) {
+    this.medGalleryRequest.emit(alternativa);
+  }
+  riscar(alternativa) {
+    if (this.permiteRiscar(alternativa)) {
+      alternativa.Riscada = !alternativa.Riscada;
+      if (alternativa.Alternativa === this.alternativaSelecionada) {
+        this.respostaAlterada('');
+      }
+      this.alternativaRiscada = { alternativa };
+      if (!this.isDesktop) {
+        alternativa.Pressionada = !alternativa.Pressionada;
+      }
+    }
+  }
+  permiteRiscar(alternativa) {
+    let countNaoRiscadas = 0;
+    for (const alternativa of this.alternativas) {
+      countNaoRiscadas += !alternativa.Riscada ? 1 : 0;
+    }
+    return alternativa.Riscada || (!alternativa.Riscada && countNaoRiscadas > 1);
+  }
+  getAlternativa(key) {
     let objAlternativa;
     for (const item of this.alternativas) {
-      if (item[this.keyAlternativa] === alternativa) {
+      if (item[this.keyAlternativa] === key) {
         objAlternativa = item;
         break;
       }
     }
-    this.medChange.emit(objAlternativa);
-  }
-  imageRequest(alternativa) {
-    this.medGalleryRequest.emit(alternativa);
+    return objAlternativa;
   }
   render() {
     let hasImage = false;
@@ -43,22 +119,28 @@ export class MedAlternativas {
     }
     return (h(Host, { "from-stencil": true },
       h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada },
-        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) },
-          h("med-option", { class: 'alternativa__option' },
-            h("ion-radio", { value: alternativa[this.keyAlternativa] }),
-            h("label", { slot: "label" }, alternativa[this.keyAlternativa])),
-          h("div", { class: 'alternativa__right' },
-            alternativa[this.keyEnunciado] && h("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }),
-            h("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) },
-              alternativa[this.keyImagem] && h("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }),
-              h("div", { class: 'overlay' },
-                h("div", { class: "overlay__content" },
-                  h("p", { class: "overlay__label" }, "clique para ampliar"),
-                  h("ion-icon", { name: "med-expand" })))),
-            h("ion-progress-bar", { percentage: true, class: `
-                    ion-progress-bar
-                    ${this.mostraResposta && this.alternativaSelecionada ? 'ion-progress-bar--toggle' : ''}
-                    ${alternativa[this.keyPorcentagem] === 1 ? 'ion-progress-bar--100' : ''}`, value: alternativa[this.keyPorcentagem] })))))))));
+        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onPointerDown: () => this.onTouchStart(alternativa), onPointerUp: () => this.onTouchEnd() },
+          h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') },
+            h("med-option", { class: this.cssClassOption(alternativa) },
+              h("ion-radio", { value: alternativa[this.keyAlternativa] }),
+              h("label", { slot: "label" }, alternativa[this.keyAlternativa])),
+            h("div", { class: 'alternativa__right' },
+              alternativa[this.keyEnunciado] && h("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }),
+              h("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) },
+                alternativa[this.keyImagem] && h("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }),
+                h("div", { class: 'overlay' },
+                  h("div", { class: "overlay__content" },
+                    h("p", { class: "overlay__label" }, "clique para ampliar"),
+                    h("ion-icon", { name: "med-expand" })))),
+              !alternativa.Riscada &&
+                h("ion-progress-bar", { percentage: true, class: `
+                        ion-progress-bar
+                        ${this.mostraResposta && this.alternativaSelecionada ? 'ion-progress-bar--toggle' : ''}
+                        ${alternativa[this.keyPorcentagem] === 1 ? 'ion-progress-bar--100' : ''}`, value: alternativa[this.keyPorcentagem] })),
+            this.podeRiscar && (alternativa.Pressionada || this.isDesktop) &&
+              h("div", { class: "riscar", onClick: () => this.riscar(alternativa) },
+                h("ion-icon", { name: "med-riscar" }),
+                h("span", { class: "riscar__label" }, (alternativa.Riscada ? 'Retomar' : 'Riscar') + (this.isDesktop ? ' alternativa' : '')))))))))));
   }
   static get is() { return "med-alternativas"; }
   static get encapsulation() { return "shadow"; }
@@ -69,6 +151,40 @@ export class MedAlternativas {
     "$": ["med-alternativas.css"]
   }; }
   static get properties() { return {
+    "podeRiscar": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "pode-riscar",
+      "reflect": false
+    },
+    "isDesktop": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "is-desktop",
+      "reflect": false
+    },
     "alternativas": {
       "type": "any",
       "mutable": false,
@@ -215,6 +331,10 @@ export class MedAlternativas {
       "attribute": "alternativa-selecionada",
       "reflect": true
     }
+  }; }
+  static get states() { return {
+    "alternativaRiscada": {},
+    "alternativaPressionada": {}
   }; }
   static get events() { return [{
       "method": "medChange",
