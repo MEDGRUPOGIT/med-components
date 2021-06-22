@@ -14,4 +14,6 @@ export interface MedAlternativasInterface {
   respostaCorreta: string;
   mostraResposta: boolean;
   alternativaSelecionada?: string;
+  podeRiscar?: boolean;
+  isDesktop?: boolean;
 }
