@@ -122,6 +122,7 @@ const MedAlternativas = class {
   render() {
     let hasImage = false;
     for (const alternativa of this.alternativas) {
+      alternativa.Pressionada = false;
       if (alternativa[this.keyImagem]) {
         hasImage = true;
         break;
