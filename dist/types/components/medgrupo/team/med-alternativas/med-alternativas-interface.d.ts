@@ -4,6 +4,7 @@ export interface MedAlternativaInterface {
   Imagem: string;
   Porcentagem: number;
   Riscada: boolean;
+  Pressionada: boolean;
 }
 export interface MedAlternativasInterface {
   alternativas: MedAlternativaInterface[] | any[];
