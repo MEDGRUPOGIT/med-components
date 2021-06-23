@@ -371,11 +371,12 @@
   color: #7a7a7a;
   line-height: 100%;
 }
-:host .alternativa--riscada {
+:host .alternativa--riscada .alternativa__option {
   opacity: 0.5;
 }
 :host .alternativa--riscada .alternativa__text {
   text-decoration: line-through;
+  opacity: 0.5;
 }
 :host .alternativa--pressed {
   background-color: #ebebeb;

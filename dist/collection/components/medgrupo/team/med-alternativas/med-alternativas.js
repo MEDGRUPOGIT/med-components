@@ -6,7 +6,7 @@ export class MedAlternativas {
     this.keyEnunciado = 'Enunciado';
     this.keyImagem = 'Imagem';
     this.keyPorcentagem = 'Porcentagem';
-    this.tempoLongPress = 2000;
+    this.tempoLongPress = 1000;
   }
   onTouchStart(alternativaPressionada) {
     if (!this.isDesktop) {
@@ -117,6 +117,7 @@ export class MedAlternativas {
         break;
       }
     }
+    this.isDesktop = true;
     return (h(Host, { "from-stencil": true },
       h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada },
         h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onPointerDown: () => this.onTouchStart(alternativa), onPointerUp: () => this.onTouchEnd() },
