@@ -123,7 +123,6 @@ const MedAlternativas = class {
         break;
       }
     }
-    this.isDesktop = true;
     return (h(Host, { "from-stencil": true }, h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada }, h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onPointerDown: () => this.onTouchStart(alternativa), onPointerUp: () => this.onTouchEnd() }, h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') }, h("med-option", { class: this.cssClassOption(alternativa) }, h("ion-radio", { value: alternativa[this.keyAlternativa] }), h("label", { slot: "label" }, alternativa[this.keyAlternativa])), h("div", { class: 'alternativa__right' }, alternativa[this.keyEnunciado] && h("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }), h("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) }, alternativa[this.keyImagem] && h("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }), h("div", { class: 'overlay' }, h("div", { class: "overlay__content" }, h("p", { class: "overlay__label" }, "clique para ampliar"), h("ion-icon", { name: "med-expand" })))), !alternativa.Riscada &&
       h("ion-progress-bar", { percentage: true, class: `
                         ion-progress-bar
