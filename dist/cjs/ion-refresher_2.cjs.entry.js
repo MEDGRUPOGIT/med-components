@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-c609be80.js');
+const index = require('./index-a0a08b2a.js');
+const ionicGlobal = require('./ionic-global-926d5da1.js');
 const cubicBezier = require('./cubic-bezier-6f49c00a.js');
 const helpers = require('./helpers-ab0db03b.js');
 const haptic = require('./haptic-3d9360f0.js');

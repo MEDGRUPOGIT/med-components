@@ -15,10 +15,13 @@ export declare class MedAlternativas implements MedAlternativasInterface {
   medGalleryRequest: EventEmitter<MedAlternativaInterface>;
   alternativaRiscada: any;
   alternativaPressionada: any;
+  elements: HTMLDivElement[];
   dataStart: Date;
   dataEnd: Date;
   tempoLongPress: number;
   timer: any;
+  private onTouchStart;
+  private onTouchEnd;
   private cssClassAlternativa;
   private cssClassOption;
   private getCssClassAlternativaRiscada;
@@ -27,6 +30,5 @@ export declare class MedAlternativas implements MedAlternativasInterface {
   private riscar;
   permiteRiscar(alternativa: any): any;
   private getAlternativa;
-  componentDidRender(): void;
   render(): any;
 }

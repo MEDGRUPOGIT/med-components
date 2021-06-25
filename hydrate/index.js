@@ -4688,7 +4688,7 @@ function hydrateFactory($stencilWindow, $stencilHydrateOpts, $stencilHydrateResu
 
 
 const NAMESPACE = 'ionic';
-const BUILD = /* ionic */ { allRenderFn: false, appendChildSlotFix: false, asyncLoading: true, attachStyles: true, cloneNodeFix: false, cmpDidLoad: true, cmpDidRender: true, cmpDidUnload: false, cmpDidUpdate: true, cmpShouldUpdate: false, cmpWillLoad: true, cmpWillRender: true, cmpWillUpdate: false, connectedCallback: true, constructableCSS: false, cssAnnotations: true, cssVarShim: false, devTools: false, disconnectedCallback: true, dynamicImportShim: false, element: false, event: true, hasRenderFn: true, hostListener: true, hostListenerTarget: true, hostListenerTargetBody: true, hostListenerTargetDocument: true, hostListenerTargetParent: false, hostListenerTargetWindow: true, hotModuleReplacement: false, hydrateClientSide: true, hydrateServerSide: true, hydratedAttribute: false, hydratedClass: true, isDebug: false, isDev: false, isTesting: false, lazyLoad: true, lifecycle: true, lifecycleDOMEvents: false, member: true, method: true, mode: true, observeAttribute: true, profile: false, prop: true, propBoolean: true, propMutable: true, propNumber: true, propString: true, reflect: true, safari10: false, scoped: true, scriptDataOpts: false, shadowDelegatesFocus: true, shadowDom: true, shadowDomShim: true, slot: true, slotChildNodesFix: false, slotRelocation: true, state: true, style: true, svg: true, taskQueue: true, updatable: true, vdomAttribute: true, vdomClass: true, vdomFunctional: true, vdomKey: true, vdomListener: true, vdomPropOrAttr: true, vdomRef: true, vdomRender: true, vdomStyle: true, vdomText: true, vdomXlink: true, watchCallback: true };
+const BUILD = /* ionic */ { allRenderFn: false, appendChildSlotFix: false, asyncLoading: true, attachStyles: true, cloneNodeFix: false, cmpDidLoad: true, cmpDidRender: false, cmpDidUnload: false, cmpDidUpdate: true, cmpShouldUpdate: false, cmpWillLoad: true, cmpWillRender: true, cmpWillUpdate: false, connectedCallback: true, constructableCSS: false, cssAnnotations: true, cssVarShim: false, devTools: false, disconnectedCallback: true, dynamicImportShim: false, element: false, event: true, hasRenderFn: true, hostListener: true, hostListenerTarget: true, hostListenerTargetBody: true, hostListenerTargetDocument: true, hostListenerTargetParent: false, hostListenerTargetWindow: true, hotModuleReplacement: false, hydrateClientSide: true, hydrateServerSide: true, hydratedAttribute: false, hydratedClass: true, isDebug: false, isDev: false, isTesting: false, lazyLoad: true, lifecycle: true, lifecycleDOMEvents: false, member: true, method: true, mode: true, observeAttribute: true, profile: false, prop: true, propBoolean: true, propMutable: true, propNumber: true, propString: true, reflect: true, safari10: false, scoped: true, scriptDataOpts: false, shadowDelegatesFocus: true, shadowDom: true, shadowDomShim: true, slot: true, slotChildNodesFix: false, slotRelocation: true, state: true, style: true, svg: true, taskQueue: true, updatable: true, vdomAttribute: true, vdomClass: true, vdomFunctional: true, vdomKey: true, vdomListener: true, vdomPropOrAttr: true, vdomRef: true, vdomRender: true, vdomStyle: true, vdomText: true, vdomXlink: true, watchCallback: true };
 
 const getPlatforms = (win) => setupPlatforms(win);
 const isPlatform = (winOrPlatform, platform) => {
@@ -5362,8 +5362,7 @@ const callRender = (e, t, o) => {
  return null;
 }, postUpdateComponent = e => {
  const t = e.$cmpMeta$.$tagName$, o = e.$hostElement$, n = createTime("postUpdate", t), s = e.$lazyInstance$ , l = e.$ancestorComponent$;
- (safeCall$1(s, "componentDidRender"), 
- BUILD.isDev ), 64 & e.$flags$ ? ((safeCall$1(s, "componentDidUpdate"), 
+ 64 & e.$flags$ ? ((safeCall$1(s, "componentDidUpdate"), 
  BUILD.isDev ), n()) : (e.$flags$ |= 64, addHydratedFlag(o), 
  (safeCall$1(s, "componentDidLoad"), 
  BUILD.isDev ), n(), (e.$onReadyResolve$(o), l || appDidLoad())), e.$onInstanceResolve$(o), (e.$onRenderResolve$ && (e.$onRenderResolve$(), 
@@ -13934,37 +13933,38 @@ class MedAlternativas {
     this.keyEnunciado = 'Enunciado';
     this.keyImagem = 'Imagem';
     this.keyPorcentagem = 'Porcentagem';
+    this.elements = [];
     this.tempoLongPress = 1000;
   }
-  // private onTouchStart(alternativaPressionada: any) {
-  //   console.log('start0');
-  //   if (!this.isDesktop) {
-  //     console.log('start1');
-  //     this.dataStart = new Date();
-  //     this.timer = setTimeout(() => {
-  //       console.log('start2');
-  //       this.dataEnd = new Date();
-  //       const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
-  //       if (tempoTotal >= this.tempoLongPress) {
-  //         console.log('start3');
-  //         if (this.permiteRiscar(alternativaPressionada)) {
-  //           for (const alternativa of this.alternativas) {
-  //             if (alternativa.Alternativa != alternativaPressionada.Alternativa) {
-  //               alternativa.Pressionada = false;
-  //             }
-  //           }
-  //           console.log('start4');
-  //           alternativaPressionada.Pressionada = !alternativaPressionada.Pressionada;
-  //           this.alternativaPressionada = { alternativaPressionada };
-  //         }
-  //       }
-  //     }, this.tempoLongPress);
-  //   }
-  // }
-  // private onTouchEnd() {
-  //   clearTimeout(this.timer);
-  //   console.log('end1');
-  // }
+  onTouchStart(alternativaPressionada) {
+    console.log('start0');
+    if (!this.isDesktop) {
+      console.log('start1');
+      this.dataStart = new Date();
+      this.timer = setTimeout(() => {
+        console.log('start2');
+        this.dataEnd = new Date();
+        const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
+        if (tempoTotal >= this.tempoLongPress) {
+          console.log('start3');
+          if (this.permiteRiscar(alternativaPressionada)) {
+            for (const alternativa of this.alternativas) {
+              if (alternativa.Alternativa != alternativaPressionada.Alternativa) {
+                alternativa.Pressionada = false;
+              }
+            }
+            console.log('start4');
+            alternativaPressionada.Pressionada = !alternativaPressionada.Pressionada;
+            this.alternativaPressionada = { alternativaPressionada };
+          }
+        }
+      }, this.tempoLongPress);
+    }
+  }
+  onTouchEnd() {
+    clearTimeout(this.timer);
+    console.log('end1');
+  }
   cssClassAlternativa(alternativa) {
     let objAlternativa = this.getAlternativa(alternativa);
     let classe = 'alternativa';
@@ -14042,18 +14042,28 @@ class MedAlternativas {
     }
     return objAlternativa;
   }
-  componentDidRender() {
-    for (const alternativa of this.alternativas) {
-      const element = document.getElementById('div' + alternativa.Alternativa);
-      console.log(element);
-      if (element) {
-        element.addEventListener('onclick', function (e) {
-          console.log(e);
-          console.log('clicou!');
-        });
-      }
-    }
-  }
+  // componentDidRender() {
+  //   console.log(this.elements);
+  //   // for(const alternativa of this.alternativas) {
+  //   //   const element = document.getElementById('div' + alternativa.Alternativa);
+  //   //   console.log(element);
+  //   //   if (element) {
+  //   //     element.addEventListener('onclick', function(e) {
+  //   //       console.log(e);
+  //   //       console.log('clicou!');
+  //   //     });
+  //   //   }
+  //   // }
+  // }
+  // componentDidLoad() {
+  //   // console.log(this.elements);
+  //   for(const element of this.elements) {
+  //     element.addEventListener('onclick', function(e) {
+  //       console.log(e);
+  //       console.log('clicou!');
+  //     });
+  //   }
+  // }
   render() {
     let hasImage = false;
     for (const alternativa of this.alternativas) {
@@ -14066,7 +14076,10 @@ class MedAlternativas {
     // this.isDesktop = false;
     return (hAsync(Host, { "from-stencil": true }, hAsync("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada }, hAsync("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (
     // <div id={'div' + alternativa.Alternativa} onMouseDown={() => this.onTouchStart(alternativa)} onMouseUp={() => this.onTouchEnd()}>
-    hAsync("div", { id: 'div' + alternativa.Alternativa }, hAsync("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') }, hAsync("med-option", { class: this.cssClassOption(alternativa) }, hAsync("ion-radio", { value: alternativa[this.keyAlternativa] }), hAsync("label", { slot: "label" }, alternativa[this.keyAlternativa])), hAsync("div", { class: 'alternativa__right' }, alternativa[this.keyEnunciado] && hAsync("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }), hAsync("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) }, alternativa[this.keyImagem] && hAsync("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }), hAsync("div", { class: 'overlay' }, hAsync("div", { class: "overlay__content" }, hAsync("p", { class: "overlay__label" }, "clique para ampliar"), hAsync("ion-icon", { name: "med-expand" })))), !alternativa.Riscada &&
+    hAsync("div", { id: 'div' + alternativa.Alternativa, ref: (el) => {
+        el.ontouchstart = () => { this.onTouchStart(alternativa); };
+        el.ontouchend = () => { this.onTouchEnd(); };
+      } }, hAsync("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') }, hAsync("med-option", { class: this.cssClassOption(alternativa) }, hAsync("ion-radio", { value: alternativa[this.keyAlternativa] }), hAsync("label", { slot: "label" }, alternativa[this.keyAlternativa])), hAsync("div", { class: 'alternativa__right' }, alternativa[this.keyEnunciado] && hAsync("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }), hAsync("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) }, alternativa[this.keyImagem] && hAsync("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }), hAsync("div", { class: 'overlay' }, hAsync("div", { class: "overlay__content" }, hAsync("p", { class: "overlay__label" }, "clique para ampliar"), hAsync("ion-icon", { name: "med-expand" })))), !alternativa.Riscada &&
       hAsync("ion-progress-bar", { percentage: true, class: `
                         ion-progress-bar
                         ${this.mostraResposta && this.alternativaSelecionada ? 'ion-progress-bar--toggle' : ''}

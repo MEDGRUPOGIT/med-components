@@ -1,5 +1,5 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { c as config, b as getIonMode } from './ionic-global-10d9ffcf.js';
+import { r as registerInstance, h, H as Host } from './index-7a8b7a1c.js';
+import { c as config, b as getIonMode } from './ionic-global-366f1c10.js';
 import { j as clamp } from './helpers-6b411283.js';
 import { c as createColorClasses } from './theme-0269729a.js';
 
