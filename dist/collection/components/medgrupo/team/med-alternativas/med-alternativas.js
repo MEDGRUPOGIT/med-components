@@ -126,7 +126,7 @@ export class MedAlternativas {
     // this.isDesktop = false;
     return (h(Host, { "from-stencil": true },
       h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada },
-        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onTouchStart: () => this.onTouchStart(alternativa), onTouchEnd: () => this.onTouchEnd() },
+        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onMouseDown: () => this.onTouchStart(alternativa), onMouseUp: () => this.onTouchEnd() },
           h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') },
             h("med-option", { class: this.cssClassOption(alternativa) },
               h("ion-radio", { value: alternativa[this.keyAlternativa] }),
