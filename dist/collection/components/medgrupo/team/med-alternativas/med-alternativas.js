@@ -9,18 +9,23 @@ export class MedAlternativas {
     this.tempoLongPress = 1000;
   }
   onTouchStart(alternativaPressionada) {
+    console.log('start0');
     if (!this.isDesktop) {
+      console.log('start1');
       this.dataStart = new Date();
       this.timer = setTimeout(() => {
+        console.log('start2');
         this.dataEnd = new Date();
         const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
         if (tempoTotal >= this.tempoLongPress) {
+          console.log('start3');
           if (this.permiteRiscar(alternativaPressionada)) {
             for (const alternativa of this.alternativas) {
               if (alternativa.Alternativa != alternativaPressionada.Alternativa) {
                 alternativa.Pressionada = false;
               }
             }
+            console.log('start4');
             alternativaPressionada.Pressionada = !alternativaPressionada.Pressionada;
             this.alternativaPressionada = { alternativaPressionada };
           }
@@ -30,9 +35,9 @@ export class MedAlternativas {
   }
   onTouchEnd() {
     clearTimeout(this.timer);
+    console.log('end1');
   }
   cssClassAlternativa(alternativa) {
-    this.podeRiscar = true;
     let objAlternativa = this.getAlternativa(alternativa);
     let classe = 'alternativa';
     if (!objAlternativa.Riscada) {
@@ -97,7 +102,7 @@ export class MedAlternativas {
     for (const alternativa of this.alternativas) {
       countNaoRiscadas += !alternativa.Riscada ? 1 : 0;
     }
-    return alternativa.Riscada || (!alternativa.Riscada && countNaoRiscadas > 1);
+    return this.podeRiscar && (alternativa.Riscada || (!alternativa.Riscada && countNaoRiscadas > 1));
   }
   getAlternativa(key) {
     let objAlternativa;
@@ -117,9 +122,11 @@ export class MedAlternativas {
         break;
       }
     }
+    // this.podeRiscar = true;
+    // this.isDesktop = false;
     return (h(Host, { "from-stencil": true },
       h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada },
-        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onPointerDown: () => this.onTouchStart(alternativa), onPointerUp: () => this.onTouchEnd() },
+        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onTouchStart: () => this.onTouchStart(alternativa), onTouchEnd: () => this.onTouchEnd() },
           h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') },
             h("med-option", { class: this.cssClassOption(alternativa) },
               h("ion-radio", { value: alternativa[this.keyAlternativa] }),

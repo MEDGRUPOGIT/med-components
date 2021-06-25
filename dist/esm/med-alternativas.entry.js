@@ -15,18 +15,23 @@ const MedAlternativas = class {
     this.tempoLongPress = 1000;
   }
   onTouchStart(alternativaPressionada) {
+    console.log('start0');
     if (!this.isDesktop) {
+      console.log('start1');
       this.dataStart = new Date();
       this.timer = setTimeout(() => {
+        console.log('start2');
         this.dataEnd = new Date();
         const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
         if (tempoTotal >= this.tempoLongPress) {
+          console.log('start3');
           if (this.permiteRiscar(alternativaPressionada)) {
             for (const alternativa of this.alternativas) {
               if (alternativa.Alternativa != alternativaPressionada.Alternativa) {
                 alternativa.Pressionada = false;
               }
             }
+            console.log('start4');
             alternativaPressionada.Pressionada = !alternativaPressionada.Pressionada;
             this.alternativaPressionada = { alternativaPressionada };
           }
@@ -36,9 +41,9 @@ const MedAlternativas = class {
   }
   onTouchEnd() {
     clearTimeout(this.timer);
+    console.log('end1');
   }
   cssClassAlternativa(alternativa) {
-    this.podeRiscar = true;
     let objAlternativa = this.getAlternativa(alternativa);
     let classe = 'alternativa';
     if (!objAlternativa.Riscada) {
@@ -103,7 +108,7 @@ const MedAlternativas = class {
     for (const alternativa of this.alternativas) {
       countNaoRiscadas += !alternativa.Riscada ? 1 : 0;
     }
-    return alternativa.Riscada || (!alternativa.Riscada && countNaoRiscadas > 1);
+    return this.podeRiscar && (alternativa.Riscada || (!alternativa.Riscada && countNaoRiscadas > 1));
   }
   getAlternativa(key) {
     let objAlternativa;
@@ -123,7 +128,9 @@ const MedAlternativas = class {
         break;
       }
     }
-    return (h(Host, { "from-stencil": true }, h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada }, h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onPointerDown: () => this.onTouchStart(alternativa), onPointerUp: () => this.onTouchEnd() }, h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') }, h("med-option", { class: this.cssClassOption(alternativa) }, h("ion-radio", { value: alternativa[this.keyAlternativa] }), h("label", { slot: "label" }, alternativa[this.keyAlternativa])), h("div", { class: 'alternativa__right' }, alternativa[this.keyEnunciado] && h("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }), h("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) }, alternativa[this.keyImagem] && h("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }), h("div", { class: 'overlay' }, h("div", { class: "overlay__content" }, h("p", { class: "overlay__label" }, "clique para ampliar"), h("ion-icon", { name: "med-expand" })))), !alternativa.Riscada &&
+    // this.podeRiscar = true;
+    // this.isDesktop = false;
+    return (h(Host, { "from-stencil": true }, h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada }, h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onTouchStart: () => this.onTouchStart(alternativa), onTouchEnd: () => this.onTouchEnd() }, h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') }, h("med-option", { class: this.cssClassOption(alternativa) }, h("ion-radio", { value: alternativa[this.keyAlternativa] }), h("label", { slot: "label" }, alternativa[this.keyAlternativa])), h("div", { class: 'alternativa__right' }, alternativa[this.keyEnunciado] && h("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }), h("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) }, alternativa[this.keyImagem] && h("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }), h("div", { class: 'overlay' }, h("div", { class: "overlay__content" }, h("p", { class: "overlay__label" }, "clique para ampliar"), h("ion-icon", { name: "med-expand" })))), !alternativa.Riscada &&
       h("ion-progress-bar", { percentage: true, class: `
                         ion-progress-bar
                         ${this.mostraResposta && this.alternativaSelecionada ? 'ion-progress-bar--toggle' : ''}

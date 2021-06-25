@@ -13936,18 +13936,23 @@ class MedAlternativas {
     this.tempoLongPress = 1000;
   }
   onTouchStart(alternativaPressionada) {
+    console.log('start0');
     if (!this.isDesktop) {
+      console.log('start1');
       this.dataStart = new Date();
       this.timer = setTimeout(() => {
+        console.log('start2');
         this.dataEnd = new Date();
         const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
         if (tempoTotal >= this.tempoLongPress) {
+          console.log('start3');
           if (this.permiteRiscar(alternativaPressionada)) {
             for (const alternativa of this.alternativas) {
               if (alternativa.Alternativa != alternativaPressionada.Alternativa) {
                 alternativa.Pressionada = false;
               }
             }
+            console.log('start4');
             alternativaPressionada.Pressionada = !alternativaPressionada.Pressionada;
             this.alternativaPressionada = { alternativaPressionada };
           }
@@ -13957,9 +13962,9 @@ class MedAlternativas {
   }
   onTouchEnd() {
     clearTimeout(this.timer);
+    console.log('end1');
   }
   cssClassAlternativa(alternativa) {
-    this.podeRiscar = true;
     let objAlternativa = this.getAlternativa(alternativa);
     let classe = 'alternativa';
     if (!objAlternativa.Riscada) {
@@ -14024,7 +14029,7 @@ class MedAlternativas {
     for (const alternativa of this.alternativas) {
       countNaoRiscadas += !alternativa.Riscada ? 1 : 0;
     }
-    return alternativa.Riscada || (!alternativa.Riscada && countNaoRiscadas > 1);
+    return this.podeRiscar && (alternativa.Riscada || (!alternativa.Riscada && countNaoRiscadas > 1));
   }
   getAlternativa(key) {
     let objAlternativa;
@@ -14044,7 +14049,9 @@ class MedAlternativas {
         break;
       }
     }
-    return (hAsync(Host, { "from-stencil": true }, hAsync("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada }, hAsync("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (hAsync("div", { onPointerDown: () => this.onTouchStart(alternativa), onPointerUp: () => this.onTouchEnd() }, hAsync("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') }, hAsync("med-option", { class: this.cssClassOption(alternativa) }, hAsync("ion-radio", { value: alternativa[this.keyAlternativa] }), hAsync("label", { slot: "label" }, alternativa[this.keyAlternativa])), hAsync("div", { class: 'alternativa__right' }, alternativa[this.keyEnunciado] && hAsync("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }), hAsync("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) }, alternativa[this.keyImagem] && hAsync("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }), hAsync("div", { class: 'overlay' }, hAsync("div", { class: "overlay__content" }, hAsync("p", { class: "overlay__label" }, "clique para ampliar"), hAsync("ion-icon", { name: "med-expand" })))), !alternativa.Riscada &&
+    // this.podeRiscar = true;
+    // this.isDesktop = false;
+    return (hAsync(Host, { "from-stencil": true }, hAsync("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada }, hAsync("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (hAsync("div", { onTouchStart: () => this.onTouchStart(alternativa), onTouchEnd: () => this.onTouchEnd() }, hAsync("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') }, hAsync("med-option", { class: this.cssClassOption(alternativa) }, hAsync("ion-radio", { value: alternativa[this.keyAlternativa] }), hAsync("label", { slot: "label" }, alternativa[this.keyAlternativa])), hAsync("div", { class: 'alternativa__right' }, alternativa[this.keyEnunciado] && hAsync("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }), hAsync("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) }, alternativa[this.keyImagem] && hAsync("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }), hAsync("div", { class: 'overlay' }, hAsync("div", { class: "overlay__content" }, hAsync("p", { class: "overlay__label" }, "clique para ampliar"), hAsync("ion-icon", { name: "med-expand" })))), !alternativa.Riscada &&
       hAsync("ion-progress-bar", { percentage: true, class: `
                         ion-progress-bar
                         ${this.mostraResposta && this.alternativaSelecionada ? 'ion-progress-bar--toggle' : ''}
