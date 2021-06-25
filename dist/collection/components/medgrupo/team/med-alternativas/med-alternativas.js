@@ -8,35 +8,35 @@ export class MedAlternativas {
     this.keyPorcentagem = 'Porcentagem';
     this.tempoLongPress = 1000;
   }
-  onTouchStart(alternativaPressionada) {
-    console.log('start0');
-    if (!this.isDesktop) {
-      console.log('start1');
-      this.dataStart = new Date();
-      this.timer = setTimeout(() => {
-        console.log('start2');
-        this.dataEnd = new Date();
-        const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
-        if (tempoTotal >= this.tempoLongPress) {
-          console.log('start3');
-          if (this.permiteRiscar(alternativaPressionada)) {
-            for (const alternativa of this.alternativas) {
-              if (alternativa.Alternativa != alternativaPressionada.Alternativa) {
-                alternativa.Pressionada = false;
-              }
-            }
-            console.log('start4');
-            alternativaPressionada.Pressionada = !alternativaPressionada.Pressionada;
-            this.alternativaPressionada = { alternativaPressionada };
-          }
-        }
-      }, this.tempoLongPress);
-    }
-  }
-  onTouchEnd() {
-    clearTimeout(this.timer);
-    console.log('end1');
-  }
+  // private onTouchStart(alternativaPressionada: any) {
+  //   console.log('start0');
+  //   if (!this.isDesktop) {
+  //     console.log('start1');
+  //     this.dataStart = new Date();
+  //     this.timer = setTimeout(() => {
+  //       console.log('start2');
+  //       this.dataEnd = new Date();
+  //       const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
+  //       if (tempoTotal >= this.tempoLongPress) {
+  //         console.log('start3');
+  //         if (this.permiteRiscar(alternativaPressionada)) {
+  //           for (const alternativa of this.alternativas) {
+  //             if (alternativa.Alternativa != alternativaPressionada.Alternativa) {
+  //               alternativa.Pressionada = false;
+  //             }
+  //           }
+  //           console.log('start4');
+  //           alternativaPressionada.Pressionada = !alternativaPressionada.Pressionada;
+  //           this.alternativaPressionada = { alternativaPressionada };
+  //         }
+  //       }
+  //     }, this.tempoLongPress);
+  //   }
+  // }
+  // private onTouchEnd() {
+  //   clearTimeout(this.timer);
+  //   console.log('end1');
+  // }
   cssClassAlternativa(alternativa) {
     let objAlternativa = this.getAlternativa(alternativa);
     let classe = 'alternativa';
@@ -114,6 +114,18 @@ export class MedAlternativas {
     }
     return objAlternativa;
   }
+  componentDidRender() {
+    for (const alternativa of this.alternativas) {
+      const element = document.getElementById('div' + alternativa.Alternativa);
+      console.log(element);
+      if (element) {
+        element.addEventListener('onclick', function (e) {
+          console.log(e);
+          console.log('clicou!');
+        });
+      }
+    }
+  }
   render() {
     let hasImage = false;
     for (const alternativa of this.alternativas) {
@@ -122,11 +134,13 @@ export class MedAlternativas {
         break;
       }
     }
-    // this.podeRiscar = true;
+    this.podeRiscar = true;
     // this.isDesktop = false;
     return (h(Host, { "from-stencil": true },
       h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada },
-        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onMouseDown: () => this.onTouchStart(alternativa), onMouseUp: () => this.onTouchEnd() },
+        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (
+        // <div id={'div' + alternativa.Alternativa} onMouseDown={() => this.onTouchStart(alternativa)} onMouseUp={() => this.onTouchEnd()}>
+        h("div", { id: 'div' + alternativa.Alternativa },
           h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') },
             h("med-option", { class: this.cssClassOption(alternativa) },
               h("ion-radio", { value: alternativa[this.keyAlternativa] }),

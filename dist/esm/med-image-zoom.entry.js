@@ -1,6 +1,6 @@
-import { r as registerInstance, h, H as Host } from './index-7a8b7a1c.js';
-import { m as modalController } from './overlays-abdb9c38.js';
-import './ionic-global-366f1c10.js';
+import { r as registerInstance, h, H as Host } from './index-70672e81.js';
+import { m as modalController } from './overlays-0b1670e0.js';
+import './ionic-global-10d9ffcf.js';
 import './hardware-back-button-3fda9f12.js';
 import './helpers-6b411283.js';
 
