@@ -9,6 +9,7 @@ import { Color } from '../../interface';
  * width of the `buffer` value.
  */
 export declare class ProgressBar implements ComponentInterface {
+  el: HTMLElement;
   percentage: boolean;
   /**
    * The state of the progress bar, based on if the time the process takes is known or not.

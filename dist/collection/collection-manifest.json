@@ -39,6 +39,8 @@
     "./components/list/list.js",
     "./components/list-header/list-header.js",
     "./components/loading/loading.js",
+    "./components/medgrupo/global/med-accordion/med-accordion.js",
+    "./components/medgrupo/global/med-agrupador/med-agrupador.js",
     "./components/medgrupo/global/med-autocomplete/med-autocomplete.js",
     "./components/medgrupo/global/med-banner/med-banner.js",
     "./components/medgrupo/global/med-font-zoom/med-font-zoom.js",

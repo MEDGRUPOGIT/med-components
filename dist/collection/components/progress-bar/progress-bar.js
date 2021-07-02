@@ -1,8 +1,8 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+import { Component, Host, Prop, h, Element } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { clamp } from '../../utils/helpers';
-import { createColorClasses } from '../../utils/theme';
+import { createColorClasses, hostContext } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -44,7 +44,8 @@ export class ProgressBar {
         [`progress-bar-${type}`]: true,
         'percentage': percentage,
         'progress-paused': paused,
-        'progress-bar-reversed': document.dir === 'rtl' ? !reversed : reversed
+        'progress-bar-reversed': document.dir === 'rtl' ? !reversed : reversed,
+        'in-med-header': hostContext('med-header', this.el),
       }) }, type === 'indeterminate'
       ? renderIndeterminate()
       : renderProgress(value, buffer)));
@@ -173,6 +174,7 @@ export class ProgressBar {
       "reflect": false
     }
   }; }
+  static get elementRef() { return "el"; }
 }
 const renderIndeterminate = () => {
   return (h("div", { part: "track", class: "progress-buffer-bar" },

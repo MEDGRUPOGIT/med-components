@@ -10,8 +10,7 @@ export class Badge {
     return (h(Host, { class: createColorClasses(this.color, {
         [mode]: true,
       }) },
-      h("span", { class: "inner" },
-        h("slot", null))));
+      h("slot", null)));
   }
   static get is() { return "ion-badge"; }
   static get encapsulation() { return "shadow"; }

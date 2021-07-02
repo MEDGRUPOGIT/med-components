@@ -2722,6 +2722,13 @@ export namespace Components {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
+    interface MedAccordion {
+        "color"?: Color;
+        "dsSize"?: 'full';
+    }
+    interface MedAgrupador {
+        "color"?: Color;
+    }
     interface MedAlternativas {
         "alternativaSelecionada": string;
         "alternativas": MedAlternativaInterface | any;
@@ -3301,6 +3308,18 @@ declare global {
         prototype: HTMLIonVirtualScrollElement;
         new (): HTMLIonVirtualScrollElement;
     };
+    interface HTMLMedAccordionElement extends Components.MedAccordion, HTMLStencilElement {
+    }
+    var HTMLMedAccordionElement: {
+        prototype: HTMLMedAccordionElement;
+        new (): HTMLMedAccordionElement;
+    };
+    interface HTMLMedAgrupadorElement extends Components.MedAgrupador, HTMLStencilElement {
+    }
+    var HTMLMedAgrupadorElement: {
+        prototype: HTMLMedAgrupadorElement;
+        new (): HTMLMedAgrupadorElement;
+    };
     interface HTMLMedAlternativasElement extends Components.MedAlternativas, HTMLStencilElement {
     }
     var HTMLMedAlternativasElement: {
@@ -3485,6 +3504,8 @@ declare global {
         "ion-toggle": HTMLIonToggleElement;
         "ion-toolbar": HTMLIonToolbarElement;
         "ion-virtual-scroll": HTMLIonVirtualScrollElement;
+        "med-accordion": HTMLMedAccordionElement;
+        "med-agrupador": HTMLMedAgrupadorElement;
         "med-alternativas": HTMLMedAlternativasElement;
         "med-autocomplete": HTMLMedAutocompleteElement;
         "med-banner": HTMLMedBannerElement;
@@ -6133,6 +6154,13 @@ declare namespace LocalJSX {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
+    interface MedAccordion {
+        "color"?: Color;
+        "dsSize"?: 'full';
+    }
+    interface MedAgrupador {
+        "color"?: Color;
+    }
     interface MedAlternativas {
         "alternativaSelecionada": string;
         "alternativas"?: MedAlternativaInterface | any;
@@ -6285,6 +6313,8 @@ declare namespace LocalJSX {
         "ion-toggle": IonToggle;
         "ion-toolbar": IonToolbar;
         "ion-virtual-scroll": IonVirtualScroll;
+        "med-accordion": MedAccordion;
+        "med-agrupador": MedAgrupador;
         "med-alternativas": MedAlternativas;
         "med-autocomplete": MedAutocomplete;
         "med-banner": MedBanner;
@@ -6394,6 +6424,8 @@ declare module "@stencil/core" {
             "ion-toggle": LocalJSX.IonToggle & JSXBase.HTMLAttributes<HTMLIonToggleElement>;
             "ion-toolbar": LocalJSX.IonToolbar & JSXBase.HTMLAttributes<HTMLIonToolbarElement>;
             "ion-virtual-scroll": LocalJSX.IonVirtualScroll & JSXBase.HTMLAttributes<HTMLIonVirtualScrollElement>;
+            "med-accordion": LocalJSX.MedAccordion & JSXBase.HTMLAttributes<HTMLMedAccordionElement>;
+            "med-agrupador": LocalJSX.MedAgrupador & JSXBase.HTMLAttributes<HTMLMedAgrupadorElement>;
             "med-alternativas": LocalJSX.MedAlternativas & JSXBase.HTMLAttributes<HTMLMedAlternativasElement>;
             "med-autocomplete": LocalJSX.MedAutocomplete & JSXBase.HTMLAttributes<HTMLMedAutocompleteElement>;
             "med-banner": LocalJSX.MedBanner & JSXBase.HTMLAttributes<HTMLMedBannerElement>;

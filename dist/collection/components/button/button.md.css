@@ -20,6 +20,7 @@
   --med-color-aula-light-rgb: 115, 229, 207;
   --med-color-aula-lightest: #b0f5e7;
   --med-color-aula-lightest-rgb: 176, 245, 231;
+  --med-color-aula-gradient: linear-gradient(to right, #3ab89f, #13856e);
   --med-color-material-darkest: #552607;
   --med-color-material-darkest-rgb: 85, 38, 7;
   --med-color-material-dark: #854013;
@@ -30,6 +31,7 @@
   --med-color-material-light-rgb: 229, 161, 115;
   --med-color-material-lightest: #f5ccb0;
   --med-color-material-lightest-rgb: 245, 204, 176;
+  --med-color-material-gradient: linear-gradient(to right, #b86d3b, #854013);
   --med-color-questoes-darkest: #073953;
   --med-color-questoes-darkest-rgb: 7, 57, 83;
   --med-color-questoes-dark: #135f85;
@@ -40,6 +42,7 @@
   --med-color-questoes-light-rgb: 115, 191, 229;
   --med-color-questoes-lightest: #b0def5;
   --med-color-questoes-lightest-rgb: 176, 222, 245;
+  --med-color-questoes-gradient: linear-gradient(to right, #3a8eb8, #135f85);
   --med-color-revalida-darkest: #53071e;
   --med-color-revalida-darkest-rgb: 83, 7, 30;
   --med-color-revalida-dark: #851335;
@@ -50,6 +53,7 @@
   --med-color-revalida-light-rgb: 229, 115, 149;
   --med-color-revalida-lightest: #f5b0c5;
   --med-color-revalida-lightest-rgb: 245, 176, 197;
+  --med-color-revalida-gradient: linear-gradient(to right, #b83a60, #851335);
   --med-color-provaschecklist-darkest: #2b0755;
   --med-color-provaschecklist-darkest-rgb: 43, 7, 85;
   --med-color-provaschecklist-dark: #481385;
@@ -60,6 +64,7 @@
   --med-color-provaschecklist-light-rgb: 168, 115, 229;
   --med-color-provaschecklist-lightest: #d1b2f5;
   --med-color-provaschecklist-lightest-rgb: 209, 178, 245;
+  --med-color-provaschecklist-gradient: linear-gradient(to right, #753bb8, #481385);
   --med-color-neutral-dark-prime: #141414;
   --med-color-neutral-dark-prime-rgb: 20, 20, 20;
   --med-color-neutral-dark-40: #292929;
@@ -70,6 +75,7 @@
   --med-color-neutral-dark-20-rgb: 92, 92, 92;
   --med-color-neutral-dark-10: #7a7a7a;
   --med-color-neutral-dark-10-rgb: 122, 122, 122;
+  --med-color-neutral-dark-gradient: linear-gradient(to right, #fafafa, #141414);
   --med-color-neutral-light-prime: #fafafa;
   --med-color-neutral-light-prime-rgb: 250, 250, 250;
   --med-color-neutral-light-40: #ebebeb;
@@ -80,7 +86,7 @@
   --med-color-neutral-light-20-rgb: 194, 194, 194;
   --med-color-neutral-light-10: #adadad;
   --med-color-neutral-light-10-rgb: 173, 173, 173;
-  --med-color-neutral-gradient: linear-gradient(to right, #141414, #fafafa);
+  --med-color-neutral-light-gradient: linear-gradient(to right, #141414, #fafafa);
   --med-color-feedback-warning-darkest: #504606;
   --med-color-feedback-warning-darkest-rgb: 80, 70, 6;
   --med-color-feedback-warning-dark: #857513;
@@ -91,6 +97,7 @@
   --med-color-feedback-warning-light-rgb: 229, 214, 115;
   --med-color-feedback-warning-lightest: #f5ecb0;
   --med-color-feedback-warning-lightest-rgb: 245, 236, 176;
+  --med-color-feedback-warning-gradient: linear-gradient(to right, #b8a73b, #857513);
   --med-color-feedback-error-darkest: #520c07;
   --med-color-feedback-error-darkest-rgb: 82, 12, 7;
   --med-color-feedback-error-dark: #851a13;
@@ -101,6 +108,7 @@
   --med-color-feedback-error-light-rgb: 229, 122, 115;
   --med-color-feedback-error-lightest: #f5b5b0;
   --med-color-feedback-error-lightest-rgb: 245, 181, 176;
+  --med-color-feedback-error-gradient: linear-gradient(to right, #b8433b, #851a13);
   --med-color-feedback-success-darkest: #065010;
   --med-color-feedback-success-darkest-rgb: 6, 80, 16;
   --med-color-feedback-success-dark: #138522;
@@ -111,6 +119,7 @@
   --med-color-feedback-success-light-rgb: 115, 229, 130;
   --med-color-feedback-success-lightest: #b0f5b9;
   --med-color-feedback-success-lightest-rgb: 176, 245, 185;
+  --med-color-feedback-success-gradient: linear-gradient(to right, #3bb84b, #138522);
 }
 
 :root {
@@ -508,11 +517,10 @@ ion-ripple-effect {
     opacity: var(--background-hover-opacity);
   }
 }
-:host(.med-button-solid.ion-color) .button-native {
-  background: var(--ion-color-base);
-  color: var(--ion-color-contrast);
-}
-
+/* :host(.med-button-solid.ion-color) .button-native {
+  background: current-color(base);
+  color: current-color(contrast);
+} */
 :host(.med-button-outline.ion-color) .button-native {
   border-color: var(--ion-color-base);
   background: transparent;
@@ -575,8 +583,6 @@ ion-ripple-effect {
   --background-focused-opacity: .24;
   --background-hover-opacity: .08;
   --box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  --background-hover: red;
-  --background-hover-opacity: 1;
 }
 
 :host(.med-button-solid.ion-activated) {
@@ -671,8 +677,7 @@ ion-ripple-effect {
 :host {
   --border-radius: 31.25em;
   --box-shadow: none;
-  --color: #fafafa;
-  --transition: background var(--transition-timing) ease-out, color var(--transition-timing) ease-out, border-color var(--transition-timing) ease-out, opacity var(--transition-timing) ease-out;
+  --transition: background 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out, opacity 300ms ease-out;
   --padding: 8px 32px;
   --min-height: 48px;
   --min-width: auto;
@@ -680,7 +685,6 @@ ion-ripple-effect {
   --font-weight: 600;
   --text-transform: uppercase;
   --line-height: 100%;
-  --transition-timing: 300ms;
   min-height: var(--min-height);
   min-width: var(--min-width);
   height: auto;
@@ -701,26 +705,47 @@ ion-ripple-effect {
   transition: var(--transition);
 }
 
-:host(.ion-color) {
-  --ion-color-contrast: #fff !important;
-}
-
 :host(.med-button-disabled) {
   opacity: 1;
 }
 
-/* :host(.ion-color.med-button-disabled) {
-  --ion-color-contrast: #fff !important;
-} */
 :host(.med-button-solid) {
-  --background: $med-color-brand-primary-gradient;
-  --background-hover: var(--ion-color-primary-medium, #3aa8b9);
+  --color: var(--med-color-brand-primary-contrast, #fafafa);
+  --background: var(--med-color-brand-primary-gradient, linear-gradient(to right, #3aa8b9, #137585));
+  --background-hover: var(--med-color-brand-primary-medium, #3aa8b9);
   --background-hover-opacity: 1;
-  --background-focused: #3aa8b9;
+  --background-focused: var(--med-color-brand-primary-medium, #3aa8b9);
   --background-focused-opacity: 1;
-  --background-activated: #137585;
+  --background-activated: var(--med-color-brand-primary-dark, #137585);
   --background-activated-opacity: 1;
-  --ripple-color: #137585;
+  --ripple-color: var(--med-color-brand-primary-dark, #137585);
+}
+
+:host(.med-hovered.med-button-solid) {
+  --background: var(--med-color-brand-primary-medium, #3aa8b9);
+}
+
+:host(.med-button-solid.med-button-disabled) {
+  --background: var(--med-color-neutral-light-20, #c2c2c2);
+}
+
+:host(.ion-color.med-button-solid) {
+  --background: var(--med-color-gradient);
+  --background-hover: var(--med-color-medium);
+  --background-focused: var(--med-color-medium);
+  --background-activated: var(--med-color-dark);
+}
+
+:host(.ion-color.med-button-solid) .button-native {
+  background: var(--med-color-gradient);
+}
+
+:host(.ion-color.med-button-solid.med-button-disabled) {
+  --background: var(--med-color-neutral-light-20, #c2c2c2);
+}
+
+:host(.ion-color.med-button-disabled.med-button-solid) .button-native {
+  background: var(--med-color-neutral-light-20, #c2c2c2);
 }
 
 :host([expand=full].med-button-solid) {
@@ -751,25 +776,65 @@ ion-ripple-effect {
   --padding: 0 16px;
 }
 
-:host(.med-button-solid.med-button-disabled) .button-native {
-  background: #c2c2c2;
-}
-
-:host(.ion-color.med-button-solid.ion-activated) {
-  --background-activated: current-color(shade);
-}
-
 :host(.med-button-outline) {
+  --color: var(--med-color-brand-primary-light, #73d6e5);
+  --background: transparent;
   --background-hover: transparent;
-  --background-focused: transparent;
-  --background-activated: transparent;
-  --border-width: 2px;
-  --border-color: #73d6e5;
-  --color: #73d6e5;
-  --ripple-color: transparent;
-  --background-activated-opacity: 0;
-  --background-focused-opacity: 0;
   --background-hover-opacity: 0;
+  --background-focused: transparent;
+  --background-focused-opacity: 0;
+  --background-activated: transparent;
+  --background-activated-opacity: 0;
+  --ripple-color: transparent;
+  --border-width: 2px;
+  --border-color: var(--med-color-brand-primary-light, #73d6e5);
+}
+
+:host(.med-button-outline.med-button-disabled) {
+  --border-color: var(--med-color-neutral-light-20, #c2c2c2);
+  --color: var(--med-color-neutral-light-20, #c2c2c2);
+}
+
+@media (any-hover: hover) {
+  :host(.med-button-outline:hover) {
+    --border-color: var(--med-color-brand-primary-medium, #3aa8b9);
+    --color: var(--med-color-brand-primary-medium, #3aa8b9);
+  }
+}
+:host(.med-button-outline.ion-focused) {
+  --border-color: var(--med-color-brand-primary-medium, #3aa8b9);
+  --color: var(--med-color-brand-primary-medium, #3aa8b9);
+}
+
+:host(.med-button-outline.ion-activated) {
+  --border-color: var(--med-color-brand-primary-dark, #137585);
+  --color: var(--med-color-brand-primary-dark, #137585);
+}
+
+:host(.ion-color.med-button-outline) {
+  --border-color: var(--med-color-light);
+  --color: var(--med-color-light);
+}
+
+@media (any-hover: hover) {
+  :host(.ion-color.med-button-outline:hover) {
+    --border-color: var(--med-color-medium);
+    --color: var(--med-color-medium);
+  }
+}
+:host(.ion-color.med-button-outline.ion-focused) {
+  --border-color: var(--med-color-medium);
+  --color: var(--med-color-medium);
+}
+
+:host(.ion-color.med-button-outline.ion-activated) {
+  --border-color: var(--med-color-dark);
+  --color: var(--med-color-dark);
+}
+
+:host(.ion-color.med-button-outline.med-button-disabled) {
+  --border-color: var(--med-color-neutral-light-20, #c2c2c2);
+  --color: var(--med-color-neutral-light-20, #c2c2c2);
 }
 
 :host([ds-size=sm].med-button-outline) {
@@ -788,46 +853,41 @@ ion-ripple-effect {
   --padding: 0 16px;
 }
 
-@media (any-hover: hover) {
-  :host(.med-button-outline:hover) {
-    --border-color: #3aa8b9;
-    --color: #3aa8b9;
-  }
-}
-:host(.med-button-outline.med-hovered) {
-  --border-color: #3aa8b9;
-  --color: #3aa8b9;
-}
-
-:host(.med-button-outline.ion-activated) {
-  --border-color: #137585;
-  --color: #137585;
-}
-
-:host(.med-button-outline.ion-focused) {
-  --border-color: #3aa8b9;
-  --color: #3aa8b9;
-}
-
-:host(.med-button-outline.med-button-disabled) {
-  --border-color: #adadad;
-  --color: #adadad;
-}
-
-:host(.ion-color.med-button-outline.med-button-disabled) {
-  --ion-color-base: #adadad !important;
-}
-
 :host(.med-button-clear) {
-  --background-hover: #3aa8b9;
+  --color: var(--med-color-neutral-light-prime, #fafafa);
+  --background: transparent;
+  --background-hover: var(--med-color-brand-primary-medium, #3aa8b9);
   --background-hover-opacity: 0.16;
-  --background-focused: #3aa8b9;
+  --background-focused: var(--med-color-brand-primary-medium, #3aa8b9);
   --background-focused-opacity: 0.16;
-  --ripple-color: rgba(58, 168, 185, 0.16);
+  --background-activated: transparent;
+  --background-activated-opacity: 0;
+  --ripple-color: rgba(var(--med-color-brand-primary-medium-rgb, 58, 168, 185), 0.16);
   --border-radius: 4px;
   --padding: 8px;
-  --color: #fafafa;
   --min-height: 32px;
+}
+
+:host(.med-button-clear.med-button-disabled) {
+  --color: var(--med-color-neutral-light-10, #adadad);
+}
+
+@media (any-hover: hover) {
+  :host(.med-button-clear:hover) {
+    --color: var(--med-color-neutral-light-prime, #fafafa);
+  }
+}
+:host(.med-button-clear.ion-focused) {
+  --color: var(--med-color-neutral-light-prime, #fafafa);
+}
+
+:host(.med-button-clear.ion-activated) {
+  --color: var(--med-color-neutral-light-prime, #fafafa);
+}
+
+:host(.ion-color.med-button-clear) {
+  --color: var(--med-color-neutral-light-prime, #fafafa);
+  --background-hover: var(--med-color-medium);
 }
 
 :host([expand=full].med-button-clear) {
@@ -856,31 +916,24 @@ ion-ripple-effect {
   --padding: 0 16px;
 }
 
-:host(.med-button-clear.med-button-disabled) {
-  --color: #adadad;
-  --ion-color-base: #adadad !important;
-}
-
-:host(.ion.med-button-clear.med-button-disabled) {
-  --ion-color-base: #adadad !important;
+:host(.button-has-icon-only) {
+  --color: var(--med-color-neutral-light-prime, #fafafa);
+  --background: transparent;
+  --background-hover: rgba(var(--med-color-neutral-light-10-rgb, 173, 173, 173), 0.08);
+  --background-hover-opacity: 1;
+  --background-focused: transparent;
+  --background-focused-opacity: 0;
+  --background-activated: transparent;
+  --background-activated-opacity: 0;
+  --ripple-color: rgba(var(--med-color-neutral-light-10-rgb, 173, 173, 173), 0.16);
+  --border-radius: 50%;
+  --padding: 0;
+  --min-height: 32px;
+  --min-width: 32px;
 }
 
 :host(.button-has-icon-only) {
-  --border-radius: 50%;
-  --background-hover: #adadad;
-  --background-hover-opacity: 0.08;
-  --background-focused: #adadad;
-  --background-focused-opacity: 0.08;
-  --ripple-color: rgba(173, 173, 173, 0.08);
-  --padding: 0;
-  --color: #fafafa;
-  --min-height: 32px;
-  --min-width: 32px;
   font-size: 32px;
-}
-
-:host(.ion-color.button-has-icon-only) ::slotted(ion-icon[slot=icon-only]) {
-  color: var(--ion-color-base);
 }
 
 ::slotted(ion-icon) {
@@ -888,12 +941,15 @@ ion-ripple-effect {
 }
 
 ::slotted(ion-icon[slot=icon-only]) {
-  color: #fafafa;
   font-size: 1em;
 }
 
-:host(.button-has-icon-only.med-button-disabled) ::slotted(ion-icon[slot=icon-only]) {
+:host(.button-has-icon-only.med-button-disabled) {
   opacity: 0.32;
+}
+
+:host(.ion-color.button-has-icon-only) {
+  --background-hover: rgba(var(--med-color-neutral-light-10-rgb, 173, 173, 173), 0.08);
 }
 
 :host([ds-size=xs].button-has-icon-only) {
@@ -910,106 +966,12 @@ ion-ripple-effect {
   font-size: 24px;
 }
 
-/* :host([ds-size="xs"].button-has-icon-only) {
-  --min-height: 24px;
-  --min-width: 24px;
-  --padding: 0;
-  font-size: 16px;
-}
-
-:host([ds-size="sm"].button-has-icon-only) {
-  --min-height: 32px;
-  --min-width: 32px;
-  --padding: 0;
-  font-size: 24px;
-}
-
-:host([ds-size="md"].button-has-icon-only) {
-  --min-height: 40px;
-  --min-width: 40px;
-  --padding: 0;
-  font-size: 32px;
-}
-
-:host([ds-size="lg"].button-has-icon-only) {
-  --min-height: 48px;
-  --min-width: 48px;
-  --padding: 0;
-  font-size: 32px;
-} */
-/* :host-context(.plt-desktop):host(.button-has-icon-only) {
-  --padding: 4px;
-  --min-height: 40px;
-  --min-width: 40px;
-
-  --background-hover: #adadad;
-  --background-hover-opacity: 0.08;
-  --border-radius: 50%;
-  --ripple-color: rgba(173, 173, 173, 0.08);
-} */
-/* :host-context(.plt-desktop) :host(.button-has-icon-only.ion-activated) ::slotted(ion-icon[slot="icon-only"]) {
-  opacity: 1;
-} */
-/* :host-context(.plt-desktop.light-mode):host(.button-has-icon-only) {
-  --background-hover: #7a7a7a;
-  --background-hover-opacity: 0.08;
-  --border-radius: 50%;
-  --ripple-color: rgba(122, 122, 122, 0.08);
-} */
-/* :host-context(.plt-desktop):host([ds-size="xs"].button-has-icon-only) {
-  --min-height: 24px;
-  --min-width: 24px;
-  font-size: 16px;
-} */
-/* :host-context(.plt-desktop):host([ds-size="sm"].button-has-icon-only) {
-  --min-height: 32px;
-  --min-width: 32px;
-  font-size: 24px;
-} */
-/* :host-context(.plt-desktop):host([ds-size="md"].button-has-icon-only) {
-  --min-height: 40px;
-  --min-width: 40px;
-  font-size: 32px;
-} */
-/* :host-context(.plt-desktop):host([ds-size="lg"].button-has-icon-only) {
-  --padding: 8px;
-  --min-height: 48px;
-  --min-width: 48px;
-  font-size: 32px;
-} */
 :host(.in-med-navbar.button-has-icon-only) {
   --min-height: 24px;
   --min-width: 24px;
   font-size: 24px;
 }
 
-/* :host-context(.plt-desktop):host(.in-med-navbar.button-has-icon-only) {
-  --min-height: 32px;
-  --min-width: 32px;
-  font-size: 24px;
-} */
-/* :host-context(.light-mode):host(.in-med-navbar.button-has-icon-only) {
-  ::slotted(ion-icon[slot="icon-only"]) {
-    color: $med-color-neutral-dark-prime;
-  }
-} */
-/* :host-context(.med-navbar[ds-name="secondary"]):host(.in-med-navbar.button-has-icon-only) {
-  ::slotted(ion-icon[slot="icon-only"]) {
-    color: $med-color-neutral-dark-prime;
-  }
-} */
-/* :host-context(.dark-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="dark"]):host(.in-med-navbar.button-has-icon-only),
-:host-context(.dark-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="dark"]):host(.in-med-navbar.button-has-icon-only) {
-  ::slotted(ion-icon[slot="icon-only"]) {
-    color: $med-color-neutral-dark-prime;
-  }
-} */
-/* :host-context(.light-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="light"]):host(.in-med-navbar.button-has-icon-only),
-:host-context(.light-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="light"]):host(.in-med-navbar.button-has-icon-only) {
-  ::slotted(ion-icon[slot="icon-only"]) {
-    color: $med-color-neutral-light-prime;
-  }
-} */
 :host(.in-med-toolbar.button-has-icon-only) {
   --min-height: 32px;
   --min-width: 32px;
@@ -1023,23 +985,20 @@ ion-ripple-effect {
   margin-right: 24px;
 }
 
-/* :host-context(.plt-desktop):host(.in-med-toolbar.button-has-icon-only) {
-  --min-height: 32px;
-  --min-width: 32px;
-  font-size: 24px;
-} */
 :host(.button-icon-label) {
+  --color: var(--med-color-neutral-light-prime, #fafafa);
+  --background: transparent;
+  --background-hover: transparent;
+  --background-hover-opacity: 0;
+  --background-focused: transparent;
+  --background-focused-opacity: 0;
+  --background-activated: transparent;
+  --background-activated-opacity: 0;
+  --ripple-color: transparent;
   --padding: 0;
-  --color: #fafafa;
-  --font-size: 14px;
   --font-weight: 400;
   --text-transform: normal;
-  --line-height: 100%;
-  --background-hover: transparent;
-  --background-hover-opacity: transparent;
-  --background-focused: transparent;
-  --background-focused-opacity: transparent;
-  --ripple-color: transparent;
+  --min-height: 24px;
 }
 
 ::slotted(ion-icon[slot=start]) {
@@ -1054,32 +1013,14 @@ ion-ripple-effect {
   font-size: 24px;
 }
 
-/* :host-context(.light-mode):host(.button-icon-label) {
-  --color: $med-color-neutral-dark-10;
-} */
-:host(.button-icon-label.ion-activated) {
-  opacity: 0.5;
-}
-
 :host(.button-icon-label.med-button-disabled) {
   opacity: 0.32;
 }
 
-/* :host-context(.light-mode):host(.in-med-navbar.button-icon-label) {
-  color: $med-color-neutral-dark-prime;
-} */
-/* :host-context(.med-navbar[ds-name="secondary"]):host(.in-med-navbar.button-icon-label) {
-  color: $med-color-neutral-dark-prime;
-} */
-/* :host-context(.dark-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="dark"]):host(.in-med-navbar.button-icon-label),
-:host-context(.dark-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="dark"]):host(.in-med-navbar.button-icon-label) {
-  color: $med-color-neutral-dark-prime;
-} */
-/* :host-context(.light-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="light"]):host(.in-med-navbar.button-icon-label),
-:host-context(.light-mode):host-context(.med-navbar[ds-name="transparent"][ds-theme="light"]):host(.in-med-navbar.button-icon-label) {
-  color: $med-color-neutral-light-prime;
+:host(.button-icon-label.ion-activated) .button-native {
+  opacity: 0.5;
 }
- */
+
 :host(.in-med-toolbar.button-icon-label) {
   color: #adadad;
 }
@@ -1148,45 +1089,4 @@ ion-ripple-effect {
     background: var(--background-hover);
     opacity: var(--background-hover-opacity);
   }
-}
-:host(.med-button-solid.ion-color.ion-focused) .button-native::before {
-  background: var(--ion-color-contrast);
-}
-
-:host(.med-button-outline.ion-color.ion-focused) .button-native::before {
-  background: var(--ion-color-base);
-}
-
-:host(.med-button-clear.ion-color.ion-focused) .button-native::before {
-  background: var(--ion-color-base);
-}
-
-@media (any-hover: hover) {
-  :host(.med-button-solid.ion-color:hover) .button-native::before {
-    background: var(--ion-color-base);
-  }
-
-  :host(.med-button-outline.ion-color:hover) .button-native::before {
-    background: var(--ion-color-base);
-  }
-
-  :host(.med-button-clear.ion-color:hover) .button-native::before {
-    background: var(--ion-color-base);
-  }
-}
-:host(.med-hovered) .button-native::before {
-  background: var(--background-hover);
-  opacity: var(--background-hover-opacity);
-}
-
-:host(.med-hovered.med-button-solid.ion-color) .button-native::before {
-  background: var(--ion-color-base);
-}
-
-:host(.med-hovered.med-button-clear.ion-color) .button-native::before {
-  background: var(--ion-color-base);
-}
-
-:host(.med-hovered.med-button-outline.ion-color) .button-native::before {
-  background: var(--ion-color-base);
 }

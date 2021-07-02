@@ -4617,6 +4617,53 @@
       ]
     },
     {
+      "name": "med-accordion",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "color",
+          "description": ""
+        },
+        {
+          "name": "ds-size",
+          "description": "",
+          "values": [
+            {
+              "name": "full"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-accordion/med-accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-agrupador",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "color",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-agrupador/med-agrupador.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-alternativas",
       "description": {
         "kind": "markdown",
