@@ -1003,10 +1003,6 @@ ion-slides {
   background: var(--scroll-bar-background-active);
 }
 
-.swiper-slide {
-  padding: 16px;
-}
-
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
 .swiper-container-horizontal > .swiper-pagination-bullets {

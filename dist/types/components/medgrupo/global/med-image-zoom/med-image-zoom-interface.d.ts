@@ -1,8 +1,10 @@
-export interface MedImagemZoomInterface {
-  title?: string;
-  link?: string;
+export interface MedImageZoomItemInterface {
+  src?: string;
   legenda?: string;
 }
-export interface MedImagensZoomInterface {
-  imagens: MedImagemZoomInterface[] | any[];
+export interface MedImageZoomInterface {
+  titulo?: string;
+  imagens: MedImageZoomItemInterface[];
+  marcaAguaSuperior?: string;
+  marcaAguaInferior?: string;
 }

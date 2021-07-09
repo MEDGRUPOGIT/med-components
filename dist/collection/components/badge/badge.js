@@ -5,10 +5,14 @@ import { createColorClasses } from '../../utils/theme';
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export class Badge {
+  constructor() {
+    this.invert = false;
+  }
   render() {
     const mode = getIonMode(this);
     return (h(Host, { class: createColorClasses(this.color, {
         [mode]: true,
+        'invert': this.invert,
       }) },
       h("slot", null)));
   }
@@ -56,6 +60,24 @@ export class Badge {
       },
       "attribute": "fill",
       "reflect": false
+    },
+    "invert": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "invert",
+      "reflect": true,
+      "defaultValue": "false"
     },
     "color": {
       "type": "string",

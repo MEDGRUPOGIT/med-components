@@ -287,6 +287,28 @@
   padding: 16px;
   max-width: 992px;
 }
+:host .marcaAguaSuperior {
+  position: absolute;
+  left: 12%;
+  top: 40%;
+  z-index: 1;
+  width: auto;
+  font-size: 2.5em;
+  opacity: 0.01;
+  color: #673AB7;
+  pointer-events: none;
+}
+:host .marcaAguaInferior {
+  position: absolute;
+  left: 5%;
+  top: 60%;
+  z-index: 1;
+  width: auto;
+  font-size: 2.5em;
+  opacity: 0.02;
+  color: red;
+  pointer-events: none;
+}
 :host .button-container {
   position: fixed;
   bottom: 48px;

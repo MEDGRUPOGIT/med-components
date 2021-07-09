@@ -268,6 +268,10 @@
           ]
         },
         {
+          "name": "invert",
+          "description": ""
+        },
+        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -4624,11 +4628,15 @@
       },
       "attributes": [
         {
+          "name": "collapsed",
+          "description": ""
+        },
+        {
           "name": "color",
           "description": ""
         },
         {
-          "name": "ds-size",
+          "name": "size",
           "description": "",
           "values": [
             {
@@ -4869,6 +4877,18 @@
       "attributes": [
         {
           "name": "imagens",
+          "description": ""
+        },
+        {
+          "name": "marca-agua-inferior",
+          "description": ""
+        },
+        {
+          "name": "marca-agua-superior",
+          "description": ""
+        },
+        {
+          "name": "titulo",
           "description": ""
         }
       ],

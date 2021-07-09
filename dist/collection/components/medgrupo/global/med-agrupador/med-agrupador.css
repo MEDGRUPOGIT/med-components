@@ -248,7 +248,7 @@
 }
 
 :host {
-  --color: var(--med-color-brand-primary-medium, #3aa8b9);
+  --color: var(--med-color-brand-3, #14a2b8);
   font-size: 14px;
   font-weight: 500;
   line-height: 100%;
@@ -285,5 +285,5 @@
 }
 
 :host(.ion-color) {
-  --color: var(--med-color-medium);
+  --color: var(--med-color-3);
 }

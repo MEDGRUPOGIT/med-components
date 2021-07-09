@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-07-02T19:38:26",
+  "timestamp": "2021-07-09T13:10:50",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -1525,6 +1525,23 @@
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "invert",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "invert",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
           "required": false
         },
         {
@@ -18780,6 +18797,23 @@
       "usage": {},
       "props": [
         {
+          "name": "collapsed",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "collapsed",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "color",
           "type": "string | undefined",
           "mutable": false,
@@ -18799,10 +18833,10 @@
           "required": false
         },
         {
-          "name": "dsSize",
+          "name": "size",
           "type": "\"full\" | undefined",
           "mutable": false,
-          "attr": "ds-size",
+          "attr": "size",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
@@ -18819,7 +18853,19 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "toggle",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "toggle() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "events": [],
       "listeners": [],
       "styles": [],
@@ -19484,22 +19530,68 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "marcaAguaInferior",
+          "type": "string | undefined",
+          "mutable": true,
+          "attr": "marca-agua-inferior",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "marcaAguaSuperior",
+          "type": "string | undefined",
+          "mutable": true,
+          "attr": "marca-agua-superior",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "titulo",
+          "type": "string | undefined",
+          "mutable": true,
+          "attr": "titulo",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
       "events": [],
-      "listeners": [
-        {
-          "event": "ionSlideDidChange",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "ionSlidesDidLoad",
-          "capture": false,
-          "passive": false
-        }
-      ],
+      "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],

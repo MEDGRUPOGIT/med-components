@@ -6,6 +6,7 @@ import { Color } from '../../interface';
 export declare class Badge implements ComponentInterface {
   dsSize?: 'sm' | 'md' | 'lg';
   fill?: 'outline';
+  invert: boolean;
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

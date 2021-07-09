@@ -9,7 +9,7 @@ export class MedAgrupador {
   }
   render() {
     const { color } = this;
-    return (h(Host, { "from-stencil": true, class: createColorClasses(color, { null: true, 'toggle': this.toggle }), onClick: this.onClick },
+    return (h(Host, { "from-stencil": true, class: createColorClasses(color, { 'toggle': this.toggle }), onClick: this.onClick },
       h("div", { class: "toggle__expandir" }, "Expandir a lista"),
       h("div", { class: "toggle__ocultar" }, "Ocultar a lista"),
       h("ion-icon", { class: "toggle__img", name: "med-arrow-down" })));

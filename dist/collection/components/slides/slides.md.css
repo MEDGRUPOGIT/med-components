@@ -1003,10 +1003,6 @@ ion-slides {
   background: var(--scroll-bar-background-active);
 }
 
-.swiper-slide {
-  padding: 16px;
-}
-
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
 .swiper-container-horizontal > .swiper-pagination-bullets {
@@ -1030,10 +1026,6 @@ ion-slides {
   --progress-bar-background-active: var(--ion-color-primary-shade, #3171e0);
   --scroll-bar-background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
   --scroll-bar-background-active: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
-}
-
-.swiper-slide {
-  padding: 16px;
 }
 
 .swiper-pagination-fraction,

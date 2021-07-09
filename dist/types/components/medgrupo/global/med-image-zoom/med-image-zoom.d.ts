@@ -1,10 +1,10 @@
-import { MedImagensZoomInterface } from './med-image-zoom-interface';
+import { MedImageZoomItemInterface } from './med-image-zoom-interface';
 export declare class MedImageZoom {
-  imagens: MedImagensZoomInterface[] | any;
+  imagens: MedImageZoomItemInterface[] | any;
+  marcaAguaSuperior?: string;
+  marcaAguaInferior?: string;
+  titulo?: string;
   slider: any;
-  title: any;
-  ionSlideDidChangeHandler(): void;
-  ionSlidesDidLoadHandler(): void;
   private sliderOpts;
   zoom(zoomIn: boolean): void;
   dismiss(): void;
