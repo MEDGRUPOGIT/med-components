@@ -248,11 +248,12 @@
 }
 
 :host {
-  --z-index: 1000;
+  --zindex: 1000;
   display: block;
   width: 100vw;
   height: 100vh;
   position: fixed;
+  z-index: var(--zindex);
 }
 :host .wrapper {
   opacity: 0.8;
@@ -266,7 +267,6 @@
   align-items: center;
   flex-direction: column;
   pointer-events: none;
-  z-index: var(--z-index);
 }
 :host .icon {
   width: 48px;
