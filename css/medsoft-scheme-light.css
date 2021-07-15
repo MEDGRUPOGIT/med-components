@@ -20,135 +20,153 @@
   --med-color-neutral-9-rgb: 34, 41, 42;
   --med-color-neutral-10: #0b0e0e;
   --med-color-neutral-10-rgb: 11, 14, 14;
+  --med-color-brand-contrast-1: #000;
+  --med-color-brand-contrast-2: #fff;
   --med-color-brand-1: #b8dbe0;
   --med-color-brand-2: #70b7c2;
   --med-color-brand-3: #3d848f;
   --med-color-brand-4: #2e636b;
   --med-color-brand-5: #1f4247;
+  --med-color-brand-contrast-1-rgb: 0, 0, 0;
+  --med-color-brand-contrast-2-rgb: 255, 255, 255;
   --med-color-brand-1-rgb: 184, 219, 224;
   --med-color-brand-2-rgb: 112, 183, 194;
   --med-color-brand-3-rgb: 61, 132, 143;
   --med-color-brand-4-rgb: 46, 99, 107;
   --med-color-brand-5-rgb: 31, 66, 71;
   --med-color-gradient: var(--med-color-brand-gradient, linear-gradient(to right, #3d848f, #b8dbe0));
+  --med-color-aulas-contrast-1: #000;
+  --med-color-aulas-contrast-2: #fff;
   --med-color-aulas-1: #b8e0d8;
   --med-color-aulas-2: #70c2b1;
   --med-color-aulas-3: #3d8f7e;
   --med-color-aulas-4: #2e6b5f;
   --med-color-aulas-5: #1f473f;
+  --med-color-aulas-contrast-1-rgb: 0, 0, 0;
+  --med-color-aulas-contrast-2-rgb: 255, 255, 255;
   --med-color-aulas-1-rgb: 184, 224, 216;
   --med-color-aulas-2-rgb: 112, 194, 177;
   --med-color-aulas-3-rgb: 61, 143, 126;
   --med-color-aulas-4-rgb: 46, 107, 95;
   --med-color-aulas-5-rgb: 31, 71, 63;
   --med-color-gradient: var(--med-color-aulas-gradient, linear-gradient(to right, #3d8f7e, #b8e0d8));
+  --med-color-material-contrast-1: #000;
+  --med-color-material-contrast-2: #fff;
   --med-color-material-1: #e0c8b8;
   --med-color-material-2: #c29170;
   --med-color-material-3: #8f5e3d;
   --med-color-material-4: #6b462e;
   --med-color-material-5: #472f1f;
+  --med-color-material-contrast-1-rgb: 0, 0, 0;
+  --med-color-material-contrast-2-rgb: 255, 255, 255;
   --med-color-material-1-rgb: 224, 200, 184;
   --med-color-material-2-rgb: 194, 145, 112;
   --med-color-material-3-rgb: 143, 94, 61;
   --med-color-material-4-rgb: 107, 70, 46;
   --med-color-material-5-rgb: 71, 47, 31;
   --med-color-gradient: var(--med-color-material-gradient, linear-gradient(to right, #8f5e3d, #e0c8b8));
+  --med-color-questoes-contrast-1: #000;
+  --med-color-questoes-contrast-2: #fff;
   --med-color-questoes-1: #b8d3e0;
   --med-color-questoes-2: #70a7c2;
   --med-color-questoes-3: #3d748f;
   --med-color-questoes-4: #2e576b;
   --med-color-questoes-5: #1f3a47;
+  --med-color-questoes-contrast-1-rgb: 0, 0, 0;
+  --med-color-questoes-contrast-2-rgb: 255, 255, 255;
   --med-color-questoes-1-rgb: 184, 211, 224;
   --med-color-questoes-2-rgb: 112, 167, 194;
   --med-color-questoes-3-rgb: 61, 116, 143;
   --med-color-questoes-4-rgb: 46, 87, 107;
   --med-color-questoes-5-rgb: 31, 58, 71;
   --med-color-gradient: var(--med-color-questoes-gradient, linear-gradient(to right, #3d748f, #b8d3e0));
+  --med-color-revalida-contrast-1: #000;
+  --med-color-revalida-contrast-2: #fff;
   --med-color-revalida-1: #e0b8c4;
   --med-color-revalida-2: #c27089;
   --med-color-revalida-3: #8f3d56;
   --med-color-revalida-4: #6b2e40;
   --med-color-revalida-5: #471f2b;
+  --med-color-revalida-contrast-1-rgb: 0, 0, 0;
+  --med-color-revalida-contrast-2-rgb: 255, 255, 255;
   --med-color-revalida-1-rgb: 224, 184, 196;
   --med-color-revalida-2-rgb: 194, 112, 137;
   --med-color-revalida-3-rgb: 143, 61, 86;
   --med-color-revalida-4-rgb: 107, 46, 64;
   --med-color-revalida-5-rgb: 71, 31, 43;
   --med-color-gradient: var(--med-color-revalida-gradient, linear-gradient(to right, #8f3d56, #e0b8c4));
+  --med-color-provas-contrast-1: #000;
+  --med-color-provas-contrast-2: #fff;
   --med-color-provas-1: #cbb8e0;
   --med-color-provas-2: #9670c2;
   --med-color-provas-3: #633d8f;
   --med-color-provas-4: #4a2e6b;
   --med-color-provas-5: #321f47;
+  --med-color-provas-contrast-1-rgb: 0, 0, 0;
+  --med-color-provas-contrast-2-rgb: 255, 255, 255;
   --med-color-provas-1-rgb: 203, 184, 224;
   --med-color-provas-2-rgb: 150, 112, 194;
   --med-color-provas-3-rgb: 99, 61, 143;
   --med-color-provas-4-rgb: 74, 46, 107;
   --med-color-provas-5-rgb: 50, 31, 71;
   --med-color-gradient: var(--med-color-provas-gradient, linear-gradient(to right, #633d8f, #cbb8e0));
+  --med-color-success-contrast-1: #fff;
+  --med-color-success-contrast-2: #fff;
   --med-color-success-1: #0f8a20;
   --med-color-success-2: #0f8a20;
   --med-color-success-3: #0f8a20;
   --med-color-success-4: #0f8a20;
   --med-color-success-5: #0f8a20;
+  --med-color-success-contrast-1-rgb: 255, 255, 255;
+  --med-color-success-contrast-2-rgb: 255, 255, 255;
   --med-color-success-1-rgb: 15, 138, 32;
   --med-color-success-2-rgb: 15, 138, 32;
   --med-color-success-3-rgb: 15, 138, 32;
   --med-color-success-4-rgb: 15, 138, 32;
   --med-color-success-5-rgb: 15, 138, 32;
   --med-color-gradient: var(--med-color-success-gradient, linear-gradient(to right, #394446, #677b7e));
+  --med-color-warning-contrast-1: #000;
+  --med-color-warning-contrast-2: #fff;
   --med-color-warning-1: #cf9b17;
   --med-color-warning-2: #cf9b17;
   --med-color-warning-3: #cf9b17;
   --med-color-warning-4: #cf9b17;
   --med-color-warning-5: #cf9b17;
+  --med-color-warning-contrast-1-rgb: 0, 0, 0;
+  --med-color-warning-contrast-2-rgb: 255, 255, 255;
   --med-color-warning-1-rgb: 207, 155, 23;
   --med-color-warning-2-rgb: 207, 155, 23;
   --med-color-warning-3-rgb: 207, 155, 23;
   --med-color-warning-4-rgb: 207, 155, 23;
   --med-color-warning-5-rgb: 207, 155, 23;
   --med-color-gradient: var(--med-color-warning-gradient, linear-gradient(to right, #394446, #677b7e));
+  --med-color-caution-contrast-1: #000;
+  --med-color-caution-contrast-2: #fff;
   --med-color-caution-1: #b81f14;
   --med-color-caution-2: #b81f14;
   --med-color-caution-3: #b81f14;
   --med-color-caution-4: #b81f14;
   --med-color-caution-5: #b81f14;
+  --med-color-caution-contrast-1-rgb: 0, 0, 0;
+  --med-color-caution-contrast-2-rgb: 255, 255, 255;
   --med-color-caution-1-rgb: 184, 31, 20;
   --med-color-caution-2-rgb: 184, 31, 20;
   --med-color-caution-3-rgb: 184, 31, 20;
   --med-color-caution-4-rgb: 184, 31, 20;
   --med-color-caution-5-rgb: 184, 31, 20;
   --med-color-gradient: var(--med-color-caution-gradient, linear-gradient(to right, #b9c4c6, #f1f3f4));
-  --med-color-light-1: #0b0e0e;
-  --med-color-light-2: #22292a;
-  --med-color-light-3: #394446;
-  --med-color-light-4: #506062;
-  --med-color-light-5: #677b7e;
-  --med-color-light-1-rgb: 11, 14, 14;
-  --med-color-light-2-rgb: 34, 41, 42;
-  --med-color-light-3-rgb: 57, 68, 70;
-  --med-color-light-4-rgb: 80, 96, 98;
-  --med-color-light-5-rgb: 103, 123, 126;
-  --med-color-gradient: var(--med-color-light-gradient, linear-gradient(to right, #394446, #677b7e));
-  --med-color-dark-1: #819598;
-  --med-color-dark-2: #9dacaf;
-  --med-color-dark-3: #b9c4c6;
-  --med-color-dark-4: #d5dcdd;
-  --med-color-dark-5: #f1f3f4;
-  --med-color-dark-1-rgb: 129, 149, 152;
-  --med-color-dark-2-rgb: 157, 172, 175;
-  --med-color-dark-3-rgb: 185, 196, 198;
-  --med-color-dark-4-rgb: 213, 220, 221;
-  --med-color-dark-5-rgb: 241, 243, 244;
-  --med-color-gradient: var(--med-color-dark-gradient, linear-gradient(to right, #b9c4c6, #f1f3f4));
 }
 .color-scheme-light .ion-color-brand,
 [color-scheme=light] .ion-color-brand {
+  --med-color-contrast-1: var(--med-color-brand-contrast-1, #000);
+  --med-color-contrast-2: var(--med-color-brand-contrast-2, #fff);
   --med-color-1: var(--med-color-brand-1, #b8dbe0);
   --med-color-2: var(--med-color-brand-2, #70b7c2);
   --med-color-3: var(--med-color-brand-3, #3d848f);
   --med-color-4: var(--med-color-brand-4, #2e636b);
   --med-color-5: var(--med-color-brand-5, #1f4247);
+  --med-color-contrast-1-rgb: var(--med-color-brand-contrast-1-rgb, 0, 0, 0);
+  --med-color-contrast-2-rgb: var(--med-color-brand-contrast-2-rgb, 255, 255, 255);
   --med-color-1-rgb: var(--med-color-brand-1-rgb, 184, 219, 224);
   --med-color-2-rgb: var(--med-color-brand-2-rgb, 112, 183, 194);
   --med-color-3-rgb: var(--med-color-brand-3-rgb, 61, 132, 143);
@@ -158,11 +176,15 @@
 }
 .color-scheme-light .ion-color-aulas,
 [color-scheme=light] .ion-color-aulas {
+  --med-color-contrast-1: var(--med-color-aulas-contrast-1, #000);
+  --med-color-contrast-2: var(--med-color-aulas-contrast-2, #fff);
   --med-color-1: var(--med-color-aulas-1, #b8e0d8);
   --med-color-2: var(--med-color-aulas-2, #70c2b1);
   --med-color-3: var(--med-color-aulas-3, #3d8f7e);
   --med-color-4: var(--med-color-aulas-4, #2e6b5f);
   --med-color-5: var(--med-color-aulas-5, #1f473f);
+  --med-color-contrast-1-rgb: var(--med-color-aulas-contrast-1-rgb, 0, 0, 0);
+  --med-color-contrast-2-rgb: var(--med-color-aulas-contrast-2-rgb, 255, 255, 255);
   --med-color-1-rgb: var(--med-color-aulas-1-rgb, 184, 224, 216);
   --med-color-2-rgb: var(--med-color-aulas-2-rgb, 112, 194, 177);
   --med-color-3-rgb: var(--med-color-aulas-3-rgb, 61, 143, 126);
@@ -172,11 +194,15 @@
 }
 .color-scheme-light .ion-color-material,
 [color-scheme=light] .ion-color-material {
+  --med-color-contrast-1: var(--med-color-material-contrast-1, #000);
+  --med-color-contrast-2: var(--med-color-material-contrast-2, #fff);
   --med-color-1: var(--med-color-material-1, #e0c8b8);
   --med-color-2: var(--med-color-material-2, #c29170);
   --med-color-3: var(--med-color-material-3, #8f5e3d);
   --med-color-4: var(--med-color-material-4, #6b462e);
   --med-color-5: var(--med-color-material-5, #472f1f);
+  --med-color-contrast-1-rgb: var(--med-color-material-contrast-1-rgb, 0, 0, 0);
+  --med-color-contrast-2-rgb: var(--med-color-material-contrast-2-rgb, 255, 255, 255);
   --med-color-1-rgb: var(--med-color-material-1-rgb, 224, 200, 184);
   --med-color-2-rgb: var(--med-color-material-2-rgb, 194, 145, 112);
   --med-color-3-rgb: var(--med-color-material-3-rgb, 143, 94, 61);
@@ -186,11 +212,15 @@
 }
 .color-scheme-light .ion-color-questoes,
 [color-scheme=light] .ion-color-questoes {
+  --med-color-contrast-1: var(--med-color-questoes-contrast-1, #000);
+  --med-color-contrast-2: var(--med-color-questoes-contrast-2, #fff);
   --med-color-1: var(--med-color-questoes-1, #b8d3e0);
   --med-color-2: var(--med-color-questoes-2, #70a7c2);
   --med-color-3: var(--med-color-questoes-3, #3d748f);
   --med-color-4: var(--med-color-questoes-4, #2e576b);
   --med-color-5: var(--med-color-questoes-5, #1f3a47);
+  --med-color-contrast-1-rgb: var(--med-color-questoes-contrast-1-rgb, 0, 0, 0);
+  --med-color-contrast-2-rgb: var(--med-color-questoes-contrast-2-rgb, 255, 255, 255);
   --med-color-1-rgb: var(--med-color-questoes-1-rgb, 184, 211, 224);
   --med-color-2-rgb: var(--med-color-questoes-2-rgb, 112, 167, 194);
   --med-color-3-rgb: var(--med-color-questoes-3-rgb, 61, 116, 143);
@@ -200,11 +230,15 @@
 }
 .color-scheme-light .ion-color-revalida,
 [color-scheme=light] .ion-color-revalida {
+  --med-color-contrast-1: var(--med-color-revalida-contrast-1, #000);
+  --med-color-contrast-2: var(--med-color-revalida-contrast-2, #fff);
   --med-color-1: var(--med-color-revalida-1, #e0b8c4);
   --med-color-2: var(--med-color-revalida-2, #c27089);
   --med-color-3: var(--med-color-revalida-3, #8f3d56);
   --med-color-4: var(--med-color-revalida-4, #6b2e40);
   --med-color-5: var(--med-color-revalida-5, #471f2b);
+  --med-color-contrast-1-rgb: var(--med-color-revalida-contrast-1-rgb, 0, 0, 0);
+  --med-color-contrast-2-rgb: var(--med-color-revalida-contrast-2-rgb, 255, 255, 255);
   --med-color-1-rgb: var(--med-color-revalida-1-rgb, 224, 184, 196);
   --med-color-2-rgb: var(--med-color-revalida-2-rgb, 194, 112, 137);
   --med-color-3-rgb: var(--med-color-revalida-3-rgb, 143, 61, 86);
@@ -214,11 +248,15 @@
 }
 .color-scheme-light .ion-color-provas,
 [color-scheme=light] .ion-color-provas {
+  --med-color-contrast-1: var(--med-color-provas-contrast-1, #000);
+  --med-color-contrast-2: var(--med-color-provas-contrast-2, #fff);
   --med-color-1: var(--med-color-provas-1, #cbb8e0);
   --med-color-2: var(--med-color-provas-2, #9670c2);
   --med-color-3: var(--med-color-provas-3, #633d8f);
   --med-color-4: var(--med-color-provas-4, #4a2e6b);
   --med-color-5: var(--med-color-provas-5, #321f47);
+  --med-color-contrast-1-rgb: var(--med-color-provas-contrast-1-rgb, 0, 0, 0);
+  --med-color-contrast-2-rgb: var(--med-color-provas-contrast-2-rgb, 255, 255, 255);
   --med-color-1-rgb: var(--med-color-provas-1-rgb, 203, 184, 224);
   --med-color-2-rgb: var(--med-color-provas-2-rgb, 150, 112, 194);
   --med-color-3-rgb: var(--med-color-provas-3-rgb, 99, 61, 143);
@@ -228,11 +266,15 @@
 }
 .color-scheme-light .ion-color-success,
 [color-scheme=light] .ion-color-success {
+  --med-color-contrast-1: var(--med-color-success-contrast-1, #fff);
+  --med-color-contrast-2: var(--med-color-success-contrast-2, #fff);
   --med-color-1: var(--med-color-success-1, #0f8a20);
   --med-color-2: var(--med-color-success-2, #0f8a20);
   --med-color-3: var(--med-color-success-3, #0f8a20);
   --med-color-4: var(--med-color-success-4, #0f8a20);
   --med-color-5: var(--med-color-success-5, #0f8a20);
+  --med-color-contrast-1-rgb: var(--med-color-success-contrast-1-rgb, 255, 255, 255);
+  --med-color-contrast-2-rgb: var(--med-color-success-contrast-2-rgb, 255, 255, 255);
   --med-color-1-rgb: var(--med-color-success-1-rgb, 15, 138, 32);
   --med-color-2-rgb: var(--med-color-success-2-rgb, 15, 138, 32);
   --med-color-3-rgb: var(--med-color-success-3-rgb, 15, 138, 32);
@@ -242,11 +284,15 @@
 }
 .color-scheme-light .ion-color-warning,
 [color-scheme=light] .ion-color-warning {
+  --med-color-contrast-1: var(--med-color-warning-contrast-1, #000);
+  --med-color-contrast-2: var(--med-color-warning-contrast-2, #fff);
   --med-color-1: var(--med-color-warning-1, #cf9b17);
   --med-color-2: var(--med-color-warning-2, #cf9b17);
   --med-color-3: var(--med-color-warning-3, #cf9b17);
   --med-color-4: var(--med-color-warning-4, #cf9b17);
   --med-color-5: var(--med-color-warning-5, #cf9b17);
+  --med-color-contrast-1-rgb: var(--med-color-warning-contrast-1-rgb, 0, 0, 0);
+  --med-color-contrast-2-rgb: var(--med-color-warning-contrast-2-rgb, 255, 255, 255);
   --med-color-1-rgb: var(--med-color-warning-1-rgb, 207, 155, 23);
   --med-color-2-rgb: var(--med-color-warning-2-rgb, 207, 155, 23);
   --med-color-3-rgb: var(--med-color-warning-3-rgb, 207, 155, 23);
@@ -256,11 +302,15 @@
 }
 .color-scheme-light .ion-color-caution,
 [color-scheme=light] .ion-color-caution {
+  --med-color-contrast-1: var(--med-color-caution-contrast-1, #000);
+  --med-color-contrast-2: var(--med-color-caution-contrast-2, #fff);
   --med-color-1: var(--med-color-caution-1, #b81f14);
   --med-color-2: var(--med-color-caution-2, #b81f14);
   --med-color-3: var(--med-color-caution-3, #b81f14);
   --med-color-4: var(--med-color-caution-4, #b81f14);
   --med-color-5: var(--med-color-caution-5, #b81f14);
+  --med-color-contrast-1-rgb: var(--med-color-caution-contrast-1-rgb, 0, 0, 0);
+  --med-color-contrast-2-rgb: var(--med-color-caution-contrast-2-rgb, 255, 255, 255);
   --med-color-1-rgb: var(--med-color-caution-1-rgb, 184, 31, 20);
   --med-color-2-rgb: var(--med-color-caution-2-rgb, 184, 31, 20);
   --med-color-3-rgb: var(--med-color-caution-3-rgb, 184, 31, 20);
@@ -268,33 +318,75 @@
   --med-color-5-rgb: var(--med-color-caution-5-rgb, 184, 31, 20);
   --med-color-gradient: var(--med-color-caution-gradient, linear-gradient(to right, #b9c4c6, #f1f3f4));
 }
-.color-scheme-light .ion-color-light,
-[color-scheme=light] .ion-color-light {
-  --med-color-1: var(--med-color-light-1, #0b0e0e);
-  --med-color-2: var(--med-color-light-2, #22292a);
-  --med-color-3: var(--med-color-light-3, #394446);
-  --med-color-4: var(--med-color-light-4, #506062);
-  --med-color-5: var(--med-color-light-5, #677b7e);
-  --med-color-1-rgb: var(--med-color-light-1-rgb, 11, 14, 14);
-  --med-color-2-rgb: var(--med-color-light-2-rgb, 34, 41, 42);
-  --med-color-3-rgb: var(--med-color-light-3-rgb, 57, 68, 70);
-  --med-color-4-rgb: var(--med-color-light-4-rgb, 80, 96, 98);
-  --med-color-5-rgb: var(--med-color-light-5-rgb, 103, 123, 126);
-  --med-color-gradient: var(--med-color-light-gradient, linear-gradient(to right, #394446, #677b7e));
+.color-scheme-light .med-neutral-1,
+[color-scheme=light] .med-neutral-1 {
+  --med-neutral: var(--med-neutral-1, #f1f3f4) !important;
+  --med-neutral-rgb: var(--med-neutral-1-rgb, 241, 243, 244) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
-.color-scheme-light .ion-color-dark,
-[color-scheme=light] .ion-color-dark {
-  --med-color-1: var(--med-color-dark-1, #819598);
-  --med-color-2: var(--med-color-dark-2, #9dacaf);
-  --med-color-3: var(--med-color-dark-3, #b9c4c6);
-  --med-color-4: var(--med-color-dark-4, #d5dcdd);
-  --med-color-5: var(--med-color-dark-5, #f1f3f4);
-  --med-color-1-rgb: var(--med-color-dark-1-rgb, 129, 149, 152);
-  --med-color-2-rgb: var(--med-color-dark-2-rgb, 157, 172, 175);
-  --med-color-3-rgb: var(--med-color-dark-3-rgb, 185, 196, 198);
-  --med-color-4-rgb: var(--med-color-dark-4-rgb, 213, 220, 221);
-  --med-color-5-rgb: var(--med-color-dark-5-rgb, 241, 243, 244);
-  --med-color-gradient: var(--med-color-dark-gradient, linear-gradient(to right, #b9c4c6, #f1f3f4));
+.color-scheme-light .med-neutral-2,
+[color-scheme=light] .med-neutral-2 {
+  --med-neutral: var(--med-neutral-2, #d5dcdd) !important;
+  --med-neutral-rgb: var(--med-neutral-2-rgb, 213, 220, 221) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
+}
+.color-scheme-light .med-neutral-3,
+[color-scheme=light] .med-neutral-3 {
+  --med-neutral: var(--med-neutral-3, #b9c4c6) !important;
+  --med-neutral-rgb: var(--med-neutral-3-rgb, 185, 196, 198) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
+}
+.color-scheme-light .med-neutral-4,
+[color-scheme=light] .med-neutral-4 {
+  --med-neutral: var(--med-neutral-4, #9dacaf) !important;
+  --med-neutral-rgb: var(--med-neutral-4-rgb, 157, 172, 175) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
+}
+.color-scheme-light .med-neutral-5,
+[color-scheme=light] .med-neutral-5 {
+  --med-neutral: var(--med-neutral-5, #819598) !important;
+  --med-neutral-rgb: var(--med-neutral-5-rgb, 129, 149, 152) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
+}
+.color-scheme-light .med-neutral-6,
+[color-scheme=light] .med-neutral-6 {
+  --med-neutral: var(--med-neutral-6, #677b7e) !important;
+  --med-neutral-rgb: var(--med-neutral-6-rgb, 103, 123, 126) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
+}
+.color-scheme-light .med-neutral-7,
+[color-scheme=light] .med-neutral-7 {
+  --med-neutral: var(--med-neutral-7, #506062) !important;
+  --med-neutral-rgb: var(--med-neutral-7-rgb, 80, 96, 98) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
+}
+.color-scheme-light .med-neutral-8,
+[color-scheme=light] .med-neutral-8 {
+  --med-neutral: var(--med-neutral-8, #394446) !important;
+  --med-neutral-rgb: var(--med-neutral-8-rgb, 57, 68, 70) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
+}
+.color-scheme-light .med-neutral-9,
+[color-scheme=light] .med-neutral-9 {
+  --med-neutral: var(--med-neutral-9, #22292a) !important;
+  --med-neutral-rgb: var(--med-neutral-9-rgb, 34, 41, 42) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
+}
+.color-scheme-light .med-neutral-10,
+[color-scheme=light] .med-neutral-10 {
+  --med-neutral: var(--med-neutral-10, #0b0e0e) !important;
+  --med-neutral-rgb: var(--med-neutral-10-rgb, 11, 14, 14) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 
 /*# sourceMappingURL=medsoft-scheme-light.css.map */

@@ -253,19 +253,19 @@
   height: 100%;
   background-color: #141414;
 }
-:host .header {
+:host .zoom-header {
   position: fixed;
   width: 100%;
   z-index: 1;
   top: 0;
 }
-:host .header__title {
+:host .zoom-header__title {
   color: #fafafa;
   font-size: 16px;
   line-height: 100%;
   font-weight: 600;
 }
-:host .content {
+:host .zoom-content {
   --background: #141414;
   height: 100%;
   overflow-y: hidden;
@@ -276,47 +276,72 @@
   justify-content: center;
   height: 100%;
 }
-:host .swiper-zoom-container div {
-  flex-direction: column;
-  margin: 0 16px;
+:host ion-slides .swiper-pagination-bullet-active {
+  border: 2px solid #fff;
 }
-:host .legenda {
+:host .swiper-zoom-container {
+  flex-direction: column;
+}
+:host .zoom-imagem {
+  width: auto;
+  max-width: calc(100% - 100px);
+  height: auto;
+  max-height: calc(100% - 100px);
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+:host .zoom-legenda-container {
+  padding: 16px 52px;
+  text-align: justify;
+}
+@media (max-width: 992px) {
+  :host .zoom-legenda-container {
+    padding: 16px 52px;
+    padding-right: 70px;
+    text-align: justify;
+  }
+}
+:host .zoom-legenda {
+  display: inline-block;
   color: #fff;
   font-size: 14px;
-  margin: 0;
-  padding: 16px;
   max-width: 992px;
+  overflow-y: auto;
+  max-height: 60px;
 }
-:host .marcaAguaSuperior {
+:host .marca-agua-superior {
   position: absolute;
-  left: 12%;
-  top: 40%;
+  top: 29%;
   z-index: 1;
-  width: auto;
+  width: 100%;
+  text-align: center;
   font-size: 2.5em;
   opacity: 0.01;
-  color: #673AB7;
+  color: #673ab7;
   pointer-events: none;
 }
-:host .marcaAguaInferior {
+:host .marca-agua-inferior {
   position: absolute;
-  left: 5%;
-  top: 60%;
+  top: 52%;
   z-index: 1;
-  width: auto;
+  width: 100%;
+  text-align: center;
   font-size: 2.5em;
   opacity: 0.02;
   color: red;
   pointer-events: none;
 }
-:host .button-container {
+:host .zoom-button-container {
   position: fixed;
   bottom: 48px;
   right: 15px;
   height: 175px;
   width: 48px;
 }
-:host .button {
+:host .zoom-button {
   width: 48px;
   height: 48px;
   border: none;
@@ -325,18 +350,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
   background-color: #ebebeb;
 }
-:host .button ion-icon {
+:host .zoom-button ion-icon {
   font-size: 24px;
   color: #292929;
 }
-:host .button:not(:last-child) {
+:host .zoom-button:not(:last-child) {
   margin-bottom: 16px;
 }
-:host .button--close {
+:host .zoom-button--close {
   background-color: #292929;
 }
-:host .button--close ion-icon {
+:host .zoom-button--close ion-icon {
   color: #fafafa;
 }

@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const index = require('./index-a0a08b2a.js');
 const helpers = require('./helpers-ab0db03b.js');
 const ionicGlobal = require('./ionic-global-926d5da1.js');
-const theme = require('./theme-04439550.js');
+const theme = require('./theme-21d701cc.js');
 
 const Route = class {
   constructor(hostRef) {

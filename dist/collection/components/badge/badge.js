@@ -13,7 +13,7 @@ export class Badge {
     return (h(Host, { class: createColorClasses(this.color, {
         [mode]: true,
         'invert': this.invert,
-      }) },
+      }, this.neutral) },
       h("slot", null)));
   }
   static get is() { return "ion-badge"; }
@@ -79,6 +79,28 @@ export class Badge {
       "reflect": true,
       "defaultValue": "false"
     },
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Color",
+        "resolved": "string | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "neutral",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,
@@ -96,7 +118,7 @@ export class Badge {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false

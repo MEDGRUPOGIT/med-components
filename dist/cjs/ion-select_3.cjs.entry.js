@@ -6,7 +6,7 @@ const index = require('./index-a0a08b2a.js');
 const ionicGlobal = require('./ionic-global-926d5da1.js');
 const helpers = require('./helpers-ab0db03b.js');
 const overlays = require('./overlays-a806c884.js');
-const theme = require('./theme-04439550.js');
+const theme = require('./theme-21d701cc.js');
 require('./hardware-back-button-e370df1e.js');
 
 const watchForOptions = (containerEl, tagName, onChange) => {

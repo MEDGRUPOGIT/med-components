@@ -248,39 +248,48 @@
 }
 
 :host {
-  --background: var(--med-color-neutral-3);
+  --background: var(--med-color-neutral-2);
   --icon-color: var(--med-color-neutral-10);
+}
+
+:host {
   display: block;
   border-radius: 8px;
   background: var(--background);
   width: 100%;
 }
-
-.med-accordion__header {
+:host .med-accordion__header {
   display: flex;
   cursor: pointer;
   width: 100%;
-  padding: 16px 24px;
+  padding: 16px;
   box-sizing: border-box;
+  line-height: 24px;
 }
-
-.med-accordion__icon {
-  color: var(--icon-color);
+:host .med-accordion__icon-container {
+  display: flex;
+}
+:host .med-accordion__icon-container--left {
+  padding-right: 8px;
+}
+:host .med-accordion__icon-container--right {
+  padding-left: 8px;
   margin-left: auto;
+}
+:host .med-accordion__icon {
+  color: var(--icon-color);
   font-size: 24px;
   transform: rotate(180deg);
+}
+:host .med-accordion__content--fake {
+  overflow: hidden;
+}
+:host .med-accordion__content {
+  overflow: hidden;
 }
 
 :host(.med-accordion--collapsed) .med-accordion__icon {
   transform: rotate(0);
-}
-
-.med-accordion__content--fake {
-  overflow: hidden;
-}
-
-.med-accordion__content {
-  overflow: hidden;
 }
 
 :host(.med-accordion--full) {

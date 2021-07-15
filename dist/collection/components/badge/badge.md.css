@@ -311,7 +311,7 @@
 }
 
 :host {
-  --color: var(--med-color-neutral-10);
+  --color: md-color(brand, contrast-1);
   --background: var(--med-color-brand-2, #0f798a);
   --padding-bottom: 0;
   --padding-end: 16px;
@@ -336,8 +336,14 @@
 
 :host(.ion-color) {
   background: var(--med-color-2);
-  color: var(--med-color-neutral-10);
+  color: var(--med-color-contrast-1);
   border-color: var(--med-color-2);
+}
+
+:host(.med-neutral) {
+  color: var(--med-neutral-contrast);
+  background: var(--med-neutral);
+  border-color: var(--med-neutral);
 }
 
 :host([fill=outline]) {
@@ -349,6 +355,12 @@
 :host(.ion-color[fill=outline]) {
   border-color: var(--med-color-2);
   color: var(--med-color-2);
+}
+
+:host(.med-neutral[fill=outline]) {
+  color: var(--med-neutral);
+  background: transparent;
+  border-color: var(--med-neutral);
 }
 
 :host([ds-size=xs]) {
@@ -383,26 +395,30 @@
   height: 40px;
 }
 
-:host(.invert) {
+/* :host(.invert) {
   background: var(--med-color-neutral-3);
   border-color: var(--med-color-neutral-3);
   color: var(--med-color-neutral-8);
 }
 
+// color invert
 :host(.invert.ion-color) {
   background: var(--med-color-neutral-3);
   color: var(--med-color-neutral-8);
   border-color: var(--med-color-neutral-3);
 }
 
-:host([fill=outline].invert) {
+// outline invert
+:host([fill="outline"].invert){
   background: transparent;
   border-style: solid;
   border-color: var(--med-color-neutral-8);
   color: var(--med-color-neutral-8);
 }
 
-:host(.ion-color[fill=outline].invert) {
+// outline invert color
+:host(.ion-color[fill="outline"].invert) {
   border-color: var(--med-color-neutral-8);
   color: var(--med-color-neutral-8);
 }
+ */

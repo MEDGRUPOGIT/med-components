@@ -1,5 +1,7 @@
 {
   "entries": [
+    "./components/medgrupo/01-core/med-chart-donut/med-chart-donut.js",
+    "./components/medgrupo/01-core/med-chart-label/med-chart-label.js",
     "./components/action-sheet/action-sheet.js",
     "./components/alert/alert.js",
     "./components/app/app.js",
@@ -39,8 +41,9 @@
     "./components/list/list.js",
     "./components/list-header/list-header.js",
     "./components/loading/loading.js",
+    "./components/medgrupo/01-core/med-agrupador/med-agrupador.js",
+    "./components/medgrupo/01-core/med-divider/med-divider.js",
     "./components/medgrupo/global/med-accordion/med-accordion.js",
-    "./components/medgrupo/global/med-agrupador/med-agrupador.js",
     "./components/medgrupo/global/med-autocomplete/med-autocomplete.js",
     "./components/medgrupo/global/med-banner/med-banner.js",
     "./components/medgrupo/global/med-font-zoom/med-font-zoom.js",

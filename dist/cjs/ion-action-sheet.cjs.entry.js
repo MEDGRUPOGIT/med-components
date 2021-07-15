@@ -6,7 +6,7 @@ const index = require('./index-a0a08b2a.js');
 const ionicGlobal = require('./ionic-global-926d5da1.js');
 const buttonActive = require('./button-active-0b4e09f5.js');
 const overlays = require('./overlays-a806c884.js');
-const theme = require('./theme-04439550.js');
+const theme = require('./theme-21d701cc.js');
 const animation = require('./animation-dadce649.js');
 require('./haptic-3d9360f0.js');
 require('./index-adf3c519.js');
