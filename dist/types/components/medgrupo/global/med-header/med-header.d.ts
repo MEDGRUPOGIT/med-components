@@ -5,6 +5,7 @@ export declare class MedHeader {
   medResize: EventEmitter<headerResizeEventDetail>;
   private hostHeight;
   private hostResizeObserver;
+  connectedCallback(): void;
   componentDidLoad(): void;
   disconnectedCallback(): void;
   private setSize;

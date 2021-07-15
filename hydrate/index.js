@@ -14449,6 +14449,9 @@ class MedHeader {
     this.medResize = createEvent(this, "medResize", 7);
     this.hostHeight = 0;
   }
+  connectedCallback() {
+    this.setSize();
+  }
   componentDidLoad() {
     this.setSize();
   }

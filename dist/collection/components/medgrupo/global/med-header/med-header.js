@@ -3,6 +3,9 @@ export class MedHeader {
   constructor() {
     this.hostHeight = 0;
   }
+  connectedCallback() {
+    this.setSize();
+  }
   componentDidLoad() {
     this.setSize();
   }
