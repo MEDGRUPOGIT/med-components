@@ -129,6 +129,10 @@ const TemplateIcon = ({ color }) => {
             <span class="list__span">med-notes</span>
           </li>
           <li class="list__item">
+            <ion-icon .color=${color} name="med-offline"></ion-icon>
+            <span class="list__span">med-offline</span>
+          </li>
+          <li class="list__item">
             <ion-icon .color=${color} name="med-plus"></ion-icon>
             <span class="list__span">med-plus</span>
           </li>

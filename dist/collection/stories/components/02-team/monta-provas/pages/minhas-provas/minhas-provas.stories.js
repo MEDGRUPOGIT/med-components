@@ -9,7 +9,7 @@ export default {
 const TemplateDefault = ({valores}) => {
 
   setTimeout(() => {
-    document.querySelector('med-chart-donut').valores = valores.valores;
+    document.querySelector('med-chart-radial').valores = valores.valores;
     document.querySelector('med-chart-label').valores = valores.valores;
   }, 1000);
 
@@ -74,13 +74,13 @@ const TemplateDefault = ({valores}) => {
 
           <div class="monta-provas-chart" slot="content">
 
-            <med-chart-donut class="monta-provas-chart__donut">
+            <med-chart-radial class="monta-provas-chart__radial">
               <div class="monta-provas-chart__total">
                 <span class="monta-provas-chart__label">Total de</span>
                 <span class="monta-provas-chart__number">100</span>
                 <span class="monta-provas-chart__label">Questões</span>
               </div>
-            </med-chart-donut>
+            </med-chart-radial>
 
             <med-chart-label class="monta-provas-chart__label"></med-chart-label>
 
