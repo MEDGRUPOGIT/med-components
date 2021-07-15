@@ -248,12 +248,12 @@
 }
 
 :host {
-  --zindex: 1000;
+  --z-index: 1000;
   display: block;
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: var(--zindex);
+  z-index: var(--z-index);
 }
 :host .wrapper {
   opacity: 0.8;
