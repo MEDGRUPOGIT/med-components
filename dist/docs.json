@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-07-15T19:53:51",
+  "timestamp": "2021-07-16T14:14:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -2245,6 +2245,7 @@
       ],
       "dependents": [
         "med-image-zoom",
+        "med-offline",
         "med-tooltip"
       ],
       "dependencies": [
@@ -2255,6 +2256,9 @@
           "ion-ripple-effect"
         ],
         "med-image-zoom": [
+          "ion-button"
+        ],
+        "med-offline": [
           "ion-button"
         ],
         "med-tooltip": [
@@ -19647,11 +19651,15 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "med-image-zoom"
+        "med-image-zoom",
+        "med-offline"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "med-image-zoom": [
+          "med-header"
+        ],
+        "med-offline": [
           "med-header"
         ]
       }
@@ -19797,11 +19805,15 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "med-image-zoom"
+        "med-image-zoom",
+        "med-offline"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "med-image-zoom": [
+          "med-navbar"
+        ],
+        "med-offline": [
           "med-navbar"
         ]
       }
@@ -19816,14 +19828,39 @@
       "usage": {},
       "props": [],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "medClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "med-header",
+        "med-navbar",
+        "ion-button",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-offline": [
+          "med-header",
+          "med-navbar",
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
     },
     {
       "filePath": "./src/components/medgrupo/team/med-option/med-option.tsx",

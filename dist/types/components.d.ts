@@ -6275,6 +6275,7 @@ declare namespace LocalJSX {
         "onMedResize"?: (event: CustomEvent<navbarResizeEventDetail>) => void;
     }
     interface MedOffline {
+        "onMedClick"?: (event: CustomEvent<void>) => void;
     }
     interface MedOption {
     }
