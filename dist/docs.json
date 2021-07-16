@@ -19822,7 +19822,7 @@
       "filePath": "./src/components/medgrupo/01-core/med-offline/med-offline.tsx",
       "encapsulation": "shadow",
       "tag": "med-offline",
-      "readme": "# med-offline\n\n\n",
+      "readme": "# med-offline\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
