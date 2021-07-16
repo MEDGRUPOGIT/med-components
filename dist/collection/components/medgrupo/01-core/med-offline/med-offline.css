@@ -253,6 +253,7 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
+  z-index: var(--z-index);
 }
 :host .wrapper {
   opacity: 0.8;
@@ -263,6 +264,7 @@
   top: 0px;
 }
 :host .wrapper__content {
+  pointer-events: none;
   width: 100%;
   height: calc(100% - 50px);
   display: flex;
