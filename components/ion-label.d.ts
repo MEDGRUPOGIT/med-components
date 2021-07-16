@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface IonLabel extends Components.IonLabel, HTMLElement {}
 export const IonLabel: {

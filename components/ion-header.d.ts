@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface IonHeader extends Components.IonHeader, HTMLElement {}
 export const IonHeader: {

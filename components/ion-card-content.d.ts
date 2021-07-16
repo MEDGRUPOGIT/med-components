@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface IonCardContent extends Components.IonCardContent, HTMLElement {}
 export const IonCardContent: {

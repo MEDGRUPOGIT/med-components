@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface IonItemDivider extends Components.IonItemDivider, HTMLElement {}
 export const IonItemDivider: {

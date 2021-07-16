@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface IonSelectPopover extends Components.IonSelectPopover, HTMLElement {}
 export const IonSelectPopover: {

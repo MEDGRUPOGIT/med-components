@@ -1,6 +1,6 @@
 /* Ionic custom elements */
 
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 /**
  * Used to manually set the base path where assets can be found.

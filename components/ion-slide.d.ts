@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface IonSlide extends Components.IonSlide, HTMLElement {}
 export const IonSlide: {

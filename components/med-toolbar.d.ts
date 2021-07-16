@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface MedToolbar extends Components.MedToolbar, HTMLElement {}
 export const MedToolbar: {

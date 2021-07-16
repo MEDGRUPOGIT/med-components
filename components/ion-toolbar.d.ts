@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface IonToolbar extends Components.IonToolbar, HTMLElement {}
 export const IonToolbar: {

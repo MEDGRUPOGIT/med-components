@@ -5,7 +5,9 @@ export class MedNavbar {
     this.setSize();
   }
   disconnectedCallback() {
-    this.sidesResizeObserver.disconnect();
+    if (this.sidesResizeObserver) {
+      this.sidesResizeObserver.disconnect();
+    }
   }
   setSize() {
     this.sidesResizeObserver = new ResizeObserver((entries) => {

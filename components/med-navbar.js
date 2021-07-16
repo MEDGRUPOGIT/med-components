@@ -940,7 +940,9 @@ const MedNavbar$1 = class extends HTMLElement {
     this.setSize();
   }
   disconnectedCallback() {
-    this.sidesResizeObserver.disconnect();
+    if (this.sidesResizeObserver) {
+      this.sidesResizeObserver.disconnect();
+    }
   }
   setSize() {
     this.sidesResizeObserver = new index((entries) => {

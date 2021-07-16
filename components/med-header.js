@@ -10,14 +10,13 @@ const MedHeader$1 = class extends HTMLElement {
     this.medResize = createEvent(this, "medResize", 7);
     this.hostHeight = 0;
   }
-  connectedCallback() {
-    this.setSize();
-  }
   componentDidLoad() {
     this.setSize();
   }
   disconnectedCallback() {
-    this.hostResizeObserver.disconnect();
+    if (this.hostResizeObserver) {
+      this.hostResizeObserver.disconnect();
+    }
   }
   setSize() {
     this.hostResizeObserver = new ResizeObserver(() => {

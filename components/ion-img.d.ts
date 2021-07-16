@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface IonImg extends Components.IonImg, HTMLElement {}
 export const IonImg: {

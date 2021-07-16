@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../dist/types/components";
+import type { Components, JSX } from "../dist/types/interface";
 
 interface IonInfiniteScroll extends Components.IonInfiniteScroll, HTMLElement {}
 export const IonInfiniteScroll: {
