@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-07-16T15:22:48",
+  "timestamp": "2021-07-21T20:32:05",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -2245,7 +2245,6 @@
       ],
       "dependents": [
         "med-image-zoom",
-        "med-offline",
         "med-tooltip"
       ],
       "dependencies": [
@@ -2256,9 +2255,6 @@
           "ion-ripple-effect"
         ],
         "med-image-zoom": [
-          "ion-button"
-        ],
-        "med-offline": [
           "ion-button"
         ],
         "med-tooltip": [
@@ -19128,6 +19124,15 @@
           "docsTags": []
         },
         {
+          "event": "medClick",
+          "detail": "MedAlternativaInterface",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
           "event": "medGalleryRequest",
           "detail": "MedAlternativaInterface",
           "bubbles": true,
@@ -19348,17 +19353,17 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/01-core/med-chart-label/med-chart-label.tsx",
+      "filePath": "./src/components/medgrupo/01-core/med-chart-donut/med-chart-donut.tsx",
       "encapsulation": "scoped",
-      "tag": "med-chart-label",
-      "readme": "# med-chart-label\r\n\r\n\r\n\r",
+      "tag": "med-chart-donut",
+      "readme": "# med-chart-donut\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
         {
           "name": "valores",
-          "type": "MedRadialItem[]",
+          "type": "MedDonutItem[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "",
@@ -19366,7 +19371,7 @@
           "default": "[]",
           "values": [
             {
-              "type": "MedRadialItem[]"
+              "type": "MedDonutItem[]"
             }
           ],
           "optional": false,
@@ -19384,17 +19389,17 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/01-core/med-chart-radial/med-chart-radial.tsx",
+      "filePath": "./src/components/medgrupo/01-core/med-chart-label/med-chart-label.tsx",
       "encapsulation": "scoped",
-      "tag": "med-chart-radial",
-      "readme": "# med-chart-radial\r\n\r\n\r\n\r",
+      "tag": "med-chart-label",
+      "readme": "# med-chart-label\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
         {
           "name": "valores",
-          "type": "MedRadialItem[]",
+          "type": "MedDonutItem[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "",
@@ -19402,7 +19407,7 @@
           "default": "[]",
           "values": [
             {
-              "type": "MedRadialItem[]"
+              "type": "MedDonutItem[]"
             }
           ],
           "optional": false,
@@ -19651,15 +19656,11 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "med-image-zoom",
-        "med-offline"
+        "med-image-zoom"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "med-image-zoom": [
-          "med-header"
-        ],
-        "med-offline": [
           "med-header"
         ]
       }
@@ -19805,60 +19806,12 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "med-image-zoom",
-        "med-offline"
+        "med-image-zoom"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "med-image-zoom": [
           "med-navbar"
-        ],
-        "med-offline": [
-          "med-navbar"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/medgrupo/01-core/med-offline/med-offline.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-offline",
-      "readme": "# med-offline\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [
-        {
-          "event": "medClick",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "med-header",
-        "med-navbar",
-        "ion-button",
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "med-offline": [
-          "med-header",
-          "med-navbar",
-          "ion-button",
-          "ion-icon"
-        ],
-        "ion-button": [
-          "ion-ripple-effect"
         ]
       }
     },

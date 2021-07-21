@@ -248,7 +248,7 @@
 }
 
 :host {
-  display: inline-block;
+  display: block;
 }
 :host .list {
   list-style: none;

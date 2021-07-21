@@ -14,9 +14,7 @@ const MedHeader$1 = class extends HTMLElement {
     this.setSize();
   }
   disconnectedCallback() {
-    if (this.hostResizeObserver) {
-      this.hostResizeObserver.disconnect();
-    }
+    this.hostResizeObserver.disconnect();
   }
   setSize() {
     this.hostResizeObserver = new ResizeObserver(() => {

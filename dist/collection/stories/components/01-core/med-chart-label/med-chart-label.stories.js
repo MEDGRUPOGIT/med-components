@@ -17,10 +17,10 @@ const TemplateDefault = ({valores}) => {
       <div class="storybook-only__container">
 
         <!-- component -->
-        <med-chart-label></med-chart-label>
+          <med-chart-label></med-chart-label>
         <!-- component -->
 
-      </div>
+      <ion-content>
     </ion-app>
   `
 }
@@ -59,7 +59,7 @@ ChartLabel.argTypes = {
     control: { type: 'array' },
     description: 'Define a lista...',
     table: {
-      type:  { summary: 'MedRadialItem[]' },
+      type:  { summary: 'MedDonutItem[]' },
       defaultValue: { summary: 'undefined' },
     },
   },

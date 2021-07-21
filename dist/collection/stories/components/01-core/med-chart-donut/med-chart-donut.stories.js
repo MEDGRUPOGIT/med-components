@@ -2,14 +2,14 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Core/Chart Radial',
+  title: 'Components/Core/Chart Donut',
   decorators: [withDesign],
 };
 
 const TemplateDefault = ({valores}) => {
 
   setTimeout(() => {
-    document.querySelector('med-chart-radial').valores = valores.valores;
+    document.querySelector('med-chart-donut').valores = valores.valores;
   }, 1000);
 
   return html`
@@ -17,22 +17,22 @@ const TemplateDefault = ({valores}) => {
       <div class="storybook-only__container">
 
         <!-- component -->
-          <med-chart-radial></med-chart-radial>
+          <med-chart-donut></med-chart-donut>
         <!-- component -->
 
-      </div>
+      <ion-content>
     </ion-app>
   `
 }
 
-export const ChartRadial = TemplateDefault.bind({});
-ChartRadial.parameters = {
+export const ChartDonut = TemplateDefault.bind({});
+ChartDonut.parameters = {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/zdbyAa3XpX3loOjJEaXc6E/Quest%C3%B5es?node-id=826%3A1008',
   },
 }
-ChartRadial.argTypes = {
+ChartDonut.argTypes = {
   valores: {
     defaultValue: {
       valores: [
@@ -59,7 +59,7 @@ ChartRadial.argTypes = {
     control: { type: 'array' },
     description: 'Define a lista...',
     table: {
-      type:  { summary: 'MedRadialItem[]' },
+      type:  { summary: 'MedDonutItem[]' },
       defaultValue: { summary: 'undefined' },
     },
   },

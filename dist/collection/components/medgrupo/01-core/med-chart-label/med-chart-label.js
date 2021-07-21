@@ -26,10 +26,10 @@ export class MedChartLabel {
       "type": "unknown",
       "mutable": false,
       "complexType": {
-        "original": "MedRadialItem[]",
-        "resolved": "MedRadialItem[]",
+        "original": "MedDonutItem[]",
+        "resolved": "MedDonutItem[]",
         "references": {
-          "MedRadialItem": {
+          "MedDonutItem": {
             "location": "local"
           }
         }

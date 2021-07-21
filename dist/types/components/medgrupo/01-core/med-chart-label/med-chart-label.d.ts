@@ -1,10 +1,10 @@
-export interface MedRadialItem {
+export interface MedDonutItem {
   cor: string;
   label: string;
   quantia: number;
   ignoreBarra: boolean;
 }
 export declare class MedChartLabel {
-  valores: MedRadialItem[];
+  valores: MedDonutItem[];
   render(): any;
 }

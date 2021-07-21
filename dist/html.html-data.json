@@ -4814,6 +4814,20 @@
       ]
     },
     {
+      "name": "med-chart-donut",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/01-core/med-chart-donut/med-chart-donut.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-chart-label",
       "description": {
         "kind": "markdown",
@@ -4824,20 +4838,6 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/01-core/med-chart-label/med-chart-label.tsx"
-        }
-      ]
-    },
-    {
-      "name": "med-chart-radial",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [],
-      "references": [
-        {
-          "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/01-core/med-chart-radial/med-chart-radial.tsx"
         }
       ]
     },
@@ -4973,20 +4973,6 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/global/med-navbar/med-navbar.tsx"
-        }
-      ]
-    },
-    {
-      "name": "med-offline",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [],
-      "references": [
-        {
-          "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/medgrupo/01-core/med-offline/med-offline.tsx"
         }
       ]
     },

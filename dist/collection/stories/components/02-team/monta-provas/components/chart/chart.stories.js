@@ -9,13 +9,13 @@ export default {
 const TemplateDefault = ({valores}) => {
 
   setTimeout(() => {
-    document.querySelector('med-chart-radial').valores = valores.valores;
+    document.querySelector('med-chart-donut').valores = valores.valores;
     document.querySelector('med-chart-label').valores = valores.valores;
   }, 1000);
 
   return html`
     <style>
-      .header__heading {
+      .monta-provas-accordion__header {
         font-size: var(--med-font-size-xs);
         font-weight: var(--med-font-weight-semibold);
         line-height: var(--med-line-height-default);
@@ -37,6 +37,7 @@ const TemplateDefault = ({valores}) => {
 
       .monta-provas-chart__total {
         position: absolute;
+        display: grid;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -52,7 +53,7 @@ const TemplateDefault = ({valores}) => {
       .monta-provas-chart__number {
         font-weight: var(--med-font-weight-bold);
         font-size: var(--med-font-size-md);
-        color: var(--med-color-neutral-10);
+        color: var(--med-color-neutral-light-prime);
       }
     </style>
 
@@ -61,22 +62,19 @@ const TemplateDefault = ({valores}) => {
 
         <!-- component -->
         <med-accordion class="monta-provas-accordion" icon="left">
-          <div class="header" slot="header">
-            <h4 class="header__heading">Nome da Prova</h4>
-            <ion-icon class="header__icon" name="med-context-menu"></ion-icon>
-          </div>
+          <h4 class="monta-provas-accordion__header" slot="header">Nome da Prova</h4>
 
           <div class="monta-provas-chart" slot="content">
 
-            <med-chart-radial>
+            <med-chart-donut class="monta-provas-chart__donut">
               <div class="monta-provas-chart__total">
                 <span class="monta-provas-chart__label">Total de</span>
                 <span class="monta-provas-chart__number">100</span>
                 <span class="monta-provas-chart__label">Questões</span>
               </div>
-            </med-chart-radial>
+            </med-chart-donut>
 
-            <med-chart-label></med-chart-label>
+            <med-chart-label class="monta-provas-chart__label"></med-chart-label>
 
           </div>
         </med-accordion>
@@ -121,7 +119,7 @@ Chart.argTypes = {
     control: { type: 'array' },
     description: 'Define a lista...',
     table: {
-      type:  { summary: 'MedRadialItem[]' },
+      type:  { summary: 'MedDonutItem[]' },
       defaultValue: { summary: 'undefined' },
     },
   },

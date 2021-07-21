@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 ;
-export class MedChartRadial {
+export class MedChartDonut {
   constructor() {
     this.valores = [];
   }
@@ -29,23 +29,23 @@ export class MedChartRadial {
           }
         }))));
   }
-  static get is() { return "med-chart-radial"; }
+  static get is() { return "med-chart-donut"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "$": ["med-chart-radial.scss"]
+    "$": ["med-chart-donut.scss"]
   }; }
   static get styleUrls() { return {
-    "$": ["med-chart-radial.css"]
+    "$": ["med-chart-donut.css"]
   }; }
   static get properties() { return {
     "valores": {
       "type": "unknown",
       "mutable": false,
       "complexType": {
-        "original": "MedRadialItem[]",
-        "resolved": "MedRadialItem[]",
+        "original": "MedDonutItem[]",
+        "resolved": "MedDonutItem[]",
         "references": {
-          "MedRadialItem": {
+          "MedDonutItem": {
             "location": "local"
           }
         }

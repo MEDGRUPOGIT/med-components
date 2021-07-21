@@ -12,9 +12,7 @@ const MedHeader = class {
     this.setSize();
   }
   disconnectedCallback() {
-    if (this.hostResizeObserver) {
-      this.hostResizeObserver.disconnect();
-    }
+    this.hostResizeObserver.disconnect();
   }
   setSize() {
     this.hostResizeObserver = new ResizeObserver(() => {
@@ -971,9 +969,7 @@ const MedNavbar = class {
     this.setSize();
   }
   disconnectedCallback() {
-    if (this.sidesResizeObserver) {
-      this.sidesResizeObserver.disconnect();
-    }
+    this.sidesResizeObserver.disconnect();
   }
   setSize() {
     this.sidesResizeObserver = new index((entries) => {
