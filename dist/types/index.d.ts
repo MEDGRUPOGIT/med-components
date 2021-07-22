@@ -14,4 +14,4 @@ export { menuController } from './utils/menu-controller';
 export { alertController, actionSheetController, modalController, loadingController, pickerController, popoverController, toastController } from './utils/overlays';
 export { MedColors } from './global/med-components/color.enum';
 export { MedFontSize } from './global/med-components/font-size.enum';
-export { RateStatus } from './components/medgrupo/global/med-rate-like/med-rate-like.enum';
+export { RateStatus } from './components/00-autoral/global/med-rate-like/med-rate-like.enum';

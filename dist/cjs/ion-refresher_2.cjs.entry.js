@@ -803,8 +803,8 @@ const RefresherContent = class {
     const mode = ionicGlobal.getIonMode(this);
     return (index.h(index.Host, { class: mode }, index.h("div", { class: "refresher-pulling" }, this.pullingIcon && hasSpinner &&
       index.h("div", { class: "refresher-pulling-icon" }, index.h("div", { class: "spinner-arrow-container" }, index.h("ion-spinner", { name: this.pullingIcon, paused: true }), mode === 'md' && this.pullingIcon === 'circular' &&
-        index.h("div", { class: "arrow-container" }, index.h("ion-icon", { name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
-      index.h("div", { class: "refresher-pulling-icon" }, index.h("ion-icon", { icon: this.pullingIcon, lazy: false })), this.pullingText &&
+        index.h("div", { class: "arrow-container" }, index.h("ion-icon", { class: "med-icon", name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
+      index.h("div", { class: "refresher-pulling-icon" }, index.h("ion-icon", { class: "med-icon", icon: this.pullingIcon, lazy: false })), this.pullingText &&
       index.h("div", { class: "refresher-pulling-text", innerHTML: index$1.sanitizeDOMString(this.pullingText) })), index.h("div", { class: "refresher-refreshing" }, this.refreshingSpinner &&
       index.h("div", { class: "refresher-refreshing-icon" }, index.h("ion-spinner", { name: this.refreshingSpinner })), this.refreshingText &&
       index.h("div", { class: "refresher-refreshing-text", innerHTML: index$1.sanitizeDOMString(this.refreshingText) }))));

@@ -43,10 +43,10 @@ const BackButton = class {
     }
     if (ionicGlobal.getIonMode(this) === 'ios') {
       // default ios back button icon
-      return ionicGlobal.config.get('backButtonIcon', 'chevron-back');
+      return ionicGlobal.config.get('backButtonIcon', 'med-esquerda');
     }
     // default md back button icon
-    return ionicGlobal.config.get('backButtonIcon', 'arrow-back-sharp');
+    return ionicGlobal.config.get('backButtonIcon', 'med-esquerda');
   }
   get backButtonText() {
     const defaultBackButtonText = ionicGlobal.getIonMode(this) === 'ios' ? 'Back' : null;
@@ -77,7 +77,7 @@ const BackButton = class {
         'ion-activatable': true,
         'ion-focusable': true,
         'show-back-button': showBackButton
-      }) }, index.h("button", { type: type, disabled: disabled, class: "button-native", part: "native", "aria-label": backButtonText || 'back' }, index.h("span", { class: "button-inner" }, backButtonIcon && index.h("ion-icon", { part: "icon", icon: backButtonIcon, "aria-hidden": "true", lazy: false }), backButtonText && index.h("span", { part: "text", "aria-hidden": "true", class: "button-text" }, backButtonText)), mode === 'md' && index.h("ion-ripple-effect", { type: this.rippleType }))));
+      }) }, index.h("button", { type: type, disabled: disabled, class: "button-native", part: "native", "aria-label": backButtonText || 'back' }, index.h("span", { class: "button-inner" }, backButtonIcon && index.h("ion-icon", { class: "med-icon", part: "icon", icon: backButtonIcon, "aria-hidden": "true", lazy: false }), backButtonText && index.h("span", { part: "text", "aria-hidden": "true", class: "button-text" }, backButtonText)), mode === 'md' && index.h("ion-ripple-effect", { type: this.rippleType }))));
   }
   get el() { return index.getElement(this); }
 };

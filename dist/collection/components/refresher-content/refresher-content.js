@@ -28,10 +28,10 @@ export class RefresherContent {
               h("ion-spinner", { name: this.pullingIcon, paused: true }),
               mode === 'md' && this.pullingIcon === 'circular' &&
                 h("div", { class: "arrow-container" },
-                  h("ion-icon", { name: "caret-back-sharp" })))),
+                  h("ion-icon", { class: "med-icon", name: "caret-back-sharp" })))),
         this.pullingIcon && !hasSpinner &&
           h("div", { class: "refresher-pulling-icon" },
-            h("ion-icon", { icon: this.pullingIcon, lazy: false })),
+            h("ion-icon", { class: "med-icon", icon: this.pullingIcon, lazy: false })),
         this.pullingText &&
           h("div", { class: "refresher-pulling-text", innerHTML: sanitizeDOMString(this.pullingText) })),
       h("div", { class: "refresher-refreshing" },

@@ -8,7 +8,7 @@ const MedAutocomplete = class {
     this.list = false;
   }
   render() {
-    return (h(Host, null, h("ul", { class: "list" }, h("li", { class: "item" }, h("ion-icon", { name: "med-medical-bag" }, "ion-button"), "Nefrologia"), h("li", { class: "item" }, h("ion-icon", { name: "med-medical-bag" }, "ion-button"), "Neurocirurgia"), h("li", { class: "item" }, h("ion-icon", { name: "med-medical-bag" }, "ion-button"), "Neurologia"), h("li", { class: "item" }, h("ion-icon", { name: "med-medical-bag" }, "ion-button"), "Nutrologia")), this.list && h("span", { class: "msg" }, "Nenhum item encontrado.")));
+    return (h(Host, { "from-stencil": true }, h("ul", { class: "list" }, h("li", { class: "item" }, h("ion-icon", { class: "med-icon", name: "med-alerta" }, "ion-button"), "Nefrologia"), h("li", { class: "item" }, h("ion-icon", { class: "med-icon", name: "med-alerta" }, "ion-button"), "Neurocirurgia"), h("li", { class: "item" }, h("ion-icon", { class: "med-icon", name: "med-alerta" }, "ion-button"), "Neurologia"), h("li", { class: "item" }, h("ion-icon", { class: "med-icon", name: "med-alerta" }, "ion-button"), "Nutrologia")), this.list && h("span", { class: "msg" }, "Nenhum item encontrado.")));
   }
 };
 MedAutocomplete.style = medAutocompleteCss;

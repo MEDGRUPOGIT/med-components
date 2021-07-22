@@ -249,7 +249,7 @@ const Toast = class {
       [`toast-button-group-${side}`]: true
     };
     return (h("div", { class: buttonGroupsClasses }, buttons.map(b => h("button", { type: "button", class: buttonClass(b), tabIndex: 0, onClick: () => this.buttonClick(b), part: "button" }, h("div", { class: "toast-button-inner" }, b.icon &&
-      h("ion-icon", { icon: b.icon, slot: b.text === undefined ? 'icon-only' : undefined, class: "toast-icon" }), b.text), mode === 'md' && h("ion-ripple-effect", { type: b.icon !== undefined && b.text === undefined ? 'unbounded' : 'bounded' })))));
+      h("ion-icon", { icon: b.icon, slot: b.text === undefined ? 'icon-only' : undefined, class: "med-icon toast-icon" }), b.text), mode === 'md' && h("ion-ripple-effect", { type: b.icon !== undefined && b.text === undefined ? 'unbounded' : 'bounded' })))));
   }
   render() {
     const allButtons = this.getButtons();

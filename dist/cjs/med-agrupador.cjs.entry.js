@@ -17,7 +17,7 @@ const MedAgrupador = class {
   }
   render() {
     const { color } = this;
-    return (index.h(index.Host, { "from-stencil": true, class: theme.createColorClasses(color, { 'toggle': this.toggle }), onClick: this.onClick }, index.h("div", { class: "toggle__expandir" }, "Expandir a lista"), index.h("div", { class: "toggle__ocultar" }, "Ocultar a lista"), index.h("ion-icon", { class: "toggle__img", name: "med-arrow-down" })));
+    return (index.h(index.Host, { "from-stencil": true, class: theme.createColorClasses(color, { 'toggle': this.toggle }), onClick: this.onClick }, index.h("div", { class: "toggle__expandir" }, "Expandir a lista"), index.h("div", { class: "toggle__ocultar" }, "Ocultar a lista"), index.h("ion-icon", { class: "med-icon toggle__img", name: "med-baixo" })));
   }
 };
 MedAgrupador.style = medAgrupadorCss;

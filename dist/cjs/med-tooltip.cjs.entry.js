@@ -17,7 +17,7 @@ const MedTooltip = class {
     const { header, content, buttonLeft, buttonRight } = this;
     const simple = !header && !buttonLeft && !buttonRight && content && content.split(' ').length <= 3;
     if (buttonLeft && buttonLeft.icon) {
-      buttonLeftEl = (index.h("ion-button", { "ds-name": "icon-only" }, index.h("ion-icon", { slot: "icon-only", name: buttonLeft.icon })));
+      buttonLeftEl = (index.h("ion-button", { "ds-name": "icon-only" }, index.h("ion-icon", { class: "med-icon", slot: "icon-only", name: buttonLeft.icon })));
     }
     else if (buttonLeft && buttonLeft.label) {
       buttonLeftEl = (index.h("button", { class: "button button--left" }, buttonLeft.label));
@@ -27,7 +27,7 @@ const MedTooltip = class {
     }
     if (buttonRight && buttonRight.icon) {
       console.log(buttonRight.icon);
-      buttonRightEl = (index.h("ion-button", { "ds-name": "icon-only" }, index.h("ion-icon", { slot: "icon-only", name: buttonRight.icon })));
+      buttonRightEl = (index.h("ion-button", { "ds-name": "icon-only" }, index.h("ion-icon", { class: "med-icon", slot: "icon-only", name: buttonRight.icon })));
     }
     else if (buttonRight && buttonRight.label) {
       buttonRightEl = (index.h("button", { class: "button button--right" }, buttonRight.label));

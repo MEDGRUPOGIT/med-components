@@ -13,7 +13,7 @@ const MedAgrupador = class {
   }
   render() {
     const { color } = this;
-    return (h(Host, { "from-stencil": true, class: createColorClasses(color, { 'toggle': this.toggle }), onClick: this.onClick }, h("div", { class: "toggle__expandir" }, "Expandir a lista"), h("div", { class: "toggle__ocultar" }, "Ocultar a lista"), h("ion-icon", { class: "toggle__img", name: "med-arrow-down" })));
+    return (h(Host, { "from-stencil": true, class: createColorClasses(color, { 'toggle': this.toggle }), onClick: this.onClick }, h("div", { class: "toggle__expandir" }, "Expandir a lista"), h("div", { class: "toggle__ocultar" }, "Ocultar a lista"), h("ion-icon", { class: "med-icon toggle__img", name: "med-baixo" })));
   }
 };
 MedAgrupador.style = medAgrupadorCss;

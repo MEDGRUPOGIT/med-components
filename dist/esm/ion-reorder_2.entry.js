@@ -22,7 +22,7 @@ const Reorder = class {
   render() {
     const mode = getIonMode(this);
     const reorderIcon = mode === 'ios' ? 'reorder-three-outline' : 'reorder-two-sharp';
-    return (h(Host, { class: mode }, h("slot", null, h("ion-icon", { name: reorderIcon, lazy: false, class: "reorder-icon", part: "icon" }))));
+    return (h(Host, { class: mode }, h("slot", null, h("ion-icon", { name: reorderIcon, lazy: false, class: "med-icon reorder-icon", part: "icon" }))));
   }
   get el() { return getElement(this); }
 };

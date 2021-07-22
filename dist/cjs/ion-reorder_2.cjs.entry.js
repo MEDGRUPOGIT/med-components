@@ -26,7 +26,7 @@ const Reorder = class {
   render() {
     const mode = ionicGlobal.getIonMode(this);
     const reorderIcon = mode === 'ios' ? 'reorder-three-outline' : 'reorder-two-sharp';
-    return (index.h(index.Host, { class: mode }, index.h("slot", null, index.h("ion-icon", { name: reorderIcon, lazy: false, class: "reorder-icon", part: "icon" }))));
+    return (index.h(index.Host, { class: mode }, index.h("slot", null, index.h("ion-icon", { name: reorderIcon, lazy: false, class: "med-icon reorder-icon", part: "icon" }))));
   }
   get el() { return index.getElement(this); }
 };

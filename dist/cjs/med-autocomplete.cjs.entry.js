@@ -12,7 +12,7 @@ const MedAutocomplete = class {
     this.list = false;
   }
   render() {
-    return (index.h(index.Host, null, index.h("ul", { class: "list" }, index.h("li", { class: "item" }, index.h("ion-icon", { name: "med-medical-bag" }, "ion-button"), "Nefrologia"), index.h("li", { class: "item" }, index.h("ion-icon", { name: "med-medical-bag" }, "ion-button"), "Neurocirurgia"), index.h("li", { class: "item" }, index.h("ion-icon", { name: "med-medical-bag" }, "ion-button"), "Neurologia"), index.h("li", { class: "item" }, index.h("ion-icon", { name: "med-medical-bag" }, "ion-button"), "Nutrologia")), this.list && index.h("span", { class: "msg" }, "Nenhum item encontrado.")));
+    return (index.h(index.Host, { "from-stencil": true }, index.h("ul", { class: "list" }, index.h("li", { class: "item" }, index.h("ion-icon", { class: "med-icon", name: "med-alerta" }, "ion-button"), "Nefrologia"), index.h("li", { class: "item" }, index.h("ion-icon", { class: "med-icon", name: "med-alerta" }, "ion-button"), "Neurocirurgia"), index.h("li", { class: "item" }, index.h("ion-icon", { class: "med-icon", name: "med-alerta" }, "ion-button"), "Neurologia"), index.h("li", { class: "item" }, index.h("ion-icon", { class: "med-icon", name: "med-alerta" }, "ion-button"), "Nutrologia")), this.list && index.h("span", { class: "msg" }, "Nenhum item encontrado.")));
   }
 };
 MedAutocomplete.style = medAutocompleteCss;

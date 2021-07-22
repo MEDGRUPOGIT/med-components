@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-07-21T20:32:05",
+  "timestamp": "2021-07-22T21:17:47",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -1480,12 +1480,32 @@
           "required": false
         },
         {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "dsSize",
-          "type": "\"lg\" | \"md\" | \"sm\" | undefined",
+          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define a variação de tamanho componente.",
           "docsTags": [],
           "values": [
             {
@@ -1501,23 +1521,7 @@
               "type": "string"
             },
             {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "fill",
-          "type": "\"outline\" | undefined",
-          "mutable": false,
-          "attr": "fill",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "outline",
+              "value": "xs",
               "type": "string"
             },
             {
@@ -1525,23 +1529,6 @@
             }
           ],
           "optional": true,
-          "required": false
-        },
-        {
-          "name": "invert",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "invert",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
           "required": false
         },
         {
@@ -1571,7 +1558,7 @@
           "mutable": false,
           "attr": "neutral",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define a cor neutra do componente.",
           "docsTags": [],
           "values": [
             {
@@ -1593,6 +1580,11 @@
           "name": "--background",
           "annotation": "prop",
           "docs": "Background of the badge"
+        },
+        {
+          "name": "--border-color",
+          "annotation": "prop",
+          "docs": "Define a cor da borda do componente."
         },
         {
           "name": "--color",
@@ -2244,7 +2236,9 @@
         }
       ],
       "dependents": [
+        "med-context-menu",
         "med-image-zoom",
+        "med-offline",
         "med-tooltip"
       ],
       "dependencies": [
@@ -2254,7 +2248,13 @@
         "ion-button": [
           "ion-ripple-effect"
         ],
+        "med-context-menu": [
+          "ion-button"
+        ],
         "med-image-zoom": [
+          "ion-button"
+        ],
+        "med-offline": [
           "ion-button"
         ],
         "med-tooltip": [
@@ -3166,6 +3166,26 @@
           "required": false
         },
         {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -3181,6 +3201,25 @@
             {
               "value": "md",
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "neutral",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "neutral",
+          "reflectToAttr": false,
+          "docs": "Define a cor neutra do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
             }
           ],
           "optional": true,
@@ -3214,6 +3253,11 @@
           "docs": "Background of the chip"
         },
         {
+          "name": "--border-color",
+          "annotation": "prop",
+          "docs": "Define a cor da borda do componente."
+        },
+        {
           "name": "--color",
           "annotation": "prop",
           "docs": "Color of the chip"
@@ -3222,14 +3266,8 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "ion-ripple-effect"
-      ],
-      "dependencyGraph": {
-        "ion-chip": [
-          "ion-ripple-effect"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/col/col.tsx",
@@ -5062,6 +5100,25 @@
             {
               "value": "md",
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "neutral",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "neutral",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
             }
           ],
           "optional": true,
@@ -12953,7 +13010,6 @@
         "ion-back-button",
         "ion-button",
         "ion-card",
-        "ion-chip",
         "ion-fab-button",
         "ion-item",
         "ion-item-option",
@@ -12977,9 +13033,6 @@
           "ion-ripple-effect"
         ],
         "ion-card": [
-          "ion-ripple-effect"
-        ],
-        "ion-chip": [
           "ion-ripple-effect"
         ],
         "ion-fab-button": [
@@ -14072,6 +14125,25 @@
             {
               "value": "md",
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "neutral",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "neutral",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
             }
           ],
           "optional": true,
@@ -18807,7 +18879,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-accordion/med-accordion.tsx",
+      "filePath": "./src/components/00-autoral/global/med-accordion/med-accordion.tsx",
       "encapsulation": "shadow",
       "tag": "med-accordion",
       "readme": "# med-accordion\r\n\r\n\r\n\r",
@@ -18925,7 +18997,7 @@
       }
     },
     {
-      "filePath": "./src/components/medgrupo/01-core/med-agrupador/med-agrupador.tsx",
+      "filePath": "./src/components/00-autoral/global/med-agrupador/med-agrupador.tsx",
       "encapsulation": "shadow",
       "tag": "med-agrupador",
       "readme": "# med-agrupador\r\n\r\n\r\n\r",
@@ -18970,7 +19042,7 @@
       }
     },
     {
-      "filePath": "./src/components/medgrupo/team/med-alternativas/med-alternativas.tsx",
+      "filePath": "./src/components/00-autoral/team/questoes/med-alternativas/med-alternativas.tsx",
       "encapsulation": "shadow",
       "tag": "med-alternativas",
       "readme": "# med-alternativas\r\n\r\n\r\n\r",
@@ -19165,7 +19237,7 @@
       }
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-autocomplete/med-autocomplete.tsx",
+      "filePath": "./src/components/00-autoral/global/med-autocomplete/med-autocomplete.tsx",
       "encapsulation": "shadow",
       "tag": "med-autocomplete",
       "readme": "# med-autocomplete\r\n\r\n\r\n\r",
@@ -19208,7 +19280,7 @@
       }
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-banner/med-banner.tsx",
+      "filePath": "./src/components/00-autoral/global/med-banner/med-banner.tsx",
       "encapsulation": "shadow",
       "tag": "med-banner",
       "readme": "# med-banner\r\n\r\n\r\n\r",
@@ -19295,7 +19367,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/team/med-cartao-resposta-item/med-cartao-resposta-item.tsx",
+      "filePath": "./src/components/00-autoral/team/questoes/med-cartao-resposta-item/med-cartao-resposta-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-cartao-resposta-item",
       "readme": "# med-cartao-resposta\r\n\r\n\r\n\r",
@@ -19334,7 +19406,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/team/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx",
+      "filePath": "./src/components/00-autoral/team/questoes/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx",
       "encapsulation": "shadow",
       "tag": "med-cartao-resposta-lista",
       "readme": "# med-cartao-resposta-listas\r\n\r\n\r\n\r",
@@ -19353,43 +19425,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/01-core/med-chart-donut/med-chart-donut.tsx",
-      "encapsulation": "scoped",
-      "tag": "med-chart-donut",
-      "readme": "# med-chart-donut\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "valores",
-          "type": "MedDonutItem[]",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "[]",
-          "values": [
-            {
-              "type": "MedDonutItem[]"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/medgrupo/01-core/med-chart-label/med-chart-label.tsx",
+      "filePath": "./src/components/00-autoral/global/med-chart-label/med-chart-label.tsx",
       "encapsulation": "scoped",
       "tag": "med-chart-label",
       "readme": "# med-chart-label\r\n\r\n\r\n\r",
@@ -19398,8 +19434,46 @@
       "usage": {},
       "props": [
         {
+          "name": "color",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "neutral",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "neutral",
+          "reflectToAttr": false,
+          "docs": "Define a cor neutra do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "valores",
-          "type": "MedDonutItem[]",
+          "type": "MedRadialItem[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "",
@@ -19407,7 +19481,7 @@
           "default": "[]",
           "values": [
             {
-              "type": "MedDonutItem[]"
+              "type": "MedRadialItem[]"
             }
           ],
           "optional": false,
@@ -19425,7 +19499,141 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/01-core/med-divider/med-divider.tsx",
+      "filePath": "./src/components/00-autoral/global/med-chart-radial/med-chart-radial.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-chart-radial",
+      "readme": "# med-chart-radial\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "valores",
+          "type": "MedRadialItem[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "MedRadialItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/00-autoral/global/med-context-menu/med-context-menu.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-context-menu",
+      "readme": "# med-context-menu\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "collapsed",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "collapsed",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "neutral",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "neutral",
+          "reflectToAttr": false,
+          "docs": "Define a cor neutra do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "toggle",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "toggle() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-button",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-context-menu": [
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/00-autoral/global/med-divider/med-divider.tsx",
       "encapsulation": "shadow",
       "tag": "med-divider",
       "readme": "# med-divider\r\n\r\n\r\n\r",
@@ -19433,6 +19641,44 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "color",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "neutral",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "neutral",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
         {
           "name": "text",
           "type": "string",
@@ -19461,7 +19707,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/team/med-enunciado/med-enunciado.tsx",
+      "filePath": "./src/components/00-autoral/team/questoes/med-enunciado/med-enunciado.tsx",
       "encapsulation": "shadow",
       "tag": "med-enunciado",
       "readme": "# med-enunciado\r\n\r\n\r\n\r",
@@ -19510,7 +19756,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/team/med-enunciado-discursiva/med-enunciado-discursiva.tsx",
+      "filePath": "./src/components/00-autoral/team/questoes/med-enunciado-discursiva/med-enunciado-discursiva.tsx",
       "encapsulation": "shadow",
       "tag": "med-enunciado-discursiva",
       "readme": "# med-enunciado-discursiva\r\n\r\n\r\n\r",
@@ -19559,7 +19805,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-font-zoom/med-font-zoom.tsx",
+      "filePath": "./src/components/00-autoral/global/med-font-zoom/med-font-zoom.tsx",
       "encapsulation": "shadow",
       "tag": "med-font-zoom",
       "readme": "# med-font-zoom\r\n\r\n\r\n\r",
@@ -19631,7 +19877,7 @@
       }
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-header/med-header.tsx",
+      "filePath": "./src/components/00-autoral/global/med-header/med-header.tsx",
       "encapsulation": "shadow",
       "tag": "med-header",
       "readme": "# med-header\r\n\r\n\r\n\r",
@@ -19656,17 +19902,21 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "med-image-zoom"
+        "med-image-zoom",
+        "med-offline"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "med-image-zoom": [
           "med-header"
+        ],
+        "med-offline": [
+          "med-header"
         ]
       }
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-image-zoom/med-image-zoom.tsx",
+      "filePath": "./src/components/00-autoral/global/med-image-zoom/med-image-zoom.tsx",
       "encapsulation": "scoped",
       "tag": "med-image-zoom",
       "readme": "# med-image-zoom\r\n\r\n\r\n\r",
@@ -19781,10 +20031,147 @@
       }
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-navbar/med-navbar.tsx",
+      "filePath": "./src/components/00-autoral/global/med-navbar/med-navbar.tsx",
       "encapsulation": "shadow",
       "tag": "med-navbar",
       "readme": "# med-navbar\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "left - Posiciona um elemento ao lado esquerdo ao navbar",
+          "name": "slot"
+        },
+        {
+          "text": "title - Titulo da navbar.",
+          "name": "slot"
+        },
+        {
+          "text": "subtitle - Subtitulo da navbar.",
+          "name": "slot"
+        },
+        {
+          "text": "right - Posiciona um elemento ao lado direito da navbar.",
+          "name": "slot"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | \"transparent\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "transparent",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "neutral",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "neutral",
+          "reflectToAttr": false,
+          "docs": "Define a cor neutra do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--background",
+          "annotation": "prop",
+          "docs": "Define a cor de background do componente."
+        },
+        {
+          "name": "--color",
+          "annotation": "prop",
+          "docs": "Define a cor de texto do componente."
+        }
+      ],
+      "slots": [
+        {
+          "name": "left",
+          "docs": "Posiciona um elemento ao lado esquerdo ao navbar"
+        },
+        {
+          "name": "right",
+          "docs": "Posiciona um elemento ao lado direito da navbar."
+        },
+        {
+          "name": "subtitle",
+          "docs": "Subtitulo da navbar."
+        },
+        {
+          "name": "title",
+          "docs": "Titulo da navbar."
+        }
+      ],
+      "parts": [],
+      "dependents": [
+        "med-image-zoom",
+        "med-offline"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "med-image-zoom": [
+          "med-navbar"
+        ],
+        "med-offline": [
+          "med-navbar"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/00-autoral/global/med-offline/med-offline.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-offline",
+      "readme": "# med-offline\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -19792,8 +20179,8 @@
       "methods": [],
       "events": [
         {
-          "event": "medResize",
-          "detail": "navbarResizeEventDetail",
+          "event": "medClick",
+          "detail": "void",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -19805,18 +20192,27 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "med-image-zoom"
+      "dependents": [],
+      "dependencies": [
+        "med-header",
+        "med-navbar",
+        "ion-button",
+        "ion-icon"
       ],
-      "dependencies": [],
       "dependencyGraph": {
-        "med-image-zoom": [
-          "med-navbar"
+        "med-offline": [
+          "med-header",
+          "med-navbar",
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ]
       }
     },
     {
-      "filePath": "./src/components/medgrupo/team/med-option/med-option.tsx",
+      "filePath": "./src/components/00-autoral/team/questoes/med-option/med-option.tsx",
       "encapsulation": "shadow",
       "tag": "med-option",
       "readme": "# med-option\r\n\r\n\r\n\r",
@@ -19841,7 +20237,7 @@
       }
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-rate-bar/med-rate-bar.tsx",
+      "filePath": "./src/components/00-autoral/global/med-rate-bar/med-rate-bar.tsx",
       "encapsulation": "shadow",
       "tag": "med-rate-bar",
       "readme": "# med-rate-bar\r\n\r\n\r\n\r",
@@ -19860,7 +20256,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-rate-like/med-rate-like.tsx",
+      "filePath": "./src/components/00-autoral/global/med-rate-like/med-rate-like.tsx",
       "encapsulation": "shadow",
       "tag": "med-rate-like",
       "readme": "# med-rate-like\r\n\r\n\r\n\r",
@@ -19918,14 +20314,53 @@
       }
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-toolbar/med-toolbar.tsx",
+      "filePath": "./src/components/00-autoral/global/med-toolbar/med-toolbar.tsx",
       "encapsulation": "shadow",
       "tag": "med-toolbar",
       "readme": "# med-toolbar\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "color",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "neutral",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "neutral",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -19937,7 +20372,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/medgrupo/global/med-tooltip/med-tooltip.tsx",
+      "filePath": "./src/components/00-autoral/global/med-tooltip/med-tooltip.tsx",
       "encapsulation": "shadow",
       "tag": "med-tooltip",
       "readme": "# med-tooltip\r\n\r\n\r\n\r",
@@ -20026,6 +20461,62 @@
         ],
         "ion-button": [
           "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/00-autoral/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.tsx",
+      "encapsulation": "shadow",
+      "tag": "monta-provas-plusminus",
+      "readme": "# monta-provas-plusminus\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsSize",
+          "type": "\"xl\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "xl",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "medChange",
+          "detail": "PlusMinusStatus.MINUS | PlusMinusStatus.PLUS",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "monta-provas-plusminus": [
+          "ion-icon"
         ]
       }
     }

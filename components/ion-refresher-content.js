@@ -25,8 +25,8 @@ const RefresherContent = class extends HTMLElement {
     const mode = getIonMode(this);
     return (h(Host, { class: mode }, h("div", { class: "refresher-pulling" }, this.pullingIcon && hasSpinner &&
       h("div", { class: "refresher-pulling-icon" }, h("div", { class: "spinner-arrow-container" }, h("ion-spinner", { name: this.pullingIcon, paused: true }), mode === 'md' && this.pullingIcon === 'circular' &&
-        h("div", { class: "arrow-container" }, h("ion-icon", { name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
-      h("div", { class: "refresher-pulling-icon" }, h("ion-icon", { icon: this.pullingIcon, lazy: false })), this.pullingText &&
+        h("div", { class: "arrow-container" }, h("ion-icon", { class: "med-icon", name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
+      h("div", { class: "refresher-pulling-icon" }, h("ion-icon", { class: "med-icon", icon: this.pullingIcon, lazy: false })), this.pullingText &&
       h("div", { class: "refresher-pulling-text", innerHTML: sanitizeDOMString(this.pullingText) })), h("div", { class: "refresher-refreshing" }, this.refreshingSpinner &&
       h("div", { class: "refresher-refreshing-icon" }, h("ion-spinner", { name: this.refreshingSpinner })), this.refreshingText &&
       h("div", { class: "refresher-refreshing-text", innerHTML: sanitizeDOMString(this.refreshingText) }))));

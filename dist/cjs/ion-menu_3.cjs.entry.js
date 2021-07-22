@@ -507,7 +507,7 @@ const MenuButton = class {
         'in-toolbar-color': theme.hostContext('ion-toolbar[color]', this.el),
         'ion-activatable': true,
         'ion-focusable': true
-      }) }, index.h("button", Object.assign({}, attrs, { disabled: disabled, class: "button-native", part: "native", "aria-label": "menu" }), index.h("span", { class: "button-inner" }, index.h("slot", null, index.h("ion-icon", { part: "icon", icon: menuIcon, mode: mode, lazy: false, "aria-hidden": "true" }))), mode === 'md' && index.h("ion-ripple-effect", { type: "unbounded" }))));
+      }) }, index.h("button", Object.assign({}, attrs, { disabled: disabled, class: "button-native", part: "native", "aria-label": "menu" }), index.h("span", { class: "button-inner" }, index.h("slot", null, index.h("ion-icon", { class: "med-icon", part: "icon", icon: menuIcon, mode: mode, lazy: false, "aria-hidden": "true" }))), mode === 'md' && index.h("ion-ripple-effect", { type: "unbounded" }))));
   }
   get el() { return index.getElement(this); }
 };

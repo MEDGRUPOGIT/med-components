@@ -52,7 +52,7 @@ const MedFontZoom$1 = class extends HTMLElement {
     };
   }
   render() {
-    return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, h("ion-icon", { slot: "start", size: "small", name: "med-font-decrease" }), h("ion-icon", { slot: "end", name: "med-font-increase" }))));
+    return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, h("ion-icon", { class: "med-icon", slot: "start", size: "small", name: "med-fontmenor" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontmaior" }))));
   }
   static get style() { return medFontZoomCss; }
 };
