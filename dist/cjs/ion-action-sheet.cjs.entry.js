@@ -2,10 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-b66b6152.js');
-const ionicGlobal = require('./ionic-global-26aa53b6.js');
-const buttonActive = require('./button-active-1418b563.js');
-const overlays = require('./overlays-ae722e00.js');
+const index = require('./index-a0a08b2a.js');
+const ionicGlobal = require('./ionic-global-926d5da1.js');
+const buttonActive = require('./button-active-0b4e09f5.js');
+const overlays = require('./overlays-a806c884.js');
 const theme = require('./theme-21d701cc.js');
 const animation = require('./animation-dadce649.js');
 require('./haptic-3d9360f0.js');
@@ -244,7 +244,7 @@ const ActionSheet = class {
     return (index.h(index.Host, { role: "dialog", "aria-modal": "true", tabindex: "-1", style: {
         zIndex: `${20000 + this.overlayIndex}`,
       }, class: Object.assign(Object.assign({ [mode]: true }, theme.getClassMap(this.cssClass)), { 'action-sheet-translucent': this.translucent }), onIonActionSheetWillDismiss: this.dispatchCancelHandler, onIonBackdropTap: this.onBackdropTap }, index.h("ion-backdrop", { tappable: this.backdropDismiss }), index.h("div", { tabindex: "0" }), index.h("div", { class: "action-sheet-wrapper ion-overlay-wrapper", role: "dialog", ref: el => this.wrapperEl = el }, index.h("div", { class: "action-sheet-container" }, index.h("div", { class: "action-sheet-group", ref: el => this.groupEl = el }, this.header !== undefined &&
-      index.h("div", { class: "action-sheet-title" }, this.header, this.subHeader && index.h("div", { class: "action-sheet-sub-title" }, this.subHeader)), buttons.map(b => index.h("button", { type: "button", class: buttonClass(b), onClick: () => this.buttonClick(b) }, index.h("span", { class: "action-sheet-button-inner" }, b.icon && index.h("ion-icon", { icon: b.icon, lazy: false, class: "action-sheet-icon" }), b.text), mode === 'md' && index.h("ion-ripple-effect", null)))), cancelButton &&
+      index.h("div", { class: "action-sheet-title" }, this.header, this.subHeader && index.h("div", { class: "action-sheet-sub-title" }, this.subHeader)), buttons.map(b => index.h("button", { type: "button", class: buttonClass(b), onClick: () => this.buttonClick(b) }, index.h("span", { class: "action-sheet-button-inner" }, b.icon && index.h("ion-icon", { icon: b.icon, lazy: false, class: "med-icon action-sheet-icon" }), b.text), mode === 'md' && index.h("ion-ripple-effect", null)))), cancelButton &&
       index.h("div", { class: "action-sheet-group action-sheet-group-cancel" }, index.h("button", { type: "button", class: buttonClass(cancelButton), onClick: () => this.buttonClick(cancelButton) }, index.h("span", { class: "action-sheet-button-inner" }, cancelButton.icon &&
         index.h("ion-icon", { icon: cancelButton.icon, lazy: false, class: "action-sheet-icon" }), cancelButton.text), mode === 'md' && index.h("ion-ripple-effect", null))))), index.h("div", { tabindex: "0" })));
   }

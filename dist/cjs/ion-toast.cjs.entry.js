@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-b66b6152.js');
-const ionicGlobal = require('./ionic-global-26aa53b6.js');
-const overlays = require('./overlays-ae722e00.js');
+const index = require('./index-a0a08b2a.js');
+const ionicGlobal = require('./ionic-global-926d5da1.js');
+const overlays = require('./overlays-a806c884.js');
 const index$1 = require('./index-099f2bcb.js');
 const theme = require('./theme-21d701cc.js');
 const animation = require('./animation-dadce649.js');
@@ -253,7 +253,7 @@ const Toast = class {
       [`toast-button-group-${side}`]: true
     };
     return (index.h("div", { class: buttonGroupsClasses }, buttons.map(b => index.h("button", { type: "button", class: buttonClass(b), tabIndex: 0, onClick: () => this.buttonClick(b), part: "button" }, index.h("div", { class: "toast-button-inner" }, b.icon &&
-      index.h("ion-icon", { icon: b.icon, slot: b.text === undefined ? 'icon-only' : undefined, class: "toast-icon" }), b.text), mode === 'md' && index.h("ion-ripple-effect", { type: b.icon !== undefined && b.text === undefined ? 'unbounded' : 'bounded' })))));
+      index.h("ion-icon", { icon: b.icon, slot: b.text === undefined ? 'icon-only' : undefined, class: "med-icon toast-icon" }), b.text), mode === 'md' && index.h("ion-ripple-effect", { type: b.icon !== undefined && b.text === undefined ? 'unbounded' : 'bounded' })))));
   }
   render() {
     const allButtons = this.getButtons();

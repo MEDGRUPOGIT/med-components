@@ -597,11 +597,11 @@
 }
 
 :host {
-  --color: #d6d6d6;
-  --background: #292929;
+  --color: var(--med-color-neutral-10);
+  --background: var(--med-color-neutral-2);
   --border-radius: 8px;
-  --icon-color: #d6d6d6;
-  --cancel-button-color: #3a8eb8;
+  --icon-color: var(--med-color-neutral-10);
+  --cancel-button-color: var(--med-color-brand-3, #14a2b8);
   --placeholder-opacity: 1;
   --spacing: 8px;
   padding: var(--spacing);
@@ -617,8 +617,26 @@
   width: 24px;
 }
 
-:host-context(.light-mode) {
-  --color: #474747;
-  --background: #ebebeb;
-  --icon-color: #474747;
+:host(.ion-color) {
+  color: var(--med-color-neutral-10);
+}
+
+:host(.ion-color) .searchbar-input {
+  background: var(--med-color-neutral-2);
+}
+
+:host(.ion-color) .searchbar-cancel-button {
+  color: var(--med-color-3);
+}
+
+:host(.med-neutral) {
+  color: var(--med-color-neutral-10);
+}
+
+:host(.med-neutral) .searchbar-input {
+  background: var(--med-color-neutral-2);
+}
+
+:host(.med-neutral) .searchbar-cancel-button {
+  color: var(--med-neutral-contrast);
 }

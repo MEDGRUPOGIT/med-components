@@ -329,7 +329,7 @@ export class Searchbar {
     const shouldShowCancelButton = this.shouldShowCancelButton();
     const cancelButton = (this.showCancelButton !== 'never') && (h("button", { "aria-label": cancelButtonText, "aria-hidden": shouldShowCancelButton ? undefined : 'true', type: "button", tabIndex: mode === 'ios' && !shouldShowCancelButton ? -1 : undefined, onMouseDown: this.onCancelSearchbar, onTouchStart: this.onCancelSearchbar, class: "searchbar-cancel-button" },
       h("div", { "aria-hidden": "true" }, mode === 'md'
-        ? h("ion-icon", { "aria-hidden": "true", mode: mode, icon: this.cancelButtonIcon, lazy: false })
+        ? h("ion-icon", { class: "med-icon", "aria-hidden": "true", mode: mode, icon: this.cancelButtonIcon, lazy: false })
         : cancelButtonText)));
     return (h(Host, { role: "search", "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(this.color, {
         [mode]: true,
@@ -341,13 +341,13 @@ export class Searchbar {
         'searchbar-has-focus': this.focused,
         'searchbar-should-show-clear': this.shouldShowClearButton(),
         'searchbar-should-show-cancel': this.shouldShowCancelButton()
-      }) },
+      }, this.neutral) },
       h("div", { class: "searchbar-input-container" },
         h("input", { "aria-label": "search text", disabled: this.disabled, ref: el => this.nativeInput = el, class: "searchbar-input", inputMode: this.inputmode, enterKeyHint: this.enterkeyhint, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, placeholder: this.placeholder, type: this.type, value: this.getValue(), autoComplete: this.autocomplete, autoCorrect: this.autocorrect, spellcheck: this.spellcheck }),
         mode === 'md' && cancelButton,
-        h("ion-icon", { "aria-hidden": "true", mode: mode, icon: searchIcon, lazy: false, class: "searchbar-search-icon" }),
+        h("ion-icon", { "aria-hidden": "true", mode: mode, icon: searchIcon, lazy: false, class: "med-icon searchbar-search-icon" }),
         h("button", { "aria-label": "reset", type: "button", "no-blur": true, class: "searchbar-clear-button", onMouseDown: ev => this.onClearInput(ev, true), onTouchStart: ev => this.onClearInput(ev, true) },
-          h("ion-icon", { "aria-hidden": "true", mode: mode, icon: clearIcon, lazy: false, class: "searchbar-clear-icon" }))),
+          h("ion-icon", { "aria-hidden": "true", mode: mode, icon: clearIcon, lazy: false, class: "med-icon searchbar-clear-icon" }))),
       mode === 'ios' && cancelButton));
   }
   static get is() { return "ion-searchbar"; }
@@ -361,6 +361,28 @@ export class Searchbar {
     "md": ["searchbar.ios.css"]
   }; }
   static get properties() { return {
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Neutral",
+        "resolved": "string | undefined",
+        "references": {
+          "Neutral": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "neutral",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,
@@ -378,7 +400,7 @@ export class Searchbar {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -454,7 +476,7 @@ export class Searchbar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Set the cancel button icon. Only applies to `md` mode.\nDefaults to `\"arrow-back-sharp\"`."
+        "text": "Set the cancel button icon. Only applies to `md` mode.\r\nDefaults to `\"arrow-back-sharp\"`."
       },
       "attribute": "cancel-button-icon",
       "reflect": false,
@@ -543,7 +565,7 @@ export class Searchbar {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
+        "text": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
       },
       "attribute": "inputmode",
       "reflect": false
@@ -560,7 +582,7 @@ export class Searchbar {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`."
+        "text": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`."
       },
       "attribute": "enterkeyhint",
       "reflect": false
@@ -577,7 +599,7 @@ export class Searchbar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Set the input's placeholder.\n`placeholder` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+        "text": "Set the input's placeholder.\r\n`placeholder` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
       },
       "attribute": "placeholder",
       "reflect": false,
@@ -595,7 +617,7 @@ export class Searchbar {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\n`ios` mode and `\"search-sharp\"` in `md` mode."
+        "text": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\r\n`ios` mode and `\"search-sharp\"` in `md` mode."
       },
       "attribute": "search-icon",
       "reflect": false
@@ -612,7 +634,7 @@ export class Searchbar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\nSetting to `\"focus\"` shows the cancel button on focus.\nSetting to `\"never\"` hides the cancel button.\nSetting to `\"always\"` shows the cancel button regardless\nof focus state."
+        "text": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\r\nSetting to `\"focus\"` shows the cancel button on focus.\r\nSetting to `\"never\"` hides the cancel button.\r\nSetting to `\"always\"` shows the cancel button regardless\r\nof focus state."
       },
       "attribute": "show-cancel-button",
       "reflect": false,
@@ -630,7 +652,7 @@ export class Searchbar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\nSetting to `\"focus\"` shows the clear button on focus if the\ninput is not empty.\nSetting to `\"never\"` hides the clear button.\nSetting to `\"always\"` shows the clear button regardless\nof focus state, but only if the input is not empty."
+        "text": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\r\nSetting to `\"focus\"` shows the clear button on focus if the\r\ninput is not empty.\r\nSetting to `\"never\"` hides the clear button.\r\nSetting to `\"always\"` shows the clear button regardless\r\nof focus state, but only if the input is not empty."
       },
       "attribute": "show-clear-button",
       "reflect": false,
@@ -831,7 +853,7 @@ export class Searchbar {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\n`input.focus()`.",
+        "text": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\r\n`input.focus()`.",
         "tags": []
       }
     },

@@ -917,7 +917,7 @@ ion-ripple-effect {
 }
 
 :host(.button-has-icon-only) {
-  --color: var(--med-color-neutral-light-prime, #fafafa);
+  --color: var(--med-color-neutral-10);
   --background: transparent;
   --background-hover: rgba(var(--med-color-neutral-light-10-rgb, 173, 173, 173), 0.08);
   --background-hover-opacity: 1;
@@ -933,7 +933,7 @@ ion-ripple-effect {
 }
 
 :host(.button-has-icon-only) {
-  font-size: 32px;
+  --font-size: 32px;
 }
 
 ::slotted(ion-icon) {

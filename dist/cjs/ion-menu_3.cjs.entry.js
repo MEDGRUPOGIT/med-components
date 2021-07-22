@@ -2,12 +2,12 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-b66b6152.js');
-const ionicGlobal = require('./ionic-global-26aa53b6.js');
+const index = require('./index-a0a08b2a.js');
+const ionicGlobal = require('./ionic-global-926d5da1.js');
 const cubicBezier = require('./cubic-bezier-6f49c00a.js');
 const gestureController = require('./gesture-controller-bcfe01ec.js');
 const helpers = require('./helpers-ab0db03b.js');
-const index$1 = require('./index-eb408535.js');
+const index$1 = require('./index-ffeb9370.js');
 const theme = require('./theme-21d701cc.js');
 require('./hardware-back-button-e370df1e.js');
 require('./animation-dadce649.js');
@@ -507,7 +507,7 @@ const MenuButton = class {
         'in-toolbar-color': theme.hostContext('ion-toolbar[color]', this.el),
         'ion-activatable': true,
         'ion-focusable': true
-      }) }, index.h("button", Object.assign({}, attrs, { disabled: disabled, class: "button-native", part: "native", "aria-label": "menu" }), index.h("span", { class: "button-inner" }, index.h("slot", null, index.h("ion-icon", { part: "icon", icon: menuIcon, mode: mode, lazy: false, "aria-hidden": "true" }))), mode === 'md' && index.h("ion-ripple-effect", { type: "unbounded" }))));
+      }) }, index.h("button", Object.assign({}, attrs, { disabled: disabled, class: "button-native", part: "native", "aria-label": "menu" }), index.h("span", { class: "button-inner" }, index.h("slot", null, index.h("ion-icon", { class: "med-icon", part: "icon", icon: menuIcon, mode: mode, lazy: false, "aria-hidden": "true" }))), mode === 'md' && index.h("ion-ripple-effect", { type: "unbounded" }))));
   }
   get el() { return index.getElement(this); }
 };

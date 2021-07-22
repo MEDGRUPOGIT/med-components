@@ -31,8 +31,8 @@ export * from './components/toggle/toggle-interface';
 export * from './components/virtual-scroll/virtual-scroll-interface';
 
 // medgrupo
-export * from './components/medgrupo/team/med-alternativas/med-alternativas-interface';
-export * from './components/medgrupo/global/med-image-zoom/med-image-zoom-interface';
+export * from './components/00-autoral/team/med-alternativas/med-alternativas-interface';
+export * from './components/00-autoral/global/med-image-zoom/med-image-zoom-interface';
 export type Neutral = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | string;
 
 // Types from utils

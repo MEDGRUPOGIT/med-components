@@ -1,6 +1,6 @@
-import { r as registerInstance, h, H as Host } from './index-a04c4e19.js';
-import { m as modalController } from './overlays-d31ba288.js';
-import './ionic-global-9e3e8d3f.js';
+import { r as registerInstance, h, H as Host } from './index-7a8b7a1c.js';
+import { m as modalController } from './overlays-abdb9c38.js';
+import './ionic-global-366f1c10.js';
 import './hardware-back-button-3fda9f12.js';
 import './helpers-6b411283.js';
 
@@ -30,7 +30,7 @@ const MedImageZoom = class {
     modalController.dismiss();
   }
   render() {
-    return (h(Host, { "from-stencil": true }, h("med-header", { class: "zoom-header" }, h("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" }, h("span", { slot: "title", innerHTML: this.titulo }), h("ion-button", { "ds-name": "icon-only", slot: "right", onClick: () => this.dismiss() }, h("ion-icon", { slot: "icon-only", name: "med-close" })))), h("ion-content", { class: "zoom-content" }, h("ion-slides", { ref: (el) => { this.slider = el; el.options = this.sliderOpts; }, pager: this.imagens && this.imagens.length > 1 }, this.imagens.map((img) => h("ion-slide", null, h("span", { class: "marca-agua-superior" }, this.marcaAguaSuperior), h("div", { class: "swiper-zoom-container" }, h("img", { class: "zoom-imagem", src: img === null || img === void 0 ? void 0 : img.src }), h("div", { class: "zoom-legenda-container" }, h("div", { class: "zoom-legenda", innerHTML: img === null || img === void 0 ? void 0 : img.legenda })))))), h("span", { class: "marca-agua-inferior" }, this.marcaAguaInferior)), h("div", { class: "zoom-button-container" }, h("button", { class: "zoom-button", onClick: () => this.zoom(true) }, h("ion-icon", { name: "med-plus" })), h("button", { class: "zoom-button", onClick: () => this.zoom(false) }, h("ion-icon", { name: "med-minus" })), h("button", { class: "zoom-button zoom-button--close", onClick: () => this.dismiss() }, h("ion-icon", { name: "med-close" })))));
+    return (h(Host, { "from-stencil": true }, h("med-header", { class: "zoom-header" }, h("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" }, h("span", { slot: "title", innerHTML: this.titulo }), h("ion-button", { "ds-name": "icon-only", slot: "right", onClick: () => this.dismiss() }, h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })))), h("ion-content", { class: "zoom-content" }, h("ion-slides", { ref: (el) => { this.slider = el; el.options = this.sliderOpts; }, pager: this.imagens && this.imagens.length > 1 }, this.imagens.map((img) => h("ion-slide", null, h("span", { class: "marca-agua-superior" }, this.marcaAguaSuperior), h("div", { class: "swiper-zoom-container" }, h("img", { class: "zoom-imagem", src: img === null || img === void 0 ? void 0 : img.src }), h("div", { class: "zoom-legenda-container" }, h("div", { class: "zoom-legenda", innerHTML: img === null || img === void 0 ? void 0 : img.legenda })))))), h("span", { class: "marca-agua-inferior" }, this.marcaAguaInferior)), h("div", { class: "zoom-button-container" }, h("button", { class: "zoom-button", onClick: () => this.zoom(true) }, h("ion-icon", { class: "med-icon", name: "med-menos" })), h("button", { class: "zoom-button", onClick: () => this.zoom(false) }, h("ion-icon", { class: "med-icon", name: "med-mais" })), h("button", { class: "zoom-button zoom-button--close", onClick: () => this.dismiss() }, h("ion-icon", { class: "med-icon", name: "med-fechar" })))));
   }
 };
 MedImageZoom.style = medImageZoomCss;

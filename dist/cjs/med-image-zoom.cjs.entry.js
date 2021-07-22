@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-b66b6152.js');
-const overlays = require('./overlays-ae722e00.js');
-require('./ionic-global-26aa53b6.js');
+const index = require('./index-a0a08b2a.js');
+const overlays = require('./overlays-a806c884.js');
+require('./ionic-global-926d5da1.js');
 require('./hardware-back-button-e370df1e.js');
 require('./helpers-ab0db03b.js');
 
@@ -34,7 +34,7 @@ const MedImageZoom = class {
     overlays.modalController.dismiss();
   }
   render() {
-    return (index.h(index.Host, { "from-stencil": true }, index.h("med-header", { class: "zoom-header" }, index.h("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" }, index.h("span", { slot: "title", innerHTML: this.titulo }), index.h("ion-button", { "ds-name": "icon-only", slot: "right", onClick: () => this.dismiss() }, index.h("ion-icon", { slot: "icon-only", name: "med-close" })))), index.h("ion-content", { class: "zoom-content" }, index.h("ion-slides", { ref: (el) => { this.slider = el; el.options = this.sliderOpts; }, pager: this.imagens && this.imagens.length > 1 }, this.imagens.map((img) => index.h("ion-slide", null, index.h("span", { class: "marca-agua-superior" }, this.marcaAguaSuperior), index.h("div", { class: "swiper-zoom-container" }, index.h("img", { class: "zoom-imagem", src: img === null || img === void 0 ? void 0 : img.src }), index.h("div", { class: "zoom-legenda-container" }, index.h("div", { class: "zoom-legenda", innerHTML: img === null || img === void 0 ? void 0 : img.legenda })))))), index.h("span", { class: "marca-agua-inferior" }, this.marcaAguaInferior)), index.h("div", { class: "zoom-button-container" }, index.h("button", { class: "zoom-button", onClick: () => this.zoom(true) }, index.h("ion-icon", { name: "med-plus" })), index.h("button", { class: "zoom-button", onClick: () => this.zoom(false) }, index.h("ion-icon", { name: "med-minus" })), index.h("button", { class: "zoom-button zoom-button--close", onClick: () => this.dismiss() }, index.h("ion-icon", { name: "med-close" })))));
+    return (index.h(index.Host, { "from-stencil": true }, index.h("med-header", { class: "zoom-header" }, index.h("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" }, index.h("span", { slot: "title", innerHTML: this.titulo }), index.h("ion-button", { "ds-name": "icon-only", slot: "right", onClick: () => this.dismiss() }, index.h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })))), index.h("ion-content", { class: "zoom-content" }, index.h("ion-slides", { ref: (el) => { this.slider = el; el.options = this.sliderOpts; }, pager: this.imagens && this.imagens.length > 1 }, this.imagens.map((img) => index.h("ion-slide", null, index.h("span", { class: "marca-agua-superior" }, this.marcaAguaSuperior), index.h("div", { class: "swiper-zoom-container" }, index.h("img", { class: "zoom-imagem", src: img === null || img === void 0 ? void 0 : img.src }), index.h("div", { class: "zoom-legenda-container" }, index.h("div", { class: "zoom-legenda", innerHTML: img === null || img === void 0 ? void 0 : img.legenda })))))), index.h("span", { class: "marca-agua-inferior" }, this.marcaAguaInferior)), index.h("div", { class: "zoom-button-container" }, index.h("button", { class: "zoom-button", onClick: () => this.zoom(true) }, index.h("ion-icon", { class: "med-icon", name: "med-menos" })), index.h("button", { class: "zoom-button", onClick: () => this.zoom(false) }, index.h("ion-icon", { class: "med-icon", name: "med-mais" })), index.h("button", { class: "zoom-button zoom-button--close", onClick: () => this.dismiss() }, index.h("ion-icon", { class: "med-icon", name: "med-fechar" })))));
   }
 };
 MedImageZoom.style = medImageZoomCss;

@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-b66b6152.js');
-const ionicGlobal = require('./ionic-global-26aa53b6.js');
+const index = require('./index-a0a08b2a.js');
+const ionicGlobal = require('./ionic-global-926d5da1.js');
 const cubicBezier = require('./cubic-bezier-6f49c00a.js');
 const helpers = require('./helpers-ab0db03b.js');
 const haptic = require('./haptic-3d9360f0.js');
@@ -803,8 +803,8 @@ const RefresherContent = class {
     const mode = ionicGlobal.getIonMode(this);
     return (index.h(index.Host, { class: mode }, index.h("div", { class: "refresher-pulling" }, this.pullingIcon && hasSpinner &&
       index.h("div", { class: "refresher-pulling-icon" }, index.h("div", { class: "spinner-arrow-container" }, index.h("ion-spinner", { name: this.pullingIcon, paused: true }), mode === 'md' && this.pullingIcon === 'circular' &&
-        index.h("div", { class: "arrow-container" }, index.h("ion-icon", { name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
-      index.h("div", { class: "refresher-pulling-icon" }, index.h("ion-icon", { icon: this.pullingIcon, lazy: false })), this.pullingText &&
+        index.h("div", { class: "arrow-container" }, index.h("ion-icon", { class: "med-icon", name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
+      index.h("div", { class: "refresher-pulling-icon" }, index.h("ion-icon", { class: "med-icon", icon: this.pullingIcon, lazy: false })), this.pullingText &&
       index.h("div", { class: "refresher-pulling-text", innerHTML: index$1.sanitizeDOMString(this.pullingText) })), index.h("div", { class: "refresher-refreshing" }, this.refreshingSpinner &&
       index.h("div", { class: "refresher-refreshing-icon" }, index.h("ion-spinner", { name: this.refreshingSpinner })), this.refreshingText &&
       index.h("div", { class: "refresher-refreshing-text", innerHTML: index$1.sanitizeDOMString(this.refreshingText) }))));
