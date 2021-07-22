@@ -14,6 +14,7 @@ const MedAccordion$1 = class extends HTMLElement {
       console.log('med-accordion', new Date().getTime());
       console.log('med-accordion', event);
       this.expandContent();
+      event.stopPropagation();
     };
     this.expandContent = async () => {
       if (this.collapsedState) {

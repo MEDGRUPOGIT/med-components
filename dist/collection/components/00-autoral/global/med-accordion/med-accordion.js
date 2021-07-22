@@ -8,6 +8,7 @@ export class MedAccordion {
       console.log('med-accordion', new Date().getTime());
       console.log('med-accordion', event);
       this.expandContent();
+      event.stopPropagation();
     };
     this.expandContent = async () => {
       if (this.collapsedState) {

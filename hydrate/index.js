@@ -13957,6 +13957,7 @@ class MedAccordion {
       console.log('med-accordion', new Date().getTime());
       console.log('med-accordion', event);
       this.expandContent();
+      event.stopPropagation();
     };
     this.expandContent = async () => {
       if (this.collapsedState) {
@@ -14304,8 +14305,8 @@ class MedContextMenu {
     this.onClick = (event) => {
       console.log('med-context-menu', new Date().getTime());
       console.log('med-context-menu', event);
-      this.expandContent();
       event.stopPropagation();
+      this.expandContent();
     };
   }
   async toggle() {

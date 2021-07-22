@@ -13,8 +13,8 @@ const MedContextMenu$1 = class extends HTMLElement {
     this.onClick = (event) => {
       console.log('med-context-menu', new Date().getTime());
       console.log('med-context-menu', event);
-      this.expandContent();
       event.stopPropagation();
+      this.expandContent();
     };
   }
   async toggle() {
