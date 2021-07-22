@@ -2,19 +2,19 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-a0a08b2a.js');
-const appGlobals = require('./app-globals-23aad209.js');
-require('./ionic-global-926d5da1.js');
+const index = require('./index-b66b6152.js');
+const appGlobals = require('./app-globals-abfef3e2.js');
+require('./ionic-global-26aa53b6.js');
 
 /*
- Stencil Client Patch Esm v2.5.0 | MIT Licensed | https://stenciljs.com
+ Stencil Client Patch Esm v2.6.0 | MIT Licensed | https://stenciljs.com
  */
 const patchEsm = () => {
     // NOTE!! This fn cannot use async/await!
     // @ts-ignore
     if (!(index.CSS && index.CSS.supports && index.CSS.supports('color', 'var(--c)'))) {
         // @ts-ignore
-        return Promise.resolve().then(function () { return require(/* webpackChunkName: "polyfills-css-shim" */ './css-shim-2ce83f16.js'); }).then(() => {
+        return Promise.resolve().then(function () { return require(/* webpackChunkName: "polyfills-css-shim" */ './css-shim-e33df79c.js'); }).then(() => {
             if ((index.plt.$cssShim$ = index.win.__cssshim)) {
                 return index.plt.$cssShim$.i();
             }

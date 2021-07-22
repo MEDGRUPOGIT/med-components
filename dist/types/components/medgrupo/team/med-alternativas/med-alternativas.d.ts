@@ -10,6 +10,7 @@ export declare class MedAlternativas implements MedAlternativasInterface {
   mostraResposta: boolean;
   alternativaSelecionada: string;
   medChange: EventEmitter<MedAlternativaInterface>;
+  medClick: EventEmitter<MedAlternativaInterface>;
   medGalleryRequest: EventEmitter<MedAlternativaInterface>;
   private cssClassAlternativa;
   private respostaAlterada;

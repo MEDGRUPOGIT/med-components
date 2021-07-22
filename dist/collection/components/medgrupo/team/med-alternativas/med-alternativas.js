@@ -21,17 +21,13 @@ export class MedAlternativas {
   }
   respostaAlterada(alternativa) {
     this.alternativaSelecionada = alternativa;
-    let objAlternativa;
-    for (const item of this.alternativas) {
-      if (item[this.keyAlternativa] === alternativa) {
-        objAlternativa = item;
-        break;
-      }
-    }
+    let objAlternativa = this.alternativas.find((item) => item[this.keyAlternativa] === alternativa);
+    this.medClick.emit(objAlternativa);
     this.medChange.emit(objAlternativa);
   }
-  imageRequest(alternativa) {
+  imageRequest(alternativa, ev) {
     this.medGalleryRequest.emit(alternativa);
+    ev.stopPropagation();
   }
   render() {
     let hasImage = false;
@@ -43,13 +39,13 @@ export class MedAlternativas {
     }
     return (h(Host, { "from-stencil": true },
       h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada },
-        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) },
+        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("li", { onClick: () => this.respostaAlterada(alternativa[this.keyAlternativa]), class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) },
           h("med-option", { class: 'alternativa__option' },
             h("ion-radio", { value: alternativa[this.keyAlternativa] }),
             h("label", { slot: "label" }, alternativa[this.keyAlternativa])),
           h("div", { class: 'alternativa__right' },
             alternativa[this.keyEnunciado] && h("div", { class: 'alternativa__text', innerHTML: alternativa[this.keyEnunciado] }),
-            h("div", { class: 'image-container', onClick: () => this.imageRequest(alternativa) },
+            h("div", { class: 'image-container', onClick: (ev) => this.imageRequest(alternativa, ev) },
               alternativa[this.keyImagem] && h("img", { class: 'alternativa__image', src: alternativa[this.keyImagem] }),
               h("div", { class: 'overlay' },
                 h("div", { class: "overlay__content" },
@@ -219,6 +215,26 @@ export class MedAlternativas {
   static get events() { return [{
       "method": "medChange",
       "name": "medChange",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "complexType": {
+        "original": "MedAlternativaInterface",
+        "resolved": "MedAlternativaInterface",
+        "references": {
+          "MedAlternativaInterface": {
+            "location": "import",
+            "path": "./med-alternativas-interface"
+          }
+        }
+      }
+    }, {
+      "method": "medClick",
+      "name": "medClick",
       "bubbles": true,
       "cancelable": true,
       "composed": true,

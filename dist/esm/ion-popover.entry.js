@@ -1,9 +1,9 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-7a8b7a1c.js';
-import { b as getIonMode } from './ionic-global-366f1c10.js';
+import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-a04c4e19.js';
+import { b as getIonMode } from './ionic-global-9e3e8d3f.js';
 import { a as attachComponent, d as detachComponent } from './framework-delegate-0ff5b9dc.js';
-import { B as BACKDROP, e as prepareOverlay, d as present, f as dismiss, g as eventMethod } from './overlays-abdb9c38.js';
+import { B as BACKDROP, e as prepareOverlay, d as present, f as dismiss, g as eventMethod } from './overlays-d31ba288.js';
 import { g as getClassMap } from './theme-3b0eafd2.js';
-import { e as deepReady } from './index-c7f62e39.js';
+import { e as deepReady } from './index-d4091ab2.js';
 import { c as createAnimation } from './animation-f0f182d7.js';
 import './helpers-6b411283.js';
 import './hardware-back-button-3fda9f12.js';
