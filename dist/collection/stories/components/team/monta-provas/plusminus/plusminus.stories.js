@@ -21,8 +21,6 @@ const TemplateDefault = () => {
         </monta-provas-plusminus>
         <!-- component -->
 
-        <ion-toggle mode="ios" color="medium"></ion-toggle>
-
       </div>
     </ion-app>
   `

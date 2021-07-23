@@ -1,9 +1,9 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-7a8b7a1c.js';
-import { c as config, b as getIonMode } from './ionic-global-366f1c10.js';
+import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-a04c4e19.js';
+import { c as config, b as getIonMode } from './ionic-global-9e3e8d3f.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-c3ea3c34.js';
 import { G as GESTURE_CONTROLLER } from './gesture-controller-cb973372.js';
 import { m as isEndSide, l as assert, j as clamp } from './helpers-6b411283.js';
-import { m as menuController } from './index-ac64c8d9.js';
+import { m as menuController } from './index-a8f15ba6.js';
 import { c as createColorClasses, h as hostContext } from './theme-3b0eafd2.js';
 import './hardware-back-button-3fda9f12.js';
 import './animation-f0f182d7.js';

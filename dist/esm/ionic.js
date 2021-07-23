@@ -1,9 +1,9 @@
-import { p as plt, w as win, d as doc, N as NAMESPACE, a as promiseResolve, b as bootstrapLazy } from './index-7a8b7a1c.js';
-import { g as globalScripts } from './app-globals-9242aa78.js';
-import './ionic-global-366f1c10.js';
+import { p as plt, w as win, d as doc, N as NAMESPACE, a as promiseResolve, b as bootstrapLazy } from './index-a04c4e19.js';
+import { g as globalScripts } from './app-globals-a2cfb0fa.js';
+import './ionic-global-9e3e8d3f.js';
 
 /*
- Stencil Client Patch Browser v2.5.0 | MIT Licensed | https://stenciljs.com
+ Stencil Client Patch Browser v2.6.0 | MIT Licensed | https://stenciljs.com
  */
 const getDynamicImportFunction = (namespace) => `__sc_import_${namespace.replace(/\s|-/g, '_')}`;
 const patchBrowser = () => {
@@ -37,7 +37,7 @@ const patchBrowser = () => {
         if (!win.customElements) {
             // module support, but no custom elements support (Old Edge)
             // @ts-ignore
-            return import(/* webpackChunkName: "polyfills-dom" */ './dom-1900fb82.js').then(() => opts);
+            return import(/* webpackChunkName: "polyfills-dom" */ './dom-1b195079.js').then(() => opts);
         }
     }
     return promiseResolve(opts);

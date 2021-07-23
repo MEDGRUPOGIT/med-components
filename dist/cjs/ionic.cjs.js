@@ -1,11 +1,11 @@
 'use strict';
 
-const index = require('./index-a0a08b2a.js');
-const appGlobals = require('./app-globals-23aad209.js');
-require('./ionic-global-926d5da1.js');
+const index = require('./index-b66b6152.js');
+const appGlobals = require('./app-globals-abfef3e2.js');
+require('./ionic-global-26aa53b6.js');
 
 /*
- Stencil Client Patch Browser v2.5.0 | MIT Licensed | https://stenciljs.com
+ Stencil Client Patch Browser v2.6.0 | MIT Licensed | https://stenciljs.com
  */
 const getDynamicImportFunction = (namespace) => `__sc_import_${namespace.replace(/\s|-/g, '_')}`;
 const patchBrowser = () => {
@@ -39,7 +39,7 @@ const patchBrowser = () => {
         if (!index.win.customElements) {
             // module support, but no custom elements support (Old Edge)
             // @ts-ignore
-            return Promise.resolve().then(function () { return require(/* webpackChunkName: "polyfills-dom" */ './dom-c563008f.js'); }).then(() => opts);
+            return Promise.resolve().then(function () { return require(/* webpackChunkName: "polyfills-dom" */ './dom-c8b6d1a7.js'); }).then(() => opts);
         }
     }
     return index.promiseResolve(opts);

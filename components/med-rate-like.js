@@ -20,9 +20,9 @@ const MedRateLike$1 = class extends HTMLElement {
   render() {
     return (h(Host, { "from-stencil": true }, h("button", { class: `button
           ${this.status === RateStatus.LIKE ? 'button--like' : ''}
-          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(RateStatus.LIKE) }, h("ion-icon", { name: "med-like", class: "rate" })), h("button", { class: `button
+          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(RateStatus.LIKE) }, h("ion-icon", { name: "med-positivo", class: "med-icon rate" })), h("button", { class: `button
           ${this.status === RateStatus.DISLIKE ? 'button--dislike' : ''}
-          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(RateStatus.DISLIKE) }, h("ion-icon", { name: "med-dislike", class: "rate" }))));
+          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(RateStatus.DISLIKE) }, h("ion-icon", { name: "med-negativo", class: "med-icon rate" }))));
   }
   static get style() { return medRateLikeCss; }
 };
