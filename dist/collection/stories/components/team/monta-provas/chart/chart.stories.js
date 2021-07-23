@@ -42,29 +42,13 @@ const TemplateDefault = ({valores}) => {
         margin: 0 auto;
       }
 
-      .monta-provas-chart__total {
+      .monta-provas-chart-content {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         line-height: var(--med-line-height-compressed);
         text-align: center;
-      }
-
-      .monta-provas-chart__label {
-        font-size: var(--med-font-size-nano);
-        color: var(--med-color-neutral-dark-10);
-        font-weight: var(--med-font-weight-bold);
-        display: flex;
-        justify-content: center;
-        line-height: var(--med-line-height-compressed);
-      }
-
-      .monta-provas-chart__number {
-        font-weight: var(--med-font-weight-bold);
-        font-size: var(--med-font-size-md);
-        color: var(--med-color-neutral-10);
-        line-height: var(--med-line-height-compressed);
       }
 
       .med-context-menu__list {
@@ -133,12 +117,8 @@ const TemplateDefault = ({valores}) => {
           </med-context-menu>
 
           <div class="monta-provas-chart" slot="content">
-            <med-chart-radial class="monta-provas-chart__radial">
-              <div class="monta-provas-chart__total">
-                <span class="monta-provas-chart__label">Total de</span>
-                <span class="monta-provas-chart__number">100</span>
-                <span class="monta-provas-chart__label">Questões</span>
-              </div>
+            <med-chart-radial>
+              <med-chart-radial-content class="monta-provas-chart-content" total="500"></med-chart-radial-content>
             </med-chart-radial>
 
             <med-chart-radial-label class="monta-provas-chart__label"></med-chart-radial-label>

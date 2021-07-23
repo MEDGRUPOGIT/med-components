@@ -6,7 +6,7 @@ export default {
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({valores}) => {
+const Default = ({valores}) => {
 
   setTimeout(() => {
     document.querySelector('med-chart-radial').valores = valores.valores;
@@ -25,7 +25,7 @@ const TemplateDefault = ({valores}) => {
   `
 }
 
-export const ChartRadial = TemplateDefault.bind({});
+export const ChartRadial = Default.bind({});
 ChartRadial.parameters = {
   design: {
     type: 'figma',

@@ -396,7 +396,7 @@ export class Range {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -413,7 +413,7 @@ export class Range {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "How long, in milliseconds, to wait to trigger the\r\n`ionChange` event after each change in the range value.\r\nThis also impacts form bindings such as `ngModel` or `v-model`."
+        "text": "How long, in milliseconds, to wait to trigger the\n`ionChange` event after each change in the range value.\nThis also impacts form bindings such as `ngModel` or `v-model`."
       },
       "attribute": "debounce",
       "reflect": false,
@@ -503,7 +503,7 @@ export class Range {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, a pin with integer value is shown when the knob\r\nis pressed."
+        "text": "If `true`, a pin with integer value is shown when the knob\nis pressed."
       },
       "attribute": "pin",
       "reflect": false,
@@ -521,7 +521,7 @@ export class Range {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, the knob snaps to tick marks evenly spaced based\r\non the step property value."
+        "text": "If `true`, the knob snaps to tick marks evenly spaced based\non the step property value."
       },
       "attribute": "snaps",
       "reflect": false,
@@ -557,7 +557,7 @@ export class Range {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, tick marks are displayed based on the step value.\r\nOnly applies when `snaps` is `true`."
+        "text": "If `true`, tick marks are displayed based on the step value.\nOnly applies when `snaps` is `true`."
       },
       "attribute": "ticks",
       "reflect": false,

@@ -6,7 +6,7 @@ export default {
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({valores}) => {
+const Default = ({valores}) => {
 
   setTimeout(() => {
     document.querySelector('med-chart-label').valores = valores.valores;
@@ -25,14 +25,14 @@ const TemplateDefault = ({valores}) => {
   `
 }
 
-export const ChartLabel = TemplateDefault.bind({});
-ChartLabel.parameters = {
+export const ChartRadialLabel = Default.bind({});
+ChartRadialLabel.parameters = {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/zdbyAa3XpX3loOjJEaXc6E/Quest%C3%B5es?node-id=826%3A1008',
   },
 }
-ChartLabel.argTypes = {
+ChartRadialLabel.argTypes = {
   valores: {
     defaultValue: {
       valores: [
