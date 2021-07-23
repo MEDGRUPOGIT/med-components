@@ -261,3 +261,6 @@
   color: var(--med-color-neutral-10);
   line-height: var(--med-line-height-compressed);
 }
+:host(.monta-provas-chart-content) .monta-provas-chart__number--small {
+  font-size: var(--med-font-size-xs);
+}

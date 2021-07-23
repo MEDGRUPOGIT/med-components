@@ -1,5 +1,5 @@
-import { k as getAssetPath, r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-a04c4e19.js';
-import { b as getIonMode$1 } from './ionic-global-9e3e8d3f.js';
+import { k as getAssetPath, r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-ec43b846.js';
+import { b as getIonMode$1 } from './ionic-global-d64985b2.js';
 import { k as hasShadowDom, i as inheritAttributes } from './helpers-6b411283.js';
 import { o as openURL, c as createColorClasses$1, h as hostContext } from './theme-3b0eafd2.js';
 

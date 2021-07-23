@@ -118,7 +118,7 @@ const TemplateDefault = ({valores}) => {
 
           <div class="monta-provas-chart" slot="content">
             <med-chart-radial>
-              <med-chart-radial-content class="monta-provas-chart-content" total="500"></med-chart-radial-content>
+              <med-chart-radial-content class="monta-provas-chart-content" total="999999"></med-chart-radial-content>
             </med-chart-radial>
 
             <med-chart-radial-label class="monta-provas-chart__label"></med-chart-radial-label>

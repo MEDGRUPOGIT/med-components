@@ -1,14 +1,26 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Watch } from '@stencil/core';
 export class MedChartRadialContent {
   constructor() {
     this.total = 0;
+  }
+  componentDidRender() {
+    this.fontResize();
+  }
+  collapsedChanged() {
+    this.fontResize();
+  }
+  fontResize() {
+    if (this.total.toString().length >= 6) {
+      return 'monta-provas-chart__number--small';
+    }
+    return '';
   }
   render() {
     const { total } = this;
     return (h(Host, null,
       h("div", { class: "monta-provas-chart__total" },
         h("span", { class: "monta-provas-chart__label" }, "Total de"),
-        h("span", { class: "monta-provas-chart__number" }, total),
+        h("span", { class: `monta-provas-chart__number ${this.fontResize()}` }, total),
         h("span", { class: "monta-provas-chart__label" }, "Quest\u00F5es"))));
   }
   static get is() { return "med-chart-radial-content"; }
@@ -39,4 +51,8 @@ export class MedChartRadialContent {
       "defaultValue": "0"
     }
   }; }
+  static get watchers() { return [{
+      "propName": "total",
+      "methodName": "collapsedChanged"
+    }]; }
 }
