@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-a0a08b2a.js');
+const index = require('./index-b66b6152.js');
 const frameworkDelegate = require('./framework-delegate-6b50976f.js');
 require('./helpers-ab0db03b.js');
 

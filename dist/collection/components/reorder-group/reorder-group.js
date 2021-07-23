@@ -277,7 +277,7 @@ export class ReorderGroup {
       "composed": true,
       "docs": {
         "tags": [],
-        "text": "Event that needs to be listened to in order to complete the reorder action.\r\nOnce the event has been emitted, the `complete()` method then needs\r\nto be called in order to finalize the reorder action."
+        "text": "Event that needs to be listened to in order to complete the reorder action.\nOnce the event has been emitted, the `complete()` method then needs\nto be called in order to finalize the reorder action."
       },
       "complexType": {
         "original": "ItemReorderEventDetail",
@@ -296,10 +296,10 @@ export class ReorderGroup {
         "signature": "(listOrReorder?: boolean | any[] | undefined) => Promise<any>",
         "parameters": [{
             "tags": [{
-                "text": "listOrReorder A list of items to be sorted and returned in the new order or a\r\nboolean of whether or not the reorder should reposition the item.",
+                "text": "listOrReorder A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item.",
                 "name": "param"
               }],
-            "text": "A list of items to be sorted and returned in the new order or a\r\nboolean of whether or not the reorder should reposition the item."
+            "text": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
           }],
         "references": {
           "Promise": {
@@ -309,10 +309,10 @@ export class ReorderGroup {
         "return": "Promise<any>"
       },
       "docs": {
-        "text": "Completes the reorder operation. Must be called by the `ionItemReorder` event.\r\n\r\nIf a list of items is passed, the list will be reordered and returned in the\r\nproper order.\r\n\r\nIf no parameters are passed or if `true` is passed in, the reorder will complete\r\nand the item will remain in the position it was dragged to. If `false` is passed,\r\nthe reorder will complete and the item will bounce back to its original position.",
+        "text": "Completes the reorder operation. Must be called by the `ionItemReorder` event.\n\nIf a list of items is passed, the list will be reordered and returned in the\nproper order.\n\nIf no parameters are passed or if `true` is passed in, the reorder will complete\nand the item will remain in the position it was dragged to. If `false` is passed,\nthe reorder will complete and the item will bounce back to its original position.",
         "tags": [{
             "name": "param",
-            "text": "listOrReorder A list of items to be sorted and returned in the new order or a\r\nboolean of whether or not the reorder should reposition the item."
+            "text": "listOrReorder A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
           }]
       }
     }
