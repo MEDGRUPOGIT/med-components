@@ -9,7 +9,7 @@ import { ActionSheetButton, AlertButton, AlertInput, AnimationBuilder, Autocompl
 import { IonicSafeString } from "./utils/sanitization";
 import { NavigationHookCallback } from "./components/route/route-interface";
 import { SelectCompareFn } from "./components/select/select-interface";
-import { MedAlternativaInterface } from "./components/00-autoral/team/med-alternativas/med-alternativas-interface";
+import { MedAlternativaInterface } from "./components/00-autoral/team/questoes/med-alternativas/med-alternativas-interface";
 import { MedRadialItem } from "./components/00-autoral/global/med-chart-label/med-chart-label";
 import { MedRadialItem as MedRadialItem1 } from "./components/00-autoral/global/med-chart-radial/med-chart-radial";
 import { MedFontSize } from "./global/med-components/font-size.enum";

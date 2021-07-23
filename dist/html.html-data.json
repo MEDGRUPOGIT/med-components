@@ -4750,7 +4750,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/med-alternativas/med-alternativas.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/questoes/med-alternativas/med-alternativas.tsx"
         }
       ]
     },
@@ -4815,7 +4815,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/med-cartao-resposta-item/med-cartao-resposta-item.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/questoes/med-cartao-resposta-item/med-cartao-resposta-item.tsx"
         }
       ]
     },
@@ -4829,7 +4829,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/questoes/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx"
         }
       ]
     },
@@ -4939,7 +4939,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/med-enunciado/med-enunciado.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/questoes/med-enunciado/med-enunciado.tsx"
         }
       ]
     },
@@ -4958,7 +4958,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/med-enunciado-discursiva/med-enunciado-discursiva.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/questoes/med-enunciado-discursiva/med-enunciado-discursiva.tsx"
         }
       ]
     },
@@ -5085,7 +5085,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/med-option/med-option.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/team/questoes/med-option/med-option.tsx"
         }
       ]
     },
