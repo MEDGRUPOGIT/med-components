@@ -14291,7 +14291,7 @@ class MedChartRadialContent {
   }
   render() {
     const { total } = this;
-    return (hAsync(Host, null, hAsync("div", { class: "monta-provas-chart__total" }, hAsync("span", { class: "monta-provas-chart__label" }, "Total de"), hAsync("span", { class: `monta-provas-chart__number ${this.fontResize()}` }, total), hAsync("span", { class: "monta-provas-chart__label" }, "Quest\u00F5es"))));
+    return (hAsync(Host, null, hAsync("span", { class: "monta-provas-chart__label" }, "Total de"), hAsync("span", { class: `monta-provas-chart__number ${this.fontResize()}` }, total), hAsync("span", { class: "monta-provas-chart__label" }, "Quest\u00F5es")));
   }
   static get watchers() { return {
     "total": ["collapsedChanged"]

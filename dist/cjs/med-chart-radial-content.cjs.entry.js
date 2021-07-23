@@ -25,7 +25,7 @@ const MedChartRadialContent = class {
   }
   render() {
     const { total } = this;
-    return (index.h(index.Host, null, index.h("div", { class: "monta-provas-chart__total" }, index.h("span", { class: "monta-provas-chart__label" }, "Total de"), index.h("span", { class: `monta-provas-chart__number ${this.fontResize()}` }, total), index.h("span", { class: "monta-provas-chart__label" }, "Quest\u00F5es"))));
+    return (index.h(index.Host, null, index.h("span", { class: "monta-provas-chart__label" }, "Total de"), index.h("span", { class: `monta-provas-chart__number ${this.fontResize()}` }, total), index.h("span", { class: "monta-provas-chart__label" }, "Quest\u00F5es")));
   }
   static get watchers() { return {
     "total": ["collapsedChanged"]

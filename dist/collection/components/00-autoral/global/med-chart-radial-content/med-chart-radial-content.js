@@ -18,10 +18,9 @@ export class MedChartRadialContent {
   render() {
     const { total } = this;
     return (h(Host, null,
-      h("div", { class: "monta-provas-chart__total" },
-        h("span", { class: "monta-provas-chart__label" }, "Total de"),
-        h("span", { class: `monta-provas-chart__number ${this.fontResize()}` }, total),
-        h("span", { class: "monta-provas-chart__label" }, "Quest\u00F5es"))));
+      h("span", { class: "monta-provas-chart__label" }, "Total de"),
+      h("span", { class: `monta-provas-chart__number ${this.fontResize()}` }, total),
+      h("span", { class: "monta-provas-chart__label" }, "Quest\u00F5es")));
   }
   static get is() { return "med-chart-radial-content"; }
   static get encapsulation() { return "shadow"; }
