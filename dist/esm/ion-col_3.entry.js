@@ -1,5 +1,5 @@
-import { r as registerInstance, j as forceUpdate, h, H as Host } from './index-ec43b846.js';
-import { b as getIonMode } from './ionic-global-d64985b2.js';
+import { r as registerInstance, j as forceUpdate, h, H as Host } from './index-70672e81.js';
+import { b as getIonMode } from './ionic-global-10d9ffcf.js';
 
 const SIZE_TO_MEDIA = {
   'xs': '(min-width: 0px)',

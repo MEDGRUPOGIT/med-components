@@ -256,7 +256,7 @@
   font-weight: 700;
   line-height: 100%;
   color: var(--color);
-  height: 400px;
+  max-height: 400px;
   width: 100%;
   display: flex;
   justify-content: center;
