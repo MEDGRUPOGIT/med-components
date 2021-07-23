@@ -1,12 +1,7 @@
 import { Color, Neutral } from '../../../../interface';
-export interface MedRadialItem {
-  cor: string;
-  label: string;
-  quantia: number;
-  ignoreBarra: boolean;
-}
-export declare class MedChartLabel {
-  valores: MedRadialItem[];
+import { MedChartRadiaItem } from '../med-chart-radial/med-chart-radial-interface';
+export declare class MedChartRadialLabel {
+  valores: MedChartRadiaItem[];
   /**
    * Define a cor do componente.
    */

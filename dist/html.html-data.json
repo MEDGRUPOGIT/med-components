@@ -4834,7 +4834,35 @@
       ]
     },
     {
-      "name": "med-chart-label",
+      "name": "med-chart-radial",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-chart-radial/med-chart-radial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-chart-radial-content",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-chart-radial-content/med-chart-radial-content.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-chart-radial-label",
       "description": {
         "kind": "markdown",
         "value": ""
@@ -4852,21 +4880,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-chart-label/med-chart-label.tsx"
-        }
-      ]
-    },
-    {
-      "name": "med-chart-radial",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [],
-      "references": [
-        {
-          "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-chart-radial/med-chart-radial.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-chart-radial-label/med-chart-radial-label.tsx"
         }
       ]
     },

@@ -12,9 +12,7 @@ const MedAccordion = class {
     index.registerInstance(this, hostRef);
     this.collapsed = true;
     this.collapsedState = true;
-    this.onClick = (event) => {
-      console.log('med-accordion', new Date().getTime());
-      console.log('med-accordion', event);
+    this.onClick = () => {
       this.expandContent();
     };
     this.expandContent = async () => {
@@ -57,11 +55,11 @@ const MedAccordion = class {
     this.expandContent();
   }
   render() {
-    const { color, size, collapsedState: collapsed, icon } = this;
+    const { color, size, collapsedState, icon } = this;
     return (index.h(index.Host, { "from-stencil": true, class: theme.createColorClasses(color, {
         'med-accordion--full': size !== undefined,
-        'med-accordion--collapsed': collapsed,
-      }) }, index.h("div", { class: "med-accordion__header" }, icon === 'left' && index.h("div", { class: "med-accordion__icon-container med-accordion__icon-container--left", onClick: (event) => this.onClick(event) }, index.h("ion-icon", { class: "med-icon med-accordion__icon", name: "med-baixo" })), index.h("div", { class: "med-accordion__heading", onClick: (event) => this.onClick(event) }, index.h("slot", { name: "header" })), index.h("slot", { name: "button" }), (!icon || icon === 'right') && index.h("div", { class: "med-accordion__icon-container med-accordion__icon-container--right", onClick: (event) => this.onClick(event) }, index.h("ion-icon", { class: "med-icon med-accordion__icon", name: "med-baixo" }))), index.h("div", { class: "med-accordion__content--fake", ref: (el) => this.contentFakeEl = el }, index.h("slot", { name: "content-fake" })), index.h("div", { class: "med-accordion__content", ref: (el) => this.contentEl = el }, index.h("slot", { name: "content" }))));
+        'med-accordion--collapsed': collapsedState,
+      }) }, index.h("div", { class: "med-accordion__header" }, icon === 'left' && index.h("div", { class: "med-accordion__icon-container med-accordion__icon-container--left", onClick: () => this.onClick() }, index.h("ion-icon", { class: "med-icon med-accordion__icon", name: "med-baixo" })), index.h("div", { class: "med-accordion__heading", onClick: () => this.onClick() }, index.h("slot", { name: "header" })), index.h("slot", { name: "button" }), (!icon || icon === 'right') && index.h("div", { class: "med-accordion__icon-container med-accordion__icon-container--right", onClick: () => this.onClick() }, index.h("ion-icon", { class: "med-icon med-accordion__icon", name: "med-baixo" }))), index.h("div", { class: "med-accordion__content--fake", ref: (el) => this.contentFakeEl = el }, index.h("slot", { name: "content-fake" })), index.h("div", { class: "med-accordion__content", ref: (el) => this.contentEl = el }, index.h("slot", { name: "content" }))));
   }
   get el() { return index.getElement(this); }
   static get watchers() { return {

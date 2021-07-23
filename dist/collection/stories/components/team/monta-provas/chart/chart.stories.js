@@ -10,7 +10,7 @@ const TemplateDefault = ({valores}) => {
 
   setTimeout(() => {
     document.querySelector('med-chart-radial').valores = valores.valores;
-    document.querySelector('med-chart-label').valores = valores.valores;
+    document.querySelector('med-chart-radial-label').valores = valores.valores;
   }, 1000);
 
   return html`
@@ -141,7 +141,7 @@ const TemplateDefault = ({valores}) => {
               </div>
             </med-chart-radial>
 
-            <med-chart-label class="monta-provas-chart__label"></med-chart-label>
+            <med-chart-radial-label class="monta-provas-chart__label"></med-chart-radial-label>
           </div>
         </med-accordion>
         <!-- component -->

@@ -1,11 +1,6 @@
-export interface MedRadialItem {
-  cor: string;
-  label: string;
-  quantia: number;
-  ignoreBarra: boolean;
-}
+import { MedChartRadiaItem } from './med-chart-radial-interface';
 export declare class MedChartRadial {
-  valores: MedRadialItem[];
+  valores: MedChartRadiaItem[];
   private getTotal;
   render(): any;
 }

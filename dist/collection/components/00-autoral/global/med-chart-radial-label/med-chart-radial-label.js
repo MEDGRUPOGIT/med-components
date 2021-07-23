@@ -1,40 +1,40 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
-;
-export class MedChartLabel {
+export class MedChartRadialLabel {
   constructor() {
     this.valores = [];
   }
   render() {
     const { color, neutral, } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
-        'med-chart-label': true,
+        'med-chart-radial-label': true,
       }, neutral) },
-      h("ul", { class: "med-chart-label__list" }, this.valores.reverse().map((item) => {
-        return h("li", { class: "med-chart-label__item" },
-          h("span", { class: { 'med-chart-label__quantia': true, [item.cor]: true } }, item.quantia),
+      h("ul", { class: "med-chart-radial-label__list" }, this.valores.reverse().map((item) => {
+        return h("li", { class: "med-chart-radial-label__item" },
+          h("span", { class: { 'med-chart-radial-label__quantia': true, [item.cor]: true } }, item.quantia),
           " ",
           item.label);
       }))));
   }
-  static get is() { return "med-chart-label"; }
+  static get is() { return "med-chart-radial-label"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "$": ["med-chart-label.scss"]
+    "$": ["med-chart-radial-label.scss"]
   }; }
   static get styleUrls() { return {
-    "$": ["med-chart-label.css"]
+    "$": ["med-chart-radial-label.css"]
   }; }
   static get properties() { return {
     "valores": {
       "type": "unknown",
       "mutable": false,
       "complexType": {
-        "original": "MedRadialItem[]",
-        "resolved": "MedRadialItem[]",
+        "original": "MedChartRadiaItem[]",
+        "resolved": "MedChartRadiaItem[]",
         "references": {
-          "MedRadialItem": {
-            "location": "local"
+          "MedChartRadiaItem": {
+            "location": "import",
+            "path": "../med-chart-radial/med-chart-radial-interface"
           }
         }
       },

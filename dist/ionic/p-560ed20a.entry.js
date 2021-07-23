@@ -1,0 +1,1 @@
+import{r,h as s,H as t}from"./p-bc306d5e.js";const o=class{constructor(s){r(this,s)}render(){return s(t,null,s("slot",null))}};o.style=":host{display:block}";export{o as med_chart_radial_content}

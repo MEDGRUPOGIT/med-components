@@ -1,11 +1,12 @@
 {
   "entries": [
-    "./components/00-autoral/global/med-chart-label/med-chart-label.js",
-    "./components/00-autoral/global/med-chart-radial/med-chart-radial.js",
     "./components/00-autoral/global/med-accordion/med-accordion.js",
     "./components/00-autoral/global/med-agrupador/med-agrupador.js",
     "./components/00-autoral/global/med-autocomplete/med-autocomplete.js",
     "./components/00-autoral/global/med-banner/med-banner.js",
+    "./components/00-autoral/global/med-chart-radial/med-chart-radial.js",
+    "./components/00-autoral/global/med-chart-radial-content/med-chart-radial-content.js",
+    "./components/00-autoral/global/med-chart-radial-label/med-chart-radial-label.js",
     "./components/00-autoral/global/med-context-menu/med-context-menu.js",
     "./components/00-autoral/global/med-divider/med-divider.js",
     "./components/00-autoral/global/med-font-zoom/med-font-zoom.js",

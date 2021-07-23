@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-07-23T12:31:15",
+  "timestamp": "2021-07-23T16:53:03",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.6.0",
@@ -19425,10 +19425,65 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/00-autoral/global/med-chart-label/med-chart-label.tsx",
+      "filePath": "./src/components/00-autoral/global/med-chart-radial/med-chart-radial.tsx",
       "encapsulation": "scoped",
-      "tag": "med-chart-label",
-      "readme": "# med-chart-label\n\n\n",
+      "tag": "med-chart-radial",
+      "readme": "# med-chart-radial\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "valores",
+          "type": "MedChartRadiaItem[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "MedChartRadiaItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/00-autoral/global/med-chart-radial-content/med-chart-radial-content.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-chart-radial-content",
+      "readme": "# med-chart-radial-content\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/00-autoral/global/med-chart-radial-label/med-chart-radial-label.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-chart-radial-label",
+      "readme": "# med-chart-radial-label\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -19473,7 +19528,7 @@
         },
         {
           "name": "valores",
-          "type": "MedRadialItem[]",
+          "type": "MedChartRadiaItem[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "",
@@ -19481,43 +19536,7 @@
           "default": "[]",
           "values": [
             {
-              "type": "MedRadialItem[]"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/00-autoral/global/med-chart-radial/med-chart-radial.tsx",
-      "encapsulation": "scoped",
-      "tag": "med-chart-radial",
-      "readme": "# med-chart-radial\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "valores",
-          "type": "MedRadialItem[]",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "[]",
-          "values": [
-            {
-              "type": "MedRadialItem[]"
+              "type": "MedChartRadiaItem[]"
             }
           ],
           "optional": false,
@@ -19551,7 +19570,7 @@
           "reflectToAttr": true,
           "docs": "",
           "docsTags": [],
-          "default": "false",
+          "default": "true",
           "values": [
             {
               "type": "boolean"
@@ -19606,7 +19625,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "toggle() => Promise<void>",
+          "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
           "docs": "",
           "docsTags": []

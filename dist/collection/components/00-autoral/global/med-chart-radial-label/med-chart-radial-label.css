@@ -247,14 +247,14 @@
   --med-shadow-level-10: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
 }
 
-:host(.med-chart-label) {
+:host(.med-chart-radial-label) {
   display: inline-block;
 }
-:host(.med-chart-label) .med-chart-label__list {
+:host(.med-chart-radial-label) .med-chart-radial-label__list {
   list-style: none;
   padding: 0;
 }
-:host(.med-chart-label) .med-chart-label__item {
+:host(.med-chart-radial-label) .med-chart-radial-label__item {
   font-size: 10px;
   line-height: 100%;
   color: var(--med-color-neutral-5);
@@ -262,10 +262,10 @@
   align-items: center;
   font-weight: 700;
 }
-:host(.med-chart-label) .med-chart-label__item:not(:last-of-type) {
+:host(.med-chart-radial-label) .med-chart-radial-label__item:not(:last-of-type) {
   padding-bottom: 8px;
 }
-:host(.med-chart-label) .med-chart-label__quantia {
+:host(.med-chart-radial-label) .med-chart-radial-label__quantia {
   font-size: 24px;
   line-height: 100%;
   margin-right: 8px;
