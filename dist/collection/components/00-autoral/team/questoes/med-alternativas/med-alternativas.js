@@ -19,11 +19,18 @@ export class MedAlternativas {
     }
     return classe;
   }
+  onMedChange(alternativa) {
+    let objAlternativa = this.respostaAlterada(alternativa);
+    this.medChange.emit(objAlternativa);
+  }
+  onMedClick(alternativa) {
+    let objAlternativa = this.respostaAlterada(alternativa);
+    this.medClick.emit(objAlternativa);
+  }
   respostaAlterada(alternativa) {
     this.alternativaSelecionada = alternativa;
     let objAlternativa = this.alternativas.find((item) => item[this.keyAlternativa] === alternativa);
-    this.medClick.emit(objAlternativa);
-    this.medChange.emit(objAlternativa);
+    return objAlternativa;
   }
   imageRequest(alternativa, ev) {
     this.medGalleryRequest.emit(alternativa);
@@ -38,8 +45,8 @@ export class MedAlternativas {
       }
     }
     return (h(Host, { "from-stencil": true },
-      h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada },
-        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("li", { onClick: () => this.respostaAlterada(alternativa[this.keyAlternativa]), class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) },
+      h("ion-radio-group", { onIonChange: ev => this.onMedChange(ev.detail.value), value: this.alternativaSelecionada },
+        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("li", { onClick: () => this.onMedClick(alternativa[this.keyAlternativa]), class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) },
           h("med-option", { class: 'alternativa__option' },
             h("ion-radio", { value: alternativa[this.keyAlternativa] }),
             h("label", { slot: "label" }, alternativa[this.keyAlternativa])),

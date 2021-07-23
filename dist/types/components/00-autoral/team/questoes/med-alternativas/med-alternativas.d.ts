@@ -13,6 +13,8 @@ export declare class MedAlternativas implements MedAlternativasInterface {
   medClick: EventEmitter<MedAlternativaInterface>;
   medGalleryRequest: EventEmitter<MedAlternativaInterface>;
   private cssClassAlternativa;
+  private onMedChange;
+  private onMedClick;
   private respostaAlterada;
   private imageRequest;
   render(): any;

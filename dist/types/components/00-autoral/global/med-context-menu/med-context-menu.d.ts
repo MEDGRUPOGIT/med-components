@@ -5,14 +5,10 @@ export declare class MedContextMenu {
    */
   neutral?: Neutral;
   /**
-     * Define a cor do componente.
-     */
+   * Define a cor do componente.
+   */
   color?: Color;
   collapsed: boolean;
-  collapsedState: boolean;
-  toggle(): Promise<void>;
-  collapsedChanged(): void;
-  private expandContent;
-  private onClick;
+  toggle(event?: Event): Promise<void>;
   render(): any;
 }

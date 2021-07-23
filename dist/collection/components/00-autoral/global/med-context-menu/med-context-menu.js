@@ -1,40 +1,23 @@
-import { Component, Host, h, Prop, Method, Watch, State } from '@stencil/core';
+import { Component, Host, h, Prop, Method } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
 export class MedContextMenu {
   constructor() {
-    this.collapsed = false;
-    this.collapsedState = true;
-    this.onClick = (event) => {
-      console.log('med-context-menu', new Date().getTime());
-      console.log('med-context-menu', event);
-      event === null || event === void 0 ? void 0 : event.stopPropagation();
-      this.expandContent();
-    };
+    this.collapsed = true;
   }
-  async toggle() {
-    this.expandContent();
-  }
-  collapsedChanged() {
-    this.expandContent();
-  }
-  expandContent() {
-    if (this.collapsedState) {
-      this.collapsedState = !this.collapsedState;
-    }
-    else {
-      this.collapsedState = !this.collapsedState;
-    }
+  async toggle(event) {
+    event === null || event === void 0 ? void 0 : event.stopPropagation();
+    this.collapsed = !this.collapsed;
   }
   render() {
-    const { color, neutral, collapsedState: collapsed } = this;
+    const { color, neutral, collapsed } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
         'med-context-menu': true,
         'med-context-menu--collapsed': collapsed
       }, neutral) },
-      h("ion-button", { onClick: (event) => { this.onClick(event); }, class: "med-context-menu__button", "ds-name": "icon-only" },
+      h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", "ds-name": "icon-only" },
         h("ion-icon", { class: "med-icon med-context-menu__icon", name: "med-context-menu" })),
       h("div", { class: "med-context-menu__content" },
-        h("ion-button", { onClick: (event) => { this.onClick(event); }, class: "med-context-menu__inner-button", "ds-name": "icon-only" },
+        h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-context-menu__inner-button", "ds-name": "icon-only" },
           h("ion-icon", { class: "med-icon med-context-menu__inner-icon", name: "med-context-menu" })),
         h("slot", null))));
   }
@@ -107,19 +90,22 @@ export class MedContextMenu {
       },
       "attribute": "collapsed",
       "reflect": true,
-      "defaultValue": "false"
+      "defaultValue": "true"
     }
-  }; }
-  static get states() { return {
-    "collapsedState": {}
   }; }
   static get methods() { return {
     "toggle": {
       "complexType": {
-        "signature": "() => Promise<void>",
-        "parameters": [],
+        "signature": "(event?: Event | undefined) => Promise<void>",
+        "parameters": [{
+            "tags": [],
+            "text": ""
+          }],
         "references": {
           "Promise": {
+            "location": "global"
+          },
+          "Event": {
             "location": "global"
           }
         },
@@ -131,8 +117,4 @@ export class MedContextMenu {
       }
     }
   }; }
-  static get watchers() { return [{
-      "propName": "collapsed",
-      "methodName": "collapsedChanged"
-    }]; }
 }

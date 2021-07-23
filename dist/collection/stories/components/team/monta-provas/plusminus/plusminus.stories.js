@@ -16,9 +16,7 @@ const TemplateDefault = () => {
       <div class="storybook-only__container">
 
         <!-- component -->
-        <monta-provas-plusminus ds-size="xl">
-        500
-        </monta-provas-plusminus>
+        <monta-provas-plusminus ds-size="xl">500</monta-provas-plusminus>
         <!-- component -->
 
       </div>

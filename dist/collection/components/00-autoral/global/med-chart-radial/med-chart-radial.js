@@ -1,5 +1,4 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-;
 export class MedChartRadial {
   constructor() {
     this.valores = [];
@@ -42,11 +41,12 @@ export class MedChartRadial {
       "type": "unknown",
       "mutable": false,
       "complexType": {
-        "original": "MedRadialItem[]",
-        "resolved": "MedRadialItem[]",
+        "original": "MedChartRadiaItem[]",
+        "resolved": "MedChartRadiaItem[]",
         "references": {
-          "MedRadialItem": {
-            "location": "local"
+          "MedChartRadiaItem": {
+            "location": "import",
+            "path": "./med-chart-radial-interface"
           }
         }
       },
