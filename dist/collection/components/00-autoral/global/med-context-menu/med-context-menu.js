@@ -12,7 +12,9 @@ export class MedContextMenu {
     this.collapsed = !this.collapsed;
   }
   handleClick(event) {
-    this.toggle(event);
+    if (!this.collapsed) {
+      this.toggle(event);
+    }
   }
   render() {
     const { collapsed } = this;

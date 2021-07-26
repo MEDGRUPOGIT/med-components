@@ -18,7 +18,9 @@ const MedContextMenu$1 = class extends HTMLElement {
     this.collapsed = !this.collapsed;
   }
   handleClick(event) {
-    this.toggle(event);
+    if (!this.collapsed) {
+      this.toggle(event);
+    }
   }
   render() {
     const { collapsed } = this;
