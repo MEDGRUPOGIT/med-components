@@ -93,7 +93,8 @@ const TemplateDefault = ({valores}) => {
       <div class="storybook-only__container">
 
         <!-- component -->
-        <med-accordion class="monta-provas-accordion" icon="left">
+        <med-accordion icon="left">
+
           <div class="med-accordion-header" slot="header">
             <h4 class="med-accordion-header__heading">Nome da Prova</h4>
           </div>
@@ -123,6 +124,7 @@ const TemplateDefault = ({valores}) => {
 
             <med-chart-radial-label class="monta-provas-chart__label"></med-chart-radial-label>
           </div>
+
         </med-accordion>
         <!-- component -->
 

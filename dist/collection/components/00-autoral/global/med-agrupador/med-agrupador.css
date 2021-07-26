@@ -248,7 +248,13 @@
 }
 
 :host {
+  /**
+   * @prop --color: Define a cor do componente.
+   */
   --color: var(--med-color-brand-3, #14a2b8);
+}
+
+:host(.med-agrupador) {
   font-size: 14px;
   font-weight: 500;
   line-height: 100%;
@@ -259,31 +265,48 @@
   color: var(--color);
   cursor: pointer;
 }
-:host ion-icon {
+
+:host(.med-agrupador) .med-agrupador__icon {
   font-size: 24px;
+  stroke: var(--color);
 }
 
-.toggle__expandir {
+:host(.med-agrupador) .med-agrupador__expandir {
   display: block;
 }
 
-.toggle__ocultar {
+:host(.med-agrupador) .med-agrupador__ocultar {
   display: none;
-}
-
-:host(.toggle) {
-  flex-direction: column-reverse;
-}
-:host(.toggle) .toggle__expandir {
-  display: none;
-}
-:host(.toggle) .toggle__ocultar {
-  display: block;
-}
-:host(.toggle) .toggle__img {
-  transform: rotate(180deg);
 }
 
 :host(.ion-color) {
   --color: var(--med-color-3);
+}
+
+:host(.ion-color) .med-agrupador__icon {
+  --color: var(--med-color-3);
+}
+
+:host(.med-neutral) {
+  --color: var(--med-neutral);
+}
+
+:host(.med-neutral) .med-agrupador__icon {
+  --color: var(--med-neutral);
+}
+
+:host(.med-agrupador--collapsed) {
+  flex-direction: column-reverse;
+}
+
+:host(.med-agrupador--collapsed) .med-agrupador__expandir {
+  display: none;
+}
+
+:host(.med-agrupador--collapsed) .med-agrupador__ocultar {
+  display: block;
+}
+
+:host(.med-agrupador--collapsed) .med-agrupador__icon {
+  transform: rotate(180deg);
 }

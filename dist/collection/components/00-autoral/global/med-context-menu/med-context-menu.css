@@ -248,9 +248,14 @@
 }
 
 :host {
-  --z-index: 1;
+  /**
+   * @prop --background: Define a cor da borda do componente.
+   * @prop --color: Define a cor do componente.
+   * @prop --z-index: Define o z-index do componente.
+   */
   --background: var(--med-color-neutral-9);
   --color: var(--med-color-neutral-3);
+  --z-index: 1;
 }
 
 :host(.med-context-menu) {
@@ -264,6 +269,7 @@
   right: -8px;
   top: -8px;
   min-width: 250px;
+  max-width: 250px;
   width: 100%;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 4px;

@@ -248,14 +248,17 @@
 }
 
 :host {
+  /**
+   * @prop --color: Define a cor do componente.
+   */
   --color: var(--med-color-neutral-5);
 }
 
-:host {
+:host(.med-divider) {
   display: block;
   text-align: left;
 }
-:host .heading {
+:host(.med-divider) .med-divider__heading {
   padding: 0;
   margin: 0;
   padding-top: 16px;

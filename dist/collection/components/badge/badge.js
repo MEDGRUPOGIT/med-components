@@ -78,7 +78,7 @@ export class Badge {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a varia\u00E7\u00E3o de tamanho componente."
+        "text": "Define a varia\u00E7\u00E3o de tamanho do componente."
       },
       "attribute": "ds-size",
       "reflect": false

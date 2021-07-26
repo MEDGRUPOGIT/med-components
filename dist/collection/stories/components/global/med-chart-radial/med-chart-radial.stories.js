@@ -13,6 +13,11 @@ const Default = ({valores}) => {
   }, 1000);
 
   return html`
+    <style>
+      med-chart-radial {
+        justify-content: center;
+      }
+    </style>
     <ion-app class="storybook-only">
       <div class="storybook-only__container">
 

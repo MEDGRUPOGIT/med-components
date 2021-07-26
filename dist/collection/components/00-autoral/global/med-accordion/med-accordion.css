@@ -248,17 +248,21 @@
 }
 
 :host {
+  /**
+   * @prop --background: Define a cor de background do componente.
+   * @prop  --icon-color: Define a cor de do icone do componente.
+   */
   --background: var(--med-color-neutral-2);
   --icon-color: var(--med-color-neutral-10);
 }
 
-:host {
+:host(.med-accordion) {
   display: block;
   border-radius: 8px;
   background: var(--background);
   width: 100%;
 }
-:host .med-accordion__header {
+:host(.med-accordion) .med-accordion__header {
   display: flex;
   cursor: pointer;
   width: 100%;
@@ -267,28 +271,28 @@
   line-height: 24px;
   align-items: center;
 }
-:host .med-accordion__heading {
+:host(.med-accordion) .med-accordion__heading {
   width: 100%;
 }
-:host .med-accordion__icon-container {
+:host(.med-accordion) .med-accordion__icon-container {
   display: flex;
 }
-:host .med-accordion__icon-container--left {
+:host(.med-accordion) .med-accordion__icon-container--left {
   padding-right: 8px;
 }
-:host .med-accordion__icon-container--right {
+:host(.med-accordion) .med-accordion__icon-container--right {
   padding-left: 8px;
   margin-left: auto;
 }
-:host .med-accordion__icon {
+:host(.med-accordion) .med-accordion__icon {
   color: var(--icon-color);
   font-size: 32px;
   transform: rotate(180deg);
 }
-:host .med-accordion__content--fake {
+:host(.med-accordion) .med-accordion__content--fake {
   overflow: hidden;
 }
-:host .med-accordion__content {
+:host(.med-accordion) .med-accordion__content {
   overflow: hidden;
 }
 

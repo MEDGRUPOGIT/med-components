@@ -2,6 +2,9 @@ import { Component, Host, h, Prop, Method } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
 export class MedContextMenu {
   constructor() {
+    /**
+     * Define o estado do componente.
+     */
     this.collapsed = true;
   }
   async toggle(event) {
@@ -9,11 +12,11 @@ export class MedContextMenu {
     this.collapsed = !this.collapsed;
   }
   render() {
-    const { color, neutral, collapsed } = this;
-    return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
+    const { collapsed } = this;
+    return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-context-menu': true,
         'med-context-menu--collapsed': collapsed
-      }, neutral) },
+      }, null) },
       h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", "ds-name": "icon-only" },
         h("ion-icon", { class: "med-icon med-context-menu__icon", name: "med-context-menu" })),
       h("div", { class: "med-context-menu__content" },
@@ -30,50 +33,6 @@ export class MedContextMenu {
     "$": ["med-context-menu.css"]
   }; }
   static get properties() { return {
-    "neutral": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Neutral",
-        "resolved": "string | undefined",
-        "references": {
-          "Neutral": {
-            "location": "import",
-            "path": "../../../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor neutra do componente."
-      },
-      "attribute": "neutral",
-      "reflect": false
-    },
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "color",
-      "reflect": false
-    },
     "collapsed": {
       "type": "boolean",
       "mutable": true,
@@ -86,7 +45,7 @@ export class MedContextMenu {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o estado do componente."
       },
       "attribute": "collapsed",
       "reflect": true,

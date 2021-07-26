@@ -1,22 +1,75 @@
 import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
-import { medColors } from '../../../med-colors';
+import { medColors, medNeutrals } from '../../../med-colors';
 
 export default {
   title: 'Components/Core/Context Menu',
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({color}) => {
+const TemplateDefault = ({ collapsed }) => {
   return html`
-    <ion-app class="storybook-only">
-      <div class="storybook-only__container">
+    <style>
+      .med-context-menu__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
-        <!-- component -->
-          <med-context-menu .color=${color}></med-context-menu>
-        <!-- component -->
+      .med-context-menu__item {
+        padding-right: var(--med-spacing-inline-xs);
+        margin-bottom: var(--med-spacing-stack-base);
+        font-size: var(--med-font-size-xs);
+        line-height: var(--med-line-height-compressed);
+        color: var(--med-color-neutral-3);
+        display: flex;
+        align-items: center;
+        transition: color 300ms ease-out;
+        cursor: pointer;
+      }
 
-      </div>
+      .med-context-menu__item:hover {
+        color: var(--med-color-neutral-1);
+      }
+
+      .med-context-menu__icon {
+        padding-right: var(--med-spacing-inline-xxxs);
+        stroke: var(--med-color-neutral-3);
+      }
+
+      .med-context-menu__info {
+        padding: 0;
+        margin: 0;
+        font-size: var(--med-font-size-xs);
+        line-height: var(--med-line-height-compressed);
+        color: var(--med-color-neutral-5);
+        padding: var(--med-spacing-inset-xs);
+        text-align: center;
+      }
+    </style>
+
+    <ion-app style="align-items: center; justify-content: center;">
+
+      <!-- component -->
+      <med-context-menu class="med-context-menu" .collapsed=${collapsed}>
+        <ul class="med-context-menu__list">
+          <li class="med-context-menu__item">
+            <ion-icon class="med-icon med-context-menu__icon" name="med-filtro"></ion-icon>
+            <span>Ver filtro selecionado</span>
+          </li>
+          <li class="med-context-menu__item">
+            <ion-icon class="med-icon med-context-menu__icon" name="med-editar"></ion-icon>
+            <span>Renomear Prova</span>
+          </li>
+          <li class="med-context-menu__item">
+            <ion-icon class="med-icon med-context-menu__icon" name="med-lixeira"></ion-icon>
+            <span>Excluir Prova</span>
+          </li>
+        </ul>
+        <p class="med-context-menu__info">Criada em 30/12/2020</p>
+      </med-context-menu>
+      <!-- component -->
+
     </ion-app>
   `
 }
@@ -29,13 +82,13 @@ ContextMenu.parameters = {
   },
 }
 ContextMenu.argTypes = {
-  color: {
-    options: medColors,
-    control: { type: 'select'},
-    description: "Define a cor do componente.",
+  collapsed: {
+    control: { type: 'boolean' },
+    description: 'Define o estado do componente.',
+    defaultValue: true,
     table: {
-      type:  { summary: 'Color' },
-      defaultValue: { summary: 'undefined' },
+      type:  { summary: 'boolean' },
+      defaultValue: { summary: 'true' },
     },
-  }
+  },
 };

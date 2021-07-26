@@ -1,7 +1,16 @@
 import { Component, Host, h, Prop, Method, Element, State, Watch } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
+/**
+ * @slot header - Define o conteudo do header.
+ * @slot button - Se houver algum botão deve ser colocado nesse slot.
+ * @slot content-fake - Conteúdo que vai aparecer com reticiências.
+ * @slot content - Conteúdo do componente.
+ */
 export class MedAccordion {
   constructor() {
+    /**
+     * Define o estado do componente.
+     */
     this.collapsed = true;
     this.collapsedState = true;
     this.onClick = () => {
@@ -47,11 +56,12 @@ export class MedAccordion {
     this.expandContent();
   }
   render() {
-    const { color, size, collapsedState, icon } = this;
-    return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
-        'med-accordion--full': size !== undefined,
+    const { size, icon, collapsedState } = this;
+    return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
+        'med-accordion': true,
+        [`med-accordion--${size}`]: size !== undefined,
         'med-accordion--collapsed': collapsedState,
-      }) },
+      }, null) },
       h("div", { class: "med-accordion__header" },
         icon === 'left' && h("div", { class: "med-accordion__icon-container med-accordion__icon-container--left", onClick: () => this.onClick() },
           h("ion-icon", { class: "med-icon med-accordion__icon", name: "med-baixo" })),
@@ -74,28 +84,6 @@ export class MedAccordion {
     "$": ["med-accordion.css"]
   }; }
   static get properties() { return {
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "color",
-      "reflect": false
-    },
     "size": {
       "type": "string",
       "mutable": false,
@@ -108,7 +96,7 @@ export class MedAccordion {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a varia\u00E7\u00E3o de estilo do componente."
       },
       "attribute": "size",
       "reflect": false
@@ -125,7 +113,7 @@ export class MedAccordion {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o posicionamento do icone do componente."
       },
       "attribute": "icon",
       "reflect": true
@@ -142,7 +130,7 @@ export class MedAccordion {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o estado do componente."
       },
       "attribute": "collapsed",
       "reflect": true,

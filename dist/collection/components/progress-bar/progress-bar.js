@@ -91,7 +91,7 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The state of the progress bar, based on if the time the process takes is known or not.\r\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right)."
+        "text": "The state of the progress bar, based on if the time the process takes is known or not.\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right)."
       },
       "attribute": "type",
       "reflect": false,
@@ -127,7 +127,7 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The value determines how much of the active bar should display when the\r\n`type` is `\"determinate\"`.\r\nThe value should be between [0, 1]."
+        "text": "The value determines how much of the active bar should display when the\n`type` is `\"determinate\"`.\nThe value should be between [0, 1]."
       },
       "attribute": "value",
       "reflect": false,
@@ -145,7 +145,7 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If the buffer and value are smaller than 1, the buffer circles will show.\r\nThe buffer should be between [0, 1]."
+        "text": "If the buffer and value are smaller than 1, the buffer circles will show.\nThe buffer should be between [0, 1]."
       },
       "attribute": "buffer",
       "reflect": false,
@@ -168,7 +168,7 @@ export class ProgressBar {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false

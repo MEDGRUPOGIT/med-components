@@ -5,7 +5,7 @@ export class MedChartRadialLabel {
     this.valores = [];
   }
   render() {
-    const { color, neutral, } = this;
+    const { color, neutral } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
         'med-chart-radial-label': true,
       }, neutral) },

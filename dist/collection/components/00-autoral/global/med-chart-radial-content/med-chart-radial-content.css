@@ -247,7 +247,7 @@
   --med-shadow-level-10: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
 }
 
-:host(.monta-provas-chart-content) .monta-provas-chart__label {
+:host(.med-chart-radial-content) .med-chart-radial-content__label {
   font-size: var(--med-font-size-nano);
   color: var(--med-color-neutral-dark-10);
   font-weight: var(--med-font-weight-bold);
@@ -255,12 +255,12 @@
   justify-content: center;
   line-height: var(--med-line-height-compressed);
 }
-:host(.monta-provas-chart-content) .monta-provas-chart__number {
+:host(.med-chart-radial-content) .med-chart-radial-content__number {
   font-weight: var(--med-font-weight-bold);
   font-size: var(--med-font-size-md);
   color: var(--med-color-neutral-10);
   line-height: var(--med-line-height-compressed);
 }
-:host(.monta-provas-chart-content) .monta-provas-chart__number--small {
+:host(.med-chart-radial-content) .med-chart-radial-content__number--small {
   font-size: var(--med-font-size-xs);
 }

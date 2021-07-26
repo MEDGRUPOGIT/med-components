@@ -2,10 +2,11 @@ import { Component, Host, h, Prop } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
 export class MedDivider {
   render() {
-    return (h(Host, { "from-stencil": true, class: createColorClasses(this.color, {
+    const { color, neutral, text } = this;
+    return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
         'med-divider': true
-      }, this.neutral) },
-      h("h3", { class: "heading" }, this.text)));
+      }, neutral) },
+      h("h3", { class: "med-divider__heading" }, text)));
   }
   static get is() { return "med-divider"; }
   static get encapsulation() { return "shadow"; }
@@ -16,23 +17,6 @@ export class MedDivider {
     "$": ["med-divider.css"]
   }; }
   static get properties() { return {
-    "text": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "text",
-      "reflect": false
-    },
     "color": {
       "type": "string",
       "mutable": false,
@@ -50,7 +34,7 @@ export class MedDivider {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a cor do componente."
       },
       "attribute": "color",
       "reflect": false
@@ -72,9 +56,26 @@ export class MedDivider {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a cor neutra do componente."
       },
       "attribute": "neutral",
+      "reflect": false
+    },
+    "text": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o texto do componente."
+      },
+      "attribute": "text",
       "reflect": false
     }
   }; }

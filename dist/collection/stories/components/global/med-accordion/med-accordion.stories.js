@@ -29,7 +29,7 @@ const TemplateDefault = ({size, icon, collapsed}) => {
       <div class="storybook-only__container">
 
         <!-- component -->
-          <med-accordion class="med-accordion" .size=${size} .icon=${icon} .collapsed=${collapsed}>
+          <med-accordion .size=${size} .icon=${icon} .collapsed=${collapsed}>
 
             <div slot="header">
               <h4>Header</h4>
@@ -62,7 +62,7 @@ Accordion.argTypes = {
   size: {
     options: [undefined, 'full'],
     control: { type: 'radio'},
-    description: "Aplica tamanho fullscreen.",
+    description: "Define a variação de estilo do componente.",
     table: {
       type:  { summary: 'full' },
       defaultValue: { summary: 'undefined' },

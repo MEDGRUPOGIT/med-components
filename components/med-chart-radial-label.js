@@ -10,7 +10,7 @@ const MedChartRadialLabel$1 = class extends HTMLElement {
     this.valores = [];
   }
   render() {
-    const { color, neutral, } = this;
+    const { color, neutral } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
         'med-chart-radial-label': true,
       }, neutral) }, h("ul", { class: "med-chart-radial-label__list" }, this.valores.reverse().map((item) => {

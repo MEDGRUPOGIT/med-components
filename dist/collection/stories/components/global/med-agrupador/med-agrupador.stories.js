@@ -1,19 +1,19 @@
 import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
-import { medColors } from '../../../med-colors';
+import { medColors, medNeutrals } from '../../../med-colors';
 
 export default {
   title: 'Components/Core/Agrupador',
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({color}) => {
+const TemplateDefault = ({ color, neutral }) => {
   return html`
     <ion-app class="storybook-only">
       <div class="storybook-only__container">
 
         <!-- component -->
-          <med-agrupador .color=${color}></med-agrupador>
+          <med-agrupador .color=${color} .neutral=${neutral}></med-agrupador>
         <!-- component -->
 
       </div>
@@ -31,11 +31,20 @@ Agrupador.parameters = {
 Agrupador.argTypes = {
   color: {
     options: medColors,
-    control: { type: 'select'},
+    control: { type: 'inline-radio'},
     description: "Define a cor do componente.",
     table: {
       type:  { summary: 'Color' },
       defaultValue: { summary: 'undefined' },
     },
-  }
+  },
+  neutral: {
+    options: medNeutrals,
+    control: { type: 'inline-radio'},
+    description: "Define a cor neutra do componente.",
+    table: {
+      type:  { summary: 'Neutrals' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
 };

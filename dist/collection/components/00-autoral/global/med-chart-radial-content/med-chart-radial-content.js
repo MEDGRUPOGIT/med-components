@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, Watch } from '@stencil/core';
+import { createColorClasses } from '../../../../utils/theme';
 export class MedChartRadialContent {
   constructor() {
     this.total = 0;
@@ -11,16 +12,18 @@ export class MedChartRadialContent {
   }
   fontResize() {
     if (this.total.toString().length >= 6) {
-      return 'monta-provas-chart__number--small';
+      return 'med-chart-radial-content__number--small';
     }
     return '';
   }
   render() {
     const { total } = this;
-    return (h(Host, null,
-      h("span", { class: "monta-provas-chart__label" }, "Total de"),
-      h("span", { class: `monta-provas-chart__number ${this.fontResize()}` }, total),
-      h("span", { class: "monta-provas-chart__label" }, "Quest\u00F5es")));
+    return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
+        'med-chart-radial-content': true,
+      }, null) },
+      h("span", { class: "med-chart-radial-content__label" }, "Total de"),
+      h("span", { class: `med-chart-radial-content__number ${this.fontResize()}` }, total),
+      h("span", { class: "med-chart-radial-content__label" }, "Quest\u00F5es")));
   }
   static get is() { return "med-chart-radial-content"; }
   static get encapsulation() { return "shadow"; }
