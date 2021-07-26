@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Method } from '@stencil/core';
+import { Component, Host, h, Prop, Method, Listen } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
 export class MedContextMenu {
   constructor() {
@@ -10,6 +10,9 @@ export class MedContextMenu {
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;
+  }
+  handleClick(event) {
+    this.toggle(event);
   }
   render() {
     const { collapsed } = this;
@@ -76,4 +79,11 @@ export class MedContextMenu {
       }
     }
   }; }
+  static get listeners() { return [{
+      "name": "click",
+      "method": "handleClick",
+      "target": "window",
+      "capture": false,
+      "passive": false
+    }]; }
 }

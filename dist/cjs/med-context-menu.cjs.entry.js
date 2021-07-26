@@ -19,6 +19,9 @@ const MedContextMenu = class {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;
   }
+  handleClick(event) {
+    this.toggle(event);
+  }
   render() {
     const { collapsed } = this;
     return (index.h(index.Host, { "from-stencil": true, class: theme.createColorClasses(null, {

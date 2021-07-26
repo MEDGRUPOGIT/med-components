@@ -14373,6 +14373,9 @@ class MedContextMenu {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;
   }
+  handleClick(event) {
+    this.toggle(event);
+  }
   render() {
     const { collapsed } = this;
     return (hAsync(Host, { "from-stencil": true, class: createColorClasses$1(null, {
@@ -14388,7 +14391,7 @@ class MedContextMenu {
       "collapsed": [1540],
       "toggle": [64]
     },
-    "$listeners$": undefined,
+    "$listeners$": [[8, "click", "handleClick"]],
     "$lazyBundleId$": "-",
     "$attrsToReflect$": [["collapsed", "collapsed"]]
   }; }

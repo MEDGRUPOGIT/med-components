@@ -17,6 +17,9 @@ const MedContextMenu$1 = class extends HTMLElement {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;
   }
+  handleClick(event) {
+    this.toggle(event);
+  }
   render() {
     const { collapsed } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
@@ -27,6 +30,6 @@ const MedContextMenu$1 = class extends HTMLElement {
   static get style() { return medContextMenuCss; }
 };
 
-const MedContextMenu = /*@__PURE__*/proxyCustomElement(MedContextMenu$1, [1,"med-context-menu",{"collapsed":[1540]}]);
+const MedContextMenu = /*@__PURE__*/proxyCustomElement(MedContextMenu$1, [1,"med-context-menu",{"collapsed":[1540]},[[8,"click","handleClick"]]]);
 
 export { MedContextMenu };
