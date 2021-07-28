@@ -262,13 +262,15 @@
   justify-content: center;
   align-items: center;
 }
-:host(.monta-provas-plusminus) .icon-minus {
+:host(.monta-provas-plusminus) .monta-provas-plusminus__icon-minus {
   margin-right: 16px;
   cursor: pointer;
+  stroke: var(--med-color-neutral-10);
 }
-:host(.monta-provas-plusminus) .icon-plus {
+:host(.monta-provas-plusminus) .monta-provas-plusminus__icon-plus {
   margin-left: 16px;
   cursor: pointer;
+  stroke: var(--med-color-neutral-10);
 }
 
 :host(.monta-provas-plusminus--xl) {

@@ -285,7 +285,7 @@
   margin-left: auto;
 }
 :host(.med-accordion) .med-accordion__icon {
-  color: var(--icon-color);
+  stroke: var(--icon-color);
   font-size: 32px;
   transform: rotate(180deg);
 }

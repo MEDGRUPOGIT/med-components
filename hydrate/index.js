@@ -5714,814 +5714,6 @@ const cmpModules = new Map, getModule = e => {
  isTesting: !1
 }, styles$1 = new Map, modeResolutionChain = [];
 
-const HapticEngine = {
-  getEngine() {
-    const win = window;
-    return (win.TapticEngine) || (win.Capacitor && win.Capacitor.isPluginAvailable('Haptics') && win.Capacitor.Plugins.Haptics);
-  },
-  available() {
-    return !!this.getEngine();
-  },
-  isCordova() {
-    return !!window.TapticEngine;
-  },
-  isCapacitor() {
-    const win = window;
-    return !!win.Capacitor;
-  },
-  impact(options) {
-    const engine = this.getEngine();
-    if (!engine) {
-      return;
-    }
-    const style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
-    engine.impact({ style });
-  },
-  notification(options) {
-    const engine = this.getEngine();
-    if (!engine) {
-      return;
-    }
-    const style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
-    engine.notification({ style });
-  },
-  selection() {
-    this.impact({ style: 'light' });
-  },
-  selectionStart() {
-    const engine = this.getEngine();
-    if (!engine) {
-      return;
-    }
-    if (this.isCapacitor()) {
-      engine.selectionStart();
-    }
-    else {
-      engine.gestureSelectionStart();
-    }
-  },
-  selectionChanged() {
-    const engine = this.getEngine();
-    if (!engine) {
-      return;
-    }
-    if (this.isCapacitor()) {
-      engine.selectionChanged();
-    }
-    else {
-      engine.gestureSelectionChanged();
-    }
-  },
-  selectionEnd() {
-    const engine = this.getEngine();
-    if (!engine) {
-      return;
-    }
-    if (this.isCapacitor()) {
-      engine.selectionEnd();
-    }
-    else {
-      engine.gestureSelectionEnd();
-    }
-  }
-};
-/**
- * Trigger a selection changed haptic event. Good for one-time events
- * (not for gestures)
- */
-const hapticSelection = () => {
-  HapticEngine.selection();
-};
-/**
- * Tell the haptic engine that a gesture for a selection change is starting.
- */
-const hapticSelectionStart = () => {
-  HapticEngine.selectionStart();
-};
-/**
- * Tell the haptic engine that a selection changed during a gesture.
- */
-const hapticSelectionChanged = () => {
-  HapticEngine.selectionChanged();
-};
-/**
- * Tell the haptic engine we are done with a gesture. This needs to be
- * called lest resources are not properly recycled.
- */
-const hapticSelectionEnd = () => {
-  HapticEngine.selectionEnd();
-};
-/**
- * Use this to indicate success/failure/warning to the user.
- * options should be of the type `{ style: 'light' }` (or `medium`/`heavy`)
- */
-const hapticImpact = (options) => {
-  HapticEngine.impact(options);
-};
-
-class GestureController {
-  constructor() {
-    this.gestureId = 0;
-    this.requestedStart = new Map();
-    this.disabledGestures = new Map();
-    this.disabledScroll = new Set();
-  }
-  /**
-   * Creates a gesture delegate based on the GestureConfig passed
-   */
-  createGesture(config) {
-    return new GestureDelegate(this, this.newID(), config.name, config.priority || 0, !!config.disableScroll);
-  }
-  /**
-   * Creates a blocker that will block any other gesture events from firing. Set in the ion-gesture component.
-   */
-  createBlocker(opts = {}) {
-    return new BlockerDelegate(this, this.newID(), opts.disable, !!opts.disableScroll);
-  }
-  start(gestureName, id, priority) {
-    if (!this.canStart(gestureName)) {
-      this.requestedStart.delete(id);
-      return false;
-    }
-    this.requestedStart.set(id, priority);
-    return true;
-  }
-  capture(gestureName, id, priority) {
-    if (!this.start(gestureName, id, priority)) {
-      return false;
-    }
-    const requestedStart = this.requestedStart;
-    let maxPriority = -10000;
-    requestedStart.forEach(value => {
-      maxPriority = Math.max(maxPriority, value);
-    });
-    if (maxPriority === priority) {
-      this.capturedId = id;
-      requestedStart.clear();
-      const event = new CustomEvent('ionGestureCaptured', { detail: { gestureName } });
-      document.dispatchEvent(event);
-      return true;
-    }
-    requestedStart.delete(id);
-    return false;
-  }
-  release(id) {
-    this.requestedStart.delete(id);
-    if (this.capturedId === id) {
-      this.capturedId = undefined;
-    }
-  }
-  disableGesture(gestureName, id) {
-    let set = this.disabledGestures.get(gestureName);
-    if (set === undefined) {
-      set = new Set();
-      this.disabledGestures.set(gestureName, set);
-    }
-    set.add(id);
-  }
-  enableGesture(gestureName, id) {
-    const set = this.disabledGestures.get(gestureName);
-    if (set !== undefined) {
-      set.delete(id);
-    }
-  }
-  disableScroll(id) {
-    this.disabledScroll.add(id);
-    if (this.disabledScroll.size === 1) {
-      document.body.classList.add(BACKDROP_NO_SCROLL);
-    }
-  }
-  enableScroll(id) {
-    this.disabledScroll.delete(id);
-    if (this.disabledScroll.size === 0) {
-      document.body.classList.remove(BACKDROP_NO_SCROLL);
-    }
-  }
-  canStart(gestureName) {
-    if (this.capturedId !== undefined) {
-      // a gesture already captured
-      return false;
-    }
-    if (this.isDisabled(gestureName)) {
-      return false;
-    }
-    return true;
-  }
-  isCaptured() {
-    return this.capturedId !== undefined;
-  }
-  isScrollDisabled() {
-    return this.disabledScroll.size > 0;
-  }
-  isDisabled(gestureName) {
-    const disabled = this.disabledGestures.get(gestureName);
-    if (disabled && disabled.size > 0) {
-      return true;
-    }
-    return false;
-  }
-  newID() {
-    this.gestureId++;
-    return this.gestureId;
-  }
-}
-class GestureDelegate {
-  constructor(ctrl, id, name, priority, disableScroll) {
-    this.id = id;
-    this.name = name;
-    this.disableScroll = disableScroll;
-    this.priority = priority * 1000000 + id;
-    this.ctrl = ctrl;
-  }
-  canStart() {
-    if (!this.ctrl) {
-      return false;
-    }
-    return this.ctrl.canStart(this.name);
-  }
-  start() {
-    if (!this.ctrl) {
-      return false;
-    }
-    return this.ctrl.start(this.name, this.id, this.priority);
-  }
-  capture() {
-    if (!this.ctrl) {
-      return false;
-    }
-    const captured = this.ctrl.capture(this.name, this.id, this.priority);
-    if (captured && this.disableScroll) {
-      this.ctrl.disableScroll(this.id);
-    }
-    return captured;
-  }
-  release() {
-    if (this.ctrl) {
-      this.ctrl.release(this.id);
-      if (this.disableScroll) {
-        this.ctrl.enableScroll(this.id);
-      }
-    }
-  }
-  destroy() {
-    this.release();
-    this.ctrl = undefined;
-  }
-}
-class BlockerDelegate {
-  constructor(ctrl, id, disable, disableScroll) {
-    this.id = id;
-    this.disable = disable;
-    this.disableScroll = disableScroll;
-    this.ctrl = ctrl;
-  }
-  block() {
-    if (!this.ctrl) {
-      return;
-    }
-    if (this.disable) {
-      for (const gesture of this.disable) {
-        this.ctrl.disableGesture(gesture, this.id);
-      }
-    }
-    if (this.disableScroll) {
-      this.ctrl.disableScroll(this.id);
-    }
-  }
-  unblock() {
-    if (!this.ctrl) {
-      return;
-    }
-    if (this.disable) {
-      for (const gesture of this.disable) {
-        this.ctrl.enableGesture(gesture, this.id);
-      }
-    }
-    if (this.disableScroll) {
-      this.ctrl.enableScroll(this.id);
-    }
-  }
-  destroy() {
-    this.unblock();
-    this.ctrl = undefined;
-  }
-}
-const BACKDROP_NO_SCROLL = 'backdrop-no-scroll';
-const GESTURE_CONTROLLER = new GestureController();
-
-const addEventListener$1 = (el, eventName, callback, opts) => {
-  // use event listener options when supported
-  // otherwise it's just a boolean for the "capture" arg
-  const listenerOpts = supportsPassive(el) ? {
-    'capture': !!opts.capture,
-    'passive': !!opts.passive,
-  } : !!opts.capture;
-  let add;
-  let remove;
-  if (el['__zone_symbol__addEventListener']) {
-    add = '__zone_symbol__addEventListener';
-    remove = '__zone_symbol__removeEventListener';
-  }
-  else {
-    add = 'addEventListener';
-    remove = 'removeEventListener';
-  }
-  el[add](eventName, callback, listenerOpts);
-  return () => {
-    el[remove](eventName, callback, listenerOpts);
-  };
-};
-const supportsPassive = (node) => {
-  if (_sPassive === undefined) {
-    try {
-      const opts = Object.defineProperty({}, 'passive', {
-        get: () => {
-          _sPassive = true;
-        }
-      });
-      node.addEventListener('optsTest', () => { return; }, opts);
-    }
-    catch (e) {
-      _sPassive = false;
-    }
-  }
-  return !!_sPassive;
-};
-let _sPassive;
-
-const MOUSE_WAIT = 2000;
-const createPointerEvents = (el, pointerDown, pointerMove, pointerUp, options) => {
-  let rmTouchStart;
-  let rmTouchMove;
-  let rmTouchEnd;
-  let rmTouchCancel;
-  let rmMouseStart;
-  let rmMouseMove;
-  let rmMouseUp;
-  let lastTouchEvent = 0;
-  const handleTouchStart = (ev) => {
-    lastTouchEvent = Date.now() + MOUSE_WAIT;
-    if (!pointerDown(ev)) {
-      return;
-    }
-    if (!rmTouchMove && pointerMove) {
-      rmTouchMove = addEventListener$1(el, 'touchmove', pointerMove, options);
-    }
-    if (!rmTouchEnd) {
-      rmTouchEnd = addEventListener$1(el, 'touchend', handleTouchEnd, options);
-    }
-    if (!rmTouchCancel) {
-      rmTouchCancel = addEventListener$1(el, 'touchcancel', handleTouchEnd, options);
-    }
-  };
-  const handleMouseDown = (ev) => {
-    if (lastTouchEvent > Date.now()) {
-      return;
-    }
-    if (!pointerDown(ev)) {
-      return;
-    }
-    if (!rmMouseMove && pointerMove) {
-      rmMouseMove = addEventListener$1(getDocument(el), 'mousemove', pointerMove, options);
-    }
-    if (!rmMouseUp) {
-      rmMouseUp = addEventListener$1(getDocument(el), 'mouseup', handleMouseUp, options);
-    }
-  };
-  const handleTouchEnd = (ev) => {
-    stopTouch();
-    if (pointerUp) {
-      pointerUp(ev);
-    }
-  };
-  const handleMouseUp = (ev) => {
-    stopMouse();
-    if (pointerUp) {
-      pointerUp(ev);
-    }
-  };
-  const stopTouch = () => {
-    if (rmTouchMove) {
-      rmTouchMove();
-    }
-    if (rmTouchEnd) {
-      rmTouchEnd();
-    }
-    if (rmTouchCancel) {
-      rmTouchCancel();
-    }
-    rmTouchMove = rmTouchEnd = rmTouchCancel = undefined;
-  };
-  const stopMouse = () => {
-    if (rmMouseMove) {
-      rmMouseMove();
-    }
-    if (rmMouseUp) {
-      rmMouseUp();
-    }
-    rmMouseMove = rmMouseUp = undefined;
-  };
-  const stop = () => {
-    stopTouch();
-    stopMouse();
-  };
-  const enable = (isEnabled = true) => {
-    if (!isEnabled) {
-      if (rmTouchStart) {
-        rmTouchStart();
-      }
-      if (rmMouseStart) {
-        rmMouseStart();
-      }
-      rmTouchStart = rmMouseStart = undefined;
-      stop();
-    }
-    else {
-      if (!rmTouchStart) {
-        rmTouchStart = addEventListener$1(el, 'touchstart', handleTouchStart, options);
-      }
-      if (!rmMouseStart) {
-        rmMouseStart = addEventListener$1(el, 'mousedown', handleMouseDown, options);
-      }
-    }
-  };
-  const destroy = () => {
-    enable(false);
-    pointerUp = pointerMove = pointerDown = undefined;
-  };
-  return {
-    enable,
-    stop,
-    destroy
-  };
-};
-const getDocument = (node) => {
-  return node instanceof Document ? node : node.ownerDocument;
-};
-
-const createPanRecognizer = (direction, thresh, maxAngle) => {
-  const radians = maxAngle * (Math.PI / 180);
-  const isDirX = direction === 'x';
-  const maxCosine = Math.cos(radians);
-  const threshold = thresh * thresh;
-  let startX = 0;
-  let startY = 0;
-  let dirty = false;
-  let isPan = 0;
-  return {
-    start(x, y) {
-      startX = x;
-      startY = y;
-      isPan = 0;
-      dirty = true;
-    },
-    detect(x, y) {
-      if (!dirty) {
-        return false;
-      }
-      const deltaX = (x - startX);
-      const deltaY = (y - startY);
-      const distance = deltaX * deltaX + deltaY * deltaY;
-      if (distance < threshold) {
-        return false;
-      }
-      const hypotenuse = Math.sqrt(distance);
-      const cosine = (isDirX ? deltaX : deltaY) / hypotenuse;
-      if (cosine > maxCosine) {
-        isPan = 1;
-      }
-      else if (cosine < -maxCosine) {
-        isPan = -1;
-      }
-      else {
-        isPan = 0;
-      }
-      dirty = false;
-      return true;
-    },
-    isGesture() {
-      return isPan !== 0;
-    },
-    getDirection() {
-      return isPan;
-    }
-  };
-};
-
-const createGesture = (config) => {
-  let hasCapturedPan = false;
-  let hasStartedPan = false;
-  let hasFiredStart = true;
-  let isMoveQueued = false;
-  const finalConfig = Object.assign({ disableScroll: false, direction: 'x', gesturePriority: 0, passive: true, maxAngle: 40, threshold: 10 }, config);
-  const canStart = finalConfig.canStart;
-  const onWillStart = finalConfig.onWillStart;
-  const onStart = finalConfig.onStart;
-  const onEnd = finalConfig.onEnd;
-  const notCaptured = finalConfig.notCaptured;
-  const onMove = finalConfig.onMove;
-  const threshold = finalConfig.threshold;
-  const passive = finalConfig.passive;
-  const blurOnStart = finalConfig.blurOnStart;
-  const detail = {
-    type: 'pan',
-    startX: 0,
-    startY: 0,
-    startTime: 0,
-    currentX: 0,
-    currentY: 0,
-    velocityX: 0,
-    velocityY: 0,
-    deltaX: 0,
-    deltaY: 0,
-    currentTime: 0,
-    event: undefined,
-    data: undefined
-  };
-  const pan = createPanRecognizer(finalConfig.direction, finalConfig.threshold, finalConfig.maxAngle);
-  const gesture = GESTURE_CONTROLLER.createGesture({
-    name: config.gestureName,
-    priority: config.gesturePriority,
-    disableScroll: config.disableScroll
-  });
-  const pointerDown = (ev) => {
-    const timeStamp = now(ev);
-    if (hasStartedPan || !hasFiredStart) {
-      return false;
-    }
-    updateDetail(ev, detail);
-    detail.startX = detail.currentX;
-    detail.startY = detail.currentY;
-    detail.startTime = detail.currentTime = timeStamp;
-    detail.velocityX = detail.velocityY = detail.deltaX = detail.deltaY = 0;
-    detail.event = ev;
-    // Check if gesture can start
-    if (canStart && canStart(detail) === false) {
-      return false;
-    }
-    // Release fallback
-    gesture.release();
-    // Start gesture
-    if (!gesture.start()) {
-      return false;
-    }
-    hasStartedPan = true;
-    if (threshold === 0) {
-      return tryToCapturePan();
-    }
-    pan.start(detail.startX, detail.startY);
-    return true;
-  };
-  const pointerMove = (ev) => {
-    // fast path, if gesture is currently captured
-    // do minimum job to get user-land even dispatched
-    if (hasCapturedPan) {
-      if (!isMoveQueued && hasFiredStart) {
-        isMoveQueued = true;
-        calcGestureData(detail, ev);
-        requestAnimationFrame(fireOnMove);
-      }
-      return;
-    }
-    // gesture is currently being detected
-    calcGestureData(detail, ev);
-    if (pan.detect(detail.currentX, detail.currentY)) {
-      if (!pan.isGesture() || !tryToCapturePan()) {
-        abortGesture();
-      }
-    }
-  };
-  const fireOnMove = () => {
-    // Since fireOnMove is called inside a RAF, onEnd() might be called,
-    // we must double check hasCapturedPan
-    if (!hasCapturedPan) {
-      return;
-    }
-    isMoveQueued = false;
-    if (onMove) {
-      onMove(detail);
-    }
-  };
-  const tryToCapturePan = () => {
-    if (gesture && !gesture.capture()) {
-      return false;
-    }
-    hasCapturedPan = true;
-    hasFiredStart = false;
-    // reset start position since the real user-land event starts here
-    // If the pan detector threshold is big, not resetting the start position
-    // will cause a jump in the animation equal to the detector threshold.
-    // the array of positions used to calculate the gesture velocity does not
-    // need to be cleaned, more points in the positions array always results in a
-    // more accurate value of the velocity.
-    detail.startX = detail.currentX;
-    detail.startY = detail.currentY;
-    detail.startTime = detail.currentTime;
-    if (onWillStart) {
-      onWillStart(detail).then(fireOnStart);
-    }
-    else {
-      fireOnStart();
-    }
-    return true;
-  };
-  const blurActiveElement = () => {
-    /* tslint:disable-next-line */
-    if (typeof document !== 'undefined') {
-      const activeElement = document.activeElement;
-      if (activeElement !== null && activeElement.blur) {
-        activeElement.blur();
-      }
-    }
-  };
-  const fireOnStart = () => {
-    if (blurOnStart) {
-      blurActiveElement();
-    }
-    if (onStart) {
-      onStart(detail);
-    }
-    hasFiredStart = true;
-  };
-  const reset = () => {
-    hasCapturedPan = false;
-    hasStartedPan = false;
-    isMoveQueued = false;
-    hasFiredStart = true;
-    gesture.release();
-  };
-  // END *************************
-  const pointerUp = (ev) => {
-    const tmpHasCaptured = hasCapturedPan;
-    const tmpHasFiredStart = hasFiredStart;
-    reset();
-    if (!tmpHasFiredStart) {
-      return;
-    }
-    calcGestureData(detail, ev);
-    // Try to capture press
-    if (tmpHasCaptured) {
-      if (onEnd) {
-        onEnd(detail);
-      }
-      return;
-    }
-    // Not captured any event
-    if (notCaptured) {
-      notCaptured(detail);
-    }
-  };
-  const pointerEvents = createPointerEvents(finalConfig.el, pointerDown, pointerMove, pointerUp, {
-    capture: false,
-    passive
-  });
-  const abortGesture = () => {
-    reset();
-    pointerEvents.stop();
-    if (notCaptured) {
-      notCaptured(detail);
-    }
-  };
-  return {
-    enable(enable = true) {
-      if (!enable) {
-        if (hasCapturedPan) {
-          pointerUp(undefined);
-        }
-        reset();
-      }
-      pointerEvents.enable(enable);
-    },
-    destroy() {
-      gesture.destroy();
-      pointerEvents.destroy();
-    }
-  };
-};
-const calcGestureData = (detail, ev) => {
-  if (!ev) {
-    return;
-  }
-  const prevX = detail.currentX;
-  const prevY = detail.currentY;
-  const prevT = detail.currentTime;
-  updateDetail(ev, detail);
-  const currentX = detail.currentX;
-  const currentY = detail.currentY;
-  const timestamp = detail.currentTime = now(ev);
-  const timeDelta = timestamp - prevT;
-  if (timeDelta > 0 && timeDelta < 100) {
-    const velocityX = (currentX - prevX) / timeDelta;
-    const velocityY = (currentY - prevY) / timeDelta;
-    detail.velocityX = velocityX * 0.7 + detail.velocityX * 0.3;
-    detail.velocityY = velocityY * 0.7 + detail.velocityY * 0.3;
-  }
-  detail.deltaX = currentX - detail.startX;
-  detail.deltaY = currentY - detail.startY;
-  detail.event = ev;
-};
-const updateDetail = (ev, detail) => {
-  // get X coordinates for either a mouse click
-  // or a touch depending on the given event
-  let x = 0;
-  let y = 0;
-  if (ev) {
-    const changedTouches = ev.changedTouches;
-    if (changedTouches && changedTouches.length > 0) {
-      const touch = changedTouches[0];
-      x = touch.clientX;
-      y = touch.clientY;
-    }
-    else if (ev.pageX !== undefined) {
-      x = ev.pageX;
-      y = ev.pageY;
-    }
-  }
-  detail.currentX = x;
-  detail.currentY = y;
-};
-const now = (ev) => {
-  return ev.timeStamp || Date.now();
-};
-
-var index$2 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  createGesture: createGesture,
-  GESTURE_CONTROLLER: GESTURE_CONTROLLER
-});
-
-const createButtonActiveGesture = (el, isButton) => {
-  let currentTouchedButton;
-  let initialTouchedButton;
-  const activateButtonAtPoint = (x, y, hapticFeedbackFn) => {
-    if (typeof document === 'undefined') {
-      return;
-    }
-    const target = document.elementFromPoint(x, y);
-    if (!target || !isButton(target)) {
-      clearActiveButton();
-      return;
-    }
-    if (target !== currentTouchedButton) {
-      clearActiveButton();
-      setActiveButton(target, hapticFeedbackFn);
-    }
-  };
-  const setActiveButton = (button, hapticFeedbackFn) => {
-    currentTouchedButton = button;
-    if (!initialTouchedButton) {
-      initialTouchedButton = currentTouchedButton;
-    }
-    const buttonToModify = currentTouchedButton;
-    writeTask(() => buttonToModify.classList.add('ion-activated'));
-    hapticFeedbackFn();
-  };
-  const clearActiveButton = (dispatchClick = false) => {
-    if (!currentTouchedButton) {
-      return;
-    }
-    const buttonToModify = currentTouchedButton;
-    writeTask(() => buttonToModify.classList.remove('ion-activated'));
-    /**
-     * Clicking on one button, but releasing on another button
-     * does not dispatch a click event in browsers, so we
-     * need to do it manually here. Some browsers will
-     * dispatch a click if clicking on one button, dragging over
-     * another button, and releasing on the original button. In that
-     * case, we need to make sure we do not cause a double click there.
-     */
-    if (dispatchClick && initialTouchedButton !== currentTouchedButton) {
-      currentTouchedButton.click();
-    }
-    currentTouchedButton = undefined;
-  };
-  return createGesture({
-    el,
-    gestureName: 'buttonActiveDrag',
-    threshold: 0,
-    onStart: ev => activateButtonAtPoint(ev.currentX, ev.currentY, hapticSelectionStart),
-    onMove: ev => activateButtonAtPoint(ev.currentX, ev.currentY, hapticSelectionChanged),
-    onEnd: () => {
-      clearActiveButton(true);
-      hapticSelectionEnd();
-      initialTouchedButton = undefined;
-    }
-  });
-};
-
-/**
- * When hardwareBackButton: false in config,
- * we need to make sure we also block the default
- * webview behavior. If we don't then it will be
- * possible for users to navigate backward while
- * an overlay is still open. Additionally, it will
- * give the appearance that the hardwareBackButton
- * config is not working as the page transition
- * will still happen.
- */
-const OVERLAY_BACK_BUTTON_PRIORITY = 100;
-const MENU_BACK_BUTTON_PRIORITY = 99; // 1 less than overlay priority since menu is displayed behind overlays
-
 /**
  * Waits for a component to be ready for
  * both custom element and non-custom element builds.
@@ -6565,7 +5757,7 @@ const inheritAttributes = (el, attributes = []) => {
   });
   return attributeObject;
 };
-const addEventListener = (el, eventName, callback, opts) => {
+const addEventListener$1 = (el, eventName, callback, opts) => {
   if (typeof window !== 'undefined') {
     const win = window;
     const config = win && win.Ionic && win.Ionic.config;
@@ -6763,403 +5955,6 @@ const debounce = (func, wait = 0) => {
     clearTimeout(timer);
     timer = setTimeout(func, wait, ...args);
   };
-};
-
-let lastId = 0;
-const activeAnimations = new WeakMap();
-const createController = (tagName) => {
-  return {
-    create(options) {
-      return createOverlay(tagName, options);
-    },
-    dismiss(data, role, id) {
-      return dismissOverlay(document, data, role, tagName, id);
-    },
-    async getTop() {
-      return getOverlay(document, tagName);
-    }
-  };
-};
-const alertController = /*@__PURE__*/ createController('ion-alert');
-const actionSheetController = /*@__PURE__*/ createController('ion-action-sheet');
-const modalController = /*@__PURE__*/ createController('ion-modal');
-const pickerController = /*@__PURE__*/ createController('ion-picker');
-const popoverController = /*@__PURE__*/ createController('ion-popover');
-const prepareOverlay = (el) => {
-  /* tslint:disable-next-line */
-  if (typeof document !== 'undefined') {
-    connectListeners(document);
-  }
-  const overlayIndex = lastId++;
-  el.overlayIndex = overlayIndex;
-  if (!el.hasAttribute('id')) {
-    el.id = `ion-overlay-${overlayIndex}`;
-  }
-};
-const createOverlay = (tagName, opts) => {
-  /* tslint:disable-next-line */
-  if (typeof customElements !== 'undefined') {
-    return customElements.whenDefined(tagName).then(() => {
-      const element = document.createElement(tagName);
-      element.classList.add('overlay-hidden');
-      // convert the passed in overlay options into props
-      // that get passed down into the new overlay
-      Object.assign(element, opts);
-      // append the overlay element to the document body
-      getAppRoot(document).appendChild(element);
-      return new Promise(resolve => componentOnReady(element, resolve));
-    });
-  }
-  return Promise.resolve();
-};
-const focusableQueryString = '[tabindex]:not([tabindex^="-"]), input:not([type=hidden]):not([tabindex^="-"]), textarea:not([tabindex^="-"]), button:not([tabindex^="-"]), select:not([tabindex^="-"]), .ion-focusable:not([tabindex^="-"])';
-const innerFocusableQueryString = 'input:not([type=hidden]), textarea, button, select';
-const focusFirstDescendant = (ref, overlay) => {
-  let firstInput = ref.querySelector(focusableQueryString);
-  const shadowRoot = firstInput && firstInput.shadowRoot;
-  if (shadowRoot) {
-    // If there are no inner focusable elements, just focus the host element.
-    firstInput = shadowRoot.querySelector(innerFocusableQueryString) || firstInput;
-  }
-  if (firstInput) {
-    firstInput.focus();
-  }
-  else {
-    // Focus overlay instead of letting focus escape
-    overlay.focus();
-  }
-};
-const focusLastDescendant = (ref, overlay) => {
-  const inputs = Array.from(ref.querySelectorAll(focusableQueryString));
-  let lastInput = inputs.length > 0 ? inputs[inputs.length - 1] : null;
-  const shadowRoot = lastInput && lastInput.shadowRoot;
-  if (shadowRoot) {
-    // If there are no inner focusable elements, just focus the host element.
-    lastInput = shadowRoot.querySelector(innerFocusableQueryString) || lastInput;
-  }
-  if (lastInput) {
-    lastInput.focus();
-  }
-  else {
-    // Focus overlay instead of letting focus escape
-    overlay.focus();
-  }
-};
-/**
- * Traps keyboard focus inside of overlay components.
- * Based on https://w3c.github.io/aria-practices/examples/dialog-modal/alertdialog.html
- * This includes the following components: Action Sheet, Alert, Loading, Modal,
- * Picker, and Popover.
- * Should NOT include: Toast
- */
-const trapKeyboardFocus = (ev, doc) => {
-  const lastOverlay = getOverlay(doc);
-  const target = ev.target;
-  // If no active overlay, ignore this event
-  if (!lastOverlay || !target) {
-    return;
-  }
-  /**
-   * If we are focusing the overlay, clear
-   * the last focused element so that hitting
-   * tab activates the first focusable element
-   * in the overlay wrapper.
-   */
-  if (lastOverlay === target) {
-    lastOverlay.lastFocus = undefined;
-    /**
-     * Otherwise, we must be focusing an element
-     * inside of the overlay. The two possible options
-     * here are an input/button/etc or the ion-focus-trap
-     * element. The focus trap element is used to prevent
-     * the keyboard focus from leaving the overlay when
-     * using Tab or screen assistants.
-     */
-  }
-  else {
-    /**
-     * We do not want to focus the traps, so get the overlay
-     * wrapper element as the traps live outside of the wrapper.
-     */
-    const overlayRoot = getElementRoot(lastOverlay);
-    if (!overlayRoot.contains(target)) {
-      return;
-    }
-    const overlayWrapper = overlayRoot.querySelector('.ion-overlay-wrapper');
-    if (!overlayWrapper) {
-      return;
-    }
-    /**
-     * If the target is inside the wrapper, let the browser
-     * focus as normal and keep a log of the last focused element.
-     */
-    if (overlayWrapper.contains(target)) {
-      lastOverlay.lastFocus = target;
-    }
-    else {
-      /**
-       * Otherwise, we must have focused one of the focus traps.
-       * We need to wrap the focus to either the first element
-       * or the last element.
-       */
-      /**
-       * Once we call `focusFirstDescendant` and focus the first
-       * descendant, another focus event will fire which will
-       * cause `lastOverlay.lastFocus` to be updated before
-       * we can run the code after that. We will cache the value
-       * here to avoid that.
-       */
-      const lastFocus = lastOverlay.lastFocus;
-      // Focus the first element in the overlay wrapper
-      focusFirstDescendant(overlayWrapper, lastOverlay);
-      /**
-       * If the cached last focused element is the
-       * same as the active element, then we need
-       * to wrap focus to the last descendant. This happens
-       * when the first descendant is focused, and the user
-       * presses Shift + Tab. The previous line will focus
-       * the same descendant again (the first one), causing
-       * last focus to equal the active element.
-       */
-      if (lastFocus === doc.activeElement) {
-        focusLastDescendant(overlayWrapper, lastOverlay);
-      }
-      lastOverlay.lastFocus = doc.activeElement;
-    }
-  }
-};
-const connectListeners = (doc) => {
-  if (lastId === 0) {
-    lastId = 1;
-    doc.addEventListener('focus', ev => trapKeyboardFocus(ev, doc), true);
-    // handle back-button click
-    doc.addEventListener('ionBackButton', ev => {
-      const lastOverlay = getOverlay(doc);
-      if (lastOverlay && lastOverlay.backdropDismiss) {
-        ev.detail.register(OVERLAY_BACK_BUTTON_PRIORITY, () => {
-          return lastOverlay.dismiss(undefined, BACKDROP);
-        });
-      }
-    });
-    // handle ESC to close overlay
-    doc.addEventListener('keyup', ev => {
-      if (ev.key === 'Escape') {
-        const lastOverlay = getOverlay(doc);
-        if (lastOverlay && lastOverlay.backdropDismiss) {
-          lastOverlay.dismiss(undefined, BACKDROP);
-        }
-      }
-    });
-  }
-};
-const dismissOverlay = (doc, data, role, overlayTag, id) => {
-  const overlay = getOverlay(doc, overlayTag, id);
-  if (!overlay) {
-    return Promise.reject('overlay does not exist');
-  }
-  return overlay.dismiss(data, role);
-};
-const getOverlays = (doc, selector) => {
-  if (selector === undefined) {
-    selector = 'ion-alert,ion-action-sheet,ion-loading,ion-modal,ion-picker,ion-popover,ion-toast';
-  }
-  return Array.from(doc.querySelectorAll(selector))
-    .filter(c => c.overlayIndex > 0);
-};
-const getOverlay = (doc, overlayTag, id) => {
-  const overlays = getOverlays(doc, overlayTag);
-  return (id === undefined)
-    ? overlays[overlays.length - 1]
-    : overlays.find(o => o.id === id);
-};
-const present = async (overlay, name, iosEnterAnimation, mdEnterAnimation, opts) => {
-  if (overlay.presented) {
-    return;
-  }
-  overlay.presented = true;
-  overlay.willPresent.emit();
-  const mode = getIonMode$1(overlay);
-  // get the user's animation fn if one was provided
-  const animationBuilder = (overlay.enterAnimation)
-    ? overlay.enterAnimation
-    : config.get(name, mode === 'ios' ? iosEnterAnimation : mdEnterAnimation);
-  const completed = await overlayAnimation(overlay, animationBuilder, overlay.el, opts);
-  if (completed) {
-    overlay.didPresent.emit();
-  }
-  /**
-   * When an overlay that steals focus
-   * is dismissed, focus should be returned
-   * to the element that was focused
-   * prior to the overlay opening. Toast
-   * does not steal focus and is excluded
-   * from returning focus as a result.
-   */
-  if (overlay.el.tagName !== 'ION-TOAST') {
-    focusPreviousElementOnDismiss(overlay.el);
-  }
-  if (overlay.keyboardClose) {
-    overlay.el.focus();
-  }
-};
-/**
- * When an overlay component is dismissed,
- * focus should be returned to the element
- * that presented the overlay. Otherwise
- * focus will be set on the body which
- * means that people using screen readers
- * or tabbing will need to re-navigate
- * to where they were before they
- * opened the overlay.
- */
-const focusPreviousElementOnDismiss = async (overlayEl) => {
-  let previousElement = document.activeElement;
-  if (!previousElement) {
-    return;
-  }
-  const shadowRoot = previousElement && previousElement.shadowRoot;
-  if (shadowRoot) {
-    // If there are no inner focusable elements, just focus the host element.
-    previousElement = shadowRoot.querySelector(innerFocusableQueryString) || previousElement;
-  }
-  await overlayEl.onDidDismiss();
-  previousElement.focus();
-};
-const dismiss = async (overlay, data, role, name, iosLeaveAnimation, mdLeaveAnimation, opts) => {
-  if (!overlay.presented) {
-    return false;
-  }
-  overlay.presented = false;
-  try {
-    // Overlay contents should not be clickable during dismiss
-    overlay.el.style.setProperty('pointer-events', 'none');
-    overlay.willDismiss.emit({ data, role });
-    const mode = getIonMode$1(overlay);
-    const animationBuilder = (overlay.leaveAnimation)
-      ? overlay.leaveAnimation
-      : config.get(name, mode === 'ios' ? iosLeaveAnimation : mdLeaveAnimation);
-    // If dismissed via gesture, no need to play leaving animation again
-    if (role !== 'gesture') {
-      await overlayAnimation(overlay, animationBuilder, overlay.el, opts);
-    }
-    overlay.didDismiss.emit({ data, role });
-    activeAnimations.delete(overlay);
-  }
-  catch (err) {
-    console.error(err);
-  }
-  overlay.el.remove();
-  return true;
-};
-const getAppRoot = (doc) => {
-  return doc.querySelector('ion-app') || doc.body;
-};
-const overlayAnimation = async (overlay, animationBuilder, baseEl, opts) => {
-  // Make overlay visible in case it's hidden
-  baseEl.classList.remove('overlay-hidden');
-  const aniRoot = baseEl.shadowRoot || overlay.el;
-  const animation = animationBuilder(aniRoot, opts);
-  if (!overlay.animated || !config.getBoolean('animated', true)) {
-    animation.duration(0);
-  }
-  if (overlay.keyboardClose) {
-    animation.beforeAddWrite(() => {
-      const activeElement = baseEl.ownerDocument.activeElement;
-      if (activeElement && activeElement.matches('input, ion-input, ion-textarea')) {
-        activeElement.blur();
-      }
-    });
-  }
-  const activeAni = activeAnimations.get(overlay) || [];
-  activeAnimations.set(overlay, [...activeAni, animation]);
-  await animation.play();
-  return true;
-};
-const eventMethod = (element, eventName) => {
-  let resolve;
-  const promise = new Promise(r => resolve = r);
-  onceEvent(element, eventName, (event) => {
-    resolve(event.detail);
-  });
-  return promise;
-};
-const onceEvent = (element, eventName, callback) => {
-  const handler = (ev) => {
-    removeEventListener(element, eventName, handler);
-    callback(ev);
-  };
-  addEventListener(element, eventName, handler);
-};
-const isCancel = (role) => {
-  return role === 'cancel' || role === BACKDROP;
-};
-const defaultGate = (h) => h();
-const safeCall = (handler, arg) => {
-  if (typeof handler === 'function') {
-    const jmp = config.get('_zoneGate', defaultGate);
-    return jmp(() => {
-      try {
-        return handler(arg);
-      }
-      catch (e) {
-        console.error(e);
-      }
-    });
-  }
-  return undefined;
-};
-const BACKDROP = 'backdrop';
-
-const hostContext = (selector, el) => {
-  return el.closest(selector) !== null;
-};
-/**
- * Create the mode and color classes for the component based on the classes passed in
- */
-const createColorClasses$1 = (color, cssClassMap, neutral) => {
-  /* return (typeof color === 'string' && color.length > 0) ? {
-    'ion-color': true,
-    [`ion-color-${color}`]: true,
-    ...cssClassMap
-  } : cssClassMap;
- */
-  if (typeof color === 'string' && color.length > 0) {
-    return Object.assign({ 'ion-color': true, [`ion-color-${color}`]: true }, cssClassMap);
-  }
-  else if (neutral) {
-    return Object.assign({ 'med-neutral': true, [`med-neutral-${neutral}`]: true }, cssClassMap);
-  }
-  else {
-    return cssClassMap;
-  }
-};
-const getClassList = (classes) => {
-  if (classes !== undefined) {
-    const array = Array.isArray(classes) ? classes : classes.split(' ');
-    return array
-      .filter(c => c != null)
-      .map(c => c.trim())
-      .filter(c => c !== '');
-  }
-  return [];
-};
-const getClassMap = (classes) => {
-  const map = {};
-  getClassList(classes).forEach(c => map[c] = true);
-  return map;
-};
-const SCHEME = /^[a-z][a-z0-9+\-.]*:/;
-const openURL = async (url, ev, direction, animation) => {
-  if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
-    const router = document.querySelector('ion-router');
-    if (router) {
-      if (ev != null) {
-        ev.preventDefault();
-      }
-      return router.push(url, direction, animation);
-    }
-  }
-  return false;
 };
 
 let animationPrefix;
@@ -8112,6 +6907,1381 @@ const createAnimation = (animationId) => {
     progressStep,
     progressEnd
   };
+};
+
+const accordionCss = "/*!@:root*/.sc-hv-accordion:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-hv-accordion:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-hv-accordion:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-hv-accordion:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-hv-accordion-h{display:block}/*!@.blocker*/.blocker.sc-hv-accordion{height:50px;background-color:#fff;will-change:transform}";
+
+class Accordion {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+    this.currentlyOpen = null;
+  }
+  componentDidLoad() {
+    this.blocker = this.hostElement.shadowRoot.querySelector('.blocker');
+  }
+  async handleToggle(ev) {
+    ev.detail.shouldOpen ? await this.animateOpen(ev) : await this.animateClose(ev);
+    ev.detail.endTransition();
+  }
+  async closeOpenItem() {
+    if (this.currentlyOpen !== null) {
+      const itemToClose = this.currentlyOpen.detail;
+      itemToClose.startTransition();
+      await this.animateClose(this.currentlyOpen);
+      itemToClose.endTransition();
+      itemToClose.setClosed();
+      return true;
+    }
+  }
+  async animateOpen(ev) {
+    // Close any open item first
+    await this.closeOpenItem();
+    this.currentlyOpen = ev;
+    // Create an array of all accordion items
+    const items = Array.from(this.hostElement.children);
+    // Find the item being opened, and create a new array with only the elements beneath the element being opened
+    let splitOnIndex = 0;
+    items.forEach((item, index) => {
+      if (item === ev.detail.element) {
+        splitOnIndex = index;
+      }
+    });
+    this.elementsToShift = [...items].splice(splitOnIndex + 1, items.length - (splitOnIndex + 1));
+    // Set item content to be visible
+    ev.detail.content.style.display = 'block';
+    // Calculate the amount other items need to be shifted
+    const amountToShift = ev.detail.content.clientHeight;
+    const openAnimationTime = 300;
+    // Initially set all items below the one being opened to cover the new content
+    // but then animate back to their normal position to reveal the content
+    this.shiftDownAnimation = createAnimation()
+      .addElement(this.elementsToShift)
+      .delay(20)
+      .beforeStyles({
+      ['transform']: `translateY(-${amountToShift}px)`,
+      ['position']: 'relative',
+      ['z-index']: '1',
+    })
+      .afterClearStyles(['position', 'z-index'])
+      .to('transform', 'translateY(0)')
+      .duration(openAnimationTime)
+      .easing('cubic-bezier(0.32,0.72,0,1)');
+    // This blocker element is placed after the last item in the accordion list
+    // It will change its height to the height of the content being displayed so that
+    // the content doesn't leak out the bottom of the list
+    this.blockerDownAnimation = createAnimation()
+      .addElement(this.blocker)
+      .delay(20)
+      .beforeStyles({
+      ['transform']: `translateY(-${amountToShift}px)`,
+      ['height']: `${amountToShift}px`,
+    })
+      .to('transform', 'translateY(0)')
+      .duration(openAnimationTime)
+      .easing('cubic-bezier(0.32,0.72,0,1)');
+    return await Promise.all([this.shiftDownAnimation.play(), this.blockerDownAnimation.play()]);
+  }
+  async animateClose(ev) {
+    this.currentlyOpen = null;
+    const amountToShift = ev.detail.content.clientHeight;
+    const closeAnimationTime = 300;
+    // Now we first animate up the elements beneath the content that was opened to cover it
+    // and then we set the content back to display: none and remove the transform completely
+    // With the content gone, there will be no noticeable position change when removing the transform
+    const shiftUpAnimation = createAnimation()
+      .addElement(this.elementsToShift)
+      .afterStyles({
+      ['transform']: 'translateY(0)',
+    })
+      .to('transform', `translateY(-${amountToShift}px)`)
+      .afterAddWrite(() => {
+      this.shiftDownAnimation.destroy();
+      this.blockerDownAnimation.destroy();
+    })
+      .duration(closeAnimationTime)
+      .easing('cubic-bezier(0.32,0.72,0,1)');
+    const blockerUpAnimation = createAnimation()
+      .addElement(this.blocker)
+      .afterStyles({
+      ['transform']: 'translateY(0)',
+    })
+      .to('transform', `translateY(-${amountToShift}px)`)
+      .duration(closeAnimationTime)
+      .easing('cubic-bezier(0.32,0.72,0,1)');
+    await Promise.all([shiftUpAnimation.play(), blockerUpAnimation.play()]);
+    ev.detail.content.style.display = 'none';
+    shiftUpAnimation.destroy();
+    blockerUpAnimation.destroy();
+    return true;
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("slot", null), hAsync("div", { class: "blocker" })));
+  }
+  get hostElement() { return getElement(this); }
+  static get style() { return accordionCss; }
+  static get cmpMeta() { return {
+    "$flags$": 9,
+    "$tagName$": "hv-accordion",
+    "$members$": undefined,
+    "$listeners$": [[0, "toggle", "handleToggle"]],
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const accordionItemCss = "/*!@:root*/.sc-hv-accordion-item:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-hv-accordion-item:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-hv-accordion-item:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-hv-accordion-item:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-hv-accordion-item-h{display:block;height:100%;overflow:auto;background-color:#fff;border:3px solid #fff;will-change:transform}/*!@.header*/.header.sc-hv-accordion-item{padding:0px 20px 5px 20px;background-color:#f5f5f5;border:1px solid #ececec}/*!@.content*/.content.sc-hv-accordion-item{display:none;padding:0 20px;overflow:auto}";
+
+class AccordionItem {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+    this.toggle = createEvent(this, "toggle", 7);
+    this.isOpen = false;
+    this.isTransitioning = false;
+  }
+  componentDidLoad() {
+    this.content = this.hostElement.shadowRoot.querySelector('.content');
+  }
+  toggleOpen() {
+    if (this.isTransitioning) {
+      return;
+    }
+    this.isOpen = !this.isOpen;
+    this.isTransitioning = true;
+    this.toggle.emit({
+      element: this.hostElement,
+      content: this.content,
+      shouldOpen: this.isOpen,
+      startTransition: () => {
+        this.isTransitioning = true;
+      },
+      endTransition: () => {
+        this.isTransitioning = false;
+      },
+      setClosed: () => {
+        this.isOpen = false;
+      },
+    });
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("div", { class: "header" }, hAsync("slot", { name: "header" })), hAsync("div", { class: "content" }, hAsync("slot", { name: "content" }))));
+  }
+  get hostElement() { return getElement(this); }
+  static get style() { return accordionItemCss; }
+  static get cmpMeta() { return {
+    "$flags$": 9,
+    "$tagName$": "hv-accordion-item",
+    "$members$": {
+      "isOpen": [32]
+    },
+    "$listeners$": [[0, "click", "toggleOpen"]],
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const HapticEngine = {
+  getEngine() {
+    const win = window;
+    return (win.TapticEngine) || (win.Capacitor && win.Capacitor.isPluginAvailable('Haptics') && win.Capacitor.Plugins.Haptics);
+  },
+  available() {
+    return !!this.getEngine();
+  },
+  isCordova() {
+    return !!window.TapticEngine;
+  },
+  isCapacitor() {
+    const win = window;
+    return !!win.Capacitor;
+  },
+  impact(options) {
+    const engine = this.getEngine();
+    if (!engine) {
+      return;
+    }
+    const style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
+    engine.impact({ style });
+  },
+  notification(options) {
+    const engine = this.getEngine();
+    if (!engine) {
+      return;
+    }
+    const style = this.isCapacitor() ? options.style.toUpperCase() : options.style;
+    engine.notification({ style });
+  },
+  selection() {
+    this.impact({ style: 'light' });
+  },
+  selectionStart() {
+    const engine = this.getEngine();
+    if (!engine) {
+      return;
+    }
+    if (this.isCapacitor()) {
+      engine.selectionStart();
+    }
+    else {
+      engine.gestureSelectionStart();
+    }
+  },
+  selectionChanged() {
+    const engine = this.getEngine();
+    if (!engine) {
+      return;
+    }
+    if (this.isCapacitor()) {
+      engine.selectionChanged();
+    }
+    else {
+      engine.gestureSelectionChanged();
+    }
+  },
+  selectionEnd() {
+    const engine = this.getEngine();
+    if (!engine) {
+      return;
+    }
+    if (this.isCapacitor()) {
+      engine.selectionEnd();
+    }
+    else {
+      engine.gestureSelectionEnd();
+    }
+  }
+};
+/**
+ * Trigger a selection changed haptic event. Good for one-time events
+ * (not for gestures)
+ */
+const hapticSelection = () => {
+  HapticEngine.selection();
+};
+/**
+ * Tell the haptic engine that a gesture for a selection change is starting.
+ */
+const hapticSelectionStart = () => {
+  HapticEngine.selectionStart();
+};
+/**
+ * Tell the haptic engine that a selection changed during a gesture.
+ */
+const hapticSelectionChanged = () => {
+  HapticEngine.selectionChanged();
+};
+/**
+ * Tell the haptic engine we are done with a gesture. This needs to be
+ * called lest resources are not properly recycled.
+ */
+const hapticSelectionEnd = () => {
+  HapticEngine.selectionEnd();
+};
+/**
+ * Use this to indicate success/failure/warning to the user.
+ * options should be of the type `{ style: 'light' }` (or `medium`/`heavy`)
+ */
+const hapticImpact = (options) => {
+  HapticEngine.impact(options);
+};
+
+class GestureController {
+  constructor() {
+    this.gestureId = 0;
+    this.requestedStart = new Map();
+    this.disabledGestures = new Map();
+    this.disabledScroll = new Set();
+  }
+  /**
+   * Creates a gesture delegate based on the GestureConfig passed
+   */
+  createGesture(config) {
+    return new GestureDelegate(this, this.newID(), config.name, config.priority || 0, !!config.disableScroll);
+  }
+  /**
+   * Creates a blocker that will block any other gesture events from firing. Set in the ion-gesture component.
+   */
+  createBlocker(opts = {}) {
+    return new BlockerDelegate(this, this.newID(), opts.disable, !!opts.disableScroll);
+  }
+  start(gestureName, id, priority) {
+    if (!this.canStart(gestureName)) {
+      this.requestedStart.delete(id);
+      return false;
+    }
+    this.requestedStart.set(id, priority);
+    return true;
+  }
+  capture(gestureName, id, priority) {
+    if (!this.start(gestureName, id, priority)) {
+      return false;
+    }
+    const requestedStart = this.requestedStart;
+    let maxPriority = -10000;
+    requestedStart.forEach(value => {
+      maxPriority = Math.max(maxPriority, value);
+    });
+    if (maxPriority === priority) {
+      this.capturedId = id;
+      requestedStart.clear();
+      const event = new CustomEvent('ionGestureCaptured', { detail: { gestureName } });
+      document.dispatchEvent(event);
+      return true;
+    }
+    requestedStart.delete(id);
+    return false;
+  }
+  release(id) {
+    this.requestedStart.delete(id);
+    if (this.capturedId === id) {
+      this.capturedId = undefined;
+    }
+  }
+  disableGesture(gestureName, id) {
+    let set = this.disabledGestures.get(gestureName);
+    if (set === undefined) {
+      set = new Set();
+      this.disabledGestures.set(gestureName, set);
+    }
+    set.add(id);
+  }
+  enableGesture(gestureName, id) {
+    const set = this.disabledGestures.get(gestureName);
+    if (set !== undefined) {
+      set.delete(id);
+    }
+  }
+  disableScroll(id) {
+    this.disabledScroll.add(id);
+    if (this.disabledScroll.size === 1) {
+      document.body.classList.add(BACKDROP_NO_SCROLL);
+    }
+  }
+  enableScroll(id) {
+    this.disabledScroll.delete(id);
+    if (this.disabledScroll.size === 0) {
+      document.body.classList.remove(BACKDROP_NO_SCROLL);
+    }
+  }
+  canStart(gestureName) {
+    if (this.capturedId !== undefined) {
+      // a gesture already captured
+      return false;
+    }
+    if (this.isDisabled(gestureName)) {
+      return false;
+    }
+    return true;
+  }
+  isCaptured() {
+    return this.capturedId !== undefined;
+  }
+  isScrollDisabled() {
+    return this.disabledScroll.size > 0;
+  }
+  isDisabled(gestureName) {
+    const disabled = this.disabledGestures.get(gestureName);
+    if (disabled && disabled.size > 0) {
+      return true;
+    }
+    return false;
+  }
+  newID() {
+    this.gestureId++;
+    return this.gestureId;
+  }
+}
+class GestureDelegate {
+  constructor(ctrl, id, name, priority, disableScroll) {
+    this.id = id;
+    this.name = name;
+    this.disableScroll = disableScroll;
+    this.priority = priority * 1000000 + id;
+    this.ctrl = ctrl;
+  }
+  canStart() {
+    if (!this.ctrl) {
+      return false;
+    }
+    return this.ctrl.canStart(this.name);
+  }
+  start() {
+    if (!this.ctrl) {
+      return false;
+    }
+    return this.ctrl.start(this.name, this.id, this.priority);
+  }
+  capture() {
+    if (!this.ctrl) {
+      return false;
+    }
+    const captured = this.ctrl.capture(this.name, this.id, this.priority);
+    if (captured && this.disableScroll) {
+      this.ctrl.disableScroll(this.id);
+    }
+    return captured;
+  }
+  release() {
+    if (this.ctrl) {
+      this.ctrl.release(this.id);
+      if (this.disableScroll) {
+        this.ctrl.enableScroll(this.id);
+      }
+    }
+  }
+  destroy() {
+    this.release();
+    this.ctrl = undefined;
+  }
+}
+class BlockerDelegate {
+  constructor(ctrl, id, disable, disableScroll) {
+    this.id = id;
+    this.disable = disable;
+    this.disableScroll = disableScroll;
+    this.ctrl = ctrl;
+  }
+  block() {
+    if (!this.ctrl) {
+      return;
+    }
+    if (this.disable) {
+      for (const gesture of this.disable) {
+        this.ctrl.disableGesture(gesture, this.id);
+      }
+    }
+    if (this.disableScroll) {
+      this.ctrl.disableScroll(this.id);
+    }
+  }
+  unblock() {
+    if (!this.ctrl) {
+      return;
+    }
+    if (this.disable) {
+      for (const gesture of this.disable) {
+        this.ctrl.enableGesture(gesture, this.id);
+      }
+    }
+    if (this.disableScroll) {
+      this.ctrl.enableScroll(this.id);
+    }
+  }
+  destroy() {
+    this.unblock();
+    this.ctrl = undefined;
+  }
+}
+const BACKDROP_NO_SCROLL = 'backdrop-no-scroll';
+const GESTURE_CONTROLLER = new GestureController();
+
+const addEventListener = (el, eventName, callback, opts) => {
+  // use event listener options when supported
+  // otherwise it's just a boolean for the "capture" arg
+  const listenerOpts = supportsPassive(el) ? {
+    'capture': !!opts.capture,
+    'passive': !!opts.passive,
+  } : !!opts.capture;
+  let add;
+  let remove;
+  if (el['__zone_symbol__addEventListener']) {
+    add = '__zone_symbol__addEventListener';
+    remove = '__zone_symbol__removeEventListener';
+  }
+  else {
+    add = 'addEventListener';
+    remove = 'removeEventListener';
+  }
+  el[add](eventName, callback, listenerOpts);
+  return () => {
+    el[remove](eventName, callback, listenerOpts);
+  };
+};
+const supportsPassive = (node) => {
+  if (_sPassive === undefined) {
+    try {
+      const opts = Object.defineProperty({}, 'passive', {
+        get: () => {
+          _sPassive = true;
+        }
+      });
+      node.addEventListener('optsTest', () => { return; }, opts);
+    }
+    catch (e) {
+      _sPassive = false;
+    }
+  }
+  return !!_sPassive;
+};
+let _sPassive;
+
+const MOUSE_WAIT = 2000;
+const createPointerEvents = (el, pointerDown, pointerMove, pointerUp, options) => {
+  let rmTouchStart;
+  let rmTouchMove;
+  let rmTouchEnd;
+  let rmTouchCancel;
+  let rmMouseStart;
+  let rmMouseMove;
+  let rmMouseUp;
+  let lastTouchEvent = 0;
+  const handleTouchStart = (ev) => {
+    lastTouchEvent = Date.now() + MOUSE_WAIT;
+    if (!pointerDown(ev)) {
+      return;
+    }
+    if (!rmTouchMove && pointerMove) {
+      rmTouchMove = addEventListener(el, 'touchmove', pointerMove, options);
+    }
+    if (!rmTouchEnd) {
+      rmTouchEnd = addEventListener(el, 'touchend', handleTouchEnd, options);
+    }
+    if (!rmTouchCancel) {
+      rmTouchCancel = addEventListener(el, 'touchcancel', handleTouchEnd, options);
+    }
+  };
+  const handleMouseDown = (ev) => {
+    if (lastTouchEvent > Date.now()) {
+      return;
+    }
+    if (!pointerDown(ev)) {
+      return;
+    }
+    if (!rmMouseMove && pointerMove) {
+      rmMouseMove = addEventListener(getDocument(el), 'mousemove', pointerMove, options);
+    }
+    if (!rmMouseUp) {
+      rmMouseUp = addEventListener(getDocument(el), 'mouseup', handleMouseUp, options);
+    }
+  };
+  const handleTouchEnd = (ev) => {
+    stopTouch();
+    if (pointerUp) {
+      pointerUp(ev);
+    }
+  };
+  const handleMouseUp = (ev) => {
+    stopMouse();
+    if (pointerUp) {
+      pointerUp(ev);
+    }
+  };
+  const stopTouch = () => {
+    if (rmTouchMove) {
+      rmTouchMove();
+    }
+    if (rmTouchEnd) {
+      rmTouchEnd();
+    }
+    if (rmTouchCancel) {
+      rmTouchCancel();
+    }
+    rmTouchMove = rmTouchEnd = rmTouchCancel = undefined;
+  };
+  const stopMouse = () => {
+    if (rmMouseMove) {
+      rmMouseMove();
+    }
+    if (rmMouseUp) {
+      rmMouseUp();
+    }
+    rmMouseMove = rmMouseUp = undefined;
+  };
+  const stop = () => {
+    stopTouch();
+    stopMouse();
+  };
+  const enable = (isEnabled = true) => {
+    if (!isEnabled) {
+      if (rmTouchStart) {
+        rmTouchStart();
+      }
+      if (rmMouseStart) {
+        rmMouseStart();
+      }
+      rmTouchStart = rmMouseStart = undefined;
+      stop();
+    }
+    else {
+      if (!rmTouchStart) {
+        rmTouchStart = addEventListener(el, 'touchstart', handleTouchStart, options);
+      }
+      if (!rmMouseStart) {
+        rmMouseStart = addEventListener(el, 'mousedown', handleMouseDown, options);
+      }
+    }
+  };
+  const destroy = () => {
+    enable(false);
+    pointerUp = pointerMove = pointerDown = undefined;
+  };
+  return {
+    enable,
+    stop,
+    destroy
+  };
+};
+const getDocument = (node) => {
+  return node instanceof Document ? node : node.ownerDocument;
+};
+
+const createPanRecognizer = (direction, thresh, maxAngle) => {
+  const radians = maxAngle * (Math.PI / 180);
+  const isDirX = direction === 'x';
+  const maxCosine = Math.cos(radians);
+  const threshold = thresh * thresh;
+  let startX = 0;
+  let startY = 0;
+  let dirty = false;
+  let isPan = 0;
+  return {
+    start(x, y) {
+      startX = x;
+      startY = y;
+      isPan = 0;
+      dirty = true;
+    },
+    detect(x, y) {
+      if (!dirty) {
+        return false;
+      }
+      const deltaX = (x - startX);
+      const deltaY = (y - startY);
+      const distance = deltaX * deltaX + deltaY * deltaY;
+      if (distance < threshold) {
+        return false;
+      }
+      const hypotenuse = Math.sqrt(distance);
+      const cosine = (isDirX ? deltaX : deltaY) / hypotenuse;
+      if (cosine > maxCosine) {
+        isPan = 1;
+      }
+      else if (cosine < -maxCosine) {
+        isPan = -1;
+      }
+      else {
+        isPan = 0;
+      }
+      dirty = false;
+      return true;
+    },
+    isGesture() {
+      return isPan !== 0;
+    },
+    getDirection() {
+      return isPan;
+    }
+  };
+};
+
+const createGesture = (config) => {
+  let hasCapturedPan = false;
+  let hasStartedPan = false;
+  let hasFiredStart = true;
+  let isMoveQueued = false;
+  const finalConfig = Object.assign({ disableScroll: false, direction: 'x', gesturePriority: 0, passive: true, maxAngle: 40, threshold: 10 }, config);
+  const canStart = finalConfig.canStart;
+  const onWillStart = finalConfig.onWillStart;
+  const onStart = finalConfig.onStart;
+  const onEnd = finalConfig.onEnd;
+  const notCaptured = finalConfig.notCaptured;
+  const onMove = finalConfig.onMove;
+  const threshold = finalConfig.threshold;
+  const passive = finalConfig.passive;
+  const blurOnStart = finalConfig.blurOnStart;
+  const detail = {
+    type: 'pan',
+    startX: 0,
+    startY: 0,
+    startTime: 0,
+    currentX: 0,
+    currentY: 0,
+    velocityX: 0,
+    velocityY: 0,
+    deltaX: 0,
+    deltaY: 0,
+    currentTime: 0,
+    event: undefined,
+    data: undefined
+  };
+  const pan = createPanRecognizer(finalConfig.direction, finalConfig.threshold, finalConfig.maxAngle);
+  const gesture = GESTURE_CONTROLLER.createGesture({
+    name: config.gestureName,
+    priority: config.gesturePriority,
+    disableScroll: config.disableScroll
+  });
+  const pointerDown = (ev) => {
+    const timeStamp = now(ev);
+    if (hasStartedPan || !hasFiredStart) {
+      return false;
+    }
+    updateDetail(ev, detail);
+    detail.startX = detail.currentX;
+    detail.startY = detail.currentY;
+    detail.startTime = detail.currentTime = timeStamp;
+    detail.velocityX = detail.velocityY = detail.deltaX = detail.deltaY = 0;
+    detail.event = ev;
+    // Check if gesture can start
+    if (canStart && canStart(detail) === false) {
+      return false;
+    }
+    // Release fallback
+    gesture.release();
+    // Start gesture
+    if (!gesture.start()) {
+      return false;
+    }
+    hasStartedPan = true;
+    if (threshold === 0) {
+      return tryToCapturePan();
+    }
+    pan.start(detail.startX, detail.startY);
+    return true;
+  };
+  const pointerMove = (ev) => {
+    // fast path, if gesture is currently captured
+    // do minimum job to get user-land even dispatched
+    if (hasCapturedPan) {
+      if (!isMoveQueued && hasFiredStart) {
+        isMoveQueued = true;
+        calcGestureData(detail, ev);
+        requestAnimationFrame(fireOnMove);
+      }
+      return;
+    }
+    // gesture is currently being detected
+    calcGestureData(detail, ev);
+    if (pan.detect(detail.currentX, detail.currentY)) {
+      if (!pan.isGesture() || !tryToCapturePan()) {
+        abortGesture();
+      }
+    }
+  };
+  const fireOnMove = () => {
+    // Since fireOnMove is called inside a RAF, onEnd() might be called,
+    // we must double check hasCapturedPan
+    if (!hasCapturedPan) {
+      return;
+    }
+    isMoveQueued = false;
+    if (onMove) {
+      onMove(detail);
+    }
+  };
+  const tryToCapturePan = () => {
+    if (gesture && !gesture.capture()) {
+      return false;
+    }
+    hasCapturedPan = true;
+    hasFiredStart = false;
+    // reset start position since the real user-land event starts here
+    // If the pan detector threshold is big, not resetting the start position
+    // will cause a jump in the animation equal to the detector threshold.
+    // the array of positions used to calculate the gesture velocity does not
+    // need to be cleaned, more points in the positions array always results in a
+    // more accurate value of the velocity.
+    detail.startX = detail.currentX;
+    detail.startY = detail.currentY;
+    detail.startTime = detail.currentTime;
+    if (onWillStart) {
+      onWillStart(detail).then(fireOnStart);
+    }
+    else {
+      fireOnStart();
+    }
+    return true;
+  };
+  const blurActiveElement = () => {
+    /* tslint:disable-next-line */
+    if (typeof document !== 'undefined') {
+      const activeElement = document.activeElement;
+      if (activeElement !== null && activeElement.blur) {
+        activeElement.blur();
+      }
+    }
+  };
+  const fireOnStart = () => {
+    if (blurOnStart) {
+      blurActiveElement();
+    }
+    if (onStart) {
+      onStart(detail);
+    }
+    hasFiredStart = true;
+  };
+  const reset = () => {
+    hasCapturedPan = false;
+    hasStartedPan = false;
+    isMoveQueued = false;
+    hasFiredStart = true;
+    gesture.release();
+  };
+  // END *************************
+  const pointerUp = (ev) => {
+    const tmpHasCaptured = hasCapturedPan;
+    const tmpHasFiredStart = hasFiredStart;
+    reset();
+    if (!tmpHasFiredStart) {
+      return;
+    }
+    calcGestureData(detail, ev);
+    // Try to capture press
+    if (tmpHasCaptured) {
+      if (onEnd) {
+        onEnd(detail);
+      }
+      return;
+    }
+    // Not captured any event
+    if (notCaptured) {
+      notCaptured(detail);
+    }
+  };
+  const pointerEvents = createPointerEvents(finalConfig.el, pointerDown, pointerMove, pointerUp, {
+    capture: false,
+    passive
+  });
+  const abortGesture = () => {
+    reset();
+    pointerEvents.stop();
+    if (notCaptured) {
+      notCaptured(detail);
+    }
+  };
+  return {
+    enable(enable = true) {
+      if (!enable) {
+        if (hasCapturedPan) {
+          pointerUp(undefined);
+        }
+        reset();
+      }
+      pointerEvents.enable(enable);
+    },
+    destroy() {
+      gesture.destroy();
+      pointerEvents.destroy();
+    }
+  };
+};
+const calcGestureData = (detail, ev) => {
+  if (!ev) {
+    return;
+  }
+  const prevX = detail.currentX;
+  const prevY = detail.currentY;
+  const prevT = detail.currentTime;
+  updateDetail(ev, detail);
+  const currentX = detail.currentX;
+  const currentY = detail.currentY;
+  const timestamp = detail.currentTime = now(ev);
+  const timeDelta = timestamp - prevT;
+  if (timeDelta > 0 && timeDelta < 100) {
+    const velocityX = (currentX - prevX) / timeDelta;
+    const velocityY = (currentY - prevY) / timeDelta;
+    detail.velocityX = velocityX * 0.7 + detail.velocityX * 0.3;
+    detail.velocityY = velocityY * 0.7 + detail.velocityY * 0.3;
+  }
+  detail.deltaX = currentX - detail.startX;
+  detail.deltaY = currentY - detail.startY;
+  detail.event = ev;
+};
+const updateDetail = (ev, detail) => {
+  // get X coordinates for either a mouse click
+  // or a touch depending on the given event
+  let x = 0;
+  let y = 0;
+  if (ev) {
+    const changedTouches = ev.changedTouches;
+    if (changedTouches && changedTouches.length > 0) {
+      const touch = changedTouches[0];
+      x = touch.clientX;
+      y = touch.clientY;
+    }
+    else if (ev.pageX !== undefined) {
+      x = ev.pageX;
+      y = ev.pageY;
+    }
+  }
+  detail.currentX = x;
+  detail.currentY = y;
+};
+const now = (ev) => {
+  return ev.timeStamp || Date.now();
+};
+
+var index$2 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  createGesture: createGesture,
+  GESTURE_CONTROLLER: GESTURE_CONTROLLER
+});
+
+const createButtonActiveGesture = (el, isButton) => {
+  let currentTouchedButton;
+  let initialTouchedButton;
+  const activateButtonAtPoint = (x, y, hapticFeedbackFn) => {
+    if (typeof document === 'undefined') {
+      return;
+    }
+    const target = document.elementFromPoint(x, y);
+    if (!target || !isButton(target)) {
+      clearActiveButton();
+      return;
+    }
+    if (target !== currentTouchedButton) {
+      clearActiveButton();
+      setActiveButton(target, hapticFeedbackFn);
+    }
+  };
+  const setActiveButton = (button, hapticFeedbackFn) => {
+    currentTouchedButton = button;
+    if (!initialTouchedButton) {
+      initialTouchedButton = currentTouchedButton;
+    }
+    const buttonToModify = currentTouchedButton;
+    writeTask(() => buttonToModify.classList.add('ion-activated'));
+    hapticFeedbackFn();
+  };
+  const clearActiveButton = (dispatchClick = false) => {
+    if (!currentTouchedButton) {
+      return;
+    }
+    const buttonToModify = currentTouchedButton;
+    writeTask(() => buttonToModify.classList.remove('ion-activated'));
+    /**
+     * Clicking on one button, but releasing on another button
+     * does not dispatch a click event in browsers, so we
+     * need to do it manually here. Some browsers will
+     * dispatch a click if clicking on one button, dragging over
+     * another button, and releasing on the original button. In that
+     * case, we need to make sure we do not cause a double click there.
+     */
+    if (dispatchClick && initialTouchedButton !== currentTouchedButton) {
+      currentTouchedButton.click();
+    }
+    currentTouchedButton = undefined;
+  };
+  return createGesture({
+    el,
+    gestureName: 'buttonActiveDrag',
+    threshold: 0,
+    onStart: ev => activateButtonAtPoint(ev.currentX, ev.currentY, hapticSelectionStart),
+    onMove: ev => activateButtonAtPoint(ev.currentX, ev.currentY, hapticSelectionChanged),
+    onEnd: () => {
+      clearActiveButton(true);
+      hapticSelectionEnd();
+      initialTouchedButton = undefined;
+    }
+  });
+};
+
+/**
+ * When hardwareBackButton: false in config,
+ * we need to make sure we also block the default
+ * webview behavior. If we don't then it will be
+ * possible for users to navigate backward while
+ * an overlay is still open. Additionally, it will
+ * give the appearance that the hardwareBackButton
+ * config is not working as the page transition
+ * will still happen.
+ */
+const OVERLAY_BACK_BUTTON_PRIORITY = 100;
+const MENU_BACK_BUTTON_PRIORITY = 99; // 1 less than overlay priority since menu is displayed behind overlays
+
+let lastId = 0;
+const activeAnimations = new WeakMap();
+const createController = (tagName) => {
+  return {
+    create(options) {
+      return createOverlay(tagName, options);
+    },
+    dismiss(data, role, id) {
+      return dismissOverlay(document, data, role, tagName, id);
+    },
+    async getTop() {
+      return getOverlay(document, tagName);
+    }
+  };
+};
+const alertController = /*@__PURE__*/ createController('ion-alert');
+const actionSheetController = /*@__PURE__*/ createController('ion-action-sheet');
+const modalController = /*@__PURE__*/ createController('ion-modal');
+const pickerController = /*@__PURE__*/ createController('ion-picker');
+const popoverController = /*@__PURE__*/ createController('ion-popover');
+const prepareOverlay = (el) => {
+  /* tslint:disable-next-line */
+  if (typeof document !== 'undefined') {
+    connectListeners(document);
+  }
+  const overlayIndex = lastId++;
+  el.overlayIndex = overlayIndex;
+  if (!el.hasAttribute('id')) {
+    el.id = `ion-overlay-${overlayIndex}`;
+  }
+};
+const createOverlay = (tagName, opts) => {
+  /* tslint:disable-next-line */
+  if (typeof customElements !== 'undefined') {
+    return customElements.whenDefined(tagName).then(() => {
+      const element = document.createElement(tagName);
+      element.classList.add('overlay-hidden');
+      // convert the passed in overlay options into props
+      // that get passed down into the new overlay
+      Object.assign(element, opts);
+      // append the overlay element to the document body
+      getAppRoot(document).appendChild(element);
+      return new Promise(resolve => componentOnReady(element, resolve));
+    });
+  }
+  return Promise.resolve();
+};
+const focusableQueryString = '[tabindex]:not([tabindex^="-"]), input:not([type=hidden]):not([tabindex^="-"]), textarea:not([tabindex^="-"]), button:not([tabindex^="-"]), select:not([tabindex^="-"]), .ion-focusable:not([tabindex^="-"])';
+const innerFocusableQueryString = 'input:not([type=hidden]), textarea, button, select';
+const focusFirstDescendant = (ref, overlay) => {
+  let firstInput = ref.querySelector(focusableQueryString);
+  const shadowRoot = firstInput && firstInput.shadowRoot;
+  if (shadowRoot) {
+    // If there are no inner focusable elements, just focus the host element.
+    firstInput = shadowRoot.querySelector(innerFocusableQueryString) || firstInput;
+  }
+  if (firstInput) {
+    firstInput.focus();
+  }
+  else {
+    // Focus overlay instead of letting focus escape
+    overlay.focus();
+  }
+};
+const focusLastDescendant = (ref, overlay) => {
+  const inputs = Array.from(ref.querySelectorAll(focusableQueryString));
+  let lastInput = inputs.length > 0 ? inputs[inputs.length - 1] : null;
+  const shadowRoot = lastInput && lastInput.shadowRoot;
+  if (shadowRoot) {
+    // If there are no inner focusable elements, just focus the host element.
+    lastInput = shadowRoot.querySelector(innerFocusableQueryString) || lastInput;
+  }
+  if (lastInput) {
+    lastInput.focus();
+  }
+  else {
+    // Focus overlay instead of letting focus escape
+    overlay.focus();
+  }
+};
+/**
+ * Traps keyboard focus inside of overlay components.
+ * Based on https://w3c.github.io/aria-practices/examples/dialog-modal/alertdialog.html
+ * This includes the following components: Action Sheet, Alert, Loading, Modal,
+ * Picker, and Popover.
+ * Should NOT include: Toast
+ */
+const trapKeyboardFocus = (ev, doc) => {
+  const lastOverlay = getOverlay(doc);
+  const target = ev.target;
+  // If no active overlay, ignore this event
+  if (!lastOverlay || !target) {
+    return;
+  }
+  /**
+   * If we are focusing the overlay, clear
+   * the last focused element so that hitting
+   * tab activates the first focusable element
+   * in the overlay wrapper.
+   */
+  if (lastOverlay === target) {
+    lastOverlay.lastFocus = undefined;
+    /**
+     * Otherwise, we must be focusing an element
+     * inside of the overlay. The two possible options
+     * here are an input/button/etc or the ion-focus-trap
+     * element. The focus trap element is used to prevent
+     * the keyboard focus from leaving the overlay when
+     * using Tab or screen assistants.
+     */
+  }
+  else {
+    /**
+     * We do not want to focus the traps, so get the overlay
+     * wrapper element as the traps live outside of the wrapper.
+     */
+    const overlayRoot = getElementRoot(lastOverlay);
+    if (!overlayRoot.contains(target)) {
+      return;
+    }
+    const overlayWrapper = overlayRoot.querySelector('.ion-overlay-wrapper');
+    if (!overlayWrapper) {
+      return;
+    }
+    /**
+     * If the target is inside the wrapper, let the browser
+     * focus as normal and keep a log of the last focused element.
+     */
+    if (overlayWrapper.contains(target)) {
+      lastOverlay.lastFocus = target;
+    }
+    else {
+      /**
+       * Otherwise, we must have focused one of the focus traps.
+       * We need to wrap the focus to either the first element
+       * or the last element.
+       */
+      /**
+       * Once we call `focusFirstDescendant` and focus the first
+       * descendant, another focus event will fire which will
+       * cause `lastOverlay.lastFocus` to be updated before
+       * we can run the code after that. We will cache the value
+       * here to avoid that.
+       */
+      const lastFocus = lastOverlay.lastFocus;
+      // Focus the first element in the overlay wrapper
+      focusFirstDescendant(overlayWrapper, lastOverlay);
+      /**
+       * If the cached last focused element is the
+       * same as the active element, then we need
+       * to wrap focus to the last descendant. This happens
+       * when the first descendant is focused, and the user
+       * presses Shift + Tab. The previous line will focus
+       * the same descendant again (the first one), causing
+       * last focus to equal the active element.
+       */
+      if (lastFocus === doc.activeElement) {
+        focusLastDescendant(overlayWrapper, lastOverlay);
+      }
+      lastOverlay.lastFocus = doc.activeElement;
+    }
+  }
+};
+const connectListeners = (doc) => {
+  if (lastId === 0) {
+    lastId = 1;
+    doc.addEventListener('focus', ev => trapKeyboardFocus(ev, doc), true);
+    // handle back-button click
+    doc.addEventListener('ionBackButton', ev => {
+      const lastOverlay = getOverlay(doc);
+      if (lastOverlay && lastOverlay.backdropDismiss) {
+        ev.detail.register(OVERLAY_BACK_BUTTON_PRIORITY, () => {
+          return lastOverlay.dismiss(undefined, BACKDROP);
+        });
+      }
+    });
+    // handle ESC to close overlay
+    doc.addEventListener('keyup', ev => {
+      if (ev.key === 'Escape') {
+        const lastOverlay = getOverlay(doc);
+        if (lastOverlay && lastOverlay.backdropDismiss) {
+          lastOverlay.dismiss(undefined, BACKDROP);
+        }
+      }
+    });
+  }
+};
+const dismissOverlay = (doc, data, role, overlayTag, id) => {
+  const overlay = getOverlay(doc, overlayTag, id);
+  if (!overlay) {
+    return Promise.reject('overlay does not exist');
+  }
+  return overlay.dismiss(data, role);
+};
+const getOverlays = (doc, selector) => {
+  if (selector === undefined) {
+    selector = 'ion-alert,ion-action-sheet,ion-loading,ion-modal,ion-picker,ion-popover,ion-toast';
+  }
+  return Array.from(doc.querySelectorAll(selector))
+    .filter(c => c.overlayIndex > 0);
+};
+const getOverlay = (doc, overlayTag, id) => {
+  const overlays = getOverlays(doc, overlayTag);
+  return (id === undefined)
+    ? overlays[overlays.length - 1]
+    : overlays.find(o => o.id === id);
+};
+const present = async (overlay, name, iosEnterAnimation, mdEnterAnimation, opts) => {
+  if (overlay.presented) {
+    return;
+  }
+  overlay.presented = true;
+  overlay.willPresent.emit();
+  const mode = getIonMode$1(overlay);
+  // get the user's animation fn if one was provided
+  const animationBuilder = (overlay.enterAnimation)
+    ? overlay.enterAnimation
+    : config.get(name, mode === 'ios' ? iosEnterAnimation : mdEnterAnimation);
+  const completed = await overlayAnimation(overlay, animationBuilder, overlay.el, opts);
+  if (completed) {
+    overlay.didPresent.emit();
+  }
+  /**
+   * When an overlay that steals focus
+   * is dismissed, focus should be returned
+   * to the element that was focused
+   * prior to the overlay opening. Toast
+   * does not steal focus and is excluded
+   * from returning focus as a result.
+   */
+  if (overlay.el.tagName !== 'ION-TOAST') {
+    focusPreviousElementOnDismiss(overlay.el);
+  }
+  if (overlay.keyboardClose) {
+    overlay.el.focus();
+  }
+};
+/**
+ * When an overlay component is dismissed,
+ * focus should be returned to the element
+ * that presented the overlay. Otherwise
+ * focus will be set on the body which
+ * means that people using screen readers
+ * or tabbing will need to re-navigate
+ * to where they were before they
+ * opened the overlay.
+ */
+const focusPreviousElementOnDismiss = async (overlayEl) => {
+  let previousElement = document.activeElement;
+  if (!previousElement) {
+    return;
+  }
+  const shadowRoot = previousElement && previousElement.shadowRoot;
+  if (shadowRoot) {
+    // If there are no inner focusable elements, just focus the host element.
+    previousElement = shadowRoot.querySelector(innerFocusableQueryString) || previousElement;
+  }
+  await overlayEl.onDidDismiss();
+  previousElement.focus();
+};
+const dismiss = async (overlay, data, role, name, iosLeaveAnimation, mdLeaveAnimation, opts) => {
+  if (!overlay.presented) {
+    return false;
+  }
+  overlay.presented = false;
+  try {
+    // Overlay contents should not be clickable during dismiss
+    overlay.el.style.setProperty('pointer-events', 'none');
+    overlay.willDismiss.emit({ data, role });
+    const mode = getIonMode$1(overlay);
+    const animationBuilder = (overlay.leaveAnimation)
+      ? overlay.leaveAnimation
+      : config.get(name, mode === 'ios' ? iosLeaveAnimation : mdLeaveAnimation);
+    // If dismissed via gesture, no need to play leaving animation again
+    if (role !== 'gesture') {
+      await overlayAnimation(overlay, animationBuilder, overlay.el, opts);
+    }
+    overlay.didDismiss.emit({ data, role });
+    activeAnimations.delete(overlay);
+  }
+  catch (err) {
+    console.error(err);
+  }
+  overlay.el.remove();
+  return true;
+};
+const getAppRoot = (doc) => {
+  return doc.querySelector('ion-app') || doc.body;
+};
+const overlayAnimation = async (overlay, animationBuilder, baseEl, opts) => {
+  // Make overlay visible in case it's hidden
+  baseEl.classList.remove('overlay-hidden');
+  const aniRoot = baseEl.shadowRoot || overlay.el;
+  const animation = animationBuilder(aniRoot, opts);
+  if (!overlay.animated || !config.getBoolean('animated', true)) {
+    animation.duration(0);
+  }
+  if (overlay.keyboardClose) {
+    animation.beforeAddWrite(() => {
+      const activeElement = baseEl.ownerDocument.activeElement;
+      if (activeElement && activeElement.matches('input, ion-input, ion-textarea')) {
+        activeElement.blur();
+      }
+    });
+  }
+  const activeAni = activeAnimations.get(overlay) || [];
+  activeAnimations.set(overlay, [...activeAni, animation]);
+  await animation.play();
+  return true;
+};
+const eventMethod = (element, eventName) => {
+  let resolve;
+  const promise = new Promise(r => resolve = r);
+  onceEvent(element, eventName, (event) => {
+    resolve(event.detail);
+  });
+  return promise;
+};
+const onceEvent = (element, eventName, callback) => {
+  const handler = (ev) => {
+    removeEventListener(element, eventName, handler);
+    callback(ev);
+  };
+  addEventListener$1(element, eventName, handler);
+};
+const isCancel = (role) => {
+  return role === 'cancel' || role === BACKDROP;
+};
+const defaultGate = (h) => h();
+const safeCall = (handler, arg) => {
+  if (typeof handler === 'function') {
+    const jmp = config.get('_zoneGate', defaultGate);
+    return jmp(() => {
+      try {
+        return handler(arg);
+      }
+      catch (e) {
+        console.error(e);
+      }
+    });
+  }
+  return undefined;
+};
+const BACKDROP = 'backdrop';
+
+const hostContext = (selector, el) => {
+  return el.closest(selector) !== null;
+};
+/**
+ * Create the mode and color classes for the component based on the classes passed in
+ */
+const createColorClasses$1 = (color, cssClassMap, neutral) => {
+  /* return (typeof color === 'string' && color.length > 0) ? {
+    'ion-color': true,
+    [`ion-color-${color}`]: true,
+    ...cssClassMap
+  } : cssClassMap;
+ */
+  if (typeof color === 'string' && color.length > 0) {
+    return Object.assign({ 'ion-color': true, [`ion-color-${color}`]: true }, cssClassMap);
+  }
+  else if (neutral) {
+    return Object.assign({ 'med-neutral': true, [`med-neutral-${neutral}`]: true }, cssClassMap);
+  }
+  else {
+    return cssClassMap;
+  }
+};
+const getClassList = (classes) => {
+  if (classes !== undefined) {
+    const array = Array.isArray(classes) ? classes : classes.split(' ');
+    return array
+      .filter(c => c != null)
+      .map(c => c.trim())
+      .filter(c => c !== '');
+  }
+  return [];
+};
+const getClassMap = (classes) => {
+  const map = {};
+  getClassList(classes).forEach(c => map[c] = true);
+  return map;
+};
+const SCHEME = /^[a-z][a-z0-9+\-.]*:/;
+const openURL = async (url, ev, direction, animation) => {
+  if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
+    const router = document.querySelector('ion-router');
+    if (router) {
+      if (ev != null) {
+        ev.preventDefault();
+      }
+      return router.push(url, direction, animation);
+    }
+  }
+  return false;
 };
 
 /**
@@ -9209,9 +9379,9 @@ class Backdrop {
   }; }
 }
 
-const iosBadgeMdCss = "/*!@:root*/.sc-ion-badge-ios:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-ion-badge-ios:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-ion-badge-ios:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-ion-badge-ios:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-ion-badge-ios-h{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:13px;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-badge-ios-h{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@:host(.ion-color)*/.ion-color.sc-ion-badge-ios-h{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(:empty)*/.sc-ion-badge-ios-h:empty{display:none}/*!@:host*/.sc-ion-badge-ios-h{--padding-top:3px;--padding-end:4px;--padding-bottom:4px;--padding-start:4px;border-radius:4px}/*!@:host*/.sc-ion-badge-ios-h{--background:var(--med-color-brand-3, #14a2b8);--color:md-color(brand, contrast-1);--padding-bottom:0;--padding-end:16px;--padding-start:16px;--padding-top:0;--border-color:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-badge)*/.med-badge.sc-ion-badge-ios-h{font-size:12px;font-weight:500;line-height:100%;border-radius:31.25em;border-color:var(--border-color);border-width:1px;font-family:inherit;min-width:auto;border-style:solid;height:24px;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}/*!@:host(.med-badge--xs)*/.med-badge--xs.sc-ion-badge-ios-h{--padding-start:8px;--padding-end:8px;font-size:10px;font-weight:400;height:16px}/*!@:host(.med-badge--sm)*/.med-badge--sm.sc-ion-badge-ios-h{--padding-start:16px;--padding-end:16px;font-size:10px;font-weight:400;height:24px}/*!@:host(.med-badge--md)*/.med-badge--md.sc-ion-badge-ios-h{--padding-start:16px;--padding-end:16px;font-size:14px;font-weight:500;height:32px}/*!@:host(.med-badge--lg)*/.med-badge--lg.sc-ion-badge-ios-h{--padding-start:24px;--padding-end:24px;font-size:16px;font-weight:500;height:40px}/*!@:host(.med-badge.ion-color)*/.med-badge.ion-color.sc-ion-badge-ios-h{--border-color:var(--med-color-3);background:var(--med-color-3);color:var(--med-color-contrast-1)}/*!@:host(.med-badge.med-neutral)*/.med-badge.med-neutral.sc-ion-badge-ios-h{--border-color:var(--med-neutral);background:var(--med-neutral);color:var(--med-neutral-contrast)}/*!@:host(.med-badge--secondary)*/.med-badge--secondary.sc-ion-badge-ios-h{border-style:solid;background:transparent;color:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-badge--secondary.ion-color)*/.med-badge--secondary.ion-color.sc-ion-badge-ios-h{--border-color:var(--med-color-3);background:transparent;color:var(--med-color-3)}/*!@:host(.med-badge--secondary.med-neutral)*/.med-badge--secondary.med-neutral.sc-ion-badge-ios-h{--border-color:var(--med-neutral);background:transparent;color:var(--med-neutral)}";
+const iosBadgeMdCss = "/*!@:root*/.sc-ion-badge-ios:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-ion-badge-ios:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-ion-badge-ios:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-ion-badge-ios:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-ion-badge-ios-h{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:13px;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-badge-ios-h{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@:host(.ion-color)*/.ion-color.sc-ion-badge-ios-h{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(:empty)*/.sc-ion-badge-ios-h:empty{display:none}/*!@:host*/.sc-ion-badge-ios-h{--padding-top:3px;--padding-end:4px;--padding-bottom:4px;--padding-start:4px;border-radius:4px}/*!@:host*/.sc-ion-badge-ios-h{--background:var(--med-color-brand-3, #14a2b8);--color:var(--med-color-brand-contrast-1, #fff);--padding-bottom:0;--padding-end:16px;--padding-start:16px;--padding-top:0;--border-color:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-badge)*/.med-badge.sc-ion-badge-ios-h{font-size:12px;font-weight:500;line-height:100%;border-radius:31.25em;border-color:var(--border-color);border-width:1px;font-family:inherit;min-width:auto;border-style:solid;height:24px;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}/*!@:host(.med-badge--xs)*/.med-badge--xs.sc-ion-badge-ios-h{--padding-start:8px;--padding-end:8px;font-size:10px;font-weight:400;height:16px}/*!@:host(.med-badge--sm)*/.med-badge--sm.sc-ion-badge-ios-h{--padding-start:16px;--padding-end:16px;font-size:10px;font-weight:400;height:24px}/*!@:host(.med-badge--md)*/.med-badge--md.sc-ion-badge-ios-h{--padding-start:16px;--padding-end:16px;font-size:14px;font-weight:500;height:32px}/*!@:host(.med-badge--lg)*/.med-badge--lg.sc-ion-badge-ios-h{--padding-start:24px;--padding-end:24px;font-size:16px;font-weight:500;height:40px}/*!@:host(.med-badge.ion-color)*/.med-badge.ion-color.sc-ion-badge-ios-h{--border-color:var(--med-color-3);background:var(--med-color-3);color:var(--med-color-contrast-1)}/*!@:host(.med-badge.med-neutral)*/.med-badge.med-neutral.sc-ion-badge-ios-h{--border-color:var(--med-neutral);background:var(--med-neutral);color:var(--med-neutral-contrast)}/*!@:host(.med-badge--secondary)*/.med-badge--secondary.sc-ion-badge-ios-h{border-style:solid;background:transparent;color:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-badge--secondary.ion-color)*/.med-badge--secondary.ion-color.sc-ion-badge-ios-h{--border-color:var(--med-color-3);background:transparent;color:var(--med-color-3)}/*!@:host(.med-badge--secondary.med-neutral)*/.med-badge--secondary.med-neutral.sc-ion-badge-ios-h{--border-color:var(--med-neutral);background:transparent;color:var(--med-neutral)}";
 
-const badgeMdCss = "/*!@:root*/.sc-ion-badge-md:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-ion-badge-md:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-ion-badge-md:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-ion-badge-md:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-ion-badge-md-h{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:13px;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-badge-md-h{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@:host(.ion-color)*/.ion-color.sc-ion-badge-md-h{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(:empty)*/.sc-ion-badge-md-h:empty{display:none}/*!@:host*/.sc-ion-badge-md-h{--padding-top:3px;--padding-end:4px;--padding-bottom:4px;--padding-start:4px;border-radius:4px}/*!@:host*/.sc-ion-badge-md-h{--background:var(--med-color-brand-3, #14a2b8);--color:md-color(brand, contrast-1);--padding-bottom:0;--padding-end:16px;--padding-start:16px;--padding-top:0;--border-color:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-badge)*/.med-badge.sc-ion-badge-md-h{font-size:12px;font-weight:500;line-height:100%;border-radius:31.25em;border-color:var(--border-color);border-width:1px;font-family:inherit;min-width:auto;border-style:solid;height:24px;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}/*!@:host(.med-badge--xs)*/.med-badge--xs.sc-ion-badge-md-h{--padding-start:8px;--padding-end:8px;font-size:10px;font-weight:400;height:16px}/*!@:host(.med-badge--sm)*/.med-badge--sm.sc-ion-badge-md-h{--padding-start:16px;--padding-end:16px;font-size:10px;font-weight:400;height:24px}/*!@:host(.med-badge--md)*/.med-badge--md.sc-ion-badge-md-h{--padding-start:16px;--padding-end:16px;font-size:14px;font-weight:500;height:32px}/*!@:host(.med-badge--lg)*/.med-badge--lg.sc-ion-badge-md-h{--padding-start:24px;--padding-end:24px;font-size:16px;font-weight:500;height:40px}/*!@:host(.med-badge.ion-color)*/.med-badge.ion-color.sc-ion-badge-md-h{--border-color:var(--med-color-3);background:var(--med-color-3);color:var(--med-color-contrast-1)}/*!@:host(.med-badge.med-neutral)*/.med-badge.med-neutral.sc-ion-badge-md-h{--border-color:var(--med-neutral);background:var(--med-neutral);color:var(--med-neutral-contrast)}/*!@:host(.med-badge--secondary)*/.med-badge--secondary.sc-ion-badge-md-h{border-style:solid;background:transparent;color:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-badge--secondary.ion-color)*/.med-badge--secondary.ion-color.sc-ion-badge-md-h{--border-color:var(--med-color-3);background:transparent;color:var(--med-color-3)}/*!@:host(.med-badge--secondary.med-neutral)*/.med-badge--secondary.med-neutral.sc-ion-badge-md-h{--border-color:var(--med-neutral);background:transparent;color:var(--med-neutral)}";
+const badgeMdCss = "/*!@:root*/.sc-ion-badge-md:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-ion-badge-md:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-ion-badge-md:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-ion-badge-md:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-ion-badge-md-h{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:13px;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-badge-md-h{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@:host(.ion-color)*/.ion-color.sc-ion-badge-md-h{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(:empty)*/.sc-ion-badge-md-h:empty{display:none}/*!@:host*/.sc-ion-badge-md-h{--padding-top:3px;--padding-end:4px;--padding-bottom:4px;--padding-start:4px;border-radius:4px}/*!@:host*/.sc-ion-badge-md-h{--background:var(--med-color-brand-3, #14a2b8);--color:var(--med-color-brand-contrast-1, #fff);--padding-bottom:0;--padding-end:16px;--padding-start:16px;--padding-top:0;--border-color:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-badge)*/.med-badge.sc-ion-badge-md-h{font-size:12px;font-weight:500;line-height:100%;border-radius:31.25em;border-color:var(--border-color);border-width:1px;font-family:inherit;min-width:auto;border-style:solid;height:24px;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}/*!@:host(.med-badge--xs)*/.med-badge--xs.sc-ion-badge-md-h{--padding-start:8px;--padding-end:8px;font-size:10px;font-weight:400;height:16px}/*!@:host(.med-badge--sm)*/.med-badge--sm.sc-ion-badge-md-h{--padding-start:16px;--padding-end:16px;font-size:10px;font-weight:400;height:24px}/*!@:host(.med-badge--md)*/.med-badge--md.sc-ion-badge-md-h{--padding-start:16px;--padding-end:16px;font-size:14px;font-weight:500;height:32px}/*!@:host(.med-badge--lg)*/.med-badge--lg.sc-ion-badge-md-h{--padding-start:24px;--padding-end:24px;font-size:16px;font-weight:500;height:40px}/*!@:host(.med-badge.ion-color)*/.med-badge.ion-color.sc-ion-badge-md-h{--border-color:var(--med-color-3);background:var(--med-color-3);color:var(--med-color-contrast-1)}/*!@:host(.med-badge.med-neutral)*/.med-badge.med-neutral.sc-ion-badge-md-h{--border-color:var(--med-neutral);background:var(--med-neutral);color:var(--med-neutral-contrast)}/*!@:host(.med-badge--secondary)*/.med-badge--secondary.sc-ion-badge-md-h{border-style:solid;background:transparent;color:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-badge--secondary.ion-color)*/.med-badge--secondary.ion-color.sc-ion-badge-md-h{--border-color:var(--med-color-3);background:transparent;color:var(--med-color-3)}/*!@:host(.med-badge--secondary.med-neutral)*/.med-badge--secondary.med-neutral.sc-ion-badge-md-h{--border-color:var(--med-neutral);background:transparent;color:var(--med-neutral)}";
 
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -11011,7 +11181,7 @@ class Datetime {
       this.isExpanded = false;
       this.setFocus();
     });
-    addEventListener(picker, 'ionPickerColChange', async (event) => {
+    addEventListener$1(picker, 'ionPickerColChange', async (event) => {
       const data = event.detail;
       const colSelectedIndex = data.selectedIndex;
       const colOptions = data.options;
@@ -13947,7 +14117,7 @@ class Loading {
   }; }
 }
 
-const medAccordionCss = "/*!@:root*/.sc-med-accordion:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-med-accordion:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-med-accordion:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-med-accordion:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-med-accordion-h{--background:var(--med-color-neutral-2);--icon-color:var(--med-color-neutral-10)}/*!@:host(.med-accordion)*/.med-accordion.sc-med-accordion-h{display:block;border-radius:8px;background:var(--background);width:100%}/*!@:host(.med-accordion) .med-accordion__header*/.med-accordion.sc-med-accordion-h .med-accordion__header.sc-med-accordion{display:-ms-flexbox;display:flex;cursor:pointer;width:100%;padding:16px;-webkit-box-sizing:border-box;box-sizing:border-box;line-height:24px;-ms-flex-align:center;align-items:center}/*!@:host(.med-accordion) .med-accordion__heading*/.med-accordion.sc-med-accordion-h .med-accordion__heading.sc-med-accordion{width:100%}/*!@:host(.med-accordion) .med-accordion__icon-container*/.med-accordion.sc-med-accordion-h .med-accordion__icon-container.sc-med-accordion{display:-ms-flexbox;display:flex}/*!@:host(.med-accordion) .med-accordion__icon-container--left*/.med-accordion.sc-med-accordion-h .med-accordion__icon-container--left.sc-med-accordion{padding-right:8px}/*!@:host(.med-accordion) .med-accordion__icon-container--right*/.med-accordion.sc-med-accordion-h .med-accordion__icon-container--right.sc-med-accordion{padding-left:8px;margin-left:auto}/*!@:host(.med-accordion) .med-accordion__icon*/.med-accordion.sc-med-accordion-h .med-accordion__icon.sc-med-accordion{color:var(--icon-color);font-size:32px;-webkit-transform:rotate(180deg);transform:rotate(180deg)}/*!@:host(.med-accordion) .med-accordion__content--fake*/.med-accordion.sc-med-accordion-h .med-accordion__content--fake.sc-med-accordion{overflow:hidden}/*!@:host(.med-accordion) .med-accordion__content*/.med-accordion.sc-med-accordion-h .med-accordion__content.sc-med-accordion{overflow:hidden}/*!@:host(.med-accordion--collapsed) .med-accordion__icon*/.med-accordion--collapsed.sc-med-accordion-h .med-accordion__icon.sc-med-accordion{-webkit-transform:rotate(0);transform:rotate(0)}/*!@:host(.med-accordion--full)*/.med-accordion--full.sc-med-accordion-h{border-radius:0}";
+const medAccordionCss = "/*!@:root*/.sc-med-accordion:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-med-accordion:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-med-accordion:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-med-accordion:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-med-accordion-h{--background:var(--med-color-neutral-2);--icon-color:var(--med-color-neutral-10)}/*!@:host(.med-accordion)*/.med-accordion.sc-med-accordion-h{display:block;border-radius:8px;background:var(--background);width:100%}/*!@:host(.med-accordion) .med-accordion__header*/.med-accordion.sc-med-accordion-h .med-accordion__header.sc-med-accordion{display:-ms-flexbox;display:flex;cursor:pointer;width:100%;padding:16px;-webkit-box-sizing:border-box;box-sizing:border-box;line-height:24px;-ms-flex-align:center;align-items:center}/*!@:host(.med-accordion) .med-accordion__heading*/.med-accordion.sc-med-accordion-h .med-accordion__heading.sc-med-accordion{width:100%}/*!@:host(.med-accordion) .med-accordion__icon-container*/.med-accordion.sc-med-accordion-h .med-accordion__icon-container.sc-med-accordion{display:-ms-flexbox;display:flex}/*!@:host(.med-accordion) .med-accordion__icon-container--left*/.med-accordion.sc-med-accordion-h .med-accordion__icon-container--left.sc-med-accordion{padding-right:8px}/*!@:host(.med-accordion) .med-accordion__icon-container--right*/.med-accordion.sc-med-accordion-h .med-accordion__icon-container--right.sc-med-accordion{padding-left:8px;margin-left:auto}/*!@:host(.med-accordion) .med-accordion__icon*/.med-accordion.sc-med-accordion-h .med-accordion__icon.sc-med-accordion{stroke:var(--icon-color);font-size:32px;-webkit-transform:rotate(180deg);transform:rotate(180deg)}/*!@:host(.med-accordion) .med-accordion__content--fake*/.med-accordion.sc-med-accordion-h .med-accordion__content--fake.sc-med-accordion{overflow:hidden}/*!@:host(.med-accordion) .med-accordion__content*/.med-accordion.sc-med-accordion-h .med-accordion__content.sc-med-accordion{overflow:hidden}/*!@:host(.med-accordion--collapsed) .med-accordion__icon*/.med-accordion--collapsed.sc-med-accordion-h .med-accordion__icon.sc-med-accordion{-webkit-transform:rotate(0);transform:rotate(0)}/*!@:host(.med-accordion--full)*/.med-accordion--full.sc-med-accordion-h{border-radius:0}";
 
 /**
  * @slot header - Define o conteudo do header.
@@ -15763,6 +15933,41 @@ class MedRateLike {
   }; }
 }
 
+const medTilesCss = "/*!@:root*/.sc-med-tiles:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-med-tiles:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-med-tiles:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-med-tiles:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-med-tiles-h{--padding:16px;--background:var(--med-color-neutral-2);--border-radius:8px;--border-background:var(--med-color-neutral-5);--border-background-selected:var(--med-color-brand-3, #14a2b8);--font-size-title:20px;--color-title:var(--med-color-neutral-10);--font-size-label:12px;--color-label:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-tiles)*/.med-tiles.sc-med-tiles-h{display:-ms-flexbox;display:flex;background:var(--background);border-radius:var(--border-radius)}/*!@:host(.med-tiles) .med-tiles__content*/.med-tiles.sc-med-tiles-h .med-tiles__content.sc-med-tiles{padding:var(--padding);display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;text-align:left;width:100%}/*!@:host(.med-tiles) .med-tiles__border*/.med-tiles.sc-med-tiles-h .med-tiles__border.sc-med-tiles{border-top-left-radius:var(--border-radius);border-bottom-left-radius:var(--border-radius);width:8px;min-height:100%;background:var(--border-background)}/*!@:host(.med-tiles) .med-tiles__title*/.med-tiles.sc-med-tiles-h .med-tiles__title.sc-med-tiles{margin:0;padding:0;font-size:var(--font-size-title);font-weight:600;line-height:100%;color:var(--color-title);padding-bottom:4px}/*!@:host(.med-tiles) .med-tiles__label*/.med-tiles.sc-med-tiles-h .med-tiles__label.sc-med-tiles{margin:0;padding:0;font-size:var(--font-size-label);font-weight:400;line-height:100%;color:var(--color-label);padding-bottom:16px}/*!@:host(.med-tiles) .med-tiles__badge*/.med-tiles.sc-med-tiles-h .med-tiles__badge.sc-med-tiles{margin-left:auto}/*!@:host(.med-tiles--selected) .med-tiles__border*/.med-tiles--selected.sc-med-tiles-h .med-tiles__border.sc-med-tiles{background:var(--border-background-selected)}/*!@:host(.med-tiles.ion-color)*/.med-tiles.ion-color.sc-med-tiles-h{--border-background-selected:var(--med-color-3);--color-label:var(--med-color-3)}/*!@:host(.med-tiles.med-neutral)*/.med-tiles.med-neutral.sc-med-tiles-h{--border-background-selected:var(--med-neutral);--color-label:var(--med-neutral)}/*!@:host(.med-tiles.med-solid)*/.med-tiles.med-solid.sc-med-tiles-h{--background:var(--med-color-brand-3, #14a2b8);--border-background-selected:var(--med-color-brand-contrast, );--color-label:var(--med-color-brand-contrast, )}/*!@:host(.med-tiles.med-solid) .med-tiles__badge*/.med-tiles.med-solid.sc-med-tiles-h .med-tiles__badge.sc-med-tiles{--background:var(--med-color-brand-3, #14a2b8)}/*!@:host(.med-tiles.med-solid.ion-color)*/.med-tiles.med-solid.ion-color.sc-med-tiles-h{--background:var(--med-color-3);--border-background-selected:var(--med-color-contrast);--color-label:var(--med-color-contrast)}/*!@:host(.med-tiles.med-solid.ion-color) .med-tiles__badge*/.med-tiles.med-solid.ion-color.sc-med-tiles-h .med-tiles__badge.sc-med-tiles{--background:var(--med-color-1) !important}/*!@:host(.med-tiles.med-solid.med-neutral)*/.med-tiles.med-solid.med-neutral.sc-med-tiles-h{--background:var(--med-neutral);--border-background-selected:var(--med-neutral-contrast);--color-label:var(--med-neutral-contrast)}/*!@:host(.med-tiles.med-solid.med-neutral) .med-tiles__badge*/.med-tiles.med-solid.med-neutral.sc-med-tiles-h .med-tiles__badge.sc-med-tiles{--background:var(--med-neutral-contrast)}";
+
+class MedTiles {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+    this.solid = false;
+    this.selected = false;
+  }
+  render() {
+    const { color, neutral, titulo, label, badge, selected, solid } = this;
+    return (hAsync(Host, { "from-stencil": true, class: createColorClasses$1(color, {
+        'med-tiles': true,
+        'med-solid': solid,
+        'med-tiles--selected': selected
+      }, neutral) }, hAsync("div", { class: "med-tiles__border" }), hAsync("div", { class: "med-tiles__content" }, hAsync("h3", { class: "med-tiles__title" }, titulo), hAsync("h4", { class: "med-tiles__label" }, label), hAsync("ion-badge", { class: "med-tiles__badge", "ds-size": "xs", neutral: neutral, color: color }, badge))));
+  }
+  static get style() { return medTilesCss; }
+  static get cmpMeta() { return {
+    "$flags$": 9,
+    "$tagName$": "med-tiles",
+    "$members$": {
+      "titulo": [1],
+      "label": [1],
+      "badge": [1],
+      "neutral": [1],
+      "color": [1],
+      "solid": [4],
+      "selected": [516]
+    },
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": [["selected", "selected"]]
+  }; }
+}
+
 const medToolbarCss = "/*!@:root*/.sc-med-toolbar:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-med-toolbar:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-med-toolbar:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-med-toolbar:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-med-toolbar-h{--background:var(--med-color-neutral-2);--center-width:auto;--center-margin:0 16px;padding:8px 16px;background:var(--background);min-height:48px;height:auto;-webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);box-shadow:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);display:block;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}/*!@.container*/.container.sc-med-toolbar{max-width:1200px;width:100%;margin:0 auto;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}/*!@.container__center*/.container__center.sc-med-toolbar{margin:var(--center-margin);width:var(--center-width)}/*!@:host(.ion-color)*/.ion-color.sc-med-toolbar-h{--background:var(--med-color-1)}/*!@:host(.med-neutral)*/.med-neutral.sc-med-toolbar-h{--background:var(--med-neutral)}/*!@::slotted(*)*/.sc-med-toolbar-s>*{margin:0 !important;padding:0 !important;list-style:none}";
 
 class MedToolbar {
@@ -17521,7 +17726,7 @@ var PlusMinusStatus;
   PlusMinusStatus["PLUS"] = "plus";
 })(PlusMinusStatus || (PlusMinusStatus = {}));
 
-const montaProvasPlusminusCss = "/*!@:root*/.sc-monta-provas-plusminus:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-monta-provas-plusminus:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-monta-provas-plusminus:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-monta-provas-plusminus:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-monta-provas-plusminus-h{--color:var(--med-color-neutral-10)}/*!@:host(.monta-provas-plusminus)*/.monta-provas-plusminus.sc-monta-provas-plusminus-h{font-size:48px;font-weight:700;line-height:100%;color:var(--color);max-height:400px;width:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}/*!@:host(.monta-provas-plusminus) .icon-minus*/.monta-provas-plusminus.sc-monta-provas-plusminus-h .icon-minus.sc-monta-provas-plusminus{margin-right:16px;cursor:pointer}/*!@:host(.monta-provas-plusminus) .icon-plus*/.monta-provas-plusminus.sc-monta-provas-plusminus-h .icon-plus.sc-monta-provas-plusminus{margin-left:16px;cursor:pointer}/*!@:host(.monta-provas-plusminus--xl)*/.monta-provas-plusminus--xl.sc-monta-provas-plusminus-h{font-size:64px}";
+const montaProvasPlusminusCss = "/*!@:root*/.sc-monta-provas-plusminus:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-monta-provas-plusminus:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-monta-provas-plusminus:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-monta-provas-plusminus:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-monta-provas-plusminus-h{--color:var(--med-color-neutral-10)}/*!@:host(.monta-provas-plusminus)*/.monta-provas-plusminus.sc-monta-provas-plusminus-h{font-size:48px;font-weight:700;line-height:100%;color:var(--color);max-height:400px;width:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}/*!@:host(.monta-provas-plusminus) .monta-provas-plusminus__icon-minus*/.monta-provas-plusminus.sc-monta-provas-plusminus-h .monta-provas-plusminus__icon-minus.sc-monta-provas-plusminus{margin-right:16px;cursor:pointer;stroke:var(--med-color-neutral-10)}/*!@:host(.monta-provas-plusminus) .monta-provas-plusminus__icon-plus*/.monta-provas-plusminus.sc-monta-provas-plusminus-h .monta-provas-plusminus__icon-plus.sc-monta-provas-plusminus{margin-left:16px;cursor:pointer;stroke:var(--med-color-neutral-10)}/*!@:host(.monta-provas-plusminus--xl)*/.monta-provas-plusminus--xl.sc-monta-provas-plusminus-h{font-size:64px}";
 
 class MontaProvasPlusminus {
   constructor(hostRef) {
@@ -17536,7 +17741,7 @@ class MontaProvasPlusminus {
     return (hAsync(Host, { "from-stencil": true, class: createColorClasses$1(null, {
         'monta-provas-plusminus': true,
         [`monta-provas-plusminus--${dsSize}`]: dsSize !== undefined,
-      }, null) }, hAsync("ion-icon", { class: "med-icon med-icon--lg icon-minus", name: "med-menos-circulo", onClick: () => this.onClick(PlusMinusStatus.MINUS) }), hAsync("slot", null), hAsync("ion-icon", { class: "med-icon med-icon--lg icon-plus", name: "med-mais-circulo", onClick: () => this.onClick(PlusMinusStatus.PLUS) })));
+      }, null) }, hAsync("ion-icon", { class: "med-icon med-icon--lg monta-provas-plusminus__icon-minus", name: "med-menos-circulo", onClick: () => this.onClick(PlusMinusStatus.MINUS) }), hAsync("slot", null), hAsync("ion-icon", { class: "med-icon med-icon--lg monta-provas-plusminus__icon-plus", name: "med-mais-circulo", onClick: () => this.onClick(PlusMinusStatus.PLUS) })));
   }
   static get style() { return montaProvasPlusminusCss; }
   static get cmpMeta() { return {
@@ -19618,7 +19823,7 @@ class Radio {
     const radioGroup = this.radioGroup = this.el.closest('ion-radio-group');
     if (radioGroup) {
       this.updateState();
-      addEventListener(radioGroup, 'ionChange', this.updateState);
+      addEventListener$1(radioGroup, 'ionChange', this.updateState);
     }
   }
   disconnectedCallback() {
@@ -23409,8 +23614,8 @@ class SegmentButton {
     const segmentEl = this.segmentEl = this.el.closest('ion-segment');
     if (segmentEl) {
       this.updateState();
-      addEventListener(segmentEl, 'ionSelect', this.updateState);
-      addEventListener(segmentEl, 'ionStyle', this.updateStyle);
+      addEventListener$1(segmentEl, 'ionSelect', this.updateState);
+      addEventListener$1(segmentEl, 'ionStyle', this.updateStyle);
     }
   }
   disconnectedCallback() {
@@ -26587,6 +26792,8 @@ const VirtualProxy = ({ dom }, children, utils) => {
 };
 
 registerComponents([
+  Accordion,
+  AccordionItem,
   ActionSheet,
   Alert,
   App,
@@ -26649,6 +26856,7 @@ registerComponents([
   MedOption,
   MedRateBar,
   MedRateLike,
+  MedTiles,
   MedToolbar,
   MedTooltip,
   Menu,

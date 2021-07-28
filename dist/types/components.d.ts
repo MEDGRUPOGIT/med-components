@@ -17,6 +17,10 @@ import { MedImageZoomItemInterface } from "./components/00-autoral/global/med-im
 import { RateStatus } from "./components/00-autoral/global/med-rate-like/med-rate-like.enum";
 import { PlusMinusStatus } from "./components/00-autoral/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.enum";
 export namespace Components {
+    interface HvAccordion {
+    }
+    interface HvAccordionItem {
+    }
     interface IonActionSheet {
         /**
           * If `true`, the action sheet will animate.
@@ -2875,6 +2879,15 @@ export namespace Components {
     interface MedRateLike {
         "status"?: RateStatus;
     }
+    interface MedTiles {
+        "badge"?: string;
+        "color"?: Color;
+        "label"?: string;
+        "neutral"?: Neutral;
+        "selected": boolean;
+        "solid": boolean;
+        "titulo"?: string;
+    }
     interface MedToolbar {
         "color"?: Color;
         "neutral"?: Neutral;
@@ -2890,6 +2903,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLHvAccordionElement extends Components.HvAccordion, HTMLStencilElement {
+    }
+    var HTMLHvAccordionElement: {
+        prototype: HTMLHvAccordionElement;
+        new (): HTMLHvAccordionElement;
+    };
+    interface HTMLHvAccordionItemElement extends Components.HvAccordionItem, HTMLStencilElement {
+    }
+    var HTMLHvAccordionItemElement: {
+        prototype: HTMLHvAccordionItemElement;
+        new (): HTMLHvAccordionItemElement;
+    };
     interface HTMLIonActionSheetElement extends Components.IonActionSheet, HTMLStencilElement {
     }
     var HTMLIonActionSheetElement: {
@@ -3544,6 +3569,12 @@ declare global {
         prototype: HTMLMedRateLikeElement;
         new (): HTMLMedRateLikeElement;
     };
+    interface HTMLMedTilesElement extends Components.MedTiles, HTMLStencilElement {
+    }
+    var HTMLMedTilesElement: {
+        prototype: HTMLMedTilesElement;
+        new (): HTMLMedTilesElement;
+    };
     interface HTMLMedToolbarElement extends Components.MedToolbar, HTMLStencilElement {
     }
     var HTMLMedToolbarElement: {
@@ -3563,6 +3594,8 @@ declare global {
         new (): HTMLMontaProvasPlusminusElement;
     };
     interface HTMLElementTagNameMap {
+        "hv-accordion": HTMLHvAccordionElement;
+        "hv-accordion-item": HTMLHvAccordionItemElement;
         "ion-action-sheet": HTMLIonActionSheetElement;
         "ion-alert": HTMLIonAlertElement;
         "ion-app": HTMLIonAppElement;
@@ -3672,12 +3705,18 @@ declare global {
         "med-option": HTMLMedOptionElement;
         "med-rate-bar": HTMLMedRateBarElement;
         "med-rate-like": HTMLMedRateLikeElement;
+        "med-tiles": HTMLMedTilesElement;
         "med-toolbar": HTMLMedToolbarElement;
         "med-tooltip": HTMLMedTooltipElement;
         "monta-provas-plusminus": HTMLMontaProvasPlusminusElement;
     }
 }
 declare namespace LocalJSX {
+    interface HvAccordion {
+    }
+    interface HvAccordionItem {
+        "onToggle"?: (event: CustomEvent<any>) => void;
+    }
     interface IonActionSheet {
         /**
           * If `true`, the action sheet will animate.
@@ -6466,6 +6505,15 @@ declare namespace LocalJSX {
         "onMedChange"?: (event: CustomEvent<RateStatus>) => void;
         "status"?: RateStatus;
     }
+    interface MedTiles {
+        "badge"?: string;
+        "color"?: Color;
+        "label"?: string;
+        "neutral"?: Neutral;
+        "selected"?: boolean;
+        "solid"?: boolean;
+        "titulo"?: string;
+    }
     interface MedToolbar {
         "color"?: Color;
         "neutral"?: Neutral;
@@ -6481,6 +6529,8 @@ declare namespace LocalJSX {
         "onMedChange"?: (event: CustomEvent<PlusMinusStatus>) => void;
     }
     interface IntrinsicElements {
+        "hv-accordion": HvAccordion;
+        "hv-accordion-item": HvAccordionItem;
         "ion-action-sheet": IonActionSheet;
         "ion-alert": IonAlert;
         "ion-app": IonApp;
@@ -6590,6 +6640,7 @@ declare namespace LocalJSX {
         "med-option": MedOption;
         "med-rate-bar": MedRateBar;
         "med-rate-like": MedRateLike;
+        "med-tiles": MedTiles;
         "med-toolbar": MedToolbar;
         "med-tooltip": MedTooltip;
         "monta-provas-plusminus": MontaProvasPlusminus;
@@ -6599,6 +6650,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "hv-accordion": LocalJSX.HvAccordion & JSXBase.HTMLAttributes<HTMLHvAccordionElement>;
+            "hv-accordion-item": LocalJSX.HvAccordionItem & JSXBase.HTMLAttributes<HTMLHvAccordionItemElement>;
             "ion-action-sheet": LocalJSX.IonActionSheet & JSXBase.HTMLAttributes<HTMLIonActionSheetElement>;
             "ion-alert": LocalJSX.IonAlert & JSXBase.HTMLAttributes<HTMLIonAlertElement>;
             "ion-app": LocalJSX.IonApp & JSXBase.HTMLAttributes<HTMLIonAppElement>;
@@ -6708,6 +6761,7 @@ declare module "@stencil/core" {
             "med-option": LocalJSX.MedOption & JSXBase.HTMLAttributes<HTMLMedOptionElement>;
             "med-rate-bar": LocalJSX.MedRateBar & JSXBase.HTMLAttributes<HTMLMedRateBarElement>;
             "med-rate-like": LocalJSX.MedRateLike & JSXBase.HTMLAttributes<HTMLMedRateLikeElement>;
+            "med-tiles": LocalJSX.MedTiles & JSXBase.HTMLAttributes<HTMLMedTilesElement>;
             "med-toolbar": LocalJSX.MedToolbar & JSXBase.HTMLAttributes<HTMLMedToolbarElement>;
             "med-tooltip": LocalJSX.MedTooltip & JSXBase.HTMLAttributes<HTMLMedTooltipElement>;
             "monta-provas-plusminus": LocalJSX.MontaProvasPlusminus & JSXBase.HTMLAttributes<HTMLMontaProvasPlusminusElement>;

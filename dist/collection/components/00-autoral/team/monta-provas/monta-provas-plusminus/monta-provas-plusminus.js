@@ -13,9 +13,9 @@ export class MontaProvasPlusminus {
         'monta-provas-plusminus': true,
         [`monta-provas-plusminus--${dsSize}`]: dsSize !== undefined,
       }, null) },
-      h("ion-icon", { class: "med-icon med-icon--lg icon-minus", name: "med-menos-circulo", onClick: () => this.onClick(PlusMinusStatus.MINUS) }),
+      h("ion-icon", { class: "med-icon med-icon--lg monta-provas-plusminus__icon-minus", name: "med-menos-circulo", onClick: () => this.onClick(PlusMinusStatus.MINUS) }),
       h("slot", null),
-      h("ion-icon", { class: "med-icon med-icon--lg icon-plus", name: "med-mais-circulo", onClick: () => this.onClick(PlusMinusStatus.PLUS) })));
+      h("ion-icon", { class: "med-icon med-icon--lg monta-provas-plusminus__icon-plus", name: "med-mais-circulo", onClick: () => this.onClick(PlusMinusStatus.PLUS) })));
   }
   static get is() { return "monta-provas-plusminus"; }
   static get encapsulation() { return "shadow"; }

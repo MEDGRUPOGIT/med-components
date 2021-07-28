@@ -317,7 +317,7 @@
   * @prop --color: Define a cor de texto do componente.
   */
   --background: var(--med-color-brand-3, #14a2b8);
-  --color: md-color(brand, contrast-1);
+  --color: var(--med-color-brand-contrast-1, #fff);
   --padding-bottom: 0;
   --padding-end: 16px;
   --padding-start: 16px;

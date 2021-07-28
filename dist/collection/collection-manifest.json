@@ -1,5 +1,7 @@
 {
   "entries": [
+    "./components/00-autoral/global/accordion/accordion.js",
+    "./components/00-autoral/global/accordion-item/accordion-item.js",
     "./components/00-autoral/global/med-accordion/med-accordion.js",
     "./components/00-autoral/global/med-agrupador/med-agrupador.js",
     "./components/00-autoral/global/med-autocomplete/med-autocomplete.js",
@@ -16,6 +18,7 @@
     "./components/00-autoral/global/med-offline/med-offline.js",
     "./components/00-autoral/global/med-rate-bar/med-rate-bar.js",
     "./components/00-autoral/global/med-rate-like/med-rate-like.js",
+    "./components/00-autoral/global/med-tiles/med-tiles.js",
     "./components/00-autoral/global/med-toolbar/med-toolbar.js",
     "./components/00-autoral/global/med-tooltip/med-tooltip.js",
     "./components/00-autoral/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.js",

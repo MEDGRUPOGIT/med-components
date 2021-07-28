@@ -2,6 +2,34 @@
   "version": 1.1,
   "tags": [
     {
+      "name": "hv-accordion",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/accordion/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hv-accordion-item",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/accordion-item/accordion-item.tsx"
+        }
+      ]
+    },
+    {
       "name": "ion-action-sheet",
       "description": {
         "kind": "markdown",
@@ -5134,6 +5162,49 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-rate-like/med-rate-like.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-tiles",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "badge",
+          "description": ""
+        },
+        {
+          "name": "color",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "neutral",
+          "description": ""
+        },
+        {
+          "name": "selected",
+          "description": ""
+        },
+        {
+          "name": "solid",
+          "description": ""
+        },
+        {
+          "name": "titulo",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-tiles/med-tiles.tsx"
         }
       ]
     },
