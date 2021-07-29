@@ -1,8 +1,8 @@
 {
   "entries": [
-    "./components/00-autoral/global/accordion/accordion.js",
-    "./components/00-autoral/global/accordion-item/accordion-item.js",
     "./components/00-autoral/global/med-accordion/med-accordion.js",
+    "./components/00-autoral/global/med-accordion-item/med-accordion-item.js",
+    "./components/00-autoral/global/med-accordion-list/med-accordion-list.js",
     "./components/00-autoral/global/med-agrupador/med-agrupador.js",
     "./components/00-autoral/global/med-autocomplete/med-autocomplete.js",
     "./components/00-autoral/global/med-banner/med-banner.js",
@@ -14,6 +14,9 @@
     "./components/00-autoral/global/med-font-zoom/med-font-zoom.js",
     "./components/00-autoral/global/med-header/med-header.js",
     "./components/00-autoral/global/med-image-zoom/med-image-zoom.js",
+    "./components/00-autoral/global/med-list/med-list.js",
+    "./components/00-autoral/global/med-list-item/med-list-item.js",
+    "./components/00-autoral/global/med-list-item-accordion/med-list-item-accordion.js",
     "./components/00-autoral/global/med-navbar/med-navbar.js",
     "./components/00-autoral/global/med-offline/med-offline.js",
     "./components/00-autoral/global/med-rate-bar/med-rate-bar.js",
@@ -118,7 +121,7 @@
   ],
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.6.0",
+    "version": "2.5.0",
     "typescriptVersion": "4.2.3"
   },
   "collections": [

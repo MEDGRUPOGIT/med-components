@@ -17,10 +17,6 @@ import { MedImageZoomItemInterface } from "./components/00-autoral/global/med-im
 import { RateStatus } from "./components/00-autoral/global/med-rate-like/med-rate-like.enum";
 import { PlusMinusStatus } from "./components/00-autoral/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.enum";
 export namespace Components {
-    interface HvAccordion {
-    }
-    interface HvAccordionItem {
-    }
     interface IonActionSheet {
         /**
           * If `true`, the action sheet will animate.
@@ -418,6 +414,7 @@ export namespace Components {
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
+        "neutral"?: Neutral;
         /**
           * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
          */
@@ -2762,6 +2759,14 @@ export namespace Components {
         "size"?: 'full';
         "toggle": () => Promise<void>;
     }
+    interface MedAccordionItem {
+        "icon"?: 'left' | 'right';
+        "noBorder": boolean;
+    }
+    interface MedAccordionList {
+        "margin"?: 'xs' | 'sm' | 'md' | 'lg';
+        "noBorder": boolean;
+    }
     interface MedAgrupador {
         /**
           * Define o estado do componente.
@@ -2856,6 +2861,32 @@ export namespace Components {
         "marcaAguaSuperior"?: string;
         "titulo"?: string;
     }
+    interface MedList {
+        "color"?: Color;
+        "margin"?: 'xs' | 'sm' | 'md' | 'lg';
+        "neutral"?: Neutral;
+    }
+    interface MedListItem {
+        "border": boolean;
+        "color"?: Color;
+        "dsSize"?: 'xs' | 'sm' | 'md';
+        "label"?: string;
+        "neutral"?: Neutral;
+        "selected": boolean;
+        "titulo"?: string;
+    }
+    interface MedListItemAccordion {
+        "border": boolean;
+        "collapsed": boolean;
+        "color"?: Color;
+        "dsSize"?: 'xs' | 'sm' | 'md';
+        "label"?: string;
+        "margin"?: 'xs' | 'sm' | 'md' | 'lg';
+        "neutral"?: Neutral;
+        "selected": boolean;
+        "titulo"?: string;
+        "toggle": (event?: Event | undefined) => Promise<void>;
+    }
     interface MedNavbar {
         /**
           * Define a cor do componente.
@@ -2903,18 +2934,6 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLHvAccordionElement extends Components.HvAccordion, HTMLStencilElement {
-    }
-    var HTMLHvAccordionElement: {
-        prototype: HTMLHvAccordionElement;
-        new (): HTMLHvAccordionElement;
-    };
-    interface HTMLHvAccordionItemElement extends Components.HvAccordionItem, HTMLStencilElement {
-    }
-    var HTMLHvAccordionItemElement: {
-        prototype: HTMLHvAccordionItemElement;
-        new (): HTMLHvAccordionItemElement;
-    };
     interface HTMLIonActionSheetElement extends Components.IonActionSheet, HTMLStencilElement {
     }
     var HTMLIonActionSheetElement: {
@@ -3443,6 +3462,18 @@ declare global {
         prototype: HTMLMedAccordionElement;
         new (): HTMLMedAccordionElement;
     };
+    interface HTMLMedAccordionItemElement extends Components.MedAccordionItem, HTMLStencilElement {
+    }
+    var HTMLMedAccordionItemElement: {
+        prototype: HTMLMedAccordionItemElement;
+        new (): HTMLMedAccordionItemElement;
+    };
+    interface HTMLMedAccordionListElement extends Components.MedAccordionList, HTMLStencilElement {
+    }
+    var HTMLMedAccordionListElement: {
+        prototype: HTMLMedAccordionListElement;
+        new (): HTMLMedAccordionListElement;
+    };
     interface HTMLMedAgrupadorElement extends Components.MedAgrupador, HTMLStencilElement {
     }
     var HTMLMedAgrupadorElement: {
@@ -3539,6 +3570,24 @@ declare global {
         prototype: HTMLMedImageZoomElement;
         new (): HTMLMedImageZoomElement;
     };
+    interface HTMLMedListElement extends Components.MedList, HTMLStencilElement {
+    }
+    var HTMLMedListElement: {
+        prototype: HTMLMedListElement;
+        new (): HTMLMedListElement;
+    };
+    interface HTMLMedListItemElement extends Components.MedListItem, HTMLStencilElement {
+    }
+    var HTMLMedListItemElement: {
+        prototype: HTMLMedListItemElement;
+        new (): HTMLMedListItemElement;
+    };
+    interface HTMLMedListItemAccordionElement extends Components.MedListItemAccordion, HTMLStencilElement {
+    }
+    var HTMLMedListItemAccordionElement: {
+        prototype: HTMLMedListItemAccordionElement;
+        new (): HTMLMedListItemAccordionElement;
+    };
     interface HTMLMedNavbarElement extends Components.MedNavbar, HTMLStencilElement {
     }
     var HTMLMedNavbarElement: {
@@ -3594,8 +3643,6 @@ declare global {
         new (): HTMLMontaProvasPlusminusElement;
     };
     interface HTMLElementTagNameMap {
-        "hv-accordion": HTMLHvAccordionElement;
-        "hv-accordion-item": HTMLHvAccordionItemElement;
         "ion-action-sheet": HTMLIonActionSheetElement;
         "ion-alert": HTMLIonAlertElement;
         "ion-app": HTMLIonAppElement;
@@ -3684,6 +3731,8 @@ declare global {
         "ion-toolbar": HTMLIonToolbarElement;
         "ion-virtual-scroll": HTMLIonVirtualScrollElement;
         "med-accordion": HTMLMedAccordionElement;
+        "med-accordion-item": HTMLMedAccordionItemElement;
+        "med-accordion-list": HTMLMedAccordionListElement;
         "med-agrupador": HTMLMedAgrupadorElement;
         "med-alternativas": HTMLMedAlternativasElement;
         "med-autocomplete": HTMLMedAutocompleteElement;
@@ -3700,6 +3749,9 @@ declare global {
         "med-font-zoom": HTMLMedFontZoomElement;
         "med-header": HTMLMedHeaderElement;
         "med-image-zoom": HTMLMedImageZoomElement;
+        "med-list": HTMLMedListElement;
+        "med-list-item": HTMLMedListItemElement;
+        "med-list-item-accordion": HTMLMedListItemAccordionElement;
         "med-navbar": HTMLMedNavbarElement;
         "med-offline": HTMLMedOfflineElement;
         "med-option": HTMLMedOptionElement;
@@ -3712,11 +3764,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface HvAccordion {
-    }
-    interface HvAccordionItem {
-        "onToggle"?: (event: CustomEvent<any>) => void;
-    }
     interface IonActionSheet {
         /**
           * If `true`, the action sheet will animate.
@@ -4120,6 +4167,7 @@ declare namespace LocalJSX {
           * The name of the control, which is submitted with the form data.
          */
         "name"?: string;
+        "neutral"?: Neutral;
         /**
           * Emitted when the checkbox loses focus.
          */
@@ -6380,6 +6428,15 @@ declare namespace LocalJSX {
          */
         "size"?: 'full';
     }
+    interface MedAccordionItem {
+        "icon"?: 'left' | 'right';
+        "noBorder"?: boolean;
+        "onToggle"?: (event: CustomEvent<any>) => void;
+    }
+    interface MedAccordionList {
+        "margin"?: 'xs' | 'sm' | 'md' | 'lg';
+        "noBorder"?: boolean;
+    }
     interface MedAgrupador {
         /**
           * Define o estado do componente.
@@ -6480,6 +6537,31 @@ declare namespace LocalJSX {
         "marcaAguaSuperior"?: string;
         "titulo"?: string;
     }
+    interface MedList {
+        "color"?: Color;
+        "margin"?: 'xs' | 'sm' | 'md' | 'lg';
+        "neutral"?: Neutral;
+    }
+    interface MedListItem {
+        "border"?: boolean;
+        "color"?: Color;
+        "dsSize"?: 'xs' | 'sm' | 'md';
+        "label"?: string;
+        "neutral"?: Neutral;
+        "selected"?: boolean;
+        "titulo"?: string;
+    }
+    interface MedListItemAccordion {
+        "border"?: boolean;
+        "collapsed"?: boolean;
+        "color"?: Color;
+        "dsSize"?: 'xs' | 'sm' | 'md';
+        "label"?: string;
+        "margin"?: 'xs' | 'sm' | 'md' | 'lg';
+        "neutral"?: Neutral;
+        "selected"?: boolean;
+        "titulo"?: string;
+    }
     interface MedNavbar {
         /**
           * Define a cor do componente.
@@ -6529,8 +6611,6 @@ declare namespace LocalJSX {
         "onMedChange"?: (event: CustomEvent<PlusMinusStatus>) => void;
     }
     interface IntrinsicElements {
-        "hv-accordion": HvAccordion;
-        "hv-accordion-item": HvAccordionItem;
         "ion-action-sheet": IonActionSheet;
         "ion-alert": IonAlert;
         "ion-app": IonApp;
@@ -6619,6 +6699,8 @@ declare namespace LocalJSX {
         "ion-toolbar": IonToolbar;
         "ion-virtual-scroll": IonVirtualScroll;
         "med-accordion": MedAccordion;
+        "med-accordion-item": MedAccordionItem;
+        "med-accordion-list": MedAccordionList;
         "med-agrupador": MedAgrupador;
         "med-alternativas": MedAlternativas;
         "med-autocomplete": MedAutocomplete;
@@ -6635,6 +6717,9 @@ declare namespace LocalJSX {
         "med-font-zoom": MedFontZoom;
         "med-header": MedHeader;
         "med-image-zoom": MedImageZoom;
+        "med-list": MedList;
+        "med-list-item": MedListItem;
+        "med-list-item-accordion": MedListItemAccordion;
         "med-navbar": MedNavbar;
         "med-offline": MedOffline;
         "med-option": MedOption;
@@ -6650,8 +6735,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "hv-accordion": LocalJSX.HvAccordion & JSXBase.HTMLAttributes<HTMLHvAccordionElement>;
-            "hv-accordion-item": LocalJSX.HvAccordionItem & JSXBase.HTMLAttributes<HTMLHvAccordionItemElement>;
             "ion-action-sheet": LocalJSX.IonActionSheet & JSXBase.HTMLAttributes<HTMLIonActionSheetElement>;
             "ion-alert": LocalJSX.IonAlert & JSXBase.HTMLAttributes<HTMLIonAlertElement>;
             "ion-app": LocalJSX.IonApp & JSXBase.HTMLAttributes<HTMLIonAppElement>;
@@ -6740,6 +6823,8 @@ declare module "@stencil/core" {
             "ion-toolbar": LocalJSX.IonToolbar & JSXBase.HTMLAttributes<HTMLIonToolbarElement>;
             "ion-virtual-scroll": LocalJSX.IonVirtualScroll & JSXBase.HTMLAttributes<HTMLIonVirtualScrollElement>;
             "med-accordion": LocalJSX.MedAccordion & JSXBase.HTMLAttributes<HTMLMedAccordionElement>;
+            "med-accordion-item": LocalJSX.MedAccordionItem & JSXBase.HTMLAttributes<HTMLMedAccordionItemElement>;
+            "med-accordion-list": LocalJSX.MedAccordionList & JSXBase.HTMLAttributes<HTMLMedAccordionListElement>;
             "med-agrupador": LocalJSX.MedAgrupador & JSXBase.HTMLAttributes<HTMLMedAgrupadorElement>;
             "med-alternativas": LocalJSX.MedAlternativas & JSXBase.HTMLAttributes<HTMLMedAlternativasElement>;
             "med-autocomplete": LocalJSX.MedAutocomplete & JSXBase.HTMLAttributes<HTMLMedAutocompleteElement>;
@@ -6756,6 +6841,9 @@ declare module "@stencil/core" {
             "med-font-zoom": LocalJSX.MedFontZoom & JSXBase.HTMLAttributes<HTMLMedFontZoomElement>;
             "med-header": LocalJSX.MedHeader & JSXBase.HTMLAttributes<HTMLMedHeaderElement>;
             "med-image-zoom": LocalJSX.MedImageZoom & JSXBase.HTMLAttributes<HTMLMedImageZoomElement>;
+            "med-list": LocalJSX.MedList & JSXBase.HTMLAttributes<HTMLMedListElement>;
+            "med-list-item": LocalJSX.MedListItem & JSXBase.HTMLAttributes<HTMLMedListItemElement>;
+            "med-list-item-accordion": LocalJSX.MedListItemAccordion & JSXBase.HTMLAttributes<HTMLMedListItemAccordionElement>;
             "med-navbar": LocalJSX.MedNavbar & JSXBase.HTMLAttributes<HTMLMedNavbarElement>;
             "med-offline": LocalJSX.MedOffline & JSXBase.HTMLAttributes<HTMLMedOfflineElement>;
             "med-option": LocalJSX.MedOption & JSXBase.HTMLAttributes<HTMLMedOptionElement>;

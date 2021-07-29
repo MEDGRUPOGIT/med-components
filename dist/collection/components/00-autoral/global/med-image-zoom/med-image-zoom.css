@@ -284,7 +284,7 @@
 }
 :host .zoom-imagem {
   width: auto;
-  max-width: calc(100% - 100px);
+  max-width: calc(100% - 50px);
   height: auto;
   max-height: calc(100% - 100px);
   -webkit-user-drag: none;
@@ -292,6 +292,9 @@
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
+}
+:host .swiper-slide-zoomed .zoom-legenda-container {
+  display: none !important;
 }
 :host .zoom-legenda-container {
   padding: 16px 52px;

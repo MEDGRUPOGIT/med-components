@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Team/Monta Provas/Quantidade Questao',
+  title: 'Components/Team/Monta Provas/Quantidade Questão',
   decorators: [withDesign],
 };
 

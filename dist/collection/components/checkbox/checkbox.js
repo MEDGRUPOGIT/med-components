@@ -73,17 +73,21 @@ export class Checkbox {
     }
   }
   render() {
-    const { color, checked, disabled, el, indeterminate, inputId, name, value } = this;
+    const { color, neutral, checked, disabled, el, indeterminate, inputId, name, value } = this;
     const mode = getIonMode(this);
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     renderHiddenInput(true, el, name, (checked ? value : ''), disabled);
     let path = indeterminate
-      ? h("path", { d: "M6 12L18 12", part: "mark" })
-      : h("path", { d: "M5.9,12.5l3.8,3.8l8.8-8.8", part: "mark" });
+      // ? <path d="M6 12L18 12" part="mark" />
+      ? h("div", { class: "indeterminate" })
+      // : <path d="M5.9,12.5l3.8,3.8l8.8-8.8" part="mark" />;
+      : h("div", { class: "checked" });
     if (mode === 'md') {
       path = indeterminate
-        ? h("path", { d: "M2 12H22", part: "mark" })
-        : h("path", { d: "M1.73,12.91 8.1,19.28 22.79,4.59", part: "mark" });
+        // ? <path d="M2 12H22" part="mark" />
+        ? h("div", { class: "indeterminate" })
+        // : <path d="M1.73,12.91 8.1,19.28 22.79,4.59" part="mark" />;
+        : h("div", { class: "checked" });
     }
     return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses(color, {
         [mode]: true,
@@ -92,22 +96,44 @@ export class Checkbox {
         'checkbox-disabled': disabled,
         'checkbox-indeterminate': indeterminate,
         'interactive': true
-      }) },
-      h("svg", { class: "checkbox-icon", viewBox: "0 0 24 24", part: "container" }, path),
+      }, neutral) },
+      h("div", { part: "container", class: "checkbox-icon" }, path),
       h("label", { htmlFor: inputId }, labelText),
       h("input", { type: "checkbox", "aria-checked": `${checked}`, disabled: disabled, id: inputId, onFocus: () => this.onFocus(), onBlur: () => this.onBlur(), ref: focusEl => this.focusEl = focusEl })));
   }
   static get is() { return "ion-checkbox"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["checkbox.ios.scss"],
+    "ios": ["checkbox.md.scss"],
     "md": ["checkbox.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["checkbox.ios.css"],
+    "ios": ["checkbox.md.css"],
     "md": ["checkbox.md.css"]
   }; }
   static get properties() { return {
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Neutral",
+        "resolved": "string | undefined",
+        "references": {
+          "Neutral": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "neutral",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,
