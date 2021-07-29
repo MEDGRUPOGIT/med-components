@@ -1,41 +1,36 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Method, Listen } from '@stencil/core';
+import { createColorClasses } from '../../../../utils/theme';
 export class MedTooltip {
+  constructor() {
+    /**
+     * Define o estado do componente.
+     */
+    this.collapsed = true;
+  }
+  async toggle(event) {
+    event === null || event === void 0 ? void 0 : event.stopPropagation();
+    this.collapsed = !this.collapsed;
+  }
+  handleClick(event) {
+    if (!this.collapsed) {
+      this.toggle(event);
+    }
+  }
   render() {
-    let buttonContainer;
-    let buttonRightEl;
-    let buttonLeftEl;
-    const { header, content, buttonLeft, buttonRight } = this;
-    const simple = !header && !buttonLeft && !buttonRight && content && content.split(' ').length <= 3;
-    if (buttonLeft && buttonLeft.icon) {
-      buttonLeftEl = (h("ion-button", { "ds-name": "icon-only" },
-        h("ion-icon", { class: "med-icon", slot: "icon-only", name: buttonLeft.icon })));
-    }
-    else if (buttonLeft && buttonLeft.label) {
-      buttonLeftEl = (h("button", { class: "button button--left" }, buttonLeft.label));
-    }
-    else {
-      buttonLeftEl = '';
-    }
-    if (buttonRight && buttonRight.icon) {
-      console.log(buttonRight.icon);
-      buttonRightEl = (h("ion-button", { "ds-name": "icon-only" },
-        h("ion-icon", { class: "med-icon", slot: "icon-only", name: buttonRight.icon })));
-    }
-    else if (buttonRight && buttonRight.label) {
-      buttonRightEl = (h("button", { class: "button button--right" }, buttonRight.label));
-    }
-    else {
-      buttonRightEl = '';
-    }
-    if (buttonLeft || buttonRight) {
-      buttonContainer = (h("div", { class: "button-container" },
-        buttonLeftEl,
-        buttonRightEl));
-    }
-    return (h(Host, { "from-stencil": true, class: { 'simple': simple } },
-      header && h("h4", { class: "header" }, header),
-      content && h("p", { class: "content" }, content),
-      buttonContainer));
+    const { dsName, placement, position, collapsed, content } = this;
+    return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
+        'med-tooltip': true,
+        [`med-tooltip--${dsName}`]: dsName !== undefined,
+        [`med-tooltip--${placement}`]: placement !== undefined,
+        [`med-tooltip--${position}`]: position !== undefined,
+        'med-tooltip--collapsed': collapsed
+      }, null) },
+      h("div", { class: "med-tooltip__icon-container" },
+        h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-tooltip__button", "ds-name": "icon-only" },
+          h("slot", { name: "icon" }))),
+      h("div", { class: "med-tooltip__content" },
+        h("p", { class: "med-tooltip__text" }, content),
+        h("slot", null))));
   }
   static get is() { return "med-tooltip"; }
   static get encapsulation() { return "shadow"; }
@@ -46,6 +41,57 @@ export class MedTooltip {
     "$": ["med-tooltip.css"]
   }; }
   static get properties() { return {
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'definition'",
+        "resolved": "\"definition\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
+    "placement": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'top' | 'bottom' | 'left' | 'right'",
+        "resolved": "\"bottom\" | \"left\" | \"right\" | \"top\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "placement",
+      "reflect": true
+    },
+    "position": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'start' | 'center' | 'end'",
+        "resolved": "\"center\" | \"end\" | \"start\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "position",
+      "reflect": true
+    },
     "header": {
       "type": "string",
       "mutable": false,
@@ -109,6 +155,55 @@ export class MedTooltip {
         "tags": [],
         "text": ""
       }
+    },
+    "collapsed": {
+      "type": "boolean",
+      "mutable": true,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o estado do componente."
+      },
+      "attribute": "collapsed",
+      "reflect": true,
+      "defaultValue": "true"
     }
   }; }
+  static get methods() { return {
+    "toggle": {
+      "complexType": {
+        "signature": "(event?: Event | undefined) => Promise<void>",
+        "parameters": [{
+            "tags": [],
+            "text": ""
+          }],
+        "references": {
+          "Promise": {
+            "location": "global"
+          },
+          "Event": {
+            "location": "global"
+          }
+        },
+        "return": "Promise<void>"
+      },
+      "docs": {
+        "text": "",
+        "tags": []
+      }
+    }
+  }; }
+  static get listeners() { return [{
+      "name": "click",
+      "method": "handleClick",
+      "target": "window",
+      "capture": false,
+      "passive": false
+    }]; }
 }

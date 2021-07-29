@@ -2926,6 +2926,23 @@ export namespace Components {
     interface MedTooltip {
         "buttonLeft": { label: string, icon: string };
         "buttonRight": { label: string, icon: string };
+        /**
+          * Define o estado do componente.
+         */
+        "collapsed": boolean;
+        "content": string;
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'definition';
+        "header": string;
+        "placement"?: 'top' | 'bottom' | 'left' | 'right';
+        "position"?: 'start' | 'center' | 'end';
+        "toggle": (event?: Event | undefined) => Promise<void>;
+    }
+    interface MedTooltip2 {
+        "buttonLeft": { label: string, icon: string };
+        "buttonRight": { label: string, icon: string };
         "content": string;
         "header": string;
     }
@@ -3636,6 +3653,12 @@ declare global {
         prototype: HTMLMedTooltipElement;
         new (): HTMLMedTooltipElement;
     };
+    interface HTMLMedTooltip2Element extends Components.MedTooltip2, HTMLStencilElement {
+    }
+    var HTMLMedTooltip2Element: {
+        prototype: HTMLMedTooltip2Element;
+        new (): HTMLMedTooltip2Element;
+    };
     interface HTMLMontaProvasPlusminusElement extends Components.MontaProvasPlusminus, HTMLStencilElement {
     }
     var HTMLMontaProvasPlusminusElement: {
@@ -3760,6 +3783,7 @@ declare global {
         "med-tiles": HTMLMedTilesElement;
         "med-toolbar": HTMLMedToolbarElement;
         "med-tooltip": HTMLMedTooltipElement;
+        "med-tooltip2": HTMLMedTooltip2Element;
         "monta-provas-plusminus": HTMLMontaProvasPlusminusElement;
     }
 }
@@ -6603,6 +6627,22 @@ declare namespace LocalJSX {
     interface MedTooltip {
         "buttonLeft": { label: string, icon: string };
         "buttonRight": { label: string, icon: string };
+        /**
+          * Define o estado do componente.
+         */
+        "collapsed"?: boolean;
+        "content": string;
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'definition';
+        "header": string;
+        "placement"?: 'top' | 'bottom' | 'left' | 'right';
+        "position"?: 'start' | 'center' | 'end';
+    }
+    interface MedTooltip2 {
+        "buttonLeft": { label: string, icon: string };
+        "buttonRight": { label: string, icon: string };
         "content": string;
         "header": string;
     }
@@ -6728,6 +6768,7 @@ declare namespace LocalJSX {
         "med-tiles": MedTiles;
         "med-toolbar": MedToolbar;
         "med-tooltip": MedTooltip;
+        "med-tooltip2": MedTooltip2;
         "monta-provas-plusminus": MontaProvasPlusminus;
     }
 }
@@ -6852,6 +6893,7 @@ declare module "@stencil/core" {
             "med-tiles": LocalJSX.MedTiles & JSXBase.HTMLAttributes<HTMLMedTilesElement>;
             "med-toolbar": LocalJSX.MedToolbar & JSXBase.HTMLAttributes<HTMLMedToolbarElement>;
             "med-tooltip": LocalJSX.MedTooltip & JSXBase.HTMLAttributes<HTMLMedTooltipElement>;
+            "med-tooltip2": LocalJSX.MedTooltip2 & JSXBase.HTMLAttributes<HTMLMedTooltip2Element>;
             "monta-provas-plusminus": LocalJSX.MontaProvasPlusminus & JSXBase.HTMLAttributes<HTMLMontaProvasPlusminusElement>;
         }
     }

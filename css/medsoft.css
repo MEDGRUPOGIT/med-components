@@ -499,71 +499,71 @@
 
 /* neutral classes */
 .med-neutral-1 {
-  --med-neutral: var(--med-neutral-1, #0b0e0e) !important;
-  --med-neutral-rgb: var(--med-neutral-1-rgb, 11, 14, 14) !important;
+  --med-neutral: var(--med-neutral-1, #121616) !important;
+  --med-neutral-rgb: var(--med-neutral-1-rgb, 18, 22, 22) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 
 .med-neutral-2 {
-  --med-neutral: var(--med-neutral-2, #22292a) !important;
-  --med-neutral-rgb: var(--med-neutral-2-rgb, 34, 41, 42) !important;
+  --med-neutral: var(--med-neutral-2, #293132) !important;
+  --med-neutral-rgb: var(--med-neutral-2-rgb, 41, 49, 50) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 
 .med-neutral-3 {
-  --med-neutral: var(--med-neutral-3, #394446) !important;
-  --med-neutral-rgb: var(--med-neutral-3-rgb, 57, 68, 70) !important;
+  --med-neutral: var(--med-neutral-3, #404d4f) !important;
+  --med-neutral-rgb: var(--med-neutral-3-rgb, 64, 77, 79) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 
 .med-neutral-4 {
-  --med-neutral: var(--med-neutral-4, #506062) !important;
-  --med-neutral-rgb: var(--med-neutral-4-rgb, 80, 96, 98) !important;
+  --med-neutral: var(--med-neutral-4, #57686b) !important;
+  --med-neutral-rgb: var(--med-neutral-4-rgb, 87, 104, 107) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 
 .med-neutral-5 {
-  --med-neutral: var(--med-neutral-5, #6a7e81) !important;
-  --med-neutral-rgb: var(--med-neutral-5-rgb, 106, 126, 129) !important;
+  --med-neutral: var(--med-neutral-5, #6e8387) !important;
+  --med-neutral-rgb: var(--med-neutral-5-rgb, 110, 131, 135) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 
 .med-neutral-6 {
-  --med-neutral: var(--med-neutral-6, #819598) !important;
-  --med-neutral-rgb: var(--med-neutral-6-rgb, 129, 149, 152) !important;
+  --med-neutral: var(--med-neutral-6, #899c9f) !important;
+  --med-neutral-rgb: var(--med-neutral-6-rgb, 137, 156, 159) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 
 .med-neutral-7 {
-  --med-neutral: var(--med-neutral-7, #9dacaf) !important;
-  --med-neutral-rgb: var(--med-neutral-7-rgb, 157, 172, 175) !important;
+  --med-neutral: var(--med-neutral-7, #a5b3b6) !important;
+  --med-neutral-rgb: var(--med-neutral-7-rgb, 165, 179, 182) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 
 .med-neutral-8 {
-  --med-neutral: var(--med-neutral-8, #b9c4c6) !important;
-  --med-neutral-rgb: var(--med-neutral-8-rgb, 185, 196, 198) !important;
+  --med-neutral: var(--med-neutral-8, #c1cbcd) !important;
+  --med-neutral-rgb: var(--med-neutral-8-rgb, 193, 203, 205) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 
 .med-neutral-9 {
-  --med-neutral: var(--med-neutral-9, #d5dcdd) !important;
-  --med-neutral-rgb: var(--med-neutral-9-rgb, 213, 220, 221) !important;
+  --med-neutral: var(--med-neutral-9, #dde3e3) !important;
+  --med-neutral-rgb: var(--med-neutral-9-rgb, 221, 227, 227) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 
 .med-neutral-10 {
-  --med-neutral: var(--med-neutral-10, #f1f3f4) !important;
-  --med-neutral-rgb: var(--med-neutral-10-rgb, 241, 243, 244) !important;
+  --med-neutral: var(--med-neutral-10, #f9fafa) !important;
+  --med-neutral-rgb: var(--med-neutral-10-rgb, 249, 250, 250) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }

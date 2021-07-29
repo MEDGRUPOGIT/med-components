@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-c609be80.js');
+const index = require('./index-02058231.js');
+const ionicGlobal = require('./ionic-global-6859565f.js');
 const helpers = require('./helpers-ab0db03b.js');
 const theme = require('./theme-21d701cc.js');
 
@@ -97,7 +97,7 @@ const Checkbox = class {
         // : <path d="M1.73,12.91 8.1,19.28 22.79,4.59" part="mark" />;
         : index.h("div", { class: "checked" });
     }
-    return (index.h(index.Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: theme.createColorClasses(color, {
+    return (index.h(index.Host, { "from-stencil": true, onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: theme.createColorClasses(color, {
         [mode]: true,
         'in-item': theme.hostContext('ion-item', el),
         'checkbox-checked': checked,
