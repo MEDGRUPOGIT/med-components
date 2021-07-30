@@ -9892,6 +9892,7 @@ class Checkbox {
       this.setFocus();
       this.checked = !this.checked;
       this.indeterminate = false;
+      console.log('clicked');
     };
     this.onFocus = () => {
       this.ionFocus.emit();
@@ -9941,7 +9942,7 @@ class Checkbox {
         // : <path d="M1.73,12.91 8.1,19.28 22.79,4.59" part="mark" />;
         : hAsync("div", { class: "checked" });
     }
-    return (hAsync(Host, { "from-stencil": true, onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses$1(color, {
+    return (hAsync(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses$1(color, {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'checkbox-checked': checked,
