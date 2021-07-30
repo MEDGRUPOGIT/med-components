@@ -17,6 +17,7 @@ const Template = ({ collapsed, placement, position, content }) => {
       <!-- component -->
       <med-tooltip .content=${content} .collapsed=${collapsed} .placement=${placement} .position=${position}>
         <ion-icon slot="icon" class="med-icon med-tooltip__icon" name="med-context-menu"></ion-icon>
+        <p>asihjdgasidhgasidhgasdhigas</p>
       </med-tooltip>
       <!-- component -->
 

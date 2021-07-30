@@ -272,12 +272,13 @@
   display: flex;
   align-items: center;
   width: 100%;
+  margin: var(--margin);
 }
 :host(.med-list-item-accordion) .med-list-item-accordion__sub-item {
   width: 100%;
-  overflow: hidden;
-  opacity: 0;
-  height: 0;
+  overflow: auto;
+  height: auto;
+  opacity: 1;
   transition: 500ms opacity ease;
 }
 :host(.med-list-item-accordion) .med-list-item-accordion__content {
@@ -307,12 +308,12 @@
 }
 
 :host(.med-list-item-accordion--collapsed) .med-list-item-accordion__item {
-  margin: var(--margin);
+  margin: 0;
 }
 :host(.med-list-item-accordion--collapsed) .med-list-item-accordion__sub-item {
-  overflow: auto;
-  height: auto;
-  opacity: 1;
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
 }
 :host(.med-list-item-accordion--collapsed) .med-icon {
   transform: rotate(180deg);
