@@ -104,7 +104,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to offset the column, in terms of how many columns it should shift to the end\r\nof the total available."
+        "text": "The amount to offset the column, in terms of how many columns it should shift to the end\nof the total available."
       },
       "attribute": "offset",
       "reflect": false
@@ -121,7 +121,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to offset the column for xs screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to offset the column for xs screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "offset-xs",
       "reflect": false
@@ -138,7 +138,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to offset the column for sm screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to offset the column for sm screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "offset-sm",
       "reflect": false
@@ -155,7 +155,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to offset the column for md screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to offset the column for md screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "offset-md",
       "reflect": false
@@ -172,7 +172,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to offset the column for lg screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to offset the column for lg screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "offset-lg",
       "reflect": false
@@ -189,7 +189,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to offset the column for xl screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to offset the column for xl screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "offset-xl",
       "reflect": false
@@ -206,7 +206,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to pull the column, in terms of how many columns it should shift to the start of\r\nthe total available."
+        "text": "The amount to pull the column, in terms of how many columns it should shift to the start of\nthe total available."
       },
       "attribute": "pull",
       "reflect": false
@@ -223,7 +223,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to pull the column for xs screens, in terms of how many columns it should shift\r\nto the start of the total available."
+        "text": "The amount to pull the column for xs screens, in terms of how many columns it should shift\nto the start of the total available."
       },
       "attribute": "pull-xs",
       "reflect": false
@@ -240,7 +240,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to pull the column for sm screens, in terms of how many columns it should shift\r\nto the start of the total available."
+        "text": "The amount to pull the column for sm screens, in terms of how many columns it should shift\nto the start of the total available."
       },
       "attribute": "pull-sm",
       "reflect": false
@@ -257,7 +257,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to pull the column for md screens, in terms of how many columns it should shift\r\nto the start of the total available."
+        "text": "The amount to pull the column for md screens, in terms of how many columns it should shift\nto the start of the total available."
       },
       "attribute": "pull-md",
       "reflect": false
@@ -274,7 +274,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to pull the column for lg screens, in terms of how many columns it should shift\r\nto the start of the total available."
+        "text": "The amount to pull the column for lg screens, in terms of how many columns it should shift\nto the start of the total available."
       },
       "attribute": "pull-lg",
       "reflect": false
@@ -291,7 +291,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to pull the column for xl screens, in terms of how many columns it should shift\r\nto the start of the total available."
+        "text": "The amount to pull the column for xl screens, in terms of how many columns it should shift\nto the start of the total available."
       },
       "attribute": "pull-xl",
       "reflect": false
@@ -308,7 +308,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to push the column, in terms of how many columns it should shift to the end\r\nof the total available."
+        "text": "The amount to push the column, in terms of how many columns it should shift to the end\nof the total available."
       },
       "attribute": "push",
       "reflect": false
@@ -325,7 +325,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to push the column for xs screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to push the column for xs screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "push-xs",
       "reflect": false
@@ -342,7 +342,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to push the column for sm screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to push the column for sm screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "push-sm",
       "reflect": false
@@ -359,7 +359,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to push the column for md screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to push the column for md screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "push-md",
       "reflect": false
@@ -376,7 +376,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to push the column for lg screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to push the column for lg screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "push-lg",
       "reflect": false
@@ -393,7 +393,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The amount to push the column for xl screens, in terms of how many columns it should shift\r\nto the end of the total available."
+        "text": "The amount to push the column for xl screens, in terms of how many columns it should shift\nto the end of the total available."
       },
       "attribute": "push-xl",
       "reflect": false
@@ -410,7 +410,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The size of the column, in terms of how many columns it should take up out of the total\r\navailable. If `\"auto\"` is passed, the column will be the size of its content."
+        "text": "The size of the column, in terms of how many columns it should take up out of the total\navailable. If `\"auto\"` is passed, the column will be the size of its content."
       },
       "attribute": "size",
       "reflect": false
@@ -427,7 +427,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The size of the column for xs screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+        "text": "The size of the column for xs screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
       },
       "attribute": "size-xs",
       "reflect": false
@@ -444,7 +444,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The size of the column for sm screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+        "text": "The size of the column for sm screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
       },
       "attribute": "size-sm",
       "reflect": false
@@ -461,7 +461,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The size of the column for md screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+        "text": "The size of the column for md screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
       },
       "attribute": "size-md",
       "reflect": false
@@ -478,7 +478,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The size of the column for lg screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+        "text": "The size of the column for lg screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
       },
       "attribute": "size-lg",
       "reflect": false
@@ -495,7 +495,7 @@ export class Col {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The size of the column for xl screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+        "text": "The size of the column for xl screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
       },
       "attribute": "size-xl",
       "reflect": false

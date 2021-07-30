@@ -2928,13 +2928,14 @@ export namespace Components {
           * Define o estado do componente.
          */
         "collapsed": boolean;
-        "content"?: string;
+        "content": string;
         /**
           * Define a variação do componente.
          */
         "dsName"?: 'definition';
         "placement"?: 'top' | 'bottom' | 'left' | 'right';
         "position"?: 'start' | 'center' | 'end';
+        "titulo": string;
         "toggle": (event?: Event | undefined) => Promise<void>;
     }
     interface MedTooltip2 {
@@ -6626,13 +6627,14 @@ declare namespace LocalJSX {
           * Define o estado do componente.
          */
         "collapsed"?: boolean;
-        "content"?: string;
+        "content": string;
         /**
           * Define a variação do componente.
          */
         "dsName"?: 'definition';
         "placement"?: 'top' | 'bottom' | 'left' | 'right';
         "position"?: 'start' | 'center' | 'end';
+        "titulo": string;
     }
     interface MedTooltip2 {
         "buttonLeft": { label: string, icon: string };

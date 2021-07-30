@@ -17,7 +17,7 @@ export class MedTooltip {
     }
   }
   render() {
-    const { dsName, placement, position, collapsed, content } = this;
+    const { dsName, placement, position, collapsed, titulo, content } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-tooltip': true,
         [`med-tooltip--${dsName}`]: dsName !== undefined,
@@ -29,7 +29,9 @@ export class MedTooltip {
         h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-tooltip__button", "ds-name": "icon-only" },
           h("slot", { name: "icon" }))),
       h("div", { class: "med-tooltip__content" },
-        h("p", { class: "med-tooltip__text" }, content))));
+        h("h3", { class: "med-tooltip__titulo" }, titulo),
+        h("p", { class: "med-tooltip__text" }, content),
+        h("slot", null))));
   }
   static get is() { return "med-tooltip"; }
   static get encapsulation() { return "shadow"; }
@@ -55,23 +57,6 @@ export class MedTooltip {
         "text": "Define a varia\u00E7\u00E3o do componente."
       },
       "attribute": "ds-name",
-      "reflect": false
-    },
-    "content": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "content",
       "reflect": false
     },
     "placement": {
@@ -106,6 +91,40 @@ export class MedTooltip {
         "text": ""
       },
       "attribute": "position",
+      "reflect": true
+    },
+    "titulo": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "titulo",
+      "reflect": true
+    },
+    "content": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "content",
       "reflect": true
     },
     "collapsed": {

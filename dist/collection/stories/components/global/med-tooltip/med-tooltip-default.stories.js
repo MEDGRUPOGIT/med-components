@@ -7,7 +7,7 @@ export default {
   decorators: [withDesign],
 };
 
-const Default = ({ collapsed, placement, position, content }) => {
+const Template = ({ collapsed, placement, position, content }) => {
   return html`
     <style>
     </style>
@@ -24,7 +24,7 @@ const Default = ({ collapsed, placement, position, content }) => {
   `
 }
 
-export const Default = Default.bind({});
+export const Default = Template.bind({});
 Default.parameters = {
   design: {
     type: 'figma',

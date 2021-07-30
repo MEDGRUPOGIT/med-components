@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 /*!
- Stencil Mock Doc v2.5.0 | MIT Licensed | https://stenciljs.com
+ Stencil Mock Doc v2.6.0 | MIT Licensed | https://stenciljs.com
  */
 const CONTENT_REF_ID = 'r';
 const ORG_LOCATION_ID = 'o';
@@ -9941,7 +9941,7 @@ class Checkbox {
         // : <path d="M1.73,12.91 8.1,19.28 22.79,4.59" part="mark" />;
         : hAsync("div", { class: "checked" });
     }
-    return (hAsync(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses$1(color, {
+    return (hAsync(Host, { "from-stencil": true, onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses$1(color, {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'checkbox-checked': checked,
@@ -16136,7 +16136,7 @@ class MedToolbar {
   }; }
 }
 
-const medTooltipCss = "/*!@:root*/.sc-med-tooltip:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-med-tooltip:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-med-tooltip:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-med-tooltip:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-med-tooltip-h{--background:var(--med-color-neutral-3);--z-index:1;--box-shadow:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--border-radius:2px;--padding:4px 8px}/*!@:host(.med-tooltip)*/.med-tooltip.sc-med-tooltip-h{display:block;position:relative}/*!@:host(.med-tooltip) .med-tooltip__content*/.med-tooltip.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{z-index:var(--z-index);position:absolute;background:var(--background);border-radius:var(--border-radius);padding:var(--padding);visibility:visible;opacity:1;-webkit-transition:opacity 300ms ease-in-out;transition:opacity 300ms ease-in-out;top:calc(100% + 6px)}/*!@:host(.med-tooltip) .med-tooltip__icon-container*/.med-tooltip.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip{position:relative}/*!@:host(.med-tooltip) .med-tooltip__icon-container::after*/.med-tooltip.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{content:\"\";position:absolute;left:50%;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--background);clear:both;top:100%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}/*!@:host(.med-tooltip) .med-tooltip__button*/.med-tooltip.sc-med-tooltip-h .med-tooltip__button.sc-med-tooltip{--font-size:24px}/*!@:host(.med-tooltip) .med-tooltip__inner-button*/.med-tooltip.sc-med-tooltip-h .med-tooltip__inner-button.sc-med-tooltip{position:absolute;right:8px;top:9px;--font-size:24px}/*!@:host(.med-tooltip) .med-tooltip__icon*/.med-tooltip.sc-med-tooltip-h .med-tooltip__icon.sc-med-tooltip{stroke:var(--med-color-neutral-10)}/*!@:host(.med-tooltip) .med-tooltip__inner-icon*/.med-tooltip.sc-med-tooltip-h .med-tooltip__inner-icon.sc-med-tooltip{stroke:var(--med-color-neutral-3)}/*!@:host(.med-tooltip) .med-tooltip__text*/.med-tooltip.sc-med-tooltip-h .med-tooltip__text.sc-med-tooltip{font-size:12px;font-weight:400;line-height:16px;color:#fafafa;margin:0;white-space:nowrap}/*!@:host(.med-tooltip--collapsed) .med-tooltip__content*/.med-tooltip--collapsed.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{visibility:hidden;opacity:0;-webkit-transition:opacity 300ms ease-in-out;transition:opacity 300ms ease-in-out}/*!@:host(.med-tooltip--collapsed) .med-tooltip__icon-container::after*/.med-tooltip--collapsed.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{display:none}/*!@:host(.med-tooltip--bottom) .med-tooltip__icon-container::after*/.med-tooltip--bottom.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--background)}/*!@:host(.med-tooltip--bottom) .med-tooltip__content*/.med-tooltip--bottom.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{top:calc(100% + 6px)}/*!@:host(.med-tooltip--top) .med-tooltip__icon-container::after*/.med-tooltip--top.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{bottom:100%;top:auto;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid var(--background);border-bottom:0}/*!@:host(.med-tooltip--top) .med-tooltip__content*/.med-tooltip--top.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{bottom:calc(100% + 6px);top:auto}/*!@:host(.med-tooltip--left) .med-tooltip__icon-container::after*/.med-tooltip--left.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:6px solid var(--background);border-right:0;right:100%;left:auto;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}/*!@:host(.med-tooltip--left) .med-tooltip__content*/.med-tooltip--left.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{right:calc(100% + 6px);top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}/*!@:host(.med-tooltip--right) .med-tooltip__icon-container::after*/.med-tooltip--right.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:6px solid var(--background);border-left:0;right:auto;left:100%;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}/*!@:host(.med-tooltip--right) .med-tooltip__content*/.med-tooltip--right.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{left:calc(100% + 6px);top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}";
+const medTooltipCss = "/*!@:root*/.sc-med-tooltip:root{--med-color-brand-primary-darkest:#074953;--med-color-brand-primary-darkest-rgb:7, 73, 83;--med-color-brand-primary-dark:#137585;--med-color-brand-primary-dark-rgb:19, 117, 133;--med-color-brand-primary-medium:#3aa8b9;--med-color-brand-primary-medium-rgb:58, 168, 185;--med-color-brand-primary-light:#73d6e5;--med-color-brand-primary-light-rgb:115, 214, 229;--med-color-brand-primary-lightest:#b0ecf5;--med-color-brand-primary-lightest-rgb:176, 236, 245;--med-color-brand-primary-gradient:linear-gradient(to right, #3aa8b9, #137585);--med-color-aula-darkest:#075344;--med-color-aula-darkest-rgb:7, 83, 68;--med-color-aula-dark:#13856e;--med-color-aula-dark-rgb:19, 133, 110;--med-color-aula-medium:#3ab89f;--med-color-aula-medium-rgb:58, 184, 159;--med-color-aula-light:#73e5cf;--med-color-aula-light-rgb:115, 229, 207;--med-color-aula-lightest:#b0f5e7;--med-color-aula-lightest-rgb:176, 245, 231;--med-color-aula-gradient:linear-gradient(to right, #3ab89f, #13856e);--med-color-material-darkest:#552607;--med-color-material-darkest-rgb:85, 38, 7;--med-color-material-dark:#854013;--med-color-material-dark-rgb:133, 64, 19;--med-color-material-medium:#b86d3b;--med-color-material-medium-rgb:184, 109, 59;--med-color-material-light:#e5a173;--med-color-material-light-rgb:229, 161, 115;--med-color-material-lightest:#f5ccb0;--med-color-material-lightest-rgb:245, 204, 176;--med-color-material-gradient:linear-gradient(to right, #b86d3b, #854013);--med-color-questoes-darkest:#073953;--med-color-questoes-darkest-rgb:7, 57, 83;--med-color-questoes-dark:#135f85;--med-color-questoes-dark-rgb:19, 95, 133;--med-color-questoes-medium:#3a8eb8;--med-color-questoes-medium-rgb:58, 142, 184;--med-color-questoes-light:#73bfe5;--med-color-questoes-light-rgb:115, 191, 229;--med-color-questoes-lightest:#b0def5;--med-color-questoes-lightest-rgb:176, 222, 245;--med-color-questoes-gradient:linear-gradient(to right, #3a8eb8, #135f85);--med-color-revalida-darkest:#53071e;--med-color-revalida-darkest-rgb:83, 7, 30;--med-color-revalida-dark:#851335;--med-color-revalida-dark-rgb:133, 19, 53;--med-color-revalida-medium:#b83a60;--med-color-revalida-medium-rgb:184, 58, 96;--med-color-revalida-light:#e57395;--med-color-revalida-light-rgb:229, 115, 149;--med-color-revalida-lightest:#f5b0c5;--med-color-revalida-lightest-rgb:245, 176, 197;--med-color-revalida-gradient:linear-gradient(to right, #b83a60, #851335);--med-color-provaschecklist-darkest:#2b0755;--med-color-provaschecklist-darkest-rgb:43, 7, 85;--med-color-provaschecklist-dark:#481385;--med-color-provaschecklist-dark-rgb:72, 19, 133;--med-color-provaschecklist-medium:#753bb8;--med-color-provaschecklist-medium-rgb:117, 59, 184;--med-color-provaschecklist-light:#a873e5;--med-color-provaschecklist-light-rgb:168, 115, 229;--med-color-provaschecklist-lightest:#d1b2f5;--med-color-provaschecklist-lightest-rgb:209, 178, 245;--med-color-provaschecklist-gradient:linear-gradient(to right, #753bb8, #481385);--med-color-neutral-dark-prime:#141414;--med-color-neutral-dark-prime-rgb:20, 20, 20;--med-color-neutral-dark-40:#292929;--med-color-neutral-dark-40-rgb:41, 41, 41;--med-color-neutral-dark-30:#474747;--med-color-neutral-dark-30-rgb:71, 71, 71;--med-color-neutral-dark-20:#5c5c5c;--med-color-neutral-dark-20-rgb:92, 92, 92;--med-color-neutral-dark-10:#7a7a7a;--med-color-neutral-dark-10-rgb:122, 122, 122;--med-color-neutral-dark-gradient:linear-gradient(to right, #fafafa, #141414);--med-color-neutral-light-prime:#fafafa;--med-color-neutral-light-prime-rgb:250, 250, 250;--med-color-neutral-light-40:#ebebeb;--med-color-neutral-light-40-rgb:235, 235, 235;--med-color-neutral-light-30:#d6d6d6;--med-color-neutral-light-30-rgb:214, 214, 214;--med-color-neutral-light-20:#c2c2c2;--med-color-neutral-light-20-rgb:194, 194, 194;--med-color-neutral-light-10:#adadad;--med-color-neutral-light-10-rgb:173, 173, 173;--med-color-neutral-light-gradient:linear-gradient(to right, #141414, #fafafa);--med-color-feedback-warning-darkest:#504606;--med-color-feedback-warning-darkest-rgb:80, 70, 6;--med-color-feedback-warning-dark:#857513;--med-color-feedback-warning-dark-rgb:133, 117, 19;--med-color-feedback-warning-medium:#b8a73b;--med-color-feedback-warning-medium-rgb:184, 167, 59;--med-color-feedback-warning-light:#e5d673;--med-color-feedback-warning-light-rgb:229, 214, 115;--med-color-feedback-warning-lightest:#f5ecb0;--med-color-feedback-warning-lightest-rgb:245, 236, 176;--med-color-feedback-warning-gradient:linear-gradient(to right, #b8a73b, #857513);--med-color-feedback-error-darkest:#520c07;--med-color-feedback-error-darkest-rgb:82, 12, 7;--med-color-feedback-error-dark:#851a13;--med-color-feedback-error-dark-rgb:133, 26, 19;--med-color-feedback-error-medium:#b8433b;--med-color-feedback-error-medium-rgb:184, 67, 59;--med-color-feedback-error-light:#e57a73;--med-color-feedback-error-light-rgb:229, 122, 115;--med-color-feedback-error-lightest:#f5b5b0;--med-color-feedback-error-lightest-rgb:245, 181, 176;--med-color-feedback-error-gradient:linear-gradient(to right, #b8433b, #851a13);--med-color-feedback-success-darkest:#065010;--med-color-feedback-success-darkest-rgb:6, 80, 16;--med-color-feedback-success-dark:#138522;--med-color-feedback-success-dark-rgb:19, 133, 34;--med-color-feedback-success-medium:#3bb84b;--med-color-feedback-success-medium-rgb:59, 184, 75;--med-color-feedback-success-light:#73e582;--med-color-feedback-success-light-rgb:115, 229, 130;--med-color-feedback-success-lightest:#b0f5b9;--med-color-feedback-success-lightest-rgb:176, 245, 185;--med-color-feedback-success-gradient:linear-gradient(to right, #3bb84b, #138522)}/*!@:root*/.sc-med-tooltip:root{--med-font-family-brand:fsemeric;--med-font-family-base:fsemeric;--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-line-height-compressed:100%;--med-line-height-double:100%}/*!@:root*/.sc-med-tooltip:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-md:32px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-med-tooltip:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host*/.sc-med-tooltip-h{--background:var(--med-color-neutral-3);--z-index:1;--box-shadow:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--border-radius:2px;--padding:4px 8px}/*!@:host(.med-tooltip)*/.med-tooltip.sc-med-tooltip-h{display:block;position:relative}/*!@:host(.med-tooltip) .med-tooltip__content*/.med-tooltip.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{z-index:var(--z-index);position:absolute;background:var(--background);border-radius:var(--border-radius);padding:var(--padding);visibility:visible;opacity:1;-webkit-transition:opacity 300ms ease-in-out;transition:opacity 300ms ease-in-out;top:calc(100% + 6px)}/*!@:host(.med-tooltip) .med-tooltip__icon-container*/.med-tooltip.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip{position:relative}/*!@:host(.med-tooltip) .med-tooltip__icon-container::after*/.med-tooltip.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{content:\"\";position:absolute;left:50%;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--background);clear:both;top:100%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}/*!@:host(.med-tooltip) .med-tooltip__button*/.med-tooltip.sc-med-tooltip-h .med-tooltip__button.sc-med-tooltip{--font-size:24px}/*!@:host(.med-tooltip) .med-tooltip__inner-button*/.med-tooltip.sc-med-tooltip-h .med-tooltip__inner-button.sc-med-tooltip{position:absolute;right:8px;top:9px;--font-size:24px}/*!@:host(.med-tooltip) .med-tooltip__icon*/.med-tooltip.sc-med-tooltip-h .med-tooltip__icon.sc-med-tooltip{stroke:var(--med-color-neutral-10)}/*!@:host(.med-tooltip) .med-tooltip__inner-icon*/.med-tooltip.sc-med-tooltip-h .med-tooltip__inner-icon.sc-med-tooltip{stroke:var(--med-color-neutral-3)}/*!@:host(.med-tooltip) .med-tooltip__titulo*/.med-tooltip.sc-med-tooltip-h .med-tooltip__titulo.sc-med-tooltip{font-size:12px;font-weight:700;line-height:16px;color:var(--med-neutral-10);margin:0;padding-top:8px;padding-bottom:8px}/*!@:host(.med-tooltip) .med-tooltip__text*/.med-tooltip.sc-med-tooltip-h .med-tooltip__text.sc-med-tooltip{font-size:12px;font-weight:400;line-height:16px;color:var(--med-neutral-10);margin:0;white-space:nowrap}/*!@:host(.med-tooltip--definition)*/.med-tooltip--definition.sc-med-tooltip-h{--padding:16px}/*!@:host(.med-tooltip--definition) .med-tooltip__content*/.med-tooltip--definition.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{min-width:285px;max-width:285px;width:100%}/*!@:host(.med-tooltip--definition) .med-tooltip__text*/.med-tooltip--definition.sc-med-tooltip-h .med-tooltip__text.sc-med-tooltip{white-space:initial}/*!@:host(.med-tooltip--collapsed) .med-tooltip__content*/.med-tooltip--collapsed.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{visibility:hidden;opacity:0;-webkit-transition:opacity 300ms ease-in-out;transition:opacity 300ms ease-in-out}/*!@:host(.med-tooltip--collapsed) .med-tooltip__icon-container::after*/.med-tooltip--collapsed.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{display:none}/*!@:host(.med-tooltip--bottom) .med-tooltip__icon-container::after*/.med-tooltip--bottom.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--background)}/*!@:host(.med-tooltip--bottom) .med-tooltip__content*/.med-tooltip--bottom.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{top:calc(100% + 6px)}/*!@:host(.med-tooltip--top) .med-tooltip__icon-container::after*/.med-tooltip--top.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{bottom:100%;top:auto;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid var(--background);border-bottom:0}/*!@:host(.med-tooltip--top) .med-tooltip__content*/.med-tooltip--top.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{bottom:calc(100% + 6px);top:auto}/*!@:host(.med-tooltip--left) .med-tooltip__icon-container::after*/.med-tooltip--left.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:6px solid var(--background);border-right:0;right:100%;left:auto;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}/*!@:host(.med-tooltip--left) .med-tooltip__content*/.med-tooltip--left.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{right:calc(100% + 6px);top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}/*!@:host(.med-tooltip--right) .med-tooltip__icon-container::after*/.med-tooltip--right.sc-med-tooltip-h .med-tooltip__icon-container.sc-med-tooltip::after{border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:6px solid var(--background);border-left:0;right:auto;left:100%;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}/*!@:host(.med-tooltip--right) .med-tooltip__content*/.med-tooltip--right.sc-med-tooltip-h .med-tooltip__content.sc-med-tooltip{left:calc(100% + 6px);top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}/*!@:host(.med-tooltip--center:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content*/.med-tooltip--center.sc-med-tooltip-h:not(.med-tooltip--right):not(.med-tooltip--left) .med-tooltip__content.sc-med-tooltip{left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}/*!@:host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content*/.med-tooltip--end.sc-med-tooltip-h:not(.med-tooltip--right):not(.med-tooltip--left) .med-tooltip__content.sc-med-tooltip{-webkit-transform:rotate(-180deg);transform:rotate(-180deg);left:100%;-webkit-transform-origin:left center;transform-origin:left center}/*!@:host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content **/.med-tooltip--end.sc-med-tooltip-h:not(.med-tooltip--right):not(.med-tooltip--left) .med-tooltip__content.sc-med-tooltip *.sc-med-tooltip{-webkit-transform:rotate(180deg);transform:rotate(180deg)}";
 
 class MedTooltip {
   constructor(hostRef) {
@@ -16156,14 +16156,14 @@ class MedTooltip {
     }
   }
   render() {
-    const { dsName, placement, position, collapsed, content } = this;
+    const { dsName, placement, position, collapsed, titulo, content } = this;
     return (hAsync(Host, { "from-stencil": true, class: createColorClasses$1(null, {
         'med-tooltip': true,
         [`med-tooltip--${dsName}`]: dsName !== undefined,
         [`med-tooltip--${placement}`]: placement !== undefined,
         [`med-tooltip--${position}`]: position !== undefined,
         'med-tooltip--collapsed': collapsed
-      }, null) }, hAsync("div", { class: "med-tooltip__icon-container" }, hAsync("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-tooltip__button", "ds-name": "icon-only" }, hAsync("slot", { name: "icon" }))), hAsync("div", { class: "med-tooltip__content" }, hAsync("p", { class: "med-tooltip__text" }, content))));
+      }, null) }, hAsync("div", { class: "med-tooltip__icon-container" }, hAsync("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-tooltip__button", "ds-name": "icon-only" }, hAsync("slot", { name: "icon" }))), hAsync("div", { class: "med-tooltip__content" }, hAsync("h3", { class: "med-tooltip__titulo" }, titulo), hAsync("p", { class: "med-tooltip__text" }, content), hAsync("slot", null))));
   }
   static get style() { return medTooltipCss; }
   static get cmpMeta() { return {
@@ -16171,15 +16171,16 @@ class MedTooltip {
     "$tagName$": "med-tooltip",
     "$members$": {
       "dsName": [1, "ds-name"],
-      "content": [1],
       "placement": [513],
       "position": [513],
+      "titulo": [513],
+      "content": [513],
       "collapsed": [1540],
       "toggle": [64]
     },
     "$listeners$": [[8, "click", "handleClick"]],
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["placement", "placement"], ["position", "position"], ["collapsed", "collapsed"]]
+    "$attrsToReflect$": [["placement", "placement"], ["position", "position"], ["titulo", "titulo"], ["content", "content"], ["collapsed", "collapsed"]]
   }; }
 }
 
@@ -27990,7 +27991,7 @@ function transform(transform) {
   }
   return this;
 }
-function transition(duration) {
+function transition$1(duration) {
   if (typeof duration !== 'string') {
     duration = `${duration}ms`; // eslint-disable-line
   }
@@ -28129,7 +28130,7 @@ function trigger(...args) {
   }
   return this;
 }
-function transitionEnd(callback) {
+function transitionEnd$1(callback) {
   const events = ['webkitTransitionEnd', 'transitionend'];
   const dom = this;
   let i;
@@ -28520,11 +28521,11 @@ const Methods = {
   removeAttr,
   data,
   transform,
-  transition: transition,
+  transition: transition$1,
   on,
   off,
   trigger,
-  transitionEnd: transitionEnd,
+  transitionEnd: transitionEnd$1,
   outerWidth,
   outerHeight,
   offset,
@@ -29699,7 +29700,7 @@ function transitionStart (runCallbacks = true, direction) {
   }
 }
 
-function transitionEnd$1 (runCallbacks = true, direction) {
+function transitionEnd (runCallbacks = true, direction) {
   const swiper = this;
   const { activeIndex, previousIndex, params } = swiper;
   swiper.animating = false;
@@ -29729,10 +29730,10 @@ function transitionEnd$1 (runCallbacks = true, direction) {
   }
 }
 
-var transition$1 = {
+var transition = {
   setTransition,
   transitionStart,
-  transitionEnd: transitionEnd$1,
+  transitionEnd,
 };
 
 function slideTo (index = 0, speed = this.params.speed, runCallbacks = true, internal) {
@@ -31536,7 +31537,7 @@ var defaults = {
 const prototypes = {
   update,
   translate,
-  transition: transition$1,
+  transition,
   slide,
   loop,
   grabCursor,
@@ -32275,379 +32276,6 @@ var keyboard = {
         swiper.keyboard.disable();
       }
     },
-  },
-};
-
-function isEventSupported() {
-  const eventName = 'onwheel';
-  let isSupported = eventName in doc;
-
-  if (!isSupported) {
-    const element = doc.createElement('div');
-    element.setAttribute(eventName, 'return;');
-    isSupported = typeof element[eventName] === 'function';
-  }
-
-  if (!isSupported
-    && doc.implementation
-    && doc.implementation.hasFeature
-    // always returns true in newer browsers as per the standard.
-    // @see http://dom.spec.whatwg.org/#dom-domimplementation-hasfeature
-    && doc.implementation.hasFeature('', '') !== true
-  ) {
-    // This is the only way to test support for the `wheel` event in IE9+.
-    isSupported = doc.implementation.hasFeature('Events.wheel', '3.0');
-  }
-
-  return isSupported;
-}
-const Mousewheel = {
-  lastScrollTime: Utils.now(),
-  lastEventBeforeSnap: undefined,
-  recentWheelEvents: [],
-  event() {
-    if (win.navigator.userAgent.indexOf('firefox') > -1) return 'DOMMouseScroll';
-    return isEventSupported() ? 'wheel' : 'mousewheel';
-  },
-  normalize(e) {
-    // Reasonable defaults
-    const PIXEL_STEP = 10;
-    const LINE_HEIGHT = 40;
-    const PAGE_HEIGHT = 800;
-
-    let sX = 0;
-    let sY = 0; // spinX, spinY
-    let pX = 0;
-    let pY = 0; // pixelX, pixelY
-
-    // Legacy
-    if ('detail' in e) {
-      sY = e.detail;
-    }
-    if ('wheelDelta' in e) {
-      sY = -e.wheelDelta / 120;
-    }
-    if ('wheelDeltaY' in e) {
-      sY = -e.wheelDeltaY / 120;
-    }
-    if ('wheelDeltaX' in e) {
-      sX = -e.wheelDeltaX / 120;
-    }
-
-    // side scrolling on FF with DOMMouseScroll
-    if ('axis' in e && e.axis === e.HORIZONTAL_AXIS) {
-      sX = sY;
-      sY = 0;
-    }
-
-    pX = sX * PIXEL_STEP;
-    pY = sY * PIXEL_STEP;
-
-    if ('deltaY' in e) {
-      pY = e.deltaY;
-    }
-    if ('deltaX' in e) {
-      pX = e.deltaX;
-    }
-
-    if (e.shiftKey && !pX) { // if user scrolls with shift he wants horizontal scroll
-      pX = pY;
-      pY = 0;
-    }
-
-    if ((pX || pY) && e.deltaMode) {
-      if (e.deltaMode === 1) { // delta in LINE units
-        pX *= LINE_HEIGHT;
-        pY *= LINE_HEIGHT;
-      } else { // delta in PAGE units
-        pX *= PAGE_HEIGHT;
-        pY *= PAGE_HEIGHT;
-      }
-    }
-
-    // Fall-back if spin cannot be determined
-    if (pX && !sX) {
-      sX = (pX < 1) ? -1 : 1;
-    }
-    if (pY && !sY) {
-      sY = (pY < 1) ? -1 : 1;
-    }
-
-    return {
-      spinX: sX,
-      spinY: sY,
-      pixelX: pX,
-      pixelY: pY,
-    };
-  },
-  handleMouseEnter() {
-    const swiper = this;
-    swiper.mouseEntered = true;
-  },
-  handleMouseLeave() {
-    const swiper = this;
-    swiper.mouseEntered = false;
-  },
-  handle(event) {
-    let e = event;
-    const swiper = this;
-    const params = swiper.params.mousewheel;
-
-    if (swiper.params.cssMode) {
-      e.preventDefault();
-    }
-
-    let target = swiper.$el;
-    if (swiper.params.mousewheel.eventsTarged !== 'container') {
-      target = $(swiper.params.mousewheel.eventsTarged);
-    }
-    if (!swiper.mouseEntered && !target[0].contains(e.target) && !params.releaseOnEdges) return true;
-
-    if (e.originalEvent) e = e.originalEvent; // jquery fix
-    let delta = 0;
-    const rtlFactor = swiper.rtlTranslate ? -1 : 1;
-
-    const data = Mousewheel.normalize(e);
-
-    if (params.forceToAxis) {
-      if (swiper.isHorizontal()) {
-        if (Math.abs(data.pixelX) > Math.abs(data.pixelY)) delta = data.pixelX * rtlFactor;
-        else return true;
-      } else if (Math.abs(data.pixelY) > Math.abs(data.pixelX)) delta = data.pixelY;
-      else return true;
-    } else {
-      delta = Math.abs(data.pixelX) > Math.abs(data.pixelY) ? -data.pixelX * rtlFactor : -data.pixelY;
-    }
-
-    if (delta === 0) return true;
-
-    if (params.invert) delta = -delta;
-
-    if (!swiper.params.freeMode) {
-      // Register the new event in a variable which stores the relevant data
-      const newEvent = {
-        time: Utils.now(),
-        delta: Math.abs(delta),
-        direction: Math.sign(delta),
-        raw: event,
-      };
-
-      // Keep the most recent events
-      const recentWheelEvents = swiper.mousewheel.recentWheelEvents;
-      if (recentWheelEvents.length >= 2) {
-        recentWheelEvents.shift(); // only store the last N events
-      }
-      const prevEvent = recentWheelEvents.length ? recentWheelEvents[recentWheelEvents.length - 1] : undefined;
-      recentWheelEvents.push(newEvent);
-
-      // If there is at least one previous recorded event:
-      //   If direction has changed or
-      //   if the scroll is quicker than the previous one:
-      //     Animate the slider.
-      // Else (this is the first time the wheel is moved):
-      //     Animate the slider.
-      if (prevEvent) {
-        if (newEvent.direction !== prevEvent.direction || newEvent.delta > prevEvent.delta || newEvent.time > prevEvent.time + 150) {
-          swiper.mousewheel.animateSlider(newEvent);
-        }
-      } else {
-        swiper.mousewheel.animateSlider(newEvent);
-      }
-
-      // If it's time to release the scroll:
-      //   Return now so you don't hit the preventDefault.
-      if (swiper.mousewheel.releaseScroll(newEvent)) {
-        return true;
-      }
-    } else {
-      // Freemode or scrollContainer:
-
-      // If we recently snapped after a momentum scroll, then ignore wheel events
-      // to give time for the deceleration to finish. Stop ignoring after 500 msecs
-      // or if it's a new scroll (larger delta or inverse sign as last event before
-      // an end-of-momentum snap).
-      const newEvent = { time: Utils.now(), delta: Math.abs(delta), direction: Math.sign(delta) };
-      const { lastEventBeforeSnap } = swiper.mousewheel;
-      const ignoreWheelEvents = lastEventBeforeSnap
-        && newEvent.time < lastEventBeforeSnap.time + 500
-        && newEvent.delta <= lastEventBeforeSnap.delta
-        && newEvent.direction === lastEventBeforeSnap.direction;
-      if (!ignoreWheelEvents) {
-        swiper.mousewheel.lastEventBeforeSnap = undefined;
-
-        if (swiper.params.loop) {
-          swiper.loopFix();
-        }
-        let position = swiper.getTranslate() + (delta * params.sensitivity);
-        const wasBeginning = swiper.isBeginning;
-        const wasEnd = swiper.isEnd;
-
-        if (position >= swiper.minTranslate()) position = swiper.minTranslate();
-        if (position <= swiper.maxTranslate()) position = swiper.maxTranslate();
-
-        swiper.setTransition(0);
-        swiper.setTranslate(position);
-        swiper.updateProgress();
-        swiper.updateActiveIndex();
-        swiper.updateSlidesClasses();
-
-        if ((!wasBeginning && swiper.isBeginning) || (!wasEnd && swiper.isEnd)) {
-          swiper.updateSlidesClasses();
-        }
-
-        if (swiper.params.freeModeSticky) {
-          // When wheel scrolling starts with sticky (aka snap) enabled, then detect
-          // the end of a momentum scroll by storing recent (N=15?) wheel events.
-          // 1. do all N events have decreasing or same (absolute value) delta?
-          // 2. did all N events arrive in the last M (M=500?) msecs?
-          // 3. does the earliest event have an (absolute value) delta that's
-          //    at least P (P=1?) larger than the most recent event's delta?
-          // 4. does the latest event have a delta that's smaller than Q (Q=6?) pixels?
-          // If 1-4 are "yes" then we're near the end of a momuntum scroll deceleration.
-          // Snap immediately and ignore remaining wheel events in this scroll.
-          // See comment above for "remaining wheel events in this scroll" determination.
-          // If 1-4 aren't satisfied, then wait to snap until 500ms after the last event.
-          clearTimeout(swiper.mousewheel.timeout);
-          swiper.mousewheel.timeout = undefined;
-          const recentWheelEvents = swiper.mousewheel.recentWheelEvents;
-          if (recentWheelEvents.length >= 15) {
-            recentWheelEvents.shift(); // only store the last N events
-          }
-          const prevEvent = recentWheelEvents.length ? recentWheelEvents[recentWheelEvents.length - 1] : undefined;
-          const firstEvent = recentWheelEvents[0];
-          recentWheelEvents.push(newEvent);
-          if (prevEvent && (newEvent.delta > prevEvent.delta || newEvent.direction !== prevEvent.direction)) {
-            // Increasing or reverse-sign delta means the user started scrolling again. Clear the wheel event log.
-            recentWheelEvents.splice(0);
-          } else if (recentWheelEvents.length >= 15
-              && newEvent.time - firstEvent.time < 500
-              && firstEvent.delta - newEvent.delta >= 1
-              && newEvent.delta <= 6
-          ) {
-            // We're at the end of the deceleration of a momentum scroll, so there's no need
-            // to wait for more events. Snap ASAP on the next tick.
-            // Also, because there's some remaining momentum we'll bias the snap in the
-            // direction of the ongoing scroll because it's better UX for the scroll to snap
-            // in the same direction as the scroll instead of reversing to snap.  Therefore,
-            // if it's already scrolled more than 20% in the current direction, keep going.
-            const snapToThreshold = delta > 0 ? 0.8 : 0.2;
-            swiper.mousewheel.lastEventBeforeSnap = newEvent;
-            recentWheelEvents.splice(0);
-            swiper.mousewheel.timeout = Utils.nextTick(() => {
-              swiper.slideToClosest(swiper.params.speed, true, undefined, snapToThreshold);
-            }, 0); // no delay; move on next tick
-          }
-          if (!swiper.mousewheel.timeout) {
-            // if we get here, then we haven't detected the end of a momentum scroll, so
-            // we'll consider a scroll "complete" when there haven't been any wheel events
-            // for 500ms.
-            swiper.mousewheel.timeout = Utils.nextTick(() => {
-              const snapToThreshold = 0.5;
-              swiper.mousewheel.lastEventBeforeSnap = newEvent;
-              recentWheelEvents.splice(0);
-              swiper.slideToClosest(swiper.params.speed, true, undefined, snapToThreshold);
-            }, 500);
-          }
-        }
-
-        // Emit event
-        if (!ignoreWheelEvents) swiper.emit('scroll', e);
-
-        // Stop autoplay
-        if (swiper.params.autoplay && swiper.params.autoplayDisableOnInteraction) swiper.autoplay.stop();
-        // Return page scroll on edge positions
-        if (position === swiper.minTranslate() || position === swiper.maxTranslate()) return true;
-      }
-    }
-
-    if (e.preventDefault) e.preventDefault();
-    else e.returnValue = false;
-    return false;
-  },
-  animateSlider(newEvent) {
-    const swiper = this;
-    // If the movement is NOT big enough and
-    // if the last time the user scrolled was too close to the current one (avoid continuously triggering the slider):
-    //   Don't go any further (avoid insignificant scroll movement).
-    if (newEvent.delta >= 6 && Utils.now() - swiper.mousewheel.lastScrollTime < 60) {
-      // Return false as a default
-      return true;
-    }
-    // If user is scrolling towards the end:
-    //   If the slider hasn't hit the latest slide or
-    //   if the slider is a loop and
-    //   if the slider isn't moving right now:
-    //     Go to next slide and
-    //     emit a scroll event.
-    // Else (the user is scrolling towards the beginning) and
-    // if the slider hasn't hit the first slide or
-    // if the slider is a loop and
-    // if the slider isn't moving right now:
-    //   Go to prev slide and
-    //   emit a scroll event.
-    if (newEvent.direction < 0) {
-      if ((!swiper.isEnd || swiper.params.loop) && !swiper.animating) {
-        swiper.slideNext();
-        swiper.emit('scroll', newEvent.raw);
-      }
-    } else if ((!swiper.isBeginning || swiper.params.loop) && !swiper.animating) {
-      swiper.slidePrev();
-      swiper.emit('scroll', newEvent.raw);
-    }
-    // If you got here is because an animation has been triggered so store the current time
-    swiper.mousewheel.lastScrollTime = (new win.Date()).getTime();
-    // Return false as a default
-    return false;
-  },
-  releaseScroll(newEvent) {
-    const swiper = this;
-    const params = swiper.params.mousewheel;
-    if (newEvent.direction < 0) {
-      if (swiper.isEnd && !swiper.params.loop && params.releaseOnEdges) {
-        // Return true to animate scroll on edges
-        return true;
-      }
-    } else if (swiper.isBeginning && !swiper.params.loop && params.releaseOnEdges) {
-      // Return true to animate scroll on edges
-      return true;
-    }
-    return false;
-  },
-  enable() {
-    const swiper = this;
-    const event = Mousewheel.event();
-    if (swiper.params.cssMode) {
-      swiper.wrapperEl.removeEventListener(event, swiper.mousewheel.handle);
-      return true;
-    }
-    if (!event) return false;
-    if (swiper.mousewheel.enabled) return false;
-    let target = swiper.$el;
-    if (swiper.params.mousewheel.eventsTarged !== 'container') {
-      target = $(swiper.params.mousewheel.eventsTarged);
-    }
-    target.on('mouseenter', swiper.mousewheel.handleMouseEnter);
-    target.on('mouseleave', swiper.mousewheel.handleMouseLeave);
-    target.on(event, swiper.mousewheel.handle);
-    swiper.mousewheel.enabled = true;
-    return true;
-  },
-  disable() {
-    const swiper = this;
-    const event = Mousewheel.event();
-    if (swiper.params.cssMode) {
-      swiper.wrapperEl.addEventListener(event, swiper.mousewheel.handle);
-      return true;
-    }
-    if (!event) return false;
-    if (!swiper.mousewheel.enabled) return false;
-    let target = swiper.$el;
-    if (swiper.params.mousewheel.eventsTarged !== 'container') {
-      target = $(swiper.params.mousewheel.eventsTarged);
-    }
-    target.off(event, swiper.mousewheel.handle);
-    swiper.mousewheel.enabled = false;
-    return true;
   },
 };
 

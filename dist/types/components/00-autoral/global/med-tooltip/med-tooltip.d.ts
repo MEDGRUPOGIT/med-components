@@ -3,9 +3,10 @@ export declare class MedTooltip {
    * Define a variação do componente.
    */
   dsName?: 'definition';
-  content?: string;
   placement?: 'top' | 'bottom' | 'left' | 'right';
   position?: 'start' | 'center' | 'end';
+  titulo: string;
+  content: string;
   /**
    * Define o estado do componente.
    */

@@ -7,7 +7,7 @@ export default {
   decorators: [withDesign],
 };
 
-const Default = ({ collapsed, placement, position, content }) => {
+const Template = ({ collapsed, placement, position, titulo, content }) => {
   return html`
     <style>
     </style>
@@ -15,7 +15,7 @@ const Default = ({ collapsed, placement, position, content }) => {
     <ion-app style="align-items: center; justify-content: center;">
 
       <!-- component -->
-      <med-tooltip .content=${content} .collapsed=${collapsed} .placement=${placement} .position=${position}>
+      <med-tooltip ds-name="definition" .titulo=${titulo} .content=${content} .collapsed=${collapsed} .placement=${placement} .position=${position}>
         <ion-icon slot="icon" class="med-icon med-tooltip__icon" name="med-context-menu"></ion-icon>
       </med-tooltip>
       <!-- component -->
@@ -24,14 +24,14 @@ const Default = ({ collapsed, placement, position, content }) => {
   `
 }
 
-export const Default = Default.bind({});
-Default.parameters = {
+export const Definition = Template.bind({});
+Definition.parameters = {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=2781%3A8634',
   },
 }
-Default.argTypes = {
+Definition.argTypes = {
   collapsed: {
     control: { type: 'boolean' },
     description: 'Define o estado do componente.',
@@ -59,8 +59,12 @@ Default.argTypes = {
       defaultValue: { summary: 'undefined' },
     },
   },
+  titulo: {
+    control: { type: 'text' },
+    defaultValue: 'Título do Tutorial.',
+  },
   content: {
     control: { type: 'text' },
-    defaultValue: 'Tooltip Simples',
+    defaultValue: 'Este é um exemplo de tootip em parágrafo. Esse box contém o tamanho máximo de texto que pode ser exibido. Acima disso, utilize um modal.',
   },
 };

@@ -267,9 +267,6 @@
   z-index: var(--z-index);
   position: absolute;
   background: var(--background);
-  /*  min-width: 250px;
-   max-width: 250px;
-   width: 100%; */
   border-radius: var(--border-radius);
   padding: var(--padding);
   visibility: visible;
@@ -308,13 +305,34 @@
 :host(.med-tooltip) .med-tooltip__inner-icon {
   stroke: var(--med-color-neutral-3);
 }
+:host(.med-tooltip) .med-tooltip__titulo {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  color: var(--med-neutral-10);
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
 :host(.med-tooltip) .med-tooltip__text {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  color: #fafafa;
+  color: var(--med-neutral-10);
   margin: 0;
   white-space: nowrap;
+}
+
+:host(.med-tooltip--definition) {
+  --padding: 16px;
+}
+:host(.med-tooltip--definition) .med-tooltip__content {
+  min-width: 285px;
+  max-width: 285px;
+  width: 100%;
+}
+:host(.med-tooltip--definition) .med-tooltip__text {
+  white-space: initial;
 }
 
 :host(.med-tooltip--collapsed) .med-tooltip__content {
@@ -382,4 +400,19 @@
   left: calc(100% + 6px);
   top: 50%;
   transform: translateY(-50%);
+}
+
+:host(.med-tooltip--center:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+:host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content {
+  transform: rotate(-180deg);
+  left: 100%;
+  transform-origin: left center;
+}
+
+:host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content * {
+  transform: rotate(180deg);
 }

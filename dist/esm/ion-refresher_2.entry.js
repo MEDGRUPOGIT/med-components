@@ -1,5 +1,5 @@
-import { c as writeTask, r as registerInstance, e as createEvent, f as readTask, h, i as getElement, H as Host } from './index-70672e81.js';
-import { a as isPlatform, b as getIonMode, c as config } from './ionic-global-10d9ffcf.js';
+import { c as writeTask, r as registerInstance, e as createEvent, f as readTask, h, i as getElement, H as Host } from './index-ec43b846.js';
+import { a as isPlatform, b as getIonMode, c as config } from './ionic-global-d64985b2.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-c3ea3c34.js';
 import { c as componentOnReady, j as clamp, g as getElementRoot, r as raf } from './helpers-6b411283.js';
 import { d as hapticImpact } from './haptic-3835cb22.js';
