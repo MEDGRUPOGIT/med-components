@@ -1,5 +1,5 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-ec43b846.js';
-import { b as getIonMode } from './ionic-global-d64985b2.js';
+import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
+import { b as getIonMode } from './ionic-global-10d9ffcf.js';
 import { d as getAriaLabel, e as renderHiddenInput } from './helpers-6b411283.js';
 import { c as createColorClasses, h as hostContext } from './theme-3b0eafd2.js';
 
@@ -93,7 +93,7 @@ const Checkbox = class {
         // : <path d="M1.73,12.91 8.1,19.28 22.79,4.59" part="mark" />;
         : h("div", { class: "checked" });
     }
-    return (h(Host, { "from-stencil": true, onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses(color, {
+    return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses(color, {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'checkbox-checked': checked,

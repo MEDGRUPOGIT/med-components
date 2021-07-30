@@ -29,8 +29,7 @@ export class MedTooltip {
         h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-tooltip__button", "ds-name": "icon-only" },
           h("slot", { name: "icon" }))),
       h("div", { class: "med-tooltip__content" },
-        h("p", { class: "med-tooltip__text" }, content),
-        h("slot", null))));
+        h("p", { class: "med-tooltip__text" }, content))));
   }
   static get is() { return "med-tooltip"; }
   static get encapsulation() { return "shadow"; }
@@ -56,6 +55,23 @@ export class MedTooltip {
         "text": "Define a varia\u00E7\u00E3o do componente."
       },
       "attribute": "ds-name",
+      "reflect": false
+    },
+    "content": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "content",
       "reflect": false
     },
     "placement": {
@@ -91,70 +107,6 @@ export class MedTooltip {
       },
       "attribute": "position",
       "reflect": true
-    },
-    "header": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "header",
-      "reflect": true
-    },
-    "content": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "content",
-      "reflect": true
-    },
-    "buttonLeft": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "{ label: string, icon: string }",
-        "resolved": "{ label: string; icon: string; }",
-        "references": {}
-      },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      }
-    },
-    "buttonRight": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "{ label: string, icon: string }",
-        "resolved": "{ label: string; icon: string; }",
-        "references": {}
-      },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      }
     },
     "collapsed": {
       "type": "boolean",

@@ -252,7 +252,7 @@
    * @prop --background: Define a cor de background do componente.
    * @prop  --icon-color: Define a cor de do icone do componente.
    */
-  --background--background: var(--med-color-neutral-2);
+  --background: var(--med-color-neutral-2);
   --icon-color: var(--med-color-neutral-10);
 }
 

@@ -267,6 +267,9 @@
   z-index: var(--z-index);
   position: absolute;
   background: var(--background);
+  /*  min-width: 250px;
+   max-width: 250px;
+   width: 100%; */
   border-radius: var(--border-radius);
   padding: var(--padding);
   visibility: visible;
@@ -312,15 +315,6 @@
   color: #fafafa;
   margin: 0;
   white-space: nowrap;
-}
-
-:host(.med-tooltip--definition) .med-tooltip--definition__content {
-  min-width: 285px;
-  max-width: 285px;
-  width: 100%;
-}
-:host(.med-tooltip--definition) .med-tooltip--definition__text {
-  white-space: initial;
 }
 
 :host(.med-tooltip--collapsed) .med-tooltip__content {
@@ -388,19 +382,4 @@
   left: calc(100% + 6px);
   top: 50%;
   transform: translateY(-50%);
-}
-
-:host(.med-tooltip--center:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-:host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content {
-  transform: rotate(-180deg);
-  left: 100%;
-  transform-origin: left center;
-}
-
-:host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content * {
-  transform: rotate(180deg);
 }

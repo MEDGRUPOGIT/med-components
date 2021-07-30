@@ -2924,18 +2924,15 @@ export namespace Components {
         "neutral"?: Neutral;
     }
     interface MedTooltip {
-        "buttonLeft": { label: string, icon: string };
-        "buttonRight": { label: string, icon: string };
         /**
           * Define o estado do componente.
          */
         "collapsed": boolean;
-        "content": string;
+        "content"?: string;
         /**
           * Define a variação do componente.
          */
         "dsName"?: 'definition';
-        "header": string;
         "placement"?: 'top' | 'bottom' | 'left' | 'right';
         "position"?: 'start' | 'center' | 'end';
         "toggle": (event?: Event | undefined) => Promise<void>;
@@ -6625,18 +6622,15 @@ declare namespace LocalJSX {
         "neutral"?: Neutral;
     }
     interface MedTooltip {
-        "buttonLeft": { label: string, icon: string };
-        "buttonRight": { label: string, icon: string };
         /**
           * Define o estado do componente.
          */
         "collapsed"?: boolean;
-        "content": string;
+        "content"?: string;
         /**
           * Define a variação do componente.
          */
         "dsName"?: 'definition';
-        "header": string;
         "placement"?: 'top' | 'bottom' | 'left' | 'right';
         "position"?: 'start' | 'center' | 'end';
     }
