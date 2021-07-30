@@ -260,7 +260,7 @@
 }
 
 :host(.med-tooltip) {
-  display: block;
+  display: inline-block;
   position: relative;
 }
 :host(.med-tooltip) .med-tooltip__content {

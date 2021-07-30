@@ -42,6 +42,7 @@ export const medIcons = [
   'med-imagem',
   'med-inbox',
   'med-indice',
+  'med-informacao',
   'med-intensivao',
   'med-invisivel',
   'med-limparfiltro',
