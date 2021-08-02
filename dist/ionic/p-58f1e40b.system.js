@@ -1,1 +1,0 @@
-System.register([],(function(t){"use strict";return{execute:function(){t("M",void 0);var e;(function(t){t["XXXS"]="12px";t["XXS"]="14px";t["XS"]="16px";t["SM"]="20px";t["MD"]="24px"})(e||(e=t("M",{})))}}}));
