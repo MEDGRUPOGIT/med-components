@@ -1,0 +1,46 @@
+@import "../functions";
+@import "../mixins";
+
+// hue
+$med-brand: 43;
+
+//saturation
+$med-saturation: 80%;
+
+// luminosity
+$med-darkest: 20%;
+$med-dark: 30%;
+$med-medium: 40%;
+$med-light: 60%;
+$med-lightest: 80%;
+
+// neutrals saturation
+$med-saturation-neutral: 10%;
+
+$new-medsoft-colors: (
+  brand: (
+    contrast-1: #000,
+    contrast-2: #fff,
+    1: hsl($med-brand, $med-saturation, $med-darkest),
+    2: hsl($med-brand, $med-saturation, $med-dark),
+    3: hsl($med-brand, $med-saturation, $med-medium),
+    4: hsl($med-brand, $med-saturation, $med-light),
+    5: hsl($med-brand, $med-saturation, $med-lightest),
+    gradient: linear-gradient(to right, hsl($med-brand, $med-saturation, $med-medium), hsl($med-brand, $med-saturation, $med-darkest)),
+  )
+);
+
+$med-neutrals: (
+  '1': hsl($med-brand, $med-saturation-neutral, 5%),
+  '2': hsl($med-brand, $med-saturation-neutral, 15%),
+  '3': hsl($med-brand, $med-saturation-neutral, 25%),
+  '4': hsl($med-brand, $med-saturation-neutral, 35%),
+  '5': hsl($med-brand, $med-saturation-neutral, 46%),
+  '6': hsl($med-brand, $med-saturation-neutral, 55%),
+  '7': hsl($med-brand, $med-saturation-neutral, 65%),
+  '8': hsl($med-brand, $med-saturation-neutral, 75%),
+  '9': hsl($med-brand, $med-saturation-neutral, 85%),
+  '10': hsl($med-brand, $med-saturation-neutral, 95%),
+) !default;
+
+@include new-generate-custom-theme('gold');

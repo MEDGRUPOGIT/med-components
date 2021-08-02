@@ -311,20 +311,30 @@
 }
 
 :host {
-  --color: var(--med-color-neutral-10);
-  --background: var(--med-color-brand-2, #0f798a);
+  /**
+  * OBS: sobreescrita das css custom properties do ionic.
+  * @prop --background: Define a cor de background do componente.
+  * @prop --color: Define a cor de texto do componente.
+  */
+  --background: var(--med-color-brand-3, #14a2b8);
+  --color: var(--med-color-brand-contrast-1, #fff);
   --padding-bottom: 0;
   --padding-end: 16px;
   --padding-start: 16px;
   --padding-top: 0;
+  /**
+   * OBS: design system css custom properties.
+   * @prop --border-color: Define a cor da borda do componente.
+   */
+  --border-color: var(--med-color-brand-3, #14a2b8);
 }
 
-:host {
+:host(.med-badge) {
   font-size: 12px;
   font-weight: 500;
   line-height: 100%;
   border-radius: 31.25em;
-  border-color: var(--med-color-brand-2, #0f798a);
+  border-color: var(--border-color);
   border-width: 1px;
   font-family: inherit;
   min-width: auto;
@@ -334,24 +344,7 @@
   align-items: center;
 }
 
-:host(.ion-color) {
-  background: var(--med-color-2);
-  color: var(--med-color-neutral-10);
-  border-color: var(--med-color-2);
-}
-
-:host([fill=outline]) {
-  background: transparent;
-  border-style: solid;
-  color: var(--med-color-brand-2, #0f798a);
-}
-
-:host(.ion-color[fill=outline]) {
-  border-color: var(--med-color-2);
-  color: var(--med-color-2);
-}
-
-:host([ds-size=xs]) {
+:host(.med-badge--xs) {
   --padding-start: 8px;
   --padding-end: 8px;
   font-size: 10px;
@@ -359,7 +352,7 @@
   height: 16px;
 }
 
-:host([ds-size=sm]) {
+:host(.med-badge--sm) {
   --padding-start: 16px;
   --padding-end: 16px;
   font-size: 10px;
@@ -367,7 +360,7 @@
   height: 24px;
 }
 
-:host([ds-size=md]) {
+:host(.med-badge--md) {
   --padding-start: 16px;
   --padding-end: 16px;
   font-size: 14px;
@@ -375,7 +368,7 @@
   height: 32px;
 }
 
-:host([ds-size=lg]) {
+:host(.med-badge--lg) {
   --padding-start: 24px;
   --padding-end: 24px;
   font-size: 16px;
@@ -383,26 +376,32 @@
   height: 40px;
 }
 
-:host(.invert) {
-  background: var(--med-color-neutral-3);
-  border-color: var(--med-color-neutral-3);
-  color: var(--med-color-neutral-8);
+:host(.med-badge.ion-color) {
+  --border-color: var(--med-color-3);
+  background: var(--med-color-3);
+  color: var(--med-color-contrast-1);
 }
 
-:host(.invert.ion-color) {
-  background: var(--med-color-neutral-3);
-  color: var(--med-color-neutral-8);
-  border-color: var(--med-color-neutral-3);
+:host(.med-badge.med-neutral) {
+  --border-color: var(--med-neutral);
+  background: var(--med-neutral);
+  color: var(--med-neutral-contrast);
 }
 
-:host([fill=outline].invert) {
-  background: transparent;
+:host(.med-badge--secondary) {
   border-style: solid;
-  border-color: var(--med-color-neutral-8);
-  color: var(--med-color-neutral-8);
+  background: transparent;
+  color: var(--med-color-brand-3, #14a2b8);
 }
 
-:host(.ion-color[fill=outline].invert) {
-  border-color: var(--med-color-neutral-8);
-  color: var(--med-color-neutral-8);
+:host(.med-badge--secondary.ion-color) {
+  --border-color: var(--med-color-3);
+  background: transparent;
+  color: var(--med-color-3);
+}
+
+:host(.med-badge--secondary.med-neutral) {
+  --border-color: var(--med-neutral);
+  background: transparent;
+  color: var(--med-neutral);
 }

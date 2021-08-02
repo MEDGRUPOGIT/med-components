@@ -56,7 +56,7 @@ export class MenuButton {
       h("button", Object.assign({}, attrs, { disabled: disabled, class: "button-native", part: "native", "aria-label": "menu" }),
         h("span", { class: "button-inner" },
           h("slot", null,
-            h("ion-icon", { part: "icon", icon: menuIcon, mode: mode, lazy: false, "aria-hidden": "true" }))),
+            h("ion-icon", { class: "med-icon", part: "icon", icon: menuIcon, mode: mode, lazy: false, "aria-hidden": "true" }))),
         mode === 'md' && h("ion-ripple-effect", { type: "unbounded" }))));
   }
   static get is() { return "ion-menu-button"; }

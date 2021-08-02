@@ -16,15 +16,17 @@ export class Chip {
     this.disabled = false;
   }
   render() {
+    const { color, neutral, dsName } = this;
     const mode = getIonMode(this);
-    return (h(Host, { "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(this.color, {
+    return (h(Host, { "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(color, {
         [mode]: true,
         'chip-outline': this.outline,
         'chip-disabled': this.disabled,
-        'ion-activatable': true,
-      }) },
-      h("slot", null),
-      mode === 'md' && h("ion-ripple-effect", null)));
+        'ion-activatable': false,
+        'med-chip': true,
+        [`med-chip--${dsName}`]: dsName !== undefined,
+      }, neutral) },
+      h("slot", null)));
   }
   static get is() { return "ion-chip"; }
   static get encapsulation() { return "shadow"; }
@@ -37,6 +39,45 @@ export class Chip {
     "md": ["chip.md.css"]
   }; }
   static get properties() { return {
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Neutral",
+        "resolved": "string | undefined",
+        "references": {
+          "Neutral": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor neutra do componente."
+      },
+      "attribute": "neutral",
+      "reflect": false
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,

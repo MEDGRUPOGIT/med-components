@@ -1,0 +1,128 @@
+.color-theme-recursos,
+[color-theme=recursos] {
+  --med-color-neutral-1: #0b0d0e;
+  --med-color-neutral-1-rgb: 11, 13, 14;
+  --med-color-neutral-2: #22282a;
+  --med-color-neutral-2-rgb: 34, 40, 42;
+  --med-color-neutral-3: #394346;
+  --med-color-neutral-3-rgb: 57, 67, 70;
+  --med-color-neutral-4: #505e62;
+  --med-color-neutral-4-rgb: 80, 94, 98;
+  --med-color-neutral-5: #67787e;
+  --med-color-neutral-5-rgb: 103, 120, 126;
+  --med-color-neutral-6: #819298;
+  --med-color-neutral-6-rgb: 129, 146, 152;
+  --med-color-neutral-7: #9daaaf;
+  --med-color-neutral-7-rgb: 157, 170, 175;
+  --med-color-neutral-8: #b9c2c6;
+  --med-color-neutral-8-rgb: 185, 194, 198;
+  --med-color-neutral-9: #d5dbdd;
+  --med-color-neutral-9-rgb: 213, 219, 221;
+  --med-color-neutral-10: #f1f3f4;
+  --med-color-neutral-10-rgb: 241, 243, 244;
+  --med-color-brand-contrast-1: #000;
+  --med-color-brand-contrast-2: #fff;
+  --med-color-brand-1: #203c46;
+  --med-color-brand-2: #305b69;
+  --med-color-brand-3: #40798c;
+  --med-color-brand-4: #73acbf;
+  --med-color-brand-5: #b9d5df;
+  --med-color-brand-contrast-1-rgb: 0, 0, 0;
+  --med-color-brand-contrast-2-rgb: 255, 255, 255;
+  --med-color-brand-1-rgb: 32, 60, 70;
+  --med-color-brand-2-rgb: 48, 91, 105;
+  --med-color-brand-3-rgb: 64, 121, 140;
+  --med-color-brand-4-rgb: 115, 172, 191;
+  --med-color-brand-5-rgb: 185, 213, 223;
+  --med-color-brand-gradient: linear-gradient(to right, #40798c, #203c46);
+}
+.color-theme-recursos .ion-color-brand,
+[color-theme=recursos] .ion-color-brand {
+  --med-color-contrast-1: var(--med-color-brand-contrast-1, #000);
+  --med-color-contrast-2: var(--med-color-brand-contrast-2, #fff);
+  --med-color-1: var(--med-color-brand-1, #203c46);
+  --med-color-2: var(--med-color-brand-2, #305b69);
+  --med-color-3: var(--med-color-brand-3, #40798c);
+  --med-color-4: var(--med-color-brand-4, #73acbf);
+  --med-color-5: var(--med-color-brand-5, #b9d5df);
+  --med-color-contrast-1-rgb: var(--med-color-brand-contrast-1-rgb, 0, 0, 0);
+  --med-color-contrast-2-rgb: var(--med-color-brand-contrast-2-rgb, 255, 255, 255);
+  --med-color-1-rgb: var(--med-color-brand-1-rgb, 32, 60, 70);
+  --med-color-2-rgb: var(--med-color-brand-2-rgb, 48, 91, 105);
+  --med-color-3-rgb: var(--med-color-brand-3-rgb, 64, 121, 140);
+  --med-color-4-rgb: var(--med-color-brand-4-rgb, 115, 172, 191);
+  --med-color-5-rgb: var(--med-color-brand-5-rgb, 185, 213, 223);
+  --med-color-gradient: var(--med-color-brand-gradient, linear-gradient(to right, #40798c, #203c46));
+}
+.color-theme-recursos .med-neutral-1,
+[color-theme=recursos] .med-neutral-1 {
+  --med-neutral: var(--med-neutral-1, #0b0d0e) !important;
+  --med-neutral-rgb: var(--med-neutral-1-rgb, 11, 13, 14) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
+}
+.color-theme-recursos .med-neutral-2,
+[color-theme=recursos] .med-neutral-2 {
+  --med-neutral: var(--med-neutral-2, #22282a) !important;
+  --med-neutral-rgb: var(--med-neutral-2-rgb, 34, 40, 42) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
+}
+.color-theme-recursos .med-neutral-3,
+[color-theme=recursos] .med-neutral-3 {
+  --med-neutral: var(--med-neutral-3, #394346) !important;
+  --med-neutral-rgb: var(--med-neutral-3-rgb, 57, 67, 70) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
+}
+.color-theme-recursos .med-neutral-4,
+[color-theme=recursos] .med-neutral-4 {
+  --med-neutral: var(--med-neutral-4, #505e62) !important;
+  --med-neutral-rgb: var(--med-neutral-4-rgb, 80, 94, 98) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
+}
+.color-theme-recursos .med-neutral-5,
+[color-theme=recursos] .med-neutral-5 {
+  --med-neutral: var(--med-neutral-5, #6a7b81) !important;
+  --med-neutral-rgb: var(--med-neutral-5-rgb, 106, 123, 129) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
+}
+.color-theme-recursos .med-neutral-6,
+[color-theme=recursos] .med-neutral-6 {
+  --med-neutral: var(--med-neutral-6, #819298) !important;
+  --med-neutral-rgb: var(--med-neutral-6-rgb, 129, 146, 152) !important;
+  --med-neutral-contrast: #fff !important;
+  --med-neutral-contrast-rgb: 255, 255, 255 !important;
+}
+.color-theme-recursos .med-neutral-7,
+[color-theme=recursos] .med-neutral-7 {
+  --med-neutral: var(--med-neutral-7, #9daaaf) !important;
+  --med-neutral-rgb: var(--med-neutral-7-rgb, 157, 170, 175) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
+}
+.color-theme-recursos .med-neutral-8,
+[color-theme=recursos] .med-neutral-8 {
+  --med-neutral: var(--med-neutral-8, #b9c2c6) !important;
+  --med-neutral-rgb: var(--med-neutral-8-rgb, 185, 194, 198) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
+}
+.color-theme-recursos .med-neutral-9,
+[color-theme=recursos] .med-neutral-9 {
+  --med-neutral: var(--med-neutral-9, #d5dbdd) !important;
+  --med-neutral-rgb: var(--med-neutral-9-rgb, 213, 219, 221) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
+}
+.color-theme-recursos .med-neutral-10,
+[color-theme=recursos] .med-neutral-10 {
+  --med-neutral: var(--med-neutral-10, #f1f3f4) !important;
+  --med-neutral-rgb: var(--med-neutral-10-rgb, 241, 243, 244) !important;
+  --med-neutral-contrast: #000 !important;
+  --med-neutral-contrast-rgb: 0, 0, 0 !important;
+}
+
+/*# sourceMappingURL=recursos.css.map */

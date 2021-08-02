@@ -419,3 +419,61 @@ input {
     margin-inline-end: 36px;
   }
 }
+
+:host {
+  --background: transparent;
+  --border-radius: 8px;
+  --border-color: var(--med-color-brand-4, #47d5eb);
+  --border-width: 2px;
+  --size: 24px;
+  min-width: var(--size);
+}
+
+:host .checkbox-icon {
+  position: relative;
+}
+
+:host(.checkbox-checked) .checkbox-icon,
+:host(.checkbox-indeterminate) .checkbox-icon {
+  border-color: var(--border-color);
+  background: var(--background);
+}
+
+:host .checked {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+:host .indeterminate {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+:host(.checkbox-checked) .checked {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(100%);
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  background: var(--border-color);
+  transition: 300ms all ease;
+}
+
+:host(.checkbox-indeterminate) .indeterminate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(100%);
+  width: 12px;
+  height: 2px;
+  border-radius: 4px;
+  background: var(--border-color);
+}
+
+:host(.ion-color) {
+  --border-color: var(--med-color-3);
+}
+
+:host(.med-neutral) {
+  --border-color: var(--med-neutral);
+}

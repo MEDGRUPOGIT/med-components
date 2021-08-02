@@ -1,8 +1,8 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-7a8b7a1c.js';
-import { b as getIonMode } from './ionic-global-366f1c10.js';
-import { i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-abdb9c38.js';
+import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
+import { b as getIonMode } from './ionic-global-10d9ffcf.js';
+import { i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-0b1670e0.js';
 import { s as sanitizeDOMString } from './index-504c5ae5.js';
-import { g as getClassMap, c as createColorClasses } from './theme-0269729a.js';
+import { g as getClassMap, c as createColorClasses } from './theme-3b0eafd2.js';
 import { c as createAnimation } from './animation-f0f182d7.js';
 import './hardware-back-button-3fda9f12.js';
 import './helpers-6b411283.js';
@@ -249,7 +249,7 @@ const Toast = class {
       [`toast-button-group-${side}`]: true
     };
     return (h("div", { class: buttonGroupsClasses }, buttons.map(b => h("button", { type: "button", class: buttonClass(b), tabIndex: 0, onClick: () => this.buttonClick(b), part: "button" }, h("div", { class: "toast-button-inner" }, b.icon &&
-      h("ion-icon", { icon: b.icon, slot: b.text === undefined ? 'icon-only' : undefined, class: "toast-icon" }), b.text), mode === 'md' && h("ion-ripple-effect", { type: b.icon !== undefined && b.text === undefined ? 'unbounded' : 'bounded' })))));
+      h("ion-icon", { icon: b.icon, slot: b.text === undefined ? 'icon-only' : undefined, class: "med-icon toast-icon" }), b.text), mode === 'md' && h("ion-ripple-effect", { type: b.icon !== undefined && b.text === undefined ? 'unbounded' : 'bounded' })))));
   }
   render() {
     const allButtons = this.getButtons();

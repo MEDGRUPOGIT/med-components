@@ -5,15 +5,15 @@ import { createColorClasses } from '../../utils/theme';
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export class Badge {
-  constructor() {
-    this.invert = false;
-  }
   render() {
+    const { color, neutral, dsName, dsSize } = this;
     const mode = getIonMode(this);
-    return (h(Host, { class: createColorClasses(this.color, {
+    return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
         [mode]: true,
-        'invert': this.invert,
-      }) },
+        'med-badge': true,
+        [`med-badge--${dsName}`]: dsName !== undefined,
+        [`med-badge--${dsSize}`]: dsSize !== undefined,
+      }, neutral) },
       h("slot", null)));
   }
   static get is() { return "ion-badge"; }
@@ -27,57 +27,61 @@ export class Badge {
     "md": ["badge.md.css"]
   }; }
   static get properties() { return {
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Neutral",
+        "resolved": "string | undefined",
+        "references": {
+          "Neutral": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor neutra do componente."
+      },
+      "attribute": "neutral",
+      "reflect": false
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
     "dsSize": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | undefined",
+        "original": "'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
         "references": {}
       },
       "required": false,
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a varia\u00E7\u00E3o de tamanho do componente."
       },
       "attribute": "ds-size",
       "reflect": false
-    },
-    "fill": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'outline'",
-        "resolved": "\"outline\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "fill",
-      "reflect": false
-    },
-    "invert": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "invert",
-      "reflect": true,
-      "defaultValue": "false"
     },
     "color": {
       "type": "string",

@@ -1,5 +1,5 @@
-import { c as writeTask, r as registerInstance, e as createEvent, f as readTask, h, i as getElement, H as Host } from './index-7a8b7a1c.js';
-import { a as isPlatform, b as getIonMode, c as config } from './ionic-global-366f1c10.js';
+import { c as writeTask, r as registerInstance, e as createEvent, f as readTask, h, i as getElement, H as Host } from './index-70672e81.js';
+import { a as isPlatform, b as getIonMode, c as config } from './ionic-global-10d9ffcf.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-c3ea3c34.js';
 import { c as componentOnReady, j as clamp, g as getElementRoot, r as raf } from './helpers-6b411283.js';
 import { d as hapticImpact } from './haptic-3835cb22.js';
@@ -799,8 +799,8 @@ const RefresherContent = class {
     const mode = getIonMode(this);
     return (h(Host, { class: mode }, h("div", { class: "refresher-pulling" }, this.pullingIcon && hasSpinner &&
       h("div", { class: "refresher-pulling-icon" }, h("div", { class: "spinner-arrow-container" }, h("ion-spinner", { name: this.pullingIcon, paused: true }), mode === 'md' && this.pullingIcon === 'circular' &&
-        h("div", { class: "arrow-container" }, h("ion-icon", { name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
-      h("div", { class: "refresher-pulling-icon" }, h("ion-icon", { icon: this.pullingIcon, lazy: false })), this.pullingText &&
+        h("div", { class: "arrow-container" }, h("ion-icon", { class: "med-icon", name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
+      h("div", { class: "refresher-pulling-icon" }, h("ion-icon", { class: "med-icon", icon: this.pullingIcon, lazy: false })), this.pullingText &&
       h("div", { class: "refresher-pulling-text", innerHTML: sanitizeDOMString(this.pullingText) })), h("div", { class: "refresher-refreshing" }, this.refreshingSpinner &&
       h("div", { class: "refresher-refreshing-icon" }, h("ion-spinner", { name: this.refreshingSpinner })), this.refreshingText &&
       h("div", { class: "refresher-refreshing-text", innerHTML: sanitizeDOMString(this.refreshingText) }))));

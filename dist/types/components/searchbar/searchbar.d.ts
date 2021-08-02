@@ -1,9 +1,10 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { AutocompleteTypes, Color, SearchbarChangeEventDetail, StyleEventDetail } from '../../interface';
+import { AutocompleteTypes, Color, SearchbarChangeEventDetail, StyleEventDetail, Neutral } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export declare class Searchbar implements ComponentInterface {
+  neutral?: Neutral;
   private nativeInput?;
   private isCancelVisible;
   private shouldAlignLeft;

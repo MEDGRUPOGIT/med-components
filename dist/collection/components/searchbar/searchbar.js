@@ -329,7 +329,7 @@ export class Searchbar {
     const shouldShowCancelButton = this.shouldShowCancelButton();
     const cancelButton = (this.showCancelButton !== 'never') && (h("button", { "aria-label": cancelButtonText, "aria-hidden": shouldShowCancelButton ? undefined : 'true', type: "button", tabIndex: mode === 'ios' && !shouldShowCancelButton ? -1 : undefined, onMouseDown: this.onCancelSearchbar, onTouchStart: this.onCancelSearchbar, class: "searchbar-cancel-button" },
       h("div", { "aria-hidden": "true" }, mode === 'md'
-        ? h("ion-icon", { "aria-hidden": "true", mode: mode, icon: this.cancelButtonIcon, lazy: false })
+        ? h("ion-icon", { class: "med-icon", "aria-hidden": "true", mode: mode, icon: this.cancelButtonIcon, lazy: false })
         : cancelButtonText)));
     return (h(Host, { role: "search", "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(this.color, {
         [mode]: true,
@@ -341,13 +341,13 @@ export class Searchbar {
         'searchbar-has-focus': this.focused,
         'searchbar-should-show-clear': this.shouldShowClearButton(),
         'searchbar-should-show-cancel': this.shouldShowCancelButton()
-      }) },
+      }, this.neutral) },
       h("div", { class: "searchbar-input-container" },
         h("input", { "aria-label": "search text", disabled: this.disabled, ref: el => this.nativeInput = el, class: "searchbar-input", inputMode: this.inputmode, enterKeyHint: this.enterkeyhint, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, placeholder: this.placeholder, type: this.type, value: this.getValue(), autoComplete: this.autocomplete, autoCorrect: this.autocorrect, spellcheck: this.spellcheck }),
         mode === 'md' && cancelButton,
-        h("ion-icon", { "aria-hidden": "true", mode: mode, icon: searchIcon, lazy: false, class: "searchbar-search-icon" }),
+        h("ion-icon", { "aria-hidden": "true", mode: mode, icon: searchIcon, lazy: false, class: "med-icon searchbar-search-icon" }),
         h("button", { "aria-label": "reset", type: "button", "no-blur": true, class: "searchbar-clear-button", onMouseDown: ev => this.onClearInput(ev, true), onTouchStart: ev => this.onClearInput(ev, true) },
-          h("ion-icon", { "aria-hidden": "true", mode: mode, icon: clearIcon, lazy: false, class: "searchbar-clear-icon" }))),
+          h("ion-icon", { "aria-hidden": "true", mode: mode, icon: clearIcon, lazy: false, class: "med-icon searchbar-clear-icon" }))),
       mode === 'ios' && cancelButton));
   }
   static get is() { return "ion-searchbar"; }
@@ -361,6 +361,28 @@ export class Searchbar {
     "md": ["searchbar.ios.css"]
   }; }
   static get properties() { return {
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Neutral",
+        "resolved": "string | undefined",
+        "references": {
+          "Neutral": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "neutral",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,

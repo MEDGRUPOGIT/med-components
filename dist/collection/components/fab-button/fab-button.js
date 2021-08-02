@@ -73,9 +73,9 @@ export class FabButton {
         'ion-activatable': true,
         'ion-focusable': true,
         [`fab-button-${size}`]: size !== undefined,
-      }) },
+      }, this.neutral) },
       h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur, onClick: (ev) => openURL(href, ev, this.routerDirection, this.routerAnimation) }),
-        h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "close-icon", lazy: false }),
+        h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "med-icon close-icon", lazy: false }),
         h("span", { class: "button-inner" },
           h("slot", null),
           h("slot", { name: "label" })),
@@ -124,6 +124,28 @@ export class FabButton {
         "text": ""
       },
       "attribute": "ds-name",
+      "reflect": false
+    },
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Neutral",
+        "resolved": "string | undefined",
+        "references": {
+          "Neutral": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "neutral",
       "reflect": false
     },
     "color": {

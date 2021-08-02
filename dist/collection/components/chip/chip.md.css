@@ -341,48 +341,21 @@
   background: rgba(0, 0, 0, 0.08);
 }
 
-::slotted(ion-icon) {
+/* ::slotted(ion-icon) {
   font-size: 20px;
 }
 
 :host(:not(.ion-color)) ::slotted(ion-icon) {
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, .54);
 }
 
 ::slotted(ion-icon:first-child) {
-  margin-left: -4px;
-  margin-right: 8px;
-  margin-top: -4px;
-  margin-bottom: -4px;
-}
-@supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
-  ::slotted(ion-icon:first-child) {
-    margin-left: unset;
-    margin-right: unset;
-    -webkit-margin-start: -4px;
-    margin-inline-start: -4px;
-    -webkit-margin-end: 8px;
-    margin-inline-end: 8px;
-  }
+  @include margin(-4px, 8px, -4px, -4px);
 }
 
 ::slotted(ion-icon:last-child) {
-  margin-left: 8px;
-  margin-right: -4px;
-  margin-top: -4px;
-  margin-bottom: -4px;
-}
-@supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
-  ::slotted(ion-icon:last-child) {
-    margin-left: unset;
-    margin-right: unset;
-    -webkit-margin-start: 8px;
-    margin-inline-start: 8px;
-    -webkit-margin-end: -4px;
-    margin-inline-end: -4px;
-  }
-}
-
+  @include margin(-4px, -4px, -4px, 8px);
+} */
 ::slotted(ion-avatar) {
   width: 24px;
   height: 24px;
@@ -434,75 +407,51 @@
   --background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);
 }
 
-@media (any-hover: hover) {
+/* @media (any-hover: hover) {
   :host(:hover) {
     --background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.16);
   }
 
   :host(.ion-color:hover) {
-    background: rgba(var(--ion-color-base-rgb), 0.12);
+    background: current-color(base, .12);
   }
 
   :host(.chip-outline:not(.ion-color):hover) {
-    background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.04);
+    background: rgba($text-color-rgb, .04);
   }
-}
+} */
 :host {
-  --color: var(--med-color-neutral-dark-30, #474747);
-  --background: var(--med-color-neutral-light-30, #d6d6d6);
-  --ripple-color: rgba(var(--med-color-brand-primary-dark-rgb, 19, 117, 133), 0.5);
+  /**
+   * OBS: sobreescrita das css custom properties do ionic.
+   * @prop --background: Define a cor de background do componente.
+   * @prop --color: Define a cor de texto do componente.
+   */
+  --background: var(--med-color-neutral-7);
+  --color: var(--med-color-neutral-3);
+  /**
+   * OBS: design system css custom properties.
+   * @prop --border-color: Define a cor da borda do componente.
+   */
+  --border-color: var(--med-color-neutral-7);
+  --ripple-color: transparent;
+}
+
+:host(.med-chip) {
   height: 32px;
   padding: 4px 8px;
   background: var(--background);
   border-radius: 31.25em;
+  border-color: var(--border-color);
+  border-width: 1px;
+  border-style: solid;
   font-size: 14px;
   font-weight: 400;
   line-height: 100%;
   color: var(--color);
 }
 
-:host(.ion-activated) {
-  --background: var(--med-color-neutral-light-30, #d6d6d6);
-}
-
-@media (any-hover: hover) {
-  :host(:hover) {
-    --background: var(--med-color-neutral-light-30, #d6d6d6);
-  }
-}
-:host(.ion-color) {
-  background: var(--med-color-lightest);
-  color: var(--med-color-dark);
-  border-color: var(--med-color-medium);
-}
-
-@media (any-hover: hover) {
-  :host(:hover.ion-color:hover) {
-    background: var(--med-color-lightest);
-  }
-}
-:host(.chip-outline) {
-  border-color: var(--med-color-neutral-light-30, #d6d6d6);
-  color: var(--med-color-neutral-dark-30, #474747);
-}
-
-:host(.chip-outline) ::slotted(ion-icon) {
-  color: var(--med-color-neutral-dark-30, #474747);
-}
-
-@media (any-hover: hover) {
-  :host(.chip-outline:hover) {
-    background: transparent !important;
-  }
-}
-:host(.ion-color.chip-outline) {
-  border-color: var(--med-color-light);
-  color: var(--med-color-dark);
-  background: transparent;
-}
-
-:host(.ion-color.chip-outline) ::slotted(ion-icon) {
-  color: var(--med-color-dark);
+::slotted(ion-icon) {
+  font-size: 20px;
 }
 
 ::slotted(ion-icon:last-child) {
@@ -517,4 +466,77 @@
 
 ::slotted(ion-label) {
   margin: 4px;
+}
+
+@media (any-hover: hover) {
+  :host(.med-chip:hover) {
+    --border-color: var(--med-color-neutral-7);
+    --background: var(--med-color-neutral-7);
+    --color: var(--med-color-neutral-3);
+  }
+}
+:host(.med-chip.ion-color) {
+  --border-color: var(--med-color-3);
+  background: var(--med-color-3);
+  color: var(--med-color-contrast-1);
+}
+
+@media (any-hover: hover) {
+  :host(.med-chip.ion-color:hover) {
+    --border-color: var(--med-color-3);
+    background: var(--med-color-3);
+    color: var(--med-color-contrast-1);
+  }
+}
+:host(.med-chip.med-neutral) {
+  --border-color: var(--med-neutral);
+  background: var(--med-neutral);
+  color: var(--med-neutral-contrast);
+}
+
+@media (any-hover: hover) {
+  :host(.med-chip.ion-neutral:hover) {
+    --border-color: var(--med-neutral);
+    background: var(--med-neutral);
+    color: var(--med-neutral-contrast);
+  }
+}
+:host(.med-chip--secondary) {
+  --border-color: var(--med-color-neutral-7);
+  --background: transparent;
+  --color: var(--med-color-neutral-7);
+}
+
+@media (any-hover: hover) {
+  :host(.med-chip--secondary:hover) {
+    --border-color: var(--med-color-neutral-7);
+    --background: transparent;
+    --color: var(--med-color-neutral-7);
+  }
+}
+:host(.med-chip--secondary.ion-color) {
+  --border-color: var(--med-color-3);
+  background: transparent;
+  color: var(--med-color-3);
+}
+
+@media (any-hover: hover) {
+  :host(.med-chip--secondary.ion-color:hover) {
+    --border-color: var(--med-color-3);
+    background: transparent;
+    color: var(--med-color-3);
+  }
+}
+:host(.med-chip--secondary.med-neutral) {
+  --border-color: var(--med-neutral);
+  background: transparent;
+  color: var(--med-neutral);
+}
+
+@media (any-hover: hover) {
+  :host(.med-chip--secondary.ion-neutral:hover) {
+    --border-color: var(--med-neutral);
+    background: transparent;
+    color: var(--med-neutral);
+  }
 }

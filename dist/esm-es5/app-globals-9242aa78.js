@@ -1,1 +1,0 @@
-import{i as initialize}from"./ionic-global-366f1c10.js";var globalScripts=initialize;export{globalScripts as g};

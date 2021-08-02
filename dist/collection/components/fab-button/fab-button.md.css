@@ -555,7 +555,7 @@ ion-ripple-effect {
   }
 }
 :host {
-  --background: var(--med-color-neutral-dark-40, #292929);
+  --background: var(--med-color-brand-gradient, linear-gradient(to right, #14a2b8, #0a515c));
   --background-activated-opacity: 0.32;
   --background-hover-opacity: 0.16;
   --padding-bottom: 8px;
@@ -569,6 +569,7 @@ ion-ripple-effect {
   min-width: 40px;
   width: auto;
   max-width: 100%;
+  text-transform: uppercase;
 }
 :host .button-native {
   contain: none;
@@ -586,7 +587,7 @@ ion-ripple-effect {
 }
 
 ::slotted(ion-label) {
-  color: var(--med-color-neutral-light-prime, #fafafa);
+  color: var(--med-neutral-contrast);
   padding-left: 8px;
   padding-right: 8px;
   font-size: 14px;
@@ -618,4 +619,14 @@ ion-ripple-effect {
 
 :host(.fab-button-close-active) ::slotted([slot=label]) {
   transform: scale(0.4) rotateZ(-45deg);
+}
+
+:host(.ion-color) .button-native {
+  color: var(--med-color-contrast-1);
+  background: var(--med-color-gradient);
+}
+
+:host(.med-neutral) .button-native {
+  color: var(--med-neutral-contrast);
+  background: var(--med-neutral);
 }
