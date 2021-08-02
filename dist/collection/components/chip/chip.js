@@ -1,0 +1,140 @@
+import { Component, Host, Prop, h } from '@stencil/core';
+import { getIonMode } from '../../global/ionic-global';
+import { createColorClasses } from '../../utils/theme';
+/**
+ * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
+ */
+export class Chip {
+  constructor() {
+    /**
+     * Display an outline style button.
+     */
+    this.outline = false;
+    /**
+     * If `true`, the user cannot interact with the chip.
+     */
+    this.disabled = false;
+  }
+  render() {
+    const { color, neutral, dsName } = this;
+    const mode = getIonMode(this);
+    return (h(Host, { "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(color, {
+        [mode]: true,
+        'chip-outline': this.outline,
+        'chip-disabled': this.disabled,
+        'ion-activatable': false,
+        'med-chip': true,
+        [`med-chip--${dsName}`]: dsName !== undefined,
+      }, neutral) },
+      h("slot", null)));
+  }
+  static get is() { return "ion-chip"; }
+  static get encapsulation() { return "shadow"; }
+  static get originalStyleUrls() { return {
+    "ios": ["chip.md.scss"],
+    "md": ["chip.md.scss"]
+  }; }
+  static get styleUrls() { return {
+    "ios": ["chip.md.css"],
+    "md": ["chip.md.css"]
+  }; }
+  static get properties() { return {
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Neutral",
+        "resolved": "string | undefined",
+        "references": {
+          "Neutral": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor neutra do componente."
+      },
+      "attribute": "neutral",
+      "reflect": false
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
+    "color": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Color",
+        "resolved": "string | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+      },
+      "attribute": "color",
+      "reflect": false
+    },
+    "outline": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Display an outline style button."
+      },
+      "attribute": "outline",
+      "reflect": false,
+      "defaultValue": "false"
+    },
+    "disabled": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "If `true`, the user cannot interact with the chip."
+      },
+      "attribute": "disabled",
+      "reflect": false,
+      "defaultValue": "false"
+    }
+  }; }
+}
