@@ -23,11 +23,10 @@ const MedContextMenu$1 = class extends HTMLElement {
     }
   }
   render() {
-    const { collapsed } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-context-menu': true,
-        'med-context-menu--collapsed': collapsed
-      }, null) }, h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", "ds-name": "icon-only" }, h("ion-icon", { class: "med-icon med-context-menu__icon", name: "med-context-menu" })), h("div", { class: "med-context-menu__content" }, h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-context-menu__inner-button", "ds-name": "icon-only" }, h("ion-icon", { class: "med-icon med-context-menu__inner-icon", name: "med-context-menu" })), h("slot", null))));
+        'med-context-menu--collapsed': this.collapsed
+      }, null) }, h("ion-button", { onIonBlur: (event) => { console.log('blur'); this.toggle(event); }, onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", "ds-name": "icon-only" }, h("ion-icon", { class: "med-icon med-context-menu__icon", name: "med-context-menu" })), h("div", { class: "med-context-menu__content" }, h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-context-menu__inner-button", "ds-name": "icon-only" }, h("ion-icon", { class: "med-icon med-context-menu__inner-icon", name: "med-context-menu" })), h("slot", null))));
   }
   static get style() { return medContextMenuCss; }
 };

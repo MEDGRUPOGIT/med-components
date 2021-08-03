@@ -259,10 +259,7 @@
 
 :host(.med-accordion-item) {
   display: block;
-  overflow: auto;
-  will-change: transform;
   border-radius: var(--border-radius);
-  overflow: hidden;
 }
 :host(.med-accordion-item) .med-accordion-item__header {
   display: flex;
@@ -274,7 +271,6 @@
   align-items: center;
   background-color: var(--background);
   position: relative;
-  z-index: 9;
   border-radius: var(--border-radius);
 }
 :host(.med-accordion-item) .med-accordion-item__heading {
@@ -304,6 +300,10 @@
   border-bottom-right-radius: var(--border-radius);
 }
 
-:host(.mmed-accordion-item--no-border) {
+:host(.med-accordion-item--open) .med-accordion-item__icon {
+  transform: rotate(0);
+}
+
+:host(.med-accordion-item--no-border) {
   border-radius: 0;
 }

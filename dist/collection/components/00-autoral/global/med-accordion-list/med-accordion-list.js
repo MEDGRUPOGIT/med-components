@@ -39,7 +39,7 @@ export class Accordion {
       position: 'relative',
       'z-index': '1',
     };
-    const afterStyles = { transform: `translateY(0)` };
+    const afterStyles = { transform: `none`, 'z-index': null };
     if (isBlocker) {
       beforeStyles['height'] = `${amountToShift}px`;
       afterStyles['height'] = '0px';
@@ -86,6 +86,8 @@ export class Accordion {
   async animateClose(ev) {
     ev.detail.header.style = '';
     const elementsToShift = this.getElementsToShift(ev.detail.element);
+    ev.detail.element.style.overflow = 'hidden';
+    ev.detail.header.style.zIndex = '1';
     this.currentlyOpen = null;
     const amountToShift = ev.detail.content.clientHeight;
     // Now we first animate up the elements beneath the content that was opened to cover it
@@ -95,6 +97,8 @@ export class Accordion {
     const blockerUpAnimation = this.createCloseAnimation(this.blocker, amountToShift);
     const contentUpAnimation = this.createCloseAnimation(ev.detail.content, amountToShift);
     await Promise.all([shiftUpAnimation.play(), blockerUpAnimation.play(), contentUpAnimation.play()]);
+    ev.detail.element.style.overflow = 'initial';
+    ev.detail.header.style.zIndex = 'initial';
     ev.detail.content.style.display = 'none';
     shiftUpAnimation.destroy();
     blockerUpAnimation.destroy();

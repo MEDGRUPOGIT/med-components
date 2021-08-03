@@ -25,15 +25,96 @@ const TemplateDefault = ({size, icon, collapsed}) => {
       }
     </style>
 
-    <ion-app class="storybook-only">
-      <div class="storybook-only__container">
-
+    <ion-app style="height: auto;">
+    <ion-content class="storybook-only__container">
+      <med-accordion-list>
         <!-- component -->
           <med-accordion .size=${size} .icon=${icon} .collapsed=${collapsed}>
 
             <div slot="header">
               <h4>Header</h4>
             </div>
+
+            <med-context-menu class="med-context-menu" slot="button">
+              <ul class="med-context-menu__list">
+                <li class="med-context-menu__item" (click)="detalhesProva()">
+                  <ion-icon class="med-icon  med-context-menu__icon" name="med-filtro"></ion-icon>
+                  <span>{{textos.MENU_FILTRO_SELECIONADO}}</span>
+                </li>
+                <li class="med-context-menu__item" (click)="modalRenomearProva()">
+                  <ion-icon class="med-icon med-context-menu__icon" name="med-editar"></ion-icon>
+                  <span>{{textos.MENU_RENOMEAR_PROVA}}</span>
+                </li>
+                <li class="med-context-menu__item" (click)="alertaExclusao()">
+                  <ion-icon class="med-icon med-context-menu__icon" name="med-lixeira"></ion-icon>
+                  <span>{{textos.MENU_EXCLUIR_PROVA}}</span>
+                </li>
+              </ul>
+            </med-context-menu>
+
+            <div slot="content-fake" class="med-accordion__content">
+              <p>Conteúdo em 1 linha que pode ser expandi…</p>
+            </div>
+
+            <div slot="content" class="med-accordion__content">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, nisi quos saepe similique eius illum voluptatibus unde cupiditate sit fuga ea, neque in odit, iste non delectus! Mollitia, ipsam natus delectus maiores veniam quaerat iusto dignissimos beatae cum corporis eaque quod nostrum inventore possimus voluptates dolore velit, praesentium minus adipisci ad enim nihil impedit in rerum. Aut, distinctio velit ab quis iusto dolorum voluptatum reiciendis neque repellendus culpa quo exercitationem corrupti molestiae maxime ut ratione optio. Commodi, vitae obcaecati ullam quis minus consequuntur tempora eum corporis doloribus mollitia voluptatem. Necessitatibus dolor vitae id quia facilis tempore explicabo aliquam quisquam dolores.</p>
+            </div>
+
+          </med-accordion>
+          <med-accordion .size=${size} .icon=${icon} .collapsed=${collapsed}>
+
+            <div slot="header">
+              <h4>Header</h4>
+            </div>
+
+            <med-context-menu class="med-context-menu" slot="button">
+              <ul class="med-context-menu__list">
+                <li class="med-context-menu__item" (click)="detalhesProva()">
+                  <ion-icon class="med-icon  med-context-menu__icon" name="med-filtro"></ion-icon>
+                  <span>{{textos.MENU_FILTRO_SELECIONADO}}</span>
+                </li>
+                <li class="med-context-menu__item" (click)="modalRenomearProva()">
+                  <ion-icon class="med-icon med-context-menu__icon" name="med-editar"></ion-icon>
+                  <span>{{textos.MENU_RENOMEAR_PROVA}}</span>
+                </li>
+                <li class="med-context-menu__item" (click)="alertaExclusao()">
+                  <ion-icon class="med-icon med-context-menu__icon" name="med-lixeira"></ion-icon>
+                  <span>{{textos.MENU_EXCLUIR_PROVA}}</span>
+                </li>
+              </ul>
+            </med-context-menu>
+
+            <div slot="content-fake" class="med-accordion__content">
+              <p>Conteúdo em 1 linha que pode ser expandi…</p>
+            </div>
+
+            <div slot="content" class="med-accordion__content">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, nisi quos saepe similique eius illum voluptatibus unde cupiditate sit fuga ea, neque in odit, iste non delectus! Mollitia, ipsam natus delectus maiores veniam quaerat iusto dignissimos beatae cum corporis eaque quod nostrum inventore possimus voluptates dolore velit, praesentium minus adipisci ad enim nihil impedit in rerum. Aut, distinctio velit ab quis iusto dolorum voluptatum reiciendis neque repellendus culpa quo exercitationem corrupti molestiae maxime ut ratione optio. Commodi, vitae obcaecati ullam quis minus consequuntur tempora eum corporis doloribus mollitia voluptatem. Necessitatibus dolor vitae id quia facilis tempore explicabo aliquam quisquam dolores.</p>
+            </div>
+
+          </med-accordion>
+          <med-accordion .size=${size} .icon=${icon} .collapsed=${collapsed}>
+
+            <div slot="header">
+              <h4>Header</h4>
+            </div>
+
+            <med-context-menu class="med-context-menu" slot="button">
+              <ul class="med-context-menu__list">
+                <li class="med-context-menu__item" (click)="detalhesProva()">
+                  <ion-icon class="med-icon  med-context-menu__icon" name="med-filtro"></ion-icon>
+                  <span>{{textos.MENU_FILTRO_SELECIONADO}}</span>
+                </li>
+                <li class="med-context-menu__item" (click)="modalRenomearProva()">
+                  <ion-icon class="med-icon med-context-menu__icon" name="med-editar"></ion-icon>
+                  <span>{{textos.MENU_RENOMEAR_PROVA}}</span>
+                </li>
+                <li class="med-context-menu__item" (click)="alertaExclusao()">
+                  <ion-icon class="med-icon med-context-menu__icon" name="med-lixeira"></ion-icon>
+                  <span>{{textos.MENU_EXCLUIR_PROVA}}</span>
+                </li>
+              </ul>
+            </med-context-menu>
 
             <div slot="content-fake" class="med-accordion__content">
               <p>Conteúdo em 1 linha que pode ser expandi…</p>
@@ -45,8 +126,8 @@ const TemplateDefault = ({size, icon, collapsed}) => {
 
           </med-accordion>
         <!-- component -->
-
-      </div>
+        </med-accordion-list>
+      </ion-content>
     </ion-app>
   `
 }

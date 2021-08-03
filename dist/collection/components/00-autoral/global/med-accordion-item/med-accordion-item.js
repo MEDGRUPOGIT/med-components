@@ -32,10 +32,11 @@ export class MedAccordionItem {
     });
   }
   render() {
-    const { noBorder, icon } = this;
+    const { noBorder, icon, isOpen } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-accordion-item': true,
         'med-accordion-item--no-border': noBorder,
+        'med-accordion-item--open': isOpen,
       }, null) },
       h("div", { class: "med-accordion-item__header", ref: (el) => this.header = el },
         icon === 'left' && h("div", { class: "med-accordion-item__icon-container med-accordion-item__icon-container--left", onClick: () => this.onClick() },
