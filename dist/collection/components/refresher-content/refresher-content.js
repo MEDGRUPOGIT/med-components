@@ -60,7 +60,7 @@ export class RefresherContent {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A static icon or a spinner to display when you begin to pull down.\r\nA spinner name can be provided to gradually show tick marks\r\nwhen pulling down on iOS devices."
+        "text": "A static icon or a spinner to display when you begin to pull down.\nA spinner name can be provided to gradually show tick marks\nwhen pulling down on iOS devices."
       },
       "attribute": "pulling-icon",
       "reflect": false
@@ -82,7 +82,7 @@ export class RefresherContent {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The text you want to display when you begin to pull down.\r\n`pullingText` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+        "text": "The text you want to display when you begin to pull down.\n`pullingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
       },
       "attribute": "pulling-text",
       "reflect": false
@@ -126,7 +126,7 @@ export class RefresherContent {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The text you want to display when performing a refresh.\r\n`refreshingText` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+        "text": "The text you want to display when performing a refresh.\n`refreshingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
       },
       "attribute": "refreshing-text",
       "reflect": false

@@ -4,6 +4,7 @@ import { createColorClasses } from '../../../../utils/theme';
 export class Accordion {
   constructor() {
     this.noBorder = false;
+    this.singleOpen = true;
     this.currentlyOpen = null;
   }
   async handleToggle(ev) {
@@ -17,103 +18,91 @@ export class Accordion {
       await this.animateClose(this.currentlyOpen);
       itemToClose.endTransition();
       itemToClose.setClosed();
-      return true;
     }
   }
-  async animateOpen(ev) {
-    // Close any open item first
-    await this.closeOpenItem();
-    this.currentlyOpen = ev;
+  getElementsToShift(target) {
     // Create an array of all accordion items
     const items = Array.from(this.hostElement.children);
     // Find the item being opened, and create a new array with only the elements beneath the element being opened
     let splitOnIndex = 0;
     items.forEach((item, index) => {
-      if (item === ev.detail.element) {
+      if (item === target) {
         splitOnIndex = index;
       }
     });
-    this.elementsToShift = [...items].splice(splitOnIndex + 1, items.length - (splitOnIndex + 1));
+    return [...items].splice(splitOnIndex + 1, items.length - (splitOnIndex + 1));
+  }
+  createOpenAnimation(elements, amountToShift, isBlocker) {
+    const openAnimationTime = 300;
+    const beforeStyles = {
+      transform: `translateY(-${amountToShift}px)`,
+      position: 'relative',
+      'z-index': '1',
+    };
+    const afterStyles = { transform: `none`, 'z-index': null };
+    if (isBlocker) {
+      beforeStyles['height'] = `${amountToShift}px`;
+      afterStyles['height'] = '0px';
+    }
+    let animation = createAnimation()
+      .addElement(elements)
+      .delay(20)
+      .beforeStyles(beforeStyles)
+      .afterClearStyles(['position', 'z-index'])
+      .afterStyles(afterStyles)
+      .to('transform', 'translateY(0)')
+      .duration(openAnimationTime)
+      .easing('cubic-bezier(0.32,0.72,0,1)');
+    return animation;
+  }
+  async animateOpen(ev) {
+    // Close any open item first
+    if (this.singleOpen) {
+      await this.closeOpenItem();
+    }
+    this.currentlyOpen = ev;
+    const elementsToShift = this.getElementsToShift(ev.detail.element);
     // Set item content to be visible
     ev.detail.content.style.display = 'block';
-    ev.detail.content.header.borde = 'block';
-    // Calculate the amount other items need to be shifted
+    ev.detail.header.style.borderBottomLeftRadius = '0';
+    ev.detail.header.style.borderBottomRightRadius = '0';
     const amountToShift = ev.detail.content.clientHeight;
-    const openAnimationTime = 300;
-    // Initially set all items below the one being opened to cover the new content
-    // but then animate back to their normal position to reveal the content
-    this.shiftDownAnimation = createAnimation()
-      .addElement(this.elementsToShift)
-      .delay(20)
-      .beforeStyles({
-      ['transform']: `translateY(-${amountToShift}px)`,
-      ['position']: 'relative',
-      ['z-index']: '1',
-    })
-      .afterClearStyles(['position', 'z-index'])
-      .to('transform', 'translateY(0)')
-      .duration(openAnimationTime)
+    const shiftDownAnimation = this.createOpenAnimation(elementsToShift, amountToShift, false);
+    const blockerDownAnimation = this.createOpenAnimation(this.blocker, amountToShift, true);
+    await Promise.all([shiftDownAnimation.play(), blockerDownAnimation.play()]);
+    shiftDownAnimation.destroy();
+    blockerDownAnimation.destroy();
+  }
+  createCloseAnimation(elements, amountToShift) {
+    const closeAnimationTime = 300;
+    return createAnimation()
+      .addElement(elements)
+      .afterStyles({ transform: 'translateY(0)' })
+      .to('transform', `translateY(-${amountToShift}px)`)
+      .duration(closeAnimationTime)
       .easing('cubic-bezier(0.32,0.72,0,1)');
-    // This blocker element is placed after the last item in the accordion list
-    // It will change its height to the height of the content being displayed so that
-    // the content doesn't leak out the bottom of the list
-    this.blockerDownAnimation = createAnimation()
-      .addElement(this.blocker)
-      .delay(20)
-      .beforeStyles({
-      ['transform']: `translateY(-${amountToShift}px)`,
-      ['height']: `${amountToShift}px`,
-    })
-      .to('transform', 'translateY(0)')
-      .duration(openAnimationTime)
-      .easing('cubic-bezier(0.32,0.72,0,1)');
-    return await Promise.all([this.shiftDownAnimation.play(), this.blockerDownAnimation.play()]);
+    ;
   }
   async animateClose(ev) {
+    ev.detail.header.style = '';
+    const elementsToShift = this.getElementsToShift(ev.detail.element);
+    ev.detail.element.style.overflow = 'hidden';
+    ev.detail.header.style.zIndex = '1';
     this.currentlyOpen = null;
     const amountToShift = ev.detail.content.clientHeight;
-    const closeAnimationTime = 300;
     // Now we first animate up the elements beneath the content that was opened to cover it
     // and then we set the content back to display: none and remove the transform completely
     // With the content gone, there will be no noticeable position change when removing the transform
-    const shiftUpAnimation = createAnimation()
-      .addElement(this.elementsToShift)
-      .afterStyles({
-      ['transform']: 'translateY(0)',
-    })
-      .to('transform', `translateY(-${amountToShift}px)`)
-      .afterAddWrite(() => {
-      this.shiftDownAnimation.destroy();
-      this.blockerDownAnimation.destroy();
-    })
-      .duration(closeAnimationTime)
-      .easing('cubic-bezier(0.32,0.72,0,1)');
-    const blockerUpAnimation = createAnimation()
-      .addElement(this.blocker)
-      .afterStyles({
-      ['transform']: 'translateY(0)',
-    })
-      .to('transform', `translateY(-${amountToShift}px)`)
-      .duration(closeAnimationTime)
-      .easing('cubic-bezier(0.32,0.72,0,1)');
-    const teste = createAnimation()
-      .addElement(ev.detail.content)
-      .afterStyles({
-      ['transform']: 'translateY(0)',
-    })
-      .to('transform', `translateY(-${amountToShift}px)`)
-      .afterAddWrite(() => {
-      this.shiftDownAnimation.destroy();
-      this.blockerDownAnimation.destroy();
-    })
-      .duration(closeAnimationTime)
-      .easing('cubic-bezier(0.32,0.72,0,1)');
-    await Promise.all([shiftUpAnimation.play(), blockerUpAnimation.play(), teste.play()]);
+    const shiftUpAnimation = this.createCloseAnimation(elementsToShift, amountToShift);
+    const blockerUpAnimation = this.createCloseAnimation(this.blocker, amountToShift);
+    const contentUpAnimation = this.createCloseAnimation(ev.detail.content, amountToShift);
+    await Promise.all([shiftUpAnimation.play(), blockerUpAnimation.play(), contentUpAnimation.play()]);
+    ev.detail.element.style.overflow = 'initial';
+    ev.detail.header.style.zIndex = 'initial';
     ev.detail.content.style.display = 'none';
     shiftUpAnimation.destroy();
     blockerUpAnimation.destroy();
-    teste.destroy();
-    return true;
+    contentUpAnimation.destroy();
   }
   render() {
     const { noBorder, margin } = this;
@@ -151,6 +140,24 @@ export class Accordion {
       "attribute": "no-border",
       "reflect": true,
       "defaultValue": "false"
+    },
+    "singleOpen": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "single-open",
+      "reflect": true,
+      "defaultValue": "true"
     },
     "margin": {
       "type": "string",

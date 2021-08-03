@@ -32,16 +32,18 @@ export class MedAccordionItem {
     });
   }
   render() {
-    const { noBorder, icon } = this;
+    const { noBorder, icon, isOpen } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-accordion-item': true,
         'med-accordion-item--no-border': noBorder,
+        'med-accordion-item--open': isOpen,
       }, null) },
       h("div", { class: "med-accordion-item__header", ref: (el) => this.header = el },
         icon === 'left' && h("div", { class: "med-accordion-item__icon-container med-accordion-item__icon-container--left", onClick: () => this.onClick() },
           h("ion-icon", { class: "med-icon med-accordion-item__icon", name: "med-baixo" })),
         h("div", { class: "med-accordion-item__heading", onClick: () => this.onClick() },
           h("slot", { name: "header" })),
+        h("slot", { name: "button" }),
         (!icon || icon === 'right') && h("div", { class: "med-accordion-item__icon-container med-accordion-item__icon-container--right", onClick: () => this.onClick() },
           h("ion-icon", { class: "med-icon med-accordion-item__icon", name: "med-baixo" }))),
       h("div", { class: "med-accordion-item__content", ref: (el) => this.content = el },

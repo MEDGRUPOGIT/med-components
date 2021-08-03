@@ -413,6 +413,7 @@
   transform-origin: left center;
 }
 
-:host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content * {
+:host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__content *,
+:host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) ::slotted(*) {
   transform: rotate(180deg);
 }

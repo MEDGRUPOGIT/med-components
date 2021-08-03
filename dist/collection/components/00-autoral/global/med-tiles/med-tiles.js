@@ -7,7 +7,7 @@ export class MedTiles {
   }
   render() {
     const { color, neutral, titulo, label, badge, selected, solid } = this;
-    return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
+    return (h(Host, { class: createColorClasses(color, {
         'med-tiles': true,
         'med-solid': solid,
         'med-tiles--selected': selected
