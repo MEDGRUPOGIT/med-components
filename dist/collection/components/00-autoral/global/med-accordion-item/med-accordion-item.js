@@ -42,6 +42,7 @@ export class MedAccordionItem {
           h("ion-icon", { class: "med-icon med-accordion-item__icon", name: "med-baixo" })),
         h("div", { class: "med-accordion-item__heading", onClick: () => this.onClick() },
           h("slot", { name: "header" })),
+        h("slot", { name: "button" }),
         (!icon || icon === 'right') && h("div", { class: "med-accordion-item__icon-container med-accordion-item__icon-container--right", onClick: () => this.onClick() },
           h("ion-icon", { class: "med-icon med-accordion-item__icon", name: "med-baixo" }))),
       h("div", { class: "med-accordion-item__content", ref: (el) => this.content = el },

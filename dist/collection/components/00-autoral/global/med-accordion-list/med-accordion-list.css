@@ -259,7 +259,7 @@
   display: block;
 }
 :host(.med-accordion-list) .med-accordion-list__blocker {
-  background-color: var(--med-color-neutral-1);
+  background-color: var(--background);
   will-change: transform;
   border-radius: 8px;
 }
