@@ -20,15 +20,15 @@
   --med-color-neutral-9-rgb: 42, 40, 34;
   --med-color-neutral-10: #0e0d0b;
   --med-color-neutral-10-rgb: 14, 13, 11;
-  --med-color-brand-contrast-1: #000;
-  --med-color-brand-contrast-2: #fff;
+  --med-color-brand-contrast-1: #fafaf9;
+  --med-color-brand-contrast-2: #161512;
   --med-color-brand-1: #f5dea3;
   --med-color-brand-2: #ebbc47;
   --med-color-brand-3: #b88914;
   --med-color-brand-4: #8a670f;
   --med-color-brand-5: #5c450a;
-  --med-color-brand-contrast-1-rgb: 0, 0, 0;
-  --med-color-brand-contrast-2-rgb: 255, 255, 255;
+  --med-color-brand-contrast-1-rgb: 250, 250, 249;
+  --med-color-brand-contrast-2-rgb: 22, 21, 18;
   --med-color-brand-1-rgb: 245, 222, 163;
   --med-color-brand-2-rgb: 235, 188, 71;
   --med-color-brand-3-rgb: 184, 137, 20;
@@ -38,15 +38,15 @@
 }
 .color-theme-gold.color-scheme-light .ion-color-brand,
 [color-theme=gold][color-scheme=light] .ion-color-brand {
-  --med-color-contrast-1: var(--med-color-brand-contrast-1, #000);
-  --med-color-contrast-2: var(--med-color-brand-contrast-2, #fff);
+  --med-color-contrast-1: var(--med-color-brand-contrast-1, #fafaf9);
+  --med-color-contrast-2: var(--med-color-brand-contrast-2, #161512);
   --med-color-1: var(--med-color-brand-1, #f5dea3);
   --med-color-2: var(--med-color-brand-2, #ebbc47);
   --med-color-3: var(--med-color-brand-3, #b88914);
   --med-color-4: var(--med-color-brand-4, #8a670f);
   --med-color-5: var(--med-color-brand-5, #5c450a);
-  --med-color-contrast-1-rgb: var(--med-color-brand-contrast-1-rgb, 0, 0, 0);
-  --med-color-contrast-2-rgb: var(--med-color-brand-contrast-2-rgb, 255, 255, 255);
+  --med-color-contrast-1-rgb: var(--med-color-brand-contrast-1-rgb, 250, 250, 249);
+  --med-color-contrast-2-rgb: var(--med-color-brand-contrast-2-rgb, 22, 21, 18);
   --med-color-1-rgb: var(--med-color-brand-1-rgb, 245, 222, 163);
   --med-color-2-rgb: var(--med-color-brand-2-rgb, 235, 188, 71);
   --med-color-3-rgb: var(--med-color-brand-3-rgb, 184, 137, 20);
@@ -56,71 +56,71 @@
 }
 .color-theme-gold.color-scheme-light .med-neutral-1,
 [color-theme=gold][color-scheme=light] .med-neutral-1 {
-  --med-neutral: var(--med-neutral-1, #f4f3f1) !important;
-  --med-neutral-rgb: var(--med-neutral-1-rgb, 244, 243, 241) !important;
+  --med-neutral: var(--med-neutral-1, #fafaf9) !important;
+  --med-neutral-rgb: var(--med-neutral-1-rgb, 250, 250, 249) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 .color-theme-gold.color-scheme-light .med-neutral-2,
 [color-theme=gold][color-scheme=light] .med-neutral-2 {
-  --med-neutral: var(--med-neutral-2, #dddad5) !important;
-  --med-neutral-rgb: var(--med-neutral-2-rgb, 221, 218, 213) !important;
+  --med-neutral: var(--med-neutral-2, #e3e2dd) !important;
+  --med-neutral-rgb: var(--med-neutral-2-rgb, 227, 226, 221) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 .color-theme-gold.color-scheme-light .med-neutral-3,
 [color-theme=gold][color-scheme=light] .med-neutral-3 {
-  --med-neutral: var(--med-neutral-3, #c6c2b9) !important;
-  --med-neutral-rgb: var(--med-neutral-3-rgb, 198, 194, 185) !important;
+  --med-neutral: var(--med-neutral-3, #cdc9c1) !important;
+  --med-neutral-rgb: var(--med-neutral-3-rgb, 205, 201, 193) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 .color-theme-gold.color-scheme-light .med-neutral-4,
 [color-theme=gold][color-scheme=light] .med-neutral-4 {
-  --med-neutral: var(--med-neutral-4, #afaa9d) !important;
-  --med-neutral-rgb: var(--med-neutral-4-rgb, 175, 170, 157) !important;
+  --med-neutral: var(--med-neutral-4, #b6b1a5) !important;
+  --med-neutral-rgb: var(--med-neutral-4-rgb, 182, 177, 165) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 .color-theme-gold.color-scheme-light .med-neutral-5,
 [color-theme=gold][color-scheme=light] .med-neutral-5 {
-  --med-neutral: var(--med-neutral-5, #9a9484) !important;
-  --med-neutral-rgb: var(--med-neutral-5-rgb, 154, 148, 132) !important;
+  --med-neutral: var(--med-neutral-5, #9f9989) !important;
+  --med-neutral-rgb: var(--med-neutral-5-rgb, 159, 153, 137) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 .color-theme-gold.color-scheme-light .med-neutral-6,
 [color-theme=gold][color-scheme=light] .med-neutral-6 {
-  --med-neutral: var(--med-neutral-6, #7e7867) !important;
-  --med-neutral-rgb: var(--med-neutral-6-rgb, 126, 120, 103) !important;
+  --med-neutral: var(--med-neutral-6, #87806e) !important;
+  --med-neutral-rgb: var(--med-neutral-6-rgb, 135, 128, 110) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 .color-theme-gold.color-scheme-light .med-neutral-7,
 [color-theme=gold][color-scheme=light] .med-neutral-7 {
-  --med-neutral: var(--med-neutral-7, #625d50) !important;
-  --med-neutral-rgb: var(--med-neutral-7-rgb, 98, 93, 80) !important;
+  --med-neutral: var(--med-neutral-7, #6b6557) !important;
+  --med-neutral-rgb: var(--med-neutral-7-rgb, 107, 101, 87) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 .color-theme-gold.color-scheme-light .med-neutral-8,
 [color-theme=gold][color-scheme=light] .med-neutral-8 {
-  --med-neutral: var(--med-neutral-8, #464339) !important;
-  --med-neutral-rgb: var(--med-neutral-8-rgb, 70, 67, 57) !important;
+  --med-neutral: var(--med-neutral-8, #4f4a40) !important;
+  --med-neutral-rgb: var(--med-neutral-8-rgb, 79, 74, 64) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 .color-theme-gold.color-scheme-light .med-neutral-9,
 [color-theme=gold][color-scheme=light] .med-neutral-9 {
-  --med-neutral: var(--med-neutral-9, #2a2822) !important;
-  --med-neutral-rgb: var(--med-neutral-9-rgb, 42, 40, 34) !important;
+  --med-neutral: var(--med-neutral-9, #323029) !important;
+  --med-neutral-rgb: var(--med-neutral-9-rgb, 50, 48, 41) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 .color-theme-gold.color-scheme-light .med-neutral-10,
 [color-theme=gold][color-scheme=light] .med-neutral-10 {
-  --med-neutral: var(--med-neutral-10, #0e0d0b) !important;
-  --med-neutral-rgb: var(--med-neutral-10-rgb, 14, 13, 11) !important;
+  --med-neutral: var(--med-neutral-10, #161512) !important;
+  --med-neutral-rgb: var(--med-neutral-10-rgb, 22, 21, 18) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }

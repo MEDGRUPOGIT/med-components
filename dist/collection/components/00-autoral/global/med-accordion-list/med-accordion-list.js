@@ -1,10 +1,19 @@
+import { Component, Element, h, Host, Listen, Prop } from '@stencil/core';
 import { createAnimation } from '../../../../utils/animation/animation';
-import { Component, Element, h, Listen, Host, Prop } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
+/**
+  * @slot -
+  */
 export class Accordion {
   constructor() {
-    this.noBorder = false;
+    /**
+      * Define a variação da borda do componente.
+      */
     this.singleOpen = true;
+    /**
+      * Define a variação da borda do componente.
+      */
+    this.noBorder = false;
     this.currentlyOpen = null;
   }
   async handleToggle(ev) {
@@ -84,8 +93,8 @@ export class Accordion {
     ;
   }
   async animateClose(ev) {
-    ev.detail.header.style = '';
     const elementsToShift = this.getElementsToShift(ev.detail.element);
+    ev.detail.header.style = '';
     ev.detail.element.style.overflow = 'hidden';
     ev.detail.header.style.zIndex = '1';
     this.currentlyOpen = null;
@@ -123,23 +132,22 @@ export class Accordion {
     "$": ["med-accordion-list.css"]
   }; }
   static get properties() { return {
-    "noBorder": {
-      "type": "boolean",
+    "margin": {
+      "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
+        "original": "'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
         "references": {}
       },
       "required": false,
-      "optional": false,
+      "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a margin entre os itens do accordion."
       },
-      "attribute": "no-border",
-      "reflect": true,
-      "defaultValue": "false"
+      "attribute": "margin",
+      "reflect": false
     },
     "singleOpen": {
       "type": "boolean",
@@ -153,28 +161,29 @@ export class Accordion {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a varia\u00E7\u00E3o da borda do componente."
       },
       "attribute": "single-open",
       "reflect": true,
       "defaultValue": "true"
     },
-    "margin": {
-      "type": "string",
+    "noBorder": {
+      "type": "boolean",
       "mutable": false,
       "complexType": {
-        "original": "'xs' | 'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
+        "original": "boolean",
+        "resolved": "boolean",
         "references": {}
       },
       "required": false,
-      "optional": true,
+      "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a varia\u00E7\u00E3o da borda do componente."
       },
-      "attribute": "margin",
-      "reflect": false
+      "attribute": "no-border",
+      "reflect": true,
+      "defaultValue": "false"
     }
   }; }
   static get elementRef() { return "hostElement"; }

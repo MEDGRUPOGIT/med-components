@@ -3,20 +3,20 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const animation = require('./animation-dadce649.js');
-const ios_transition = require('./ios.transition-8c58dd85.js');
-const md_transition = require('./md.transition-c4df4663.js');
+const ios_transition = require('./ios.transition-d78dff5b.js');
+const md_transition = require('./md.transition-8a1ac5c9.js');
 const cubicBezier = require('./cubic-bezier-6f49c00a.js');
 const index = require('./index-adf3c519.js');
-const ionicGlobal = require('./ionic-global-6859565f.js');
+const ionicGlobal = require('./ionic-global-c609be80.js');
 const helpers = require('./helpers-ab0db03b.js');
 const index$1 = require('./index-099f2bcb.js');
-const index$2 = require('./index-026be489.js');
-const index$3 = require('./index-826ddc70.js');
-const overlays = require('./overlays-1bb27b20.js');
+const index$2 = require('./index-a0e14e16.js');
+const index$3 = require('./index-0633c29d.js');
+const overlays = require('./overlays-738b020e.js');
 const fontSize_enum = require('./font-size.enum-b5379cd9.js');
 const medRateLike_enum = require('./med-rate-like.enum-6b630019.js');
 require('./gesture-controller-bcfe01ec.js');
-require('./index-02058231.js');
+require('./index-bc2e4509.js');
 require('./hardware-back-button-e370df1e.js');
 
 const setupConfig = (config) => {
@@ -46,17 +46,16 @@ const getMode = () => {
 
 exports.MedColors = void 0;
 (function (MedColors) {
-  MedColors["BRAND_PRIMARY"] = "brand-primary";
-  MedColors["AULA"] = "aula";
+  MedColors["BRAND"] = "brand";
+  MedColors["AULAS"] = "aulas";
   MedColors["MATERIAL"] = "material";
   MedColors["QUESTOES"] = "questoes";
   MedColors["REVALIDA"] = "revalida";
-  MedColors["PROVASCHECKLIST"] = "provaschecklist";
-  MedColors["FEEDBACK_WARNING"] = "feedback-warning";
-  MedColors["FEEDBACK_ERROR"] = "feedback-error";
-  MedColors["FEEDBACK_SUCCESS"] = "feedback-success";
-  MedColors["NEUTRAL_DARK"] = "neutral-dark";
-  MedColors["NEUTRAL_LIGHT"] = "neutral-light";
+  MedColors["PROVAS"] = "provas";
+  MedColors["ATTENTION"] = "attention";
+  MedColors["CAUTION"] = "caution";
+  MedColors["WARNING"] = "warning";
+  MedColors["SUCCESS"] = "success";
 })(exports.MedColors || (exports.MedColors = {}));
 
 exports.createAnimation = animation.createAnimation;

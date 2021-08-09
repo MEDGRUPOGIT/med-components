@@ -40,17 +40,16 @@ const getMode = () => {
 
 var MedColors;
 (function (MedColors) {
-  MedColors["BRAND_PRIMARY"] = "brand-primary";
-  MedColors["AULA"] = "aula";
+  MedColors["BRAND"] = "brand";
+  MedColors["AULAS"] = "aulas";
   MedColors["MATERIAL"] = "material";
   MedColors["QUESTOES"] = "questoes";
   MedColors["REVALIDA"] = "revalida";
-  MedColors["PROVASCHECKLIST"] = "provaschecklist";
-  MedColors["FEEDBACK_WARNING"] = "feedback-warning";
-  MedColors["FEEDBACK_ERROR"] = "feedback-error";
-  MedColors["FEEDBACK_SUCCESS"] = "feedback-success";
-  MedColors["NEUTRAL_DARK"] = "neutral-dark";
-  MedColors["NEUTRAL_LIGHT"] = "neutral-light";
+  MedColors["PROVAS"] = "provas";
+  MedColors["ATTENTION"] = "attention";
+  MedColors["CAUTION"] = "caution";
+  MedColors["WARNING"] = "warning";
+  MedColors["SUCCESS"] = "success";
 })(MedColors || (MedColors = {}));
 
 export { MedColors, getMode, setupConfig };

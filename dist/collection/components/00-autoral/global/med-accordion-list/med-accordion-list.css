@@ -250,9 +250,12 @@
 :host {
   /**
    * @prop --background: Define a cor de background do componente.
+   * @prop --border: Define a borda entre os itens do componente.
+   * @prop --border-radius: Define o border-radius do componente.
    */
   --background: var(--med-color-neutral-1);
   --border: 8px solid var(--med-color-neutral-1);
+  --border-radius: 8px;
 }
 
 :host(.med-accordion-list) {
@@ -261,7 +264,7 @@
 :host(.med-accordion-list) .med-accordion-list__blocker {
   background-color: var(--background);
   will-change: transform;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 :host(.med-accordion-list) ::slotted(med-accordion-item) {
@@ -288,6 +291,6 @@
   --border: 24px solid var(--med-color-neutral-1);
 }
 
-:host(.mmed-accordion-item--no-border) .med-accordion-list__blocker {
-  border-radius: 0;
+:host(.med-accordion-list--no-border) .med-accordion-list__blocker {
+  --border-radius: 0;
 }

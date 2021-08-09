@@ -19,8 +19,8 @@ $med-saturation-neutral: 10%;
 
 $new-medsoft-colors: (
   brand: (
-    contrast-1: #000,
-    contrast-2: #fff,
+    contrast-1: hsl($med-brand, $med-saturation-neutral, 98%),
+    contrast-2: hsl($med-brand, $med-saturation-neutral, 8%),
     1: hsl($med-brand, $med-saturation, $med-lightest),
     2: hsl($med-brand, $med-saturation, $med-light),
     3: hsl($med-brand, $med-saturation, $med-medium),
@@ -31,16 +31,16 @@ $new-medsoft-colors: (
 );
 
 $med-neutrals: (
-  '1': hsl($med-brand, $med-saturation-neutral, 95%),
-  '2': hsl($med-brand, $med-saturation-neutral, 85%),
-  '3': hsl($med-brand, $med-saturation-neutral, 75%),
-  '4': hsl($med-brand, $med-saturation-neutral, 65%),
-  '5': hsl($med-brand, $med-saturation-neutral, 56%),
-  '6': hsl($med-brand, $med-saturation-neutral, 45%),
-  '7': hsl($med-brand, $med-saturation-neutral, 35%),
-  '8': hsl($med-brand, $med-saturation-neutral, 25%),
-  '9': hsl($med-brand,  $med-saturation-neutral, 15%),
-  '10': hsl($med-brand, $med-saturation-neutral, 5%),
+  '1': hsl($med-brand, $med-saturation-neutral, 98%),
+  '2': hsl($med-brand, $med-saturation-neutral, 88%),
+  '3': hsl($med-brand, $med-saturation-neutral, 78%),
+  '4': hsl($med-brand, $med-saturation-neutral, 68%),
+  '5': hsl($med-brand, $med-saturation-neutral, 58%),
+  '6': hsl($med-brand, $med-saturation-neutral, 48%),
+  '7': hsl($med-brand, $med-saturation-neutral, 38%),
+  '8': hsl($med-brand, $med-saturation-neutral, 28%),
+  '9': hsl($med-brand, $med-saturation-neutral, 18%),
+  '10': hsl($med-brand, $med-saturation-neutral, 8%),
 ) !default;
 
 @include new-generate-custom-theme-scheme('medgrupo', 'light');

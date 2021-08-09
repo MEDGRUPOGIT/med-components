@@ -1,10 +1,22 @@
-import { Animation } from '../../../../utils/animation/animation-interface';
 import { ComponentInterface } from '../../../../stencil-public-runtime';
+import { Animation } from '../../../../utils/animation/animation-interface';
+/**
+  * @slot -
+  */
 export declare class Accordion implements ComponentInterface {
   hostElement: HTMLElement;
-  noBorder: boolean;
-  singleOpen: boolean;
+  /**
+    * Define a margin entre os itens do accordion.
+    */
   margin?: 'xs' | 'sm' | 'md' | 'lg';
+  /**
+    * Define a variação da borda do componente.
+    */
+  singleOpen: boolean;
+  /**
+    * Define a variação da borda do componente.
+    */
+  noBorder: boolean;
   private blocker;
   private currentlyOpen;
   handleToggle(ev: any): Promise<void>;

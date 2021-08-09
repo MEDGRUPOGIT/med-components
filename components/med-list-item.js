@@ -18,7 +18,7 @@ const MedListItem$1 = class extends HTMLElement {
         'med-list-item--selected': selected,
         'med-list-item--border-radius': border,
         [`med-list-item--${dsSize}`]: dsSize !== undefined,
-      }, neutral) }, h("slot", { name: "start" }), h("div", { class: "med-list-item__content" }, h("h3", { class: "med-list-item__title" }, titulo), h("h4", { class: "med-list-item__label" }, label)), h("slot", { name: "end" })));
+      }, neutral) }, h("slot", { name: "start" }), h("div", { class: "med-list-item__content" }, h("h3", { class: "med-list-item__title", innerHTML: titulo }), h("h4", { class: "med-list-item__label", innerHTML: label })), h("slot", { name: "end" })));
   }
   static get style() { return medListItemCss; }
 };

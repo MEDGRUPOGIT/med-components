@@ -15,8 +15,8 @@ export class MedListItem {
       }, neutral) },
       h("slot", { name: "start" }),
       h("div", { class: "med-list-item__content" },
-        h("h3", { class: "med-list-item__title" }, titulo),
-        h("h4", { class: "med-list-item__label" }, label)),
+        h("h3", { class: "med-list-item__title", innerHTML: titulo }),
+        h("h4", { class: "med-list-item__label", innerHTML: label })),
       h("slot", { name: "end" })));
   }
   static get is() { return "med-list-item"; }

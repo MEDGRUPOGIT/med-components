@@ -219,7 +219,7 @@ export namespace Components {
         /**
           * Define a variação de tamanho do componente.
          */
-        "dsSize"?: 'xs' | 'sm' | 'md' | 'lg';
+        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
         /**
           * The mode determines which platform styles to use.
          */
@@ -2744,28 +2744,28 @@ export namespace Components {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
-    interface MedAccordion {
-        /**
-          * Define o estado do componente.
-         */
-        "collapsed": boolean;
-        /**
-          * Define o posicionamento do icone do componente.
-         */
-        "icon"?: 'left' | 'right';
-        /**
-          * Define a variação de estilo do componente.
-         */
-        "size"?: 'full';
-        "toggle": () => Promise<void>;
-    }
     interface MedAccordionItem {
+        /**
+          * Define a posição do ícone de abertura do componente.
+         */
         "icon"?: 'left' | 'right';
+        /**
+          * Define a variação da borda do componente.
+         */
         "noBorder": boolean;
     }
     interface MedAccordionList {
+        /**
+          * Define a margin entre os itens do accordion.
+         */
         "margin"?: 'xs' | 'sm' | 'md' | 'lg';
+        /**
+          * Define a variação da borda do componente.
+         */
         "noBorder": boolean;
+        /**
+          * Define a variação da borda do componente.
+         */
         "singleOpen": boolean;
     }
     interface MedAgrupador {
@@ -2905,6 +2905,21 @@ export namespace Components {
     interface MedOffline {
     }
     interface MedOption {
+    }
+    interface MedQuestion {
+        /**
+          * Define o estado do componente.
+         */
+        "collapsed": boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "color"?: Color;
+        /**
+          * Define a cor neutra do componente.
+         */
+        "neutral"?: Neutral;
+        "toggle": (event?: Event | undefined) => Promise<void>;
     }
     interface MedRateBar {
     }
@@ -3472,12 +3487,6 @@ declare global {
         prototype: HTMLIonVirtualScrollElement;
         new (): HTMLIonVirtualScrollElement;
     };
-    interface HTMLMedAccordionElement extends Components.MedAccordion, HTMLStencilElement {
-    }
-    var HTMLMedAccordionElement: {
-        prototype: HTMLMedAccordionElement;
-        new (): HTMLMedAccordionElement;
-    };
     interface HTMLMedAccordionItemElement extends Components.MedAccordionItem, HTMLStencilElement {
     }
     var HTMLMedAccordionItemElement: {
@@ -3622,6 +3631,12 @@ declare global {
         prototype: HTMLMedOptionElement;
         new (): HTMLMedOptionElement;
     };
+    interface HTMLMedQuestionElement extends Components.MedQuestion, HTMLStencilElement {
+    }
+    var HTMLMedQuestionElement: {
+        prototype: HTMLMedQuestionElement;
+        new (): HTMLMedQuestionElement;
+    };
     interface HTMLMedRateBarElement extends Components.MedRateBar, HTMLStencilElement {
     }
     var HTMLMedRateBarElement: {
@@ -3752,7 +3767,6 @@ declare global {
         "ion-toggle": HTMLIonToggleElement;
         "ion-toolbar": HTMLIonToolbarElement;
         "ion-virtual-scroll": HTMLIonVirtualScrollElement;
-        "med-accordion": HTMLMedAccordionElement;
         "med-accordion-item": HTMLMedAccordionItemElement;
         "med-accordion-list": HTMLMedAccordionListElement;
         "med-agrupador": HTMLMedAgrupadorElement;
@@ -3777,6 +3791,7 @@ declare global {
         "med-navbar": HTMLMedNavbarElement;
         "med-offline": HTMLMedOfflineElement;
         "med-option": HTMLMedOptionElement;
+        "med-question": HTMLMedQuestionElement;
         "med-rate-bar": HTMLMedRateBarElement;
         "med-rate-like": HTMLMedRateLikeElement;
         "med-tiles": HTMLMedTilesElement;
@@ -3987,7 +4002,7 @@ declare namespace LocalJSX {
         /**
           * Define a variação de tamanho do componente.
          */
-        "dsSize"?: 'xs' | 'sm' | 'md' | 'lg';
+        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
         /**
           * The mode determines which platform styles to use.
          */
@@ -6437,28 +6452,29 @@ declare namespace LocalJSX {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
-    interface MedAccordion {
-        /**
-          * Define o estado do componente.
-         */
-        "collapsed"?: boolean;
-        /**
-          * Define o posicionamento do icone do componente.
-         */
-        "icon"?: 'left' | 'right';
-        /**
-          * Define a variação de estilo do componente.
-         */
-        "size"?: 'full';
-    }
     interface MedAccordionItem {
+        /**
+          * Define a posição do ícone de abertura do componente.
+         */
         "icon"?: 'left' | 'right';
+        /**
+          * Define a variação da borda do componente.
+         */
         "noBorder"?: boolean;
         "onToggle"?: (event: CustomEvent<any>) => void;
     }
     interface MedAccordionList {
+        /**
+          * Define a margin entre os itens do accordion.
+         */
         "margin"?: 'xs' | 'sm' | 'md' | 'lg';
+        /**
+          * Define a variação da borda do componente.
+         */
         "noBorder"?: boolean;
+        /**
+          * Define a variação da borda do componente.
+         */
         "singleOpen"?: boolean;
     }
     interface MedAgrupador {
@@ -6605,6 +6621,20 @@ declare namespace LocalJSX {
     }
     interface MedOption {
     }
+    interface MedQuestion {
+        /**
+          * Define o estado do componente.
+         */
+        "collapsed"?: boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "color"?: Color;
+        /**
+          * Define a cor neutra do componente.
+         */
+        "neutral"?: Neutral;
+    }
     interface MedRateBar {
     }
     interface MedRateLike {
@@ -6736,7 +6766,6 @@ declare namespace LocalJSX {
         "ion-toggle": IonToggle;
         "ion-toolbar": IonToolbar;
         "ion-virtual-scroll": IonVirtualScroll;
-        "med-accordion": MedAccordion;
         "med-accordion-item": MedAccordionItem;
         "med-accordion-list": MedAccordionList;
         "med-agrupador": MedAgrupador;
@@ -6761,6 +6790,7 @@ declare namespace LocalJSX {
         "med-navbar": MedNavbar;
         "med-offline": MedOffline;
         "med-option": MedOption;
+        "med-question": MedQuestion;
         "med-rate-bar": MedRateBar;
         "med-rate-like": MedRateLike;
         "med-tiles": MedTiles;
@@ -6861,7 +6891,6 @@ declare module "@stencil/core" {
             "ion-toggle": LocalJSX.IonToggle & JSXBase.HTMLAttributes<HTMLIonToggleElement>;
             "ion-toolbar": LocalJSX.IonToolbar & JSXBase.HTMLAttributes<HTMLIonToolbarElement>;
             "ion-virtual-scroll": LocalJSX.IonVirtualScroll & JSXBase.HTMLAttributes<HTMLIonVirtualScrollElement>;
-            "med-accordion": LocalJSX.MedAccordion & JSXBase.HTMLAttributes<HTMLMedAccordionElement>;
             "med-accordion-item": LocalJSX.MedAccordionItem & JSXBase.HTMLAttributes<HTMLMedAccordionItemElement>;
             "med-accordion-list": LocalJSX.MedAccordionList & JSXBase.HTMLAttributes<HTMLMedAccordionListElement>;
             "med-agrupador": LocalJSX.MedAgrupador & JSXBase.HTMLAttributes<HTMLMedAgrupadorElement>;
@@ -6886,6 +6915,7 @@ declare module "@stencil/core" {
             "med-navbar": LocalJSX.MedNavbar & JSXBase.HTMLAttributes<HTMLMedNavbarElement>;
             "med-offline": LocalJSX.MedOffline & JSXBase.HTMLAttributes<HTMLMedOfflineElement>;
             "med-option": LocalJSX.MedOption & JSXBase.HTMLAttributes<HTMLMedOptionElement>;
+            "med-question": LocalJSX.MedQuestion & JSXBase.HTMLAttributes<HTMLMedQuestionElement>;
             "med-rate-bar": LocalJSX.MedRateBar & JSXBase.HTMLAttributes<HTMLMedRateBarElement>;
             "med-rate-like": LocalJSX.MedRateLike & JSXBase.HTMLAttributes<HTMLMedRateLikeElement>;
             "med-tiles": LocalJSX.MedTiles & JSXBase.HTMLAttributes<HTMLMedTilesElement>;

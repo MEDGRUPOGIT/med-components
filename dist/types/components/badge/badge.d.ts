@@ -15,7 +15,7 @@ export declare class Badge implements ComponentInterface {
   /**
    * Define a variação de tamanho do componente.
    */
-  dsSize?: 'xs' | 'sm' | 'md' | 'lg';
+  dsSize?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

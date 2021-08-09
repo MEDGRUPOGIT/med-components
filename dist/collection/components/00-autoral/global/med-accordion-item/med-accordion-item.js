@@ -1,7 +1,15 @@
-import { Component, Element, Event, h, Host, State, Prop } from '@stencil/core';
+import { Component, Element, Event, h, Host, Prop, State } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
+/**
+  * @slot header - Define o conteúdo do header do componente.
+  * @slot button - Se houver botões no componente eles devem ser inseridos nesse slot.
+  * @slot content - Define o conteúdo do componente.
+  */
 export class MedAccordionItem {
   constructor() {
+    /**
+      * Define a variação da borda do componente.
+      */
     this.noBorder = false;
     this.isOpen = false;
     this.isTransitioning = false;
@@ -58,24 +66,6 @@ export class MedAccordionItem {
     "$": ["med-accordion-item.css"]
   }; }
   static get properties() { return {
-    "noBorder": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "no-border",
-      "reflect": true,
-      "defaultValue": "false"
-    },
     "icon": {
       "type": "string",
       "mutable": false,
@@ -88,10 +78,28 @@ export class MedAccordionItem {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a posi\u00E7\u00E3o do \u00EDcone de abertura do componente."
       },
       "attribute": "icon",
       "reflect": true
+    },
+    "noBorder": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o da borda do componente."
+      },
+      "attribute": "no-border",
+      "reflect": true,
+      "defaultValue": "false"
     }
   }; }
   static get states() { return {

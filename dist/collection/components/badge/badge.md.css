@@ -317,7 +317,7 @@
   * @prop --color: Define a cor de texto do componente.
   */
   --background: var(--med-color-brand-3, #14a2b8);
-  --color: var(--med-color-brand-contrast-1, #fff);
+  --color: var(--med-color-brand-contrast-1, #f9fafa);
   --padding-bottom: 0;
   --padding-end: 16px;
   --padding-start: 16px;
@@ -330,7 +330,7 @@
 }
 
 :host(.med-badge) {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 100%;
   border-radius: 31.25em;
@@ -344,11 +344,19 @@
   align-items: center;
 }
 
+:host(.med-badge--xxs) {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  font-size: 10px;
+  font-weight: 300;
+  height: 16px;
+}
+
 :host(.med-badge--xs) {
   --padding-start: 8px;
   --padding-end: 8px;
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 500;
   height: 16px;
 }
 
@@ -356,7 +364,7 @@
   --padding-start: 16px;
   --padding-end: 16px;
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 500;
   height: 24px;
 }
 

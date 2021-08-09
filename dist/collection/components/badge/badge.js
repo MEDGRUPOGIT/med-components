@@ -70,8 +70,8 @@ export class Badge {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'xs' | 'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
+        "original": "'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | undefined",
         "references": {}
       },
       "required": false,

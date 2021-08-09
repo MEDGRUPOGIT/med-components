@@ -20,15 +20,15 @@
   --med-color-neutral-9-rgb: 221, 216, 213;
   --med-color-neutral-10: #f4f2f1;
   --med-color-neutral-10-rgb: 244, 242, 241;
-  --med-color-brand-contrast-1: #000;
-  --med-color-brand-contrast-2: #fff;
+  --med-color-brand-contrast-1: #fafaf9;
+  --med-color-brand-contrast-2: #161412;
   --med-color-brand-1: #642b02;
   --med-color-brand-2: #964003;
   --med-color-brand-3: #c85604;
   --med-color-brand-4: #fb8937;
   --med-color-brand-5: #fdc49b;
-  --med-color-brand-contrast-1-rgb: 0, 0, 0;
-  --med-color-brand-contrast-2-rgb: 255, 255, 255;
+  --med-color-brand-contrast-1-rgb: 250, 250, 249;
+  --med-color-brand-contrast-2-rgb: 22, 20, 18;
   --med-color-brand-1-rgb: 100, 43, 2;
   --med-color-brand-2-rgb: 150, 64, 3;
   --med-color-brand-3-rgb: 200, 86, 4;
@@ -38,15 +38,15 @@
 }
 .color-theme-medgrupo .ion-color-brand,
 [color-theme=medgrupo] .ion-color-brand {
-  --med-color-contrast-1: var(--med-color-brand-contrast-1, #000);
-  --med-color-contrast-2: var(--med-color-brand-contrast-2, #fff);
+  --med-color-contrast-1: var(--med-color-brand-contrast-1, #fafaf9);
+  --med-color-contrast-2: var(--med-color-brand-contrast-2, #161412);
   --med-color-1: var(--med-color-brand-1, #642b02);
   --med-color-2: var(--med-color-brand-2, #964003);
   --med-color-3: var(--med-color-brand-3, #c85604);
   --med-color-4: var(--med-color-brand-4, #fb8937);
   --med-color-5: var(--med-color-brand-5, #fdc49b);
-  --med-color-contrast-1-rgb: var(--med-color-brand-contrast-1-rgb, 0, 0, 0);
-  --med-color-contrast-2-rgb: var(--med-color-brand-contrast-2-rgb, 255, 255, 255);
+  --med-color-contrast-1-rgb: var(--med-color-brand-contrast-1-rgb, 250, 250, 249);
+  --med-color-contrast-2-rgb: var(--med-color-brand-contrast-2-rgb, 22, 20, 18);
   --med-color-1-rgb: var(--med-color-brand-1-rgb, 100, 43, 2);
   --med-color-2-rgb: var(--med-color-brand-2-rgb, 150, 64, 3);
   --med-color-3-rgb: var(--med-color-brand-3-rgb, 200, 86, 4);
@@ -56,71 +56,71 @@
 }
 .color-theme-medgrupo .med-neutral-1,
 [color-theme=medgrupo] .med-neutral-1 {
-  --med-neutral: var(--med-neutral-1, #0e0d0b) !important;
-  --med-neutral-rgb: var(--med-neutral-1-rgb, 14, 13, 11) !important;
+  --med-neutral: var(--med-neutral-1, #161412) !important;
+  --med-neutral-rgb: var(--med-neutral-1-rgb, 22, 20, 18) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 .color-theme-medgrupo .med-neutral-2,
 [color-theme=medgrupo] .med-neutral-2 {
-  --med-neutral: var(--med-neutral-2, #2a2622) !important;
-  --med-neutral-rgb: var(--med-neutral-2-rgb, 42, 38, 34) !important;
+  --med-neutral: var(--med-neutral-2, #322d29) !important;
+  --med-neutral-rgb: var(--med-neutral-2-rgb, 50, 45, 41) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 .color-theme-medgrupo .med-neutral-3,
 [color-theme=medgrupo] .med-neutral-3 {
-  --med-neutral: var(--med-neutral-3, #463f39) !important;
-  --med-neutral-rgb: var(--med-neutral-3-rgb, 70, 63, 57) !important;
+  --med-neutral: var(--med-neutral-3, #4f4640) !important;
+  --med-neutral-rgb: var(--med-neutral-3-rgb, 79, 70, 64) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 .color-theme-medgrupo .med-neutral-4,
 [color-theme=medgrupo] .med-neutral-4 {
-  --med-neutral: var(--med-neutral-4, #625850) !important;
-  --med-neutral-rgb: var(--med-neutral-4-rgb, 98, 88, 80) !important;
+  --med-neutral: var(--med-neutral-4, #6b5f57) !important;
+  --med-neutral-rgb: var(--med-neutral-4-rgb, 107, 95, 87) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 .color-theme-medgrupo .med-neutral-5,
 [color-theme=medgrupo] .med-neutral-5 {
-  --med-neutral: var(--med-neutral-5, #81736a) !important;
-  --med-neutral-rgb: var(--med-neutral-5-rgb, 129, 115, 106) !important;
+  --med-neutral: var(--med-neutral-5, #87786e) !important;
+  --med-neutral-rgb: var(--med-neutral-5-rgb, 135, 120, 110) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 .color-theme-medgrupo .med-neutral-6,
 [color-theme=medgrupo] .med-neutral-6 {
-  --med-neutral: var(--med-neutral-6, #988a81) !important;
-  --med-neutral-rgb: var(--med-neutral-6-rgb, 152, 138, 129) !important;
+  --med-neutral: var(--med-neutral-6, #9f9289) !important;
+  --med-neutral-rgb: var(--med-neutral-6-rgb, 159, 146, 137) !important;
   --med-neutral-contrast: #fff !important;
   --med-neutral-contrast-rgb: 255, 255, 255 !important;
 }
 .color-theme-medgrupo .med-neutral-7,
 [color-theme=medgrupo] .med-neutral-7 {
-  --med-neutral: var(--med-neutral-7, #afa49d) !important;
-  --med-neutral-rgb: var(--med-neutral-7-rgb, 175, 164, 157) !important;
+  --med-neutral: var(--med-neutral-7, #b6aca5) !important;
+  --med-neutral-rgb: var(--med-neutral-7-rgb, 182, 172, 165) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 .color-theme-medgrupo .med-neutral-8,
 [color-theme=medgrupo] .med-neutral-8 {
-  --med-neutral: var(--med-neutral-8, #c6beb9) !important;
-  --med-neutral-rgb: var(--med-neutral-8-rgb, 198, 190, 185) !important;
+  --med-neutral: var(--med-neutral-8, #cdc6c1) !important;
+  --med-neutral-rgb: var(--med-neutral-8-rgb, 205, 198, 193) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 .color-theme-medgrupo .med-neutral-9,
 [color-theme=medgrupo] .med-neutral-9 {
-  --med-neutral: var(--med-neutral-9, #ddd8d5) !important;
-  --med-neutral-rgb: var(--med-neutral-9-rgb, 221, 216, 213) !important;
+  --med-neutral: var(--med-neutral-9, #e3e0dd) !important;
+  --med-neutral-rgb: var(--med-neutral-9-rgb, 227, 224, 221) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }
 .color-theme-medgrupo .med-neutral-10,
 [color-theme=medgrupo] .med-neutral-10 {
-  --med-neutral: var(--med-neutral-10, #f4f2f1) !important;
-  --med-neutral-rgb: var(--med-neutral-10-rgb, 244, 242, 241) !important;
+  --med-neutral: var(--med-neutral-10, #fafaf9) !important;
+  --med-neutral-rgb: var(--med-neutral-10-rgb, 250, 250, 249) !important;
   --med-neutral-contrast: #000 !important;
   --med-neutral-contrast-rgb: 0, 0, 0 !important;
 }

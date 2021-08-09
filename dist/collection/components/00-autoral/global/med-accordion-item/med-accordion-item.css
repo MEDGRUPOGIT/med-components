@@ -249,9 +249,10 @@
 
 :host {
   /**
-   * @prop --background: Define a cor de background do componente.
-   * @prop  --icon-color: Define a cor de do icone do componente.
-   */
+    * @prop --background: Define a cor de background do componente.
+    * @prop --icon-color: Define a cor de do icone do componente.
+    * @prop --border-radius: Define o border-radius do componente.
+    */
   --background: var(--med-color-neutral-2);
   --icon-color: var(--med-color-neutral-10);
   --border-radius: 8px;
@@ -289,7 +290,7 @@
 :host(.med-accordion-item) .med-accordion-item__icon {
   stroke: var(--icon-color);
   font-size: 32px;
-  transform: rotate(180deg);
+  transform: rotate(0);
 }
 :host(.med-accordion-item) .med-accordion-item__content {
   display: none;
@@ -301,9 +302,9 @@
 }
 
 :host(.med-accordion-item--open) .med-accordion-item__icon {
-  transform: rotate(0);
+  transform: rotate(180deg);
 }
 
 :host(.med-accordion-item--no-border) {
-  border-radius: 0;
+  --border-radius: 0;
 }

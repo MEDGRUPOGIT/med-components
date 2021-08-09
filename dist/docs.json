@@ -1,8 +1,8 @@
 {
-  "timestamp": "2021-08-03T18:07:25",
+  "timestamp": "2021-08-09T20:03:14",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.6.0",
+    "version": "2.5.0",
     "typescriptVersion": "4.2.3"
   },
   "components": [
@@ -1501,7 +1501,7 @@
         },
         {
           "name": "dsSize",
-          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
+          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | undefined",
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
@@ -1522,6 +1522,10 @@
             },
             {
               "value": "xs",
+              "type": "string"
+            },
+            {
+              "value": "xxs",
               "type": "string"
             },
             {
@@ -18912,156 +18916,25 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/00-autoral/global/med-accordion/med-accordion.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-accordion",
-      "readme": "# med-accordion\n\n\n",
-      "docs": "",
-      "docsTags": [
-        {
-          "text": "header - Define o conteudo do header.",
-          "name": "slot"
-        },
-        {
-          "text": "button - Se houver algum botão deve ser colocado nesse slot.",
-          "name": "slot"
-        },
-        {
-          "text": "content-fake - Conteúdo que vai aparecer com reticiências.",
-          "name": "slot"
-        },
-        {
-          "text": "content - Conteúdo do componente.",
-          "name": "slot"
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "collapsed",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "collapsed",
-          "reflectToAttr": true,
-          "docs": "Define o estado do componente.",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "icon",
-          "type": "\"left\" | \"right\" | undefined",
-          "mutable": false,
-          "attr": "icon",
-          "reflectToAttr": true,
-          "docs": "Define o posicionamento do icone do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "left",
-              "type": "string"
-            },
-            {
-              "value": "right",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "size",
-          "type": "\"full\" | undefined",
-          "mutable": false,
-          "attr": "size",
-          "reflectToAttr": false,
-          "docs": "Define a variação de estilo do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "full",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [
-        {
-          "name": "toggle",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "toggle() => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "events": [],
-      "listeners": [],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Define a cor de background do componente."
-        },
-        {
-          "name": "--icon-color",
-          "annotation": "prop",
-          "docs": "Define a cor de do icone do componente."
-        }
-      ],
-      "slots": [
-        {
-          "name": "button",
-          "docs": "Se houver algum botão deve ser colocado nesse slot."
-        },
-        {
-          "name": "content",
-          "docs": "Conteúdo do componente."
-        },
-        {
-          "name": "content-fake",
-          "docs": "Conteúdo que vai aparecer com reticiências."
-        },
-        {
-          "name": "header",
-          "docs": "Define o conteudo do header."
-        }
-      ],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "med-accordion": [
-          "ion-icon"
-        ]
-      }
-    },
-    {
       "filePath": "./src/components/00-autoral/global/med-accordion-item/med-accordion-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-accordion-item",
       "readme": "# accordion-item\n\n\n",
       "docs": "",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "text": "header - Define o conteúdo do header do componente.",
+          "name": "slot"
+        },
+        {
+          "text": "button - Se houver botões no componente eles devem ser inseridos nesse slot.",
+          "name": "slot"
+        },
+        {
+          "text": "content - Define o conteúdo do componente.",
+          "name": "slot"
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -19070,7 +18943,7 @@
           "mutable": false,
           "attr": "icon",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "Define a posição do ícone de abertura do componente.",
           "docsTags": [],
           "values": [
             {
@@ -19094,7 +18967,7 @@
           "mutable": false,
           "attr": "no-border",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "Define a variação da borda do componente.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -19126,12 +18999,30 @@
           "docs": "Define a cor de background do componente."
         },
         {
+          "name": "--border-radius",
+          "annotation": "prop",
+          "docs": "Define o border-radius do componente."
+        },
+        {
           "name": "--icon-color",
           "annotation": "prop",
           "docs": "Define a cor de do icone do componente."
         }
       ],
-      "slots": [],
+      "slots": [
+        {
+          "name": "button",
+          "docs": "Se houver botões no componente eles devem ser inseridos nesse slot."
+        },
+        {
+          "name": "content",
+          "docs": "Define o conteúdo do componente."
+        },
+        {
+          "name": "header",
+          "docs": "Define o conteúdo do header do componente."
+        }
+      ],
       "parts": [],
       "dependents": [],
       "dependencies": [
@@ -19149,7 +19040,12 @@
       "tag": "med-accordion-list",
       "readme": "# hv-accordion\n\n\n",
       "docs": "",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "text": "-",
+          "name": "slot"
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -19158,7 +19054,7 @@
           "mutable": false,
           "attr": "margin",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define a margin entre os itens do accordion.",
           "docsTags": [],
           "values": [
             {
@@ -19190,7 +19086,7 @@
           "mutable": false,
           "attr": "no-border",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "Define a variação da borda do componente.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -19207,7 +19103,7 @@
           "mutable": false,
           "attr": "single-open",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "Define a variação da borda do componente.",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -19233,9 +19129,24 @@
           "name": "--background",
           "annotation": "prop",
           "docs": "Define a cor de background do componente."
+        },
+        {
+          "name": "--border",
+          "annotation": "prop",
+          "docs": "Define a borda entre os itens do componente."
+        },
+        {
+          "name": "--border-radius",
+          "annotation": "prop",
+          "docs": "Define o border-radius do componente."
         }
       ],
-      "slots": [],
+      "slots": [
+        {
+          "name": "-",
+          "docs": ""
+        }
+      ],
       "parts": [],
       "dependents": [],
       "dependencies": [],
@@ -21038,6 +20949,105 @@
       "dependencyGraph": {
         "med-alternativas": [
           "med-option"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/00-autoral/team/duvidas/med-question/med-question.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-question",
+      "readme": "# med-question\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "collapsed",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "collapsed",
+          "reflectToAttr": true,
+          "docs": "Define o estado do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "neutral",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "neutral",
+          "reflectToAttr": false,
+          "docs": "Define a cor neutra do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "toggle",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "toggle(event?: Event | undefined) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--color",
+          "annotation": "prop",
+          "docs": "Define a cor do componente."
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-question": [
+          "ion-icon"
         ]
       }
     },
