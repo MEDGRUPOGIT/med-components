@@ -66,4 +66,4 @@ var MedColors;
   MedColors["SUCCESS"] = "success";
 })(MedColors || (MedColors = {}));
 
-export { MedColors, getMode, setupConfig };
+export { MedColors, MedColorsV1, getMode, setupConfig };

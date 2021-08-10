@@ -44,7 +44,7 @@ const getMode = () => {
   return 'md';
 };
 
-var MedColorsV1;
+exports.MedColorsV1 = void 0;
 (function (MedColorsV1) {
   MedColorsV1["BRAND_PRIMARY"] = "brand-primary";
   MedColorsV1["AULA"] = "aula";
@@ -57,7 +57,7 @@ var MedColorsV1;
   MedColorsV1["FEEDBACK_SUCCESS"] = "feedback-success";
   MedColorsV1["NEUTRAL_DARK"] = "neutral-dark";
   MedColorsV1["NEUTRAL_LIGHT"] = "neutral-light";
-})(MedColorsV1 || (MedColorsV1 = {}));
+})(exports.MedColorsV1 || (exports.MedColorsV1 = {}));
 exports.MedColors = void 0;
 (function (MedColors) {
   MedColors["BRAND"] = "brand";
