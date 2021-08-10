@@ -5332,6 +5332,10 @@
         {
           "name": "neutral",
           "description": "Define a cor neutra do componente."
+        },
+        {
+          "name": "texto",
+          "description": "Define o conteúdo de texto do componente."
         }
       ],
       "references": [

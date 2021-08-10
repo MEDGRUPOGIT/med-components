@@ -2919,6 +2919,10 @@ export namespace Components {
           * Define a cor neutra do componente.
          */
         "neutral"?: Neutral;
+        /**
+          * Define o conteúdo de texto do componente.
+         */
+        "texto"?: string;
         "toggle": (event?: Event | undefined) => Promise<void>;
     }
     interface MedRateBar {
@@ -6634,6 +6638,10 @@ declare namespace LocalJSX {
           * Define a cor neutra do componente.
          */
         "neutral"?: Neutral;
+        /**
+          * Define o conteúdo de texto do componente.
+         */
+        "texto"?: string;
     }
     interface MedRateBar {
     }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --med-color-brand-primary-darkest: #074953;
   --med-color-brand-primary-darkest-rgb: 7, 73, 83;
@@ -249,10 +250,12 @@
 
 :host {
   /**
-   * @prop --color: Define a cor do componente.
-   */
+    * @prop --color: Define a cor do componente.
+    * @prop --background: Define a cor de background do componente.
+    * @prop --lines: Define o número de linhas visíveis com reticiências.
+    */
   --color: var(--med-color-neutral-10);
-  --background: var(--med-color-brand-1);
+  --background: var(--med-color-brand-1, #0a515c);
   --lines: 1;
 }
 
@@ -366,17 +369,21 @@
   }
 }
 :host(.ion-color) {
-  --color: var(--med-color-3);
+  --color: var(--med-color-contrast-1);
+  --background: var(--med-color-1);
 }
 
 :host(.ion-color) .med-question__icon {
-  --color: var(--med-color-3);
+  --color: var(--med-color-contrast-1);
+  --background: var(--med-color-1);
 }
 
 :host(.med-neutral) {
-  --color: var(--med-neutral);
+  --color: var(--med-neutral-contrast);
+  --background: var(--med-neutral);
 }
 
 :host(.med-neutral) .med-question__icon {
-  --color: var(--med-neutral);
+  --color: var(--med-neutral-contrast);
+  --background: var(--med-neutral);
 }

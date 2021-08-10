@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-08-09T20:03:14",
+  "timestamp": "2021-08-10T14:32:01",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -21015,6 +21015,25 @@
           ],
           "optional": true,
           "required": false
+        },
+        {
+          "name": "texto",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "texto",
+          "reflectToAttr": false,
+          "docs": "Define o conteúdo de texto do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [
@@ -21034,9 +21053,19 @@
       "listeners": [],
       "styles": [
         {
+          "name": "--background",
+          "annotation": "prop",
+          "docs": "Define a cor de background do componente."
+        },
+        {
           "name": "--color",
           "annotation": "prop",
           "docs": "Define a cor do componente."
+        },
+        {
+          "name": "--lines",
+          "annotation": "prop",
+          "docs": "Define o número de linhas visíveis com reticiências."
         }
       ],
       "slots": [],
