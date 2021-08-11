@@ -776,6 +776,12 @@ ion-ripple-effect {
   --padding: 0 16px;
 }
 
+:host([ds-size=xxxs].med-button-solid) {
+  --min-height: 16px;
+  --font-size: 10px;
+  --padding: 0 8px;
+}
+
 :host(.med-button-outline) {
   --color: var(--med-color-brand-primary-light, #73d6e5);
   --background: transparent;

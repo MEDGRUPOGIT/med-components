@@ -23,7 +23,7 @@ const MedListItemAccordion = class {
         [`med-list-item-accordion--${dsSize}`]: dsSize !== undefined,
         [`med-list-item-accordion--${margin}`]: margin !== undefined,
         'med-list-item-accordion--collapsed': collapsed
-      }, neutral) }, h("div", { class: "med-list-item-accordion__item" }, h("slot", { name: "start" }), h("div", { class: "med-list-item-accordion__content" }, h("h3", { class: "med-list-item-accordion__title" }, titulo), h("h4", { class: "med-list-item-accordion__label" }, label)), h("ion-button", { "ds-name": "icon-only", slot: "left", onClick: (event) => { this.toggle(event); } }, h("ion-icon", { class: "med-icon", name: "med-baixo" }))), h("div", { class: "med-list-item-accordion__sub-item" }, h("slot", { name: "end" }))));
+      }, neutral) }, h("div", { class: "med-list-item-accordion__item" }, h("slot", { name: "start" }), h("div", { class: "med-list-item-accordion__content" }, h("h3", { class: "med-list-item-accordion__title" }, titulo), h("h4", { class: "med-list-item-accordion__label" }, label)), h("ion-button", { "ds-name": "icon-only", slot: "left", onClick: (event) => { this.toggle(event); } }, h("ion-icon", { class: "med-icon", name: "med-cima" }))), h("div", { class: "med-list-item-accordion__sub-item" }, h("slot", { name: "end" }))));
   }
 };
 MedListItemAccordion.style = medListItemAccordionCss;

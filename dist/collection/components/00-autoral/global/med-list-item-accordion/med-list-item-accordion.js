@@ -26,7 +26,7 @@ export class MedListItemAccordion {
           h("h3", { class: "med-list-item-accordion__title" }, titulo),
           h("h4", { class: "med-list-item-accordion__label" }, label)),
         h("ion-button", { "ds-name": "icon-only", slot: "left", onClick: (event) => { this.toggle(event); } },
-          h("ion-icon", { class: "med-icon", name: "med-baixo" }))),
+          h("ion-icon", { class: "med-icon", name: "med-cima" }))),
       h("div", { class: "med-list-item-accordion__sub-item" },
         h("slot", { name: "end" }))));
   }

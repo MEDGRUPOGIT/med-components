@@ -212,7 +212,7 @@ export class Toast {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -269,7 +269,7 @@ export class Toast {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+        "text": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
       },
       "attribute": "css-class",
       "reflect": false
@@ -286,7 +286,7 @@ export class Toast {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "How many milliseconds to wait before hiding the toast. By default, it will show\nuntil `dismiss()` is called."
+        "text": "How many milliseconds to wait before hiding the toast. By default, it will show\r\nuntil `dismiss()` is called."
       },
       "attribute": "duration",
       "reflect": false,
@@ -399,7 +399,7 @@ export class Toast {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, the toast will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+        "text": "If `true`, the toast will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
       },
       "attribute": "translucent",
       "reflect": false,
@@ -523,10 +523,10 @@ export class Toast {
             "text": "Any data to emit in the dismiss events."
           }, {
             "tags": [{
-                "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.",
+                "text": "role The role of the element that is dismissing the toast.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the toast.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.",
                 "name": "param"
               }],
-            "text": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            "text": "The role of the element that is dismissing the toast.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the toast.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
           }],
         "references": {
           "Promise": {
@@ -542,7 +542,7 @@ export class Toast {
             "text": "data Any data to emit in the dismiss events."
           }, {
             "name": "param",
-            "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            "text": "role The role of the element that is dismissing the toast.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the toast.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
           }]
       }
     },

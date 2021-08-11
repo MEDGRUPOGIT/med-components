@@ -18,7 +18,7 @@ export declare class Button implements ComponentInterface, AnchorInterface, Butt
   private inheritedAttributes;
   el: HTMLElement;
   dsName?: 'primary' | 'secondary' | 'tertiary' | 'icon-only' | 'icon-label';
-  dsSize?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
+  dsSize?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
   private iconOnly;
   private iconLabel;
   /**

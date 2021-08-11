@@ -17,7 +17,7 @@ export class MedContextMenu {
     }
   }
   render() {
-    return (h(Host, { class: createColorClasses(null, {
+    return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-context-menu': true,
         'med-context-menu--collapsed': this.collapsed
       }, null) },

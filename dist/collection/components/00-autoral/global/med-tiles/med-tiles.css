@@ -296,7 +296,8 @@
   color: var(--color-label);
   padding-bottom: 16px;
 }
-:host(.med-tiles) .med-tiles__badge {
+
+::slotted(*) {
   margin-left: auto;
 }
 

@@ -6,7 +6,7 @@ export class MedTiles {
     this.selected = false;
   }
   render() {
-    const { color, neutral, titulo, label, badge, selected, solid } = this;
+    const { color, neutral, titulo, label, selected, solid } = this;
     return (h(Host, { class: createColorClasses(color, {
         'med-tiles': true,
         'med-solid': solid,
@@ -16,7 +16,7 @@ export class MedTiles {
       h("div", { class: "med-tiles__content" },
         h("h3", { class: "med-tiles__title", innerHTML: titulo }),
         h("h4", { class: "med-tiles__label", innerHTML: label }),
-        h("ion-badge", { class: "med-tiles__badge", "ds-size": "xs", neutral: neutral, color: color }, badge))));
+        h("slot", null))));
   }
   static get is() { return "med-tiles"; }
   static get encapsulation() { return "shadow"; }

@@ -247,7 +247,7 @@ export namespace Components {
          */
         "download": string | undefined;
         "dsName"?: 'primary' | 'secondary' | 'tertiary' | 'icon-only' | 'icon-label';
-        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
+        "dsSize"?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
         /**
           * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
          */
@@ -4088,7 +4088,7 @@ declare namespace LocalJSX {
          */
         "download"?: string | undefined;
         "dsName"?: 'primary' | 'secondary' | 'tertiary' | 'icon-only' | 'icon-label';
-        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
+        "dsSize"?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
         /**
           * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
          */

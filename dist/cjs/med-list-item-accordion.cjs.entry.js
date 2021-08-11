@@ -27,7 +27,7 @@ const MedListItemAccordion = class {
         [`med-list-item-accordion--${dsSize}`]: dsSize !== undefined,
         [`med-list-item-accordion--${margin}`]: margin !== undefined,
         'med-list-item-accordion--collapsed': collapsed
-      }, neutral) }, index.h("div", { class: "med-list-item-accordion__item" }, index.h("slot", { name: "start" }), index.h("div", { class: "med-list-item-accordion__content" }, index.h("h3", { class: "med-list-item-accordion__title" }, titulo), index.h("h4", { class: "med-list-item-accordion__label" }, label)), index.h("ion-button", { "ds-name": "icon-only", slot: "left", onClick: (event) => { this.toggle(event); } }, index.h("ion-icon", { class: "med-icon", name: "med-baixo" }))), index.h("div", { class: "med-list-item-accordion__sub-item" }, index.h("slot", { name: "end" }))));
+      }, neutral) }, index.h("div", { class: "med-list-item-accordion__item" }, index.h("slot", { name: "start" }), index.h("div", { class: "med-list-item-accordion__content" }, index.h("h3", { class: "med-list-item-accordion__title" }, titulo), index.h("h4", { class: "med-list-item-accordion__label" }, label)), index.h("ion-button", { "ds-name": "icon-only", slot: "left", onClick: (event) => { this.toggle(event); } }, index.h("ion-icon", { class: "med-icon", name: "med-cima" }))), index.h("div", { class: "med-list-item-accordion__sub-item" }, index.h("slot", { name: "end" }))));
   }
 };
 MedListItemAccordion.style = medListItemAccordionCss;
