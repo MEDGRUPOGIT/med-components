@@ -5379,6 +5379,53 @@
       ]
     },
     {
+      "name": "med-rating",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "cabe",
+          "description": "Define o estado cabe ou não cabe recurso."
+        },
+        {
+          "name": "concurso",
+          "description": "Define o nome do concurso."
+        },
+        {
+          "name": "data",
+          "description": "Define a data da postagem."
+        },
+        {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "banca"
+            },
+            {
+              "name": "medgrupo"
+            }
+          ]
+        },
+        {
+          "name": "nome",
+          "description": "Define o nome do aluno."
+        },
+        {
+          "name": "texto",
+          "description": "Define o conteúdo de texto."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-rating/med-rating.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-tiles",
       "description": {
         "kind": "markdown",
@@ -5533,6 +5580,33 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-tooltip-2/med-tooltip-2.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-vote",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "cabe",
+          "description": "Define o conteúdo de texto do componente."
+        },
+        {
+          "name": "nao-cabe",
+          "description": "Define o conteúdo de texto do componente."
+        },
+        {
+          "name": "titulo",
+          "description": "Define o conteúdo de texto do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-vote/med-vote.tsx"
         }
       ]
     },

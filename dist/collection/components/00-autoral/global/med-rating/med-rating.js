@@ -1,33 +1,57 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
-export class MedTiles {
+export class MedRating {
   constructor() {
-    this.solid = false;
-    this.selected = false;
+    /**
+    * Define o estado cabe ou não cabe recurso.
+    */
+    this.cabe = false;
   }
   render() {
-    const { color, neutral, titulo, label, badge, selected, solid } = this;
-    return (h(Host, { class: createColorClasses(color, {
-        'med-tiles': true,
-        'med-solid': solid,
-        'med-tiles--selected': selected
-      }, neutral) },
-      h("div", { class: "med-tiles__border" }),
-      h("div", { class: "med-tiles__content" },
-        h("h3", { class: "med-tiles__title", innerHTML: titulo }),
-        h("h4", { class: "med-tiles__label", innerHTML: label }),
-        h("ion-badge", { class: "med-tiles__badge", "ds-size": "xs", neutral: neutral, color: color }, badge))));
+    const { dsName, nome, data, concurso, texto, cabe } = this;
+    return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
+        'med-rating': true,
+        'med-rating--cabe': cabe,
+        'med-rating--nao-cabe': !cabe,
+        [`med-rating--${dsName}`]: dsName !== undefined,
+      }, null) },
+      h("div", { class: "med-rating__left" },
+        h("ion-icon", { name: cabe ? "med-positivo" : "med-negativo", class: "med-icon med-rating__icon" })),
+      h("div", { class: "med-rating__right" },
+        h("span", { class: "med-rating__name" }, nome),
+        " ",
+        h("span", { class: "med-rating__date" }, data),
+        h("p", { class: "med-rating__concurso" }, concurso),
+        h("span", { class: "med-rating__text" }, texto),
+        (dsName === 'medgrupo') && h("ion-icon", { name: "med-logo", class: "med-icon med-rating__icon-medgrupo" }))));
   }
-  static get is() { return "med-tiles"; }
+  static get is() { return "med-rating"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "$": ["med-tiles.scss"]
+    "$": ["med-rating.scss"]
   }; }
   static get styleUrls() { return {
-    "$": ["med-tiles.css"]
+    "$": ["med-rating.css"]
   }; }
   static get properties() { return {
-    "titulo": {
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'medgrupo' | 'banca'",
+        "resolved": "\"banca\" | \"medgrupo\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
+    "nome": {
       "type": "string",
       "mutable": false,
       "complexType": {
@@ -39,12 +63,12 @@ export class MedTiles {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o nome do aluno."
       },
-      "attribute": "titulo",
+      "attribute": "nome",
       "reflect": false
     },
-    "label": {
+    "data": {
       "type": "string",
       "mutable": false,
       "complexType": {
@@ -56,12 +80,12 @@ export class MedTiles {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a data da postagem."
       },
-      "attribute": "label",
+      "attribute": "data",
       "reflect": false
     },
-    "badge": {
+    "concurso": {
       "type": "string",
       "mutable": false,
       "complexType": {
@@ -73,56 +97,29 @@ export class MedTiles {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o nome do concurso."
       },
-      "attribute": "badge",
+      "attribute": "concurso",
       "reflect": false
     },
-    "neutral": {
+    "texto": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "Neutral",
+        "original": "string",
         "resolved": "string | undefined",
-        "references": {
-          "Neutral": {
-            "location": "import",
-            "path": "../../../../interface"
-          }
-        }
+        "references": {}
       },
       "required": false,
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o conte\u00FAdo de texto."
       },
-      "attribute": "neutral",
+      "attribute": "texto",
       "reflect": false
     },
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "color",
-      "reflect": false
-    },
-    "solid": {
+    "cabe": {
       "type": "boolean",
       "mutable": false,
       "complexType": {
@@ -134,28 +131,10 @@ export class MedTiles {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o estado cabe ou n\u00E3o cabe recurso."
       },
-      "attribute": "solid",
+      "attribute": "cabe",
       "reflect": false,
-      "defaultValue": "false"
-    },
-    "selected": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "selected",
-      "reflect": true,
       "defaultValue": "false"
     }
   }; }

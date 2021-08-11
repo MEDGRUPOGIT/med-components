@@ -19,7 +19,7 @@ const MedTiles = class {
         'med-tiles': true,
         'med-solid': solid,
         'med-tiles--selected': selected
-      }, neutral) }, index.h("div", { class: "med-tiles__border" }), index.h("div", { class: "med-tiles__content" }, index.h("h3", { class: "med-tiles__title" }, titulo), index.h("h4", { class: "med-tiles__label" }, label), index.h("ion-badge", { class: "med-tiles__badge", "ds-size": "xs", neutral: neutral, color: color }, badge))));
+      }, neutral) }, index.h("div", { class: "med-tiles__border" }), index.h("div", { class: "med-tiles__content" }, index.h("h3", { class: "med-tiles__title", innerHTML: titulo }), index.h("h4", { class: "med-tiles__label", innerHTML: label }), index.h("ion-badge", { class: "med-tiles__badge", "ds-size": "xs", neutral: neutral, color: color }, badge))));
   }
 };
 MedTiles.style = medTilesCss;

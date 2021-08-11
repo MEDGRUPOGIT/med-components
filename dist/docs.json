@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-08-10T17:17:04",
+  "timestamp": "2021-08-11T19:30:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -21158,6 +21158,175 @@
       }
     },
     {
+      "filePath": "./src/components/00-autoral/global/med-rating/med-rating.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-rating",
+      "readme": "# med-rating\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "cabe",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "cabe",
+          "reflectToAttr": false,
+          "docs": "Define o estado cabe ou não cabe recurso.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "concurso",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "concurso",
+          "reflectToAttr": false,
+          "docs": "Define o nome do concurso.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "data",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "data",
+          "reflectToAttr": false,
+          "docs": "Define a data da postagem.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"banca\" | \"medgrupo\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "banca",
+              "type": "string"
+            },
+            {
+              "value": "medgrupo",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "nome",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "nome",
+          "reflectToAttr": false,
+          "docs": "Define o nome do aluno.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "texto",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "texto",
+          "reflectToAttr": false,
+          "docs": "Define o conteúdo de texto.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--background",
+          "annotation": "prop",
+          "docs": "Define a cor de background do componente quando cabe ou não cabe."
+        },
+        {
+          "name": "--background-right",
+          "annotation": "prop",
+          "docs": "Define a cor do background do lado direito do componente."
+        },
+        {
+          "name": "--color",
+          "annotation": "prop",
+          "docs": "Define a cor do texto."
+        },
+        {
+          "name": "--color-date",
+          "annotation": "prop",
+          "docs": "Define a cor do texto da data."
+        },
+        {
+          "name": "--color-icon",
+          "annotation": "prop",
+          "docs": "Define a cor do icone."
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-rating": [
+          "ion-icon"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/00-autoral/global/med-tiles/med-tiles.tsx",
       "encapsulation": "shadow",
       "tag": "med-tiles",
@@ -21648,6 +21817,89 @@
         ],
         "ion-button": [
           "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/00-autoral/global/med-vote/med-vote.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-vote",
+      "readme": "# med-vote\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "cabe",
+          "type": "number | undefined",
+          "mutable": false,
+          "attr": "cabe",
+          "reflectToAttr": false,
+          "docs": "Define o conteúdo de texto do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "naoCabe",
+          "type": "number | undefined",
+          "mutable": false,
+          "attr": "nao-cabe",
+          "reflectToAttr": false,
+          "docs": "Define o conteúdo de texto do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "titulo",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "titulo",
+          "reflectToAttr": false,
+          "docs": "Define o conteúdo de texto do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-vote": [
+          "ion-icon"
         ]
       }
     },

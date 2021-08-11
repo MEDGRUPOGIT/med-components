@@ -17,7 +17,7 @@ const MedTiles$1 = class extends HTMLElement {
         'med-tiles': true,
         'med-solid': solid,
         'med-tiles--selected': selected
-      }, neutral) }, h("div", { class: "med-tiles__border" }), h("div", { class: "med-tiles__content" }, h("h3", { class: "med-tiles__title" }, titulo), h("h4", { class: "med-tiles__label" }, label), h("ion-badge", { class: "med-tiles__badge", "ds-size": "xs", neutral: neutral, color: color }, badge))));
+      }, neutral) }, h("div", { class: "med-tiles__border" }), h("div", { class: "med-tiles__content" }, h("h3", { class: "med-tiles__title", innerHTML: titulo }), h("h4", { class: "med-tiles__label", innerHTML: label }), h("ion-badge", { class: "med-tiles__badge", "ds-size": "xs", neutral: neutral, color: color }, badge))));
   }
   static get style() { return medTilesCss; }
 };

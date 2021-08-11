@@ -2930,6 +2930,32 @@ export namespace Components {
     interface MedRateLike {
         "status"?: RateStatus;
     }
+    interface MedRating {
+        /**
+          * Define o estado cabe ou não cabe recurso.
+         */
+        "cabe": boolean;
+        /**
+          * Define o nome do concurso.
+         */
+        "concurso"?: string;
+        /**
+          * Define a data da postagem.
+         */
+        "data"?: string;
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'medgrupo' | 'banca';
+        /**
+          * Define o nome do aluno.
+         */
+        "nome"?: string;
+        /**
+          * Define o conteúdo de texto.
+         */
+        "texto"?: string;
+    }
     interface MedTiles {
         "badge"?: string;
         "color"?: Color;
@@ -2963,6 +2989,20 @@ export namespace Components {
         "buttonRight": { label: string, icon: string };
         "content": string;
         "header": string;
+    }
+    interface MedVote {
+        /**
+          * Define o conteúdo de texto do componente.
+         */
+        "cabe"?: number;
+        /**
+          * Define o conteúdo de texto do componente.
+         */
+        "naoCabe"?: number;
+        /**
+          * Define o conteúdo de texto do componente.
+         */
+        "titulo"?: string;
     }
     interface MontaProvasPlusminus {
         "dsSize"?: 'xl';
@@ -3653,6 +3693,12 @@ declare global {
         prototype: HTMLMedRateLikeElement;
         new (): HTMLMedRateLikeElement;
     };
+    interface HTMLMedRatingElement extends Components.MedRating, HTMLStencilElement {
+    }
+    var HTMLMedRatingElement: {
+        prototype: HTMLMedRatingElement;
+        new (): HTMLMedRatingElement;
+    };
     interface HTMLMedTilesElement extends Components.MedTiles, HTMLStencilElement {
     }
     var HTMLMedTilesElement: {
@@ -3676,6 +3722,12 @@ declare global {
     var HTMLMedTooltip2Element: {
         prototype: HTMLMedTooltip2Element;
         new (): HTMLMedTooltip2Element;
+    };
+    interface HTMLMedVoteElement extends Components.MedVote, HTMLStencilElement {
+    }
+    var HTMLMedVoteElement: {
+        prototype: HTMLMedVoteElement;
+        new (): HTMLMedVoteElement;
     };
     interface HTMLMontaProvasPlusminusElement extends Components.MontaProvasPlusminus, HTMLStencilElement {
     }
@@ -3798,10 +3850,12 @@ declare global {
         "med-question": HTMLMedQuestionElement;
         "med-rate-bar": HTMLMedRateBarElement;
         "med-rate-like": HTMLMedRateLikeElement;
+        "med-rating": HTMLMedRatingElement;
         "med-tiles": HTMLMedTilesElement;
         "med-toolbar": HTMLMedToolbarElement;
         "med-tooltip": HTMLMedTooltipElement;
         "med-tooltip2": HTMLMedTooltip2Element;
+        "med-vote": HTMLMedVoteElement;
         "monta-provas-plusminus": HTMLMontaProvasPlusminusElement;
     }
 }
@@ -6649,6 +6703,32 @@ declare namespace LocalJSX {
         "onMedChange"?: (event: CustomEvent<RateStatus>) => void;
         "status"?: RateStatus;
     }
+    interface MedRating {
+        /**
+          * Define o estado cabe ou não cabe recurso.
+         */
+        "cabe"?: boolean;
+        /**
+          * Define o nome do concurso.
+         */
+        "concurso"?: string;
+        /**
+          * Define a data da postagem.
+         */
+        "data"?: string;
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'medgrupo' | 'banca';
+        /**
+          * Define o nome do aluno.
+         */
+        "nome"?: string;
+        /**
+          * Define o conteúdo de texto.
+         */
+        "texto"?: string;
+    }
     interface MedTiles {
         "badge"?: string;
         "color"?: Color;
@@ -6681,6 +6761,20 @@ declare namespace LocalJSX {
         "buttonRight": { label: string, icon: string };
         "content": string;
         "header": string;
+    }
+    interface MedVote {
+        /**
+          * Define o conteúdo de texto do componente.
+         */
+        "cabe"?: number;
+        /**
+          * Define o conteúdo de texto do componente.
+         */
+        "naoCabe"?: number;
+        /**
+          * Define o conteúdo de texto do componente.
+         */
+        "titulo"?: string;
     }
     interface MontaProvasPlusminus {
         "dsSize"?: 'xl';
@@ -6801,10 +6895,12 @@ declare namespace LocalJSX {
         "med-question": MedQuestion;
         "med-rate-bar": MedRateBar;
         "med-rate-like": MedRateLike;
+        "med-rating": MedRating;
         "med-tiles": MedTiles;
         "med-toolbar": MedToolbar;
         "med-tooltip": MedTooltip;
         "med-tooltip2": MedTooltip2;
+        "med-vote": MedVote;
         "monta-provas-plusminus": MontaProvasPlusminus;
     }
 }
@@ -6926,10 +7022,12 @@ declare module "@stencil/core" {
             "med-question": LocalJSX.MedQuestion & JSXBase.HTMLAttributes<HTMLMedQuestionElement>;
             "med-rate-bar": LocalJSX.MedRateBar & JSXBase.HTMLAttributes<HTMLMedRateBarElement>;
             "med-rate-like": LocalJSX.MedRateLike & JSXBase.HTMLAttributes<HTMLMedRateLikeElement>;
+            "med-rating": LocalJSX.MedRating & JSXBase.HTMLAttributes<HTMLMedRatingElement>;
             "med-tiles": LocalJSX.MedTiles & JSXBase.HTMLAttributes<HTMLMedTilesElement>;
             "med-toolbar": LocalJSX.MedToolbar & JSXBase.HTMLAttributes<HTMLMedToolbarElement>;
             "med-tooltip": LocalJSX.MedTooltip & JSXBase.HTMLAttributes<HTMLMedTooltipElement>;
             "med-tooltip2": LocalJSX.MedTooltip2 & JSXBase.HTMLAttributes<HTMLMedTooltip2Element>;
+            "med-vote": LocalJSX.MedVote & JSXBase.HTMLAttributes<HTMLMedVoteElement>;
             "monta-provas-plusminus": LocalJSX.MontaProvasPlusminus & JSXBase.HTMLAttributes<HTMLMontaProvasPlusminusElement>;
         }
     }
