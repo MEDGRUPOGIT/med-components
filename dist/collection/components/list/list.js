@@ -94,7 +94,7 @@ export class List {
         "return": "Promise<boolean>"
       },
       "docs": {
-        "text": "If `ion-item-sliding` are used inside the list, this method closes\r\nany open sliding item.\r\n\r\nReturns `true` if an actual `ion-item-sliding` is closed.",
+        "text": "If `ion-item-sliding` are used inside the list, this method closes\nany open sliding item.\n\nReturns `true` if an actual `ion-item-sliding` is closed.",
         "tags": []
       }
     }

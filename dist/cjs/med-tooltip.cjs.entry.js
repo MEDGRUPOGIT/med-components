@@ -32,7 +32,7 @@ const MedTooltip = class {
         [`med-tooltip--${placement}`]: placement !== undefined,
         [`med-tooltip--${position}`]: position !== undefined,
         'med-tooltip--collapsed': collapsed
-      }, null) }, index.h("div", { class: "med-tooltip__icon-container" }, index.h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-tooltip__button", "ds-name": "icon-only" }, index.h("slot", { name: "icon" }))), index.h("div", { class: "med-tooltip__content" }, index.h("h3", { class: "med-tooltip__titulo" }, titulo), index.h("p", { class: "med-tooltip__text" }, content), index.h("slot", null))));
+      }, null) }, index.h("div", { class: "med-tooltip__icon-container" }, index.h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-tooltip__button", "ds-name": "icon-only" }, index.h("slot", { name: "icon" }))), index.h("div", { class: "med-tooltip__content" }, titulo && index.h("h3", { class: "med-tooltip__titulo" }, titulo), content && index.h("p", { class: "med-tooltip__text" }, content), index.h("slot", null))));
   }
 };
 MedTooltip.style = medTooltipCss;

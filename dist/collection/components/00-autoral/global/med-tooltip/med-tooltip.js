@@ -29,8 +29,8 @@ export class MedTooltip {
         h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-tooltip__button", "ds-name": "icon-only" },
           h("slot", { name: "icon" }))),
       h("div", { class: "med-tooltip__content" },
-        h("h3", { class: "med-tooltip__titulo" }, titulo),
-        h("p", { class: "med-tooltip__text" }, content),
+        titulo && h("h3", { class: "med-tooltip__titulo" }, titulo),
+        content && h("p", { class: "med-tooltip__text" }, content),
         h("slot", null))));
   }
   static get is() { return "med-tooltip"; }
@@ -98,11 +98,11 @@ export class MedTooltip {
       "mutable": false,
       "complexType": {
         "original": "string",
-        "resolved": "string",
+        "resolved": "string | undefined",
         "references": {}
       },
-      "required": true,
-      "optional": false,
+      "required": false,
+      "optional": true,
       "docs": {
         "tags": [],
         "text": ""
@@ -115,11 +115,11 @@ export class MedTooltip {
       "mutable": false,
       "complexType": {
         "original": "string",
-        "resolved": "string",
+        "resolved": "string | undefined",
         "references": {}
       },
-      "required": true,
-      "optional": false,
+      "required": false,
+      "optional": true,
       "docs": {
         "tags": [],
         "text": ""

@@ -1,22 +1,31 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
 export class MedVote {
+  validarValores(_cabe, _naoCabe) {
+    let valueCabe = _cabe >= 0 && _cabe !== undefined && _cabe !== null ? _cabe : 0;
+    let valueNaoCabe = _naoCabe >= 0 && _naoCabe !== undefined && _naoCabe !== null ? _naoCabe : 0;
+    return { valueCabe, valueNaoCabe };
+  }
   render() {
     const { titulo, cabe, naoCabe } = this;
+    const { valueCabe, valueNaoCabe } = this.validarValores(cabe, naoCabe);
+    const total = valueCabe + valueNaoCabe;
+    const cabeP = ((valueCabe * 100) / total);
+    const naoCabeP = ((valueNaoCabe * 100) / total);
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-vote': true,
       }, null) },
       h("div", { class: "med-vote__row" },
         h("div", { class: "med-vote__icon-container" },
           h("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--cabe", name: "med-positivo" }),
-          h("div", { class: "med-vote__badge med-vote__badge--cabe" }, cabe ? cabe : '0')),
+          h("div", { class: "med-vote__badge med-vote__badge--cabe" }, valueCabe)),
         h("h3", { class: "med-vote__heading", innerHTML: titulo }),
         h("div", { class: "med-vote__icon-container" },
-          h("div", { class: "med-vote__badge med-vote__badge--nao-cabe" }, naoCabe ? naoCabe : '0'),
+          h("div", { class: "med-vote__badge med-vote__badge--nao-cabe" }, valueNaoCabe),
           h("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--nao-cabe", name: "med-negativo" }))),
       h("div", { class: "med-vote__row" },
-        h("div", { class: "med-vote__chart med-vote__chart--cabe" }),
-        h("div", { class: "med-vote__chart med-vote__chart--nao-cabe" }))));
+        h("div", { class: "med-vote__chart med-vote__chart--cabe", style: { width: `${cabeP}%` } }),
+        h("div", { class: "med-vote__chart med-vote__chart--nao-cabe", style: { width: `${naoCabeP}%` } }))));
   }
   static get is() { return "med-vote"; }
   static get encapsulation() { return "shadow"; }

@@ -303,12 +303,10 @@
   height: 2px;
 }
 :host(.med-vote) .med-vote__chart--cabe {
-  width: 50%;
   background-color: var(--med-color-fb-success-3, #5eed71);
   margin-right: 4px;
 }
 :host(.med-vote) .med-vote__chart--nao-cabe {
-  width: 50%;
   background-color: var(--med-color-fb-warning-3, #ed685e);
   margin-left: 4px;
 }

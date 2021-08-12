@@ -12,16 +12,17 @@ export class MedContextMenu {
     this.collapsed = !this.collapsed;
   }
   handleClick(event) {
-    if (!this.collapsed) {
+    console.log(event === null || event === void 0 ? void 0 : event.target);
+    /* if (!this.collapsed) {
       this.toggle(event);
-    }
+    } */
   }
   render() {
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-context-menu': true,
         'med-context-menu--collapsed': this.collapsed
       }, null) },
-      h("ion-button", { onIonBlur: (event) => { console.log('blur'); this.toggle(event); }, onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", "ds-name": "icon-only" },
+      h("ion-button", { onIonBlur: (event) => { this.toggle(event); }, onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", "ds-name": "icon-only" },
         h("ion-icon", { class: "med-icon med-context-menu__icon", name: "med-context-menu" })),
       h("div", { class: "med-context-menu__content" },
         h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-context-menu__inner-button", "ds-name": "icon-only" },
