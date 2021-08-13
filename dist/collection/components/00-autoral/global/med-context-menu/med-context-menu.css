@@ -255,7 +255,7 @@
    */
   --background: var(--med-color-neutral-9);
   --color: var(--med-color-neutral-3);
-  --z-index: 1;
+  --z-index: 999;
 }
 
 :host(.med-context-menu) {

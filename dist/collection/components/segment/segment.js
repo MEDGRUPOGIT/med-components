@@ -344,7 +344,7 @@ export class Segment {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -379,7 +379,7 @@ export class Segment {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, the segment buttons will overflow and the user can swipe to see them.\r\nIn addition, this will disable the gesture to drag the indicator between the buttons\r\nin order to swipe to see hidden buttons."
+        "text": "If `true`, the segment buttons will overflow and the user can swipe to see them.\nIn addition, this will disable the gesture to drag the indicator between the buttons\nin order to swipe to see hidden buttons."
       },
       "attribute": "scrollable",
       "reflect": false,
@@ -432,7 +432,7 @@ export class Segment {
       "composed": true,
       "docs": {
         "tags": [],
-        "text": "Emitted when the value property has changed and any\r\ndragging pointer has been released from `ion-segment`."
+        "text": "Emitted when the value property has changed and any\ndragging pointer has been released from `ion-segment`."
       },
       "complexType": {
         "original": "SegmentChangeEventDetail",

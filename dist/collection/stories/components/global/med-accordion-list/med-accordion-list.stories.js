@@ -7,6 +7,7 @@ export default {
 };
 
 const Template = ({singleOpen, margin, noBorder}) => {
+
   return html`
     <style>
       h4 {
@@ -80,7 +81,7 @@ const Template = ({singleOpen, margin, noBorder}) => {
                   </div>
                   <med-context-menu class="med-context-menu" slot="button">
                     <ul class="med-context-menu__list">
-                      <li class="med-context-menu__item">
+                      <li class="med-context-menu__item" >
                         <ion-icon class="med-icon med-context-menu__icon" name="med-filtro"></ion-icon>
                         <span>Ver filtro selecionado</span>
                       </li>

@@ -265,7 +265,7 @@ export class Input {
             "text": undefined,
             "name": "internal"
           }],
-        "text": "This is required for a WebKit bug which requires us to\r\nblur and focus an input to properly focus the input in\r\nan item with delegatesFocus. It will no longer be needed\r\nwith iOS 14."
+        "text": "This is required for a WebKit bug which requires us to\nblur and focus an input to properly focus the input in\nan item with delegatesFocus. It will no longer be needed\nwith iOS 14."
       },
       "attribute": "fire-focus-events",
       "reflect": false,
@@ -288,7 +288,7 @@ export class Input {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -322,7 +322,7 @@ export class Input {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.\r\nAvailable options: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`."
+        "text": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.\nAvailable options: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`."
       },
       "attribute": "autocapitalize",
       "reflect": false,
@@ -470,7 +470,7 @@ export class Input {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`."
+        "text": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`."
       },
       "attribute": "enterkeyhint",
       "reflect": false
@@ -487,7 +487,7 @@ export class Input {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
+        "text": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
       },
       "attribute": "inputmode",
       "reflect": false
@@ -695,7 +695,7 @@ export class Input {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Works with the min and max attributes to limit the increments at which a value can be set.\r\nPossible values are: `\"any\"` or a positive floating point number."
+        "text": "Works with the min and max attributes to limit the increments at which a value can be set.\nPossible values are: `\"any\"` or a positive floating point number."
       },
       "attribute": "step",
       "reflect": false
@@ -876,7 +876,7 @@ export class Input {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\r\n`input.focus()`.",
+        "text": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.",
         "tags": []
       }
     },
@@ -892,7 +892,7 @@ export class Input {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "Sets blur on the native `input` in `ion-input`. Use this method instead of the global\r\n`input.blur()`.",
+        "text": "Sets blur on the native `input` in `ion-input`. Use this method instead of the global\n`input.blur()`.",
         "tags": [{
             "name": "internal",
             "text": undefined
