@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-08-11T20:04:18",
+  "timestamp": "2021-08-13T17:14:34",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -19488,6 +19488,112 @@
       }
     },
     {
+      "filePath": "./src/components/00-autoral/global/med-avatar/med-avatar.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-avatar",
+      "readme": "# med-avatar\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsSize",
+          "type": "\"base\" | \"lg\" | \"md\" | \"sm\" | \"xl\" | \"xs\" | \"xxl\" | \"xxs\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "Define a variação de tamanho do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "base",
+              "type": "string"
+            },
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            },
+            {
+              "value": "xl",
+              "type": "string"
+            },
+            {
+              "value": "xs",
+              "type": "string"
+            },
+            {
+              "value": "xxl",
+              "type": "string"
+            },
+            {
+              "value": "xxs",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "image",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "image",
+          "reflectToAttr": false,
+          "docs": "Define a imagem do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "letter",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "letter",
+          "reflectToAttr": false,
+          "docs": "Define a imagem do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/00-autoral/global/med-banner/med-banner.tsx",
       "encapsulation": "shadow",
       "tag": "med-banner",
@@ -20745,6 +20851,204 @@
       }
     },
     {
+      "filePath": "./src/components/00-autoral/global/med-message/med-message.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-message",
+      "readme": "# med-message\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "concurso",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "concurso",
+          "reflectToAttr": false,
+          "docs": "Define o nome do concurso.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"comment\" | \"medgrupo\" | \"response\" | \"user-message\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "comment",
+              "type": "string"
+            },
+            {
+              "value": "medgrupo",
+              "type": "string"
+            },
+            {
+              "value": "response",
+              "type": "string"
+            },
+            {
+              "value": "user-message",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "messageId",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "message-id",
+          "reflectToAttr": false,
+          "docs": "Define o id da mensagem.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "nome",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "nome",
+          "reflectToAttr": false,
+          "docs": "Define o nome do aluno.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "texto",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "texto",
+          "reflectToAttr": false,
+          "docs": "Define o conteúdo de texto.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--background",
+          "annotation": "prop",
+          "docs": "Define a cor de background do componente."
+        },
+        {
+          "name": "--background-footer",
+          "annotation": "prop",
+          "docs": "Define a cor do background do footer do componente."
+        },
+        {
+          "name": "--color",
+          "annotation": "prop",
+          "docs": "Define a cor do texto."
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "med-tooltip",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-message": [
+          "med-tooltip",
+          "ion-icon"
+        ],
+        "med-tooltip": [
+          "ion-button"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/00-autoral/global/med-message-list/med-message-list.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-message-list",
+      "readme": "# med-message-list\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--margin-left-comment",
+          "annotation": "prop",
+          "docs": "Define a margin-left dos comentários."
+        },
+        {
+          "name": "--margin-left-response",
+          "annotation": "prop",
+          "docs": "Define a margin-left das respostas."
+        },
+        {
+          "name": "--margin-top-message",
+          "annotation": "prop",
+          "docs": "Define a margin-top da mensagem principal."
+        },
+        {
+          "name": "--margin-top-response",
+          "annotation": "prop",
+          "docs": "Define a margin-top das resposta."
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/00-autoral/global/med-navbar/med-navbar.tsx",
       "encapsulation": "shadow",
       "tag": "med-navbar",
@@ -21559,7 +21863,7 @@
         },
         {
           "name": "content",
-          "type": "string",
+          "type": "string | undefined",
           "mutable": false,
           "attr": "content",
           "reflectToAttr": true,
@@ -21568,10 +21872,13 @@
           "values": [
             {
               "type": "string"
+            },
+            {
+              "type": "undefined"
             }
           ],
-          "optional": false,
-          "required": true
+          "optional": true,
+          "required": false
         },
         {
           "name": "dsName",
@@ -21655,7 +21962,7 @@
         },
         {
           "name": "titulo",
-          "type": "string",
+          "type": "string | undefined",
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": true,
@@ -21664,10 +21971,13 @@
           "values": [
             {
               "type": "string"
+            },
+            {
+              "type": "undefined"
             }
           ],
-          "optional": false,
-          "required": true
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [
@@ -21706,7 +22016,9 @@
       ],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "med-message"
+      ],
       "dependencies": [
         "ion-button"
       ],
@@ -21716,6 +22028,9 @@
         ],
         "ion-button": [
           "ion-ripple-effect"
+        ],
+        "med-message": [
+          "med-tooltip"
         ]
       }
     },

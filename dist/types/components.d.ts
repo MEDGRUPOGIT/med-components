@@ -2796,6 +2796,20 @@ export namespace Components {
     interface MedAutocomplete {
         "list": boolean;
     }
+    interface MedAvatar {
+        /**
+          * Define a variação de tamanho do componente.
+         */
+        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | 'xxl';
+        /**
+          * Define a imagem do componente.
+         */
+        "image"?: string;
+        /**
+          * Define a imagem do componente.
+         */
+        "letter"?: string;
+    }
     interface MedBanner {
         "btnLeft": string;
         "btnRight": string;
@@ -2888,6 +2902,30 @@ export namespace Components {
         "titulo"?: string;
         "toggle": (event?: Event | undefined) => Promise<void>;
     }
+    interface MedMessage {
+        /**
+          * Define o nome do concurso.
+         */
+        "concurso"?: string;
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'medgrupo' | 'response' | 'comment' | 'user-message';
+        /**
+          * Define o id da mensagem.
+         */
+        "messageId"?: string;
+        /**
+          * Define o nome do aluno.
+         */
+        "nome"?: string;
+        /**
+          * Define o conteúdo de texto.
+         */
+        "texto"?: string;
+    }
+    interface MedMessageList {
+    }
     interface MedNavbar {
         /**
           * Define a cor do componente.
@@ -2974,14 +3012,14 @@ export namespace Components {
           * Define o estado do componente.
          */
         "collapsed": boolean;
-        "content": string;
+        "content"?: string;
         /**
           * Define a variação do componente.
          */
         "dsName"?: 'definition';
         "placement"?: 'top' | 'bottom' | 'left' | 'right';
         "position"?: 'start' | 'center' | 'end';
-        "titulo": string;
+        "titulo"?: string;
         "toggle": (event?: Event | undefined) => Promise<void>;
     }
     interface MedTooltip2 {
@@ -3561,6 +3599,12 @@ declare global {
         prototype: HTMLMedAutocompleteElement;
         new (): HTMLMedAutocompleteElement;
     };
+    interface HTMLMedAvatarElement extends Components.MedAvatar, HTMLStencilElement {
+    }
+    var HTMLMedAvatarElement: {
+        prototype: HTMLMedAvatarElement;
+        new (): HTMLMedAvatarElement;
+    };
     interface HTMLMedBannerElement extends Components.MedBanner, HTMLStencilElement {
     }
     var HTMLMedBannerElement: {
@@ -3656,6 +3700,18 @@ declare global {
     var HTMLMedListItemAccordionElement: {
         prototype: HTMLMedListItemAccordionElement;
         new (): HTMLMedListItemAccordionElement;
+    };
+    interface HTMLMedMessageElement extends Components.MedMessage, HTMLStencilElement {
+    }
+    var HTMLMedMessageElement: {
+        prototype: HTMLMedMessageElement;
+        new (): HTMLMedMessageElement;
+    };
+    interface HTMLMedMessageListElement extends Components.MedMessageList, HTMLStencilElement {
+    }
+    var HTMLMedMessageListElement: {
+        prototype: HTMLMedMessageListElement;
+        new (): HTMLMedMessageListElement;
     };
     interface HTMLMedNavbarElement extends Components.MedNavbar, HTMLStencilElement {
     }
@@ -3828,6 +3884,7 @@ declare global {
         "med-agrupador": HTMLMedAgrupadorElement;
         "med-alternativas": HTMLMedAlternativasElement;
         "med-autocomplete": HTMLMedAutocompleteElement;
+        "med-avatar": HTMLMedAvatarElement;
         "med-banner": HTMLMedBannerElement;
         "med-cartao-resposta-item": HTMLMedCartaoRespostaItemElement;
         "med-cartao-resposta-lista": HTMLMedCartaoRespostaListaElement;
@@ -3844,6 +3901,8 @@ declare global {
         "med-list": HTMLMedListElement;
         "med-list-item": HTMLMedListItemElement;
         "med-list-item-accordion": HTMLMedListItemAccordionElement;
+        "med-message": HTMLMedMessageElement;
+        "med-message-list": HTMLMedMessageListElement;
         "med-navbar": HTMLMedNavbarElement;
         "med-offline": HTMLMedOfflineElement;
         "med-option": HTMLMedOptionElement;
@@ -6565,6 +6624,20 @@ declare namespace LocalJSX {
     interface MedAutocomplete {
         "list"?: boolean;
     }
+    interface MedAvatar {
+        /**
+          * Define a variação de tamanho do componente.
+         */
+        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | 'xxl';
+        /**
+          * Define a imagem do componente.
+         */
+        "image"?: string;
+        /**
+          * Define a imagem do componente.
+         */
+        "letter"?: string;
+    }
     interface MedBanner {
         "btnLeft": string;
         "btnRight": string;
@@ -6660,6 +6733,30 @@ declare namespace LocalJSX {
         "selected"?: boolean;
         "titulo"?: string;
     }
+    interface MedMessage {
+        /**
+          * Define o nome do concurso.
+         */
+        "concurso"?: string;
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'medgrupo' | 'response' | 'comment' | 'user-message';
+        /**
+          * Define o id da mensagem.
+         */
+        "messageId"?: string;
+        /**
+          * Define o nome do aluno.
+         */
+        "nome"?: string;
+        /**
+          * Define o conteúdo de texto.
+         */
+        "texto"?: string;
+    }
+    interface MedMessageList {
+    }
     interface MedNavbar {
         /**
           * Define a cor do componente.
@@ -6747,14 +6844,14 @@ declare namespace LocalJSX {
           * Define o estado do componente.
          */
         "collapsed"?: boolean;
-        "content": string;
+        "content"?: string;
         /**
           * Define a variação do componente.
          */
         "dsName"?: 'definition';
         "placement"?: 'top' | 'bottom' | 'left' | 'right';
         "position"?: 'start' | 'center' | 'end';
-        "titulo": string;
+        "titulo"?: string;
     }
     interface MedTooltip2 {
         "buttonLeft": { label: string, icon: string };
@@ -6873,6 +6970,7 @@ declare namespace LocalJSX {
         "med-agrupador": MedAgrupador;
         "med-alternativas": MedAlternativas;
         "med-autocomplete": MedAutocomplete;
+        "med-avatar": MedAvatar;
         "med-banner": MedBanner;
         "med-cartao-resposta-item": MedCartaoRespostaItem;
         "med-cartao-resposta-lista": MedCartaoRespostaLista;
@@ -6889,6 +6987,8 @@ declare namespace LocalJSX {
         "med-list": MedList;
         "med-list-item": MedListItem;
         "med-list-item-accordion": MedListItemAccordion;
+        "med-message": MedMessage;
+        "med-message-list": MedMessageList;
         "med-navbar": MedNavbar;
         "med-offline": MedOffline;
         "med-option": MedOption;
@@ -7000,6 +7100,7 @@ declare module "@stencil/core" {
             "med-agrupador": LocalJSX.MedAgrupador & JSXBase.HTMLAttributes<HTMLMedAgrupadorElement>;
             "med-alternativas": LocalJSX.MedAlternativas & JSXBase.HTMLAttributes<HTMLMedAlternativasElement>;
             "med-autocomplete": LocalJSX.MedAutocomplete & JSXBase.HTMLAttributes<HTMLMedAutocompleteElement>;
+            "med-avatar": LocalJSX.MedAvatar & JSXBase.HTMLAttributes<HTMLMedAvatarElement>;
             "med-banner": LocalJSX.MedBanner & JSXBase.HTMLAttributes<HTMLMedBannerElement>;
             "med-cartao-resposta-item": LocalJSX.MedCartaoRespostaItem & JSXBase.HTMLAttributes<HTMLMedCartaoRespostaItemElement>;
             "med-cartao-resposta-lista": LocalJSX.MedCartaoRespostaLista & JSXBase.HTMLAttributes<HTMLMedCartaoRespostaListaElement>;
@@ -7016,6 +7117,8 @@ declare module "@stencil/core" {
             "med-list": LocalJSX.MedList & JSXBase.HTMLAttributes<HTMLMedListElement>;
             "med-list-item": LocalJSX.MedListItem & JSXBase.HTMLAttributes<HTMLMedListItemElement>;
             "med-list-item-accordion": LocalJSX.MedListItemAccordion & JSXBase.HTMLAttributes<HTMLMedListItemAccordionElement>;
+            "med-message": LocalJSX.MedMessage & JSXBase.HTMLAttributes<HTMLMedMessageElement>;
+            "med-message-list": LocalJSX.MedMessageList & JSXBase.HTMLAttributes<HTMLMedMessageListElement>;
             "med-navbar": LocalJSX.MedNavbar & JSXBase.HTMLAttributes<HTMLMedNavbarElement>;
             "med-offline": LocalJSX.MedOffline & JSXBase.HTMLAttributes<HTMLMedOfflineElement>;
             "med-option": LocalJSX.MedOption & JSXBase.HTMLAttributes<HTMLMedOptionElement>;

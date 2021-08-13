@@ -4820,6 +4820,59 @@
       ]
     },
     {
+      "name": "med-avatar",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-size",
+          "description": "Define a variação de tamanho do componente.",
+          "values": [
+            {
+              "name": "base"
+            },
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            },
+            {
+              "name": "xl"
+            },
+            {
+              "name": "xs"
+            },
+            {
+              "name": "xxl"
+            },
+            {
+              "name": "xxs"
+            }
+          ]
+        },
+        {
+          "name": "image",
+          "description": "Define a imagem do componente."
+        },
+        {
+          "name": "letter",
+          "description": "Define a imagem do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-avatar/med-avatar.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-banner",
       "description": {
         "kind": "markdown",
@@ -5251,6 +5304,69 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-list-item-accordion/med-list-item-accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-message",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "concurso",
+          "description": "Define o nome do concurso."
+        },
+        {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "comment"
+            },
+            {
+              "name": "medgrupo"
+            },
+            {
+              "name": "response"
+            },
+            {
+              "name": "user-message"
+            }
+          ]
+        },
+        {
+          "name": "message-id",
+          "description": "Define o id da mensagem."
+        },
+        {
+          "name": "nome",
+          "description": "Define o nome do aluno."
+        },
+        {
+          "name": "texto",
+          "description": "Define o conteúdo de texto."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-message/med-message.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-message-list",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/00-autoral/global/med-message-list/med-message-list.tsx"
         }
       ]
     },

@@ -54,7 +54,7 @@ const MedFontZoom = class {
     };
   }
   render() {
-    return (index.h(index.Host, { "from-stencil": true }, index.h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, index.h("ion-icon", { class: "med-icon", slot: "start", size: "small", name: "med-fontmenor" }), index.h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontmaior" }))));
+    return (index.h(index.Host, { "from-stencil": true }, index.h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, index.h("ion-icon", { class: "med-icon", slot: "start", size: "small", name: "med-fontemenor" }), index.h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
   }
 };
 MedFontZoom.style = medFontZoomCss;

@@ -48,8 +48,8 @@ export class MedFontZoom {
   render() {
     return (h(Host, { "from-stencil": true },
       h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) },
-        h("ion-icon", { class: "med-icon", slot: "start", size: "small", name: "med-fontmenor" }),
-        h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontmaior" }))));
+        h("ion-icon", { class: "med-icon", slot: "start", size: "small", name: "med-fontemenor" }),
+        h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
   }
   static get is() { return "med-font-zoom"; }
   static get encapsulation() { return "shadow"; }

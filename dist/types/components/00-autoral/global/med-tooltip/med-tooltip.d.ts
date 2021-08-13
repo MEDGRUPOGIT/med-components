@@ -5,8 +5,8 @@ export declare class MedTooltip {
   dsName?: 'definition';
   placement?: 'top' | 'bottom' | 'left' | 'right';
   position?: 'start' | 'center' | 'end';
-  titulo: string;
-  content: string;
+  titulo?: string;
+  content?: string;
   /**
    * Define o estado do componente.
    */
