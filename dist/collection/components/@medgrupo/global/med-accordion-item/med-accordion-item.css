@@ -275,7 +275,7 @@
   background: var(--background-header);
   position: relative;
   border-radius: var(--border-radius);
-  overflow: hidden;
+  overflow: initial;
   transition: background 0.5s linear;
   background-size: 200% 100%;
   background-position: 100% 0;
@@ -325,8 +325,12 @@
   bottom: 0;
 }
 
-:host(.med-accordion-item--open) .med-accordion-item__header {
-  overflow: auto;
+:host(.med-accordion-item--background) .med-accordion-item__header {
+  overflow: hidden;
+}
+
+:host(.med-accordion-item--open.med-accordion-item--background) .med-accordion-item__header {
+  overflow: initial;
 }
 
 :host(.med-accordion-item--open.med-accordion-item--background) .med-accordion-item__header {
