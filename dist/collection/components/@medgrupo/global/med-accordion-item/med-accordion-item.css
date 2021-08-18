@@ -325,6 +325,10 @@
   bottom: 0;
 }
 
+:host(.med-accordion-item--open) .med-accordion-item__header {
+  overflow: auto;
+}
+
 :host(.med-accordion-item--open.med-accordion-item--background) .med-accordion-item__header {
   background-position: 0 0;
 }
