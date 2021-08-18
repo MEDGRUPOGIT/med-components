@@ -276,6 +276,7 @@
   position: relative;
   border-radius: var(--border-radius);
   overflow: initial;
+  z-index: 2;
   transition: background 0.5s linear;
   background-size: 200% 100%;
   background-position: 100% 0;
