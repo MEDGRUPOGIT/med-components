@@ -258,12 +258,13 @@
   --buffer-background: transparent;
   --progress-correct-background: var(--med-color-feedback-success-light, #73e582);
   --percentage-color: var(--med-color-neutral-light-10, #adadad);
+  --height: 8px;
   display: block;
   position: relative;
   contain: strict;
   overflow: hidden;
   width: 100%;
-  height: 8px;
+  height: var(--height);
 }
 
 .progress-container {
@@ -291,7 +292,7 @@
   width: 100%;
   height: 100%;
   border-radius: 100px;
-  height: 8px;
+  height: var(--height);
   background: var(--progress-background);
 }
 .progress__percentage {
@@ -312,4 +313,20 @@
 
 :host(.ion-color) {
   --progress-background: var(--med-color-light);
+}
+
+:host(.med-progress-bar--minimalist) {
+  --background: var(--med-color-brand-1, #0a515c);
+  --height: 4px;
+}
+:host(.med-progress-bar--minimalist) .progress {
+  border-radius: 0;
+}
+:host(.med-progress-bar--minimalist) .progress__percentage {
+  display: none;
+}
+
+:host(.med-progress-bar--minimalist.ion-color) {
+  --background: var(--med-color-1);
+  --progress-background: var(--med-color-3);
 }

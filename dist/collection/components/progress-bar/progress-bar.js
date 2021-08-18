@@ -36,11 +36,13 @@ export class ProgressBar {
     this.buffer = 1;
   }
   render() {
-    const { color, type, reversed, value, buffer, percentage } = this;
+    const { color, type, reversed, value, buffer, percentage, dsName } = this;
     const paused = config.getBoolean('_testing');
     const mode = getIonMode(this);
     return (h(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: createColorClasses(color, {
         [mode]: true,
+        'med-progress-bar': true,
+        [`med-progress-bar--${dsName}`]: dsName !== undefined,
         [`progress-bar-${type}`]: true,
         'percentage': percentage,
         'progress-paused': paused,
@@ -91,7 +93,7 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The state of the progress bar, based on if the time the process takes is known or not.\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right)."
+        "text": "The state of the progress bar, based on if the time the process takes is known or not.\r\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right)."
       },
       "attribute": "type",
       "reflect": false,
@@ -127,7 +129,7 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The value determines how much of the active bar should display when the\n`type` is `\"determinate\"`.\nThe value should be between [0, 1]."
+        "text": "The value determines how much of the active bar should display when the\r\n`type` is `\"determinate\"`.\r\nThe value should be between [0, 1]."
       },
       "attribute": "value",
       "reflect": false,
@@ -145,7 +147,7 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If the buffer and value are smaller than 1, the buffer circles will show.\nThe buffer should be between [0, 1]."
+        "text": "If the buffer and value are smaller than 1, the buffer circles will show.\r\nThe buffer should be between [0, 1]."
       },
       "attribute": "buffer",
       "reflect": false,
@@ -168,9 +170,26 @@ export class ProgressBar {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
+      "reflect": false
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'minimalist'",
+        "resolved": "\"minimalist\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
       "reflect": false
     }
   }; }

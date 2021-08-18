@@ -37,5 +37,9 @@ export declare class ProgressBar implements ComponentInterface {
    * For more information on colors, see [theming](/docs/theming/basics).
    */
   color?: Color;
+  /**
+   * Define a variação do componente.
+   */
+  dsName?: 'minimalist';
   render(): any;
 }

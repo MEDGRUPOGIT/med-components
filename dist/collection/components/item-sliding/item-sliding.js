@@ -404,7 +404,7 @@ export class ItemSliding {
         "return": "Promise<number>"
       },
       "docs": {
-        "text": "Get the ratio of the open amount of the item compared to the width of the options.\nIf the number returned is positive, then the options on the right side are open.\nIf the number returned is negative, then the options on the left side are open.\nIf the absolute value of the number is greater than 1, the item is open more than\nthe width of the options.",
+        "text": "Get the ratio of the open amount of the item compared to the width of the options.\r\nIf the number returned is positive, then the options on the right side are open.\r\nIf the number returned is negative, then the options on the left side are open.\r\nIf the absolute value of the number is greater than 1, the item is open more than\r\nthe width of the options.",
         "tags": []
       }
     },

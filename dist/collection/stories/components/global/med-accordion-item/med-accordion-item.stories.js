@@ -1,12 +1,13 @@
 import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
+import { medColors } from '../../../med-colors';
 
 export default {
   title: 'Components/Core/Accordion Item',
   decorators: [withDesign],
 };
 
-const Template = ({icon, noBorder }) => {
+const Template = ({color, background, icon, noBorder}) => {
   return html`
     <style>
       h4, p {
@@ -30,7 +31,7 @@ const Template = ({icon, noBorder }) => {
 
               <!-- component -->
               <med-accordion-list single-open="false">
-                <med-accordion-item .icon=${icon} ?no-border=${noBorder}>
+                <med-accordion-item .color=${color} .background=${background} .icon=${icon} ?no-border=${noBorder}>
                   <div slot="header">
                     <h4>Header</h4>
                   </div>
@@ -58,6 +59,15 @@ Default.parameters = {
   },
 }
 Default.argTypes = {
+  color: {
+    options: medColors,
+    control: { type: 'inline-radio'},
+    description: "Define a cor do componente.",
+    table: {
+      type:  { summary: 'Color' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
   icon: {
     options: [undefined, 'left', 'right'],
     control: { type: 'radio'},
@@ -71,6 +81,15 @@ Default.argTypes = {
   noBorder: {
     control: { type: 'boolean' },
     description: 'Define a variação da borda do componente.',
+    defaultValue: false,
+    table: {
+      type:  { summary: 'boolean' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+  background: {
+    control: { type: 'boolean' },
+    description: 'Define se o componente irá ter background quando aberto.',
     defaultValue: false,
     table: {
       type:  { summary: 'boolean' },

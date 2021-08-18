@@ -143,7 +143,7 @@ export class Header {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Describes the scroll effect that will be applied to the header\n`condense` only applies in iOS mode.\n\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)"
+        "text": "Describes the scroll effect that will be applied to the header\r\n`condense` only applies in iOS mode.\r\n\r\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)"
       },
       "attribute": "collapse",
       "reflect": false
@@ -160,7 +160,7 @@ export class Header {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, the header will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\n\nNote: In order to scroll content behind the header, the `fullscreen`\nattribute needs to be set on the content."
+        "text": "If `true`, the header will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\r\n\r\nNote: In order to scroll content behind the header, the `fullscreen`\r\nattribute needs to be set on the content."
       },
       "attribute": "translucent",
       "reflect": false,

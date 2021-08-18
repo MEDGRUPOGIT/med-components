@@ -6,7 +6,7 @@ export default {
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({ nome, messageId, concurso, texto, dsName }) => {
+const TemplateDefault = ({ dsName, nome, avatarImage, avatarLetter, concurso, texto, messageId }) => {
   return html`
 
   <style>
@@ -62,10 +62,10 @@ const TemplateDefault = ({ nome, messageId, concurso, texto, dsName }) => {
   </style>
 
     <ion-app class="storybook-only">
-      <div class="storybook-only__container" style="text-align:left;">
+      <div class="storybook-only__container" style="text-align:left; max-width: 1200px; padding: 0 15px;">
 
         <!-- component -->
-          <med-message .nome=${nome} message-id=${messageId} .concurso=${concurso} .texto=${texto} ds-name=${dsName}>
+          <med-message ds-name=${dsName} .nome=${nome} .avatar-image=${avatarImage} .avatar-letter=${avatarLetter} .concurso=${concurso} .texto=${texto} message-id=${messageId}>
 
             <med-context-menu slot="menu" class="med-context-menu">
               <ul class="med-context-menu__list">
@@ -136,7 +136,25 @@ message.argTypes = {
   nome: {
     control: { type: 'text' },
     description: "Define o nome do aluno.",
-    defaultValue: 'Alex',
+    defaultValue: 'Nome',
+    table: {
+      type:  { summary: 'string' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+  avatarImage: {
+    control: { type: 'text' },
+    description: "Define o avatar com imagem.",
+    defaultValue: undefined,
+    table: {
+      type:  { summary: 'string' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+  avatarLetter: {
+    control: { type: 'text' },
+    description: "Define o avatar com letra.",
+    defaultValue: 'A',
     table: {
       type:  { summary: 'string' },
       defaultValue: { summary: 'undefined' },
