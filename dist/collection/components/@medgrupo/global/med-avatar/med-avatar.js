@@ -7,7 +7,7 @@ export class MedAvatar {
         'med-avatar': true,
         [`med-avatar--${dsSize}`]: dsSize !== undefined,
       }, neutral) },
-      (letter) && h("span", { class: "med-avatar__letter" }, letter),
+      (letter && !image) && h("span", { class: "med-avatar__letter" }, letter),
       (image) && h("img", { class: "med-avatar__img", src: image })));
   }
   static get is() { return "med-avatar"; }

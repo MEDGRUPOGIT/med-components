@@ -8,25 +8,33 @@ const MedVote$1 = class extends HTMLElement {
     super();
     this.__registerHost();
     attachShadow(this);
-  }
-  validarValores(_cabe, _naoCabe) {
-    let valueCabe = _cabe >= 0 && _cabe !== undefined && _cabe !== null ? _cabe : 0;
-    let valueNaoCabe = _naoCabe >= 0 && _naoCabe !== undefined && _naoCabe !== null ? _naoCabe : 0;
-    return { valueCabe, valueNaoCabe };
+    /**
+      * Define o conteúdo de texto do componente.
+      */
+    this.titulo = 'Cabe recurso?';
+    /**
+      * Define o conteúdo de texto do componente.
+      */
+    this.like = 0;
+    /**
+      * Define o conteúdo de texto do componente.
+      */
+    this.unlike = 0;
   }
   render() {
-    const { titulo, cabe, naoCabe } = this;
-    const { valueCabe, valueNaoCabe } = this.validarValores(cabe, naoCabe);
-    const total = valueCabe + valueNaoCabe;
-    const cabeP = ((valueCabe * 100) / total);
-    const naoCabeP = ((valueNaoCabe * 100) / total);
+    const titulo = this.titulo;
+    const like = isNaN(this.like) ? 0 : +this.like;
+    const unlike = isNaN(this.unlike) ? 0 : +this.unlike;
+    const total = like + unlike;
+    const likePercent = ((like * 100) / total);
+    const unlikePercent = ((unlike * 100) / total);
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-vote': true,
-      }, null) }, h("div", { class: "med-vote__row" }, h("div", { class: "med-vote__icon-container" }, h("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--cabe", name: "med-positivo" }), h("div", { class: "med-vote__badge med-vote__badge--cabe" }, valueCabe)), h("h3", { class: "med-vote__heading", innerHTML: titulo }), h("div", { class: "med-vote__icon-container" }, h("div", { class: "med-vote__badge med-vote__badge--nao-cabe" }, valueNaoCabe), h("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--nao-cabe", name: "med-negativo" }))), h("div", { class: "med-vote__row" }, h("div", { class: "med-vote__chart med-vote__chart--cabe", style: { width: `${cabeP}%` } }), h("div", { class: "med-vote__chart med-vote__chart--nao-cabe", style: { width: `${naoCabeP}%` } }))));
+      }, null) }, h("div", { class: "med-vote__row" }, h("div", { class: "med-vote__icon-container" }, h("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--cabe", name: "med-positivo" }), h("div", { class: "med-vote__badge med-vote__badge--cabe" }, like)), h("h3", { class: "med-vote__heading", innerHTML: titulo }), h("div", { class: "med-vote__icon-container" }, h("div", { class: "med-vote__badge med-vote__badge--nao-cabe" }, unlike), h("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--nao-cabe", name: "med-negativo" }))), h("div", { class: "med-vote__row" }, h("div", { class: "med-vote__chart med-vote__chart--cabe", style: { width: `${likePercent}%` } }), h("div", { class: "med-vote__chart med-vote__chart--nao-cabe", style: { width: `${unlikePercent}%` } }))));
   }
   static get style() { return medVoteCss; }
 };
 
-const MedVote = /*@__PURE__*/proxyCustomElement(MedVote$1, [1,"med-vote",{"titulo":[1],"cabe":[2],"naoCabe":[2,"nao-cabe"]}]);
+const MedVote = /*@__PURE__*/proxyCustomElement(MedVote$1, [1,"med-vote",{"titulo":[1],"like":[2],"unlike":[2]}]);
 
 export { MedVote };

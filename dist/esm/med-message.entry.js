@@ -8,12 +8,11 @@ const MedMessage = class {
     registerInstance(this, hostRef);
   }
   render() {
-    const { dsName, nome, avatarLetter, avatarImage, concurso, texto, messageId } = this;
-    console.log(avatarLetter);
+    const { dsName, nome, concurso, texto, messageId } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-message': true,
         [`med-message--${dsName}`]: dsName !== undefined,
-      }, null) }, h("div", { class: "med-message__balao" }), h("div", { class: "med-message__content" }, h("div", { class: "med-message__header" }, h("div", { class: "med-message__avatar" }, dsName !== 'medgrupo' && h("med-avatar", { "ds-size": "xs", letter: avatarLetter, image: avatarImage }), dsName === 'medgrupo' && h("img", { class: "med-message__img", src: getAssetPath(`./assets/avatar_medgrupo.png`) })), h("div", { class: "med-message__id" }, h("p", { class: "med-message__nome" }, nome, " - ", concurso), h("p", { class: "med-message__number" }, messageId)), h("div", { class: "med-message__controls" }, h("med-tooltip", { class: "med-message__tooltip", content: "Possui resposta da Equipe Acad\u00EAmica", placement: "top", position: "end" }, h("ion-icon", { slot: "icon", class: "med-icon med-message__icon", name: "med-equipe-homologada" })), h("slot", { name: "menu" }))), h("slot", null), h("p", { class: "med-message__texto" }, texto)), h("div", { class: "med-message__footer" }, h("slot", { name: "footer" }))));
+      }, null) }, h("div", { class: "med-message__balao" }), h("div", { class: "med-message__content" }, h("div", { class: "med-message__header" }, h("div", { class: "med-message__avatar" }, dsName !== 'medgrupo' && h("slot", { name: "avatar" }), dsName === 'medgrupo' && h("img", { class: "med-message__img", src: getAssetPath(`./assets/avatar_medgrupo.png`) })), h("div", { class: "med-message__id" }, h("p", { class: "med-message__nome" }, nome, " - ", concurso), h("p", { class: "med-message__number" }, messageId)), h("div", { class: "med-message__controls" }, h("med-tooltip", { class: "med-message__tooltip", content: "Possui resposta da Equipe Acad\u00EAmica", placement: "top", position: "end" }, h("ion-icon", { slot: "icon", class: "med-icon med-message__icon", name: "med-equipe-homologada" })), h("slot", { name: "menu" }))), h("slot", null), h("p", { class: "med-message__texto" }, texto)), h("div", { class: "med-message__footer" }, h("slot", { name: "footer" }))));
   }
   static get assetsDirs() { return ["assets"]; }
 };

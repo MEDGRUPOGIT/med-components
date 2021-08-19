@@ -321,7 +321,15 @@
   --color-label: var(--med-color-3);
 }
 
+:host(.med-list-item.ion-color) ::slotted(*) {
+  --border-color: var(--med-color-4);
+}
+
 :host(.med-list-item.med-neutral) {
   --border-background-selected: var(--med-neutral);
   --color-label: var(--med-neutral);
+}
+
+:host(.med-list-item.med-neutral) ::slotted(*) {
+  --border-color: var(--med-neutral);
 }

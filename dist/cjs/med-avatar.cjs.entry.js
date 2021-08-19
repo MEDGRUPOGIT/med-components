@@ -16,7 +16,7 @@ const MedAvatar = class {
     return (index.h(index.Host, { "from-stencil": true, class: theme.createColorClasses(color, {
         'med-avatar': true,
         [`med-avatar--${dsSize}`]: dsSize !== undefined,
-      }, neutral) }, (letter) && index.h("span", { class: "med-avatar__letter" }, letter), (image) && index.h("img", { class: "med-avatar__img", src: image })));
+      }, neutral) }, (letter && !image) && index.h("span", { class: "med-avatar__letter" }, letter), (image) && index.h("img", { class: "med-avatar__img", src: image })));
   }
 };
 MedAvatar.style = medAvatarCss;

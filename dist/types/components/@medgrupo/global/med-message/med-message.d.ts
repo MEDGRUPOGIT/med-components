@@ -1,3 +1,9 @@
+/**
+ * @slot - Slot destinado a listagem de badges
+ * @slot avatar - Slot destinado ao avatar.
+ * @slot menu - Slot destinado ao componete med-context-menu.
+ * @slot footer - Slot destinado a listagem de botões.
+ */
 export declare class MedMessage {
   /**
     * Define a variação do componente.
@@ -7,14 +13,6 @@ export declare class MedMessage {
     * Define o nome do aluno.
     */
   nome?: string;
-  /**
-    * Define o avatar com letra.
-    */
-  avatarLetter?: string;
-  /**
-    * Define o avatar com imagem.
-    */
-  avatarImage?: string;
   /**
     * Define o nome do concurso.
     */

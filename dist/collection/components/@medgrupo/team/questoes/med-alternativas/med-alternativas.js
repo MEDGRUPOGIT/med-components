@@ -124,7 +124,7 @@ export class MedAlternativas {
         'med-alternativas': true,
       }, null) },
       h("ion-radio-group", { onIonChange: ev => this.respostaAlterada(ev.detail.value), value: this.alternativaSelecionada },
-        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { onPointerDown: () => this.onTouchStart(alternativa), onPointerUp: () => this.onTouchEnd() },
+        h("ul", { class: `alternativas ${hasImage ? 'alternativas--imagem' : ''}` }, this.alternativas.map((alternativa) => (h("div", { class: "alternativa-wrapper", onPointerDown: () => this.onTouchStart(alternativa), onPointerUp: () => this.onTouchEnd() },
           h("li", { class: this.cssClassAlternativa(alternativa[this.keyAlternativa]) + (alternativa.Pressionada ? ' alternativa--pode-riscar-mobile' : '') },
             h("med-option", { class: this.cssClassOption(alternativa) },
               h("ion-radio", { value: alternativa[this.keyAlternativa] }),
@@ -143,9 +143,7 @@ export class MedAlternativas {
                         ${this.mostraResposta && this.alternativaSelecionada ? 'ion-progress-bar--toggle' : ''}
                         ${alternativa[this.keyPorcentagem] === 1 ? 'ion-progress-bar--100' : ''}`, value: alternativa[this.keyPorcentagem] })),
             this.podeRiscar && (alternativa.Pressionada || this.isDesktop) &&
-              h("div", { class: "riscar", onClick: () => this.riscar(alternativa) },
-                h("ion-icon", { name: "med-riscar" }),
-                h("span", { class: "riscar__label" }, (alternativa.Riscada ? 'Retomar' : 'Riscar') + (this.isDesktop ? ' alternativa' : '')))))))))));
+              h("div", { class: "riscar", onClick: () => this.riscar(alternativa) })))))))));
   }
   static get is() { return "med-alternativas"; }
   static get encapsulation() { return "shadow"; }

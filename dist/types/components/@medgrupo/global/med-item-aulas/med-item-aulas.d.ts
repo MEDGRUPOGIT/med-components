@@ -1,7 +1,19 @@
+/**
+ * @slot avatar - Slot destinado ao avatar.
+ * @slot rate - Slot destinado ao componete de rate.
+ */
 export declare class MedItemAulas {
   /**
-    * Define os dados do componente.
+    * Define o nome do professor.
     */
-  dados?: any;
+  professor: string;
+  /**
+    * Define a porcentagem de visualização de vídeos.
+    */
+  porcentagem: number;
+  /**
+    * Define a quantidade de vídeos.
+    */
+  videos: string;
   render(): any;
 }

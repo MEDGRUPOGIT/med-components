@@ -2913,9 +2913,17 @@ export namespace Components {
     }
     interface MedItemAulas {
         /**
-          * Define os dados do componente.
+          * Define a porcentagem de visualização de vídeos.
          */
-        "dados"?: any;
+        "porcentagem": number;
+        /**
+          * Define o nome do professor.
+         */
+        "professor": string;
+        /**
+          * Define a quantidade de vídeos.
+         */
+        "videos": string;
     }
     interface MedList {
         "color"?: Color;
@@ -2944,14 +2952,6 @@ export namespace Components {
         "toggle": (event?: Event | undefined) => Promise<void>;
     }
     interface MedMessage {
-        /**
-          * Define o avatar com imagem.
-         */
-        "avatarImage"?: string;
-        /**
-          * Define o avatar com letra.
-         */
-        "avatarLetter"?: string;
         /**
           * Define o nome do concurso.
          */
@@ -6850,9 +6850,17 @@ declare namespace LocalJSX {
     }
     interface MedItemAulas {
         /**
-          * Define os dados do componente.
+          * Define a porcentagem de visualização de vídeos.
          */
-        "dados"?: any;
+        "porcentagem": number;
+        /**
+          * Define o nome do professor.
+         */
+        "professor": string;
+        /**
+          * Define a quantidade de vídeos.
+         */
+        "videos": string;
     }
     interface MedList {
         "color"?: Color;
@@ -6880,14 +6888,6 @@ declare namespace LocalJSX {
         "titulo"?: string;
     }
     interface MedMessage {
-        /**
-          * Define o avatar com imagem.
-         */
-        "avatarImage"?: string;
-        /**
-          * Define o avatar com letra.
-         */
-        "avatarLetter"?: string;
         /**
           * Define o nome do concurso.
          */

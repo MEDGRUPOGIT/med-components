@@ -247,16 +247,6 @@
   --med-shadow-level-10: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
 }
 
-:host {
-  /**
-    * @prop --color-excelent: Define a cor do icone de excelente.
-    * @prop --color-bom: Define a cor do icone de bom.
-    * @prop --color-regular: Define a cor do icone de regular.
-    * @prop --color-ruim: Define a cor do icone de ruim.
-  */
-  display: block;
-}
-
 :host(.med-item-aulas) {
   background: var(--med-color-neutral-2);
   max-width: 1200px;

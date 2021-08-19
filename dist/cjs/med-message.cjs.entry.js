@@ -12,12 +12,11 @@ const MedMessage = class {
     index.registerInstance(this, hostRef);
   }
   render() {
-    const { dsName, nome, avatarLetter, avatarImage, concurso, texto, messageId } = this;
-    console.log(avatarLetter);
+    const { dsName, nome, concurso, texto, messageId } = this;
     return (index.h(index.Host, { "from-stencil": true, class: theme.createColorClasses(null, {
         'med-message': true,
         [`med-message--${dsName}`]: dsName !== undefined,
-      }, null) }, index.h("div", { class: "med-message__balao" }), index.h("div", { class: "med-message__content" }, index.h("div", { class: "med-message__header" }, index.h("div", { class: "med-message__avatar" }, dsName !== 'medgrupo' && index.h("med-avatar", { "ds-size": "xs", letter: avatarLetter, image: avatarImage }), dsName === 'medgrupo' && index.h("img", { class: "med-message__img", src: index.getAssetPath(`./assets/avatar_medgrupo.png`) })), index.h("div", { class: "med-message__id" }, index.h("p", { class: "med-message__nome" }, nome, " - ", concurso), index.h("p", { class: "med-message__number" }, messageId)), index.h("div", { class: "med-message__controls" }, index.h("med-tooltip", { class: "med-message__tooltip", content: "Possui resposta da Equipe Acad\u00EAmica", placement: "top", position: "end" }, index.h("ion-icon", { slot: "icon", class: "med-icon med-message__icon", name: "med-equipe-homologada" })), index.h("slot", { name: "menu" }))), index.h("slot", null), index.h("p", { class: "med-message__texto" }, texto)), index.h("div", { class: "med-message__footer" }, index.h("slot", { name: "footer" }))));
+      }, null) }, index.h("div", { class: "med-message__balao" }), index.h("div", { class: "med-message__content" }, index.h("div", { class: "med-message__header" }, index.h("div", { class: "med-message__avatar" }, dsName !== 'medgrupo' && index.h("slot", { name: "avatar" }), dsName === 'medgrupo' && index.h("img", { class: "med-message__img", src: index.getAssetPath(`./assets/avatar_medgrupo.png`) })), index.h("div", { class: "med-message__id" }, index.h("p", { class: "med-message__nome" }, nome, " - ", concurso), index.h("p", { class: "med-message__number" }, messageId)), index.h("div", { class: "med-message__controls" }, index.h("med-tooltip", { class: "med-message__tooltip", content: "Possui resposta da Equipe Acad\u00EAmica", placement: "top", position: "end" }, index.h("ion-icon", { slot: "icon", class: "med-icon med-message__icon", name: "med-equipe-homologada" })), index.h("slot", { name: "menu" }))), index.h("slot", null), index.h("p", { class: "med-message__texto" }, texto)), index.h("div", { class: "med-message__footer" }, index.h("slot", { name: "footer" }))));
   }
   static get assetsDirs() { return ["assets"]; }
 };

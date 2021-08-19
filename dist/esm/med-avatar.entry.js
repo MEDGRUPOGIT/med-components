@@ -12,7 +12,7 @@ const MedAvatar = class {
     return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
         'med-avatar': true,
         [`med-avatar--${dsSize}`]: dsSize !== undefined,
-      }, neutral) }, (letter) && h("span", { class: "med-avatar__letter" }, letter), (image) && h("img", { class: "med-avatar__img", src: image })));
+      }, neutral) }, (letter && !image) && h("span", { class: "med-avatar__letter" }, letter), (image) && h("img", { class: "med-avatar__img", src: image })));
   }
 };
 MedAvatar.style = medAvatarCss;

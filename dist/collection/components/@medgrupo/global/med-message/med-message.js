@@ -1,9 +1,14 @@
 import { Component, Host, h, Prop, getAssetPath } from '@stencil/core';
 import { createColorClasses } from '../../../../utils/theme';
+/**
+ * @slot - Slot destinado a listagem de badges
+ * @slot avatar - Slot destinado ao avatar.
+ * @slot menu - Slot destinado ao componete med-context-menu.
+ * @slot footer - Slot destinado a listagem de botões.
+ */
 export class MedMessage {
   render() {
-    const { dsName, nome, avatarLetter, avatarImage, concurso, texto, messageId } = this;
-    console.log(avatarLetter);
+    const { dsName, nome, concurso, texto, messageId } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-message': true,
         [`med-message--${dsName}`]: dsName !== undefined,
@@ -12,7 +17,7 @@ export class MedMessage {
       h("div", { class: "med-message__content" },
         h("div", { class: "med-message__header" },
           h("div", { class: "med-message__avatar" },
-            dsName !== 'medgrupo' && h("med-avatar", { "ds-size": "xs", letter: avatarLetter, image: avatarImage }),
+            dsName !== 'medgrupo' && h("slot", { name: "avatar" }),
             dsName === 'medgrupo' && h("img", { class: "med-message__img", src: getAssetPath(`./assets/avatar_medgrupo.png`) })),
           h("div", { class: "med-message__id" },
             h("p", { class: "med-message__nome" },
@@ -71,40 +76,6 @@ export class MedMessage {
         "text": "Define o nome do aluno."
       },
       "attribute": "nome",
-      "reflect": false
-    },
-    "avatarLetter": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define o avatar com letra."
-      },
-      "attribute": "avatar-letter",
-      "reflect": true
-    },
-    "avatarImage": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define o avatar com imagem."
-      },
-      "attribute": "avatar-image",
       "reflect": false
     },
     "concurso": {
