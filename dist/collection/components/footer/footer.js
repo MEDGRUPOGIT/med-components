@@ -51,7 +51,7 @@ export class Footer {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, the footer will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\n\nNote: In order to scroll content behind the footer, the `fullscreen`\nattribute needs to be set on the content."
+        "text": "If `true`, the footer will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\r\n\r\nNote: In order to scroll content behind the footer, the `fullscreen`\r\nattribute needs to be set on the content."
       },
       "attribute": "translucent",
       "reflect": false,
