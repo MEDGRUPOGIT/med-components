@@ -249,10 +249,10 @@
 
 :host {
   --spacing: 16px;
-  --color: #7a7a7a;
-  --color-like: #73e582;
-  --color-dislike: #e57a73;
-  --color-hover: #ebebeb;
+  --color: var(--med-color-neutral-1);
+  --color-like: var(--med-color-fb-success-3, #5eed71);
+  --color-dislike: var(--med-color-fb-warning-3, #ed685e);
+  --color-hover: var(--med-color-neutral-7);
   display: block;
 }
 :host .button {
@@ -273,10 +273,10 @@
   pointer-events: none;
 }
 :host .button--like .rate {
-  color: var(--color-like);
+  stroke: var(--color-like);
 }
 :host .button--dislike .rate {
-  color: var(--color-dislike);
+  stroke: var(--color-dislike);
 }
 
 @media (any-hover: hover) {
