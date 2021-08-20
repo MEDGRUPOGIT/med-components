@@ -143,7 +143,9 @@ export class MedAlternativas {
                         ${this.mostraResposta && this.alternativaSelecionada ? 'ion-progress-bar--toggle' : ''}
                         ${alternativa[this.keyPorcentagem] === 1 ? 'ion-progress-bar--100' : ''}`, value: alternativa[this.keyPorcentagem] })),
             this.podeRiscar && (alternativa.Pressionada || this.isDesktop) &&
-              h("div", { class: "riscar", onClick: () => this.riscar(alternativa) })))))))));
+              h("div", { class: "riscar", onClick: () => this.riscar(alternativa) },
+                h("ion-icon", { name: "med-riscar" }),
+                h("span", { class: "riscar__label" }, (alternativa.Riscada ? 'Retomar' : 'Riscar') + (this.isDesktop ? ' alternativa' : '')))))))))));
   }
   static get is() { return "med-alternativas"; }
   static get encapsulation() { return "shadow"; }
