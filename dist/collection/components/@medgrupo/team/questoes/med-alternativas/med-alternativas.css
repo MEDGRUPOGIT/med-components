@@ -248,6 +248,7 @@
 }
 
 :host {
+  --font-size: 16px;
   --riscar-flex-direction: column;
   --riscar-icon-margin: 0 0 2px 0;
 }
@@ -336,7 +337,7 @@
 }
 :host .alternativa__text {
   color: #7a7a7a;
-  font-size: 16px;
+  font-size: var(--font-size);
   font-weight: 400;
   line-height: 24px;
   text-align: justify;

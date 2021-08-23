@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { medColors, medNeutrals } from '../../../../med-colors';
 
 export default {
-  title: 'Components/Team/Aulas/Accordion Item',
+  title: 'Components/Team/Aulas/Accordion Aulas',
   decorators: [withDesign],
 };
 
@@ -35,13 +35,25 @@ const Template = ({color, neutral, icon, noBorder, background}) => {
                     <h4>Header</h4>
                   </div>
 
-                  <ion-progress-bar ds-name="minimalist" slot="auxiliar" value="0.3"></ion-progress-bar>
+                  <ion-progress-bar ds-name="minimalist" color="aula" slot="auxiliar" value="0.3"></ion-progress-bar>
 
                   <div slot="content" class="med-accordion__content">
-                    <med-item-aulas></med-item-aulas>
-                    <med-item-aulas></med-item-aulas>
-                    <med-item-aulas></med-item-aulas>
-                    <med-item-aulas></med-item-aulas>
+                    <med-item-aulas professor="professor" porcentagem="0.2" videos="20">
+                      <med-avatar ds-size="lg" letter="A" slot="avatar"></med-avatar>
+                      <med-rate-result excelente="10" bom="20" regular="30" ruim="40" slot="rate"></med-rate-result>
+                    </med-item-aulas>
+                    <med-item-aulas professor="professor" porcentagem="0.2" videos="20">
+                      <med-avatar ds-size="lg" letter="A" slot="avatar"></med-avatar>
+                      <med-rate-result excelente="10" bom="20" regular="30" ruim="40" slot="rate"></med-rate-result>
+                    </med-item-aulas>
+                    <med-item-aulas professor="professor" porcentagem="0.2" videos="20">
+                      <med-avatar ds-size="lg" letter="A" slot="avatar"></med-avatar>
+                      <med-rate-result excelente="10" bom="20" regular="30" ruim="40" slot="rate"></med-rate-result>
+                    </med-item-aulas>
+                    <med-item-aulas professor="professor" porcentagem="0.2" videos="20">
+                      <med-avatar ds-size="lg" letter="A" slot="avatar"></med-avatar>
+                      <med-rate-result excelente="10" bom="20" regular="30" ruim="40" slot="rate"></med-rate-result>
+                    </med-item-aulas>
                   </div>
                 </med-accordion-item>
               </med-accordion-list>
