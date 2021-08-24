@@ -286,15 +286,13 @@
     width: 360px;
   }
 }
-:host .alternativa-wrapper {
-  padding-bottom: 32px;
-}
 :host .alternativa-wrapper:last-of-type {
   padding-bottom: 0;
 }
 :host .alternativa {
   display: flex;
   align-items: start;
+  padding: 16px;
 }
 :host .alternativa .image-container {
   position: relative;
@@ -363,7 +361,7 @@
   display: none;
 }
 :host .alternativa--pode-riscar:hover, :host .alternativa--pode-riscar-mobile {
-  background-color: var(--med-color-neutral-2);
+  background-color: #ebebeb;
 }
 :host .alternativa--pode-riscar:hover .riscar, :host .alternativa--pode-riscar-mobile .riscar {
   cursor: pointer;
