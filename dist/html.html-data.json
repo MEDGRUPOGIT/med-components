@@ -4671,6 +4671,23 @@
       },
       "attributes": [
         {
+          "name": "background",
+          "description": "Define se o componente irá ter background quando aberto."
+        },
+        {
+          "name": "color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
+        },
+        {
           "name": "icon",
           "description": "Define a posição do ícone de abertura do componente.",
           "values": [
