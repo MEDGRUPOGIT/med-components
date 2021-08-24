@@ -118,7 +118,6 @@ export class MedAlternativas {
         break;
       }
     }
-    this.isDesktop = true;
     const { color } = this;
     return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
         'med-alternativas': true,
@@ -145,7 +144,7 @@ export class MedAlternativas {
             this.podeRiscar && (alternativa.Pressionada || this.isDesktop) &&
               h("div", { class: "riscar", onClick: () => this.riscar(alternativa) },
                 h("ion-icon", { name: "med-riscar" }),
-                h("span", { class: "riscar__label" }, (alternativa.Riscada ? 'Retomar' : 'Riscar') + (this.isDesktop ? ' alternativa' : '')))))))))));
+                h("span", { class: "riscar__label" }, (alternativa.Riscada ? 'Restaurar' : 'Riscar') + (this.isDesktop ? ' alternativa' : '')))))))))));
   }
   static get is() { return "med-alternativas"; }
   static get encapsulation() { return "shadow"; }

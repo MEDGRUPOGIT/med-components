@@ -14330,7 +14330,6 @@ class MedAlternativas {
         break;
       }
     }
-    this.isDesktop = true;
     const { color } = this;
     return (hAsync(Host, { "from-stencil": true, class: createColorClasses$1(color, {
         'med-alternativas': true,
@@ -14339,7 +14338,7 @@ class MedAlternativas {
                         ion-progress-bar
                         ${this.mostraResposta && this.alternativaSelecionada ? 'ion-progress-bar--toggle' : ''}
                         ${alternativa[this.keyPorcentagem] === 1 ? 'ion-progress-bar--100' : ''}`, value: alternativa[this.keyPorcentagem] })), this.podeRiscar && (alternativa.Pressionada || this.isDesktop) &&
-      hAsync("div", { class: "riscar", onClick: () => this.riscar(alternativa) }, hAsync("ion-icon", { name: "med-riscar" }), hAsync("span", { class: "riscar__label" }, (alternativa.Riscada ? 'Retomar' : 'Riscar') + (this.isDesktop ? ' alternativa' : '')))))))))));
+      hAsync("div", { class: "riscar", onClick: () => this.riscar(alternativa) }, hAsync("ion-icon", { name: "med-riscar" }), hAsync("span", { class: "riscar__label" }, (alternativa.Riscada ? 'Restaurar' : 'Riscar') + (this.isDesktop ? ' alternativa' : '')))))))))));
   }
   static get style() { return medAlternativasCss; }
   static get cmpMeta() { return {
