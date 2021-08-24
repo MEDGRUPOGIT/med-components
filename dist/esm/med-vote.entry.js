@@ -24,8 +24,8 @@ const MedVote = class {
     const like = isNaN(this.like) ? 0 : +this.like;
     const unlike = isNaN(this.unlike) ? 0 : +this.unlike;
     const total = like + unlike;
-    const likePercent = ((like * 100) / total);
-    const unlikePercent = ((unlike * 100) / total);
+    const likePercent = unlike === 0 && like === 0 ? 50 : ((like * 100) / total);
+    const unlikePercent = unlike === 0 && like === 0 ? 50 : ((unlike * 100) / total);
     return (h(Host, { "from-stencil": true, class: createColorClasses(null, {
         'med-vote': true,
       }, null) }, h("div", { class: "med-vote__row" }, h("div", { class: "med-vote__icon-container" }, h("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--cabe", name: "med-positivo" }), h("div", { class: "med-vote__badge med-vote__badge--cabe" }, like)), h("h3", { class: "med-vote__heading", innerHTML: titulo }), h("div", { class: "med-vote__icon-container" }, h("div", { class: "med-vote__badge med-vote__badge--nao-cabe" }, unlike), h("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--nao-cabe", name: "med-negativo" }))), h("div", { class: "med-vote__row" }, h("div", { class: "med-vote__chart med-vote__chart--cabe", style: { width: `${likePercent}%` } }), h("div", { class: "med-vote__chart med-vote__chart--nao-cabe", style: { width: `${unlikePercent}%` } }))));
