@@ -444,7 +444,7 @@ AFTER:
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The `id` of the main content. When using\na router this is typically `ion-router-outlet`.\nWhen not using a router, this is typically\nyour main view's `ion-content`. This is not the\nid of the `ion-content` inside of your `ion-menu`."
+        "text": "The `id` of the main content. When using\r\na router this is typically `ion-router-outlet`.\r\nWhen not using a router, this is typically\r\nyour main view's `ion-content`. This is not the\r\nid of the `ion-content` inside of your `ion-menu`."
       },
       "attribute": "content-id",
       "reflect": true
@@ -478,7 +478,7 @@ AFTER:
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The display type of the menu.\nAvailable options: `\"overlay\"`, `\"reveal\"`, `\"push\"`."
+        "text": "The display type of the menu.\r\nAvailable options: `\"overlay\"`, `\"reveal\"`, `\"push\"`."
       },
       "attribute": "type",
       "reflect": false
@@ -554,7 +554,7 @@ AFTER:
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The edge threshold for dragging the menu open.\nIf a drag/swipe happens over this value, the menu is not triggered."
+        "text": "The edge threshold for dragging the menu open.\r\nIf a drag/swipe happens over this value, the menu is not triggered."
       },
       "attribute": "max-edge-start",
       "reflect": false,
@@ -678,7 +678,7 @@ AFTER:
         "return": "Promise<boolean>"
       },
       "docs": {
-        "text": "Returns `true` is the menu is active.\n\nA menu is active when it can be opened or closed, meaning it's enabled\nand it's not part of a `ion-split-pane`.",
+        "text": "Returns `true` is the menu is active.\r\n\r\nA menu is active when it can be opened or closed, meaning it's enabled\r\nand it's not part of a `ion-split-pane`.",
         "tags": []
       }
     },
@@ -697,7 +697,7 @@ AFTER:
         "return": "Promise<boolean>"
       },
       "docs": {
-        "text": "Opens the menu. If the menu is already open or it can't be opened,\nit returns `false`.",
+        "text": "Opens the menu. If the menu is already open or it can't be opened,\r\nit returns `false`.",
         "tags": []
       }
     },
@@ -716,7 +716,7 @@ AFTER:
         "return": "Promise<boolean>"
       },
       "docs": {
-        "text": "Closes the menu. If the menu is already closed or it can't be closed,\nit returns `false`.",
+        "text": "Closes the menu. If the menu is already closed or it can't be closed,\r\nit returns `false`.",
         "tags": []
       }
     },
@@ -735,7 +735,7 @@ AFTER:
         "return": "Promise<boolean>"
       },
       "docs": {
-        "text": "Toggles the menu. If the menu is already open, it will try to close, otherwise it will try to open it.\nIf the operation can't be completed successfully, it returns `false`.",
+        "text": "Toggles the menu. If the menu is already open, it will try to close, otherwise it will try to open it.\r\nIf the operation can't be completed successfully, it returns `false`.",
         "tags": []
       }
     },
@@ -757,7 +757,7 @@ AFTER:
         "return": "Promise<boolean>"
       },
       "docs": {
-        "text": "Opens or closes the button.\nIf the operation can't be completed successfully, it returns `false`.",
+        "text": "Opens or closes the button.\r\nIf the operation can't be completed successfully, it returns `false`.",
         "tags": []
       }
     }
