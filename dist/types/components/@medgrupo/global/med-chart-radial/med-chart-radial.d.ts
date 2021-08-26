@@ -10,6 +10,5 @@ export declare class MedChartRadial {
    */
   dsName?: string;
   valores: MedChartRadiaItem[];
-  private getTotal;
   render(): any;
 }
