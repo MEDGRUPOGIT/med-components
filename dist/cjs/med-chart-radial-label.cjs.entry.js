@@ -14,9 +14,10 @@ const MedChartRadialLabel = class {
   }
   render() {
     const { color, neutral } = this;
+    //const arrayReverse = this.valores.slice(0).reverse();
     return (index.h(index.Host, { "from-stencil": true, class: theme.createColorClasses(color, {
         'med-chart-radial-label': true,
-      }, neutral) }, index.h("ul", { class: "med-chart-radial-label__list" }, this.valores.reverse().map((item) => {
+      }, neutral) }, index.h("ul", { class: "med-chart-radial-label__list" }, this.valores.map((item) => {
       return index.h("li", { class: "med-chart-radial-label__item" }, index.h("span", { class: { 'med-chart-radial-label__quantia': true, [item.cor]: true } }, item.quantia), " ", item.label);
     }))));
   }

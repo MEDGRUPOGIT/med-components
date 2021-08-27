@@ -6,10 +6,11 @@ export class MedChartRadialLabel {
   }
   render() {
     const { color, neutral } = this;
+    //const arrayReverse = this.valores.slice(0).reverse();
     return (h(Host, { "from-stencil": true, class: createColorClasses(color, {
         'med-chart-radial-label': true,
       }, neutral) },
-      h("ul", { class: "med-chart-radial-label__list" }, this.valores.reverse().map((item) => {
+      h("ul", { class: "med-chart-radial-label__list" }, this.valores.map((item) => {
         return h("li", { class: "med-chart-radial-label__item" },
           h("span", { class: { 'med-chart-radial-label__quantia': true, [item.cor]: true } }, item.quantia),
           " ",
