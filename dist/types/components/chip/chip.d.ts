@@ -1,9 +1,17 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
-import { Color } from '../../interface';
+import { Color, MedColor } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export declare class Chip implements ComponentInterface {
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
+  /**
+   * Define a variação do componente.
+   */
+  dsName?: 'secondary';
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

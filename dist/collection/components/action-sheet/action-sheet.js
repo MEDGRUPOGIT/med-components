@@ -154,7 +154,7 @@ export class ActionSheet {
                 this.subHeader && h("div", { class: "action-sheet-sub-title" }, this.subHeader)),
             buttons.map(b => h("button", { type: "button", class: buttonClass(b), onClick: () => this.buttonClick(b) },
               h("span", { class: "action-sheet-button-inner" },
-                b.icon && h("ion-icon", { icon: b.icon, lazy: false, class: "action-sheet-icon" }),
+                b.icon && h("ion-icon", { icon: b.icon, lazy: false, class: "med-icon action-sheet-icon" }),
                 b.text),
               mode === 'md' && h("ion-ripple-effect", null)))),
           cancelButton &&

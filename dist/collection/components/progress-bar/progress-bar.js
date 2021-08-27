@@ -2,7 +2,8 @@ import { Component, Host, Prop, h, Element } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { clamp } from '../../utils/helpers';
-import { createColorClasses, hostContext } from '../../utils/theme';
+import { hostContext } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -13,6 +14,9 @@ import { createColorClasses, hostContext } from '../../utils/theme';
  */
 export class ProgressBar {
   constructor() {
+    /**
+      * Esconde ou mostra a porcentagem.
+      */
     this.percentage = false;
     /**
      * The state of the progress bar, based on if the time the process takes is known or not.
@@ -36,11 +40,13 @@ export class ProgressBar {
     this.buffer = 1;
   }
   render() {
-    const { color, type, reversed, value, buffer, percentage } = this;
+    const { dsColor, type, reversed, value, buffer, percentage, dsName } = this;
     const paused = config.getBoolean('_testing');
     const mode = getIonMode(this);
-    return (h(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: createColorClasses(color, {
+    return (h(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: generateMedColor(dsColor, {
         [mode]: true,
+        'med-progress-bar': true,
+        [`med-progress-bar--${dsName}`]: dsName !== undefined,
         [`progress-bar-${type}`]: true,
         'percentage': percentage,
         'progress-paused': paused,
@@ -61,6 +67,45 @@ export class ProgressBar {
     "md": ["progress-bar.med.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'minimalist'",
+        "resolved": "\"minimalist\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
     "percentage": {
       "type": "boolean",
       "mutable": false,
@@ -73,10 +118,10 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Esconde ou mostra a porcentagem."
       },
       "attribute": "percentage",
-      "reflect": false,
+      "reflect": true,
       "defaultValue": "false"
     },
     "type": {

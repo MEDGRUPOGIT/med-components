@@ -1,6 +1,7 @@
 import { Component, Element, Event, Host, Listen, Prop, h } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -66,7 +67,7 @@ export class TabButton {
     return 0;
   }
   render() {
-    const { disabled, hasIcon, hasLabel, tabIndex, href, rel, target, layout, selected, tab } = this;
+    const { dsColor, disabled, hasIcon, hasLabel, tabIndex, href, rel, target, layout, selected, tab } = this;
     const mode = getIonMode(this);
     const attrs = {
       download: this.download,
@@ -74,7 +75,7 @@ export class TabButton {
       rel,
       target
     };
-    return (h(Host, { onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: {
+    return (h(Host, { "from-stencil": true, onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'tab-selected': selected,
         'tab-disabled': disabled,
@@ -86,7 +87,7 @@ export class TabButton {
         'ion-activatable': true,
         'ion-selectable': true,
         'ion-focusable': true
-      } },
+      }) },
       h("a", Object.assign({}, attrs, { tabIndex: -1, class: "button-native", part: "native" }),
         h("span", { class: "button-inner" },
           h("slot", null)),
@@ -103,6 +104,28 @@ export class TabButton {
     "md": ["tab-button.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
     "disabled": {
       "type": "boolean",
       "mutable": false,

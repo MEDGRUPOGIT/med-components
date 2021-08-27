@@ -1,6 +1,7 @@
 import { Component, Element, Event, Host, Prop, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
-import { createColorClasses, hostContext, openURL } from '../../utils/theme';
+import { hostContext, openURL } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -50,7 +51,7 @@ export class FabButton {
     };
   }
   render() {
-    const { el, disabled, color, href, activated, show, translucent, size } = this;
+    const { dsColor, el, disabled, href, activated, show, translucent, size } = this;
     const inList = hostContext('ion-fab-list', el);
     const mode = getIonMode(this);
     const TagType = href === undefined ? 'button' : 'a';
@@ -62,7 +63,7 @@ export class FabButton {
         rel: this.rel,
         target: this.target
       };
-    return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: createColorClasses(color, {
+    return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'fab-button-in-list': inList,
         'fab-button-translucent-in-list': inList && translucent,
@@ -75,7 +76,7 @@ export class FabButton {
         [`fab-button-${size}`]: size !== undefined,
       }) },
       h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur, onClick: (ev) => openURL(href, ev, this.routerDirection, this.routerAnimation) }),
-        h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "close-icon", lazy: false }),
+        h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "med-icon close-icon", lazy: false }),
         h("span", { class: "button-inner" },
           h("slot", null),
           h("slot", { name: "label" })),
@@ -125,6 +126,50 @@ export class FabButton {
       },
       "attribute": "ds-name",
       "reflect": false
+    },
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Neutral",
+        "resolved": "string | undefined",
+        "references": {
+          "Neutral": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "neutral",
+      "reflect": false
+    },
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
     },
     "color": {
       "type": "string",

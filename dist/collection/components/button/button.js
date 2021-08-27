@@ -187,8 +187,8 @@ export class Button {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | undefined",
+        "original": "'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | \"xxxs\" | undefined",
         "references": {}
       },
       "required": false,
