@@ -234,7 +234,7 @@
   overflow: hidden;
 }
 :host .alternativa__text {
-  color: var(--color-neutral-dark-10);
+  color: hsl(var(--med-color-neutral-10));
   font-size: var(--font-size);
   font-weight: var(--med-font-weight-regular);
   line-height: 24px;
@@ -255,7 +255,7 @@
   --background: hsl(var(--med-color-fb-success));
 }
 :host .alternativa--incorreto med-option {
-  --background:hsl(var(--med-color-fb-caution));
+  --background:hsl(var(--med-color-fb-warning));
 }
 :host .alternativa--pode-riscar:not(:hover) .riscar {
   display: none;

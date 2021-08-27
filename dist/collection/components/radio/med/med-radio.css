@@ -228,7 +228,7 @@ input {
 
 :host {
   --color: #fff;
-  --color-checked: var(--med-color-questoes-light);
+  --color-checked: hsl(var(--med-color-questoes-4));
   --border-color: transparent;
   --border-width: 0;
   --border-style: none;
