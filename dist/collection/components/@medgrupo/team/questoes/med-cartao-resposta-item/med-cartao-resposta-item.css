@@ -149,8 +149,8 @@
 :host {
   --border-width: var(--med-border-width-hairline);
   --border-style: solid;
-  --border-color: hsla(var(--med-color-neutral-10), var(--med-opacity-level-light));
-  --color: hsla(var(--med-color-neutral-10), var(--med-opacity-level-semiopaque));
+  --border-color: hsl(var(--med-color-neutral-10), var(--med-opacity-level-light));
+  --color: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semiopaque));
   --spacing: var(--med-spacing-inset-nano);
   --background: transparent;
   --font-size: var(--med-font-size-sm);
@@ -247,7 +247,7 @@ slot[name] {
 
 @media (any-hover: hover) {
   :host(:hover) {
-    --background: hsla(var(--med-color-neutral-10), var(--med-opacity-level-light));
+    --background: hsl(var(--med-color-neutral-10), var(--med-opacity-level-light));
     --border-color: hsl(var(--med-color-neutral-10));
   }
 }
