@@ -494,3 +494,45 @@
   color: currentColor;
   opacity: 0.5;
 }
+
+:host {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-2));
+  --border-radius: var(--med-border-radius-sm);
+  --icon-color: hsl(var(--med-color-neutral-10));
+  --cancel-button-color: hsl(var(--med-color-brand-3));
+  --placeholder-opacity: 1;
+  --spacing: var(--med-spacing-inset-xs);
+  padding: var(--spacing);
+  height: 40px;
+}
+:host .searchbar-input {
+  padding-inline-start: 30pxvar(--med-spacing-inline-nano) !important;
+  font-size: var(--med-font-size-xs);
+  font-weight: var(--med-font-weight-regular);
+  line-height: var(--med-line-height-compressed);
+}
+:host .searchbar-search-icon {
+  width: 24px;
+}
+
+:host(.med-color) {
+  --color: hsl(var(--med-color-contrast-fixed));
+  --background: hsl(var(--med-color-3));
+  --icon-color: hsl(var(--med-color-3));
+  --cancel-button-color: hsl(var(--med-color-3));
+}
+
+:host(.med-color-neutral) {
+  --color: hsl(var(--med-color-neutral-contrast));
+  --background: hsl(var(--med-color-neutral));
+  --icon-color: hsl(var(--med-color-neutral));
+  --cancel-button-color: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --color: hsl(var(--med-color-feedback-contrast));
+  --background: hsl(var(--med-color-feedback));
+  --icon-color: hsl(var(--med-color-feedback));
+  --cancel-button-color: hsl(var(--med-color-feedback));
+}
