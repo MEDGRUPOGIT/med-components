@@ -15,7 +15,7 @@ export class MedRateLike {
     return (h(Host, { "from-stencil": true, class: generateMedColor(null, {
         'med-rate-like': true,
       }) },
-      h("button", { class: `button
+      h("button", { class: `button button-spacing
           ${this.status === RateStatus.LIKE ? 'button--like' : ''}
           ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(RateStatus.LIKE) },
         h("ion-icon", { name: "med-positivo", class: "med-icon rate" })),

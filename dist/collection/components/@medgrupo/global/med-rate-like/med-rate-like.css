@@ -160,7 +160,7 @@
   cursor: pointer;
   padding: 0;
 }
-:host .button:first-child {
+:host .button-spacing {
   padding-right: var(--spacing);
 }
 :host .rate {
