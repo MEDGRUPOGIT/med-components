@@ -1,5 +1,5 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { AnimationBuilder, Color, RouterDirection } from '../../interface';
+import { AnimationBuilder, Color, RouterDirection, MedColor } from '../../interface';
 import { AnchorInterface, ButtonInterface } from '../../utils/element-interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -17,10 +17,22 @@ export declare class Button implements ComponentInterface, AnchorInterface, Butt
   private inToolbar;
   private inheritedAttributes;
   el: HTMLElement;
-  dsName?: 'primary' | 'secondary' | 'tertiary' | 'icon-only' | 'icon-label';
-  dsSize?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
-  private iconOnly;
-  private iconLabel;
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
+  /**
+    * Define a cor do componente.
+    */
+  solid: boolean;
+  /**
+    * Define a variação solida de background do componente.
+    */
+  dsName?: 'secondary' | 'tertiary';
+  /**
+    * Define a variação de tamanho componente.
+    */
+  dsSize?: 'xs' | 'sm' | 'md' | 'lg';
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

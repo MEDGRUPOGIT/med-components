@@ -1,6 +1,6 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
-import { createColorClasses } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
@@ -16,15 +16,17 @@ export class Chip {
     this.disabled = false;
   }
   render() {
+    const { dsColor, dsName } = this;
     const mode = getIonMode(this);
-    return (h(Host, { "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(this.color, {
+    return (h(Host, { "aria-disabled": this.disabled ? 'true' : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'chip-outline': this.outline,
         'chip-disabled': this.disabled,
-        'ion-activatable': true,
+        'ion-activatable': false,
+        'med-chip': true,
+        [`med-chip--${dsName}`]: dsName !== undefined,
       }) },
-      h("slot", null),
-      mode === 'md' && h("ion-ripple-effect", null)));
+      h("slot", null)));
   }
   static get is() { return "ion-chip"; }
   static get encapsulation() { return "shadow"; }
@@ -37,6 +39,45 @@ export class Chip {
     "md": ["chip.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,
@@ -54,7 +95,7 @@ export class Chip {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false

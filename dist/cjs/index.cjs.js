@@ -3,20 +3,21 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const animation = require('./animation-dadce649.js');
-const ios_transition = require('./ios.transition-63a82733.js');
-const md_transition = require('./md.transition-53cebb20.js');
+const ios_transition = require('./ios.transition-d78dff5b.js');
+const md_transition = require('./md.transition-8a1ac5c9.js');
 const cubicBezier = require('./cubic-bezier-6f49c00a.js');
 const index = require('./index-adf3c519.js');
-const ionicGlobal = require('./ionic-global-26aa53b6.js');
+const ionicGlobal = require('./ionic-global-c609be80.js');
 const helpers = require('./helpers-ab0db03b.js');
 const index$1 = require('./index-099f2bcb.js');
-const index$2 = require('./index-1fbc74ac.js');
-const index$3 = require('./index-eb408535.js');
-const overlays = require('./overlays-ae722e00.js');
-const fontSize_enum = require('./font-size.enum-b5379cd9.js');
-const medRateLike_enum = require('./med-rate-like.enum-a90944f3.js');
+const index$2 = require('./index-a0e14e16.js');
+const index$3 = require('./index-0633c29d.js');
+const overlays = require('./overlays-738b020e.js');
+const fontSize_enum = require('./font-size.enum-941770af.js');
+const skin_enum = require('./skin.enum-96db9662.js');
+const medRateLike_enum = require('./med-rate-like.enum-e8f4b5f3.js');
 require('./gesture-controller-bcfe01ec.js');
-require('./index-b66b6152.js');
+require('./index-bc2e4509.js');
 require('./hardware-back-button-e370df1e.js');
 
 const setupConfig = (config) => {
@@ -46,17 +47,26 @@ const getMode = () => {
 
 exports.MedColors = void 0;
 (function (MedColors) {
-  MedColors["BRAND_PRIMARY"] = "brand-primary";
+  MedColors["NEUTRAL_1"] = "neutral-1";
+  MedColors["NEUTRAL_2"] = "neutral-2";
+  MedColors["NEUTRAL_3"] = "neutral-3";
+  MedColors["NEUTRAL_4"] = "neutral-4";
+  MedColors["NEUTRAL_5"] = "neutral-5";
+  MedColors["NEUTRAL_6"] = "neutral-6";
+  MedColors["NEUTRAL_7"] = "neutral-7";
+  MedColors["NEUTRAL_8"] = "neutral-8";
+  MedColors["NEUTRAL_9"] = "neutral-9";
+  MedColors["NEUTRAL_10"] = "neutral-10";
+  MedColors["FB_ATTENTION"] = "fb-attention";
+  MedColors["FB_CAUTION"] = "fb-caution";
+  MedColors["FB_WARNING"] = "fb-warning";
+  MedColors["FB_SUCCESS"] = "fb-success";
+  MedColors["BRAND"] = "brand";
   MedColors["AULA"] = "aula";
   MedColors["MATERIAL"] = "material";
   MedColors["QUESTOES"] = "questoes";
   MedColors["REVALIDA"] = "revalida";
-  MedColors["PROVASCHECKLIST"] = "provaschecklist";
-  MedColors["FEEDBACK_WARNING"] = "feedback-warning";
-  MedColors["FEEDBACK_ERROR"] = "feedback-error";
-  MedColors["FEEDBACK_SUCCESS"] = "feedback-success";
-  MedColors["NEUTRAL_DARK"] = "neutral-dark";
-  MedColors["NEUTRAL_LIGHT"] = "neutral-light";
+  MedColors["PROVAS"] = "provas";
 })(exports.MedColors || (exports.MedColors = {}));
 
 exports.createAnimation = animation.createAnimation;
@@ -86,6 +96,12 @@ Object.defineProperty(exports, 'MedFontSize', {
   enumerable: true,
   get: function () {
     return fontSize_enum.MedFontSize;
+  }
+});
+Object.defineProperty(exports, 'MedSkin', {
+  enumerable: true,
+  get: function () {
+    return skin_enum.MedSkin;
   }
 });
 Object.defineProperty(exports, 'RateStatus', {

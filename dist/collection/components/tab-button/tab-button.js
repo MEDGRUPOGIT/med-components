@@ -1,6 +1,7 @@
 import { Component, Element, Event, Host, Listen, Prop, h } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -66,7 +67,7 @@ export class TabButton {
     return 0;
   }
   render() {
-    const { disabled, hasIcon, hasLabel, tabIndex, href, rel, target, layout, selected, tab } = this;
+    const { dsColor, disabled, hasIcon, hasLabel, tabIndex, href, rel, target, layout, selected, tab } = this;
     const mode = getIonMode(this);
     const attrs = {
       download: this.download,
@@ -74,7 +75,7 @@ export class TabButton {
       rel,
       target
     };
-    return (h(Host, { onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: {
+    return (h(Host, { "from-stencil": true, onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'tab-selected': selected,
         'tab-disabled': disabled,
@@ -86,7 +87,7 @@ export class TabButton {
         'ion-activatable': true,
         'ion-selectable': true,
         'ion-focusable': true
-      } },
+      }) },
       h("a", Object.assign({}, attrs, { tabIndex: -1, class: "button-native", part: "native" }),
         h("span", { class: "button-inner" },
           h("slot", null)),
@@ -103,6 +104,28 @@ export class TabButton {
     "md": ["tab-button.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
     "disabled": {
       "type": "boolean",
       "mutable": false,
@@ -133,7 +156,7 @@ export class TabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+        "text": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
       },
       "attribute": "download",
       "reflect": false
@@ -150,7 +173,7 @@ export class TabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+        "text": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
       },
       "attribute": "href",
       "reflect": false
@@ -167,7 +190,7 @@ export class TabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+        "text": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
       },
       "attribute": "rel",
       "reflect": false
@@ -189,7 +212,7 @@ export class TabButton {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Set the layout of the text and icon in the tab bar.\nIt defaults to `'icon-top'`."
+        "text": "Set the layout of the text and icon in the tab bar.\r\nIt defaults to `'icon-top'`."
       },
       "attribute": "layout",
       "reflect": false
@@ -224,7 +247,7 @@ export class TabButton {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A tab id must be provided for each `ion-tab`. It's used internally to reference\nthe selected tab or by the router to switch between them."
+        "text": "A tab id must be provided for each `ion-tab`. It's used internally to reference\r\nthe selected tab or by the router to switch between them."
       },
       "attribute": "tab",
       "reflect": false
@@ -241,7 +264,7 @@ export class TabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+        "text": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
       },
       "attribute": "target",
       "reflect": false

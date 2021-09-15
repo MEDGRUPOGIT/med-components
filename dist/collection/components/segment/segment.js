@@ -2,7 +2,8 @@ import { Component, Element, Event, Host, Prop, State, Watch, h, writeTask } fro
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { pointerCoord } from '../../utils/helpers';
-import { createColorClasses, hostContext } from '../../utils/theme';
+import { hostContext } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
@@ -305,9 +306,12 @@ export class Segment {
     });
   }
   render() {
+    const { dsColor, dsName } = this;
     const mode = getIonMode(this);
-    return (h(Host, { onClick: this.onClick, class: createColorClasses(this.color, {
+    return (h(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
         [mode]: true,
+        'med-segment': true,
+        [`med-segment--${dsName}`]: dsName !== undefined,
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
         'segment-activated': this.activated,
@@ -319,14 +323,53 @@ export class Segment {
   static get is() { return "ion-segment"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["segment.ios.scss"],
+    "ios": ["segment.md.scss"],
     "md": ["segment.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["segment.ios.css"],
+    "ios": ["segment.md.css"],
     "md": ["segment.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'default'",
+        "resolved": "\"default\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": true
+    },
     "color": {
       "type": "string",
       "mutable": false,
@@ -344,7 +387,7 @@ export class Segment {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -379,7 +422,7 @@ export class Segment {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, the segment buttons will overflow and the user can swipe to see them.\nIn addition, this will disable the gesture to drag the indicator between the buttons\nin order to swipe to see hidden buttons."
+        "text": "If `true`, the segment buttons will overflow and the user can swipe to see them.\r\nIn addition, this will disable the gesture to drag the indicator between the buttons\r\nin order to swipe to see hidden buttons."
       },
       "attribute": "scrollable",
       "reflect": false,
@@ -432,7 +475,7 @@ export class Segment {
       "composed": true,
       "docs": {
         "tags": [],
-        "text": "Emitted when the value property has changed and any\ndragging pointer has been released from `ion-segment`."
+        "text": "Emitted when the value property has changed and any\r\ndragging pointer has been released from `ion-segment`."
       },
       "complexType": {
         "original": "SegmentChangeEventDetail",

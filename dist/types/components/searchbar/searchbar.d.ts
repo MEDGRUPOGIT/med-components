@@ -1,9 +1,13 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { AutocompleteTypes, Color, SearchbarChangeEventDetail, StyleEventDetail } from '../../interface';
+import { AutocompleteTypes, MedColor, Color, SearchbarChangeEventDetail, StyleEventDetail } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export declare class Searchbar implements ComponentInterface {
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
   private nativeInput?;
   private isCancelVisible;
   private shouldAlignLeft;

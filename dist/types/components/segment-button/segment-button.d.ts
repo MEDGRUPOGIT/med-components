@@ -1,5 +1,5 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
-import { SegmentButtonLayout } from '../../interface';
+import { SegmentButtonLayout, MedColor } from '../../interface';
 import { ButtonInterface } from '../../utils/element-interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -11,6 +11,14 @@ import { ButtonInterface } from '../../utils/element-interface';
 export declare class SegmentButton implements ComponentInterface, ButtonInterface {
   private segmentEl;
   el: HTMLElement;
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
+  /**
+   * Define a variação do componente.
+   */
+  dsName?: 'default';
   checked: boolean;
   /**
    * If `true`, the user cannot interact with the segment button.

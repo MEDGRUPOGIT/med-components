@@ -116,7 +116,7 @@ var __assign=this&&this.__assign||function(){return(__assign=Object.assign||func
 
   var resourcesUrl = scriptElm ? scriptElm.getAttribute('data-resources-url') || scriptElm.src : '';
   var start = function() {
-    var url = new URL('./p-da4f7726.system.js', new URL(resourcesUrl, window.location.origin));
+    var url = new URL('./p-45bc6f48.system.js', new URL(resourcesUrl, window.location.origin));
     System.import(url.href);
   };
 

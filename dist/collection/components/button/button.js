@@ -1,7 +1,8 @@
 import { Component, Element, Event, Host, Prop, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { hasShadowDom, inheritAttributes } from '../../utils/helpers';
-import { createColorClasses, hostContext, openURL } from '../../utils/theme';
+import { hostContext, openURL } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -18,8 +19,10 @@ export class Button {
     this.inListHeader = false;
     this.inToolbar = false;
     this.inheritedAttributes = {};
-    this.iconOnly = false;
-    this.iconLabel = false;
+    /**
+      * Define a cor do componente.
+      */
+    this.solid = false;
     /**
      * The type of button.
      */
@@ -93,7 +96,8 @@ export class Button {
   }
   render() {
     const mode = getIonMode(this);
-    const { buttonType, type, disabled, rel, target, size, href, color, expand, hasIconOnly, shape, strong, inheritedAttributes } = this;
+    const { dsColor, dsName, dsSize, solid } = this;
+    const { buttonType, type, disabled, rel, target, size, href, expand, hasIconOnly, shape, strong, inheritedAttributes } = this;
     const finalSize = size === undefined && this.inItem ? 'small' : size;
     const TagType = href === undefined ? 'button' : 'a';
     const attrs = (TagType === 'button')
@@ -108,77 +112,98 @@ export class Button {
     if (fill === undefined) {
       fill = this.inToolbar || this.inListHeader ? 'clear' : 'solid';
     }
-    switch (this.dsName) {
-      case 'primary':
-        fill = 'solid';
-        break;
-      case 'secondary':
-        fill = 'outline';
-        break;
-      case 'tertiary':
-        fill = 'clear';
-        break;
-      case 'icon-only':
-        this.iconOnly = true;
-        fill = 'clear';
-        break;
-      case 'icon-label':
-        this.iconLabel = true;
-        fill = 'clear';
-        break;
-      default:
-        break;
-    }
-    return (h(Host, { onClick: this.handleClick, "aria-disabled": disabled ? 'true' : null, class: createColorClasses(color, {
+    return (h(Host, { onClick: this.handleClick, "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
         [mode]: true,
-        [`med-${buttonType}`]: true,
+        [buttonType]: true,
         [`${buttonType}-${expand}`]: expand !== undefined,
         [`${buttonType}-${finalSize}`]: finalSize !== undefined,
         [`${buttonType}-${shape}`]: shape !== undefined,
-        [`med-${buttonType}-${fill}`]: true,
+        //[`${buttonType}-${fill}`]: true,
         [`${buttonType}-strong`]: strong,
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
-        'button-has-icon-only': hasIconOnly || this.iconOnly,
-        'med-button-disabled': disabled,
+        'button-has-icon-only': hasIconOnly,
+        'button-disabled': disabled,
         'ion-activatable': true,
         'ion-focusable': true,
-        'in-med-navbar': hostContext('med-navbar', this.el),
-        'in-med-toolbar': hostContext('med-toolbar', this.el),
-        'button-icon-label': this.iconLabel
+        'med-button': true,
+        [`med-button--${dsName}`]: dsName !== undefined,
+        [`med-button--${dsSize}`]: dsSize !== undefined,
+        'med-button--solid': solid,
       }) },
       h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes),
         h("span", { class: "button-inner" },
           h("slot", { name: "icon-only" }),
           h("slot", { name: "start" }),
-          h("slot", null),
+          h("div", { class: "button-inner__text" },
+            h("slot", null)),
           h("slot", { name: "end" })),
-        mode === 'md' && h("ion-ripple-effect", { type: this.rippleType }))));
+        (mode === 'md' || mode === 'ios') && h("ion-ripple-effect", { type: this.rippleType }))));
   }
   static get is() { return "ion-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["./button.md.scss"],
-    "md": ["./button.md.scss"]
+    "ios": ["button.md.scss"],
+    "md": ["button.md.scss"]
   }; }
   static get styleUrls() { return {
     "ios": ["button.md.css"],
     "md": ["button.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
+    "solid": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "solid",
+      "reflect": true,
+      "defaultValue": "false"
+    },
     "dsName": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'primary' | 'secondary' | 'tertiary' | 'icon-only' | 'icon-label'",
-        "resolved": "\"icon-label\" | \"icon-only\" | \"primary\" | \"secondary\" | \"tertiary\" | undefined",
+        "original": "'secondary' | 'tertiary'",
+        "resolved": "\"secondary\" | \"tertiary\" | undefined",
         "references": {}
       },
       "required": false,
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a varia\u00E7\u00E3o solida de background do componente."
       },
       "attribute": "ds-name",
       "reflect": false
@@ -187,15 +212,15 @@ export class Button {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | undefined",
+        "original": "'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
         "references": {}
       },
       "required": false,
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a varia\u00E7\u00E3o de tamanho componente."
       },
       "attribute": "ds-size",
       "reflect": false
@@ -217,10 +242,10 @@ export class Button {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
-      "reflect": false
+      "reflect": true
     },
     "buttonType": {
       "type": "string",
@@ -270,7 +295,7 @@ export class Button {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\nwithout left and right borders."
+        "text": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\r\nwithout left and right borders."
       },
       "attribute": "expand",
       "reflect": true
@@ -287,7 +312,7 @@ export class Button {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Set to `\"clear\"` for a transparent button, to `\"outline\"` for a transparent\nbutton with a border, or to `\"solid\"`. The default style is `\"solid\"` except inside of\na toolbar, where the default is `\"clear\"`."
+        "text": "Set to `\"clear\"` for a transparent button, to `\"outline\"` for a transparent\r\nbutton with a border, or to `\"solid\"`. The default style is `\"solid\"` except inside of\r\na toolbar, where the default is `\"clear\"`."
       },
       "attribute": "fill",
       "reflect": true
@@ -309,7 +334,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`."
+        "text": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`."
       },
       "attribute": "router-direction",
       "reflect": false,
@@ -332,7 +357,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`."
+        "text": "When using a router, it specifies the transition animation when navigating to\r\nanother page using `href`."
       }
     },
     "download": {
@@ -347,7 +372,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+        "text": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
       },
       "attribute": "download",
       "reflect": false
@@ -364,7 +389,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+        "text": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
       },
       "attribute": "href",
       "reflect": false
@@ -381,7 +406,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+        "text": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
       },
       "attribute": "rel",
       "reflect": false
@@ -450,7 +475,7 @@ export class Button {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+        "text": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
       },
       "attribute": "target",
       "reflect": false

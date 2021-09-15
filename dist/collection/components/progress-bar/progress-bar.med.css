@@ -1,130 +1,8 @@
 :root {
-  --med-color-brand-primary-darkest: #074953;
-  --med-color-brand-primary-darkest-rgb: 7, 73, 83;
-  --med-color-brand-primary-dark: #137585;
-  --med-color-brand-primary-dark-rgb: 19, 117, 133;
-  --med-color-brand-primary-medium: #3aa8b9;
-  --med-color-brand-primary-medium-rgb: 58, 168, 185;
-  --med-color-brand-primary-light: #73d6e5;
-  --med-color-brand-primary-light-rgb: 115, 214, 229;
-  --med-color-brand-primary-lightest: #b0ecf5;
-  --med-color-brand-primary-lightest-rgb: 176, 236, 245;
-  --med-color-brand-primary-gradient: linear-gradient(to right, #3aa8b9, #137585);
-  --med-color-aula-darkest: #075344;
-  --med-color-aula-darkest-rgb: 7, 83, 68;
-  --med-color-aula-dark: #13856e;
-  --med-color-aula-dark-rgb: 19, 133, 110;
-  --med-color-aula-medium: #3ab89f;
-  --med-color-aula-medium-rgb: 58, 184, 159;
-  --med-color-aula-light: #73e5cf;
-  --med-color-aula-light-rgb: 115, 229, 207;
-  --med-color-aula-lightest: #b0f5e7;
-  --med-color-aula-lightest-rgb: 176, 245, 231;
-  --med-color-aula-gradient: linear-gradient(to right, #3ab89f, #13856e);
-  --med-color-material-darkest: #552607;
-  --med-color-material-darkest-rgb: 85, 38, 7;
-  --med-color-material-dark: #854013;
-  --med-color-material-dark-rgb: 133, 64, 19;
-  --med-color-material-medium: #b86d3b;
-  --med-color-material-medium-rgb: 184, 109, 59;
-  --med-color-material-light: #e5a173;
-  --med-color-material-light-rgb: 229, 161, 115;
-  --med-color-material-lightest: #f5ccb0;
-  --med-color-material-lightest-rgb: 245, 204, 176;
-  --med-color-material-gradient: linear-gradient(to right, #b86d3b, #854013);
-  --med-color-questoes-darkest: #073953;
-  --med-color-questoes-darkest-rgb: 7, 57, 83;
-  --med-color-questoes-dark: #135f85;
-  --med-color-questoes-dark-rgb: 19, 95, 133;
-  --med-color-questoes-medium: #3a8eb8;
-  --med-color-questoes-medium-rgb: 58, 142, 184;
-  --med-color-questoes-light: #73bfe5;
-  --med-color-questoes-light-rgb: 115, 191, 229;
-  --med-color-questoes-lightest: #b0def5;
-  --med-color-questoes-lightest-rgb: 176, 222, 245;
-  --med-color-questoes-gradient: linear-gradient(to right, #3a8eb8, #135f85);
-  --med-color-revalida-darkest: #53071e;
-  --med-color-revalida-darkest-rgb: 83, 7, 30;
-  --med-color-revalida-dark: #851335;
-  --med-color-revalida-dark-rgb: 133, 19, 53;
-  --med-color-revalida-medium: #b83a60;
-  --med-color-revalida-medium-rgb: 184, 58, 96;
-  --med-color-revalida-light: #e57395;
-  --med-color-revalida-light-rgb: 229, 115, 149;
-  --med-color-revalida-lightest: #f5b0c5;
-  --med-color-revalida-lightest-rgb: 245, 176, 197;
-  --med-color-revalida-gradient: linear-gradient(to right, #b83a60, #851335);
-  --med-color-provaschecklist-darkest: #2b0755;
-  --med-color-provaschecklist-darkest-rgb: 43, 7, 85;
-  --med-color-provaschecklist-dark: #481385;
-  --med-color-provaschecklist-dark-rgb: 72, 19, 133;
-  --med-color-provaschecklist-medium: #753bb8;
-  --med-color-provaschecklist-medium-rgb: 117, 59, 184;
-  --med-color-provaschecklist-light: #a873e5;
-  --med-color-provaschecklist-light-rgb: 168, 115, 229;
-  --med-color-provaschecklist-lightest: #d1b2f5;
-  --med-color-provaschecklist-lightest-rgb: 209, 178, 245;
-  --med-color-provaschecklist-gradient: linear-gradient(to right, #753bb8, #481385);
-  --med-color-neutral-dark-prime: #141414;
-  --med-color-neutral-dark-prime-rgb: 20, 20, 20;
-  --med-color-neutral-dark-40: #292929;
-  --med-color-neutral-dark-40-rgb: 41, 41, 41;
-  --med-color-neutral-dark-30: #474747;
-  --med-color-neutral-dark-30-rgb: 71, 71, 71;
-  --med-color-neutral-dark-20: #5c5c5c;
-  --med-color-neutral-dark-20-rgb: 92, 92, 92;
-  --med-color-neutral-dark-10: #7a7a7a;
-  --med-color-neutral-dark-10-rgb: 122, 122, 122;
-  --med-color-neutral-dark-gradient: linear-gradient(to right, #fafafa, #141414);
-  --med-color-neutral-light-prime: #fafafa;
-  --med-color-neutral-light-prime-rgb: 250, 250, 250;
-  --med-color-neutral-light-40: #ebebeb;
-  --med-color-neutral-light-40-rgb: 235, 235, 235;
-  --med-color-neutral-light-30: #d6d6d6;
-  --med-color-neutral-light-30-rgb: 214, 214, 214;
-  --med-color-neutral-light-20: #c2c2c2;
-  --med-color-neutral-light-20-rgb: 194, 194, 194;
-  --med-color-neutral-light-10: #adadad;
-  --med-color-neutral-light-10-rgb: 173, 173, 173;
-  --med-color-neutral-light-gradient: linear-gradient(to right, #141414, #fafafa);
-  --med-color-feedback-warning-darkest: #504606;
-  --med-color-feedback-warning-darkest-rgb: 80, 70, 6;
-  --med-color-feedback-warning-dark: #857513;
-  --med-color-feedback-warning-dark-rgb: 133, 117, 19;
-  --med-color-feedback-warning-medium: #b8a73b;
-  --med-color-feedback-warning-medium-rgb: 184, 167, 59;
-  --med-color-feedback-warning-light: #e5d673;
-  --med-color-feedback-warning-light-rgb: 229, 214, 115;
-  --med-color-feedback-warning-lightest: #f5ecb0;
-  --med-color-feedback-warning-lightest-rgb: 245, 236, 176;
-  --med-color-feedback-warning-gradient: linear-gradient(to right, #b8a73b, #857513);
-  --med-color-feedback-error-darkest: #520c07;
-  --med-color-feedback-error-darkest-rgb: 82, 12, 7;
-  --med-color-feedback-error-dark: #851a13;
-  --med-color-feedback-error-dark-rgb: 133, 26, 19;
-  --med-color-feedback-error-medium: #b8433b;
-  --med-color-feedback-error-medium-rgb: 184, 67, 59;
-  --med-color-feedback-error-light: #e57a73;
-  --med-color-feedback-error-light-rgb: 229, 122, 115;
-  --med-color-feedback-error-lightest: #f5b5b0;
-  --med-color-feedback-error-lightest-rgb: 245, 181, 176;
-  --med-color-feedback-error-gradient: linear-gradient(to right, #b8433b, #851a13);
-  --med-color-feedback-success-darkest: #065010;
-  --med-color-feedback-success-darkest-rgb: 6, 80, 16;
-  --med-color-feedback-success-dark: #138522;
-  --med-color-feedback-success-dark-rgb: 19, 133, 34;
-  --med-color-feedback-success-medium: #3bb84b;
-  --med-color-feedback-success-medium-rgb: 59, 184, 75;
-  --med-color-feedback-success-light: #73e582;
-  --med-color-feedback-success-light-rgb: 115, 229, 130;
-  --med-color-feedback-success-lightest: #b0f5b9;
-  --med-color-feedback-success-lightest-rgb: 176, 245, 185;
-  --med-color-feedback-success-gradient: linear-gradient(to right, #3bb84b, #138522);
-}
-
-:root {
-  --med-font-family-brand: fsemeric;
-  --med-font-family-base: fsemeric;
+  /* font family */
+  --med-font-family-brand: "fsemeric";
+  --med-font-family-base: "fsemeric";
+  /* font size */
   --med-font-size-nano: 10px;
   --med-font-size-xxxs: 12px;
   --med-font-size-xxs: 14px;
@@ -136,6 +14,7 @@
   --med-font-size-xxl: 48px;
   --med-font-size-xxxl: 64px;
   --med-font-size-huge: 96px;
+  /* font weight */
   --med-font-weight-thin: 250;
   --med-font-weight-light: 300;
   --med-font-weight-regular: 400;
@@ -144,19 +23,31 @@
   --med-font-weight-bold: 700;
   --med-font-weight-extrabold: 800;
   --med-font-weight-heavy: 900;
+  /* letter spacing */
+  --med-letter-spacing-ultracompressed: -0.04;
+  --med-letter-spacing-compressed: -0.02;
+  --med-letter-spacing-default: 0;
+  --med-letter-spacing-medium: 0.02;
+  --med-letter-spacing-expanded: 0.05;
+  --med-letter-spacing-distant: 0.1;
+  --med-letter-spacing-far: 0.2;
+  /* line height */
   --med-line-height-compressed: 100%;
-  --med-line-height-double: 100%;
+  --med-line-height-default: 24px;
+  --med-line-height-double: 200%;
 }
 
 :root {
+  /* spacing inset */
   --med-spacing-inset-nano: 4px;
   --med-spacing-inset-xs: 8px;
   --med-spacing-inset-sm: 16px;
   --med-spacing-inset-base: 24px;
   --med-spacing-inset-md: 32px;
-  --med-spacing-inset-md: 32px;
-  --med-spacing-inset-md: 32px;
+  --med-spacing-inset-lg: 40px;
+  --med-spacing-inset-xl: 48px;
   --med-spacing-inset-xxl: 64px;
+  /* spacing squish */
   --med-spacing-squish-nano: 4px 8px;
   --med-spacing-squish-xs: 8px 16px;
   --med-spacing-squish-sm: 8px 24px;
@@ -165,6 +56,7 @@
   --med-spacing-squish-lg: 16px 32px;
   --med-spacing-squish-xl: 24px 32px;
   --med-spacing-squish-xxl: 32px 40px;
+  /* spacing stretch */
   --med-spacing-stretch-nano: 8px 4px;
   --med-spacing-stretch-xs: 16px 8px;
   --med-spacing-stretch-sm: 24px 8px;
@@ -173,6 +65,7 @@
   --med-spacing-stretch-lg: 32px 16px;
   --med-spacing-stretch-xl: 32px 24px;
   --med-spacing-stretch-xxl: 40px 32px;
+  /* spacing inline */
   --med-spacing-inline-quark: 2px;
   --med-spacing-inline-nano: 4px;
   --med-spacing-inline-xxxs: 8px;
@@ -187,6 +80,7 @@
   --med-spacing-inline-xxxl: 80px;
   --med-spacing-inline-huge: 120px;
   --med-spacing-inline-ultra: 160px;
+  /* spacing stack */
   --med-spacing-stack-quark: 2px;
   --med-spacing-stack-nano: 4px;
   --med-spacing-stack-xxxs: 8px;
@@ -212,14 +106,17 @@
   --med-border-radius-lg: 24px;
   --med-border-radius-pill: 31.25em;
   --med-border-radius-full: 50%;
+  /* speech bubble */
   --med-border-radius-speech-left-down: 8px 8px 8px 0;
   --med-border-radius-speech-right-down: 8px 8px 0 8px;
   --med-border-radius-speech-right-up: 8px 0 8px 0px;
   --med-border-radius-speech-left-up: 0 8px 8px 0px;
+  /* table */
   --med-border-radius-table-down-sm: 0 0 8px 8px;
   --med-border-radius-table-up-sm: 8px 8px 0 0;
   --med-border-radius-table-down-md: 16px 16px 0 0;
   --med-border-radius-table-up-md: 0 0 16px 16px;
+  /* border widths */
   --med-border-width-none: 0;
   --med-border-width-quark: 0.25px;
   --med-border-width-nano: 0.5px;
@@ -228,12 +125,14 @@
   --med-border-width-thick: 4px;
   --med-border-width-bold: 8px;
   --med-border-width-heavy: 16px;
+  /* opacity levels */
   --med-opacity-level-semiopaque: 0.8;
   --med-opacity-level-intense: 0.64;
   --med-opacity-level-half: 0.5;
   --med-opacity-level-medium: 0.32;
   --med-opacity-level-light: 0.16;
   --med-opacity-level-semitransparent: 0.08;
+  /* shadow levels */
   --med-shadow-level-0: none;
   --med-shadow-level-1: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);
   --med-shadow-level-2: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
@@ -254,25 +153,30 @@
    * @prop --buffer-background: DEPRECATED, use `--background` instead
    */
   --background: transparent;
-  --progress-background: var(--med-color-questoes-light, #73bfe5);
+  --progress-background: hsl(var(--med-color-brand-4));
   --buffer-background: transparent;
-  --progress-correct-background: var(--med-color-feedback-success-light, #73e582);
-  --percentage-color: var(--med-color-neutral-light-10, #adadad);
+  --color-label-skin: hsl(var(--med-color-brand-4));
+  --color-progress-skin: hsl(var(--med-color-brand-4));
+  --progress-correct-background: hsl(var(--med-color-fb-success));
+  --percentage-color: hsl(var(--med-color-neutral-10));
+  --height: 8px;
   display: block;
   position: relative;
   contain: strict;
   overflow: hidden;
   width: 100%;
-  height: 8px;
+  height: var(--height);
 }
 
 .progress-container {
   display: flex;
+  border-radius: 100px;
   background-color: var(--background);
 }
 
 :host(.in-med-header) .progress-container {
-  background: var(--med-color-neutral-light-40, #ebebeb);
+  background: hsl(var(--med-color-neutral-8));
+  border-radius: 0;
 }
 :host(.in-med-header) .progress {
   border-top-left-radius: 0;
@@ -282,7 +186,7 @@
   display: none;
 }
 :host(.in-med-header) .progress--correct {
-  background: var(--med-color-questoes-light, #73bfe5);
+  background: hsl(var(--med-color-brand-4));
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -291,15 +195,15 @@
   width: 100%;
   height: 100%;
   border-radius: 100px;
-  height: 8px;
+  height: var(--height);
   background: var(--progress-background);
 }
 .progress__percentage {
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 100%;
+  font-size: var(--med-font-size-nano);
+  font-weight: var(--med-font-weight-regular);
+  line-height: var(--med-line-height-compressed);
   color: var(--percentage-color);
-  margin-left: 8px;
+  margin-left: var(--med-spacing-inline-xxxs);
   display: none;
 }
 .progress--correct {
@@ -310,6 +214,76 @@
   display: block;
 }
 
-:host(.ion-color) {
-  --progress-background: var(--med-color-light);
+:host(.med-color) {
+  --progress-background: hsl(var(--med-color-4));
+}
+
+:host(.med-color-neutral) {
+  --progress-background: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --progress-background: hsl(var(--med-color-feedback));
+}
+
+:host(.med-progress-bar--minimalist) {
+  --background: hsl(var(--med-color-brand-1));
+  --progress-correct-background: hsl(var(--med-color-brand-4));
+  --height: 4px;
+}
+:host(.med-progress-bar--minimalist) .progress {
+  border-radius: 0;
+}
+:host(.med-progress-bar--minimalist) .progress__percentage {
+  display: none;
+}
+:host(.med-progress-bar--minimalist) .progress-container {
+  border-radius: 0;
+}
+
+:host(.med-color.med-progress-bar--minimalist) {
+  --background: hsl(var(--med-color-1));
+  --progress-correct-background: hsl(var(--med-color-4));
+}
+
+:host(.med-color-neutral.med-progress-bar--minimalist) {
+  --background: transparent;
+  --progress-correct-background: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback.med-progress-bar--minimalist) {
+  --background: transparent;
+  --progress-correct-background: hsl(var(--med-color-feedback));
+}
+
+:host(.med-progress-bar--skin) {
+  --background: hsl(var(--med-color-neutral-2));
+  --progress-background: var(--color-progress-skin);
+  --percentage-color: var(--color-label-skin);
+  --height: 10px;
+}
+:host(.med-progress-bar--skin) .progress-container {
+  width: 96%;
+}
+:host(.med-progress-bar--skin) .progress__percentage {
+  position: absolute;
+  right: 0px;
+}
+
+:host(.med-color.med-progress-bar--skin) {
+  --background: hsl(var(--med-color-neutral-2));
+  --progress-background: hsl(var(--med-color-4));
+  --percentage-color: hsl(var(--med-color-4));
+}
+
+:host(.med-color-neutral.med-progress-bar--skin) {
+  --background: hsl(var(--med-color-neutral-2));
+  --progress-background: hsl(var(--med-color-neutral));
+  --percentage-color: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback.med-progress-bar--skin) {
+  --background: hsl(var(--med-color-neutral-2));
+  --progress-background: hsl(var(--med-color-feedback));
+  --percentage-color: hsl(var(--med-color-feedback));
 }

@@ -1,6 +1,6 @@
 import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
-import { createColorClasses } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
@@ -49,7 +49,6 @@ export class TabBar {
   }
   /**
    * Med Resize
-   *
    */
   setSize() {
     this.medResize.emit({ height: 1 });
@@ -63,10 +62,10 @@ export class TabBar {
     this.hostResizeObserver.observe(this.el);
   }
   render() {
-    const { color, translucent, keyboardVisible } = this;
+    const { dsColor, translucent, keyboardVisible } = this;
     const mode = getIonMode(this);
     this.medResize.emit({ height: 1 });
-    return (h(Host, { role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, class: createColorClasses(color, {
+    return (h(Host, { "from-stencil": true, role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'tab-bar-translucent': translucent,
         'tab-bar-hidden': keyboardVisible,
@@ -84,6 +83,28 @@ export class TabBar {
     "md": ["tab-bar.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
     "color": {
       "type": "string",
       "mutable": false,
@@ -101,7 +122,7 @@ export class TabBar {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -135,7 +156,7 @@ export class TabBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, the tab bar will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+        "text": "If `true`, the tab bar will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
       },
       "attribute": "translucent",
       "reflect": false,
@@ -153,7 +174,7 @@ export class TabBar {
       "composed": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "TODO"
       },
       "complexType": {
         "original": "TabBarResizeEventDetail",

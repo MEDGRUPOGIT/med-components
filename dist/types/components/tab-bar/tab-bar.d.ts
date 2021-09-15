@@ -1,5 +1,5 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { Color, TabBarChangedEventDetail, TabBarResizeEventDetail } from '../../interface';
+import { Color, MedColor, TabBarChangedEventDetail, TabBarResizeEventDetail } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
@@ -8,9 +8,16 @@ export declare class TabBar implements ComponentInterface {
   private keyboardWillHideHandler?;
   private hostHeight;
   private hostResizeObserver;
+  /**
+   * TODO
+   */
   medResize: EventEmitter<TabBarResizeEventDetail>;
   el: HTMLElement;
   keyboardVisible: boolean;
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
@@ -35,7 +42,6 @@ export declare class TabBar implements ComponentInterface {
   disconnectedCallback(): void;
   /**
    * Med Resize
-   *
    */
   private setSize;
   render(): any;

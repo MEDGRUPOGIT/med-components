@@ -1,5 +1,5 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
-import { Color } from '../../interface';
+import { Color, MedColor } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -10,6 +10,17 @@ import { Color } from '../../interface';
  */
 export declare class ProgressBar implements ComponentInterface {
   el: HTMLElement;
+  /**
+   * Define a cor do componente.
+   */
+  dsColor?: MedColor;
+  /**
+   * Define a variação do componente.
+   */
+  dsName?: 'minimalist' | 'skin';
+  /**
+    * Esconde ou mostra a porcentagem.
+    */
   percentage: boolean;
   /**
    * The state of the progress bar, based on if the time the process takes is known or not.

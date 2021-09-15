@@ -1,5 +1,5 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { Color, SegmentChangeEventDetail, StyleEventDetail } from '../../interface';
+import { Color, MedColor, SegmentChangeEventDetail, StyleEventDetail } from '../../interface';
 import { GestureDetail } from '../../utils/gesture';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -8,6 +8,14 @@ export declare class Segment implements ComponentInterface {
   private gesture?;
   private didInit;
   private checked?;
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
+  /**
+   * Define a variação do componente.
+   */
+  dsName?: 'default';
   private valueAfterGesture?;
   el: HTMLIonSegmentElement;
   activated: boolean;

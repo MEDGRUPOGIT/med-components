@@ -1,6 +1,7 @@
 import { Component, Element, Event, Host, Prop, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
-import { createColorClasses, hostContext, openURL } from '../../utils/theme';
+import { hostContext, openURL } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -50,7 +51,7 @@ export class FabButton {
     };
   }
   render() {
-    const { el, disabled, color, href, activated, show, translucent, size } = this;
+    const { dsColor, el, disabled, href, activated, show, translucent, size } = this;
     const inList = hostContext('ion-fab-list', el);
     const mode = getIonMode(this);
     const TagType = href === undefined ? 'button' : 'a';
@@ -62,7 +63,7 @@ export class FabButton {
         rel: this.rel,
         target: this.target
       };
-    return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: createColorClasses(color, {
+    return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'fab-button-in-list': inList,
         'fab-button-translucent-in-list': inList && translucent,
@@ -75,7 +76,7 @@ export class FabButton {
         [`fab-button-${size}`]: size !== undefined,
       }) },
       h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur, onClick: (ev) => openURL(href, ev, this.routerDirection, this.routerAnimation) }),
-        h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "close-icon", lazy: false }),
+        h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "med-icon close-icon", lazy: false }),
         h("span", { class: "button-inner" },
           h("slot", null),
           h("slot", { name: "label" })),
@@ -104,7 +105,7 @@ export class FabButton {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "TODO"
       },
       "attribute": "ds-size",
       "reflect": false
@@ -121,10 +122,54 @@ export class FabButton {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "TODO"
       },
       "attribute": "ds-name",
       "reflect": false
+    },
+    "neutral": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "Neutral",
+        "resolved": "string | undefined",
+        "references": {
+          "Neutral": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "TODO"
+      },
+      "attribute": "neutral",
+      "reflect": false
+    },
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
     },
     "color": {
       "type": "string",
@@ -143,7 +188,7 @@ export class FabButton {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -196,7 +241,7 @@ export class FabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+        "text": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
       },
       "attribute": "download",
       "reflect": false
@@ -213,7 +258,7 @@ export class FabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+        "text": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
       },
       "attribute": "href",
       "reflect": false
@@ -230,7 +275,7 @@ export class FabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+        "text": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
       },
       "attribute": "rel",
       "reflect": false
@@ -252,7 +297,7 @@ export class FabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`."
+        "text": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`."
       },
       "attribute": "router-direction",
       "reflect": false,
@@ -275,7 +320,7 @@ export class FabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`."
+        "text": "When using a router, it specifies the transition animation when navigating to\r\nanother page using `href`."
       }
     },
     "target": {
@@ -290,7 +335,7 @@ export class FabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+        "text": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
       },
       "attribute": "target",
       "reflect": false
@@ -325,7 +370,7 @@ export class FabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, the fab button will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+        "text": "If `true`, the fab button will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
       },
       "attribute": "translucent",
       "reflect": false,
@@ -378,7 +423,7 @@ export class FabButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The icon name to use for the close icon. This will appear when the fab button\nis pressed. Only applies if it is the main button inside of a fab containing a\nfab list."
+        "text": "The icon name to use for the close icon. This will appear when the fab button\r\nis pressed. Only applies if it is the main button inside of a fab containing a\r\nfab list."
       },
       "attribute": "close-icon",
       "reflect": false,

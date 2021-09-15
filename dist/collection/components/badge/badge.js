@@ -1,19 +1,19 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
-import { createColorClasses } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export class Badge {
-  constructor() {
-    this.invert = false;
-  }
   render() {
+    const { dsColor, dsName, dsSize } = this;
     const mode = getIonMode(this);
-    return (h(Host, { class: createColorClasses(this.color, {
+    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         [mode]: true,
-        'invert': this.invert,
-      }, this.neutral) },
+        'med-badge': true,
+        [`med-badge--${dsName}`]: dsName !== undefined,
+        [`med-badge--${dsSize}`]: dsSize !== undefined,
+      }) },
       h("slot", null)));
   }
   static get is() { return "ion-badge"; }
@@ -27,66 +27,14 @@ export class Badge {
     "md": ["badge.md.css"]
   }; }
   static get properties() { return {
-    "dsSize": {
+    "dsColor": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "ds-size",
-      "reflect": false
-    },
-    "fill": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'outline'",
-        "resolved": "\"outline\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "fill",
-      "reflect": false
-    },
-    "invert": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "invert",
-      "reflect": true,
-      "defaultValue": "false"
-    },
-    "neutral": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
+        "original": "MedColor",
         "resolved": "string | undefined",
         "references": {
-          "Color": {
+          "MedColor": {
             "location": "import",
             "path": "../../interface"
           }
@@ -96,10 +44,44 @@ export class Badge {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a cor do componente."
       },
-      "attribute": "neutral",
-      "reflect": false
+      "attribute": "ds-color",
+      "reflect": true
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": true
+    },
+    "dsSize": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o de tamanho do componente."
+      },
+      "attribute": "ds-size",
+      "reflect": true
     },
     "color": {
       "type": "string",
@@ -118,7 +100,7 @@ export class Badge {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false

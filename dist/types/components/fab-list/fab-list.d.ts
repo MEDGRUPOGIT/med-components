@@ -1,5 +1,8 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
 export declare class FabList implements ComponentInterface {
+  /**
+   * TODO
+   */
   dsSize?: 'md' | 'lg';
   el: HTMLIonFabElement;
   /**

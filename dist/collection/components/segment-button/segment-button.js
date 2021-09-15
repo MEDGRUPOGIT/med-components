@@ -2,6 +2,7 @@ import { Component, Element, Host, Prop, State, forceUpdate, h } from '@stencil/
 import { getIonMode } from '../../global/ionic-global';
 import { addEventListener, removeEventListener } from '../../utils/helpers';
 import { hostContext } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 let ids = 0;
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -62,11 +63,13 @@ export class SegmentButton {
     return !!this.el.querySelector('ion-icon');
   }
   render() {
-    const { checked, type, disabled, hasIcon, hasLabel, layout, segmentEl } = this;
+    const { checked, type, disabled, hasIcon, hasLabel, layout, segmentEl, dsColor, dsName } = this;
     const mode = getIonMode(this);
     const hasSegmentColor = () => segmentEl !== null && segmentEl.color !== undefined;
-    return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: {
+    return (h(Host, { "from-stencil": true, "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
         [mode]: true,
+        'med-segment-button': true,
+        [`med-segment-button--${dsName}`]: dsName !== undefined,
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
         'in-segment': hostContext('ion-segment', this.el),
@@ -81,7 +84,7 @@ export class SegmentButton {
         'ion-activatable': true,
         'ion-activatable-instant': true,
         'ion-focusable': true,
-      } },
+      }) },
       h("button", { type: type, "aria-pressed": checked ? 'true' : 'false', class: "button-native", part: "native", disabled: disabled },
         h("span", { class: "button-inner" },
           h("slot", null)),
@@ -95,14 +98,53 @@ export class SegmentButton {
   static get is() { return "ion-segment-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["segment-button.ios.scss"],
+    "ios": ["segment-button.md.scss"],
     "md": ["segment-button.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["segment-button.ios.css"],
+    "ios": ["segment-button.md.css"],
     "md": ["segment-button.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'default'",
+        "resolved": "\"default\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": true
+    },
     "disabled": {
       "type": "boolean",
       "mutable": false,

@@ -1,7 +1,8 @@
 import { Component, Element, Event, Host, Prop, Watch, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { getAriaLabel, renderHiddenInput } from '../../utils/helpers';
-import { createColorClasses, hostContext } from '../../utils/theme';
+import { hostContext } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -40,6 +41,7 @@ export class Checkbox {
       this.setFocus();
       this.checked = !this.checked;
       this.indeterminate = false;
+      console.log('clicked');
     };
     this.onFocus = () => {
       this.ionFocus.emit();
@@ -73,19 +75,23 @@ export class Checkbox {
     }
   }
   render() {
-    const { color, checked, disabled, el, indeterminate, inputId, name, value } = this;
+    const { dsColor, checked, disabled, el, indeterminate, inputId, name, value } = this;
     const mode = getIonMode(this);
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     renderHiddenInput(true, el, name, (checked ? value : ''), disabled);
     let path = indeterminate
-      ? h("path", { d: "M6 12L18 12", part: "mark" })
-      : h("path", { d: "M5.9,12.5l3.8,3.8l8.8-8.8", part: "mark" });
+      // ? <path d="M6 12L18 12" part="mark" />
+      ? h("div", { class: "indeterminate" })
+      // : <path d="M5.9,12.5l3.8,3.8l8.8-8.8" part="mark" />;
+      : h("div", { class: "checked" });
     if (mode === 'md') {
       path = indeterminate
-        ? h("path", { d: "M2 12H22", part: "mark" })
-        : h("path", { d: "M1.73,12.91 8.1,19.28 22.79,4.59", part: "mark" });
+        // ? <path d="M2 12H22" part="mark" />
+        ? h("div", { class: "indeterminate" })
+        // : <path d="M1.73,12.91 8.1,19.28 22.79,4.59" part="mark" />;
+        : h("div", { class: "checked" });
     }
-    return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses(color, {
+    return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: generateMedColor(dsColor, {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'checkbox-checked': checked,
@@ -93,21 +99,43 @@ export class Checkbox {
         'checkbox-indeterminate': indeterminate,
         'interactive': true
       }) },
-      h("svg", { class: "checkbox-icon", viewBox: "0 0 24 24", part: "container" }, path),
+      h("div", { part: "container", class: "checkbox-icon" }, path),
       h("label", { htmlFor: inputId }, labelText),
       h("input", { type: "checkbox", "aria-checked": `${checked}`, disabled: disabled, id: inputId, onFocus: () => this.onFocus(), onBlur: () => this.onBlur(), ref: focusEl => this.focusEl = focusEl })));
   }
   static get is() { return "ion-checkbox"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["checkbox.ios.scss"],
+    "ios": ["checkbox.md.scss"],
     "md": ["checkbox.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["checkbox.ios.css"],
+    "ios": ["checkbox.md.css"],
     "md": ["checkbox.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
     "color": {
       "type": "string",
       "mutable": false,
@@ -125,7 +153,7 @@ export class Checkbox {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -214,7 +242,7 @@ export class Checkbox {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The value of the checkbox does not mean if it's checked or not, use the `checked`\nproperty for that.\n\nThe value of a checkbox is analogous to the value of an `<input type=\"checkbox\">`,\nit's only used when the checkbox participates in a native `<form>`."
+        "text": "The value of the checkbox does not mean if it's checked or not, use the `checked`\r\nproperty for that.\r\n\r\nThe value of a checkbox is analogous to the value of an `<input type=\"checkbox\">`,\r\nit's only used when the checkbox participates in a native `<form>`."
       },
       "attribute": "value",
       "reflect": false,

@@ -56,7 +56,7 @@ export class MenuButton {
       h("button", Object.assign({}, attrs, { disabled: disabled, class: "button-native", part: "native", "aria-label": "menu" }),
         h("span", { class: "button-inner" },
           h("slot", null,
-            h("ion-icon", { part: "icon", icon: menuIcon, mode: mode, lazy: false, "aria-hidden": "true" }))),
+            h("ion-icon", { class: "med-icon", part: "icon", icon: menuIcon, mode: mode, lazy: false, "aria-hidden": "true" }))),
         mode === 'md' && h("ion-ripple-effect", { type: "unbounded" }))));
   }
   static get is() { return "ion-menu-button"; }
@@ -87,7 +87,7 @@ export class MenuButton {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false

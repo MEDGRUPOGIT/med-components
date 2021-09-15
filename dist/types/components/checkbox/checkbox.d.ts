@@ -1,5 +1,5 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { CheckboxChangeEventDetail, Color, StyleEventDetail } from '../../interface';
+import { CheckboxChangeEventDetail, Color, StyleEventDetail, MedColor } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -10,6 +10,10 @@ export declare class Checkbox implements ComponentInterface {
   private inputId;
   private focusEl?;
   el: HTMLElement;
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

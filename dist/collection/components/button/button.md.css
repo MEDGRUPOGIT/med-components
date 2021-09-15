@@ -1,130 +1,8 @@
 :root {
-  --med-color-brand-primary-darkest: #074953;
-  --med-color-brand-primary-darkest-rgb: 7, 73, 83;
-  --med-color-brand-primary-dark: #137585;
-  --med-color-brand-primary-dark-rgb: 19, 117, 133;
-  --med-color-brand-primary-medium: #3aa8b9;
-  --med-color-brand-primary-medium-rgb: 58, 168, 185;
-  --med-color-brand-primary-light: #73d6e5;
-  --med-color-brand-primary-light-rgb: 115, 214, 229;
-  --med-color-brand-primary-lightest: #b0ecf5;
-  --med-color-brand-primary-lightest-rgb: 176, 236, 245;
-  --med-color-brand-primary-gradient: linear-gradient(to right, #3aa8b9, #137585);
-  --med-color-aula-darkest: #075344;
-  --med-color-aula-darkest-rgb: 7, 83, 68;
-  --med-color-aula-dark: #13856e;
-  --med-color-aula-dark-rgb: 19, 133, 110;
-  --med-color-aula-medium: #3ab89f;
-  --med-color-aula-medium-rgb: 58, 184, 159;
-  --med-color-aula-light: #73e5cf;
-  --med-color-aula-light-rgb: 115, 229, 207;
-  --med-color-aula-lightest: #b0f5e7;
-  --med-color-aula-lightest-rgb: 176, 245, 231;
-  --med-color-aula-gradient: linear-gradient(to right, #3ab89f, #13856e);
-  --med-color-material-darkest: #552607;
-  --med-color-material-darkest-rgb: 85, 38, 7;
-  --med-color-material-dark: #854013;
-  --med-color-material-dark-rgb: 133, 64, 19;
-  --med-color-material-medium: #b86d3b;
-  --med-color-material-medium-rgb: 184, 109, 59;
-  --med-color-material-light: #e5a173;
-  --med-color-material-light-rgb: 229, 161, 115;
-  --med-color-material-lightest: #f5ccb0;
-  --med-color-material-lightest-rgb: 245, 204, 176;
-  --med-color-material-gradient: linear-gradient(to right, #b86d3b, #854013);
-  --med-color-questoes-darkest: #073953;
-  --med-color-questoes-darkest-rgb: 7, 57, 83;
-  --med-color-questoes-dark: #135f85;
-  --med-color-questoes-dark-rgb: 19, 95, 133;
-  --med-color-questoes-medium: #3a8eb8;
-  --med-color-questoes-medium-rgb: 58, 142, 184;
-  --med-color-questoes-light: #73bfe5;
-  --med-color-questoes-light-rgb: 115, 191, 229;
-  --med-color-questoes-lightest: #b0def5;
-  --med-color-questoes-lightest-rgb: 176, 222, 245;
-  --med-color-questoes-gradient: linear-gradient(to right, #3a8eb8, #135f85);
-  --med-color-revalida-darkest: #53071e;
-  --med-color-revalida-darkest-rgb: 83, 7, 30;
-  --med-color-revalida-dark: #851335;
-  --med-color-revalida-dark-rgb: 133, 19, 53;
-  --med-color-revalida-medium: #b83a60;
-  --med-color-revalida-medium-rgb: 184, 58, 96;
-  --med-color-revalida-light: #e57395;
-  --med-color-revalida-light-rgb: 229, 115, 149;
-  --med-color-revalida-lightest: #f5b0c5;
-  --med-color-revalida-lightest-rgb: 245, 176, 197;
-  --med-color-revalida-gradient: linear-gradient(to right, #b83a60, #851335);
-  --med-color-provaschecklist-darkest: #2b0755;
-  --med-color-provaschecklist-darkest-rgb: 43, 7, 85;
-  --med-color-provaschecklist-dark: #481385;
-  --med-color-provaschecklist-dark-rgb: 72, 19, 133;
-  --med-color-provaschecklist-medium: #753bb8;
-  --med-color-provaschecklist-medium-rgb: 117, 59, 184;
-  --med-color-provaschecklist-light: #a873e5;
-  --med-color-provaschecklist-light-rgb: 168, 115, 229;
-  --med-color-provaschecklist-lightest: #d1b2f5;
-  --med-color-provaschecklist-lightest-rgb: 209, 178, 245;
-  --med-color-provaschecklist-gradient: linear-gradient(to right, #753bb8, #481385);
-  --med-color-neutral-dark-prime: #141414;
-  --med-color-neutral-dark-prime-rgb: 20, 20, 20;
-  --med-color-neutral-dark-40: #292929;
-  --med-color-neutral-dark-40-rgb: 41, 41, 41;
-  --med-color-neutral-dark-30: #474747;
-  --med-color-neutral-dark-30-rgb: 71, 71, 71;
-  --med-color-neutral-dark-20: #5c5c5c;
-  --med-color-neutral-dark-20-rgb: 92, 92, 92;
-  --med-color-neutral-dark-10: #7a7a7a;
-  --med-color-neutral-dark-10-rgb: 122, 122, 122;
-  --med-color-neutral-dark-gradient: linear-gradient(to right, #fafafa, #141414);
-  --med-color-neutral-light-prime: #fafafa;
-  --med-color-neutral-light-prime-rgb: 250, 250, 250;
-  --med-color-neutral-light-40: #ebebeb;
-  --med-color-neutral-light-40-rgb: 235, 235, 235;
-  --med-color-neutral-light-30: #d6d6d6;
-  --med-color-neutral-light-30-rgb: 214, 214, 214;
-  --med-color-neutral-light-20: #c2c2c2;
-  --med-color-neutral-light-20-rgb: 194, 194, 194;
-  --med-color-neutral-light-10: #adadad;
-  --med-color-neutral-light-10-rgb: 173, 173, 173;
-  --med-color-neutral-light-gradient: linear-gradient(to right, #141414, #fafafa);
-  --med-color-feedback-warning-darkest: #504606;
-  --med-color-feedback-warning-darkest-rgb: 80, 70, 6;
-  --med-color-feedback-warning-dark: #857513;
-  --med-color-feedback-warning-dark-rgb: 133, 117, 19;
-  --med-color-feedback-warning-medium: #b8a73b;
-  --med-color-feedback-warning-medium-rgb: 184, 167, 59;
-  --med-color-feedback-warning-light: #e5d673;
-  --med-color-feedback-warning-light-rgb: 229, 214, 115;
-  --med-color-feedback-warning-lightest: #f5ecb0;
-  --med-color-feedback-warning-lightest-rgb: 245, 236, 176;
-  --med-color-feedback-warning-gradient: linear-gradient(to right, #b8a73b, #857513);
-  --med-color-feedback-error-darkest: #520c07;
-  --med-color-feedback-error-darkest-rgb: 82, 12, 7;
-  --med-color-feedback-error-dark: #851a13;
-  --med-color-feedback-error-dark-rgb: 133, 26, 19;
-  --med-color-feedback-error-medium: #b8433b;
-  --med-color-feedback-error-medium-rgb: 184, 67, 59;
-  --med-color-feedback-error-light: #e57a73;
-  --med-color-feedback-error-light-rgb: 229, 122, 115;
-  --med-color-feedback-error-lightest: #f5b5b0;
-  --med-color-feedback-error-lightest-rgb: 245, 181, 176;
-  --med-color-feedback-error-gradient: linear-gradient(to right, #b8433b, #851a13);
-  --med-color-feedback-success-darkest: #065010;
-  --med-color-feedback-success-darkest-rgb: 6, 80, 16;
-  --med-color-feedback-success-dark: #138522;
-  --med-color-feedback-success-dark-rgb: 19, 133, 34;
-  --med-color-feedback-success-medium: #3bb84b;
-  --med-color-feedback-success-medium-rgb: 59, 184, 75;
-  --med-color-feedback-success-light: #73e582;
-  --med-color-feedback-success-light-rgb: 115, 229, 130;
-  --med-color-feedback-success-lightest: #b0f5b9;
-  --med-color-feedback-success-lightest-rgb: 176, 245, 185;
-  --med-color-feedback-success-gradient: linear-gradient(to right, #3bb84b, #138522);
-}
-
-:root {
-  --med-font-family-brand: fsemeric;
-  --med-font-family-base: fsemeric;
+  /* font family */
+  --med-font-family-brand: "fsemeric";
+  --med-font-family-base: "fsemeric";
+  /* font size */
   --med-font-size-nano: 10px;
   --med-font-size-xxxs: 12px;
   --med-font-size-xxs: 14px;
@@ -136,6 +14,7 @@
   --med-font-size-xxl: 48px;
   --med-font-size-xxxl: 64px;
   --med-font-size-huge: 96px;
+  /* font weight */
   --med-font-weight-thin: 250;
   --med-font-weight-light: 300;
   --med-font-weight-regular: 400;
@@ -144,19 +23,31 @@
   --med-font-weight-bold: 700;
   --med-font-weight-extrabold: 800;
   --med-font-weight-heavy: 900;
+  /* letter spacing */
+  --med-letter-spacing-ultracompressed: -0.04;
+  --med-letter-spacing-compressed: -0.02;
+  --med-letter-spacing-default: 0;
+  --med-letter-spacing-medium: 0.02;
+  --med-letter-spacing-expanded: 0.05;
+  --med-letter-spacing-distant: 0.1;
+  --med-letter-spacing-far: 0.2;
+  /* line height */
   --med-line-height-compressed: 100%;
-  --med-line-height-double: 100%;
+  --med-line-height-default: 24px;
+  --med-line-height-double: 200%;
 }
 
 :root {
+  /* spacing inset */
   --med-spacing-inset-nano: 4px;
   --med-spacing-inset-xs: 8px;
   --med-spacing-inset-sm: 16px;
   --med-spacing-inset-base: 24px;
   --med-spacing-inset-md: 32px;
-  --med-spacing-inset-md: 32px;
-  --med-spacing-inset-md: 32px;
+  --med-spacing-inset-lg: 40px;
+  --med-spacing-inset-xl: 48px;
   --med-spacing-inset-xxl: 64px;
+  /* spacing squish */
   --med-spacing-squish-nano: 4px 8px;
   --med-spacing-squish-xs: 8px 16px;
   --med-spacing-squish-sm: 8px 24px;
@@ -165,6 +56,7 @@
   --med-spacing-squish-lg: 16px 32px;
   --med-spacing-squish-xl: 24px 32px;
   --med-spacing-squish-xxl: 32px 40px;
+  /* spacing stretch */
   --med-spacing-stretch-nano: 8px 4px;
   --med-spacing-stretch-xs: 16px 8px;
   --med-spacing-stretch-sm: 24px 8px;
@@ -173,6 +65,7 @@
   --med-spacing-stretch-lg: 32px 16px;
   --med-spacing-stretch-xl: 32px 24px;
   --med-spacing-stretch-xxl: 40px 32px;
+  /* spacing inline */
   --med-spacing-inline-quark: 2px;
   --med-spacing-inline-nano: 4px;
   --med-spacing-inline-xxxs: 8px;
@@ -187,6 +80,7 @@
   --med-spacing-inline-xxxl: 80px;
   --med-spacing-inline-huge: 120px;
   --med-spacing-inline-ultra: 160px;
+  /* spacing stack */
   --med-spacing-stack-quark: 2px;
   --med-spacing-stack-nano: 4px;
   --med-spacing-stack-xxxs: 8px;
@@ -212,14 +106,17 @@
   --med-border-radius-lg: 24px;
   --med-border-radius-pill: 31.25em;
   --med-border-radius-full: 50%;
+  /* speech bubble */
   --med-border-radius-speech-left-down: 8px 8px 8px 0;
   --med-border-radius-speech-right-down: 8px 8px 0 8px;
   --med-border-radius-speech-right-up: 8px 0 8px 0px;
   --med-border-radius-speech-left-up: 0 8px 8px 0px;
+  /* table */
   --med-border-radius-table-down-sm: 0 0 8px 8px;
   --med-border-radius-table-up-sm: 8px 8px 0 0;
   --med-border-radius-table-down-md: 16px 16px 0 0;
   --med-border-radius-table-up-md: 0 0 16px 16px;
+  /* border widths */
   --med-border-width-none: 0;
   --med-border-width-quark: 0.25px;
   --med-border-width-nano: 0.5px;
@@ -228,12 +125,14 @@
   --med-border-width-thick: 4px;
   --med-border-width-bold: 8px;
   --med-border-width-heavy: 16px;
+  /* opacity levels */
   --med-opacity-level-semiopaque: 0.8;
   --med-opacity-level-intense: 0.64;
   --med-opacity-level-half: 0.5;
   --med-opacity-level-medium: 0.32;
   --med-opacity-level-light: 0.16;
   --med-opacity-level-semitransparent: 0.08;
+  /* shadow levels */
   --med-shadow-level-0: none;
   --med-shadow-level-1: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);
   --med-shadow-level-2: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
@@ -517,10 +416,11 @@ ion-ripple-effect {
     opacity: var(--background-hover-opacity);
   }
 }
-/* :host(.med-button-solid.ion-color) .button-native {
-  background: current-color(base);
-  color: current-color(contrast);
-} */
+:host(.med-button-solid.ion-color) .button-native {
+  background: var(--ion-color-base);
+  color: var(--ion-color-contrast);
+}
+
 :host(.med-button-outline.ion-color) .button-native {
   border-color: var(--ion-color-base);
   background: transparent;
@@ -675,396 +575,216 @@ ion-ripple-effect {
   }
 }
 :host {
-  --border-radius: 31.25em;
-  --box-shadow: none;
+  /**
+   * OBS: sobreescrita das css custom properties do ionic.
+   * @prop --background: Define a cor de background do componente.
+   * @prop --color: Define a cor de texto do componente.
+   */
+  --background: var(--med-color-brand-gradient);
+  --color: hsl(var(--med-color-contrast-fixed));
+  --border-radius: var(--med-border-radius-pill);
   --transition: background 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out, opacity 300ms ease-out;
-  --padding: 8px 32px;
+  --font-size: var(--med-font-size-xxs);
+  --padding: 0 var(--med-spacing-inline-xxs);
+  --padding-label: 0 var(--med-spacing-inline-xxxs);
   --min-height: 48px;
   --min-width: auto;
-  --font-size: 14px;
-  --font-weight: 600;
-  --text-transform: uppercase;
-  --line-height: 100%;
+}
+
+:host(.med-button) {
   min-height: var(--min-height);
   min-width: var(--min-width);
   height: auto;
   font-size: var(--font-size);
-  font-weight: var(--font-weight);
-  text-transform: var(--text-transform);
+  font-weight: var(--med-font-weight-semibold);
+  text-transform: uppercase;
   margin: 0;
 }
 
-.button-native {
+:host(.med-button) .button-native {
   padding: var(--padding);
   min-height: var(--min-height);
-  line-height: var(--line-height);
+  line-height: var(--med-line-height-compressed);
   box-shadow: none;
 }
 
-.button-native::before {
-  transition: var(--transition);
+:host(.med-button) .button-inner__label {
+  padding: var(--padding-label);
+  display: flex;
+  align-items: center;
 }
 
-:host(.med-button-disabled) {
-  opacity: 1;
-}
-
-:host(.med-button-solid) {
-  --color: var(--med-color-brand-primary-contrast, #fafafa);
-  --background: var(--med-color-brand-primary-gradient, linear-gradient(to right, #3aa8b9, #137585));
-  --background-hover: var(--med-color-brand-primary-medium, #3aa8b9);
-  --background-hover-opacity: 1;
-  --background-focused: var(--med-color-brand-primary-medium, #3aa8b9);
-  --background-focused-opacity: 1;
-  --background-activated: var(--med-color-brand-primary-dark, #137585);
-  --background-activated-opacity: 1;
-  --ripple-color: var(--med-color-brand-primary-dark, #137585);
-}
-
-:host(.med-hovered.med-button-solid) {
-  --background: var(--med-color-brand-primary-medium, #3aa8b9);
-}
-
-:host(.med-button-solid.med-button-disabled) {
-  --background: var(--med-color-neutral-light-20, #c2c2c2);
-}
-
-:host(.ion-color.med-button-solid) {
-  --background: var(--med-color-gradient);
-  --background-hover: var(--med-color-medium);
-  --background-focused: var(--med-color-medium);
-  --background-activated: var(--med-color-dark);
-}
-
-:host(.ion-color.med-button-solid) .button-native {
-  background: var(--med-color-gradient);
-}
-
-:host(.ion-color.med-button-solid.med-button-disabled) {
-  --background: var(--med-color-neutral-light-20, #c2c2c2);
-}
-
-:host(.ion-color.med-button-disabled.med-button-solid) .button-native {
-  background: var(--med-color-neutral-light-20, #c2c2c2);
-}
-
-:host([expand=full].med-button-solid) {
-  --min-height: 48px;
-  --font-size: 14px;
-  --padding: 8px 32px;
-}
-
-:host([expand=block].med-button-solid) {
-  --min-height: 48px;
-  --font-size: 14px;
-  --padding: 8px 32px;
-}
-
-:host([ds-size=sm].med-button-solid) {
-  --min-height: 40px;
-}
-
-:host([ds-size=xs].med-button-solid) {
-  --min-height: 32px;
-  --font-size: 12px;
-  --padding: 8px 24px;
-}
-
-:host([ds-size=xxs].med-button-solid) {
-  --min-height: 24px;
-  --font-size: 10px;
-  --padding: 0 16px;
-}
-
-:host(.med-button-outline) {
-  --color: var(--med-color-brand-primary-light, #73d6e5);
-  --background: transparent;
-  --background-hover: transparent;
-  --background-hover-opacity: 0;
-  --background-focused: transparent;
-  --background-focused-opacity: 0;
-  --background-activated: transparent;
-  --background-activated-opacity: 0;
-  --ripple-color: transparent;
-  --border-width: 2px;
-  --border-color: var(--med-color-brand-primary-light, #73d6e5);
-}
-
-:host(.med-button-outline.med-button-disabled) {
-  --border-color: var(--med-color-neutral-light-20, #c2c2c2);
-  --color: var(--med-color-neutral-light-20, #c2c2c2);
-}
-
-@media (any-hover: hover) {
-  :host(.med-button-outline:hover) {
-    --border-color: var(--med-color-brand-primary-medium, #3aa8b9);
-    --color: var(--med-color-brand-primary-medium, #3aa8b9);
-  }
-}
-:host(.med-button-outline.ion-focused) {
-  --border-color: var(--med-color-brand-primary-medium, #3aa8b9);
-  --color: var(--med-color-brand-primary-medium, #3aa8b9);
-}
-
-:host(.med-button-outline.ion-activated) {
-  --border-color: var(--med-color-brand-primary-dark, #137585);
-  --color: var(--med-color-brand-primary-dark, #137585);
-}
-
-:host(.ion-color.med-button-outline) {
-  --border-color: var(--med-color-light);
-  --color: var(--med-color-light);
-}
-
-@media (any-hover: hover) {
-  :host(.ion-color.med-button-outline:hover) {
-    --border-color: var(--med-color-medium);
-    --color: var(--med-color-medium);
-  }
-}
-:host(.ion-color.med-button-outline.ion-focused) {
-  --border-color: var(--med-color-medium);
-  --color: var(--med-color-medium);
-}
-
-:host(.ion-color.med-button-outline.ion-activated) {
-  --border-color: var(--med-color-dark);
-  --color: var(--med-color-dark);
-}
-
-:host(.ion-color.med-button-outline.med-button-disabled) {
-  --border-color: var(--med-color-neutral-light-20, #c2c2c2);
-  --color: var(--med-color-neutral-light-20, #c2c2c2);
-}
-
-:host([ds-size=sm].med-button-outline) {
-  --min-height: 40px;
-}
-
-:host([ds-size=xs].med-button-outline) {
-  --min-height: 32px;
-  --font-size: 12px;
-  --padding: 8px 24px;
-}
-
-:host([ds-size=xxs].med-button-outline) {
-  --min-height: 24px;
-  --font-size: 10px;
-  --padding: 0 16px;
-}
-
-:host(.med-button-clear) {
-  --color: var(--med-color-neutral-light-prime, #fafafa);
-  --background: transparent;
-  --background-hover: var(--med-color-brand-primary-medium, #3aa8b9);
-  --background-hover-opacity: 0.16;
-  --background-focused: var(--med-color-brand-primary-medium, #3aa8b9);
-  --background-focused-opacity: 0.16;
-  --background-activated: transparent;
-  --background-activated-opacity: 0;
-  --ripple-color: rgba(var(--med-color-brand-primary-medium-rgb, 58, 168, 185), 0.16);
-  --border-radius: 4px;
-  --padding: 8px;
-  --min-height: 32px;
-}
-
-:host(.med-button-clear.med-button-disabled) {
-  --color: var(--med-color-neutral-light-10, #adadad);
-}
-
-@media (any-hover: hover) {
-  :host(.med-button-clear:hover) {
-    --color: var(--med-color-neutral-light-prime, #fafafa);
-  }
-}
-:host(.med-button-clear.ion-focused) {
-  --color: var(--med-color-neutral-light-prime, #fafafa);
-}
-
-:host(.med-button-clear.ion-activated) {
-  --color: var(--med-color-neutral-light-prime, #fafafa);
-}
-
-:host(.ion-color.med-button-clear) {
-  --color: var(--med-color-neutral-light-prime, #fafafa);
-  --background-hover: var(--med-color-medium);
-}
-
-:host([expand=full].med-button-clear) {
-  --min-height: 48px;
-  --font-size: 14px;
-}
-
-:host([expand=block].med-button-clear) {
-  --min-height: 32px;
-  --font-size: 14px;
-}
-
-:host([ds-size=sm].med-button-clear) {
-  --min-height: 40px;
-}
-
-:host([ds-size=xs].med-button-clear) {
-  --min-height: 32px;
-  --font-size: 12px;
-  --padding: 8px 24px;
-}
-
-:host([ds-size=xxs].med-button-clear) {
-  --min-height: 24px;
-  --font-size: 10px;
-  --padding: 0 16px;
-}
-
-:host(.button-has-icon-only) {
-  --color: var(--med-color-neutral-light-prime, #fafafa);
-  --background: transparent;
-  --background-hover: rgba(var(--med-color-neutral-light-10-rgb, 173, 173, 173), 0.08);
-  --background-hover-opacity: 1;
-  --background-focused: transparent;
-  --background-focused-opacity: 0;
-  --background-activated: transparent;
-  --background-activated-opacity: 0;
-  --ripple-color: rgba(var(--med-color-neutral-light-10-rgb, 173, 173, 173), 0.16);
-  --border-radius: 50%;
-  --padding: 0;
-  --min-height: 32px;
-  --min-width: 32px;
-}
-
-:host(.button-has-icon-only) {
-  font-size: 32px;
+:host(.med-button.button-block.button-has-icon-only) {
+  --border-radius: var(--med-border-radius-pill);
 }
 
 ::slotted(ion-icon) {
-  font-size: 1em;
-}
-
-::slotted(ion-icon[slot=icon-only]) {
-  font-size: 1em;
-}
-
-:host(.button-has-icon-only.med-button-disabled) {
-  opacity: 0.32;
-}
-
-:host(.ion-color.button-has-icon-only) {
-  --background-hover: rgba(var(--med-color-neutral-light-10-rgb, 173, 173, 173), 0.08);
-}
-
-:host([ds-size=xs].button-has-icon-only) {
-  --min-height: 16px;
-  --min-width: 16px;
-  --padding: 0;
-  font-size: 16px;
-}
-
-:host([ds-size=sm].button-has-icon-only) {
-  --min-height: 24px;
-  --min-width: 24px;
-  --padding: 0;
   font-size: 24px;
-}
-
-:host(.in-med-navbar.button-has-icon-only) {
-  --min-height: 24px;
-  --min-width: 24px;
-  font-size: 24px;
-}
-
-:host(.in-med-toolbar.button-has-icon-only) {
-  --min-height: 32px;
-  --min-width: 32px;
-  font-size: 24px;
-}
-:host(.in-med-toolbar.button-has-icon-only) ::slotted(ion-icon[slot=icon-only]) {
-  color: #adadad;
-}
-
-:host(.in-med-toolbar.button-has-icon-only:not(:last-child)) {
-  margin-right: 24px;
-}
-
-:host(.button-icon-label) {
-  --color: var(--med-color-neutral-light-prime, #fafafa);
-  --background: transparent;
-  --background-hover: transparent;
-  --background-hover-opacity: 0;
-  --background-focused: transparent;
-  --background-focused-opacity: 0;
-  --background-activated: transparent;
-  --background-activated-opacity: 0;
-  --ripple-color: transparent;
-  --padding: 0;
-  --font-weight: 400;
-  --text-transform: normal;
-  --min-height: 24px;
+  stroke: var(--color);
+  transition: stroke 300ms ease-out;
 }
 
 ::slotted(ion-icon[slot=start]) {
-  margin: 0 4px 0 0;
+  margin: 0;
 }
 
 ::slotted(ion-icon[slot=end]) {
-  margin: 0 0 0 4px;
+  margin: 0;
 }
 
-:host(.button-icon-label) ::slotted(ion-icon) {
-  font-size: 24px;
+:host(.med-button.button-has-icon-only) {
+  --border-radius: var(--med-border-radius-full);
+  --min-height: 48px;
+  --min-width: 48px;
+  --padding: 0;
+  --padding-label: 0;
 }
 
-:host(.button-icon-label.med-button-disabled) {
-  opacity: 0.32;
+:host(.med-button.med-button--sm) {
+  --min-height: 40px;
+  --min-width: 40px;
 }
 
-:host(.button-icon-label.ion-activated) .button-native {
-  opacity: 0.5;
+:host(.med-button.med-button--sm.button-has-icon-only) {
+  --min-width: 40px;
+  --padding: 0;
+  --padding-label: 0;
 }
 
-:host(.in-med-toolbar.button-icon-label) {
-  color: #adadad;
+:host(.med-button.med-button--xs) {
+  --padding: 0 var(--med-spacing-inline-base);
+  --min-height: 32px;
+  --font-size: var(--med-font-size-xxxs);
 }
 
-:host(.button-block) .button-native::after,
-.button-native::after,
-:host(.ion-activated) .button-native::after,
-:host(.ion-focused) .button-native::after {
-  display: none;
+:host(.med-button.med-button--xs) ::slotted(ion-icon) {
+  font-size: 16px;
 }
 
-:host(.med-hovered) .button-native::after {
-  display: none;
+:host(.med-button.med-button--xs.button-has-icon-only) {
+  --min-width: 32px;
+  --padding: 0;
+  --padding-label: 0;
+}
+
+:host(.med-button.med-button--xxs) {
+  --padding: 0 var(--med-spacing-inline-base);
+  --min-height: 24px;
+  --min-width: 24px;
+  --font-size: var(--med-font-size-nano);
+}
+
+:host(.med-button.med-button--xxs) ::slotted(ion-icon) {
+  font-size: 16px;
+}
+
+:host(.med-button.med-button--xxs.button-has-icon-only) {
+  --min-width: 24px;
+  --padding: 0;
+  --padding-label: 0;
 }
 
 @media (any-hover: hover) {
-  :host(:hover) .button-native::after {
-    display: none;
+  :host(.med-button:hover) .button-native::before {
+    background: hsl(var(--med-color-brand-3));
+    opacity: 1;
   }
 }
-:host(.med-button-solid.ion-color.ion-focused) .button-native::after,
-:host(.med-button-clear.ion-color.ion-focused) .button-native::after,
-:host(.med-button-outline.ion-color.ion-focused) .button-native::after {
-  display: none;
+:host(.med-button.ion-focused) .button-native::before {
+  background: hsl(var(--med-color-brand-3));
+  opacity: 1;
 }
 
-:host(.med-hovered.med-button-solid.ion-color) .button-native::after,
-:host(.med-hovered.med-button-clear.ion-color) .button-native::after,
-:host(.med-hovered.med-button-outline.ion-color) .button-native::after {
-  display: none;
+:host(.med-button.ion-activated) .button-native::before {
+  opacity: 1;
+}
+
+:host(.med-button.button-disabled) {
+  cursor: initial;
+  pointer-events: none;
+  opacity: var(--med-opacity-level-half);
+}
+
+:host(.med-button.button-disabled) .button-native::before {
+  opacity: var(--med-opacity-level-half);
+}
+
+:host(.med-button) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-brand-2));
+  --ripple-opacity: 1;
+}
+
+:host(.med-button.med-color) {
+  --background: var(--med-color-gradient);
+  --color: hsl(var(--med-color-contrast-fixed));
 }
 
 @media (any-hover: hover) {
-  :host(.med-button-solid.ion-color:hover) .button-native::after,
-:host(.med-button-clear.ion-color:hover) .button-native::after,
-:host(.med-button-outline.ion-color:hover) .button-native::after {
-    display: none;
+  :host(.med-button.med-color:hover) .button-native::before {
+    background: hsl(var(--med-color-3));
   }
 }
-:host(.button-block) .button-native::before {
-  clear: both;
+:host(.med-button.med-color.ion-focused) .button-native::before {
+  background: hsl(var(--med-color-3));
 }
 
-.button-native::before {
+:host(.med-button.med-color) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-2));
+  --ripple-opacity: 1;
+}
+
+:host(.med-button.med-color-neutral) {
+  --background: hsl(var(--med-color-neutral));
+  --color: hsl(var(--med-color-neutral-contrast));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button.med-color-neutral:hover) .button-native::before {
+    background: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semitransparent));
+  }
+
+  :host(.med-button.med-color-neutral.med-color-neutral-10:hover) .button-native::before {
+    background: hsl(var(--med-color-neutral-1), var(--med-opacity-level-semitransparent));
+  }
+}
+:host(.med-button.med-color-neutral.ion-focused) .button-native::before {
+  opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-button.med-color-neutral) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-10));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-button.med-color-neutral.med-color-neutral-10) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-1));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-button.med-color-feedback) {
+  --background: hsl(var(--med-color-feedback));
+  --color: hsl(var(--med-color-feedback-contrast));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button.med-color-feedback:hover) .button-native::before {
+    background: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semitransparent));
+  }
+}
+:host(.med-button.med-color-feedback.ion-focused) .button-native::before {
+  opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-button.med-color-feedback) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-10));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host .button-native::after {
+  display: none;
+}
+
+:host .button-native::before {
   left: 0;
   right: 0;
   top: 0;
@@ -1072,21 +792,476 @@ ion-ripple-effect {
   position: absolute;
   content: "";
   opacity: 0;
+  transition: var(--transition);
 }
 
-:host(.ion-activated) .button-native::before {
-  background: var(--background-activated);
-  opacity: var(--background-activated-opacity);
+:host(.med-button--secondary) {
+  --background: transparent;
+  --color: hsl(var(--med-color-brand-3));
+  --border-color: hsl(var(--med-color-brand-3));
+  --border-width: var(--med-border-width-thin);
+  --border-style: solid;
 }
 
-:host(.ion-focused) .button-native::before {
-  background: var(--background-focused);
-  opacity: var(--background-focused-opacity);
+:host(.med-button--secondary) ion-ripple-effect {
+  --ripple-color: transparent;
+  --ripple-opacity: 0;
 }
 
 @media (any-hover: hover) {
-  :host(:hover) .button-native::before {
-    background: var(--background-hover);
-    opacity: var(--background-hover-opacity);
+  :host(.med-button--secondary:hover) {
+    --color: hsl(var(--med-color-brand-4));
+    --background: transparent;
+    --border-color: hsl(var(--med-color-brand-4));
   }
+}
+:host(.med-button--secondary.ion-focused) {
+  --color: hsl(var(--med-color-brand-4));
+  --background: transparent;
+  --border-color: hsl(var(--med-color-brand-4));
+}
+
+:host(.med-button--secondary.ion-activated) {
+  --color: hsl(var(--med-color-brand-5));
+  --background: transparent;
+  --border-color: hsl(var(--med-color-brand-5));
+}
+
+:host(.med-button--secondary.button-disabled) {
+  opacity: var(--med-opacity-level-half);
+}
+
+@media (any-hover: hover) {
+  :host(.med-button--secondary:hover) .button-native::before {
+    opacity: 0;
+  }
+}
+:host(.med-button--secondary.ion-focused) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--secondary.ion-activated) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--secondary.button-disabled) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--secondary.med-color) {
+  --background: transparent;
+  --color: hsl(var(--med-color-4));
+  --border-color: hsl(var(--med-color-4));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button--secondary.med-color:hover) {
+    --color: hsl(var(--med-color-3));
+    --border-color: hsl(var(--med-color-3));
+    background: transparent;
+  }
+}
+:host(.med-button--secondary.med-color.ion-activated) {
+  --color: hsl(var(--med-color-5));
+  --border-color: hsl(var(--med-color-5));
+  background: transparent;
+}
+
+:host(.med-button--secondary.med-color.ion-focused) {
+  --color: hsl(var(--med-color-3));
+  --border-color: hsl(var(--med-color-3));
+  background: transparent;
+}
+
+:host(.med-button--secondary.med-color) ion-ripple-effect {
+  --ripple-color: transparent;
+  --ripple-opacity: 0;
+}
+
+:host(.med-button--secondary.med-color-neutral) {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral));
+  --border-color: hsl(var(--med-color-neutral));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button--secondary.med-color-neutral:hover) {
+    --color: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+    --border-color: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+    background: transparent;
+  }
+}
+:host(.med-button--secondary.med-color-neutral.ion-activated) {
+  --color: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
+  --border-color: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
+  background: transparent;
+}
+
+:host(.med-button--secondary.med-color-neutral.ion-focused) {
+  --color: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  --border-color: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  background: transparent;
+}
+
+:host(.med-button--secondary.med-color-neutral) ion-ripple-effect {
+  --ripple-color: transparent;
+  --ripple-opacity: 0;
+}
+
+:host(.med-button--secondary.med-color-feedback) {
+  --background: transparent;
+  --color: hsl(var(--med-color-feedback));
+  --border-color: hsl(var(--med-color-feedback));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button--secondary.med-color-feedback:hover) {
+    --color: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+    --border-color: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+    background: transparent;
+  }
+}
+:host(.med-button--secondary.med-color-feedback.ion-activated) {
+  --color: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
+  --border-color: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
+  background: transparent;
+}
+
+:host(.med-button--secondary.med-color-feedback.ion-focused) {
+  --color: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  --border-color: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  background: transparent;
+}
+
+:host(.med-button--secondary.med-color-feedback) ion-ripple-effect {
+  --ripple-color: transparent;
+  --ripple-opacity: 0;
+}
+
+:host(.med-button--secondary.ion-color) .button-native::before {
+  opacity: 0;
+}
+
+@media (any-hover: hover) {
+  :host(.med-button--secondary.ion-color:hover) .button-native::before {
+    opacity: 0;
+  }
+}
+:host(.med-button--secondary.ion-color.ion-focused) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--secondary.ion-color.ion-activated) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--secondary.ion-color.button-disabled) .button-native::before {
+  cursor: initial;
+  pointer-events: none;
+  opacity: 0;
+}
+
+:host(.med-button--secondary.med-neutral) .button-native::before {
+  opacity: 0;
+}
+
+@media (any-hover: hover) {
+  :host(.med-button--secondary.med-neutral:hover) .button-native::before {
+    opacity: 0;
+  }
+}
+:host(.med-button--secondary.med-neutral.ion-focused) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--secondary.med-neutral.ion-activated) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--secondary.med-neutral.button-disabled) .button-native::before {
+  cursor: initial;
+  pointer-events: none;
+  opacity: 0;
+}
+
+:host(.med-button--tertiary) {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-10));
+  --border-radius: var(--med-border-radius-nano);
+  --padding: 0;
+  --padding-label: 0 var(--med-spacing-inline-xxxs);
+  --min-height: 24px;
+  --line-height: 24px;
+  --font-weight: var(--med-font-weight-semibold);
+}
+
+:host(.med-button--tertiary) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-brand-3));
+  --ripple-opacity: var(--med-opacity-level-light);
+}
+
+:host(.med-button.med-button--tertiary.button-has-icon-only) {
+  --border-radius: var(--med-border-radius-full);
+}
+
+::slotted(ion-icon) {
+  font-size: 24px;
+  stroke: var(--color);
+  transition: stroke 300ms ease-out;
+}
+
+::slotted(ion-icon[slot=start]) {
+  margin: 0;
+  padding-left: var(--med-spacing-inline-xxxs);
+}
+
+::slotted(ion-icon[slot=end]) {
+  margin: 0;
+  padding-right: var(--med-spacing-inline-xxxs);
+}
+
+:host(.med-button--tertiary.med-button--lg) {
+  --font-size: var(--med-font-size-xs);
+  --line-height: 24px;
+  --min-height: 24px;
+  --min-width: 24px;
+}
+
+:host(.med-button--tertiary.med-button--lg) ::slotted(ion-icon) {
+  font-size: 24px;
+}
+
+:host(.med-button--tertiary.med-button--lg.button-has-icon-only) {
+  --min-height: 64px;
+  --min-width: 64px;
+}
+
+:host(.med-button--tertiary.med-button--lg.button-has-icon-only) ::slotted(ion-icon) {
+  font-size: 48px;
+}
+
+:host(.med-button--tertiary.med-button--md) {
+  --font-size: var(--med-font-size-xxs);
+  --line-height: 24px;
+  --min-height: 24px;
+  --min-width: 24px;
+}
+
+:host(.med-button--tertiary.med-button--md) ::slotted(ion-icon) {
+  font-size: 24px;
+}
+
+:host(.med-button--tertiary.med-button--md.button-has-icon-only) {
+  --min-height: 48px;
+  --min-width: 48px;
+}
+
+:host(.med-button--tertiary.med-button--md.button-has-icon-only) ::slotted(ion-icon) {
+  font-size: 32px;
+}
+
+:host(.med-button--tertiary.med-button--sm) {
+  --font-size: var(--med-font-size-xxxs);
+  --line-height: 16px;
+  --min-height: 16px;
+  --min-width: 16px;
+}
+
+:host(.med-button--tertiary.med-button--sm) ::slotted(ion-icon) {
+  font-size: 16px;
+}
+
+:host(.med-button--tertiary.med-button--sm.button-has-icon-only) {
+  --min-height: 40px;
+  --min-width: 40px;
+}
+
+:host(.med-button--tertiary.med-button--sm.button-has-icon-only) ::slotted(ion-icon) {
+  font-size: 24px;
+}
+
+:host(.med-button--tertiary.med-button--xs) {
+  --font-size: var(--med-font-size-nano);
+  --line-height: 16px;
+  --min-height: 16px;
+  --min-width: 16px;
+}
+
+:host(.med-button--tertiary.med-button--xs) ::slotted(ion-icon) {
+  font-size: 16px;
+}
+
+:host(.med-button--tertiary.med-button--xs.button-has-icon-only) {
+  --min-height: 32px;
+  --min-width: 32px;
+}
+
+:host(.med-button--tertiary.med-button--xs.button-has-icon-only) ::slotted(ion-icon) {
+  font-size: 24px;
+}
+
+:host(.med-button--tertiary.med-button--xxs) ::slotted(ion-icon) {
+  font-size: 16px;
+}
+
+:host(.med-button--tertiary.med-button--xxs.button-has-icon-only) {
+  --min-height: 24px;
+  --min-width: 24px;
+}
+
+:host(.med-button--tertiary.med-button--xxs.button-has-icon-only) ::slotted(ion-icon) {
+  font-size: 24px;
+}
+
+:host(.med-button--tertiary.med-button--xxxs.button-has-icon-only) {
+  --min-height: 16px;
+  --min-width: 16px;
+}
+
+:host(.med-button--tertiary.med-button--xxxs.button-has-icon-only) ::slotted(ion-icon) {
+  font-size: 16px;
+}
+
+:host(.med-button--tertiary.button-disabled) {
+  --color: color("neutral", "10");
+}
+
+@media (any-hover: hover) {
+  :host(.med-button--tertiary:hover) .button-native::before {
+    background: hsl(var(--med-color-brand-3), var(--med-opacity-level-light));
+  }
+}
+:host(.med-button--tertiary.ion-focused) .button-native::before {
+  background: hsl(var(--med-color-brand-3), var(--med-opacity-level-light));
+}
+
+:host(.med-button--tertiary.ion-activated) .button-native::before {
+  background: transparent;
+}
+
+:host(.med-button--tertiary.button-disabled) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--tertiary.med-color) {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-10));
+}
+
+:host(.med-button--tertiary.med-color) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-3));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button--tertiary.med-color:hover) .button-native::before {
+    background: hsl(var(--med-color-3), var(--med-opacity-level-light));
+  }
+}
+:host(.med-button--tertiary.med-color.ion-focused) .button-native::before {
+  background: hsl(var(--med-color-3), var(--med-opacity-level-light));
+}
+
+:host(.med-button--tertiary.med-color.ion-activated) .button-native::before {
+  background: transparent;
+}
+
+:host(.med-button--tertiary.med-color.button-disabled) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--tertiary.med-color-feedback) {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-10));
+}
+
+:host(.med-button--tertiary.med-color-feedback) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-feedback));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button--tertiary.med-color-feedback:hover) .button-native::before {
+    background: hsl(var(--med-color-feedback), var(--med-opacity-level-light));
+  }
+}
+:host(.med-button--tertiary.med-color-feedback.ion-focused) .button-native::before {
+  background: hsl(var(--med-color-feedback), var(--med-opacity-level-light));
+}
+
+:host(.med-button--tertiary.med-color-feedback.ion-activated) .button-native::before {
+  background: transparent;
+}
+
+:host(.med-button--tertiary.med-color-feedback.button-disabled) .button-native::before {
+  opacity: 0;
+}
+
+:host(.med-button--tertiary.med-color-neutral) {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-10));
+}
+
+:host(.med-button.med-button--solid) {
+  --background: hsl(var(--med-color-brand-3));
+  --color: hsl(var(--med-color-contrast-fixed));
+}
+
+:host(.med-button.med-button--solid.med-color) {
+  --background: hsl(var(--med-color-3));
+  --color: hsl(var(--med-color-contrast-fixed));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button.med-button--solid.med-color:hover) .button-native::before {
+    background: hsl(var(--med-color-3));
+  }
+}
+:host(.med-button.med-button--solid.med-color.ion-focused) .button-native::before {
+  background: hsl(var(--med-color-3));
+}
+
+:host(.med-button.med-button--solid.med-color-neutral) {
+  --background: hsl(var(--med-color-neutral));
+  --color: hsl(var(--med-color-neutral-contrast));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button.med-button--solid.med-color-neutral:hover) .button-native::before {
+    background: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semitransparent));
+  }
+
+  :host(.med-button.med-button--solid.med-color-neutral.med-color-neutral-10:hover) .button-native::before {
+    background: hsl(var(--med-color-neutral-1), var(--med-opacity-level-semitransparent));
+  }
+}
+:host(.med-button.med-button--solid.med-color-neutral.ion-focused) .button-native::before {
+  opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-button.med-button--solid.med-color-neutral) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-10));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-button.med-button--solid.med-color-neutral.med-color-neutral-10) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-1));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-button.med-button--solid.med-color-feedback) {
+  --background: hsl(var(--med-color-feedback));
+  --color: hsl(var(--med-color-feedback-contrast));
+}
+
+@media (any-hover: hover) {
+  :host(.med-button.med-button--solid.med-color-feedback:hover) .button-native::before {
+    background: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semitransparent));
+  }
+}
+:host(.med-button.med-button--solid.med-color-feedback.ion-focused) .button-native::before {
+  opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-button.med-button--solid.med-color-feedback) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-10));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
 }

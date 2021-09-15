@@ -49,7 +49,7 @@ export class FabList {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "TODO"
       },
       "attribute": "ds-size",
       "reflect": false
