@@ -1,8 +1,8 @@
 import { EventEmitter } from '../../../../../stencil-public-runtime';
 import { Color } from '../../../../../interface';
-import { Coordenada } from '../../../../../utils/medgrupo';
-import { MedAlternativaInterface, MedAlternativasInterface } from '../med-alternativas/med-alternativas-interface';
-export declare class MedAlternativasA implements MedAlternativasInterface {
+import { MedAlternativaInterface, MedAlternativasInternoInterface } from '../med-alternativas/med-alternativas-interface';
+import { MedAlternativasBase } from '../med-alternativas/med-alternativas-base';
+export declare class MedAlternativasA implements MedAlternativasInternoInterface {
   hostElement: HTMLElement;
   /**
    * TODO
@@ -70,19 +70,8 @@ export declare class MedAlternativasA implements MedAlternativasInterface {
   medGalleryRequest: EventEmitter<MedAlternativaInterface>;
   permiteAlterar: boolean;
   riscarAtivoIndice: number;
-  dataStart: Date;
-  dataEnd: Date;
-  positionStart: Coordenada | undefined;
-  distanciaMinimaClick: number;
-  tempoLongPress: number;
-  timer: any;
+  baseClass: MedAlternativasBase;
   handleClick(event: any): void;
   onAlternativasChanged(newValue: MedAlternativaInterface | any, oldValue: MedAlternativaInterface | any): void;
-  private resetState;
-  private onTouchStart;
-  private onTouchEnd;
-  private alterarAlternativa;
-  private riscar;
-  private imageRequest;
   render(): any;
 }

@@ -12180,7 +12180,7 @@ const isSrc = (str) => str.length > 0 && /(\/|\.)/.test(str);
 const isStr = (val) => typeof val === 'string';
 const toLower = (val) => val.toLowerCase();
 
-const iconCss = "/*!@:host*/.sc-ion-icon-h{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}/*!@:host .ionicon*/.sc-ion-icon-h .ionicon.sc-ion-icon{stroke:currentColor}/*!@.ionicon-fill-none*/.ionicon-fill-none.sc-ion-icon{fill:none}/*!@.ionicon-stroke-width*/.ionicon-stroke-width.sc-ion-icon{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}/*!@.icon-inner,\n.ionicon,\nsvg*/.icon-inner.sc-ion-icon,.ionicon.sc-ion-icon,svg.sc-ion-icon{display:block;height:100%;width:100%}/*!@:host(.flip-rtl) .icon-inner*/.flip-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}/*!@:host(.icon-small)*/.icon-small.sc-ion-icon-h{font-size:18px !important}/*!@:host(.icon-large)*/.icon-large.sc-ion-icon-h{font-size:32px !important}/*!@:host(.ion-color)*/.ion-color.sc-ion-icon-h{color:var(--ion-color-base) !important}/*!@:host(.ion-color-primary)*/.ion-color-primary.sc-ion-icon-h{--ion-color-base:var(--ion-color-primary, #3880ff)}/*!@:host(.ion-color-secondary)*/.ion-color-secondary.sc-ion-icon-h{--ion-color-base:var(--ion-color-secondary, #0cd1e8)}/*!@:host(.ion-color-tertiary)*/.ion-color-tertiary.sc-ion-icon-h{--ion-color-base:var(--ion-color-tertiary, #f4a942)}/*!@:host(.ion-color-success)*/.ion-color-success.sc-ion-icon-h{--ion-color-base:var(--ion-color-success, #10dc60)}/*!@:host(.ion-color-warning)*/.ion-color-warning.sc-ion-icon-h{--ion-color-base:var(--ion-color-warning, #ffce00)}/*!@:host(.ion-color-danger)*/.ion-color-danger.sc-ion-icon-h{--ion-color-base:var(--ion-color-danger, #f14141)}/*!@:host(.ion-color-light)*/.ion-color-light.sc-ion-icon-h{--ion-color-base:var(--ion-color-light, #f4f5f8)}/*!@:host(.ion-color-medium)*/.ion-color-medium.sc-ion-icon-h{--ion-color-base:var(--ion-color-medium, #989aa2)}/*!@:host(.ion-color-dark)*/.ion-color-dark.sc-ion-icon-h{--ion-color-base:var(--ion-color-dark, #222428)}/*!@:host(.med-icon)*/.med-icon.sc-ion-icon-h{--ionicon-stroke-width:2;font-size:24px;stroke:inherit}/*!@:host(.med-icon) path*/.med-icon.sc-ion-icon-h path.sc-ion-icon{stroke-width:var(--ionicon-stroke-width, 32px);fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:inherit}/*!@:host(.med-icon.med-color)*/.med-icon.med-color.sc-ion-icon-h{color:var(--med-color-3) !important;stroke:var(--med-color-3) !important}/*!@:host(.med-icon.med-color-neutral)*/.med-icon.med-color-neutral.sc-ion-icon-h{color:var(--med-neutral) !important;stroke:var(--med-neutral) !important}/*!@:host(.med-icon.med-color-feedback)*/.med-icon.med-color-feedback.sc-ion-icon-h{color:var(--med-color-feedback) !important;stroke:var(--med-color-feedback) !important}/*!@:host(.med-icon.med-icon--xxs)*/.med-icon.med-icon--xxs.sc-ion-icon-h{font-size:12px}/*!@:host(.med-icon.med-icon--xs)*/.med-icon.med-icon--xs.sc-ion-icon-h{font-size:16px}/*!@:host(.med-icon.med-icon--sm)*/.med-icon.med-icon--sm.sc-ion-icon-h{font-size:24px}/*!@:host(.med-icon.med-icon--md)*/.med-icon.med-icon--md.sc-ion-icon-h{font-size:32px}/*!@:host(.med-icon.med-icon--lg)*/.med-icon.med-icon--lg.sc-ion-icon-h{font-size:48px}/*!@:host(.med-icon.med-icon--stroke-1)*/.med-icon.med-icon--stroke-1.sc-ion-icon-h{--ionicon-stroke-width:1}";
+const iconCss = "/*!@:host*/.sc-ion-icon-h{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}/*!@:host .ionicon*/.sc-ion-icon-h .ionicon.sc-ion-icon{stroke:currentColor}/*!@.ionicon-fill-none*/.ionicon-fill-none.sc-ion-icon{fill:none}/*!@.ionicon-stroke-width*/.ionicon-stroke-width.sc-ion-icon{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}/*!@.icon-inner,\n.ionicon,\nsvg*/.icon-inner.sc-ion-icon,.ionicon.sc-ion-icon,svg.sc-ion-icon{display:block;height:100%;width:100%}/*!@:host(.flip-rtl) .icon-inner*/.flip-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}/*!@:host(.icon-small)*/.icon-small.sc-ion-icon-h{font-size:18px !important}/*!@:host(.icon-large)*/.icon-large.sc-ion-icon-h{font-size:32px !important}/*!@:host(.ion-color)*/.ion-color.sc-ion-icon-h{color:var(--ion-color-base) !important}/*!@:host(.ion-color-primary)*/.ion-color-primary.sc-ion-icon-h{--ion-color-base:var(--ion-color-primary, #3880ff)}/*!@:host(.ion-color-secondary)*/.ion-color-secondary.sc-ion-icon-h{--ion-color-base:var(--ion-color-secondary, #0cd1e8)}/*!@:host(.ion-color-tertiary)*/.ion-color-tertiary.sc-ion-icon-h{--ion-color-base:var(--ion-color-tertiary, #f4a942)}/*!@:host(.ion-color-success)*/.ion-color-success.sc-ion-icon-h{--ion-color-base:var(--ion-color-success, #10dc60)}/*!@:host(.ion-color-warning)*/.ion-color-warning.sc-ion-icon-h{--ion-color-base:var(--ion-color-warning, #ffce00)}/*!@:host(.ion-color-danger)*/.ion-color-danger.sc-ion-icon-h{--ion-color-base:var(--ion-color-danger, #f14141)}/*!@:host(.ion-color-light)*/.ion-color-light.sc-ion-icon-h{--ion-color-base:var(--ion-color-light, #f4f5f8)}/*!@:host(.ion-color-medium)*/.ion-color-medium.sc-ion-icon-h{--ion-color-base:var(--ion-color-medium, #989aa2)}/*!@:host(.ion-color-dark)*/.ion-color-dark.sc-ion-icon-h{--ion-color-base:var(--ion-color-dark, #222428)}";
 
 class Icon {
   constructor(hostRef) {
@@ -14286,7 +14286,7 @@ class MedAlternativas {
   }
   render() {
     const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar } = this;
-    return (hAsync(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && hAsync("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedChange: ev => this.medChange.emit(ev.detail), onMedRiscada: ev => this.medRiscada.emit(ev.detail), onMedGalleryRequest: ev => this.medGalleryRequest.emit(ev.detail) }), dsSkinConfig.alternativas === MedSkin.B && hAsync("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedChange: ev => this.medChange.emit(ev.detail), onMedRiscada: ev => this.medRiscada.emit(ev.detail), onMedGalleryRequest: ev => this.medGalleryRequest.emit(ev.detail) })));
+    return (hAsync(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && hAsync("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedChange: ev => this.medChange.emit(ev.detail), onMedRiscada: (ev) => { this.medRiscada.emit(ev.detail), console.log('para ricar'); }, onMedGalleryRequest: ev => this.medGalleryRequest.emit(ev.detail) }), dsSkinConfig.alternativas === MedSkin.B && hAsync("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedChange: ev => this.medChange.emit(ev.detail), onMedRiscada: ev => this.medRiscada.emit(ev.detail), onMedGalleryRequest: ev => this.medGalleryRequest.emit(ev.detail) })));
   }
   static get style() { return medAlternativasCss; }
   static get cmpMeta() { return {
@@ -14337,6 +14337,82 @@ function getPositionFromEvent(event) {
   }
 }
 
+class MedAlternativasBase {
+  constructor(parent) {
+    this.parent = parent;
+    this.distanciaMinimaClick = 50;
+    this.tempoLongPress = 1000;
+  }
+  resetState() {
+    this.parent.riscarAtivoIndice = -1;
+    this.parent.permiteAlterar = true;
+  }
+  handleClick(event) {
+    if (!event.target.classList.contains('med-alternativas') && event.target.tagName !== 'MED-ALTERNATIVAS') {
+      this.resetState();
+    }
+  }
+  onAlternativasChanged(newValue, oldValue) {
+    if (newValue != oldValue) {
+      this.resetState();
+    }
+  }
+  onTouchStart(event, indice) {
+    var _a;
+    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
+      return;
+    }
+    this.dataStart = new Date();
+    this.positionStart = getPositionFromEvent(event);
+    this.timer = setTimeout(() => {
+      this.dataEnd = new Date();
+      const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
+      if (tempoTotal >= this.tempoLongPress) {
+        this.parent.riscarAtivoIndice = indice;
+        this.parent.permiteAlterar = false;
+      }
+    }, this.tempoLongPress);
+  }
+  onTouchEnd(event, alternativa) {
+    var _a;
+    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
+      return;
+    }
+    const positionEnd = getPositionFromEvent(event);
+    clearTimeout(this.timer);
+    if (this.parent.permiteAlterar &&
+      distanciaEuclidiana(this.positionStart, positionEnd) <
+        this.distanciaMinimaClick) {
+      this.parent.riscarAtivoIndice = -1;
+      this.alterarAlternativa(alternativa);
+    }
+    this.parent.permiteAlterar = true;
+  }
+  alterarAlternativa(item) {
+    var _a;
+    const alternativa = item;
+    if (alternativa.Riscada && this.parent.permiteRiscar) {
+      return;
+    }
+    this.parent.alternativaSelecionada = alternativa.Alternativa;
+    (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
+  }
+  riscar(event, alternativa) {
+    var _a;
+    event.stopPropagation();
+    alternativa[this.parent.keyRiscada] = !alternativa[this.parent.keyRiscada];
+    this.parent.riscarAtivoIndice = -1;
+    (_a = this.parent.medRiscada) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
+    this.parent.permiteAlterar = true;
+    this.parent.alternativas = [...this.parent.alternativas];
+  }
+  imageRequest(event, alternativa) {
+    var _a;
+    event.stopPropagation();
+    (_a = this.parent.medGalleryRequest) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
+  }
+}
+
 const medAlternativasACss = "/*!@:root*/.sc-med-alternativas-a:root{--med-font-family-brand:\"fsemeric\";--med-font-family-base:\"fsemeric\";--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-letter-spacing-ultracompressed:-0.04;--med-letter-spacing-compressed:-0.02;--med-letter-spacing-default:0;--med-letter-spacing-medium:0.02;--med-letter-spacing-expanded:0.05;--med-letter-spacing-distant:0.1;--med-letter-spacing-far:0.2;--med-line-height-compressed:100%;--med-line-height-default:24px;--med-line-height-double:200%}/*!@:root*/.sc-med-alternativas-a:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-lg:40px;--med-spacing-inset-xl:48px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}/*!@:root*/.sc-med-alternativas-a:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}/*!@:host(.med-alternativas) .med-alternativas__container*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__container.sc-med-alternativas-a{display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .med-alternativas__item*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item.sc-med-alternativas-a{cursor:pointer;position:relative;-webkit-transition:background-color 300ms;transition:background-color 300ms;min-height:80px}/*!@:host(.med-alternativas) .option*/.med-alternativas.sc-med-alternativas-a-h .option.sc-med-alternativas-a{background:hsl(var(--med-color-neutral-8));padding:var(--med-spacing-inset-xs);border-radius:var(--med-border-radius-sm);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer}/*!@:host(.med-alternativas) .option__letter*/.med-alternativas.sc-med-alternativas-a-h .option__letter.sc-med-alternativas-a{font-size:var(--med-font-size-xs);font-weight:var(--med-font-weight-medium);line-height:var(--med-line-height-compressed);color:hsl(var(--med-color-neutral-1))}/*!@:host(.med-alternativas) .option__fake*/.med-alternativas.sc-med-alternativas-a-h .option__fake.sc-med-alternativas-a{height:16px;width:16px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;background:#fff;border-radius:var(--med-border-radius-full);margin:0 var(--med-spacing-inline-nano) 0 0;position:relative}/*!@.option__fake:before*/.option__fake.sc-med-alternativas-a:before{content:\"\";display:inline-block;width:8px;height:8px;background:hsl(var(--med-color-brand-3));opacity:0;-webkit-transition:opacity 300ms;transition:opacity 300ms;border-radius:var(--med-border-radius-full)}/*!@:host(.med-alternativas) .med-alternativas__left*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__left.sc-med-alternativas-a{padding:var(--med-spacing-stack-base) var(--med-spacing-stack-base) calc(var(--med-spacing-stack-base) - 10px) var(--med-spacing-stack-base)}/*!@:host(.med-alternativas) .med-alternativas__right*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__right.sc-med-alternativas-a{-ms-flex:1 1 0%;flex:1 1 0%;overflow:hidden;text-align:left;padding:var(--med-spacing-stack-base) var(--med-spacing-stack-base) calc(var(--med-spacing-stack-base) - 10px) 0;font-size:var(--med-font-size-xs);font-weight:var(--med-font-weight-regular);line-height:24px;text-align:justify;color:hsl(var(--med-color-neutral-9));cursor:pointer}/*!@:host(.med-alternativas) .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__wrapper.sc-med-alternativas-a{min-height:80px}/*!@:host(.med-alternativas) .med-alternativas__progress-bar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__progress-bar.sc-med-alternativas-a{--height:10px;-webkit-transition:all 300ms ease;transition:all 300ms ease;opacity:0;-webkit-transform:translateX(-100%);transform:translateX(-100%)}/*!@:host(.med-alternativas) .med-alternativas__riscar-icon*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-icon.sc-med-alternativas-a{stroke:hsl(var(--med-color-neutral-10));--ionicon-stroke-width:1px}@media (min-width: 768px){/*!@:host(.med-alternativas) .med-alternativas__list--has-image*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__list--has-image.sc-med-alternativas-a{display:grid;grid-template-columns:1fr 1fr;gap:16px}}/*!@:host(.med-alternativas) .med-alternativas__list--has-image .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__list--has-image.sc-med-alternativas-a .med-alternativas__riscar.sc-med-alternativas-a{position:absolute;top:10px;right:10px;height:auto;z-index:1;background:#000;padding:var(--med-spacing-inset-xs);border-radius:5px;opacity:0.5}/*!@:host(.med-alternativas) .image-container__image*/.med-alternativas.sc-med-alternativas-a-h .image-container__image.sc-med-alternativas-a{max-width:360px;width:100%;height:auto;display:block}/*!@:host(.med-alternativas) .med-alternativas__progress-bar--toggle*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__progress-bar--toggle.sc-med-alternativas-a{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}/*!@:host(.med-alternativas) .med-alternativas__item--selecionada .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--selecionada.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-brand-4))}/*!@:host(.med-alternativas) .med-alternativas__item--certa .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--certa.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--correta .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--correta.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--incorreta .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--incorreta.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-fb-warning))}/*!@:host(.med-alternativas) .med-alternativas__item--selecionada .option__fake:before,\n:host(.med-alternativas) .med-alternativas__item--correta .option__fake:before,\n:host(.med-alternativas) .med-alternativas__item--incorreta .option__fake:before*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--selecionada.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--correta.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--incorreta.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before{opacity:1}/*!@:host(.med-alternativas) .med-alternativas__item--certa .option__fake:before*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--certa.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before{opacity:0}/*!@:host(.med-alternativas) .med-alternativas__item--show*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--show.sc-med-alternativas-a{background:hsl(var(--med-color-neutral-2))}/*!@:host(.med-alternativas) .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar.sc-med-alternativas-a{color:hsl(var(--med-color-neutral-10));padding:var(--med-spacing-inline-base);font-size:var(--med-font-size-xxs);font-weight:var(--med-font-weight-regular);line-height:var(--med-line-height-compressed);height:100%;display:none;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__left,\n:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right,\n:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__progress-bar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__left.sc-med-alternativas-a,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__right.sc-med-alternativas-a,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__progress-bar.sc-med-alternativas-a{opacity:0.5}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__right.sc-med-alternativas-a{text-decoration:line-through}/*!@:host(.med-alternativas) .med-alternativas__riscar--show*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar--show.sc-med-alternativas-a{display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .med-alternativas__riscar-span*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-span.sc-med-alternativas-a{display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .med-alternativas__riscar-desktop*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-desktop.sc-med-alternativas-a{display:none;padding-left:var(--med-spacing-inline-nano)}@media (min-width: 768px){/*!@:host(.med-alternativas) .med-alternativas__riscar-desktop*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-desktop.sc-med-alternativas-a{display:-ms-flexbox;display:flex}}@media (any-hover: hover){/*!@:host(.med-alternativas) .med-alternativas__item--permite-riscar:hover*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--permite-riscar.sc-med-alternativas-a:hover{background:hsl(var(--med-color-neutral-2))}/*!@:host(.med-alternativas) .med-alternativas__item--permite-riscar:hover .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--permite-riscar.sc-med-alternativas-a:hover .med-alternativas__riscar.sc-med-alternativas-a{display:-ms-flexbox;display:flex}}";
 
 class MedAlternativasA {
@@ -14375,73 +14451,13 @@ class MedAlternativasA {
     this.permiteRiscar = true;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
-    this.distanciaMinimaClick = 50;
-    this.tempoLongPress = 1000;
+    this.baseClass = new MedAlternativasBase(this);
   }
   handleClick(event) {
-    if (!event.target.classList.contains('med-alternativas')) {
-      this.resetState();
-    }
+    this.baseClass.handleClick(event);
   }
   onAlternativasChanged(newValue, oldValue) {
-    if (newValue != oldValue) {
-      this.resetState();
-    }
-  }
-  resetState() {
-    this.riscarAtivoIndice = -1;
-    this.permiteAlterar = true;
-  }
-  onTouchStart(event, indice) {
-    var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
-      return;
-    }
-    this.dataStart = new Date();
-    this.positionStart = getPositionFromEvent(event);
-    this.timer = setTimeout(() => {
-      this.dataEnd = new Date();
-      const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
-      if (tempoTotal >= this.tempoLongPress) {
-        this.riscarAtivoIndice = indice;
-        this.permiteAlterar = false;
-      }
-    }, this.tempoLongPress);
-  }
-  onTouchEnd(event, alternativa) {
-    var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
-      return;
-    }
-    const positionEnd = getPositionFromEvent(event);
-    clearTimeout(this.timer);
-    if (this.permiteAlterar &&
-      distanciaEuclidiana(this.positionStart, positionEnd) <
-        this.distanciaMinimaClick) {
-      this.riscarAtivoIndice = -1;
-      this.alterarAlternativa(alternativa);
-    }
-    this.permiteAlterar = true;
-  }
-  alterarAlternativa(item) {
-    const alternativa = item;
-    if (alternativa.Riscada && this.permiteRiscar) {
-      return;
-    }
-    this.alternativaSelecionada = alternativa.Alternativa;
-    this.medChange.emit(alternativa);
-  }
-  riscar(event, alternativa) {
-    event.stopPropagation();
-    alternativa[this.keyRiscada] = !alternativa[this.keyRiscada];
-    this.riscarAtivoIndice = -1;
-    this.medRiscada.emit(alternativa);
-    this.permiteAlterar = true;
-    this.alternativas = [...this.alternativas];
-  }
-  imageRequest(event, alternativa) {
-    event.stopPropagation();
-    this.medGalleryRequest.emit(alternativa);
+    this.baseClass.onAlternativasChanged(newValue, oldValue);
   }
   render() {
     const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
@@ -14458,7 +14474,7 @@ class MedAlternativasA {
       }) }, hAsync("div", { class: `
            med-alternativas__list
            ${hasImage ? 'med-alternativas__list--has-image' : ''}
-           `, role: "list" }, this.alternativas.map((alternativa, indice) => (hAsync("div", { role: "listitem", onTouchStart: (event) => this.onTouchStart(event, indice), onTouchEnd: (event) => this.onTouchEnd(event, alternativa), onMouseDown: (event) => this.onTouchStart(event, indice), onMouseUp: (event) => this.onTouchEnd(event, alternativa), class: `
+           `, role: "list" }, this.alternativas.map((alternativa, indice) => (hAsync("div", { role: "listitem", onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
                 med-alternativas__item med-alternativas__item--${alternativa[this.keyAlternativa]}
                 ${permiteRiscar ? 'med-alternativas__item--permite-riscar' : ''}
                 ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__item--show' : ''}
@@ -14468,7 +14484,7 @@ class MedAlternativasA {
                 ${exibeAcerto && alternativa[this.keyAlternativa] !== this.respostaCorreta && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--incorreta' : ''}
                 ${!exibeAcerto && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--selecionada' : ''}
               ` }, hAsync("div", { class: "med-alternativas__wrapper" }, hAsync("div", { class: "med-alternativas__container" }, hAsync("div", { class: "med-alternativas__left" }, hAsync("div", { class: "option" }, hAsync("span", { class: "option__fake" }), hAsync("span", { class: "option__letter" }, alternativa[this.keyAlternativa]))), hAsync("div", { class: "med-alternativas__right", innerHTML: alternativa[this.keyEnunciado] }, alternativa[this.keyImagem] &&
-      hAsync("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.imageRequest(event, alternativa) }, hAsync("div", { class: 'image-container__wrapper' }, hAsync("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }), hAsync("div", { class: 'image-container__button' }, hAsync("ion-icon", { name: "med-expand image-container__icon" }))))), hAsync("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => this.riscar(event, alternativa) }, hAsync("ion-icon", { class: "med-alternativas__riscar-icon med-icon", name: "med-riscar" }), hAsync("div", { class: "med-alternativas__riscar-span" }, (alternativa[this.keyRiscada] ? 'Restaurar ' : 'Riscar '), hAsync("span", { class: "med-alternativas__riscar-desktop" }, " alternativa"))))), hAsync("ion-progress-bar", { percentage: true, class: `
+      hAsync("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, hAsync("div", { class: 'image-container__wrapper' }, hAsync("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }), hAsync("div", { class: 'image-container__button' }, hAsync("ion-icon", { name: "med-expand image-container__icon" }))))), hAsync("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => { this.baseClass.riscar(event, alternativa); } }, hAsync("ion-icon", { class: "med-alternativas__riscar-icon med-icon", name: "med-riscar" }), hAsync("div", { class: "med-alternativas__riscar-span" }, (alternativa[this.keyRiscada] ? 'Restaurar ' : 'Riscar '), hAsync("span", { class: "med-alternativas__riscar-desktop" }, " alternativa"))))), hAsync("ion-progress-bar", { percentage: true, class: `
                 med-alternativas__progress-bar
                 ${mostraResposta && alternativaSelecionada ? 'med-alternativas__progress-bar--toggle' : ''}
               `, value: alternativa[this.keyPorcentagem] })))))));
@@ -14542,81 +14558,20 @@ class MedAlternativasB {
     this.permiteRiscar = true;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
-    this.distanciaMinimaClick = 50;
-    this.tempoLongPress = 1000;
+    this.baseClass = new MedAlternativasBase(this);
   }
   handleClick(event) {
-    if (!event.target.classList.contains('med-alternativas')) {
-      this.resetState();
-    }
+    this.baseClass.handleClick(event);
   }
   onAlternativasChanged(newValue, oldValue) {
-    if (newValue != oldValue) {
-      this.resetState();
-    }
-  }
-  resetState() {
-    this.riscarAtivoIndice = -1;
-    this.permiteAlterar = true;
-  }
-  onTouchStart(event, indice) {
-    var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
-      return;
-    }
-    this.dataStart = new Date();
-    this.positionStart = getPositionFromEvent(event);
-    this.timer = setTimeout(() => {
-      this.dataEnd = new Date();
-      const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
-      if (tempoTotal >= this.tempoLongPress) {
-        this.riscarAtivoIndice = indice;
-        this.permiteAlterar = false;
-      }
-    }, this.tempoLongPress);
-  }
-  onTouchEnd(event, alternativa) {
-    var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
-      return;
-    }
-    const positionEnd = getPositionFromEvent(event);
-    clearTimeout(this.timer);
-    if (this.permiteAlterar &&
-      distanciaEuclidiana(this.positionStart, positionEnd) <
-        this.distanciaMinimaClick) {
-      this.riscarAtivoIndice = -1;
-      this.alterarAlternativa(alternativa);
-    }
-    this.permiteAlterar = true;
-  }
-  alterarAlternativa(item) {
-    const alternativa = item;
-    if (alternativa.Riscada && this.permiteRiscar) {
-      return;
-    }
-    this.alternativaSelecionada = alternativa.Alternativa;
-    this.medChange.emit(alternativa);
-  }
-  riscar(event, alternativa) {
-    event.stopPropagation();
-    alternativa[this.keyRiscada] = !alternativa[this.keyRiscada];
-    this.riscarAtivoIndice = -1;
-    this.medRiscada.emit(alternativa);
-    this.permiteAlterar = true;
-    this.alternativas = [...this.alternativas];
-  }
-  imageRequest(event, alternativa) {
-    event.stopPropagation();
-    this.medGalleryRequest.emit(alternativa);
+    this.baseClass.onAlternativasChanged(newValue, oldValue);
   }
   render() {
-    console.log('eeeeeeeeeeeeeeeeeeeeeeeeee');
     const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
     return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-alternativas': true,
-      }) }, hAsync("div", { class: "med-alternativas__list", role: "list" }, this.alternativas.map((alternativa, indice) => (hAsync("div", { role: "listitem", onTouchStart: (event) => this.onTouchStart(event, indice), onTouchEnd: (event) => this.onTouchEnd(event, alternativa), onMouseDown: (event) => this.onTouchStart(event, indice), onMouseUp: (event) => this.onTouchEnd(event, alternativa), class: `
+      }) }, hAsync("div", { class: "med-alternativas__list", role: "list" }, this.alternativas.map((alternativa, indice) => (hAsync("div", { role: "listitem", onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
                 med-alternativas__item med-alternativas__item--${alternativa[this.keyAlternativa]}
                 ${permiteRiscar ? 'med-alternativas__item--permite-riscar' : ''}
                 ${alternativa[this.keyRiscada] && permiteRiscar ? 'med-alternativas__item--riscado' : ''}
@@ -14625,7 +14580,7 @@ class MedAlternativasB {
                 ${exibeAcerto && alternativa[this.keyAlternativa] !== this.respostaCorreta && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--incorreta' : ''}
                 ${!exibeAcerto && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--selecionada' : ''}
               ` }, hAsync("div", { class: "med-alternativas__wrapper" }, hAsync("div", { class: "med-alternativas__container" }, hAsync("div", { class: "med-alternativas__left" }, alternativa[this.keyAlternativa]), hAsync("div", { class: "med-alternativas__right", innerHTML: alternativa[this.keyEnunciado] }, alternativa[this.keyImagem] &&
-      hAsync("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.imageRequest(event, alternativa) }, hAsync("div", { class: 'image-container__wrapper' }, hAsync("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }), hAsync("div", { class: 'image-container__button' }, hAsync("ion-icon", { name: "med-expand image-container__icon" }))))), hAsync("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => this.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') + ' alternativa'))), hAsync("ion-progress-bar", { "ds-name": "skin", percentage: true, class: `
+      hAsync("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, hAsync("div", { class: 'image-container__wrapper' }, hAsync("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }), hAsync("div", { class: 'image-container__button' }, hAsync("ion-icon", { name: "med-expand image-container__icon" }))))), hAsync("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') + ' alternativa'))), hAsync("ion-progress-bar", { "ds-name": "skin", percentage: true, class: `
                 med-alternativas__progress-bar
                 ${mostraResposta && alternativaSelecionada ? 'med-alternativas__progress-bar--toggle' : ''}
               `, value: alternativa[this.keyPorcentagem] })))))));

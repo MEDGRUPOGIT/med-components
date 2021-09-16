@@ -18,7 +18,7 @@
         },
         {
           "name": "css-class",
-          "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+          "description": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
         },
         {
           "name": "header",
@@ -46,7 +46,7 @@
         },
         {
           "name": "translucent",
-          "description": "If `true`, the action sheet will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+          "description": "If `true`, the action sheet will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
         }
       ],
       "references": [
@@ -73,7 +73,7 @@
         },
         {
           "name": "css-class",
-          "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+          "description": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
         },
         {
           "name": "header",
@@ -85,7 +85,7 @@
         },
         {
           "name": "message",
-          "description": "The main message to be displayed in the alert.\n`message` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+          "description": "The main message to be displayed in the alert.\r\n`message` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
         },
         {
           "name": "mode",
@@ -105,7 +105,7 @@
         },
         {
           "name": "translucent",
-          "description": "If `true`, the alert will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+          "description": "If `true`, the alert will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
         }
       ],
       "references": [
@@ -133,7 +133,7 @@
       "name": "ion-avatar",
       "description": {
         "kind": "markdown",
-        "value": "Avatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.\n\nAvatars can be used by themselves or inside of any element. If placed inside of an `ion-chip` or `ion-item`, the avatar will resize to fit the parent component. To position an avatar on the left or right side of an item, set the slot to `start` or `end`, respectively."
+        "value": "Avatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.\r\n\r\nAvatars can be used by themselves or inside of any element. If placed inside of an `ion-chip` or `ion-item`, the avatar will resize to fit the parent component. To position an avatar on the left or right side of an item, set the slot to `start` or `end`, respectively."
       },
       "attributes": [],
       "references": [
@@ -147,12 +147,12 @@
       "name": "ion-back-button",
       "description": {
         "kind": "markdown",
-        "value": "The back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.\n\nTo change what is displayed in the back button, use the `text` and `icon` properties."
+        "value": "The back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.\r\n\r\nTo change what is displayed in the back button, use the `text` and `icon` properties."
       },
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "default-href",
@@ -241,7 +241,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "ds-color",
@@ -310,7 +310,7 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -318,7 +318,7 @@
         },
         {
           "name": "download",
-          "description": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+          "description": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
         },
         {
           "name": "ds-color",
@@ -356,7 +356,7 @@
         },
         {
           "name": "expand",
-          "description": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\nwithout left and right borders.",
+          "description": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\r\nwithout left and right borders.",
           "values": [
             {
               "name": "block"
@@ -368,7 +368,7 @@
         },
         {
           "name": "fill",
-          "description": "Set to `\"clear\"` for a transparent button, to `\"outline\"` for a transparent\nbutton with a border, or to `\"solid\"`. The default style is `\"solid\"` except inside of\na toolbar, where the default is `\"clear\"`.",
+          "description": "Set to `\"clear\"` for a transparent button, to `\"outline\"` for a transparent\r\nbutton with a border, or to `\"solid\"`. The default style is `\"solid\"` except inside of\r\na toolbar, where the default is `\"clear\"`.",
           "values": [
             {
               "name": "clear"
@@ -386,7 +386,7 @@
         },
         {
           "name": "href",
-          "description": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+          "description": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
         },
         {
           "name": "mode",
@@ -402,11 +402,11 @@
         },
         {
           "name": "rel",
-          "description": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+          "description": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
         },
         {
           "name": "router-direction",
-          "description": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+          "description": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`.",
           "values": [
             {
               "name": "back"
@@ -453,7 +453,7 @@
         },
         {
           "name": "target",
-          "description": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+          "description": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
         },
         {
           "name": "type",
@@ -482,12 +482,12 @@
       "name": "ion-buttons",
       "description": {
         "kind": "markdown",
-        "value": "The Buttons component is a container element. Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element.\n\nThe `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.\n\n| Slot         | Description                                                                                              |\n|--------------|----------------------------------------------------------------------------------------------------------|\n| `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |\n| `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |\n| `start`      | Positions to the `left` of the content in LTR, and to the `right` in RTL.                                |\n| `end`        | Positions to the `right` of the content in LTR, and to the `left` in RTL.                                |"
+        "value": "The Buttons component is a container element. Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element.\r\n\r\nThe `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.\r\n\r\n| Slot         | Description                                                                                              |\r\n|--------------|----------------------------------------------------------------------------------------------------------|\r\n| `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |\r\n| `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |\r\n| `start`      | Positions to the `left` of the content in LTR, and to the `right` in RTL.                                |\r\n| `end`        | Positions to the `right` of the content in LTR, and to the `left` in RTL.                                |"
       },
       "attributes": [
         {
           "name": "collapse",
-          "description": "If true, buttons will disappear when its\nparent toolbar has fully collapsed if the toolbar\nis not the first toolbar. If the toolbar is the\nfirst toolbar, the buttons will be hidden and will\nonly be shown once all toolbars have fully collapsed.\n\nOnly applies in `ios` mode with `collapse` set to\n`true` on `ion-header`.\n\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)"
+          "description": "If true, buttons will disappear when its\r\nparent toolbar has fully collapsed if the toolbar\r\nis not the first toolbar. If the toolbar is the\r\nfirst toolbar, the buttons will be hidden and will\r\nonly be shown once all toolbars have fully collapsed.\r\n\r\nOnly applies in `ios` mode with `collapse` set to\r\n`true` on `ion-header`.\r\n\r\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)"
         }
       ],
       "references": [
@@ -501,7 +501,7 @@
       "name": "ion-card",
       "description": {
         "kind": "markdown",
-        "value": "Cards are a standard piece of UI that serves as an entry point to more detailed\ninformation. A card can be a single component, but is often made up of some\nheader, title, subtitle, and content. `ion-card` is broken up into several\nsub-components to reflect this. Please see `ion-card-content`,\n`ion-card-header`, `ion-card-title`, `ion-card-subtitle`."
+        "value": "Cards are a standard piece of UI that serves as an entry point to more detailed\r\ninformation. A card can be a single component, but is often made up of some\r\nheader, title, subtitle, and content. `ion-card` is broken up into several\r\nsub-components to reflect this. Please see `ion-card-content`,\r\n`ion-card-header`, `ion-card-title`, `ion-card-subtitle`."
       },
       "attributes": [
         {
@@ -510,7 +510,7 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -518,11 +518,11 @@
         },
         {
           "name": "download",
-          "description": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+          "description": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
         },
         {
           "name": "href",
-          "description": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+          "description": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
         },
         {
           "name": "mode",
@@ -538,11 +538,11 @@
         },
         {
           "name": "rel",
-          "description": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+          "description": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
         },
         {
           "name": "router-direction",
-          "description": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+          "description": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`.",
           "values": [
             {
               "name": "back"
@@ -557,7 +557,7 @@
         },
         {
           "name": "target",
-          "description": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+          "description": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
         },
         {
           "name": "type",
@@ -586,7 +586,7 @@
       "name": "ion-card-content",
       "description": {
         "kind": "markdown",
-        "value": "`ion-card-content` is child component of `ion-card` that adds some content padding.\nIt is recommended that any text content for a card should be placed in an `ion-card-content`."
+        "value": "`ion-card-content` is child component of `ion-card` that adds some content padding.\r\nIt is recommended that any text content for a card should be placed in an `ion-card-content`."
       },
       "attributes": [
         {
@@ -618,7 +618,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "mode",
@@ -634,7 +634,7 @@
         },
         {
           "name": "translucent",
-          "description": "If `true`, the card header will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+          "description": "If `true`, the card header will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
         }
       ],
       "references": [
@@ -653,7 +653,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "mode",
@@ -684,7 +684,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "mode",
@@ -719,7 +719,7 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -751,7 +751,7 @@
         },
         {
           "name": "value",
-          "description": "The value of the checkbox does not mean if it's checked or not, use the `checked`\nproperty for that.\n\nThe value of a checkbox is analogous to the value of an `<input type=\"checkbox\">`,\nit's only used when the checkbox participates in a native `<form>`."
+          "description": "The value of the checkbox does not mean if it's checked or not, use the `checked`\r\nproperty for that.\r\n\r\nThe value of a checkbox is analogous to the value of an `<input type=\"checkbox\">`,\r\nit's only used when the checkbox participates in a native `<form>`."
         }
       ],
       "references": [
@@ -770,7 +770,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -817,104 +817,104 @@
       "name": "ion-col",
       "description": {
         "kind": "markdown",
-        "value": "Columns are cellular components of the [grid](../grid) system and go inside of a [row](../row).\nThey will expand to fill their row. All content within a grid should go inside of a column.\n\nSee [Grid Layout](/docs/layout/grid) for more information."
+        "value": "Columns are cellular components of the [grid](../grid) system and go inside of a [row](../row).\r\nThey will expand to fill their row. All content within a grid should go inside of a column.\r\n\r\nSee [Grid Layout](/docs/layout/grid) for more information."
       },
       "attributes": [
         {
           "name": "offset",
-          "description": "The amount to offset the column, in terms of how many columns it should shift to the end\nof the total available."
+          "description": "The amount to offset the column, in terms of how many columns it should shift to the end\r\nof the total available."
         },
         {
           "name": "offset-lg",
-          "description": "The amount to offset the column for lg screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to offset the column for lg screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "offset-md",
-          "description": "The amount to offset the column for md screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to offset the column for md screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "offset-sm",
-          "description": "The amount to offset the column for sm screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to offset the column for sm screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "offset-xl",
-          "description": "The amount to offset the column for xl screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to offset the column for xl screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "offset-xs",
-          "description": "The amount to offset the column for xs screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to offset the column for xs screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "pull",
-          "description": "The amount to pull the column, in terms of how many columns it should shift to the start of\nthe total available."
+          "description": "The amount to pull the column, in terms of how many columns it should shift to the start of\r\nthe total available."
         },
         {
           "name": "pull-lg",
-          "description": "The amount to pull the column for lg screens, in terms of how many columns it should shift\nto the start of the total available."
+          "description": "The amount to pull the column for lg screens, in terms of how many columns it should shift\r\nto the start of the total available."
         },
         {
           "name": "pull-md",
-          "description": "The amount to pull the column for md screens, in terms of how many columns it should shift\nto the start of the total available."
+          "description": "The amount to pull the column for md screens, in terms of how many columns it should shift\r\nto the start of the total available."
         },
         {
           "name": "pull-sm",
-          "description": "The amount to pull the column for sm screens, in terms of how many columns it should shift\nto the start of the total available."
+          "description": "The amount to pull the column for sm screens, in terms of how many columns it should shift\r\nto the start of the total available."
         },
         {
           "name": "pull-xl",
-          "description": "The amount to pull the column for xl screens, in terms of how many columns it should shift\nto the start of the total available."
+          "description": "The amount to pull the column for xl screens, in terms of how many columns it should shift\r\nto the start of the total available."
         },
         {
           "name": "pull-xs",
-          "description": "The amount to pull the column for xs screens, in terms of how many columns it should shift\nto the start of the total available."
+          "description": "The amount to pull the column for xs screens, in terms of how many columns it should shift\r\nto the start of the total available."
         },
         {
           "name": "push",
-          "description": "The amount to push the column, in terms of how many columns it should shift to the end\nof the total available."
+          "description": "The amount to push the column, in terms of how many columns it should shift to the end\r\nof the total available."
         },
         {
           "name": "push-lg",
-          "description": "The amount to push the column for lg screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to push the column for lg screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "push-md",
-          "description": "The amount to push the column for md screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to push the column for md screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "push-sm",
-          "description": "The amount to push the column for sm screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to push the column for sm screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "push-xl",
-          "description": "The amount to push the column for xl screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to push the column for xl screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "push-xs",
-          "description": "The amount to push the column for xs screens, in terms of how many columns it should shift\nto the end of the total available."
+          "description": "The amount to push the column for xs screens, in terms of how many columns it should shift\r\nto the end of the total available."
         },
         {
           "name": "size",
-          "description": "The size of the column, in terms of how many columns it should take up out of the total\navailable. If `\"auto\"` is passed, the column will be the size of its content."
+          "description": "The size of the column, in terms of how many columns it should take up out of the total\r\navailable. If `\"auto\"` is passed, the column will be the size of its content."
         },
         {
           "name": "size-lg",
-          "description": "The size of the column for lg screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+          "description": "The size of the column for lg screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
         },
         {
           "name": "size-md",
-          "description": "The size of the column for md screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+          "description": "The size of the column for md screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
         },
         {
           "name": "size-sm",
-          "description": "The size of the column for sm screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+          "description": "The size of the column for sm screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
         },
         {
           "name": "size-xl",
-          "description": "The size of the column for xl screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+          "description": "The size of the column for xl screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
         },
         {
           "name": "size-xs",
-          "description": "The size of the column for xs screens, in terms of how many columns it should take up out\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
+          "description": "The size of the column for xs screens, in terms of how many columns it should take up out\r\nof the total available. If `\"auto\"` is passed, the column will be the size of its content."
         }
       ],
       "references": [
@@ -928,24 +928,24 @@
       "name": "ion-content",
       "description": {
         "kind": "markdown",
-        "value": "The content component provides an easy to use content area with some useful methods\nto control the scrollable area. There should only be one content in a single\nview.\n\nContent, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties)."
+        "value": "The content component provides an easy to use content area with some useful methods\r\nto control the scrollable area. There should only be one content in a single\r\nview.\r\n\r\nContent, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties)."
       },
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "force-overscroll",
-          "description": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, the does not disable the system bounce on iOS. That is an OS level setting."
+          "description": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\r\nIf the content exceeds the bounds of ionContent, nothing will change.\r\nNote, the does not disable the system bounce on iOS. That is an OS level setting."
         },
         {
           "name": "fullscreen",
-          "description": "If `true`, the content will scroll behind the headers\nand footers. This effect can easily be seen by setting the toolbar\nto transparent."
+          "description": "If `true`, the content will scroll behind the headers\r\nand footers. This effect can easily be seen by setting the toolbar\r\nto transparent."
         },
         {
           "name": "scroll-events",
-          "description": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\nand start listening from (ionScroll), set this property to `true`."
+          "description": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\r\nand start listening from (ionScroll), set this property to `true`."
         },
         {
           "name": "scroll-x",
@@ -967,7 +967,7 @@
       "name": "ion-datetime",
       "description": {
         "kind": "markdown",
-        "value": "Datetimes present a picker interface from the bottom of a page, making it easy for\nusers to select dates and times. The picker displays scrollable columns that can be\nused to individually select years, months, days, hours and minute values. Datetimes\nare similar to the native `input` elements of type `datetime-local`, however, Ionic's\nDatetime component makes it easy to display the date and time in a preferred format,\nand manage the datetime values."
+        "value": "Datetimes present a picker interface from the bottom of a page, making it easy for\r\nusers to select dates and times. The picker displays scrollable columns that can be\r\nused to individually select years, months, days, hours and minute values. Datetimes\r\nare similar to the native `input` elements of type `datetime-local`, however, Ionic's\r\nDatetime component makes it easy to display the date and time in a preferred format,\r\nand manage the datetime values."
       },
       "attributes": [
         {
@@ -976,15 +976,15 @@
         },
         {
           "name": "day-names",
-          "description": "Full day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English."
+          "description": "Full day of the week names. This can be used to provide\r\nlocale names for each day in the week. Defaults to English."
         },
         {
           "name": "day-short-names",
-          "description": "Short abbreviated day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English.\nDefaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']`"
+          "description": "Short abbreviated day of the week names. This can be used to provide\r\nlocale names for each day in the week. Defaults to English.\r\nDefaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']`"
         },
         {
           "name": "day-values",
-          "description": "Values used to create the list of selectable days. By default\nevery day is shown for the given month. However, to control exactly which days of\nthe month to display, the `dayValues` input can take a number, an array of numbers, or\na string of comma separated numbers. Note that even if the array days have an invalid\nnumber for the selected month, like `31` in February, it will correctly not show\ndays which are not valid for the selected month."
+          "description": "Values used to create the list of selectable days. By default\r\nevery day is shown for the given month. However, to control exactly which days of\r\nthe month to display, the `dayValues` input can take a number, an array of numbers, or\r\na string of comma separated numbers. Note that even if the array days have an invalid\r\nnumber for the selected month, like `31` in February, it will correctly not show\r\ndays which are not valid for the selected month."
         },
         {
           "name": "disabled",
@@ -992,11 +992,11 @@
         },
         {
           "name": "display-format",
-          "description": "The display format of the date and time as text that shows\nwithin the item. When the `pickerFormat` input is not used, then the\n`displayFormat` is used for both display the formatted text, and determining\nthe datetime picker's columns. See the `pickerFormat` input description for\nmore info. Defaults to `MMM D, YYYY`."
+          "description": "The display format of the date and time as text that shows\r\nwithin the item. When the `pickerFormat` input is not used, then the\r\n`displayFormat` is used for both display the formatted text, and determining\r\nthe datetime picker's columns. See the `pickerFormat` input description for\r\nmore info. Defaults to `MMM D, YYYY`."
         },
         {
           "name": "display-timezone",
-          "description": "The timezone to use for display purposes only. See\n[Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)\nfor a list of supported timezones. If no value is provided, the\ncomponent will default to displaying times in the user's local timezone."
+          "description": "The timezone to use for display purposes only. See\r\n[Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)\r\nfor a list of supported timezones. If no value is provided, the\r\ncomponent will default to displaying times in the user's local timezone."
         },
         {
           "name": "done-text",
@@ -1004,19 +1004,19 @@
         },
         {
           "name": "hour-values",
-          "description": "Values used to create the list of selectable hours. By default\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\nto control exactly which hours to display, the `hourValues` input can take a number, an\narray of numbers, or a string of comma separated numbers."
+          "description": "Values used to create the list of selectable hours. By default\r\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\r\nto control exactly which hours to display, the `hourValues` input can take a number, an\r\narray of numbers, or a string of comma separated numbers."
         },
         {
           "name": "max",
-          "description": "The maximum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\n`1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the maximum could just be the year, such as `1994`.\nDefaults to the end of this year."
+          "description": "The maximum datetime allowed. Value must be a date string\r\nfollowing the\r\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\r\n`1996-12-19`. The format does not have to be specific to an exact\r\ndatetime. For example, the maximum could just be the year, such as `1994`.\r\nDefaults to the end of this year."
         },
         {
           "name": "min",
-          "description": "The minimum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\nsuch as `1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the minimum could just be the year, such as `1994`.\nDefaults to the beginning of the year, 100 years ago from today."
+          "description": "The minimum datetime allowed. Value must be a date string\r\nfollowing the\r\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\r\nsuch as `1996-12-19`. The format does not have to be specific to an exact\r\ndatetime. For example, the minimum could just be the year, such as `1994`.\r\nDefaults to the beginning of the year, 100 years ago from today."
         },
         {
           "name": "minute-values",
-          "description": "Values used to create the list of selectable minutes. By default\nthe minutes range from `0` to `59`. However, to control exactly which minutes to display,\nthe `minuteValues` input can take a number, an array of numbers, or a string of comma\nseparated numbers. For example, if the minute selections should only be every 15 minutes,\nthen this input value would be `minuteValues=\"0,15,30,45\"`."
+          "description": "Values used to create the list of selectable minutes. By default\r\nthe minutes range from `0` to `59`. However, to control exactly which minutes to display,\r\nthe `minuteValues` input can take a number, an array of numbers, or a string of comma\r\nseparated numbers. For example, if the minute selections should only be every 15 minutes,\r\nthen this input value would be `minuteValues=\"0,15,30,45\"`."
         },
         {
           "name": "mode",
@@ -1032,15 +1032,15 @@
         },
         {
           "name": "month-names",
-          "description": "Full names for each month name. This can be used to provide\nlocale month names. Defaults to English."
+          "description": "Full names for each month name. This can be used to provide\r\nlocale month names. Defaults to English."
         },
         {
           "name": "month-short-names",
-          "description": "Short abbreviated names for each month name. This can be used to provide\nlocale month names. Defaults to English."
+          "description": "Short abbreviated names for each month name. This can be used to provide\r\nlocale month names. Defaults to English."
         },
         {
           "name": "month-values",
-          "description": "Values used to create the list of selectable months. By default\nthe month values range from `1` to `12`. However, to control exactly which months to\ndisplay, the `monthValues` input can take a number, an array of numbers, or a string of\ncomma separated numbers. For example, if only summer months should be shown, then this\ninput value would be `monthValues=\"6,7,8\"`. Note that month numbers do *not* have a\nzero-based index, meaning January's value is `1`, and December's is `12`."
+          "description": "Values used to create the list of selectable months. By default\r\nthe month values range from `1` to `12`. However, to control exactly which months to\r\ndisplay, the `monthValues` input can take a number, an array of numbers, or a string of\r\ncomma separated numbers. For example, if only summer months should be shown, then this\r\ninput value would be `monthValues=\"6,7,8\"`. Note that month numbers do *not* have a\r\nzero-based index, meaning January's value is `1`, and December's is `12`."
         },
         {
           "name": "name",
@@ -1048,11 +1048,11 @@
         },
         {
           "name": "picker-format",
-          "description": "The format of the date and time picker columns the user selects.\nA datetime input can have one or many datetime parts, each getting their\nown column which allow individual selection of that particular datetime part. For\nexample, year and month columns are two individually selectable columns which help\nchoose an exact date from the datetime picker. Each column follows the string\nparse format. Defaults to use `displayFormat`."
+          "description": "The format of the date and time picker columns the user selects.\r\nA datetime input can have one or many datetime parts, each getting their\r\nown column which allow individual selection of that particular datetime part. For\r\nexample, year and month columns are two individually selectable columns which help\r\nchoose an exact date from the datetime picker. Each column follows the string\r\nparse format. Defaults to use `displayFormat`."
         },
         {
           "name": "placeholder",
-          "description": "The text to display when there's no date selected yet.\nUsing lowercase to match the input attribute"
+          "description": "The text to display when there's no date selected yet.\r\nUsing lowercase to match the input attribute"
         },
         {
           "name": "readonly",
@@ -1064,7 +1064,7 @@
         },
         {
           "name": "year-values",
-          "description": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2024,2020,2016,2012,2008\"`."
+          "description": "Values used to create the list of selectable years. By default\r\nthe year values range between the `min` and `max` datetime inputs. However, to\r\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\r\nof numbers, or string of comma separated numbers. For example, to show upcoming and\r\nrecent leap years, then this input's value would be `yearValues=\"2024,2020,2016,2012,2008\"`."
         }
       ],
       "references": [
@@ -1083,11 +1083,11 @@
       "attributes": [
         {
           "name": "activated",
-          "description": "If `true`, both the `ion-fab-button` and all `ion-fab-list` inside `ion-fab` will become active.\nThat means `ion-fab-button` will become a `close` icon and `ion-fab-list` will become visible."
+          "description": "If `true`, both the `ion-fab-button` and all `ion-fab-list` inside `ion-fab` will become active.\r\nThat means `ion-fab-button` will become a `close` icon and `ion-fab-list` will become visible."
         },
         {
           "name": "edge",
-          "description": "If `true`, the fab will display on the edge of the header if\n`vertical` is `\"top\"`, and on the edge of the footer if\nit is `\"bottom\"`. Should be used with a `fixed` slot."
+          "description": "If `true`, the fab will display on the edge of the header if\r\n`vertical` is `\"top\"`, and on the edge of the footer if\r\nit is `\"bottom\"`. Should be used with a `fixed` slot."
         },
         {
           "name": "horizontal",
@@ -1131,7 +1131,7 @@
       "name": "ion-fab-button",
       "description": {
         "kind": "markdown",
-        "value": "Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.\n\nIf the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:"
+        "value": "Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.\r\n\r\nIf the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:"
       },
       "attributes": [
         {
@@ -1140,11 +1140,11 @@
         },
         {
           "name": "close-icon",
-          "description": "The icon name to use for the close icon. This will appear when the fab button\nis pressed. Only applies if it is the main button inside of a fab containing a\nfab list."
+          "description": "The icon name to use for the close icon. This will appear when the fab button\r\nis pressed. Only applies if it is the main button inside of a fab containing a\r\nfab list."
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -1152,7 +1152,7 @@
         },
         {
           "name": "download",
-          "description": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+          "description": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
         },
         {
           "name": "ds-color",
@@ -1184,7 +1184,7 @@
         },
         {
           "name": "href",
-          "description": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+          "description": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
         },
         {
           "name": "mode",
@@ -1204,11 +1204,11 @@
         },
         {
           "name": "rel",
-          "description": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+          "description": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
         },
         {
           "name": "router-direction",
-          "description": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+          "description": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`.",
           "values": [
             {
               "name": "back"
@@ -1236,11 +1236,11 @@
         },
         {
           "name": "target",
-          "description": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+          "description": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
         },
         {
           "name": "translucent",
-          "description": "If `true`, the fab button will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+          "description": "If `true`, the fab button will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
         },
         {
           "name": "type",
@@ -1318,7 +1318,7 @@
       "name": "ion-footer",
       "description": {
         "kind": "markdown",
-        "value": "Footer is a root component of a page that sits at the bottom of the page.\nFooter can be a wrapper for ion-toolbar to make sure the content area is sized correctly."
+        "value": "Footer is a root component of a page that sits at the bottom of the page.\r\nFooter can be a wrapper for ion-toolbar to make sure the content area is sized correctly."
       },
       "attributes": [
         {
@@ -1335,7 +1335,7 @@
         },
         {
           "name": "translucent",
-          "description": "If `true`, the footer will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\n\nNote: In order to scroll content behind the footer, the `fullscreen`\nattribute needs to be set on the content."
+          "description": "If `true`, the footer will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\r\n\r\nNote: In order to scroll content behind the footer, the `fullscreen`\r\nattribute needs to be set on the content."
         }
       ],
       "references": [
@@ -1349,7 +1349,7 @@
       "name": "ion-grid",
       "description": {
         "kind": "markdown",
-        "value": "The grid is a powerful mobile-first flexbox system for building custom layouts.\n\nIt is composed of three units — a grid, [row(s)](../row) and [column(s)](../col). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.\n\nSee the [Responsive Grid documentation](/docs/layout/grid) for more information."
+        "value": "The grid is a powerful mobile-first flexbox system for building custom layouts.\r\n\r\nIt is composed of three units — a grid, [row(s)](../row) and [column(s)](../col). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.\r\n\r\nSee the [Responsive Grid documentation](/docs/layout/grid) for more information."
       },
       "attributes": [
         {
@@ -1368,12 +1368,12 @@
       "name": "ion-header",
       "description": {
         "kind": "markdown",
-        "value": "Header is a parent component that holds the toolbar component.\nIt's important to note that ion-header needs to be the one of the three root elements of a page"
+        "value": "Header is a parent component that holds the toolbar component.\r\nIt's important to note that ion-header needs to be the one of the three root elements of a page"
       },
       "attributes": [
         {
           "name": "collapse",
-          "description": "Describes the scroll effect that will be applied to the header\n`condense` only applies in iOS mode.\n\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)",
+          "description": "Describes the scroll effect that will be applied to the header\r\n`condense` only applies in iOS mode.\r\n\r\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)",
           "values": [
             {
               "name": "condense"
@@ -1394,7 +1394,7 @@
         },
         {
           "name": "translucent",
-          "description": "If `true`, the header will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\n\nNote: In order to scroll content behind the header, the `fullscreen`\nattribute needs to be set on the content."
+          "description": "If `true`, the header will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\r\n\r\nNote: In order to scroll content behind the header, the `fullscreen`\r\nattribute needs to be set on the content."
         }
       ],
       "references": [
@@ -1413,7 +1413,7 @@
       "attributes": [
         {
           "name": "alt",
-          "description": "This attribute defines the alternative text describing the image.\nUsers will see this text displayed if the image URL is wrong,\nthe image is not in one of the supported formats, or if the image is not yet downloaded."
+          "description": "This attribute defines the alternative text describing the image.\r\nUsers will see this text displayed if the image URL is wrong,\r\nthe image is not in one of the supported formats, or if the image is not yet downloaded."
         },
         {
           "name": "src",
@@ -1431,16 +1431,16 @@
       "name": "ion-infinite-scroll",
       "description": {
         "kind": "markdown",
-        "value": "The Infinite Scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page.\n\nThe expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance."
+        "value": "The Infinite Scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page.\r\n\r\nThe expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance."
       },
       "attributes": [
         {
           "name": "disabled",
-          "description": "If `true`, the infinite scroll will be hidden and scroll event listeners\nwill be removed.\n\nSet this to true to disable the infinite scroll from actively\ntrying to receive new data while scrolling. This is useful\nwhen it is known that there is no more data that can be added, and\nthe infinite scroll is no longer needed."
+          "description": "If `true`, the infinite scroll will be hidden and scroll event listeners\r\nwill be removed.\r\n\r\nSet this to true to disable the infinite scroll from actively\r\ntrying to receive new data while scrolling. This is useful\r\nwhen it is known that there is no more data that can be added, and\r\nthe infinite scroll is no longer needed."
         },
         {
           "name": "position",
-          "description": "The position of the infinite scroll element.\nThe value can be either `top` or `bottom`.",
+          "description": "The position of the infinite scroll element.\r\nThe value can be either `top` or `bottom`.",
           "values": [
             {
               "name": "bottom"
@@ -1452,7 +1452,7 @@
         },
         {
           "name": "threshold",
-          "description": "The threshold distance from the bottom\nof the content to call the `infinite` output event when scrolled.\nThe threshold value can be either a percent, or\nin pixels. For example, use the value of `10%` for the `infinite`\noutput event to get called when the user has scrolled 10%\nfrom the bottom of the page. Use the value `100px` when the\nscroll is within 100 pixels from the bottom of the page."
+          "description": "The threshold distance from the bottom\r\nof the content to call the `infinite` output event when scrolled.\r\nThe threshold value can be either a percent, or\r\nin pixels. For example, use the value of `10%` for the `infinite`\r\noutput event to get called when the user has scrolled 10%\r\nfrom the bottom of the page. Use the value `100px` when the\r\nscroll is within 100 pixels from the bottom of the page."
         }
       ],
       "references": [
@@ -1498,7 +1498,7 @@
         },
         {
           "name": "loading-text",
-          "description": "Optional text to display while loading.\n`loadingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+          "description": "Optional text to display while loading.\r\n`loadingText` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
         }
       ],
       "references": [
@@ -1512,7 +1512,7 @@
       "name": "ion-input",
       "description": {
         "kind": "markdown",
-        "value": "The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input, but works great on desktop devices and integrates with the keyboard on mobile devices.\n\nIt is meant for text `type` inputs only, such as `\"text\"`, `\"password\"`, `\"email\"`, `\"number\"`, `\"search\"`, `\"tel\"`, and `\"url\"`. It supports all standard text input events including keyup, keydown, keypress, and more."
+        "value": "The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input, but works great on desktop devices and integrates with the keyboard on mobile devices.\r\n\r\nIt is meant for text `type` inputs only, such as `\"text\"`, `\"password\"`, `\"email\"`, `\"number\"`, `\"search\"`, `\"tel\"`, and `\"url\"`. It supports all standard text input events including keyup, keydown, keypress, and more."
       },
       "attributes": [
         {
@@ -1521,7 +1521,7 @@
         },
         {
           "name": "autocapitalize",
-          "description": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.\nAvailable options: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`."
+          "description": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.\r\nAvailable options: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`."
         },
         {
           "name": "autocomplete",
@@ -1717,7 +1717,7 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "debounce",
@@ -1729,7 +1729,7 @@
         },
         {
           "name": "enterkeyhint",
-          "description": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
+          "description": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
           "values": [
             {
               "name": "done"
@@ -1756,7 +1756,7 @@
         },
         {
           "name": "inputmode",
-          "description": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "description": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
           "values": [
             {
               "name": "decimal"
@@ -1846,7 +1846,7 @@
         },
         {
           "name": "step",
-          "description": "Works with the min and max attributes to limit the increments at which a value can be set.\nPossible values are: `\"any\"` or a positive floating point number."
+          "description": "Works with the min and max attributes to limit the increments at which a value can be set.\r\nPossible values are: `\"any\"` or a positive floating point number."
         },
         {
           "name": "type",
@@ -1915,11 +1915,11 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "detail",
-          "description": "If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`\nis `ios` and an `href` or `button` property is present."
+          "description": "If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`\r\nis `ios` and an `href` or `button` property is present."
         },
         {
           "name": "detail-icon",
@@ -1931,11 +1931,11 @@
         },
         {
           "name": "download",
-          "description": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+          "description": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
         },
         {
           "name": "href",
-          "description": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+          "description": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
         },
         {
           "name": "lines",
@@ -1966,11 +1966,11 @@
         },
         {
           "name": "rel",
-          "description": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+          "description": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
         },
         {
           "name": "router-direction",
-          "description": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+          "description": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`.",
           "values": [
             {
               "name": "back"
@@ -1985,7 +1985,7 @@
         },
         {
           "name": "target",
-          "description": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+          "description": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
         },
         {
           "name": "type",
@@ -2019,7 +2019,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "mode",
@@ -2035,7 +2035,7 @@
         },
         {
           "name": "sticky",
-          "description": "When it's set to `true`, the item-divider will stay visible when it reaches the top\nof the viewport until the next `ion-item-divider` replaces it.\n\nThis feature relies in `position:sticky`:\nhttps://caniuse.com/#feat=css-sticky"
+          "description": "When it's set to `true`, the item-divider will stay visible when it reaches the top\r\nof the viewport until the next `ion-item-divider` replaces it.\r\n\r\nThis feature relies in `position:sticky`:\r\nhttps://caniuse.com/#feat=css-sticky"
         }
       ],
       "references": [
@@ -2063,12 +2063,12 @@
       "name": "ion-item-option",
       "description": {
         "kind": "markdown",
-        "value": "The option button for an `ion-item-sliding`. Must be placed inside of an `<ion-item-options>`.\nYou can combine the `ionSwipe` event and the `expandable` directive to create a full swipe\naction for the item."
+        "value": "The option button for an `ion-item-sliding`. Must be placed inside of an `<ion-item-options>`.\r\nYou can combine the `ionSwipe` event and the `expandable` directive to create a full swipe\r\naction for the item."
       },
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -2076,7 +2076,7 @@
         },
         {
           "name": "download",
-          "description": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+          "description": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
         },
         {
           "name": "expandable",
@@ -2084,7 +2084,7 @@
         },
         {
           "name": "href",
-          "description": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+          "description": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
         },
         {
           "name": "mode",
@@ -2100,11 +2100,11 @@
         },
         {
           "name": "rel",
-          "description": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+          "description": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
         },
         {
           "name": "target",
-          "description": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+          "description": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
         },
         {
           "name": "type",
@@ -2133,7 +2133,7 @@
       "name": "ion-item-options",
       "description": {
         "kind": "markdown",
-        "value": "The option buttons for an `ion-item-sliding`. These buttons can be placed either on the [start or end side](#side-description).\nYou can combine the `ionSwipe` event plus the `expandable` directive to create a full swipe action for the item."
+        "value": "The option buttons for an `ion-item-sliding`. These buttons can be placed either on the [start or end side](#side-description).\r\nYou can combine the `ionSwipe` event plus the `expandable` directive to create a full swipe action for the item."
       },
       "attributes": [
         {
@@ -2184,7 +2184,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "ds-name",
@@ -2237,7 +2237,7 @@
       "name": "ion-list",
       "description": {
         "kind": "markdown",
-        "value": "Lists are made up of multiple rows of items which can contain text, buttons, toggles,\nicons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.\n\nLists support several interactions including swiping items to reveal options, dragging to reorder items within the list, and deleting items."
+        "value": "Lists are made up of multiple rows of items which can contain text, buttons, toggles,\r\nicons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.\r\n\r\nLists support several interactions including swiping items to reveal options, dragging to reorder items within the list, and deleting items."
       },
       "attributes": [
         {
@@ -2283,12 +2283,12 @@
       "name": "ion-list-header",
       "description": {
         "kind": "markdown",
-        "value": "ListHeader a header component for a list.\nUnlike ItemDivider, ListHeaders are styled to be stand-out from the rest of the list items."
+        "value": "ListHeader a header component for a list.\r\nUnlike ItemDivider, ListHeaders are styled to be stand-out from the rest of the list items."
       },
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "lines",
@@ -2342,7 +2342,7 @@
         },
         {
           "name": "css-class",
-          "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+          "description": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
         },
         {
           "name": "duration",
@@ -2401,7 +2401,7 @@
         },
         {
           "name": "translucent",
-          "description": "If `true`, the loading indicator will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+          "description": "If `true`, the loading indicator will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
         }
       ],
       "references": [
@@ -2415,12 +2415,12 @@
       "name": "ion-menu",
       "description": {
         "kind": "markdown",
-        "value": "The Menu component is a navigation drawer that slides in from the side of the current view.\nBy default, it slides in from the left, but the side can be overridden.\nThe menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.\nThe menu element should be a sibling to the root content element.\nThere can be any number of menus attached to the content.\nThese can be controlled from the templates, or programmatically using the MenuController."
+        "value": "The Menu component is a navigation drawer that slides in from the side of the current view.\r\nBy default, it slides in from the left, but the side can be overridden.\r\nThe menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.\r\nThe menu element should be a sibling to the root content element.\r\nThere can be any number of menus attached to the content.\r\nThese can be controlled from the templates, or programmatically using the MenuController."
       },
       "attributes": [
         {
           "name": "content-id",
-          "description": "The `id` of the main content. When using\na router this is typically `ion-router-outlet`.\nWhen not using a router, this is typically\nyour main view's `ion-content`. This is not the\nid of the `ion-content` inside of your `ion-menu`."
+          "description": "The `id` of the main content. When using\r\na router this is typically `ion-router-outlet`.\r\nWhen not using a router, this is typically\r\nyour main view's `ion-content`. This is not the\r\nid of the `ion-content` inside of your `ion-menu`."
         },
         {
           "name": "disabled",
@@ -2428,7 +2428,7 @@
         },
         {
           "name": "max-edge-start",
-          "description": "The edge threshold for dragging the menu open.\nIf a drag/swipe happens over this value, the menu is not triggered."
+          "description": "The edge threshold for dragging the menu open.\r\nIf a drag/swipe happens over this value, the menu is not triggered."
         },
         {
           "name": "menu-id",
@@ -2452,7 +2452,7 @@
         },
         {
           "name": "type",
-          "description": "The display type of the menu.\nAvailable options: `\"overlay\"`, `\"reveal\"`, `\"push\"`."
+          "description": "The display type of the menu.\r\nAvailable options: `\"overlay\"`, `\"reveal\"`, `\"push\"`."
         }
       ],
       "references": [
@@ -2475,7 +2475,7 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -2524,16 +2524,16 @@
       "name": "ion-menu-toggle",
       "description": {
         "kind": "markdown",
-        "value": "The MenuToggle component can be used to toggle a menu open or closed.\n\nBy default, it's only visible when the selected menu is active. A menu is active when it can be opened/closed. If the menu is disabled or it's being presented as a split-pane, the menu is marked as non-active and ion-menu-toggle hides itself.\n\nIn case it's desired to keep `ion-menu-toggle` always visible, the `autoHide` property can be set to `false`."
+        "value": "The MenuToggle component can be used to toggle a menu open or closed.\r\n\r\nBy default, it's only visible when the selected menu is active. A menu is active when it can be opened/closed. If the menu is disabled or it's being presented as a split-pane, the menu is marked as non-active and ion-menu-toggle hides itself.\r\n\r\nIn case it's desired to keep `ion-menu-toggle` always visible, the `autoHide` property can be set to `false`."
       },
       "attributes": [
         {
           "name": "auto-hide",
-          "description": "Automatically hides the content when the corresponding menu is not active.\n\nBy default, it's `true`. Change it to `false` in order to\nkeep `ion-menu-toggle` always visible regardless the state of the menu."
+          "description": "Automatically hides the content when the corresponding menu is not active.\r\n\r\nBy default, it's `true`. Change it to `false` in order to\r\nkeep `ion-menu-toggle` always visible regardless the state of the menu."
         },
         {
           "name": "menu",
-          "description": "Optional property that maps to a Menu's `menuId` prop.\nCan also be `start` or `end` for the menu side.\nThis is used to find the correct menu to toggle.\n\nIf this property is not used, `ion-menu-toggle` will toggle the\nfirst menu that is active."
+          "description": "Optional property that maps to a Menu's `menuId` prop.\r\nCan also be `start` or `end` for the menu side.\r\nThis is used to find the correct menu to toggle.\r\n\r\nIf this property is not used, `ion-menu-toggle` will toggle the\r\nfirst menu that is active."
         }
       ],
       "references": [
@@ -2564,7 +2564,7 @@
         },
         {
           "name": "css-class",
-          "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+          "description": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
         },
         {
           "name": "keyboard-close",
@@ -2602,7 +2602,7 @@
       "name": "ion-nav",
       "description": {
         "kind": "markdown",
-        "value": "Nav is a standalone component for loading arbitrary components and pushing new components on to the stack.\n\nUnlike Router Outlet, Nav is not tied to a particular router. This means that if we load a Nav component, and push other components to the stack, they will not affect the app's overall router. This fits use cases where you could have a modal, which needs its own sub-navigation, without making it tied to the apps URL."
+        "value": "Nav is a standalone component for loading arbitrary components and pushing new components on to the stack.\r\n\r\nUnlike Router Outlet, Nav is not tied to a particular router. This means that if we load a Nav component, and push other components to the stack, they will not affect the app's overall router. This fits use cases where you could have a modal, which needs its own sub-navigation, without making it tied to the apps URL."
       },
       "attributes": [
         {
@@ -2629,7 +2629,7 @@
       "name": "ion-nav-link",
       "description": {
         "kind": "markdown",
-        "value": "A navigation link is used to navigate to a specified component. The component can be navigated to by going `forward`, `back` or as a `root` component.\n\nIt is the element form of calling the `push()`, `pop()`, and `setRoot()` methods on the navigation controller."
+        "value": "A navigation link is used to navigate to a specified component. The component can be navigated to by going `forward`, `back` or as a `root` component.\r\n\r\nIt is the element form of calling the `push()`, `pop()`, and `setRoot()` methods on the navigation controller."
       },
       "attributes": [
         {
@@ -2668,7 +2668,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "mode",
@@ -2707,7 +2707,7 @@
         },
         {
           "name": "css-class",
-          "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+          "description": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
         },
         {
           "name": "duration",
@@ -2762,7 +2762,7 @@
         },
         {
           "name": "css-class",
-          "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+          "description": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
         },
         {
           "name": "ds-name",
@@ -2799,7 +2799,7 @@
         },
         {
           "name": "translucent",
-          "description": "If `true`, the popover will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+          "description": "If `true`, the popover will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
         }
       ],
       "references": [
@@ -2818,11 +2818,11 @@
       "attributes": [
         {
           "name": "buffer",
-          "description": "If the buffer and value are smaller than 1, the buffer circles will show.\nThe buffer should be between [0, 1]."
+          "description": "If the buffer and value are smaller than 1, the buffer circles will show.\r\nThe buffer should be between [0, 1]."
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "ds-color",
@@ -2862,7 +2862,7 @@
         },
         {
           "name": "type",
-          "description": "The state of the progress bar, based on if the time the process takes is known or not.\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right).",
+          "description": "The state of the progress bar, based on if the time the process takes is known or not.\r\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right).",
           "values": [
             {
               "name": "determinate"
@@ -2874,7 +2874,7 @@
         },
         {
           "name": "value",
-          "description": "The value determines how much of the active bar should display when the\n`type` is `\"determinate\"`.\nThe value should be between [0, 1]."
+          "description": "The value determines how much of the active bar should display when the\r\n`type` is `\"determinate\"`.\r\nThe value should be between [0, 1]."
         }
       ],
       "references": [
@@ -2888,12 +2888,12 @@
       "name": "ion-radio",
       "description": {
         "kind": "markdown",
-        "value": "Radios should be used inside of an [`ion-radio-group`](../radio-group). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.\n\nWhen radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time."
+        "value": "Radios should be used inside of an [`ion-radio-group`](../radio-group). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.\r\n\r\nWhen radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time."
       },
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -2944,7 +2944,7 @@
       "name": "ion-radio-group",
       "description": {
         "kind": "markdown",
-        "value": "A radio group is a group of [radio buttons](../radio). It allows\na user to select at most one radio button from a set. Checking one radio\nbutton that belongs to a radio group unchecks any previous checked\nradio button within the same group."
+        "value": "A radio group is a group of [radio buttons](../radio). It allows\r\na user to select at most one radio button from a set. Checking one radio\r\nbutton that belongs to a radio group unchecks any previous checked\r\nradio button within the same group."
       },
       "attributes": [
         {
@@ -2971,16 +2971,16 @@
       "name": "ion-range",
       "description": {
         "kind": "markdown",
-        "value": "The Range slider lets users select from a range of values by moving\nthe slider knob. It can accept dual knobs, but by default one knob\ncontrols the value of the range."
+        "value": "The Range slider lets users select from a range of values by moving\r\nthe slider knob. It can accept dual knobs, but by default one knob\r\ncontrols the value of the range."
       },
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "debounce",
-          "description": "How long, in milliseconds, to wait to trigger the\n`ionChange` event after each change in the range value.\nThis also impacts form bindings such as `ngModel` or `v-model`."
+          "description": "How long, in milliseconds, to wait to trigger the\r\n`ionChange` event after each change in the range value.\r\nThis also impacts form bindings such as `ngModel` or `v-model`."
         },
         {
           "name": "disabled",
@@ -3016,11 +3016,11 @@
         },
         {
           "name": "pin",
-          "description": "If `true`, a pin with integer value is shown when the knob\nis pressed."
+          "description": "If `true`, a pin with integer value is shown when the knob\r\nis pressed."
         },
         {
           "name": "snaps",
-          "description": "If `true`, the knob snaps to tick marks evenly spaced based\non the step property value."
+          "description": "If `true`, the knob snaps to tick marks evenly spaced based\r\non the step property value."
         },
         {
           "name": "step",
@@ -3028,7 +3028,7 @@
         },
         {
           "name": "ticks",
-          "description": "If `true`, tick marks are displayed based on the step value.\nOnly applies when `snaps` is `true`."
+          "description": "If `true`, tick marks are displayed based on the step value.\r\nOnly applies when `snaps` is `true`."
         },
         {
           "name": "value",
@@ -3046,12 +3046,12 @@
       "name": "ion-refresher",
       "description": {
         "kind": "markdown",
-        "value": "The refresher provides pull-to-refresh functionality on a content component.\nThe pull-to-refresh pattern lets a user pull down on a list of data using touch\nin order to retrieve more data.\n\nData should be modified during the refresher's output events. Once the async\noperation has completed and the refreshing should end, call `complete()` on the\nrefresher."
+        "value": "The refresher provides pull-to-refresh functionality on a content component.\r\nThe pull-to-refresh pattern lets a user pull down on a list of data using touch\r\nin order to retrieve more data.\r\n\r\nData should be modified during the refresher's output events. Once the async\r\noperation has completed and the refreshing should end, call `complete()` on the\r\nrefresher."
       },
       "attributes": [
         {
           "name": "close-duration",
-          "description": "Time it takes to close the refresher.\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher."
+          "description": "Time it takes to close the refresher.\r\nDoes not apply when the refresher content uses a spinner,\r\nenabling the native refresher."
         },
         {
           "name": "disabled",
@@ -3059,19 +3059,19 @@
         },
         {
           "name": "pull-factor",
-          "description": "How much to multiply the pull speed by. To slow the pull animation down,\npass a number less than `1`. To speed up the pull, pass a number greater\nthan `1`. The default value is `1` which is equal to the speed of the cursor.\nIf a negative value is passed in, the factor will be `1` instead.\n\nFor example: If the value passed is `1.2` and the content is dragged by\n`10` pixels, instead of `10` pixels the content will be pulled by `12` pixels\n(an increase of 20 percent). If the value passed is `0.8`, the dragged amount\nwill be `8` pixels, less than the amount the cursor has moved.\n\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher."
+          "description": "How much to multiply the pull speed by. To slow the pull animation down,\r\npass a number less than `1`. To speed up the pull, pass a number greater\r\nthan `1`. The default value is `1` which is equal to the speed of the cursor.\r\nIf a negative value is passed in, the factor will be `1` instead.\r\n\r\nFor example: If the value passed is `1.2` and the content is dragged by\r\n`10` pixels, instead of `10` pixels the content will be pulled by `12` pixels\r\n(an increase of 20 percent). If the value passed is `0.8`, the dragged amount\r\nwill be `8` pixels, less than the amount the cursor has moved.\r\n\r\nDoes not apply when the refresher content uses a spinner,\r\nenabling the native refresher."
         },
         {
           "name": "pull-max",
-          "description": "The maximum distance of the pull until the refresher\nwill automatically go into the `refreshing` state.\nDefaults to the result of `pullMin + 60`.\nDoes not apply when  the refresher content uses a spinner,\nenabling the native refresher."
+          "description": "The maximum distance of the pull until the refresher\r\nwill automatically go into the `refreshing` state.\r\nDefaults to the result of `pullMin + 60`.\r\nDoes not apply when  the refresher content uses a spinner,\r\nenabling the native refresher."
         },
         {
           "name": "pull-min",
-          "description": "The minimum distance the user must pull down until the\nrefresher will go into the `refreshing` state.\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher."
+          "description": "The minimum distance the user must pull down until the\r\nrefresher will go into the `refreshing` state.\r\nDoes not apply when the refresher content uses a spinner,\r\nenabling the native refresher."
         },
         {
           "name": "snapback-duration",
-          "description": "Time it takes the refresher to to snap back to the `refreshing` state.\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher."
+          "description": "Time it takes the refresher to to snap back to the `refreshing` state.\r\nDoes not apply when the refresher content uses a spinner,\r\nenabling the native refresher."
         }
       ],
       "references": [
@@ -3090,11 +3090,11 @@
       "attributes": [
         {
           "name": "pulling-icon",
-          "description": "A static icon or a spinner to display when you begin to pull down.\nA spinner name can be provided to gradually show tick marks\nwhen pulling down on iOS devices."
+          "description": "A static icon or a spinner to display when you begin to pull down.\r\nA spinner name can be provided to gradually show tick marks\r\nwhen pulling down on iOS devices."
         },
         {
           "name": "pulling-text",
-          "description": "The text you want to display when you begin to pull down.\n`pullingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+          "description": "The text you want to display when you begin to pull down.\r\n`pullingText` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
         },
         {
           "name": "refreshing-spinner",
@@ -3125,7 +3125,7 @@
         },
         {
           "name": "refreshing-text",
-          "description": "The text you want to display when performing a refresh.\n`refreshingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+          "description": "The text you want to display when performing a refresh.\r\n`refreshingText` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
         }
       ],
       "references": [
@@ -3139,7 +3139,7 @@
       "name": "ion-reorder",
       "description": {
         "kind": "markdown",
-        "value": "Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.\n\n`ion-reorder` is the anchor used to drag and drop the items inside of the `ion-reorder-group`. See the [Reorder Group](../reorder-group) for more information on how to complete the reorder operation."
+        "value": "Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.\r\n\r\n`ion-reorder` is the anchor used to drag and drop the items inside of the `ion-reorder-group`. See the [Reorder Group](../reorder-group) for more information on how to complete the reorder operation."
       },
       "attributes": [],
       "references": [
@@ -3153,7 +3153,7 @@
       "name": "ion-reorder-group",
       "description": {
         "kind": "markdown",
-        "value": "The reorder group is a wrapper component for items using the `ion-reorder` component. See the [Reorder documentation](../reorder/) for further information about the anchor component that is used to drag items within the `ion-reorder-group`.\n\nOnce the user drags an item and drops it in a new position, the `ionItemReorder` event is dispatched. A handler for it should be implemented that calls the `complete()` method.\n\nThe `detail` property of the `ionItemReorder` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` a new index."
+        "value": "The reorder group is a wrapper component for items using the `ion-reorder` component. See the [Reorder documentation](../reorder/) for further information about the anchor component that is used to drag items within the `ion-reorder-group`.\r\n\r\nOnce the user drags an item and drops it in a new position, the `ionItemReorder` event is dispatched. A handler for it should be implemented that calls the `complete()` method.\r\n\r\nThe `detail` property of the `ionItemReorder` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` a new index."
       },
       "attributes": [
         {
@@ -3172,12 +3172,12 @@
       "name": "ion-ripple-effect",
       "description": {
         "kind": "markdown",
-        "value": "The ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/). This component can only be used inside of an `<ion-app>` and can be added to any component.\n\nIt's important to note that the parent should have [relative positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position) because the ripple effect is absolutely positioned and will cover the closest parent with relative positioning. The parent element should also be given the `ion-activatable` class, which tells the ripple effect that the element is clickable.\n\nThe default type, `\"bounded\"`, will expand the ripple effect from the click position outwards. To add a ripple effect that always starts in the center of the element and expands in a circle, add an `\"unbounded\"` type. It's recommended to add `overflow: hidden` to the parent element to avoid the ripple overflowing its container, especially with an unbounded ripple."
+        "value": "The ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/). This component can only be used inside of an `<ion-app>` and can be added to any component.\r\n\r\nIt's important to note that the parent should have [relative positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position) because the ripple effect is absolutely positioned and will cover the closest parent with relative positioning. The parent element should also be given the `ion-activatable` class, which tells the ripple effect that the element is clickable.\r\n\r\nThe default type, `\"bounded\"`, will expand the ripple effect from the click position outwards. To add a ripple effect that always starts in the center of the element and expands in a circle, add an `\"unbounded\"` type. It's recommended to add `overflow: hidden` to the parent element to avoid the ripple overflowing its container, especially with an unbounded ripple."
       },
       "attributes": [
         {
           "name": "type",
-          "description": "Sets the type of ripple-effect:\n\n- `bounded`: the ripple effect expands from the user's click position\n- `unbounded`: the ripple effect expands from the center of the button and overflows the container.\n\nNOTE: Surfaces for bounded ripples should have the overflow property set to hidden,\nwhile surfaces for unbounded ripples should have it set to visible.",
+          "description": "Sets the type of ripple-effect:\r\n\r\n- `bounded`: the ripple effect expands from the user's click position\r\n- `unbounded`: the ripple effect expands from the center of the button and overflows the container.\r\n\r\nNOTE: Surfaces for bounded ripples should have the overflow property set to hidden,\r\nwhile surfaces for unbounded ripples should have it set to visible.",
           "values": [
             {
               "name": "bounded"
@@ -3199,16 +3199,16 @@
       "name": "ion-route",
       "description": {
         "kind": "markdown",
-        "value": "The route component takes a component and renders it when the Browser URL matches the url property.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router."
+        "value": "The route component takes a component and renders it when the Browser URL matches the url property.\r\n\r\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router."
       },
       "attributes": [
         {
           "name": "component",
-          "description": "Name of the component to load/select in the navigation outlet (`ion-tabs`, `ion-nav`)\nwhen the route matches.\n\nThe value of this property is not always the tagname of the component to load,\nin `ion-tabs` it actually refers to the name of the `ion-tab` to select."
+          "description": "Name of the component to load/select in the navigation outlet (`ion-tabs`, `ion-nav`)\r\nwhen the route matches.\r\n\r\nThe value of this property is not always the tagname of the component to load,\r\nin `ion-tabs` it actually refers to the name of the `ion-tab` to select."
         },
         {
           "name": "url",
-          "description": "Relative path that needs to match in order for this route to apply.\n\nAccepts paths similar to expressjs so that you can define parameters\nin the url /foo/:bar where bar would be available in incoming props."
+          "description": "Relative path that needs to match in order for this route to apply.\r\n\r\nAccepts paths similar to expressjs so that you can define parameters\r\nin the url /foo/:bar where bar would be available in incoming props."
         }
       ],
       "references": [
@@ -3222,16 +3222,16 @@
       "name": "ion-route-redirect",
       "description": {
         "kind": "markdown",
-        "value": "A route redirect can only be used with an `ion-router` as a direct child of it.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\n\nThe route redirect has two configurable properties:\n - `from`\n - `to`\n\nIt redirects \"from\" a URL \"to\" another URL. When the defined `ion-route-redirect` rule matches, the router will redirect from the path specified in the `from` property to the path in the `to` property. In order for a redirect to occur the `from` path needs to be an exact match to the navigated URL."
+        "value": "A route redirect can only be used with an `ion-router` as a direct child of it.\r\n\r\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\r\n\r\nThe route redirect has two configurable properties:\r\n - `from`\r\n - `to`\r\n\r\nIt redirects \"from\" a URL \"to\" another URL. When the defined `ion-route-redirect` rule matches, the router will redirect from the path specified in the `from` property to the path in the `to` property. In order for a redirect to occur the `from` path needs to be an exact match to the navigated URL."
       },
       "attributes": [
         {
           "name": "from",
-          "description": "A redirect route, redirects \"from\" a URL \"to\" another URL. This property is that \"from\" URL.\nIt needs to be an exact match of the navigated URL in order to apply.\n\nThe path specified in this value is always an absolute path, even if the initial `/` slash\nis not specified."
+          "description": "A redirect route, redirects \"from\" a URL \"to\" another URL. This property is that \"from\" URL.\r\nIt needs to be an exact match of the navigated URL in order to apply.\r\n\r\nThe path specified in this value is always an absolute path, even if the initial `/` slash\r\nis not specified."
         },
         {
           "name": "to",
-          "description": "A redirect route, redirects \"from\" a URL \"to\" another URL. This property is that \"to\" URL.\nWhen the defined `ion-route-redirect` rule matches, the router will redirect to the path\nspecified in this property.\n\nThe value of this property is always an absolute path inside the scope of routes defined in\n`ion-router` it can't be used with another router or to perform a redirection to a different domain.\n\nNote that this is a virtual redirect, it will not cause a real browser refresh, again, it's\na redirect inside the context of ion-router.\n\nWhen this property is not specified or his value is `undefined` the whole redirect route is noop,\neven if the \"from\" value matches."
+          "description": "A redirect route, redirects \"from\" a URL \"to\" another URL. This property is that \"to\" URL.\r\nWhen the defined `ion-route-redirect` rule matches, the router will redirect to the path\r\nspecified in this property.\r\n\r\nThe value of this property is always an absolute path inside the scope of routes defined in\r\n`ion-router` it can't be used with another router or to perform a redirection to a different domain.\r\n\r\nNote that this is a virtual redirect, it will not cause a real browser refresh, again, it's\r\na redirect inside the context of ion-router.\r\n\r\nWhen this property is not specified or his value is `undefined` the whole redirect route is noop,\r\neven if the \"from\" value matches."
         }
       ],
       "references": [
@@ -3245,16 +3245,16 @@
       "name": "ion-router",
       "description": {
         "kind": "markdown",
-        "value": "The router is a component for handling routing inside vanilla and Stencil JavaScript projects.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\n\nApps should have a single `ion-router` component in the codebase.\nThis component controls all interactions with the browser history and it aggregates updates through an event system.\n\n`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav` and `ion-tabs`.\n\nThat means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav` and `ion-tabs` what and when to \"show\" based on the browser's URL.\n\nIn order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes."
+        "value": "The router is a component for handling routing inside vanilla and Stencil JavaScript projects.\r\n\r\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\r\n\r\nApps should have a single `ion-router` component in the codebase.\r\nThis component controls all interactions with the browser history and it aggregates updates through an event system.\r\n\r\n`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav` and `ion-tabs`.\r\n\r\nThat means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav` and `ion-tabs` what and when to \"show\" based on the browser's URL.\r\n\r\nIn order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes."
       },
       "attributes": [
         {
           "name": "root",
-          "description": "By default `ion-router` will match the routes at the root path (\"/\").\nThat can be changed when"
+          "description": "By default `ion-router` will match the routes at the root path (\"/\").\r\nThat can be changed when"
         },
         {
           "name": "use-hash",
-          "description": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the otherside hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs."
+          "description": "The router can work in two \"modes\":\r\n- With hash: `/index.html#/path/to/page`\r\n- Without hash: `/path/to/page`\r\n\r\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\r\n\r\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\r\nrequires additional server-side configuration in order to properly work.\r\n\r\nOn the otherside hash-navigation is much easier to deploy, it even works over the file protocol.\r\n\r\nBy default, this property is `true`, change to `false` to allow hash-less URLs."
         }
       ],
       "references": [
@@ -3268,24 +3268,24 @@
       "name": "ion-router-link",
       "description": {
         "kind": "markdown",
-        "value": "The router link component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use an `<a>` and `routerLink` with the Angular router."
+        "value": "The router link component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.\r\n\r\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use an `<a>` and `routerLink` with the Angular router."
       },
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "href",
-          "description": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+          "description": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
         },
         {
           "name": "rel",
-          "description": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+          "description": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
         },
         {
           "name": "router-direction",
-          "description": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+          "description": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`.",
           "values": [
             {
               "name": "back"
@@ -3300,7 +3300,7 @@
         },
         {
           "name": "target",
-          "description": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+          "description": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
         }
       ],
       "references": [
@@ -3314,7 +3314,7 @@
       "name": "ion-router-outlet",
       "description": {
         "kind": "markdown",
-        "value": "Router outlet is a component used in routing within an Angular or Vue app. It behaves in a similar way to Angular's built-in router outlet component and Vue's router view component, but contains the logic for providing a stacked navigation, and animating views in and out.\n\n> Note: this component should only be used with Angular and Vue projects. For vanilla or Stencil JavaScript projects, use [`ion-router`](../router) and [`ion-route`](../route).\n\nAlthough router outlet has methods for navigating around, it's recommended to use the navigation methods in your framework's router."
+        "value": "Router outlet is a component used in routing within an Angular or Vue app. It behaves in a similar way to Angular's built-in router outlet component and Vue's router view component, but contains the logic for providing a stacked navigation, and animating views in and out.\r\n\r\n> Note: this component should only be used with Angular and Vue projects. For vanilla or Stencil JavaScript projects, use [`ion-router`](../router) and [`ion-route`](../route).\r\n\r\nAlthough router outlet has methods for navigating around, it's recommended to use the navigation methods in your framework's router."
       },
       "attributes": [
         {
@@ -3345,7 +3345,7 @@
       "name": "ion-row",
       "description": {
         "kind": "markdown",
-        "value": "Rows are horizontal components of the [grid](../grid) system and contain varying numbers of\n[columns](../col). They ensure the columns are positioned properly.\n\nSee [Grid Layout](/docs/layout/grid) for more information."
+        "value": "Rows are horizontal components of the [grid](../grid) system and contain varying numbers of\r\n[columns](../col). They ensure the columns are positioned properly.\r\n\r\nSee [Grid Layout](/docs/layout/grid) for more information."
       },
       "attributes": [],
       "references": [
@@ -3359,7 +3359,7 @@
       "name": "ion-searchbar",
       "description": {
         "kind": "markdown",
-        "value": "Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\n\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click."
+        "value": "Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\r\n\r\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click."
       },
       "attributes": [
         {
@@ -3548,7 +3548,7 @@
         },
         {
           "name": "cancel-button-icon",
-          "description": "Set the cancel button icon. Only applies to `md` mode.\nDefaults to `\"arrow-back-sharp\"`."
+          "description": "Set the cancel button icon. Only applies to `md` mode.\r\nDefaults to `\"arrow-back-sharp\"`."
         },
         {
           "name": "cancel-button-text",
@@ -3560,7 +3560,7 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "debounce",
@@ -3576,7 +3576,7 @@
         },
         {
           "name": "enterkeyhint",
-          "description": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
+          "description": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
           "values": [
             {
               "name": "done"
@@ -3603,7 +3603,7 @@
         },
         {
           "name": "inputmode",
-          "description": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "description": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
           "values": [
             {
               "name": "decimal"
@@ -3645,15 +3645,15 @@
         },
         {
           "name": "placeholder",
-          "description": "Set the input's placeholder.\n`placeholder` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+          "description": "Set the input's placeholder.\r\n`placeholder` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
         },
         {
           "name": "search-icon",
-          "description": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\n`ios` mode and `\"search-sharp\"` in `md` mode."
+          "description": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\r\n`ios` mode and `\"search-sharp\"` in `md` mode."
         },
         {
           "name": "show-cancel-button",
-          "description": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\nSetting to `\"focus\"` shows the cancel button on focus.\nSetting to `\"never\"` hides the cancel button.\nSetting to `\"always\"` shows the cancel button regardless\nof focus state.",
+          "description": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\r\nSetting to `\"focus\"` shows the cancel button on focus.\r\nSetting to `\"never\"` hides the cancel button.\r\nSetting to `\"always\"` shows the cancel button regardless\r\nof focus state.",
           "values": [
             {
               "name": "always"
@@ -3668,7 +3668,7 @@
         },
         {
           "name": "show-clear-button",
-          "description": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\nSetting to `\"focus\"` shows the clear button on focus if the\ninput is not empty.\nSetting to `\"never\"` hides the clear button.\nSetting to `\"always\"` shows the clear button regardless\nof focus state, but only if the input is not empty.",
+          "description": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\r\nSetting to `\"focus\"` shows the clear button on focus if the\r\ninput is not empty.\r\nSetting to `\"never\"` hides the clear button.\r\nSetting to `\"always\"` shows the clear button regardless\r\nof focus state, but only if the input is not empty.",
           "values": [
             {
               "name": "always"
@@ -3728,12 +3728,12 @@
       "name": "ion-segment",
       "description": {
         "kind": "markdown",
-        "value": "Segments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.\n\nTheir functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages."
+        "value": "Segments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.\r\n\r\nTheir functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages."
       },
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -3766,7 +3766,7 @@
         },
         {
           "name": "scrollable",
-          "description": "If `true`, the segment buttons will overflow and the user can swipe to see them.\nIn addition, this will disable the gesture to drag the indicator between the buttons\nin order to swipe to see hidden buttons."
+          "description": "If `true`, the segment buttons will overflow and the user can swipe to see them.\r\nIn addition, this will disable the gesture to drag the indicator between the buttons\r\nin order to swipe to see hidden buttons."
         },
         {
           "name": "swipe-gesture",
@@ -3875,7 +3875,7 @@
       "name": "ion-select",
       "description": {
         "kind": "markdown",
-        "value": "Selects are form controls to select an option, or options, from a set of options, similar to a native `<select>` element. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.\n\nA select should be used with child `<ion-select-option>` elements. If the child option is not given a `value` attribute then its text will be used as the value.\n\nIf `value` is set on the `<ion-select>`, the selected option will be chosen based on that value."
+        "value": "Selects are form controls to select an option, or options, from a set of options, similar to a native `<select>` element. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.\r\n\r\nA select should be used with child `<ion-select-option>` elements. If the child option is not given a `value` attribute then its text will be used as the value.\r\n\r\nIf `value` is set on the `<ion-select>`, the selected option will be chosen based on that value."
       },
       "attributes": [
         {
@@ -3907,7 +3907,7 @@
         },
         {
           "name": "interface-options",
-          "description": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](../alert), the\n[ion-action-sheet docs](../action-sheet) and the\n[ion-popover docs](../popover) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface."
+          "description": "Any additional options that the `alert`, `action-sheet` or `popover` interface\r\ncan take. See the [ion-alert docs](../alert), the\r\n[ion-action-sheet docs](../action-sheet) and the\r\n[ion-popover docs](../popover) for the\r\ncreate options for each interface.\r\n\r\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface."
         },
         {
           "name": "mode",
@@ -3999,7 +3999,7 @@
       "name": "ion-slide",
       "description": {
         "kind": "markdown",
-        "value": "The Slide component is a child component of [Slides](../slides). The template\nshould be written as `ion-slide`. Any slide content should be written\nin this component and it should be used in conjunction with [Slides](../slides).\n\nSee the [Slides API Docs](../slides) for more usage information."
+        "value": "The Slide component is a child component of [Slides](../slides). The template\r\nshould be written as `ion-slide`. Any slide content should be written\r\nin this component and it should be used in conjunction with [Slides](../slides).\r\n\r\nSee the [Slides API Docs](../slides) for more usage information."
       },
       "attributes": [],
       "references": [
@@ -4013,7 +4013,7 @@
       "name": "ion-slides",
       "description": {
         "kind": "markdown",
-        "value": "The Slides component is a multi-section container. Each section can be swiped\nor dragged between. It contains any number of [Slide](../slide) components.\n\n\nAdopted from Swiper.js:\nThe most modern mobile touch slider and framework with hardware accelerated transitions.\n\nhttp://www.idangero.us/swiper/\n\nCopyright 2016, Vladimir Kharlampidi\nThe iDangero.us\nhttp://www.idangero.us/\n\nLicensed under MIT"
+        "value": "The Slides component is a multi-section container. Each section can be swiped\r\nor dragged between. It contains any number of [Slide](../slide) components.\r\n\r\n\r\nAdopted from Swiper.js:\r\nThe most modern mobile touch slider and framework with hardware accelerated transitions.\r\n\r\nhttp://www.idangero.us/swiper/\r\n\r\nCopyright 2016, Vladimir Kharlampidi\r\nThe iDangero.us\r\nhttp://www.idangero.us/\r\n\r\nLicensed under MIT"
       },
       "attributes": [
         {
@@ -4030,7 +4030,7 @@
         },
         {
           "name": "options",
-          "description": "Options to pass to the swiper instance.\nSee http://idangero.us/swiper/api/ for valid options"
+          "description": "Options to pass to the swiper instance.\r\nSee http://idangero.us/swiper/api/ for valid options"
         },
         {
           "name": "pager",
@@ -4052,12 +4052,12 @@
       "name": "ion-spinner",
       "description": {
         "kind": "markdown",
-        "value": "The Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.\n\nThe default spinner to use is based on the platform. The default spinner for `ios` is `\"lines\"`, and the default for `android` is `\"crescent\"`. If the platform is not `ios` or `android`, the spinner will default to `crescent`. If the `name` property is set, then that spinner will be used instead of the platform specific spinner."
+        "value": "The Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.\r\n\r\nThe default spinner to use is based on the platform. The default spinner for `ios` is `\"lines\"`, and the default for `android` is `\"crescent\"`. If the platform is not `ios` or `android`, the spinner will default to `crescent`. If the `name` property is set, then that spinner will be used instead of the platform specific spinner."
       },
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "duration",
@@ -4065,7 +4065,7 @@
         },
         {
           "name": "name",
-          "description": "The name of the SVG spinner to use. If a name is not provided, the platform's default\nspinner will be used.",
+          "description": "The name of the SVG spinner to use. If a name is not provided, the platform's default\r\nspinner will be used.",
           "values": [
             {
               "name": "bubbles"
@@ -4106,12 +4106,12 @@
       "name": "ion-split-pane",
       "description": {
         "kind": "markdown",
-        "value": "A split pane is useful when creating multi-view layouts. It allows UI elements, like menus, to be\ndisplayed as the viewport width increases.\n\nIf the device's screen width is below a certain size, the split pane will collapse and the menu will be hidden. This is ideal for creating an app that will be served in a browser and deployed through the app store to phones and tablets."
+        "value": "A split pane is useful when creating multi-view layouts. It allows UI elements, like menus, to be\r\ndisplayed as the viewport width increases.\r\n\r\nIf the device's screen width is below a certain size, the split pane will collapse and the menu will be hidden. This is ideal for creating an app that will be served in a browser and deployed through the app store to phones and tablets."
       },
       "attributes": [
         {
           "name": "content-id",
-          "description": "The `id` of the main content. When using\na router this is typically `ion-router-outlet`.\nWhen not using a router, this is typically\nyour main view's `ion-content`. This is not the\nid of the `ion-content` inside of your `ion-menu`."
+          "description": "The `id` of the main content. When using\r\na router this is typically `ion-router-outlet`.\r\nWhen not using a router, this is typically\r\nyour main view's `ion-content`. This is not the\r\nid of the `ion-content` inside of your `ion-menu`."
         },
         {
           "name": "disabled",
@@ -4119,7 +4119,7 @@
         },
         {
           "name": "when",
-          "description": "When the split-pane should be shown.\nCan be a CSS media query expression, or a shortcut expression.\nCan also be a boolean expression."
+          "description": "When the split-pane should be shown.\r\nCan be a CSS media query expression, or a shortcut expression.\r\nCan also be a boolean expression."
         }
       ],
       "references": [
@@ -4133,7 +4133,7 @@
       "name": "ion-tab",
       "description": {
         "kind": "markdown",
-        "value": "The tab component is a child component of [tabs](../tabs). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.\n\n> Note: This component should only be used with vanilla or Stencil JavaScript projects. For Angular, React, and Vue apps you do not need to use `ion-tab` to declare your tab components.\n\nSee the [tabs documentation](../tabs/) for more details on configuring tabs."
+        "value": "The tab component is a child component of [tabs](../tabs). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.\r\n\r\n> Note: This component should only be used with vanilla or Stencil JavaScript projects. For Angular, React, and Vue apps you do not need to use `ion-tab` to declare your tab components.\r\n\r\nSee the [tabs documentation](../tabs/) for more details on configuring tabs."
       },
       "attributes": [
         {
@@ -4142,7 +4142,7 @@
         },
         {
           "name": "tab",
-          "description": "A tab id must be provided for each `ion-tab`. It's used internally to reference\nthe selected tab or by the router to switch between them."
+          "description": "A tab id must be provided for each `ion-tab`. It's used internally to reference\r\nthe selected tab or by the router to switch between them."
         }
       ],
       "references": [
@@ -4161,7 +4161,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "ds-color",
@@ -4185,7 +4185,7 @@
         },
         {
           "name": "translucent",
-          "description": "If `true`, the tab bar will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+          "description": "If `true`, the tab bar will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
         }
       ],
       "references": [
@@ -4199,7 +4199,7 @@
       "name": "ion-tab-button",
       "description": {
         "kind": "markdown",
-        "value": "A tab button is a UI component that is placed inside of a [tab bar](../tab-bar). The tab button can specify the layout of the icon and label and connect to a [tab view](../tab).\n\nSee the [tabs documentation](../tabs) for more details on configuring tabs."
+        "value": "A tab button is a UI component that is placed inside of a [tab bar](../tab-bar). The tab button can specify the layout of the icon and label and connect to a [tab view](../tab).\r\n\r\nSee the [tabs documentation](../tabs) for more details on configuring tabs."
       },
       "attributes": [
         {
@@ -4208,7 +4208,7 @@
         },
         {
           "name": "download",
-          "description": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+          "description": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
         },
         {
           "name": "ds-color",
@@ -4216,11 +4216,11 @@
         },
         {
           "name": "href",
-          "description": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+          "description": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
         },
         {
           "name": "layout",
-          "description": "Set the layout of the text and icon in the tab bar.\nIt defaults to `'icon-top'`.",
+          "description": "Set the layout of the text and icon in the tab bar.\r\nIt defaults to `'icon-top'`.",
           "values": [
             {
               "name": "icon-bottom"
@@ -4256,7 +4256,7 @@
         },
         {
           "name": "rel",
-          "description": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+          "description": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
         },
         {
           "name": "selected",
@@ -4264,11 +4264,11 @@
         },
         {
           "name": "tab",
-          "description": "A tab id must be provided for each `ion-tab`. It's used internally to reference\nthe selected tab or by the router to switch between them."
+          "description": "A tab id must be provided for each `ion-tab`. It's used internally to reference\r\nthe selected tab or by the router to switch between them."
         },
         {
           "name": "target",
-          "description": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+          "description": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
         }
       ],
       "references": [
@@ -4282,7 +4282,7 @@
       "name": "ion-tabs",
       "description": {
         "kind": "markdown",
-        "value": "Tabs are a top level navigation component to implement a tab-based navigation.\nThe component is a container of individual [Tab](../tab/) components.\n\nThe `ion-tabs` component does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`.\n\nBoth `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that behaves like a native app.\n\nThe `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component."
+        "value": "Tabs are a top level navigation component to implement a tab-based navigation.\r\nThe component is a container of individual [Tab](../tab/) components.\r\n\r\nThe `ion-tabs` component does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`.\r\n\r\nBoth `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that behaves like a native app.\r\n\r\nThe `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component."
       },
       "attributes": [],
       "references": [
@@ -4301,7 +4301,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "mode",
@@ -4327,7 +4327,7 @@
       "name": "ion-textarea",
       "description": {
         "kind": "markdown",
-        "value": "The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\n\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\n\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties."
+        "value": "The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\r\n\r\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\r\n\r\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties."
       },
       "attributes": [
         {
@@ -4348,7 +4348,7 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "cols",
@@ -4364,7 +4364,7 @@
         },
         {
           "name": "enterkeyhint",
-          "description": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
+          "description": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
           "values": [
             {
               "name": "done"
@@ -4391,7 +4391,7 @@
         },
         {
           "name": "inputmode",
-          "description": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "description": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
           "values": [
             {
               "name": "decimal"
@@ -4494,7 +4494,7 @@
       "name": "ion-thumbnail",
       "description": {
         "kind": "markdown",
-        "value": "Thumbnails are square components that usually wrap an image or icon. They can be used to make it easier to display a group of larger images or provide a preview of the full-size image.\n\nThumbnails can be used by themselves or inside of any element. If placed inside of an `ion-item`, the thumbnail will resize to fit the parent component. To position a thumbnail on the left or right side of an item, set the slot to `start` or `end`, respectively."
+        "value": "Thumbnails are square components that usually wrap an image or icon. They can be used to make it easier to display a group of larger images or provide a preview of the full-size image.\r\n\r\nThumbnails can be used by themselves or inside of any element. If placed inside of an `ion-item`, the thumbnail will resize to fit the parent component. To position a thumbnail on the left or right side of an item, set the slot to `start` or `end`, respectively."
       },
       "attributes": [],
       "references": [
@@ -4513,7 +4513,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "size",
@@ -4548,15 +4548,15 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "css-class",
-          "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+          "description": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
         },
         {
           "name": "duration",
-          "description": "How many milliseconds to wait before hiding the toast. By default, it will show\nuntil `dismiss()` is called."
+          "description": "How many milliseconds to wait before hiding the toast. By default, it will show\r\nuntil `dismiss()` is called."
         },
         {
           "name": "header",
@@ -4599,7 +4599,7 @@
         },
         {
           "name": "translucent",
-          "description": "If `true`, the toast will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+          "description": "If `true`, the toast will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
         }
       ],
       "references": [
@@ -4622,7 +4622,7 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -4646,7 +4646,7 @@
         },
         {
           "name": "value",
-          "description": "The value of the toggle does not mean if it's checked or not, use the `checked`\nproperty for that.\n\nThe value of a toggle is analogous to the value of a `<input type=\"checkbox\">`,\nit's only used when the toggle participates in a native `<form>`."
+          "description": "The value of the toggle does not mean if it's checked or not, use the `checked`\r\nproperty for that.\r\n\r\nThe value of a toggle is analogous to the value of a `<input type=\"checkbox\">`,\r\nit's only used when the toggle participates in a native `<form>`."
         }
       ],
       "references": [
@@ -4665,7 +4665,7 @@
       "attributes": [
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "mode",
@@ -4691,20 +4691,20 @@
       "name": "ion-virtual-scroll",
       "description": {
         "kind": "markdown",
-        "value": "Virtual Scroll displays a virtual, \"infinite\" list. An array of records\nis passed to the virtual scroll containing the data to create templates\nfor. The template created for each record, referred to as a cell, can\nconsist of items, headers, and footers. For performance reasons, not every record\nin the list is rendered at once; instead a small subset of records (enough to fill the viewport)\nare rendered and reused as the user scrolls."
+        "value": "Virtual Scroll displays a virtual, \"infinite\" list. An array of records\r\nis passed to the virtual scroll containing the data to create templates\r\nfor. The template created for each record, referred to as a cell, can\r\nconsist of items, headers, and footers. For performance reasons, not every record\r\nin the list is rendered at once; instead a small subset of records (enough to fill the viewport)\r\nare rendered and reused as the user scrolls."
       },
       "attributes": [
         {
           "name": "approx-footer-height",
-          "description": "The approximate width of each footer template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered."
+          "description": "The approximate width of each footer template's cell.\r\nThis dimension is used to help determine how many cells should\r\nbe created when initialized, and to help calculate the height of\r\nthe scrollable area. This height value can only use `px` units.\r\nNote that the actual rendered size of each cell comes from the\r\napp's CSS, whereas this approximation is used to help calculate\r\ninitial dimensions before the item has been rendered."
         },
         {
           "name": "approx-header-height",
-          "description": "The approximate height of each header template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered."
+          "description": "The approximate height of each header template's cell.\r\nThis dimension is used to help determine how many cells should\r\nbe created when initialized, and to help calculate the height of\r\nthe scrollable area. This height value can only use `px` units.\r\nNote that the actual rendered size of each cell comes from the\r\napp's CSS, whereas this approximation is used to help calculate\r\ninitial dimensions before the item has been rendered."
         },
         {
           "name": "approx-item-height",
-          "description": "It is important to provide this\nif virtual item height will be significantly larger than the default\nThe approximate height of each virtual item template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered."
+          "description": "It is important to provide this\r\nif virtual item height will be significantly larger than the default\r\nThe approximate height of each virtual item template's cell.\r\nThis dimension is used to help determine how many cells should\r\nbe created when initialized, and to help calculate the height of\r\nthe scrollable area. This height value can only use `px` units.\r\nNote that the actual rendered size of each cell comes from the\r\napp's CSS, whereas this approximation is used to help calculate\r\ninitial dimensions before the item has been rendered."
         }
       ],
       "references": [

@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, Event, State, Element, Listen, Watch } from '@stencil/core';
 import { generateMedColor } from '../../../../../utils/med-theme';
-import { distanciaEuclidiana, getPositionFromEvent } from '../../../../../utils/medgrupo';
+import { MedAlternativasBase } from '../med-alternativas/med-alternativas-base';
 export class MedAlternativasA {
   constructor() {
     /**
@@ -33,73 +33,13 @@ export class MedAlternativasA {
     this.permiteRiscar = true;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
-    this.distanciaMinimaClick = 50;
-    this.tempoLongPress = 1000;
+    this.baseClass = new MedAlternativasBase(this);
   }
   handleClick(event) {
-    if (!event.target.classList.contains('med-alternativas')) {
-      this.resetState();
-    }
+    this.baseClass.handleClick(event);
   }
   onAlternativasChanged(newValue, oldValue) {
-    if (newValue != oldValue) {
-      this.resetState();
-    }
-  }
-  resetState() {
-    this.riscarAtivoIndice = -1;
-    this.permiteAlterar = true;
-  }
-  onTouchStart(event, indice) {
-    var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
-      return;
-    }
-    this.dataStart = new Date();
-    this.positionStart = getPositionFromEvent(event);
-    this.timer = setTimeout(() => {
-      this.dataEnd = new Date();
-      const tempoTotal = this.dataEnd.getTime() - this.dataStart.getTime();
-      if (tempoTotal >= this.tempoLongPress) {
-        this.riscarAtivoIndice = indice;
-        this.permiteAlterar = false;
-      }
-    }, this.tempoLongPress);
-  }
-  onTouchEnd(event, alternativa) {
-    var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
-      return;
-    }
-    const positionEnd = getPositionFromEvent(event);
-    clearTimeout(this.timer);
-    if (this.permiteAlterar &&
-      distanciaEuclidiana(this.positionStart, positionEnd) <
-        this.distanciaMinimaClick) {
-      this.riscarAtivoIndice = -1;
-      this.alterarAlternativa(alternativa);
-    }
-    this.permiteAlterar = true;
-  }
-  alterarAlternativa(item) {
-    const alternativa = item;
-    if (alternativa.Riscada && this.permiteRiscar) {
-      return;
-    }
-    this.alternativaSelecionada = alternativa.Alternativa;
-    this.medChange.emit(alternativa);
-  }
-  riscar(event, alternativa) {
-    event.stopPropagation();
-    alternativa[this.keyRiscada] = !alternativa[this.keyRiscada];
-    this.riscarAtivoIndice = -1;
-    this.medRiscada.emit(alternativa);
-    this.permiteAlterar = true;
-    this.alternativas = [...this.alternativas];
-  }
-  imageRequest(event, alternativa) {
-    event.stopPropagation();
-    this.medGalleryRequest.emit(alternativa);
+    this.baseClass.onAlternativasChanged(newValue, oldValue);
   }
   render() {
     const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
@@ -117,7 +57,7 @@ export class MedAlternativasA {
       h("div", { class: `
            med-alternativas__list
            ${hasImage ? 'med-alternativas__list--has-image' : ''}
-           `, role: "list" }, this.alternativas.map((alternativa, indice) => (h("div", { role: "listitem", onTouchStart: (event) => this.onTouchStart(event, indice), onTouchEnd: (event) => this.onTouchEnd(event, alternativa), onMouseDown: (event) => this.onTouchStart(event, indice), onMouseUp: (event) => this.onTouchEnd(event, alternativa), class: `
+           `, role: "list" }, this.alternativas.map((alternativa, indice) => (h("div", { role: "listitem", onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
                 med-alternativas__item med-alternativas__item--${alternativa[this.keyAlternativa]}
                 ${permiteRiscar ? 'med-alternativas__item--permite-riscar' : ''}
                 ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__item--show' : ''}
@@ -134,12 +74,12 @@ export class MedAlternativasA {
                 h("span", { class: "option__fake" }),
                 h("span", { class: "option__letter" }, alternativa[this.keyAlternativa]))),
             h("div", { class: "med-alternativas__right", innerHTML: alternativa[this.keyEnunciado] }, alternativa[this.keyImagem] &&
-              h("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.imageRequest(event, alternativa) },
+              h("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) },
                 h("div", { class: 'image-container__wrapper' },
                   h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }),
                   h("div", { class: 'image-container__button' },
                     h("ion-icon", { name: "med-expand image-container__icon" }))))),
-            h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => this.riscar(event, alternativa) },
+            h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => { this.baseClass.riscar(event, alternativa); } },
               h("ion-icon", { class: "med-alternativas__riscar-icon med-icon", name: "med-riscar" }),
               h("div", { class: "med-alternativas__riscar-span" },
                 (alternativa[this.keyRiscada] ? 'Restaurar ' : 'Riscar '),
