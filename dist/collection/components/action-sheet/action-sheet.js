@@ -289,7 +289,7 @@ export class ActionSheet {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
+        "text": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
       },
       "attribute": "css-class",
       "reflect": false
@@ -358,7 +358,7 @@ export class ActionSheet {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If `true`, the action sheet will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+        "text": "If `true`, the action sheet will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
       },
       "attribute": "translucent",
       "reflect": false,
@@ -482,10 +482,10 @@ export class ActionSheet {
             "text": "Any data to emit in the dismiss events."
           }, {
             "tags": [{
-                "text": "role The role of the element that is dismissing the action sheet.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the action sheet.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.",
+                "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`.",
                 "name": "param"
               }],
-            "text": "The role of the element that is dismissing the action sheet.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the action sheet.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            "text": "The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
           }],
         "references": {
           "Promise": {
@@ -501,7 +501,7 @@ export class ActionSheet {
             "text": "data Any data to emit in the dismiss events."
           }, {
             "name": "param",
-            "text": "role The role of the element that is dismissing the action sheet.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the action sheet.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+            "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
           }]
       }
     },

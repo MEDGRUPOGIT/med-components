@@ -575,209 +575,54 @@ ion-ripple-effect {
   }
 }
 :host {
-  /**
-   * OBS: sobreescrita das css custom properties do ionic.
-   * @prop --background: Define a cor de background do componente.
-   * @prop --color: Define a cor de texto do componente.
-   */
   --background: var(--med-color-brand-gradient);
+  --border-color: hsl(var(--med-color-brand-3));
   --color: hsl(var(--med-color-contrast-fixed));
-  --border-radius: var(--med-border-radius-pill);
-  --transition: background 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out, opacity 300ms ease-out;
+  --bg-hover: hsl(var(--med-color-brand-3));
+  --bg-hover-opacity: 1;
+  --border-color-hover: transparent;
+  --color-hover: hsl(var(--med-color-contrast-fixed));
+  --bg-focused: hsl(var(--med-color-brand-3));
+  --bg-focused-opacity: 1;
+  --border-color-focused: transparent;
+  --color-focused: hsl(var(--med-color-contrast-fixed));
+  --bg-activated: transparent;
+  --bg-activated-opacity: 0;
+  --border-color-activated: transparent;
+  --color-activated: hsl(var(--med-color-contrast-fixed));
   --font-size: var(--med-font-size-xxs);
+  --font-weight: var(--med-font-weight-semibold);
+  --line-height: var(--med-line-height-compressed);
   --padding: 0 var(--med-spacing-inline-xxs);
-  --padding-label: 0 var(--med-spacing-inline-xxxs);
+  --padding-text: 0 var(--med-spacing-inline-xxxs);
+  --border-radius: var(--med-border-radius-pill);
   --min-height: 48px;
-  --min-width: auto;
+  --min-width: 48px;
+  --transition: background 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out, opacity 300ms ease-out;
+  --icon-font-size: 24px;
 }
 
-:host(.med-button) {
+:host {
   min-height: var(--min-height);
   min-width: var(--min-width);
   height: auto;
   font-size: var(--font-size);
-  font-weight: var(--med-font-weight-semibold);
+  font-weight: var(--font-weight);
   text-transform: uppercase;
   margin: 0;
 }
 
-:host(.med-button) .button-native {
+:host .button-native {
   padding: var(--padding);
   min-height: var(--min-height);
-  line-height: var(--med-line-height-compressed);
+  line-height: var(--line-height);
   box-shadow: none;
 }
 
-:host(.med-button) .button-inner__label {
-  padding: var(--padding-label);
+:host .button-inner__text {
+  padding: var(--padding-text);
   display: flex;
   align-items: center;
-}
-
-:host(.med-button.button-block.button-has-icon-only) {
-  --border-radius: var(--med-border-radius-pill);
-}
-
-::slotted(ion-icon) {
-  font-size: 24px;
-  stroke: var(--color);
-  transition: stroke 300ms ease-out;
-}
-
-::slotted(ion-icon[slot=start]) {
-  margin: 0;
-}
-
-::slotted(ion-icon[slot=end]) {
-  margin: 0;
-}
-
-:host(.med-button.button-has-icon-only) {
-  --border-radius: var(--med-border-radius-full);
-  --min-height: 48px;
-  --min-width: 48px;
-  --padding: 0;
-  --padding-label: 0;
-}
-
-:host(.med-button.med-button--sm) {
-  --min-height: 40px;
-  --min-width: 40px;
-}
-
-:host(.med-button.med-button--sm.button-has-icon-only) {
-  --min-width: 40px;
-  --padding: 0;
-  --padding-label: 0;
-}
-
-:host(.med-button.med-button--xs) {
-  --padding: 0 var(--med-spacing-inline-base);
-  --min-height: 32px;
-  --font-size: var(--med-font-size-xxxs);
-}
-
-:host(.med-button.med-button--xs) ::slotted(ion-icon) {
-  font-size: 16px;
-}
-
-:host(.med-button.med-button--xs.button-has-icon-only) {
-  --min-width: 32px;
-  --padding: 0;
-  --padding-label: 0;
-}
-
-:host(.med-button.med-button--xxs) {
-  --padding: 0 var(--med-spacing-inline-base);
-  --min-height: 24px;
-  --min-width: 24px;
-  --font-size: var(--med-font-size-nano);
-}
-
-:host(.med-button.med-button--xxs) ::slotted(ion-icon) {
-  font-size: 16px;
-}
-
-:host(.med-button.med-button--xxs.button-has-icon-only) {
-  --min-width: 24px;
-  --padding: 0;
-  --padding-label: 0;
-}
-
-@media (any-hover: hover) {
-  :host(.med-button:hover) .button-native::before {
-    background: hsl(var(--med-color-brand-3));
-    opacity: 1;
-  }
-}
-:host(.med-button.ion-focused) .button-native::before {
-  background: hsl(var(--med-color-brand-3));
-  opacity: 1;
-}
-
-:host(.med-button.ion-activated) .button-native::before {
-  opacity: 1;
-}
-
-:host(.med-button.button-disabled) {
-  cursor: initial;
-  pointer-events: none;
-  opacity: var(--med-opacity-level-half);
-}
-
-:host(.med-button.button-disabled) .button-native::before {
-  opacity: var(--med-opacity-level-half);
-}
-
-:host(.med-button) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-brand-2));
-  --ripple-opacity: 1;
-}
-
-:host(.med-button.med-color) {
-  --background: var(--med-color-gradient);
-  --color: hsl(var(--med-color-contrast-fixed));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button.med-color:hover) .button-native::before {
-    background: hsl(var(--med-color-3));
-  }
-}
-:host(.med-button.med-color.ion-focused) .button-native::before {
-  background: hsl(var(--med-color-3));
-}
-
-:host(.med-button.med-color) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-2));
-  --ripple-opacity: 1;
-}
-
-:host(.med-button.med-color-neutral) {
-  --background: hsl(var(--med-color-neutral));
-  --color: hsl(var(--med-color-neutral-contrast));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button.med-color-neutral:hover) .button-native::before {
-    background: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semitransparent));
-  }
-
-  :host(.med-button.med-color-neutral.med-color-neutral-10:hover) .button-native::before {
-    background: hsl(var(--med-color-neutral-1), var(--med-opacity-level-semitransparent));
-  }
-}
-:host(.med-button.med-color-neutral.ion-focused) .button-native::before {
-  opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-button.med-color-neutral) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-neutral-10));
-  --ripple-opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-button.med-color-neutral.med-color-neutral-10) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-neutral-1));
-  --ripple-opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-button.med-color-feedback) {
-  --background: hsl(var(--med-color-feedback));
-  --color: hsl(var(--med-color-feedback-contrast));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button.med-color-feedback:hover) .button-native::before {
-    background: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semitransparent));
-  }
-}
-:host(.med-button.med-color-feedback.ion-focused) .button-native::before {
-  opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-button.med-color-feedback) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-neutral-10));
-  --ripple-opacity: var(--med-opacity-level-semitransparent);
 }
 
 :host .button-native::after {
@@ -795,204 +640,298 @@ ion-ripple-effect {
   transition: var(--transition);
 }
 
+:host ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-brand-2));
+  --ripple-opacity: 1;
+}
+
+::slotted(ion-icon) {
+  font-size: var(--icon-font-size);
+  stroke: var(--color);
+  transition: stroke 300ms ease-out;
+}
+
+::slotted(ion-icon[slot=start]) {
+  margin: 0;
+}
+
+::slotted(ion-icon[slot=end]) {
+  margin: 0;
+}
+
+::slotted(ion-icon[slot=icon-only]) {
+  font-size: var(--icon-font-size);
+}
+
+:host(.button-has-icon-only) {
+  --padding: 0;
+  --padding-text: 0;
+  --border-radius: var(--med-border-radius-pill);
+  --min-height: 48px;
+  --min-width: 48px;
+  --icon-font-size: 32px;
+}
+
+:host(.med-button--md) {
+  --min-height: 48px;
+  --min-height: 48px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--md.button-has-icon-only) {
+  --min-height: 48px;
+  --min-width: 48px;
+  --icon-font-size: 32px;
+}
+
+:host(.med-button--sm) {
+  --min-height: 40px;
+  --min-height: 40px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--sm.button-has-icon-only) {
+  --min-height: 40px;
+  --min-width: 40px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--xs) {
+  --min-height: 32px;
+  --min-width: 32px;
+  --padding: 0 var(--med-spacing-inline-base);
+  --font-size: var(--med-font-size-xxxs);
+  --icon-font-size: 16px;
+}
+
+:host(.med-button--xs.button-has-icon-only) {
+  --min-height: 32px;
+  --min-width: 32px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--xxs) {
+  --min-height: 24px;
+  --min-width: 24px;
+  --padding: 0 var(--med-spacing-inline-xxxs);
+  --font-size: var(--med-font-size-nano);
+  --icon-font-size: 16px;
+}
+
+:host(.med-button--xxs.button-has-icon-only) {
+  --min-height: 24px;
+  --min-width: 24px;
+  --icon-font-size: 16px;
+}
+
+:host(.med-button--xxxs) {
+  --min-height: 16px;
+  --min-width: 16px;
+  --padding: 0;
+  --font-size: var(--med-font-size-nano);
+  --icon-font-size: 8px;
+}
+
+:host(.med-button--xxxs.button-has-icon-only) {
+  --min-height: 16px;
+  --min-width: 16px;
+  --icon-font-size: 8px;
+}
+
+@media (any-hover: hover) {
+  :host(.med-button:hover) {
+    color: var(--color-hover);
+  }
+
+  :host(.med-button:hover) .button-native {
+    border-color: var(--border-color-hover);
+  }
+
+  :host(.med-button:hover) .button-native::before {
+    background: var(--bg-hover);
+    opacity: var(--bg-hover-opacity);
+  }
+
+  :host(.med-button:hover) ::slotted(ion-icon) {
+    stroke: var(--color-hover);
+  }
+}
+:host(.ion-focused) {
+  color: var(--color-focused);
+}
+
+:host(.ion-focused) .button-native {
+  border-color: var(--border-color-focused);
+}
+
+:host(.ion-focused) .button-native::before {
+  background: var(--bg-focused);
+  opacity: var(--bg-focused-opacity);
+  border-color: var(--border-color-focused);
+}
+
+:host(.ion-focused) ::slotted(ion-icon) {
+  stroke: var(--color-focused);
+}
+
+:host(.ion-activated) {
+  color: var(--color-activated);
+}
+
+:host(.ion-activated) .button-native {
+  border-color: var(--border-color-activated);
+}
+
+:host(.ion-activated) .button-native::before {
+  background: var(--bg-activated);
+  opacity: var(--bg-activated-opacity);
+}
+
+:host(.ion-activated) ::slotted(ion-icon) {
+  stroke: var(--color-activated);
+}
+
+:host(.button-disabled) {
+  cursor: initial;
+  pointer-events: none;
+  opacity: var(--med-opacity-level-half);
+}
+
+:host(.med-color) {
+  --background: var(--med-color-gradient);
+  --border-color: hsl(var(--med-color-3));
+  --color: hsl(var(--med-color-contrast-fixed));
+  --bg-hover: hsl(var(--med-color-3));
+  --color-hover: hsl(var(--med-color-contrast-fixed));
+  --bg-focused: hsl(var(--med-color-3));
+  --color-focused: hsl(var(--med-color-contrast-fixed));
+  --color-activated: hsl(var(--med-color-contrast-fixed));
+}
+
+:host(.med-color) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-2));
+}
+
+:host(.med-color-neutral) {
+  --background: hsl(var(--med-color-neutral));
+  --border-color: hsl(var(--med-color-neutral));
+  --color: hsl(var(--med-color-neutral-contrast));
+  --bg-hover: hsl(var(--med-color-neutral-contrast), var(--med-opacity-level-semitransparent));
+  --color-hover: hsl(var(--med-color-neutral-contrast));
+  --bg-focused: hsl(var(--med-color-neutral-contrast));
+  --bg-focused-opacity: var(--med-opacity-level-semitransparent);
+  --color-focused: hsl(var(--med-color-neutral-contrast));
+  --color-activated: hsl(var(--med-color-neutral-contrast));
+}
+
+:host(.med-color-neutral) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-contrast));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-color-feedback) {
+  --background: hsl(var(--med-color-feedback));
+  --border-color: hsl(var(--med-color-feedback));
+  --color: hsl(var(--med-color-feedback-contrast));
+  --bg-hover: hsl(var(--med-color-feedback-contrast), var(--med-opacity-level-semitransparent));
+  --color-hover: hsl(var(--med-color-feedback-contrast));
+  --bg-focused: hsl(var(--med-color-feedback-contrast));
+  --bg-focused-opacity: var(--med-opacity-level-semitransparent);
+  --color-focused: hsl(var(--med-color-feedback-contrast));
+  --color-activated: hsl(var(--med-color-feedback-contrast));
+}
+
+:host(.med-color-feedback) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-feedback-contrast));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
+}
+
 :host(.med-button--secondary) {
   --background: transparent;
-  --color: hsl(var(--med-color-brand-3));
   --border-color: hsl(var(--med-color-brand-3));
+  --color: hsl(var(--med-color-brand-3));
+  --bg-hover: transparent;
+  --bg-hover-opacity: 0;
+  --border-color-hover: hsl(var(--med-color-brand-4));
+  --color-hover: hsl(var(--med-color-brand-4));
+  --bg-focused: transparent;
+  --bg-focused-opacity: 0;
+  --border-color-focused: hsl(var(--med-color-brand-4));
+  --color-focused: hsl(var(--med-color-brand-4));
+  --bg-activated: transparent;
+  --bg-activated-opacity: 0;
+  --border-color-activated: hsl(var(--med-color-brand-5));
+  --color-activated: hsl(var(--med-color-brand-5));
   --border-width: var(--med-border-width-thin);
   --border-style: solid;
 }
 
 :host(.med-button--secondary) ion-ripple-effect {
   --ripple-color: transparent;
-  --ripple-opacity: 0;
+  --ripple-opacity: transparent;
 }
 
-@media (any-hover: hover) {
-  :host(.med-button--secondary:hover) {
-    --color: hsl(var(--med-color-brand-4));
-    --background: transparent;
-    --border-color: hsl(var(--med-color-brand-4));
-  }
-}
-:host(.med-button--secondary.ion-focused) {
-  --color: hsl(var(--med-color-brand-4));
-  --background: transparent;
-  --border-color: hsl(var(--med-color-brand-4));
-}
-
-:host(.med-button--secondary.ion-activated) {
-  --color: hsl(var(--med-color-brand-5));
-  --background: transparent;
-  --border-color: hsl(var(--med-color-brand-5));
-}
-
-:host(.med-button--secondary.button-disabled) {
-  opacity: var(--med-opacity-level-half);
-}
-
-@media (any-hover: hover) {
-  :host(.med-button--secondary:hover) .button-native::before {
-    opacity: 0;
-  }
-}
-:host(.med-button--secondary.ion-focused) .button-native::before {
-  opacity: 0;
-}
-
-:host(.med-button--secondary.ion-activated) .button-native::before {
-  opacity: 0;
-}
-
-:host(.med-button--secondary.button-disabled) .button-native::before {
-  opacity: 0;
+:host(.button-has-icon-only) {
+  --min-height: 48px;
+  --min-width: 48px;
+  --icon-font-size: 32px;
+  --padding: 0;
 }
 
 :host(.med-button--secondary.med-color) {
-  --background: transparent;
-  --color: hsl(var(--med-color-4));
-  --border-color: hsl(var(--med-color-4));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button--secondary.med-color:hover) {
-    --color: hsl(var(--med-color-3));
-    --border-color: hsl(var(--med-color-3));
-    background: transparent;
-  }
-}
-:host(.med-button--secondary.med-color.ion-activated) {
-  --color: hsl(var(--med-color-5));
-  --border-color: hsl(var(--med-color-5));
-  background: transparent;
-}
-
-:host(.med-button--secondary.med-color.ion-focused) {
-  --color: hsl(var(--med-color-3));
   --border-color: hsl(var(--med-color-3));
-  background: transparent;
-}
-
-:host(.med-button--secondary.med-color) ion-ripple-effect {
-  --ripple-color: transparent;
-  --ripple-opacity: 0;
+  --color: hsl(var(--med-color-3));
+  --bg-hover: hsl(var(--med-color-3));
+  --color-hover: hsl(var(--med-color-contrast-fixed));
+  --bg-focused: hsl(var(--med-color-3));
+  --color-focused: hsl(var(--med-color-contrast-fixed));
+  --color-activated: hsl(var(--med-color-contrast-fixed));
 }
 
 :host(.med-button--secondary.med-color-neutral) {
-  --background: transparent;
-  --color: hsl(var(--med-color-neutral));
   --border-color: hsl(var(--med-color-neutral));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button--secondary.med-color-neutral:hover) {
-    --color: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
-    --border-color: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
-    background: transparent;
-  }
-}
-:host(.med-button--secondary.med-color-neutral.ion-activated) {
-  --color: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
-  --border-color: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
-  background: transparent;
-}
-
-:host(.med-button--secondary.med-color-neutral.ion-focused) {
-  --color: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
-  --border-color: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
-  background: transparent;
-}
-
-:host(.med-button--secondary.med-color-neutral) ion-ripple-effect {
-  --ripple-color: transparent;
-  --ripple-opacity: 0;
+  --color: hsl(var(--med-color-neutral));
+  --border-color-hover: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  --color-hover: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  --border-color-focused: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  --color-focused: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  --border-color-activated: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
+  --color-activated: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
 }
 
 :host(.med-button--secondary.med-color-feedback) {
-  --background: transparent;
-  --color: hsl(var(--med-color-feedback));
   --border-color: hsl(var(--med-color-feedback));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button--secondary.med-color-feedback:hover) {
-    --color: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
-    --border-color: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
-    background: transparent;
-  }
-}
-:host(.med-button--secondary.med-color-feedback.ion-activated) {
-  --color: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
-  --border-color: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
-  background: transparent;
-}
-
-:host(.med-button--secondary.med-color-feedback.ion-focused) {
-  --color: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
-  --border-color: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
-  background: transparent;
-}
-
-:host(.med-button--secondary.med-color-feedback) ion-ripple-effect {
-  --ripple-color: transparent;
-  --ripple-opacity: 0;
-}
-
-:host(.med-button--secondary.ion-color) .button-native::before {
-  opacity: 0;
-}
-
-@media (any-hover: hover) {
-  :host(.med-button--secondary.ion-color:hover) .button-native::before {
-    opacity: 0;
-  }
-}
-:host(.med-button--secondary.ion-color.ion-focused) .button-native::before {
-  opacity: 0;
-}
-
-:host(.med-button--secondary.ion-color.ion-activated) .button-native::before {
-  opacity: 0;
-}
-
-:host(.med-button--secondary.ion-color.button-disabled) .button-native::before {
-  cursor: initial;
-  pointer-events: none;
-  opacity: 0;
-}
-
-:host(.med-button--secondary.med-neutral) .button-native::before {
-  opacity: 0;
-}
-
-@media (any-hover: hover) {
-  :host(.med-button--secondary.med-neutral:hover) .button-native::before {
-    opacity: 0;
-  }
-}
-:host(.med-button--secondary.med-neutral.ion-focused) .button-native::before {
-  opacity: 0;
-}
-
-:host(.med-button--secondary.med-neutral.ion-activated) .button-native::before {
-  opacity: 0;
-}
-
-:host(.med-button--secondary.med-neutral.button-disabled) .button-native::before {
-  cursor: initial;
-  pointer-events: none;
-  opacity: 0;
+  --color: hsl(var(--med-color-feedback));
+  --border-color-hover: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  --color-hover: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  --border-color-focused: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  --color-focused: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  --border-color-activated: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
+  --color-activated: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
 }
 
 :host(.med-button--tertiary) {
   --background: transparent;
-  --color: hsl(var(--med-color-neutral-10));
-  --border-radius: var(--med-border-radius-nano);
-  --padding: 0;
-  --padding-label: 0 var(--med-spacing-inline-xxxs);
-  --min-height: 24px;
+  --border-color: transparent;
+  --color: hsl(var(--med-color-contrast-fixed));
+  --bg-hover: hsl(var(--med-color-brand-3));
+  --bg-hover-opacity: var(--med-opacity-level-light);
+  --border-color-hover: transparent;
+  --color-hover: hsl(var(--med-color-contrast-fixed));
+  --bg-focused: hsl(var(--med-color-brand-3));
+  --bg-focused-opacity: var(--med-opacity-level-light);
+  --border-color-focused: transparent;
+  --color-focused: hsl(var(--med-color-contrast-fixed));
+  --bg-activated: hsl(var(--med-color-brand-3));
+  --bg-activated-opacity: var(--med-opacity-level-light);
+  --border-color-activated: transparent;
+  --color-activated: hsl(var(--med-color-contrast-fixed));
   --line-height: 24px;
-  --font-weight: var(--med-font-weight-semibold);
+  --padding: 0;
+  --padding-text: 0 var(--med-spacing-inline-xxxs);
+  --min-height: 24px;
+  --min-width: 24px;
+  --border-radius: var(--med-border-radius-nano);
 }
 
 :host(.med-button--tertiary) ion-ripple-effect {
@@ -1000,24 +939,62 @@ ion-ripple-effect {
   --ripple-opacity: var(--med-opacity-level-light);
 }
 
-:host(.med-button.med-button--tertiary.button-has-icon-only) {
+:host(.med-button--tertiary.button-has-icon-only) {
+  --padding: 0;
+  --padding-text: 0;
   --border-radius: var(--med-border-radius-full);
+  --min-height: 32px;
+  --min-width: 32px;
+  --icon-font-size: 24px;
 }
 
-::slotted(ion-icon) {
-  font-size: 24px;
-  stroke: var(--color);
-  transition: stroke 300ms ease-out;
+:host(.med-button--tertiary.button-block) {
+  --border-radius: var(--med-border-radius-nano);
 }
 
-::slotted(ion-icon[slot=start]) {
-  margin: 0;
-  padding-left: var(--med-spacing-inline-xxxs);
+:host(.med-button--tertiary.med-color) {
+  --color: hsl(var(--med-color-neutral-10));
+  --bg-hover: hsl(var(--med-color-3));
+  --color-hover: hsl(var(--med-color-neutral-10));
+  --bg-focused: hsl(var(--med-color-3));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --bg-activated: hsl(var(--med-color-3));
+  --color-activated: hsl(var(--med-color-neutral-10));
 }
 
-::slotted(ion-icon[slot=end]) {
-  margin: 0;
-  padding-right: var(--med-spacing-inline-xxxs);
+:host(.med-button--tertiary.med-color) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-3));
+  --ripple-opacity: var(--med-opacity-level-light);
+}
+
+:host(.med-button--tertiary.med-color-neutral) {
+  --color: hsl(var(--med-color-neutral-10));
+  --bg-hover: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+  --bg-focused: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --bg-activated: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+}
+
+:host(.med-button--tertiary.med-color-neutral) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-10));
+  --ripple-opacity: var(--med-opacity-level-light);
+}
+
+:host(.med-button--tertiary.med-color-feedback) {
+  --color: hsl(var(--med-color-neutral-10));
+  --bg-hover: hsl(var(--med-color-feedback));
+  --color-hover: hsl(var(--med-color-neutral-10));
+  --bg-focused: hsl(var(--med-color-feedback));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --bg-activated: hsl(var(--med-color-feedback));
+  --color-activated: hsl(var(--med-color-neutral-10));
+}
+
+:host(.med-button--tertiary.med-color-feedback) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-feedback));
+  --ripple-opacity: var(--med-opacity-level-light);
 }
 
 :host(.med-button--tertiary.med-button--lg) {
@@ -1027,17 +1004,10 @@ ion-ripple-effect {
   --min-width: 24px;
 }
 
-:host(.med-button--tertiary.med-button--lg) ::slotted(ion-icon) {
-  font-size: 24px;
-}
-
 :host(.med-button--tertiary.med-button--lg.button-has-icon-only) {
   --min-height: 64px;
   --min-width: 64px;
-}
-
-:host(.med-button--tertiary.med-button--lg.button-has-icon-only) ::slotted(ion-icon) {
-  font-size: 48px;
+  --icon-font-size: 48px;
 }
 
 :host(.med-button--tertiary.med-button--md) {
@@ -1047,17 +1017,10 @@ ion-ripple-effect {
   --min-width: 24px;
 }
 
-:host(.med-button--tertiary.med-button--md) ::slotted(ion-icon) {
-  font-size: 24px;
-}
-
 :host(.med-button--tertiary.med-button--md.button-has-icon-only) {
   --min-height: 48px;
   --min-width: 48px;
-}
-
-:host(.med-button--tertiary.med-button--md.button-has-icon-only) ::slotted(ion-icon) {
-  font-size: 32px;
+  --icon-font-size: 32px;
 }
 
 :host(.med-button--tertiary.med-button--sm) {
@@ -1067,17 +1030,10 @@ ion-ripple-effect {
   --min-width: 16px;
 }
 
-:host(.med-button--tertiary.med-button--sm) ::slotted(ion-icon) {
-  font-size: 16px;
-}
-
 :host(.med-button--tertiary.med-button--sm.button-has-icon-only) {
   --min-height: 40px;
   --min-width: 40px;
-}
-
-:host(.med-button--tertiary.med-button--sm.button-has-icon-only) ::slotted(ion-icon) {
-  font-size: 24px;
+  --icon-font-size: 24px;
 }
 
 :host(.med-button--tertiary.med-button--xs) {
@@ -1087,181 +1043,20 @@ ion-ripple-effect {
   --min-width: 16px;
 }
 
-:host(.med-button--tertiary.med-button--xs) ::slotted(ion-icon) {
-  font-size: 16px;
-}
-
 :host(.med-button--tertiary.med-button--xs.button-has-icon-only) {
   --min-height: 32px;
   --min-width: 32px;
-}
-
-:host(.med-button--tertiary.med-button--xs.button-has-icon-only) ::slotted(ion-icon) {
-  font-size: 24px;
-}
-
-:host(.med-button--tertiary.med-button--xxs) ::slotted(ion-icon) {
-  font-size: 16px;
+  --icon-font-size: 24px;
 }
 
 :host(.med-button--tertiary.med-button--xxs.button-has-icon-only) {
   --min-height: 24px;
   --min-width: 24px;
-}
-
-:host(.med-button--tertiary.med-button--xxs.button-has-icon-only) ::slotted(ion-icon) {
-  font-size: 24px;
+  --icon-font-size: 24px;
 }
 
 :host(.med-button--tertiary.med-button--xxxs.button-has-icon-only) {
   --min-height: 16px;
   --min-width: 16px;
-}
-
-:host(.med-button--tertiary.med-button--xxxs.button-has-icon-only) ::slotted(ion-icon) {
-  font-size: 16px;
-}
-
-:host(.med-button--tertiary.button-disabled) {
-  --color: color("neutral", "10");
-}
-
-@media (any-hover: hover) {
-  :host(.med-button--tertiary:hover) .button-native::before {
-    background: hsl(var(--med-color-brand-3), var(--med-opacity-level-light));
-  }
-}
-:host(.med-button--tertiary.ion-focused) .button-native::before {
-  background: hsl(var(--med-color-brand-3), var(--med-opacity-level-light));
-}
-
-:host(.med-button--tertiary.ion-activated) .button-native::before {
-  background: transparent;
-}
-
-:host(.med-button--tertiary.button-disabled) .button-native::before {
-  opacity: 0;
-}
-
-:host(.med-button--tertiary.med-color) {
-  --background: transparent;
-  --color: hsl(var(--med-color-neutral-10));
-}
-
-:host(.med-button--tertiary.med-color) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-3));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button--tertiary.med-color:hover) .button-native::before {
-    background: hsl(var(--med-color-3), var(--med-opacity-level-light));
-  }
-}
-:host(.med-button--tertiary.med-color.ion-focused) .button-native::before {
-  background: hsl(var(--med-color-3), var(--med-opacity-level-light));
-}
-
-:host(.med-button--tertiary.med-color.ion-activated) .button-native::before {
-  background: transparent;
-}
-
-:host(.med-button--tertiary.med-color.button-disabled) .button-native::before {
-  opacity: 0;
-}
-
-:host(.med-button--tertiary.med-color-feedback) {
-  --background: transparent;
-  --color: hsl(var(--med-color-neutral-10));
-}
-
-:host(.med-button--tertiary.med-color-feedback) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-feedback));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button--tertiary.med-color-feedback:hover) .button-native::before {
-    background: hsl(var(--med-color-feedback), var(--med-opacity-level-light));
-  }
-}
-:host(.med-button--tertiary.med-color-feedback.ion-focused) .button-native::before {
-  background: hsl(var(--med-color-feedback), var(--med-opacity-level-light));
-}
-
-:host(.med-button--tertiary.med-color-feedback.ion-activated) .button-native::before {
-  background: transparent;
-}
-
-:host(.med-button--tertiary.med-color-feedback.button-disabled) .button-native::before {
-  opacity: 0;
-}
-
-:host(.med-button--tertiary.med-color-neutral) {
-  --background: transparent;
-  --color: hsl(var(--med-color-neutral-10));
-}
-
-:host(.med-button.med-button--solid) {
-  --background: hsl(var(--med-color-brand-3));
-  --color: hsl(var(--med-color-contrast-fixed));
-}
-
-:host(.med-button.med-button--solid.med-color) {
-  --background: hsl(var(--med-color-3));
-  --color: hsl(var(--med-color-contrast-fixed));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button.med-button--solid.med-color:hover) .button-native::before {
-    background: hsl(var(--med-color-3));
-  }
-}
-:host(.med-button.med-button--solid.med-color.ion-focused) .button-native::before {
-  background: hsl(var(--med-color-3));
-}
-
-:host(.med-button.med-button--solid.med-color-neutral) {
-  --background: hsl(var(--med-color-neutral));
-  --color: hsl(var(--med-color-neutral-contrast));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button.med-button--solid.med-color-neutral:hover) .button-native::before {
-    background: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semitransparent));
-  }
-
-  :host(.med-button.med-button--solid.med-color-neutral.med-color-neutral-10:hover) .button-native::before {
-    background: hsl(var(--med-color-neutral-1), var(--med-opacity-level-semitransparent));
-  }
-}
-:host(.med-button.med-button--solid.med-color-neutral.ion-focused) .button-native::before {
-  opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-button.med-button--solid.med-color-neutral) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-neutral-10));
-  --ripple-opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-button.med-button--solid.med-color-neutral.med-color-neutral-10) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-neutral-1));
-  --ripple-opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-button.med-button--solid.med-color-feedback) {
-  --background: hsl(var(--med-color-feedback));
-  --color: hsl(var(--med-color-feedback-contrast));
-}
-
-@media (any-hover: hover) {
-  :host(.med-button.med-button--solid.med-color-feedback:hover) .button-native::before {
-    background: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semitransparent));
-  }
-}
-:host(.med-button.med-button--solid.med-color-feedback.ion-focused) .button-native::before {
-  opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-button.med-button--solid.med-color-feedback) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-neutral-10));
-  --ripple-opacity: var(--med-opacity-level-semitransparent);
+  --icon-font-size: 16px;
 }
