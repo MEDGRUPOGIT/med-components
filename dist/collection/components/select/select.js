@@ -501,7 +501,7 @@ export class Select {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Any additional options that the `alert`, `action-sheet` or `popover` interface\r\ncan take. See the [ion-alert docs](../alert), the\r\n[ion-action-sheet docs](../action-sheet) and the\r\n[ion-popover docs](../popover) for the\r\ncreate options for each interface.\r\n\r\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface."
+        "text": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](../alert), the\n[ion-action-sheet docs](../action-sheet) and the\n[ion-popover docs](../popover) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface."
       },
       "attribute": "interface-options",
       "reflect": false,
@@ -661,7 +661,7 @@ export class Select {
         "return": "Promise<any>"
       },
       "docs": {
-        "text": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\r\ndepending on the `interface` property on the `ion-select`.",
+        "text": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
         "tags": [{
             "name": "param",
             "text": "event The user interface event that called the open."

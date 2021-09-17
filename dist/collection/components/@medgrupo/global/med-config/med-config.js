@@ -48,7 +48,7 @@ export class MedConfig {
       "type": "unknown",
       "mutable": false,
       "complexType": {
-        "original": "{\r\n    scheme: ( value: string ) => void;\r\n    theme: ( value: string ) => void;\r\n  }",
+        "original": "{\n    scheme: ( value: string ) => void;\n    theme: ( value: string ) => void;\n  }",
         "resolved": "{ scheme: (value: string) => void; theme: (value: string) => void; }",
         "references": {}
       },

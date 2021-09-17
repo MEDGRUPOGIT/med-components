@@ -913,19 +913,19 @@ ion-ripple-effect {
 :host(.med-button--tertiary) {
   --background: transparent;
   --border-color: transparent;
-  --color: hsl(var(--med-color-contrast-fixed));
+  --color: hsl(var(--med-color-neutral-10));
   --bg-hover: hsl(var(--med-color-brand-3));
   --bg-hover-opacity: var(--med-opacity-level-light);
   --border-color-hover: transparent;
-  --color-hover: hsl(var(--med-color-contrast-fixed));
+  --color-hover: hsl(var(--med-color-neutral-10));
   --bg-focused: hsl(var(--med-color-brand-3));
   --bg-focused-opacity: var(--med-opacity-level-light);
   --border-color-focused: transparent;
-  --color-focused: hsl(var(--med-color-contrast-fixed));
+  --color-focused: hsl(var(--med-color-neutral-10));
   --bg-activated: hsl(var(--med-color-brand-3));
   --bg-activated-opacity: var(--med-opacity-level-light);
   --border-color-activated: transparent;
-  --color-activated: hsl(var(--med-color-contrast-fixed));
+  --color-activated: hsl(var(--med-color-neutral-10));
   --line-height: 24px;
   --padding: 0;
   --padding-text: 0 var(--med-spacing-inline-xxxs);
