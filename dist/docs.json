@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-16T19:22:32",
+  "timestamp": "2021-09-17T13:02:48",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -11945,8 +11945,8 @@
       "filePath": "./src/components/radio/radio.tsx",
       "encapsulation": "shadow",
       "tag": "ion-radio",
-      "readme": "# ion-radio\r\n\r\nRadios should be used inside of an [`ion-radio-group`](../radio-group). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.\r\n\r\nWhen radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.\r\n\r\n\r\n\r\n\r",
-      "docs": "Radios should be used inside of an [`ion-radio-group`](../radio-group). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.\r\n\r\nWhen radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.",
+      "readme": "# ion-radio\n\nRadios should be used inside of an [`ion-radio-group`](../radio-group). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.\n\nWhen radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.\n\n\n\n",
+      "docs": "Radios should be used inside of an [`ion-radio-group`](../radio-group). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.\n\nWhen radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.",
       "docsTags": [
         {
           "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
@@ -12176,8 +12176,8 @@
       "filePath": "./src/components/radio-group/radio-group.tsx",
       "encapsulation": "none",
       "tag": "ion-radio-group",
-      "readme": "# ion-radio-group\r\n\r\nA radio group is a group of [radio buttons](../radio). It allows\r\na user to select at most one radio button from a set. Checking one radio\r\nbutton that belongs to a radio group unchecks any previous checked\r\nradio button within the same group.\r\n\r\n\r\n\r\n\r",
-      "docs": "A radio group is a group of [radio buttons](../radio). It allows\r\na user to select at most one radio button from a set. Checking one radio\r\nbutton that belongs to a radio group unchecks any previous checked\r\nradio button within the same group.",
+      "readme": "# ion-radio-group\n\nA radio group is a group of [radio buttons](../radio). It allows\na user to select at most one radio button from a set. Checking one radio\nbutton that belongs to a radio group unchecks any previous checked\nradio button within the same group.\n\n\n\n",
+      "docs": "A radio group is a group of [radio buttons](../radio). It allows\na user to select at most one radio button from a set. Checking one radio\nbutton that belongs to a radio group unchecks any previous checked\nradio button within the same group.",
       "docsTags": [],
       "usage": {
         "angular": "```html\r\n<ion-list>\r\n  <ion-radio-group>\r\n    <ion-list-header>\r\n      <ion-label>\r\n        Auto Manufacturers\r\n      </ion-label>\r\n    </ion-list-header>\r\n\r\n    <ion-item>\r\n      <ion-label>Cord</ion-label>\r\n      <ion-radio value=\"cord\"></ion-radio>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label>Duesenberg</ion-label>\r\n      <ion-radio value=\"duesenberg\"></ion-radio>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label>Hudson</ion-label>\r\n      <ion-radio value=\"hudson\"></ion-radio>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label>Packard</ion-label>\r\n      <ion-radio value=\"packard\"></ion-radio>\r\n    </ion-item>\r\n\r\n    <ion-item>\r\n      <ion-label>Studebaker</ion-label>\r\n      <ion-radio value=\"studebaker\"></ion-radio>\r\n    </ion-item>\r\n  </ion-radio-group>\r\n</ion-list>\r\n```\r\n",
@@ -14122,7 +14122,7 @@
           "mutable": false,
           "attr": "cancel-button-icon",
           "reflectToAttr": false,
-          "docs": "Set the cancel button icon. Only applies to `md` mode.\r\nDefaults to `\"arrow-back-sharp\"`.",
+          "docs": "Set the cancel button icon. Only applies to `md` mode.\nDefaults to `\"arrow-back-sharp\"`.",
           "docsTags": [],
           "default": "config.get('backButtonIcon', 'arrow-back-sharp') as string",
           "values": [
@@ -14175,7 +14175,7 @@
           "mutable": false,
           "attr": "color",
           "reflectToAttr": false,
-          "docs": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics).",
+          "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
           "docsTags": [],
           "values": [
             {
@@ -14247,7 +14247,7 @@
           "mutable": false,
           "attr": "enterkeyhint",
           "reflectToAttr": false,
-          "docs": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
+          "docs": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
           "docsTags": [],
           "values": [
             {
@@ -14291,7 +14291,7 @@
           "mutable": false,
           "attr": "inputmode",
           "reflectToAttr": false,
-          "docs": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "docs": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
           "docsTags": [],
           "values": [
             {
@@ -14360,7 +14360,7 @@
           "mutable": false,
           "attr": "placeholder",
           "reflectToAttr": false,
-          "docs": "Set the input's placeholder.\r\n`placeholder` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
+          "docs": "Set the input's placeholder.\n`placeholder` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
           "docsTags": [],
           "default": "'Pesquisar'",
           "values": [
@@ -14377,7 +14377,7 @@
           "mutable": false,
           "attr": "search-icon",
           "reflectToAttr": false,
-          "docs": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\r\n`ios` mode and `\"search-sharp\"` in `md` mode.",
+          "docs": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\n`ios` mode and `\"search-sharp\"` in `md` mode.",
           "docsTags": [],
           "values": [
             {
@@ -14396,7 +14396,7 @@
           "mutable": false,
           "attr": "show-cancel-button",
           "reflectToAttr": false,
-          "docs": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\r\nSetting to `\"focus\"` shows the cancel button on focus.\r\nSetting to `\"never\"` hides the cancel button.\r\nSetting to `\"always\"` shows the cancel button regardless\r\nof focus state.",
+          "docs": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\nSetting to `\"focus\"` shows the cancel button on focus.\nSetting to `\"never\"` hides the cancel button.\nSetting to `\"always\"` shows the cancel button regardless\nof focus state.",
           "docsTags": [],
           "default": "'never'",
           "values": [
@@ -14422,7 +14422,7 @@
           "mutable": false,
           "attr": "show-clear-button",
           "reflectToAttr": false,
-          "docs": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\r\nSetting to `\"focus\"` shows the clear button on focus if the\r\ninput is not empty.\r\nSetting to `\"never\"` hides the clear button.\r\nSetting to `\"always\"` shows the clear button regardless\r\nof focus state, but only if the input is not empty.",
+          "docs": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\nSetting to `\"focus\"` shows the clear button on focus if the\ninput is not empty.\nSetting to `\"never\"` hides the clear button.\nSetting to `\"always\"` shows the clear button regardless\nof focus state, but only if the input is not empty.",
           "docsTags": [],
           "default": "'focus'",
           "values": [
@@ -14545,7 +14545,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\r\n`input.focus()`.",
+          "docs": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\n`input.focus()`.",
           "docsTags": []
         }
       ],
@@ -19588,7 +19588,7 @@
       "filePath": "./src/components/@medgrupo/team/questoes/med-alternativas/med-alternativas.tsx",
       "encapsulation": "shadow",
       "tag": "med-alternativas",
-      "readme": "# med-alternativas\r\n\r\n\r\n\r",
+      "readme": "# med-alternativas\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -22747,7 +22747,7 @@
       "filePath": "./src/components/@medgrupo/team/questoes/med-option/med-option.tsx",
       "encapsulation": "shadow",
       "tag": "med-option",
-      "readme": "# med-option\r\n\r\n\r\n\r",
+      "readme": "# med-option\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

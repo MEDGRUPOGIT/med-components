@@ -2888,7 +2888,7 @@
       "name": "ion-radio",
       "description": {
         "kind": "markdown",
-        "value": "Radios should be used inside of an [`ion-radio-group`](../radio-group). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.\r\n\r\nWhen radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time."
+        "value": "Radios should be used inside of an [`ion-radio-group`](../radio-group). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.\n\nWhen radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time."
       },
       "attributes": [
         {
@@ -2944,7 +2944,7 @@
       "name": "ion-radio-group",
       "description": {
         "kind": "markdown",
-        "value": "A radio group is a group of [radio buttons](../radio). It allows\r\na user to select at most one radio button from a set. Checking one radio\r\nbutton that belongs to a radio group unchecks any previous checked\r\nradio button within the same group."
+        "value": "A radio group is a group of [radio buttons](../radio). It allows\na user to select at most one radio button from a set. Checking one radio\nbutton that belongs to a radio group unchecks any previous checked\nradio button within the same group."
       },
       "attributes": [
         {
@@ -3548,7 +3548,7 @@
         },
         {
           "name": "cancel-button-icon",
-          "description": "Set the cancel button icon. Only applies to `md` mode.\r\nDefaults to `\"arrow-back-sharp\"`."
+          "description": "Set the cancel button icon. Only applies to `md` mode.\nDefaults to `\"arrow-back-sharp\"`."
         },
         {
           "name": "cancel-button-text",
@@ -3560,7 +3560,7 @@
         },
         {
           "name": "color",
-          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "debounce",
@@ -3576,7 +3576,7 @@
         },
         {
           "name": "enterkeyhint",
-          "description": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
+          "description": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
           "values": [
             {
               "name": "done"
@@ -3603,7 +3603,7 @@
         },
         {
           "name": "inputmode",
-          "description": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "description": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
           "values": [
             {
               "name": "decimal"
@@ -3645,15 +3645,15 @@
         },
         {
           "name": "placeholder",
-          "description": "Set the input's placeholder.\r\n`placeholder` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+          "description": "Set the input's placeholder.\n`placeholder` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
         },
         {
           "name": "search-icon",
-          "description": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\r\n`ios` mode and `\"search-sharp\"` in `md` mode."
+          "description": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\n`ios` mode and `\"search-sharp\"` in `md` mode."
         },
         {
           "name": "show-cancel-button",
-          "description": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\r\nSetting to `\"focus\"` shows the cancel button on focus.\r\nSetting to `\"never\"` hides the cancel button.\r\nSetting to `\"always\"` shows the cancel button regardless\r\nof focus state.",
+          "description": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\nSetting to `\"focus\"` shows the cancel button on focus.\nSetting to `\"never\"` hides the cancel button.\nSetting to `\"always\"` shows the cancel button regardless\nof focus state.",
           "values": [
             {
               "name": "always"
@@ -3668,7 +3668,7 @@
         },
         {
           "name": "show-clear-button",
-          "description": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\r\nSetting to `\"focus\"` shows the clear button on focus if the\r\ninput is not empty.\r\nSetting to `\"never\"` hides the clear button.\r\nSetting to `\"always\"` shows the clear button regardless\r\nof focus state, but only if the input is not empty.",
+          "description": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\nSetting to `\"focus\"` shows the clear button on focus if the\ninput is not empty.\nSetting to `\"never\"` hides the clear button.\nSetting to `\"always\"` shows the clear button regardless\nof focus state, but only if the input is not empty.",
           "values": [
             {
               "name": "always"
