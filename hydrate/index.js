@@ -9272,7 +9272,7 @@ class BackButton {
     const mode = getIonMode$1(this);
     return (hAsync(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
         [mode]: true,
-        'button': true,
+        //'button': true, // ion-buttons target .button
         'back-button-disabled': disabled,
         'back-button-has-icon-only': hasIconOnly,
         'in-toolbar': hostContext('ion-toolbar', this.el),

@@ -74,7 +74,7 @@ const BackButton = class {
     const mode = ionicGlobal.getIonMode(this);
     return (index.h(index.Host, { onClick: this.onClick, class: medTheme.generateMedColor(dsColor, {
         [mode]: true,
-        'button': true,
+        //'button': true, // ion-buttons target .button
         'back-button-disabled': disabled,
         'back-button-has-icon-only': hasIconOnly,
         'in-toolbar': theme.hostContext('ion-toolbar', this.el),

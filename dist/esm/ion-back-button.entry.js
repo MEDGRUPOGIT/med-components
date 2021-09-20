@@ -70,7 +70,7 @@ const BackButton = class {
     const mode = getIonMode(this);
     return (h(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
         [mode]: true,
-        'button': true,
+        //'button': true, // ion-buttons target .button
         'back-button-disabled': disabled,
         'back-button-has-icon-only': hasIconOnly,
         'in-toolbar': hostContext('ion-toolbar', this.el),
