@@ -163,6 +163,46 @@
           "description": "If `true`, the user cannot interact with the button."
         },
         {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "ds-name",
+          "description": "Define a variação solida de background do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "tertiary"
+            }
+          ]
+        },
+        {
+          "name": "ds-size",
+          "description": "Define a variação de tamanho componente.",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            },
+            {
+              "name": "xs"
+            },
+            {
+              "name": "xxs"
+            },
+            {
+              "name": "xxxs"
+            }
+          ]
+        },
+        {
           "name": "icon",
           "description": "The icon name to use for the back button."
         },
@@ -177,6 +217,10 @@
               "name": "md"
             }
           ]
+        },
+        {
+          "name": "solid",
+          "description": "Define a cor do componente."
         },
         {
           "name": "text",
@@ -351,6 +395,12 @@
             },
             {
               "name": "xs"
+            },
+            {
+              "name": "xxs"
+            },
+            {
+              "name": "xxxs"
             }
           ]
         },

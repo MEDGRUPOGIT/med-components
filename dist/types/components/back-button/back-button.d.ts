@@ -1,5 +1,5 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
-import { AnimationBuilder, Color } from '../../interface';
+import { AnimationBuilder, Color, MedColor } from '../../interface';
 import { ButtonInterface } from '../../utils/element-interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -10,6 +10,22 @@ import { ButtonInterface } from '../../utils/element-interface';
  */
 export declare class BackButton implements ComponentInterface, ButtonInterface {
   el: HTMLElement;
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
+  /**
+    * Define a cor do componente.
+    */
+  solid: boolean;
+  /**
+    * Define a variação de tamanho componente.
+    */
+  dsSize?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
+  /**
+    * Define a variação solida de background do componente.
+    */
+  dsName?: 'secondary' | 'tertiary';
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

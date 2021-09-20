@@ -32,7 +32,7 @@ export declare class Button implements ComponentInterface, AnchorInterface, Butt
   /**
     * Define a variação de tamanho componente.
     */
-  dsSize?: 'xs' | 'sm' | 'md' | 'lg';
+  dsSize?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

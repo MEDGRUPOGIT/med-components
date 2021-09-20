@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-17T20:21:21",
+  "timestamp": "2021-09-20T16:32:51",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -1016,6 +1016,89 @@
           "required": false
         },
         {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | \"tertiary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": false,
+          "docs": "Define a variação solida de background do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | \"xxxs\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "Define a variação de tamanho componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            },
+            {
+              "value": "xs",
+              "type": "string"
+            },
+            {
+              "value": "xxs",
+              "type": "string"
+            },
+            {
+              "value": "xxxs",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "icon",
           "type": "null | string | undefined",
           "mutable": false,
@@ -1071,6 +1154,23 @@
             },
             {
               "type": "undefined"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "solid",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "solid",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": false,
@@ -1135,6 +1235,16 @@
           "docs": "Background of the button"
         },
         {
+          "name": "--background-activated",
+          "annotation": "prop",
+          "docs": "Background of the button when pressed. Note: setting this will interfere with the Material Design ripple."
+        },
+        {
+          "name": "--background-activated-opacity",
+          "annotation": "prop",
+          "docs": "Opacity of the button when pressed"
+        },
+        {
           "name": "--background-focused",
           "annotation": "prop",
           "docs": "Background of the button when focused with the tab key"
@@ -1142,7 +1252,7 @@
         {
           "name": "--background-focused-opacity",
           "annotation": "prop",
-          "docs": "Opacity of the button background when focused with the tab key"
+          "docs": "Opacity of the button when focused with the tab key"
         },
         {
           "name": "--background-hover",
@@ -1155,14 +1265,39 @@
           "docs": "Opacity of the background on hover"
         },
         {
+          "name": "--border-color",
+          "annotation": "prop",
+          "docs": "Border color of the button"
+        },
+        {
           "name": "--border-radius",
           "annotation": "prop",
           "docs": "Border radius of the button"
         },
         {
+          "name": "--border-style",
+          "annotation": "prop",
+          "docs": "Border style of the button"
+        },
+        {
+          "name": "--border-width",
+          "annotation": "prop",
+          "docs": "Border width of the button"
+        },
+        {
+          "name": "--box-shadow",
+          "annotation": "prop",
+          "docs": "Box shadow of the button"
+        },
+        {
           "name": "--color",
           "annotation": "prop",
           "docs": "Text color of the button"
+        },
+        {
+          "name": "--color-activated",
+          "annotation": "prop",
+          "docs": "Text color of the button when pressed"
         },
         {
           "name": "--color-focused",
@@ -1172,87 +1307,7 @@
         {
           "name": "--color-hover",
           "annotation": "prop",
-          "docs": "Text color of the button on hover"
-        },
-        {
-          "name": "--icon-font-size",
-          "annotation": "prop",
-          "docs": "Font size of the button icon"
-        },
-        {
-          "name": "--icon-font-weight",
-          "annotation": "prop",
-          "docs": "Font weight of the button icon"
-        },
-        {
-          "name": "--icon-margin-bottom",
-          "annotation": "prop",
-          "docs": "Bottom margin of the button icon"
-        },
-        {
-          "name": "--icon-margin-end",
-          "annotation": "prop",
-          "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button icon"
-        },
-        {
-          "name": "--icon-margin-start",
-          "annotation": "prop",
-          "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button icon"
-        },
-        {
-          "name": "--icon-margin-top",
-          "annotation": "prop",
-          "docs": "Top margin of the button icon"
-        },
-        {
-          "name": "--icon-padding-bottom",
-          "annotation": "prop",
-          "docs": "Bottom padding of the button icon"
-        },
-        {
-          "name": "--icon-padding-end",
-          "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button icon"
-        },
-        {
-          "name": "--icon-padding-start",
-          "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button icon"
-        },
-        {
-          "name": "--icon-padding-top",
-          "annotation": "prop",
-          "docs": "Top padding of the button icon"
-        },
-        {
-          "name": "--margin-bottom",
-          "annotation": "prop",
-          "docs": "Bottom margin of the button"
-        },
-        {
-          "name": "--margin-end",
-          "annotation": "prop",
-          "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button"
-        },
-        {
-          "name": "--margin-start",
-          "annotation": "prop",
-          "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button"
-        },
-        {
-          "name": "--margin-top",
-          "annotation": "prop",
-          "docs": "Top margin of the button"
-        },
-        {
-          "name": "--min-height",
-          "annotation": "prop",
-          "docs": "Minimum height of the button"
-        },
-        {
-          "name": "--min-width",
-          "annotation": "prop",
-          "docs": "Minimum width of the button"
+          "docs": "Text color of the button when hover"
         },
         {
           "name": "--opacity",
@@ -1779,7 +1834,7 @@
         },
         {
           "name": "dsSize",
-          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
+          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | \"xxxs\" | undefined",
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
@@ -1800,6 +1855,14 @@
             },
             {
               "value": "xs",
+              "type": "string"
+            },
+            {
+              "value": "xxs",
+              "type": "string"
+            },
+            {
+              "value": "xxxs",
               "type": "string"
             },
             {

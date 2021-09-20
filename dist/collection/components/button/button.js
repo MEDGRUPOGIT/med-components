@@ -138,7 +138,7 @@ export class Button {
           h("div", { class: "button-inner__text" },
             h("slot", null)),
           h("slot", { name: "end" })),
-        (mode === 'md' || mode === 'ios') && h("ion-ripple-effect", { type: this.rippleType }))));
+        h("ion-ripple-effect", { type: this.rippleType }))));
   }
   static get is() { return "ion-button"; }
   static get encapsulation() { return "shadow"; }
@@ -212,8 +212,8 @@ export class Button {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'xs' | 'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
+        "original": "'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | \"xxxs\" | undefined",
         "references": {}
       },
       "required": false,

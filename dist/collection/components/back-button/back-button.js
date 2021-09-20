@@ -1,7 +1,8 @@
 import { Component, Element, Host, Prop, h } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
-import { createColorClasses, hostContext, openURL } from '../../utils/theme';
+import { hostContext, openURL } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -11,6 +12,10 @@ import { createColorClasses, hostContext, openURL } from '../../utils/theme';
  */
 export class BackButton {
   constructor() {
+    /**
+      * Define a cor do componente.
+      */
+    this.solid = false;
     /**
      * If `true`, the user cannot interact with the button.
      */
@@ -62,10 +67,10 @@ export class BackButton {
     return 'bounded';
   }
   render() {
-    const { color, defaultHref, disabled, type, hasIconOnly, backButtonIcon, backButtonText } = this;
+    const { dsName, dsColor, dsSize, solid, defaultHref, disabled, type, hasIconOnly, backButtonIcon, backButtonText } = this;
     const showBackButton = defaultHref !== undefined;
     const mode = getIonMode(this);
-    return (h(Host, { onClick: this.onClick, class: createColorClasses(color, {
+    return (h(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
         [mode]: true,
         'button': true,
         'back-button-disabled': disabled,
@@ -74,25 +79,104 @@ export class BackButton {
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
         'ion-activatable': true,
         'ion-focusable': true,
-        'show-back-button': showBackButton
+        'show-back-button': showBackButton,
+        'med-button': true,
+        [`med-button--${dsName}`]: dsName !== undefined,
+        [`med-button--${dsSize}`]: dsSize !== undefined,
+        'med-button--solid': solid,
       }) },
       h("button", { type: type, disabled: disabled, class: "button-native", part: "native", "aria-label": backButtonText || 'back' },
         h("span", { class: "button-inner" },
-          backButtonIcon && h("ion-icon", { class: "med-icon", part: "icon", icon: backButtonIcon, "aria-hidden": "true", lazy: false }),
-          backButtonText && h("span", { part: "text", "aria-hidden": "true", class: "button-text" }, backButtonText)),
-        mode === 'md' && h("ion-ripple-effect", { type: this.rippleType }))));
+          h("div", { class: "button-inner__text" },
+            backButtonIcon && h("ion-icon", { class: "med-icon", part: "icon", icon: backButtonIcon, "aria-hidden": "true", lazy: false }),
+            backButtonText && h("span", { part: "text", "aria-hidden": "true", class: "button-text" }, backButtonText))),
+        h("ion-ripple-effect", { type: this.rippleType }))));
   }
   static get is() { return "ion-back-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["back-button.ios.scss"],
+    "ios": ["back-button.md.scss"],
     "md": ["back-button.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["back-button.ios.css"],
+    "ios": ["back-button.md.css"],
     "md": ["back-button.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
+    "solid": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "solid",
+      "reflect": true,
+      "defaultValue": "false"
+    },
+    "dsSize": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | \"xxxs\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o de tamanho componente."
+      },
+      "attribute": "ds-size",
+      "reflect": false
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary' | 'tertiary'",
+        "resolved": "\"secondary\" | \"tertiary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o solida de background do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
     "color": {
       "type": "string",
       "mutable": false,

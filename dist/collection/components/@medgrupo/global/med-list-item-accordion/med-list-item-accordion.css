@@ -155,6 +155,7 @@
   --font-size-label: var(--med-font-size-xxxs);
   --color-label: hsl(var(--med-color-brand-4));
   --margin: 0;
+  --button-margin: auto;
 }
 
 :host(.med-list-item-accordion) {
@@ -166,6 +167,9 @@
   padding: var(--padding);
   align-items: center;
   flex-direction: column;
+}
+:host(.med-list-item-accordion) .med-list-item-accordion__button {
+  margin-left: var(--button-margin);
 }
 :host(.med-list-item-accordion) .med-list-item-accordion__item {
   display: flex;
@@ -184,7 +188,6 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  width: 100%;
 }
 :host(.med-list-item-accordion) .med-list-item-accordion__title {
   margin: 0;

@@ -148,108 +148,126 @@
 
 :host {
   /**
-    * @prop --background: Background of the button
-    * @prop --background-focused: Background of the button when focused with the tab key
-    * @prop --background-focused-opacity: Opacity of the button background when focused with the tab key
-    * @prop --background-hover: Background of the button on hover
-    * @prop --background-hover-opacity: Opacity of the background on hover
-    *
-    * @prop --color: Text color of the button
-    * @prop --color-focused: Text color of the button when focused with the tab key
-    * @prop --color-hover: Text color of the button on hover
-    *
-    * @prop --min-width: Minimum width of the button
-    * @prop --min-height: Minimum height of the button
-    *
-    * @prop --transition: Transition of the button
-    *
-    * @prop --border-radius: Border radius of the button
-    *
-    * @prop --ripple-color: Color of the button ripple effect
-    *
-    * @prop --opacity: Opacity of the button
-    *
-    * @prop --margin-top: Top margin of the button
-    * @prop --margin-end: Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button
-    * @prop --margin-bottom: Bottom margin of the button
-    * @prop --margin-start: Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button
-    *
-    * @prop --padding-top: Top padding of the button
-    * @prop --padding-end: Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button
-    * @prop --padding-bottom: Bottom padding of the button
-    * @prop --padding-start: Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button
-    *
-    * @prop --icon-margin-top: Top margin of the button icon
-    * @prop --icon-margin-end: Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button icon
-    * @prop --icon-margin-bottom: Bottom margin of the button icon
-    * @prop --icon-margin-start: Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button icon
-    *
-    * @prop --icon-padding-top: Top padding of the button icon
-    * @prop --icon-padding-end: Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button icon
-    * @prop --icon-padding-bottom: Bottom padding of the button icon
-    * @prop --icon-padding-start: Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button icon
-    *
-    * @prop --icon-font-size: Font size of the button icon
-    * @prop --icon-font-weight: Font weight of the button icon
-    */
-  --background: transparent;
-  --color-focused: currentColor;
-  --color-hover: currentColor;
-  --icon-margin-top: 0;
-  --icon-margin-bottom: 0;
-  --icon-padding-top: 0;
-  --icon-padding-end: 0;
-  --icon-padding-bottom: 0;
-  --icon-padding-start: 0;
-  --margin-top: 0;
-  --margin-end: 0;
-  --margin-bottom: 0;
-  --margin-start: 0;
-  --min-width: auto;
-  --min-height: auto;
-  --padding-top: 0;
-  --padding-end: 0;
-  --padding-bottom: 0;
-  --padding-start: 0;
-  --opacity: 1;
+   * @prop --background: Background of the button
+   * @prop --background-activated: Background of the button when pressed. Note: setting this will interfere with the Material Design ripple.
+   * @prop --background-activated-opacity: Opacity of the button when pressed
+   * @prop --background-focused: Background of the button when focused with the tab key
+   * @prop --background-focused-opacity: Opacity of the button when focused with the tab key
+   * @prop --background-hover: Background of the button on hover
+   * @prop --background-hover-opacity: Opacity of the background on hover
+   *
+   * @prop --color: Text color of the button
+   * @prop --color-activated: Text color of the button when pressed
+   * @prop --color-focused: Text color of the button when focused with the tab key
+   * @prop --color-hover: Text color of the button when hover
+   *
+   * @prop --transition: Transition of the button
+   *
+   * @prop --border-radius: Border radius of the button
+   * @prop --border-width: Border width of the button
+   * @prop --border-style: Border style of the button
+   * @prop --border-color: Border color of the button
+   *
+   * @prop --ripple-color: Color of the button ripple effect
+   *
+   * @prop --box-shadow: Box shadow of the button
+   * @prop --opacity: Opacity of the button
+   *
+   * @prop --padding-top: Top padding of the button
+   * @prop --padding-end: Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button
+   * @prop --padding-bottom: Bottom padding of the button
+   * @prop --padding-start: Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button
+   */
+  --overflow: hidden;
   --ripple-color: currentColor;
-  --transition: background-color, opacity 100ms linear;
-  display: none;
-  min-width: var(--min-width);
-  min-height: var(--min-height);
+  --border-width: initial;
+  --border-color: initial;
+  --border-style: initial;
+  --color-activated: var(--color);
+  --color-focused: var(--color);
+  --color-hover: var(--color);
+  --box-shadow: none;
+  display: inline-block;
+  width: auto;
   color: var(--color);
   font-family: var(--ion-font-family, inherit);
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
-  text-transform: none;
   white-space: nowrap;
   user-select: none;
+  vertical-align: top;
+  vertical-align: -webkit-baseline-middle;
+  pointer-events: auto;
   font-kerning: none;
 }
 
-:host(.ion-color) .button-native {
-  color: var(--ion-color-base);
-}
-
-:host(.show-back-button) {
-  display: block;
-}
-
-:host(.back-button-disabled) {
+:host(.med-button-disabled) {
   cursor: default;
   opacity: 0.5;
   pointer-events: none;
+}
+
+:host(.med-button-solid) {
+  --background: var(--ion-color-primary, #3880ff);
+  --color: var(--ion-color-primary-contrast, #fff);
+}
+
+:host(.med-button-outline) {
+  --border-color: var(--ion-color-primary, #3880ff);
+  --background: transparent;
+  --color: var(--ion-color-primary, #3880ff);
+}
+
+:host(.med-button-clear) {
+  --border-width: 0;
+  --background: transparent;
+  --color: var(--ion-color-primary, #3880ff);
+}
+
+:host(.button-block) {
+  display: block;
+}
+
+:host(.button-block) .button-native {
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+  width: 100%;
+  clear: both;
+  contain: content;
+}
+
+:host(.button-block) .button-native::after {
+  clear: both;
+}
+
+:host(.button-full) {
+  display: block;
+}
+
+:host(.button-full) .button-native {
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+  width: 100%;
+  contain: content;
+}
+
+:host(.button-full:not(.button-round)) .button-native {
+  border-radius: 0;
+  border-right-width: 0;
+  border-left-width: 0;
 }
 
 .button-native {
   border-radius: var(--border-radius);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  margin-left: var(--margin-start);
-  margin-right: var(--margin-end);
-  margin-top: var(--margin-top);
-  margin-bottom: var(--margin-bottom);
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   padding-left: var(--padding-start);
   padding-right: var(--padding-end);
   padding-top: var(--padding-top);
@@ -270,28 +288,21 @@
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: inherit;
   transition: var(--transition);
-  border: 0;
+  border-width: var(--border-width);
+  border-style: var(--border-style);
+  border-color: var(--border-color);
   outline: none;
   background: var(--background);
   line-height: 1;
+  box-shadow: var(--box-shadow);
+  contain: layout style;
   cursor: pointer;
   opacity: var(--opacity);
-  overflow: hidden;
-  user-select: none;
+  overflow: var(--overflow);
   z-index: 0;
+  box-sizing: border-box;
   appearance: none;
-}
-@supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
-  .button-native {
-    margin-left: unset;
-    margin-right: unset;
-    -webkit-margin-start: var(--margin-start);
-    margin-inline-start: var(--margin-start);
-    -webkit-margin-end: var(--margin-end);
-    margin-inline-end: var(--margin-end);
-  }
 }
 @supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
   .button-native {
@@ -302,6 +313,10 @@
     -webkit-padding-end: var(--padding-end);
     padding-inline-end: var(--padding-end);
   }
+}
+
+.button-native::-moz-focus-inner {
+  border: 0;
 }
 
 .button-inner {
@@ -316,47 +331,51 @@
   z-index: 1;
 }
 
-ion-icon {
-  padding-left: var(--icon-padding-start);
-  padding-right: var(--icon-padding-end);
-  padding-top: var(--icon-padding-top);
-  padding-bottom: var(--icon-padding-bottom);
-  margin-left: var(--icon-margin-start);
-  margin-right: var(--icon-margin-end);
-  margin-top: var(--icon-margin-top);
-  margin-bottom: var(--icon-margin-bottom);
-  display: inherit;
-  font-size: var(--icon-font-size);
-  font-weight: var(--icon-font-weight);
+::slotted(ion-icon) {
+  font-size: 1.4em;
   pointer-events: none;
 }
-@supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
-  ion-icon {
-    padding-left: unset;
-    padding-right: unset;
-    -webkit-padding-start: var(--icon-padding-start);
-    padding-inline-start: var(--icon-padding-start);
-    -webkit-padding-end: var(--icon-padding-end);
-    padding-inline-end: var(--icon-padding-end);
-  }
+
+::slotted(ion-icon[slot=start]) {
+  margin-left: -0.3em;
+  margin-right: 0.3em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 @supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
-  ion-icon {
+  ::slotted(ion-icon[slot=start]) {
     margin-left: unset;
     margin-right: unset;
-    -webkit-margin-start: var(--icon-margin-start);
-    margin-inline-start: var(--icon-margin-start);
-    -webkit-margin-end: var(--icon-margin-end);
-    margin-inline-end: var(--icon-margin-end);
+    -webkit-margin-start: -0.3em;
+    margin-inline-start: -0.3em;
+    -webkit-margin-end: 0.3em;
+    margin-inline-end: 0.3em;
   }
 }
 
-:host(.ion-focused) .button-native {
-  color: var(--color-focused);
+::slotted(ion-icon[slot=end]) {
+  margin-left: 0.3em;
+  margin-right: -0.2em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-:host(.ion-focused) .button-native::after {
-  background: var(--background-focused);
-  opacity: var(--background-focused-opacity);
+@supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
+  ::slotted(ion-icon[slot=end]) {
+    margin-left: unset;
+    margin-right: unset;
+    -webkit-margin-start: 0.3em;
+    margin-inline-start: 0.3em;
+    -webkit-margin-end: -0.2em;
+    margin-inline-end: -0.2em;
+  }
+}
+
+::slotted(ion-icon[slot=icon-only]) {
+  font-size: 1.8em;
+}
+
+ion-ripple-effect {
+  color: var(--ripple-color);
 }
 
 .button-native::after {
@@ -369,85 +388,663 @@ ion-icon {
   opacity: 0;
 }
 
+:host(.ion-activated) {
+  color: var(--color-activated);
+}
+
+:host(.ion-activated) .button-native::after {
+  background: var(--background-activated);
+  opacity: var(--background-activated-opacity);
+}
+
+:host(.ion-focused) {
+  color: var(--color-focused);
+}
+
+:host(.ion-focused) .button-native::after {
+  background: var(--background-focused);
+  opacity: var(--background-focused-opacity);
+}
+
 @media (any-hover: hover) {
-  :host(:hover) .button-native {
+  :host(:hover) {
     color: var(--color-hover);
   }
+
   :host(:hover) .button-native::after {
     background: var(--background-hover);
     opacity: var(--background-hover-opacity);
   }
 }
-:host(.ion-color.ion-focused) .button-native {
+:host(.med-button-solid.ion-color) .button-native {
+  background: var(--ion-color-base);
+  color: var(--ion-color-contrast);
+}
+
+:host(.med-button-outline.ion-color) .button-native {
+  border-color: var(--ion-color-base);
+  background: transparent;
   color: var(--ion-color-base);
 }
 
-@media (any-hover: hover) {
-  :host(.ion-color:hover) .button-native {
-    color: var(--ion-color-base);
-  }
+:host(.med-button-clear.ion-color) .button-native {
+  background: transparent;
+  color: var(--ion-color-base);
 }
-:host(.in-toolbar:not(.in-toolbar-color)) {
+
+:host(.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native {
   color: var(--ion-toolbar-color, var(--color));
+}
+
+:host(.med-button-outline.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native {
+  border-color: var(--ion-toolbar-color, var(--color, var(--border-color)));
+}
+
+:host(.med-button-solid.in-toolbar:not(.ion-color):not(.in-toolbar-color)) .button-native {
+  background: var(--ion-toolbar-color, var(--background));
+  color: var(--ion-toolbar-background, var(--color));
 }
 
 :host {
   --border-radius: 4px;
-  --background-focused: currentColor;
-  --background-focused-opacity: .12;
-  --background-hover: currentColor;
-  --background-hover-opacity: 0.04;
-  --color: currentColor;
-  --icon-margin-end: 0;
-  --icon-margin-start: 0;
-  --icon-font-size: 24px;
-  --icon-font-weight: normal;
-  --min-height: 32px;
-  --min-width: 44px;
-  --padding-start: 12px;
-  --padding-end: 12px;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 1.1em;
+  --padding-end: 1.1em;
+  --transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),
+                  background-color 15ms linear,
+                  color 15ms linear;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  height: 36px;
   font-size: 14px;
   font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-
-:host(.back-button-has-icon-only) {
-  --border-radius: 50%;
-  min-width: 48px;
-  height: 48px;
+@supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
+  :host {
+    margin-left: unset;
+    margin-right: unset;
+    -webkit-margin-start: 2px;
+    margin-inline-start: 2px;
+    -webkit-margin-end: 2px;
+    margin-inline-end: 2px;
+  }
 }
 
-.button-native {
-  box-shadow: none;
+:host(.med-button-solid) {
+  --background-activated: transparent;
+  --background-hover: var(--ion-color-primary-contrast, #fff);
+  --background-focused: var(--ion-color-primary-contrast, #fff);
+  --background-activated-opacity: 0;
+  --background-focused-opacity: .24;
+  --background-hover-opacity: .08;
+  --box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-.button-text {
-  padding-left: 4px;
-  padding-right: 4px;
+:host(.med-button-solid.ion-activated) {
+  --box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+:host(.med-button-outline) {
+  --border-width: 2px;
+  --border-style: solid;
+  --box-shadow: none;
+  --background-activated: transparent;
+  --background-focused: var(--ion-color-primary, #3880ff);
+  --background-hover: var(--ion-color-primary, #3880ff);
+  --background-activated-opacity: 0;
+  --background-focused-opacity: .12;
+  --background-hover-opacity: .04;
+}
+
+:host(.med-button-outline.ion-activated.ion-color) .button-native {
+  background: transparent;
+}
+
+:host(.med-button-clear) {
+  --background-activated: transparent;
+  --background-focused: var(--ion-color-primary, #3880ff);
+  --background-hover: var(--ion-color-primary, #3880ff);
+  --background-activated-opacity: 0;
+  --background-focused-opacity: .12;
+  --background-hover-opacity: .04;
+}
+
+:host(.button-round) {
+  --border-radius: 64px;
+  --padding-top: 0;
+  --padding-start: 26px;
+  --padding-end: 26px;
+  --padding-bottom: 0;
+}
+
+:host(.button-large) {
+  --padding-top: 0;
+  --padding-start: 1em;
+  --padding-end: 1em;
+  --padding-bottom: 0;
+  height: 2.8em;
+  font-size: 20px;
+}
+
+:host(.button-small) {
+  --padding-top: 0;
+  --padding-start: 0.9em;
+  --padding-end: 0.9em;
+  --padding-bottom: 0;
+  height: 2.1em;
+  font-size: 13px;
+}
+
+:host(.button-strong) {
+  font-weight: bold;
+}
+
+::slotted(ion-icon[slot=icon-only]) {
+  padding-left: 0;
+  padding-right: 0;
   padding-top: 0;
   padding-bottom: 0;
 }
-@supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
-  .button-text {
-    padding-left: unset;
-    padding-right: unset;
-    -webkit-padding-start: 4px;
-    padding-inline-start: 4px;
-    -webkit-padding-end: 4px;
-    padding-inline-end: 4px;
-  }
+
+:host(.med-button-solid.ion-color.ion-focused) .button-native::after {
+  background: var(--ion-color-contrast);
+  opacity: 0.24;
 }
 
-ion-icon {
-  line-height: 0.67;
-  text-align: start;
+:host(.med-button-clear.ion-color.ion-focused) .button-native::after,
+:host(.med-button-outline.ion-color.ion-focused) .button-native::after {
+  background: var(--ion-color-base);
+  opacity: 0.12;
 }
 
 @media (any-hover: hover) {
-  :host(.ion-color:hover) .button-native::after {
+  :host(.med-button-solid.ion-color:hover) .button-native::after {
+    background: var(--ion-color-contrast);
+    opacity: 0.08;
+  }
+
+  :host(.med-button-clear.ion-color:hover) .button-native::after,
+:host(.med-button-outline.ion-color:hover) .button-native::after {
     background: var(--ion-color-base);
+    opacity: 0.04;
   }
 }
-:host(.ion-color.ion-focused) .button-native::after {
-  background: var(--ion-color-base);
+:host {
+  --background: var(--med-color-brand-gradient);
+  --border-color: hsl(var(--med-color-brand-3));
+  --color: hsl(var(--med-color-contrast-fixed));
+  --bg-hover: hsl(var(--med-color-brand-3));
+  --bg-hover-opacity: 1;
+  --border-color-hover: transparent;
+  --color-hover: hsl(var(--med-color-contrast-fixed));
+  --bg-focused: hsl(var(--med-color-brand-3));
+  --bg-focused-opacity: 1;
+  --border-color-focused: transparent;
+  --color-focused: hsl(var(--med-color-contrast-fixed));
+  --bg-activated: transparent;
+  --bg-activated-opacity: 0;
+  --border-color-activated: transparent;
+  --color-activated: hsl(var(--med-color-contrast-fixed));
+  --font-size: var(--med-font-size-xxs);
+  --font-weight: var(--med-font-weight-semibold);
+  --line-height: var(--med-line-height-compressed);
+  --padding: 0 var(--med-spacing-inline-xxs);
+  --padding-text: 0 var(--med-spacing-inline-xxxs);
+  --border-radius: var(--med-border-radius-pill);
+  --min-height: 48px;
+  --min-width: 48px;
+  --transition: background 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out, opacity 300ms ease-out;
+  --icon-font-size: 24px;
+}
+
+:host {
+  min-height: var(--min-height);
+  min-width: var(--min-width);
+  height: auto;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+:host .button-native {
+  padding: var(--padding);
+  min-height: var(--min-height);
+  line-height: var(--line-height);
+  box-shadow: none;
+}
+
+:host .button-inner__text {
+  padding: var(--padding-text);
+  display: flex;
+  align-items: center;
+}
+
+:host .button-native::after {
+  display: none;
+}
+
+:host .button-native::before {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: "";
+  opacity: 0;
+  transition: var(--transition);
+}
+
+:host ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-brand-2));
+  --ripple-opacity: 1;
+}
+
+ion-icon {
+  font-size: var(--icon-font-size);
+  stroke: var(--color);
+  transition: stroke 300ms ease-out;
+}
+
+:host(.back-button-has-icon-only) {
+  --padding: 0;
+  --padding-text: 0;
+  --border-radius: var(--med-border-radius-pill);
+  --min-height: 48px;
+  --min-width: 48px;
+  --icon-font-size: 32px;
+}
+
+:host(.med-button--md) {
+  --min-height: 48px;
+  --min-height: 48px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--md.back-button-has-icon-only) {
+  --min-height: 48px;
+  --min-width: 48px;
+  --icon-font-size: 32px;
+}
+
+:host(.med-button--sm) {
+  --min-height: 40px;
+  --min-height: 40px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--sm.back-button-has-icon-only) {
+  --min-height: 40px;
+  --min-width: 40px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--xs) {
+  --min-height: 32px;
+  --min-width: 32px;
+  --padding: 0 var(--med-spacing-inline-base);
+  --font-size: var(--med-font-size-xxxs);
+  --icon-font-size: 16px;
+}
+
+:host(.med-button--xs.back-button-has-icon-only) {
+  --min-height: 32px;
+  --min-width: 32px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--xxs) {
+  --min-height: 24px;
+  --min-width: 24px;
+  --padding: 0 var(--med-spacing-inline-xxxs);
+  --font-size: var(--med-font-size-nano);
+  --icon-font-size: 16px;
+}
+
+:host(.med-button--xxs.back-button-has-icon-only) {
+  --min-height: 24px;
+  --min-width: 24px;
+  --icon-font-size: 16px;
+}
+
+:host(.med-button--xxxs) {
+  --min-height: 16px;
+  --min-width: 16px;
+  --padding: 0;
+  --font-size: var(--med-font-size-nano);
+  --icon-font-size: 8px;
+}
+
+:host(.med-button--xxxs.back-button-has-icon-only) {
+  --min-height: 16px;
+  --min-width: 16px;
+  --icon-font-size: 8px;
+}
+
+@media (any-hover: hover) {
+  :host(.med-button:hover) {
+    color: var(--color-hover);
+  }
+
+  :host(.med-button:hover) .button-native {
+    border-color: var(--border-color-hover);
+  }
+
+  :host(.med-button:hover) .button-native::before {
+    background: var(--bg-hover);
+    opacity: var(--bg-hover-opacity);
+  }
+
+  :host(.med-button:hover) ion-icon {
+    stroke: var(--color-hover);
+  }
+}
+:host(.ion-focused) {
+  color: var(--color-focused);
+}
+
+:host(.ion-focused) .button-native {
+  border-color: var(--border-color-focused);
+}
+
+:host(.ion-focused) .button-native::before {
+  background: var(--bg-focused);
+  opacity: var(--bg-focused-opacity);
+  border-color: var(--border-color-focused);
+}
+
+:host(.ion-focused) ion-icon {
+  stroke: var(--color-focused);
+}
+
+:host(.ion-activated) {
+  color: var(--color-activated);
+}
+
+:host(.ion-activated) .button-native {
+  border-color: var(--border-color-activated);
+}
+
+:host(.ion-activated) .button-native::before {
+  background: var(--bg-activated);
+  opacity: var(--bg-activated-opacity);
+}
+
+:host(.ion-activated) ion-icon {
+  stroke: var(--color-activated);
+}
+
+:host(.button-disabled) {
+  cursor: initial;
+  pointer-events: none;
+  opacity: var(--med-opacity-level-half);
+}
+
+:host(.med-color) {
+  --background: var(--med-color-gradient);
+  --border-color: hsl(var(--med-color-3));
+  --color: hsl(var(--med-color-contrast-fixed));
+  --bg-hover: hsl(var(--med-color-3));
+  --color-hover: hsl(var(--med-color-contrast-fixed));
+  --bg-focused: hsl(var(--med-color-3));
+  --color-focused: hsl(var(--med-color-contrast-fixed));
+  --color-activated: hsl(var(--med-color-contrast-fixed));
+}
+
+:host(.med-color) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-2));
+}
+
+:host(.med-color-neutral) {
+  --background: hsl(var(--med-color-neutral));
+  --border-color: hsl(var(--med-color-neutral));
+  --color: hsl(var(--med-color-neutral-contrast));
+  --bg-hover: hsl(var(--med-color-neutral-contrast), var(--med-opacity-level-semitransparent));
+  --color-hover: hsl(var(--med-color-neutral-contrast));
+  --bg-focused: hsl(var(--med-color-neutral-contrast));
+  --bg-focused-opacity: var(--med-opacity-level-semitransparent);
+  --color-focused: hsl(var(--med-color-neutral-contrast));
+  --color-activated: hsl(var(--med-color-neutral-contrast));
+}
+
+:host(.med-color-neutral) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-contrast));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-color-feedback) {
+  --background: hsl(var(--med-color-feedback));
+  --border-color: hsl(var(--med-color-feedback));
+  --color: hsl(var(--med-color-feedback-contrast));
+  --bg-hover: hsl(var(--med-color-feedback-contrast), var(--med-opacity-level-semitransparent));
+  --color-hover: hsl(var(--med-color-feedback-contrast));
+  --bg-focused: hsl(var(--med-color-feedback-contrast));
+  --bg-focused-opacity: var(--med-opacity-level-semitransparent);
+  --color-focused: hsl(var(--med-color-feedback-contrast));
+  --color-activated: hsl(var(--med-color-feedback-contrast));
+}
+
+:host(.med-color-feedback) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-feedback-contrast));
+  --ripple-opacity: var(--med-opacity-level-semitransparent);
+}
+
+:host(.med-button--secondary) {
+  --background: transparent;
+  --border-color: hsl(var(--med-color-brand-3));
+  --color: hsl(var(--med-color-brand-3));
+  --bg-hover: transparent;
+  --bg-hover-opacity: 0;
+  --border-color-hover: hsl(var(--med-color-brand-4));
+  --color-hover: hsl(var(--med-color-brand-4));
+  --bg-focused: transparent;
+  --bg-focused-opacity: 0;
+  --border-color-focused: hsl(var(--med-color-brand-4));
+  --color-focused: hsl(var(--med-color-brand-4));
+  --bg-activated: transparent;
+  --bg-activated-opacity: 0;
+  --border-color-activated: hsl(var(--med-color-brand-5));
+  --color-activated: hsl(var(--med-color-brand-5));
+  --border-width: var(--med-border-width-thin);
+  --border-style: solid;
+}
+
+:host(.med-button--secondary) ion-ripple-effect {
+  --ripple-color: transparent;
+  --ripple-opacity: transparent;
+}
+
+:host(.back-button-has-icon-only) {
+  --min-height: 48px;
+  --min-width: 48px;
+  --icon-font-size: 32px;
+  --padding: 0;
+}
+
+:host(.med-button--secondary.med-color) {
+  --border-color: hsl(var(--med-color-3));
+  --color: hsl(var(--med-color-3));
+  --bg-hover: hsl(var(--med-color-3));
+  --color-hover: hsl(var(--med-color-contrast-fixed));
+  --bg-focused: hsl(var(--med-color-3));
+  --color-focused: hsl(var(--med-color-contrast-fixed));
+  --color-activated: hsl(var(--med-color-contrast-fixed));
+}
+
+:host(.med-button--secondary.med-color-neutral) {
+  --border-color: hsl(var(--med-color-neutral));
+  --color: hsl(var(--med-color-neutral));
+  --border-color-hover: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  --color-hover: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  --border-color-focused: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  --color-focused: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
+  --border-color-activated: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
+  --color-activated: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
+}
+
+:host(.med-button--secondary.med-color-feedback) {
+  --border-color: hsl(var(--med-color-feedback));
+  --color: hsl(var(--med-color-feedback));
+  --border-color-hover: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  --color-hover: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  --border-color-focused: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  --color-focused: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
+  --border-color-activated: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
+  --color-activated: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
+}
+
+:host(.med-button--tertiary) {
+  --background: transparent;
+  --border-color: transparent;
+  --color: hsl(var(--med-color-neutral-10));
+  --bg-hover: hsl(var(--med-color-brand-3));
+  --bg-hover-opacity: var(--med-opacity-level-light);
+  --border-color-hover: transparent;
+  --color-hover: hsl(var(--med-color-neutral-10));
+  --bg-focused: hsl(var(--med-color-brand-3));
+  --bg-focused-opacity: var(--med-opacity-level-light);
+  --border-color-focused: transparent;
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --bg-activated: hsl(var(--med-color-brand-3));
+  --bg-activated-opacity: var(--med-opacity-level-light);
+  --border-color-activated: transparent;
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --line-height: 24px;
+  --padding: 0;
+  --padding-text: 0 var(--med-spacing-inline-xxxs);
+  --min-height: 24px;
+  --min-width: 24px;
+  --border-radius: var(--med-border-radius-nano);
+}
+
+:host(.med-button--tertiary) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-brand-3));
+  --ripple-opacity: var(--med-opacity-level-light);
+}
+
+:host(.med-button--tertiary.back-button-has-icon-only) {
+  --padding: 0;
+  --padding-text: 0;
+  --border-radius: var(--med-border-radius-full);
+  --min-height: 32px;
+  --min-width: 32px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--tertiary.button-block) {
+  --border-radius: var(--med-border-radius-nano);
+}
+
+:host(.med-button--tertiary.med-color) {
+  --color: hsl(var(--med-color-neutral-10));
+  --bg-hover: hsl(var(--med-color-3));
+  --color-hover: hsl(var(--med-color-neutral-10));
+  --bg-focused: hsl(var(--med-color-3));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --bg-activated: hsl(var(--med-color-3));
+  --color-activated: hsl(var(--med-color-neutral-10));
+}
+
+:host(.med-button--tertiary.med-color) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-3));
+  --ripple-opacity: var(--med-opacity-level-light);
+}
+
+:host(.med-button--tertiary.med-color-neutral) {
+  --color: hsl(var(--med-color-neutral-10));
+  --bg-hover: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+  --bg-focused: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --bg-activated: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+}
+
+:host(.med-button--tertiary.med-color-neutral) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-10));
+  --ripple-opacity: var(--med-opacity-level-light);
+}
+
+:host(.med-button--tertiary.med-color-feedback) {
+  --color: hsl(var(--med-color-neutral-10));
+  --bg-hover: hsl(var(--med-color-feedback));
+  --color-hover: hsl(var(--med-color-neutral-10));
+  --bg-focused: hsl(var(--med-color-feedback));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --bg-activated: hsl(var(--med-color-feedback));
+  --color-activated: hsl(var(--med-color-neutral-10));
+}
+
+:host(.med-button--tertiary.med-color-feedback) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-feedback));
+  --ripple-opacity: var(--med-opacity-level-light);
+}
+
+:host(.med-button--tertiary.med-button--lg) {
+  --font-size: var(--med-font-size-xs);
+  --line-height: 24px;
+  --min-height: 24px;
+  --min-width: 24px;
+}
+
+:host(.med-button--tertiary.med-button--lg.back-button-has-icon-only) {
+  --min-height: 64px;
+  --min-width: 64px;
+  --icon-font-size: 48px;
+}
+
+:host(.med-button--tertiary.med-button--md) {
+  --font-size: var(--med-font-size-xxs);
+  --line-height: 24px;
+  --min-height: 24px;
+  --min-width: 24px;
+}
+
+:host(.med-button--tertiary.med-button--md.back-button-has-icon-only) {
+  --min-height: 48px;
+  --min-width: 48px;
+  --icon-font-size: 32px;
+}
+
+:host(.med-button--tertiary.med-button--sm) {
+  --font-size: var(--med-font-size-xxxs);
+  --line-height: 16px;
+  --min-height: 16px;
+  --min-width: 16px;
+}
+
+:host(.med-button--tertiary.med-button--sm.back-button-has-icon-only) {
+  --min-height: 40px;
+  --min-width: 40px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--tertiary.med-button--xs) {
+  --font-size: var(--med-font-size-nano);
+  --line-height: 16px;
+  --min-height: 16px;
+  --min-width: 16px;
+}
+
+:host(.med-button--tertiary.med-button--xs.back-button-has-icon-only) {
+  --min-height: 32px;
+  --min-width: 32px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--tertiary.med-button--xxs.back-button-has-icon-only) {
+  --min-height: 24px;
+  --min-width: 24px;
+  --icon-font-size: 24px;
+}
+
+:host(.med-button--tertiary.med-button--xxxs.back-button-has-icon-only) {
+  --min-height: 16px;
+  --min-width: 16px;
+  --icon-font-size: 16px;
 }
