@@ -175,16 +175,16 @@
   margin: 0;
   padding: 0;
   font-size: var(--font-size-title);
-  font-weight: var(--font-weight-light);
-  line-height: var(--line-height-compressed);
+  font-weight: var(--med-font-weight-light);
+  line-height: var(--med-line-height-compressed);
   color: var(--color-title);
 }
 :host(.med-list-item) .med-list-item__label {
   margin: 0;
   padding: 0;
   font-size: var(--font-size-label);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-compressed);
+  font-weight: var(--med-font-weight-regular);
+  line-height: var(--med-line-height-compressed);
   color: var(--color-label);
   margin-top: var(--med-spacing-inline-nano);
 }

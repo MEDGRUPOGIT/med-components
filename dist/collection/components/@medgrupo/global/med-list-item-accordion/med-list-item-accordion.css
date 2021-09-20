@@ -162,7 +162,7 @@
   background-image: linear-gradient(to right, hsl(var(--med-color-neutral-2), 1), hsl(var(--med-color-neutral-2), 0.1), hsl(var(--med-color-neutral-2), 0));
   background-size: 200% 100%;
   background-position: 100% 0;
-  transition: 0.5s;
+  transition: background-image 0.5s linear;
   display: flex;
   padding: var(--padding);
   align-items: center;
