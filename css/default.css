@@ -34,7 +34,7 @@
   /* neutral tokens */
   --med-color-neutral-1: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity));
   --med-color-neutral-2: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity) + 10% * var(--neutral-invert));
-  --med-color-neutral-3: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity) + 12% * var(--neutral-invert));
+  --med-color-neutral-3: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity) + 20% * var(--neutral-invert));
   --med-color-neutral-4: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity) + 30% * var(--neutral-invert));
   --med-color-neutral-5: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity) + 40% * var(--neutral-invert));
   --med-color-neutral-6: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-luminosity) + 50% * var(--neutral-invert));
