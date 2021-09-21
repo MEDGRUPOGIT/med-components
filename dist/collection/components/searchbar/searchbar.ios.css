@@ -502,18 +502,20 @@
   --icon-color: hsl(var(--med-color-neutral-10));
   --cancel-button-color: hsl(var(--med-color-brand-3));
   --placeholder-opacity: 1;
+  --padding-left: 30px;
   --spacing: var(--med-spacing-inset-xs);
   padding: var(--spacing);
   height: 40px;
 }
 :host .searchbar-input {
-  padding-inline-start: 30pxvar(--med-spacing-inline-nano) !important;
+  padding-inline-start: calc(var(--padding-left) + var(--med-spacing-inline-nano)) !important;
   font-size: var(--med-font-size-xs);
   font-weight: var(--med-font-weight-regular);
   line-height: var(--med-line-height-compressed);
 }
 :host .searchbar-search-icon {
   width: 24px;
+  stroke: var(--color);
 }
 
 :host(.med-color) {

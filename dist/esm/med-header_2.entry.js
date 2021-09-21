@@ -28,7 +28,7 @@ const MedHeader = class {
     this.hostResizeObserver.observe(this.el);
   }
   render() {
-    return (h(Host, { "from-stencil": true }, h("slot", { name: "navbar" }), h("slot", { name: "toolbar" }), h("slot", { name: "progress" })));
+    return (h(Host, { "from-stencil": true }, h("slot", { name: "navbar" }), h("slot", { name: "toolbar" }), h("slot", { name: "progress" }), h("slot", { name: "auxiliar" })));
   }
   get el() { return getElement(this); }
 };

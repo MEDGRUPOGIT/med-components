@@ -25,7 +25,8 @@ export class MedHeader {
     return (h(Host, { "from-stencil": true },
       h("slot", { name: "navbar" }),
       h("slot", { name: "toolbar" }),
-      h("slot", { name: "progress" })));
+      h("slot", { name: "progress" }),
+      h("slot", { name: "auxiliar" })));
   }
   static get is() { return "med-header"; }
   static get encapsulation() { return "shadow"; }
