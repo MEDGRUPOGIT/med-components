@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-21T19:26:24",
+  "timestamp": "2021-09-22T12:56:03",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -20987,6 +20987,26 @@
           "required": false
         },
         {
+          "name": "dsSize",
+          "type": "\"lg\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "Define a variação de tamanho do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "valores",
           "type": "MedChartRadiaItem[]",
           "mutable": false,
@@ -21032,6 +21052,26 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"lg\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "Define a variação de tamanho do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
               "type": "string"
             },
             {
@@ -21088,6 +21128,26 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"lg\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "Define a variação de tamanho do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
               "type": "string"
             },
             {

@@ -10,6 +10,10 @@ export declare class MedChartRadial {
    */
   dsName?: string;
   /**
+   * Define a variação de tamanho do componente.
+   */
+  dsSize?: 'lg';
+  /**
    * Define os valores do gráfico
    */
   valores: MedChartRadiaItem[];

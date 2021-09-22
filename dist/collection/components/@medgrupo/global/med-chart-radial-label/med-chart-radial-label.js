@@ -8,10 +8,11 @@ export class MedChartRadialLabel {
     this.valores = [];
   }
   render() {
-    const { dsColor } = this;
+    const { dsColor, dsSize } = this;
     //const arrayReverse = this.valores.slice(0).reverse();
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-chart-radial-label': true,
+        [`med-chart-radial-label--${dsSize}`]: dsSize !== undefined,
       }) },
       h("ul", { class: "med-chart-radial-label__list" }, this.valores.map((item) => {
         return h("li", { class: "med-chart-radial-label__item" },
@@ -71,6 +72,23 @@ export class MedChartRadialLabel {
       },
       "attribute": "ds-color",
       "reflect": true
+    },
+    "dsSize": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'lg'",
+        "resolved": "\"lg\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o de tamanho do componente."
+      },
+      "attribute": "ds-size",
+      "reflect": false
     }
   }; }
 }

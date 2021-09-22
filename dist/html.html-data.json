@@ -5269,6 +5269,15 @@
         {
           "name": "ds-name",
           "description": "Define a variação do componente."
+        },
+        {
+          "name": "ds-size",
+          "description": "Define a variação de tamanho do componente.",
+          "values": [
+            {
+              "name": "lg"
+            }
+          ]
         }
       ],
       "references": [
@@ -5288,6 +5297,15 @@
         {
           "name": "ds-color",
           "description": "Define a cor do componente."
+        },
+        {
+          "name": "ds-size",
+          "description": "Define a variação de tamanho do componente.",
+          "values": [
+            {
+              "name": "lg"
+            }
+          ]
         },
         {
           "name": "total",
@@ -5311,6 +5329,15 @@
         {
           "name": "ds-color",
           "description": "Define a cor do componente."
+        },
+        {
+          "name": "ds-size",
+          "description": "Define a variação de tamanho do componente.",
+          "values": [
+            {
+              "name": "lg"
+            }
+          ]
         }
       ],
       "references": [

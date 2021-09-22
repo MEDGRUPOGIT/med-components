@@ -8,7 +8,7 @@ export class MedChartRadial {
     this.valores = [];
   }
   render() {
-    const { dsName, dsColor } = this;
+    const { dsName, dsColor, dsSize } = this;
     const totais = {
       total: 0,
       subtotais: []
@@ -21,6 +21,7 @@ export class MedChartRadial {
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-chart-radial': true,
         [`med-chart-radial--${dsName}`]: dsName !== undefined,
+        [`med-chart-radial--${dsSize}`]: dsSize !== undefined,
       }) },
       h("svg", { viewBox: "0 0 36 36" },
         h("circle", { cx: "18", cy: "18", r: "16" }),
@@ -80,6 +81,23 @@ export class MedChartRadial {
         "text": "Define a varia\u00E7\u00E3o do componente."
       },
       "attribute": "ds-name",
+      "reflect": false
+    },
+    "dsSize": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'lg'",
+        "resolved": "\"lg\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o de tamanho do componente."
+      },
+      "attribute": "ds-size",
       "reflect": false
     },
     "valores": {

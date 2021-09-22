@@ -179,6 +179,10 @@
   stroke: hsl(var(--med-color-feedback));
 }
 
+:host(.med-chart-radial--lg) {
+  --size-default: 125px;
+}
+
 :host(.med-chart-radial--secondary) svg {
   width: var(--size-sm);
   height: var(--size-sm);

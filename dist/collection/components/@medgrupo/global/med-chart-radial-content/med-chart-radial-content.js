@@ -20,9 +20,10 @@ export class MedChartRadialContent {
     return '';
   }
   render() {
-    const { total, dsColor } = this;
+    const { total, dsColor, dsSize } = this;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-chart-radial-content': true,
+        [`med-chart-radial-content--${dsSize}`]: dsSize !== undefined,
       }) },
       h("span", { class: "med-chart-radial-content__label" }, "Total de"),
       h("span", { class: `med-chart-radial-content__number ${this.fontResize()}` }, total),
@@ -76,6 +77,23 @@ export class MedChartRadialContent {
       },
       "attribute": "ds-color",
       "reflect": true
+    },
+    "dsSize": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'lg'",
+        "resolved": "\"lg\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o de tamanho do componente."
+      },
+      "attribute": "ds-size",
+      "reflect": false
     }
   }; }
   static get watchers() { return [{
