@@ -1,1 +1,0 @@
-var MedFontSize;(function(e){e["XXXS"]="12px";e["XXS"]="14px";e["XS"]="16px";e["SM"]="20px";e["MD"]="24px"})(MedFontSize||(MedFontSize={}));export{MedFontSize as M};

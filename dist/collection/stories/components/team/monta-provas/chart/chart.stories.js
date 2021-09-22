@@ -145,21 +145,21 @@ Chart.argTypes = {
     defaultValue: {
       valores: [
         {
-          cor: 'ion-color-success',
+          cor: 'med-color-fb-success',
           label: 'Acertos',
-          quantia: 32,
+          quantia: 50,
           ignoreBarra: false,
         },
         {
-          cor: 'ion-color-caution',
+          cor: 'med-color-fb-warning',
           label: 'Erros',
-          quantia: 16,
+          quantia: 50,
           ignoreBarra: false,
         },
         {
           cor: '',
           label: 'Restantes',
-          quantia: 52,
+          quantia: 0,
           ignoreBarra: true,
         }
       ],

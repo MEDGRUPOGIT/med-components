@@ -21,7 +21,7 @@ const MedListItem = class {
   }
   render() {
     const { dsColor, titulo, label, selected, dsSize, border } = this;
-    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, {
+    return (index.h(index.Host, { class: medTheme.generateMedColor(dsColor, {
         'med-list-item': true,
         'med-list-item--selected': selected,
         'med-list-item--border-radius': border,

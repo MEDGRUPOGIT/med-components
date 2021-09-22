@@ -1,1 +1,0 @@
-System.register([],(function(t){"use strict";return{execute:function(){t("M",void 0);var e;(function(t){t["A"]="A";t["B"]="B"})(e||(e=t("M",{})))}}}));
