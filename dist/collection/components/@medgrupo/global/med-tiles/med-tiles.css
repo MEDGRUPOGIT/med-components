@@ -154,7 +154,7 @@
   --border-background-selected: hsl(var(--med-color-brand-3));
   --font-size-title: var(--med-font-size-sm);
   --color-title: hsl(var(--med-color-neutral-10));
-  --font-size-label: var(--med-font-size-xxxs);
+  --font-size-label: var(--med-font-size-xs);
   --color-label: hsl(var(--med-color-brand-3));
 }
 
