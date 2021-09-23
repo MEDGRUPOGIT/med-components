@@ -578,11 +578,11 @@ ion-ripple-effect {
   --background: hsl(var(--med-color-brand-3));
   --border-color: hsl(var(--med-color-brand-3));
   --color: hsl(var(--med-color-contrast-fixed));
-  --bg-hover: hsl(var(--med-color-brand-5));
+  --bg-hover: hsl(var(--med-color-brand-1));
   --bg-hover-opacity: 1;
   --border-color-hover: transparent;
   --color-hover: hsl(var(--med-color-contrast-fixed));
-  --bg-focused: hsl(var(--med-color-brand-5));
+  --bg-focused: hsl(var(--med-color-brand-1));
   --bg-focused-opacity: 1;
   --border-color-focused: transparent;
   --color-focused: hsl(var(--med-color-contrast-fixed));
@@ -798,12 +798,12 @@ ion-ripple-effect {
 }
 
 :host(.med-color) {
-  --background: var(--med-color-gradient);
+  --background: hsl(var(--med-color-1));
   --border-color: hsl(var(--med-color-3));
   --color: hsl(var(--med-color-contrast-fixed));
-  --bg-hover: hsl(var(--med-color-3));
+  --bg-hover: hsl(var(--med-color-1));
   --color-hover: hsl(var(--med-color-contrast-fixed));
-  --bg-focused: hsl(var(--med-color-3));
+  --bg-focused: hsl(var(--med-color-1));
   --color-focused: hsl(var(--med-color-contrast-fixed));
   --color-activated: hsl(var(--med-color-contrast-fixed));
 }
