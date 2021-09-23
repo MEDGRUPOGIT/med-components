@@ -34,7 +34,7 @@ const Badge = class {
   render() {
     const { dsColor, dsName, dsSize } = this;
     const mode = ionicGlobal.getIonMode(this);
-    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, {
+    return (index.h(index.Host, { class: medTheme.generateMedColor(dsColor, {
         [mode]: true,
         'med-badge': true,
         [`med-badge--${dsName}`]: dsName !== undefined,

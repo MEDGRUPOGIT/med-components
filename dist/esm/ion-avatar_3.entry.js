@@ -30,7 +30,7 @@ const Badge = class {
   render() {
     const { dsColor, dsName, dsSize } = this;
     const mode = getIonMode(this);
-    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (h(Host, { class: generateMedColor(dsColor, {
         [mode]: true,
         'med-badge': true,
         [`med-badge--${dsName}`]: dsName !== undefined,

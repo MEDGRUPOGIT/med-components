@@ -504,7 +504,6 @@
   --cancel-button-color: hsl(var(--med-color-brand-3));
   --placeholder-opacity: 1;
   --padding-left: 30px;
-  --icon-color: hsl(var(--med-color-neutral-10));
   --clear-button-color: hsl(var(--med-color-neutral-5));
   --spacing: var(--med-spacing-inset-xs);
   padding: var(--spacing);
