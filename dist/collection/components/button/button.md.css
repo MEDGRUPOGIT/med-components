@@ -798,7 +798,7 @@ ion-ripple-effect {
 }
 
 :host(.med-color) {
-  --background: hsl(var(--med-color-1));
+  --background: hsl(var(--med-color-3));
   --border-color: hsl(var(--med-color-3));
   --color: hsl(var(--med-color-contrast-fixed));
   --bg-hover: hsl(var(--med-color-1));
