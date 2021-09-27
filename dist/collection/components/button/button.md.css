@@ -646,6 +646,7 @@ ion-ripple-effect {
 }
 
 ::slotted(ion-icon) {
+  min-width: var(--icon-font-size);
   font-size: var(--icon-font-size);
   stroke: var(--color);
   transition: stroke 300ms ease-out;
@@ -660,6 +661,7 @@ ion-ripple-effect {
 }
 
 ::slotted(ion-icon[slot=icon-only]) {
+  min-width: var(--icon-font-size);
   font-size: var(--icon-font-size);
 }
 

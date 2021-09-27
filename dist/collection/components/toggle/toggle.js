@@ -2,7 +2,8 @@ import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil
 import { getIonMode } from '../../global/ionic-global';
 import { getAriaLabel, renderHiddenInput } from '../../utils/helpers';
 import { hapticSelection } from '../../utils/native/haptic';
-import { createColorClasses, hostContext } from '../../utils/theme';
+import { hostContext } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -112,13 +113,14 @@ export class Toggle {
     }
   }
   render() {
-    const { activated, color, checked, disabled, el, inputId, name } = this;
+    const { activated, dsColor, checked, disabled, el, inputId, name } = this;
     const mode = getIonMode(this);
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     const value = this.getValue();
     renderHiddenInput(true, el, name, (checked ? value : ''), disabled);
-    return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "switch", class: createColorClasses(color, {
+    return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "switch", class: generateMedColor(dsColor, {
         [mode]: true,
+        'med-toggle': true,
         'in-item': hostContext('ion-item', el),
         'toggle-activated': activated,
         'toggle-checked': checked,
@@ -135,13 +137,35 @@ export class Toggle {
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
     "ios": ["toggle.ios.scss"],
-    "md": ["toggle.md.scss"]
+    "md": ["toggle.ios.scss"]
   }; }
   static get styleUrls() { return {
     "ios": ["toggle.ios.css"],
-    "md": ["toggle.md.css"]
+    "md": ["toggle.ios.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
     "color": {
       "type": "string",
       "mutable": false,

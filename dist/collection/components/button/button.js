@@ -20,10 +20,6 @@ export class Button {
     this.inToolbar = false;
     this.inheritedAttributes = {};
     /**
-      * Define a cor do componente.
-      */
-    this.solid = false;
-    /**
      * The type of button.
      */
     this.buttonType = 'button';
@@ -96,7 +92,7 @@ export class Button {
   }
   render() {
     const mode = getIonMode(this);
-    const { dsColor, dsName, dsSize, solid } = this;
+    const { dsColor, dsName, dsSize } = this;
     const { buttonType, type, disabled, rel, target, size, href, expand, hasIconOnly, shape, strong, inheritedAttributes } = this;
     const finalSize = size === undefined && this.inItem ? 'small' : size;
     const TagType = href === undefined ? 'button' : 'a';
@@ -129,7 +125,6 @@ export class Button {
         'med-button': true,
         [`med-button--${dsName}`]: dsName !== undefined,
         [`med-button--${dsSize}`]: dsSize !== undefined,
-        'med-button--solid': solid,
       }) },
       h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes),
         h("span", { class: "button-inner" },
@@ -172,24 +167,6 @@ export class Button {
       },
       "attribute": "ds-color",
       "reflect": true
-    },
-    "solid": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "solid",
-      "reflect": true,
-      "defaultValue": "false"
     },
     "dsName": {
       "type": "string",

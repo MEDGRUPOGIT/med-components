@@ -210,21 +210,12 @@
 }
 
 :host {
-  /**
-  * OBS: sobreescrita das css custom properties do ionic.
-  * @prop --background: Define a cor de background do componente.
-  * @prop --color: Define a cor de texto do componente.
-  */
   --background: hsl(var(--med-color-brand-3));
   --color: hsl(var(--med-color-contrast-fixed));
   --padding-bottom: 0;
   --padding-end: var(--med-spacing-inline-base);
   --padding-start: var(--med-spacing-inline-base);
   --padding-top: 0;
-  /**
-   * OBS: design system css custom properties.
-   * @prop --border-color: Define a cor da borda do componente.
-   */
   --border-color: hsl(var(--med-color-brand-3));
 }
 

@@ -494,10 +494,6 @@
           ]
         },
         {
-          "name": "solid",
-          "description": "Define a cor do componente."
-        },
-        {
           "name": "strong",
           "description": "If `true`, activates a button with a heavier font weight."
         },
@@ -4677,6 +4673,10 @@
         {
           "name": "disabled",
           "description": "If `true`, the user cannot interact with the toggle."
+        },
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
         },
         {
           "name": "mode",

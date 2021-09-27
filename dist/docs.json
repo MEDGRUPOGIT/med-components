@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-09-23T21:21:36",
+  "timestamp": "2021-09-27T12:22:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -1641,11 +1641,6 @@
           "docs": "Background of the badge"
         },
         {
-          "name": "--border-color",
-          "annotation": "prop",
-          "docs": "Define a cor da borda do componente."
-        },
-        {
           "name": "--color",
           "annotation": "prop",
           "docs": "Text color of the badge"
@@ -2077,23 +2072,6 @@
             }
           ],
           "optional": true,
-          "required": false
-        },
-        {
-          "name": "solid",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "solid",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
           "required": false
         },
         {
@@ -18618,6 +18596,25 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {

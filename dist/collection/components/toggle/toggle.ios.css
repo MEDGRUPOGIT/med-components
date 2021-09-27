@@ -382,3 +382,15 @@ input {
     padding-inline-end: 16px;
   }
 }
+
+:host(.med-color.med-toggle) {
+  --background-checked: hsl(var(--med-color-3));
+}
+
+:host(.med-color-neutral.med-toggle) {
+  --background-checked: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback.med-toggle) {
+  --background-checked: hsl(var(--med-color-feedback));
+}

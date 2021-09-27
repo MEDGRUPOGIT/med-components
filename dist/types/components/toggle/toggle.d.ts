@@ -1,5 +1,5 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { Color, StyleEventDetail, ToggleChangeEventDetail } from '../../interface';
+import { Color, StyleEventDetail, ToggleChangeEventDetail, MedColor } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -13,6 +13,10 @@ export declare class Toggle implements ComponentInterface {
   private lastDrag;
   el: HTMLElement;
   activated: boolean;
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

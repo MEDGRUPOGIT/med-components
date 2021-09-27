@@ -313,10 +313,6 @@ export namespace Components {
          */
         "size"?: 'small' | 'default' | 'large';
         /**
-          * Define a cor do componente.
-         */
-        "solid": boolean;
-        /**
           * If `true`, activates a button with a heavier font weight.
          */
         "strong": boolean;
@@ -2758,6 +2754,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -4893,10 +4893,6 @@ declare namespace LocalJSX {
           * The button size.
          */
         "size"?: 'small' | 'default' | 'large';
-        /**
-          * Define a cor do componente.
-         */
-        "solid"?: boolean;
         /**
           * If `true`, activates a button with a heavier font weight.
          */
@@ -7259,6 +7255,10 @@ declare namespace LocalJSX {
           * If `true`, the user cannot interact with the toggle.
          */
         "disabled"?: boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
         /**
           * The mode determines which platform styles to use.
          */

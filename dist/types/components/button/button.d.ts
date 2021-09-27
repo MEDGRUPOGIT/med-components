@@ -22,10 +22,6 @@ export declare class Button implements ComponentInterface, AnchorInterface, Butt
     */
   dsColor?: MedColor;
   /**
-    * Define a cor do componente.
-    */
-  solid: boolean;
-  /**
     * Define a variação solida de background do componente.
     */
   dsName?: 'secondary' | 'tertiary';
