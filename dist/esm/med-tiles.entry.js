@@ -17,7 +17,7 @@ const MedTiles = class {
   }
   render() {
     const { dsColor, titulo, label, selected, solid } = this;
-    return (h(Host, { class: generateMedColor(dsColor, {
+    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-tiles': true,
         'med-solid': solid,
         'med-tiles--selected': selected
