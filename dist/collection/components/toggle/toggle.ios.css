@@ -383,6 +383,10 @@ input {
   }
 }
 
+:host(.med-toggle) {
+  --background-checked: hsl(var(--med-color-brand-3));
+}
+
 :host(.med-color.med-toggle) {
   --background-checked: hsl(var(--med-color-3));
 }
