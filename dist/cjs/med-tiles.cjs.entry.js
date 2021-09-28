@@ -21,7 +21,7 @@ const MedTiles = class {
   }
   render() {
     const { dsColor, titulo, label, selected, solid } = this;
-    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, {
+    return (index.h(index.Host, { class: medTheme.generateMedColor(dsColor, {
         'med-tiles': true,
         'med-solid': solid,
         'med-tiles--selected': selected
