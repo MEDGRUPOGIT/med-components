@@ -21,26 +21,26 @@ const TemplateToolbar = ({ dsColor, platform }) => {
 
       <!-- component -->
       <med-toolbar .dsColor=${dsColor}>
-        <ion-button ds-name="icon-only" slot="start">
+        <ion-button ds-name="tertiary" slot="start">
           <ion-icon class="med-icon" slot="icon-only" name="med-setaesquerda"></ion-icon>
         </ion-button>
         <ul>
           <li>
-            <ion-button ds-name="icon-only">
+            <ion-button ds-name="tertiary">
               <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
             </ion-button>
-            <ion-button ds-name="icon-only">
+            <ion-button ds-name="tertiary">
               <ion-icon class="med-icon" slot="icon-only" name="med-visivel"></ion-icon>
             </ion-button>
-            <ion-button ds-name="icon-only">
+            <ion-button ds-name="tertiary">
               <ion-icon class="med-icon" slot="icon-only" color="brand" name="med-editar"></ion-icon>
             </ion-button>
-            <ion-button ds-name="icon-only">
+            <ion-button ds-name="tertiary">
               <ion-icon class="med-icon med-neutral med-neutral-4" slot="icon-only" name="med-fonte"></ion-icon>
             </ion-button>
           </li>
         </ul>
-        <ion-button ds-name="icon-only" slot="end">
+        <ion-button ds-name="tertiary" slot="end">
           <ion-icon class="med-icon" slot="icon-only" name="med-setadireita"></ion-icon>
         </ion-button>
       </med-toolbar>

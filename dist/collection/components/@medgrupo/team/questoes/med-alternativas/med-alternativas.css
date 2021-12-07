@@ -148,4 +148,5 @@
 
 :host {
   display: block;
+  --font-size: var(--med-font-size-xs);
 }

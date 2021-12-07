@@ -1,4 +1,8 @@
 import { Component, Host, h, Prop, Event } from '@stencil/core';
+/**
+  * @slot imagem - Posiciona um elemento imagem ou icone a esquerda do banner.
+  * @slot content - Define o conetudo de texto do banner.
+  */
 export class MedBanner {
   constructor() {
     this.onBtnLeftClick = () => {
@@ -49,7 +53,7 @@ export class MedBanner {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define o t\u00EDtulo do banner."
       },
       "attribute": "header",
       "reflect": false
@@ -66,7 +70,7 @@ export class MedBanner {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define o texto do bot\u00E3o esquerdo, se existir."
       },
       "attribute": "btn-left",
       "reflect": false
@@ -83,7 +87,7 @@ export class MedBanner {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define o texto do bot\u00E3o direito."
       },
       "attribute": "btn-right",
       "reflect": false
@@ -97,7 +101,7 @@ export class MedBanner {
       "composed": true,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define o texto texto do bot\u00E3o direito, se existir."
       },
       "complexType": {
         "original": "void",
@@ -112,7 +116,7 @@ export class MedBanner {
       "composed": true,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Emitido quando \u00E9 feito um click no bot\u00E3o direito."
       },
       "complexType": {
         "original": "void",

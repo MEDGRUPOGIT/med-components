@@ -1,7 +1,7 @@
 import { ComponentInterface } from '../../../../stencil-public-runtime';
 import { Animation } from '../../../../utils/animation/animation-interface';
 /**
-  * @slot -
+  * @slot - Slot default destinado ao componente `med-accordion-item`
   */
 export declare class Accordion implements ComponentInterface {
   hostElement: HTMLElement;

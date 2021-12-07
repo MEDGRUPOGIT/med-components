@@ -147,12 +147,6 @@
 }
 
 :host {
-  /**
-    * @prop --background-header: Define a cor de background do header do componente.
-    * @prop --background-content: Define a cor de background do conteudo componente.
-    * @prop --icon-color: Define a cor de do icone do componente.
-    * @prop --border-radius: Define o border-radius do componente.
-  */
   --background-header: linear-gradient(to right, hsl(var(--med-color-brand-1)), hsl(var(--med-color-neutral-2)), hsl(var(--med-color-neutral-2)));
   --background-content: hsl(var(--med-color-neutral-2));
   --icon-color: hsl(var(--med-color-neutral-10));
@@ -166,16 +160,16 @@
   border-radius: var(--border-radius);
 }
 :host(.med-accordion-item) .med-accordion-item__header-container {
-  padding: var(--padding);
   width: 100%;
-  display: flex;
   cursor: pointer;
-  align-items: center;
   line-height: 24px;
-  box-sizing: border-box;
   z-index: 1;
+  display: flex;
+  align-items: center;
 }
 :host(.med-accordion-item) .med-accordion-item__header {
+  box-sizing: border-box;
+  padding: var(--padding);
   background: var(--background-header);
   border-radius: var(--border-radius);
   position: relative;
@@ -197,11 +191,6 @@
   padding-left: var(--med-spacing-inline-xxxs);
   margin-left: auto;
 }
-:host(.med-accordion-item) .med-accordion-item__icon {
-  stroke: var(--icon-color);
-  font-size: var(--icon-font-size);
-  transform: rotate(0);
-}
 :host(.med-accordion-item) .med-accordion-item__content {
   display: none;
   overflow: auto;
@@ -210,13 +199,17 @@
   border-bottom-right-radius: var(--border-radius);
   z-index: 0;
 }
-
-:host(.med-accordion-item--open) .med-accordion-item__icon {
-  transform: rotate(180deg);
+:host(.med-accordion-item) .header-container__end {
+  margin-left: auto;
 }
 
 :host(.med-accordion-item--no-border) {
   --border-radius: 0;
+}
+
+:host(.med-accordion-item--keep-border) .med-accordion-item__header {
+  border-bottom-left-radius: var(--med-border-radius-sm) !important;
+  border-bottom-right-radius: var(--med-border-radius-sm) !important;
 }
 
 ::slotted(ion-progress-bar) {

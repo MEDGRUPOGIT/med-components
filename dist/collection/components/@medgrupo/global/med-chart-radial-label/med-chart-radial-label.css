@@ -158,6 +158,11 @@
   list-style: none;
   padding: 0;
 }
+@media (min-width: 992px) {
+  :host(.med-chart-radial-label) .med-chart-radial-label__list {
+    display: flex;
+  }
+}
 :host(.med-chart-radial-label) .med-chart-radial-label__item {
   font-size: var(--font-size-item);
   line-height: var(--med-line-height-compressed);
@@ -165,11 +170,15 @@
   display: flex;
   align-items: center;
   font-weight: var(--med-font-weight-bold);
-  min-width: 3ch;
   text-align: right;
 }
 :host(.med-chart-radial-label) .med-chart-radial-label__item:not(:last-of-type) {
   padding-bottom: var(--med-spacing-stack-xxxs);
+}
+@media (min-width: 992px) {
+  :host(.med-chart-radial-label) .med-chart-radial-label__item:not(:last-of-type) {
+    padding-bottom: 0;
+  }
 }
 :host(.med-chart-radial-label) .med-chart-radial-label__quantia {
   font-size: var(--font-size-quantia);
@@ -177,6 +186,7 @@
   margin-right: var(--med-spacing-inline-xxxs);
   color: hsl(var(--med-color-feedback));
   font-weight: var(--med-font-weight-bold);
+  min-width: 3ch;
 }
 
 :host(.med-chart-radial-label--lg) {

@@ -56,21 +56,21 @@ Default.argTypes = {
   iconLeft: {
     options: MedIcons,
     control: { type: 'select'},
-    defaultValue: 'med-setaesquerda',
+    defaultValue: 'med-esquerda',
     description: '**Atributo utilizado apenas no storybook. Não é um atributo do componente!.**',
     table: {
       type:  { summary: ['string'] },
-      defaultValue: { summary: 'med-setaesquerda' },
+      defaultValue: { summary: 'med-esquerda' },
     },
   },
   iconRight: {
     options: MedIcons,
     control: { type: 'select'},
-    defaultValue: 'med-setadireita',
+    defaultValue: 'med-direita',
     description: '**Atributo utilizado apenas no storybook. Não é um atributo do componente!.**',
     table: {
       type:  { summary: ['string'] },
-      defaultValue: { summary: 'med-setadireita' },
+      defaultValue: { summary: 'med-direita' },
     },
   },
   slot: {

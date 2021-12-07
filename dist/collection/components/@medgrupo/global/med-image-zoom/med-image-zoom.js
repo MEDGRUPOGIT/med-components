@@ -30,7 +30,7 @@ export class MedImageZoom {
       h("med-header", { class: "zoom-header" },
         h("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" },
           h("span", { slot: "title", innerHTML: this.titulo }),
-          h("ion-button", { "ds-name": "icon-only", slot: "right", onClick: () => this.dismiss() },
+          h("ion-button", { "ds-name": "tertiary", slot: "right", onClick: () => this.dismiss() },
             h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })))),
       h("ion-content", { class: "zoom-content" },
         h("ion-slides", { ref: (el) => { this.slider = el; el.options = this.sliderOpts; }, pager: this.imagens && this.imagens.length > 1 }, this.imagens.map((img) => h("ion-slide", null,

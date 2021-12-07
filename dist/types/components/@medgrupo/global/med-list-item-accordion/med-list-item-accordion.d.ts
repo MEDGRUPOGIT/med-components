@@ -33,6 +33,10 @@ export declare class MedListItemAccordion {
    */
   collapsed: boolean;
   /**
+   * If `true`, the user cannot interact with the button.
+   */
+  disabled: boolean;
+  /**
    * TODO
    */
   toggle(event?: Event): Promise<void>;

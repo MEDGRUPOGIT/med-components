@@ -97,20 +97,20 @@ const TemplateDefault = () => {
 
                 <ul class="med-message__footer" slot="footer">
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-only">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-positivo" slot="start"></ion-icon>
                       4221
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-gabarito" slot="start"></ion-icon>
                       123
                     </ion-button>
@@ -129,7 +129,7 @@ const TemplateDefault = () => {
 
                 <ul class="med-message__footer" slot="footer">
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-positivo" slot="start"></ion-icon>
                       4221
                     </ion-button>
@@ -150,20 +150,20 @@ const TemplateDefault = () => {
 
                 <ul class="med-message__footer" slot="footer">
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-only">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-positivo" slot="start"></ion-icon>
                       4221
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-gabarito" slot="start"></ion-icon>
                       123
                     </ion-button>
@@ -184,20 +184,20 @@ const TemplateDefault = () => {
 
                 <ul class="med-message__footer" slot="footer">
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-only">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-positivo" slot="start"></ion-icon>
                       4221
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-gabarito" slot="start"></ion-icon>
                       123
                     </ion-button>
@@ -218,20 +218,20 @@ const TemplateDefault = () => {
 
                 <ul class="med-message__footer" slot="footer">
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-only">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-positivo" slot="start"></ion-icon>
                       4221
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-gabarito" slot="start"></ion-icon>
                       123
                     </ion-button>
@@ -252,20 +252,20 @@ const TemplateDefault = () => {
 
                 <ul class="med-message__footer" slot="footer">
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-only">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-positivo" slot="start"></ion-icon>
                       4221
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-gabarito" slot="start"></ion-icon>
                       123
                     </ion-button>
@@ -286,20 +286,20 @@ const TemplateDefault = () => {
 
                 <ul class="med-message__footer" slot="footer">
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-only">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-positivo" slot="start"></ion-icon>
                       4221
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-gabarito" slot="start"></ion-icon>
                       123
                     </ion-button>
@@ -335,20 +335,20 @@ const TemplateDefault = () => {
 
                 <ul class="med-message__footer" slot="footer">
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-only">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-positivo" slot="start"></ion-icon>
                       4221
                     </ion-button>
                   </li>
 
                   <li class="med-message__list-item">
-                    <ion-button ds-name="icon-label">
+                    <ion-button ds-name="tertiary">
                       <ion-icon class="med-icon" name="med-gabarito" slot="start"></ion-icon>
                       123
                     </ion-button>

@@ -73,21 +73,20 @@ export class MedAlternativasA {
               h("div", { class: "option" },
                 h("span", { class: "option__fake" }),
                 h("span", { class: "option__letter" }, alternativa[this.keyAlternativa]))),
-            h("div", { class: "med-alternativas__right", innerHTML: alternativa[this.keyEnunciado] }, alternativa[this.keyImagem] &&
-              h("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) },
-                h("div", { class: 'image-container__wrapper' },
-                  h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }),
-                  h("div", { class: 'image-container__button' },
-                    h("ion-icon", { name: "med-expand image-container__icon" }))))),
+            h("div", { class: "med-alternativas__right", innerHTML: alternativa[this.keyEnunciado] },
+              alternativa[this.keyImagem] &&
+                h("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) },
+                  h("div", { class: 'image-container__wrapper' },
+                    h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }))),
+              h("ion-progress-bar", { percentage: true, class: `
+                      med-alternativas__progress-bar
+                      ${mostraResposta && alternativaSelecionada ? 'med-alternativas__progress-bar--toggle' : ''}
+                    `, value: alternativa[this.keyPorcentagem] })),
             h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => { this.baseClass.riscar(event, alternativa); } },
               h("ion-icon", { class: "med-alternativas__riscar-icon med-icon", name: "med-riscar" }),
               h("div", { class: "med-alternativas__riscar-span" },
                 (alternativa[this.keyRiscada] ? 'Restaurar ' : 'Riscar '),
-                h("span", { class: "med-alternativas__riscar-desktop" }, " alternativa"))))),
-        h("ion-progress-bar", { percentage: true, class: `
-                med-alternativas__progress-bar
-                ${mostraResposta && alternativaSelecionada ? 'med-alternativas__progress-bar--toggle' : ''}
-              `, value: alternativa[this.keyPorcentagem] })))))));
+                h("span", { class: "med-alternativas__riscar-desktop" }, " alternativa")))))))))));
   }
   static get is() { return "med-alternativas-a"; }
   static get encapsulation() { return "shadow"; }

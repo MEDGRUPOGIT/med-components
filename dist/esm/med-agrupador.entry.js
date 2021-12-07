@@ -7,13 +7,13 @@ const MedAgrupador = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * Define o estado do componente.
-     */
-    this.collapsed = true;
+      * Define o estado do componente.
+      */
+    this.collapsed = false;
   }
   /**
-  * TODO
-  */
+    * Define o estado do componente programaticamente.
+    */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;

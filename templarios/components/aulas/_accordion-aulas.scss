@@ -1,0 +1,78 @@
+@import "../../../templarios/abstracts";
+
+// ////////////////////
+// Accordion usado na lista de aulas
+// Arquivo : accordion-aulas.stories.ts
+// ////////////////////
+
+.med-accordion-aulas__start {
+  margin-right: 16px;
+  stroke: hsl(var(--med-color-neutral-10));
+}
+
+.med-accordion-aulas__middle {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.med-accordion-aulas__end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.med-accordion-aulas__icon {
+  stroke: hsl(var(--med-color-neutral-10));
+}
+
+.med-accordion-aulas__thumbnail, .med-accordion-aulas__start {
+  margin-right: 16px;
+}
+
+.med-accordion-aulas__slot-end {
+  margin-left: auto;
+}
+
+.med-accordion-aulas__middle-caption {
+  margin: 8px 0;
+}
+
+.med-accordion-aulas__content-start {
+  margin-right: 24px;
+}
+
+.med-accordion-aulas__content-middle {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.med-accordion-aulas__result {
+  margin-top: 16px;
+}
+
+.med-accordion-aulas__content-end {
+  display:flex;
+  align-items: end;
+  padding-bottom: 16px;
+}
+
+.med-accordion-aulas__button-small {
+  display: none;
+
+  @include breakpoint-down('xxs') {
+    display: block;
+  }
+}
+
+.med-accordion-aulas__button {
+  display: block;
+
+  @include breakpoint-down('xxs') {
+    display: none;
+  }
+}

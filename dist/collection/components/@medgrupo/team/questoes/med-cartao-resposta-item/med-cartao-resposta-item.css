@@ -149,8 +149,8 @@
 :host {
   --border-width: var(--med-border-width-hairline);
   --border-style: solid;
-  --border-color: hsl(var(--med-color-neutral-10), var(--med-opacity-level-light));
-  --color: hsl(var(--med-color-neutral-10), var(--med-opacity-level-semiopaque));
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-6));
   --spacing: var(--med-spacing-inset-nano);
   --background: transparent;
   --font-size: var(--med-font-size-sm);

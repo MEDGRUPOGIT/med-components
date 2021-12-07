@@ -15,10 +15,6 @@ export declare class BackButton implements ComponentInterface, ButtonInterface {
     */
   dsColor?: MedColor;
   /**
-    * Define a cor do componente.
-    */
-  solid: boolean;
-  /**
     * Define a variação de tamanho componente.
     */
   dsSize?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg';

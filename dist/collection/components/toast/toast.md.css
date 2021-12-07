@@ -434,7 +434,7 @@
   --start: 0;
   --end: 0;
   --border-radius: 0;
-  --background: var(--med-color-neutral-dark-40);
+  --background: hsl(var(--med-color-neutral-5));
   --spacing: var(--med-spacing-inset-sm);
   border-radius: var(--med-border-radius-nano);
 }
@@ -449,7 +449,7 @@
   font-size: var(--med-font-size-xs);
   font-weight: var(--med-font-weight-regular);
   line-height: var(--med-line-height-compressed);
-  color: var(--med-color-neutral-light-prime);
+  color: hsl(var(--med-color-neutral-10));
 }
 :host .toast-button-group-end,
 :host .toast-button-group-start {
@@ -464,7 +464,7 @@
   padding-bottom: 0;
   font-size: var(--med-font-size-xs);
   font-weight: var(--med-font-weight-bold);
-  color: var(--med-color-brand-primary-medium);
+  color: hsl(var(--med-color-brand-3));
 }
 :host .toast-button:hover,
 :host .toast-button-cancel:hover {

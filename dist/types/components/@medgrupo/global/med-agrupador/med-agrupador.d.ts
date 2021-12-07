@@ -5,12 +5,12 @@ export declare class MedAgrupador {
     */
   dsColor?: MedColor;
   /**
-   * Define o estado do componente.
-   */
+    * Define o estado do componente.
+    */
   collapsed: boolean;
   /**
-  * TODO
-  */
+    * Define o estado do componente programaticamente.
+    */
   toggle(event?: Event): Promise<void>;
   render(): any;
 }

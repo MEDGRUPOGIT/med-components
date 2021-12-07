@@ -88,7 +88,7 @@ const Accordion = class {
     const closeAnimationTime = 300;
     return createAnimation()
       .addElement(elements)
-      .afterStyles({ transform: 'none' })
+      .afterStyles({ transform: 'none', zIndex: '0' })
       .to('transform', `translateY(-${amountToShift}px)`)
       .duration(closeAnimationTime)
       .easing('cubic-bezier(0.32,0.72,0,1)');

@@ -151,7 +151,7 @@
 }
 
 :host(.monta-provas-plusminus) {
-  font-size: var(--med-font-size-xxl);
+  font-size: var(--med-font-size-lg);
   font-weight: var(--med-font-weight-bold);
   line-height: var(--med-line-height-compressed);
   color: var(--color);
@@ -172,8 +172,25 @@
   stroke: var(--color);
 }
 
+:host(.monta-provas-plusminus--disabled-minus) .monta-provas-plusminus__icon-minus,
+:host(.monta-provas-plusminus--disabled-plus) .monta-provas-plusminus__icon-plus {
+  cursor: initial;
+  pointer-events: none;
+  opacity: var(--med-opacity-level-half);
+}
+
+:host(.monta-provas-plusminus--disabled-both) .monta-provas-plusminus__icon-minus,
+:host(.monta-provas-plusminus--disabled-both) .monta-provas-plusminus__icon-plus {
+  cursor: initial;
+  pointer-events: none;
+  opacity: var(--med-opacity-level-half);
+}
+
 :host(.monta-provas-plusminus--xl) {
   font-size: var(--med-font-size-xxxl);
+}
+:host(.monta-provas-plusminus--xl) .med-icon {
+  font-size: 50px;
 }
 
 :host(.med-color) {

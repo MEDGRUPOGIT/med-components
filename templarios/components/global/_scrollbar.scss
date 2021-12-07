@@ -1,0 +1,24 @@
+@media (pointer: fine) {
+  .med-scrollbar {
+    scrollbar-width: thin;
+  }
+
+  .med-scrollbar::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+  }
+
+  .med-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--med-color-neutral-2));
+    border-radius: 10px;
+  }
+
+  .med-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--med-color-neutral-3));
+    border-radius: 10px;
+  }
+
+  .med-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--med-color-neutral-4));
+  }
+}

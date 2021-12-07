@@ -1,4 +1,4 @@
-import { Component, Element, Event, h, Host, Prop, State } from '@stencil/core';
+import { Component, Element, Event, h, Host, Prop, State, Watch } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 /**
   * @slot header - Define o conteúdo do header do componente.
@@ -17,17 +17,44 @@ export class MedAccordionItem {
       * Define se o componente irá ter background quando aberto.
       */
     this.background = false;
+    /**
+     * Permite que a abertura do accordion seja bloqueada pelo front.
+     */
+    this.canCollapse = true;
+    /**
+     * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
+     */
+    this.isOpened = false;
+    /**
+    * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
+    */
+    this.slotsToggle = [];
     this.isOpen = false;
     this.isTransitioning = false;
-    this.onClick = () => {
-      this.toggleOpen();
+    this.onClick = (slot) => {
+      if (!this.canCollapse) {
+        return;
+      }
+      if (!this.slotsToggle.length || this.slotsToggle.indexOf(slot) >= 0) {
+        this.toggleOpen();
+      }
     };
+  }
+  watchPropHandler(newValue) {
+    if (newValue !== this.isOpen) { }
+    this.toggleOpen();
+  }
+  componentDidLoad() {
+    if (this.isOpened) {
+      this.toggleOpen();
+    }
   }
   toggleOpen() {
     if (this.isTransitioning) {
       return;
     }
     this.isOpen = !this.isOpen;
+    this.opened.emit(this.isOpen);
     this.isTransitioning = true;
     this.toggle.emit({
       element: this.hostElement,
@@ -42,12 +69,13 @@ export class MedAccordionItem {
       },
       setClosed: () => {
         this.isOpen = false;
+        this.opened.emit(this.isOpen);
       },
     });
   }
   render() {
-    const { dsColor, noBorder, icon, isOpen, background } = this;
-    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    const { dsColor, noBorder, isOpen, background } = this;
+    return (h(Host, { class: generateMedColor(dsColor, {
         'med-accordion-item': true,
         'med-accordion-item--no-border': noBorder,
         'med-accordion-item--open': isOpen,
@@ -55,16 +83,14 @@ export class MedAccordionItem {
       }) },
       h("div", { class: "med-accordion-item__header", ref: (el) => this.header = el },
         h("div", { class: "med-accordion-item__header-container" },
-          icon === 'left' && h("div", { class: "med-accordion-item__icon-container med-accordion-item__icon-container--left", onClick: () => this.onClick() },
-            h("ion-icon", { class: "med-icon med-accordion-item__icon", name: "med-baixo" })),
-          h("div", { class: "med-accordion-item__heading", onClick: () => this.onClick() },
-            h("slot", { name: "header" }),
-            h("slot", { name: "auxiliar" })),
-          h("slot", { name: "button" }),
-          (!icon || icon === 'right') && h("div", { class: "med-accordion-item__icon-container med-accordion-item__icon-container--right", onClick: () => this.onClick() },
-            h("ion-icon", { class: "med-icon med-accordion-item__icon", name: "med-baixo" }))),
-        h("div", { class: "med-accordion-item__bar" },
-          h("slot", { name: "progress" }))),
+          h("div", { class: "header-container__start", onClick: () => this.onClick('start') },
+            h("slot", { name: "start" })),
+          h("div", { class: "header-container__middle", onClick: () => this.onClick('middle') },
+            h("slot", { name: "middle" })),
+          h("div", { class: "header-container__end", onClick: () => this.onClick('end') },
+            h("slot", { name: "end" }))),
+        h("div", null,
+          h("slot", { name: "auxiliar" }))),
       h("div", { class: "med-accordion-item__content", ref: (el) => this.content = el },
         h("slot", { name: "content" }))));
   }
@@ -151,6 +177,60 @@ export class MedAccordionItem {
       "attribute": "background",
       "reflect": true,
       "defaultValue": "false"
+    },
+    "canCollapse": {
+      "type": "boolean",
+      "mutable": true,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Permite que a abertura do accordion seja bloqueada pelo front."
+      },
+      "attribute": "can-collapse",
+      "reflect": true,
+      "defaultValue": "true"
+    },
+    "isOpened": {
+      "type": "boolean",
+      "mutable": true,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Permite que o front consiga definir quando o accordion vem aberto ou fechado."
+      },
+      "attribute": "is-opened",
+      "reflect": true,
+      "defaultValue": "false"
+    },
+    "slotsToggle": {
+      "type": "string",
+      "mutable": true,
+      "complexType": {
+        "original": "'start' | 'middle' | 'end' []",
+        "resolved": "\"end\"[] | \"middle\" | \"start\"",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Permite que o front consiga definir quando o accordion vem aberto ou fechado."
+      },
+      "attribute": "slots-toggle",
+      "reflect": true,
+      "defaultValue": "[]"
     }
   }; }
   static get states() { return {
@@ -164,7 +244,22 @@ export class MedAccordionItem {
       "composed": true,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Internal"
+      },
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      }
+    }, {
+      "method": "opened",
+      "name": "opened",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
       },
       "complexType": {
         "original": "any",
@@ -173,4 +268,8 @@ export class MedAccordionItem {
       }
     }]; }
   static get elementRef() { return "hostElement"; }
+  static get watchers() { return [{
+      "propName": "isOpened",
+      "methodName": "watchPropHandler"
+    }]; }
 }

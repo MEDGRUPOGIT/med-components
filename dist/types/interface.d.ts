@@ -31,6 +31,9 @@ export * from './components/toggle/toggle-interface';
 export * from './components/virtual-scroll/virtual-scroll-interface';
 
 // medgrupo
+export type Type = 'h48' | 'h32' | 'h24' | 'h20' | 'h20x' | 'p16' | 'p16b' | 'p16x' | 'p16xb' | 'p14' | 'p14b' | 'p14x' | 'p14xb' | 'p12' | 'p12b' | 'p12x' | 'p12xb' | 'p10' | 'p10b' | string;
+
+// medgrupo
 export * from './components/@medgrupo/team/questoes/med-alternativas/med-alternativas-interface';
 export * from './components/@medgrupo/global/med-image-zoom/med-image-zoom-interface';
 export * from './components/@medgrupo/global/med-chart-radial/med-chart-radial-interface';

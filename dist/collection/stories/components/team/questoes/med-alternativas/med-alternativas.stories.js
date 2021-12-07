@@ -23,13 +23,12 @@ const TemplateDefault = ({ alternativas, dsColor}) => {
   return html`
     <ion-app>
       <ion-content>
-        <div class="flex-center">
 
           <!-- component -->
           <med-alternativas id=${id} .dsColor=${dsColor} .dsSkinConfig=${dsSkinConfig}></med-alternativas>
           <!-- component -->
 
-        <div>
+
       </ion-content>
     </ion-app>
     `
@@ -52,7 +51,7 @@ Alternativas.argTypes = {
         {
           Alternativa: 'A',
           Enunciado: 'Enunciado B Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.',
-          Imagem: 'https://via.placeholder.com/500',
+          Imagem: '',
           Porcentagem: 0.55,
           Riscada: true,
         },
@@ -65,7 +64,7 @@ Alternativas.argTypes = {
         {
           Alternativa: 'C',
           Enunciado: 'Enunciado C Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.',
-          Imagem: 'https://via.placeholder.com/500',
+          Imagem: '',
           Porcentagem: 0.3
         },
         {
@@ -77,7 +76,7 @@ Alternativas.argTypes = {
         {
           Alternativa: 'E',
           Enunciado: 'Enunciado E Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.',
-          Imagem: 'https://via.placeholder.com/500',
+          Imagem: '',
           Porcentagem: 0
         },
       ],

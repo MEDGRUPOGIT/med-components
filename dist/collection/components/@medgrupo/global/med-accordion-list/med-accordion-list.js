@@ -2,7 +2,7 @@ import { Component, Element, h, Host, Listen, Prop } from '@stencil/core';
 import { createAnimation } from '../../../../utils/animation/animation';
 import { generateMedColor } from '../../../../utils/med-theme';
 /**
-  * @slot -
+  * @slot - Slot default destinado ao componente `med-accordion-item`
   */
 export class Accordion {
   constructor() {
@@ -86,7 +86,7 @@ export class Accordion {
     const closeAnimationTime = 300;
     return createAnimation()
       .addElement(elements)
-      .afterStyles({ transform: 'none' })
+      .afterStyles({ transform: 'none', zIndex: '0' })
       .to('transform', `translateY(-${amountToShift}px)`)
       .duration(closeAnimationTime)
       .easing('cubic-bezier(0.32,0.72,0,1)');

@@ -36,14 +36,14 @@ const Template = ({ dsColor, dsName, iconLeft, iconRight, slot }) => {
   `
 }
 
-export const Default = Template.bind({});
-Default.parameters = {
+export const Overview = Template.bind({});
+Overview.parameters = {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=1981%3A4566',
   },
 }
-Default.argTypes = {
+Overview.argTypes = {
   dsColor: {
     options: MedColor,
     control: { type: 'select'},
@@ -65,7 +65,7 @@ Default.argTypes = {
   iconLeft: {
     options: MedIcons,
     control: { type: 'select'},
-    defaultValue: 'med-arrow-left-circle',
+    defaultValue: 'med-esquerda',
     description: '**Atributo utilizado apenas no storybook. Não é um atributo do componente!.**',
     table: {
       type:  { summary: ['string'] },
@@ -75,7 +75,7 @@ Default.argTypes = {
   iconRight: {
     options: MedIcons,
     control: { type: 'select'},
-    defaultValue: 'med-arrow-right-circle',
+    defaultValue: 'med-direita',
     description: '**Atributo utilizado apenas no storybook. Não é um atributo do componente!.**',
     table: {
       type:  { summary: ['string'] },

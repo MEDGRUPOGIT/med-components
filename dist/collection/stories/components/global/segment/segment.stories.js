@@ -56,7 +56,7 @@ segment.argTypes = {
     description: "Define a variação do componente.",
     table: {
       type:  { summary: 'default | undefined' },
-      defaultValue: { summary: 'undefined' },
+      defaultValue: { summary: 'default' },
     },
   },
 };

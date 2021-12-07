@@ -433,3 +433,10 @@
 .action-sheet-selected {
   font-weight: bold;
 }
+
+:host {
+  --background: hsl(var(--med-color-neutral-10));
+}
+:host .action-sheet-selected {
+  color: hsl(var(--med-color-brand-4));
+}

@@ -10,29 +10,53 @@ export default {
 const Template = ({dsColor, background, icon, noBorder}) => {
   return html`
     <style>
-      h4, p {
-        margin: 0;
-        color: hsl(var(--med-color-neutral-10));
+
+      .med-accordion-item__middle {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
-      .med-accordion__content {
-        padding: var(--med-spacing-inset-sm);
+      .med-accordion-item__end {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
       }
+
     </style>
 
     <ion-app>
       <ion-content>
 
         <!-- component -->
+
         <med-accordion-list single-open="false">
-          <med-accordion-item .dsColor=${dsColor} .background=${background} .icon=${icon} ?no-border=${noBorder}>
-            <div slot="header">
-              <h4>Header</h4>
+
+          <med-accordion-item slots-toggle=[middle,end]" .dsColor=${dsColor} .background=${background} .icon=${icon} ?no-border=${noBorder}>
+
+            <ion-icon slot="start" name="med-video" class="med-icon med-accordion-aulas__start"></ion-icon>
+
+            <div class="med-accordion-item__middle" slot="middle">
+              <med-caption ds-size="xxs" ds-color="neutral-5">
+                <h3>84% concluído</h3>
+              </med-caption>
             </div>
+
+            <div class="med-accordion-item__end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-color="aula" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
+            </div>
+
+
             <div slot="content" class="med-accordion__content">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, nisi quos saepe similique eius illum voluptatibus unde cupiditate sit fuga ea, neque in odit, iste non delectus! Mollitia, ipsam natus delectus maiores veniam quaerat iusto dignissimos beatae cum corporis eaque quod nostrum inventore possimus voluptates dolore velit, praesentium minus adipisci ad enim nihil impedit in rerum. Aut, distinctio velit ab quis iusto dolorum voluptatum reiciendis neque repellendus culpa quo exercitationem corrupti molestiae maxime ut ratione optio. Commodi, vitae obcaecati ullam quis minus consequuntur tempora eum corporis doloribus mollitia voluptatem. Necessitatibus dolor vitae id quia facilis tempore explicabo aliquam quisquam dolores.</p>
+
             </div>
+
           </med-accordion-item>
+
         </med-accordion-list>
         <!-- component -->
 

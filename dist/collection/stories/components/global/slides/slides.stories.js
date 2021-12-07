@@ -30,7 +30,7 @@ const TemplateDefault = ({color}) => {
           </ion-slide>
 
           <ion-slide>
-            <ion-button fill="clear">Continue <ion-icon class="med-icon" slot="end" name="arrow-forward"></ion-icon></ion-button>
+            <ion-button >Continue <ion-icon class="med-icon" slot="end" name="med-direita"></ion-icon></ion-button>
           </ion-slide>
 
         </ion-slides>

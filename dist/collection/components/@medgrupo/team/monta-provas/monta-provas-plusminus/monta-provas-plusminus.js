@@ -8,14 +8,15 @@ export class MontaProvasPlusminus {
     };
   }
   render() {
-    const { dsSize, dsColor } = this;
+    const { dsSize, dsColor, disabled } = this;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'monta-provas-plusminus': true,
+        [`monta-provas-plusminus--disabled-${disabled}`]: disabled !== undefined,
         [`monta-provas-plusminus--${dsSize}`]: dsSize !== undefined,
       }) },
-      h("ion-icon", { class: "med-icon med-icon--lg monta-provas-plusminus__icon-minus", name: "med-menos-circulo", onClick: () => this.onClick(PlusMinusStatus.MINUS) }),
+      h("ion-icon", { class: "med-icon monta-provas-plusminus__icon-minus", name: "med-menos-circulo", onClick: () => this.onClick(PlusMinusStatus.MINUS) }),
       h("slot", null),
-      h("ion-icon", { class: "med-icon med-icon--lg monta-provas-plusminus__icon-plus", name: "med-mais-circulo", onClick: () => this.onClick(PlusMinusStatus.PLUS) })));
+      h("ion-icon", { class: "med-icon monta-provas-plusminus__icon-plus", name: "med-mais-circulo", onClick: () => this.onClick(PlusMinusStatus.PLUS) })));
   }
   static get is() { return "monta-provas-plusminus"; }
   static get encapsulation() { return "shadow"; }
@@ -63,7 +64,24 @@ export class MontaProvasPlusminus {
         "text": "TODO"
       },
       "attribute": "ds-size",
-      "reflect": false
+      "reflect": true
+    },
+    "disabled": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'minus' | 'plus' | 'both'",
+        "resolved": "\"both\" | \"minus\" | \"plus\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "TODO"
+      },
+      "attribute": "disabled",
+      "reflect": true
     }
   }; }
   static get events() { return [{

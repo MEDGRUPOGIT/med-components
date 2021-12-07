@@ -581,11 +581,11 @@ ion-ripple-effect {
   --bg-hover: hsl(var(--med-color-brand-1));
   --bg-hover-opacity: 1;
   --border-color-hover: transparent;
-  --color-hover: hsl(var(--med-color-contrast-fixed));
+  --color-hover: hsl(var(--med-color-neutral-10));
   --bg-focused: hsl(var(--med-color-brand-1));
   --bg-focused-opacity: 1;
   --border-color-focused: transparent;
-  --color-focused: hsl(var(--med-color-contrast-fixed));
+  --color-focused: hsl(var(--med-color-neutral-10));
   --bg-activated: transparent;
   --bg-activated-opacity: 0;
   --border-color-activated: transparent;

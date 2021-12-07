@@ -155,7 +155,7 @@
 
 :host(.med-item-aulas) .med-item-aulas__top {
   display: flex;
-  padding: var(--spacing-inset-sm);
+  padding: var(--med-spacing-inset-sm);
 }
 :host(.med-item-aulas) .med-item-aulas__top ion-icon {
   min-width: 1em;
@@ -163,7 +163,7 @@
 
 :host(.med-item-aulas) .med-item-aulas__info {
   width: 100%;
-  margin: 0 var(--spacing-inset-sm);
+  margin: 0 var(--med-spacing-inset-sm);
 }
 
 :host(.med-item-aulas) .med-item-aulas__professor,
@@ -182,16 +182,16 @@
 :host(.med-item-aulas) .med-item-aulas__professor {
   font-size: var(--med-font-size-xxxs);
   font-weight: var(--med-font-weight-regular);
-  line-height: var(--line-height-default);
+  line-height: var(--med-line-height-default);
   color: hsl(var(--med-color-neutral-7));
-  opacity: var(--opacity-level-semiopaque);
+  opacity: var(--med-opacity-level-semiopaque);
 }
 
 :host(.med-item-aulas) .med-item-aulas__total {
   font-size: var(--med-font-size-nano);
   font-weight: var(--med-font-weight-regular);
-  line-height: var(--line-height-default);
+  line-height: var(--med-line-height-default);
   color: hsl(var(--med-color-neutral-7));
-  opacity: var(--opacity-level-semiopaque);
-  margin-bottom: var(--spacing-stack-base);
+  opacity: var(--med-pacity-level-semiopaque);
+  margin-bottom: var(--med-spacing-stack-base);
 }

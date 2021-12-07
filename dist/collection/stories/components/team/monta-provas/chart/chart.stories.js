@@ -14,116 +14,399 @@ const TemplateDefault = ({valores}) => {
   }, 1000);
 
   return html`
-    <style>
-      .med-accordion-header {
-        display: flex;
-        align-items: center;
-        width: 100%;
-      }
-
-      .med-accordion-header__heading {
-        font-size: var(--med-font-size-xs);
-        font-weight: var(--med-font-weight-semibold);
-        line-height: var(--med-line-height-default);
-        color: hsl(var(--med-color-neutral-10));
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        text-align: center;
-      }
-
-      .monta-provas-chart {
-        background: hsl(var(--med-color-neutral-2));
-        padding: 0 var(--med-spacing-stretch-md);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
-      .monta-provas-chart-content {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        line-height: var(--med-line-height-compressed);
-        text-align: center;
-      }
-
-      .med-context-menu__list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .med-context-menu__item {
-        padding-right: var(--med-spacing-inline-xs);
-        margin-bottom: var(--med-spacing-stack-base);
-        font-size: var(--med-font-size-xs);
-        line-height: var(--med-line-height-compressed);
-        color: hsl(var(--med-color-neutral-3));
-        display: flex;
-        align-items: center;
-        transition: color 300ms ease-out;
-        cursor: pointer;
-      }
-
-      .med-context-menu__item:hover {
-        color: hsl(var(--med-color-neutral-1));
-      }
-
-      .med-context-menu__icon {
-        padding-right: var(--med-spacing-inline-xxxs);
-        stroke: hsl(var(--med-color-neutral-3));
-      }
-
-      .med-context-menu__info {
-        padding: 0;
-        margin: 0;
-        font-size: var(--med-font-size-xs);
-        line-height: var(--med-line-height-compressed);
-        color: hsl(var(--med-color-neutral-5));
-        padding: var(--med-spacing-inset-xs);
-        text-align: center;
-      }
-    </style>
 
     <ion-app>
       <ion-content>
 
         <!-- component -->
-        <med-accordion-list accordion-list single-open="false">
-          <med-accordion-item icon="left">
-            <div class="med-accordion-header" slot="header">
-              <h4 class="med-accordion-header__heading">Nome da Prova</h4>
+        <med-accordion-list accordion-list single-open="true">
+          <med-accordion-item>
+
+            <med-caption class="monta-provas-accordion__text-header" slot="start">
+              <h3 class="med-clamp">Nome da prova</h3>
+            </med-caption>
+
+            <div class="monta-provas__header-end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
             </div>
 
-            <med-context-menu class="med-context-menu" slot="button">
-              <ul class="med-context-menu__list">
-                <li class="med-context-menu__item">
-                  <ion-icon class="med-icon med-context-menu__icon" name="med-filtro"></ion-icon>
-                  <span>Ver filtro selecionado</span>
-                </li>
-                <li class="med-context-menu__item">
-                  <ion-icon class="med-icon med-context-menu__icon" name="med-editar"></ion-icon>
-                  <span>Renomear Prova</span>
-                </li>
-                <li class="med-context-menu__item">
-                  <ion-icon class="med-icon med-context-menu__icon" name="med-lixeira"></ion-icon>
-                  <span>Excluir Prova</span>
-                </li>
-              </ul>
-              <p class="med-context-menu__info">Criada em 30/12/2020</p>
-            </med-context-menu>
+            <div class="monta-provas-content" slot="content">
 
-            <div class="monta-provas-chart" slot="content">
-              <med-chart-radial >
-                <med-chart-radial-content class="monta-provas-chart-content" total="999999" ></med-chart-radial-content>
-              </med-chart-radial>
+              <div class="monta-provas-content__chart">
+                <med-chart-radial>
+                  <med-chart-radial-content class="monta-provas-content__chart-data" total="999999" ></med-chart-radial-content>
+                </med-chart-radial>
 
-              <med-chart-radial-label class="monta-provas-chart__label" ></med-chart-radial-label>
+                <med-chart-radial-label class="monta-provas-content__chart-label" ></med-chart-radial-label>
+              </div>
+
+              <div class="monta-provas-content__button">
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-filtro"></ion-icon>
+                </ion-button>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-duplicar"></ion-icon>
+                </ion-button>
+                <med-tooltip from-stencil class="med-tooltip monta-provas-content__button-icon-duplicar" placement="top" content="Tooltip Simples">
+                  <ion-icon slot="icon" class="med-icon monta-provas-content__button-tooltip" name="med-duplicar"></ion-icon>
+                </med-tooltip>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-lixeira"></ion-icon>
+                </ion-button>
+                <ion-button ds-size="xxs" ds-name="primary" class="monta-provas-content__button-realizar">
+                  Realizar Prova
+                </ion-button>
+              </div>
+
             </div>
+
+          </med-accordion-item>
+
+          <med-accordion-item>
+
+            <med-caption class="monta-provas-accordion__text-header" slot="start">
+              <h3 class="med-clamp">Nome da prova</h3>
+            </med-caption>
+
+            <div class="monta-provas__header-end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
+            </div>
+
+            <div class="monta-provas-content" slot="content">
+
+              <div class="monta-provas-content__chart">
+                <med-chart-radial>
+                  <med-chart-radial-content class="monta-provas-content__chart-data" total="999999" ></med-chart-radial-content>
+                </med-chart-radial>
+
+                <med-chart-radial-label class="monta-provas-content__chart-label" ></med-chart-radial-label>
+              </div>
+
+              <div class="monta-provas-content__button">
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-filtro"></ion-icon>
+                </ion-button>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-duplicar"></ion-icon>
+                </ion-button>
+                <med-tooltip from-stencil class="med-tooltip monta-provas-content__button-icon-duplicar" placement="top" content="Tooltip Simples">
+                  <ion-icon slot="icon" class="med-icon monta-provas-content__button-tooltip" name="med-duplicar"></ion-icon>
+                </med-tooltip>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-lixeira"></ion-icon>
+                </ion-button>
+                <ion-button ds-size="xxs" ds-name="primary" class="monta-provas-content__button-realizar">
+                  Realizar Prova
+                </ion-button>
+              </div>
+
+            </div>
+
+          </med-accordion-item>
+          <med-accordion-item>
+
+            <med-caption class="monta-provas-accordion__text-header" slot="start">
+              <h3 class="med-clamp">Nome da prova</h3>
+            </med-caption>
+
+            <div class="monta-provas__header-end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
+            </div>
+
+            <div class="monta-provas-content" slot="content">
+
+              <div class="monta-provas-content__chart">
+                <med-chart-radial>
+                  <med-chart-radial-content class="monta-provas-content__chart-data" total="999999" ></med-chart-radial-content>
+                </med-chart-radial>
+
+                <med-chart-radial-label class="monta-provas-content__chart-label" ></med-chart-radial-label>
+              </div>
+
+              <div class="monta-provas-content__button">
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-filtro"></ion-icon>
+                </ion-button>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-duplicar"></ion-icon>
+                </ion-button>
+                <med-tooltip from-stencil class="med-tooltip monta-provas-content__button-icon-duplicar" placement="top" content="Tooltip Simples">
+                  <ion-icon slot="icon" class="med-icon monta-provas-content__button-tooltip" name="med-duplicar"></ion-icon>
+                </med-tooltip>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-lixeira"></ion-icon>
+                </ion-button>
+                <ion-button ds-size="xxs" ds-name="primary" class="monta-provas-content__button-realizar">
+                  Realizar Prova
+                </ion-button>
+              </div>
+
+            </div>
+
+          </med-accordion-item>
+          <med-accordion-item>
+
+            <med-caption class="monta-provas-accordion__text-header" slot="start">
+              <h3 class="med-clamp">Nome da prova</h3>
+            </med-caption>
+
+            <div class="monta-provas__header-end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
+            </div>
+
+            <div class="monta-provas-content" slot="content">
+
+              <div class="monta-provas-content__chart">
+                <med-chart-radial>
+                  <med-chart-radial-content class="monta-provas-content__chart-data" total="999999" ></med-chart-radial-content>
+                </med-chart-radial>
+
+                <med-chart-radial-label class="monta-provas-content__chart-label" ></med-chart-radial-label>
+              </div>
+
+              <div class="monta-provas-content__button">
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-filtro"></ion-icon>
+                </ion-button>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-duplicar"></ion-icon>
+                </ion-button>
+                <med-tooltip from-stencil class="med-tooltip monta-provas-content__button-icon-duplicar" placement="top" content="Tooltip Simples">
+                  <ion-icon slot="icon" class="med-icon monta-provas-content__button-tooltip" name="med-duplicar"></ion-icon>
+                </med-tooltip>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-lixeira"></ion-icon>
+                </ion-button>
+                <ion-button ds-size="xxs" ds-name="primary" class="monta-provas-content__button-realizar">
+                  Realizar Prova
+                </ion-button>
+              </div>
+
+            </div>
+
+          </med-accordion-item>
+          <med-accordion-item>
+
+            <med-caption class="monta-provas-accordion__text-header" slot="start">
+              <h3 class="med-clamp">Nome da prova</h3>
+            </med-caption>
+
+            <div class="monta-provas__header-end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
+            </div>
+
+            <div class="monta-provas-content" slot="content">
+
+              <div class="monta-provas-content__chart">
+                <med-chart-radial>
+                  <med-chart-radial-content class="monta-provas-content__chart-data" total="999999" ></med-chart-radial-content>
+                </med-chart-radial>
+
+                <med-chart-radial-label class="monta-provas-content__chart-label" ></med-chart-radial-label>
+              </div>
+
+              <div class="monta-provas-content__button">
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-filtro"></ion-icon>
+                </ion-button>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-duplicar"></ion-icon>
+                </ion-button>
+                <med-tooltip from-stencil class="med-tooltip monta-provas-content__button-icon-duplicar" placement="top" content="Tooltip Simples">
+                  <ion-icon slot="icon" class="med-icon monta-provas-content__button-tooltip" name="med-duplicar"></ion-icon>
+                </med-tooltip>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-lixeira"></ion-icon>
+                </ion-button>
+                <ion-button ds-size="xxs" ds-name="primary" class="monta-provas-content__button-realizar">
+                  Realizar Prova
+                </ion-button>
+              </div>
+
+            </div>
+
+          </med-accordion-item>
+          <med-accordion-item>
+
+            <med-caption class="monta-provas-accordion__text-header" slot="start">
+              <h3 class="med-clamp">Nome da prova</h3>
+            </med-caption>
+
+            <div class="monta-provas__header-end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
+            </div>
+
+            <div class="monta-provas-content" slot="content">
+
+              <div class="monta-provas-content__chart">
+                <med-chart-radial>
+                  <med-chart-radial-content class="monta-provas-content__chart-data" total="999999" ></med-chart-radial-content>
+                </med-chart-radial>
+
+                <med-chart-radial-label class="monta-provas-content__chart-label" ></med-chart-radial-label>
+              </div>
+
+              <div class="monta-provas-content__button">
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-filtro"></ion-icon>
+                </ion-button>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-duplicar"></ion-icon>
+                </ion-button>
+                <med-tooltip from-stencil class="med-tooltip monta-provas-content__button-icon-duplicar" placement="top" content="Tooltip Simples">
+                  <ion-icon slot="icon" class="med-icon monta-provas-content__button-tooltip" name="med-duplicar"></ion-icon>
+                </med-tooltip>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-lixeira"></ion-icon>
+                </ion-button>
+                <ion-button ds-size="xxs" ds-name="primary" class="monta-provas-content__button-realizar">
+                  Realizar Prova
+                </ion-button>
+              </div>
+
+            </div>
+
+          </med-accordion-item>
+          <med-accordion-item>
+
+            <med-caption class="monta-provas-accordion__text-header" slot="start">
+              <h3 class="med-clamp">Nome da prova</h3>
+            </med-caption>
+
+            <div class="monta-provas__header-end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
+            </div>
+
+            <div class="monta-provas-content" slot="content">
+
+              <div class="monta-provas-content__chart">
+                <med-chart-radial>
+                  <med-chart-radial-content class="monta-provas-content__chart-data" total="999999" ></med-chart-radial-content>
+                </med-chart-radial>
+
+                <med-chart-radial-label class="monta-provas-content__chart-label" ></med-chart-radial-label>
+              </div>
+
+              <div class="monta-provas-content__button">
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-filtro"></ion-icon>
+                </ion-button>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-duplicar"></ion-icon>
+                </ion-button>
+                <med-tooltip from-stencil class="med-tooltip monta-provas-content__button-icon-duplicar" placement="top" content="Tooltip Simples">
+                  <ion-icon slot="icon" class="med-icon monta-provas-content__button-tooltip" name="med-duplicar"></ion-icon>
+                </med-tooltip>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-lixeira"></ion-icon>
+                </ion-button>
+                <ion-button ds-size="xxs" ds-name="primary" class="monta-provas-content__button-realizar">
+                  Realizar Prova
+                </ion-button>
+              </div>
+
+            </div>
+
+          </med-accordion-item>
+          <med-accordion-item>
+
+            <med-caption class="monta-provas-accordion__text-header" slot="start">
+              <h3 class="med-clamp">Nome da prova</h3>
+            </med-caption>
+
+            <div class="monta-provas__header-end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
+            </div>
+
+            <div class="monta-provas-content" slot="content">
+
+              <div class="monta-provas-content__chart">
+                <med-chart-radial>
+                  <med-chart-radial-content class="monta-provas-content__chart-data" total="999999" ></med-chart-radial-content>
+                </med-chart-radial>
+
+                <med-chart-radial-label class="monta-provas-content__chart-label" ></med-chart-radial-label>
+              </div>
+
+              <div class="monta-provas-content__button">
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-filtro"></ion-icon>
+                </ion-button>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-duplicar"></ion-icon>
+                </ion-button>
+                <med-tooltip from-stencil class="med-tooltip monta-provas-content__button-icon-duplicar" placement="top" content="Tooltip Simples">
+                  <ion-icon slot="icon" class="med-icon monta-provas-content__button-tooltip" name="med-duplicar"></ion-icon>
+                </med-tooltip>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-lixeira"></ion-icon>
+                </ion-button>
+                <ion-button ds-size="xxs" ds-name="primary" class="monta-provas-content__button-realizar">
+                  Realizar Prova
+                </ion-button>
+              </div>
+
+            </div>
+
+          </med-accordion-item>
+          <med-accordion-item>
+
+            <med-caption class="monta-provas-accordion__text-header" slot="start">
+              <h3 class="med-clamp">Nome da prova</h3>
+            </med-caption>
+
+            <div class="monta-provas__header-end" slot="end">
+              <ion-button class="med-list-item-accordion__button" ds-name="tertiary" ds-size="xs">
+                <ion-icon slot="icon-only" class="med-icon med-rotate" name="med-cima"></ion-icon>
+              </ion-button>
+            </div>
+
+            <div class="monta-provas-content" slot="content">
+
+              <div class="monta-provas-content__chart">
+                <med-chart-radial>
+                  <med-chart-radial-content class="monta-provas-content__chart-data" total="999999" ></med-chart-radial-content>
+                </med-chart-radial>
+
+                <med-chart-radial-label class="monta-provas-content__chart-label" ></med-chart-radial-label>
+              </div>
+
+              <div class="monta-provas-content__button">
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-filtro"></ion-icon>
+                </ion-button>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-duplicar"></ion-icon>
+                </ion-button>
+                <med-tooltip from-stencil class="med-tooltip monta-provas-content__button-icon-duplicar" placement="top" content="Tooltip Simples">
+                  <ion-icon slot="icon" class="med-icon monta-provas-content__button-tooltip" name="med-duplicar"></ion-icon>
+                </med-tooltip>
+                <ion-button ds-name="tertiary" class="monta-provas-content__button-icon">
+                  <ion-icon slot="icon-only" class="med-icon" name="med-lixeira"></ion-icon>
+                </ion-button>
+                <ion-button ds-size="xxs" ds-name="primary" class="monta-provas-content__button-realizar">
+                  Realizar Prova
+                </ion-button>
+              </div>
+
+            </div>
+
           </med-accordion-item>
         </med-accordion-list>
         <!-- component -->

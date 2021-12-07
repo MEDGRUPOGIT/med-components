@@ -20,41 +20,40 @@ const TemplateProgress = ({ platform }) => {
     <med-header>
 
       <med-navbar slot="navbar">
-        <ion-button ds-name="icon-label" slot="left">
-          <ion-icon class="med-icon" name="med-chevron-left"></ion-icon>
-          voltar
+        <ion-button ds-name="tertiary" slot="left">
+          <ion-icon slot="icon-only" class="med-icon" name="med-esquerda"></ion-icon>
         </ion-button>
 
         <span slot="title">header com título muito grande</span>
         <span slot="subtitle">subheader</span>
 
-        <ion-button ds-name="icon-only" slot="right">
-          <ion-icon class="med-icon" slot="icon-only" name="med-star-filled"></ion-icon>
+        <ion-button ds-name="tertiary" slot="right">
+          <ion-icon slot="icon-only" class="med-icon" name="med-star-filled"></ion-icon>
         </ion-button>
       </med-navbar>
 
       <med-toolbar slot="toolbar">
-        <ion-button ds-name="icon-only" slot="start">
-          <ion-icon class="med-icon" slot="icon-only" name="med-arrow-left-circle"></ion-icon>
+        <ion-button ds-name="tertiary" slot="start">
+          <ion-icon class="med-icon" slot="icon-only" name="med-setaesquerda"></ion-icon>
         </ion-button>
         <ul>
           <li>
-            <ion-button ds-name="icon-only">
-              <ion-icon class="med-icon" slot="icon-only" name="med-star-outline"></ion-icon>
+            <ion-button ds-name="tertiary">
+              <ion-icon class="med-icon" slot="icon-only" name="med-duvidas"></ion-icon>
             </ion-button>
-            <ion-button ds-name="icon-only">
-              <ion-icon class="med-icon" slot="icon-only" name="med-eye-show-line"></ion-icon>
+            <ion-button ds-name="tertiary">
+              <ion-icon class="med-icon" slot="icon-only" name="med-email"></ion-icon>
             </ion-button>
-            <ion-button ds-name="icon-only">
-              <ion-icon class="med-icon" slot="icon-only" name="med-notes"></ion-icon>
+            <ion-button ds-name="tertiary">
+              <ion-icon class="med-icon" slot="icon-only" name="med-enviar"></ion-icon>
             </ion-button>
-            <ion-button ds-name="icon-only">
-              <ion-icon class="med-icon" slot="icon-only" name="med-font-size"></ion-icon>
+            <ion-button ds-name="tertiary">
+              <ion-icon class="med-icon" slot="icon-only" name="med-fonte"></ion-icon>
             </ion-button>
           </li>
         </ul>
-        <ion-button ds-name="icon-only" slot="end">
-          <ion-icon class="med-icon" slot="icon-only" name="med-arrow-right-circle"></ion-icon>
+        <ion-button ds-name="tertiary" slot="end">
+          <ion-icon class="med-icon" slot="icon-only" name="med-setadireita"></ion-icon>
         </ion-button>
       </med-toolbar>
 

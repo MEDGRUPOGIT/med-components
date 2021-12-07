@@ -4,6 +4,7 @@ import { findItemLabel, getAriaLabel, renderHiddenInput } from '../../utils/help
 import { actionSheetController, alertController, popoverController } from '../../utils/overlays';
 import { hostContext } from '../../utils/theme';
 import { watchForOptions } from '../../utils/watch-options';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -296,7 +297,7 @@ export class Select {
     });
   }
   render() {
-    const { disabled, el, inputId, isExpanded, name, placeholder, value } = this;
+    const { disabled, el, inputId, isExpanded, name, placeholder, value, dsColor } = this;
     const mode = getIonMode(this);
     const { labelText, labelId } = getAriaLabel(el, inputId);
     renderHiddenInput(true, el, name, parseValue(value), disabled);
@@ -319,29 +320,51 @@ export class Select {
     const displayLabel = labelText !== undefined
       ? (selectText !== '' ? `${selectText}, ${labelText}` : labelText)
       : selectText;
-    return (h(Host, { onClick: this.onClick, role: "button", "aria-haspopup": "listbox", "aria-disabled": disabled ? 'true' : null, "aria-label": displayLabel, class: {
+    return (h(Host, { onClick: this.onClick, role: "button", "aria-haspopup": "listbox", "aria-disabled": disabled ? 'true' : null, "aria-label": displayLabel, class: generateMedColor(dsColor, {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'select-disabled': disabled,
-        'select-expanded': isExpanded
-      } },
+        'select-expanded': isExpanded,
+        'med-select': true
+      }) },
       h("div", { "aria-hidden": "true", class: selectTextClasses, part: textPart }, selectText),
-      h("div", { class: "select-icon", role: "presentation", part: "icon" },
-        h("div", { class: "select-icon-inner" })),
+      h("ion-icon", { class: "med-icon med-select-icon", name: "med-baixo" }),
       h("label", { id: labelId }, displayLabel),
       h("button", { type: "button", disabled: disabled, id: inputId, "aria-labelledby": labelId, "aria-haspopup": "listbox", "aria-expanded": `${isExpanded}`, onFocus: this.onFocus, onBlur: this.onBlur, ref: (focusEl => this.focusEl = focusEl) })));
   }
   static get is() { return "ion-select"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["select.ios.scss"],
+    "ios": ["select.md.scss"],
     "md": ["select.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["select.ios.css"],
+    "ios": ["select.md.css"],
     "md": ["select.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
     "disabled": {
       "type": "boolean",
       "mutable": false,
@@ -501,7 +524,7 @@ export class Select {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](../alert), the\n[ion-action-sheet docs](../action-sheet) and the\n[ion-popover docs](../popover) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface."
+        "text": "Any additional options that the `alert`, `action-sheet` or `popover` interface\r\ncan take. See the [ion-alert docs](../alert), the\r\n[ion-action-sheet docs](../action-sheet) and the\r\n[ion-popover docs](../popover) for the\r\ncreate options for each interface.\r\n\r\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface."
       },
       "attribute": "interface-options",
       "reflect": false,
@@ -661,7 +684,7 @@ export class Select {
         "return": "Promise<any>"
       },
       "docs": {
-        "text": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
+        "text": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\r\ndepending on the `interface` property on the `ion-select`.",
         "tags": [{
             "name": "param",
             "text": "event The user interface event that called the open."

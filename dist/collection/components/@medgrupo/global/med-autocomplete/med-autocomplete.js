@@ -2,7 +2,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 export class MedAutocomplete {
   constructor() {
     /**
-     * TODO
+     * A lista de items a ser renderizada.
      */
     this.list = false;
   }
@@ -44,7 +44,7 @@ export class MedAutocomplete {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "A lista de items a ser renderizada."
       },
       "attribute": "list",
       "reflect": false,

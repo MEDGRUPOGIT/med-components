@@ -1,0 +1,49 @@
+@import "../../../templarios/abstracts";
+
+// ////////////////////
+// Accordion usado na lista de professores
+// Arquivo : accordion-lista.stories.ts
+// ////////////////////
+
+.med-accordion-lista__start {
+  margin-right: 16px;
+  stroke: hsl(var(--med-color-neutral-10));
+}
+
+.med-accordion-lista__middle {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.med-accordion-lista__end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.med-accordion-lista__icon {
+  stroke: hsl(var(--med-color-neutral-10));
+}
+
+.med-accordion-lista__thumbnail, .med-accordion-lista__start {
+  margin-right: 16px;
+}
+
+.med-accordion-item--open .med-rotate {
+  --rotate: rotate(180deg);
+}
+
+.med-accordion-lista__slot-end {
+  margin-left: auto;
+}
+
+.med-accordion-lista__item:not(:last-of-type) {
+  border-bottom: 1px solid hsl(var(--med-color-aula-3));
+}
+
+.med-rotate {
+  transition: transform 300ms ease;
+}

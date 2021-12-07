@@ -14,6 +14,10 @@ export class MedListItemAccordion {
      * TODO
      */
     this.collapsed = true;
+    /**
+     * If `true`, the user cannot interact with the button.
+     */
+    this.disabled = false;
   }
   /**
    * TODO
@@ -23,9 +27,10 @@ export class MedListItemAccordion {
     this.collapsed = !this.collapsed;
   }
   render() {
-    const { dsColor, titulo, label, selected, dsSize, border, margin, collapsed } = this;
+    const { dsColor, titulo, label, selected, dsSize, border, margin, collapsed, disabled } = this;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-list-item-accordion': true,
+        'med-list-item-accordion--disabled': disabled,
         'med-list-item-accordion--selected': selected,
         'med-list-item-accordion--border-radius': border,
         [`med-list-item-accordion--${dsSize}`]: dsSize !== undefined,
@@ -194,6 +199,24 @@ export class MedListItemAccordion {
       "attribute": "collapsed",
       "reflect": true,
       "defaultValue": "true"
+    },
+    "disabled": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "If `true`, the user cannot interact with the button."
+      },
+      "attribute": "disabled",
+      "reflect": true,
+      "defaultValue": "false"
     }
   }; }
   static get methods() { return {

@@ -7,7 +7,7 @@ export default {
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({dsColor}) => {
+const TemplateDefault = ({dsColor, disabled}) => {
 
   return html`
     <style>
@@ -18,7 +18,7 @@ const TemplateDefault = ({dsColor}) => {
         <div class="flex-center">
 
         <!-- component -->
-        <monta-provas-plusminus .dsColor=${dsColor} ds-size="xl">500</monta-provas-plusminus>
+        <monta-provas-plusminus .dsColor=${dsColor} .disabled=${disabled} ds-size="xl">500</monta-provas-plusminus>
         <!-- component -->
 
         </div>
@@ -44,6 +44,16 @@ PlusMinus.argTypes = {
     description: "Define a cor do componente.",
     table: {
       type:  { summary: 'MedColor' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+  disabled: {
+    defaultValue: 'none',
+    options: [undefined, 'minus', 'plus', 'both'],
+    control: { type: 'radio'},
+    description: "Define a variação de desabilitado do componente.",
+    table: {
+      type:  { summary: ['minus | plus | both'] },
       defaultValue: { summary: 'undefined' },
     },
   },

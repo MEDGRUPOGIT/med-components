@@ -63,36 +63,6 @@ Secondary.argTypes = {
       defaultValue: { summary: 'undefined' },
     },
   },
-  expand: {
-    defaultValue: 'none',
-    options: [undefined, 'full', 'block'],
-    control: { type: 'radio'},
-    description: "Define a variação de estilo do componente.",
-    table: {
-      type:  { summary: ['full | block'] },
-      defaultValue: { summary: 'undefined' },
-    },
-  },
-  iconLeft: {
-    options: MedIcons,
-    control: { type: 'select'},
-    defaultValue: 'med-setaesquerda',
-    description: '**Atributo utilizado apenas no storybook. Não é um atributo do componente!.**',
-    table: {
-      type:  { summary: ['string'] },
-      defaultValue: { summary: 'med-setaesquerda' },
-    },
-  },
-  iconRight: {
-    options: MedIcons,
-    control: { type: 'select'},
-    defaultValue: 'med-setadireita',
-    description: '**Atributo utilizado apenas no storybook. Não é um atributo do componente!.**',
-    table: {
-      type:  { summary: ['string'] },
-      defaultValue: { summary: 'med-setadireita' },
-    },
-  },
   iconOnly: {
     options: MedIcons,
     control: { type: 'select'},
@@ -102,9 +72,5 @@ Secondary.argTypes = {
       type:  { summary: ['string'] },
       defaultValue: { summary: 'med-fechar' },
     },
-  },
-  slot: {
-    control: { type: 'text' },
-    defaultValue: 'button',
   },
 };

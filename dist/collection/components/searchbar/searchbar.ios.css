@@ -505,9 +505,11 @@
   --placeholder-opacity: 1;
   --padding-left: 30px;
   --clear-button-color: hsl(var(--med-color-neutral-5));
+  --icon-size: 24px;
+  --padding-left-icon: 0;
   --spacing: var(--med-spacing-inset-xs);
   padding: var(--spacing);
-  height: 40px;
+  height: 45px;
 }
 :host .searchbar-input {
   padding-inline-start: calc(var(--padding-left) + var(--med-spacing-inline-nano)) !important;
@@ -516,8 +518,17 @@
   line-height: var(--med-line-height-compressed);
 }
 :host .searchbar-search-icon {
-  width: 24px;
+  width: var(--icon-size);
   stroke: var(--icon-color);
+}
+:host .searchbar-input-container.sc-ion-searchbar-ios {
+  height: 45px;
+}
+:host .searchbar-search-icon.sc-ion-searchbar-ios {
+  margin-inline-start: var(--padding-left-icon);
+}
+:host .searchbar-clear-button.sc-ion-searchbar-ios {
+  width: 45px;
 }
 
 :host(.med-color) {

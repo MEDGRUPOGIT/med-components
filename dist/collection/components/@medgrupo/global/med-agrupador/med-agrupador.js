@@ -3,13 +3,13 @@ import { generateMedColor } from '../../../../utils/med-theme';
 export class MedAgrupador {
   constructor() {
     /**
-     * Define o estado do componente.
-     */
-    this.collapsed = true;
+      * Define o estado do componente.
+      */
+    this.collapsed = false;
   }
   /**
-  * TODO
-  */
+    * Define o estado do componente programaticamente.
+    */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;
@@ -71,7 +71,7 @@ export class MedAgrupador {
       },
       "attribute": "collapsed",
       "reflect": true,
-      "defaultValue": "true"
+      "defaultValue": "false"
     }
   }; }
   static get methods() { return {
@@ -93,7 +93,7 @@ export class MedAgrupador {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "TODO",
+        "text": "Define o estado do componente programaticamente.",
         "tags": []
       }
     }

@@ -28,9 +28,8 @@ export class MedTooltip {
         [`med-tooltip--${position}`]: position !== undefined,
         'med-tooltip--collapsed': collapsed
       }) },
-      h("div", { class: "med-tooltip__icon-container" },
-        h("ion-button", { "ds-name": "tertiary", onClick: (event) => { this.toggle(event); }, class: "med-tooltip__button" },
-          h("slot", { name: "icon" }))),
+      h("div", { class: "med-tooltip__input-container", onClick: (event) => { this.toggle(event); } },
+        h("slot", { name: "input" })),
       h("div", { class: "med-tooltip__content" },
         titulo && h("h3", { class: "med-tooltip__titulo" }, titulo),
         content && h("p", { class: "med-tooltip__text" }, content),

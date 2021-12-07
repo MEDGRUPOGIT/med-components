@@ -1,0 +1,22 @@
+@import './card-assuntos-temas';
+@import './tabs';
+
+@import "./global/pre";
+@import "./global/scrollbar";
+
+////////////////////
+// old
+////////////////////
+
+@import "./aulas/accordion-aulas";
+
+@import "./global/accordion-lista";
+@import "./global/time-stamp";
+
+@import "./main/main-week";
+
+@import "./monta-provas/accordion-chart-monta-provas";
+@import "./monta-provas/filtros-monta-provas";
+@import "./monta-provas/footer-monta-provas";
+
+

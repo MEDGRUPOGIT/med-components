@@ -205,7 +205,7 @@
   overflow: hidden;
   text-align: left;
   padding: var(--med-spacing-stack-base) var(--med-spacing-stack-base) calc(var(--med-spacing-stack-base) - 10px) 0;
-  font-size: var(--med-font-size-xs);
+  font-size: var(--font-size);
   font-weight: var(--med-font-weight-regular);
   line-height: 24px;
   text-align: justify;
@@ -261,7 +261,7 @@
 }
 
 :host(.med-alternativas) .med-alternativas__item--selecionada .option {
-  background: hsl(var(--med-color-brand-4));
+  background: hsl(var(--med-color-brand-3));
 }
 
 :host(.med-alternativas) .med-alternativas__item--certa .option {
@@ -292,15 +292,23 @@
 
 :host(.med-alternativas) .med-alternativas__riscar {
   color: hsl(var(--med-color-neutral-10));
-  padding: var(--med-spacing-inline-base);
+  padding: 0 var(--med-spacing-inline-base);
   font-size: var(--med-font-size-xxs);
   font-weight: var(--med-font-weight-regular);
   line-height: var(--med-line-height-compressed);
+  display: flex;
   height: 100%;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background: hsl(var(--med-color-neutral-2));
+  transition: opacity 300ms;
 }
 
 :host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__left,
@@ -313,7 +321,9 @@
 }
 
 :host(.med-alternativas) .med-alternativas__riscar--show {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
 }
 
 :host(.med-alternativas) .med-alternativas__riscar-span {
@@ -330,12 +340,20 @@
   }
 }
 
+@media (min-width: 768px) {
+  :host(.med-alternativas) .image-container__button {
+    display: none;
+  }
+}
+
 @media (any-hover: hover) {
   :host(.med-alternativas) .med-alternativas__item--permite-riscar:hover {
     background: hsl(var(--med-color-neutral-2));
   }
 
   :host(.med-alternativas) .med-alternativas__item--permite-riscar:hover .med-alternativas__riscar {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
   }
 }

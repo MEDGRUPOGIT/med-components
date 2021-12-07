@@ -320,17 +320,8 @@
   }
 } */
 :host {
-  /**
-   * OBS: sobreescrita das css custom properties do ionic.
-   * @prop --background: Define a cor de background do componente.
-   * @prop --color: Define a cor de texto do componente.
-   */
   --background: hsl(var(--med-color-neutral-7));
   --color: hsl(var(--med-color-neutral-1));
-  /**
-   * OBS: design system css custom properties.
-   * @prop --border-color: Define a cor da borda do componente.
-   */
   --border-color: hsl(var(--med-color-neutral-7));
   --ripple-color: transparent;
 }
@@ -350,7 +341,7 @@
 }
 
 :host(.med-chip) ::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-neutral-1));
+  stroke: var(--color);
 }
 
 ::slotted(ion-icon:last-child) {
@@ -365,18 +356,6 @@
 
 ::slotted(ion-label) {
   margin: var(--med-spacing-inline-nano);
-}
-
-:host(.med-color) ::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-contrast-fixed));
-}
-
-:host(.med-color-neutral) ::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-neutral-contrast));
-}
-
-:host(.med-color-feedback) ::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-feedback-contrast));
 }
 
 @media (any-hover: hover) {
@@ -399,6 +378,10 @@
     color: hsl(var(--med-color-contrast-fixed));
   }
 }
+:host(.med-color) ::slotted(ion-icon) {
+  stroke: hsl(var(--med-color-contrast-fixed));
+}
+
 :host(.med-color-neutral) {
   --border-color: hsl(var(--med-color-neutral));
   background: hsl(var(--med-color-neutral));
@@ -412,6 +395,10 @@
     color: hsl(var(--med-color-neutral-contrast));
   }
 }
+:host(.med-color-neutral) ::slotted(ion-icon) {
+  stroke: hsl(var(--med-color-neutral-contrast));
+}
+
 :host(.med-color-feedback) {
   --border-color: hsl(var(--med-color-feedback));
   background: hsl(var(--med-color-feedback));
@@ -425,6 +412,10 @@
     color: hsl(var(--med-color-feedback-contrast));
   }
 }
+:host(.med-color-feedback) ::slotted(ion-icon) {
+  stroke: hsl(var(--med-color-feedback-contrast));
+}
+
 :host(.med-chip--secondary) {
   --border-color: hsl(var(--med-color-neutral-7));
   --background: transparent;
@@ -444,6 +435,10 @@
   color: hsl(var(--med-color-3));
 }
 
+:host(.med-chip--secondary.med-color) ::slotted(ion-icon) {
+  stroke: hsl(var(--med-color-3));
+}
+
 @media (any-hover: hover) {
   :host(.med-chip--secondary.med-color:hover) {
     --border-color: hsl(var(--med-color-3));
@@ -457,6 +452,10 @@
   color: hsl(var(--med-color-neutral));
 }
 
+:host(.med-chip--secondary.med-color-neutral) ::slotted(ion-icon) {
+  stroke: hsl(var(--med-color-neutral));
+}
+
 @media (any-hover: hover) {
   :host(.med-chip--secondary.med-color-neutral:hover) {
     --border-color: hsl(var(--med-color-neutral));
@@ -468,6 +467,10 @@
   --border-color: hsl(var(--med-color-feedback));
   background: transparent;
   color: hsl(var(--med-color-feedback));
+}
+
+:host(.med-chip--secondary.med-color-feedback) ::slotted(ion-icon) {
+  stroke: hsl(var(--med-color-feedback));
 }
 
 @media (any-hover: hover) {

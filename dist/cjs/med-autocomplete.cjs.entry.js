@@ -10,7 +10,7 @@ const MedAutocomplete = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     /**
-     * TODO
+     * A lista de items a ser renderizada.
      */
     this.list = false;
   }

@@ -14,6 +14,10 @@ export declare class MontaProvasPlusminus {
    * TODO
    */
   medChange: EventEmitter<PlusMinusStatus>;
+  /**
+  * TODO
+  */
+  disabled?: 'minus' | 'plus' | 'both';
   private onClick;
   render(): any;
 }

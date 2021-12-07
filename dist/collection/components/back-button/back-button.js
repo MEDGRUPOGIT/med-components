@@ -13,10 +13,6 @@ import { generateMedColor } from '../../utils/med-theme';
 export class BackButton {
   constructor() {
     /**
-      * Define a cor do componente.
-      */
-    this.solid = false;
-    /**
      * If `true`, the user cannot interact with the button.
      */
     this.disabled = false;
@@ -67,7 +63,7 @@ export class BackButton {
     return 'bounded';
   }
   render() {
-    const { dsName, dsColor, dsSize, solid, defaultHref, disabled, type, hasIconOnly, backButtonIcon, backButtonText } = this;
+    const { dsName, dsColor, dsSize, defaultHref, disabled, type, hasIconOnly, backButtonIcon, backButtonText } = this;
     const showBackButton = defaultHref !== undefined;
     const mode = getIonMode(this);
     return (h(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
@@ -83,7 +79,6 @@ export class BackButton {
         'med-button': true,
         [`med-button--${dsName}`]: dsName !== undefined,
         [`med-button--${dsSize}`]: dsSize !== undefined,
-        'med-button--solid': solid,
       }) },
       h("button", { type: type, disabled: disabled, class: "button-native", part: "native", "aria-label": backButtonText || 'back' },
         h("span", { class: "button-inner" },
@@ -124,24 +119,6 @@ export class BackButton {
       },
       "attribute": "ds-color",
       "reflect": true
-    },
-    "solid": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "solid",
-      "reflect": true,
-      "defaultValue": "false"
     },
     "dsSize": {
       "type": "string",
@@ -194,7 +171,7 @@ export class BackButton {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -303,7 +280,7 @@ export class BackButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "When using a router, it specifies the transition animation when navigating to\nanother page."
+        "text": "When using a router, it specifies the transition animation when navigating to\r\nanother page."
       }
     }
   }; }

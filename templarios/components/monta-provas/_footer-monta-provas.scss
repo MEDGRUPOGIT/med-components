@@ -1,0 +1,76 @@
+@import "../../../templarios/abstracts";
+
+.monta-provas-footer {
+  @include breakpoint-up("lg") {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--med-spacing-stack-sm);
+    padding-bottom: var(--med-spacing-stack-md);
+    padding-right: var(--med-spacing-inline-lg);
+    padding-left: var(--med-spacing-inline-lg);
+    background: hsl(var(--med-color-neutral-1));
+  }
+}
+
+.monta-provas-footer__container {
+  display: flex;
+  align-items: center;
+  padding: var(--med-spacing-inset-sm);
+  max-width: 1220px;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  @include breakpoint-up("lg") {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.monta-provas-footer__container-button {
+  display: flex;
+  align-items: center;
+  padding: var(--med-spacing-inset-sm);
+  max-width: 1220px;
+  margin: 0 auto;
+  justify-content: center;
+
+  @include breakpoint-up("lg") {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.monta-provas-footer__auxiliar {
+  font-size: var(--med-font-size-nano);
+  font-weight: var(--med-font-weight-regular);
+  line-height: var(--med-line-height-compressed);
+  color: hsl(var(--med-color-neutral-10));
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.monta-provas-footer__col {
+  text-align: center;
+
+  @include breakpoint-up("lg") {
+    margin-right: var(--med-spacing-inline-xs);
+  }
+}
+
+.monta-provas-footer__number {
+  font-size: var(--med-font-size-xs);
+  font-weight: var(--med-font-weight-semibold);
+  line-height: var(--med-line-height-compressed);
+  color: hsl(var(--med-color-brand-4));
+  text-transform: uppercase;
+  margin: 0;
+  padding: var(--med-spacing-stack-nano) 0;
+}
+
+.monta-provas-footer__text-number {
+  --font-weight: var(--med-font-weight-semibold);
+
+  @include breakpoint-up("lg") {
+    --font-size: var(--med-font-size-lg);
+  }
+}

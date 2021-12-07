@@ -24,5 +24,9 @@ export declare class MedListItem {
    * TODO
    */
   border: boolean;
+  /**
+   * If `true`, the user cannot interact with the button.
+   */
+  disabled: boolean;
   render(): any;
 }

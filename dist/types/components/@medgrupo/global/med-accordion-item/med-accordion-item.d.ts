@@ -26,10 +26,25 @@ export declare class MedAccordionItem implements ComponentInterface {
     */
   background: boolean;
   /**
-   * TODO
+   * Permite que a abertura do accordion seja bloqueada pelo front.
+   */
+  canCollapse: boolean;
+  /**
+   * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
+   */
+  isOpened: boolean;
+  /**
+  * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
+  */
+  slotsToggle: 'start' | 'middle' | 'end'[];
+  /**
+   * Internal
    */
   toggle: EventEmitter;
+  opened: EventEmitter;
   isOpen: boolean;
+  watchPropHandler(newValue: boolean): void;
+  componentDidLoad(): void;
   private content;
   private header;
   private isTransitioning;

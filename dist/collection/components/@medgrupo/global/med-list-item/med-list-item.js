@@ -10,12 +10,17 @@ export class MedListItem {
      * TODO
      */
     this.border = false;
+    /**
+     * If `true`, the user cannot interact with the button.
+     */
+    this.disabled = false;
   }
   render() {
-    const { dsColor, titulo, label, selected, dsSize, border } = this;
+    const { dsColor, titulo, label, selected, dsSize, border, disabled } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-list-item': true,
         'med-list-item--selected': selected,
+        'med-list-item--disabled': disabled,
         'med-list-item--border-radius': border,
         [`med-list-item--${dsSize}`]: dsSize !== undefined,
       }) },
@@ -140,6 +145,24 @@ export class MedListItem {
         "text": "TODO"
       },
       "attribute": "border",
+      "reflect": true,
+      "defaultValue": "false"
+    },
+    "disabled": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "If `true`, the user cannot interact with the button."
+      },
+      "attribute": "disabled",
       "reflect": true,
       "defaultValue": "false"
     }

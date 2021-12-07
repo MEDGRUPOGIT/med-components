@@ -1,23 +1,27 @@
 import { EventEmitter } from '../../../../stencil-public-runtime';
+/**
+  * @slot imagem - Posiciona um elemento imagem ou icone a esquerda do banner.
+  * @slot content - Define o conetudo de texto do banner.
+  */
 export declare class MedBanner {
   /**
-   * TODO
+   * Define o título do banner.
    */
   header: string;
   /**
-   * TODO
+   * Define o texto do botão esquerdo, se existir.
    */
   btnLeft: string;
   /**
-   * TODO
+   * Define o texto do botão direito.
    */
   btnRight: string;
   /**
-   * TODO
+   * Define o texto texto do botão direito, se existir.
    */
   btnLeftClick: EventEmitter<void>;
   /**
-   * TODO
+   * Emitido quando é feito um click no botão direito.
    */
   btnRightClick: EventEmitter<void>;
   private onBtnLeftClick;

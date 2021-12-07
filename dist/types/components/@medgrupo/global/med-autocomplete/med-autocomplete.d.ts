@@ -1,6 +1,6 @@
 export declare class MedAutocomplete {
   /**
-   * TODO
+   * A lista de items a ser renderizada.
    */
   list: boolean;
   render(): any;

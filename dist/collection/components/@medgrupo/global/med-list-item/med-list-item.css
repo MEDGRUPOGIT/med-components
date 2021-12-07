@@ -150,7 +150,7 @@
   --padding: var(--med-spacing-squish-xs);
   --background: transparent;
   --border-radius: var(--med-border-radius-sm);
-  --font-size-title: var(--med-font-size-xs);
+  --font-size-title: 14px;
   --color-title: hsl(var(--med-color-neutral-10));
   --font-size-label: var(--med-font-size-xxxs);
   --color-label: hsl(var(--med-color-brand-4));
@@ -176,7 +176,6 @@
   padding: 0;
   font-size: var(--font-size-title);
   font-weight: var(--med-font-weight-light);
-  line-height: var(--med-line-height-compressed);
   color: var(--color-title);
 }
 :host(.med-list-item) .med-list-item__label {
@@ -184,7 +183,6 @@
   padding: 0;
   font-size: var(--font-size-label);
   font-weight: var(--med-font-weight-regular);
-  line-height: var(--med-line-height-compressed);
   color: var(--color-label);
   margin-top: var(--med-spacing-inline-nano);
 }
@@ -194,6 +192,11 @@
 
 :host(.med-list-item--selected) {
   background-position: 0 0;
+}
+
+:host(.med-list-item--disabled) {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 ::slotted([slot=start]) {

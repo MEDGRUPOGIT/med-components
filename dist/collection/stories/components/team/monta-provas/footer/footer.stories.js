@@ -8,59 +8,36 @@ export default {
 
 const Default = ({}) => {
   return html`
-    <style>
-      .monta-provas-footer {
-        background: hsl(var(--med-color-neutral-2));
-      }
-
-      .monta-provas-footer__container {
-        display: flex;
-        align-items: center;
-        padding: var(--med-spacing-inset-sm);
-        max-width: 1220px;
-        margin: 0 auto;
-      }
-
-      .monta-provas-footer__col--left {
-        flex: 1;
-        padding-right: var(--med-spacing-inline-base);
-      }
-
-      .monta-provas-footer__auxiliar {
-        font-size: var(--med-font-size-nano);
-        font-weight: var(--med-font-weight-regular);
-        line-height; var(--med-line-height-compressed);
-        color: hsl(var(--med-color-neutral-10));
-        text-transform: uppercase;
-        margin: 0;
-      }
-
-      .monta-provas-footer__number {
-        font-size: var(--med-font-size-xs);
-        font-weight: var(--med-font-weight-semibold);
-        line-height; var(--med-line-height-compressed);
-        color: hsl(var(--med-color-brand-4));
-        text-transform: uppercase;
-        margin: 0;
-        padding: var(--med-spacing-stack-nano) 0;
-      }
-    </style>
-
     <ion-app>
       <ion-container></ion-container>
       <!-- component -->
+
         <ion-footer class="monta-provas-footer">
+
           <div class="monta-provas-footer__container">
-            <div class="monta-provas-footer__col monta-provas-footer__col--left">
-              <p class="monta-provas-footer__auxiliar">seu filtro tem</p>
-              <p class="monta-provas-footer__number">224.123</p>
-              <p class="monta-provas-footer__auxiliar">questões</p>
+            <div class="monta-provas-footer__col">
+              <med-caption ds-size="xl" ds-color="neutral-7">
+                <span class="monta-provas-footer__text-number">253.478</span>
+              </med-caption>
+              <med-caption ds-size="sm" ds-color="neutral-7">
+                <span>Questões Filtradas</span>
+              </med-caption>
             </div>
-            <div class="monta-provas-footer__col monta-provas-footer__col--right">
-              <ion-button ds-name="primary" ds-size="sm">filtrar</ion-button>
+
+            <div class="monta-provas-footer__col">
+              <monta-provas-plusminus ds-size="">500</monta-provas-plusminus>
+              <med-caption ds-size="sm" ds-color="neutral-7">
+                <span>Total de Questões</span>
+              </med-caption>
             </div>
           </div>
+
+          <div class="monta-provas-footer__container-button">
+            <ion-button ds-name="primary">Realizar Prova</ion-button>
+          </div>
+
         </ion-footer>
+
         <!-- component -->
     </ion-app>
   `

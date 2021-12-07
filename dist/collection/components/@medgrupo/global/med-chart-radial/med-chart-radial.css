@@ -170,7 +170,7 @@
 }
 :host circle.size {
   stroke-dasharray: var(--size) 100;
-  stroke: hsl(var(--med-color-3));
+  stroke: hsl(var(--med-color-4));
 }
 :host circle[class^="size med-color-neutral"] {
   stroke: hsl(var(--med-color-neutral));
@@ -188,7 +188,7 @@
   height: var(--size-sm);
 }
 :host(.med-chart-radial--secondary) .size {
-  stroke: hsl(var(--med-color-brand-2));
+  stroke: hsl(var(--med-color-brand-4));
 }
 :host(.med-chart-radial--secondary) circle {
   stroke: hsl(var(--med-color-neutral-2));
@@ -206,10 +206,10 @@
 }
 
 :host(.med-color.med-chart-radial--secondary) .size {
-  stroke: hsl(var(--med-color-2));
+  stroke: hsl(var(--med-color-4));
 }
 :host(.med-color.med-chart-radial--secondary) .med-chart-radial__percent {
-  --color-label: hsl(var(--med-color-2));
+  --color-label: hsl(var(--med-color-4));
 }
 
 :host(.med-color-neutral.med-chart-radial--secondary) .size {

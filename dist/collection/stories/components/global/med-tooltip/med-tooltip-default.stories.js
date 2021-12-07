@@ -7,26 +7,16 @@ export default {
   decorators: [withDesign],
 };
 
-const Template = ({ collapsed, placement, position, content, dsColor }) => {
+const Template = ({ collapsed, placement, position, content, dsColor, titulo, }) => {
   return html`
     <ion-app style="align-items: center; justify-content: center;">
 
       <!-- component -->
-      <med-tooltip .dsColor=${dsColor} .content=${content} .collapsed=${collapsed} .placement=${placement} .position=${position}>
-        <ion-icon slot="icon" class="med-icon" name="med-context-menu"></ion-icon>
-
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-          <p>asihjdgasidhgasidhgasdhigas</p>
-
+      <med-tooltip .dsColor=${dsColor} .titulo=${titulo} .content=${content} .collapsed=${collapsed} .placement=${placement} .position=${position}>
+        <input type="text" placeholder="teste" slot="input">
+        <div slot="content">
+          teste
+        </div>
       </med-tooltip>
       <!-- component -->
 
@@ -78,8 +68,12 @@ Default.argTypes = {
       defaultValue: { summary: 'undefined' },
     },
   },
+  titulo: {
+    control: { type: 'text' },
+    defaultValue: 'Titulo',
+  },
   content: {
     control: { type: 'text' },
-    defaultValue: 'Tooltip Simples',
+    defaultValue: 'Content',
   },
 };

@@ -56,21 +56,21 @@ Secondary.argTypes = {
   iconLeft: {
     options: MedIcons,
     control: { type: 'select'},
-    defaultValue: 'med-arrow-left-circle',
+    defaultValue: 'med-esquerda',
     description: '**Atributo utilizado apenas no storybook. Não é um atributo do componente!.**',
     table: {
       type:  { summary: ['string'] },
-      defaultValue: { summary: 'med-arrow-left-circle' },
+      defaultValue: { summary: 'med-esquerda' },
     },
   },
   iconRight: {
     options: MedIcons,
     control: { type: 'select'},
-    defaultValue: 'med-arrow-right-circle',
+    defaultValue: 'med-direita',
     description: '**Atributo utilizado apenas no storybook. Não é um atributo do componente!.**',
     table: {
       type:  { summary: ['string'] },
-      defaultValue: { summary: 'med-arrow-left-circle' },
+      defaultValue: { summary: 'med-direita' },
     },
   },
   slot: {

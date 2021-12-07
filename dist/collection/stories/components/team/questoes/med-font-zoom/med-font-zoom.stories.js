@@ -5,7 +5,7 @@ import { popoverController } from "../../../../../../dist/ionic/index.esm.js";
 import { MedFontSize } from "../../../../constants";
 
 export default {
-  title: "Components/Core/Font Zoom",
+  title: "Components/Team/Questões/Font Zoom",
   decorators: [withDesign],
 };
 
