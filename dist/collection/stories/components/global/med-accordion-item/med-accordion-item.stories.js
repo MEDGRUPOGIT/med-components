@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColor } from '../../../constants';
 
 export default {
-  title: 'Components/Core/Accordion Item',
+  title: 'Components/Global/Accordion Item',
   decorators: [withDesign],
 };
 
@@ -70,6 +70,9 @@ Default.parameters = {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=2808%3A8916',
+  },
+  actions: {
+    handles: ['medClick'],
   },
 }
 Default.argTypes = {

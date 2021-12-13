@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Core/Navbar',
+  title: 'Components/Global/Navbar',
   decorators: [withDesign],
 };
 

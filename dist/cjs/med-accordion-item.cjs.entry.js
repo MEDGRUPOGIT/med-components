@@ -12,6 +12,7 @@ const MedAccordionItem = class {
     index.registerInstance(this, hostRef);
     this.toggle = index.createEvent(this, "toggle", 7);
     this.opened = index.createEvent(this, "opened", 7);
+    this.medClick = index.createEvent(this, "medClick", 7);
     /**
       * Define a variação da borda do componente.
       */
@@ -75,14 +76,17 @@ const MedAccordionItem = class {
       },
     });
   }
+  onHeaderClick() {
+    this.medClick.emit();
+  }
   render() {
     const { dsColor, noBorder, isOpen, background } = this;
-    return (index.h(index.Host, { class: medTheme.generateMedColor(dsColor, {
+    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, {
         'med-accordion-item': true,
         'med-accordion-item--no-border': noBorder,
         'med-accordion-item--open': isOpen,
         'med-accordion-item--background': background,
-      }) }, index.h("div", { class: "med-accordion-item__header", ref: (el) => this.header = el }, index.h("div", { class: "med-accordion-item__header-container" }, index.h("div", { class: "header-container__start", onClick: () => this.onClick('start') }, index.h("slot", { name: "start" })), index.h("div", { class: "header-container__middle", onClick: () => this.onClick('middle') }, index.h("slot", { name: "middle" })), index.h("div", { class: "header-container__end", onClick: () => this.onClick('end') }, index.h("slot", { name: "end" }))), index.h("div", null, index.h("slot", { name: "auxiliar" }))), index.h("div", { class: "med-accordion-item__content", ref: (el) => this.content = el }, index.h("slot", { name: "content" }))));
+      }) }, index.h("div", { class: "med-accordion-item__header", onClick: () => this.onHeaderClick(), ref: (el) => this.header = el }, index.h("div", { class: "med-accordion-item__header-container" }, index.h("div", { class: "header-container__start", onClick: () => this.onClick('start') }, index.h("slot", { name: "start" })), index.h("div", { class: "header-container__middle", onClick: () => this.onClick('middle') }, index.h("slot", { name: "middle" })), index.h("div", { class: "header-container__end", onClick: () => this.onClick('end') }, index.h("slot", { name: "end" }))), index.h("div", null, index.h("slot", { name: "auxiliar" }))), index.h("div", { class: "med-accordion-item__content", ref: (el) => this.content = el }, index.h("slot", { name: "content" }))));
   }
   get hostElement() { return index.getElement(this); }
   static get watchers() { return {

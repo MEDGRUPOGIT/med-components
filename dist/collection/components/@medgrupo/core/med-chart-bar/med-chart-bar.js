@@ -1,7 +1,12 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
+/**
+ * @slot  Slot default.
+ */
 export class MedChartBar {
   constructor() {
+    // private labelElement?: any;
+    this.labelElementHeight = 0;
     /**
       * Define a valor do componente.
       */
@@ -13,22 +18,36 @@ export class MedChartBar {
     /**
       * Define o width em px do componente.
       */
-    this.width = 42;
-    /**
-      * Define o token do label do componente.
-      */
-    this.token = 'p12b';
+    this.width = 24;
+  }
+  componentDidLoad() {
+    this.setSize();
+  }
+  disconnectedCallback() {
+    if (this.labelResizeObserver) {
+      this.labelResizeObserver.disconnect();
+    }
+  }
+  setSize() {
+    this.labelResizeObserver = new ResizeObserver(() => {
+      var _a;
+      let newLabelHeight = Number((_a = this.el) === null || _a === void 0 ? void 0 : _a.getBoundingClientRect().height);
+      if (newLabelHeight !== this.labelElementHeight) {
+        this.labelElementHeight = newLabelHeight;
+        //console.log(this.labelElementHeight);
+      }
+    });
+    this.labelResizeObserver.observe(this.el);
   }
   render() {
-    const { dsColor, value, height, width, token } = this;
-    const percentage = value === 0 ? 100 : 100 - value;
-    return (h(Host, { class: generateMedColor(dsColor, {
-        'med-chart-bar': true
-      }) },
-      h("div", { class: "med-chart-bar__container", style: { '--value': `${percentage}`, '--height': `${height}px`, '--width': `${width}px` } },
-        h("med-type", { class: "med-chart-bar__label", token: token },
-          value,
-          "%"),
+    const { dsColor, value, height, width } = this;
+    const { labelElementHeight } = this;
+    console.log(labelElementHeight);
+    const percentage = value === 0 ? height : height - ((height * value) / 100);
+    return (h(Host, { class: generateMedColor(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } },
+      h("div", { class: "med-chart-bar__container" },
+        h("div", { class: "med-chart-bar__label" },
+          h("slot", null)),
         h("div", { class: "med-chart-bar__progress" }))));
   }
   static get is() { return "med-chart-bar"; }
@@ -114,25 +133,8 @@ export class MedChartBar {
       },
       "attribute": "width",
       "reflect": true,
-      "defaultValue": "42"
-    },
-    "token": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Define o token do label do componente."
-      },
-      "attribute": "token",
-      "reflect": true,
-      "defaultValue": "'p12b'"
+      "defaultValue": "24"
     }
   }; }
+  static get elementRef() { return "el"; }
 }

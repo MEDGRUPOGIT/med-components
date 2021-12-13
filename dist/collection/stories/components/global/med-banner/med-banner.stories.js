@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import imageTest from "./image-test.png";
 
 export default {
-  title: 'Components/Core/Banner',
+  title: 'Components/Global/Banner',
   decorators: [withDesign],
 };
 

@@ -1,5 +1,11 @@
 import { MedColor } from '../../../../interface';
+/**
+ * @slot  Slot default.
+ */
 export declare class MedChartBar {
+  el: HTMLElement;
+  private labelElementHeight;
+  private labelResizeObserver;
   /**
     * Define a cor do componente.
     */
@@ -16,9 +22,8 @@ export declare class MedChartBar {
     * Define o width em px do componente.
     */
   width: number;
-  /**
-    * Define o token do label do componente.
-    */
-  token: string;
+  componentDidLoad(): void;
+  disconnectedCallback(): void;
+  private setSize;
   render(): any;
 }

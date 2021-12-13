@@ -1,0 +1,76 @@
+@import "../../templarios/abstracts";
+
+.cp-chart-bar {
+  flex-direction: column;
+  width: 100%;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px
+  }
+
+  &__legenda {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-of-type) {
+      padding-right: 16px;
+    }
+  }
+
+  &__legenda-icon {
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    margin-right: 6px;
+    background: color('neutral', '10');
+
+    &--voce {
+      background: color('brand', '4');
+    }
+
+    &--concorrencia {
+      background: color('neutral', '8');
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    min-width: 80px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__chart {
+    &--right {
+      margin-left: 2px;
+    }
+  }
+
+  &__porcentagem {
+    padding-bottom: 6px;
+  }
+
+  &__semana {
+    padding-top: 14px;
+    text-align: center;
+  }
+}

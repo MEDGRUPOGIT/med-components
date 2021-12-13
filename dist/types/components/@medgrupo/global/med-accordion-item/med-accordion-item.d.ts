@@ -42,6 +42,7 @@ export declare class MedAccordionItem implements ComponentInterface {
    */
   toggle: EventEmitter;
   opened: EventEmitter;
+  medClick: EventEmitter;
   isOpen: boolean;
   watchPropHandler(newValue: boolean): void;
   componentDidLoad(): void;
@@ -50,5 +51,6 @@ export declare class MedAccordionItem implements ComponentInterface {
   private isTransitioning;
   private onClick;
   private toggleOpen;
+  private onHeaderClick;
   render(): any;
 }

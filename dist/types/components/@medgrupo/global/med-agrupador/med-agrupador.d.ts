@@ -5,6 +5,14 @@ export declare class MedAgrupador {
     */
   dsColor?: MedColor;
   /**
+    * TODO.
+    */
+  texto1: string;
+  /**
+    * TODO.
+    */
+  texto2: string;
+  /**
     * Define o estado do componente.
     */
   collapsed: boolean;

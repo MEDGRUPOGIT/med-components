@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { MedColor, MedIcons } from '../../../constants';
 
 export default {
-  title: 'Components/Core/Icon',
+  title: 'Components/Global/Icon',
   decorators: [],
 };
 

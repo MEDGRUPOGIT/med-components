@@ -11,6 +11,14 @@ const MedAgrupador = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     /**
+      * TODO.
+      */
+    this.texto1 = `Expandir a lista`;
+    /**
+      * TODO.
+      */
+    this.texto2 = `Ocultar a lista`;
+    /**
       * Define o estado do componente.
       */
     this.collapsed = false;
@@ -23,11 +31,11 @@ const MedAgrupador = class {
     this.collapsed = !this.collapsed;
   }
   render() {
-    const { dsColor, collapsed } = this;
+    const { dsColor, collapsed, texto1, texto2 } = this;
     return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, {
         'med-agrupador': true,
         'med-agrupador--collapsed': collapsed
-      }), onClick: (event) => { this.toggle(event); } }, index.h("div", { class: "med-agrupador__expandir" }, "Expandir a lista"), index.h("div", { class: "med-agrupador__ocultar" }, "Ocultar a lista"), index.h("ion-icon", { class: "med-icon med-agrupador__icon", name: "med-baixo" })));
+      }), onClick: (event) => { this.toggle(event); } }, index.h("div", { class: "med-agrupador__expandir" }, texto1), index.h("div", { class: "med-agrupador__ocultar" }, texto2), index.h("ion-icon", { class: "med-icon med-agrupador__icon", name: "med-baixo" })));
   }
 };
 MedAgrupador.style = medAgrupadorCss;

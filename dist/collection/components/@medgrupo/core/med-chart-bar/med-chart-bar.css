@@ -151,19 +151,23 @@
 }
 
 :host {
-  display: block;
   overflow: hidden;
-  height: calc(var(--height) + 12px);
+  height: calc(var(--height) + 16 * 1px);
+  border-radius: 2px;
 }
 
 .med-chart-bar__container {
-  transform: translateY(var(--value));
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  transform: translateY(calc(var(--value) * 1px));
 }
-
 .med-chart-bar__progress {
+  height: calc(var(--value) * 1px);
   background: var(--background);
-  width: var(--width);
-  height: var(--height);
+  width: calc(var(--width) * 1px);
+  height: calc(var(--height) * 1px);
+  border-radius: 2px;
 }
 
 :host(.med-color) {

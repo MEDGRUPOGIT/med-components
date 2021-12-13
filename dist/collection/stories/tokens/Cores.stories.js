@@ -8,16 +8,31 @@ export default {
 const Template = () => {
   return `
     <style>
-      h2 {
+      .token-h, .token-p, .token-span {
         text-align: center;
       }
 
-      span {
+      .token-pre {
+        background: hsl(var(--med-color-neutral-2));
+        border-radius: 4px;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .token-span {
         color: hsl(var(--med-color-brand-3));
       }
     </style>
 
-    <h2>⚠️ Para visualizar clique na aba <span>Design</span> abaixo! ⚠️</h2>
+    <h2 class="token-h">⚠️ Para visualizar clique na aba <span class="token-span">Design</span> abaixo! ⚠️</h2>
+    <p class="token-p">Utilização do token:</p>
+<pre class="token-pre">
+  <code>
+    .class {
+      color: hsl(var(--med-color-neutral-5));
+    }
+  </code>
+</pre>
   `;
 };
 

@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "./stencil-public-runtime";
-import { ActionSheetButton, AlertButton, AlertInput, AnimationBuilder, AutocompleteTypes, CheckboxChangeEventDetail, Color, ComponentProps, ComponentRef, DatetimeChangeEventDetail, DatetimeOptions, DomRenderFn, FooterHeightFn, FrameworkDelegate, HeaderFn, HeaderHeightFn, InputChangeEventDetail, ItemHeightFn, ItemRenderFn, ItemReorderEventDetail, MedColor, MenuChangeEventDetail, NavComponent, NavComponentWithProps, NavOptions, Neutral, OverlayEventDetail, PickerButton, PickerColumn, RadioGroupChangeEventDetail, RangeChangeEventDetail, RangeValue, RefresherEventDetail, RouteID, RouterDirection, RouterEventDetail, RouterOutletOptions, RouteWrite, ScrollBaseDetail, ScrollDetail, SearchbarChangeEventDetail, SegmentButtonLayout, SegmentChangeEventDetail, SelectChangeEventDetail, SelectInterface, SelectPopoverOption, Side, SpinnerTypes, StyleEventDetail, SwipeGestureHandler, TabBarChangedEventDetail, TabBarResizeEventDetail, TabButtonClickEventDetail, TabButtonLayout, TextareaChangeEventDetail, TextFieldTypes, ToastButton, ToggleChangeEventDetail, TransitionDoneFn, TransitionInstruction, Type, ViewController } from "./interface";
+import { ActionSheetButton, AlertButton, AlertInput, AnimationBuilder, AutocompleteTypes, CheckboxChangeEventDetail, Color, ComponentProps, ComponentRef, DatetimeChangeEventDetail, DatetimeOptions, DomRenderFn, FooterHeightFn, FrameworkDelegate, HeaderFn, HeaderHeightFn, InputChangeEventDetail, ItemHeightFn, ItemRenderFn, ItemReorderEventDetail, MedColor, MedTypeToken, MenuChangeEventDetail, NavComponent, NavComponentWithProps, NavOptions, Neutral, OverlayEventDetail, PickerButton, PickerColumn, RadioGroupChangeEventDetail, RangeChangeEventDetail, RangeValue, RefresherEventDetail, RouteID, RouterDirection, RouterEventDetail, RouterOutletOptions, RouteWrite, ScrollBaseDetail, ScrollDetail, SearchbarChangeEventDetail, SegmentButtonLayout, SegmentChangeEventDetail, SelectChangeEventDetail, SelectInterface, SelectPopoverOption, Side, SpinnerTypes, StyleEventDetail, SwipeGestureHandler, TabBarChangedEventDetail, TabBarResizeEventDetail, TabButtonClickEventDetail, TabButtonLayout, TextareaChangeEventDetail, TextFieldTypes, ToastButton, ToggleChangeEventDetail, TransitionDoneFn, TransitionInstruction, ViewController } from "./interface";
 import { IonicSafeString } from "./utils/sanitization";
 import { NavigationHookCallback } from "./components/route/route-interface";
 import { SelectCompareFn } from "./components/select/select-interface";
@@ -2909,6 +2909,14 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
+          * TODO.
+         */
+        "texto1": string;
+        /**
+          * TODO.
+         */
+        "texto2": string;
+        /**
           * Define o estado do componente programaticamente.
          */
         "toggle": (event?: Event | undefined) => Promise<void>;
@@ -3115,17 +3123,17 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a borda do componente.
+          * Define a variação de borde-radius do componente.
          */
-        "radius"?: string | undefined;
+        "radius"?: 's02' | 's04' | 's08' | string;
         /**
-          * Define a borda do componente.
+          * Define a variação de padding horizontal do componente.
          */
-        "spacingH"?: string | undefined;
+        "spacingH"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
         /**
-          * Define a borda do componente.
+          * Define a variação de padding vertical do componente.
          */
-        "spacingV"?: string | undefined;
+        "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCaption {
         /**
@@ -3166,10 +3174,6 @@ export namespace Components {
           * Define o height em px do componente.
          */
         "height": number;
-        /**
-          * Define o token do label do componente.
-         */
-        "token": string;
         /**
           * Define a valor do componente.
          */
@@ -3750,7 +3754,7 @@ export namespace Components {
         /**
           * Define o token do componente.
          */
-        "token"?: Type;
+        "token"?: MedTypeToken;
     }
     interface MedVideoThumbnail {
         /**
@@ -7620,6 +7624,7 @@ declare namespace LocalJSX {
           * Define a variação da borda do componente.
          */
         "noBorder"?: boolean;
+        "onMedClick"?: (event: CustomEvent<any>) => void;
         "onOpened"?: (event: CustomEvent<any>) => void;
         /**
           * Internal
@@ -7653,6 +7658,14 @@ declare namespace LocalJSX {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        /**
+          * TODO.
+         */
+        "texto1"?: string;
+        /**
+          * TODO.
+         */
+        "texto2"?: string;
     }
     interface MedAlternativas {
         /**
@@ -7900,17 +7913,17 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a borda do componente.
+          * Define a variação de borde-radius do componente.
          */
-        "radius"?: string | undefined;
+        "radius"?: 's02' | 's04' | 's08' | string;
         /**
-          * Define a borda do componente.
+          * Define a variação de padding horizontal do componente.
          */
-        "spacingH"?: string | undefined;
+        "spacingH"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
         /**
-          * Define a borda do componente.
+          * Define a variação de padding vertical do componente.
          */
-        "spacingV"?: string | undefined;
+        "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCaption {
         /**
@@ -7951,10 +7964,6 @@ declare namespace LocalJSX {
           * Define o height em px do componente.
          */
         "height"?: number;
-        /**
-          * Define o token do label do componente.
-         */
-        "token"?: string;
         /**
           * Define a valor do componente.
          */
@@ -8543,7 +8552,7 @@ declare namespace LocalJSX {
         /**
           * Define o token do componente.
          */
-        "token"?: Type;
+        "token"?: MedTypeToken;
     }
     interface MedVideoThumbnail {
         /**

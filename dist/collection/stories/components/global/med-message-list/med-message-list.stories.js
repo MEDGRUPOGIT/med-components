@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Core/Message List',
+  title: 'Components/Global/Message List',
   decorators: [withDesign],
 };
 

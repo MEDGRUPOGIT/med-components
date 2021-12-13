@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { modalController } from '../../../../../dist/ionic/index.esm.js';
 
 export default {
-  title: 'Components/Core/Image Zoom',
+  title: 'Components/Global/Image Zoom',
   decorators: [withDesign],
 };
 

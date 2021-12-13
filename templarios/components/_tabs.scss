@@ -14,9 +14,11 @@
   width: 136px;
   transition: background-color 300ms;
   flex-shrink: 0;
+  border: 1px solid color('neutral', '3');
 
   &--active {
-    background: hsl(var(--med-color-neutral-1));
+    background: color('neutral', '2');
+    border: 1px solid color('neutral', '2');
   }
 
   &__top {
@@ -38,16 +40,16 @@
     border-radius: 50%;
 
     &--positivo {
-      background: hsl(var(--med-color-fb-success));
+      background: color('feedback', 'success');
     }
 
     &--negativo {
-      background: hsl(var(--med-color-fb-warning));
+      background: color('feedback', 'warning');
       transform: rotate(180deg);
     }
   }
 
   &__icon {
-    stroke: hsl(var(--med-color-neutral-1));
+    stroke: color('neutral', '1');
   }
 }

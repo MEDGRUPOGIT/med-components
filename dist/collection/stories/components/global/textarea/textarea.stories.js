@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Core/Textarea',
+  title: 'Components/Global/Textarea',
   decorators: [withDesign],
 };
 

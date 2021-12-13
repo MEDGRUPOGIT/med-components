@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Core/Rating',
+  title: 'Components/Global/Rating',
   decorators: [withDesign],
 };
 

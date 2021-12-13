@@ -32,6 +32,126 @@
   stroke: hsl(var(--med-color-neutral-1));
 }
 
+.cp-chart-bar {
+  flex-direction: column;
+  width: 100%;
+}
+.cp-chart-bar__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+.cp-chart-bar__legenda {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+.cp-chart-bar__label {
+  display: flex;
+  align-items: center;
+}
+.cp-chart-bar__label:not(:last-of-type) {
+  padding-right: 16px;
+}
+.cp-chart-bar__legenda-icon {
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  margin-right: 6px;
+  background: hsl(var(--med-color-neutral-10));
+}
+.cp-chart-bar__legenda-icon--voce {
+  background: hsl(var(--med-color-brand-4));
+}
+.cp-chart-bar__legenda-icon--concorrencia {
+  background: hsl(var(--med-color-neutral-8));
+}
+.cp-chart-bar__bottom {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.cp-chart-bar__item {
+  display: flex;
+  flex-direction: column;
+  min-width: 80px;
+}
+.cp-chart-bar__container {
+  display: flex;
+  justify-content: center;
+}
+.cp-chart-bar__chart--right {
+  margin-left: 2px;
+}
+.cp-chart-bar__porcentagem {
+  padding-bottom: 6px;
+}
+.cp-chart-bar__semana {
+  padding-top: 14px;
+  text-align: center;
+}
+
+.cp-filtro-dashboard-modal {
+  border-radius: 16px 16px 0px 0px;
+}
+.cp-filtro-dashboard-modal__content {
+  --background: hsl(var(--med-color-neutral-2));
+  --padding-start: 32px;
+  --padding-end: 32px;
+  --padding-top: 32px;
+}
+.cp-filtro-dashboard-modal__header {
+  text-align: right;
+}
+.cp-filtro-dashboard-modal__filtro-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: solid 1px hsl(var(--med-color-neutral-3));
+  margin-top: 40px;
+}
+.cp-filtro-dashboard-modal__seletor {
+  display: flex;
+  align-items: center;
+}
+.cp-filtro-dashboard-modal__label {
+  text-align: center;
+  margin: 0px 4px;
+}
+.cp-filtro-dashboard-modal__concursos-container {
+  margin-top: 32px;
+}
+.cp-filtro-dashboard-modal__concurso {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+.cp-filtro-dashboard-modal__radio {
+  align-items: center;
+  display: flex;
+  margin-right: 16px;
+}
+.cp-filtro-dashboard-modal__footer {
+  background: hsl(var(--med-color-neutral-3));
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+}
+
+.cp-filtro-dashboard {
+  align-items: center;
+}
+.cp-filtro-dashboard__type {
+  padding-right: 16px;
+}
+.cp-filtro-dashboard__button {
+  margin-left: auto;
+}
+
 .cp-tabs {
   display: flex;
   overflow-x: auto;
@@ -45,9 +165,11 @@
   width: 136px;
   transition: background-color 300ms;
   flex-shrink: 0;
+  border: 1px solid hsl(var(--med-color-neutral-3));
 }
 .cp-tab--active {
-  background: hsl(var(--med-color-neutral-1));
+  background: hsl(var(--med-color-neutral-2));
+  border: 1px solid hsl(var(--med-color-neutral-2));
 }
 .cp-tab__top {
   display: flex;
@@ -74,12 +196,6 @@
 }
 .cp-tab__icon {
   stroke: hsl(var(--med-color-neutral-1));
-}
-
-.med-pre {
-  display: inline-flex;
-  align-items: center;
-  white-space: pre;
 }
 
 @media (pointer: fine) {

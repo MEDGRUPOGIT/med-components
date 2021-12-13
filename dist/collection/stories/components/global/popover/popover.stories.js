@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { popoverController } from '../../../../../dist/ionic/index.esm.js';
 
 export default {
-  title: 'Components/Core/Popover',
+  title: 'Components/Global/Popover',
   decorators: [withDesign],
 };
 

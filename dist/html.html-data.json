@@ -4934,6 +4934,14 @@
         {
           "name": "ds-color",
           "description": "Define a cor do componente."
+        },
+        {
+          "name": "texto-1",
+          "description": "TODO."
+        },
+        {
+          "name": "texto-2",
+          "description": "TODO."
         }
       ],
       "references": [
@@ -5256,21 +5264,21 @@
         },
         {
           "name": "radius",
-          "description": "Define a borda do componente."
+          "description": "Define a variação de borde-radius do componente."
         },
         {
           "name": "spacing-h",
-          "description": "Define a borda do componente."
+          "description": "Define a variação de padding horizontal do componente."
         },
         {
           "name": "spacing-v",
-          "description": "Define a borda do componente."
+          "description": "Define a variação de padding vertical do componente."
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-base/med-base.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-base/med-base.tsx"
         }
       ]
     },
@@ -5376,10 +5384,6 @@
         {
           "name": "height",
           "description": "Define o height em px do componente."
-        },
-        {
-          "name": "token",
-          "description": "Define o token do label do componente."
         },
         {
           "name": "value",

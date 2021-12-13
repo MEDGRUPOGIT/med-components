@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColor } from '../../../constants';
 
 export default {
-  title: 'Components/Core/Search Bar',
+  title: 'Components/Global/Search Bar',
   decorators: [withDesign],
 };
 

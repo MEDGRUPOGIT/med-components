@@ -60,6 +60,7 @@
     "jest": "^26.4.1",
     "jest-cli": "^26.4.1",
     "lit-html": "^1.3.0",
+    "loki": "^0.28.1",
     "np": "^6.4.0",
     "npm-run-all": "^4.1.5",
     "pixelmatch": "4.0.2",
@@ -114,7 +115,8 @@
     "custom:start": "npm-run-all --parallel start custom:theme:clean",
     "custom:build": "npm-run-all build custom:theme:clean custom:theme:build",
     "custom:storybook": "npm run custom:theme:build && npm-run-all --parallel custom:build:watch storybook",
-    "custom:build:storybook": "npm-run-all build custom:theme:clean custom:theme:build build-storybook"
+    "custom:build:storybook": "npm-run-all build custom:theme:clean custom:theme:build build-storybook",
+    "loki": "loki test"
   },
   "author": "Ionic Team",
   "license": "MIT",
@@ -128,5 +130,16 @@
   "homepage": "https://ionicframework.com/",
   "jest": {
     "preset": "@stencil/core/testing"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      }
+    }
   }
 }

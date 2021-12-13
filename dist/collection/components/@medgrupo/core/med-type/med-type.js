@@ -44,10 +44,10 @@ export class MedType {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "Type",
+        "original": "MedTypeToken",
         "resolved": "string | undefined",
         "references": {
-          "Type": {
+          "MedTypeToken": {
             "location": "import",
             "path": "../../../../interface"
           }

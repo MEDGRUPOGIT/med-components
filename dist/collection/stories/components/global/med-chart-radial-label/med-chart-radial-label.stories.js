@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Core/Chart Radial Label',
+  title: 'Components/Global/Chart Radial Label',
   decorators: [withDesign],
 };
 

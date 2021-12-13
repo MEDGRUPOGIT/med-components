@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { toastController } from '../../../../../dist/ionic/index.esm.js';
 
 export default {
-  title: 'Components/Core/Snack Bar',
+  title: 'Components/Global/Snack Bar',
   decorators: [withDesign],
 };
 

@@ -8,6 +8,7 @@ const MedAccordionItem = class {
     registerInstance(this, hostRef);
     this.toggle = createEvent(this, "toggle", 7);
     this.opened = createEvent(this, "opened", 7);
+    this.medClick = createEvent(this, "medClick", 7);
     /**
       * Define a variação da borda do componente.
       */
@@ -71,14 +72,17 @@ const MedAccordionItem = class {
       },
     });
   }
+  onHeaderClick() {
+    this.medClick.emit();
+  }
   render() {
     const { dsColor, noBorder, isOpen, background } = this;
-    return (h(Host, { class: generateMedColor(dsColor, {
+    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-accordion-item': true,
         'med-accordion-item--no-border': noBorder,
         'med-accordion-item--open': isOpen,
         'med-accordion-item--background': background,
-      }) }, h("div", { class: "med-accordion-item__header", ref: (el) => this.header = el }, h("div", { class: "med-accordion-item__header-container" }, h("div", { class: "header-container__start", onClick: () => this.onClick('start') }, h("slot", { name: "start" })), h("div", { class: "header-container__middle", onClick: () => this.onClick('middle') }, h("slot", { name: "middle" })), h("div", { class: "header-container__end", onClick: () => this.onClick('end') }, h("slot", { name: "end" }))), h("div", null, h("slot", { name: "auxiliar" }))), h("div", { class: "med-accordion-item__content", ref: (el) => this.content = el }, h("slot", { name: "content" }))));
+      }) }, h("div", { class: "med-accordion-item__header", onClick: () => this.onHeaderClick(), ref: (el) => this.header = el }, h("div", { class: "med-accordion-item__header-container" }, h("div", { class: "header-container__start", onClick: () => this.onClick('start') }, h("slot", { name: "start" })), h("div", { class: "header-container__middle", onClick: () => this.onClick('middle') }, h("slot", { name: "middle" })), h("div", { class: "header-container__end", onClick: () => this.onClick('end') }, h("slot", { name: "end" }))), h("div", null, h("slot", { name: "auxiliar" }))), h("div", { class: "med-accordion-item__content", ref: (el) => this.content = el }, h("slot", { name: "content" }))));
   }
   get hostElement() { return getElement(this); }
   static get watchers() { return {

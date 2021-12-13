@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColor } from '../../../constants';
 
 export default {
-  title: 'Components/Core/Radio',
+  title: 'Components/Global/Radio',
   decorators: [withDesign],
 };
 

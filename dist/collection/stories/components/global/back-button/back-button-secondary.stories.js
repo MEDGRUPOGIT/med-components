@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColor, MedIcons } from '../../../constants';
 
 export default {
-  title: 'Components/Core/Back Button/Secondary',
+  title: 'Components/Global/Back Button/Secondary',
   decorators: [withDesign],
 };
 

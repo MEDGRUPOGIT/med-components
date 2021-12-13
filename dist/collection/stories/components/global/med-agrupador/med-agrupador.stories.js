@@ -3,18 +3,18 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColor } from '../../../constants';
 
 export default {
-  title: 'Components/Core/Agrupador',
+  title: 'Components/Global/Agrupador',
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({ dsColor }) => {
+const TemplateDefault = ({ dsColor, texto1, texto2 }) => {
   return html`
     <ion-app>
       <ion-content>
         <div class="flex-center">
 
         <!-- component -->
-          <med-agrupador .dsColor=${dsColor}></med-agrupador>
+          <med-agrupador .dsColor=${dsColor} .texto1=${texto1} .texto2=${texto2}></med-agrupador>
         <!-- component -->
 
         </div>
@@ -39,5 +39,13 @@ Agrupador.argTypes = {
       type:  { summary: 'MedColor' },
       defaultValue: { summary: 'undefined' },
     },
+  },
+  texto1: {
+    control: { type: 'text' },
+    defaultValue: 'Expandir a lista',
+  },
+  texto2: {
+    control: { type: 'text' },
+    defaultValue: 'Ocultar a lista',
   },
 };

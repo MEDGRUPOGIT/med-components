@@ -1,4 +1,4 @@
-import { MedColor, Type } from '../../../../interface';
+import { MedColor, MedTypeToken } from '../../../../interface';
 export declare class MedType {
   /**
     * Define a cor do componente.
@@ -7,6 +7,6 @@ export declare class MedType {
   /**
     * Define o token do componente.
     */
-  token?: Type;
+  token?: MedTypeToken;
   render(): any;
 }

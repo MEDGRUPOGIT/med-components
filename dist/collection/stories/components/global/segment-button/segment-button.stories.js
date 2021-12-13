@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColor } from '../../../constants';
 
 export default {
-  title: 'Components/Core/Segment Button',
+  title: 'Components/Global/Segment Button',
   decorators: [withDesign],
 };
 

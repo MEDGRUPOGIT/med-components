@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Core/Auto Complete',
+  title: 'Components/Global/Auto Complete',
   decorators: [withDesign],
 };
 

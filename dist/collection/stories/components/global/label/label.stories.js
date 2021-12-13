@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedLabels } from '../../../constants';
 
 export default {
-  title: 'Components/Core/Label',
+  title: 'Components/Global/Label',
   decorators: [withDesign],
 };
 

@@ -73,15 +73,18 @@ export class MedAccordionItem {
       },
     });
   }
+  onHeaderClick() {
+    this.medClick.emit();
+  }
   render() {
     const { dsColor, noBorder, isOpen, background } = this;
-    return (h(Host, { class: generateMedColor(dsColor, {
+    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-accordion-item': true,
         'med-accordion-item--no-border': noBorder,
         'med-accordion-item--open': isOpen,
         'med-accordion-item--background': background,
       }) },
-      h("div", { class: "med-accordion-item__header", ref: (el) => this.header = el },
+      h("div", { class: "med-accordion-item__header", onClick: () => this.onHeaderClick(), ref: (el) => this.header = el },
         h("div", { class: "med-accordion-item__header-container" },
           h("div", { class: "header-container__start", onClick: () => this.onClick('start') },
             h("slot", { name: "start" })),
@@ -254,6 +257,21 @@ export class MedAccordionItem {
     }, {
       "method": "opened",
       "name": "opened",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      }
+    }, {
+      "method": "medClick",
+      "name": "medClick",
       "bubbles": true,
       "cancelable": true,
       "composed": true,
