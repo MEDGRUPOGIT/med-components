@@ -1,0 +1,10 @@
+@import "../../templarios/abstracts";
+
+.cp-header-counter {
+  align-items: center;
+  justify-content: space-between;
+
+  &__end {
+    margin-left: 16px;
+  }
+}

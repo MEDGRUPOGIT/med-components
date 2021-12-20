@@ -11,10 +11,18 @@ const accordionGroupCss = ":root{--med-font-family-brand:\"fsemeric\";--med-font
 const AccordionGroup = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    /**
+      * TODO.
+      */
+    this.singleOpen = true;
+    /**
+      * TODO.
+      */
+    this.noAnimation = false;
     this.currentlyOpen = null;
     // public blockerDownAnimation!: Animation;
-    this.openAnimationTime = 300;
-    this.closeAnimationTime = 300;
+    this.openAnimationTime = this.noAnimation ? 0 : 300;
+    this.closeAnimationTime = this.noAnimation ? 0 : 300;
   }
   async handleToggle(event) {
     event.detail.shouldOpen ? await this.animateOpen(event) : await this.animateClose(event);
@@ -34,7 +42,9 @@ const AccordionGroup = class {
     //const element = event.detail.element;
     const contentElement = event.detail.content;
     // fecha qualquer item aberto
-    await this.closeOpenItem();
+    if (this.singleOpen) {
+      await this.closeOpenItem();
+    }
     this.currentlyOpen = event;
     // cria um array com todos itens do accordion
     const items = Array.from(this.hostElement.children);

@@ -1,3 +1,86 @@
+.cp-accordion-list__item {
+  border-radius: 8px;
+  --margin: 0;
+}
+.cp-accordion-list__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+.cp-accordion-list__middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cp-accordion-list__end {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cp-accordion-list__thumbnail {
+  margin-right: 16px;
+}
+.cp-accordion-list__avancar {
+  margin-left: auto;
+}
+.cp-accordion-list__aula {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+.cp-accordion-list__aula:not(:last-of-type) {
+  border-bottom: 1px solid hsl(var(--med-color-aula-3));
+}
+.cp-accordion-list__icon--color {
+  stroke: hsl(var(--med-color-aula-3));
+  margin-right: 8px;
+}
+.cp-accordion-list__caption {
+  margin: 4px 0;
+}
+.cp-accordion-list__aulas-start {
+  margin-right: 16px;
+}
+.cp-accordion-list__aulas-middle {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  margin-top: 4px;
+}
+.cp-accordion-list__aulas-result {
+  margin-top: 16px;
+}
+.cp-accordion-list__aulas-end {
+  display: flex;
+  align-items: end;
+  padding-bottom: 16px;
+}
+.cp-accordion-list__aulas-btn {
+  display: block;
+}
+@media (max-width: 339.98px) {
+  .cp-accordion-list__aulas-btn {
+    display: none;
+  }
+}
+.cp-accordion-list__aulas-btn-small {
+  display: none;
+}
+@media (max-width: 339.98px) {
+  .cp-accordion-list__aulas-btn-small {
+    display: block;
+  }
+}
+
+.med-rotate {
+  transition: transform 300ms ease;
+}
+
+.accordion-item--open .med-rotate {
+  --rotate: rotate(180deg);
+}
+
 .cp-card-assuntos-temas {
   align-items: center;
   justify-content: space-between;
@@ -152,6 +235,14 @@
   margin-left: auto;
 }
 
+.cp-header-counter {
+  align-items: center;
+  justify-content: space-between;
+}
+.cp-header-counter__end {
+  margin-left: 16px;
+}
+
 .cp-tabs {
   display: flex;
   overflow-x: auto;
@@ -198,14 +289,28 @@
   stroke: hsl(var(--med-color-neutral-1));
 }
 
+.cp-video-caption-feedback {
+  min-height: 85px;
+}
+.cp-video-caption-feedback__start {
+  display: flex;
+  align-items: center;
+}
+
 @media (pointer: fine) {
   .med-scrollbar {
-    scrollbar-width: thin;
+    --style: thin;
+    --width: 7px;
+    --height: 7px;
+    --padding: 10px;
+    scrollbar-width: var(--style);
+    padding-bottom: var(--padding);
   }
 
   .med-scrollbar::-webkit-scrollbar {
-    height: 7px;
-    width: 7px;
+    height: var(--height);
+    width: var(--width);
+    display: block !important;
   }
 
   .med-scrollbar::-webkit-scrollbar-track {
@@ -222,138 +327,21 @@
     background: hsl(var(--med-color-neutral-4));
   }
 }
-.med-accordion-aulas__start {
-  margin-right: 16px;
-  stroke: hsl(var(--med-color-neutral-10));
-}
-
-.med-accordion-aulas__middle {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.med-accordion-aulas__end {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.med-accordion-aulas__icon {
-  stroke: hsl(var(--med-color-neutral-10));
-}
-
-.med-accordion-aulas__thumbnail, .med-accordion-aulas__start {
-  margin-right: 16px;
-}
-
-.med-accordion-aulas__slot-end {
-  margin-left: auto;
-}
-
-.med-accordion-aulas__middle-caption {
-  margin: 8px 0;
-}
-
-.med-accordion-aulas__content-start {
-  margin-right: 24px;
-}
-
-.med-accordion-aulas__content-middle {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  margin-top: 4px;
-}
-
-.med-accordion-aulas__result {
-  margin-top: 16px;
-}
-
-.med-accordion-aulas__content-end {
-  display: flex;
-  align-items: end;
-  padding-bottom: 16px;
-}
-
-.med-accordion-aulas__button-small {
-  display: none;
-}
-@media (max-width: 339.98px) {
-  .med-accordion-aulas__button-small {
-    display: block;
-  }
-}
-
-.med-accordion-aulas__button {
-  display: block;
-}
-@media (max-width: 339.98px) {
-  .med-accordion-aulas__button {
-    display: none;
-  }
-}
-
-.med-accordion-lista__start {
-  margin-right: 16px;
-  stroke: hsl(var(--med-color-neutral-10));
-}
-
-.med-accordion-lista__middle {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.med-accordion-lista__end {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.med-accordion-lista__icon {
-  stroke: hsl(var(--med-color-neutral-10));
-}
-
-.med-accordion-lista__thumbnail, .med-accordion-lista__start {
-  margin-right: 16px;
-}
-
-.med-accordion-item--open .med-rotate {
-  --rotate: rotate(180deg);
-}
-
-.med-accordion-lista__slot-end {
-  margin-left: auto;
-}
-
-.med-accordion-lista__item:not(:last-of-type) {
-  border-bottom: 1px solid hsl(var(--med-color-aula-3));
-}
-
-.med-rotate {
-  transition: transform 300ms ease;
-}
-
-.med-time-stamp {
+.cp-time-stamp {
   display: flex;
   align-items: center;
 }
 
-.med-time-stamp__icon {
+.cp-time-stamp__icon {
   stroke: hsl(var(--med-color-neutral-10));
   margin-right: 8px;
 }
 
-.med-time-stamp__icon-aula {
-  stroke: hsl(var(--med-color-aula-4));
+.cp-time-stamp__icon--play {
+  stroke: hsl(var(--med-color-aula-3));
 }
 
-.med-time-stamp__title {
+.cp-time-stamp__title {
   margin: 0 8px;
 }
 
@@ -437,6 +425,7 @@
 
 .monta-provas-content__button-tooltip {
   opacity: 0.3;
+  stroke: hsl(var(--med-color-neutral-10));
 }
 
 .monta-provas-filtro__fechar {
@@ -516,12 +505,6 @@
   align-items: center;
   margin: 8px 0px 8px 0px;
   --padding: 8px 16px;
-}
-@media (min-width: 992px) {
-  .monta-prova-filtro__todas {
-    flex-basis: 30%;
-    height: 45px;
-  }
 }
 
 @media (min-width: 992px) {
@@ -616,10 +599,19 @@
   --min-height: 45px;
 }
 
+.monta-provas-filtro__content--subespecialidades {
+  width: 100%;
+}
+
 .monta-provas-filtro-concurso__items {
   border-top: 1px solid hsl(var(--med-color-neutral-3));
   margin: 0 16px;
   --padding: 6px 0px;
+}
+@media (min-width: 992px) {
+  .monta-provas-filtro-concurso__items {
+    --button-margin: 16px !important;
+  }
 }
 
 .monta-provas-filtro__accordion-item {

@@ -1,0 +1,184 @@
+import { Component, Host, h, Prop } from '@stencil/core';
+import { generateMedColor } from '../../../../utils/med-theme';
+export class MedCheckCard {
+  constructor() {
+    this.alert = false;
+  }
+  render() {
+    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName } = this;
+    return (h(Host, { class: generateMedColor(dsColor, {
+        'med-check-card': true,
+        'med-check-card--alert': alert,
+      }) },
+      h("med-base", { class: "med-check-card__container", "spacing-h": "s12" },
+        h("ion-checkbox", { "ds-color": dsColor }),
+        h("div", { class: "med-check-card__text-container" },
+          h("med-type", { token: "p16xb" }, titulo),
+          h("div", { class: "med-check-card__info-container" },
+            h("ion-icon", { class: "med-check-card__icon med-icon med-icon--xxs", name: iconName }),
+            h("med-type", { class: "med-check-card__subtitulo", token: "p12xb", "ds-color": "neutral-8" }, categoria),
+            h("med-type", { token: "p12x", "ds-color": "neutral-8" },
+              horaInicial,
+              " \u2013 ",
+              horaFinal))),
+        h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: "top", position: "end" },
+          h("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }),
+          h("div", { slot: "content" },
+            h("div", { class: "med-check-card__tooltip-header" },
+              h("med-type", { "ds-color": "neutral-01", token: "p14b" }, "Tarefa pendente"),
+              h("ion-icon", { class: "med-check-card__tooltip-icon med-icon med-icon--sm", name: "med-fechar" })),
+            h("med-type", { "ds-color": "neutral-01", token: "p14x", slot: "content" }, "Para reagendar este card, clique no menu ao lado e selecione Editar."))))));
+  }
+  static get is() { return "med-check-card"; }
+  static get encapsulation() { return "scoped"; }
+  static get originalStyleUrls() { return {
+    "$": ["med-check-card.scss"]
+  }; }
+  static get styleUrls() { return {
+    "$": ["med-check-card.css"]
+  }; }
+  static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
+    "alert": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "alert",
+      "reflect": true,
+      "defaultValue": "false"
+    },
+    "titulo": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "titulo",
+      "reflect": true
+    },
+    "categoria": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "categoria",
+      "reflect": true
+    },
+    "horaInicial": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "hora-inicial",
+      "reflect": true
+    },
+    "horaFinal": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "hora-final",
+      "reflect": true
+    },
+    "finalizada": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "finalizada",
+      "reflect": true
+    },
+    "iconName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "icon-name",
+      "reflect": true
+    }
+  }; }
+}

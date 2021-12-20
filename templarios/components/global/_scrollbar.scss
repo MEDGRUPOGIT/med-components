@@ -1,11 +1,18 @@
 @media (pointer: fine) {
-  .med-scrollbar {
-    scrollbar-width: thin;
+   .med-scrollbar {
+    --style: thin;
+    --width: 7px;
+    --height: 7px;
+    --padding: 10px;
+
+    scrollbar-width: var(--style);
+    padding-bottom: var(--padding);
   }
 
   .med-scrollbar::-webkit-scrollbar {
-    height: 7px;
-    width: 7px;
+    height: var(--height);
+    width: var(--width);
+    display: block !important;
   }
 
   .med-scrollbar::-webkit-scrollbar-track {

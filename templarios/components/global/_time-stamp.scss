@@ -1,17 +1,17 @@
-.med-time-stamp {
+.cp-time-stamp {
   display: flex;
   align-items: center;
 }
 
-.med-time-stamp__icon {
+.cp-time-stamp__icon {
   stroke: hsl(var(--med-color-neutral-10));
   margin-right: 8px;
 }
 
-.med-time-stamp__icon-aula {
-  stroke: hsl(var(--med-color-aula-4));
+.cp-time-stamp__icon--play {
+  stroke: hsl(var(--med-color-aula-3));
 }
 
-.med-time-stamp__title {
+.cp-time-stamp__title {
   margin: 0 8px;
 }

@@ -1,8 +1,11 @@
+@import "./accordion-list";
 @import './card-assuntos-temas';
 @import './chart-bar';
 @import './filtro-dashboard-modal';
 @import './filtro-dashboard';
+@import './header-counter';
 @import './tabs';
+@import './video-caption-feedback';
 
 @import "./global/scrollbar";
 
@@ -10,9 +13,6 @@
 // old
 ////////////////////
 
-@import "./aulas/accordion-aulas";
-
-@import "./global/accordion-lista";
 @import "./global/time-stamp";
 
 @import "./main/main-week";

@@ -148,53 +148,55 @@ const TemplateDefault = ({ valores }) => {
                 </med-caption>
               </med-base>
 
-              <med-list-item-accordion titulo="Titulo" class="monta-provas-filtro-concurso__items">
-                <ion-checkbox slot="start"></ion-checkbox>
-                <med-list-item slot="end" titulo="Titulo">
+              <div class="monta-provas-filtro__content--subespecialidades">
+                <med-list-item-accordion titulo="Titulo" class="monta-provas-filtro-concurso__items">
                   <ion-checkbox slot="start"></ion-checkbox>
-                </med-list-item>
-                <med-list-item slot="end" titulo="Titulo">
-                  <ion-checkbox slot="start"></ion-checkbox>
-                </med-list-item>
-                <med-list-item slot="end" titulo="Titulo">
-                  <ion-checkbox slot="start"></ion-checkbox>
-                </med-list-item>
-              </med-list-item-accordion>
+                  <med-list-item slot="end" titulo="Titulo">
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </med-list-item>
+                  <med-list-item slot="end" titulo="Titulo">
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </med-list-item>
+                  <med-list-item slot="end" titulo="Titulo">
+                    <ion-checkbox slot="start"></ion-checkbox>
+                  </med-list-item>
+                </med-list-item-accordion>
 
-              <div class="monta-prova-filtro__items">
-                <ion-checkbox></ion-checkbox>
-                <med-caption
-                  ds-size="sm"
-                  ds-color="neutral-10"
-                  slot="middle"
-                  class="monta-prova-filtro__todas-caption"
-                >
-                  <h3>Cirurgia Geral</h3>
-                </med-caption>
-              </div>
+                <div class="monta-prova-filtro__items">
+                  <ion-checkbox></ion-checkbox>
+                  <med-caption
+                    ds-size="sm"
+                    ds-color="neutral-10"
+                    slot="middle"
+                    class="monta-prova-filtro__todas-caption"
+                  >
+                    <h3>Cirurgia Geral</h3>
+                  </med-caption>
+                </div>
 
-              <div class="monta-prova-filtro__items">
-                <ion-checkbox></ion-checkbox>
-                <med-caption
-                  ds-size="sm"
-                  ds-color="neutral-10"
-                  slot="middle"
-                  class="monta-prova-filtro__todas-caption"
-                >
-                  <h3>Clínica Médica</h3>
-                </med-caption>
-              </div>
+                <div class="monta-prova-filtro__items">
+                  <ion-checkbox></ion-checkbox>
+                  <med-caption
+                    ds-size="sm"
+                    ds-color="neutral-10"
+                    slot="middle"
+                    class="monta-prova-filtro__todas-caption"
+                  >
+                    <h3>Clínica Médica</h3>
+                  </med-caption>
+                </div>
 
-              <div class="monta-prova-filtro__items">
-                <ion-checkbox></ion-checkbox>
-                <med-caption
-                  ds-size="sm"
-                  ds-color="neutral-10"
-                  slot="middle"
-                  class="monta-prova-filtro__todas-caption"
-                >
-                  <h3>Pediatria</h3>
-                </med-caption>
+                <div class="monta-prova-filtro__items">
+                  <ion-checkbox></ion-checkbox>
+                  <med-caption
+                    ds-size="sm"
+                    ds-color="neutral-10"
+                    slot="middle"
+                    class="monta-prova-filtro__todas-caption"
+                  >
+                    <h3>Pediatria</h3>
+                  </med-caption>
+                </div>
               </div>
             </div>
           </med-accordion-item>

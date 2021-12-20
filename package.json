@@ -116,7 +116,7 @@
     "custom:build": "npm-run-all build custom:theme:clean custom:theme:build",
     "custom:storybook": "npm run custom:theme:build && npm-run-all --parallel custom:build:watch storybook",
     "custom:build:storybook": "npm-run-all build custom:theme:clean custom:theme:build build-storybook",
-    "loki": "loki test"
+    "screenshot:loki": "loki test"
   },
   "author": "Ionic Team",
   "license": "MIT",

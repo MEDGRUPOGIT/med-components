@@ -171,6 +171,10 @@
   --background: hsl(var(--med-color-feedback));
 }
 
+:host(.med-base--radius-s00) {
+  border-radius: 0px;
+}
+
 :host(.med-base--radius-s02) {
   border-radius: 2px;
 }

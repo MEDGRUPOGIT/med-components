@@ -3,9 +3,9 @@ import { MedColor } from '../../../../interface';
  * @slot  Slot default.
  */
 export declare class MedChartBar {
-  el: HTMLElement;
-  private labelElementHeight;
-  private labelResizeObserver;
+  hostElement: HTMLElement;
+  private hostHeight;
+  private hostResizeObserver;
   /**
     * Define a cor do componente.
     */
