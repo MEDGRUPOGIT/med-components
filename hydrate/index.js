@@ -14549,7 +14549,7 @@ class MedAddCard {
     const { dsColor, titulo, iconName } = this;
     return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-add-card': true,
-      }) }, hAsync("med-base", { class: "med-add-card__container", "spacing-h": "s16", "spacing-v": "s12" }, hAsync("ion-icon", { class: "med-icon med-add-card__icon", name: iconName }), hAsync("med-type", { token: "p14" }, titulo))));
+      }) }, hAsync("med-base", { class: "med-add-card__container", "spacing-h": "s16", "spacing-v": "s22" }, hAsync("ion-icon", { class: "med-icon med-add-card__icon", name: iconName }), hAsync("med-type", { token: "p14" }, titulo))));
   }
   static get style() { return medAddCardCss; }
   static get cmpMeta() { return {

@@ -6,7 +6,7 @@ export class MedAddCard {
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-add-card': true,
       }) },
-      h("med-base", { class: "med-add-card__container", "spacing-h": "s16", "spacing-v": "s12" },
+      h("med-base", { class: "med-add-card__container", "spacing-h": "s16", "spacing-v": "s22" },
         h("ion-icon", { class: "med-icon med-add-card__icon", name: iconName }),
         h("med-type", { token: "p14" }, titulo))));
   }

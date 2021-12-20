@@ -15,7 +15,7 @@ const MedAddCard = class {
     const { dsColor, titulo, iconName } = this;
     return (index.h(index.Host, { class: medTheme.generateMedColor(dsColor, {
         'med-add-card': true,
-      }) }, index.h("med-base", { class: "med-add-card__container", "spacing-h": "s16", "spacing-v": "s12" }, index.h("ion-icon", { class: "med-icon med-add-card__icon", name: iconName }), index.h("med-type", { token: "p14" }, titulo))));
+      }) }, index.h("med-base", { class: "med-add-card__container", "spacing-h": "s16", "spacing-v": "s22" }, index.h("ion-icon", { class: "med-icon med-add-card__icon", name: iconName }), index.h("med-type", { token: "p14" }, titulo))));
   }
 };
 MedAddCard.style = medAddCardCss;
