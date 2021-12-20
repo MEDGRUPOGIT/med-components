@@ -153,6 +153,7 @@
 }
 .med-check-card__text-container {
   padding: 0 18px;
+  flex: 1;
 }
 .med-check-card__info-container {
   display: flex;
