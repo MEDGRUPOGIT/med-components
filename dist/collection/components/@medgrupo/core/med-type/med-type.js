@@ -1,13 +1,21 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedType {
+  constructor() {
+    /**
+      * Define a tag HTML do componente.
+      */
+    this.tag = 'span';
+  }
   render() {
-    const { dsColor, token } = this;
+    const { dsColor, token, tag } = this;
+    const TagType = tag === undefined ? 'span' : tag;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-type': true,
         [`med-type--${token}`]: token !== undefined,
       }) },
-      h("slot", null)));
+      h(TagType, null,
+        h("slot", null))));
   }
   static get is() { return "med-type"; }
   static get encapsulation() { return "shadow"; }
@@ -61,6 +69,24 @@ export class MedType {
       },
       "attribute": "token",
       "reflect": true
+    },
+    "tag": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'",
+        "resolved": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"p\" | \"span\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a tag HTML do componente."
+      },
+      "attribute": "tag",
+      "reflect": true,
+      "defaultValue": "'span'"
     }
   }; }
 }

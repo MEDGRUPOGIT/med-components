@@ -4,9 +4,10 @@ export class MedCheckCard {
   constructor() {
     this.alert = false;
     this.tooltipPlacement = 'top';
+    this.tooltipCollapsed = true;
   }
   render() {
-    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName, tooltipPlacement } = this;
+    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName, tooltipPlacement, tooltipCollapsed } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
@@ -22,7 +23,7 @@ export class MedCheckCard {
               horaInicial,
               " \u2013 ",
               horaFinal))),
-        h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end" },
+        h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end", collapsed: tooltipCollapsed },
           h("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }),
           h("div", { slot: "content" },
             h("div", { class: "med-check-card__tooltip-header" },
@@ -198,6 +199,24 @@ export class MedCheckCard {
       "attribute": "tooltip-placement",
       "reflect": true,
       "defaultValue": "'top'"
+    },
+    "tooltipCollapsed": {
+      "type": "boolean",
+      "mutable": true,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "tooltip-collapsed",
+      "reflect": true,
+      "defaultValue": "true"
     }
   }; }
 }

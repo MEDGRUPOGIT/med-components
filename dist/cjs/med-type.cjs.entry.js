@@ -10,13 +10,18 @@ const medTypeCss = ":root{--med-font-family-brand:\"fsemeric\";--med-font-family
 const MedType = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    /**
+      * Define a tag HTML do componente.
+      */
+    this.tag = 'span';
   }
   render() {
-    const { dsColor, token } = this;
+    const { dsColor, token, tag } = this;
+    const TagType = tag === undefined ? 'span' : tag;
     return (index.h(index.Host, { class: medTheme.generateMedColor(dsColor, {
         'med-type': true,
         [`med-type--${token}`]: token !== undefined,
-      }) }, index.h("slot", null)));
+      }) }, index.h(TagType, null, index.h("slot", null))));
   }
 };
 MedType.style = medTypeCss;

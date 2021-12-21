@@ -5667,6 +5667,10 @@
           "description": ""
         },
         {
+          "name": "tooltip-collapsed",
+          "description": ""
+        },
+        {
           "name": "tooltip-placement",
           "description": "",
           "values": [
@@ -6928,6 +6932,36 @@
         {
           "name": "ds-color",
           "description": "Define a cor do componente."
+        },
+        {
+          "name": "tag",
+          "description": "Define a tag HTML do componente.",
+          "values": [
+            {
+              "name": "h1"
+            },
+            {
+              "name": "h2"
+            },
+            {
+              "name": "h3"
+            },
+            {
+              "name": "h4"
+            },
+            {
+              "name": "h5"
+            },
+            {
+              "name": "h6"
+            },
+            {
+              "name": "p"
+            },
+            {
+              "name": "span"
+            }
+          ]
         },
         {
           "name": "token",

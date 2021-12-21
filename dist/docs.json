@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-21T17:09:55",
+  "timestamp": "2021-12-21T17:55:23",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -22312,6 +22312,23 @@
           "required": false
         },
         {
+          "name": "tooltipCollapsed",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "tooltip-collapsed",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "tooltipPlacement",
           "type": "\"bottom\" | \"left\" | \"right\" | \"top\" | undefined",
           "mutable": false,
@@ -26015,6 +26032,55 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "tag",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"p\" | \"span\" | undefined",
+          "mutable": false,
+          "attr": "tag",
+          "reflectToAttr": true,
+          "docs": "Define a tag HTML do componente.",
+          "docsTags": [],
+          "default": "'span'",
+          "values": [
+            {
+              "value": "h1",
+              "type": "string"
+            },
+            {
+              "value": "h2",
+              "type": "string"
+            },
+            {
+              "value": "h3",
+              "type": "string"
+            },
+            {
+              "value": "h4",
+              "type": "string"
+            },
+            {
+              "value": "h5",
+              "type": "string"
+            },
+            {
+              "value": "h6",
+              "type": "string"
+            },
+            {
+              "value": "p",
+              "type": "string"
+            },
+            {
+              "value": "span",
               "type": "string"
             },
             {
