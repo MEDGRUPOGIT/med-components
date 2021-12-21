@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-21T16:40:13",
+  "timestamp": "2021-12-21T17:09:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -22309,6 +22309,39 @@
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "tooltipPlacement",
+          "type": "\"bottom\" | \"left\" | \"right\" | \"top\" | undefined",
+          "mutable": false,
+          "attr": "tooltip-placement",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "'top'",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": false,
           "required": false
         }
       ],

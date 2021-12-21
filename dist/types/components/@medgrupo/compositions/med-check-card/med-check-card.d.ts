@@ -11,5 +11,6 @@ export declare class MedCheckCard {
   horaFinal?: string;
   finalizada?: string;
   iconName?: string;
+  tooltipPlacement: "top" | "bottom" | "left" | "right" | undefined;
   render(): any;
 }

@@ -3,9 +3,10 @@ import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCheckCard {
   constructor() {
     this.alert = false;
+    this.tooltipPlacement = 'top';
   }
   render() {
-    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName } = this;
+    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName, tooltipPlacement } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
@@ -21,7 +22,7 @@ export class MedCheckCard {
               horaInicial,
               " \u2013 ",
               horaFinal))),
-        h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: "top", position: "end" },
+        h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end" },
           h("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }),
           h("div", { slot: "content" },
             h("div", { class: "med-check-card__tooltip-header" },
@@ -179,6 +180,24 @@ export class MedCheckCard {
       },
       "attribute": "icon-name",
       "reflect": true
+    },
+    "tooltipPlacement": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "\"top\" | \"bottom\" | \"left\" | \"right\" | undefined",
+        "resolved": "\"bottom\" | \"left\" | \"right\" | \"top\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "tooltip-placement",
+      "reflect": true,
+      "defaultValue": "'top'"
     }
   }; }
 }

@@ -3303,6 +3303,7 @@ export namespace Components {
         "horaInicial"?: string;
         "iconName"?: string;
         "titulo"?: string;
+        "tooltipPlacement": "top" | "bottom" | "left" | "right" | undefined;
     }
     interface MedChild {
         /**
@@ -8266,6 +8267,7 @@ declare namespace LocalJSX {
         "horaInicial"?: string;
         "iconName"?: string;
         "titulo"?: string;
+        "tooltipPlacement"?: "top" | "bottom" | "left" | "right" | undefined;
     }
     interface MedChild {
         /**

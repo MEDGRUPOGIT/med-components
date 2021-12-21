@@ -5665,6 +5665,24 @@
         {
           "name": "titulo",
           "description": ""
+        },
+        {
+          "name": "tooltip-placement",
+          "description": "",
+          "values": [
+            {
+              "name": "bottom"
+            },
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            },
+            {
+              "name": "top"
+            }
+          ]
         }
       ],
       "references": [

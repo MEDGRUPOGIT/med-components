@@ -167,7 +167,6 @@
   margin: 0 8px 0 10px;
 }
 .med-check-card__tooltip {
-  --z-index: 4;
   display: none;
 }
 .med-check-card__tooltip-header {
