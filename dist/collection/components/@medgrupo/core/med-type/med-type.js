@@ -74,8 +74,8 @@ export class MedType {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'",
-        "resolved": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"p\" | \"span\" | undefined",
+        "original": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label'",
+        "resolved": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"label\" | \"p\" | \"span\" | undefined",
         "references": {}
       },
       "required": false,

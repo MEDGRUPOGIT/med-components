@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-21T17:55:23",
+  "timestamp": "2021-12-21T18:47:02",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -23275,6 +23275,25 @@
       }
     },
     {
+      "filePath": "./src/components/@medgrupo/core/med-input/med-input.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-input",
+      "readme": "# med-input\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/@medgrupo/global/med-item-aulas/med-item-aulas.tsx",
       "encapsulation": "shadow",
       "tag": "med-item-aulas",
@@ -26043,7 +26062,7 @@
         },
         {
           "name": "tag",
-          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"p\" | \"span\" | undefined",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"label\" | \"p\" | \"span\" | undefined",
           "mutable": false,
           "attr": "tag",
           "reflectToAttr": true,
@@ -26073,6 +26092,10 @@
             },
             {
               "value": "h6",
+              "type": "string"
+            },
+            {
+              "value": "label",
               "type": "string"
             },
             {

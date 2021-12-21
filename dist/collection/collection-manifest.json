@@ -9,6 +9,7 @@
     "./components/@medgrupo/core/med-calendar/med-calendar.js",
     "./components/@medgrupo/core/med-chart-bar/med-chart-bar.js",
     "./components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.js",
+    "./components/@medgrupo/core/med-input/med-input.js",
     "./components/@medgrupo/core/med-piechart/med-piechart.js",
     "./components/@medgrupo/core/med-tab-button/med-tab-button.js",
     "./components/@medgrupo/core/med-tabs/med-tabs.js",

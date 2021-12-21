@@ -5979,6 +5979,20 @@
       ]
     },
     {
+      "name": "med-input",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-input/med-input.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-item-aulas",
       "description": {
         "kind": "markdown",
@@ -6954,6 +6968,9 @@
             },
             {
               "name": "h6"
+            },
+            {
+              "name": "label"
             },
             {
               "name": "p"

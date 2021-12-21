@@ -12,6 +12,6 @@ export declare class MedType implements ComponentInterface {
   /**
     * Define a tag HTML do componente.
     */
-  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label';
   render(): any;
 }

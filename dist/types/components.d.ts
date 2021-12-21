@@ -3431,6 +3431,8 @@ export namespace Components {
          */
         "titulo"?: string;
     }
+    interface MedInput {
+    }
     interface MedItemAulas {
         /**
           * Define a cor do componente.
@@ -3853,7 +3855,7 @@ export namespace Components {
         /**
           * Define a tag HTML do componente.
          */
-        "tag"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+        "tag"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label';
         /**
           * Define o token do componente.
          */
@@ -4653,6 +4655,12 @@ declare global {
         prototype: HTMLMedImageZoomElement;
         new (): HTMLMedImageZoomElement;
     };
+    interface HTMLMedInputElement extends Components.MedInput, HTMLStencilElement {
+    }
+    var HTMLMedInputElement: {
+        prototype: HTMLMedInputElement;
+        new (): HTMLMedInputElement;
+    };
     interface HTMLMedItemAulasElement extends Components.MedItemAulas, HTMLStencilElement {
     }
     var HTMLMedItemAulasElement: {
@@ -4976,6 +4984,7 @@ declare global {
         "med-header": HTMLMedHeaderElement;
         "med-heading": HTMLMedHeadingElement;
         "med-image-zoom": HTMLMedImageZoomElement;
+        "med-input": HTMLMedInputElement;
         "med-item-aulas": HTMLMedItemAulasElement;
         "med-list": HTMLMedListElement;
         "med-list-item": HTMLMedListItemElement;
@@ -8416,6 +8425,8 @@ declare namespace LocalJSX {
          */
         "titulo"?: string;
     }
+    interface MedInput {
+    }
     interface MedItemAulas {
         /**
           * Define a cor do componente.
@@ -8833,7 +8844,7 @@ declare namespace LocalJSX {
         /**
           * Define a tag HTML do componente.
          */
-        "tag"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+        "tag"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label';
         /**
           * Define o token do componente.
          */
@@ -9016,6 +9027,7 @@ declare namespace LocalJSX {
         "med-header": MedHeader;
         "med-heading": MedHeading;
         "med-image-zoom": MedImageZoom;
+        "med-input": MedInput;
         "med-item-aulas": MedItemAulas;
         "med-list": MedList;
         "med-list-item": MedListItem;
@@ -9179,6 +9191,7 @@ declare module "@stencil/core" {
             "med-header": LocalJSX.MedHeader & JSXBase.HTMLAttributes<HTMLMedHeaderElement>;
             "med-heading": LocalJSX.MedHeading & JSXBase.HTMLAttributes<HTMLMedHeadingElement>;
             "med-image-zoom": LocalJSX.MedImageZoom & JSXBase.HTMLAttributes<HTMLMedImageZoomElement>;
+            "med-input": LocalJSX.MedInput & JSXBase.HTMLAttributes<HTMLMedInputElement>;
             "med-item-aulas": LocalJSX.MedItemAulas & JSXBase.HTMLAttributes<HTMLMedItemAulasElement>;
             "med-list": LocalJSX.MedList & JSXBase.HTMLAttributes<HTMLMedListElement>;
             "med-list-item": LocalJSX.MedListItem & JSXBase.HTMLAttributes<HTMLMedListItemElement>;
