@@ -13,7 +13,7 @@ const MedChartBarHorizontal = class {
   }
   render() {
     const { dsColor, value } = this;
-    return (h(Host, { class: generateMedColor(dsColor, { ['med-chart-bar-horizontal']: true }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, h("div", { class: "med-chart-bar-horizontal__container" }, h("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${value === 0 ? -100 : value - 100}` } }), h("div", { class: "med-chart-bar-horizontal__track", part: "track" })), h("med-type", { class: "med-chart-bar-horizontal__label" }, value, "%")));
+    return (h(Host, { class: generateMedColor(dsColor, { ['med-chart-bar-horizontal']: true }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, h("div", { class: "med-chart-bar-horizontal__container" }, h("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${value === 0 ? -100 : value - 100}` } }), h("div", { class: "med-chart-bar-horizontal__track", part: "track" })), h("med-type", { class: "med-chart-bar-horizontal__label", token: "p10b" }, value, "%")));
   }
 };
 MedChartBarHorizontal.style = medChartBarHorizontalCss;

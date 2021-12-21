@@ -5512,6 +5512,18 @@
           "description": "Define a cor do componente."
         },
         {
+          "name": "meta",
+          "description": ""
+        },
+        {
+          "name": "realizado",
+          "description": ""
+        },
+        {
+          "name": "titulo",
+          "description": ""
+        },
+        {
           "name": "value",
           "description": "Define o valor do componente."
         }

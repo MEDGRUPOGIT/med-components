@@ -13,7 +13,7 @@ export class MedChartBarHorizontal {
       h("div", { class: "med-chart-bar-horizontal__container" },
         h("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${value === 0 ? -100 : value - 100}` } }),
         h("div", { class: "med-chart-bar-horizontal__track", part: "track" })),
-      h("med-type", { class: "med-chart-bar-horizontal__label" },
+      h("med-type", { class: "med-chart-bar-horizontal__label", token: "p10b" },
         value,
         "%")));
   }

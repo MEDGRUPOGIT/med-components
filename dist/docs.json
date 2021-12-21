@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-21T13:45:06",
+  "timestamp": "2021-12-21T16:40:13",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -21799,6 +21799,63 @@
           "attr": "ds-color",
           "reflectToAttr": true,
           "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "meta",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "meta",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "realizado",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "realizado",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "titulo",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "titulo",
+          "reflectToAttr": true,
+          "docs": "",
           "docsTags": [],
           "values": [
             {

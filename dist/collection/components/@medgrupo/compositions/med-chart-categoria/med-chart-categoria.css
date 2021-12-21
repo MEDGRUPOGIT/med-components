@@ -147,7 +147,7 @@
 }
 
 :host {
-  --color: hsl(var(--med-color-brand-4));
+  --color-realizado: hsl(var(--med-color-brand-4));
 }
 
 :host {
@@ -160,21 +160,33 @@
 .med-chart-categoria__info {
   display: flex;
   margin-left: auto;
+  padding-left: 16px;
+}
+.med-chart-categoria__info-type {
+  margin-left: 3px;
+}
+.med-chart-categoria__info-type--realizado {
+  --color: var(--color-realizado);
 }
 .med-chart-categoria__meta {
   display: flex;
 }
-.med-chart-categoria__tempo-meta {
-  margin-left: 5px;
-}
 .med-chart-categoria__realizado {
   display: flex;
-  margin-left: 16px;
-}
-.med-chart-categoria__tempo-realizado {
-  --color: var(--color);
-  margin-left: 5px;
+  margin-left: 30px;
 }
 .med-chart-categoria__chart {
-  padding-top: 10px;
+  padding-top: 8px;
+}
+
+:host(.med-color) {
+  --color-realizado: hsl(var(--med-color-4));
+}
+
+:host(.med-color-neutral) {
+  --color-realizado: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --color-realizado: hsl(var(--med-color-feedback));
 }
