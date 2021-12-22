@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Event } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCheckCard {
   constructor() {
@@ -7,13 +7,13 @@ export class MedCheckCard {
     this.tooltipCollapsed = true;
   }
   render() {
-    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName, tooltipPlacement, tooltipCollapsed } = this;
+    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName, tooltipPlacement, tooltipCollapsed, tooltipHeading, tooltipContent } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
       }) },
       h("med-base", { class: "med-check-card__container", "spacing-h": "s12" },
-        h("ion-checkbox", { "ds-color": dsColor }),
+        h("slot", { name: "input" }),
         h("div", { class: "med-check-card__text-container" },
           h("med-type", { token: "p16xb" }, titulo),
           h("div", { class: "med-check-card__info-container" },
@@ -27,12 +27,12 @@ export class MedCheckCard {
           h("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }),
           h("div", { slot: "content" },
             h("div", { class: "med-check-card__tooltip-header" },
-              h("med-type", { "ds-color": "neutral-01", token: "p14b" }, "Tarefa pendente"),
+              h("med-type", { "ds-color": "neutral-01", token: "p14b" }, tooltipHeading),
               h("ion-icon", { class: "med-check-card__tooltip-icon med-icon med-icon--sm", name: "med-fechar" })),
-            h("med-type", { "ds-color": "neutral-01", token: "p14x", slot: "content" }, "Para reagendar este card, clique no menu ao lado e selecione Editar."))))));
+            h("med-type", { "ds-color": "neutral-01", token: "p14x", slot: "content" }, tooltipContent))))));
   }
   static get is() { return "med-check-card"; }
-  static get encapsulation() { return "scoped"; }
+  static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
     "$": ["med-check-card.scss"]
   }; }
@@ -217,6 +217,56 @@ export class MedCheckCard {
       "attribute": "tooltip-collapsed",
       "reflect": true,
       "defaultValue": "true"
+    },
+    "tooltipHeading": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "tooltip-heading",
+      "reflect": true
+    },
+    "tooltipContent": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "tooltip-content",
+      "reflect": true
     }
   }; }
+  static get events() { return [{
+      "method": "medClick",
+      "name": "medClick",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      }
+    }]; }
 }

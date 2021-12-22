@@ -168,7 +168,6 @@
 }
 .med-check-card__tooltip {
   display: none;
-  --z-index: 4;
 }
 .med-check-card__tooltip-header {
   display: flex;

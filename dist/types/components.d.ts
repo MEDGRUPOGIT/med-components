@@ -3169,10 +3169,6 @@ export namespace Components {
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
     }
     interface MedCaption {
         /**
@@ -3304,6 +3300,8 @@ export namespace Components {
         "iconName"?: string;
         "titulo"?: string;
         "tooltipCollapsed": boolean;
+        "tooltipContent"?: string;
+        "tooltipHeading"?: string;
         "tooltipPlacement": "top" | "bottom" | "left" | "right" | undefined;
     }
     interface MedChild {
@@ -8147,10 +8145,6 @@ declare namespace LocalJSX {
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
     }
     interface MedCaption {
         /**
@@ -8280,8 +8274,11 @@ declare namespace LocalJSX {
         "horaFinal"?: string;
         "horaInicial"?: string;
         "iconName"?: string;
+        "onMedClick"?: (event: CustomEvent<any>) => void;
         "titulo"?: string;
         "tooltipCollapsed"?: boolean;
+        "tooltipContent"?: string;
+        "tooltipHeading"?: string;
         "tooltipPlacement"?: "top" | "bottom" | "left" | "right" | undefined;
     }
     interface MedChild {

@@ -1,3 +1,4 @@
+import { EventEmitter } from '../../../../stencil-public-runtime';
 import { MedColor } from '../../../../interface';
 export declare class MedCheckCard {
   /**
@@ -13,5 +14,8 @@ export declare class MedCheckCard {
   iconName?: string;
   tooltipPlacement: "top" | "bottom" | "left" | "right" | undefined;
   tooltipCollapsed: boolean;
+  tooltipHeading?: string;
+  tooltipContent?: string;
+  medClick: EventEmitter;
   render(): any;
 }

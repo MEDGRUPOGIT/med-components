@@ -1,84 +1,122 @@
-import { Component, Host, h, Prop } from '@stencil/core';
-import { generateMedColor } from '../../../../utils/med-theme';
+import { Component, Host, h, Element } from '@stencil/core';
 export class MedCalendar {
+  constructor() {
+    this.today = new Date();
+    this.currentMonth = this.today.getMonth();
+    this.currentYear = this.today.getFullYear();
+    this.generate_year_range = (start, end) => {
+      let years = '';
+      for (var year = start; year <= end; year++) {
+        years += "<option value='" + year + "'>" + year + "</option>";
+      }
+      return years;
+    };
+    this.next = () => {
+      this.currentYear = (this.currentMonth === 11) ? this.currentYear + 1 : this.currentYear;
+      this.currentMonth = (this.currentMonth + 1) % 12;
+      this.showCalendar(this.currentMonth, this.currentYear);
+    };
+    this.previous = () => {
+      this.currentYear = (this.currentMonth === 0) ? this.currentYear - 1 : this.currentYear;
+      this.currentMonth = (this.currentMonth === 0) ? 11 : this.currentMonth - 1;
+      this.showCalendar(this.currentMonth, this.currentYear);
+    };
+    this.jump = () => {
+      this.currentYear = parseInt(this.selectYear.value);
+      this.currentMonth = parseInt(this.selectMonth.value);
+      this.showCalendar(this.currentMonth, this.currentYear);
+    };
+    this.showCalendar = (month, year) => {
+      const firstDay = (new Date(year, month)).getDay();
+      const tbl = this.hostElement.querySelector('calendar-body');
+      tbl.innerHTML = "";
+      this.monthAndYear.innerHTML = this.months[month] + " " + year;
+      this.selectYear.value = year;
+      this.selectMonth.value = month;
+      // creating all cells
+      let date = 1;
+      for (var i = 0; i < 6; i++) {
+        const row = document.createElement("tr");
+        let cell, cellText;
+        for (var j = 0; j < 7; j++) {
+          if (i === 0 && j < firstDay) {
+            cell = document.createElement("td");
+            cellText = document.createTextNode("");
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+          }
+          else if (date > this.daysInMonth(month, year)) {
+            break;
+          }
+          else {
+            cell = document.createElement("td");
+            cell.setAttribute("data-date", `${date}`);
+            cell.setAttribute("data-month", month + 1);
+            cell.setAttribute("data-year", year);
+            cell.setAttribute("data-month_name", this.months[month]);
+            cell.className = "date-picker";
+            cell.innerHTML = "<span>" + date + "</span>";
+            if (date === this.today.getDate() && year === this.today.getFullYear() && month === this.today.getMonth()) {
+              cell.className = "date-picker selected";
+            }
+            row.appendChild(cell);
+            date++;
+          }
+        }
+        tbl.appendChild(row);
+      }
+    };
+    this.daysInMonth = (iMonth, iYear) => {
+      return 32 - new Date(iYear, iMonth, 32).getDate();
+    };
+  }
+  componentDidLoad() {
+    this.selectYear = this.hostElement.querySelector('.year');
+    this.selectMonth = this.hostElement.querySelector('.month');
+    // this.createYear = generate_year_range( 1970, currentYear );
+    this.createYear = this.generate_year_range(1970, 2050);
+    this.selectYear.innerHTML = this.createYear;
+    // const calendar = this.hostElement.querySelector(".calendar");
+    // const lang = calendar?.getAttribute('data-lang');
+    this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    this.days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let $dataHead = '<tr>';
+    for (const dhead in this.days) {
+      $dataHead += "<th data-days='" + this.days[dhead] + "'>" + this.days[dhead] + "</th>";
+    }
+    $dataHead += "</tr>";
+    //alert($dataHead);
+    this.hostElement.querySelector('thead-month').innerHTML = $dataHead;
+    this.monthAndYear = this.hostElement.querySelector('.monthAndYear');
+    this.showCalendar(this.currentMonth, this.currentYear);
+  }
   render() {
-    const { dsColor } = this;
-    return (h(Host, { class: generateMedColor(dsColor, { 'med-calendar': true }) },
-      h("div", { class: "week" },
-        h("div", { class: "week__day" }, "Seg"),
-        h("div", { class: "week__day" }, "Ter"),
-        h("div", { class: "week__day" }, "Qua"),
-        h("div", { class: "week__day" }, "Qui"),
-        h("div", { class: "week__day" }, "Sex"),
-        h("div", { class: "week__day" }, "Sab")),
-      h("div", { class: "body" },
-        h("ion-slides", null,
-          h("ion-slide", null,
-            h("div", { class: "month__grid" },
-              h("button", { class: "week__day" }, "1"),
-              h("button", { class: "week__day" }, "2"),
-              h("button", { class: "week__day" }, "3"),
-              h("button", { class: "week__day" }, "4"),
-              h("button", { class: "week__day" }, "5"),
-              h("button", { class: "week__day" }, "6"),
-              h("button", { class: "week__day" }, "7"),
-              h("button", { class: "week__day" }, "8"),
-              h("button", { class: "week__day" }, "9"),
-              h("button", { class: "week__day" }, "10"),
-              h("button", { class: "week__day" }, "11"),
-              h("button", { class: "week__day" }, "12"),
-              h("button", { class: "week__day" }, "13"),
-              h("button", { class: "week__day" }, "14"),
-              h("button", { class: "week__day" }, "15"),
-              h("button", { class: "week__day" }, "16"),
-              h("button", { class: "week__day" }, "17"),
-              h("button", { class: "week__day" }, "18"),
-              h("button", { class: "week__day" }, "19"),
-              h("button", { class: "week__day" }, "20"),
-              h("button", { class: "week__day" }, "21"),
-              h("button", { class: "week__day" }, "22"),
-              h("button", { class: "week__day" }, "23"),
-              h("button", { class: "week__day" }, "24"),
-              h("button", { class: "week__day" }, "25"),
-              h("button", { class: "week__day" }, "26"),
-              h("button", { class: "week__day" }, "27"),
-              h("button", { class: "week__day" }, "28"),
-              h("button", { class: "week__day" }, "29"),
-              h("button", { class: "week__day" }, "30"),
-              h("button", { class: "week__day" }, "31"))),
-          h("ion-slide", null,
-            h("div", { class: "month__grid" },
-              h("button", { class: "week__day" }, "1"),
-              h("button", { class: "week__day" }, "2"),
-              h("button", { class: "week__day" }, "3"),
-              h("button", { class: "week__day" }, "4"),
-              h("button", { class: "week__day" }, "5"),
-              h("button", { class: "week__day" }, "6"),
-              h("button", { class: "week__day" }, "7"),
-              h("button", { class: "week__day" }, "8"),
-              h("button", { class: "week__day" }, "9"),
-              h("button", { class: "week__day" }, "10"),
-              h("button", { class: "week__day" }, "11"),
-              h("button", { class: "week__day" }, "12"),
-              h("button", { class: "week__day" }, "13"),
-              h("button", { class: "week__day" }, "14"),
-              h("button", { class: "week__day" }, "15"),
-              h("button", { class: "week__day" }, "16"),
-              h("button", { class: "week__day" }, "17"),
-              h("button", { class: "week__day" }, "18"),
-              h("button", { class: "week__day" }, "19"),
-              h("button", { class: "week__day" }, "20"),
-              h("button", { class: "week__day" }, "21"),
-              h("button", { class: "week__day" }, "22"),
-              h("button", { class: "week__day" }, "23"),
-              h("button", { class: "week__day" }, "24"),
-              h("button", { class: "week__day" }, "25"),
-              h("button", { class: "week__day" }, "26"),
-              h("button", { class: "week__day" }, "27"),
-              h("button", { class: "week__day" }, "28"),
-              h("button", { class: "week__day" }, "29"),
-              h("button", { class: "week__day" }, "30"),
-              h("button", { class: "week__day" }, "31")))))));
+    return (h(Host, null,
+      h("div", { class: "wrapper" },
+        h("div", { class: "container-calendar" },
+          h("h3", { id: "monthAndYear", class: "monthAndYear" }),
+          h("div", { class: "button-container-calendar" },
+            h("button", { id: "previous", onClick: () => this.previous() }, "\u2039"),
+            h("button", { id: "next", onClick: () => this.next() }, "\u203A")),
+          h("table", { class: "table-calendar", id: "calendar", "data-lang": "en" },
+            h("thead", { class: "thead-month", id: "thead-month" }),
+            h("tbody", { class: "calendar-body", id: "calendar-body" })),
+          h("div", { class: "footer-container-calendar" },
+            h("label", { htmlFor: "month" }, "Jump To: "),
+            h("select", { id: "month", class: "month", onChange: () => this.jump() },
+              h("option", { value: "0" }, "Jan"),
+              h("option", { value: "1" }, "Feb"),
+              h("option", { value: "2" }, "Mar"),
+              h("option", { value: "3" }, "Apr"),
+              h("option", { value: "4" }, "May"),
+              h("option", { value: "5" }, "Jun"),
+              h("option", { value: "6" }, "Jul"),
+              h("option", { value: "7" }, "Aug"),
+              h("option", { value: "8" }, "Sep"),
+              h("option", { value: "9" }, "Oct"),
+              h("option", { value: "10" }, "Nov"),
+              h("option", { value: "11" }, "Dec")),
+            h("select", { id: "year", class: "year", onChange: () => this.jump() }))))));
   }
   static get is() { return "med-calendar"; }
   static get encapsulation() { return "shadow"; }
@@ -88,28 +126,5 @@ export class MedCalendar {
   static get styleUrls() { return {
     "$": ["med-calendar.css"]
   }; }
-  static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    }
-  }; }
+  static get elementRef() { return "hostElement"; }
 }
