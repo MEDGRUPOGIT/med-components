@@ -165,9 +165,14 @@
 }
 .med-check-card__subtitulo {
   margin: 0 8px 0 10px;
+  stroke: hsl(var(--med-color-neutral-8));
+}
+.med-check-card__hora {
+  stroke: hsl(var(--med-color-neutral-8));
 }
 .med-check-card__tooltip {
   display: none;
+  --background: hsl(var(--med-color-fb-warning));
 }
 .med-check-card__tooltip-header {
   display: flex;
