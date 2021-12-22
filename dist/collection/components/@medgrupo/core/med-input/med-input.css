@@ -153,3 +153,7 @@
 ::slotted(med-type) {
   padding-bottom: 8px;
 }
+
+::slotted(ion-textarea) {
+  margin: 0;
+}
