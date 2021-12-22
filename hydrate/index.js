@@ -15584,7 +15584,7 @@ class MedCheckCard {
   }
   render() {
     const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName, tooltipPlacement, tooltipCollapsed, tooltipHeading, tooltipContent } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
       }) }, hAsync("med-base", { class: "med-check-card__container", "spacing-h": "s12" }, hAsync("slot", { name: "input" }), hAsync("div", { class: "med-check-card__text-container" }, hAsync("med-type", { token: "p16xb" }, titulo), hAsync("div", { class: "med-check-card__info-container" }, hAsync("ion-icon", { class: "med-check-card__icon med-icon med-icon--xxs", name: iconName }), hAsync("med-type", { class: "med-check-card__subtitulo", token: "p12xb" }, categoria), hAsync("med-type", { class: "med-check-card__hora", token: "p12x" }, horaInicial, " \u2013 ", horaFinal))), hAsync("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end", collapsed: tooltipCollapsed }, hAsync("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }), hAsync("div", { slot: "content" }, hAsync("div", { class: "med-check-card__tooltip-header" }, hAsync("med-type", { "ds-color": "neutral-01", token: "p14b" }, tooltipHeading), hAsync("ion-icon", { class: "med-check-card__tooltip-icon med-icon med-icon--sm", name: "med-fechar" })), hAsync("med-type", { "ds-color": "neutral-01", token: "p14x", slot: "content" }, tooltipContent))))));

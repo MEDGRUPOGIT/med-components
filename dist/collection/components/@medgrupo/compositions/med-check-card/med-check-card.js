@@ -8,7 +8,7 @@ export class MedCheckCard {
   }
   render() {
     const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName, tooltipPlacement, tooltipCollapsed, tooltipHeading, tooltipContent } = this;
-    return (h(Host, { class: generateMedColor(dsColor, {
+    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
       }) },
