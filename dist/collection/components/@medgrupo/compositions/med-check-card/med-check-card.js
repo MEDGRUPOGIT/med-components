@@ -13,7 +13,7 @@ export class MedCheckCard {
         'med-check-card--alert': alert,
       }) },
       h("med-base", { class: "med-check-card__container", "spacing-h": "s12" },
-        h("slot", { name: "input" }),
+        h("ion-checkbox", { "ds-color": dsColor }),
         h("div", { class: "med-check-card__text-container" },
           h("med-type", { token: "p16xb" }, titulo),
           h("div", { class: "med-check-card__info-container" },
