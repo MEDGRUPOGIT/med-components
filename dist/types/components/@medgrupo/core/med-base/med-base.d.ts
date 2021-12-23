@@ -12,7 +12,7 @@ export declare class MedBase {
   /**
     * Define a variação de borde-radius do componente.
     */
-  radius?: 's02' | 's04' | 's08' | string;
+  radius?: 's00' | 's02' | 's04' | 's08' | string;
   /**
    * Define a variação de padding vertical do componente.
    */

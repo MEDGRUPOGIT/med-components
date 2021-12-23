@@ -1,0 +1,42 @@
+@import "../../templarios/abstracts";
+
+.cp-card-assuntos-temas {
+  align-items: center;
+  justify-content: space-between;
+
+  &__column {
+    display: flex;
+    align-items: center;
+    padding: 0 16px 0 0;
+
+    &:nth-of-type(2) {
+      border-right: 1px solid color('neutral', '3');
+      flex: 1;
+    }
+
+    &:nth-of-type(3) {
+      padding: 0 0 0 16px;
+    }
+  }
+
+  &__icon-background {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+
+    &--positivo {
+      background: color('feedback', 'success');
+    }
+
+    &--negativo {
+      background: color('feedback', 'warning');
+      transform: rotate(180deg);
+    }
+  }
+
+  &__icon {
+    stroke: color('neutral', '1');
+  }
+}

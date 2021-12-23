@@ -53,7 +53,7 @@ export class MedBase {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'s02' | 's04' | 's08' | string",
+        "original": "'s00' | 's02' | 's04' | 's08' | string",
         "resolved": "string | undefined",
         "references": {}
       },

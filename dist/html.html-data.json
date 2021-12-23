@@ -7,7 +7,16 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": [],
+      "attributes": [
+        {
+          "name": "no-animation",
+          "description": "TODO."
+        },
+        {
+          "name": "single-open",
+          "description": "TODO."
+        }
+      ],
       "references": [
         {
           "name": "Source code",
@@ -21,7 +30,24 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": [],
+      "attributes": [
+        {
+          "name": "background",
+          "description": "Define se o componente irá ter background quando aberto."
+        },
+        {
+          "name": "disable",
+          "description": "Desabilita o componente."
+        },
+        {
+          "name": "header-toggle",
+          "description": "Desabilita o componente."
+        },
+        {
+          "name": "open",
+          "description": "Abre programaticamente o componente."
+        }
+      ],
       "references": [
         {
           "name": "Source code",
@@ -4905,6 +4931,10 @@
           ]
         },
         {
+          "name": "no-animation",
+          "description": ""
+        },
+        {
           "name": "no-border",
           "description": "Define a variação da borda do componente."
         },
@@ -6196,30 +6226,22 @@
           "description": "Define o estado do componente."
         },
         {
-          "name": "download-progresso",
-          "description": "Define a porcentagem de download do botão de download."
-        },
-        {
-          "name": "downloaded",
-          "description": "Define o estado do componente."
-        },
-        {
-          "name": "downloading",
-          "description": "Define o estado do componente."
-        },
-        {
           "name": "ds-color",
           "description": "Define a cor do componente."
         },
         {
-          "name": "progresso",
-          "description": "Define o progresso a ser mostrado."
+          "name": "text",
+          "description": "Define o texto do componente."
+        },
+        {
+          "name": "value",
+          "description": "Define o value do componente."
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-piechart/med-piechart.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-piechart/med-piechart.tsx"
         }
       ]
     },
@@ -6390,6 +6412,62 @@
       ]
     },
     {
+      "name": "med-semana",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "active",
+          "description": "Define o estado do componente."
+        },
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "skin",
+          "description": "Define a skin do componente.",
+          "values": [
+            {
+              "name": "lista"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-semana/med-semana.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-semanas",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "skin",
+          "description": "",
+          "values": [
+            {
+              "name": "lista"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-semanas/med-semanas.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-subtitle",
       "description": {
         "kind": "markdown",
@@ -6441,6 +6519,48 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-subtitle/med-subtitle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-tab-button",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "active",
+          "description": "Define a variação da borda do componente."
+        },
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-tab-button/med-tab-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-tabs",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-tabs/med-tabs.tsx"
         }
       ]
     },
@@ -6649,6 +6769,25 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-type/med-type.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-video-list-item",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/med-video-list-item/med-video-list-item.tsx"
         }
       ]
     },

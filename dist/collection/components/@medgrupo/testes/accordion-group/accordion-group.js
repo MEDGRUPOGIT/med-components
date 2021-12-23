@@ -1,11 +1,19 @@
-import { Component, h, Host, Listen, Element } from '@stencil/core';
+import { Component, h, Host, Listen, Element, Prop } from '@stencil/core';
 import { createAnimation } from '../../../../utils/animation/animation';
 export class AccordionGroup {
   constructor() {
+    /**
+      * TODO.
+      */
+    this.singleOpen = true;
+    /**
+      * TODO.
+      */
+    this.noAnimation = false;
     this.currentlyOpen = null;
     // public blockerDownAnimation!: Animation;
-    this.openAnimationTime = 300;
-    this.closeAnimationTime = 300;
+    this.openAnimationTime = this.noAnimation ? 0 : 300;
+    this.closeAnimationTime = this.noAnimation ? 0 : 300;
   }
   async handleToggle(event) {
     event.detail.shouldOpen ? await this.animateOpen(event) : await this.animateClose(event);
@@ -25,7 +33,9 @@ export class AccordionGroup {
     //const element = event.detail.element;
     const contentElement = event.detail.content;
     // fecha qualquer item aberto
-    await this.closeOpenItem();
+    if (this.singleOpen) {
+      await this.closeOpenItem();
+    }
     this.currentlyOpen = event;
     // cria um array com todos itens do accordion
     const items = Array.from(this.hostElement.children);
@@ -132,6 +142,44 @@ export class AccordionGroup {
   }; }
   static get styleUrls() { return {
     "$": ["accordion-group.css"]
+  }; }
+  static get properties() { return {
+    "singleOpen": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "TODO."
+      },
+      "attribute": "single-open",
+      "reflect": true,
+      "defaultValue": "true"
+    },
+    "noAnimation": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "TODO."
+      },
+      "attribute": "no-animation",
+      "reflect": true,
+      "defaultValue": "false"
+    }
   }; }
   static get elementRef() { return "hostElement"; }
   static get listeners() { return [{

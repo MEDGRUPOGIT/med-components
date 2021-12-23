@@ -14,6 +14,7 @@ export class Accordion {
       * Define a variação da borda do componente.
       */
     this.noBorder = false;
+    this.noAnimation = false;
     this.currentlyOpen = null;
   }
   async handleToggle(ev) {
@@ -42,7 +43,7 @@ export class Accordion {
     return [...items].splice(splitOnIndex + 1, items.length - (splitOnIndex + 1));
   }
   createOpenAnimation(elements, amountToShift, isBlocker) {
-    const openAnimationTime = 300;
+    const openAnimationTime = this.noAnimation ? 0 : 300;
     const beforeStyles = {
       transform: `translateY(-${amountToShift}px)`,
       position: 'relative',
@@ -83,7 +84,7 @@ export class Accordion {
     blockerDownAnimation.destroy();
   }
   createCloseAnimation(elements, amountToShift) {
-    const closeAnimationTime = 300;
+    const closeAnimationTime = this.noAnimation ? 0 : 300;
     return createAnimation()
       .addElement(elements)
       .afterStyles({ transform: 'none', zIndex: '0' })
@@ -182,6 +183,24 @@ export class Accordion {
         "text": "Define a varia\u00E7\u00E3o da borda do componente."
       },
       "attribute": "no-border",
+      "reflect": true,
+      "defaultValue": "false"
+    },
+    "noAnimation": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "no-animation",
       "reflect": true,
       "defaultValue": "false"
     }

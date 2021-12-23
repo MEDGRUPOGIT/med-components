@@ -1,0 +1,55 @@
+@import "../../templarios/abstracts";
+
+.cp-tabs {
+  display: flex;
+  overflow-x: auto;
+
+  &__tab:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.cp-tab {
+  flex-direction: column;
+  width: 136px;
+  transition: background-color 300ms;
+  flex-shrink: 0;
+  border: 1px solid color('neutral', '3');
+
+  &--active {
+    background: color('neutral', '2');
+    border: 1px solid color('neutral', '2');
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    padding-right: 16px;
+  }
+
+  &__icon-background {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+
+    &--positivo {
+      background: color('feedback', 'success');
+    }
+
+    &--negativo {
+      background: color('feedback', 'warning');
+      transform: rotate(180deg);
+    }
+  }
+
+  &__icon {
+    stroke: color('neutral', '1');
+  }
+}

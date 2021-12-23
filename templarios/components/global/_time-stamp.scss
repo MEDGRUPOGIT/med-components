@@ -1,0 +1,17 @@
+.cp-time-stamp {
+  display: flex;
+  align-items: center;
+}
+
+.cp-time-stamp__icon {
+  stroke: hsl(var(--med-color-neutral-10));
+  margin-right: 8px;
+}
+
+.cp-time-stamp__icon--play {
+  stroke: hsl(var(--med-color-aula-3));
+}
+
+.cp-time-stamp__title {
+  margin: 0 8px;
+}

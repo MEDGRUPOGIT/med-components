@@ -9,11 +9,28 @@ export default {
 
 const Template = ({ collapsed, placement, position, content, dsColor, titulo, }) => {
   return html`
+
+  <style>
+    .med-icon {
+      stroke: hsl(var(--med-color-neutral-10));
+    }
+    .spacing {
+      margin-top: 100px;
+    }
+  </style>
+
     <ion-app style="align-items: center; justify-content: center;">
 
       <!-- component -->
       <med-tooltip .dsColor=${dsColor} .titulo=${titulo} .content=${content} .collapsed=${collapsed} .placement=${placement} .position=${position}>
         <input type="text" placeholder="teste" slot="input">
+        <div slot="content">
+          teste
+        </div>
+      </med-tooltip>
+
+      <med-tooltip class="spacing" .dsColor=${dsColor} .titulo=${titulo} .content=${content} .collapsed=${collapsed} .placement=${placement} .position=${position}>
+        <ion-icon class="med-icon" name="med-fechar" slot="input"></ion-icon>
         <div slot="content">
           teste
         </div>

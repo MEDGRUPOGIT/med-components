@@ -1,0 +1,188 @@
+@import "../../../templarios/abstracts";
+
+.monta-provas-filtro__fechar {
+  display: flex;
+  padding: 12px 32px;
+  justify-content: end;
+}
+
+.monta-provas-filtro__wrap-title {
+  display: flex;
+  align-items: center;
+  padding: 12px 32px;
+}
+
+.monta-provas-filtro__limpar {
+  margin-left: auto;
+}
+
+.monta-provas-filtro__accordion {
+  padding: 12px 32px;
+}
+
+.monta-provas-filtro__accordion-item {
+  --background: transparent;
+  --border: var(--med-spacing-stack-xxxs) solid hsl(var(--med-color-neutral-2));
+  --background-header: hsl(var(--med-color-neutral-6));
+  --background-content: transparent;
+}
+
+.monta-provas-filtro__accordion-title {
+  display: flex;
+  align-items: center;
+  --font-weight: 700;
+}
+
+.monta-provas-filtro__accordion-icon {
+  margin-left: auto;
+}
+
+.monta-prova-filtro__icon {
+  stroke: hsl(var(--med-color-neutral-2));
+}
+
+.monta-provas-filtro__accordion-chip {
+  height: 24px;
+  --background: hsl(var(--med-color-brand-1));
+  --color: hsl(var(--med-color-neutral-10));
+  --border-color: transparent;
+}
+
+.monta-provas-filtro__content {
+  padding: 16px 0 0 0;
+}
+
+.monta-provas-filtro__content--desktop {
+  @include breakpoint-up("lg") {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.monta-prova-filtro__search {
+  --background: hsl(var(--med-color-neutral-3));
+  --icon-size: 16px;
+  --spacing: var(--med-spacing-inset-xxs);
+  --padding-left-icon: 8px;
+
+  @include breakpoint-up("lg") {
+    flex-basis: 30%;
+  }
+}
+
+.monta-prova-filtro__todas {
+  display: flex;
+  align-items: center;
+  margin: 8px 0px 8px 0px;
+  --padding: 8px 16px;
+}
+
+.monta-prova-filtro__lista {
+  @include breakpoint-up("lg") {
+    flex-basis: 100%;
+  }
+}
+
+.monta-prova-filtro__todas-caption {
+  margin-left: 16px;
+}
+
+.monta-prova-filtro__todas-caption--disabled {
+  opacity: .5;
+}
+
+.monta-prova-filtro__items {
+  display: flex;
+  align-items: center;
+  padding: 16px 0px 8px 0px;
+  margin: 8px 16px;
+  border-top: 1px solid hsl(var(--med-color-neutral-3));
+}
+
+.monta-prova-filtro__item-label {
+  --color-label: hsl(var(--med-color-neutral-10));
+  --margin: 16px 16px 8px 16px;
+  border-top: 1px solid hsl(var(--med-color-neutral-3));
+  padding: 12px 0px 0px 0px;
+}
+
+.monta-provas-filtro__accordion-header {
+  margin-bottom: 16px;
+}
+
+.monta-provas-filtro__search-terms {
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint-up("lg") {
+    justify-content: unset;
+  }
+}
+
+.monta-provas-filtro__search-limpar {
+  --min-width: 45px;
+  --min-height: 45px;
+}
+
+.monta-provas-filtro__search-items {
+  margin-top: 16px;
+}
+
+.monta-provas-filtro__item-button {
+  display: inline-flex;
+  margin-right: 16px;
+  align-items: center;
+  padding: 3px 3px 3px 16px;
+  margin-bottom: 8px;
+  border-radius: 50px;
+  background: hsl(var(--med-color-neutral-3));
+}
+
+.monta-provas-filtro__item-label {
+  margin-right: 8px;
+}
+
+.monta-provas-filtro__content-years {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  @include breakpoint-up("lg") {
+    justify-content: start;
+  }
+}
+
+.monta-prova-filtro__input {
+  --background: hsl(var(--med-color-neutral-3));
+  --border-color: transparent;
+  color: hsl(var(--med-color-neutral-10));
+}
+
+.monta-provas-filtro__content-flex {
+  display: flex;
+}
+
+.monta-provas-filtro__input-limpar {
+  --min-width: 50px;
+  --min-height: 45px;
+}
+
+.monta-provas-filtro__content--subespecialidades {
+  width: 100%;
+}
+
+.monta-provas-filtro-concurso__items {
+  border-top: 1px solid hsl(var(--med-color-neutral-3));
+  margin: 0 16px;
+  --padding: 6px 0px;
+  @include breakpoint-up("lg") {
+    --button-margin: 16px !important;
+  }
+}
+
+.monta-provas-filtro__accordion-item {
+  --background: hsl(var(--med-color-neutral-2));
+}
+
+.monta-provas-filtro__periodo-caption {
+  margin: 0 16px;
+}

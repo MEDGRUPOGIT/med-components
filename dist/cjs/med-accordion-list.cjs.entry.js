@@ -20,6 +20,7 @@ const Accordion = class {
       * Define a variação da borda do componente.
       */
     this.noBorder = false;
+    this.noAnimation = false;
     this.currentlyOpen = null;
   }
   async handleToggle(ev) {
@@ -48,7 +49,7 @@ const Accordion = class {
     return [...items].splice(splitOnIndex + 1, items.length - (splitOnIndex + 1));
   }
   createOpenAnimation(elements, amountToShift, isBlocker) {
-    const openAnimationTime = 300;
+    const openAnimationTime = this.noAnimation ? 0 : 300;
     const beforeStyles = {
       transform: `translateY(-${amountToShift}px)`,
       position: 'relative',
@@ -89,7 +90,7 @@ const Accordion = class {
     blockerDownAnimation.destroy();
   }
   createCloseAnimation(elements, amountToShift) {
-    const closeAnimationTime = 300;
+    const closeAnimationTime = this.noAnimation ? 0 : 300;
     return animation.createAnimation()
       .addElement(elements)
       .afterStyles({ transform: 'none', zIndex: '0' })

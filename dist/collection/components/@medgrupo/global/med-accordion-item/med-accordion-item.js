@@ -221,7 +221,7 @@ export class MedAccordionItem {
       "type": "string",
       "mutable": true,
       "complexType": {
-        "original": "'start' | 'middle' | 'end' []",
+        "original": "'start' | 'middle' | 'end'[]",
         "resolved": "\"end\"[] | \"middle\" | \"start\"",
         "references": {}
       },

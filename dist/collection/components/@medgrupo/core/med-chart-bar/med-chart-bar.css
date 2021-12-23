@@ -147,15 +147,19 @@
 }
 
 :host {
+  --height-label: 18;
   --background: hsl(var(--med-color-brand-3));
 }
 
 :host {
   overflow: hidden;
-  height: calc(var(--height) + 16 * 1px);
+  height: calc(var(--height) + var(--height-label) * 1px);
   border-radius: 2px;
 }
 
+.med-chart-bar__label {
+  height: calc(var(--height-label) * 1px);
+}
 .med-chart-bar__container {
   flex-direction: column;
   align-items: center;

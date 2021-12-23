@@ -231,6 +231,7 @@
 :host(.med-rate-aula) .med-rate-aula__button-fechar {
   margin-left: auto;
   margin-right: 16px;
+  padding-right: 16px;
 }
 :host(.med-rate-aula) .med-rate-aula__end {
   margin-left: auto;

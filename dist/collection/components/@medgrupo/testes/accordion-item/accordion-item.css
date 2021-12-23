@@ -149,26 +149,35 @@
 :host {
   --margin: 10px;
   --background-page: hsl(var(--med-color-neutral-1));
-  --background-header: hsl(var(--med-color-neutral-2));
   --background-content: hsl(var(--med-color-neutral-2));
+  --background-header: linear-gradient(to right, hsl(var(--med-color-brand-1)), hsl(var(--med-color-neutral-2)), hsl(var(--med-color-neutral-2)));
+  --border-radius: var(--med-border-radius-sm);
 }
 
-:host {
+:host(.accordion-item) {
   display: block;
   will-change: transform;
   border-bottom: var(--margin) solid var(--background-page);
   overflow: hidden;
 }
-
-.header {
-  background-color: var(--background-header);
-  z-index: 2;
+:host(.accordion-item) .accordion-item__header {
+  background: var(--background-header);
+  position: relative;
+  transition: background 0.5s linear;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+}
+:host(.accordion-item) .accordion-item__content {
+  display: none;
+  background-color: var(--background-content);
+  z-index: -1;
   position: relative;
 }
 
-.content {
-  display: none;
-  background-color: var(--background-content);
-  z-index: 1;
-  position: relative;
+:host(.accordion-item--open.accordion-item--background) .accordion-item__header {
+  background-position: 0 0;
+}
+
+:host(.med-color.accordion-item--background) {
+  --background-header: linear-gradient(to right, hsl(var(--med-color-1)), hsl(var(--med-color-neutral-2)), hsl(var(--med-color-neutral-2)));
 }

@@ -17,6 +17,7 @@ export declare class Accordion implements ComponentInterface {
     * Define a variação da borda do componente.
     */
   noBorder: boolean;
+  noAnimation: boolean;
   private blocker;
   private currentlyOpen;
   handleToggle(ev: any): Promise<void>;

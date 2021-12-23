@@ -5,8 +5,7 @@ import { generateMedColor } from '../../../../utils/med-theme';
  */
 export class MedChartBar {
   constructor() {
-    // private labelElement?: any;
-    this.labelElementHeight = 0;
+    this.hostHeight = 0;
     /**
       * Define a valor do componente.
       */
@@ -24,25 +23,22 @@ export class MedChartBar {
     this.setSize();
   }
   disconnectedCallback() {
-    if (this.labelResizeObserver) {
-      this.labelResizeObserver.disconnect();
+    if (this.hostResizeObserver) {
+      this.hostResizeObserver.disconnect();
     }
   }
   setSize() {
-    this.labelResizeObserver = new ResizeObserver(() => {
+    this.hostResizeObserver = new ResizeObserver(() => {
       var _a;
-      let newLabelHeight = Number((_a = this.el) === null || _a === void 0 ? void 0 : _a.getBoundingClientRect().height);
-      if (newLabelHeight !== this.labelElementHeight) {
-        this.labelElementHeight = newLabelHeight;
-        //console.log(this.labelElementHeight);
+      let newHostHeight = Number((_a = this.hostElement) === null || _a === void 0 ? void 0 : _a.getBoundingClientRect().height);
+      if (newHostHeight !== this.hostHeight) {
+        this.hostHeight = newHostHeight;
       }
     });
-    this.labelResizeObserver.observe(this.el);
+    this.hostResizeObserver.observe(this.hostElement);
   }
   render() {
     const { dsColor, value, height, width } = this;
-    const { labelElementHeight } = this;
-    console.log(labelElementHeight);
     const percentage = value === 0 ? height : height - ((height * value) / 100);
     return (h(Host, { class: generateMedColor(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } },
       h("div", { class: "med-chart-bar__container" },
@@ -136,5 +132,5 @@ export class MedChartBar {
       "defaultValue": "24"
     }
   }; }
-  static get elementRef() { return "el"; }
+  static get elementRef() { return "hostElement"; }
 }

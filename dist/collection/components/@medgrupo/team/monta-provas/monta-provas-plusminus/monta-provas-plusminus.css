@@ -174,15 +174,11 @@
 
 :host(.monta-provas-plusminus--disabled-minus) .monta-provas-plusminus__icon-minus,
 :host(.monta-provas-plusminus--disabled-plus) .monta-provas-plusminus__icon-plus {
-  cursor: initial;
-  pointer-events: none;
   opacity: var(--med-opacity-level-half);
 }
 
 :host(.monta-provas-plusminus--disabled-both) .monta-provas-plusminus__icon-minus,
 :host(.monta-provas-plusminus--disabled-both) .monta-provas-plusminus__icon-plus {
-  cursor: initial;
-  pointer-events: none;
   opacity: var(--med-opacity-level-half);
 }
 
