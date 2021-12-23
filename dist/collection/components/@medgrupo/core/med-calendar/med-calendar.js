@@ -44,13 +44,15 @@ export class MedCalendar {
           else {
             this.calendarBody.insertAdjacentHTML('afterbegin', `
             <div data-date="${date}" data-month="${month + 1}" data-year="${year}" data-month-name="${this.months[month]}" class="date">
-              <med-type tokeb="p12b" ds-color="neutral-10">${date}</med-type>
+              <med-type class="date__type">${date}</med-type>
             </div>
           `);
             if (date === this.today.getDate() && year === this.today.getFullYear() && month === this.today.getMonth()) {
               this.calendarBody.insertAdjacentHTML('afterbegin', `
-              <div data-date="${date}" data-month="${month + 1}" data-year="${year}" data-month-name="${this.months[month]}" class="date date__active">
-                <med-type tokeb="p12b" ds-color="neutral-10">${date}</med-type>
+              <div data-date="${date}" data-month="${month + 1}" data-year="${year}" data-month-name="${this.months[month]}" class="date">
+                <div class="date__active">
+                  <med-type class="date__type date__type--active">${date}</med-type>
+                </div>
               </div>
             `);
             }
@@ -71,7 +73,7 @@ export class MedCalendar {
     this.days.forEach((day) => {
       this.calendarHead.insertAdjacentHTML('afterbegin', `
         <div class="content__week-day">
-          <med-type class="content__week-type" token="p12" ds-color="neutral-8" data-days="${day}">${day}</med-type>
+          <med-type class="content__week-type" data-days="${day}">${day}</med-type>
         </div>
       `);
     });
@@ -88,14 +90,16 @@ export class MedCalendar {
           h("ion-button", { "ds-name": "tertiary", onClick: () => this.next() },
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))),
         h("div", { class: "header__right" },
-          h("div", null),
-          h("ion-icon", { class: "med-icon", name: "med-esquerda" }))),
+          h("ion-button", { "ds-name": "tertiary" },
+            h("med-type", { class: "choice__type" }, "M\u00EAs"),
+            h("ion-icon", { slot: "end", class: "med-icon header__button-icon", name: "med-baixo" })),
+          h("ion-icon", { class: "med-icon header__icon", name: "med-grafico" }))),
       h("div", { class: "content" },
         h("div", { class: "content__header", ref: (el) => this.calendarHead = el }),
         h("div", { class: "content__container", ref: (el) => this.calendarBody = el })),
       h("div", { class: "footer" },
         h("label", { htmlFor: "month" }, "Jump To: "),
-        h("select", { id: "month", class: "month", onChange: () => this.jump(), ref: (el) => this.selectMonth = el },
+        h("select", { onChange: () => this.jump(), ref: (el) => this.selectMonth = el },
           h("option", { value: "0" }, "Jan"),
           h("option", { value: "1" }, "Feb"),
           h("option", { value: "2" }, "Mar"),
@@ -108,7 +112,7 @@ export class MedCalendar {
           h("option", { value: "9" }, "Oct"),
           h("option", { value: "10" }, "Nov"),
           h("option", { value: "11" }, "Dec")),
-        h("select", { id: "year", class: "year", onChange: () => this.jump(), ref: (el) => this.selectYear = el }))));
+        h("select", { onChange: () => this.jump(), ref: (el) => this.selectYear = el }))));
   }
   static get is() { return "med-calendar"; }
   static get encapsulation() { return "shadow"; }

@@ -146,8 +146,18 @@
   --med-shadow-level-10: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
 }
 
+:host {
+  --main-color: hsl(var(--med-color-brand-3));
+}
+
 .header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+.header__type {
+  flex: 1;
 }
 .header__left {
   display: flex;
@@ -155,8 +165,15 @@
   text-align: center;
   width: 200px;
 }
-.header__type {
-  flex: 1;
+.header__right {
+  display: flex;
+  align-items: center;
+}
+.header__button-icon {
+  font-size: 18px;
+}
+.header__icon {
+  stroke: hsl(var(--med-color-neutral-8));
 }
 
 .content__header {
@@ -171,7 +188,10 @@
   height: 24px;
 }
 .content__week-type {
-  --color: ;
+  --font-size: 12px;
+  --font-weight: 400;
+  --line-height: 12px;
+  --color: hsl(var(--med-color-neutral-8));
 }
 .content__container {
   display: grid;
@@ -179,7 +199,58 @@
   height: 100%;
 }
 
+.choice__type {
+  --font-size: 16px;
+  --font-weight: 400;
+  --line-height: 16px;
+  --color: hsl(var(--med-color-neutral-8));
+  text-transform: none;
+}
+
 .date {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 48px;
+  cursor: pointer;
+}
+.date__type {
+  --font-size: 12px;
+  --font-weight: 600;
+  --line-height: 11px;
+  --color: hsl(var(--med-color-neutral-10));
+}
+.date__active {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--main-color);
+}
+
+.footer {
+  display: none;
+}
+
+:host(.med-color) {
+  --main-color: hsl(var(--med-color-3));
+}
+:host(.med-color) .date__type--active {
+  --color: hsl(var(--med-color-contrast-fixed));
+}
+
+:host(.med-color-neutral) {
+  --main-color: hsl(var(--med-color-neutral));
+}
+:host(.med-color-neutral) .date__type--active {
+  --color: hsl(var(--med-color-neutral-contrast));
+}
+
+:host(.med-color-feedback) {
+  --main-color: hsl(var(--med-color-feedback));
+}
+:host(.med-color-feedback) .date__type--active {
+  --color: hsl(var(--med-color-fb-contrast));
 }
