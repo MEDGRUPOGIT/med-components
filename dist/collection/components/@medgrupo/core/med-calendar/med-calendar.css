@@ -148,6 +148,11 @@
 
 :host {
   --main-color: hsl(var(--med-color-brand-3));
+  --background: hsl(var(--med-color-neutral-1));
+}
+
+:host {
+  background: var(--background);
 }
 
 .header {
