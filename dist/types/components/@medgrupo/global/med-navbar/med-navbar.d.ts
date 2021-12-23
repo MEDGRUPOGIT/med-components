@@ -13,7 +13,7 @@ export declare class MedNavbar {
   dsColor?: MedColor;
   /**
    * Define a variação do componente.
-   */
+    */
   dsName?: 'secondary' | 'transparent';
   private leftEl;
   private rightEl;

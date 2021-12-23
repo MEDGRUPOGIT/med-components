@@ -62,6 +62,7 @@ export const MedIcons = [
   'med-ajuda',
 
   'med-alerta',
+  'med-alerta2',
   'med-anotacao',
   'med-anotar',
   'med-apostila',
@@ -139,6 +140,7 @@ export const MedIcons = [
 
   'med-fontemenor',
   'med-gabarito',
+  'med-grafico',
   'med-imagem',
   'med-impresso',
 
@@ -182,6 +184,7 @@ export const MedIcons = [
   'med-offline2',
   'med-online',
   'med-orientacao',
+  'med-outros',
 
   'med-play',
   'med-plus',

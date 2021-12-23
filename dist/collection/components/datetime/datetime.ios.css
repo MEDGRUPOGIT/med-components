@@ -252,3 +252,22 @@ button::-moz-focus-inner {
   --padding-bottom: 10px;
   --padding-start: 20px;
 }
+
+:host {
+  --icon-color: hsl(var(--med-color-neutral-9));
+  background: hsl(var(--med-color-neutral-3));
+  border-radius: 8px;
+}
+
+:host {
+  --placeholder-color: hsl(var(--med-color-neutral-9));
+  color: hsl(var(--med-color-neutral-9));
+}
+:host .datetime-text {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+:host .datetime-icon {
+  stroke: var(--icon-color);
+}

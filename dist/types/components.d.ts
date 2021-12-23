@@ -694,6 +694,7 @@ export namespace Components {
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
+        "iconName": string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
          */
@@ -3169,6 +3170,10 @@ export namespace Components {
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
     }
     interface MedCaption {
         /**
@@ -5700,6 +5705,7 @@ declare namespace LocalJSX {
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
+        "iconName"?: string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
          */
@@ -8145,6 +8151,10 @@ declare namespace LocalJSX {
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
     }
     interface MedCaption {
         /**
@@ -8274,7 +8284,6 @@ declare namespace LocalJSX {
         "horaFinal"?: string;
         "horaInicial"?: string;
         "iconName"?: string;
-        "onMedClick"?: (event: CustomEvent<any>) => void;
         "titulo"?: string;
         "tooltipCollapsed"?: boolean;
         "tooltipContent"?: string;

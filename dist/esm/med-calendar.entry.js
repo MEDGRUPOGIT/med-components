@@ -1,6 +1,7 @@
 import { r as registerInstance, h, H as Host, i as getElement } from './index-70672e81.js';
+import { g as generateMedColor } from './med-theme-33df6a63.js';
 
-const medCalendarCss = ":root{--med-font-family-brand:\"fsemeric\";--med-font-family-base:\"fsemeric\";--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-letter-spacing-ultracompressed:-0.04;--med-letter-spacing-compressed:-0.02;--med-letter-spacing-default:0;--med-letter-spacing-medium:0.02;--med-letter-spacing-expanded:0.05;--med-letter-spacing-distant:0.1;--med-letter-spacing-far:0.2;--med-line-height-compressed:100%;--med-line-height-default:24px;--med-line-height-double:200%}:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-lg:40px;--med-spacing-inset-xl:48px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}html{font-family:sans-serif;font-size:15px;line-height:1.4;color:#444}body{margin:0;background:#504f4f;font-size:1em}.wrapper{margin:15px auto;max-width:1100px}.container-calendar{background:#ffffff;padding:15px;max-width:475px;margin:0 auto;overflow:auto}.button-container-calendar button{cursor:pointer;display:inline-block;zoom:1;background:#00a2b7;color:#fff;border:1px solid #0aa2b5;border-radius:4px;padding:5px 10px}.table-calendar{border-collapse:collapse;width:100%}.table-calendar td,.table-calendar th{padding:5px;border:1px solid #e2e2e2;text-align:center;vertical-align:top}.date-picker.selected{font-weight:bold;outline:1px dashed #00BCD4}.date-picker.selected span{border-bottom:2px solid currentColor}.date-picker:nth-child(1){color:red}.date-picker:nth-child(6){color:green}#monthAndYear{text-align:center;margin-top:0}.button-container-calendar{position:relative;margin-bottom:1em;overflow:hidden;clear:both}#previous{float:left}#next{float:right}.footer-container-calendar{margin-top:1em;border-top:1px solid #dadada;padding:10px 0}.footer-container-calendar select{cursor:pointer;display:inline-block;zoom:1;background:#ffffff;color:#585858;border:1px solid #bfc5c5;border-radius:3px;padding:5px 1em}";
+const medCalendarCss = ":root{--med-font-family-brand:\"fsemeric\";--med-font-family-base:\"fsemeric\";--med-font-size-nano:10px;--med-font-size-xxxs:12px;--med-font-size-xxs:14px;--med-font-size-xs:16px;--med-font-size-sm:20px;--med-font-size-md:24px;--med-font-size-lg:32px;--med-font-size-xl:40px;--med-font-size-xxl:48px;--med-font-size-xxxl:64px;--med-font-size-huge:96px;--med-font-weight-thin:250;--med-font-weight-light:300;--med-font-weight-regular:400;--med-font-weight-medium:500;--med-font-weight-semibold:600;--med-font-weight-bold:700;--med-font-weight-extrabold:800;--med-font-weight-heavy:900;--med-letter-spacing-ultracompressed:-0.04;--med-letter-spacing-compressed:-0.02;--med-letter-spacing-default:0;--med-letter-spacing-medium:0.02;--med-letter-spacing-expanded:0.05;--med-letter-spacing-distant:0.1;--med-letter-spacing-far:0.2;--med-line-height-compressed:100%;--med-line-height-default:24px;--med-line-height-double:200%}:root{--med-spacing-inset-nano:4px;--med-spacing-inset-xs:8px;--med-spacing-inset-sm:16px;--med-spacing-inset-base:24px;--med-spacing-inset-md:32px;--med-spacing-inset-lg:40px;--med-spacing-inset-xl:48px;--med-spacing-inset-xxl:64px;--med-spacing-squish-nano:4px 8px;--med-spacing-squish-xs:8px 16px;--med-spacing-squish-sm:8px 24px;--med-spacing-squish-base:8px 32px;--med-spacing-squish-md:16px 24px;--med-spacing-squish-lg:16px 32px;--med-spacing-squish-xl:24px 32px;--med-spacing-squish-xxl:32px 40px;--med-spacing-stretch-nano:8px 4px;--med-spacing-stretch-xs:16px 8px;--med-spacing-stretch-sm:24px 8px;--med-spacing-stretch-base:32px 8px;--med-spacing-stretch-md:24px 16px;--med-spacing-stretch-lg:32px 16px;--med-spacing-stretch-xl:32px 24px;--med-spacing-stretch-xxl:40px 32px;--med-spacing-inline-quark:2px;--med-spacing-inline-nano:4px;--med-spacing-inline-xxxs:8px;--med-spacing-inline-base:16px;--med-spacing-inline-xxs:24px;--med-spacing-inline-xs:32px;--med-spacing-inline-sm:40px;--med-spacing-inline-md:48px;--med-spacing-inline-lg:56px;--med-spacing-inline-xl:64px;--med-spacing-inline-xxl:72px;--med-spacing-inline-xxxl:80px;--med-spacing-inline-huge:120px;--med-spacing-inline-ultra:160px;--med-spacing-stack-quark:2px;--med-spacing-stack-nano:4px;--med-spacing-stack-xxxs:8px;--med-spacing-stack-base:16px;--med-spacing-stack-xxs:24px;--med-spacing-stack-xs:32px;--med-spacing-stack-sm:40px;--med-spacing-stack-md:48px;--med-spacing-stack-lg:56px;--med-spacing-stack-xl:64px;--med-spacing-stack-xxl:72px;--med-spacing-stack-xxxl:80px;--med-spacing-stack-huge:120px;--med-spacing-stack-ultra:160px}:root{--med-border-radius-none:0;--med-border-radius-quark:2px;--med-border-radius-nano:4px;--med-border-radius-sm:8px;--med-border-radius-md:16px;--med-border-radius-lg:24px;--med-border-radius-pill:31.25em;--med-border-radius-full:50%;--med-border-radius-speech-left-down:8px 8px 8px 0;--med-border-radius-speech-right-down:8px 8px 0 8px;--med-border-radius-speech-right-up:8px 0 8px 0px;--med-border-radius-speech-left-up:0 8px 8px 0px;--med-border-radius-table-down-sm:0 0 8px 8px;--med-border-radius-table-up-sm:8px 8px 0 0;--med-border-radius-table-down-md:16px 16px 0 0;--med-border-radius-table-up-md:0 0 16px 16px;--med-border-width-none:0;--med-border-width-quark:0.25px;--med-border-width-nano:0.5px;--med-border-width-hairline:1px;--med-border-width-thin:2px;--med-border-width-thick:4px;--med-border-width-bold:8px;--med-border-width-heavy:16px;--med-opacity-level-semiopaque:0.8;--med-opacity-level-intense:0.64;--med-opacity-level-half:0.5;--med-opacity-level-medium:0.32;--med-opacity-level-light:0.16;--med-opacity-level-semitransparent:0.08;--med-shadow-level-0:none;--med-shadow-level-1:0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);--med-shadow-level-2:0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-3:0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-4:0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-5:0 6px 10px rgba(0, 0, 0, 0.14), 0 1px 18px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-6:0 8px 10px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);--med-shadow-level-7:0 9px 12px rgba(0, 0, 0, 0.14), 0 3px 16px rgba(0, 0, 0, 0.12), 0 5px 6px rgba(0, 0, 0, 0.2);--med-shadow-level-8:0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);--med-shadow-level-9:0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);--med-shadow-level-10:0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2)}.header{display:-ms-flexbox;display:flex}.header__left{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;text-align:center;width:200px}.header__type{-ms-flex:1;flex:1}.content__header{display:grid;grid-template-columns:repeat(7, 1fr);text-align:center}.content__week-day{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;height:24px}.content__week-type{}.content__container{display:grid;grid-template-columns:repeat(7, 1fr);height:100%}.date{text-align:center;height:48px}";
 
 const MedCalendar = class {
   constructor(hostRef) {
@@ -32,42 +33,33 @@ const MedCalendar = class {
     };
     this.showCalendar = (month, year) => {
       const firstDay = (new Date(year, month)).getDay();
-      const tbl = this.hostElement.querySelector('calendar-body');
-      tbl.innerHTML = "";
-      this.monthAndYear.innerHTML = this.months[month] + " " + year;
+      this.calendarBody.innerHTML = '';
+      this.monthAndYear.innerHTML = this.months[month] + ' ' + year;
       this.selectYear.value = year;
       this.selectMonth.value = month;
-      // creating all cells
       let date = 1;
-      for (var i = 0; i < 6; i++) {
-        const row = document.createElement("tr");
-        let cell, cellText;
-        for (var j = 0; j < 7; j++) {
-          if (i === 0 && j < firstDay) {
-            cell = document.createElement("td");
-            cellText = document.createTextNode("");
-            cell.appendChild(cellText);
-            row.appendChild(cell);
-          }
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 7; j++) {
+          if (i === 0 && j < firstDay) ;
           else if (date > this.daysInMonth(month, year)) {
             break;
           }
           else {
-            cell = document.createElement("td");
-            cell.setAttribute("data-date", `${date}`);
-            cell.setAttribute("data-month", month + 1);
-            cell.setAttribute("data-year", year);
-            cell.setAttribute("data-month_name", this.months[month]);
-            cell.className = "date-picker";
-            cell.innerHTML = "<span>" + date + "</span>";
+            this.calendarBody.insertAdjacentHTML('afterbegin', `
+            <div data-date="${date}" data-month="${month + 1}" data-year="${year}" data-month-name="${this.months[month]}" class="date">
+              <med-type tokeb="p12b" ds-color="neutral-10">${date}</med-type>
+            </div>
+          `);
             if (date === this.today.getDate() && year === this.today.getFullYear() && month === this.today.getMonth()) {
-              cell.className = "date-picker selected";
+              this.calendarBody.insertAdjacentHTML('afterbegin', `
+              <div data-date="${date}" data-month="${month + 1}" data-year="${year}" data-month-name="${this.months[month]}" class="date date__active">
+                <med-type tokeb="p12b" ds-color="neutral-10">${date}</med-type>
+              </div>
+            `);
             }
-            row.appendChild(cell);
             date++;
           }
         }
-        tbl.appendChild(row);
       }
     };
     this.daysInMonth = (iMonth, iYear) => {
@@ -75,27 +67,22 @@ const MedCalendar = class {
     };
   }
   componentDidLoad() {
-    this.selectYear = this.hostElement.querySelector('.year');
-    this.selectMonth = this.hostElement.querySelector('.month');
-    // this.createYear = generate_year_range( 1970, currentYear );
     this.createYear = this.generate_year_range(1970, 2050);
     this.selectYear.innerHTML = this.createYear;
-    // const calendar = this.hostElement.querySelector(".calendar");
-    // const lang = calendar?.getAttribute('data-lang');
-    this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    this.days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    let $dataHead = '<tr>';
-    for (const dhead in this.days) {
-      $dataHead += "<th data-days='" + this.days[dhead] + "'>" + this.days[dhead] + "</th>";
-    }
-    $dataHead += "</tr>";
-    //alert($dataHead);
-    this.hostElement.querySelector('thead-month').innerHTML = $dataHead;
-    this.monthAndYear = this.hostElement.querySelector('.monthAndYear');
+    this.months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    this.days = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'];
+    this.days.forEach((day) => {
+      this.calendarHead.insertAdjacentHTML('afterbegin', `
+        <div class="content__week-day">
+          <med-type class="content__week-type" token="p12" ds-color="neutral-8" data-days="${day}">${day}</med-type>
+        </div>
+      `);
+    });
     this.showCalendar(this.currentMonth, this.currentYear);
   }
   render() {
-    return (h(Host, null, h("div", { class: "wrapper" }, h("div", { class: "container-calendar" }, h("h3", { id: "monthAndYear", class: "monthAndYear" }), h("div", { class: "button-container-calendar" }, h("button", { id: "previous", onClick: () => this.previous() }, "\u2039"), h("button", { id: "next", onClick: () => this.next() }, "\u203A")), h("table", { class: "table-calendar", id: "calendar", "data-lang": "en" }, h("thead", { class: "thead-month", id: "thead-month" }), h("tbody", { class: "calendar-body", id: "calendar-body" })), h("div", { class: "footer-container-calendar" }, h("label", { htmlFor: "month" }, "Jump To: "), h("select", { id: "month", class: "month", onChange: () => this.jump() }, h("option", { value: "0" }, "Jan"), h("option", { value: "1" }, "Feb"), h("option", { value: "2" }, "Mar"), h("option", { value: "3" }, "Apr"), h("option", { value: "4" }, "May"), h("option", { value: "5" }, "Jun"), h("option", { value: "6" }, "Jul"), h("option", { value: "7" }, "Aug"), h("option", { value: "8" }, "Sep"), h("option", { value: "9" }, "Oct"), h("option", { value: "10" }, "Nov"), h("option", { value: "11" }, "Dec")), h("select", { id: "year", class: "year", onChange: () => this.jump() }))))));
+    const { dsColor } = this;
+    return (h(Host, { class: generateMedColor(dsColor, { 'med-badge': true }) }, h("div", { class: "header" }, h("div", { class: "header__left" }, h("ion-button", { "ds-name": "tertiary", onClick: () => this.previous() }, h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })), h("med-type", { class: "header__type", token: "p16b", ref: (el) => this.monthAndYear = el }), h("ion-button", { "ds-name": "tertiary", onClick: () => this.next() }, h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))), h("div", { class: "header__right" }, h("div", null), h("ion-icon", { class: "med-icon", name: "med-esquerda" }))), h("div", { class: "content" }, h("div", { class: "content__header", ref: (el) => this.calendarHead = el }), h("div", { class: "content__container", ref: (el) => this.calendarBody = el })), h("div", { class: "footer" }, h("label", { htmlFor: "month" }, "Jump To: "), h("select", { id: "month", class: "month", onChange: () => this.jump(), ref: (el) => this.selectMonth = el }, h("option", { value: "0" }, "Jan"), h("option", { value: "1" }, "Feb"), h("option", { value: "2" }, "Mar"), h("option", { value: "3" }, "Apr"), h("option", { value: "4" }, "May"), h("option", { value: "5" }, "Jun"), h("option", { value: "6" }, "Jul"), h("option", { value: "7" }, "Aug"), h("option", { value: "8" }, "Sep"), h("option", { value: "9" }, "Oct"), h("option", { value: "10" }, "Nov"), h("option", { value: "11" }, "Dec")), h("select", { id: "year", class: "year", onChange: () => this.jump(), ref: (el) => this.selectYear = el }))));
   }
   get hostElement() { return getElement(this); }
 };

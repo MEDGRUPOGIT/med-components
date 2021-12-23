@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Event } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCheckCard {
   constructor() {
@@ -8,7 +8,7 @@ export class MedCheckCard {
   }
   render() {
     const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName, tooltipPlacement, tooltipCollapsed, tooltipHeading, tooltipContent } = this;
-    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (h(Host, { class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
       }) },
@@ -253,20 +253,4 @@ export class MedCheckCard {
       "reflect": true
     }
   }; }
-  static get events() { return [{
-      "method": "medClick",
-      "name": "medClick",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "complexType": {
-        "original": "any",
-        "resolved": "any",
-        "references": {}
-      }
-    }]; }
 }

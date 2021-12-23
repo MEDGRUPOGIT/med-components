@@ -1,14 +1,21 @@
+import { MedColor } from '../../../../interface';
 export declare class MedCalendar {
   hostElement: any;
+  /**
+    * Define a cor do componente.
+    */
+  dsColor?: MedColor;
   today: Date;
   currentMonth: number;
   currentYear: number;
-  selectYear: any;
-  selectMonth: any;
   createYear: any;
-  monthAndYear: any;
   months: any;
   days: any;
+  private monthAndYear;
+  private selectYear;
+  private selectMonth;
+  private calendarHead;
+  private calendarBody;
   componentDidLoad(): void;
   private generate_year_range;
   private next;
