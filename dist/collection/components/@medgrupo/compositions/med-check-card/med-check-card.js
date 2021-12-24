@@ -7,7 +7,7 @@ export class MedCheckCard {
     this.tooltipCollapsed = true;
   }
   render() {
-    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, iconName, tooltipPlacement, tooltipCollapsed, tooltipHeading, tooltipContent } = this;
+    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, dataInicial, dataFinal, iconName, tooltipPlacement, tooltipCollapsed, tooltipHeading, tooltipContent } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
@@ -22,7 +22,15 @@ export class MedCheckCard {
             h("med-type", { class: "med-check-card__hora", token: "p12x" },
               horaInicial,
               " \u2013 ",
-              horaFinal))),
+              horaFinal)),
+          h("med-type", { class: "med-check-card__data", token: "p12x" },
+            dataInicial,
+            " - ",
+            horaInicial,
+            " at\u00E9 ",
+            dataFinal,
+            " - ",
+            horaFinal)),
         h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end", collapsed: tooltipCollapsed },
           h("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }),
           h("div", { slot: "content" },
@@ -146,6 +154,40 @@ export class MedCheckCard {
         "text": ""
       },
       "attribute": "hora-final",
+      "reflect": true
+    },
+    "dataInicial": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "data-inicial",
+      "reflect": true
+    },
+    "dataFinal": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "data-final",
       "reflect": true
     },
     "finalizada": {

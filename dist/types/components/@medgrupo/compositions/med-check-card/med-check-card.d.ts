@@ -9,6 +9,8 @@ export declare class MedCheckCard {
   categoria?: string;
   horaInicial?: string;
   horaFinal?: string;
+  dataInicial?: string;
+  dataFinal?: string;
   finalizada?: string;
   iconName?: string;
   tooltipPlacement: "top" | "bottom" | "left" | "right" | undefined;

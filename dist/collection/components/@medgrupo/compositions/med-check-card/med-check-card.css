@@ -164,11 +164,15 @@
   stroke: hsl(var(--med-color-neutral-8));
 }
 .med-check-card__subtitulo {
-  margin: 0 8px 0 10px;
+  margin: 0 8px;
   stroke: hsl(var(--med-color-neutral-8));
 }
 .med-check-card__hora {
-  stroke: hsl(var(--med-color-neutral-8));
+  color: hsl(var(--med-color-neutral-8));
+}
+.med-check-card__data {
+  margin-top: 4px;
+  color: hsl(var(--med-color-neutral-8));
 }
 .med-check-card__tooltip {
   display: none;

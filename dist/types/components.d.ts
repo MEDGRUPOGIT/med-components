@@ -3295,6 +3295,8 @@ export namespace Components {
     interface MedCheckCard {
         "alert": boolean;
         "categoria"?: string;
+        "dataFinal"?: string;
+        "dataInicial"?: string;
         /**
           * Define a cor do componente.
          */
@@ -8276,6 +8278,8 @@ declare namespace LocalJSX {
     interface MedCheckCard {
         "alert"?: boolean;
         "categoria"?: string;
+        "dataFinal"?: string;
+        "dataInicial"?: string;
         /**
           * Define a cor do componente.
          */

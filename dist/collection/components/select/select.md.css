@@ -298,13 +298,12 @@ button {
 
 :host {
   --background: hsl(var(--med-color-neutral-3));
-  --placeholder-color: hsl(var(--med-color-neutral-3));
   --placeholder-opacity: 1;
   --padding-top: 8px;
   --padding-end: 8px;
   --padding-bottom: 8px;
   --padding-start: 16px;
-  --placeholder-color: hsl(var(--med-color-neutral-5));
+  --placeholder-color: hsl(var(--med-color-neutral-9));
   --placeholder-opacity: 1;
   --placeholder-font-size: 14px;
   --placeholder-font-weight: 400;
@@ -321,7 +320,7 @@ button {
   color: var(--placeholder-color);
 }
 :host(.med-select) .med-select-icon {
-  stroke: hsl(var(--med-color-neutral-5));
+  stroke: hsl(var(--med-color-neutral-9));
 }
 :host(.med-select) .select-placeholder {
   font-size: var(--placeholder-font-size);

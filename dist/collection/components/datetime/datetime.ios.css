@@ -267,6 +267,7 @@ button::-moz-focus-inner {
   font-size: 14px;
   display: flex;
   align-items: center;
+  font-weight: 600;
 }
 :host .datetime-icon {
   stroke: var(--icon-color);

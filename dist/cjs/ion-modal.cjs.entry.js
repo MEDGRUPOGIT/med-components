@@ -3,17 +3,17 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index$1 = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-c609be80.js');
-const frameworkDelegate = require('./framework-delegate-6b50976f.js');
-const overlays = require('./overlays-738b020e.js');
-const theme = require('./theme-21d701cc.js');
-const index$2 = require('./index-a0e14e16.js');
-const animation = require('./animation-dadce649.js');
-const cubicBezier = require('./cubic-bezier-6f49c00a.js');
-const index = require('./index-adf3c519.js');
-const helpers = require('./helpers-ab0db03b.js');
-require('./hardware-back-button-e370df1e.js');
-require('./gesture-controller-bcfe01ec.js');
+const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const frameworkDelegate = require('./framework-delegate-45524d8c.js');
+const overlays = require('./overlays-e22059c3.js');
+const theme = require('./theme-f551502d.js');
+const index$2 = require('./index-29aebf46.js');
+const animation = require('./animation-13cbbb20.js');
+const cubicBezier = require('./cubic-bezier-0b2ccc35.js');
+const index = require('./index-98d43f07.js');
+const helpers = require('./helpers-d381ec4d.js');
+require('./hardware-back-button-148ce546.js');
+require('./gesture-controller-29adda71.js');
 
 // Defaults for the card swipe animation
 const SwipeToCloseDefaults = {

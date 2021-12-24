@@ -219,7 +219,7 @@ export class Textarea {
       }) },
       h("div", { class: "textarea-wrapper", ref: el => this.textareaWrapper = el },
         h("textarea", Object.assign({ class: "native-textarea", "aria-labelledby": labelId, ref: el => this.nativeInput = el, autoCapitalize: this.autocapitalize, autoFocus: this.autofocus, enterKeyHint: this.enterkeyhint, inputMode: this.inputmode, disabled: this.disabled, maxLength: this.maxlength, minLength: this.minlength, name: this.name, placeholder: this.placeholder || '', readOnly: this.readonly, required: this.required, spellcheck: this.spellcheck, cols: this.cols, rows: this.rows, wrap: this.wrap, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, onKeyDown: this.onKeyDown }, this.inheritedAttributes), value),
-        h("span", { class: "length" }, "123 / 123"))));
+        h("slot", null))));
   }
   static get is() { return "ion-textarea"; }
   static get encapsulation() { return "scoped"; }
@@ -247,7 +247,7 @@ export class Textarea {
             "text": undefined,
             "name": "internal"
           }],
-        "text": "This is required for a WebKit bug which requires us to\r\nblur and focus an input to properly focus the input in\r\nan item with delegatesFocus. It will no longer be needed\r\nwith iOS 14."
+        "text": "This is required for a WebKit bug which requires us to\nblur and focus an input to properly focus the input in\nan item with delegatesFocus. It will no longer be needed\nwith iOS 14."
       },
       "attribute": "fire-focus-events",
       "reflect": false,
@@ -270,7 +270,7 @@ export class Textarea {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -377,7 +377,7 @@ export class Textarea {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
+        "text": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
       },
       "attribute": "inputmode",
       "reflect": false
@@ -394,7 +394,7 @@ export class Textarea {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`."
+        "text": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`."
       },
       "attribute": "enterkeyhint",
       "reflect": false
@@ -727,7 +727,7 @@ export class Textarea {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\r\n`textarea.focus()`.",
+        "text": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.focus()`.",
         "tags": []
       }
     },
@@ -743,7 +743,7 @@ export class Textarea {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "Sets blur on the native `textarea` in `ion-textarea`. Use this method instead of the global\r\n`textarea.blur()`.",
+        "text": "Sets blur on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.blur()`.",
         "tags": [{
             "name": "internal",
             "text": undefined
