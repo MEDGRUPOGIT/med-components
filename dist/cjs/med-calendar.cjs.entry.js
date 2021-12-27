@@ -13,14 +13,12 @@ const MedCalendar = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     this.medClick = index.createEvent(this, "medClick", 7);
-    this.medChoiceClick = index.createEvent(this, "medChoiceClick", 7);
-    this.medMonthClick = index.createEvent(this, "medMonthClick", 7);
     this.medSwipe = index.createEvent(this, "medSwipe", 7);
     this.choice = 'Semana';
   }
   componentDidLoad() {
     let direction;
-    const swipeGesture = index$1.createGesture({
+    const options = {
       el: this.container,
       gestureName: 'swipe',
       onStart: () => {
@@ -34,11 +32,16 @@ const MedCalendar = class {
         }
       },
       onEnd: () => {
-        console.log(direction);
         this.medSwipe.emit(direction);
       }
-    });
-    swipeGesture.enable();
+    };
+    this.gesture = index$1.createGesture(options);
+    this.gesture.enable();
+  }
+  disconnectedCallback() {
+    if (this.gesture) {
+      this.gesture.destroy();
+    }
   }
   onChoiceClick() {
     this.choice = this.choice === 'Semana' ? 'Mês' : 'Semana';
@@ -47,9 +50,12 @@ const MedCalendar = class {
   onMonthClick(type) {
     this.medClick.emit(type);
   }
+  onGraficoClick() {
+    this.medClick.emit('graph');
+  }
   render() {
-    const { dsColor, calendario } = this;
-    return (index.h(index.Host, { class: medTheme.generateMedColor(dsColor, { 'med-calendar': true }) }, index.h("div", { class: "header" }, index.h("div", { class: "header__left" }, index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })), index.h("med-type", { class: "header__type", token: "p16b" }, calendario), index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('next') }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))), index.h("div", { class: "header__right" }, index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() }, index.h("med-type", { class: "choice__type" }, this.choice), index.h("ion-icon", { class: "med-icon header__icon", name: "med-grafico" })))), index.h("div", { class: "content" }, index.h("div", { class: "content__header" }, index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Seg")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Ter")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Qua")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Qui")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Sex")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Sab")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Dom"))), index.h("div", { class: "content__container", ref: (el) => { this.container = el; } }, index.h("slot", null)))));
+    const { dsColor, mes, ano } = this;
+    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, { 'med-calendar': true }) }, index.h("div", { class: "header" }, index.h("div", { class: "header__left" }, index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })), index.h("med-type", { class: "header__type", token: "p16b" }, mes, " ", ano), index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('next') }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))), index.h("div", { class: "header__right" }, index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() }, index.h("med-type", { class: "choice__type" }, this.choice), index.h("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })), index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onGraficoClick() }, index.h("ion-icon", { class: "med-icon header__icon", name: "med-grafico" })))), index.h("div", { class: "content" }, index.h("div", { class: "content__header" }, index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Seg")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Ter")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Qua")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Qui")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Sex")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Sab")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Dom"))), index.h("div", { class: "content__container", ref: (el) => { this.container = el; } }, index.h("slot", null)))));
   }
   get hostElement() { return index.getElement(this); }
 };

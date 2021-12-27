@@ -15126,14 +15126,12 @@ class MedCalendar {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.medClick = createEvent(this, "medClick", 7);
-    this.medChoiceClick = createEvent(this, "medChoiceClick", 7);
-    this.medMonthClick = createEvent(this, "medMonthClick", 7);
     this.medSwipe = createEvent(this, "medSwipe", 7);
     this.choice = 'Semana';
   }
   componentDidLoad() {
     let direction;
-    const swipeGesture = createGesture({
+    const options = {
       el: this.container,
       gestureName: 'swipe',
       onStart: () => {
@@ -15147,11 +15145,16 @@ class MedCalendar {
         }
       },
       onEnd: () => {
-        console.log(direction);
         this.medSwipe.emit(direction);
       }
-    });
-    swipeGesture.enable();
+    };
+    this.gesture = createGesture(options);
+    this.gesture.enable();
+  }
+  disconnectedCallback() {
+    if (this.gesture) {
+      this.gesture.destroy();
+    }
   }
   onChoiceClick() {
     this.choice = this.choice === 'Semana' ? 'Mês' : 'Semana';
@@ -15160,9 +15163,12 @@ class MedCalendar {
   onMonthClick(type) {
     this.medClick.emit(type);
   }
+  onGraficoClick() {
+    this.medClick.emit('graph');
+  }
   render() {
-    const { dsColor, calendario } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, { 'med-calendar': true }) }, hAsync("div", { class: "header" }, hAsync("div", { class: "header__left" }, hAsync("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })), hAsync("med-type", { class: "header__type", token: "p16b" }, calendario), hAsync("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('next') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))), hAsync("div", { class: "header__right" }, hAsync("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() }, hAsync("med-type", { class: "choice__type" }, this.choice), hAsync("ion-icon", { class: "med-icon header__icon", name: "med-grafico" })))), hAsync("div", { class: "content" }, hAsync("div", { class: "content__header" }, hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Seg")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Ter")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Qua")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Qui")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Sex")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Sab")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Dom"))), hAsync("div", { class: "content__container", ref: (el) => { this.container = el; } }, hAsync("slot", null)))));
+    const { dsColor, mes, ano } = this;
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, { 'med-calendar': true }) }, hAsync("div", { class: "header" }, hAsync("div", { class: "header__left" }, hAsync("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })), hAsync("med-type", { class: "header__type", token: "p16b" }, mes, " ", ano), hAsync("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('next') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))), hAsync("div", { class: "header__right" }, hAsync("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() }, hAsync("med-type", { class: "choice__type" }, this.choice), hAsync("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })), hAsync("ion-button", { "ds-name": "tertiary", onClick: () => this.onGraficoClick() }, hAsync("ion-icon", { class: "med-icon header__icon", name: "med-grafico" })))), hAsync("div", { class: "content" }, hAsync("div", { class: "content__header" }, hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Seg")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Ter")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Qua")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Qui")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Sex")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Sab")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Dom"))), hAsync("div", { class: "content__container", ref: (el) => { this.container = el; } }, hAsync("slot", null)))));
   }
   get hostElement() { return getElement(this); }
   static get style() { return medCalendarCss; }
@@ -15171,12 +15177,13 @@ class MedCalendar {
     "$tagName$": "med-calendar",
     "$members$": {
       "dsColor": [513, "ds-color"],
-      "calendario": [513],
+      "mes": [513],
+      "ano": [513],
       "choice": [32]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"], ["calendario", "calendario"]]
+    "$attrsToReflect$": [["dsColor", "ds-color"], ["mes", "mes"], ["ano", "ano"]]
   }; }
 }
 

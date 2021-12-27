@@ -3170,8 +3170,9 @@ export namespace Components {
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
-        "calendario"?: string;
+        "ano"?: string;
         "dsColor"?: MedColor;
+        "mes"?: string;
     }
     interface MedCalendarDay {
         "active": boolean;
@@ -8165,11 +8166,10 @@ declare namespace LocalJSX {
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
-        "calendario"?: string;
+        "ano"?: string;
         "dsColor"?: MedColor;
-        "onMedChoiceClick"?: (event: CustomEvent<any>) => void;
+        "mes"?: string;
         "onMedClick"?: (event: CustomEvent<any>) => void;
-        "onMedMonthClick"?: (event: CustomEvent<any>) => void;
         "onMedSwipe"?: (event: CustomEvent<any>) => void;
     }
     interface MedCalendarDay {

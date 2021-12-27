@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-27T14:56:06",
+  "timestamp": "2021-12-27T17:49:47",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -21395,10 +21395,10 @@
       "usage": {},
       "props": [
         {
-          "name": "calendario",
+          "name": "ano",
           "type": "string | undefined",
           "mutable": false,
-          "attr": "calendario",
+          "attr": "ano",
           "reflectToAttr": true,
           "docs": "",
           "docsTags": [],
@@ -21431,30 +21431,31 @@
           ],
           "optional": true,
           "required": false
+        },
+        {
+          "name": "mes",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "mes",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
       "events": [
         {
-          "event": "medChoiceClick",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
           "event": "medClick",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "event": "medMonthClick",
           "detail": "any",
           "bubbles": true,
           "cancelable": true,

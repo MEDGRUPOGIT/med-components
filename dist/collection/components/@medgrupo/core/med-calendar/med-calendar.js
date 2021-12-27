@@ -7,7 +7,7 @@ export class MedCalendar {
   }
   componentDidLoad() {
     let direction;
-    const swipeGesture = createGesture({
+    const options = {
       el: this.container,
       gestureName: 'swipe',
       onStart: () => {
@@ -21,11 +21,16 @@ export class MedCalendar {
         }
       },
       onEnd: () => {
-        console.log(direction);
         this.medSwipe.emit(direction);
       }
-    });
-    swipeGesture.enable();
+    };
+    this.gesture = createGesture(options);
+    this.gesture.enable();
+  }
+  disconnectedCallback() {
+    if (this.gesture) {
+      this.gesture.destroy();
+    }
   }
   onChoiceClick() {
     this.choice = this.choice === 'Semana' ? 'Mês' : 'Semana';
@@ -34,19 +39,27 @@ export class MedCalendar {
   onMonthClick(type) {
     this.medClick.emit(type);
   }
+  onGraficoClick() {
+    this.medClick.emit('graph');
+  }
   render() {
-    const { dsColor, calendario } = this;
-    return (h(Host, { class: generateMedColor(dsColor, { 'med-calendar': true }) },
+    const { dsColor, mes, ano } = this;
+    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, { 'med-calendar': true }) },
       h("div", { class: "header" },
         h("div", { class: "header__left" },
           h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') },
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })),
-          h("med-type", { class: "header__type", token: "p16b" }, calendario),
+          h("med-type", { class: "header__type", token: "p16b" },
+            mes,
+            " ",
+            ano),
           h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('next') },
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))),
         h("div", { class: "header__right" },
           h("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() },
             h("med-type", { class: "choice__type" }, this.choice),
+            h("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })),
+          h("ion-button", { "ds-name": "tertiary", onClick: () => this.onGraficoClick() },
             h("ion-icon", { class: "med-icon header__icon", name: "med-grafico" })))),
       h("div", { class: "content" },
         h("div", { class: "content__header" },
@@ -98,7 +111,7 @@ export class MedCalendar {
       "attribute": "ds-color",
       "reflect": true
     },
-    "calendario": {
+    "mes": {
       "type": "string",
       "mutable": false,
       "complexType": {
@@ -112,7 +125,24 @@ export class MedCalendar {
         "tags": [],
         "text": ""
       },
-      "attribute": "calendario",
+      "attribute": "mes",
+      "reflect": true
+    },
+    "ano": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "ano",
       "reflect": true
     }
   }; }
@@ -122,36 +152,6 @@ export class MedCalendar {
   static get events() { return [{
       "method": "medClick",
       "name": "medClick",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "complexType": {
-        "original": "any",
-        "resolved": "any",
-        "references": {}
-      }
-    }, {
-      "method": "medChoiceClick",
-      "name": "medChoiceClick",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "complexType": {
-        "original": "any",
-        "resolved": "any",
-        "references": {}
-      }
-    }, {
-      "method": "medMonthClick",
-      "name": "medMonthClick",
       "bubbles": true,
       "cancelable": true,
       "composed": true,
