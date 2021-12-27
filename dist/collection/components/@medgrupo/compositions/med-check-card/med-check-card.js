@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Event } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCheckCard {
   constructor() {
@@ -6,38 +6,43 @@ export class MedCheckCard {
     this.tooltipPlacement = 'top';
     this.tooltipCollapsed = true;
   }
+  onClick() {
+    this.medClick.emit();
+  }
   render() {
     const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, dataInicial, dataFinal, iconName, tooltipPlacement, tooltipCollapsed, tooltipHeading, tooltipContent } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
       }) },
-      h("med-base", { class: "med-check-card__container", "spacing-h": "s12" },
-        h("slot", { name: "input" }),
-        h("div", { class: "med-check-card__text-container" },
-          h("med-type", { token: "p16xb" }, titulo),
-          h("div", { class: "med-check-card__info-container" },
-            h("ion-icon", { class: "med-check-card__icon med-icon med-icon--xxs", name: iconName }),
-            h("med-type", { class: "med-check-card__subtitulo", token: "p12xb" }, categoria),
-            !dataInicial && !dataFinal && h("med-type", { class: "med-check-card__hora", token: "p12x" },
+      h("med-base", { class: "med-check-card__base" },
+        h("div", { class: "med-check-card__container", onClick: () => this.onClick() },
+          h("slot", { name: "input" }),
+          h("div", { class: "med-check-card__text-container" },
+            h("med-type", { token: "p16xb" }, titulo),
+            h("div", { class: "med-check-card__info-container" },
+              h("ion-icon", { class: "med-check-card__icon med-icon med-icon--xxs", name: iconName }),
+              h("med-type", { class: "med-check-card__subtitulo", token: "p12xb" }, categoria),
+              !dataInicial && !dataFinal && h("med-type", { class: "med-check-card__hora", token: "p12x" },
+                horaInicial,
+                " \u2013 ",
+                horaFinal)),
+            dataInicial && dataFinal && h("med-type", { class: "med-check-card__data", token: "p12x" },
+              dataInicial,
+              " - ",
               horaInicial,
-              " \u2013 ",
-              horaFinal)),
-          dataInicial && dataFinal && h("med-type", { class: "med-check-card__data", token: "p12x" },
-            dataInicial,
-            " - ",
-            horaInicial,
-            " at\u00E9 ",
-            dataFinal,
-            " - ",
-            horaFinal)),
-        h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end", collapsed: tooltipCollapsed },
-          h("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }),
-          h("div", { slot: "content" },
-            h("div", { class: "med-check-card__tooltip-header" },
-              h("med-type", { "ds-color": "neutral-01", token: "p14b" }, tooltipHeading),
-              h("ion-icon", { class: "med-check-card__tooltip-icon med-icon med-icon--sm", name: "med-fechar" })),
-            h("med-type", { "ds-color": "neutral-01", token: "p14x", slot: "content" }, tooltipContent))))));
+              " at\u00E9 ",
+              dataFinal,
+              " - ",
+              horaFinal))),
+        h("div", { class: "med-check-card__tooltip-container" },
+          h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end", collapsed: tooltipCollapsed },
+            h("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }),
+            h("div", { slot: "content" },
+              h("div", { class: "med-check-card__tooltip-header" },
+                h("med-type", { "ds-color": "neutral-01", token: "p14b" }, tooltipHeading),
+                h("ion-icon", { class: "med-check-card__tooltip-icon med-icon med-icon--sm", name: "med-fechar" })),
+              h("med-type", { "ds-color": "neutral-01", token: "p14x", slot: "content" }, tooltipContent)))))));
   }
   static get is() { return "med-check-card"; }
   static get encapsulation() { return "shadow"; }
@@ -295,4 +300,20 @@ export class MedCheckCard {
       "reflect": true
     }
   }; }
+  static get events() { return [{
+      "method": "medClick",
+      "name": "medClick",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      }
+    }]; }
 }
