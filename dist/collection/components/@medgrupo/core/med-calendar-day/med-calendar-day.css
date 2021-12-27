@@ -174,16 +174,16 @@
 }
 
 :host(.med-color.med-calendar-day--active) {
-  --background: hsl(var(--med-color-brand-3));
+  --background: hsl(var(--med-color-3));
   --color: hsl(var(--med-color-contrast-fixed));
 }
 
 :host(.med-color-neutral.med-calendar-day--active) {
-  --background: hsl(var(--med-color-neutral-));
-  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral));
+  --color: hsl(var(--med-color-neutral-contrast));
 }
 
 :host(.med-color-feedback.med-calendar-day--active) {
-  --background: hsl(var(--med-color-fb-));
-  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-feedback));
+  --color: hsl(var(--med-color-feedback-contrast));
 }

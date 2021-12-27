@@ -1,17 +1,38 @@
 import { Component, Host, h, Element, Prop, Event, State } from '@stencil/core';
+import { createGesture } from '../../../../utils/gesture';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCalendar {
   constructor() {
     this.choice = 'Semana';
   }
+  componentDidLoad() {
+    let direction;
+    const swipeGesture = createGesture({
+      el: this.container,
+      gestureName: 'swipe',
+      onStart: () => {
+      },
+      onMove: (event) => {
+        if (event.deltaX > 0) {
+          direction = 'right';
+        }
+        else {
+          direction = 'left';
+        }
+      },
+      onEnd: () => {
+        console.log(direction);
+        this.medSwipe.emit(direction);
+      }
+    });
+    swipeGesture.enable();
+  }
   onChoiceClick() {
     this.choice = this.choice === 'Semana' ? 'Mês' : 'Semana';
-    console.log(this.choice);
-    this.medChoiceClick.emit(this.choice);
+    this.medClick.emit(this.choice);
   }
   onMonthClick(type) {
-    console.log(type);
-    this.medMonthClick.emit(type);
+    this.medClick.emit(type);
   }
   render() {
     const { dsColor, calendario } = this;
@@ -26,8 +47,7 @@ export class MedCalendar {
         h("div", { class: "header__right" },
           h("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() },
             h("med-type", { class: "choice__type" }, this.choice),
-            h("ion-icon", { slot: "end", class: "med-icon header__button-icon", name: "med-baixo" })),
-          h("ion-icon", { class: "med-icon header__icon", name: "med-grafico" }))),
+            h("ion-icon", { class: "med-icon header__icon", name: "med-grafico" })))),
       h("div", { class: "content" },
         h("div", { class: "content__header" },
           h("div", { class: "content__week-day" },
@@ -44,7 +64,7 @@ export class MedCalendar {
             h("med-type", { class: "content__week-type" }, "Sab")),
           h("div", { class: "content__week-day" },
             h("med-type", { class: "content__week-type" }, "Dom"))),
-        h("div", { class: "content__container" },
+        h("div", { class: "content__container", ref: (el) => { this.container = el; } },
           h("slot", null)))));
   }
   static get is() { return "med-calendar"; }
@@ -73,7 +93,7 @@ export class MedCalendar {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": ""
       },
       "attribute": "ds-color",
       "reflect": true
@@ -100,6 +120,21 @@ export class MedCalendar {
     "choice": {}
   }; }
   static get events() { return [{
+      "method": "medClick",
+      "name": "medClick",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      }
+    }, {
       "method": "medChoiceClick",
       "name": "medChoiceClick",
       "bubbles": true,
@@ -117,6 +152,21 @@ export class MedCalendar {
     }, {
       "method": "medMonthClick",
       "name": "medMonthClick",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      }
+    }, {
+      "method": "medSwipe",
+      "name": "medSwipe",
       "bubbles": true,
       "cancelable": true,
       "composed": true,

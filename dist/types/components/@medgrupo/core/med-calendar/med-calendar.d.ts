@@ -8,14 +8,15 @@ export interface MedCalendar {
 }
 export declare class MedCalendar {
   hostElement: any;
-  /**
-    * Define a cor do componente.
-    */
   dsColor?: MedColor;
   calendario?: string;
   choice: string;
+  medClick: EventEmitter;
   medChoiceClick: EventEmitter;
   medMonthClick: EventEmitter;
+  medSwipe: EventEmitter;
+  private container;
+  componentDidLoad(): void;
   private onChoiceClick;
   private onMonthClick;
   render(): any;

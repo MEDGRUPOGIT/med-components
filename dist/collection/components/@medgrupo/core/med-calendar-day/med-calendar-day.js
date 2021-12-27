@@ -1,18 +1,15 @@
-import { Component, Host, h, Prop, Event } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCalendarDay {
   constructor() {
     this.active = false;
-  }
-  onDayClick() {
-    this.medDayClick.emit();
   }
   render() {
     const { dsColor, active } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-calendar-day': true,
         'med-calendar-day--active': active
-      }), onClick: () => this.onDayClick() },
+      }) },
       h("div", { class: "date" },
         h("div", { class: "date__container" },
           h("med-type", { class: "date__type" },
@@ -68,20 +65,4 @@ export class MedCalendarDay {
       "defaultValue": "false"
     }
   }; }
-  static get events() { return [{
-      "method": "medDayClick",
-      "name": "medDayClick",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "complexType": {
-        "original": "any",
-        "resolved": "any",
-        "references": {}
-      }
-    }]; }
 }

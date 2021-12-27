@@ -3171,9 +3171,6 @@ export namespace Components {
     }
     interface MedCalendar {
         "calendario"?: string;
-        /**
-          * Define a cor do componente.
-         */
         "dsColor"?: MedColor;
     }
     interface MedCalendarDay {
@@ -8169,12 +8166,11 @@ declare namespace LocalJSX {
     }
     interface MedCalendar {
         "calendario"?: string;
-        /**
-          * Define a cor do componente.
-         */
         "dsColor"?: MedColor;
         "onMedChoiceClick"?: (event: CustomEvent<any>) => void;
+        "onMedClick"?: (event: CustomEvent<any>) => void;
         "onMedMonthClick"?: (event: CustomEvent<any>) => void;
+        "onMedSwipe"?: (event: CustomEvent<any>) => void;
     }
     interface MedCalendarDay {
         "active"?: boolean;
@@ -8182,7 +8178,6 @@ declare namespace LocalJSX {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
-        "onMedDayClick"?: (event: CustomEvent<any>) => void;
     }
     interface MedCaption {
         /**
