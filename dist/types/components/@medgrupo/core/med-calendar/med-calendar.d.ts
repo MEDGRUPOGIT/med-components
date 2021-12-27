@@ -1,27 +1,22 @@
+import { EventEmitter } from '../../../../stencil-public-runtime';
 import { MedColor } from '../../../../interface';
+export interface MedCalendar {
+  date: number;
+  month: number;
+  year: number;
+  monthName: string;
+}
 export declare class MedCalendar {
   hostElement: any;
   /**
     * Define a cor do componente.
     */
   dsColor?: MedColor;
-  today: Date;
-  currentMonth: number;
-  currentYear: number;
-  createYear: any;
-  months: any;
-  days: any;
-  private monthAndYear;
-  private selectYear;
-  private selectMonth;
-  private calendarHead;
-  private calendarBody;
-  componentDidLoad(): void;
-  private generate_year_range;
-  private next;
-  private previous;
-  private jump;
-  private showCalendar;
-  private daysInMonth;
+  calendario?: string;
+  choice: string;
+  medChoiceClick: EventEmitter;
+  medMonthClick: EventEmitter;
+  private onChoiceClick;
+  private onMonthClick;
   render(): any;
 }

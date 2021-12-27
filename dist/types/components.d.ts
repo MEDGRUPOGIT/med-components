@@ -3170,6 +3170,14 @@ export namespace Components {
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
+        "calendario"?: string;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+    }
+    interface MedCalendarDay {
+        "active": boolean;
         /**
           * Define a cor do componente.
          */
@@ -4534,6 +4542,12 @@ declare global {
         prototype: HTMLMedCalendarElement;
         new (): HTMLMedCalendarElement;
     };
+    interface HTMLMedCalendarDayElement extends Components.MedCalendarDay, HTMLStencilElement {
+    }
+    var HTMLMedCalendarDayElement: {
+        prototype: HTMLMedCalendarDayElement;
+        new (): HTMLMedCalendarDayElement;
+    };
     interface HTMLMedCaptionElement extends Components.MedCaption, HTMLStencilElement {
     }
     var HTMLMedCaptionElement: {
@@ -4968,6 +4982,7 @@ declare global {
         "med-banner": HTMLMedBannerElement;
         "med-base": HTMLMedBaseElement;
         "med-calendar": HTMLMedCalendarElement;
+        "med-calendar-day": HTMLMedCalendarDayElement;
         "med-caption": HTMLMedCaptionElement;
         "med-cartao-resposta-item": HTMLMedCartaoRespostaItemElement;
         "med-cartao-resposta-lista": HTMLMedCartaoRespostaListaElement;
@@ -8153,10 +8168,21 @@ declare namespace LocalJSX {
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
+        "calendario"?: string;
         /**
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        "onMedChoiceClick"?: (event: CustomEvent<any>) => void;
+        "onMedMonthClick"?: (event: CustomEvent<any>) => void;
+    }
+    interface MedCalendarDay {
+        "active"?: boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        "onMedDayClick"?: (event: CustomEvent<any>) => void;
     }
     interface MedCaption {
         /**
@@ -9016,6 +9042,7 @@ declare namespace LocalJSX {
         "med-banner": MedBanner;
         "med-base": MedBase;
         "med-calendar": MedCalendar;
+        "med-calendar-day": MedCalendarDay;
         "med-caption": MedCaption;
         "med-cartao-resposta-item": MedCartaoRespostaItem;
         "med-cartao-resposta-lista": MedCartaoRespostaLista;
@@ -9180,6 +9207,7 @@ declare module "@stencil/core" {
             "med-banner": LocalJSX.MedBanner & JSXBase.HTMLAttributes<HTMLMedBannerElement>;
             "med-base": LocalJSX.MedBase & JSXBase.HTMLAttributes<HTMLMedBaseElement>;
             "med-calendar": LocalJSX.MedCalendar & JSXBase.HTMLAttributes<HTMLMedCalendarElement>;
+            "med-calendar-day": LocalJSX.MedCalendarDay & JSXBase.HTMLAttributes<HTMLMedCalendarDayElement>;
             "med-caption": LocalJSX.MedCaption & JSXBase.HTMLAttributes<HTMLMedCaptionElement>;
             "med-cartao-resposta-item": LocalJSX.MedCartaoRespostaItem & JSXBase.HTMLAttributes<HTMLMedCartaoRespostaItemElement>;
             "med-cartao-resposta-lista": LocalJSX.MedCartaoRespostaLista & JSXBase.HTMLAttributes<HTMLMedCartaoRespostaListaElement>;

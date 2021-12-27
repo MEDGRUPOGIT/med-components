@@ -126,6 +126,7 @@ export const MedIcons = [
   'med-expand',
   'med-eye-hide-line',
   'med-eye-show-line',
+  'med-faculdade',
   'med-fechar',
 
   'med-fecharcirculo',
@@ -233,6 +234,7 @@ export const MedIcons = [
   'med-textosublinhar',
 
   'med-top-temas',
+  'med-trabalho',
   'med-trofeu',
   'med-usuario',
   'med-video',

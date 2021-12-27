@@ -3,13 +3,13 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const cubicBezier = require('./cubic-bezier-0b2ccc35.js');
-const helpers = require('./helpers-d381ec4d.js');
-const haptic = require('./haptic-9f199ada.js');
-const animation = require('./animation-13cbbb20.js');
-const index$1 = require('./index-e1bb33c3.js');
-const spinnerConfigs = require('./spinner-configs-a5915c04.js');
+const ionicGlobal = require('./ionic-global-c609be80.js');
+const cubicBezier = require('./cubic-bezier-6f49c00a.js');
+const helpers = require('./helpers-ab0db03b.js');
+const haptic = require('./haptic-3d9360f0.js');
+const animation = require('./animation-dadce649.js');
+const index$1 = require('./index-099f2bcb.js');
+const spinnerConfigs = require('./spinner-configs-dd28b49c.js');
 
 const getRefresherAnimationType = (contentEl) => {
   const previousSibling = contentEl.previousElementSibling;
@@ -370,7 +370,7 @@ const Refresher = class {
       });
     };
     this.scrollEl.addEventListener('scroll', this.scrollListenerCallback);
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-98d43f07.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-adf3c519.js'); })).createGesture({
       el: this.scrollEl,
       gestureName: 'refresher',
       gesturePriority: 31,
@@ -422,7 +422,7 @@ const Refresher = class {
         refreshingCircle.style.setProperty('animation-delay', '-655ms');
       });
     }
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-98d43f07.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-adf3c519.js'); })).createGesture({
       el: this.scrollEl,
       gestureName: 'refresher',
       gesturePriority: 31,
@@ -527,7 +527,7 @@ const Refresher = class {
       this.setupNativeRefresher(contentEl);
     }
     else {
-      this.gesture = (await Promise.resolve().then(function () { return require('./index-98d43f07.js'); })).createGesture({
+      this.gesture = (await Promise.resolve().then(function () { return require('./index-adf3c519.js'); })).createGesture({
         el: contentEl,
         gestureName: 'refresher',
         gesturePriority: 31,

@@ -298,16 +298,16 @@ button {
 
 :host {
   --background: hsl(var(--med-color-neutral-3));
-  --placeholder-opacity: 1;
   --padding-top: 8px;
   --padding-end: 8px;
   --padding-bottom: 8px;
   --padding-start: 16px;
-  --placeholder-color: hsl(var(--med-color-neutral-9));
-  --placeholder-opacity: 1;
+  --placeholder-color: hsl(var(--med-color-neutral-5));
+  --placeholder-opacity: 0.5;
   --placeholder-font-size: 14px;
   --placeholder-font-weight: 400;
   --placeholder-line-height: 16px;
+  --color: hsl(var(--med-color-neutral-10));
   --height: 40px;
   --border-radius: 8px;
 }
@@ -317,7 +317,7 @@ button {
   border-radius: 8px;
 }
 :host(.med-select) .select-text {
-  color: var(--placeholder-color);
+  color: var(--color);
 }
 :host(.med-select) .med-select-icon {
   stroke: hsl(var(--med-color-neutral-9));

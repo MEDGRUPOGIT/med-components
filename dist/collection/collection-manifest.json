@@ -7,6 +7,7 @@
     "./components/@medgrupo/compositions/med-semanas/med-semanas.js",
     "./components/@medgrupo/core/med-base/med-base.js",
     "./components/@medgrupo/core/med-calendar/med-calendar.js",
+    "./components/@medgrupo/core/med-calendar-day/med-calendar-day.js",
     "./components/@medgrupo/core/med-chart-bar/med-chart-bar.js",
     "./components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.js",
     "./components/@medgrupo/core/med-input/med-input.js",
