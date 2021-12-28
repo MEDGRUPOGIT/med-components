@@ -4,6 +4,19 @@ import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCalendar {
   constructor() {
     this.choice = 'Semana';
+    this.width = 166;
+  }
+  connectedCallback() {
+    const resizeObserver = new ResizeObserver(() => {
+      this.init();
+    });
+    resizeObserver.observe(document.body);
+  }
+  init() {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 1200) {
+      this.width = windowWidth / 7;
+    }
   }
   componentDidLoad() {
     let direction;
@@ -44,7 +57,7 @@ export class MedCalendar {
   }
   render() {
     const { dsColor, mes, ano } = this;
-    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, { 'med-calendar': true }) },
+    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, { 'med-calendar': true }), style: { '--width': `${this.width}` } },
       h("div", { class: "header" },
         h("div", { class: "header__left" },
           h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') },
@@ -147,7 +160,8 @@ export class MedCalendar {
     }
   }; }
   static get states() { return {
-    "choice": {}
+    "choice": {},
+    "width": {}
   }; }
   static get events() { return [{
       "method": "medClick",
