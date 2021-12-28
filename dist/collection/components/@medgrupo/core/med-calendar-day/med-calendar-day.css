@@ -146,6 +146,10 @@
   --med-shadow-level-10: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
 }
 
+:host {
+  --border-color: hsl(var(--med-color-fb-warning));
+}
+
 .date {
   display: flex;
   align-items: center;
@@ -171,6 +175,10 @@
 
 :host(.med-calendar-day--active) {
   --background: hsl(var(--med-color-brand-3));
+}
+
+:host(.med-calendar-day--outline) .date__container {
+  border: 1px solid var(--border-color);
 }
 
 :host(.med-color.med-calendar-day--active) {

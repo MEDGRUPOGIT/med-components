@@ -5,5 +5,6 @@ export declare class MedCalendarDay {
     */
   dsColor?: MedColor;
   active: boolean;
+  fill?: 'outline';
   render(): any;
 }

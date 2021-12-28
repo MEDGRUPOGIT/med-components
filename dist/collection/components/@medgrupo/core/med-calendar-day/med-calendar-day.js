@@ -5,10 +5,11 @@ export class MedCalendarDay {
     this.active = false;
   }
   render() {
-    const { dsColor, active } = this;
+    const { dsColor, active, fill } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-calendar-day': true,
-        'med-calendar-day--active': active
+        'med-calendar-day--active': active,
+        [`med-calendar-day--${fill}`]: fill !== undefined
       }) },
       h("div", { class: "date" },
         h("div", { class: "date__container" },
@@ -63,6 +64,23 @@ export class MedCalendarDay {
       "attribute": "active",
       "reflect": true,
       "defaultValue": "false"
+    },
+    "fill": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'outline'",
+        "resolved": "\"outline\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "fill",
+      "reflect": true
     }
   }; }
 }

@@ -3180,6 +3180,7 @@ export namespace Components {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        "fill"?: 'outline';
     }
     interface MedCaption {
         /**
@@ -8178,6 +8179,7 @@ declare namespace LocalJSX {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        "fill"?: 'outline';
     }
     interface MedCaption {
         /**
