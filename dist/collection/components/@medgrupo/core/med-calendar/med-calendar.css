@@ -191,6 +191,7 @@
   align-items: center;
   justify-content: center;
   height: 24px;
+  width: calc(var(--width) * 1px);
 }
 .content__week-type {
   --font-size: 12px;
