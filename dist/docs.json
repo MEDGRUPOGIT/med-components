@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-28T17:47:57",
+  "timestamp": "2021-12-29T14:45:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -22599,6 +22599,15 @@
       "events": [
         {
           "event": "medClick",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "medTooltipClose",
           "detail": "any",
           "bubbles": true,
           "cancelable": true,

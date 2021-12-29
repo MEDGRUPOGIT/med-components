@@ -19,6 +19,8 @@ export declare class MedCheckCard {
   tooltipHeading?: string;
   tooltipContent?: string;
   medClick: EventEmitter;
+  medTooltipClose: EventEmitter;
   onClick(): void;
+  onTooltipCloseClick(): void;
   render(): any;
 }

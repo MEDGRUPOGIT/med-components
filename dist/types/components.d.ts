@@ -8312,6 +8312,7 @@ declare namespace LocalJSX {
         "horaInicial"?: string;
         "iconName"?: string;
         "onMedClick"?: (event: CustomEvent<any>) => void;
+        "onMedTooltipClose"?: (event: CustomEvent<any>) => void;
         "titulo"?: string;
         "tooltipCollapsed"?: boolean;
         "tooltipContent"?: string;

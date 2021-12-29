@@ -9,6 +9,9 @@ export class MedCheckCard {
   onClick() {
     this.medClick.emit();
   }
+  onTooltipCloseClick() {
+    this.medTooltipClose.emit();
+  }
   render() {
     const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, dataInicial, dataFinal, iconName, tooltipPlacement, tooltipCollapsed, tooltipHeading, tooltipContent } = this;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
@@ -22,7 +25,7 @@ export class MedCheckCard {
           h("div", { class: "med-check-card__text-container" },
             h("med-type", { token: "p16xb" }, titulo),
             h("div", { class: "med-check-card__info-container" },
-              h("ion-icon", { class: "med-check-card__icon med-icon med-icon--xxs", name: iconName }),
+              h("ion-icon", { class: "med-check-card__icon med-icon med-icon--xs", name: iconName }),
               h("med-type", { class: "med-check-card__subtitulo", token: "p12xb" }, categoria),
               !dataInicial && !dataFinal && h("med-type", { class: "med-check-card__hora", token: "p12x" },
                 horaInicial,
@@ -37,7 +40,7 @@ export class MedCheckCard {
               " - ",
               horaFinal))),
         h("div", { class: alert ? 'med-check-card__tooltip-container' : '' },
-          h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end", collapsed: tooltipCollapsed },
+          h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end", collapsed: tooltipCollapsed, onClick: () => this.onTooltipCloseClick() },
             h("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }),
             h("div", { slot: "content" },
               h("div", { class: "med-check-card__tooltip-header" },
@@ -304,6 +307,21 @@ export class MedCheckCard {
   static get events() { return [{
       "method": "medClick",
       "name": "medClick",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      }
+    }, {
+      "method": "medTooltipClose",
+      "name": "medTooltipClose",
       "bubbles": true,
       "cancelable": true,
       "composed": true,
