@@ -345,6 +345,30 @@
   margin: 0 8px;
 }
 
+.med-datetime .picker-wrapper {
+  background: hsl(var(--med-color-neutral-2));
+  border-radius: 16px 16px 0px 0px;
+}
+.med-datetime .picker-above-highlight,
+.med-datetime .picker-below-highlight {
+  background: hsl(var(--med-color-neutral-2), 0.8);
+}
+.med-datetime .picker-button {
+  text-transform: uppercase;
+  font-family: "fsemeric";
+  color: hsl(var(--med-color-brand-4));
+  font-size: 12px;
+  line-height: 12px;
+  padding: 24px;
+}
+.med-datetime .picker-toolbar-cancel .picker-button {
+  color: hsl(var(--med-color-neutral-9));
+  font-weight: 600;
+}
+.med-datetime .picker-opt {
+  color: hsl(var(--med-color-neutral-10));
+}
+
 .monta-provas-accordion__text-header {
   display: flex;
   align-items: center;

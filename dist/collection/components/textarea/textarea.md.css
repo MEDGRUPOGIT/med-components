@@ -310,50 +310,39 @@
 }
 
 :host {
-  --padding-top: var(--med-spacing-inset-xs);
-  --padding-end: var(--med-spacing-inset-xs);
-  --padding-bottom: var(--med-spacing-inset-sm);
-  --padding-start: var(--med-spacing-inset-sm);
-  --background: var(--med-color-neutral-light-prime);
-  border-radius: var(--med-border-radius-sm);
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-10));
+  --font-size: 14px;
+  --font-weight: 400;
+  --line-height: 16px;
+  --padding-top: 8px;
+  --padding-end: 8px;
+  --padding-bottom: 8px;
+  --padding-start: 16px;
+  --placeholder-color: hsl(var(--med-color-neutral-5));
+  --placeholder-font-size: 14px;
+  --placeholder-font-weight: 400;
+  --placeholder-line-height: 16px;
+  --placeholder-opacity: 1;
+  --height: 112px;
+  --border-radius: 8px;
+  border-radius: 8px;
   border-style: solid;
-  border-width: var(--med-border-width-hairline);
-  border-color: var(--med-color-neutral-light-10);
-  min-height: 112px;
+  border-width: 1px;
+  border-color: hsl(var(--med-color-neutral-3));
+  min-height: var(--height);
   text-align: left;
   display: flex;
   min-width: 100%;
+  margin: 0;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
 }
 :host::placeholder {
-  --placeholder-color: var(--med-color-neutral-light-20);
-  --placeholder-font-weight: var(--med-font-weight-regular);
-  line-height: var(--med-line-height-compressed);
-  color: var(--med-color-neutral-light-20);
-  padding: var(--med-spacing-stack-nano);
+  line-height: var(--line-height);
+  font-size: var(--placeholder-font-size);
 }
 :host .native-textarea.sc-ion-textarea-md {
-  min-height: 112px;
-}
-:host .length {
-  position: absolute;
-  bottom: -25px;
-  right: 0;
-  font-size: var(--med-font-size-xxxs);
-  font-weight: var(--med-font-weight-regular);
-  color: var(--med-color-neutral-light-10);
-  margin-top: var(--med-spacing-inset-xs);
-}
-
-:host(.has-focus) {
-  --border-width: var(--med-border-width-thin);
-}
-
-:host([success]) {
-  border-color: var(--med-color-feedback-success-medium);
-  border-width: var(--med-border-width-thin);
-}
-
-:host([error]) {
-  border-color: var(--med-color-feedback-error-medium);
-  border-width: var(--med-border-width-thin);
+  min-height: var(--height);
 }

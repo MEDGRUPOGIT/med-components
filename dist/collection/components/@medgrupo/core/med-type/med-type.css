@@ -193,6 +193,12 @@
   --line-height: 24px;
 }
 
+:host(.med-type--h24x) {
+  --font-size: 24px;
+  --font-weight: 600;
+  --line-height: 32px;
+}
+
 :host(.med-type--h20) {
   --font-size: 20px;
   --font-weight: 600;

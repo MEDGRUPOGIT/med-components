@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-12-23T18:04:48",
+  "timestamp": "2021-12-30T17:22:52",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -2519,6 +2519,7 @@
         "filtro-dashboard",
         "filtro-modal",
         "ion-searchbar",
+        "med-calendar",
         "med-config",
         "med-context-menu",
         "med-image-zoom",
@@ -2541,6 +2542,9 @@
           "ion-button"
         ],
         "ion-searchbar": [
+          "ion-button"
+        ],
+        "med-calendar": [
           "ion-button"
         ],
         "med-config": [
@@ -4675,6 +4679,23 @@
           "required": false
         },
         {
+          "name": "iconName",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"med-baixo\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "max",
           "type": "string | undefined",
           "mutable": true,
@@ -5095,8 +5116,14 @@
         }
       ],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "ion-datetime": [
+          "ion-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/fab/fab.tsx",
@@ -19900,6 +19927,93 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/@medgrupo/compositions/med-add-card/med-add-card.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-add-card",
+      "readme": "# med-add-card\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconName",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "icon-name",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "titulo",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "titulo",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "med-base",
+        "ion-icon",
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-add-card": [
+          "med-base",
+          "ion-icon",
+          "med-type"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/@medgrupo/global/med-agrupador/med-agrupador.tsx",
       "encapsulation": "shadow",
       "tag": "med-agrupador",
@@ -21137,7 +21251,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/core/med-base/med-base.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-base",
       "readme": "# med-base\r\n\r\n\r\n\r",
       "docs": "",
@@ -21254,12 +21368,211 @@
       ],
       "parts": [],
       "dependents": [
-        "filtro-dashboard"
+        "filtro-dashboard",
+        "med-add-card",
+        "med-check-card"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "filtro-dashboard": [
           "med-base"
+        ],
+        "med-add-card": [
+          "med-base"
+        ],
+        "med-check-card": [
+          "med-base"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-calendar/med-calendar.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-calendar",
+      "readme": "# med-calendar\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "ano",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ano",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "mes",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "mes",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "medClick",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "medSwipe",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-button",
+        "ion-icon",
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-calendar": [
+          "ion-button",
+          "ion-icon",
+          "med-type"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-calendar-day/med-calendar-day.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-calendar-day",
+      "readme": "# med-calendar-day\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "fill",
+          "type": "\"outline\" | undefined",
+          "mutable": false,
+          "attr": "fill",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "outline",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-calendar-day": [
+          "med-type"
         ]
       }
     },
@@ -21552,6 +21865,206 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-chart-bar-horizontal",
+      "readme": "# chart-bar-horizontal\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Define o valor do componente.",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "progress",
+          "docs": ""
+        },
+        {
+          "name": "track",
+          "docs": ""
+        }
+      ],
+      "dependents": [
+        "med-chart-categoria"
+      ],
+      "dependencies": [
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-chart-bar-horizontal": [
+          "med-type"
+        ],
+        "med-chart-categoria": [
+          "med-chart-bar-horizontal"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/compositions/med-chart-categoria/med-chart-categoria.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-chart-categoria",
+      "readme": "# med-chart-categoria\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "meta",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "meta",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "realizado",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "realizado",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "titulo",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "titulo",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Define o valor do componente.",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "med-type",
+        "med-chart-bar-horizontal"
+      ],
+      "dependencyGraph": {
+        "med-chart-categoria": [
+          "med-type",
+          "med-chart-bar-horizontal"
+        ],
+        "med-chart-bar-horizontal": [
+          "med-type"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/@medgrupo/global/med-chart-radial/med-chart-radial.tsx",
       "encapsulation": "scoped",
       "tag": "med-chart-radial",
@@ -21795,6 +22308,333 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/@medgrupo/compositions/med-check-card/med-check-card.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-check-card",
+      "readme": "# med-check-card\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alert",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "alert",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "categoria",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "categoria",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dataFinal",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "data-final",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dataInicial",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "data-inicial",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "finalizada",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "finalizada",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "horaFinal",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "hora-final",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "horaInicial",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "hora-inicial",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconName",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "icon-name",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "titulo",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "titulo",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "tooltipCollapsed",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "tooltip-collapsed",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tooltipContent",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "tooltip-content",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "tooltipHeading",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "tooltip-heading",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "tooltipPlacement",
+          "type": "\"bottom\" | \"left\" | \"right\" | \"top\" | undefined",
+          "mutable": false,
+          "attr": "tooltip-placement",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "'top'",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "medClick",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "medTooltipClose",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "med-base",
+        "med-type",
+        "ion-icon",
+        "med-tooltip"
+      ],
+      "dependencyGraph": {
+        "med-check-card": [
+          "med-base",
+          "med-type",
+          "ion-icon",
+          "med-tooltip"
+        ]
+      }
     },
     {
       "filePath": "./src/components/@medgrupo/cores/child/child.tsx",
@@ -22683,6 +23523,25 @@
           "ion-ripple-effect"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-input/med-input.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-input",
+      "readme": "# med-input\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/@medgrupo/global/med-item-aulas/med-item-aulas.tsx",
@@ -24686,6 +25545,135 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/@medgrupo/compositions/med-semana/med-semana.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-semana",
+      "readme": "# med-semana\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active",
+          "reflectToAttr": true,
+          "docs": "Define o estado do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "skin",
+          "type": "\"lista\" | undefined",
+          "mutable": false,
+          "attr": "skin",
+          "reflectToAttr": true,
+          "docs": "Define a skin do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lista",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "med-type",
+        "med-piechart",
+        "med-download-button"
+      ],
+      "dependencyGraph": {
+        "med-semana": [
+          "med-type",
+          "med-piechart",
+          "med-download-button"
+        ],
+        "med-piechart": [
+          "med-type"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/compositions/med-semanas/med-semanas.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-semanas",
+      "readme": "# med-semanas\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "skin",
+          "type": "\"lista\" | undefined",
+          "mutable": false,
+          "attr": "skin",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lista",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/@medgrupo/global/med-subtitle/med-subtitle.tsx",
       "encapsulation": "shadow",
       "tag": "med-subtitle",
@@ -25410,10 +26398,14 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "med-check-card",
         "med-message"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "med-check-card": [
+          "med-tooltip"
+        ],
         "med-message": [
           "med-tooltip"
         ]
@@ -25438,6 +26430,59 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "tag",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"label\" | \"p\" | \"span\" | undefined",
+          "mutable": false,
+          "attr": "tag",
+          "reflectToAttr": true,
+          "docs": "Define a tag HTML do componente.",
+          "docsTags": [],
+          "default": "'span'",
+          "values": [
+            {
+              "value": "h1",
+              "type": "string"
+            },
+            {
+              "value": "h2",
+              "type": "string"
+            },
+            {
+              "value": "h3",
+              "type": "string"
+            },
+            {
+              "value": "h4",
+              "type": "string"
+            },
+            {
+              "value": "h5",
+              "type": "string"
+            },
+            {
+              "value": "h6",
+              "type": "string"
+            },
+            {
+              "value": "label",
+              "type": "string"
+            },
+            {
+              "value": "p",
+              "type": "string"
+            },
+            {
+              "value": "span",
               "type": "string"
             },
             {
@@ -25475,6 +26520,12 @@
       "parts": [],
       "dependents": [
         "filtro-modal",
+        "med-add-card",
+        "med-calendar",
+        "med-calendar-day",
+        "med-chart-bar-horizontal",
+        "med-chart-categoria",
+        "med-check-card",
         "med-piechart",
         "med-semana",
         "med-video-list-item"
@@ -25482,6 +26533,24 @@
       "dependencies": [],
       "dependencyGraph": {
         "filtro-modal": [
+          "med-type"
+        ],
+        "med-add-card": [
+          "med-type"
+        ],
+        "med-calendar": [
+          "med-type"
+        ],
+        "med-calendar-day": [
+          "med-type"
+        ],
+        "med-chart-bar-horizontal": [
+          "med-type"
+        ],
+        "med-chart-categoria": [
+          "med-type"
+        ],
+        "med-check-card": [
           "med-type"
         ],
         "med-piechart": [

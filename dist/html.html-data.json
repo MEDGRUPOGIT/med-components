@@ -1131,6 +1131,10 @@
           "description": "Values used to create the list of selectable hours. By default\r\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\r\nto control exactly which hours to display, the `hourValues` input can take a number, an\r\narray of numbers, or a string of comma separated numbers."
         },
         {
+          "name": "icon-name",
+          "description": ""
+        },
+        {
           "name": "max",
           "description": "The maximum datetime allowed. Value must be a date string\r\nfollowing the\r\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\r\n`1996-12-19`. The format does not have to be specific to an exact\r\ndatetime. For example, the maximum could just be the year, such as `1994`.\r\nDefaults to the end of this year."
         },
@@ -4951,6 +4955,33 @@
       ]
     },
     {
+      "name": "med-add-card",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "icon-name",
+          "description": ""
+        },
+        {
+          "name": "titulo",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-add-card/med-add-card.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-agrupador",
       "description": {
         "kind": "markdown",
@@ -5313,6 +5344,65 @@
       ]
     },
     {
+      "name": "med-calendar",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ano",
+          "description": ""
+        },
+        {
+          "name": "ds-color",
+          "description": ""
+        },
+        {
+          "name": "mes",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-calendar/med-calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-calendar-day",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "active",
+          "description": ""
+        },
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "fill",
+          "description": "",
+          "values": [
+            {
+              "name": "outline"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-calendar-day/med-calendar-day.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-caption",
       "description": {
         "kind": "markdown",
@@ -5432,6 +5522,64 @@
       ]
     },
     {
+      "name": "med-chart-bar-horizontal",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "value",
+          "description": "Define o valor do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-chart-categoria",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "meta",
+          "description": ""
+        },
+        {
+          "name": "realizado",
+          "description": ""
+        },
+        {
+          "name": "titulo",
+          "description": ""
+        },
+        {
+          "name": "value",
+          "description": "Define o valor do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-chart-categoria/med-chart-categoria.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-chart-radial",
       "description": {
         "kind": "markdown",
@@ -5520,6 +5668,91 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-chart-radial-label/med-chart-radial-label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-check-card",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "alert",
+          "description": ""
+        },
+        {
+          "name": "categoria",
+          "description": ""
+        },
+        {
+          "name": "data-final",
+          "description": ""
+        },
+        {
+          "name": "data-inicial",
+          "description": ""
+        },
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "finalizada",
+          "description": ""
+        },
+        {
+          "name": "hora-final",
+          "description": ""
+        },
+        {
+          "name": "hora-inicial",
+          "description": ""
+        },
+        {
+          "name": "icon-name",
+          "description": ""
+        },
+        {
+          "name": "titulo",
+          "description": ""
+        },
+        {
+          "name": "tooltip-collapsed",
+          "description": ""
+        },
+        {
+          "name": "tooltip-content",
+          "description": ""
+        },
+        {
+          "name": "tooltip-heading",
+          "description": ""
+        },
+        {
+          "name": "tooltip-placement",
+          "description": "",
+          "values": [
+            {
+              "name": "bottom"
+            },
+            {
+              "name": "left"
+            },
+            {
+              "name": "right"
+            },
+            {
+              "name": "top"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-check-card/med-check-card.tsx"
         }
       ]
     },
@@ -5802,6 +6035,20 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-image-zoom/med-image-zoom.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-input",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-input/med-input.tsx"
         }
       ]
     },
@@ -6759,6 +7006,39 @@
         {
           "name": "ds-color",
           "description": "Define a cor do componente."
+        },
+        {
+          "name": "tag",
+          "description": "Define a tag HTML do componente.",
+          "values": [
+            {
+              "name": "h1"
+            },
+            {
+              "name": "h2"
+            },
+            {
+              "name": "h3"
+            },
+            {
+              "name": "h4"
+            },
+            {
+              "name": "h5"
+            },
+            {
+              "name": "h6"
+            },
+            {
+              "name": "label"
+            },
+            {
+              "name": "p"
+            },
+            {
+              "name": "span"
+            }
+          ]
         },
         {
           "name": "token",

@@ -16,10 +16,11 @@ export class MedBase {
       }) },
       h("slot", { name: "start" }),
       h("slot", { name: "middle" }),
-      h("slot", { name: "end" })));
+      h("slot", { name: "end" }),
+      h("slot", null)));
   }
   static get is() { return "med-base"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-base.scss"]
   }; }

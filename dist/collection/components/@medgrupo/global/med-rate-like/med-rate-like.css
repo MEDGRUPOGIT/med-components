@@ -159,6 +159,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  outline: none;
 }
 :host .button-spacing {
   padding-right: var(--spacing);

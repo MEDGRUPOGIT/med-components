@@ -333,57 +333,30 @@
 }
 
 :host {
-  --spacing: var(--med-spacing-squish-xs)
-  --background: var(--med-color-neutral-light-prime);
-  --height: 48px;
-  --border-radius: var(--med-border-radius-sm);
-  --border-width: var(--med-border-width-hairline);
-  --border-color: var(--med-color-neutral-light-10);
-  --border-style: solid;
-  --color: var(--med-color-neutral-dark-20);
-  --placeholder-spacing: var(--med-spacing-stack-nano);
-  --placeholder-font-size: var(--med-font-size-xs);
-  --placeholder-line-height: var(--med-line-height-compressed);
-  --padding-end: var(--med-spacing-inline-base);
-  --placeholder-color: var(--med-color-neutral-light-20);
-  --placeholder-font-weight: var(--med-font-weight-regular);
-  padding: var(--spacing);
-  padding-right: 56px;
-  background: var(--background);
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-10));
+  --font-size: 14px;
+  --font-weight: 400;
+  --line-height: 16px;
+  --padding-bottom: 8px;
+  --padding-end: 8px;
+  --padding-start: 16px;
+  --padding-top: 8px;
+  --placeholder-color: hsl(var(--med-color-neutral-5));
+  --placeholder-font-size: 14px;
+  --placeholder-font-weight: 400;
+  --placeholder-line-height: 16px;
+  --placeholder-opacity: 1;
+  --height: 40px;
+  --border-radius: 8px;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
   height: var(--height);
-  border-style: var(--border-style);
   border-radius: var(--border-radius);
-  border-width: var(--border-width);
-  border-color: var(--border-color);
-  text-align: left;
-  color: var(--color);
 }
 :host::placeholder {
-  margin: var(--placeholder-spacing);
   font-size: var(--placeholder-font-size);
   font-weight: var(--placeholder-font-weight);
   line-height: var(--placeholder-line-height);
-  color: var(--placeholder-color);
-}
-
-:host(.has-focus) {
-  --border-width: var(--med-border-width-thin);
-}
-
-:host([success]) {
-  --border-color: var(--med-color-feedback-success-medium);
-  --color: var(--med-color-neutral-dark-20);
-  --padding-end: 56px;
-}
-
-:host([error]) {
-  --border-color: var(--med-color-feedback-error-medium);
-}
-
-::slotted(ion-icon) {
-  position: absolute;
-  right: 16px;
-  fill: var(--med-color-feedback-success-medium);
-  width: 24px;
-  height: 24px;
 }

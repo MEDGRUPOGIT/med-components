@@ -1,9 +1,16 @@
 {
   "entries": [
+    "./components/@medgrupo/compositions/med-add-card/med-add-card.js",
+    "./components/@medgrupo/compositions/med-chart-categoria/med-chart-categoria.js",
+    "./components/@medgrupo/compositions/med-check-card/med-check-card.js",
     "./components/@medgrupo/compositions/med-semana/med-semana.js",
     "./components/@medgrupo/compositions/med-semanas/med-semanas.js",
     "./components/@medgrupo/core/med-base/med-base.js",
+    "./components/@medgrupo/core/med-calendar/med-calendar.js",
+    "./components/@medgrupo/core/med-calendar-day/med-calendar-day.js",
     "./components/@medgrupo/core/med-chart-bar/med-chart-bar.js",
+    "./components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.js",
+    "./components/@medgrupo/core/med-input/med-input.js",
     "./components/@medgrupo/core/med-piechart/med-piechart.js",
     "./components/@medgrupo/core/med-tab-button/med-tab-button.js",
     "./components/@medgrupo/core/med-tabs/med-tabs.js",

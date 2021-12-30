@@ -30,6 +30,7 @@ export class Datetime {
      * If `true`, the datetime appears normal but is not interactive.
      */
     this.readonly = false;
+    this.iconName = "med-baixo";
     /**
      * The display format of the date and time as text that shows
      * within the item. When the `pickerFormat` input is not used, then the
@@ -359,7 +360,7 @@ export class Datetime {
     }
   }
   render() {
-    const { inputId, text, disabled, readonly, isExpanded, el, placeholder } = this;
+    const { inputId, text, disabled, readonly, isExpanded, el, placeholder, iconName } = this;
     const mode = getIonMode(this);
     const labelId = inputId + '-lbl';
     const label = findItemLabel(el);
@@ -384,6 +385,7 @@ export class Datetime {
         'in-item': hostContext('ion-item', el)
       } },
       h("div", { class: "datetime-text", part: datetimeTextPart }, datetimeText),
+      h("ion-icon", { class: "datetime-icon med-icon", slot: "icon-only", name: iconName }),
       h("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: this.disabled, ref: btnEl => this.buttonEl = btnEl })));
   }
   static get is() { return "ion-datetime"; }
@@ -450,6 +452,24 @@ export class Datetime {
       "attribute": "readonly",
       "reflect": false,
       "defaultValue": "false"
+    },
+    "iconName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "icon-name",
+      "reflect": false,
+      "defaultValue": "\"med-baixo\""
     },
     "min": {
       "type": "string",

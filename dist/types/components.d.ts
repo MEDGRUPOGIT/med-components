@@ -694,6 +694,7 @@ export namespace Components {
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
+        "iconName": string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
          */
@@ -2924,6 +2925,14 @@ export namespace Components {
          */
         "singleOpen": boolean;
     }
+    interface MedAddCard {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        "iconName"?: string;
+        "titulo"?: string;
+    }
     interface MedAgrupador {
         /**
           * Define o estado do componente.
@@ -3160,6 +3169,19 @@ export namespace Components {
          */
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
+    interface MedCalendar {
+        "ano"?: string;
+        "dsColor"?: MedColor;
+        "mes"?: string;
+    }
+    interface MedCalendarDay {
+        "active": boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        "fill"?: 'outline';
+    }
     interface MedCaption {
         /**
           * Define a cor do componente.
@@ -3208,6 +3230,29 @@ export namespace Components {
          */
         "width": number;
     }
+    interface MedChartBarHorizontal {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
+          * Define o valor do componente.
+         */
+        "value": number;
+    }
+    interface MedChartCategoria {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        "meta"?: string;
+        "realizado"?: string;
+        "titulo"?: string;
+        /**
+          * Define o valor do componente.
+         */
+        "value": number;
+    }
     interface MedChartRadial {
         /**
           * Define a cor do componente.
@@ -3253,6 +3298,25 @@ export namespace Components {
           * TODO
          */
         "valores": MedChartRadiaItem[];
+    }
+    interface MedCheckCard {
+        "alert": boolean;
+        "categoria"?: string;
+        "dataFinal"?: string;
+        "dataInicial"?: string;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        "finalizada"?: string;
+        "horaFinal"?: string;
+        "horaInicial"?: string;
+        "iconName"?: string;
+        "titulo"?: string;
+        "tooltipCollapsed": boolean;
+        "tooltipContent"?: string;
+        "tooltipHeading"?: string;
+        "tooltipPlacement": "top" | "bottom" | "left" | "right" | undefined;
     }
     interface MedChild {
         /**
@@ -3378,6 +3442,8 @@ export namespace Components {
           * TODO
          */
         "titulo"?: string;
+    }
+    interface MedInput {
     }
     interface MedItemAulas {
         /**
@@ -3798,6 +3864,10 @@ export namespace Components {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        /**
+          * Define a tag HTML do componente.
+         */
+        "tag"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label';
         /**
           * Define o token do componente.
          */
@@ -4411,6 +4481,12 @@ declare global {
         prototype: HTMLMedAccordionListElement;
         new (): HTMLMedAccordionListElement;
     };
+    interface HTMLMedAddCardElement extends Components.MedAddCard, HTMLStencilElement {
+    }
+    var HTMLMedAddCardElement: {
+        prototype: HTMLMedAddCardElement;
+        new (): HTMLMedAddCardElement;
+    };
     interface HTMLMedAgrupadorElement extends Components.MedAgrupador, HTMLStencilElement {
     }
     var HTMLMedAgrupadorElement: {
@@ -4459,6 +4535,18 @@ declare global {
         prototype: HTMLMedBaseElement;
         new (): HTMLMedBaseElement;
     };
+    interface HTMLMedCalendarElement extends Components.MedCalendar, HTMLStencilElement {
+    }
+    var HTMLMedCalendarElement: {
+        prototype: HTMLMedCalendarElement;
+        new (): HTMLMedCalendarElement;
+    };
+    interface HTMLMedCalendarDayElement extends Components.MedCalendarDay, HTMLStencilElement {
+    }
+    var HTMLMedCalendarDayElement: {
+        prototype: HTMLMedCalendarDayElement;
+        new (): HTMLMedCalendarDayElement;
+    };
     interface HTMLMedCaptionElement extends Components.MedCaption, HTMLStencilElement {
     }
     var HTMLMedCaptionElement: {
@@ -4483,6 +4571,18 @@ declare global {
         prototype: HTMLMedChartBarElement;
         new (): HTMLMedChartBarElement;
     };
+    interface HTMLMedChartBarHorizontalElement extends Components.MedChartBarHorizontal, HTMLStencilElement {
+    }
+    var HTMLMedChartBarHorizontalElement: {
+        prototype: HTMLMedChartBarHorizontalElement;
+        new (): HTMLMedChartBarHorizontalElement;
+    };
+    interface HTMLMedChartCategoriaElement extends Components.MedChartCategoria, HTMLStencilElement {
+    }
+    var HTMLMedChartCategoriaElement: {
+        prototype: HTMLMedChartCategoriaElement;
+        new (): HTMLMedChartCategoriaElement;
+    };
     interface HTMLMedChartRadialElement extends Components.MedChartRadial, HTMLStencilElement {
     }
     var HTMLMedChartRadialElement: {
@@ -4500,6 +4600,12 @@ declare global {
     var HTMLMedChartRadialLabelElement: {
         prototype: HTMLMedChartRadialLabelElement;
         new (): HTMLMedChartRadialLabelElement;
+    };
+    interface HTMLMedCheckCardElement extends Components.MedCheckCard, HTMLStencilElement {
+    }
+    var HTMLMedCheckCardElement: {
+        prototype: HTMLMedCheckCardElement;
+        new (): HTMLMedCheckCardElement;
     };
     interface HTMLMedChildElement extends Components.MedChild, HTMLStencilElement {
     }
@@ -4566,6 +4672,12 @@ declare global {
     var HTMLMedImageZoomElement: {
         prototype: HTMLMedImageZoomElement;
         new (): HTMLMedImageZoomElement;
+    };
+    interface HTMLMedInputElement extends Components.MedInput, HTMLStencilElement {
+    }
+    var HTMLMedInputElement: {
+        prototype: HTMLMedInputElement;
+        new (): HTMLMedInputElement;
     };
     interface HTMLMedItemAulasElement extends Components.MedItemAulas, HTMLStencilElement {
     }
@@ -4859,6 +4971,7 @@ declare global {
         "ion-virtual-scroll": HTMLIonVirtualScrollElement;
         "med-accordion-item": HTMLMedAccordionItemElement;
         "med-accordion-list": HTMLMedAccordionListElement;
+        "med-add-card": HTMLMedAddCardElement;
         "med-agrupador": HTMLMedAgrupadorElement;
         "med-alternativas": HTMLMedAlternativasElement;
         "med-alternativas-a": HTMLMedAlternativasAElement;
@@ -4867,13 +4980,18 @@ declare global {
         "med-avatar": HTMLMedAvatarElement;
         "med-banner": HTMLMedBannerElement;
         "med-base": HTMLMedBaseElement;
+        "med-calendar": HTMLMedCalendarElement;
+        "med-calendar-day": HTMLMedCalendarDayElement;
         "med-caption": HTMLMedCaptionElement;
         "med-cartao-resposta-item": HTMLMedCartaoRespostaItemElement;
         "med-cartao-resposta-lista": HTMLMedCartaoRespostaListaElement;
         "med-chart-bar": HTMLMedChartBarElement;
+        "med-chart-bar-horizontal": HTMLMedChartBarHorizontalElement;
+        "med-chart-categoria": HTMLMedChartCategoriaElement;
         "med-chart-radial": HTMLMedChartRadialElement;
         "med-chart-radial-content": HTMLMedChartRadialContentElement;
         "med-chart-radial-label": HTMLMedChartRadialLabelElement;
+        "med-check-card": HTMLMedCheckCardElement;
         "med-child": HTMLMedChildElement;
         "med-config": HTMLMedConfigElement;
         "med-context-menu": HTMLMedContextMenuElement;
@@ -4885,6 +5003,7 @@ declare global {
         "med-header": HTMLMedHeaderElement;
         "med-heading": HTMLMedHeadingElement;
         "med-image-zoom": HTMLMedImageZoomElement;
+        "med-input": HTMLMedInputElement;
         "med-item-aulas": HTMLMedItemAulasElement;
         "med-list": HTMLMedListElement;
         "med-list-item": HTMLMedListItemElement;
@@ -5602,6 +5721,7 @@ declare namespace LocalJSX {
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
+        "iconName"?: string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
          */
@@ -7762,6 +7882,14 @@ declare namespace LocalJSX {
          */
         "singleOpen"?: boolean;
     }
+    interface MedAddCard {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        "iconName"?: string;
+        "titulo"?: string;
+    }
     interface MedAgrupador {
         /**
           * Define o estado do componente.
@@ -8038,6 +8166,21 @@ declare namespace LocalJSX {
          */
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
+    interface MedCalendar {
+        "ano"?: string;
+        "dsColor"?: MedColor;
+        "mes"?: string;
+        "onMedClick"?: (event: CustomEvent<any>) => void;
+        "onMedSwipe"?: (event: CustomEvent<any>) => void;
+    }
+    interface MedCalendarDay {
+        "active"?: boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        "fill"?: 'outline';
+    }
     interface MedCaption {
         /**
           * Define a cor do componente.
@@ -8086,6 +8229,29 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
+    interface MedChartBarHorizontal {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
+          * Define o valor do componente.
+         */
+        "value"?: number;
+    }
+    interface MedChartCategoria {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        "meta"?: string;
+        "realizado"?: string;
+        "titulo"?: string;
+        /**
+          * Define o valor do componente.
+         */
+        "value"?: number;
+    }
     interface MedChartRadial {
         /**
           * Define a cor do componente.
@@ -8131,6 +8297,27 @@ declare namespace LocalJSX {
           * TODO
          */
         "valores"?: MedChartRadiaItem[];
+    }
+    interface MedCheckCard {
+        "alert"?: boolean;
+        "categoria"?: string;
+        "dataFinal"?: string;
+        "dataInicial"?: string;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        "finalizada"?: string;
+        "horaFinal"?: string;
+        "horaInicial"?: string;
+        "iconName"?: string;
+        "onMedClick"?: (event: CustomEvent<any>) => void;
+        "onMedTooltipClose"?: (event: CustomEvent<any>) => void;
+        "titulo"?: string;
+        "tooltipCollapsed"?: boolean;
+        "tooltipContent"?: string;
+        "tooltipHeading"?: string;
+        "tooltipPlacement"?: "top" | "bottom" | "left" | "right" | undefined;
     }
     interface MedChild {
         /**
@@ -8272,6 +8459,8 @@ declare namespace LocalJSX {
           * TODO
          */
         "titulo"?: string;
+    }
+    interface MedInput {
     }
     interface MedItemAulas {
         /**
@@ -8688,6 +8877,10 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
+          * Define a tag HTML do componente.
+         */
+        "tag"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label';
+        /**
           * Define o token do componente.
          */
         "token"?: MedTypeToken;
@@ -8838,6 +9031,7 @@ declare namespace LocalJSX {
         "ion-virtual-scroll": IonVirtualScroll;
         "med-accordion-item": MedAccordionItem;
         "med-accordion-list": MedAccordionList;
+        "med-add-card": MedAddCard;
         "med-agrupador": MedAgrupador;
         "med-alternativas": MedAlternativas;
         "med-alternativas-a": MedAlternativasA;
@@ -8846,13 +9040,18 @@ declare namespace LocalJSX {
         "med-avatar": MedAvatar;
         "med-banner": MedBanner;
         "med-base": MedBase;
+        "med-calendar": MedCalendar;
+        "med-calendar-day": MedCalendarDay;
         "med-caption": MedCaption;
         "med-cartao-resposta-item": MedCartaoRespostaItem;
         "med-cartao-resposta-lista": MedCartaoRespostaLista;
         "med-chart-bar": MedChartBar;
+        "med-chart-bar-horizontal": MedChartBarHorizontal;
+        "med-chart-categoria": MedChartCategoria;
         "med-chart-radial": MedChartRadial;
         "med-chart-radial-content": MedChartRadialContent;
         "med-chart-radial-label": MedChartRadialLabel;
+        "med-check-card": MedCheckCard;
         "med-child": MedChild;
         "med-config": MedConfig;
         "med-context-menu": MedContextMenu;
@@ -8864,6 +9063,7 @@ declare namespace LocalJSX {
         "med-header": MedHeader;
         "med-heading": MedHeading;
         "med-image-zoom": MedImageZoom;
+        "med-input": MedInput;
         "med-item-aulas": MedItemAulas;
         "med-list": MedList;
         "med-list-item": MedListItem;
@@ -8996,6 +9196,7 @@ declare module "@stencil/core" {
             "ion-virtual-scroll": LocalJSX.IonVirtualScroll & JSXBase.HTMLAttributes<HTMLIonVirtualScrollElement>;
             "med-accordion-item": LocalJSX.MedAccordionItem & JSXBase.HTMLAttributes<HTMLMedAccordionItemElement>;
             "med-accordion-list": LocalJSX.MedAccordionList & JSXBase.HTMLAttributes<HTMLMedAccordionListElement>;
+            "med-add-card": LocalJSX.MedAddCard & JSXBase.HTMLAttributes<HTMLMedAddCardElement>;
             "med-agrupador": LocalJSX.MedAgrupador & JSXBase.HTMLAttributes<HTMLMedAgrupadorElement>;
             "med-alternativas": LocalJSX.MedAlternativas & JSXBase.HTMLAttributes<HTMLMedAlternativasElement>;
             "med-alternativas-a": LocalJSX.MedAlternativasA & JSXBase.HTMLAttributes<HTMLMedAlternativasAElement>;
@@ -9004,13 +9205,18 @@ declare module "@stencil/core" {
             "med-avatar": LocalJSX.MedAvatar & JSXBase.HTMLAttributes<HTMLMedAvatarElement>;
             "med-banner": LocalJSX.MedBanner & JSXBase.HTMLAttributes<HTMLMedBannerElement>;
             "med-base": LocalJSX.MedBase & JSXBase.HTMLAttributes<HTMLMedBaseElement>;
+            "med-calendar": LocalJSX.MedCalendar & JSXBase.HTMLAttributes<HTMLMedCalendarElement>;
+            "med-calendar-day": LocalJSX.MedCalendarDay & JSXBase.HTMLAttributes<HTMLMedCalendarDayElement>;
             "med-caption": LocalJSX.MedCaption & JSXBase.HTMLAttributes<HTMLMedCaptionElement>;
             "med-cartao-resposta-item": LocalJSX.MedCartaoRespostaItem & JSXBase.HTMLAttributes<HTMLMedCartaoRespostaItemElement>;
             "med-cartao-resposta-lista": LocalJSX.MedCartaoRespostaLista & JSXBase.HTMLAttributes<HTMLMedCartaoRespostaListaElement>;
             "med-chart-bar": LocalJSX.MedChartBar & JSXBase.HTMLAttributes<HTMLMedChartBarElement>;
+            "med-chart-bar-horizontal": LocalJSX.MedChartBarHorizontal & JSXBase.HTMLAttributes<HTMLMedChartBarHorizontalElement>;
+            "med-chart-categoria": LocalJSX.MedChartCategoria & JSXBase.HTMLAttributes<HTMLMedChartCategoriaElement>;
             "med-chart-radial": LocalJSX.MedChartRadial & JSXBase.HTMLAttributes<HTMLMedChartRadialElement>;
             "med-chart-radial-content": LocalJSX.MedChartRadialContent & JSXBase.HTMLAttributes<HTMLMedChartRadialContentElement>;
             "med-chart-radial-label": LocalJSX.MedChartRadialLabel & JSXBase.HTMLAttributes<HTMLMedChartRadialLabelElement>;
+            "med-check-card": LocalJSX.MedCheckCard & JSXBase.HTMLAttributes<HTMLMedCheckCardElement>;
             "med-child": LocalJSX.MedChild & JSXBase.HTMLAttributes<HTMLMedChildElement>;
             "med-config": LocalJSX.MedConfig & JSXBase.HTMLAttributes<HTMLMedConfigElement>;
             "med-context-menu": LocalJSX.MedContextMenu & JSXBase.HTMLAttributes<HTMLMedContextMenuElement>;
@@ -9022,6 +9228,7 @@ declare module "@stencil/core" {
             "med-header": LocalJSX.MedHeader & JSXBase.HTMLAttributes<HTMLMedHeaderElement>;
             "med-heading": LocalJSX.MedHeading & JSXBase.HTMLAttributes<HTMLMedHeadingElement>;
             "med-image-zoom": LocalJSX.MedImageZoom & JSXBase.HTMLAttributes<HTMLMedImageZoomElement>;
+            "med-input": LocalJSX.MedInput & JSXBase.HTMLAttributes<HTMLMedInputElement>;
             "med-item-aulas": LocalJSX.MedItemAulas & JSXBase.HTMLAttributes<HTMLMedItemAulasElement>;
             "med-list": LocalJSX.MedList & JSXBase.HTMLAttributes<HTMLMedListElement>;
             "med-list-item": LocalJSX.MedListItem & JSXBase.HTMLAttributes<HTMLMedListItemElement>;
