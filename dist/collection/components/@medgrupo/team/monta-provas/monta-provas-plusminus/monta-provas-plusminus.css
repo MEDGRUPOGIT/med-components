@@ -148,6 +148,7 @@
 
 :host {
   --color: hsl(var(--med-color-neutral-10));
+  --pointer-events: initial;
 }
 
 :host(.monta-provas-plusminus) {
@@ -175,11 +176,13 @@
 :host(.monta-provas-plusminus--disabled-minus) .monta-provas-plusminus__icon-minus,
 :host(.monta-provas-plusminus--disabled-plus) .monta-provas-plusminus__icon-plus {
   opacity: var(--med-opacity-level-half);
+  pointer-events: var(--pointer-events);
 }
 
 :host(.monta-provas-plusminus--disabled-both) .monta-provas-plusminus__icon-minus,
 :host(.monta-provas-plusminus--disabled-both) .monta-provas-plusminus__icon-plus {
   opacity: var(--med-opacity-level-half);
+  pointer-events: var(--pointer-events);
 }
 
 :host(.monta-provas-plusminus--xl) {
