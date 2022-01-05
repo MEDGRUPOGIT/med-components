@@ -142,6 +142,8 @@ export const MedIcons = [
   'med-fontemenor',
   'med-gabarito',
   'med-grafico',
+  'med-ilustracao-tema',
+  'med-ilustracao-treino',
   'med-imagem',
   'med-impresso',
 

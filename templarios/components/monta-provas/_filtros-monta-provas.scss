@@ -62,9 +62,7 @@
 
 .monta-prova-filtro__search {
   --background: hsl(var(--med-color-neutral-3));
-  --icon-size: 16px;
   --spacing: var(--med-spacing-inset-xxs);
-  --padding-left-icon: 8px;
 
   @include breakpoint-up("lg") {
     flex-basis: 30%;

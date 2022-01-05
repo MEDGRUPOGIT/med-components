@@ -116,7 +116,8 @@
     "custom:build": "npm-run-all build custom:theme:clean custom:theme:build",
     "custom:storybook": "npm run custom:theme:build && npm-run-all --parallel custom:build:watch storybook",
     "custom:build:storybook": "npm-run-all build custom:theme:clean custom:theme:build build-storybook",
-    "screenshot:loki": "loki test"
+    "screenshot:loki": "loki test",
+    "tp:watch:sass": "sass --no-source-map src/components/@templarios/scss/:templarios-new/css --watch"
   },
   "author": "Ionic Team",
   "license": "MIT",

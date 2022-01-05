@@ -474,9 +474,9 @@
 }
 
 ::slotted([slot=start]) {
-  stroke: #fff;
+  stroke: hsl(var(--med-color-neutral-8));
 }
 
 ::slotted([slot=end]) {
-  stroke: #fff;
+  stroke: hsl(var(--med-color-neutral-8));
 }
