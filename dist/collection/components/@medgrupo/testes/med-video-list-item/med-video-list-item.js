@@ -7,11 +7,11 @@ export class MedVideoListItem {
         'med-video-list-item': true,
       }) },
       h("div", { class: "med-video-list-item__text-container" },
-        h("ion-icon", { class: "med-icon med-icon--sm", name: "med-play" }),
-        h("med-type", { class: "cp-time-stamp__title", token: "p12x", "ds-color": "neutral-9" }, "Taquiarritmias"),
+        h("ion-icon", { class: "med-icon med-video-list-item__icon", name: "med-play" }),
+        h("med-type", { class: "med-video-list-item__title", token: "p12x", "ds-color": "neutral-9" }, "Taquiarritmias"),
         h("med-type", { token: "p12x", "ds-color": dsColor }, "00:42:25")),
       h("ion-button", { class: "med-video-list-item__avancar", "ds-color": dsColor, "ds-name": "tertiary" },
-        h("ion-icon", { class: "med-video-list-item__icon med-icon", slot: "icon-only", name: "med-direita" }))));
+        h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-direita" }))));
   }
   static get is() { return "med-video-list-item"; }
   static get encapsulation() { return "scoped"; }

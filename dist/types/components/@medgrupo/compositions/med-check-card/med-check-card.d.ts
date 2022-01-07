@@ -14,10 +14,6 @@ export declare class MedCheckCard {
   dataFinal?: string;
   finalizada?: string;
   iconName?: string;
-  tooltipPlacement: "top" | "bottom" | "left" | "right" | undefined;
-  tooltipCollapsed: boolean;
-  tooltipHeading?: string;
-  tooltipContent?: string;
   medClick: EventEmitter;
   medTooltipClose: EventEmitter;
   onClick(): void;

@@ -27,6 +27,7 @@ export declare class Datetime implements ComponentInterface {
    * If `true`, the datetime appears normal but is not interactive.
    */
   readonly: boolean;
+  noStyle: boolean;
   iconName: string;
   protected disabledChanged(): void;
   /**

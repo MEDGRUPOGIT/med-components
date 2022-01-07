@@ -3,8 +3,6 @@ import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCheckCard {
   constructor() {
     this.alert = false;
-    this.tooltipPlacement = 'top';
-    this.tooltipCollapsed = true;
   }
   onClick() {
     this.medClick.emit();
@@ -13,7 +11,7 @@ export class MedCheckCard {
     this.medTooltipClose.emit();
   }
   render() {
-    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, dataInicial, dataFinal, iconName, tooltipPlacement, tooltipCollapsed, tooltipHeading, tooltipContent } = this;
+    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, dataInicial, dataFinal, iconName } = this;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
@@ -40,13 +38,7 @@ export class MedCheckCard {
               " - ",
               horaFinal))),
         h("div", { class: alert ? 'med-check-card__tooltip-container' : '' },
-          h("med-tooltip", { class: "med-check-card__tooltip", "ds-color": "fb-warning", placement: tooltipPlacement, position: "end", collapsed: tooltipCollapsed, onClick: () => this.onTooltipCloseClick() },
-            h("ion-icon", { class: "med-check-card__alert-icon med-icon med-icon--sm", name: "med-marcar", slot: "input" }),
-            h("div", { slot: "content" },
-              h("div", { class: "med-check-card__tooltip-header" },
-                h("med-type", { "ds-color": "neutral-01", token: "p14b" }, tooltipHeading),
-                h("ion-icon", { class: "med-check-card__tooltip-icon med-icon med-icon--sm", name: "med-fechar" })),
-              h("med-type", { "ds-color": "neutral-01", token: "p14x", slot: "content" }, tooltipContent)))))));
+          h("slot", { name: "tooltip" })))));
   }
   static get is() { return "med-check-card"; }
   static get encapsulation() { return "shadow"; }
@@ -231,76 +223,6 @@ export class MedCheckCard {
         "text": ""
       },
       "attribute": "icon-name",
-      "reflect": true
-    },
-    "tooltipPlacement": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "\"top\" | \"bottom\" | \"left\" | \"right\" | undefined",
-        "resolved": "\"bottom\" | \"left\" | \"right\" | \"top\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "tooltip-placement",
-      "reflect": true,
-      "defaultValue": "'top'"
-    },
-    "tooltipCollapsed": {
-      "type": "boolean",
-      "mutable": true,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "tooltip-collapsed",
-      "reflect": true,
-      "defaultValue": "true"
-    },
-    "tooltipHeading": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "tooltip-heading",
-      "reflect": true
-    },
-    "tooltipContent": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "tooltip-content",
       "reflect": true
     }
   }; }

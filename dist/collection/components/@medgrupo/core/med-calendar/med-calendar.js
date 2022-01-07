@@ -7,6 +7,7 @@ export class MedCalendar {
     this.width = 166;
   }
   connectedCallback() {
+    this.init();
     const resizeObserver = new ResizeObserver(() => {
       this.init();
     });

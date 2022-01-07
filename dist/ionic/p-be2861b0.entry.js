@@ -1,0 +1,1 @@
+import{r as t,h as e,H as o}from"./p-4d70e85a.js";const s=class{constructor(e){t(this,e)}render(){return e(o,null,e("slot",{name:"label"}),e("slot",{name:"input"}))}};s.style=":host{display:block}::slotted(med-type){padding-bottom:8px}::slotted(ion-textarea){margin:0}";export{s as med_input}

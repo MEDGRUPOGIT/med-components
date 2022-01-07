@@ -1,0 +1,1 @@
+import{r as s,h as o,H as t}from"./p-4d70e85a.js";import{g as r}from"./p-b87b9a9f.js";const a=class{constructor(o){s(this,o)}render(){const{dsColor:s}=this;return o(t,{class:r(s,{"med-tabs":!0})},o("slot",null))}};a.style=":host(.med-tabs){display:-ms-flexbox;display:flex;overflow-y:hidden;overflow-x:auto;width:100%;height:50px}";export{a as med_tabs}

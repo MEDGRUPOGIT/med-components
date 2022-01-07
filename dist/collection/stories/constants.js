@@ -231,6 +231,7 @@ export const MedIcons = [
 
   'med-star-outline',
   'med-sun',
+  'med-target',
   'med-texto',
   'med-textoselecionar',
   'med-textosublinhar',

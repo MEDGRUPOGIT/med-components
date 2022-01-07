@@ -2,23 +2,23 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const animation = require('./animation-dadce649.js');
-const ios_transition = require('./ios.transition-d78dff5b.js');
-const md_transition = require('./md.transition-8a1ac5c9.js');
-const cubicBezier = require('./cubic-bezier-6f49c00a.js');
-const index = require('./index-adf3c519.js');
-const ionicGlobal = require('./ionic-global-c609be80.js');
-const helpers = require('./helpers-ab0db03b.js');
-const index$1 = require('./index-099f2bcb.js');
-const index$2 = require('./index-a0e14e16.js');
-const index$3 = require('./index-0633c29d.js');
-const overlays = require('./overlays-738b020e.js');
-const fontSize_enum = require('./font-size.enum-941770af.js');
-const skin_enum = require('./skin.enum-96db9662.js');
-const medRateLike_enum = require('./med-rate-like.enum-e8f4b5f3.js');
-require('./gesture-controller-bcfe01ec.js');
+const animation = require('./animation-13cbbb20.js');
+const ios_transition = require('./ios.transition-3fc3591b.js');
+const md_transition = require('./md.transition-0c82d7a2.js');
+const cubicBezier = require('./cubic-bezier-0b2ccc35.js');
+const index = require('./index-98d43f07.js');
+const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const helpers = require('./helpers-d381ec4d.js');
+const index$1 = require('./index-e1bb33c3.js');
+const index$2 = require('./index-29aebf46.js');
+const index$3 = require('./index-3bb26b58.js');
+const overlays = require('./overlays-e22059c3.js');
+const fontSize_enum = require('./font-size.enum-2233ba2a.js');
+const skin_enum = require('./skin.enum-0657adcf.js');
+const medRateLike_enum = require('./med-rate-like.enum-45570365.js');
+require('./gesture-controller-29adda71.js');
 require('./index-bc2e4509.js');
-require('./hardware-back-button-e370df1e.js');
+require('./hardware-back-button-148ce546.js');
 
 const setupConfig = (config) => {
   const win = window;

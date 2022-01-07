@@ -1,0 +1,20 @@
+.med-sheet {
+  height: var(--height-mobile);
+}
+.med-sheet__header {
+  margin: 20px 0;
+  display: flex;
+}
+.med-sheet__button {
+  margin-left: auto;
+}
+.med-sheet__content {
+  overflow: auto;
+  position: relative;
+}
+
+@media only screen and (min-width: 992px) {
+  :host {
+    height: var(--height-desktop);
+  }
+}

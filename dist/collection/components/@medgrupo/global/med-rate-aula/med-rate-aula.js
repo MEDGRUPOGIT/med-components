@@ -42,7 +42,8 @@ export class MedRateAula {
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" })))),
       h("div", { class: "med-rate-aula__end", onClick: (event) => { this.toggle(event); } },
         h("ion-button", { "ds-size": "xs", "ds-name": "tertiary" },
-          h("ion-icon", { slot: "icon-only", class: "med-rate-aula__icon-abrir", name: "med-avaliar" })))));
+          h("ion-icon", { slot: "icon-only", class: "med-rate-aula__icon-abrir", name: "med-avaliar" })),
+        h("med-type", { token: "p12x" }, "Avalie"))));
   }
   static get is() { return "med-rate-aula"; }
   static get encapsulation() { return "shadow"; }
