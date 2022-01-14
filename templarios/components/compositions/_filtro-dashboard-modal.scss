@@ -1,0 +1,60 @@
+@import "../../../templarios/abstracts";
+
+.cp-filtro-dashboard-modal {
+  border-radius: 16px 16px 0px 0px;
+
+  &__content {
+    --background: #{color("neutral", "2")};
+    --padding-start: 32px;
+    --padding-end: 32px;
+    --padding-top: 32px;
+  }
+
+  &__header {
+    text-align: right;
+  }
+
+  &__filtro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: solid 1px color("neutral", "3");
+    margin-top: 40px;
+  }
+
+  &__seletor {
+    display: flex;
+    align-items: center;
+  }
+
+  &__label {
+    text-align: center;
+    margin: 0px 4px;
+  }
+
+  &__concursos-container {
+    margin-top: 32px;
+  }
+
+  &__concurso {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  &__radio {
+    align-items: center;
+    display: flex;
+    margin-right: 16px;
+  }
+
+  &__footer {
+    background: color("neutral", "3");
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+  }
+}

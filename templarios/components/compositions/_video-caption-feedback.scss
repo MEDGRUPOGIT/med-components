@@ -1,0 +1,10 @@
+@import "../../../templarios/abstracts";
+
+.cp-video-caption-feedback {
+  min-height: 85px;
+
+  &__start {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -173,7 +173,7 @@
   transform: translateX(0);
 }
 
-@media (any-hover: hover) {
+@media (any-hover: hover) and (pointer: fine) {
   :host(.med-alternativas) .med-alternativas__item--permite-riscar .med-alternativas__wrapper:hover .med-alternativas__riscar {
     transform: translateX(0);
   }

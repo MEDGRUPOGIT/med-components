@@ -198,7 +198,7 @@
   }
 }
 
-@media (any-hover: hover) {
+@media (any-hover: hover) and (pointer: fine) {
   :host(.med-alternativas) .med-alternativas__item--permite-riscar:hover {
     background: hsl(var(--med-color-neutral-2));
   }

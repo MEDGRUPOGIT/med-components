@@ -1,6 +1,6 @@
 import { r as registerInstance, h, H as Host, i as getElement } from './index-70672e81.js';
-import { c as createAnimation } from './animation-096c6391.js';
-import './helpers-dd7e4b7b.js';
+import { c as createAnimation } from './animation-f0f182d7.js';
+import './helpers-6b411283.js';
 
 const accordionGroupCss = ":host{--margin:10px;--background-page:hsl(var(--med-color-neutral-1))}:host{display:block}";
 

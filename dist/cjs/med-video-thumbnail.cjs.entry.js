@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const medTheme = require('./med-theme-1bca89cc.js');
+const medTheme = require('./med-theme-42add9fc.js');
 
 const medVideoThumbnailCss = ":host(.med-video-thumbnail){display:block;width:112px;height:64px;position:relative;overflow:hidden;border-radius:4px}:host(.med-video-thumbnail) .med-video-thumbnail__img{width:100%;height:auto;display:block}:host(.med-video-thumbnail) .med-video-thumbnail__icon{stroke:#fff;font-size:20px;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}:host(.med-video-thumbnail) .med-video-thumbnail__progress{position:absolute;bottom:0;left:0}";
 

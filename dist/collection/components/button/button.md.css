@@ -450,7 +450,8 @@ ion-ripple-effect {
   --border-radius: var(--med-border-radius-pill);
   --min-height: 48px;
   --min-width: 48px;
-  --transition: background 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out, opacity 300ms ease-out;
+  --transition: background 300ms ease-out, color 300ms ease-out,
+    border-color 300ms ease-out, opacity 300ms ease-out;
   --icon-font-size: 24px;
 }
 
@@ -525,6 +526,10 @@ ion-ripple-effect {
   --min-height: 48px;
   --min-width: 48px;
   --icon-font-size: 32px;
+}
+
+:host(.med-button--primary.button-block) {
+  width: 100%;
 }
 
 :host(.med-button--md) {
@@ -732,6 +737,10 @@ ion-ripple-effect {
   --min-width: 48px;
   --icon-font-size: 32px;
   --padding: 0;
+}
+
+:host(.med-button--secondary.button-block) {
+  width: 100%;
 }
 
 :host(.med-button--secondary.med-color) {

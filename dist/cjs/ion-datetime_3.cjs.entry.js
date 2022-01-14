@@ -3,13 +3,13 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const helpers = require('./helpers-d381ec4d.js');
-const overlays = require('./overlays-e22059c3.js');
-const theme = require('./theme-f551502d.js');
-const animation = require('./animation-13cbbb20.js');
-const haptic = require('./haptic-9f199ada.js');
-require('./hardware-back-button-148ce546.js');
+const ionicGlobal = require('./ionic-global-c609be80.js');
+const helpers = require('./helpers-ab0db03b.js');
+const overlays = require('./overlays-738b020e.js');
+const theme = require('./theme-21d701cc.js');
+const animation = require('./animation-dadce649.js');
+const haptic = require('./haptic-3d9360f0.js');
+require('./hardware-back-button-e370df1e.js');
 
 /**
  * Gets a date value given a format
@@ -1226,7 +1226,7 @@ const PickerColumnCmp = class {
     }
     this.rotateFactor = pickerRotateFactor;
     this.scaleFactor = pickerScaleFactor;
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-98d43f07.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-adf3c519.js'); })).createGesture({
       el: this.el,
       gestureName: 'picker-swipe',
       gesturePriority: 100,

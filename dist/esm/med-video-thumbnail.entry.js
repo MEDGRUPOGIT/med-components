@@ -1,5 +1,5 @@
 import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { g as generateMedColor } from './med-theme-83c28ab9.js';
+import { g as generateMedColor } from './med-theme-33df6a63.js';
 
 const medVideoThumbnailCss = ":host(.med-video-thumbnail){display:block;width:112px;height:64px;position:relative;overflow:hidden;border-radius:4px}:host(.med-video-thumbnail) .med-video-thumbnail__img{width:100%;height:auto;display:block}:host(.med-video-thumbnail) .med-video-thumbnail__icon{stroke:#fff;font-size:20px;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}:host(.med-video-thumbnail) .med-video-thumbnail__progress{position:absolute;bottom:0;left:0}";
 

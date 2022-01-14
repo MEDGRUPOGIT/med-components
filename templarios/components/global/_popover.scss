@@ -1,0 +1,19 @@
+@import "../../../templarios/abstracts";
+
+.med-popover {
+  --ion-backdrop-opacity: 0.8;
+
+  ion-backdrop {
+    background: hsl(var(--med-color-neutral-1));
+  }
+
+  .popover-content {
+    background: hsl(var(--med-color-neutral-2)) !important;
+    border-radius: 16px;
+    padding: 24px;
+    width: 90%;
+    left: 50% !important;
+    transform: translate(-50%, 0%) !important;
+    transform-origin: unset !important;
+  }
+}

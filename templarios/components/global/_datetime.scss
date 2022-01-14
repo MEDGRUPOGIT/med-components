@@ -1,6 +1,5 @@
 @import "../../../templarios/abstracts";
 
-
 .med-datetime {
   .picker-wrapper {
     background: hsl(var(--med-color-neutral-2));
@@ -30,5 +29,14 @@
 
   .picker-opt {
     color: hsl(var(--med-color-neutral-10));
+  }
+}
+
+@include platform('desktop') {
+  .med-datetime--modal {
+    .picker-wrapper {
+      left: unset;
+      width: 430px;
+    }
   }
 }

@@ -14,7 +14,7 @@
   background: var(--background);
 }
 :host(.med-navbar) .med-navbar__container {
-  padding: var(--ion-safe-area-top, 0) var(--med-spacing-inset-sm) 0 var(--med-spacing-inset-sm);
+  padding: var(--ion-safe-area-top, 20px) var(--med-spacing-inset-sm) 0 var(--med-spacing-inset-sm);
   position: relative;
   display: flex;
   align-items: center;

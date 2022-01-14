@@ -1,7 +1,7 @@
 import { r as registerInstance, h, H as Host, i as getElement } from './index-70672e81.js';
-import { c as createAnimation } from './animation-096c6391.js';
-import { g as generateMedColor } from './med-theme-83c28ab9.js';
-import './helpers-dd7e4b7b.js';
+import { c as createAnimation } from './animation-f0f182d7.js';
+import { g as generateMedColor } from './med-theme-33df6a63.js';
+import './helpers-6b411283.js';
 
 const medAccordionListCss = ":host{--background:hsl(var(--med-color-neutral-1));--border:var(--med-spacing-stack-xxxs) solid hsl(var(--med-color-neutral-1));--border-radius:var(--med-border-radius-sm)}:host(.med-accordion-list){display:block}:host(.med-accordion-list) .med-accordion-list__blocker{background-color:var(--background);will-change:transform;border-radius:var(--border-radius)}:host(.med-accordion-list) ::slotted(med-accordion-item){border-bottom:var(--border)}:host(.med-accordion-list) ::slotted(med-accordion-item:last-child){border-bottom:none !important}:host(.med-accordion-list--xs) ::slotted(med-accordion-item){--border:var(--med-spacing-stack-nano) solid hsl(var(--med-color-neutral-1))}:host(.med-accordion-list--sm) ::slotted(med-accordion-item){--border:var(--med-spacing-stack-xxxs) solid hsl(var(--med-color-neutral-1))}:host(.med-accordion-list--md) ::slotted(med-accordion-item){--border:var(--med-spacing-stack-base) solid hsl(var(--med-color-neutral-1))}:host(.med-accordion-list--lg) ::slotted(med-accordion-item){--border:var(--med-spacing-stack-xxs) solid hsl(var(--med-color-neutral-1))}:host(.med-accordion-list--no-border) .med-accordion-list__blocker{--border-radius:0}";
 

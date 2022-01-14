@@ -3,8 +3,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const animation = require('./animation-13cbbb20.js');
-require('./helpers-d381ec4d.js');
+const animation = require('./animation-dadce649.js');
+require('./helpers-ab0db03b.js');
 
 const accordionGroupCss = ":host{--margin:10px;--background-page:hsl(var(--med-color-neutral-1))}:host{display:block}";
 

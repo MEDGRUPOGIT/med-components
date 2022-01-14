@@ -1,25 +1,34 @@
-@import "./accordion-list";
-@import './card-assuntos-temas';
-@import './chart-bar';
-@import './filtro-dashboard-modal';
-@import './filtro-dashboard';
-@import './header-counter';
-@import './tabs';
-@import './video-caption-feedback';
-
-@import "./global/scrollbar";
-
 ////////////////////
-// old
+// Global
 ////////////////////
-
-@import "./global/time-stamp";
 @import "./global/datetime";
+@import "./global/picker";
+@import "./global/popover";
+@import "./global/scrollbar";
+@import "./global/sheet";
+@import "./global/time-stamp";
 
-@import "./main/main-week";
+////////////////////
+// Compositions
+////////////////////
+@import "./compositions/accordion-list";
+@import "./compositions/card-assuntos-temas";
+@import "./compositions/chart-bar";
+@import "./compositions/dialog";
+@import "./compositions/filtro-dashboard-modal";
+@import "./compositions/filtro-dashboard";
+@import "./compositions/header-counter";
+@import "./compositions/tabs";
+@import "./compositions/video-caption-feedback";
 
+////////////////////
+// Monta Provas
+////////////////////
 @import "./monta-provas/accordion-chart-monta-provas";
 @import "./monta-provas/filtros-monta-provas";
 @import "./monta-provas/footer-monta-provas";
 
-
+////////////////////
+// old
+////////////////////
+@import "./main/main-week";
