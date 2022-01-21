@@ -1,20 +1,20 @@
 import { MedColor } from '../../../../../interface';
 export declare class MedCartaoRespostaItem {
   /**
-    * Define a cor do componente.
-    */
+   * TODO
+   */
   dsColor?: MedColor;
   /**
-   * Define o estado do componente para anulado.
-   */
+  * TODO
+  */
   anulada: boolean;
   /**
-    * Define o estado do componente para impresso.
-    */
+   * TODO
+   */
   impressa: boolean;
   /**
-    * Define o estado do componente para ativo.
-    */
+   * TODO
+   */
   ativa: boolean;
   render(): any;
 }

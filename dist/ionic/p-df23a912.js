@@ -1,1 +1,0 @@
-var p;!function(p){p.XXXS="12px",p.XXS="14px",p.XS="16px",p.SM="20px",p.MD="24px"}(p||(p={}));export{p as M}

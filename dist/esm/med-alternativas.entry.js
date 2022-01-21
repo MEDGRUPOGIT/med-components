@@ -1,7 +1,7 @@
 import { r as registerInstance, e as createEvent, h, H as Host } from './index-70672e81.js';
 import { M as MedSkin } from './skin.enum-3ed9fb8d.js';
 
-const medAlternativasCss = ":host{display:block;--font-size:var(--med-font-size-xs)}";
+const medAlternativasCss = ":host{--font-size:16px;display:block}";
 
 const MedAlternativas = class {
   constructor(hostRef) {

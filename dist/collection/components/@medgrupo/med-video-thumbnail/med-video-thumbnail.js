@@ -3,7 +3,7 @@ import { generateMedColor } from '../../../utils/med-theme';
 export class MedVideoThumbnail {
   constructor() {
     /**
-      * Define o valor da progress bar do componente.
+      * TODO
       */
     this.value = 0;
   }
@@ -42,7 +42,7 @@ export class MedVideoThumbnail {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": "TODO"
       },
       "attribute": "ds-color",
       "reflect": true
@@ -59,7 +59,7 @@ export class MedVideoThumbnail {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a url do componente."
+        "text": "TODO"
       },
       "attribute": "url",
       "reflect": true
@@ -76,7 +76,7 @@ export class MedVideoThumbnail {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o valor da progress bar do componente."
+        "text": "TODO"
       },
       "attribute": "value",
       "reflect": true,

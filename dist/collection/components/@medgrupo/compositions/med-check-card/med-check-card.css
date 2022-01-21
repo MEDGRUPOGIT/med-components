@@ -21,17 +21,23 @@
 .med-check-card__info-container {
   display: flex;
   align-items: center;
-  padding-top: 4px;
+  flex-wrap: wrap;
 }
 .med-check-card__icon {
   stroke: hsl(var(--med-color-neutral-8));
+  padding-top: 4px;
+}
+.med-check-card__container-fix {
+  display: flex;
 }
 .med-check-card__subtitulo {
   margin: 0 8px;
+  padding-top: 4px;
   stroke: hsl(var(--med-color-neutral-8));
 }
 .med-check-card__hora {
   color: hsl(var(--med-color-neutral-8));
+  padding-top: 4px;
 }
 .med-check-card__data {
   margin-top: 4px;

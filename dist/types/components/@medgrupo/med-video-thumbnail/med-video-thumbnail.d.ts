@@ -1,15 +1,15 @@
 import { MedColor } from '../../../interface';
 export declare class MedVideoThumbnail {
   /**
-    * Define a cor do componente.
+    * TODO
     */
   dsColor?: MedColor;
   /**
-    * Define a url do componente.
+    * TODO
     */
   url?: string;
   /**
-    * Define o valor da progress bar do componente.
+    * TODO
     */
   value: number;
   render(): any;

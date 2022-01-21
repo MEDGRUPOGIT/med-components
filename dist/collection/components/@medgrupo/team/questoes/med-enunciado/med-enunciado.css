@@ -1,10 +1,10 @@
 :host {
-  --font-size: var(--med-font-size-xs);
-  --font-weight: var(--med-font-weight-regular);
-  --line-height: var(--med-line-height-double);
+  --font-size: 16px;
+  --font-weight: 400;
+  --line-height: 200%;
   --color: hsl(var(--med-color-neutral-10));
   --text-align: justify;
-  --image-list-padding-top: var(--med-spacing-stack-base);
+  --image-list-padding-top: 16px;
   display: block;
   font-size: var(--font-size);
   font-weight: var(--font-weight);
@@ -71,6 +71,6 @@
 }
 
 :host(.med-enunciado--skin) {
-  --font-size: var(--med-font-size-xxs);
-  --line-heigh: var(--med-line-height-default);
+  --font-size: 14px;
+  --line-height: 24px;
 }

@@ -1,12 +1,12 @@
 import { MedColor } from '../../../../interface';
 export declare class MedTooltip {
   /**
-   * Define a variação do componente.
+   * TODO
    */
   dsName?: 'definition';
   /**
-    * Define a cor do componente.
-    */
+   * TODO
+   */
   dsColor?: MedColor;
   /**
    * TODO
@@ -25,7 +25,7 @@ export declare class MedTooltip {
    */
   content?: string;
   /**
-   * Define o estado do componente.
+   * TODO
    */
   collapsed: boolean;
   /**

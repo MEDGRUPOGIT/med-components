@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
-import { MedColor } from '../../../../constants';
+import { MedColors } from "../../../../../global/templarios/color.enum";
 
 export default {
   title: 'Components/Team/Questões/Alternativas',
@@ -9,9 +9,9 @@ export default {
 
 const TemplateDefault = ({ alternativas, dsColor}) => {
   const id = Math.random().toString(36).substr(2, 9);
-  const dsSkinConfig = alternativas.dsSkinConfig
-  setTimeout(() => {
+  const dsSkinConfig = alternativas.dsSkinConfig;
 
+  setTimeout(() => {
     const alternativasEl = document.getElementById(id);
     //alternativasEl.dsSkinConfig = dsSkinConfig;
 
@@ -24,10 +24,9 @@ const TemplateDefault = ({ alternativas, dsColor}) => {
     <ion-app>
       <ion-content>
 
-          <!-- component -->
-          <med-alternativas id=${id} .dsColor=${dsColor} .dsSkinConfig=${dsSkinConfig}></med-alternativas>
-          <!-- component -->
-
+        <!-- component markdown -->
+        <med-alternativas id=${id} .dsColor=${dsColor} .dsSkinConfig=${dsSkinConfig}></med-alternativas>
+        <!-- component markdown -->
 
       </ion-content>
     </ion-app>
@@ -38,10 +37,10 @@ export const Alternativas = TemplateDefault.bind({});
 Alternativas.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/zdbyAa3XpX3loOjJEaXc6E/Quest%C3%B5es?node-id=313%3A107',
+    url: '',
   },
   actions: {
-    handles: ['medChange','medClick'],
+    handles: ['medChange','medClick', 'medGalleryRequest', 'medRiscada'],
   },
 }
 Alternativas.argTypes = {
@@ -94,11 +93,11 @@ Alternativas.argTypes = {
     },
   },
   dsColor: {
-    options: MedColor,
+    options: Object.values(MedColors),
     control: { type: 'select'},
     description: "Define a cor do componente.",
     table: {
-      type:  { summary: 'MedColor' },
+      type:  { summary: Object.values(MedColors).join(' |') },
       defaultValue: { summary: 'undefined' },
     },
   },

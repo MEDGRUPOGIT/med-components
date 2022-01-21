@@ -13,6 +13,15 @@ const TemplateDefault = ({ valores }) => {
   }, 1000);
 
   return html`
+    <style>
+      .monta-provas-filtro__accordion {
+        --align-items: center;
+      }
+
+      .monta-provas-filtro__accordion-item {
+        --border: var(--med-spacing-stack-xxxs) solid hsl(var(--med-color-neutral-2));
+      }
+    </style>
     <ion-app>
       <ion-content>
         <div class="monta-provas-filtro__fechar">
@@ -45,14 +54,16 @@ const TemplateDefault = ({ valores }) => {
           <med-accordion-item
             class="monta-provas-filtro__accordion-item med-accordion-item--keep-border"
           >
-            <med-caption
-              ds-size="base"
-              ds-color="neutral-2"
-              slot="start"
-              class="monta-provas-filtro__accordion-title"
-            >
-              <h3>Nome da Prova</h3>
-            </med-caption>
+
+            <div class="monta-provas-filtro__text-center" slot="start">
+              <med-caption
+                ds-size="base"
+                ds-color="neutral-2"
+                class="monta-provas-filtro__accordion-title"
+              >
+                <h3>Nome da Prova</h3>
+              </med-caption>
+            </div>
 
             <div
               class="monta-provas__header-end monta-provas-filtro__accordion-icon"
@@ -92,18 +103,19 @@ const TemplateDefault = ({ valores }) => {
           <med-accordion-item
             class="monta-provas-filtro__accordion-item med-accordion-item--keep-border"
           >
-            <med-caption
-              ds-size="base"
-              ds-color="neutral-2"
-              slot="start"
-              class="monta-provas-filtro__accordion-title"
-            >
-              <h3>Especialidade</h3>
-            </med-caption>
+            <div class="monta-provas-filtro__text-center" slot="start">
+              <med-caption
+                ds-size="base"
+                ds-color="neutral-2"
+                class="monta-provas-filtro__accordion-title"
+              >
+                <h3>Especialidade</h3>
+              </med-caption>
 
-            <ion-chip class="monta-provas-filtro__accordion-chip" slot="middle">
-              <ion-label>5</ion-label>
-            </ion-chip>
+              <ion-chip class="monta-provas-filtro__accordion-chip">
+                <ion-label>5</ion-label>
+              </ion-chip>
+            </div>
 
             <div
               class="monta-provas__header-end monta-provas-filtro__accordion-icon"
@@ -204,18 +216,19 @@ const TemplateDefault = ({ valores }) => {
           <med-accordion-item
             class="monta-provas-filtro__accordion-item med-accordion-item--keep-border"
           >
-            <med-caption
-              ds-size="base"
-              ds-color="neutral-2"
-              slot="start"
-              class="monta-provas-filtro__accordion-title"
-            >
-              <h3>Concursos</h3>
-            </med-caption>
+            <div class="monta-provas-filtro__text-center" slot="start">
+              <med-caption
+                ds-size="base"
+                ds-color="neutral-2"
+                class="monta-provas-filtro__accordion-title"
+              >
+                <h3>Concursos</h3>
+              </med-caption>
 
-            <ion-chip class="monta-provas-filtro__accordion-chip" slot="middle">
-              <ion-label>23</ion-label>
-            </ion-chip>
+              <ion-chip class="monta-provas-filtro__accordion-chip">
+                <ion-label>23</ion-label>
+              </ion-chip>
+            </div>
 
             <div
               class="monta-provas__header-end monta-provas-filtro__accordion-icon"
@@ -299,18 +312,19 @@ const TemplateDefault = ({ valores }) => {
           <med-accordion-item
             class="monta-provas-filtro__accordion-item med-accordion-item--keep-border"
           >
-            <med-caption
-              ds-size="base"
-              ds-color="neutral-2"
-              slot="start"
-              class="monta-provas-filtro__accordion-title"
-            >
-              <h3>Período</h3>
-            </med-caption>
+            <div class="monta-provas-filtro__text-center" slot="start">
+              <med-caption
+                ds-size="base"
+                ds-color="neutral-2"
+                class="monta-provas-filtro__accordion-title"
+              >
+                <h3>Período</h3>
+              </med-caption>
 
-            <ion-chip class="monta-provas-filtro__accordion-chip" slot="middle">
-              <ion-label>2018-2021</ion-label>
-            </ion-chip>
+              <ion-chip class="monta-provas-filtro__accordion-chip">
+                <ion-label>2018-2021</ion-label>
+              </ion-chip>
+            </div>
 
             <div
               class="monta-provas__header-end monta-provas-filtro__accordion-icon"
@@ -354,18 +368,19 @@ const TemplateDefault = ({ valores }) => {
           <med-accordion-item
             class="monta-provas-filtro__accordion-item med-accordion-item--keep-border"
           >
-            <med-caption
-              ds-size="base"
-              ds-color="neutral-2"
-              slot="start"
-              class="monta-provas-filtro__accordion-title"
-            >
-              <h3>Termos</h3>
-            </med-caption>
+            <div class="monta-provas-filtro__text-center" slot="start">
+              <med-caption
+                ds-size="base"
+                ds-color="neutral-2"
+                class="monta-provas-filtro__accordion-title"
+              >
+                <h3>Termos</h3>
+              </med-caption>
 
-            <ion-chip class="monta-provas-filtro__accordion-chip" slot="middle">
-              <ion-label>2</ion-label>
-            </ion-chip>
+              <ion-chip class="monta-provas-filtro__accordion-chip">
+                <ion-label>2</ion-label>
+              </ion-chip>
+            </div>
 
             <div
               class="monta-provas__header-end monta-provas-filtro__accordion-icon"
@@ -481,18 +496,19 @@ const TemplateDefault = ({ valores }) => {
           <med-accordion-item
             class="monta-provas-filtro__accordion-item med-accordion-item--keep-border"
           >
-            <med-caption
-              ds-size="base"
-              ds-color="neutral-2"
-              slot="start"
-              class="monta-provas-filtro__accordion-title"
-            >
-              <h3>Especiais</h3>
-            </med-caption>
+            <div class="monta-provas-filtro__text-center" slot="start">
+              <med-caption
+                ds-size="base"
+                ds-color="neutral-2"
+                class="monta-provas-filtro__accordion-title"
+              >
+                <h3>Especiais</h3>
+              </med-caption>
 
-            <ion-chip class="monta-provas-filtro__accordion-chip" slot="middle">
-              <ion-label>1</ion-label>
-            </ion-chip>
+              <ion-chip class="monta-provas-filtro__accordion-chip">
+                <ion-label>1</ion-label>
+              </ion-chip>
+            </div>
 
             <div
               class="monta-provas__header-end monta-provas-filtro__accordion-icon"

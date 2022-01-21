@@ -115,7 +115,7 @@
   --height: 10px;
 }
 :host(.med-progress-bar--skin) .progress-container {
-  width: 96%;
+  width: calc(100% - 30px);
 }
 :host(.med-progress-bar--skin) .progress__percentage {
   position: absolute;

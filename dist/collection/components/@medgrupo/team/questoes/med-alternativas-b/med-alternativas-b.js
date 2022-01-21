@@ -64,7 +64,7 @@ export class MedAlternativasB {
                 h("div", { class: 'image-container__wrapper' },
                   h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }),
                   h("div", { class: 'image-container__button' },
-                    h("ion-icon", { name: "med-expand image-container__icon" }))))),
+                    h("ion-icon", { class: "med-icon image-container__icon", name: "med-busca" }))))),
             h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') + ' alternativa'))),
         h("ion-progress-bar", { "ds-name": "skin", percentage: true, class: `
                 med-alternativas__progress-bar

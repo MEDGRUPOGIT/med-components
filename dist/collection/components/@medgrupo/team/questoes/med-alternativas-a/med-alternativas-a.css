@@ -11,17 +11,17 @@
 
 :host(.med-alternativas) .option {
   background: hsl(var(--med-color-neutral-8));
-  padding: var(--med-spacing-inset-xs);
-  border-radius: var(--med-border-radius-sm);
+  padding: 8px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
 :host(.med-alternativas) .option__letter {
-  font-size: var(--med-font-size-xs);
-  font-weight: var(--med-font-weight-medium);
-  line-height: var(--med-line-height-compressed);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
   color: hsl(var(--med-color-neutral-1));
 }
 
@@ -32,8 +32,8 @@
   align-items: center;
   justify-content: center;
   background: #fff;
-  border-radius: var(--med-border-radius-full);
-  margin: 0 var(--med-spacing-inline-nano) 0 0;
+  border-radius: 50%;
+  margin: 0 4px 0 0;
   position: relative;
 }
 
@@ -45,20 +45,20 @@
   background: hsl(var(--med-color-brand-3));
   opacity: 0;
   transition: opacity 300ms;
-  border-radius: var(--med-border-radius-full);
+  border-radius: 50%;
 }
 
 :host(.med-alternativas) .med-alternativas__left {
-  padding: var(--med-spacing-stack-base) var(--med-spacing-stack-base) calc(var(--med-spacing-stack-base) - 10px) var(--med-spacing-stack-base);
+  padding: 16px 16px 6px 16px;
 }
 
 :host(.med-alternativas) .med-alternativas__right {
   flex: 1 1 0%;
   overflow: hidden;
   text-align: left;
-  padding: var(--med-spacing-stack-base) var(--med-spacing-stack-base) calc(var(--med-spacing-stack-base) - 10px) 0;
+  padding: 16px 16px 6px 16px;
   font-size: var(--font-size);
-  font-weight: var(--med-font-weight-regular);
+  font-weight: 400;
   line-height: 24px;
   text-align: justify;
   color: hsl(var(--med-color-neutral-9));
@@ -95,7 +95,7 @@
   height: auto;
   z-index: 1;
   background: #000;
-  padding: var(--med-spacing-inset-xs);
+  padding: 8px;
   border-radius: 5px;
   opacity: 0.5;
 }
@@ -144,10 +144,10 @@
 
 :host(.med-alternativas) .med-alternativas__riscar {
   color: hsl(var(--med-color-neutral-10));
-  padding: 0 var(--med-spacing-inline-base);
-  font-size: var(--med-font-size-xxs);
-  font-weight: var(--med-font-weight-regular);
-  line-height: var(--med-line-height-compressed);
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
   display: flex;
   height: 100%;
   visibility: hidden;
@@ -184,7 +184,7 @@
 
 :host(.med-alternativas) .med-alternativas__riscar-desktop {
   display: none;
-  padding-left: var(--med-spacing-inline-nano);
+  padding-left: 4px;
 }
 @media (min-width: 768px) {
   :host(.med-alternativas) .med-alternativas__riscar-desktop {

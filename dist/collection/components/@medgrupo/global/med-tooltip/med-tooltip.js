@@ -3,7 +3,7 @@ import { generateMedColor } from '../../../../utils/med-theme';
 export class MedTooltip {
   constructor() {
     /**
-     * Define o estado do componente.
+     * TODO
      */
     this.collapsed = true;
   }
@@ -56,7 +56,7 @@ export class MedTooltip {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a varia\u00E7\u00E3o do componente."
+        "text": "TODO"
       },
       "attribute": "ds-name",
       "reflect": false
@@ -78,7 +78,7 @@ export class MedTooltip {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": "TODO"
       },
       "attribute": "ds-color",
       "reflect": true
@@ -163,7 +163,7 @@ export class MedTooltip {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o estado do componente."
+        "text": "TODO"
       },
       "attribute": "collapsed",
       "reflect": true,

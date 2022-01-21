@@ -1,21 +1,13 @@
 import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
-import { MedColor } from '../../../constants';
+import { MedColors } from "../../../../global/templarios/color.enum";
 
 export default {
   title: 'Components/Global/Toolbar',
   decorators: [withDesign],
 };
 
-const TemplateToolbar = ({ dsColor, platform }) => {
-  if (platform === 'Mobile') {
-    document.querySelector('html').classList.remove('plt-desktop');
-    document.querySelector('html').classList.remove('plt-electron');
-  } else if (platform === 'Desktop') {
-    document.querySelector('html').classList.add('plt-desktop');
-    document.querySelector('html').classList.add('plt-electron');
-  }
-
+const Template = ({ dsColor }) => {
   return html `
     <ion-app>
 
@@ -50,7 +42,7 @@ const TemplateToolbar = ({ dsColor, platform }) => {
   `
 }
 
-export const Toolbar = TemplateToolbar.bind({});
+export const Toolbar = Template.bind({});
 Toolbar.parameters = {
   design: {
     type: 'figma',
@@ -59,18 +51,12 @@ Toolbar.parameters = {
 }
 Toolbar.argTypes = {
   dsColor: {
-    options: MedColor,
+    options: Object.values(MedColors),
     control: { type: 'select'},
     description: "Define a cor do componente.",
     table: {
-      type:  { summary: 'MedColor' },
+      type:  { summary: Object.values(MedColors).join(' |') },
       defaultValue: { summary: 'undefined' },
     },
-  },
-  platform: {
-    defaultValue: 'Desktop',
-    options: ['Desktop', 'Mobile'],
-    control: { type: 'radio' },
-    description: 'Muda a visualização do componente entre plataformas. **Usado apenas no storybook para visualização.**'
   },
 };

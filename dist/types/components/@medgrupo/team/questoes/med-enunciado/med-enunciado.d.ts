@@ -9,7 +9,7 @@ export declare class MedEnunciado {
    */
   medGalleryRequest: EventEmitter<string>;
   /**
-   * Define a variação do componente.
+   * TODO
    */
   dsName?: 'skin';
   private imageRequest;

@@ -3,16 +3,16 @@ import { generateMedColor } from '../../../../../utils/med-theme';
 export class MedCartaoRespostaItem {
   constructor() {
     /**
-     * Define o estado do componente para anulado.
-     */
+    * TODO
+    */
     this.anulada = false;
     /**
-      * Define o estado do componente para impresso.
-      */
+     * TODO
+     */
     this.impressa = false;
     /**
-      * Define o estado do componente para ativo.
-      */
+     * TODO
+     */
     this.ativa = false;
   }
   render() {
@@ -53,7 +53,7 @@ export class MedCartaoRespostaItem {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": "TODO"
       },
       "attribute": "ds-color",
       "reflect": true
@@ -70,7 +70,7 @@ export class MedCartaoRespostaItem {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o estado do componente para anulado."
+        "text": "TODO"
       },
       "attribute": "anulada",
       "reflect": true,
@@ -88,7 +88,7 @@ export class MedCartaoRespostaItem {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o estado do componente para impresso."
+        "text": "TODO"
       },
       "attribute": "impressa",
       "reflect": true,
@@ -106,7 +106,7 @@ export class MedCartaoRespostaItem {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o estado do componente para ativo."
+        "text": "TODO"
       },
       "attribute": "ativa",
       "reflect": true,

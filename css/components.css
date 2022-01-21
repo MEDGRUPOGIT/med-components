@@ -59,13 +59,13 @@
   width: 430px;
 }
 
-.med-popover {
+.med-popover--full {
   --ion-backdrop-opacity: 0.8;
 }
-.med-popover ion-backdrop {
+.med-popover--full ion-backdrop {
   background: hsl(var(--med-color-neutral-1));
 }
-.med-popover .popover-content {
+.med-popover--full .popover-content {
   background: hsl(var(--med-color-neutral-2)) !important;
   border-radius: 16px;
   padding: 24px;
@@ -73,6 +73,60 @@
   left: 50% !important;
   transform: translate(-50%, 0%) !important;
   transform-origin: unset !important;
+}
+
+.med-popover--font-zoom {
+  --box-shadow: 0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);
+  --background: hsl(var(--med-color-neutral-2)) !important;
+  --width: 224px;
+  color: hsl(var(--med-color-neutral-10));
+  transform: translateY(20px);
+}
+.med-popover--font-zoom .popover-arrow::after {
+  left: 1px;
+  top: 4px;
+  border-radius: 7px;
+  width: 18px;
+  height: 18px;
+}
+.med-popover--font-zoom .popover-content {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 768px) {
+  .med-popover--font-zoom .popover-content {
+    --width: 280px;
+  }
+}
+@media (min-width: 992px) {
+  .med-popover--font-zoom .popover-content {
+    --width: 400px;
+  }
+}
+
+@supports (backdrop-filter: blur(0)) {
+  .med-popover--font-zoom .popover-content,
+.med-popover--font-zoom .popover-arrow::after {
+    --background: hsl(var(--med-color-neutral-2));
+    background: hsl(var(--med-color-neutral-2)) !important;
+  }
+}
+.med-popover--tooltip {
+  --background: hsl(var(--med-color-neutral-3));
+  --box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --width: auto;
+  --max-width: 280px;
+}
+.med-popover--tooltip .popover-arrow::after {
+  left: 6px;
+  top: 5px;
+  border-radius: 0;
+  width: 8px;
+  height: 8px;
+}
+.med-popover--tooltip .popover-content {
+  border-radius: 2px;
 }
 
 @media (pointer: fine) {
@@ -470,6 +524,7 @@
 
 .cp-video-caption-feedback {
   min-height: 85px;
+  --padding: 8px 16px !important;
 }
 .cp-video-caption-feedback__start {
   display: flex;
@@ -749,6 +804,11 @@
 
 .monta-provas-filtro__periodo-caption {
   margin: 0 16px;
+}
+
+.monta-provas-filtro__text-center {
+  align-items: center;
+  display: flex;
 }
 
 @media (min-width: 992px) {

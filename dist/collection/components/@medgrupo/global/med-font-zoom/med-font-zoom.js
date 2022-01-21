@@ -85,7 +85,7 @@ export class MedFontZoom {
     },
     "value": {
       "type": "string",
-      "mutable": false,
+      "mutable": true,
       "complexType": {
         "original": "MedFontSize",
         "resolved": "MedFontSize.MD | MedFontSize.SM | MedFontSize.XS | MedFontSize.XXS | MedFontSize.XXXS",

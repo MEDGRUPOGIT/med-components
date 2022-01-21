@@ -7,7 +7,7 @@ const MedVideoThumbnail = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define o valor da progress bar do componente.
+      * TODO
       */
     this.value = 0;
   }

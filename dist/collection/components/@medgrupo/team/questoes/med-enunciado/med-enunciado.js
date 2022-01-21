@@ -59,7 +59,7 @@ export class MedEnunciado {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a varia\u00E7\u00E3o do componente."
+        "text": "TODO"
       },
       "attribute": "ds-name",
       "reflect": true

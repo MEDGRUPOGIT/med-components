@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { html } from "lit-html";
 import { withDesign } from "storybook-addon-designs";
 import { popoverController } from "../../../../../../dist/ionic/index.esm.js";
-import { MedFontSize } from "../../../../constants";
+import { MedFontSize } from "../../../../../global/templarios/font-size.enum";
 
 export default {
   title: "Components/Team/Questões/Font Zoom",
@@ -13,11 +13,10 @@ let call = false;
 let currentPopover = null;
 
 const createPopover = async (ev, value) => {
-  console.log("Create popoover", ev, value);
   popoverController
     .create({
       component: "med-font-zoom",
-      cssClass: "med-popover",
+      cssClass: "med-popover med-popover--font-zoom",
       componentProps: {
         value,
         emitter: {
@@ -37,37 +36,40 @@ const createPopover = async (ev, value) => {
     });
 };
 
-const TemplateDefault = ({ value }) => {
+const Template = ({ value }) => {
   return html`
     <ion-app>
-      <ion-content class="storybook-only__container">
-        <!-- component -->
-        <ion-button ds-name="primary" @click="${(e) => createPopover(e, value)}"
-          >Abrir popover</ion-button
-        >
-        <!-- component -->
+      <ion-content>
+
+        <!-- component markdown -->
+        <ion-button ds-name="primary" @click="${(e) => createPopover(e, value)}">Abrir popover</ion-button>
+        <!-- component markdown -->
+
       </ion-content>
     </ion-app>
   `;
 };
 
-export const MedFontZoom = TemplateDefault.bind({});
+export const MedFontZoom = Template.bind({});
 MedFontZoom.parameters = {
   design: {
     type: "figma",
     url: "",
   },
+  actions: {
+    handles: ['values'],
+  },
 };
 
 MedFontZoom.argTypes = {
   value: {
-    options: medFontSize,
+    options: Object.values(MedFontSize),
     control: { type: "select" },
     description: "Define o tamanho da fonte.",
     defaultValue: "16px",
     table: {
-      type: { summary: "MedFontSize Enum" },
-      defaultValue: { summary: "MedFontSize.XS Enum" },
+      type: { summary: Object.values(MedFontSize).join(' |') },
+      defaultValue: { summary: "MedFontSize.XS" },
     },
   },
 };

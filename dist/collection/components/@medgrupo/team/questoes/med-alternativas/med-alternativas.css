@@ -1,4 +1,4 @@
 :host {
+  --font-size: 16px;
   display: block;
-  --font-size: var(--med-font-size-xs);
 }
