@@ -24,6 +24,10 @@
   --offset-top: 0px;
   --offset-bottom: 0px;
   --overflow: auto;
+  --style: thin;
+  --width: 7px;
+  --height: 7px;
+  --padding: 10px;
   display: block;
   position: relative;
   flex: 1;
@@ -35,6 +39,43 @@
   /* stylelint-enable */
   font-family: var(--ion-font-family, inherit);
   contain: size style;
+}
+
+:host main ::-webkit-scrollbar {
+  scrollbar-width: var(--style);
+  padding-bottom: var(--padding);
+  height: var(--height);
+  width: var(--width);
+  display: block !important;
+}
+:host main ::-webkit-scrollbar-track {
+  background: hsl(var(--med-color-neutral-2));
+}
+:host main ::-webkit-scrollbar-thumb {
+  background: hsl(var(--med-color-neutral-3));
+}
+:host main ::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--med-color-neutral-4));
+}
+:host main::-webkit-scrollbar {
+  --style: thin;
+  --width: 7px;
+  --height: 7px;
+  --padding: 10px;
+  scrollbar-width: var(--style);
+  padding-bottom: var(--padding);
+  height: var(--height);
+  width: var(--width);
+  display: block !important;
+}
+:host main::-webkit-scrollbar-track {
+  background: hsl(var(--med-color-neutral-2));
+}
+:host main::-webkit-scrollbar-thumb {
+  background: hsl(var(--med-color-neutral-3));
+}
+:host main::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--med-color-neutral-4));
 }
 
 :host(.ion-color) .inner-scroll {
