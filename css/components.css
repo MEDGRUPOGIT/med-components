@@ -172,9 +172,13 @@
   max-height: 70vh !important;
   overflow: auto !important;
   opacity: 1 !important;
-  padding: var(--ion-safe-area-bottom) !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+  padding: 24px !important;
+}
+@media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait), (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait), (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait), (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait), (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  .tp-sheet .modal-wrapper {
+    padding: 24px 24px var(--ion-safe-area-bottom, 24px) 24px;
+    padding-bottom: calc(24px + 3vh);
+  }
 }
 .tp-sheet .modal-wrapper .ion-page {
   position: relative !important;
@@ -186,7 +190,10 @@
   overflow: none !important;
 }
 .tp-sheet--ion-content ion-content {
-  height: 100vh !important;
+  height: 70vh !important;
+  --padding-end: 24px;
+  --padding-start: 24px;
+  --padding-top: 24px;
 }
 
 @media (min-width: 992px) {
@@ -197,6 +204,10 @@
   .tp-sheet .modal-wrapper {
     max-height: 100vh !important;
     right: 0 !important;
+  }
+
+  .tp-sheet--ion-content ion-content {
+    height: 100vh !important;
   }
 }
 .cp-time-stamp {
