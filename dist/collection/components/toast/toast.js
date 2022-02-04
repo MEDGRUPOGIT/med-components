@@ -2,7 +2,8 @@ import { Component, Element, Event, Host, Method, Prop, h } from '@stencil/core'
 import { getIonMode } from '../../global/ionic-global';
 import { dismiss, eventMethod, isCancel, prepareOverlay, present, safeCall } from '../../utils/overlays';
 import { sanitizeDOMString } from '../../utils/sanitization';
-import { createColorClasses, getClassMap } from '../../utils/theme';
+import { getClassMap } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 import { iosEnterAnimation } from './animations/ios.enter';
 import { iosLeaveAnimation } from './animations/ios.leave';
 import { mdEnterAnimation } from './animations/md.enter';
@@ -153,7 +154,7 @@ export class Toast {
     };
     return (h(Host, { "from-stencil": true, style: {
         zIndex: `${60000 + this.overlayIndex}`,
-      }, class: createColorClasses(this.color, Object.assign(Object.assign({ [mode]: true }, getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler },
+      }, class: generateMedColor(this.dsColor, Object.assign(Object.assign({ [mode]: true }, getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler },
       h("div", { class: wrapperClass },
         h("div", { class: "toast-container", part: "container" },
           this.renderButtons(startButtons, 'start'),
@@ -195,14 +196,14 @@ export class Toast {
       "attribute": "overlay-index",
       "reflect": false
     },
-    "color": {
+    "dsColor": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "Color",
+        "original": "MedColor",
         "resolved": "string | undefined",
         "references": {
-          "Color": {
+          "MedColor": {
             "location": "import",
             "path": "../../interface"
           }
@@ -212,10 +213,10 @@ export class Toast {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "Define a cor do componente."
       },
-      "attribute": "color",
-      "reflect": false
+      "attribute": "ds-color",
+      "reflect": true
     },
     "enterAnimation": {
       "type": "unknown",

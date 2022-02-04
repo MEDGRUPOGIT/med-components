@@ -28,8 +28,17 @@
   }
 }
 
+.tp-sheet-header {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
 .tp-sheet--ion-content {
   overflow: none !important;
+
+  .modal-wrapper {
+    padding: 0 !important;
+  }
 
   ion-content {
     height: 70vh !important;
@@ -46,6 +55,7 @@
 
     .modal-wrapper {
       max-height: 100vh !important;
+      height: 100vh !important;
       right: 0 !important;
     }
   }

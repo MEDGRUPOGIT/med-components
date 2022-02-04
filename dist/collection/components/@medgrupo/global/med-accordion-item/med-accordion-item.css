@@ -54,6 +54,9 @@
 :host(.med-accordion-item) .header-container__end {
   margin-left: auto;
 }
+:host(.med-accordion-item) .header-container__middle {
+  width: var(--middle-width);
+}
 
 :host(.med-accordion-item--no-border) {
   --border-radius: 0;

@@ -992,6 +992,7 @@ export namespace Components {
           * Returns the native `<input>` element used under the hood.
          */
         "getInputElement": () => Promise<HTMLInputElement>;
+        "icon"?: string;
         /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
@@ -2711,10 +2712,6 @@ export namespace Components {
          */
         "buttons"?: (ToastButton | string)[];
         /**
-          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
-         */
-        "color"?: Color;
-        /**
           * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
          */
         "cssClass"?: string | string[];
@@ -2724,6 +2721,10 @@ export namespace Components {
           * @param role The role of the element that is dismissing the toast. This can be useful in a button handler for determining which button was clicked to dismiss the toast. Some examples include: ``"cancel"`, `"destructive"`, "selected"`, and `"backdrop"`.
          */
         "dismiss": (data?: any, role?: string | undefined) => Promise<boolean>;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
         /**
           * How many milliseconds to wait before hiding the toast. By default, it will show until `dismiss()` is called.
          */
@@ -3113,6 +3114,36 @@ export namespace Components {
           * TODO
          */
         "respostaCorreta": string;
+    }
+    interface MedAulaProfessor {
+        /**
+          * TO DO
+         */
+        "active": boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
+          * TO DO
+         */
+        "icon": string;
+        /**
+          * TO DO
+         */
+        "professores": string;
+        /**
+          * TO DO
+         */
+        "titulo": string;
+        /**
+          * TO DO
+         */
+        "value": number;
+        /**
+          * TO DO
+         */
+        "videos": string;
     }
     interface MedAutocomplete {
         /**
@@ -3577,6 +3608,59 @@ export namespace Components {
         "texto"?: string;
     }
     interface MedMessageList {
+    }
+    interface MedNav {
+        /**
+          * TODO.
+         */
+        "active": boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+    }
+    interface MedNavAccordion {
+        "dsColor"?: MedColor;
+    }
+    interface MedNavItem {
+        /**
+          * TODO.
+         */
+        "active": boolean;
+        /**
+          * TODO.
+         */
+        "disabled": boolean;
+        /**
+          * TODO.
+         */
+        "dsColor"?: MedColor;
+        /**
+          * TODO.
+         */
+        "icon"?: string;
+        /**
+          * TODO.
+         */
+        "iconOnly": boolean;
+        /**
+          * TODO.
+         */
+        "routerAnimation": AnimationBuilder | undefined;
+        /**
+          * TODO.
+         */
+        "routerDirection": RouterDirection;
+        /**
+          * TODO.
+         */
+        "text"?: string;
+    }
+    interface MedNavSimple {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
     }
     interface MedNavbar {
         /**
@@ -4522,6 +4606,12 @@ declare global {
         prototype: HTMLMedAlternativasBElement;
         new (): HTMLMedAlternativasBElement;
     };
+    interface HTMLMedAulaProfessorElement extends Components.MedAulaProfessor, HTMLStencilElement {
+    }
+    var HTMLMedAulaProfessorElement: {
+        prototype: HTMLMedAulaProfessorElement;
+        new (): HTMLMedAulaProfessorElement;
+    };
     interface HTMLMedAutocompleteElement extends Components.MedAutocomplete, HTMLStencilElement {
     }
     var HTMLMedAutocompleteElement: {
@@ -4725,6 +4815,30 @@ declare global {
     var HTMLMedMessageListElement: {
         prototype: HTMLMedMessageListElement;
         new (): HTMLMedMessageListElement;
+    };
+    interface HTMLMedNavElement extends Components.MedNav, HTMLStencilElement {
+    }
+    var HTMLMedNavElement: {
+        prototype: HTMLMedNavElement;
+        new (): HTMLMedNavElement;
+    };
+    interface HTMLMedNavAccordionElement extends Components.MedNavAccordion, HTMLStencilElement {
+    }
+    var HTMLMedNavAccordionElement: {
+        prototype: HTMLMedNavAccordionElement;
+        new (): HTMLMedNavAccordionElement;
+    };
+    interface HTMLMedNavItemElement extends Components.MedNavItem, HTMLStencilElement {
+    }
+    var HTMLMedNavItemElement: {
+        prototype: HTMLMedNavItemElement;
+        new (): HTMLMedNavItemElement;
+    };
+    interface HTMLMedNavSimpleElement extends Components.MedNavSimple, HTMLStencilElement {
+    }
+    var HTMLMedNavSimpleElement: {
+        prototype: HTMLMedNavSimpleElement;
+        new (): HTMLMedNavSimpleElement;
     };
     interface HTMLMedNavbarElement extends Components.MedNavbar, HTMLStencilElement {
     }
@@ -4993,6 +5107,7 @@ declare global {
         "med-alternativas": HTMLMedAlternativasElement;
         "med-alternativas-a": HTMLMedAlternativasAElement;
         "med-alternativas-b": HTMLMedAlternativasBElement;
+        "med-aula-professor": HTMLMedAulaProfessorElement;
         "med-autocomplete": HTMLMedAutocompleteElement;
         "med-avatar": HTMLMedAvatarElement;
         "med-banner": HTMLMedBannerElement;
@@ -5027,6 +5142,10 @@ declare global {
         "med-list-item-accordion": HTMLMedListItemAccordionElement;
         "med-message": HTMLMedMessageElement;
         "med-message-list": HTMLMedMessageListElement;
+        "med-nav": HTMLMedNavElement;
+        "med-nav-accordion": HTMLMedNavAccordionElement;
+        "med-nav-item": HTMLMedNavItemElement;
+        "med-nav-simple": HTMLMedNavSimpleElement;
         "med-navbar": HTMLMedNavbarElement;
         "med-offline": HTMLMedOfflineElement;
         "med-option": HTMLMedOptionElement;
@@ -6057,6 +6176,7 @@ declare namespace LocalJSX {
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
+        "icon"?: string;
         /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
@@ -7684,13 +7804,13 @@ declare namespace LocalJSX {
          */
         "buttons"?: (ToastButton | string)[];
         /**
-          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
-         */
-        "color"?: Color;
-        /**
           * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
          */
         "cssClass"?: string | string[];
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
         /**
           * How many milliseconds to wait before hiding the toast. By default, it will show until `dismiss()` is called.
          */
@@ -8120,6 +8240,36 @@ declare namespace LocalJSX {
           * TODO
          */
         "respostaCorreta": string;
+    }
+    interface MedAulaProfessor {
+        /**
+          * TO DO
+         */
+        "active"?: boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
+          * TO DO
+         */
+        "icon": string;
+        /**
+          * TO DO
+         */
+        "professores": string;
+        /**
+          * TO DO
+         */
+        "titulo": string;
+        /**
+          * TO DO
+         */
+        "value": number;
+        /**
+          * TO DO
+         */
+        "videos": string;
     }
     interface MedAutocomplete {
         /**
@@ -8609,6 +8759,75 @@ declare namespace LocalJSX {
     }
     interface MedMessageList {
     }
+    interface MedNav {
+        /**
+          * TODO.
+         */
+        "active"?: boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+    }
+    interface MedNavAccordion {
+        "dsColor"?: MedColor;
+    }
+    interface MedNavItem {
+        /**
+          * TODO.
+         */
+        "active"?: boolean;
+        /**
+          * TODO.
+         */
+        "disabled"?: boolean;
+        /**
+          * TODO.
+         */
+        "dsColor"?: MedColor;
+        /**
+          * TODO.
+         */
+        "icon"?: string;
+        /**
+          * TODO.
+         */
+        "iconOnly"?: boolean;
+        /**
+          * TODO.
+         */
+        "onMedBlur"?: (event: CustomEvent<void>) => void;
+        /**
+          * TODO.
+         */
+        "onMedClick"?: (event: CustomEvent<void>) => void;
+        /**
+          * TODO.
+         */
+        "onMedFocus"?: (event: CustomEvent<void>) => void;
+        /**
+          * TODO.
+         */
+        "routerAnimation"?: AnimationBuilder | undefined;
+        /**
+          * TODO.
+         */
+        "routerDirection"?: RouterDirection;
+        /**
+          * TODO.
+         */
+        "text"?: string;
+    }
+    interface MedNavSimple {
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
+          * TODO.
+         */
+        "onClose"?: (event: CustomEvent<any>) => void;
+    }
     interface MedNavbar {
         /**
           * Define a cor do componente.
@@ -9066,6 +9285,7 @@ declare namespace LocalJSX {
         "med-alternativas": MedAlternativas;
         "med-alternativas-a": MedAlternativasA;
         "med-alternativas-b": MedAlternativasB;
+        "med-aula-professor": MedAulaProfessor;
         "med-autocomplete": MedAutocomplete;
         "med-avatar": MedAvatar;
         "med-banner": MedBanner;
@@ -9100,6 +9320,10 @@ declare namespace LocalJSX {
         "med-list-item-accordion": MedListItemAccordion;
         "med-message": MedMessage;
         "med-message-list": MedMessageList;
+        "med-nav": MedNav;
+        "med-nav-accordion": MedNavAccordion;
+        "med-nav-item": MedNavItem;
+        "med-nav-simple": MedNavSimple;
         "med-navbar": MedNavbar;
         "med-offline": MedOffline;
         "med-option": MedOption;
@@ -9232,6 +9456,7 @@ declare module "@stencil/core" {
             "med-alternativas": LocalJSX.MedAlternativas & JSXBase.HTMLAttributes<HTMLMedAlternativasElement>;
             "med-alternativas-a": LocalJSX.MedAlternativasA & JSXBase.HTMLAttributes<HTMLMedAlternativasAElement>;
             "med-alternativas-b": LocalJSX.MedAlternativasB & JSXBase.HTMLAttributes<HTMLMedAlternativasBElement>;
+            "med-aula-professor": LocalJSX.MedAulaProfessor & JSXBase.HTMLAttributes<HTMLMedAulaProfessorElement>;
             "med-autocomplete": LocalJSX.MedAutocomplete & JSXBase.HTMLAttributes<HTMLMedAutocompleteElement>;
             "med-avatar": LocalJSX.MedAvatar & JSXBase.HTMLAttributes<HTMLMedAvatarElement>;
             "med-banner": LocalJSX.MedBanner & JSXBase.HTMLAttributes<HTMLMedBannerElement>;
@@ -9266,6 +9491,10 @@ declare module "@stencil/core" {
             "med-list-item-accordion": LocalJSX.MedListItemAccordion & JSXBase.HTMLAttributes<HTMLMedListItemAccordionElement>;
             "med-message": LocalJSX.MedMessage & JSXBase.HTMLAttributes<HTMLMedMessageElement>;
             "med-message-list": LocalJSX.MedMessageList & JSXBase.HTMLAttributes<HTMLMedMessageListElement>;
+            "med-nav": LocalJSX.MedNav & JSXBase.HTMLAttributes<HTMLMedNavElement>;
+            "med-nav-accordion": LocalJSX.MedNavAccordion & JSXBase.HTMLAttributes<HTMLMedNavAccordionElement>;
+            "med-nav-item": LocalJSX.MedNavItem & JSXBase.HTMLAttributes<HTMLMedNavItemElement>;
+            "med-nav-simple": LocalJSX.MedNavSimple & JSXBase.HTMLAttributes<HTMLMedNavSimpleElement>;
             "med-navbar": LocalJSX.MedNavbar & JSXBase.HTMLAttributes<HTMLMedNavbarElement>;
             "med-offline": LocalJSX.MedOffline & JSXBase.HTMLAttributes<HTMLMedOfflineElement>;
             "med-option": LocalJSX.MedOption & JSXBase.HTMLAttributes<HTMLMedOptionElement>;

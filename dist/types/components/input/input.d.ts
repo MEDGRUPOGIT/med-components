@@ -137,6 +137,7 @@ export declare class Input implements ComponentInterface {
    * The value of the input.
    */
   value?: string | number | null;
+  icon?: string;
   /**
    * Emitted when a keyboard input occurred.
    */

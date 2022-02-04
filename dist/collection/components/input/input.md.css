@@ -212,3 +212,7 @@
   font-weight: var(--placeholder-font-weight);
   line-height: var(--placeholder-line-height);
 }
+:host .med-icon {
+  stroke: hsl(var(--med-color-neutral-6));
+  padding-right: 16px;
+}

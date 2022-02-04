@@ -1,6 +1,6 @@
 :host {
-  --background: hsl(var(--med-color-neutral-1));
-  --background-row: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-2));
+  --background-row: hsl(var(--med-color-neutral-2));
 }
 
 :host(.med-semana) {
@@ -47,6 +47,9 @@
 .med-semana__chart-container {
   display: flex;
 }
+.med-semana__chart {
+  --stroke-background: hsl(var(--med-color-neutral-3));
+}
 .med-semana__chart:not(:last-child) {
   margin-right: 8px;
 }
@@ -76,6 +79,9 @@
   background: hsl(var(--med-color-feedback));
 }
 
+:host(.med-semana--active) {
+  --background: hsl(var(--med-color-neutral-3));
+}
 :host(.med-semana--active) .med-semana__chart {
   --stroke-background: hsl(var(--med-color-neutral-1));
 }
@@ -97,6 +103,7 @@
   flex-direction: column;
   justify-content: start;
   padding: 0;
+  max-width: auto;
 }
 :host(.med-semana--skin-lista) .med-semana__heading-container {
   flex-direction: row;
@@ -168,6 +175,7 @@
   flex-direction: column;
   justify-content: start;
   padding: 0;
+  max-width: unset;
 }
 :host(.med-semana--skin-lista) .med-semana__heading-container {
   flex-direction: row;

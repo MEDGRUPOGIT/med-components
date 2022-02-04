@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-01-25T19:46:40",
+  "timestamp": "2022-02-04T14:55:51",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -2525,6 +2525,8 @@
         "med-context-menu",
         "med-image-zoom",
         "med-list-item-accordion",
+        "med-nav",
+        "med-nav-simple",
         "med-offline",
         "med-rate-aula",
         "med-sheet",
@@ -2562,6 +2564,12 @@
           "ion-button"
         ],
         "med-list-item-accordion": [
+          "ion-button"
+        ],
+        "med-nav": [
+          "ion-button"
+        ],
+        "med-nav-simple": [
           "ion-button"
         ],
         "med-offline": [
@@ -6980,6 +6988,25 @@
           "required": false
         },
         {
+          "name": "icon",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "inputmode",
           "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
           "mutable": false,
@@ -7497,8 +7524,14 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "ion-input": [
+          "ion-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/item/item.tsx",
@@ -12261,6 +12294,7 @@
       "dependents": [
         "med-alternativas-a",
         "med-alternativas-b",
+        "med-aula-professor",
         "med-item-aulas",
         "med-video-thumbnail"
       ],
@@ -12270,6 +12304,9 @@
           "ion-progress-bar"
         ],
         "med-alternativas-b": [
+          "ion-progress-bar"
+        ],
+        "med-aula-professor": [
           "ion-progress-bar"
         ],
         "med-item-aulas": [
@@ -18415,25 +18452,6 @@
           "required": false
         },
         {
-          "name": "color",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "color",
-          "reflectToAttr": false,
-          "docs": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics).",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "cssClass",
           "type": "string | string[] | undefined",
           "mutable": false,
@@ -18447,6 +18465,25 @@
             },
             {
               "type": "string[]"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             },
             {
               "type": "undefined"
@@ -19818,9 +19855,15 @@
         }
       ],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "med-nav-accordion"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-nav-accordion": [
+          "med-accordion-item"
+        ]
+      }
     },
     {
       "filePath": "./src/components/@medgrupo/global/med-accordion-list/med-accordion-list.tsx",
@@ -19953,9 +19996,15 @@
         }
       ],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "med-nav-accordion"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-nav-accordion": [
+          "med-accordion-list"
+        ]
+      }
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-add-card/med-add-card.tsx",
@@ -20993,6 +21042,152 @@
         ],
         "med-alternativas": [
           "med-alternativas-b"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/compositions/med-aula-professor/med-aula-professor.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-aula-professor",
+      "readme": "# med-aula-professor\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active",
+          "reflectToAttr": true,
+          "docs": "TO DO",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": true,
+          "docs": "TO DO",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "professores",
+          "type": "string",
+          "mutable": false,
+          "attr": "professores",
+          "reflectToAttr": true,
+          "docs": "TO DO",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "titulo",
+          "type": "string",
+          "mutable": false,
+          "attr": "titulo",
+          "reflectToAttr": true,
+          "docs": "TO DO",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "TO DO",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "videos",
+          "type": "string",
+          "mutable": false,
+          "attr": "videos",
+          "reflectToAttr": true,
+          "docs": "TO DO",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon",
+        "med-type",
+        "ion-progress-bar"
+      ],
+      "dependencyGraph": {
+        "med-aula-professor": [
+          "ion-icon",
+          "med-type",
+          "ion-progress-bar"
         ]
       }
     },
@@ -24338,6 +24533,437 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/@medgrupo/core/med-nav/med-nav.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-nav",
+      "readme": "# med-nav\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active",
+          "reflectToAttr": true,
+          "docs": "TODO.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "close",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon",
+        "med-type",
+        "ion-button",
+        "med-nav-simple"
+      ],
+      "dependencyGraph": {
+        "med-nav": [
+          "ion-icon",
+          "med-type",
+          "ion-button",
+          "med-nav-simple"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
+        "med-nav-simple": [
+          "ion-icon",
+          "med-nav-item",
+          "ion-button"
+        ],
+        "med-nav-item": [
+          "ion-icon",
+          "med-type"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-nav-accordion/med-nav-accordion.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-nav-accordion",
+      "readme": "# med-nav-accordion\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "med-accordion-list",
+        "med-accordion-item",
+        "med-type",
+        "ion-icon",
+        "med-nav-item"
+      ],
+      "dependencyGraph": {
+        "med-nav-accordion": [
+          "med-accordion-list",
+          "med-accordion-item",
+          "med-type",
+          "ion-icon",
+          "med-nav-item"
+        ],
+        "med-nav-item": [
+          "ion-icon",
+          "med-type"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-nav-item/med-nav-item.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-nav-item",
+      "readme": "# med-nav-item\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "active",
+          "reflectToAttr": true,
+          "docs": "TODO.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "TODO.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "TODO.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": true,
+          "docs": "TODO.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconOnly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "icon-only",
+          "reflectToAttr": true,
+          "docs": "TODO.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "routerAnimation",
+          "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "TODO.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "((baseEl: any, opts?: any) => Animation)"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "routerDirection",
+          "type": "\"back\" | \"forward\" | \"root\"",
+          "mutable": false,
+          "attr": "router-direction",
+          "reflectToAttr": false,
+          "docs": "TODO.",
+          "docsTags": [],
+          "default": "'forward'",
+          "values": [
+            {
+              "value": "back",
+              "type": "string"
+            },
+            {
+              "value": "forward",
+              "type": "string"
+            },
+            {
+              "value": "root",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "text",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "text",
+          "reflectToAttr": true,
+          "docs": "TODO.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "medBlur",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "TODO.",
+          "docsTags": []
+        },
+        {
+          "event": "medClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "TODO.",
+          "docsTags": []
+        },
+        {
+          "event": "medFocus",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "TODO.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "med-nav-accordion",
+        "med-nav-simple"
+      ],
+      "dependencies": [
+        "ion-icon",
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-nav-item": [
+          "ion-icon",
+          "med-type"
+        ],
+        "med-nav-accordion": [
+          "med-nav-item"
+        ],
+        "med-nav-simple": [
+          "med-nav-item"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-nav-simple/med-nav-simple.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-nav-simple",
+      "readme": "# med-nav-simple\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "close",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "TODO.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "med-nav"
+      ],
+      "dependencies": [
+        "ion-icon",
+        "med-nav-item",
+        "ion-button"
+      ],
+      "dependencyGraph": {
+        "med-nav-simple": [
+          "ion-icon",
+          "med-nav-item",
+          "ion-button"
+        ],
+        "med-nav-item": [
+          "ion-icon",
+          "med-type"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
+        "med-nav": [
+          "med-nav-simple"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/@medgrupo/global/med-navbar/med-navbar.tsx",
       "encapsulation": "shadow",
       "tag": "med-navbar",
@@ -26432,12 +27058,16 @@
       "dependents": [
         "filtro-modal",
         "med-add-card",
+        "med-aula-professor",
         "med-banner",
         "med-calendar",
         "med-calendar-day",
         "med-chart-bar-horizontal",
         "med-chart-categoria",
         "med-check-card",
+        "med-nav",
+        "med-nav-accordion",
+        "med-nav-item",
         "med-piechart",
         "med-rate-aula",
         "med-semana",
@@ -26449,6 +27079,9 @@
           "med-type"
         ],
         "med-add-card": [
+          "med-type"
+        ],
+        "med-aula-professor": [
           "med-type"
         ],
         "med-banner": [
@@ -26467,6 +27100,15 @@
           "med-type"
         ],
         "med-check-card": [
+          "med-type"
+        ],
+        "med-nav": [
+          "med-type"
+        ],
+        "med-nav-accordion": [
+          "med-type"
+        ],
+        "med-nav-item": [
           "med-type"
         ],
         "med-piechart": [

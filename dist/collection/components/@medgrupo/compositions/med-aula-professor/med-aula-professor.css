@@ -1,0 +1,68 @@
+:host {
+  --icon-color: hsl(var(--med-color-brand-4));
+}
+
+:host {
+  display: block;
+  position: relative;
+}
+
+.med-aula-professor__base {
+  --padding: 0;
+  background: linear-gradient(to right, hsl(var(--med-color-brand-1)), hsl(var(--med-color-neutral-2)), hsl(var(--med-color-neutral-2)));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.5s linear;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  border-radius: 8px;
+}
+.med-aula-professor__container {
+  padding: 16px;
+  display: flex;
+}
+.med-aula-professor__icon {
+  stroke: var(--icon-color);
+  margin-right: 8px;
+  min-width: 24px;
+}
+.med-aula-professor__middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.med-aula-professor__caption {
+  margin: 4px 0;
+}
+.med-aula-professor__end {
+  margin-left: auto;
+}
+
+.med-rotate {
+  transition: transform 300ms ease;
+}
+
+.accordion-item--open .med-rotate {
+  --rotate: rotate(180deg);
+}
+
+:host(.med-aula-professor--active) .med-aula-professor__base {
+  background-position: 0 0;
+}
+
+:host(.in-accordion) ion-progress-bar {
+  display: none;
+}
+
+:host(.med-color) {
+  --icon-color: hsl(var(--med-color-3));
+}
+
+:host(.med-color-neutral) {
+  --icon-color: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --icon-color: hsl(var(--med-color-feedback));
+}

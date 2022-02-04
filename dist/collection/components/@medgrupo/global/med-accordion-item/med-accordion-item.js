@@ -93,7 +93,9 @@ export class MedAccordionItem {
           h("div", { class: "header-container__end", onClick: () => this.onClick('end') },
             h("slot", { name: "end" }))),
         h("div", null,
-          h("slot", { name: "auxiliar" }))),
+          h("slot", { name: "auxiliar" })),
+        h("div", { onClick: () => this.onClick('middle') },
+          h("slot", { name: "full-header" }))),
       h("div", { class: "med-accordion-item__content", ref: (el) => this.content = el },
         h("slot", { name: "content" }))));
   }

@@ -1,6 +1,7 @@
 {
   "entries": [
     "./components/@medgrupo/compositions/med-add-card/med-add-card.js",
+    "./components/@medgrupo/compositions/med-aula-professor/med-aula-professor.js",
     "./components/@medgrupo/compositions/med-chart-categoria/med-chart-categoria.js",
     "./components/@medgrupo/compositions/med-check-card/med-check-card.js",
     "./components/@medgrupo/compositions/med-semana/med-semana.js",
@@ -12,6 +13,10 @@
     "./components/@medgrupo/core/med-chart-bar/med-chart-bar.js",
     "./components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.js",
     "./components/@medgrupo/core/med-input/med-input.js",
+    "./components/@medgrupo/core/med-nav/med-nav.js",
+    "./components/@medgrupo/core/med-nav-accordion/med-nav-accordion.js",
+    "./components/@medgrupo/core/med-nav-item/med-nav-item.js",
+    "./components/@medgrupo/core/med-nav-simple/med-nav-simple.js",
     "./components/@medgrupo/core/med-piechart/med-piechart.js",
     "./components/@medgrupo/core/med-sheet/med-sheet.js",
     "./components/@medgrupo/core/med-tab-button/med-tab-button.js",

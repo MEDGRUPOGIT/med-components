@@ -286,21 +286,21 @@
   --start: 0;
   --end: 0;
   --border-radius: 0;
-  --background: hsl(var(--med-color-neutral-5));
-  --spacing: var(--med-spacing-inset-sm);
-  border-radius: var(--med-border-radius-nano);
+  --background: hsl(var(--med-color-neutral-2));
+  --spacing: 16px;
+  border-radius: 4px;
 }
 :host .toast-container {
   padding: var(--spacing);
 }
 :host .toast-header {
-  font-weight: var(--med-font-weight-semibold);
+  font-weight: 600;
 }
 :host .toast-content {
   padding: 0;
-  font-size: var(--med-font-size-xs);
-  font-weight: var(--med-font-weight-regular);
-  line-height: var(--med-line-height-compressed);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
   color: hsl(var(--med-color-neutral-10));
 }
 :host .toast-button-group-end,
@@ -309,14 +309,14 @@
 }
 :host .toast-button-group-start .toast-button {
   padding: 0;
-  margin-right: var(--med-spacing-inline-xxxs);
+  margin-right: 12px;
 }
 :host .toast-button-group-end .toast-button {
   padding-top: 0;
   padding-bottom: 0;
-  font-size: var(--med-font-size-xs);
-  font-weight: var(--med-font-weight-bold);
-  color: hsl(var(--med-color-brand-3));
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(var(--med-color-neutral-10));
 }
 :host .toast-button:hover,
 :host .toast-button-cancel:hover {
@@ -324,7 +324,7 @@
 }
 :host .toast-icon {
   font-size: 24px;
-  color: #fff;
+  stroke: hsl(var(--med-color-neutral-10));
 }
 
 :host(.ion-toast--rows) .toast-content {
@@ -337,7 +337,7 @@
   float: left;
 }
 :host(.ion-toast--rows) .toast-button-group-end {
-  padding-top: var(--med-spacing-stack-base);
+  padding-top: 16px;
   justify-content: flex-end;
 }
 
@@ -345,10 +345,10 @@
   --width: auto;
   --start: 8px;
   --end: 8px;
-  --border-radius: var(--border-radius-nano);
+  --border-radius: 4px;
 }
 :host(.ion-toast--float) .toast-message {
-  padding-left: var(--med-spacing-inline-nano);
+  padding-left: 4px;
 }
 :host(.ion-toast--float) .toast-wrapper.toast-bottom {
   bottom: calc(8px + var(--ion-safe-area-bottom, 0px)) !important;
@@ -359,4 +359,16 @@
 
 :host(.ion-color) .toast-wrapper {
   background: hsl(var(--med-color-3));
+}
+
+:host(.med-color) {
+  --background: hsl(var(--med-color-3));
+}
+
+:host(.med-color-neutral) {
+  --background: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --background: hsl(var(--med-color-feedback));
 }

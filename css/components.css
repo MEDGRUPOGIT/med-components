@@ -186,8 +186,16 @@
   contain: content !important;
 }
 
+.tp-sheet-header {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
 .tp-sheet--ion-content {
   overflow: none !important;
+}
+.tp-sheet--ion-content .modal-wrapper {
+  padding: 0 !important;
 }
 .tp-sheet--ion-content ion-content {
   height: 70vh !important;
@@ -203,6 +211,7 @@
   }
   .tp-sheet .modal-wrapper {
     max-height: 100vh !important;
+    height: 100vh !important;
     right: 0 !important;
   }
 
@@ -235,7 +244,6 @@
 .cp-accordion-list__header {
   display: flex;
   justify-content: space-between;
-  padding: 16px;
 }
 .cp-accordion-list__middle {
   display: flex;

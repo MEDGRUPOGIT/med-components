@@ -12,7 +12,8 @@ const createToastDefault = async () => {
     header: 'Titulo da Notificação.',
     message: 'Sem conexão. Por favor, tente conectar-se novamente para concluir essa tarefa.',
     position: 'bottom',
-    showCloseButton: true,
+    showCloseButton: false,
+    dsColor: 'fb-warning',
     buttons: [
     {
       side: 'start',
@@ -28,14 +29,6 @@ const createToastDefault = async () => {
         console.log('Cancel clicked');
       }
     },
-    {
-      side: 'end',
-      icon: 'med-close',
-      role: 'cancel',
-      handler: () => {
-        console.log('Cancel clicked');
-      }
-    }
   ]
   }).then((toast) => {
     toast.present()
