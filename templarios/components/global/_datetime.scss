@@ -30,6 +30,11 @@
   .picker-opt {
     color: hsl(var(--med-color-neutral-10));
   }
+
+  ion-backdrop {
+    --ion-backdrop-color: hsl(var(--med-color-neutral-1)) !important;
+    --backdrop-opacity: 0.8 !important;
+  }
 }
 
 @include platform('desktop') {

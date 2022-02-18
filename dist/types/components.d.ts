@@ -3183,9 +3183,13 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a variação de tamanho do componente.
+          * Define o icone, se existir.
          */
-        "dsSize"?: 'sm' | 'md';
+        "icon": string;
+        /**
+          * Define a url da imagem, se existir.
+         */
+        "image": string;
         /**
           * Define o texto do componente.
          */
@@ -3215,6 +3219,7 @@ export namespace Components {
     }
     interface MedCalendar {
         "ano"?: string;
+        "container"?: string;
         "dsColor"?: MedColor;
         "mes"?: string;
     }
@@ -3485,6 +3490,65 @@ export namespace Components {
     }
     interface MedInput {
     }
+    interface MedItem {
+        /**
+          * If `true`, a button tag will be rendered and the item will be tappable.
+         */
+        "button": boolean;
+        /**
+          * If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode` is `ios` and an `href` or `button` property is present.
+         */
+        "detail"?: boolean;
+        /**
+          * The icon to use when `detail` is set to `true`.
+         */
+        "detailIcon": string;
+        /**
+          * If `true`, the user cannot interact with the item.
+         */
+        "disabled": boolean;
+        /**
+          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+         */
+        "download": string | undefined;
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "dsColor"?: MedColor;
+        /**
+          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+         */
+        "href": string | undefined;
+        /**
+          * How the bottom border should be displayed on the item.
+         */
+        "lines"?: 'full' | 'inset' | 'none';
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        "padding": boolean;
+        /**
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+         */
+        "rel": string | undefined;
+        /**
+          * When using a router, it specifies the transition animation when navigating to another page using `href`.
+         */
+        "routerAnimation": AnimationBuilder | undefined;
+        /**
+          * When using a router, it specifies the transition direction when navigating to another page using `href`.
+         */
+        "routerDirection": RouterDirection;
+        /**
+          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+         */
+        "target": string | undefined;
+        /**
+          * The type of the button. Only used when an `onclick` or `button` property is present.
+         */
+        "type": 'submit' | 'reset' | 'button';
+    }
     interface MedItemAulas {
         /**
           * Define a cor do componente.
@@ -3584,6 +3648,26 @@ export namespace Components {
           * TODO
          */
         "toggle": (event?: Event | undefined) => Promise<void>;
+    }
+    interface MedLista {
+        /**
+          * If `ion-item-sliding` are used inside the list, this method closes any open sliding item.  Returns `true` if an actual `ion-item-sliding` is closed.
+         */
+        "closeSlidingItems": () => Promise<boolean>;
+        "dsColor"?: MedColor;
+        /**
+          * If `true`, the list will have margin around it and rounded corners.
+         */
+        "inset": boolean;
+        /**
+          * How the bottom border should be displayed on all items.
+         */
+        "lines"?: 'full' | 'inset' | 'none';
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        "padding": boolean;
     }
     interface MedMessage {
         /**
@@ -4780,6 +4864,12 @@ declare global {
         prototype: HTMLMedInputElement;
         new (): HTMLMedInputElement;
     };
+    interface HTMLMedItemElement extends Components.MedItem, HTMLStencilElement {
+    }
+    var HTMLMedItemElement: {
+        prototype: HTMLMedItemElement;
+        new (): HTMLMedItemElement;
+    };
     interface HTMLMedItemAulasElement extends Components.MedItemAulas, HTMLStencilElement {
     }
     var HTMLMedItemAulasElement: {
@@ -4803,6 +4893,12 @@ declare global {
     var HTMLMedListItemAccordionElement: {
         prototype: HTMLMedListItemAccordionElement;
         new (): HTMLMedListItemAccordionElement;
+    };
+    interface HTMLMedListaElement extends Components.MedLista, HTMLStencilElement {
+    }
+    var HTMLMedListaElement: {
+        prototype: HTMLMedListaElement;
+        new (): HTMLMedListaElement;
     };
     interface HTMLMedMessageElement extends Components.MedMessage, HTMLStencilElement {
     }
@@ -5136,10 +5232,12 @@ declare global {
         "med-heading": HTMLMedHeadingElement;
         "med-image-zoom": HTMLMedImageZoomElement;
         "med-input": HTMLMedInputElement;
+        "med-item": HTMLMedItemElement;
         "med-item-aulas": HTMLMedItemAulasElement;
         "med-list": HTMLMedListElement;
         "med-list-item": HTMLMedListItemElement;
         "med-list-item-accordion": HTMLMedListItemAccordionElement;
+        "med-lista": HTMLMedListaElement;
         "med-message": HTMLMedMessageElement;
         "med-message-list": HTMLMedMessageListElement;
         "med-nav": HTMLMedNavElement;
@@ -8309,9 +8407,13 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a variação de tamanho do componente.
+          * Define o icone, se existir.
          */
-        "dsSize"?: 'sm' | 'md';
+        "icon": string;
+        /**
+          * Define a url da imagem, se existir.
+         */
+        "image": string;
         /**
           * Emitido quando há um click no botão esquerdo.
          */
@@ -8349,6 +8451,7 @@ declare namespace LocalJSX {
     }
     interface MedCalendar {
         "ano"?: string;
+        "container"?: string;
         "dsColor"?: MedColor;
         "mes"?: string;
         "onMedClick"?: (event: CustomEvent<any>) => void;
@@ -8639,6 +8742,65 @@ declare namespace LocalJSX {
     }
     interface MedInput {
     }
+    interface MedItem {
+        /**
+          * If `true`, a button tag will be rendered and the item will be tappable.
+         */
+        "button"?: boolean;
+        /**
+          * If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode` is `ios` and an `href` or `button` property is present.
+         */
+        "detail"?: boolean;
+        /**
+          * The icon to use when `detail` is set to `true`.
+         */
+        "detailIcon"?: string;
+        /**
+          * If `true`, the user cannot interact with the item.
+         */
+        "disabled"?: boolean;
+        /**
+          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+         */
+        "download"?: string | undefined;
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "dsColor"?: MedColor;
+        /**
+          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+         */
+        "href"?: string | undefined;
+        /**
+          * How the bottom border should be displayed on the item.
+         */
+        "lines"?: 'full' | 'inset' | 'none';
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        "padding"?: boolean;
+        /**
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+         */
+        "rel"?: string | undefined;
+        /**
+          * When using a router, it specifies the transition animation when navigating to another page using `href`.
+         */
+        "routerAnimation"?: AnimationBuilder | undefined;
+        /**
+          * When using a router, it specifies the transition direction when navigating to another page using `href`.
+         */
+        "routerDirection"?: RouterDirection;
+        /**
+          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+         */
+        "target"?: string | undefined;
+        /**
+          * The type of the button. Only used when an `onclick` or `button` property is present.
+         */
+        "type"?: 'submit' | 'reset' | 'button';
+    }
     interface MedItemAulas {
         /**
           * Define a cor do componente.
@@ -8734,6 +8896,22 @@ declare namespace LocalJSX {
           * TODO
          */
         "titulo"?: string;
+    }
+    interface MedLista {
+        "dsColor"?: MedColor;
+        /**
+          * If `true`, the list will have margin around it and rounded corners.
+         */
+        "inset"?: boolean;
+        /**
+          * How the bottom border should be displayed on all items.
+         */
+        "lines"?: 'full' | 'inset' | 'none';
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        "padding"?: boolean;
     }
     interface MedMessage {
         /**
@@ -9314,10 +9492,12 @@ declare namespace LocalJSX {
         "med-heading": MedHeading;
         "med-image-zoom": MedImageZoom;
         "med-input": MedInput;
+        "med-item": MedItem;
         "med-item-aulas": MedItemAulas;
         "med-list": MedList;
         "med-list-item": MedListItem;
         "med-list-item-accordion": MedListItemAccordion;
+        "med-lista": MedLista;
         "med-message": MedMessage;
         "med-message-list": MedMessageList;
         "med-nav": MedNav;
@@ -9485,10 +9665,12 @@ declare module "@stencil/core" {
             "med-heading": LocalJSX.MedHeading & JSXBase.HTMLAttributes<HTMLMedHeadingElement>;
             "med-image-zoom": LocalJSX.MedImageZoom & JSXBase.HTMLAttributes<HTMLMedImageZoomElement>;
             "med-input": LocalJSX.MedInput & JSXBase.HTMLAttributes<HTMLMedInputElement>;
+            "med-item": LocalJSX.MedItem & JSXBase.HTMLAttributes<HTMLMedItemElement>;
             "med-item-aulas": LocalJSX.MedItemAulas & JSXBase.HTMLAttributes<HTMLMedItemAulasElement>;
             "med-list": LocalJSX.MedList & JSXBase.HTMLAttributes<HTMLMedListElement>;
             "med-list-item": LocalJSX.MedListItem & JSXBase.HTMLAttributes<HTMLMedListItemElement>;
             "med-list-item-accordion": LocalJSX.MedListItemAccordion & JSXBase.HTMLAttributes<HTMLMedListItemAccordionElement>;
+            "med-lista": LocalJSX.MedLista & JSXBase.HTMLAttributes<HTMLMedListaElement>;
             "med-message": LocalJSX.MedMessage & JSXBase.HTMLAttributes<HTMLMedMessageElement>;
             "med-message-list": LocalJSX.MedMessageList & JSXBase.HTMLAttributes<HTMLMedMessageListElement>;
             "med-nav": LocalJSX.MedNav & JSXBase.HTMLAttributes<HTMLMedNavElement>;

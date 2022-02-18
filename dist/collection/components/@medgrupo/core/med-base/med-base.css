@@ -5,10 +5,10 @@
 }
 
 :host(.med-base) {
+  display: flex;
   background: var(--background);
   border-radius: var(--border-radius);
   padding: var(--padding);
-  display: flex;
 }
 
 :host(.med-color) {

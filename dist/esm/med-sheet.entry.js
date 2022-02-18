@@ -1,6 +1,6 @@
 import { r as registerInstance, e as createEvent, h, H as Host } from './index-70672e81.js';
 
-const medSheetCss = ".med-sheet{height:var(--height-mobile)}.med-sheet__header{margin:20px 0;display:-ms-flexbox;display:flex}.med-sheet__button{margin-left:auto}.med-sheet__content{overflow:auto;position:relative}@media only screen and (min-width: 992px){:host{height:var(--height-desktop)}}";
+const medSheetCss = ".med-sheet__header{margin:20px 0;display:-ms-flexbox;display:flex}.med-sheet__button{margin-left:auto}.med-sheet__content{overflow:auto;position:relative}";
 
 const MedSheet = class {
   constructor(hostRef) {

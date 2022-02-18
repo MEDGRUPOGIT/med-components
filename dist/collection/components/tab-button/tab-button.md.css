@@ -330,47 +330,121 @@ ion-ripple-effect {
   font-size: 24px;
 }
 :host {
-  --color: hsl(var(--med-color-neutral-9));
-  --color-hover: hsl(var(--med-color-brand-5));
-  --color-focused: hsl(var(--med-color-brand-5));
-  --color-selected:hsl(var(--med-color-brand-2));
-  --color-activated: hsl(var(--med-color-brand-4));
+  --color: hsl(var(--med-color-neutral-3));
+  --color-hover: hsl(var(--med-color-neutral-5));
+  --color-focused: hsl(var(--med-color-neutral-5));
+  --color-selected: hsl(var(--med-color-brand-4));
   --background-focused: transparent;
-  --background-focused-opacity: 1;
-  --ripple-color: transparent;
-  --padding-bottom:	var(--med-spacing-stack-xxxs);
-  --padding-end:	var(--med-spacing-inline-nano);
-  --padding-start:	var(--med-spacing-inline-nano);
-  --padding-top: var(--med-spacing-stack-xxxs);
-  --color-icon: hsl(var(--med-color-neutral-9));
-  --color-icon-hover: hsl(var(--med-color-brand-5));
-  --color-icon-focused: hsl(var(--med-color-brand-5));
-  --color-icon-selected:hsl(var(--med-color-brand-2));
-  --color-icon-activated: hsl(var(--med-color-brand-4));
-  min-width: 0;
-  max-width: 100%;
-  justify-content: start;
-  font-size: var(--med-font-size-nano);
-  font-weight: var(--med-font-weight-regular);
-  line-height: var(--med-line-height-compressed);
+  transition: color 300ms ease-out, stroke 300ms ease-out;
+  justify-content: flex-start;
+  max-width: 56px;
+  margin: 0 var(--padding-gap);
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   :host {
-    --padding-bottom:	var(--med-spacing-stack-base);
-    --padding-end: var(--med-spacing-inline-xxxs);
-    --padding-start: var(--med-spacing-inline-xxxs);
-    --padding-top: var(--med-spacing-stack-base);
     flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: left;
-    font-size: var(--med-font-size-xxxs);
+    max-width: fit-content;
   }
 }
 
-:host ::slotted(ion-icon) {
-  min-height: 24px;
+::slotted(ion-icon) {
+  stroke: hsl(var(--med-color-neutral-3));
   min-width: 24px;
+  min-height: 24px;
+  margin-bottom: 4px !important;
+  transition: stroke 300ms ease-out;
+}
+@media (min-width: 992px) {
+  ::slotted(ion-icon) {
+    margin-bottom: 0;
+    margin-right: 4px;
+  }
+}
+
+::slotted(med-type) {
+  --font-size: 10px;
+  --line-height: 12px;
+  --color: var(--color);
+}
+
+:host(.tab-selected) ::slotted(ion-icon) {
+  stroke: var(--color-selected);
+}
+
+:host(.tab-disabled) {
+  opacity: 1;
+  color: hsl(var(--med-color-neutral-2)) !important;
+}
+:host(.tab-disabled) ::slotted(ion-icon) {
+  stroke: hsl(var(--med-color-neutral-2)) !important;
+}
+
+:host(.ion-focused) ::slotted(ion-icon) {
+  stroke: var(--color-focused);
+}
+
+@media (any-hover: hover) {
+  a:hover {
+    color: var(--color-hover);
+  }
+  a:hover ::slotted(ion-icon) {
+    stroke: var(--color-hover);
+  }
+
+  :host(.tab-selected) a:hover {
+    color: var(--color-selected);
+  }
+  :host(.tab-selected) a:hover ::slotted(ion-icon) {
+    stroke: var(--color-selected);
+  }
+}
+/* :host {
+  --color: hsl(var(--med-color-neutral-3));
+  --color-hover: hsl(var(--med-color-neutral-5));
+  --color-focused: hsl(var(--med-color-neutral-5));
+  --color-selected:hsl(var(--med-color-brand-4));
+  --color-activated: hsl(var(--med-color-neutral-5));
+  --background-focused: transparent;
+  --background-focused-opacity: 1;
+  --ripple-color: transparent;
+  --padding-bottom:	8px;
+  --padding-end: 4px;
+  --padding-start: 4px;
+  --padding-top: 8px;
+  --color-icon: hsl(var(--med-color-neutral-3));
+  --color-icon-hover: hsl(var(--med-color-neutral-5));
+  --color-icon-focused: hsl(var(--med-color-neutral-5));
+  --color-icon-selected:hsl(var(--med-color-brand-4));
+  --color-icon-activated: hsl(var(--med-color-neutral-5));
+
+  min-width: 0;
+  max-width: 100%;
+  justify-content: start;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  transition: color 300ms;
+
+  @include breakpoint-up('sm') {
+    --padding-bottom:	16px;
+    --padding-end: 8px;
+    --padding-start: 8px;
+    --padding-top: 16px;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+// icon
+:host ::slotted(ion-icon) {
+  min-height: 20px;
+  min-width: 20px;
   max-width: initial;
   display: block;
   contain: unset;
@@ -380,15 +454,15 @@ ion-ripple-effect {
 
 :host(.tab-layout-icon-top) ::slotted(ion-icon) {
   margin-top: 0;
-  margin-bottom: var(--med-spacing-stack-nano);
-}
-@media (min-width: 576px) {
-  :host(.tab-layout-icon-top) ::slotted(ion-icon) {
+  margin-bottom: 4px;
+
+  @include breakpoint-up('sm') {
     margin-bottom: 0;
-    margin-right: var(--med-spacing-inline-xxxs);
+    margin-right: 6px;
   }
 }
 
+// label
 :host ::slotted(ion-label) {
   text-overflow: initial;
   white-space: initial;
@@ -400,51 +474,66 @@ ion-ripple-effect {
   margin-bottom: 0;
 }
 
+// states
 @media (any-hover: hover) {
   a:hover {
     color: var(--color-hover);
+
+    ::slotted(ion-icon) {
+      stroke: var(--color-icon-hover);
+    }
   }
-  a:hover ::slotted(ion-icon) {
-    stroke: var(--color-icon-hover);
-  }
-}
-:host(.ion-focused) .button-native {
-  color: var(--color-focused);
-}
-:host(.ion-focused) .button-native::after {
-  background: var(--background-focused);
-  opacity: var(--background-focused-opacity);
 }
 
-:host(.ion-focused) ::slotted(ion-icon) {
-  stroke: var(--color-icon-focused);
+:host(.ion-focused) .button-native {
+  color: var(--color-focused);
+
+  &::after {
+    background: var(--background-focused);
+    opacity: var(--background-focused-opacity);
+  }
+}
+
+:host(.ion-focused) {
+  ::slotted(ion-icon) {
+    stroke: var(--color-icon-focused);
+  }
 }
 
 :host(.ion-activated) .button-native {
   color: var(--color-activated);
 }
 
-:host(.ion-activated) ::slotted(ion-icon) {
-  stroke: var(--color-icon-activated);
+:host(.ion-activated) {
+  ::slotted(ion-icon) {
+    stroke: var(--color-icon-activated);
+  }
 }
 
 :host(.tab-selected) {
   color: var(--color-selected);
-}
-:host(.tab-selected) ::slotted(ion-icon) {
-  stroke: var(--color-icon-selected);
-}
-@media (any-hover: hover) {
-  :host(.tab-selected) a:hover ::slotted(ion-icon) {
-    stroke: var(--color-icon-hover);
+
+  ::slotted(ion-icon) {
+    stroke: var(--color-icon-selected);
+  }
+
+  @media (any-hover: hover) {
+    a:hover {
+      ::slotted(ion-icon) {
+        stroke: var(--color-icon-hover);
+      }
+    }
   }
 }
 
 :host(.tab-disabled) {
   color: var(--color);
-  opacity: var(--med-opacity-level-semiopaque);
+  opacity: 0.8;
+
+  ::slotted(ion-icon) {
+    stroke: (--color-icon);
+    opacity: 0.8;
+  }
 }
-:host(.tab-disabled) ::slotted(ion-icon) {
-  stroke: --color-icon;
-  opacity: var(--med-opacity-level-semiopaque);
-}
+
+ */

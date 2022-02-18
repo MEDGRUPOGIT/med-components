@@ -342,7 +342,7 @@ ion-ripple-effect {
 }
 
 :host(.med-button-outline) {
-  --border-width: 2px;
+  --border-width: 1px;
   --border-style: solid;
   --box-shadow: none;
   --background-activated: transparent;
@@ -430,24 +430,24 @@ ion-ripple-effect {
   --background: hsl(var(--med-color-brand-3));
   --border-color: hsl(var(--med-color-brand-3));
   --color: hsl(var(--med-color-contrast-fixed));
-  --bg-hover: hsl(var(--med-color-brand-1));
+  --bg-hover: hsl(var(--med-color-brand-2));
   --bg-hover-opacity: 1;
   --border-color-hover: transparent;
   --color-hover: hsl(var(--med-color-neutral-10));
-  --bg-focused: hsl(var(--med-color-brand-1));
+  --bg-focused: hsl(var(--med-color-brand-2));
   --bg-focused-opacity: 1;
   --border-color-focused: transparent;
   --color-focused: hsl(var(--med-color-neutral-10));
   --bg-activated: transparent;
   --bg-activated-opacity: 0;
   --border-color-activated: transparent;
-  --color-activated: hsl(var(--med-color-contrast-fixed));
-  --font-size: var(--med-font-size-xxs);
-  --font-weight: var(--med-font-weight-semibold);
-  --line-height: var(--med-line-height-compressed);
-  --padding: 0 var(--med-spacing-inline-xxs);
-  --padding-text: 0 var(--med-spacing-inline-xxxs);
-  --border-radius: var(--med-border-radius-pill);
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --font-size: 16px;
+  --font-weight: 600;
+  --line-height: 16px;
+  --padding: 0 24px;
+  --padding-text: 0 8px;
+  --border-radius: 500px;
   --min-height: 48px;
   --min-width: 48px;
   --transition: background 300ms ease-out, color 300ms ease-out,
@@ -461,8 +461,9 @@ ion-ripple-effect {
   height: auto;
   font-size: var(--font-size);
   font-weight: var(--font-weight);
-  text-transform: uppercase;
+  text-transform: none;
   margin: 0;
+  letter-spacing: initial;
   cursor: pointer;
 }
 
@@ -522,10 +523,10 @@ ion-ripple-effect {
 :host(.button-has-icon-only) {
   --padding: 0;
   --padding-text: 0;
-  --border-radius: var(--med-border-radius-pill);
+  --border-radius: 500px;
   --min-height: 48px;
   --min-width: 48px;
-  --icon-font-size: 32px;
+  --icon-font-size: 24px;
 }
 
 :host(.med-button--primary.button-block) {
@@ -535,19 +536,27 @@ ion-ripple-effect {
 :host(.med-button--md) {
   --min-height: 48px;
   --min-height: 48px;
+  --padding: 0 24px;
   --icon-font-size: 24px;
+  --font-size: 16px;
+  --font-weight: 600;
+  --line-height: 16px;
 }
 
 :host(.med-button--md.button-has-icon-only) {
   --min-height: 48px;
   --min-width: 48px;
-  --icon-font-size: 32px;
+  --icon-font-size: 24px;
 }
 
 :host(.med-button--sm) {
   --min-height: 40px;
   --min-height: 40px;
+  --padding: 0 24px;
   --icon-font-size: 24px;
+  --font-size: 16px;
+  --font-weight: 600;
+  --line-height: 16px;
 }
 
 :host(.med-button--sm.button-has-icon-only) {
@@ -559,9 +568,11 @@ ion-ripple-effect {
 :host(.med-button--xs) {
   --min-height: 32px;
   --min-width: 32px;
-  --padding: 0 var(--med-spacing-inline-base);
-  --font-size: var(--med-font-size-xxxs);
+  --padding: 0 16px;
   --icon-font-size: 16px;
+  --font-size: 14px;
+  --font-weight: 600;
+  --line-height: 16px;
 }
 
 :host(.med-button--xs.button-has-icon-only) {
@@ -572,30 +583,18 @@ ion-ripple-effect {
 
 :host(.med-button--xxs) {
   --min-height: 24px;
-  --min-width: 24px;
-  --padding: 0 var(--med-spacing-inline-xxxs);
-  --font-size: var(--med-font-size-nano);
+  --min-width: 16px;
+  --padding: 0 8px;
   --icon-font-size: 16px;
+  --font-size: 12px;
+  --font-weight: 600;
+  --line-height: 12px;
 }
 
 :host(.med-button--xxs.button-has-icon-only) {
   --min-height: 24px;
   --min-width: 24px;
   --icon-font-size: 16px;
-}
-
-:host(.med-button--xxxs) {
-  --min-height: 16px;
-  --min-width: 16px;
-  --padding: 0;
-  --font-size: var(--med-font-size-nano);
-  --icon-font-size: 8px;
-}
-
-:host(.med-button--xxxs.button-has-icon-only) {
-  --min-height: 16px;
-  --min-width: 16px;
-  --icon-font-size: 8px;
 }
 
 @media (any-hover: hover) {
@@ -651,10 +650,14 @@ ion-ripple-effect {
   stroke: var(--color-activated);
 }
 
-:host(.button-disabled) {
+:host(.button-disabled),
+:host(.med-color.button-disabled),
+:host(.med-color-neutral.button-disabled),
+:host(.med-color-feedback.button-disabled) {
   cursor: initial;
   pointer-events: none;
-  opacity: var(--med-opacity-level-half);
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 :host(.med-color) {
@@ -722,7 +725,7 @@ ion-ripple-effect {
   --bg-activated-opacity: 0;
   --border-color-activated: hsl(var(--med-color-brand-5));
   --color-activated: hsl(var(--med-color-brand-5));
-  --border-width: var(--med-border-width-thin);
+  --border-width: 1px;
   --border-style: solid;
   cursor: pointer;
 }
@@ -732,10 +735,17 @@ ion-ripple-effect {
   --ripple-opacity: transparent;
 }
 
+:host(.med-button--secondary.button-disabled) {
+  cursor: initial;
+  pointer-events: none;
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+
 :host(.button-has-icon-only) {
   --min-height: 48px;
   --min-width: 48px;
-  --icon-font-size: 32px;
+  --icon-font-size: 24px;
   --padding: 0;
 }
 
@@ -779,10 +789,10 @@ ion-ripple-effect {
   --background: transparent;
   --border-color: transparent;
   --color: hsl(var(--med-color-neutral-10));
-  --bg-hover: hsl(var(--med-color-brand-3));
-  --bg-hover-opacity: var(--med-opacity-level-light);
+  --bg-hover: transparent;
+  --bg-hover-opacity: 0;
   --border-color-hover: transparent;
-  --color-hover: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-brand-3));
   --bg-focused: hsl(var(--med-color-brand-3));
   --bg-focused-opacity: var(--med-opacity-level-light);
   --border-color-focused: transparent;
@@ -803,6 +813,13 @@ ion-ripple-effect {
 :host(.med-button--tertiary) ion-ripple-effect {
   --ripple-color: hsl(var(--med-color-brand-3));
   --ripple-opacity: var(--med-opacity-level-light);
+}
+
+:host(.med-button--tertiary.button-disabled) {
+  cursor: initial;
+  pointer-events: none;
+  --bg-hover: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 :host(.med-button--tertiary.button-has-icon-only) {

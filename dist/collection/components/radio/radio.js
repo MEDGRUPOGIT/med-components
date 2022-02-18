@@ -86,7 +86,7 @@ export class Radio {
         [mode]: true,
         'med-radio': true,
         [`med-radio--${dsName}`]: dsName !== undefined,
-        'in-item': hostContext('ion-item', el) || hostContext('med-option', el),
+        'in-item': hostContext('ion-item', el) || hostContext('med-option', el) || hostContext('med-item', el),
         'interactive': true,
         'radio-checked': checked,
         'radio-disabled': disabled,

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-04T14:55:51",
+  "timestamp": "2022-02-18T13:09:46",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -21431,29 +21431,36 @@
           "required": false
         },
         {
-          "name": "dsSize",
-          "type": "\"md\" | \"sm\" | undefined",
+          "name": "icon",
+          "type": "string",
           "mutable": false,
-          "attr": "ds-size",
-          "reflectToAttr": true,
-          "docs": "Define a variação de tamanho do componente.",
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Define o icone, se existir.",
           "docsTags": [],
-          "default": "'sm'",
           "values": [
             {
-              "value": "md",
               "type": "string"
-            },
-            {
-              "value": "sm",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
             }
           ],
-          "optional": true,
-          "required": false
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "image",
+          "type": "string",
+          "mutable": false,
+          "attr": "image",
+          "reflectToAttr": false,
+          "docs": "Define a url da imagem, se existir.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
         },
         {
           "name": "texto",
@@ -21522,11 +21529,13 @@
       "dependents": [],
       "dependencies": [
         "med-type",
+        "ion-icon",
         "ion-button"
       ],
       "dependencyGraph": {
         "med-banner": [
           "med-type",
+          "ion-icon",
           "ion-button"
         ],
         "ion-button": [
@@ -21541,6 +21550,10 @@
       "readme": "# med-base\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [
+        {
+          "text": "- Slot default.",
+          "name": "slot"
+        },
         {
           "text": "start - Conteúdo é posicionado a esquerda do componente.",
           "name": "slot"
@@ -21639,6 +21652,10 @@
       "styles": [],
       "slots": [
         {
+          "name": "",
+          "docs": "Slot default."
+        },
+        {
           "name": "end",
           "docs": "Conteúdo é posicionado a direita do componente."
         },
@@ -21684,6 +21701,25 @@
           "type": "string | undefined",
           "mutable": false,
           "attr": "ano",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "container",
+          "type": "string | undefined",
+          "mutable": true,
+          "attr": "container",
           "reflectToAttr": true,
           "docs": "",
           "docsTags": [],
@@ -23739,6 +23775,391 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/@medgrupo/core/med-item/med-item.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-item",
+      "readme": "# med-item\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+          "name": "virtualProp"
+        },
+        {
+          "text": "- Content is placed between the named slots if provided without a slot.",
+          "name": "slot"
+        },
+        {
+          "text": "start - Content is placed to the left of the item text in LTR, and to the right in RTL.",
+          "name": "slot"
+        },
+        {
+          "text": "end - Content is placed to the right of the item text in LTR, and to the left in RTL.",
+          "name": "slot"
+        },
+        {
+          "text": "native - The native HTML button, anchor or div element that wraps all child elements.",
+          "name": "part"
+        },
+        {
+          "text": "detail-icon - The chevron icon for the item. Only applies when `detail=\"true\"`.",
+          "name": "part"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "button",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "button",
+          "reflectToAttr": false,
+          "docs": "If `true`, a button tag will be rendered and the item will be tappable.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "detail",
+          "type": "boolean | undefined",
+          "mutable": false,
+          "attr": "detail",
+          "reflectToAttr": false,
+          "docs": "If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`\r\nis `ios` and an `href` or `button` property is present.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "detailIcon",
+          "type": "string",
+          "mutable": false,
+          "attr": "detail-icon",
+          "reflectToAttr": false,
+          "docs": "The icon to use when `detail` is set to `true`.",
+          "docsTags": [],
+          "default": "'chevron-forward'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If `true`, the user cannot interact with the item.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "download",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "download",
+          "reflectToAttr": false,
+          "docs": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want).",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": false,
+          "docs": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics).",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "lines",
+          "type": "\"full\" | \"inset\" | \"none\" | undefined",
+          "mutable": false,
+          "attr": "lines",
+          "reflectToAttr": false,
+          "docs": "How the bottom border should be displayed on the item.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "inset",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "The mode determines which platform styles to use.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "padding",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "padding",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "rel",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "rel",
+          "reflectToAttr": false,
+          "docs": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "routerAnimation",
+          "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "When using a router, it specifies the transition animation when navigating to\r\nanother page using `href`.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "((baseEl: any, opts?: any) => Animation)"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "routerDirection",
+          "type": "\"back\" | \"forward\" | \"root\"",
+          "mutable": false,
+          "attr": "router-direction",
+          "reflectToAttr": false,
+          "docs": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`.",
+          "docsTags": [],
+          "default": "'forward'",
+          "values": [
+            {
+              "value": "back",
+              "type": "string"
+            },
+            {
+              "value": "forward",
+              "type": "string"
+            },
+            {
+              "value": "root",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of the button. Only used when an `onclick` or `button` property is present.",
+          "docsTags": [],
+          "default": "'button'",
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "ionColor",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ionStyle",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Content is placed between the named slots if provided without a slot."
+        },
+        {
+          "name": "end",
+          "docs": "Content is placed to the right of the item text in LTR, and to the left in RTL."
+        },
+        {
+          "name": "start",
+          "docs": "Content is placed to the left of the item text in LTR, and to the right in RTL."
+        }
+      ],
+      "parts": [
+        {
+          "name": "detail-icon",
+          "docs": "The chevron icon for the item. Only applies when `detail=\"true\"`."
+        },
+        {
+          "name": "native",
+          "docs": "The native HTML button, anchor or div element that wraps all child elements."
+        }
+      ],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-item": [
+          "ion-icon"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/@medgrupo/global/med-item-aulas/med-item-aulas.tsx",
       "encapsulation": "shadow",
       "tag": "med-item-aulas",
@@ -24305,6 +24726,145 @@
           "ion-ripple-effect"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-lista/med-lista.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-lista",
+      "readme": "# med-lista\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+          "name": "virtualProp"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inset",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inset",
+          "reflectToAttr": false,
+          "docs": "If `true`, the list will have margin around it and rounded corners.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "lines",
+          "type": "\"full\" | \"inset\" | \"none\" | undefined",
+          "mutable": false,
+          "attr": "lines",
+          "reflectToAttr": false,
+          "docs": "How the bottom border should be displayed on all items.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "full",
+              "type": "string"
+            },
+            {
+              "value": "inset",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "The mode determines which platform styles to use.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "padding",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "padding",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "closeSlidingItems",
+          "returns": {
+            "type": "Promise<boolean>",
+            "docs": ""
+          },
+          "signature": "closeSlidingItems() => Promise<boolean>",
+          "parameters": [],
+          "docs": "If `ion-item-sliding` are used inside the list, this method closes\r\nany open sliding item.\r\n\r\nReturns `true` if an actual `ion-item-sliding` is closed.",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/@medgrupo/global/med-message/med-message.tsx",

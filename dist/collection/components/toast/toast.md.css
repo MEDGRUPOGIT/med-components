@@ -287,6 +287,7 @@
   --end: 0;
   --border-radius: 0;
   --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-10));
   --spacing: 16px;
   border-radius: 4px;
 }
@@ -299,9 +300,9 @@
 :host .toast-content {
   padding: 0;
   font-size: 16px;
-  font-weight: 400;
-  line-height: 100%;
-  color: hsl(var(--med-color-neutral-10));
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color);
 }
 :host .toast-button-group-end,
 :host .toast-button-group-start {
@@ -316,15 +317,19 @@
   padding-bottom: 0;
   font-size: 16px;
   font-weight: 700;
-  color: hsl(var(--med-color-neutral-10));
+  color: var(--color);
 }
 :host .toast-button:hover,
 :host .toast-button-cancel:hover {
   background-color: transparent;
 }
+:host .toast-button-inner {
+  width: 24px;
+}
 :host .toast-icon {
   font-size: 24px;
-  stroke: hsl(var(--med-color-neutral-10));
+  min-width: 24px;
+  stroke: var(--color);
 }
 
 :host(.ion-toast--rows) .toast-content {
@@ -363,12 +368,15 @@
 
 :host(.med-color) {
   --background: hsl(var(--med-color-3));
+  --color: hsl(var(--med-color-contrast-fixed));
 }
 
 :host(.med-color-neutral) {
   --background: hsl(var(--med-color-neutral));
+  --color: hsl(var(--med-color-neutral-contrast));
 }
 
 :host(.med-color-feedback) {
   --background: hsl(var(--med-color-feedback));
+  --color: hsl(var(--med-color-feedback-contrast));
 }

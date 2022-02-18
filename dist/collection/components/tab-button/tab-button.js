@@ -77,6 +77,7 @@ export class TabButton {
     };
     return (h(Host, { "from-stencil": true, onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: generateMedColor(dsColor, {
         [mode]: true,
+        'med-tab-button': true,
         'tab-selected': selected,
         'tab-disabled': disabled,
         'tab-has-label': hasLabel,

@@ -5,18 +5,19 @@ export declare class MedCalendar {
   dsColor?: MedColor;
   mes?: string;
   ano?: string;
+  container?: string;
   choice: string;
   width: number;
   medClick: EventEmitter;
   medSwipe: EventEmitter;
   private gesture;
-  private container;
+  private containerEl;
   connectedCallback(): void;
   init(): void;
+  watchPropHandler(newValue: any): void;
   componentDidLoad(): void;
   disconnectedCallback(): void;
   private onChoiceClick;
   private onMonthClick;
-  private onGraficoClick;
   render(): any;
 }

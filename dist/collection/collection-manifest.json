@@ -13,6 +13,8 @@
     "./components/@medgrupo/core/med-chart-bar/med-chart-bar.js",
     "./components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.js",
     "./components/@medgrupo/core/med-input/med-input.js",
+    "./components/@medgrupo/core/med-item/med-item.js",
+    "./components/@medgrupo/core/med-lista/med-lista.js",
     "./components/@medgrupo/core/med-nav/med-nav.js",
     "./components/@medgrupo/core/med-nav-accordion/med-nav-accordion.js",
     "./components/@medgrupo/core/med-nav-item/med-nav-item.js",

@@ -27,6 +27,7 @@ export class TabBar {
     this.setSize();
   }
   connectedCallback() {
+    this.updateGap();
     if (typeof window !== 'undefined') {
       this.keyboardWillShowHandler = () => {
         if (this.el.getAttribute('slot') !== 'top') {
@@ -48,8 +49,18 @@ export class TabBar {
     }
   }
   /**
-   * Med Resize
-   */
+  * Med Resize
+  */
+  updateGap() {
+    let gap = '2px';
+    if (this.el.children.length <= 3) {
+      gap = '8px';
+    }
+    if (this.el.children.length === 4) {
+      gap = '4px';
+    }
+    this.gap = gap;
+  }
   setSize() {
     this.medResize.emit({ height: 1 });
     this.hostResizeObserver = new ResizeObserver(() => {
@@ -65,7 +76,7 @@ export class TabBar {
     const { dsColor, translucent, keyboardVisible } = this;
     const mode = getIonMode(this);
     this.medResize.emit({ height: 1 });
-    return (h(Host, { "from-stencil": true, role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, class: generateMedColor(dsColor, {
+    return (h(Host, { "from-stencil": true, role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, style: { '--gap': `${this.gap}` }, class: generateMedColor(dsColor, {
         [mode]: true,
         'tab-bar-translucent': translucent,
         'tab-bar-hidden': keyboardVisible,
@@ -164,6 +175,7 @@ export class TabBar {
     }
   }; }
   static get states() { return {
+    "gap": {},
     "keyboardVisible": {}
   }; }
   static get events() { return [{

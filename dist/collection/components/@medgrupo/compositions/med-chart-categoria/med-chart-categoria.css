@@ -1,5 +1,6 @@
 :host {
   --color-realizado: hsl(var(--med-color-brand-4));
+  --chart-track-background: hsl(var(--med-color-neutral-1));
 }
 
 :host {
@@ -29,6 +30,7 @@
 }
 .med-chart-categoria__chart {
   padding-top: 8px;
+  --background: var(--chart-track-background);
 }
 
 :host(.med-color) {

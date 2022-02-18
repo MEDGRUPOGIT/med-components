@@ -8,11 +8,12 @@ export declare class TabBar implements ComponentInterface {
   private keyboardWillHideHandler?;
   private hostHeight;
   private hostResizeObserver;
+  el: HTMLElement;
   /**
    * TODO
    */
   medResize: EventEmitter<TabBarResizeEventDetail>;
-  el: HTMLElement;
+  gap: string;
   keyboardVisible: boolean;
   /**
     * Define a cor do componente.
@@ -41,8 +42,9 @@ export declare class TabBar implements ComponentInterface {
   connectedCallback(): void;
   disconnectedCallback(): void;
   /**
-   * Med Resize
-   */
+  * Med Resize
+  */
+  private updateGap;
   private setSize;
   render(): any;
 }

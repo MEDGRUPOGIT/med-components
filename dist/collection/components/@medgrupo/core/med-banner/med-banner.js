@@ -2,35 +2,38 @@ import { Component, Host, h, Prop, Event } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedBanner {
   constructor() {
-    /**
-     * Define a variação de tamanho do componente.
-     */
-    this.dsSize = 'sm';
-    this.onBtnLeftClick = () => {
+    this.onButtonLeftClick = () => {
       this.btnLeftClick.emit();
     };
-    this.onBtnRightClick = () => {
+    this.onButtonRightClick = () => {
       this.btnRightClick.emit();
     };
   }
   render() {
-    const { dsColor, dsSize, titulo, texto, btnLeft, btnRight } = this;
+    const { dsColor, titulo, texto, btnLeft, btnRight, icon, image } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-notification': true,
-        [`med-notification--${dsSize}`]: dsSize !== undefined,
       }) },
       (titulo || texto) && h("div", { class: "med-notification__content" },
         h("div", { class: "med-notification__left" },
-          titulo && h("med-type", { class: "med-notification__titulo", token: dsSize === 'md' ? 'h20' : 'p16b' }, titulo),
-          texto && h("med-type", { class: "med-notification__texto", token: dsSize === 'md' ? 'p16x' : 'p14x' }, texto)),
-        h("div", { class: "med-notification__right" },
-          h("slot", { name: "imagem" }))),
+          h("div", { class: "med-notification__header" },
+            titulo && h("med-type", { class: "med-notification__titulo" },
+              " ",
+              titulo,
+              " "),
+            icon && h("ion-icon", { class: "med-notification__icon med-icon", name: icon })),
+          texto && h("med-type", { class: "med-notification__texto" },
+            " ",
+            texto,
+            " ")),
+        image && h("div", { class: "med-notification__right" },
+          h("img", { class: "med-notification__image", src: image }))),
       (btnLeft || btnRight) && h("div", { class: "med-notification__footer" },
-        btnLeft && h("ion-button", { class: "med-notification__button", "ds-color": dsColor, "ds-name": "tertiary", "ds-size": dsSize, onClick: this.onBtnLeftClick },
+        btnLeft && h("ion-button", { class: "med-notification__button", "ds-color": dsColor, "ds-name": "tertiary", onClick: this.onButtonLeftClick },
           " ",
           btnLeft,
           " "),
-        btnRight && h("ion-button", { class: "med-notification__button", "ds-color": dsColor, "ds-name": "tertiary", "ds-size": dsSize, onClick: this.onBtnRightClick },
+        btnRight && h("ion-button", { class: "med-notification__button", "ds-color": dsColor, "ds-name": "tertiary", onClick: this.onButtonRightClick },
           " ",
           btnRight,
           " "))));
@@ -65,24 +68,6 @@ export class MedBanner {
       },
       "attribute": "ds-color",
       "reflect": true
-    },
-    "dsSize": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'sm' | 'md'",
-        "resolved": "\"md\" | \"sm\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a varia\u00E7\u00E3o de tamanho do componente."
-      },
-      "attribute": "ds-size",
-      "reflect": true,
-      "defaultValue": "'sm'"
     },
     "titulo": {
       "type": "string",
@@ -150,6 +135,40 @@ export class MedBanner {
         "text": "Define o texto do bot\u00E3o direito, se existir."
       },
       "attribute": "btn-right",
+      "reflect": false
+    },
+    "icon": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o icone, se existir."
+      },
+      "attribute": "icon",
+      "reflect": false
+    },
+    "image": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define a url da imagem, se existir."
+      },
+      "attribute": "image",
       "reflect": false
     }
   }; }

@@ -22,21 +22,38 @@ const MedCalendar = class {
     const resizeObserver = new ResizeObserver(() => {
       this.init();
     });
-    resizeObserver.observe(document.body);
+    if (this.container) {
+      const container = document.querySelector(`.${this.container}`);
+      resizeObserver.observe(container);
+    }
+    else {
+      resizeObserver.observe(document.body);
+    }
   }
   init() {
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 1200) {
-      this.width = windowWidth / 7;
+    if (this.container) {
+      const container = document.querySelector(`.${this.container}`);
+      const containerWidth = container === null || container === void 0 ? void 0 : container.clientWidth;
+      if (containerWidth < 1200) {
+        this.width = containerWidth / 7;
+      }
     }
+    else {
+      const windowWidth = window.innerWidth;
+      if (windowWidth < 1200) {
+        this.width = windowWidth / 7;
+      }
+    }
+  }
+  watchPropHandler(newValue) {
+    this.init();
   }
   componentDidLoad() {
     let direction;
     const options = {
-      el: this.container,
+      el: this.containerEl,
       gestureName: 'swipe',
-      onStart: () => {
-      },
+      onStart: () => { },
       onMove: (event) => {
         if (event.deltaX > 0) {
           direction = 'right';
@@ -64,14 +81,17 @@ const MedCalendar = class {
   onMonthClick(type) {
     this.medClick.emit(type);
   }
-  onGraficoClick() {
+  /* private onGraficoClick() {
     this.medClick.emit('graph');
-  }
+  } */
   render() {
     const { dsColor, mes, ano } = this;
-    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, { 'med-calendar': true }), style: { '--width': `${this.width}` } }, index.h("div", { class: "header" }, index.h("div", { class: "header__left" }, index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })), index.h("med-type", { class: "header__type", token: "p16b" }, mes, " ", ano), index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('next') }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))), index.h("div", { class: "header__right" }, index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() }, index.h("med-type", { class: "choice__type" }, this.choice), index.h("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })), index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onGraficoClick() }, index.h("ion-icon", { class: "med-icon header__icon", name: "med-grafico" })))), index.h("div", { class: "content" }, index.h("div", { class: "content__header" }, index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Seg")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Ter")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Qua")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Qui")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Sex")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Sab")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Dom"))), index.h("div", { class: "content__container", ref: (el) => { this.container = el; } }, index.h("slot", null)))));
+    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, { 'med-calendar': true }), style: { '--width': `${this.width}` } }, index.h("div", { class: "header" }, index.h("div", { class: "header__left" }, index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })), index.h("med-type", { class: "header__type", token: "p16b" }, mes, " ", ano), index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('next') }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))), index.h("div", { class: "header__right" }, index.h("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() }, index.h("med-type", { class: "choice__type" }, this.choice), index.h("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })))), index.h("div", { class: "content" }, index.h("div", { class: "content__header" }, index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Seg")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Ter")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Qua")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Qui")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Sex")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Sab")), index.h("div", { class: "content__week-day" }, index.h("med-type", { class: "content__week-type" }, "Dom"))), index.h("div", { class: "content__container", ref: (el) => { this.containerEl = el; } }, index.h("slot", null)))));
   }
   get hostElement() { return index.getElement(this); }
+  static get watchers() { return {
+    "container": ["watchPropHandler"]
+  }; }
 };
 MedCalendar.style = medCalendarCss;
 

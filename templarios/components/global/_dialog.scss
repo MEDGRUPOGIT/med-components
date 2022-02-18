@@ -1,0 +1,64 @@
+@import '../../abstracts';
+
+.tp-dialog {
+  --background: hsl(var(--med-color-neutral-2)) !important;
+  --border-radius: 16px !important;
+  --height: auto !important;
+  --min-height: 50px !important;
+  --width: 100% !important;
+  --max-width: 640px !important;
+
+  ion-backdrop {
+    --ion-backdrop-color: hsl(var(--med-color-neutral-1)) !important;
+    --backdrop-opacity: 0.8 !important;
+  }
+
+  .modal-wrapper {
+    padding: 24px;
+  }
+
+  .ion-page {
+    left: unset;
+    bottom: unset;
+    top: unset;
+    right: unset;
+    position: initial;
+    display: block;
+    contain: unset;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .tp-dialog {
+    --max-width: 640px !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .tp-dialog {
+    --max-width: 440px !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .tp-dialog {
+    --max-width: calc(100% - 48px) !important;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .tp-dialog {
+    --max-width: calc(100% - 32px) !important;
+  }
+}
+
+.tp-dialog-header {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
+.tp-dialog-header {
+  text-align: right;
+  margin-bottom: 24px;
+}

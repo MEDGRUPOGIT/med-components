@@ -6,10 +6,6 @@ export declare class MedBanner {
     */
   dsColor?: MedColor;
   /**
-   * Define a variação de tamanho do componente.
-   */
-  dsSize?: 'sm' | 'md';
-  /**
     * Define o título do componente.
     */
   titulo?: string;
@@ -18,13 +14,21 @@ export declare class MedBanner {
     */
   texto?: string;
   /**
-   * Define o texto do botão esquerdo, se existir.
-   */
+    * Define o texto do botão esquerdo, se existir.
+    */
   btnLeft: string;
   /**
     * Define o texto do botão direito, se existir.
     */
   btnRight: string;
+  /**
+    * Define o icone, se existir.
+    */
+  icon: string;
+  /**
+    * Define a url da imagem, se existir.
+    */
+  image: string;
   /**
     * Emitido quando há um click no botão esquerdo.
     */
@@ -33,7 +37,7 @@ export declare class MedBanner {
     * Emitido quando há um click no botão direito.
     */
   btnRightClick: EventEmitter<void>;
-  private onBtnLeftClick;
-  private onBtnRightClick;
+  private onButtonLeftClick;
+  private onButtonRightClick;
   render(): any;
 }

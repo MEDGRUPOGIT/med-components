@@ -236,7 +236,12 @@ input {
 }
 
 :host(.med-toggle) {
+  --background: hsl(var(--med-color-neutral-4));
   --background-checked: hsl(var(--med-color-brand-3));
+  --handle-height: calc(20px - (2px * 2));
+  --handle-width: calc(20px - (2px * 2));
+  height: 20px;
+  width: 32px;
 }
 
 :host(.med-color.med-toggle) {

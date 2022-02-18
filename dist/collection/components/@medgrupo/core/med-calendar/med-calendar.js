@@ -1,4 +1,4 @@
-import { Component, Host, h, Element, Prop, Event, State } from '@stencil/core';
+import { Component, Host, h, Element, Prop, Event, State, Watch } from '@stencil/core';
 import { createGesture } from '../../../../utils/gesture';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCalendar {
@@ -11,21 +11,39 @@ export class MedCalendar {
     const resizeObserver = new ResizeObserver(() => {
       this.init();
     });
-    resizeObserver.observe(document.body);
+    if (this.container) {
+      const container = document.querySelector(`.${this.container}`);
+      resizeObserver.observe(container);
+    }
+    else {
+      resizeObserver.observe(document.body);
+    }
   }
   init() {
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 1200) {
-      this.width = windowWidth / 7;
+    if (this.container) {
+      const container = document.querySelector(`.${this.container}`);
+      const containerWidth = container === null || container === void 0 ? void 0 : container.clientWidth;
+      if (containerWidth < 1200) {
+        this.width = containerWidth / 7;
+      }
     }
+    else {
+      const windowWidth = window.innerWidth;
+      if (windowWidth < 1200) {
+        this.width = windowWidth / 7;
+      }
+    }
+  }
+  watchPropHandler(newValue) {
+    if (newValue !== this.container) { }
+    this.init();
   }
   componentDidLoad() {
     let direction;
     const options = {
-      el: this.container,
+      el: this.containerEl,
       gestureName: 'swipe',
-      onStart: () => {
-      },
+      onStart: () => { },
       onMove: (event) => {
         if (event.deltaX > 0) {
           direction = 'right';
@@ -53,9 +71,9 @@ export class MedCalendar {
   onMonthClick(type) {
     this.medClick.emit(type);
   }
-  onGraficoClick() {
+  /* private onGraficoClick() {
     this.medClick.emit('graph');
-  }
+  } */
   render() {
     const { dsColor, mes, ano } = this;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, { 'med-calendar': true }), style: { '--width': `${this.width}` } },
@@ -72,9 +90,7 @@ export class MedCalendar {
         h("div", { class: "header__right" },
           h("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() },
             h("med-type", { class: "choice__type" }, this.choice),
-            h("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })),
-          h("ion-button", { "ds-name": "tertiary", onClick: () => this.onGraficoClick() },
-            h("ion-icon", { class: "med-icon header__icon", name: "med-grafico" })))),
+            h("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })))),
       h("div", { class: "content" },
         h("div", { class: "content__header" },
           h("div", { class: "content__week-day" },
@@ -91,7 +107,7 @@ export class MedCalendar {
             h("med-type", { class: "content__week-type" }, "Sab")),
           h("div", { class: "content__week-day" },
             h("med-type", { class: "content__week-type" }, "Dom"))),
-        h("div", { class: "content__container", ref: (el) => { this.container = el; } },
+        h("div", { class: "content__container", ref: (el) => { this.containerEl = el; } },
           h("slot", null)))));
   }
   static get is() { return "med-calendar"; }
@@ -158,6 +174,23 @@ export class MedCalendar {
       },
       "attribute": "ano",
       "reflect": true
+    },
+    "container": {
+      "type": "string",
+      "mutable": true,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "container",
+      "reflect": true
     }
   }; }
   static get states() { return {
@@ -196,4 +229,8 @@ export class MedCalendar {
       }
     }]; }
   static get elementRef() { return "hostElement"; }
+  static get watchers() { return [{
+      "propName": "container",
+      "methodName": "watchPropHandler"
+    }]; }
 }
