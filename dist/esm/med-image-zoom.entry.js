@@ -13,27 +13,56 @@ const MedImageZoom = class {
      * TODO
      */
     this.imagens = [];
-    this.sliderOpts = {
-      zoom: {
-        maxRation: 5
-      },
-      intialSlide: 1,
-    };
+    this.defaultMaxRatio = 13;
+    this.aplicandoZoom = false;
+    this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
   }
-  zoom(zoomIn) {
+  getSliderOpts(maxRatio) {
+    const sliderOpts = {
+      zoom: {
+        maxRatio,
+      },
+      intialSlide: 0,
+    };
+    return sliderOpts;
+  }
+  async sleep(time = 500) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, time);
+    });
+  }
+  async zoomIn(increment = 3) {
+    if (this.aplicandoZoom) {
+      return;
+    }
+    this.aplicandoZoom = true;
     const zoom = this.slider.swiper.zoom;
-    if (zoomIn) {
-      zoom.in();
+    let maxRatio = zoom.currentScale + increment;
+    if (maxRatio > this.defaultMaxRatio) {
+      maxRatio = this.defaultMaxRatio;
     }
-    else {
-      zoom.out();
+    else if (maxRatio < 1) {
+      maxRatio = 1;
     }
+    this.sliderOpts = this.getSliderOpts(maxRatio);
+    await this.sleep(45);
+    zoom.in();
+    await this.sleep(45);
+    this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
+    this.aplicandoZoom = false;
+  }
+  async zoomOut() {
+    this.zoomIn(-3);
   }
   dismiss() {
     modalController.dismiss();
   }
   render() {
-    return (h(Host, { "from-stencil": true }, h("med-header", { class: "zoom-header" }, h("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" }, h("span", { slot: "title", innerHTML: this.titulo }), h("ion-button", { "ds-name": "tertiary", slot: "right", onClick: () => this.dismiss() }, h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })))), h("ion-content", { class: "zoom-content" }, h("ion-slides", { ref: (el) => { this.slider = el; el.options = this.sliderOpts; }, pager: this.imagens && this.imagens.length > 1 }, this.imagens.map((img) => h("ion-slide", null, h("span", { class: "marca-agua-superior" }, this.marcaAguaSuperior), h("div", { class: "swiper-zoom-container" }, h("img", { class: "zoom-imagem", src: img === null || img === void 0 ? void 0 : img.src }), h("div", { class: "zoom-legenda-container" }, h("div", { class: "zoom-legenda", innerHTML: img === null || img === void 0 ? void 0 : img.legenda })))))), h("span", { class: "marca-agua-inferior" }, this.marcaAguaInferior)), h("div", { class: "zoom-button-container" }, h("button", { class: "zoom-button", onClick: () => this.zoom(true) }, h("ion-icon", { class: "med-icon", name: "med-mais" })), h("button", { class: "zoom-button", onClick: () => this.zoom(false) }, h("ion-icon", { class: "med-icon", name: "med-menos" })), h("button", { class: "zoom-button zoom-button--close", onClick: () => this.dismiss() }, h("ion-icon", { class: "med-icon", name: "med-fechar" })))));
+    return (h(Host, { "from-stencil": true }, h("med-header", { class: "zoom-header" }, h("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" }, h("span", { slot: "title", innerHTML: this.titulo }), h("ion-button", { "ds-name": "tertiary", slot: "right", onClick: () => this.dismiss() }, h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })))), h("ion-content", { class: "zoom-content" }, h("ion-slides", { ref: (el) => {
+        this.slider = el;
+      }, options: this.sliderOpts, pager: this.imagens && this.imagens.length > 1 }, this.imagens.map((img) => (h("ion-slide", null, h("span", { class: "marca-agua-superior" }, this.marcaAguaSuperior), h("div", { class: "swiper-zoom-container" }, h("img", { class: "zoom-imagem", src: img === null || img === void 0 ? void 0 : img.src }), h("div", { class: "zoom-legenda-container" }, h("div", { class: "zoom-legenda", innerHTML: img === null || img === void 0 ? void 0 : img.legenda }))))))), h("span", { class: "marca-agua-inferior" }, this.marcaAguaInferior)), h("div", { class: "zoom-button-container" }, h("button", { class: "zoom-button", onClick: () => this.zoomIn() }, h("ion-icon", { class: "med-icon", name: "med-mais" })), h("button", { class: "zoom-button", onClick: () => this.zoomOut() }, h("ion-icon", { class: "med-icon", name: "med-menos" })), h("button", { class: "zoom-button zoom-button--close", onClick: () => this.dismiss() }, h("ion-icon", { class: "med-icon", name: "med-fechar" })))));
   }
 };
 MedImageZoom.style = medImageZoomCss;

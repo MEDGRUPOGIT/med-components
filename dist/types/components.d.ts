@@ -3488,7 +3488,8 @@ export namespace Components {
         /**
           * TODO
          */
-        "imagens": MedImageZoomItemInterface[] | any;
+        "imagens": | MedImageZoomItemInterface[]
+    | any;
         /**
           * TODO
          */
@@ -8769,7 +8770,8 @@ declare namespace LocalJSX {
         /**
           * TODO
          */
-        "imagens"?: MedImageZoomItemInterface[] | any;
+        "imagens"?: | MedImageZoomItemInterface[]
+    | any;
         /**
           * TODO
          */

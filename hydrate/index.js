@@ -16193,27 +16193,56 @@ class MedImageZoom {
      * TODO
      */
     this.imagens = [];
-    this.sliderOpts = {
-      zoom: {
-        maxRation: 5
-      },
-      intialSlide: 1,
-    };
+    this.defaultMaxRatio = 13;
+    this.aplicandoZoom = false;
+    this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
   }
-  zoom(zoomIn) {
+  getSliderOpts(maxRatio) {
+    const sliderOpts = {
+      zoom: {
+        maxRatio,
+      },
+      intialSlide: 0,
+    };
+    return sliderOpts;
+  }
+  async sleep(time = 500) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, time);
+    });
+  }
+  async zoomIn(increment = 3) {
+    if (this.aplicandoZoom) {
+      return;
+    }
+    this.aplicandoZoom = true;
     const zoom = this.slider.swiper.zoom;
-    if (zoomIn) {
-      zoom.in();
+    let maxRatio = zoom.currentScale + increment;
+    if (maxRatio > this.defaultMaxRatio) {
+      maxRatio = this.defaultMaxRatio;
     }
-    else {
-      zoom.out();
+    else if (maxRatio < 1) {
+      maxRatio = 1;
     }
+    this.sliderOpts = this.getSliderOpts(maxRatio);
+    await this.sleep(45);
+    zoom.in();
+    await this.sleep(45);
+    this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
+    this.aplicandoZoom = false;
+  }
+  async zoomOut() {
+    this.zoomIn(-3);
   }
   dismiss() {
     modalController.dismiss();
   }
   render() {
-    return (hAsync(Host, { "from-stencil": true }, hAsync("med-header", { class: "zoom-header" }, hAsync("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" }, hAsync("span", { slot: "title", innerHTML: this.titulo }), hAsync("ion-button", { "ds-name": "tertiary", slot: "right", onClick: () => this.dismiss() }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })))), hAsync("ion-content", { class: "zoom-content" }, hAsync("ion-slides", { ref: (el) => { this.slider = el; el.options = this.sliderOpts; }, pager: this.imagens && this.imagens.length > 1 }, this.imagens.map((img) => hAsync("ion-slide", null, hAsync("span", { class: "marca-agua-superior" }, this.marcaAguaSuperior), hAsync("div", { class: "swiper-zoom-container" }, hAsync("img", { class: "zoom-imagem", src: img === null || img === void 0 ? void 0 : img.src }), hAsync("div", { class: "zoom-legenda-container" }, hAsync("div", { class: "zoom-legenda", innerHTML: img === null || img === void 0 ? void 0 : img.legenda })))))), hAsync("span", { class: "marca-agua-inferior" }, this.marcaAguaInferior)), hAsync("div", { class: "zoom-button-container" }, hAsync("button", { class: "zoom-button", onClick: () => this.zoom(true) }, hAsync("ion-icon", { class: "med-icon", name: "med-mais" })), hAsync("button", { class: "zoom-button", onClick: () => this.zoom(false) }, hAsync("ion-icon", { class: "med-icon", name: "med-menos" })), hAsync("button", { class: "zoom-button zoom-button--close", onClick: () => this.dismiss() }, hAsync("ion-icon", { class: "med-icon", name: "med-fechar" })))));
+    return (hAsync(Host, { "from-stencil": true }, hAsync("med-header", { class: "zoom-header" }, hAsync("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" }, hAsync("span", { slot: "title", innerHTML: this.titulo }), hAsync("ion-button", { "ds-name": "tertiary", slot: "right", onClick: () => this.dismiss() }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })))), hAsync("ion-content", { class: "zoom-content" }, hAsync("ion-slides", { ref: (el) => {
+        this.slider = el;
+      }, options: this.sliderOpts, pager: this.imagens && this.imagens.length > 1 }, this.imagens.map((img) => (hAsync("ion-slide", null, hAsync("span", { class: "marca-agua-superior" }, this.marcaAguaSuperior), hAsync("div", { class: "swiper-zoom-container" }, hAsync("img", { class: "zoom-imagem", src: img === null || img === void 0 ? void 0 : img.src }), hAsync("div", { class: "zoom-legenda-container" }, hAsync("div", { class: "zoom-legenda", innerHTML: img === null || img === void 0 ? void 0 : img.legenda }))))))), hAsync("span", { class: "marca-agua-inferior" }, this.marcaAguaInferior)), hAsync("div", { class: "zoom-button-container" }, hAsync("button", { class: "zoom-button", onClick: () => this.zoomIn() }, hAsync("ion-icon", { class: "med-icon", name: "med-mais" })), hAsync("button", { class: "zoom-button", onClick: () => this.zoomOut() }, hAsync("ion-icon", { class: "med-icon", name: "med-menos" })), hAsync("button", { class: "zoom-button zoom-button--close", onClick: () => this.dismiss() }, hAsync("ion-icon", { class: "med-icon", name: "med-fechar" })))));
   }
   static get style() { return medImageZoomCss; }
   static get cmpMeta() { return {
@@ -16224,7 +16253,8 @@ class MedImageZoom {
       "marcaAguaSuperior": [1537, "marca-agua-superior"],
       "marcaAguaInferior": [1537, "marca-agua-inferior"],
       "titulo": [1537],
-      "slider": [32]
+      "slider": [32],
+      "sliderOpts": [32]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-25T17:38:59",
+  "timestamp": "2022-02-25T20:36:31",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -23241,7 +23241,7 @@
       "filePath": "./src/components/@medgrupo/core/med-download-button/med-download-button.tsx",
       "encapsulation": "shadow",
       "tag": "med-download-button",
-      "readme": "# med-download-button\r\n\r\n\r\n\r",
+      "readme": "# med-download-button\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -26723,7 +26723,7 @@
       "filePath": "./src/components/@medgrupo/compositions/med-semana/med-semana.tsx",
       "encapsulation": "scoped",
       "tag": "med-semana",
-      "readme": "# med-semana\r\n\r\n\r\n\r",
+      "readme": "# med-semana\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

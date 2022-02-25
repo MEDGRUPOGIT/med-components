@@ -1,4 +1,4 @@
-import { MedImageZoomItemInterface } from './med-image-zoom-interface';
+import { MedImageZoomItemInterface } from "./med-image-zoom-interface";
 export declare class MedImageZoom {
   /**
    * TODO
@@ -17,8 +17,23 @@ export declare class MedImageZoom {
    */
   titulo?: string;
   slider: any;
-  private sliderOpts;
-  zoom(zoomIn: boolean): void;
+  defaultMaxRatio: number;
+  aplicandoZoom: boolean;
+  sliderOpts: {
+    zoom: {
+      maxRatio: number;
+    };
+    intialSlide: number;
+  };
+  getSliderOpts(maxRatio: number): {
+    zoom: {
+      maxRatio: number;
+    };
+    intialSlide: number;
+  };
+  sleep(time?: number): Promise<void>;
+  zoomIn(increment?: number): Promise<void>;
+  zoomOut(): Promise<void>;
   dismiss(): void;
   render(): any;
 }
