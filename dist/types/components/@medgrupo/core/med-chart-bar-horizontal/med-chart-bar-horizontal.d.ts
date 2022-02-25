@@ -5,6 +5,14 @@ export declare class MedChartBarHorizontal {
     */
   dsColor?: MedColor;
   /**
+    * Define a variação de tamanho do componente.
+    */
+  dsSize?: 'md';
+  /**
+   * Define a visibilidade do label.
+   */
+  label: boolean;
+  /**
    * Define o valor do componente.
    */
   value: number;

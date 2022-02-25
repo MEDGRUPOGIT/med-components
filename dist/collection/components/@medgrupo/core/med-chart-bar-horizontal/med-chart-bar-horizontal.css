@@ -1,5 +1,5 @@
 :host {
-  --background: hsl(var(--med-color-neutral-1));
+  --track-background: hsl(var(--med-color-neutral-1));
   --progress-background: hsl(var(--med-color-brand-4));
   --label-color: hsl(var(--med-color-brand-4));
   --border-radius: 4px;
@@ -33,25 +33,15 @@
   top: 50%;
 }
 .med-chart-bar-horizontal__track {
-  background: var(--background);
+  background: var(--track-background);
 }
 .med-chart-bar-horizontal__label {
   --color: var(--label-color);
-  margin-left: 12px;
-}
-
-:host(.med-chart-bar-horizontal--full) {
-  --progress-background: hsl(var(--med-color-fb-success));
-  --label-color: hsl(var(--med-color-fb-success));
-}
-
-:host(.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__track {
-  border: 1px solid hsl(var(--med-color-brand-5));
-}
-
-:host(.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__progress {
-  background-image: linear-gradient(45deg, hsl(var(--med-color-brand-4)) 47.06%, hsl(var(--med-color-brand-5)) 47.06%, hsl(var(--med-color-brand-5)) 50%, hsl(var(--med-color-brand-4)) 50%, hsl(var(--med-color-brand-4)) 97.06%, hsl(var(--med-color-brand-5)) 97.06%, hsl(var(--med-color-brand-5)) 100%);
-  background-size: 24.04px 24.04px;
+  --font-size: 10px;
+  --font-weight: 600;
+  --line-height: 12px;
+  min-width: 40px;
+  text-align: right;
 }
 
 :host(.med-color) {
@@ -67,6 +57,37 @@
 :host(.med-color-feedback) {
   --progress-background: hsl(var(--med-color-feedback));
   --label-color: hsl(var(--med-color-feedback));
+}
+
+:host(.med-chart-bar-horizontal--md) {
+  --border-radius: 6px;
+  --height: 12px;
+}
+:host(.med-chart-bar-horizontal--md) .med-chart-bar-horizontal__label {
+  --font-size: 12px;
+  --font-weight: 600;
+  --line-height: 12px;
+  min-width: 48px;
+}
+
+:host(.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__progress {
+  background-image: linear-gradient(-45deg, hsl(var(--med-color-brand-4)) 50%, hsl(var(--med-color-neutral-2), 0.2) 50%, hsl(var(--med-color-neutral-2), 0.2) 75%, hsl(var(--med-color-brand-4)) 75%, hsl(var(--med-color-brand-4)) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%);
+  background-size: 24.04px 24.04px;
+}
+
+:host(.med-color.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__progress {
+  --label-color: hsl(var(--med-color-4));
+  background-image: linear-gradient(-45deg, hsl(var(--med-color-4)) 50%, hsl(var(--med-color-neutral-2), 0.2) 50%, hsl(var(--med-color-neutral-2), 0.2) 75%, hsl(var(--med-color-4)) 75%, hsl(var(--med-color-4)) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%);
+}
+
+:host(.med-color-neutral.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__progress {
+  --label-color: hsl(var(--med-color-neutral));
+  background-image: linear-gradient(-45deg, hsl(var(--med-color-neutral)) 50%, hsl(var(--med-color-neutral-2), 0.2) 50%, hsl(var(--med-color-neutral-2), 0.2) 75%, hsl(var(--med-color-neutral)) 75%, hsl(var(--med-color-neutral)) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%);
+}
+
+:host(.med-color-feedback.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__progress {
+  --label-color: hsl(var(--med-color-feedback));
+  background-image: linear-gradient(-45deg, hsl(var(--med-color-feedback)) 50%, hsl(var(--med-color-neutral-2), 0.2) 50%, hsl(var(--med-color-neutral-2), 0.2) 75%, hsl(var(--med-color-feedback)) 75%, hsl(var(--med-color-feedback)) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%);
 }
 
 @keyframes start {

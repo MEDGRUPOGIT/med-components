@@ -186,3 +186,48 @@
 ::slotted([slot=fixed]) {
   position: absolute;
 }
+
+:host {
+  --tp-scroll-color-content: hsl(var(--med-color-brand-3));
+  scroll-snap-type: both mandatory;
+  scroll-padding-top: 30px;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  color: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tp-scroll-color-content);
+}
+
+::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  border: 4px solid transparent;
+  border-radius: 7px;
+  box-shadow: inset 0 0 0 10px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.inner-scroll:hover::-webkit-scrollbar-thumb {
+  color: var(--tp-scroll-color-content);
+}

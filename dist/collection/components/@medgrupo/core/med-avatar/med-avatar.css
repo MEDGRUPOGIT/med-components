@@ -1,0 +1,92 @@
+:host {
+  --background: hsl(var(--med-color-brand-3));
+  --color: hsl(var(--med-color-contrast-fixed));
+  --size: 48px;
+  --font-weight: 600;
+  --font-size: 24px;
+  --line-height: 24px;
+}
+
+:host {
+  font-size: var(--font-size);
+  min-width: var(--size);
+  height: var(--size);
+  color: var(--color);
+  background: var(--background);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  border-radius: 500px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.med-avatar__image {
+  width: var(--size);
+  height: auto;
+  display: block;
+}
+
+:host(.med-color) {
+  --background: hsl(var(--med-color-3));
+  --color: hsl(var(--med-color-contrast-fixed));
+}
+
+:host(.med-color-neutral) {
+  --background: hsl(var(--med-color-neutral));
+  --color: hsl(var(--med-color-neutral-contrast));
+}
+
+:host(.med-color-feedback) {
+  --background: hsl(var(--med-color-feedback));
+  --color: hsl(var(--med-color-feedback-contrast));
+}
+
+:host(.med-avatar--xxs) {
+  --size: 24px;
+  --font-weight: 600;
+  --font-size: 16px;
+  --line-height: 16px;
+}
+
+:host(.med-avatar--xs) {
+  --size: 32px;
+  --font-weight: 600;
+  --font-size: 16px;
+  --line-height: 16px;
+}
+
+:host(.med-avatar--sm) {
+  --size: 40px;
+  --font-weight: 600;
+  --font-size: 24px;
+  --line-height: 24px;
+}
+
+:host(.med-avatar--md) {
+  --size: 56px;
+  --font-weight: 600;
+  --font-size: 32px;
+  --line-height: 32px;
+}
+
+:host(.med-avatar--lg) {
+  --size: 64px;
+  --font-weight: 600;
+  --font-size: 32px;
+  --line-height: 32px;
+}
+
+:host(.med-avatar--xl) {
+  --size: 72px;
+  --font-weight: 600;
+  --font-size: 48px;
+  --line-height: 48px;
+}
+
+:host(.med-avatar--xxl) {
+  --size: 80px;
+  --font-weight: 600;
+  --font-size: 48px;
+  --line-height: 48px;
+}

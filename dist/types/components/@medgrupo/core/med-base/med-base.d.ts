@@ -15,6 +15,10 @@ export declare class MedBase {
     */
   radius?: 's00' | 's02' | 's04' | 's08' | string;
   /**
+    * Define o gap entre slots.
+    */
+  gap?: 's00' | 's02' | 's04' | 's08' | string;
+  /**
    * Define a variação de padding vertical do componente.
    */
   spacingV?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;

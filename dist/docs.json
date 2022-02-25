@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-02-18T13:09:46",
+  "timestamp": "2022-02-25T17:38:59",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -20094,7 +20094,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-agrupador/med-agrupador.tsx",
+      "filePath": "./src/components/@medgrupo/core/med-agrupador/med-agrupador.tsx",
       "encapsulation": "shadow",
       "tag": "med-agrupador",
       "readme": "# med-agrupador\r\n\r\n\r\n\r",
@@ -20139,14 +20139,14 @@
           "required": false
         },
         {
-          "name": "texto1",
+          "name": "labelAlternativo",
           "type": "string",
           "mutable": false,
-          "attr": "texto-1",
+          "attr": "label-alternativo",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define o texto no estado active.",
           "docsTags": [],
-          "default": "`Expandir a lista`",
+          "default": "'Ocultar a lista'",
           "values": [
             {
               "type": "string"
@@ -20156,14 +20156,14 @@
           "required": false
         },
         {
-          "name": "texto2",
+          "name": "labelDefault",
           "type": "string",
           "mutable": false,
-          "attr": "texto-2",
+          "attr": "label-default",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define o texto no estado default.",
           "docsTags": [],
-          "default": "`Ocultar a lista`",
+          "default": "'Expandir a lista'",
           "values": [
             {
               "type": "string"
@@ -20188,13 +20188,7 @@
       ],
       "events": [],
       "listeners": [],
-      "styles": [
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Define a cor do componente."
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -21235,7 +21229,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-avatar/med-avatar.tsx",
+      "filePath": "./src/components/@medgrupo/core/med-avatar/med-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "med-avatar",
       "readme": "# med-avatar\r\n\r\n\r\n\r",
@@ -21316,7 +21310,7 @@
           "mutable": false,
           "attr": "image",
           "reflectToAttr": false,
-          "docs": "Define a imagem do componente.",
+          "docs": "Define a url da imagem, se existir.",
           "docsTags": [],
           "values": [
             {
@@ -21335,7 +21329,7 @@
           "mutable": false,
           "attr": "letter",
           "reflectToAttr": false,
-          "docs": "Define a imagem do componente.",
+          "docs": "Define a letra a ser exibida, se existir.",
           "docsTags": [],
           "values": [
             {
@@ -21352,18 +21346,7 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Define a cor de background do componente."
-        },
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Define a cor do texto."
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -21589,6 +21572,25 @@
           "required": false
         },
         {
+          "name": "gap",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "gap",
+          "reflectToAttr": true,
+          "docs": "Define o gap entre slots.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "radius",
           "type": "string | undefined",
           "mutable": false,
@@ -21716,6 +21718,23 @@
           "required": false
         },
         {
+          "name": "choice",
+          "type": "string",
+          "mutable": true,
+          "attr": "choice",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "'Semana'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "container",
           "type": "string | undefined",
           "mutable": true,
@@ -21732,6 +21751,23 @@
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "disable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disable",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
           "required": false
         },
         {
@@ -22211,6 +22247,43 @@
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"md\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "Define a variação de tamanho do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Define a visibilidade do label.",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
           "required": false
         },
         {
@@ -23165,7 +23238,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-download-button/med-download-button.tsx",
+      "filePath": "./src/components/@medgrupo/core/med-download-button/med-download-button.tsx",
       "encapsulation": "shadow",
       "tag": "med-download-button",
       "readme": "# med-download-button\r\n\r\n\r\n\r",
@@ -23179,7 +23252,7 @@
           "mutable": false,
           "attr": "downloaded",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define o estado do componente quando download tiver concluído.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -23196,7 +23269,7 @@
           "mutable": false,
           "attr": "downloading",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define o estado do componente durante o download.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -23232,7 +23305,7 @@
           "mutable": true,
           "attr": "initial",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define o estado inicial do componente.",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -23269,7 +23342,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO.",
+          "docs": "Emitido quando download for cancelado.",
           "docsTags": []
         },
         {
@@ -23278,7 +23351,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO.",
+          "docs": "Emitido quando download está concluído.",
           "docsTags": []
         }
       ],
@@ -23287,10 +23360,14 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "med-piechart",
         "med-semana"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "med-piechart": [
+          "med-download-button"
+        ],
         "med-semana": [
           "med-download-button"
         ]
@@ -25910,7 +25987,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-piechart/med-piechart.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-piechart/med-piechart.tsx",
       "encapsulation": "shadow",
       "tag": "med-piechart",
       "readme": "# med-piechart\r\n\r\n\r\n\r",
@@ -25919,12 +25996,29 @@
       "usage": {},
       "props": [
         {
-          "name": "active",
+          "name": "download",
           "type": "boolean",
           "mutable": false,
-          "attr": "active",
+          "attr": "download",
           "reflectToAttr": true,
-          "docs": "Define o estado do componente.",
+          "docs": "Define o estado de download do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "downloaded",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "downloaded",
+          "reflectToAttr": true,
+          "docs": "Define o estado de downloaded do componente.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25955,12 +26049,32 @@
           "required": false
         },
         {
-          "name": "text",
+          "name": "dsSize",
+          "type": "\"sm\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "Define a variação de tamanho do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "sm",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
           "type": "string | undefined",
           "mutable": false,
-          "attr": "text",
+          "attr": "label",
           "reflectToAttr": true,
-          "docs": "Define o texto do componente.",
+          "docs": "Define a porcentagem a ser mostrada.",
           "docsTags": [],
           "values": [
             {
@@ -25976,10 +26090,10 @@
         {
           "name": "value",
           "type": "number",
-          "mutable": false,
+          "mutable": true,
           "attr": "value",
           "reflectToAttr": true,
-          "docs": "Define o value do componente.",
+          "docs": "Define o valor do progresso do componente.",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -26000,7 +26114,7 @@
           },
           "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
-          "docs": "",
+          "docs": "Define o estado do componente programaticamente.",
           "docsTags": []
         }
       ],
@@ -26013,11 +26127,13 @@
         "med-semana"
       ],
       "dependencies": [
-        "med-type"
+        "med-type",
+        "med-download-button"
       ],
       "dependencyGraph": {
         "med-piechart": [
-          "med-type"
+          "med-type",
+          "med-download-button"
         ],
         "med-semana": [
           "med-piechart"
@@ -26618,7 +26734,7 @@
           "mutable": false,
           "attr": "active",
           "reflectToAttr": true,
-          "docs": "Define o estado do componente.",
+          "docs": "Define o estado active do componente.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -26639,6 +26755,26 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"sm\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "Define a variação de tamanho do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "sm",
               "type": "string"
             },
             {
@@ -26688,7 +26824,8 @@
           "med-download-button"
         ],
         "med-piechart": [
-          "med-type"
+          "med-type",
+          "med-download-button"
         ]
       }
     },

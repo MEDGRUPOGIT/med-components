@@ -26,11 +26,6 @@
   --backdrop-opacity: 0.8 !important;
 }
 
-.plt-electron.plt-desktop .med-datetime--modal .picker-wrapper {
-  left: unset;
-  width: 430px;
-}
-
 .tp-dialog {
   --background: hsl(var(--med-color-neutral-2)) !important;
   --border-radius: 16px !important;
@@ -189,36 +184,51 @@
   border-radius: 2px;
 }
 
-@media (pointer: fine) {
-  .med-scrollbar {
-    --style: thin;
-    --width: 7px;
-    --height: 7px;
-    --padding: 10px;
-    scrollbar-width: var(--style);
-    padding-bottom: var(--padding);
-  }
-
-  .med-scrollbar::-webkit-scrollbar {
-    height: var(--height);
-    width: var(--width);
-    display: block !important;
-  }
-
-  .med-scrollbar::-webkit-scrollbar-track {
-    background: hsl(var(--med-color-neutral-2));
-    border-radius: 10px;
-  }
-
-  .med-scrollbar::-webkit-scrollbar-thumb {
-    background: hsl(var(--med-color-neutral-3));
-    border-radius: 10px;
-  }
-
-  .med-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--med-color-neutral-4));
-  }
+.tp-scroll {
+  --tp-scroll-color: hsl(var(--med-color-brand-3));
+  scroll-snap-type: both mandatory;
+  scroll-padding-top: 30px;
+  scroll-behavior: smooth;
+  color: inherit;
 }
+.tp-scroll:hover::-webkit-scrollbar-thumb {
+  color: var(--tp-scroll-color);
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  color: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tp-scroll-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  border: 4px solid transparent;
+  border-radius: 7px;
+  box-shadow: inset 0 0 0 10px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
 .tp-sheet {
   --background: hsl(var(--med-color-neutral-2)) !important;
   --border-radius: 15px 15px 0 0 !important;
@@ -382,7 +392,6 @@
 
 .cp-card-assuntos-temas {
   align-items: center;
-  justify-content: space-between;
 }
 .cp-card-assuntos-temas__column {
   display: flex;

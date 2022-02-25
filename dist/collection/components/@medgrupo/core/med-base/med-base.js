@@ -8,10 +8,11 @@ import { generateMedColor } from '../../../../utils/med-theme';
  */
 export class MedBase {
   render() {
-    const { dsColor, radius, spacingV, spacingH } = this;
+    const { dsColor, radius, gap, spacingV, spacingH } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-base': true,
         [`med-base--radius-${radius}`]: radius !== undefined,
+        [`med-base--gap-${gap}`]: gap !== undefined,
         [`med-base--spacing-v-${spacingV}`]: spacingV !== undefined,
         [`med-base--spacing-h-${spacingH}`]: spacingH !== undefined,
       }) },
@@ -66,6 +67,23 @@ export class MedBase {
         "text": "Define a varia\u00E7\u00E3o de borde-radius do componente."
       },
       "attribute": "radius",
+      "reflect": true
+    },
+    "gap": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'s00' | 's02' | 's04' | 's08' | string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define o gap entre slots."
+      },
+      "attribute": "gap",
       "reflect": true
     },
     "spacingV": {

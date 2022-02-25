@@ -42,7 +42,7 @@ Default.argTypes = {
   },
   value: {
     defaultValue: '50',
-    control: { type: 'range', min: 0, max: 100, step: 1 },
+    control: { type: 'range', min: 0, max: 150, step: 1 },
     description: 'Define a porcentagem a ser mostrada.'
   },
   titulo: {

@@ -159,6 +159,7 @@ export const MedIcons = [
   'med-marcar',
   'med-medical-bag',
 
+  'med-memoriadeaula',
   'med-menos-circulo',
   'med-menos',
   'med-metricas',
@@ -171,6 +172,7 @@ export const MedIcons = [
   'med-naorespondida',
 
   'med-negativo',
+  'med-nopapo',
   'med-notasfiscais',
   'med-notes',
   'med-notificacao',

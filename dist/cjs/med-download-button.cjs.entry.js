@@ -1,0 +1,85 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const index = require('./index-bc2e4509.js');
+const medTheme = require('./med-theme-42add9fc.js');
+
+const medDownloadButtonCss = ":host{--color-1:hsl(var(--med-color-brand-4));--color-2:hsl(var(--med-color-neutral-2));--padding:5px}:host{cursor:pointer;padding:var(--padding);display:inline-block}.med-download-button__icon{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;width:15px;height:15px;border-radius:50%;background:transparent;-webkit-transition:background-color 0.7s, -webkit-transform 0.7s;transition:background-color 0.7s, -webkit-transform 0.7s;transition:transform 0.7s, background-color 0.7s;transition:transform 0.7s, background-color 0.7s, -webkit-transform 0.7s}.med-download-button__icon::after,.med-download-button__icon::before{content:\"\";position:absolute;-webkit-transition:background-color 0.7s, -webkit-transform 0.7s;transition:background-color 0.7s, -webkit-transform 0.7s;transition:transform 0.7s, background-color 0.7s;transition:transform 0.7s, background-color 0.7s, -webkit-transform 0.7s}.med-download-button__icon::after{width:1px;height:7px;background:var(--color-1)}.med-download-button__icon::before{width:4px;height:4px;border-bottom:1px solid var(--color-1);border-right:1px solid var(--color-1);-webkit-transform:rotate(45deg);transform:rotate(45deg)}.med-download-button__svg{width:auto;height:100%;-ms-flex-negative:0;flex-shrink:0}.med-download-button__circle{stroke-dashoffset:0;stroke:var(--color-2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none;-webkit-transition:stroke-dasharray 1s ease-in-out;transition:stroke-dasharray 1s ease-in-out;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);-webkit-transform-origin:18px 18px;transform-origin:18px 18px}.med-download-button__circle--value{stroke:var(--color-1);stroke-dasharray:100 100}:host(.med-color){--color-1:hsl(var(--med-color-4));--color-2:hsl(var(--med-color-2))}:host(.med-color-neutral){--color-1:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--color-1:hsl(var(--med-color-feedback))}:host(.med-download-button--downloading) .med-download-button__icon::after{background:transparent}:host(.med-download-button--downloading) .med-download-button__icon::before{-webkit-transform:rotate(0deg);transform:rotate(0deg);-webkit-transform-origin:center;transform-origin:center;width:5px;height:5px;border:0;background:var(--color-1);border-bottom:0;border-right:0}:host(.med-download-button--downloading) .med-download-button__circle--value{stroke-dasharray:var(--value) 100}:host(.med-download-button--downloaded) .med-download-button__icon{background:var(--color-1)}:host(.med-download-button--downloaded) .med-download-button__icon::after{background:var(--color-2)}:host(.med-download-button--downloaded) .med-download-button__icon::before{border-bottom:1px solid var(--color-2);border-right:1px solid var(--color-2)}:host(.med-download-button--downloaded) .med-download-button__icon__circle{-webkit-transform-origin:revert;transform-origin:revert}";
+
+const MedDownloadButton = class {
+  constructor(hostRef) {
+    index.registerInstance(this, hostRef);
+    this.medDownloaded = index.createEvent(this, "medDownloaded", 7);
+    this.medCancelar = index.createEvent(this, "medCancelar", 7);
+    /**
+      * Define o valor da progress bar do componente.
+      */
+    this.value = 0;
+    /**
+      * Define o estado do componente quando download tiver concluído.
+      */
+    this.downloaded = false;
+    /**
+      * Define o estado do componente durante o download.
+      */
+    this.downloading = false;
+    /**
+      * Define o estado inicial do componente.
+      */
+    this.initial = true;
+  }
+  downloadedChanged() {
+    this.medDownloaded.emit();
+  }
+  valueChanged() {
+    if (this.value !== 0 && this.value !== 100) {
+      this.initial = false;
+      this.downloaded = false;
+      this.downloading = true;
+    }
+    if (this.value === 0) {
+      this.initial = true;
+      this.downloaded = false;
+      this.downloading = false;
+    }
+    if (this.value === 100) {
+      this.downloaded = true;
+      this.downloading = false;
+      this.medDownloaded.emit();
+    }
+  }
+  toggle(event) {
+    event === null || event === void 0 ? void 0 : event.stopPropagation();
+    if (this.initial) {
+      this.initial = false;
+      if (this.value !== 100) {
+        this.downloaded = false;
+        this.downloading = true;
+      }
+      else if (this.value === 100) {
+        this.downloaded = true;
+        this.downloading = false;
+        this.medDownloaded.emit();
+      }
+    }
+    else {
+      this.medCancelar.emit();
+    }
+  }
+  render() {
+    const { dsColor, value, initial, downloading, downloaded } = this;
+    return (index.h(index.Host, { onClick: (event) => { this.toggle(event); }, class: medTheme.generateMedColor(dsColor, {
+        'med-download-button': true,
+        'med-download-button--downloading': downloading && !initial,
+        'med-download-button--downloaded': downloaded
+      }) }, index.h("div", { class: "med-download-button__icon" }, index.h("svg", { viewBox: "0 0 36 36", class: "med-download-button__svg" }, index.h("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle" }), index.h("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle med-download-button__circle--value", style: { '--value': `${value}` } })))));
+  }
+  static get watchers() { return {
+    "downloaded": ["downloadedChanged"],
+    "value": ["valueChanged"]
+  }; }
+};
+MedDownloadButton.style = medDownloadButtonCss;
+
+exports.med_download_button = MedDownloadButton;

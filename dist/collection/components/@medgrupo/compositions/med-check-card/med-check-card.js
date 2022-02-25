@@ -16,7 +16,7 @@ export class MedCheckCard {
         'med-check-card': true,
         'med-check-card--alert': alert,
       }) },
-      h("med-base", { class: "med-check-card__base" },
+      h("med-base", { "spacing-v": "s00", "spacing-h": "s00", class: "med-check-card__base" },
         h("div", { class: "med-check-card__input-container" },
           h("slot", { name: "input" })),
         h("div", { class: "med-check-card__container", onClick: () => this.onClick() },

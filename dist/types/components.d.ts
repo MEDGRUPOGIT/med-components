@@ -2945,13 +2945,13 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
-          * TODO.
+          * Define o texto no estado active.
          */
-        "texto1": string;
+        "labelAlternativo": string;
         /**
-          * TODO.
+          * Define o texto no estado default.
          */
-        "texto2": string;
+        "labelDefault": string;
         /**
           * Define o estado do componente programaticamente.
          */
@@ -3161,11 +3161,11 @@ export namespace Components {
          */
         "dsSize"?: 'xxs' | 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | 'xxl';
         /**
-          * Define a imagem do componente.
+          * Define a url da imagem, se existir.
          */
         "image"?: string;
         /**
-          * Define a imagem do componente.
+          * Define a letra a ser exibida, se existir.
          */
         "letter"?: string;
     }
@@ -3205,6 +3205,10 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
+          * Define o gap entre slots.
+         */
+        "gap"?: 's00' | 's02' | 's04' | 's08' | string;
+        /**
           * Define a variação de borde-radius do componente.
          */
         "radius"?: 's00' | 's02' | 's04' | 's08' | string;
@@ -3219,7 +3223,9 @@ export namespace Components {
     }
     interface MedCalendar {
         "ano"?: string;
+        "choice": string;
         "container"?: string;
+        "disable": boolean;
         "dsColor"?: MedColor;
         "mes"?: string;
     }
@@ -3284,6 +3290,14 @@ export namespace Components {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        /**
+          * Define a variação de tamanho do componente.
+         */
+        "dsSize"?: 'md';
+        /**
+          * Define a visibilidade do label.
+         */
+        "label": boolean;
         /**
           * Define o valor do componente.
          */
@@ -3408,11 +3422,11 @@ export namespace Components {
     }
     interface MedDownloadButton {
         /**
-          * TODO.
+          * Define o estado do componente quando download tiver concluído.
          */
         "downloaded": boolean;
         /**
-          * TODO.
+          * Define o estado do componente durante o download.
          */
         "downloading": boolean;
         /**
@@ -3420,7 +3434,7 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
-          * TODO.
+          * Define o estado inicial do componente.
          */
         "initial": boolean;
         /**
@@ -3794,20 +3808,31 @@ export namespace Components {
     }
     interface MedPiechart {
         /**
-          * Define o estado do componente.
+          * Define o estado de download do componente.
          */
-        "active": boolean;
+        "download": boolean;
+        /**
+          * Define o estado de downloaded do componente.
+         */
+        "downloaded": boolean;
         /**
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
         /**
-          * Define o texto do componente.
+          * Define a variação de tamanho do componente.
          */
-        "text"?: string;
+        "dsSize"?: 'sm';
+        /**
+          * Define a porcentagem a ser mostrada.
+         */
+        "label"?: string;
+        /**
+          * Define o estado do componente programaticamente.
+         */
         "toggle": (event?: Event | undefined) => Promise<void>;
         /**
-          * Define o value do componente.
+          * Define o valor do progresso do componente.
          */
         "value": number;
     }
@@ -3901,13 +3926,17 @@ export namespace Components {
     }
     interface MedSemana {
         /**
-          * Define o estado do componente.
+          * Define o estado active do componente.
          */
         "active": boolean;
         /**
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        /**
+          * Define a variação de tamanho do componente.
+         */
+        "dsSize"?: 'sm';
         /**
           * Define a skin do componente.
          */
@@ -8137,13 +8166,13 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
-          * TODO.
+          * Define o texto no estado active.
          */
-        "texto1"?: string;
+        "labelAlternativo"?: string;
         /**
-          * TODO.
+          * Define o texto no estado default.
          */
-        "texto2"?: string;
+        "labelDefault"?: string;
     }
     interface MedAlternativas {
         /**
@@ -8385,11 +8414,11 @@ declare namespace LocalJSX {
          */
         "dsSize"?: 'xxs' | 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | 'xxl';
         /**
-          * Define a imagem do componente.
+          * Define a url da imagem, se existir.
          */
         "image"?: string;
         /**
-          * Define a imagem do componente.
+          * Define a letra a ser exibida, se existir.
          */
         "letter"?: string;
     }
@@ -8437,6 +8466,10 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
+          * Define o gap entre slots.
+         */
+        "gap"?: 's00' | 's02' | 's04' | 's08' | string;
+        /**
           * Define a variação de borde-radius do componente.
          */
         "radius"?: 's00' | 's02' | 's04' | 's08' | string;
@@ -8451,7 +8484,9 @@ declare namespace LocalJSX {
     }
     interface MedCalendar {
         "ano"?: string;
+        "choice"?: string;
         "container"?: string;
+        "disable"?: boolean;
         "dsColor"?: MedColor;
         "mes"?: string;
         "onMedClick"?: (event: CustomEvent<any>) => void;
@@ -8518,6 +8553,14 @@ declare namespace LocalJSX {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        /**
+          * Define a variação de tamanho do componente.
+         */
+        "dsSize"?: 'md';
+        /**
+          * Define a visibilidade do label.
+         */
+        "label"?: boolean;
         /**
           * Define o valor do componente.
          */
@@ -8640,11 +8683,11 @@ declare namespace LocalJSX {
     }
     interface MedDownloadButton {
         /**
-          * TODO.
+          * Define o estado do componente quando download tiver concluído.
          */
         "downloaded"?: boolean;
         /**
-          * TODO.
+          * Define o estado do componente durante o download.
          */
         "downloading"?: boolean;
         /**
@@ -8652,15 +8695,15 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
-          * TODO.
+          * Define o estado inicial do componente.
          */
         "initial"?: boolean;
         /**
-          * TODO.
+          * Emitido quando download for cancelado.
          */
         "onMedCancelar"?: (event: CustomEvent<any>) => void;
         /**
-          * TODO.
+          * Emitido quando download está concluído.
          */
         "onMedDownloaded"?: (event: CustomEvent<any>) => void;
         /**
@@ -9058,19 +9101,27 @@ declare namespace LocalJSX {
     }
     interface MedPiechart {
         /**
-          * Define o estado do componente.
+          * Define o estado de download do componente.
          */
-        "active"?: boolean;
+        "download"?: boolean;
+        /**
+          * Define o estado de downloaded do componente.
+         */
+        "downloaded"?: boolean;
         /**
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
         /**
-          * Define o texto do componente.
+          * Define a variação de tamanho do componente.
          */
-        "text"?: string;
+        "dsSize"?: 'sm';
         /**
-          * Define o value do componente.
+          * Define a porcentagem a ser mostrada.
+         */
+        "label"?: string;
+        /**
+          * Define o valor do progresso do componente.
          */
         "value"?: number;
     }
@@ -9160,13 +9211,17 @@ declare namespace LocalJSX {
     }
     interface MedSemana {
         /**
-          * Define o estado do componente.
+          * Define o estado active do componente.
          */
         "active"?: boolean;
         /**
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        /**
+          * Define a variação de tamanho do componente.
+         */
+        "dsSize"?: 'sm';
         /**
           * Define a skin do componente.
          */

@@ -6,6 +6,7 @@ export declare class MedCalendar {
   mes?: string;
   ano?: string;
   container?: string;
+  disable: boolean;
   choice: string;
   width: number;
   medClick: EventEmitter;

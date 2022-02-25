@@ -30,7 +30,7 @@
 }
 .med-chart-categoria__chart {
   padding-top: 8px;
-  --background: var(--chart-track-background);
+  --track-background: var(--chart-track-background);
 }
 
 :host(.med-color) {

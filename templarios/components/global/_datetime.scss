@@ -36,12 +36,3 @@
     --backdrop-opacity: 0.8 !important;
   }
 }
-
-@include platform('desktop') {
-  .med-datetime--modal {
-    .picker-wrapper {
-      left: unset;
-      width: 430px;
-    }
-  }
-}

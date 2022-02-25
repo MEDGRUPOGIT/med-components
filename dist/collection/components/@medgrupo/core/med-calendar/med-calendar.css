@@ -66,6 +66,10 @@
   text-transform: none;
 }
 
+:host(.med-calendar--disable) .header__right .med-button {
+  pointer-events: none;
+}
+
 :host(.med-color) {
   --main-color: hsl(var(--med-color-3));
 }

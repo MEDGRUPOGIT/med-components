@@ -5,12 +5,18 @@ export declare class MedSemana {
     */
   dsColor?: MedColor;
   /**
-    * Define o estado do componente.
+    * Define a variação de tamanho do componente.
+    */
+  dsSize?: 'sm';
+  /**
+    * Define o estado active do componente.
     */
   active: boolean;
   /**
     * Define a skin do componente.
     */
   skin?: 'lista';
+  flipped: boolean;
+  private handleFlip;
   render(): any;
 }

@@ -1,9 +1,20 @@
 :host {
   --background: hsl(var(--med-color-neutral-2));
   --background-row: hsl(var(--med-color-neutral-2));
+  --semana-color: hsl(var(--med-color-neutral-10));
+  --semana-font-size: 10px;
+  --numero-color: hsl(var(--med-color-neutral-10));
+  --numero-font-size: 16px;
+  --semana-back-color: hsl(var(--med-color-neutral-10));
+  --semana-back-font-size: 10px;
+  --description-color: hsl(var(--med-color-neutral-10));
+  --description-font-size: 14px;
+  --tempo-color: hsl(var(--med-color-neutral-10));
+  --tempo-font-size: 12px;
+  --button-flip-color: hsl(var(--med-color-brand-4));
 }
 
-:host(.med-semana) {
+:host {
   background: var(--background);
   padding: 8px;
   border-radius: 8px 31px 31px 8px;
@@ -19,36 +30,80 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  position: relative;
 }
-.med-semana__text {
-  display: block;
-  text-align: left;
+.med-semana__back {
+  --font-size: var(--semana-back-font-size);
+  --line-height: 12px;
+  --font-weight: 400;
+  --color: var(--semana-back-color);
 }
-.med-semana__icon {
+.med-semana__text-animate {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.med-semana__text-animate--default {
+  transition: transform 0.6s ease;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.med-semana__text-animate--back {
+  transition: transform 0.6s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+}
+.med-semana__text-animate--flipped.med-semana__text-animate--default {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+}
+.med-semana__text-animate--flipped.med-semana__text-animate--back {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.med-semana__semana {
+  --font-size: var(--semana-font-size);
+  --line-height: 12px;
+  --font-weight: 400;
+  --color: var(--semana-color);
+}
+.med-semana__numero {
+  --font-size: var(--numero-font-size);
+  --line-height: 16px;
+  --font-weight: 600;
+  --color: var(--numero-color);
+}
+.med-semana__button-flip {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border: 1px solid hsl(var(--med-color-brand-4));
+  border: 1px solid var(--button-flip-color);
+  position: relative;
+  margin-top: 4px;
 }
-.med-semana__icon::after, .med-semana__icon::before {
+.med-semana__button-flip::after, .med-semana__button-flip::before {
   content: "";
   position: absolute;
   width: 7px;
   height: 1px;
-  background: hsl(var(--med-color-brand-4));
+  background: var(--button-flip-color);
 }
-.med-semana__icon::before {
+.med-semana__button-flip::before {
   transform: rotate(90deg);
   transition: transform 0.7s;
 }
+.med-semana__button-flip--active::before {
+  transform: rotate(0deg);
+}
 .med-semana__chart-container {
   display: flex;
-}
-.med-semana__chart {
-  --stroke-background: hsl(var(--med-color-neutral-3));
 }
 .med-semana__chart:not(:last-child) {
   margin-right: 8px;
@@ -58,116 +113,52 @@
   --padding: 0;
 }
 
-:host(.med-color) .med-semana__icon {
-  border-color: hsl(var(--med-color-4));
-}
-:host(.med-color) .med-semana__icon::after, :host(.med-color) .med-semana__icon::before {
-  background: hsl(var(--med-color-4));
+:host(.med-color) {
+  --button-flip-color: hsl(var(--med-color-4));
 }
 
-:host(.med-color-neutral) .med-semana__icon {
-  border-color: hsl(var(--med-color-neutral));
-}
-:host(.med-color-neutral) .med-semana__icon::after, :host(.med-color-neutral) .med-semana__icon::before {
-  background: hsl(var(--med-color-neutral));
+:host(.med-color-neutral) {
+  --button-flip-color: hsl(var(--med-color-neutral));
 }
 
-:host(.med-color-feedback) .med-semana__icon {
-  border-color: hsl(var(--med-color-feedback));
-}
-:host(.med-color-feedback) .med-semana__icon::after, :host(.med-color-feedback) .med-semana__icon::before {
-  background: hsl(var(--med-color-feedback));
+:host(.med-color-feedback) {
+  --button-flip-color: hsl(var(--med-color-feedback));
 }
 
 :host(.med-semana--active) {
-  --background: hsl(var(--med-color-neutral-3));
-}
-:host(.med-semana--active) .med-semana__chart {
-  --stroke-background: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-brand-1));
 }
 
-:host(.med-color.med-semana--active) {
+:host(.med-semana--active.med-color) {
   --background: hsl(var(--med-color-1));
+  --semana-color: hsl(var(--med-color-neutral-10));
+  --numero-color: hsl(var(--med-color-neutral-10));
+  --semana-back-color: hsl(var(--med-color-neutral-10));
+}
+:host(.med-semana--active.med-color) .med-semana__chart {
+  --text-color-front: hsl(var(--med-color-neutral-10));
 }
 
 :host(.med-semana--active.med-color-neutral) {
   --background: hsl(var(--med-color-neutral));
+  --semana-color: hsl(var(--med-color-neutral-contrast));
+  --numero-color: hsl(var(--med-color-neutral-contrast));
+  --semana-back-color: hsl(var(--med-color-neutral-1));
+  --button-flip-color: hsl(var(--med-color-neutral-contrast));
+}
+:host(.med-semana--active.med-color-neutral) .med-semana__chart {
+  --text-color-front: hsl(var(--med-color-neutral-contrast));
 }
 
 :host(.med-semana--active.med-color-feedback) {
   --background: hsl(var(--med-color-feedback));
+  --semana-color: hsl(var(--med-color-feedback-contrast));
+  --numero-color: hsl(var(--med-color-feedback-contrast));
+  --semana-back-color: hsl(var(--med-color-neutral-1));
+  --button-flip-color: hsl(var(--med-color-feedback-contrast));
 }
-
-:host(.med-semana--skin-lista) {
-  --background: none;
-  flex-direction: column;
-  justify-content: start;
-  padding: 0;
-  max-width: auto;
-}
-:host(.med-semana--skin-lista) .med-semana__heading-container {
-  flex-direction: row;
-  cursor: initial;
-}
-:host(.med-semana--skin-lista) .med-semana__text-container {
-  display: flex;
-  align-items: baseline;
-  margin: 8px;
-}
-:host(.med-semana--skin-lista) .med-semana__text {
-  text-transform: uppercase;
-}
-:host(.med-semana--skin-lista) .med-semana__text--number {
-  margin: 0 8px;
-}
-:host(.med-semana--skin-lista) .med-semana__week-container {
-  display: flex;
-  margin-left: 4px;
-}
-:host(.med-semana--skin-lista) .med-semana__auxiliar {
-  margin-right: 4px;
-}
-:host(.med-semana--skin-lista) .med-semana__chart-container {
-  flex-direction: column;
-  overflow-x: scroll;
-}
-:host(.med-semana--skin-lista) .med-semana__chart-row {
-  display: flex;
-  width: 100%;
-  height: 60px;
-  padding: 8px;
-  border-radius: 31px 8px 8px 31px;
-  background: var(--background-row);
-  cursor: pointer;
-}
-:host(.med-semana--skin-lista) .med-semana__chart-row:not(:last-child) {
-  margin-bottom: 8px;
-}
-:host(.med-semana--skin-lista) .med-semana__description {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  line-height: 1;
-  padding: 0 16px 0 8px;
-  max-height: 48px;
-  min-width: 268px;
-  text-align: left;
-}
-
-:host(.med-semana--skin-lista.med-semana--active) {
-  --background: none;
-}
-
-:host(.med-color.med-semana--active.med-semana--skin-lista) {
-  --background-row: hsl(var(--med-color-1));
-}
-
-:host(.med-semana--active.med-color-neutral.med-semana--skin-lista) {
-  --background-row: hsl(var(--med-color-neutral));
-}
-
-:host(.med-semana--active.med-color-feedback.med-semana--skin-lista) {
-  --background-row: hsl(var(--med-color-feedback));
+:host(.med-semana--active.med-color-feedback) .med-semana__chart {
+  --text-color-front: hsl(var(--med-color-feedback-contrast));
 }
 
 :host(.med-semana--skin-lista) {
@@ -216,14 +207,32 @@
   margin-bottom: 8px;
 }
 :host(.med-semana--skin-lista) .med-semana__description {
+  --font-size: var(--description-font-size);
+  --line-height: 16px;
+  --font-weight: 400;
+  --color: var(--description-color);
   display: flex;
   align-items: center;
-  font-size: 14px;
-  line-height: 1;
   padding: 0 16px 0 8px;
   max-height: 48px;
   min-width: 268px;
   text-align: left;
+}
+:host(.med-semana--skin-lista) .med-semana__tempo-container {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+:host(.med-semana--skin-lista) .med-semana__download-button {
+  --padding: 5px 0 5px 5px;
+}
+:host(.med-semana--skin-lista) .med-semana__tempo {
+  --font-size: var(--tempo-font-size);
+  --line-height: 12px;
+  --font-weight: 400;
+  --color: var(--tempo-color);
 }
 
 :host(.med-semana--skin-lista.med-semana--active) {

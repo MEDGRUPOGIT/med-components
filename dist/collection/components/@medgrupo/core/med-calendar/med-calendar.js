@@ -3,6 +3,7 @@ import { createGesture } from '../../../../utils/gesture';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCalendar {
   constructor() {
+    this.disable = false;
     this.choice = 'Semana';
     this.width = 166;
   }
@@ -75,8 +76,11 @@ export class MedCalendar {
     this.medClick.emit('graph');
   } */
   render() {
-    const { dsColor, mes, ano } = this;
-    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, { 'med-calendar': true }), style: { '--width': `${this.width}` } },
+    const { dsColor, mes, ano, disable } = this;
+    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+        'med-calendar': true,
+        'med-calendar--disable': disable,
+      }), style: { '--width': `${this.width}` } },
       h("div", { class: "header" },
         h("div", { class: "header__left" },
           h("ion-button", { "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') },
@@ -191,10 +195,45 @@ export class MedCalendar {
       },
       "attribute": "container",
       "reflect": true
+    },
+    "disable": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "disable",
+      "reflect": true,
+      "defaultValue": "false"
+    },
+    "choice": {
+      "type": "string",
+      "mutable": true,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "choice",
+      "reflect": true,
+      "defaultValue": "'Semana'"
     }
   }; }
   static get states() { return {
-    "choice": {},
     "width": {}
   }; }
   static get events() { return [{
