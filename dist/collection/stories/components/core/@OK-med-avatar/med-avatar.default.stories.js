@@ -41,18 +41,19 @@ Default.argTypes = {
     },
   },
   dsSize: {
-    options: [undefined, 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
+    options: ['xxs', 'xs', 'sm', 'base', 'md', 'lg', 'xl', 'xxl'],
     control: { type: 'radio'},
+    defaultValue: 'base',
     description: "Define a variação de tamanho componente.",
     table: {
-      type:  { summary: 'xxs | xs | sm | md | lg | xl | xxl' },
-      defaultValue: { summary: 'undefined' },
+      type:  { summary: 'xxs | xs | sm | base | md | lg | xl | xxl' },
+      defaultValue: { summary: 'base' },
     },
   },
   image: {
     control: { type: 'text' },
     description: 'Define a url da imagem, se existir.',
-    defaultValue: 'static/media/src/stories/assets/image-test.png',
+    defaultValue: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png',
     table: {
       type:  { summary: 'string' },
       defaultValue: { summary: 'undefined' },

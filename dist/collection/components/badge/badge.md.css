@@ -65,19 +65,19 @@
   --background: hsl(var(--med-color-brand-3));
   --color: hsl(var(--med-color-contrast-fixed));
   --padding-bottom: 0;
-  --padding-end: var(--med-spacing-inline-base);
-  --padding-start: var(--med-spacing-inline-base);
+  --padding-end: 8px;
+  --padding-start: 8px;
   --padding-top: 0;
   --border-color: hsl(var(--med-color-brand-3));
 }
 
 :host(.med-badge) {
-  font-size: var(--med-font-size-xxs);
-  font-weight: var(--med-font-weight-medium);
-  line-height: var(--med-line-height-compressed);
-  border-radius: var(--med-border-radius-pill);
+  font-size: 10x;
+  line-height: 12px;
+  font-weight: 600;
+  border-radius: 4px;
   border-color: var(--border-color);
-  border-width: var(--med-border-width-hairline);
+  border-width: 1px;
   font-family: inherit;
   min-width: auto;
   border-style: solid;
@@ -86,44 +86,20 @@
   align-items: center;
 }
 
-:host(.med-badge--xxs) {
-  --padding-start: var(--med-spacing-inline-xxxs);
-  --padding-end: var(--med-spacing-inline-xxxs);
-  font-size: var(--med-font-size-nano);
-  font-weight: var(--font-weight-light);
-  height: 16px;
-}
-
-:host(.med-badge--xs) {
-  --padding-start: var(--med-spacing-inline-xxxs);
-  --padding-end: var(--med-spacing-inline-xxxs);
-  font-size: var(--med-font-size-nano);
-  font-weight: var(--med-font-weight-medium);
-  height: 16px;
-}
-
 :host(.med-badge--sm) {
-  --padding-start: var(--med-spacing-inline-base);
-  --padding-end: var(--med-spacing-inline-base);
-  font-size: var(--med-font-size-nano);
-  font-weight: var(--med-font-weight-medium);
+  --padding-end: 8px;
+  --padding-start: 8px;
+  font-size: 10x;
+  line-height: 12px;
   height: 24px;
 }
 
 :host(.med-badge--md) {
-  --padding-start: var(--med-spacing-inline-base);
-  --padding-end: var(--med-spacing-inline-base);
-  font-size: var(--med-font-size-xxs);
-  font-weight: var(--med-font-weight-medium);
+  --padding-end: 8px;
+  --padding-start: 8px;
+  font-size: 14px;
+  line-height: 16px;
   height: 32px;
-}
-
-:host(.med-badge--lg) {
-  --padding-start: var(--med-spacing-inline-xxs);
-  --padding-end: var(--med-spacing-inline-xxs);
-  font-size: var(--med-font-size-xs);
-  font-weight: var(--med-font-weight-medium);
-  height: 40px;
 }
 
 :host(.med-color) {
@@ -144,25 +120,25 @@
   color: hsl(var(--med-color-feedback-contrast));
 }
 
-:host(.med-badge--secondary) {
+:host(.med-badge--outline) {
   border-style: solid;
   background: transparent;
   color: hsl(var(--med-color-brand-3));
 }
 
-:host(.med-color.med-badge--secondary) {
+:host(.med-color.med-badge--outline) {
   --border-color: hsl(var(--med-color-3));
   background: transparent;
   color: hsl(var(--med-color-3));
 }
 
-:host(.med-color-neutral.med-badge--secondary) {
+:host(.med-color-neutral.med-badge--outline) {
   --border-color: hsl(var(--med-color-neutral));
   background: transparent;
   color: hsl(var(--med-color-neutral));
 }
 
-:host(.med-color-feedback.med-badge--secondary) {
+:host(.med-color-feedback.med-badge--outline) {
   --border-color: hsl(var(--med-color-feedback));
   background: transparent;
   color: hsl(var(--med-color-feedback));

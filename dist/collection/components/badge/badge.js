@@ -6,12 +6,12 @@ import { generateMedColor } from '../../utils/med-theme';
  */
 export class Badge {
   render() {
-    const { dsColor, dsName, dsSize } = this;
+    const { dsColor, fill, dsSize } = this;
     const mode = getIonMode(this);
     return (h(Host, { class: generateMedColor(dsColor, {
         [mode]: true,
         'med-badge': true,
-        [`med-badge--${dsName}`]: dsName !== undefined,
+        [`med-badge--${fill}`]: fill !== undefined,
         [`med-badge--${dsSize}`]: dsSize !== undefined,
       }) },
       h("slot", null)));
@@ -49,12 +49,12 @@ export class Badge {
       "attribute": "ds-color",
       "reflect": true
     },
-    "dsName": {
+    "fill": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'secondary'",
-        "resolved": "\"secondary\" | undefined",
+        "original": "'outline'",
+        "resolved": "\"outline\" | undefined",
         "references": {}
       },
       "required": false,
@@ -63,15 +63,15 @@ export class Badge {
         "tags": [],
         "text": "Define a varia\u00E7\u00E3o do componente."
       },
-      "attribute": "ds-name",
+      "attribute": "fill",
       "reflect": true
     },
     "dsSize": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | undefined",
+        "original": "'sm' | 'md'",
+        "resolved": "\"md\" | \"sm\" | undefined",
         "references": {}
       },
       "required": false,

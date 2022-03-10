@@ -1,10 +1,11 @@
-import { MedColor } from '../../../../interface';
 export declare class MedAddCard {
   /**
-    * Define a cor do componente.
+    * Define o titulo.
     */
-  dsColor?: MedColor;
   titulo?: string;
+  /**
+    * Define o icone.
+    */
   iconName?: string;
   render(): any;
 }

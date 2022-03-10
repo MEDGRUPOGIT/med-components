@@ -17,7 +17,7 @@
 
     @include iphone-x-range {
       padding: 24px 24px var(--ion-safe-area-bottom, 24px) 24px;
-      padding-bottom: calc(24px + 3vh);
+      padding-bottom: calc(24px + 3vh) !important;
     }
 
     .ion-page {

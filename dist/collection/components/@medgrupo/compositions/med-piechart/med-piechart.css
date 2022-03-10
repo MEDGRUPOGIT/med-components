@@ -1,6 +1,6 @@
 :host {
   --stroke: hsl(var(--med-color-brand-4));
-  --stroke-background: hsl(var(--med-color-neutral-1));
+  --stroke-background: hsl(var(--med-color-neutral-2));
   --front-background: transparent;
   --back-background: hsl(var(--med-color-neutral-3));
   --text-color-front: hsl(var(--med-color-neutral-10));

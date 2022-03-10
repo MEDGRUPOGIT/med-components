@@ -11,15 +11,15 @@ export declare class MedChartBar {
     */
   dsColor?: MedColor;
   /**
-    * Define a valor do componente.
+    * Define a valor da %(porcentagem) do componente.
     */
   value: number;
   /**
-    * Define o height em px do componente.
+    * Define a valor da altura do componente.
     */
   height: number;
   /**
-    * Define o width em px do componente.
+    * Define a valor da largura do componente.
     */
   width: number;
   componentDidLoad(): void;

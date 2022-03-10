@@ -247,7 +247,7 @@
 @media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait), (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait), (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait), (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait), (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
   .tp-sheet .modal-wrapper {
     padding: 24px 24px var(--ion-safe-area-bottom, 24px) 24px;
-    padding-bottom: calc(24px + 3vh);
+    padding-bottom: calc(24px + 3vh) !important;
   }
 }
 .tp-sheet .modal-wrapper .ion-page {
@@ -436,7 +436,6 @@
 .cp-chart-bar__legenda {
   display: flex;
   align-items: center;
-  padding-left: 16px;
 }
 .cp-chart-bar__label {
   display: flex;

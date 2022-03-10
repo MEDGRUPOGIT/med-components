@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColors } from "../../../../../global/templarios/color.enum";
 
 export default {
-  title: 'Components/Team/Questões/Cartão Resposta/Item',
+  title: 'Components/Core/Item',
   decorators: [withDesign],
 };
 

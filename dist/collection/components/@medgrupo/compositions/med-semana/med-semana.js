@@ -1,60 +1,63 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
-import { generateMedColor } from '../../../../utils/med-theme';
+import { generateMedColor } from "../../../../utils/med-theme";
 export class MedSemana {
   constructor() {
     /**
-      * Define o estado active do componente.
-      */
+     * Define o estado active do componente.
+     */
     this.active = false;
     this.flipped = false;
   }
-  ;
   handleFlip() {
     this.flipped = !this.flipped;
   }
-  render() {
-    const { dsColor, active, skin } = this;
-    let textContainerEl;
-    let piechartContainerEl;
-    textContainerEl = (h("div", { class: "med-semana__heading-container" },
-      h("div", { class: "med-semana__text-container" },
-        h("div", { class: `med-semana__text-animate med-semana__text-animate--default ${this.flipped ? 'med-semana__text-animate--flipped' : ''}` },
-          h("med-type", { class: "med-semana__semana" }, "Semana"),
-          h("med-type", { class: "med-semana__numero" }, "01")),
-        h("div", { class: `med-semana__text-animate med-semana__text-animate--back ${this.flipped ? 'med-semana__text-animate--flipped' : ''}` },
-          h("med-type", { class: "med-semana__back" }, "16/08"),
-          h("med-type", { class: "med-semana__back" }, "24/08"))),
-      h("div", { class: `med-semana__button-flip ${this.flipped ? 'med-semana__button-flip--active' : ''}`, role: "button", onClick: () => this.handleFlip() })));
-    piechartContainerEl = (h("div", { class: "med-semana__chart-container med-scrollbar" },
-      h("med-piechart", { class: "med-semana__chart", "ds-color": dsColor, label: "nef 01", value: 25, download: this.flipped }),
-      h("med-piechart", { class: "med-semana__chart", "ds-color": dsColor, label: "nef 01", value: 75, download: this.flipped, downloaded: true })));
-    if (skin) {
-      textContainerEl = (h("div", { class: "med-semana__heading-container" },
+  createTextContainerEl(content, skin) {
+    if (skin === "lista") {
+      return (h("div", { class: "med-semana__heading-container" },
         h("div", { class: "med-semana__text-container" },
-          h("med-type", { class: "med-semana__text" }, "Semana"),
-          h("med-type", { class: "med-semana__text med-semana__text--number" }, "01"),
+          h("med-type", { class: "med-semana__text" }, content === null || content === void 0 ? void 0 : content.Title),
+          h("med-type", { class: "med-semana__text med-semana__text--number" }, content === null || content === void 0 ? void 0 : content.Numero),
           h("div", { class: "med-semana__week-container" },
             h("med-type", { class: "med-semana__auxiliar" }, "De"),
-            h("med-type", { class: "med-semana__auxiliar" }, "24/08"),
+            h("med-type", { class: "med-semana__auxiliar" }, content === null || content === void 0 ? void 0 : content.DataInicio),
             h("med-type", { class: "med-semana__auxiliar" }, "at\u00E9"),
-            h("med-type", { class: "med-semana__auxiliar" }, "24/08")))));
-      piechartContainerEl = (h("div", { class: "med-semana__chart-container med-scrollbar" },
-        h("div", { class: "med-semana__chart-row" },
-          h("med-piechart", { class: "med-semana__chart", "ds-color": dsColor, label: "nef 01", value: 25 }),
-          h("med-type", { class: "med-semana__description" }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies tortor a pharetra rutrum."),
-          h("div", { class: "med-semana__tempo-container" },
-            h("med-type", { class: "med-semana__tempo" }, "2h30"),
-            h("med-download-button", { class: "med-semana__download-button", "ds-color": dsColor }))),
-        h("div", { class: "med-semana__chart-row" },
-          h("med-piechart", { class: "med-semana__chart", "ds-color": dsColor, label: "nef 01", value: 75 }),
-          h("med-type", { class: "med-semana__description" }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies tortor a pharetra rutrum."),
-          h("div", { class: "med-semana__tempo-container" },
-            h("med-type", { class: "med-semana__tempo" }, "2h30"),
-            h("med-download-button", { class: "med-semana__download-button", "ds-color": dsColor })))));
+            h("med-type", { class: "med-semana__auxiliar" }, content === null || content === void 0 ? void 0 : content.DataFim)))));
     }
+    else {
+      return (h("div", { class: "med-semana__heading-container" },
+        h("div", { class: "med-semana__text-container" },
+          h("div", { class: `med-semana__text-animate med-semana__text-animate--default ${this.flipped ? "med-semana__text-animate--flipped" : ""}` },
+            h("med-type", { class: "med-semana__semana" }, content === null || content === void 0 ? void 0 : content.Title),
+            h("med-type", { class: "med-semana__numero" }, content === null || content === void 0 ? void 0 : content.Numero)),
+          h("div", { class: `med-semana__text-animate med-semana__text-animate--back ${this.flipped ? "med-semana__text-animate--flipped" : ""}` },
+            h("med-type", { class: "med-semana__back" }, content === null || content === void 0 ? void 0 : content.DataInicio),
+            h("med-type", { class: "med-semana__back" }, content === null || content === void 0 ? void 0 : content.DataFim))),
+        h("div", { class: `med-semana__button-flip ${this.flipped ? "med-semana__button-flip--active" : ""}`, role: "button", onClick: () => this.handleFlip() })));
+    }
+  }
+  createPieChartEl(Itens, skin) {
+    console.log('itens', Itens);
+    if (skin === "lista") {
+      return (h("div", { class: "med-semana__chart-container tp-scrollbar" }, Itens === null || Itens === void 0 ? void 0 : Itens.map((item, index) => (h("div", { class: "med-semana__chart-row" },
+        h("med-piechart", { class: "med-semana__chart", "ds-color": this.dsColor, label: item.Nome, value: item.PercentLido, "download-progress": item.DownloadProgress, downloaded: item.Downloaded, download: this.flipped, index: index, identification: item.Id, "hide-download": true }),
+        h("med-type", { class: "med-semana__description" }, item.Descricao),
+        h("div", { class: "med-semana__tempo-container" },
+          h("med-type", { class: "med-semana__tempo" }, item === null || item === void 0 ? void 0 : item.Time),
+          h("med-download-button", { class: "med-semana__download-button", "ds-color": this.dsColor, value: item.DownloadProgress, downloaded: item.Downloaded, index: index, identification: item.Id })))))));
+    }
+    else {
+      return (h("div", { class: "med-semana__chart-container tp-scrollbar" }, Itens === null || Itens === void 0 ? void 0 : Itens.map((item) => (h("med-piechart", { class: "med-semana__chart", "ds-color": this.dsColor, label: item.Nome, value: item.PercentLido, "download-progress": item.DownloadProgress, downloaded: item.Downloaded, download: this.flipped })))));
+    }
+  }
+  render() {
+    const { dsColor, active, skin, content } = this;
+    let textContainerEl;
+    let piechartContainerEl;
+    textContainerEl = this.createTextContainerEl(content, skin);
+    piechartContainerEl = this.createPieChartEl(content.Itens, skin);
     return (h(Host, { class: generateMedColor(dsColor, {
-        'med-semana': true,
-        'med-semana--active': active,
+        "med-semana": true,
+        "med-semana--active": active,
         [`med-semana--skin-${skin}`]: skin !== undefined,
       }) },
       textContainerEl,
@@ -95,7 +98,7 @@ export class MedSemana {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'sm'",
+        "original": "\"sm\"",
         "resolved": "\"sm\" | undefined",
         "references": {}
       },
@@ -130,7 +133,7 @@ export class MedSemana {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'lista'",
+        "original": "\"lista\"",
         "resolved": "\"lista\" | undefined",
         "references": {}
       },
@@ -142,6 +145,26 @@ export class MedSemana {
       },
       "attribute": "skin",
       "reflect": true
+    },
+    "content": {
+      "type": "unknown",
+      "mutable": false,
+      "complexType": {
+        "original": "MedSemanaInterface",
+        "resolved": "MedSemanaInterface",
+        "references": {
+          "MedSemanaInterface": {
+            "location": "import",
+            "path": "./med-semana.interface"
+          }
+        }
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o conteudo da semana."
+      }
     }
   }; }
   static get states() { return {

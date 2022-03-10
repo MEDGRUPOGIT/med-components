@@ -2,6 +2,9 @@ import { Component, Host, h, Prop, Event } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedCheckCard {
   constructor() {
+    /**
+      * Define o estado.
+      */
     this.alert = false;
   }
   onClick() {
@@ -21,27 +24,28 @@ export class MedCheckCard {
           h("slot", { name: "input" })),
         h("div", { class: "med-check-card__container", onClick: () => this.onClick() },
           h("div", { class: "med-check-card__text-container" },
-            h("med-type", { token: "p16xb" }, titulo),
-            h("div", { class: "med-check-card__info-container" },
-              h("div", { class: "med-check-card__container-fix" },
-                h("ion-icon", { class: "med-check-card__icon med-icon med-icon--xs", name: iconName }),
-                h("med-type", { class: "med-check-card__subtitulo", token: "p12xb" }, categoria)),
-              !dataInicial && !dataFinal && horaInicial && horaFinal && h("med-type", { class: "med-check-card__hora", token: "p12x" },
+            h("med-type", { class: "med-check-card__title", token: "p16xb" }, titulo),
+            h("div", { class: "med-check-card__title-wrap" },
+              h("div", { class: "med-check-card__info-container" },
+                h("div", { class: "med-check-card__container-fix" },
+                  h("ion-icon", { class: "med-check-card__icon med-icon med-icon--xs", name: iconName }),
+                  h("med-type", { class: "med-check-card__subtitulo", token: "p12xb" }, categoria)),
+                !dataInicial && !dataFinal && horaInicial && horaFinal && h("med-type", { class: "med-check-card__hora", token: "p12x" },
+                  horaInicial,
+                  " \u2013 ",
+                  horaFinal)),
+              dataInicial && dataFinal && !horaInicial && !horaFinal && h("med-type", { class: "med-check-card__data", token: "p12x" },
+                dataInicial,
+                " at\u00E9 ",
+                dataFinal),
+              dataInicial && dataFinal && horaInicial && horaFinal && h("med-type", { class: "med-check-card__data", token: "p12x" },
+                dataInicial,
+                " - ",
                 horaInicial,
-                " \u2013 ",
-                horaFinal)),
-            dataInicial && dataFinal && !horaInicial && !horaFinal && h("med-type", { class: "med-check-card__data", token: "p12x" },
-              dataInicial,
-              " at\u00E9 ",
-              dataFinal),
-            dataInicial && dataFinal && horaInicial && horaFinal && h("med-type", { class: "med-check-card__data", token: "p12x" },
-              dataInicial,
-              " - ",
-              horaInicial,
-              " at\u00E9 ",
-              dataFinal,
-              " - ",
-              horaFinal))),
+                " at\u00E9 ",
+                dataFinal,
+                " - ",
+                horaFinal)))),
         h("div", { class: alert ? 'med-check-card__tooltip-container' : '' },
           h("slot", { name: "tooltip" })))));
   }
@@ -71,7 +75,7 @@ export class MedCheckCard {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": "Define a cor."
       },
       "attribute": "ds-color",
       "reflect": true
@@ -88,7 +92,7 @@ export class MedCheckCard {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o estado."
       },
       "attribute": "alert",
       "reflect": true,
@@ -106,7 +110,7 @@ export class MedCheckCard {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o titulo."
       },
       "attribute": "titulo",
       "reflect": true
@@ -123,7 +127,7 @@ export class MedCheckCard {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a categoria."
       },
       "attribute": "categoria",
       "reflect": true
@@ -140,7 +144,7 @@ export class MedCheckCard {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a hora de inicio."
       },
       "attribute": "hora-inicial",
       "reflect": true
@@ -157,7 +161,7 @@ export class MedCheckCard {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a hora de termino."
       },
       "attribute": "hora-final",
       "reflect": true
@@ -174,7 +178,7 @@ export class MedCheckCard {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a data de inicio."
       },
       "attribute": "data-inicial",
       "reflect": true
@@ -191,7 +195,7 @@ export class MedCheckCard {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define a data de termino."
       },
       "attribute": "data-final",
       "reflect": true
@@ -208,7 +212,7 @@ export class MedCheckCard {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define se a task foi finalizada."
       },
       "attribute": "finalizada",
       "reflect": true
@@ -225,7 +229,7 @@ export class MedCheckCard {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o icone."
       },
       "attribute": "icon-name",
       "reflect": true

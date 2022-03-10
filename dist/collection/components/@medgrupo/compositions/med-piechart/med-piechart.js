@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Method } from '@stencil/core';
+import { Component, Host, h, Prop, Method, Listen } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedPiechart {
   constructor() {
@@ -11,19 +11,31 @@ export class MedPiechart {
       */
     this.downloaded = false;
     /**
-      * Define o valor do progresso do componente.
+      * Define o valor do progresso do componente do piechart.
       */
     this.value = 0;
+    /**
+    * Define o valor do progresso do componente de download.
+    */
+    this.downloadProgress = 0;
+    /**
+      * Esconde o download do pie-chart.
+      */
+    this.hideDownload = false;
   }
   /**
-   * Define o estado do componente programaticamente.
-   */
+    * Define o estado do componente programaticamente.
+    */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.download = !this.download;
   }
+  Isdownloaded(event) {
+    var _a;
+    this.downloaded = (_a = event === null || event === void 0 ? void 0 : event.detail) === null || _a === void 0 ? void 0 : _a.downloaded;
+  }
   render() {
-    const { dsColor, dsSize, download, downloaded, label, value } = this;
+    const { dsColor, dsSize, download, downloaded, label, value, downloadProgress, identification, index, hideDownload } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-piechart': true,
         'med-piechart--download': download,
@@ -38,7 +50,7 @@ export class MedPiechart {
             h("circle", { cx: "18", cy: "18", r: "16", class: "med-piechart__circle med-piechart__circle--porcentagem" }))),
         h("div", { class: "med-piechart__side med-piechart__side--back" },
           h("med-type", { class: "med-piechart__text med-piechart__text--back" }, label),
-          h("med-download-button", { class: "med-piechart__button", "ds-color": dsColor, value: value, downloaded: downloaded })))));
+          !hideDownload && h("med-download-button", { class: "med-piechart__button", "ds-color": dsColor, index: index, value: downloadProgress, downloaded: downloaded, identification: identification })))));
   }
   static get is() { return "med-piechart"; }
   static get encapsulation() { return "shadow"; }
@@ -124,24 +136,6 @@ export class MedPiechart {
       "reflect": true,
       "defaultValue": "false"
     },
-    "value": {
-      "type": "number",
-      "mutable": true,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Define o valor do progresso do componente."
-      },
-      "attribute": "value",
-      "reflect": true,
-      "defaultValue": "0"
-    },
     "label": {
       "type": "string",
       "mutable": false,
@@ -158,6 +152,94 @@ export class MedPiechart {
       },
       "attribute": "label",
       "reflect": true
+    },
+    "value": {
+      "type": "number",
+      "mutable": true,
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o valor do progresso do componente do piechart."
+      },
+      "attribute": "value",
+      "reflect": true,
+      "defaultValue": "0"
+    },
+    "downloadProgress": {
+      "type": "number",
+      "mutable": true,
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o valor do progresso do componente de download."
+      },
+      "attribute": "download-progress",
+      "reflect": true,
+      "defaultValue": "0"
+    },
+    "index": {
+      "type": "number",
+      "mutable": false,
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define qual a posi\u00E7\u00E3o do array se encontra esse chart. Opcional."
+      },
+      "attribute": "index",
+      "reflect": true
+    },
+    "identification": {
+      "type": "any",
+      "mutable": false,
+      "complexType": {
+        "original": "string | number | undefined",
+        "resolved": "number | string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Identificador do pie-chart para emiss\u00E3o de eventos."
+      },
+      "attribute": "identification",
+      "reflect": true
+    },
+    "hideDownload": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Esconde o download do pie-chart."
+      },
+      "attribute": "hide-download",
+      "reflect": true,
+      "defaultValue": "false"
     }
   }; }
   static get methods() { return {
@@ -184,4 +266,11 @@ export class MedPiechart {
       }
     }
   }; }
+  static get listeners() { return [{
+      "name": "medDownloaded",
+      "method": "Isdownloaded",
+      "target": undefined,
+      "capture": false,
+      "passive": false
+    }]; }
 }

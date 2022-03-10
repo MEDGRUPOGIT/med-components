@@ -17,16 +17,33 @@ export declare class MedPiechart {
     */
   downloaded: boolean;
   /**
-    * Define o valor do progresso do componente.
-    */
-  value: number;
-  /**
     * Define a porcentagem a ser mostrada.
     */
   label?: string;
   /**
-   * Define o estado do componente programaticamente.
-   */
+    * Define o valor do progresso do componente do piechart.
+    */
+  value: number;
+  /**
+  * Define o valor do progresso do componente de download.
+  */
+  downloadProgress: number;
+  /**
+    * Define qual a posição do array se encontra esse chart. Opcional.
+    */
+  index?: number;
+  /**
+    * Identificador do pie-chart para emissão de eventos.
+    */
+  identification?: string | number | undefined;
+  /**
+    * Esconde o download do pie-chart.
+    */
+  hideDownload: boolean;
+  /**
+    * Define o estado do componente programaticamente.
+    */
   toggle(event?: Event): Promise<void>;
+  Isdownloaded(event?: CustomEvent): void;
   render(): any;
 }

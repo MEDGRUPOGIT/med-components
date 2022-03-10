@@ -370,32 +370,23 @@
           "description": "Define a cor do componente."
         },
         {
-          "name": "ds-name",
-          "description": "Define a variação do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            }
-          ]
-        },
-        {
           "name": "ds-size",
           "description": "Define a variação de tamanho do componente.",
           "values": [
-            {
-              "name": "lg"
-            },
             {
               "name": "md"
             },
             {
               "name": "sm"
-            },
+            }
+          ]
+        },
+        {
+          "name": "fill",
+          "description": "Define a variação do componente.",
+          "values": [
             {
-              "name": "xs"
-            },
-            {
-              "name": "xxs"
+              "name": "outline"
             }
           ]
         },
@@ -840,10 +831,6 @@
         {
           "name": "checked",
           "description": "If `true`, the checkbox is selected."
-        },
-        {
-          "name": "color",
-          "description": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
           "name": "disabled",
@@ -4970,16 +4957,12 @@
       },
       "attributes": [
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
-        },
-        {
           "name": "icon-name",
-          "description": ""
+          "description": "Define o icone."
         },
         {
           "name": "titulo",
-          "description": ""
+          "description": "Define o titulo."
         }
       ],
       "references": [
@@ -5586,15 +5569,15 @@
         },
         {
           "name": "height",
-          "description": "Define o height em px do componente."
+          "description": "Define a valor da altura do componente."
         },
         {
           "name": "value",
-          "description": "Define a valor do componente."
+          "description": "Define a valor da %(porcentagem) do componente."
         },
         {
           "name": "width",
-          "description": "Define o width em px do componente."
+          "description": "Define a valor da largura do componente."
         }
       ],
       "references": [
@@ -5776,43 +5759,43 @@
       "attributes": [
         {
           "name": "alert",
-          "description": ""
+          "description": "Define o estado."
         },
         {
           "name": "categoria",
-          "description": ""
+          "description": "Define a categoria."
         },
         {
           "name": "data-final",
-          "description": ""
+          "description": "Define a data de termino."
         },
         {
           "name": "data-inicial",
-          "description": ""
+          "description": "Define a data de inicio."
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "Define a cor."
         },
         {
           "name": "finalizada",
-          "description": ""
+          "description": "Define se a task foi finalizada."
         },
         {
           "name": "hora-final",
-          "description": ""
+          "description": "Define a hora de termino."
         },
         {
           "name": "hora-inicial",
-          "description": ""
+          "description": "Define a hora de inicio."
         },
         {
           "name": "icon-name",
-          "description": ""
+          "description": "Define o icone."
         },
         {
           "name": "titulo",
-          "description": ""
+          "description": "Define o titulo."
         }
       ],
       "references": [
@@ -5924,6 +5907,14 @@
         {
           "name": "ds-color",
           "description": "Define a cor do componente."
+        },
+        {
+          "name": "identification",
+          "description": "Identificador do pieChart para emissão de eventos"
+        },
+        {
+          "name": "index",
+          "description": "Define qual a posição do array se encontra esse chart. Opcional."
         },
         {
           "name": "initial",
@@ -6820,6 +6811,10 @@
           "description": "Define o estado de download do componente."
         },
         {
+          "name": "download-progress",
+          "description": "Define o valor do progresso do componente de download."
+        },
+        {
           "name": "downloaded",
           "description": "Define o estado de downloaded do componente."
         },
@@ -6837,12 +6832,24 @@
           ]
         },
         {
+          "name": "hide-download",
+          "description": "Esconde o download do pie-chart."
+        },
+        {
+          "name": "identification",
+          "description": "Identificador do pie-chart para emissão de eventos."
+        },
+        {
+          "name": "index",
+          "description": "Define qual a posição do array se encontra esse chart. Opcional."
+        },
+        {
           "name": "label",
           "description": "Define a porcentagem a ser mostrada."
         },
         {
           "name": "value",
-          "description": "Define o valor do progresso do componente."
+          "description": "Define o valor do progresso do componente do piechart."
         }
       ],
       "references": [

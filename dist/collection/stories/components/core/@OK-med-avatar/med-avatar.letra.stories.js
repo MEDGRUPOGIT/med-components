@@ -41,11 +41,12 @@ Letra.argTypes = {
     },
   },
   dsSize: {
-    options: [undefined, 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
+    options: ['xxs', 'xs', 'sm', 'base', 'md', 'lg', 'xl', 'xxl'],
     control: { type: 'radio'},
+    defaultValue: 'base',
     description: "Define a variação de tamanho componente.",
     table: {
-      type:  { summary: 'xxs | xs | sm | md | lg | xl | xxl' },
+      type:  { summary: 'xxs | xs | sm | base | md | lg | xl | xxl' },
       defaultValue: { summary: 'undefined' },
     },
   },

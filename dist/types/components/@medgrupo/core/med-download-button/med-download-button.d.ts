@@ -10,17 +10,25 @@ export declare class MedDownloadButton {
     */
   value: number;
   /**
-    * Define o estado do componente quando download tiver concluído.
+    * Define o estado inicial do componente.
     */
-  downloaded: boolean;
+  initial: boolean;
   /**
     * Define o estado do componente durante o download.
     */
   downloading: boolean;
   /**
-    * Define o estado inicial do componente.
+    * Define o estado do componente quando download tiver concluído.
     */
-  initial: boolean;
+  downloaded: boolean;
+  /**
+  * Define qual a posição do array se encontra esse chart. Opcional.
+  */
+  index?: number;
+  /**
+  * Identificador do pieChart para emissão de eventos
+  */
+  identification?: string | number | undefined;
   /**
     * Emitido quando download está concluído.
     */
@@ -29,7 +37,12 @@ export declare class MedDownloadButton {
     * Emitido quando download for cancelado.
     */
   medCancelar: EventEmitter;
+  /**
+    * Emitido quando download for iniciado.
+    */
+  medDownloading: EventEmitter;
   downloadedChanged(): void;
+  downloadingChange(): void;
   valueChanged(): void;
   toggle(event?: Event): void;
   render(): any;

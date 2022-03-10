@@ -12,25 +12,37 @@ const MedDownloadButton = class {
     index.registerInstance(this, hostRef);
     this.medDownloaded = index.createEvent(this, "medDownloaded", 7);
     this.medCancelar = index.createEvent(this, "medCancelar", 7);
+    this.medDownloading = index.createEvent(this, "medDownloading", 7);
     /**
       * Define o valor da progress bar do componente.
       */
     this.value = 0;
     /**
-      * Define o estado do componente quando download tiver concluído.
+      * Define o estado inicial do componente.
       */
-    this.downloaded = false;
+    this.initial = true;
     /**
       * Define o estado do componente durante o download.
       */
     this.downloading = false;
     /**
-      * Define o estado inicial do componente.
+      * Define o estado do componente quando download tiver concluído.
       */
-    this.initial = true;
+    this.downloaded = false;
   }
   downloadedChanged() {
-    this.medDownloaded.emit();
+    this.medDownloaded.emit({
+      downloaded: this.downloaded,
+      id: this.identification,
+      index: this.index
+    });
+  }
+  downloadingChange() {
+    this.medDownloading.emit({
+      downloading: this.downloading,
+      id: this.identification,
+      index: this.index
+    });
   }
   valueChanged() {
     if (this.value !== 0 && this.value !== 100) {
@@ -46,12 +58,18 @@ const MedDownloadButton = class {
     if (this.value === 100) {
       this.downloaded = true;
       this.downloading = false;
-      this.medDownloaded.emit();
     }
   }
   toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
-    if (this.initial) {
+    if (this.downloaded) {
+      this.medDownloaded.emit({
+        downloaded: this.downloaded,
+        id: this.identification,
+        index: this.index
+      });
+    }
+    else if (this.initial) {
       this.initial = false;
       if (this.value !== 100) {
         this.downloaded = false;
@@ -60,11 +78,22 @@ const MedDownloadButton = class {
       else if (this.value === 100) {
         this.downloaded = true;
         this.downloading = false;
-        this.medDownloaded.emit();
+        this.medDownloaded.emit({
+          downloaded: this.downloaded,
+          id: this.identification,
+          index: this.index
+        });
       }
     }
     else {
-      this.medCancelar.emit();
+      this.medCancelar.emit({
+        id: this.identification,
+        index: this.index
+      });
+      this.initial = true;
+      this.downloaded = false;
+      this.downloading = false;
+      this.value = 0;
     }
   }
   render() {
@@ -77,6 +106,7 @@ const MedDownloadButton = class {
   }
   static get watchers() { return {
     "downloaded": ["downloadedChanged"],
+    "downloading": ["downloadingChange"],
     "value": ["valueChanged"]
   }; }
 };

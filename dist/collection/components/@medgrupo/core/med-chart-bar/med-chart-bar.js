@@ -7,17 +7,17 @@ export class MedChartBar {
   constructor() {
     this.hostHeight = 0;
     /**
-      * Define a valor do componente.
+      * Define a valor da %(porcentagem) do componente.
       */
     this.value = 0;
     /**
-      * Define o height em px do componente.
+      * Define a valor da altura do componente.
       */
     this.height = 50;
     /**
-      * Define o width em px do componente.
+      * Define a valor da largura do componente.
       */
-    this.width = 24;
+    this.width = 32;
   }
   componentDidLoad() {
     this.setSize();
@@ -39,7 +39,7 @@ export class MedChartBar {
   }
   render() {
     const { dsColor, value, height, width } = this;
-    const percentage = value === 0 ? height : height - ((height * value) / 100);
+    const percentage = value === 0 ? height - 1 : height - ((height * value) / 100);
     return (h(Host, { class: generateMedColor(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } },
       h("div", { class: "med-chart-bar__container" },
         h("div", { class: "med-chart-bar__label" },
@@ -89,7 +89,7 @@ export class MedChartBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define a valor do componente."
+        "text": "Define a valor da %(porcentagem) do componente."
       },
       "attribute": "value",
       "reflect": true,
@@ -107,7 +107,7 @@ export class MedChartBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o height em px do componente."
+        "text": "Define a valor da altura do componente."
       },
       "attribute": "height",
       "reflect": true,
@@ -125,11 +125,11 @@ export class MedChartBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o width em px do componente."
+        "text": "Define a valor da largura do componente."
       },
       "attribute": "width",
       "reflect": true,
-      "defaultValue": "24"
+      "defaultValue": "32"
     }
   }; }
   static get elementRef() { return "hostElement"; }

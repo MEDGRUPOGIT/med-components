@@ -1,5 +1,5 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { CheckboxChangeEventDetail, Color, StyleEventDetail, MedColor } from '../../interface';
+import { CheckboxChangeEventDetail, StyleEventDetail, MedColor } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -14,12 +14,6 @@ export declare class Checkbox implements ComponentInterface {
     * Define a cor do componente.
     */
   dsColor?: MedColor;
-  /**
-   * The color to use from your application's color palette.
-   * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
-   * For more information on colors, see [theming](/docs/theming/basics).
-   */
-  color?: Color;
   /**
    * The name of the control, which is submitted with the form data.
    */

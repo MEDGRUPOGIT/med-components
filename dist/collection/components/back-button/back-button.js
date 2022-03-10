@@ -81,10 +81,7 @@ export class BackButton {
         [`med-button--${dsSize}`]: dsSize !== undefined,
       }) },
       h("button", { type: type, disabled: disabled, class: "button-native", part: "native", "aria-label": backButtonText || 'back' },
-        h("span", { class: "button-inner" },
-          h("div", { class: "button-inner__text" },
-            backButtonIcon && h("ion-icon", { class: "med-icon", part: "icon", icon: backButtonIcon, "aria-hidden": "true", lazy: false }),
-            backButtonText && h("span", { part: "text", "aria-hidden": "true", class: "button-text" }, backButtonText))),
+        h("span", { class: "button-inner" }, backButtonIcon && h("ion-icon", { class: "med-icon", part: "icon", icon: backButtonIcon, "aria-hidden": "true", lazy: false })),
         h("ion-ripple-effect", { type: this.rippleType }))));
   }
   static get is() { return "ion-back-button"; }

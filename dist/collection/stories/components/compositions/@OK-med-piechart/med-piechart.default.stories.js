@@ -7,14 +7,26 @@ export default {
   decorators: [withDesign],
 };
 
-const Template = ({ dsColor, dsSize , download, downloaded, label, value }) => {
+const Template = ({ dsColor, dsSize , download, downloaded, label, value, downloadProgress, identification, index, hideDownload }) => {
   return html`
     <ion-app>
       <ion-content>
         <div class="full-height-flex">
 
           <!-- component markdown -->
-          <med-piechart .dsColor=${dsColor} .dsSize=${dsSize} ?download=${download} ?downloaded=${downloaded} label=${label} value=${value}></med-piechart>
+          <med-piechart 
+            .dsColor=${dsColor} 
+            .dsSize=${dsSize}
+            ?download=${download} 
+            ?downloaded=${downloaded}
+            label=${label} 
+            value=${value}
+            .downloadProgress=${downloadProgress} 
+            .index=${index}
+            identification=${identification}
+            ?hide-download=${hideDownload}
+          >
+          </med-piechart>
           <!-- component markdown -->
 
         </div>
@@ -80,5 +92,35 @@ Default.argTypes = {
     defaultValue: '50',
     control: { type: 'range', min: 0, max: 100, step: 1 },
     description: 'Define a porcentagem a ser mostrada.'
+  },
+  downloadProgress: {
+    defaultValue: '40',
+    control: { type: 'range', min: 0, max: 100, step: 1 },
+    description: 'Define o progresso de download.'
+  },
+  index: {
+    control: { type: 'text' },
+    description: 'Define qual a posição do array se encontra esse chart. Opcional.',
+    table: {
+      type:  { summary: 'number' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+  identification: {
+    control: { type: 'number' },
+    description: 'Identificador do pie-chart para emissão de eventos.',
+    table: {
+      type:  { summary: 'number | string | undefined' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+  hideDownload: {
+    download: false,
+    control: { type: "boolean" },
+    description: "Esconde o download do pie-chart.",
+    table: {
+      type: { summary: "boolean" },
+      defaultValue: { summary: "undefined" },
+    },
   },
 };

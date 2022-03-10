@@ -41,7 +41,6 @@ export class Checkbox {
       this.setFocus();
       this.checked = !this.checked;
       this.indeterminate = false;
-      console.log('clicked');
     };
     this.onFocus = () => {
       this.ionFocus.emit();
@@ -80,16 +79,12 @@ export class Checkbox {
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     renderHiddenInput(true, el, name, (checked ? value : ''), disabled);
     let path = indeterminate
-      // ? <path d="M6 12L18 12" part="mark" />
-      ? h("div", { class: "indeterminate" })
-      // : <path d="M5.9,12.5l3.8,3.8l8.8-8.8" part="mark" />;
-      : h("div", { class: "checked" });
+      ? h("path", { d: "M6 12L18 12", part: "mark" })
+      : h("path", { d: "M5.9,12.5l3.8,3.8l8.8-8.8", part: "mark" });
     if (mode === 'md') {
       path = indeterminate
-        // ? <path d="M2 12H22" part="mark" />
-        ? h("div", { class: "indeterminate" })
-        // : <path d="M1.73,12.91 8.1,19.28 22.79,4.59" part="mark" />;
-        : h("div", { class: "checked" });
+        ? h("path", { d: "M2 12H22", part: "mark" })
+        : h("path", { d: "M1.73,12.91 8.1,19.28 22.79,4.59", part: "mark" });
     }
     return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: generateMedColor(dsColor, {
         [mode]: true,
@@ -99,18 +94,18 @@ export class Checkbox {
         'checkbox-indeterminate': indeterminate,
         'interactive': true
       }) },
-      h("div", { part: "container", class: "checkbox-icon" }, path),
+      h("svg", { class: "checkbox-icon", viewBox: "0 0 24 24", part: "container" }, path),
       h("label", { htmlFor: inputId }, labelText),
       h("input", { type: "checkbox", "aria-checked": `${checked}`, disabled: disabled, id: inputId, onFocus: () => this.onFocus(), onBlur: () => this.onBlur(), ref: focusEl => this.focusEl = focusEl })));
   }
   static get is() { return "ion-checkbox"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["checkbox.md.scss"],
+    "ios": ["checkbox.ios.scss"],
     "md": ["checkbox.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["checkbox.md.css"],
+    "ios": ["checkbox.ios.css"],
     "md": ["checkbox.md.css"]
   }; }
   static get properties() { return {
@@ -135,28 +130,6 @@ export class Checkbox {
       },
       "attribute": "ds-color",
       "reflect": true
-    },
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
-      },
-      "attribute": "color",
-      "reflect": false
     },
     "name": {
       "type": "string",

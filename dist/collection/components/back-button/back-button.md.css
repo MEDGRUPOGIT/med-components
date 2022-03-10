@@ -442,12 +442,7 @@ ion-ripple-effect {
   --bg-activated-opacity: 0;
   --border-color-activated: transparent;
   --color-activated: hsl(var(--med-color-contrast-fixed));
-  --font-size: var(--med-font-size-xxs);
-  --font-weight: var(--med-font-weight-semibold);
-  --line-height: var(--med-line-height-compressed);
-  --padding: 0 var(--med-spacing-inline-xxs);
-  --padding-text: 0 var(--med-spacing-inline-xxxs);
-  --border-radius: var(--med-border-radius-pill);
+  --border-radius: 500px;
   --min-height: 48px;
   --min-width: 48px;
   --transition: background 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out, opacity 300ms ease-out;
@@ -462,19 +457,6 @@ ion-ripple-effect {
   font-weight: var(--font-weight);
   text-transform: uppercase;
   margin: 0;
-}
-
-:host .button-native {
-  padding: var(--padding);
-  min-height: var(--min-height);
-  line-height: var(--line-height);
-  box-shadow: none;
-}
-
-:host .button-inner__text {
-  padding: var(--padding-text);
-  display: flex;
-  align-items: center;
 }
 
 :host .button-native::after {
@@ -492,9 +474,21 @@ ion-ripple-effect {
   transition: var(--transition);
 }
 
-:host ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-brand-2));
-  --ripple-opacity: 1;
+:host .button-native {
+  padding: 0 var(--padding);
+  min-height: var(--min-height);
+  line-height: var(--line-height);
+  box-shadow: none;
+}
+
+:host(.med-button--tertiary) {
+  --background: transparent;
+  --border-color: transparent;
+  --color: hsl(var(--med-color-neutral-10));
+  --padding: 0;
+  --min-height: 24px;
+  --min-width: 24px;
+  --border-radius: 500px;
 }
 
 ion-icon {
@@ -504,79 +498,34 @@ ion-icon {
   transition: stroke 300ms ease-out;
 }
 
-:host(.back-button-has-icon-only) {
+:host(.med-button--tertiary.button-has-icon-only) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-10));
+  --ripple-opacity: 0.16;
+}
+
+:host(.med-button--tertiary.back-button-has-icon-only) {
+  --color-hover: hsl(var(--med-color-neutral-10));
+  --bg-hover: hsl(var(--med-color-neutral-10));
+  --bg-hover-opacity: 0.08;
+  --bg-activated: hsl(var(--med-color-neutral-10));
+  --bg-activated-opacity: 0.16;
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --min-height: 48px;
+  --min-width: 48px;
+  --icon-font-size: 32px;
   --padding: 0;
   --padding-text: 0;
-  --border-radius: var(--med-border-radius-pill);
-  --min-height: 48px;
-  --min-width: 48px;
-  --icon-font-size: 32px;
-}
-
-:host(.med-button--md) {
-  --min-height: 48px;
-  --min-height: 48px;
-  --icon-font-size: 24px;
-}
-
-:host(.med-button--md.back-button-has-icon-only) {
-  --min-height: 48px;
-  --min-width: 48px;
-  --icon-font-size: 32px;
-}
-
-:host(.med-button--sm) {
-  --min-height: 40px;
-  --min-height: 40px;
-  --icon-font-size: 24px;
-}
-
-:host(.med-button--sm.back-button-has-icon-only) {
-  --min-height: 40px;
-  --min-width: 40px;
-  --icon-font-size: 24px;
-}
-
-:host(.med-button--xs) {
-  --min-height: 32px;
-  --min-width: 32px;
-  --padding: 0 var(--med-spacing-inline-base);
-  --font-size: var(--med-font-size-xxxs);
-  --icon-font-size: 16px;
-}
-
-:host(.med-button--xs.back-button-has-icon-only) {
+  --border-radius: var(--med-border-radius-full);
   --min-height: 32px;
   --min-width: 32px;
   --icon-font-size: 24px;
 }
 
-:host(.med-button--xxs) {
-  --min-height: 24px;
-  --min-width: 24px;
-  --padding: 0 var(--med-spacing-inline-xxxs);
-  --font-size: var(--med-font-size-nano);
-  --icon-font-size: 16px;
-}
-
-:host(.med-button--xxs.back-button-has-icon-only) {
-  --min-height: 24px;
-  --min-width: 24px;
-  --icon-font-size: 16px;
-}
-
-:host(.med-button--xxxs) {
-  --min-height: 16px;
-  --min-width: 16px;
-  --padding: 0;
-  --font-size: var(--med-font-size-nano);
-  --icon-font-size: 8px;
-}
-
-:host(.med-button--xxxs.back-button-has-icon-only) {
-  --min-height: 16px;
-  --min-width: 16px;
-  --icon-font-size: 8px;
+:host(.med-button--tertiary.button-disabled) {
+  --bg-hover: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+  cursor: initial;
+  pointer-events: none;
 }
 
 @media (any-hover: hover) {
@@ -632,217 +581,56 @@ ion-icon {
   stroke: var(--color-activated);
 }
 
-:host(.button-disabled) {
-  cursor: initial;
-  pointer-events: none;
-  opacity: var(--med-opacity-level-half);
-}
-
-:host(.med-color) {
-  --background: hsl(var(--med-color-3));
-  --border-color: hsl(var(--med-color-3));
-  --color: hsl(var(--med-color-contrast-fixed));
-  --bg-hover: hsl(var(--med-color-1));
-  --color-hover: hsl(var(--med-color-contrast-fixed));
-  --bg-focused: hsl(var(--med-color-1));
-  --color-focused: hsl(var(--med-color-contrast-fixed));
-  --color-activated: hsl(var(--med-color-contrast-fixed));
-}
-
-:host(.med-color) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-2));
-}
-
-:host(.med-color-neutral) {
-  --background: hsl(var(--med-color-neutral));
-  --border-color: hsl(var(--med-color-neutral));
-  --color: hsl(var(--med-color-neutral-contrast));
-  --bg-hover: hsl(var(--med-color-neutral-contrast), var(--med-opacity-level-semitransparent));
-  --color-hover: hsl(var(--med-color-neutral-contrast));
-  --bg-focused: hsl(var(--med-color-neutral-contrast));
-  --bg-focused-opacity: var(--med-opacity-level-semitransparent);
-  --color-focused: hsl(var(--med-color-neutral-contrast));
-  --color-activated: hsl(var(--med-color-neutral-contrast));
-}
-
-:host(.med-color-neutral) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-neutral-contrast));
-  --ripple-opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-color-feedback) {
-  --background: hsl(var(--med-color-feedback));
-  --border-color: hsl(var(--med-color-feedback));
-  --color: hsl(var(--med-color-feedback-contrast));
-  --bg-hover: hsl(var(--med-color-feedback-contrast), var(--med-opacity-level-semitransparent));
-  --color-hover: hsl(var(--med-color-feedback-contrast));
-  --bg-focused: hsl(var(--med-color-feedback-contrast));
-  --bg-focused-opacity: var(--med-opacity-level-semitransparent);
-  --color-focused: hsl(var(--med-color-feedback-contrast));
-  --color-activated: hsl(var(--med-color-feedback-contrast));
-}
-
-:host(.med-color-feedback) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-feedback-contrast));
-  --ripple-opacity: var(--med-opacity-level-semitransparent);
-}
-
-:host(.med-button--secondary) {
-  --background: transparent;
-  --border-color: hsl(var(--med-color-brand-3));
-  --color: hsl(var(--med-color-brand-3));
-  --bg-hover: transparent;
-  --bg-hover-opacity: 0;
-  --border-color-hover: hsl(var(--med-color-brand-4));
-  --color-hover: hsl(var(--med-color-brand-4));
-  --bg-focused: transparent;
-  --bg-focused-opacity: 0;
-  --border-color-focused: hsl(var(--med-color-brand-4));
-  --color-focused: hsl(var(--med-color-brand-4));
-  --bg-activated: transparent;
-  --bg-activated-opacity: 0;
-  --border-color-activated: hsl(var(--med-color-brand-5));
-  --color-activated: hsl(var(--med-color-brand-5));
-  --border-width: var(--med-border-width-thin);
-  --border-style: solid;
-}
-
-:host(.med-button--secondary) ion-ripple-effect {
-  --ripple-color: transparent;
-  --ripple-opacity: transparent;
-}
-
-:host(.back-button-has-icon-only) {
-  --min-height: 48px;
-  --min-width: 48px;
-  --icon-font-size: 32px;
-  --padding: 0;
-}
-
-:host(.med-button--secondary.med-color) {
-  --border-color: hsl(var(--med-color-3));
-  --color: hsl(var(--med-color-3));
+:host(.med-button--tertiary.back-button-has-icon-only.med-color) {
+  --color-hover: hsl(var(--med-color-3));
   --bg-hover: hsl(var(--med-color-3));
-  --color-hover: hsl(var(--med-color-contrast-fixed));
-  --bg-focused: hsl(var(--med-color-3));
-  --color-focused: hsl(var(--med-color-contrast-fixed));
-  --color-activated: hsl(var(--med-color-contrast-fixed));
-}
-
-:host(.med-button--secondary.med-color-neutral) {
-  --border-color: hsl(var(--med-color-neutral));
-  --color: hsl(var(--med-color-neutral));
-  --border-color-hover: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
-  --color-hover: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
-  --border-color-focused: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
-  --color-focused: hsl(var(--med-color-neutral), var(--med-opacity-level-semiopaque));
-  --border-color-activated: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
-  --color-activated: hsl(var(--med-color-neutral), var(--med-opacity-level-intense));
-}
-
-:host(.med-button--secondary.med-color-feedback) {
-  --border-color: hsl(var(--med-color-feedback));
-  --color: hsl(var(--med-color-feedback));
-  --border-color-hover: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
-  --color-hover: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
-  --border-color-focused: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
-  --color-focused: hsl(var(--med-color-feedback), var(--med-opacity-level-semiopaque));
-  --border-color-activated: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
-  --color-activated: hsl(var(--med-color-feedback), var(--med-opacity-level-intense));
-}
-
-:host(.med-button--tertiary) {
-  --background: transparent;
-  --border-color: transparent;
-  --color: hsl(var(--med-color-neutral-10));
-  --bg-hover: hsl(var(--med-color-brand-3));
-  --bg-hover-opacity: var(--med-opacity-level-light);
-  --border-color-hover: transparent;
-  --color-hover: hsl(var(--med-color-neutral-10));
-  --bg-focused: hsl(var(--med-color-brand-3));
-  --bg-focused-opacity: var(--med-opacity-level-light);
-  --border-color-focused: transparent;
-  --color-focused: hsl(var(--med-color-neutral-10));
-  --bg-activated: hsl(var(--med-color-brand-3));
-  --bg-activated-opacity: var(--med-opacity-level-light);
-  --border-color-activated: transparent;
-  --color-activated: hsl(var(--med-color-neutral-10));
-  --line-height: 24px;
-  --padding: 0;
-  --padding-text: 0 var(--med-spacing-inline-xxxs);
-  --min-height: 24px;
-  --min-width: 24px;
-  --border-radius: var(--med-border-radius-nano);
-}
-
-:host(.med-button--tertiary) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-brand-3));
-  --ripple-opacity: var(--med-opacity-level-light);
-}
-
-:host(.med-button--tertiary.back-button-has-icon-only) {
-  --padding: 0;
-  --padding-text: 0;
-  --border-radius: var(--med-border-radius-full);
-  --min-height: 32px;
-  --min-width: 32px;
-  --icon-font-size: 24px;
-}
-
-:host(.med-button--tertiary.button-block) {
-  --border-radius: var(--med-border-radius-nano);
-}
-
-:host(.med-button--tertiary.med-color) {
-  --color: hsl(var(--med-color-neutral-10));
-  --bg-hover: hsl(var(--med-color-3));
-  --color-hover: hsl(var(--med-color-neutral-10));
-  --bg-focused: hsl(var(--med-color-3));
-  --color-focused: hsl(var(--med-color-neutral-10));
   --bg-activated: hsl(var(--med-color-3));
-  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-3));
 }
 
-:host(.med-button--tertiary.med-color) ion-ripple-effect {
+:host(.med-button--tertiary.back-button-has-icon-only.med-color) ion-ripple-effect {
   --ripple-color: hsl(var(--med-color-3));
-  --ripple-opacity: var(--med-opacity-level-light);
+  --ripple-opacity: 0.16;
 }
 
-:host(.med-button--tertiary.med-color-neutral) {
-  --color: hsl(var(--med-color-neutral-10));
-  --bg-hover: hsl(var(--med-color-neutral-10));
-  --color-hover: hsl(var(--med-color-neutral-10));
-  --bg-focused: hsl(var(--med-color-neutral-10));
-  --color-focused: hsl(var(--med-color-neutral-10));
-  --bg-activated: hsl(var(--med-color-neutral-10));
-  --color-activated: hsl(var(--med-color-neutral-10));
+:host(.med-button--tertiary.back-button-has-icon-only.med-color.button-disabled) {
+  --background: transparent !important;
 }
 
-:host(.med-button--tertiary.med-color-neutral) ion-ripple-effect {
-  --ripple-color: hsl(var(--med-color-neutral-10));
-  --ripple-opacity: var(--med-opacity-level-light);
+:host(.med-button--tertiary.back-button-has-icon-only.med-color-neutral) {
+  --color-hover: hsl(var(--med-color-neutral));
+  --bg-hover: hsl(var(--med-color-neutral));
+  --bg-hover-opacity: 0.08;
+  --bg-activated: hsl(var(--med-color-neutral));
+  --bg-activated-opacity: 0.16;
+  --color-activated: hsl(var(--med-color-neutral));
 }
 
-:host(.med-button--tertiary.med-color-feedback) {
-  --color: hsl(var(--med-color-neutral-10));
+:host(.med-button--tertiary.back-button-has-icon-only.med-color-neutral) ion-ripple-effect {
+  --ripple-color: hsl(var(--med-color-neutral-));
+  --ripple-opacity: 0.16;
+}
+
+:host(.med-button--tertiary.back-button-has-icon-only.med-color-neutral.button-disabled) {
+  --background: transparent !important;
+}
+
+:host(.med-button--tertiary.back-button-has-icon-only.med-color-feedback) {
+  --color-hover: hsl(var(--med-color-feedback));
   --bg-hover: hsl(var(--med-color-feedback));
-  --color-hover: hsl(var(--med-color-neutral-10));
-  --bg-focused: hsl(var(--med-color-feedback));
-  --color-focused: hsl(var(--med-color-neutral-10));
+  --bg-hover-opacity: 0.08;
   --bg-activated: hsl(var(--med-color-feedback));
-  --color-activated: hsl(var(--med-color-neutral-10));
+  --bg-activated-opacity: 0.16;
+  --color-activated: hsl(var(--med-color-feedback));
 }
 
-:host(.med-button--tertiary.med-color-feedback) ion-ripple-effect {
+:host(.med-button--tertiary.back-button-has-icon-only.med-color-feedback) ion-ripple-effect {
   --ripple-color: hsl(var(--med-color-feedback));
-  --ripple-opacity: var(--med-opacity-level-light);
+  --ripple-opacity: 0.16;
 }
 
-:host(.med-button--tertiary.med-button--lg) {
-  --font-size: var(--med-font-size-xs);
-  --line-height: 24px;
-  --min-height: 24px;
-  --min-width: 24px;
+:host(.med-button--tertiary.back-button-has-icon-only.med-color-feedback.button-disabled) {
+  --background: transparent !important;
 }
 
 :host(.med-button--tertiary.med-button--lg.back-button-has-icon-only) {
@@ -851,37 +639,16 @@ ion-icon {
   --icon-font-size: 48px;
 }
 
-:host(.med-button--tertiary.med-button--md) {
-  --font-size: var(--med-font-size-xxs);
-  --line-height: 24px;
-  --min-height: 24px;
-  --min-width: 24px;
-}
-
 :host(.med-button--tertiary.med-button--md.back-button-has-icon-only) {
   --min-height: 48px;
   --min-width: 48px;
   --icon-font-size: 32px;
 }
 
-:host(.med-button--tertiary.med-button--sm) {
-  --font-size: var(--med-font-size-xxxs);
-  --line-height: 16px;
-  --min-height: 16px;
-  --min-width: 16px;
-}
-
 :host(.med-button--tertiary.med-button--sm.back-button-has-icon-only) {
   --min-height: 40px;
   --min-width: 40px;
   --icon-font-size: 24px;
-}
-
-:host(.med-button--tertiary.med-button--xs) {
-  --font-size: var(--med-font-size-nano);
-  --line-height: 16px;
-  --min-height: 16px;
-  --min-width: 16px;
 }
 
 :host(.med-button--tertiary.med-button--xs.back-button-has-icon-only) {

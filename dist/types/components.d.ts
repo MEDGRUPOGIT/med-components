@@ -16,6 +16,7 @@ import { MedFontSize } from "./global/templarios/font-size.enum";
 import { headerResizeEventDetail } from "./components/@medgrupo/global/med-header/med-header-interface";
 import { MedImageZoomItemInterface } from "./components/@medgrupo/global/med-image-zoom/med-image-zoom-interface";
 import { RateStatus } from "./components/@medgrupo/global/med-rate-like/med-rate-like.enum";
+import { MedSemanaInterface } from "./components/@medgrupo/compositions/med-semana/med-semana.interface";
 import { MedTema } from "./components/@medgrupo/global/med-themes/med-themes-interface";
 import { PlusMinusStatus } from "./components/@medgrupo/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.enum";
 export namespace Components {
@@ -263,13 +264,13 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * Define a variação de tamanho do componente.
          */
-        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
+        "dsSize"?: 'sm' | 'md';
+        /**
+          * Define a variação do componente.
+         */
+        "fill"?: 'outline';
         /**
           * The mode determines which platform styles to use.
          */
@@ -450,10 +451,6 @@ export namespace Components {
           * If `true`, the checkbox is selected.
          */
         "checked": boolean;
-        /**
-          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
-         */
-        "color"?: Color;
         /**
           * If `true`, the user cannot interact with the checkbox.
          */
@@ -2929,10 +2926,12 @@ export namespace Components {
     }
     interface MedAddCard {
         /**
-          * Define a cor do componente.
+          * Define o icone.
          */
-        "dsColor"?: MedColor;
         "iconName"?: string;
+        /**
+          * Define o titulo.
+         */
         "titulo"?: string;
     }
     interface MedAgrupador {
@@ -3273,15 +3272,15 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
-          * Define o height em px do componente.
+          * Define a valor da altura do componente.
          */
         "height": number;
         /**
-          * Define a valor do componente.
+          * Define a valor da %(porcentagem) do componente.
          */
         "value": number;
         /**
-          * Define o width em px do componente.
+          * Define a valor da largura do componente.
          */
         "width": number;
     }
@@ -3363,18 +3362,45 @@ export namespace Components {
         "valores": MedChartRadiaItem[];
     }
     interface MedCheckCard {
+        /**
+          * Define o estado.
+         */
         "alert": boolean;
+        /**
+          * Define a categoria.
+         */
         "categoria"?: string;
+        /**
+          * Define a data de termino.
+         */
         "dataFinal"?: string;
+        /**
+          * Define a data de inicio.
+         */
         "dataInicial"?: string;
         /**
-          * Define a cor do componente.
+          * Define a cor.
          */
         "dsColor"?: MedColor;
+        /**
+          * Define se a task foi finalizada.
+         */
         "finalizada"?: string;
+        /**
+          * Define a hora de termino.
+         */
         "horaFinal"?: string;
+        /**
+          * Define a hora de inicio.
+         */
         "horaInicial"?: string;
+        /**
+          * Define o icone.
+         */
         "iconName"?: string;
+        /**
+          * Define o titulo.
+         */
         "titulo"?: string;
     }
     interface MedChild {
@@ -3433,6 +3459,14 @@ export namespace Components {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
+        /**
+          * Identificador do pieChart para emissão de eventos
+         */
+        "identification"?: string|number|undefined;
+        /**
+          * Define qual a posição do array se encontra esse chart. Opcional.
+         */
+        "index"?: number;
         /**
           * Define o estado inicial do componente.
          */
@@ -3813,6 +3847,10 @@ export namespace Components {
          */
         "download": boolean;
         /**
+          * Define o valor do progresso do componente de download.
+         */
+        "downloadProgress": number;
+        /**
           * Define o estado de downloaded do componente.
          */
         "downloaded": boolean;
@@ -3825,6 +3863,18 @@ export namespace Components {
          */
         "dsSize"?: 'sm';
         /**
+          * Esconde o download do pie-chart.
+         */
+        "hideDownload": boolean;
+        /**
+          * Identificador do pie-chart para emissão de eventos.
+         */
+        "identification"?: string | number | undefined;
+        /**
+          * Define qual a posição do array se encontra esse chart. Opcional.
+         */
+        "index"?: number;
+        /**
           * Define a porcentagem a ser mostrada.
          */
         "label"?: string;
@@ -3833,7 +3883,7 @@ export namespace Components {
          */
         "toggle": (event?: Event | undefined) => Promise<void>;
         /**
-          * Define o valor do progresso do componente.
+          * Define o valor do progresso do componente do piechart.
          */
         "value": number;
     }
@@ -3931,17 +3981,21 @@ export namespace Components {
          */
         "active": boolean;
         /**
+          * Define o conteudo da semana.
+         */
+        "content": MedSemanaInterface;
+        /**
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
         /**
           * Define a variação de tamanho do componente.
          */
-        "dsSize"?: 'sm';
+        "dsSize"?: "sm";
         /**
           * Define a skin do componente.
          */
-        "skin"?: 'lista';
+        "skin"?: "lista";
     }
     interface MedSemanas {
         "skin"?: 'lista';
@@ -5551,13 +5605,13 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * Define a variação de tamanho do componente.
          */
-        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
+        "dsSize"?: 'sm' | 'md';
+        /**
+          * Define a variação do componente.
+         */
+        "fill"?: 'outline';
         /**
           * The mode determines which platform styles to use.
          */
@@ -5746,10 +5800,6 @@ declare namespace LocalJSX {
           * If `true`, the checkbox is selected.
          */
         "checked"?: boolean;
-        /**
-          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
-         */
-        "color"?: Color;
         /**
           * If `true`, the user cannot interact with the checkbox.
          */
@@ -8151,10 +8201,12 @@ declare namespace LocalJSX {
     }
     interface MedAddCard {
         /**
-          * Define a cor do componente.
+          * Define o icone.
          */
-        "dsColor"?: MedColor;
         "iconName"?: string;
+        /**
+          * Define o titulo.
+         */
         "titulo"?: string;
     }
     interface MedAgrupador {
@@ -8537,15 +8589,15 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
-          * Define o height em px do componente.
+          * Define a valor da altura do componente.
          */
         "height"?: number;
         /**
-          * Define a valor do componente.
+          * Define a valor da %(porcentagem) do componente.
          */
         "value"?: number;
         /**
-          * Define o width em px do componente.
+          * Define a valor da largura do componente.
          */
         "width"?: number;
     }
@@ -8627,20 +8679,47 @@ declare namespace LocalJSX {
         "valores"?: MedChartRadiaItem[];
     }
     interface MedCheckCard {
+        /**
+          * Define o estado.
+         */
         "alert"?: boolean;
+        /**
+          * Define a categoria.
+         */
         "categoria"?: string;
+        /**
+          * Define a data de termino.
+         */
         "dataFinal"?: string;
+        /**
+          * Define a data de inicio.
+         */
         "dataInicial"?: string;
         /**
-          * Define a cor do componente.
+          * Define a cor.
          */
         "dsColor"?: MedColor;
+        /**
+          * Define se a task foi finalizada.
+         */
         "finalizada"?: string;
+        /**
+          * Define a hora de termino.
+         */
         "horaFinal"?: string;
+        /**
+          * Define a hora de inicio.
+         */
         "horaInicial"?: string;
+        /**
+          * Define o icone.
+         */
         "iconName"?: string;
         "onMedClick"?: (event: CustomEvent<any>) => void;
         "onMedTooltipClose"?: (event: CustomEvent<any>) => void;
+        /**
+          * Define o titulo.
+         */
         "titulo"?: string;
     }
     interface MedChild {
@@ -8696,6 +8775,14 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
+          * Identificador do pieChart para emissão de eventos
+         */
+        "identification"?: string|number|undefined;
+        /**
+          * Define qual a posição do array se encontra esse chart. Opcional.
+         */
+        "index"?: number;
+        /**
           * Define o estado inicial do componente.
          */
         "initial"?: boolean;
@@ -8707,6 +8794,10 @@ declare namespace LocalJSX {
           * Emitido quando download está concluído.
          */
         "onMedDownloaded"?: (event: CustomEvent<any>) => void;
+        /**
+          * Emitido quando download for iniciado.
+         */
+        "onMedDownloading"?: (event: CustomEvent<any>) => void;
         /**
           * Define o valor da progress bar do componente.
          */
@@ -9107,6 +9198,10 @@ declare namespace LocalJSX {
          */
         "download"?: boolean;
         /**
+          * Define o valor do progresso do componente de download.
+         */
+        "downloadProgress"?: number;
+        /**
           * Define o estado de downloaded do componente.
          */
         "downloaded"?: boolean;
@@ -9119,11 +9214,23 @@ declare namespace LocalJSX {
          */
         "dsSize"?: 'sm';
         /**
+          * Esconde o download do pie-chart.
+         */
+        "hideDownload"?: boolean;
+        /**
+          * Identificador do pie-chart para emissão de eventos.
+         */
+        "identification"?: string | number | undefined;
+        /**
+          * Define qual a posição do array se encontra esse chart. Opcional.
+         */
+        "index"?: number;
+        /**
           * Define a porcentagem a ser mostrada.
          */
         "label"?: string;
         /**
-          * Define o valor do progresso do componente.
+          * Define o valor do progresso do componente do piechart.
          */
         "value"?: number;
     }
@@ -9217,17 +9324,21 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
         /**
+          * Define o conteudo da semana.
+         */
+        "content": MedSemanaInterface;
+        /**
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
         /**
           * Define a variação de tamanho do componente.
          */
-        "dsSize"?: 'sm';
+        "dsSize"?: "sm";
         /**
           * Define a skin do componente.
          */
-        "skin"?: 'lista';
+        "skin"?: "lista";
     }
     interface MedSemanas {
         "skin"?: 'lista';

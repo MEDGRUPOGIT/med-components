@@ -7,20 +7,31 @@ export class MedDownloadButton {
       */
     this.value = 0;
     /**
-      * Define o estado do componente quando download tiver concluído.
+      * Define o estado inicial do componente.
       */
-    this.downloaded = false;
+    this.initial = true;
     /**
       * Define o estado do componente durante o download.
       */
     this.downloading = false;
     /**
-      * Define o estado inicial do componente.
+      * Define o estado do componente quando download tiver concluído.
       */
-    this.initial = true;
+    this.downloaded = false;
   }
   downloadedChanged() {
-    this.medDownloaded.emit();
+    this.medDownloaded.emit({
+      downloaded: this.downloaded,
+      id: this.identification,
+      index: this.index
+    });
+  }
+  downloadingChange() {
+    this.medDownloading.emit({
+      downloading: this.downloading,
+      id: this.identification,
+      index: this.index
+    });
   }
   valueChanged() {
     if (this.value !== 0 && this.value !== 100) {
@@ -36,12 +47,18 @@ export class MedDownloadButton {
     if (this.value === 100) {
       this.downloaded = true;
       this.downloading = false;
-      this.medDownloaded.emit();
     }
   }
   toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
-    if (this.initial) {
+    if (this.downloaded) {
+      this.medDownloaded.emit({
+        downloaded: this.downloaded,
+        id: this.identification,
+        index: this.index
+      });
+    }
+    else if (this.initial) {
       this.initial = false;
       if (this.value !== 100) {
         this.downloaded = false;
@@ -50,11 +67,22 @@ export class MedDownloadButton {
       else if (this.value === 100) {
         this.downloaded = true;
         this.downloading = false;
-        this.medDownloaded.emit();
+        this.medDownloaded.emit({
+          downloaded: this.downloaded,
+          id: this.identification,
+          index: this.index
+        });
       }
     }
     else {
-      this.medCancelar.emit();
+      this.medCancelar.emit({
+        id: this.identification,
+        index: this.index
+      });
+      this.initial = true;
+      this.downloaded = false;
+      this.downloading = false;
+      this.value = 0;
     }
   }
   render() {
@@ -118,9 +146,9 @@ export class MedDownloadButton {
       "reflect": true,
       "defaultValue": "0"
     },
-    "downloaded": {
+    "initial": {
       "type": "boolean",
-      "mutable": false,
+      "mutable": true,
       "complexType": {
         "original": "boolean",
         "resolved": "boolean",
@@ -130,11 +158,11 @@ export class MedDownloadButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o estado do componente quando download tiver conclu\u00EDdo."
+        "text": "Define o estado inicial do componente."
       },
-      "attribute": "downloaded",
+      "attribute": "initial",
       "reflect": true,
-      "defaultValue": "false"
+      "defaultValue": "true"
     },
     "downloading": {
       "type": "boolean",
@@ -154,9 +182,9 @@ export class MedDownloadButton {
       "reflect": true,
       "defaultValue": "false"
     },
-    "initial": {
+    "downloaded": {
       "type": "boolean",
-      "mutable": true,
+      "mutable": false,
       "complexType": {
         "original": "boolean",
         "resolved": "boolean",
@@ -166,11 +194,45 @@ export class MedDownloadButton {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o estado inicial do componente."
+        "text": "Define o estado do componente quando download tiver conclu\u00EDdo."
       },
-      "attribute": "initial",
+      "attribute": "downloaded",
       "reflect": true,
-      "defaultValue": "true"
+      "defaultValue": "false"
+    },
+    "index": {
+      "type": "number",
+      "mutable": false,
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define qual a posi\u00E7\u00E3o do array se encontra esse chart. Opcional."
+      },
+      "attribute": "index",
+      "reflect": true
+    },
+    "identification": {
+      "type": "any",
+      "mutable": false,
+      "complexType": {
+        "original": "string|number|undefined",
+        "resolved": "number | string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Identificador do pieChart para emiss\u00E3o de eventos"
+      },
+      "attribute": "identification",
+      "reflect": true
     }
   }; }
   static get events() { return [{
@@ -203,10 +265,28 @@ export class MedDownloadButton {
         "resolved": "any",
         "references": {}
       }
+    }, {
+      "method": "medDownloading",
+      "name": "medDownloading",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": "Emitido quando download for iniciado."
+      },
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      }
     }]; }
   static get watchers() { return [{
       "propName": "downloaded",
       "methodName": "downloadedChanged"
+    }, {
+      "propName": "downloading",
+      "methodName": "downloadingChange"
     }, {
       "propName": "value",
       "methodName": "valueChanged"

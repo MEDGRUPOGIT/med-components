@@ -1,22 +1,29 @@
-import { MedColor } from '../../../../interface';
+import { MedColor } from "../../../../interface";
+import { MedSemanaInterface } from './med-semana.interface';
 export declare class MedSemana {
   /**
-    * Define a cor do componente.
-    */
+   * Define a cor do componente.
+   */
   dsColor?: MedColor;
   /**
-    * Define a variação de tamanho do componente.
-    */
-  dsSize?: 'sm';
+   * Define a variação de tamanho do componente.
+   */
+  dsSize?: "sm";
   /**
-    * Define o estado active do componente.
-    */
+   * Define o estado active do componente.
+   */
   active: boolean;
   /**
-    * Define a skin do componente.
-    */
-  skin?: 'lista';
+   * Define a skin do componente.
+   */
+  skin?: "lista";
+  /**
+   * Define o conteudo da semana.
+   */
+  content: MedSemanaInterface;
   flipped: boolean;
   private handleFlip;
+  private createTextContainerEl;
+  private createPieChartEl;
   render(): any;
 }

@@ -5,24 +5,24 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const index = require('./index-bc2e4509.js');
 const medTheme = require('./med-theme-42add9fc.js');
 
-const medChartBarCss = ":host{--height-label:18;--background:hsl(var(--med-color-brand-3))}:host{overflow:hidden;height:calc(var(--height) + var(--height-label) * 1px);border-radius:2px}.med-chart-bar__label{height:calc(var(--height-label) * 1px)}.med-chart-bar__container{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-webkit-transform:translateY(calc(var(--value) * 1px));transform:translateY(calc(var(--value) * 1px))}.med-chart-bar__progress{height:calc(var(--value) * 1px);background:var(--background);width:calc(var(--width) * 1px);height:calc(var(--height) * 1px);border-radius:2px}:host(.med-color){--background:hsl(var(--med-color-3))}:host(.med-color-neutral){--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--background:hsl(var(--med-color-feedback))}";
+const medChartBarCss = ":host{--height-label:18;--background:hsl(var(--med-color-brand-3));--padding-label:6px}:host{overflow:hidden;height:calc(var(--height) + var(--height-label) * 1px);border-radius:2px}.med-chart-bar__label{height:calc(var(--height-label) * 1px)}.med-chart-bar__container{-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-webkit-transform:translateY(calc(var(--value) * 1px));transform:translateY(calc(var(--value) * 1px))}.med-chart-bar__progress{height:calc(var(--value) * 1px);background:var(--background);width:calc(var(--width) * 1px);height:calc(var(--height) * 1px);border-radius:2px}::slotted(med-type){padding-bottom:var(--padding-label)}:host(.med-color){--background:hsl(var(--med-color-3))}:host(.med-color-neutral){--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--background:hsl(var(--med-color-feedback))}";
 
 const MedChartBar = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     this.hostHeight = 0;
     /**
-      * Define a valor do componente.
+      * Define a valor da %(porcentagem) do componente.
       */
     this.value = 0;
     /**
-      * Define o height em px do componente.
+      * Define a valor da altura do componente.
       */
     this.height = 50;
     /**
-      * Define o width em px do componente.
+      * Define a valor da largura do componente.
       */
-    this.width = 24;
+    this.width = 32;
   }
   componentDidLoad() {
     this.setSize();
@@ -44,7 +44,7 @@ const MedChartBar = class {
   }
   render() {
     const { dsColor, value, height, width } = this;
-    const percentage = value === 0 ? height : height - ((height * value) / 100);
+    const percentage = value === 0 ? height - 1 : height - ((height * value) / 100);
     return (index.h(index.Host, { class: medTheme.generateMedColor(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } }, index.h("div", { class: "med-chart-bar__container" }, index.h("div", { class: "med-chart-bar__label" }, index.h("slot", null)), index.h("div", { class: "med-chart-bar__progress" }))));
   }
   get hostElement() { return index.getElement(this); }
