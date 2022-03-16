@@ -6,6 +6,10 @@ export class MedSemana {
      * Define o estado active do componente.
      */
     this.active = false;
+    /**
+     * Define o estado habilitado ou desabilitado do componente.
+     */
+    this.disabled = false;
     this.flipped = false;
   }
   handleFlip() {
@@ -15,13 +19,13 @@ export class MedSemana {
     if (skin === "lista") {
       return (h("div", { class: "med-semana__heading-container" },
         h("div", { class: "med-semana__text-container" },
-          h("med-type", { class: "med-semana__text" }, content === null || content === void 0 ? void 0 : content.Title),
-          h("med-type", { class: "med-semana__text med-semana__text--number" }, content === null || content === void 0 ? void 0 : content.Numero),
+          h("med-type", { token: "h20", class: "med-semana__text" }, content === null || content === void 0 ? void 0 : content.Title),
+          h("med-type", { token: "h20", class: "med-semana__text med-semana__text--number" }, content === null || content === void 0 ? void 0 : content.Numero),
           h("div", { class: "med-semana__week-container" },
-            h("med-type", { class: "med-semana__auxiliar" }, "De"),
-            h("med-type", { class: "med-semana__auxiliar" }, content === null || content === void 0 ? void 0 : content.DataInicio),
-            h("med-type", { class: "med-semana__auxiliar" }, "at\u00E9"),
-            h("med-type", { class: "med-semana__auxiliar" }, content === null || content === void 0 ? void 0 : content.DataFim)))));
+            h("med-type", { token: "p16", "ds-color": "neutral-7", class: "med-semana__auxiliar" }, "De"),
+            h("med-type", { token: "p16", "ds-color": "neutral-7", class: "med-semana__auxiliar" }, content === null || content === void 0 ? void 0 : content.DataInicio),
+            h("med-type", { token: "p16", "ds-color": "neutral-7", class: "med-semana__auxiliar" }, "at\u00E9"),
+            h("med-type", { token: "p16", "ds-color": "neutral-7", class: "med-semana__auxiliar" }, content === null || content === void 0 ? void 0 : content.DataFim)))));
     }
     else {
       return (h("div", { class: "med-semana__heading-container" },
@@ -36,21 +40,20 @@ export class MedSemana {
     }
   }
   createPieChartEl(Itens, skin) {
-    console.log('itens', Itens);
     if (skin === "lista") {
-      return (h("div", { class: "med-semana__chart-container tp-scrollbar" }, Itens === null || Itens === void 0 ? void 0 : Itens.map((item, index) => (h("div", { class: "med-semana__chart-row" },
-        h("med-piechart", { class: "med-semana__chart", "ds-color": this.dsColor, label: item.Nome, value: item.PercentLido, "download-progress": item.DownloadProgress, downloaded: item.Downloaded, download: this.flipped, index: index, identification: item.Id, "hide-download": true }),
+      return (h("div", { class: "med-semana__chart-container" }, Itens === null || Itens === void 0 ? void 0 : Itens.map((item, index) => (h("div", { class: "med-semana__chart-row" },
+        h("med-piechart", { class: "med-semana__chart", "ds-color": this.dsColor, "ds-size": this.dsSize, label: item.Nome, value: item.PercentLido, "download-progress": item.DownloadProgress, downloaded: item.Downloaded, download: this.flipped, disabled: this.disabled, index: index, identification: item.Id, "hide-download": true }),
         h("med-type", { class: "med-semana__description" }, item.Descricao),
         h("div", { class: "med-semana__tempo-container" },
           h("med-type", { class: "med-semana__tempo" }, item === null || item === void 0 ? void 0 : item.Time),
-          h("med-download-button", { class: "med-semana__download-button", "ds-color": this.dsColor, value: item.DownloadProgress, downloaded: item.Downloaded, index: index, identification: item.Id })))))));
+          h("med-download-button", { class: "med-semana__download-button", "ds-color": this.dsColor, value: item.DownloadProgress, downloaded: item.Downloaded, disabled: this.disabled, index: index, identification: item.Id })))))));
     }
     else {
-      return (h("div", { class: "med-semana__chart-container tp-scrollbar" }, Itens === null || Itens === void 0 ? void 0 : Itens.map((item) => (h("med-piechart", { class: "med-semana__chart", "ds-color": this.dsColor, label: item.Nome, value: item.PercentLido, "download-progress": item.DownloadProgress, downloaded: item.Downloaded, download: this.flipped })))));
+      return (h("div", { class: "med-semana__chart-container" }, Itens === null || Itens === void 0 ? void 0 : Itens.map((item) => (h("med-piechart", { class: "med-semana__chart", "ds-color": this.dsColor, "ds-size": this.dsSize, label: item.Nome, value: item.PercentLido, "download-progress": item.DownloadProgress, downloaded: item.Downloaded, download: this.flipped, disabled: this.disabled })))));
     }
   }
   render() {
-    const { dsColor, active, skin, content } = this;
+    const { dsColor, dsSize, active, skin, content } = this;
     let textContainerEl;
     let piechartContainerEl;
     textContainerEl = this.createTextContainerEl(content, skin);
@@ -59,6 +62,7 @@ export class MedSemana {
         "med-semana": true,
         "med-semana--active": active,
         [`med-semana--skin-${skin}`]: skin !== undefined,
+        [`med-semana--${dsSize}`]: dsSize !== undefined,
       }) },
       textContainerEl,
       piechartContainerEl));
@@ -98,7 +102,7 @@ export class MedSemana {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "\"sm\"",
+        "original": "'sm'",
         "resolved": "\"sm\" | undefined",
         "references": {}
       },
@@ -129,11 +133,29 @@ export class MedSemana {
       "reflect": true,
       "defaultValue": "false"
     },
+    "disabled": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o estado habilitado ou desabilitado do componente."
+      },
+      "attribute": "disabled",
+      "reflect": true,
+      "defaultValue": "false"
+    },
     "skin": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "\"lista\"",
+        "original": "'lista'",
         "resolved": "\"lista\" | undefined",
         "references": {}
       },

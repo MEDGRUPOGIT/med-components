@@ -36,7 +36,7 @@ export type MedTypeToken = 'h48' | 'h32' | 'h24' | 'h20' | 'h20x' | 'p16' | 'p16
 // medgrupo old
 export * from './components/@medgrupo/team/questoes/med-alternativas/med-alternativas-interface';
 export * from './components/@medgrupo/global/med-image-zoom/med-image-zoom-interface';
-export * from './components/@medgrupo/global/med-chart-radial/med-chart-radial-interface';
+export * from './components/@medgrupo/core/med-chart-radial/med-chart-radial-interface';
 export type MedColor = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'brand' | 'aula' | 'material' | 'questoes' | 'revalida' | 'provas' | 'fb-attention' | 'fb-caution' | 'fb-warning' | 'fb-success' | string;
 export type Neutral = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | string;
 

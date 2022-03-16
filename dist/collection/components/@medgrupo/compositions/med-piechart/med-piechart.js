@@ -22,6 +22,10 @@ export class MedPiechart {
       * Esconde o download do pie-chart.
       */
     this.hideDownload = false;
+    /**
+     * Define o estado habilitado ou desabilitado do componente.
+     */
+    this.disabled = false;
   }
   /**
     * Define o estado do componente programaticamente.
@@ -35,12 +39,12 @@ export class MedPiechart {
     this.downloaded = (_a = event === null || event === void 0 ? void 0 : event.detail) === null || _a === void 0 ? void 0 : _a.downloaded;
   }
   render() {
-    const { dsColor, dsSize, download, downloaded, label, value, downloadProgress, identification, index, hideDownload } = this;
+    const { dsColor, dsSize, download, downloaded, label, value, downloadProgress, identification, index, hideDownload, disabled } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-piechart': true,
         'med-piechart--download': download,
         'med-piechart--downloaded': downloaded,
-        [`med-avatar--${dsSize}`]: dsSize !== undefined,
+        [`med-piechart--${dsSize}`]: dsSize !== undefined,
       }) },
       h("div", { class: "med-piechart__container" },
         h("div", { class: "med-piechart__side med-piechart__side--front" },
@@ -50,7 +54,7 @@ export class MedPiechart {
             h("circle", { cx: "18", cy: "18", r: "16", class: "med-piechart__circle med-piechart__circle--porcentagem" }))),
         h("div", { class: "med-piechart__side med-piechart__side--back" },
           h("med-type", { class: "med-piechart__text med-piechart__text--back" }, label),
-          !hideDownload && h("med-download-button", { class: "med-piechart__button", "ds-color": dsColor, index: index, value: downloadProgress, downloaded: downloaded, identification: identification })))));
+          !hideDownload && h("med-download-button", { class: "med-piechart__button", "ds-color": dsColor, index: index, value: downloadProgress, downloaded: downloaded, disabled: disabled, identification: identification })))));
   }
   static get is() { return "med-piechart"; }
   static get encapsulation() { return "shadow"; }
@@ -238,6 +242,24 @@ export class MedPiechart {
         "text": "Esconde o download do pie-chart."
       },
       "attribute": "hide-download",
+      "reflect": true,
+      "defaultValue": "false"
+    },
+    "disabled": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o estado habilitado ou desabilitado do componente."
+      },
+      "attribute": "disabled",
       "reflect": true,
       "defaultValue": "false"
     }

@@ -18,6 +18,10 @@ export class MedDownloadButton {
       * Define o estado do componente quando download tiver concluído.
       */
     this.downloaded = false;
+    /**
+     * Define o estado habilitado ou desabilitado do componente.
+     */
+    this.disabled = false;
   }
   downloadedChanged() {
     this.medDownloaded.emit({
@@ -233,6 +237,24 @@ export class MedDownloadButton {
       },
       "attribute": "identification",
       "reflect": true
+    },
+    "disabled": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o estado habilitado ou desabilitado do componente."
+      },
+      "attribute": "disabled",
+      "reflect": true,
+      "defaultValue": "false"
     }
   }; }
   static get events() { return [{

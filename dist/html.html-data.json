@@ -5670,23 +5670,36 @@
           "description": "Define a cor do componente."
         },
         {
-          "name": "ds-name",
-          "description": "Define a variação do componente."
-        },
-        {
           "name": "ds-size",
-          "description": "Define a variação de tamanho do componente.",
+          "description": "Define a variação de tamanho.",
           "values": [
             {
               "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            },
+            {
+              "name": "xs"
             }
           ]
+        },
+        {
+          "name": "subtitulo",
+          "description": "Define o texto secundario."
+        },
+        {
+          "name": "titulo",
+          "description": "Define o texto primario."
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-chart-radial/med-chart-radial.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-chart-radial/med-chart-radial.tsx"
         }
       ]
     },
@@ -5896,6 +5909,10 @@
         "value": ""
       },
       "attributes": [
+        {
+          "name": "disabled",
+          "description": "Define o estado habilitado ou desabilitado do componente."
+        },
         {
           "name": "downloaded",
           "description": "Define o estado do componente quando download tiver concluído."
@@ -6807,6 +6824,10 @@
       },
       "attributes": [
         {
+          "name": "disabled",
+          "description": "Define o estado habilitado ou desabilitado do componente."
+        },
+        {
           "name": "download",
           "description": "Define o estado de download do componente."
         },
@@ -7035,6 +7056,10 @@
         {
           "name": "active",
           "description": "Define o estado active do componente."
+        },
+        {
+          "name": "disabled",
+          "description": "Define o estado habilitado ou desabilitado do componente."
         },
         {
           "name": "ds-color",

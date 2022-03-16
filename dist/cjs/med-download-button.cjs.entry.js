@@ -29,6 +29,10 @@ const MedDownloadButton = class {
       * Define o estado do componente quando download tiver concluído.
       */
     this.downloaded = false;
+    /**
+     * Define o estado habilitado ou desabilitado do componente.
+     */
+    this.disabled = false;
   }
   downloadedChanged() {
     this.medDownloaded.emit({

@@ -1,5 +1,5 @@
 import { MedColor } from '../../../../interface';
-import { MedChartRadiaItem } from '../med-chart-radial/med-chart-radial-interface';
+import { MedChartRadiaItem } from '../../core/med-chart-radial/med-chart-radial-interface';
 export declare class MedChartRadialLabel {
   /**
    * TODO

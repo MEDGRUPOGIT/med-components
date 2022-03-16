@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-10T19:44:15",
+  "timestamp": "2022-03-16T18:15:56",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -22409,7 +22409,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-chart-radial/med-chart-radial.tsx",
+      "filePath": "./src/components/@medgrupo/core/med-chart-radial/med-chart-radial.tsx",
       "encapsulation": "scoped",
       "tag": "med-chart-radial",
       "readme": "# med-chart-radial\r\n\r\n\r\n\r",
@@ -22437,12 +22437,44 @@
           "required": false
         },
         {
-          "name": "dsName",
+          "name": "dsSize",
+          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": false,
+          "docs": "Define a variação de tamanho.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            },
+            {
+              "value": "xs",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "subtitulo",
           "type": "string | undefined",
           "mutable": false,
-          "attr": "ds-name",
+          "attr": "subtitulo",
           "reflectToAttr": false,
-          "docs": "Define a variação do componente.",
+          "docs": "Define o texto secundario.",
           "docsTags": [],
           "values": [
             {
@@ -22456,16 +22488,15 @@
           "required": false
         },
         {
-          "name": "dsSize",
-          "type": "\"lg\" | undefined",
+          "name": "titulo",
+          "type": "string | undefined",
           "mutable": false,
-          "attr": "ds-size",
+          "attr": "titulo",
           "reflectToAttr": false,
-          "docs": "Define a variação de tamanho do componente.",
+          "docs": "Define o texto primario.",
           "docsTags": [],
           "values": [
             {
-              "value": "lg",
               "type": "string"
             },
             {
@@ -22499,8 +22530,14 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-chart-radial": [
+          "med-type"
+        ]
+      }
     },
     {
       "filePath": "./src/components/@medgrupo/global/med-chart-radial-content/med-chart-radial-content.tsx",
@@ -23196,6 +23233,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Define o estado habilitado ou desabilitado do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "downloaded",
           "type": "boolean",
@@ -25996,6 +26050,23 @@
       "usage": {},
       "props": [
         {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Define o estado habilitado ou desabilitado do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "download",
           "type": "boolean",
           "mutable": false,
@@ -26840,6 +26911,23 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Define o estado habilitado ou desabilitado do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
         },
         {
           "name": "dsColor",
@@ -27857,6 +27945,7 @@
         "med-calendar-day",
         "med-chart-bar-horizontal",
         "med-chart-categoria",
+        "med-chart-radial",
         "med-check-card",
         "med-nav",
         "med-nav-accordion",
@@ -27890,6 +27979,9 @@
           "med-type"
         ],
         "med-chart-categoria": [
+          "med-type"
+        ],
+        "med-chart-radial": [
           "med-type"
         ],
         "med-check-card": [
@@ -28135,7 +28227,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "monta-provas-plusminus",
       "readme": "# monta-provas-plusminus\r\n\r\n\r\n\r",
       "docs": "",

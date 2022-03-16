@@ -19,7 +19,7 @@ export class MontaProvasPlusminus {
       h("ion-icon", { class: "med-icon monta-provas-plusminus__icon-plus", name: "med-mais-circulo", onClick: () => this.onClick(PlusMinusStatus.PLUS) })));
   }
   static get is() { return "monta-provas-plusminus"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["monta-provas-plusminus.scss"]
   }; }

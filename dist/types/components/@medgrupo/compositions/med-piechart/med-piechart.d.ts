@@ -41,6 +41,10 @@ export declare class MedPiechart {
     */
   hideDownload: boolean;
   /**
+   * Define o estado habilitado ou desabilitado do componente.
+   */
+  disabled: boolean;
+  /**
     * Define o estado do componente programaticamente.
     */
   toggle(event?: Event): Promise<void>;

@@ -30,6 +30,10 @@ export declare class MedDownloadButton {
   */
   identification?: string | number | undefined;
   /**
+   * Define o estado habilitado ou desabilitado do componente.
+   */
+  disabled: boolean;
+  /**
     * Emitido quando download está concluído.
     */
   medDownloaded: EventEmitter;

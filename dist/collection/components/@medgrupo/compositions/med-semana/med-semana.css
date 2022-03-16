@@ -12,11 +12,12 @@
   --tempo-color: hsl(var(--med-color-neutral-10));
   --tempo-font-size: 12px;
   --button-flip-color: hsl(var(--med-color-brand-4));
+  --padding: 8px;
 }
 
 :host {
   background: var(--background);
-  padding: 8px;
+  padding: var(--padding);
   border-radius: 8px 31px 31px 8px;
   display: flex;
   justify-content: space-between;
@@ -104,7 +105,6 @@
 }
 .med-semana__chart-container {
   display: flex;
-  overflow-x: scroll;
 }
 .med-semana__chart {
   --stroke-background: hsl(var(--med-color-neutral-1));
@@ -113,8 +113,30 @@
   margin-right: 8px;
 }
 
-.med-scrollbar {
+.tp-scrollbar {
   --padding: 0;
+}
+
+:host(.med-semana--sm) {
+  --padding: 12px;
+  border-radius: 8px 40px 40px 8px;
+}
+:host(.med-semana--sm) .med-semana__semana {
+  --semana-font-size: 12px;
+  --line-height: 12px;
+  --font-weight: 400;
+}
+:host(.med-semana--sm) .med-semana__numero {
+  --numero-font-size: 24px;
+  --line-height: 24px;
+  --font-weight: 600;
+}
+:host(.med-semana--sm) .med-semana__back {
+  --semana-back-font-size: 16px;
+  --line-height: 16px;
+}
+:host(.med-semana--sm) .med-semana__heading-container {
+  padding-right: 45px;
 }
 
 :host(.med-color) {
@@ -185,7 +207,7 @@
   text-transform: uppercase;
 }
 :host(.med-semana--skin-lista) .med-semana__text--number {
-  margin: 0 8px;
+  margin: 0 16px 0 4px;
 }
 :host(.med-semana--skin-lista) .med-semana__week-container {
   display: flex;
@@ -196,7 +218,6 @@
 }
 :host(.med-semana--skin-lista) .med-semana__chart-container {
   flex-direction: column;
-  overflow-x: scroll;
 }
 :host(.med-semana--skin-lista) .med-semana__chart-row {
   display: flex;
@@ -239,8 +260,20 @@
   --color: var(--tempo-color);
 }
 
+:host(.med-semana--skin-lista.med-semana--sm) .med-semana__download-button {
+  display: none;
+}
+:host(.med-semana--skin-lista.med-semana--sm) .med-semana__tempo-container {
+  justify-content: center;
+}
+:host(.med-semana--skin-lista.med-semana--sm) .med-semana__chart-row {
+  height: 71px;
+  border-radius: 50px 8px 8px 50px;
+}
+
 :host(.med-semana--skin-lista.med-semana--active) {
   --background: none;
+  --background-row: hsl(var(--med-color-brand-1));
 }
 
 :host(.med-color.med-semana--active.med-semana--skin-lista) {

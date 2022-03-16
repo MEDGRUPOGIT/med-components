@@ -1,0 +1,121 @@
+:host {
+  --color-label: hsl(var(--med-color-neutral-2));
+  --stroke-background: hsl(var(--med-color-neutral-2));
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+:host svg {
+  width: var(--size);
+  height: var(--size);
+}
+:host circle {
+  stroke-dashoffset: 0;
+  stroke: var(--stroke-background);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transition: 1s ease-in-out;
+  transform: rotate(-90deg);
+  transform-origin: 18px 18px;
+}
+:host circle.size {
+  stroke-dasharray: var(--size) 100;
+  stroke: var(--stroke-background);
+}
+:host circle[class^="size med-color"] {
+  stroke: hsl(var(--med-color-4));
+}
+:host circle[class^="size med-color-neutral"] {
+  stroke: hsl(var(--med-color-neutral));
+}
+:host circle[class^="size med-color-fb"] {
+  stroke: hsl(var(--med-color-feedback));
+}
+
+.med-chart-radial__text-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.med-chart-radial__subtitulo {
+  --color: hsl(var(--med-color-neutral-7));
+}
+
+:host(.med-chart-radial--xs) {
+  --size: 48px;
+}
+
+:host(.med-chart-radial--sm) {
+  --size: 56px;
+}
+
+:host(.med-chart-radial--md) {
+  --size: 80px;
+}
+
+:host(.med-chart-radial--lg) {
+  --size: 108px;
+}
+
+:host(.med-chart-radial--xs) .med-chart-radial__titulo {
+  --font-size: 12px;
+  --line-height: 12px;
+  --font-weight: 600;
+}
+
+:host(.med-chart-radial--sm) .med-chart-radial__titulo {
+  --font-size: 14px;
+  --line-height: 16px;
+  --font-weight: 600;
+}
+
+:host(.med-chart-radial--md) .med-chart-radial__titulo {
+  --font-size: 16px;
+  --line-height: 16px;
+  --font-weight: 600;
+}
+
+:host(.med-chart-radial--lg) .med-chart-radial__titulo {
+  --font-size: 20px;
+  --line-height: 20px;
+  --font-weight: 600;
+}
+
+:host(.med-chart-radial--xs) .med-chart-radial__subtitulo {
+  display: none;
+}
+
+:host(.med-chart-radial--sm) .med-chart-radial__subtitulo {
+  display: none;
+}
+
+:host(.med-chart-radial--md) .med-chart-radial__subtitulo {
+  --font-size: 10px;
+  --line-height: 12px;
+  --font-weight: 400;
+}
+
+:host(.med-chart-radial--lg) .med-chart-radial__subtitulo {
+  --font-size: 12px;
+  --line-height: 12px;
+  --font-weight: 400;
+}
+
+:host(.med-color) .med-chart-radial__titulo {
+  --color: hsl(var(--med-color-4));
+}
+
+:host(.med-color-neutral) .med-chart-radial__titulo {
+  --color: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) .med-chart-radial__titulo {
+  --color: hsl(var(--med-color-feedback));
+}

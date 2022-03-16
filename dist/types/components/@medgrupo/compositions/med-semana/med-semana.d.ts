@@ -8,15 +8,19 @@ export declare class MedSemana {
   /**
    * Define a variação de tamanho do componente.
    */
-  dsSize?: "sm";
+  dsSize?: 'sm';
   /**
    * Define o estado active do componente.
    */
   active: boolean;
   /**
+   * Define o estado habilitado ou desabilitado do componente.
+   */
+  disabled: boolean;
+  /**
    * Define a skin do componente.
    */
-  skin?: "lista";
+  skin?: 'lista';
   /**
    * Define o conteudo da semana.
    */

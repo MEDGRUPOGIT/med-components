@@ -39,7 +39,7 @@ export class MedChartRadialLabel {
         "references": {
           "MedChartRadiaItem": {
             "location": "import",
-            "path": "../med-chart-radial/med-chart-radial-interface"
+            "path": "../../core/med-chart-radial/med-chart-radial-interface"
           }
         }
       },

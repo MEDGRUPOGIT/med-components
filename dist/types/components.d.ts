@@ -10,7 +10,7 @@ import { IonicSafeString } from "./utils/sanitization";
 import { NavigationHookCallback } from "./components/route/route-interface";
 import { SelectCompareFn } from "./components/select/select-interface";
 import { MedAlternativaInterface } from "./components/@medgrupo/team/questoes/med-alternativas/med-alternativas-interface";
-import { MedChartRadiaItem } from "./components/@medgrupo/global/med-chart-radial/med-chart-radial-interface";
+import { MedChartRadiaItem } from "./components/@medgrupo/core/med-chart-radial/med-chart-radial-interface";
 import { MedConfigInterface } from "./components/@medgrupo/global/med-config/med-config-interface";
 import { MedFontSize } from "./global/templarios/font-size.enum";
 import { headerResizeEventDetail } from "./components/@medgrupo/global/med-header/med-header-interface";
@@ -3321,13 +3321,17 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a variação do componente.
+          * Define a variação de tamanho.
          */
-        "dsName"?: string;
+        "dsSize"?: 'xs' | 'sm' | 'md' | 'lg';
         /**
-          * Define a variação de tamanho do componente.
+          * Define o texto secundario.
          */
-        "dsSize"?: 'lg';
+        "subtitulo"?: string;
+        /**
+          * Define o texto primario.
+         */
+        "titulo"?: string;
         /**
           * Define os valores do gráfico
          */
@@ -3447,6 +3451,10 @@ export namespace Components {
         "text": string;
     }
     interface MedDownloadButton {
+        /**
+          * Define o estado habilitado ou desabilitado do componente.
+         */
+        "disabled": boolean;
         /**
           * Define o estado do componente quando download tiver concluído.
          */
@@ -3843,6 +3851,10 @@ export namespace Components {
     }
     interface MedPiechart {
         /**
+          * Define o estado habilitado ou desabilitado do componente.
+         */
+        "disabled": boolean;
+        /**
           * Define o estado de download do componente.
          */
         "download": boolean;
@@ -3985,17 +3997,21 @@ export namespace Components {
          */
         "content": MedSemanaInterface;
         /**
+          * Define o estado habilitado ou desabilitado do componente.
+         */
+        "disabled": boolean;
+        /**
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
         /**
           * Define a variação de tamanho do componente.
          */
-        "dsSize"?: "sm";
+        "dsSize"?: 'sm';
         /**
           * Define a skin do componente.
          */
-        "skin"?: "lista";
+        "skin"?: 'lista';
     }
     interface MedSemanas {
         "skin"?: 'lista';
@@ -8638,13 +8654,17 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a variação do componente.
+          * Define a variação de tamanho.
          */
-        "dsName"?: string;
+        "dsSize"?: 'xs' | 'sm' | 'md' | 'lg';
         /**
-          * Define a variação de tamanho do componente.
+          * Define o texto secundario.
          */
-        "dsSize"?: 'lg';
+        "subtitulo"?: string;
+        /**
+          * Define o texto primario.
+         */
+        "titulo"?: string;
         /**
           * Define os valores do gráfico
          */
@@ -8762,6 +8782,10 @@ declare namespace LocalJSX {
         "text": string;
     }
     interface MedDownloadButton {
+        /**
+          * Define o estado habilitado ou desabilitado do componente.
+         */
+        "disabled"?: boolean;
         /**
           * Define o estado do componente quando download tiver concluído.
          */
@@ -9194,6 +9218,10 @@ declare namespace LocalJSX {
     }
     interface MedPiechart {
         /**
+          * Define o estado habilitado ou desabilitado do componente.
+         */
+        "disabled"?: boolean;
+        /**
           * Define o estado de download do componente.
          */
         "download"?: boolean;
@@ -9328,17 +9356,21 @@ declare namespace LocalJSX {
          */
         "content": MedSemanaInterface;
         /**
+          * Define o estado habilitado ou desabilitado do componente.
+         */
+        "disabled"?: boolean;
+        /**
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
         /**
           * Define a variação de tamanho do componente.
          */
-        "dsSize"?: "sm";
+        "dsSize"?: 'sm';
         /**
           * Define a skin do componente.
          */
-        "skin"?: "lista";
+        "skin"?: 'lista';
     }
     interface MedSemanas {
         "skin"?: 'lista';
