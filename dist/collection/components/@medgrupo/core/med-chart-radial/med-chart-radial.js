@@ -3,12 +3,12 @@ import { generateMedColor } from '../../../../utils/med-theme';
 export class MedChartRadial {
   constructor() {
     /**
-     * Define os valores do gráfico
-     */
+       * Define os valores do gráfico
+       */
     this.valores = [];
   }
   render() {
-    const { dsColor, dsSize, titulo, subtitulo } = this;
+    const { dsColor, dsName, dsSize, titulo, subtitulo } = this;
     const totais = {
       total: 0,
       subtotais: []
@@ -20,6 +20,7 @@ export class MedChartRadial {
     const arrayReverse = this.valores.slice(0).reverse();
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-chart-radial': true,
+        [`med-chart-radial--${dsName}`]: dsName !== undefined,
         [`med-chart-radial--${dsSize}`]: dsSize !== undefined,
       }) },
       h("svg", { viewBox: "0 0 36 36" },
@@ -66,6 +67,23 @@ export class MedChartRadial {
         "text": "Define a cor do componente."
       },
       "attribute": "ds-color",
+      "reflect": true
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
       "reflect": true
     },
     "dsSize": {

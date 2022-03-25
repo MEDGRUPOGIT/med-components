@@ -10,6 +10,10 @@ export class MedSemana {
      * Define o estado habilitado ou desabilitado do componente.
      */
     this.disabled = false;
+    /**
+     * Esconde o botão de download.
+     */
+    this.hideDownload = false;
     this.flipped = false;
   }
   handleFlip() {
@@ -19,8 +23,8 @@ export class MedSemana {
     if (skin === "lista") {
       return (h("div", { class: "med-semana__heading-container" },
         h("div", { class: "med-semana__text-container" },
-          h("med-type", { token: "h20", class: "med-semana__text" }, content === null || content === void 0 ? void 0 : content.Title),
-          h("med-type", { token: "h20", class: "med-semana__text med-semana__text--number" }, content === null || content === void 0 ? void 0 : content.Numero),
+          h("med-type", { class: "med-semana__text" }, content === null || content === void 0 ? void 0 : content.Title),
+          h("med-type", { class: "med-semana__text med-semana__text--number" }, content === null || content === void 0 ? void 0 : content.Numero),
           h("div", { class: "med-semana__week-container" },
             h("med-type", { token: "p16", "ds-color": "neutral-7", class: "med-semana__auxiliar" }, "De"),
             h("med-type", { token: "p16", "ds-color": "neutral-7", class: "med-semana__auxiliar" }, content === null || content === void 0 ? void 0 : content.DataInicio),
@@ -53,7 +57,7 @@ export class MedSemana {
     }
   }
   render() {
-    const { dsColor, dsSize, active, skin, content } = this;
+    const { dsColor, dsSize, active, skin, content, hideDownload } = this;
     let textContainerEl;
     let piechartContainerEl;
     textContainerEl = this.createTextContainerEl(content, skin);
@@ -61,6 +65,7 @@ export class MedSemana {
     return (h(Host, { class: generateMedColor(dsColor, {
         "med-semana": true,
         "med-semana--active": active,
+        "med-semana--hide-download": hideDownload,
         [`med-semana--skin-${skin}`]: skin !== undefined,
         [`med-semana--${dsSize}`]: dsSize !== undefined,
       }) },
@@ -187,6 +192,24 @@ export class MedSemana {
         "tags": [],
         "text": "Define o conteudo da semana."
       }
+    },
+    "hideDownload": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Esconde o bot\u00E3o de download."
+      },
+      "attribute": "hide-download",
+      "reflect": true,
+      "defaultValue": "false"
     }
   }; }
   static get states() { return {

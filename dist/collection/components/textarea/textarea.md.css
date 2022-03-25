@@ -162,39 +162,47 @@
 }
 
 :host {
-  --background: hsl(var(--med-color-neutral-3));
-  --color: hsl(var(--med-color-neutral-10));
+  --padding-top: 12px;
+  --padding-end: 16px;
+  --padding-bottom: 12px;
+  --padding-start: 16px;
+  --placeholder-opacity: 1;
   --font-size: 14px;
   --font-weight: 400;
   --line-height: 16px;
-  --padding-top: 8px;
-  --padding-end: 8px;
-  --padding-bottom: 8px;
-  --padding-start: 16px;
+  --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-10));
   --placeholder-color: hsl(var(--med-color-neutral-5));
   --placeholder-font-size: 14px;
   --placeholder-font-weight: 400;
   --placeholder-line-height: 16px;
-  --placeholder-opacity: 1;
-  --height: 112px;
   --border-radius: 8px;
-  border-radius: 8px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: hsl(var(--med-color-neutral-3));
-  min-height: var(--height);
-  text-align: left;
-  display: flex;
-  min-width: 100%;
-  margin: 0;
+  --min-height: 80px;
+}
+
+:host {
+  margin-top: 0;
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
+  white-space: inherit;
+  min-height: var(--min-height);
+  border-radius: var(--border-radius);
 }
-:host::placeholder {
-  line-height: var(--line-height);
+:host .native-textarea {
+  border-radius: var(--border-radius);
+  min-height: var(--min-height);
+}
+:host .native-textarea::placeholder {
   font-size: var(--placeholder-font-size);
+  font-weight: var(--placeholder-font-weight);
+  line-height: var(--placeholder-line-height);
 }
-:host .native-textarea.sc-ion-textarea-md {
-  min-height: var(--height);
+:host .native-textarea[disabled] {
+  opacity: 0.5;
+}
+
+:host(.med-textarea--secondary) {
+  --background: hsl(var(--med-color-neutral-3));
+  --placeholder-color: hsl(var(--med-color-neutral-6));
 }

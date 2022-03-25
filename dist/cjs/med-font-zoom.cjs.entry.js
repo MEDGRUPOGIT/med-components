@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const index = require('./index-bc2e4509.js');
 const fontSize_enum = require('./font-size.enum-941770af.js');
 
-const medFontZoomCss = ":host{display:block}";
+const medFontZoomCss = ":host{display:block}:host .med-icon{stroke:hsl(var(--med-color-neutral-8))}";
 
 const MedFontZoom = class {
   constructor(hostRef) {

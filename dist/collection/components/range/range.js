@@ -1,7 +1,8 @@
 import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { clamp, debounceEvent, renderHiddenInput } from '../../utils/helpers';
-import { createColorClasses, hostContext } from '../../utils/theme';
+import { hostContext } from '../../utils/theme';
+import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -299,7 +300,7 @@ export class Range {
     }
   }
   render() {
-    const { min, max, step, el, handleKeyboard, pressedKnob, disabled, pin, ratioLower, ratioUpper } = this;
+    const { dsColor, min, max, step, el, handleKeyboard, pressedKnob, disabled, pin, ratioLower, ratioUpper } = this;
     const mode = getIonMode(this);
     const barStart = `${ratioLower * 100}%`;
     const barEnd = `${100 - ratioUpper * 100}%`;
@@ -329,7 +330,7 @@ export class Range {
       }
     }
     renderHiddenInput(true, el, this.name, JSON.stringify(this.getValue()), disabled);
-    return (h(Host, { onFocusin: this.onFocus, onFocusout: this.onBlur, class: createColorClasses(this.color, {
+    return (h(Host, { onFocusin: this.onFocus, onFocusout: this.onBlur, class: generateMedColor(dsColor, {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'range-disabled': disabled,
@@ -379,6 +380,28 @@ export class Range {
     "md": ["range.md.css"]
   }; }
   static get properties() { return {
+    "dsColor": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "MedColor",
+        "resolved": "string | undefined",
+        "references": {
+          "MedColor": {
+            "location": "import",
+            "path": "../../interface"
+          }
+        }
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a cor do componente."
+      },
+      "attribute": "ds-color",
+      "reflect": true
+    },
     "color": {
       "type": "string",
       "mutable": false,

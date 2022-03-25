@@ -207,6 +207,7 @@ export class Textarea {
     return this.value || '';
   }
   render() {
+    const { dsName } = this;
     const mode = getIonMode(this);
     const value = this.getValue();
     const labelId = this.inputId + '-lbl';
@@ -216,19 +217,19 @@ export class Textarea {
     }
     return (h(Host, { "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(this.color, {
         [mode]: true,
+        [`med-textarea--${dsName}`]: dsName !== undefined,
       }) },
       h("div", { class: "textarea-wrapper", ref: el => this.textareaWrapper = el },
-        h("textarea", Object.assign({ class: "native-textarea", "aria-labelledby": labelId, ref: el => this.nativeInput = el, autoCapitalize: this.autocapitalize, autoFocus: this.autofocus, enterKeyHint: this.enterkeyhint, inputMode: this.inputmode, disabled: this.disabled, maxLength: this.maxlength, minLength: this.minlength, name: this.name, placeholder: this.placeholder || '', readOnly: this.readonly, required: this.required, spellcheck: this.spellcheck, cols: this.cols, rows: this.rows, wrap: this.wrap, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, onKeyDown: this.onKeyDown }, this.inheritedAttributes), value),
-        h("slot", null))));
+        h("textarea", Object.assign({ class: "native-textarea", "aria-labelledby": labelId, ref: el => this.nativeInput = el, autoCapitalize: this.autocapitalize, autoFocus: this.autofocus, enterKeyHint: this.enterkeyhint, inputMode: this.inputmode, disabled: this.disabled, maxLength: this.maxlength, minLength: this.minlength, name: this.name, placeholder: this.placeholder || '', readOnly: this.readonly, required: this.required, spellcheck: this.spellcheck, cols: this.cols, rows: this.rows, wrap: this.wrap, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, onKeyDown: this.onKeyDown }, this.inheritedAttributes), value))));
   }
   static get is() { return "ion-textarea"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "ios": ["textarea.md.scss"],
+    "ios": ["textarea.ios.scss"],
     "md": ["textarea.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["textarea.md.css"],
+    "ios": ["textarea.ios.css"],
     "md": ["textarea.md.css"]
   }; }
   static get properties() { return {
@@ -252,6 +253,23 @@ export class Textarea {
       "attribute": "fire-focus-events",
       "reflect": false,
       "defaultValue": "true"
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define o icone do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": true
     },
     "color": {
       "type": "string",

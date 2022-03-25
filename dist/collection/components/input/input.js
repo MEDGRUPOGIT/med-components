@@ -224,6 +224,7 @@ export class Input {
     return this.getValue().length > 0;
   }
   render() {
+    const { dsName, icon, status } = this;
     const mode = getIonMode(this);
     const value = this.getValue();
     const labelId = this.inputId + '-lbl';
@@ -231,23 +232,36 @@ export class Input {
     if (label) {
       label.id = labelId;
     }
+    let iconRender;
+    if (status === 'valid') {
+      iconRender = 'med-check';
+    }
+    else if (status === 'invalid') {
+      iconRender = 'med-alerta';
+    }
+    else {
+      iconRender = icon;
+    }
     return (h(Host, { "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(this.color, {
         [mode]: true,
         'has-value': this.hasValue(),
-        'has-focus': this.hasFocus
+        'has-focus': this.hasFocus,
+        [`med-input--${dsName}`]: dsName !== undefined,
+        [`med-input--${status}`]: status !== undefined,
       }) },
       h("input", Object.assign({ class: "native-input", ref: input => this.nativeInput = input, "aria-labelledby": labelId, disabled: this.disabled, accept: this.accept, autoCapitalize: this.autocapitalize, autoComplete: this.autocomplete, autoCorrect: this.autocorrect, autoFocus: this.autofocus, enterKeyHint: this.enterkeyhint, inputMode: this.inputmode, min: this.min, max: this.max, minLength: this.minlength, maxLength: this.maxlength, multiple: this.multiple, name: this.name, pattern: this.pattern, placeholder: this.placeholder || '', readOnly: this.readonly, required: this.required, spellcheck: this.spellcheck, step: this.step, size: this.size, type: this.type, value: value, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, onKeyDown: this.onKeydown }, this.inheritedAttributes)),
-      (this.clearInput && !this.readonly && !this.disabled) && h("button", { "aria-label": "reset", type: "button", class: "input-clear-icon", onTouchStart: this.clearTextInput, onMouseDown: this.clearTextInput, onKeyDown: this.clearTextOnEnter }),
-      this.icon && h("ion-icon", { class: "med-icon", name: this.icon })));
+      (this.clearInput && !this.readonly && !this.disabled) &&
+        h("ion-icon", { class: "med-icon med-input-reset", name: "med-fechar", "aria-label": "reset", onTouchStart: this.clearTextInput, onMouseDown: this.clearTextInput, onKeyDown: this.clearTextOnEnter }),
+      icon && h("ion-icon", { class: "med-icon", name: iconRender })));
   }
   static get is() { return "ion-input"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "ios": ["input.md.scss"],
+    "ios": ["input.ios.scss"],
     "md": ["input.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["input.md.css"],
+    "ios": ["input.ios.css"],
     "md": ["input.md.css"]
   }; }
   static get properties() { return {
@@ -271,6 +285,57 @@ export class Input {
       "attribute": "fire-focus-events",
       "reflect": false,
       "defaultValue": "true"
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define o icone do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": true
+    },
+    "status": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'valid' | 'invalid' | string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define o status do componente."
+      },
+      "attribute": "status",
+      "reflect": true
+    },
+    "icon": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define o icone do componente."
+      },
+      "attribute": "icon",
+      "reflect": false
     },
     "color": {
       "type": "string",
@@ -758,23 +823,6 @@ export class Input {
       "attribute": "value",
       "reflect": false,
       "defaultValue": "''"
-    },
-    "icon": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "icon",
-      "reflect": true
     }
   }; }
   static get states() { return {

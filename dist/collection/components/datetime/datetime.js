@@ -30,8 +30,15 @@ export class Datetime {
      * If `true`, the datetime appears normal but is not interactive.
      */
     this.readonly = false;
+    /**
+      * Remove o estilo de input do componente.
+      */
     this.noStyle = false;
-    this.iconName = this.noStyle ? '' : 'med-baixo';
+    /**
+      * Define o icone do componente.
+      */
+    this.iconName = this.noStyle ? '' : 'med-semana';
+    this.hasFocus = false;
     /**
      * The display format of the date and time as text that shows
      * within the item. When the `pickerFormat` input is not used, then the
@@ -54,9 +61,11 @@ export class Datetime {
     };
     this.onFocus = () => {
       this.ionFocus.emit();
+      this.hasFocus = true;
     };
     this.onBlur = () => {
       this.ionBlur.emit();
+      this.hasFocus = false;
     };
   }
   disabledChanged() {
@@ -361,7 +370,7 @@ export class Datetime {
     }
   }
   render() {
-    const { inputId, text, disabled, readonly, isExpanded, el, placeholder, iconName, noStyle } = this;
+    const { inputId, text, disabled, readonly, isExpanded, el, placeholder, dsName, iconName, noStyle } = this;
     const mode = getIonMode(this);
     const labelId = inputId + '-lbl';
     const label = findItemLabel(el);
@@ -384,7 +393,9 @@ export class Datetime {
         'datetime-readonly': readonly,
         'datetime-placeholder': addPlaceholderClass,
         'in-item': hostContext('ion-item', el),
-        'datetime--no-style': noStyle,
+        [`med-datetime--${dsName}`]: dsName !== undefined,
+        'med-datetime--no-style': noStyle,
+        'has-focus': this.hasFocus,
       } },
       h("div", { class: "datetime-text", part: datetimeTextPart }, datetimeText),
       !noStyle && h("ion-icon", { class: "datetime-icon med-icon", slot: "icon-only", name: iconName }),
@@ -455,6 +466,23 @@ export class Datetime {
       "reflect": false,
       "defaultValue": "false"
     },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": true
+    },
     "noStyle": {
       "type": "boolean",
       "mutable": false,
@@ -467,7 +495,7 @@ export class Datetime {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Remove o estilo de input do componente."
       },
       "attribute": "no-style",
       "reflect": false,
@@ -485,11 +513,11 @@ export class Datetime {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "Define o icone do componente."
       },
       "attribute": "icon-name",
       "reflect": false,
-      "defaultValue": "this.noStyle ? '' : 'med-baixo'"
+      "defaultValue": "this.noStyle ? '' : 'med-semana'"
     },
     "min": {
       "type": "string",
@@ -822,7 +850,8 @@ export class Datetime {
     }
   }; }
   static get states() { return {
-    "isExpanded": {}
+    "isExpanded": {},
+    "hasFocus": {}
   }; }
   static get events() { return [{
       "method": "ionCancel",

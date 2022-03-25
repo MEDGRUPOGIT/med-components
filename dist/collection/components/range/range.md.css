@@ -320,15 +320,20 @@
 }
 
 :host {
-  --bar-background: hsl(var(--med-color-neutral-8));
+  --bar-background: hsl(var(--med-color-neutral-7));
   --bar-background-active: hsl(var(--med-color-brand-4));
+  --knob-size: 24px;
   padding: 0;
 }
 
-::slotted([slot=start]) {
-  stroke: hsl(var(--med-color-neutral-8));
+:host(.med-color) {
+  --bar-background-active: hsl(var(--med-color-4));
 }
 
-::slotted([slot=end]) {
-  stroke: hsl(var(--med-color-neutral-8));
+:host(.med-color-neutral) {
+  --bar-background-active: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --bar-background-active: hsl(var(--med-color-feedback));
 }

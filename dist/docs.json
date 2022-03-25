@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-16T18:15:56",
+  "timestamp": "2022-03-25T14:09:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -2506,7 +2506,6 @@
       "dependents": [
         "filtro-dashboard",
         "filtro-modal",
-        "ion-searchbar",
         "med-banner",
         "med-calendar",
         "med-config",
@@ -2531,9 +2530,6 @@
           "ion-button"
         ],
         "filtro-modal": [
-          "ion-button"
-        ],
-        "ion-searchbar": [
           "ion-button"
         ],
         "med-banner": [
@@ -3478,45 +3474,6 @@
           "required": false
         },
         {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"secondary\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": false,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -3573,8 +3530,14 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "ion-ripple-effect"
+      ],
+      "dependencyGraph": {
+        "ion-chip": [
+          "ion-ripple-effect"
+        ]
+      }
     },
     {
       "filePath": "./src/components/col/col.tsx",
@@ -4639,6 +4602,26 @@
           "required": false
         },
         {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "hourValues",
           "type": "number | number[] | string | undefined",
           "mutable": false,
@@ -4669,9 +4652,9 @@
           "mutable": false,
           "attr": "icon-name",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Define o icone do componente.",
           "docsTags": [],
-          "default": "this.noStyle ? '' : 'med-baixo'",
+          "default": "this.noStyle ? '' : 'med-semana'",
           "values": [
             {
               "type": "string"
@@ -4856,7 +4839,7 @@
           "mutable": false,
           "attr": "no-style",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Remove o estilo de input do componente.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -6913,6 +6896,26 @@
           "required": false
         },
         {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "Define o icone do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "enterkeyhint",
           "type": "\"done\" | \"enter\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined",
           "mutable": false,
@@ -6961,8 +6964,8 @@
           "type": "string | undefined",
           "mutable": false,
           "attr": "icon",
-          "reflectToAttr": true,
-          "docs": "",
+          "reflectToAttr": false,
+          "docs": "Define o icone do componente.",
           "docsTags": [],
           "values": [
             {
@@ -7265,6 +7268,25 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "status",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "status",
+          "reflectToAttr": true,
+          "docs": "Define o status do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -12738,6 +12760,25 @@
           "required": false
         },
         {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "dualKnobs",
           "type": "boolean",
           "mutable": false,
@@ -13568,6 +13609,7 @@
         "ion-back-button",
         "ion-button",
         "ion-card",
+        "ion-chip",
         "ion-fab-button",
         "ion-item",
         "ion-item-option",
@@ -13590,6 +13632,9 @@
           "ion-ripple-effect"
         ],
         "ion-card": [
+          "ion-ripple-effect"
+        ],
+        "ion-chip": [
           "ion-ripple-effect"
         ],
         "ion-fab-button": [
@@ -14572,15 +14617,16 @@
           "required": false
         },
         {
-          "name": "dsColor",
-          "type": "string | undefined",
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
           "mutable": false,
-          "attr": "ds-color",
+          "attr": "ds-name",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "Define o icone do componente.",
           "docsTags": [],
           "values": [
             {
+              "value": "secondary",
               "type": "string"
             },
             {
@@ -14704,6 +14750,23 @@
           "required": false
         },
         {
+          "name": "noIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "no-icon",
+          "reflectToAttr": true,
+          "docs": "Define o icone do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "placeholder",
           "type": "string",
           "mutable": false,
@@ -14711,7 +14774,7 @@
           "reflectToAttr": false,
           "docs": "Set the input's placeholder.\r\n`placeholder` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
           "docsTags": [],
-          "default": "'Pesquisar'",
+          "default": "'Search'",
           "values": [
             {
               "type": "string"
@@ -15016,16 +15079,11 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "ion-icon",
-        "ion-button"
+        "ion-icon"
       ],
       "dependencyGraph": {
         "ion-searchbar": [
-          "ion-icon",
-          "ion-button"
-        ],
-        "ion-button": [
-          "ion-ripple-effect"
+          "ion-icon"
         ]
       }
     },
@@ -15695,13 +15753,34 @@
           "required": false
         },
         {
-          "name": "dsColor",
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "Define o icone do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
           "type": "string | undefined",
           "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Define o icone do componente.",
           "docsTags": [],
+          "default": "'med-baixo'",
           "values": [
             {
               "type": "string"
@@ -17795,6 +17874,26 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "Define o icone do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -21136,32 +21235,14 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-autocomplete/med-autocomplete.tsx",
-      "encapsulation": "shadow",
+      "filePath": "./src/components/@medgrupo/compositions/med-autocomplete/med-autocomplete.tsx",
+      "encapsulation": "scoped",
       "tag": "med-autocomplete",
       "readme": "# med-autocomplete\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [
-        {
-          "name": "list",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "list",
-          "reflectToAttr": false,
-          "docs": "A lista de items a ser renderizada.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
+      "props": [],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -21169,14 +21250,8 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "med-autocomplete": [
-          "ion-icon"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/@medgrupo/core/med-avatar/med-avatar.tsx",
@@ -22437,6 +22512,26 @@
           "required": false
         },
         {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "dsSize",
           "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
           "mutable": false,
@@ -22993,6 +23088,175 @@
       }
     },
     {
+      "filePath": "./src/components/@medgrupo/core/med-chip/med-chip.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-chip",
+      "readme": "# ion-chip\r\n\r\nChips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.\r\n\r",
+      "docs": "Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active",
+          "reflectToAttr": true,
+          "docs": "Define o estado active do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Define o estado disabled do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"md\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": true,
+          "docs": "Define a variação de tamanho componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconLeft",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-left",
+          "reflectToAttr": true,
+          "docs": "Define o icone left do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "iconRight",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-right",
+          "reflectToAttr": true,
+          "docs": "Define o icone right do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Define o texto do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon",
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-chip": [
+          "ion-icon",
+          "med-type"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/@medgrupo/global/med-config/med-config.tsx",
       "encapsulation": "scoped",
       "tag": "med-config",
@@ -23426,6 +23690,65 @@
           "med-download-button"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/compositions/med-dropdown/med-dropdown.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-dropdown",
+      "readme": "# med-dropdown\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/@medgrupo/compositions/med-dropdown-container/med-dropdown-container.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-dropdown-container",
+      "readme": "# med-dropdown-container\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/@medgrupo/team/questoes/med-enunciado/med-enunciado.tsx",
@@ -26969,6 +27292,23 @@
           "required": false
         },
         {
+          "name": "hideDownload",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "hide-download",
+          "reflectToAttr": true,
+          "docs": "Esconde o botão de download.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "skin",
           "type": "\"lista\" | undefined",
           "mutable": false,
@@ -27947,6 +28287,7 @@
         "med-chart-categoria",
         "med-chart-radial",
         "med-check-card",
+        "med-chip",
         "med-nav",
         "med-nav-accordion",
         "med-nav-item",
@@ -27985,6 +28326,9 @@
           "med-type"
         ],
         "med-check-card": [
+          "med-type"
+        ],
+        "med-chip": [
           "med-type"
         ],
         "med-nav": [

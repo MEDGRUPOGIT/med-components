@@ -1,0 +1,1 @@
+import{r as o,h as r,H as d}from"./p-4d70e85a.js";const n=class{constructor(r){o(this,r)}render(){return r(d,null,r("slot",null))}};n.style=".sc-med-dropdown-container-h{display:block;position:relative}.sc-med-dropdown-container-s>med-dropdown+ion-select{--border-radius:8px 8px 0 0}.sc-med-dropdown-container-s>med-dropdown{--top:40px}";export{n as med_dropdown_container}

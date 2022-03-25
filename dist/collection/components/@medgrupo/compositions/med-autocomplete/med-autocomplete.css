@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+::slotted(med-dropdown + ion-searchbar) {
+  --border-radius: 8px 8px 0 0;
+}
+
+::slotted(med-dropdown) {
+  --top: 40px;
+}

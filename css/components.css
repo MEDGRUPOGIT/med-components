@@ -85,6 +85,7 @@
 .med-picker {
   --background: hsl(var(--med-color-neutral-2));
   --border-radius: 16px 16px 0px 0px;
+  --border-color: transparent;
 }
 .med-picker .picker-above-highlight,
 .med-picker .picker-below-highlight {

@@ -117,6 +117,13 @@
   --padding: 0;
 }
 
+:host(.med-semana--hide-download) .med-semana__download-button {
+  display: none;
+}
+:host(.med-semana--hide-download) .med-semana__tempo-container {
+  justify-content: center !important;
+}
+
 :host(.med-semana--sm) {
   --padding: 12px;
   border-radius: 8px 40px 40px 8px;
@@ -204,6 +211,9 @@
   margin: 8px;
 }
 :host(.med-semana--skin-lista) .med-semana__text {
+  --font-size: 16px;
+  --line-height: 16px;
+  --font-weight: 600;
   text-transform: uppercase;
 }
 :host(.med-semana--skin-lista) .med-semana__text--number {
@@ -214,10 +224,21 @@
   margin-left: 4px;
 }
 :host(.med-semana--skin-lista) .med-semana__auxiliar {
+  --font-size: 14px;
+  --line-height: 16px;
+  --font-weight: 400;
+  --color: hsl(var(--med-color-neutral-7));
   margin-right: 4px;
 }
 :host(.med-semana--skin-lista) .med-semana__chart-container {
   flex-direction: column;
+}
+@media (min-width: 768px) {
+  :host(.med-semana--skin-lista) .med-semana__chart-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 8px;
+  }
 }
 :host(.med-semana--skin-lista) .med-semana__chart-row {
   display: flex;
@@ -240,7 +261,6 @@
   align-items: center;
   padding: 0 16px 0 8px;
   max-height: 48px;
-  min-width: 268px;
   text-align: left;
 }
 :host(.med-semana--skin-lista) .med-semana__tempo-container {
@@ -269,6 +289,14 @@
 :host(.med-semana--skin-lista.med-semana--sm) .med-semana__chart-row {
   height: 71px;
   border-radius: 50px 8px 8px 50px;
+}
+:host(.med-semana--skin-lista.med-semana--sm) .med-semana__text {
+  --font-size: 20px;
+  --line-height: 20px;
+}
+:host(.med-semana--skin-lista.med-semana--sm) .med-semana__auxiliar {
+  --font-size: 16px;
+  --line-height: 16px;
 }
 
 :host(.med-semana--skin-lista.med-semana--active) {

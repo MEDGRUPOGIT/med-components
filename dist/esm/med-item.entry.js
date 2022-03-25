@@ -4,9 +4,9 @@ import { r as raf } from './helpers-6b411283.js';
 import { h as hostContext, o as openURL } from './theme-3b0eafd2.js';
 import { g as generateMedColor } from './med-theme-33df6a63.js';
 
-const iosMedItemCss = ":host{--padding:0}:host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;padding:var(--padding);position:relative}:host(.med-item){background:transparent !important}:host(.med-item--padding){--padding:12px 16px}.item-inner{display:-ms-flexbox;display:flex}.input-wrapper{-ms-flex:1;flex:1}.item-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:0;background:transparent;width:100%;border:0;text-align:left;outline:none}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0;z-index:-1}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}";
+const iosMedItemCss = ":host{--padding:12px 16px}:host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;padding:var(--padding);position:relative}:host(.med-item){background:transparent !important}:host(.med-item--no-padding){--padding:0 16px}.item-inner{display:-ms-flexbox;display:flex}.input-wrapper{-ms-flex:1;flex:1}.item-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:0;background:transparent;width:100%;border:0;text-align:left;outline:none}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0;z-index:-1}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}";
 
-const mdMedItemCss = ":host{--padding:0}:host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;padding:var(--padding);position:relative}:host(.med-item){background:transparent !important}:host(.med-item--padding){--padding:12px 16px}.item-inner{display:-ms-flexbox;display:flex}.input-wrapper{-ms-flex:1;flex:1}.item-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:0;background:transparent;width:100%;border:0;text-align:left;outline:none}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0;z-index:-1}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}";
+const mdMedItemCss = ":host{--padding:12px 16px}:host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;padding:var(--padding);position:relative}:host(.med-item){background:transparent !important}:host(.med-item--no-padding){--padding:0 16px}.item-inner{display:-ms-flexbox;display:flex}.input-wrapper{-ms-flex:1;flex:1}.item-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:0;background:transparent;width:100%;border:0;text-align:left;outline:none}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0;z-index:-1}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}";
 
 const MedItem = class {
   constructor(hostRef) {
@@ -177,15 +177,15 @@ const MedItem = class {
       Object.assign(childStyles, value);
     });
     return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign(Object.assign({}, childStyles), labelColorStyles), generateMedColor(dsColor, {
-        'med-item': true,
         [mode]: true,
+        'med-item': true,
         [`med-item-lines-${lines}`]: lines !== undefined,
         'med-item-disabled': disabled,
         'in-list': hostContext('med-lista', this.el),
         'med-item-multiple-inputs': this.multipleInputs,
         'ion-activatable': canActivate,
         'ion-focusable': true,
-        'med-item--padding': padding
+        'med-item--no-padding': padding
       })) }, h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn), h("slot", { name: "start" }), h("div", { class: "item-inner" }, h("div", { class: "input-wrapper" }, h("slot", null)), h("slot", { name: "end" }), showDetail && h("ion-icon", { icon: detailIcon, lazy: false, class: "med-icon item-detail-icon", part: "detail-icon", "aria-hidden": "true" }), h("div", { class: "item-inner-highlight" }))), h("div", { class: "item-highlight" })));
   }
   static get delegatesFocus() { return true; }

@@ -1,3 +1,5 @@
+@import "../abstracts";
+
 ////////////////////
 // Global
 ////////////////////
@@ -28,8 +30,3 @@
 @import "./monta-provas/accordion-chart-monta-provas";
 @import "./monta-provas/filtros-monta-provas";
 @import "./monta-provas/footer-monta-provas";
-
-////////////////////
-// old
-////////////////////
-@import "./main/main-week";

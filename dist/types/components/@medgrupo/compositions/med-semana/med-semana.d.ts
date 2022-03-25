@@ -25,6 +25,10 @@ export declare class MedSemana {
    * Define o conteudo da semana.
    */
   content: MedSemanaInterface;
+  /**
+   * Esconde o botão de download.
+   */
+  hideDownload: boolean;
   flipped: boolean;
   private handleFlip;
   private createTextContainerEl;

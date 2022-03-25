@@ -888,19 +888,6 @@
           "description": "If `true`, the user cannot interact with the chip."
         },
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
-        },
-        {
-          "name": "ds-name",
-          "description": "Define a variação do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            }
-          ]
-        },
-        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -1114,12 +1101,21 @@
           "description": "The text to display on the picker's \"Done\" button."
         },
         {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
+        },
+        {
           "name": "hour-values",
           "description": "Values used to create the list of selectable hours. By default\r\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\r\nto control exactly which hours to display, the `hourValues` input can take a number, an\r\narray of numbers, or a string of comma separated numbers."
         },
         {
           "name": "icon-name",
-          "description": ""
+          "description": "Define o icone do componente."
         },
         {
           "name": "max",
@@ -1163,7 +1159,7 @@
         },
         {
           "name": "no-style",
-          "description": ""
+          "description": "Remove o estilo de input do componente."
         },
         {
           "name": "picker-format",
@@ -1847,6 +1843,15 @@
           "description": "If `true`, the user cannot interact with the input."
         },
         {
+          "name": "ds-name",
+          "description": "Define o icone do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
+        },
+        {
           "name": "enterkeyhint",
           "description": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
           "values": [
@@ -1875,7 +1880,7 @@
         },
         {
           "name": "icon",
-          "description": ""
+          "description": "Define o icone do componente."
         },
         {
           "name": "inputmode",
@@ -1966,6 +1971,10 @@
         {
           "name": "spellcheck",
           "description": "If `true`, the element will have its spelling and grammar checked."
+        },
+        {
+          "name": "status",
+          "description": "Define o status do componente."
         },
         {
           "name": "step",
@@ -3110,6 +3119,10 @@
           "description": "If `true`, the user cannot interact with the range."
         },
         {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
           "name": "dual-knobs",
           "description": "Show two knobs."
         },
@@ -3694,8 +3707,13 @@
           "description": "If `true`, the user cannot interact with the input."
         },
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
+          "name": "ds-name",
+          "description": "Define o icone do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
         },
         {
           "name": "enterkeyhint",
@@ -3765,6 +3783,10 @@
               "name": "md"
             }
           ]
+        },
+        {
+          "name": "no-icon",
+          "description": "Define o icone do componente."
         },
         {
           "name": "placeholder",
@@ -4014,8 +4036,17 @@
           "description": "If `true`, the user cannot interact with the select."
         },
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
+          "name": "ds-name",
+          "description": "Define o icone do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "description": "Define o icone do componente."
         },
         {
           "name": "interface",
@@ -4488,6 +4519,15 @@
         {
           "name": "disabled",
           "description": "If `true`, the user cannot interact with the textarea."
+        },
+        {
+          "name": "ds-name",
+          "description": "Define o icone do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
         },
         {
           "name": "enterkeyhint",
@@ -5249,16 +5289,11 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": [
-        {
-          "name": "list",
-          "description": "A lista de items a ser renderizada."
-        }
-      ],
+      "attributes": [],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-autocomplete/med-autocomplete.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-autocomplete/med-autocomplete.tsx"
         }
       ]
     },
@@ -5670,6 +5705,15 @@
           "description": "Define a cor do componente."
         },
         {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
+        },
+        {
           "name": "ds-size",
           "description": "Define a variação de tamanho.",
           "values": [
@@ -5847,6 +5891,63 @@
       ]
     },
     {
+      "name": "med-chip",
+      "description": {
+        "kind": "markdown",
+        "value": "Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons."
+      },
+      "attributes": [
+        {
+          "name": "active",
+          "description": "Define o estado active do componente."
+        },
+        {
+          "name": "disabled",
+          "description": "Define o estado disabled do componente."
+        },
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
+        },
+        {
+          "name": "ds-size",
+          "description": "Define a variação de tamanho componente.",
+          "values": [
+            {
+              "name": "md"
+            }
+          ]
+        },
+        {
+          "name": "icon-left",
+          "description": "Define o icone left do componente."
+        },
+        {
+          "name": "icon-right",
+          "description": "Define o icone right do componente."
+        },
+        {
+          "name": "label",
+          "description": "Define o texto do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-chip/med-chip.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-config",
       "description": {
         "kind": "markdown",
@@ -5946,6 +6047,44 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-download-button/med-download-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-dropdown",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-dropdown/med-dropdown.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-dropdown-container",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-dropdown-container/med-dropdown-container.tsx"
         }
       ]
     },
@@ -7073,6 +7212,10 @@
               "name": "sm"
             }
           ]
+        },
+        {
+          "name": "hide-download",
+          "description": "Esconde o botão de download."
         },
         {
           "name": "skin",

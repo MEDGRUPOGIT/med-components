@@ -486,14 +486,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -688,9 +680,16 @@ export namespace Components {
          */
         "doneText": string;
         /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'secondary';
+        /**
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
+        /**
+          * Define o icone do componente.
+         */
         "iconName": string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
@@ -724,6 +723,9 @@ export namespace Components {
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
+        /**
+          * Remove o estilo de input do componente.
+         */
         "noStyle": boolean;
         /**
           * Opens the datetime overlay.
@@ -978,6 +980,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Define o icone do componente.
+         */
+        "dsName"?: 'secondary';
+        /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
@@ -989,6 +995,9 @@ export namespace Components {
           * Returns the native `<input>` element used under the hood.
          */
         "getInputElement": () => Promise<HTMLInputElement>;
+        /**
+          * Define o icone do componente.
+         */
         "icon"?: string;
         /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
@@ -1054,6 +1063,10 @@ export namespace Components {
           * If `true`, the element will have its spelling and grammar checked.
          */
         "spellcheck": boolean;
+        /**
+          * Define o status do componente.
+         */
+        "status"?: 'valid' | 'invalid' | string | undefined;
         /**
           * Works with the min and max attributes to limit the increments at which a value can be set. Possible values are: `"any"` or a positive floating point number.
          */
@@ -1879,6 +1892,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
           * Show two knobs.
          */
         "dualKnobs": boolean;
@@ -2140,9 +2157,9 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define a cor do componente.
+          * Define o icone do componente.
          */
-        "dsColor"?: MedColor;
+        "dsName"?: 'secondary';
         /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
@@ -2159,6 +2176,10 @@ export namespace Components {
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
+        /**
+          * Define o icone do componente.
+         */
+        "noIcon": boolean;
         /**
           * Set the input's placeholder. `placeholder` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
          */
@@ -2270,9 +2291,13 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define a cor do componente.
+          * Define o icone do componente.
          */
-        "dsColor"?: MedColor;
+        "dsName"?: 'secondary';
+        /**
+          * Define o icone do componente.
+         */
+        "icon"?: string | undefined;
         /**
           * The interface the select should use: `action-sheet`, `popover` or `alert`.
          */
@@ -2618,6 +2643,10 @@ export namespace Components {
           * If `true`, the user cannot interact with the textarea.
          */
         "disabled": boolean;
+        /**
+          * Define o icone do componente.
+         */
+        "dsName"?: 'secondary';
         /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
@@ -3145,10 +3174,6 @@ export namespace Components {
         "videos": string;
     }
     interface MedAutocomplete {
-        /**
-          * A lista de items a ser renderizada.
-         */
-        "list": boolean;
     }
     interface MedAvatar {
         /**
@@ -3321,6 +3346,10 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'secondary';
+        /**
           * Define a variação de tamanho.
          */
         "dsSize"?: 'xs' | 'sm' | 'md' | 'lg';
@@ -3417,6 +3446,40 @@ export namespace Components {
          */
         "fill"?: 'outline';
     }
+    interface MedChip {
+        /**
+          * Define o estado active do componente.
+         */
+        "active": boolean;
+        /**
+          * Define o estado disabled do componente.
+         */
+        "disabled": boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'secondary';
+        /**
+          * Define a variação de tamanho componente.
+         */
+        "dsSize"?: 'md';
+        /**
+          * Define o icone left do componente.
+         */
+        "iconLeft": string;
+        /**
+          * Define o icone right do componente.
+         */
+        "iconRight": string;
+        /**
+          * Define o texto do componente.
+         */
+        "label": string;
+    }
     interface MedConfig {
         /**
           * TODO
@@ -3483,6 +3546,14 @@ export namespace Components {
           * Define o valor da progress bar do componente.
          */
         "value": number;
+    }
+    interface MedDropdown {
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'secondary';
+    }
+    interface MedDropdownContainer {
     }
     interface MedEnunciado {
         /**
@@ -4008,6 +4079,10 @@ export namespace Components {
           * Define a variação de tamanho do componente.
          */
         "dsSize"?: 'sm';
+        /**
+          * Esconde o botão de download.
+         */
+        "hideDownload": boolean;
         /**
           * Define a skin do componente.
          */
@@ -4898,6 +4973,12 @@ declare global {
         prototype: HTMLMedChildElement;
         new (): HTMLMedChildElement;
     };
+    interface HTMLMedChipElement extends Components.MedChip, HTMLStencilElement {
+    }
+    var HTMLMedChipElement: {
+        prototype: HTMLMedChipElement;
+        new (): HTMLMedChipElement;
+    };
     interface HTMLMedConfigElement extends Components.MedConfig, HTMLStencilElement {
     }
     var HTMLMedConfigElement: {
@@ -4921,6 +5002,18 @@ declare global {
     var HTMLMedDownloadButtonElement: {
         prototype: HTMLMedDownloadButtonElement;
         new (): HTMLMedDownloadButtonElement;
+    };
+    interface HTMLMedDropdownElement extends Components.MedDropdown, HTMLStencilElement {
+    }
+    var HTMLMedDropdownElement: {
+        prototype: HTMLMedDropdownElement;
+        new (): HTMLMedDropdownElement;
+    };
+    interface HTMLMedDropdownContainerElement extends Components.MedDropdownContainer, HTMLStencilElement {
+    }
+    var HTMLMedDropdownContainerElement: {
+        prototype: HTMLMedDropdownContainerElement;
+        new (): HTMLMedDropdownContainerElement;
     };
     interface HTMLMedEnunciadoElement extends Components.MedEnunciado, HTMLStencilElement {
     }
@@ -5321,10 +5414,13 @@ declare global {
         "med-chart-radial-label": HTMLMedChartRadialLabelElement;
         "med-check-card": HTMLMedCheckCardElement;
         "med-child": HTMLMedChildElement;
+        "med-chip": HTMLMedChipElement;
         "med-config": HTMLMedConfigElement;
         "med-context-menu": HTMLMedContextMenuElement;
         "med-divider": HTMLMedDividerElement;
         "med-download-button": HTMLMedDownloadButtonElement;
+        "med-dropdown": HTMLMedDropdownElement;
+        "med-dropdown-container": HTMLMedDropdownContainerElement;
         "med-enunciado": HTMLMedEnunciadoElement;
         "med-enunciado-discursiva": HTMLMedEnunciadoDiscursivaElement;
         "med-font-zoom": HTMLMedFontZoomElement;
@@ -5863,14 +5959,6 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -6049,9 +6137,16 @@ declare namespace LocalJSX {
          */
         "doneText"?: string;
         /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'secondary';
+        /**
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
+        /**
+          * Define o icone do componente.
+         */
         "iconName"?: string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
@@ -6085,6 +6180,9 @@ declare namespace LocalJSX {
           * The name of the control, which is submitted with the form data.
          */
         "name"?: string;
+        /**
+          * Remove o estilo de input do componente.
+         */
         "noStyle"?: boolean;
         /**
           * Emitted when the datetime loses focus.
@@ -6367,9 +6465,16 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Define o icone do componente.
+         */
+        "dsName"?: 'secondary';
+        /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
+        /**
+          * Define o icone do componente.
+         */
         "icon"?: string;
         /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
@@ -6443,6 +6548,10 @@ declare namespace LocalJSX {
           * If `true`, the element will have its spelling and grammar checked.
          */
         "spellcheck"?: boolean;
+        /**
+          * Define o status do componente.
+         */
+        "status"?: 'valid' | 'invalid' | string | undefined;
         /**
           * Works with the min and max attributes to limit the increments at which a value can be set. Possible values are: `"any"` or a positive floating point number.
          */
@@ -7152,6 +7261,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
           * Show two knobs.
          */
         "dualKnobs"?: boolean;
@@ -7416,9 +7529,9 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Define a cor do componente.
+          * Define o icone do componente.
          */
-        "dsColor"?: MedColor;
+        "dsName"?: 'secondary';
         /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
@@ -7431,6 +7544,10 @@ declare namespace LocalJSX {
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
+        /**
+          * Define o icone do componente.
+         */
+        "noIcon"?: boolean;
         /**
           * Emitted when the input loses focus.
          */
@@ -7566,9 +7683,13 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Define a cor do componente.
+          * Define o icone do componente.
          */
-        "dsColor"?: MedColor;
+        "dsName"?: 'secondary';
+        /**
+          * Define o icone do componente.
+         */
+        "icon"?: string | undefined;
         /**
           * The interface the select should use: `action-sheet`, `popover` or `alert`.
          */
@@ -7907,6 +8028,10 @@ declare namespace LocalJSX {
           * If `true`, the user cannot interact with the textarea.
          */
         "disabled"?: boolean;
+        /**
+          * Define o icone do componente.
+         */
+        "dsName"?: 'secondary';
         /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
@@ -8468,10 +8593,6 @@ declare namespace LocalJSX {
         "videos": string;
     }
     interface MedAutocomplete {
-        /**
-          * A lista de items a ser renderizada.
-         */
-        "list"?: boolean;
     }
     interface MedAvatar {
         /**
@@ -8654,6 +8775,10 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'secondary';
+        /**
           * Define a variação de tamanho.
          */
         "dsSize"?: 'xs' | 'sm' | 'md' | 'lg';
@@ -8752,6 +8877,40 @@ declare namespace LocalJSX {
          */
         "fill"?: 'outline';
     }
+    interface MedChip {
+        /**
+          * Define o estado active do componente.
+         */
+        "active"?: boolean;
+        /**
+          * Define o estado disabled do componente.
+         */
+        "disabled"?: boolean;
+        /**
+          * Define a cor do componente.
+         */
+        "dsColor"?: MedColor;
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'secondary';
+        /**
+          * Define a variação de tamanho componente.
+         */
+        "dsSize"?: 'md';
+        /**
+          * Define o icone left do componente.
+         */
+        "iconLeft": string;
+        /**
+          * Define o icone right do componente.
+         */
+        "iconRight": string;
+        /**
+          * Define o texto do componente.
+         */
+        "label": string;
+    }
     interface MedConfig {
         /**
           * TODO
@@ -8826,6 +8985,14 @@ declare namespace LocalJSX {
           * Define o valor da progress bar do componente.
          */
         "value"?: number;
+    }
+    interface MedDropdown {
+        /**
+          * Define a variação do componente.
+         */
+        "dsName"?: 'secondary';
+    }
+    interface MedDropdownContainer {
     }
     interface MedEnunciado {
         /**
@@ -9368,6 +9535,10 @@ declare namespace LocalJSX {
          */
         "dsSize"?: 'sm';
         /**
+          * Esconde o botão de download.
+         */
+        "hideDownload"?: boolean;
+        /**
           * Define a skin do componente.
          */
         "skin"?: 'lista';
@@ -9681,10 +9852,13 @@ declare namespace LocalJSX {
         "med-chart-radial-label": MedChartRadialLabel;
         "med-check-card": MedCheckCard;
         "med-child": MedChild;
+        "med-chip": MedChip;
         "med-config": MedConfig;
         "med-context-menu": MedContextMenu;
         "med-divider": MedDivider;
         "med-download-button": MedDownloadButton;
+        "med-dropdown": MedDropdown;
+        "med-dropdown-container": MedDropdownContainer;
         "med-enunciado": MedEnunciado;
         "med-enunciado-discursiva": MedEnunciadoDiscursiva;
         "med-font-zoom": MedFontZoom;
@@ -9854,10 +10028,13 @@ declare module "@stencil/core" {
             "med-chart-radial-label": LocalJSX.MedChartRadialLabel & JSXBase.HTMLAttributes<HTMLMedChartRadialLabelElement>;
             "med-check-card": LocalJSX.MedCheckCard & JSXBase.HTMLAttributes<HTMLMedCheckCardElement>;
             "med-child": LocalJSX.MedChild & JSXBase.HTMLAttributes<HTMLMedChildElement>;
+            "med-chip": LocalJSX.MedChip & JSXBase.HTMLAttributes<HTMLMedChipElement>;
             "med-config": LocalJSX.MedConfig & JSXBase.HTMLAttributes<HTMLMedConfigElement>;
             "med-context-menu": LocalJSX.MedContextMenu & JSXBase.HTMLAttributes<HTMLMedContextMenuElement>;
             "med-divider": LocalJSX.MedDivider & JSXBase.HTMLAttributes<HTMLMedDividerElement>;
             "med-download-button": LocalJSX.MedDownloadButton & JSXBase.HTMLAttributes<HTMLMedDownloadButtonElement>;
+            "med-dropdown": LocalJSX.MedDropdown & JSXBase.HTMLAttributes<HTMLMedDropdownElement>;
+            "med-dropdown-container": LocalJSX.MedDropdownContainer & JSXBase.HTMLAttributes<HTMLMedDropdownContainerElement>;
             "med-enunciado": LocalJSX.MedEnunciado & JSXBase.HTMLAttributes<HTMLMedEnunciadoElement>;
             "med-enunciado-discursiva": LocalJSX.MedEnunciadoDiscursiva & JSXBase.HTMLAttributes<HTMLMedEnunciadoDiscursivaElement>;
             "med-font-zoom": LocalJSX.MedFontZoom & JSXBase.HTMLAttributes<HTMLMedFontZoomElement>;

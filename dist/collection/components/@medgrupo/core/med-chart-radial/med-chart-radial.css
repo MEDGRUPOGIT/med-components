@@ -119,3 +119,7 @@
 :host(.med-color-feedback) .med-chart-radial__titulo {
   --color: hsl(var(--med-color-feedback));
 }
+
+:host(.med-chart-radial--secondary) {
+  --stroke-background: hsl(var(--med-color-neutral-1));
+}

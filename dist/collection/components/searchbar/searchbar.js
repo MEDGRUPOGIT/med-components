@@ -2,7 +2,7 @@ import { Component, Element, Event, Host, Method, Prop, State, Watch, forceUpdat
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { debounceEvent, raf } from '../../utils/helpers';
-import { generateMedColor } from '../../utils/med-theme';
+import { createColorClasses } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
@@ -12,6 +12,10 @@ export class Searchbar {
     this.shouldAlignLeft = true;
     this.focused = false;
     this.noAnimate = true;
+    /**
+      * Define o icone do componente.
+      */
+    this.noIcon = false;
     /**
      * If `true`, enable searchbar animation.
      */
@@ -50,7 +54,7 @@ export class Searchbar {
      *
      * For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
      */
-    this.placeholder = 'Pesquisar';
+    this.placeholder = 'Search';
     /**
      * Sets the behavior for the cancel button. Defaults to `"never"`.
      * Setting to `"focus"` shows the cancel button on focus.
@@ -321,18 +325,17 @@ export class Searchbar {
     return true;
   }
   render() {
-    const { cancelButtonText } = this;
+    const { cancelButtonText, dsName, noIcon } = this;
     const animated = this.animated && config.getBoolean('animated', true);
     const mode = getIonMode(this);
-    const clearIcon = this.clearIcon || (mode === 'ios' ? 'close-circle' : 'close-sharp');
-    const searchIcon = this.searchIcon || (mode === 'ios' ? 'search-outline' : 'search-sharp');
+    const clearIcon = this.clearIcon || (mode === 'ios' ? 'med-fechar' : 'med-fechar');
+    const searchIcon = this.searchIcon || (mode === 'ios' ? 'med-busca' : 'search-sharp');
     const shouldShowCancelButton = this.shouldShowCancelButton();
     const cancelButton = (this.showCancelButton !== 'never') && (h("button", { "aria-label": cancelButtonText, "aria-hidden": shouldShowCancelButton ? undefined : 'true', type: "button", tabIndex: mode === 'ios' && !shouldShowCancelButton ? -1 : undefined, onMouseDown: this.onCancelSearchbar, onTouchStart: this.onCancelSearchbar, class: "searchbar-cancel-button" },
       h("div", { "aria-hidden": "true" }, mode === 'md'
-        ? h("ion-icon", { class: "med-icon", "aria-hidden": "true", mode: mode, icon: this.cancelButtonIcon, lazy: false })
+        ? h("ion-icon", { "aria-hidden": "true", class: "med-icon", mode: mode, icon: this.cancelButtonIcon, lazy: false })
         : cancelButtonText)));
-    const { dsColor } = this;
-    return (h(Host, { role: "search", "aria-disabled": this.disabled ? 'true' : null, class: generateMedColor(dsColor, {
+    return (h(Host, { role: "search", "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(this.color, {
         [mode]: true,
         'searchbar-animated': animated,
         'searchbar-disabled': this.disabled,
@@ -341,48 +344,63 @@ export class Searchbar {
         'searchbar-left-aligned': this.shouldAlignLeft,
         'searchbar-has-focus': this.focused,
         'searchbar-should-show-clear': this.shouldShowClearButton(),
-        'searchbar-should-show-cancel': this.shouldShowCancelButton()
+        'searchbar-should-show-cancel': this.shouldShowCancelButton(),
+        'med-searchbar--no-icon': noIcon,
+        [`med-searchbar--${dsName}`]: dsName !== undefined,
       }) },
       h("div", { class: "searchbar-input-container" },
+        h("ion-icon", { "aria-hidden": "true", class: "med-icon med-icon-search", mode: mode, icon: searchIcon, lazy: false }),
         h("input", { "aria-label": "search text", disabled: this.disabled, ref: el => this.nativeInput = el, class: "searchbar-input", inputMode: this.inputmode, enterKeyHint: this.enterkeyhint, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, placeholder: this.placeholder, type: this.type, value: this.getValue(), autoComplete: this.autocomplete, autoCorrect: this.autocorrect, spellcheck: this.spellcheck }),
         mode === 'md' && cancelButton,
-        h("ion-icon", { "aria-hidden": "true", mode: mode, icon: searchIcon, lazy: false, class: "med-icon searchbar-search-icon" }),
-        h("ion-button", { "ds-name": "tertiary", "aria-label": "reset", type: "button", "no-blur": true, class: "searchbar-clear-button", onMouseDown: ev => this.onClearInput(ev, true), onTouchStart: ev => this.onClearInput(ev, true) },
-          h("ion-icon", { slot: "icon-only", name: "med-fechar", "aria-hidden": "true", mode: mode, icon: clearIcon, lazy: false, class: "med-icon searchbar-clear-icon" }))),
+        h("button", { "aria-label": "reset", type: "button", "no-blur": true, class: "searchbar-clear-button", onMouseDown: ev => this.onClearInput(ev, true), onTouchStart: ev => this.onClearInput(ev, true) },
+          h("ion-icon", { "aria-hidden": "true", class: "med-icon searchbar-clear-icon", mode: mode, icon: clearIcon, lazy: false }))),
       mode === 'ios' && cancelButton));
   }
   static get is() { return "ion-searchbar"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "ios": ["searchbar.ios.scss"],
-    "md": ["searchbar.ios.scss"]
+    "md": ["searchbar.md.scss"]
   }; }
   static get styleUrls() { return {
     "ios": ["searchbar.ios.css"],
-    "md": ["searchbar.ios.css"]
+    "md": ["searchbar.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
+    "dsName": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
       },
       "required": false,
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": "Define o icone do componente."
       },
-      "attribute": "ds-color",
+      "attribute": "ds-name",
       "reflect": true
+    },
+    "noIcon": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o icone do componente."
+      },
+      "attribute": "no-icon",
+      "reflect": true,
+      "defaultValue": "false"
     },
     "color": {
       "type": "string",
@@ -604,7 +622,7 @@ export class Searchbar {
       },
       "attribute": "placeholder",
       "reflect": false,
-      "defaultValue": "'Pesquisar'"
+      "defaultValue": "'Search'"
     },
     "searchIcon": {
       "type": "string",

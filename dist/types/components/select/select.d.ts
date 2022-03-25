@@ -1,7 +1,6 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
 import { SelectChangeEventDetail, SelectInterface, StyleEventDetail } from '../../interface';
 import { SelectCompareFn } from './select-interface';
-import { MedColor } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -16,11 +15,15 @@ export declare class Select implements ComponentInterface {
   private focusEl?;
   private mutationO?;
   el: HTMLIonSelectElement;
-  isExpanded: boolean;
   /**
-    * Define a cor do componente.
+    * Define o icone do componente.
     */
-  dsColor?: MedColor;
+  dsName?: 'secondary';
+  /**
+    * Define o icone do componente.
+    */
+  icon?: string | undefined;
+  isExpanded: boolean;
   /**
    * If `true`, the user cannot interact with the select.
    */

@@ -1,8 +1,7 @@
-@import "../../../templarios/abstracts";
-
 .med-picker {
   --background: hsl(var(--med-color-neutral-2));
   --border-radius: 16px 16px 0px 0px;
+  --border-color: transparent;
 
   .picker-above-highlight,
   .picker-below-highlight {

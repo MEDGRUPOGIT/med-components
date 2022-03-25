@@ -181,15 +181,15 @@ export class MedItem {
       Object.assign(childStyles, value);
     });
     return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign(Object.assign({}, childStyles), labelColorStyles), generateMedColor(dsColor, {
-        'med-item': true,
         [mode]: true,
+        'med-item': true,
         [`med-item-lines-${lines}`]: lines !== undefined,
         'med-item-disabled': disabled,
         'in-list': hostContext('med-lista', this.el),
         'med-item-multiple-inputs': this.multipleInputs,
         'ion-activatable': canActivate,
         'ion-focusable': true,
-        'med-item--padding': padding
+        'med-item--no-padding': padding
       })) },
       h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn),
         h("slot", { name: "start" }),

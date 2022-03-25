@@ -1,5 +1,5 @@
 :host {
-  --padding: 0;
+  --padding: 12px 16px;
 }
 
 :host {
@@ -14,8 +14,8 @@
   background: transparent !important;
 }
 
-:host(.med-item--padding) {
-  --padding: 12px 16px;
+:host(.med-item--no-padding) {
+  --padding: 0 16px;
 }
 
 .item-inner {

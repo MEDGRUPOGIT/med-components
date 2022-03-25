@@ -8,7 +8,7 @@ export default {
   decorators: [withDesign],
 };
 
-const Template = ({ dsColor, disabled, expand, dsSize, icon, slot }) => {
+const Template = ({ dsColor, disabled, expand, dsSize, icon, label }) => {
   console.log(dsSize);
   return html`
     <style>
@@ -23,19 +23,19 @@ const Template = ({ dsColor, disabled, expand, dsSize, icon, slot }) => {
       <ion-content>
 
         <div>
-          <ion-button .dsColor=${dsColor} ds-size=${dsSize} ?disabled=${disabled} .expand=${expand}>${slot} ${dsSize}</ion-button>
+          <ion-button .dsColor=${dsColor} ds-size=${dsSize} ?disabled=${disabled} .expand=${expand}>${label} ${dsSize}</ion-button>
         </div>
 
         <div>
           <ion-button .dsColor=${dsColor} ds-size=${dsSize} ?disabled=${disabled} .expand=${expand}>
             <ion-icon slot="start" class="med-icon" name=${icon}></ion-icon>
-            ${slot} ${dsSize}
+            ${label} ${dsSize}
           </ion-button>
         </div>
 
         <div>
           <ion-button .dsColor=${dsColor} ds-size=${dsSize} ?disabled=${disabled} .expand=${expand}>
-            ${slot} ${dsSize}
+            ${label} ${dsSize}
             <ion-icon slot="end" class="med-icon" name=${icon}></ion-icon>
           </ion-button>
         </div>
@@ -100,8 +100,12 @@ Default.argTypes = {
       defaultValue: { summary: 'med-esquerda' },
     },
   },
-  slot: {
+  label: {
     control: { type: 'text' },
-    defaultValue: 'Button',
+    description: '**Atributo utilizado apenas no storybook. Não é um atributo do componente!.**',
+    defaultValue: 'Label',
+    table: {
+      type:  { summary: 'string' },
+    },
   },
 };

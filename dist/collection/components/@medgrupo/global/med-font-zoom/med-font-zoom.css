@@ -1,3 +1,6 @@
 :host {
   display: block;
 }
+:host .med-icon {
+  stroke: hsl(var(--med-color-neutral-8));
+}

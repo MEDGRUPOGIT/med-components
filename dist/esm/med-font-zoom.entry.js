@@ -1,7 +1,7 @@
 import { r as registerInstance, h, H as Host } from './index-70672e81.js';
 import { M as MedFontSize } from './font-size.enum-efd89669.js';
 
-const medFontZoomCss = ":host{display:block}";
+const medFontZoomCss = ":host{display:block}:host .med-icon{stroke:hsl(var(--med-color-neutral-8))}";
 
 const MedFontZoom = class {
   constructor(hostRef) {

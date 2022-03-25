@@ -4,7 +4,6 @@ import { findItemLabel, getAriaLabel, renderHiddenInput } from '../../utils/help
 import { actionSheetController, alertController, popoverController } from '../../utils/overlays';
 import { hostContext } from '../../utils/theme';
 import { watchForOptions } from '../../utils/watch-options';
-import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -16,6 +15,10 @@ export class Select {
   constructor() {
     this.inputId = `ion-sel-${selectIds++}`;
     this.didInit = false;
+    /**
+      * Define o icone do componente.
+      */
+    this.icon = 'med-baixo';
     this.isExpanded = false;
     /**
      * If `true`, the user cannot interact with the select.
@@ -297,7 +300,7 @@ export class Select {
     });
   }
   render() {
-    const { disabled, el, inputId, isExpanded, name, placeholder, value, dsColor } = this;
+    const { disabled, el, inputId, isExpanded, name, placeholder, value, dsName, icon } = this;
     const mode = getIonMode(this);
     const { labelText, labelId } = getAriaLabel(el, inputId);
     renderHiddenInput(true, el, name, parseValue(value), disabled);
@@ -320,50 +323,63 @@ export class Select {
     const displayLabel = labelText !== undefined
       ? (selectText !== '' ? `${selectText}, ${labelText}` : labelText)
       : selectText;
-    return (h(Host, { onClick: this.onClick, role: "button", "aria-haspopup": "listbox", "aria-disabled": disabled ? 'true' : null, "aria-label": displayLabel, class: generateMedColor(dsColor, {
+    return (h(Host, { onClick: this.onClick, role: "button", "aria-haspopup": "listbox", "aria-disabled": disabled ? 'true' : null, "aria-label": displayLabel, class: {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'select-disabled': disabled,
         'select-expanded': isExpanded,
-        'med-select': true
-      }) },
+        [`med-select--${dsName}`]: dsName !== undefined,
+      } },
       h("div", { "aria-hidden": "true", class: selectTextClasses, part: textPart }, selectText),
-      h("ion-icon", { class: "med-icon med-select-icon", name: "med-baixo" }),
+      icon && h("ion-icon", { class: "med-icon", name: icon }),
       h("label", { id: labelId }, displayLabel),
       h("button", { type: "button", disabled: disabled, id: inputId, "aria-labelledby": labelId, "aria-haspopup": "listbox", "aria-expanded": `${isExpanded}`, onFocus: this.onFocus, onBlur: this.onBlur, ref: (focusEl => this.focusEl = focusEl) })));
   }
   static get is() { return "ion-select"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["select.md.scss"],
+    "ios": ["select.ios.scss"],
     "md": ["select.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["select.md.css"],
+    "ios": ["select.ios.css"],
     "md": ["select.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
+    "dsName": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
+        "original": "'secondary'",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
       },
       "required": false,
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": "Define o icone do componente."
       },
-      "attribute": "ds-color",
+      "attribute": "ds-name",
       "reflect": true
+    },
+    "icon": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define o icone do componente."
+      },
+      "attribute": "icon",
+      "reflect": false,
+      "defaultValue": "'med-baixo'"
     },
     "disabled": {
       "type": "boolean",

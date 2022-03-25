@@ -1,5 +1,5 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { Color, RangeChangeEventDetail, RangeValue, StyleEventDetail } from '../../interface';
+import { MedColor, Color, RangeChangeEventDetail, RangeValue, StyleEventDetail } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -24,6 +24,10 @@ export declare class Range implements ComponentInterface {
   private ratioA;
   private ratioB;
   private pressedKnob;
+  /**
+  * Define a cor do componente.
+  */
+  dsColor?: MedColor;
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

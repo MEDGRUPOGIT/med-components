@@ -20,6 +20,18 @@ export declare class Input implements ComponentInterface {
   hasFocus: boolean;
   el: HTMLElement;
   /**
+    * Define o icone do componente.
+    */
+  dsName?: 'secondary';
+  /**
+    * Define o status do componente.
+    */
+  status?: 'valid' | 'invalid' | string | undefined;
+  /**
+   * Define o icone do componente.
+   */
+  icon?: string;
+  /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
    * For more information on colors, see [theming](/docs/theming/basics).
@@ -137,7 +149,6 @@ export declare class Input implements ComponentInterface {
    * The value of the input.
    */
   value?: string | number | null;
-  icon?: string;
   /**
    * Emitted when a keyboard input occurred.
    */

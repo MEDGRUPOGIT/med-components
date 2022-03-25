@@ -7,7 +7,7 @@ export default {
   decorators: [withDesign],
 };
 
-const Template = ({dsColor, dsSize, valores}) => {
+const Template = ({dsColor, dsName, dsSize, valores}) => {
 
   setTimeout(() => {
     document.querySelector('med-chart-radial').valores = valores.valores;
@@ -24,8 +24,7 @@ const Template = ({dsColor, dsSize, valores}) => {
         <div class="full-height-flex">
 
         <!-- component markdown-->
-          <med-chart-radial titulo="100" subtitulo="Questoes" .dsColor=${dsColor} .dsSize=${dsSize}>
-          </med-chart-radial>
+          <med-chart-radial titulo="100" subtitulo="Questoes" .dsColor=${dsColor} ds-name=${dsName} .dsSize=${dsSize}></med-chart-radial>
         <!-- component markdown-->
 
         </div>
@@ -48,6 +47,15 @@ Default3.argTypes = {
     description: "Define a cor do componente.",
     table: {
       type:  { summary: Object.values(MedColors).join(' |') },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+  dsName: {
+    options: [undefined, 'secondary'],
+    control: { type: 'radio'},
+    description: "Define a variação do componente.",
+    table: {
+      type:  { summary: 'secondary' },
       defaultValue: { summary: 'undefined' },
     },
   },
