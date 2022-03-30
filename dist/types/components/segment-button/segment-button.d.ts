@@ -15,10 +15,6 @@ export declare class SegmentButton implements ComponentInterface, ButtonInterfac
     * Define a cor do componente.
     */
   dsColor?: MedColor;
-  /**
-   * Define a variação do componente.
-   */
-  dsName?: 'default';
   checked: boolean;
   /**
    * If `true`, the user cannot interact with the segment button.

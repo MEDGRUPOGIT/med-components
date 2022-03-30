@@ -419,56 +419,28 @@ ion-ripple-effect {
   background: var(--ion-color-contrast);
 }
 
-:host(.med-segment-button--default) {
-  --color-checked: transparent;
-  --background-checked: hsl(var(--med-color-neutral-10));
-  --color: hsl(var(--med-color-neutral-10));
-  --padding-start: 0;
-  --padding-end: 0;
-  font-size: var(--med-font-size-xs);
-  font-weight: var(--med-font-weight-semibold);
-  line-height: var(--med-line-height-default);
-  border-right: var(--med-border-width-thin) solid hsl(var(--med-color-neutral-10));
-  text-transform: inherit;
+:host {
+  --color-checked: hsl(var(--med-color-neutral-10));
+  --color: hsl(var(--med-color-neutral-5));
+  --indicator-color: hsl(var(--med-color-brand-3));
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
   max-width: 100%;
 }
 
-:host(.segment-button-checked.med-segment-button--default) {
-  color: hsl(var(--med-color-brand-1));
-  --color-hover: hsl(var(--med-color-brand-1));
-  --color-checked: hsl(var(--med-color-brand-1));
-  --color-disabled: hsl(var(--med-color-brand-1));
+:host(.med-color) {
+  --indicator-color: hsl(var(--med-color-3));
 }
 
-@media (any-hover: hover) {
-  :host(.med-segment-button--default:hover) .button-native {
-    color: unset;
-  }
-  :host(.med-segment-button--default:hover) .button-native::after {
-    background: unset;
-    opacity: 0;
-  }
-
-  :host(.segment-button-checked.med-segment-button--default:hover) .button-native {
-    color: unset;
-  }
-}
-:host(.in-segment-color.med-segment-button--default) ion-ripple-effect {
-  color: hsl(var(--med-color-neutral-10));
+:host(.med-color-neutral) {
+  --indicator-color: hsl(var(--med-color-neutral));
 }
 
-:host(.med-color.med-segment-button--default) {
-  --background-checked: hsl(var(--med-color-3));
-  border-color: hsl(var(--med-color-3));
-  color: hsl(var(--med-color-neutral-10));
+:host(.med-color-feedback) {
+  --indicator-color: hsl(var(--med-color-feedback));
 }
 
-:host(.med-color-neutral.med-segment-button--default) {
-  --background-checked: hsl(var(--med-color-neutral));
-  border-color: hsl(var(--med-color-neutral));
-}
-
-:host(.med-color-feedback.med-segment-button--default) {
-  --background-checked: hsl(var(--med-color-feedback));
-  border-color: hsl(var(--med-color-feedback));
+:host(.segment-button-disabled) {
+  opacity: 0.5;
 }

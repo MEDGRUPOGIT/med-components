@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-25T14:09:42",
+  "timestamp": "2022-03-30T17:39:46",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -163,6 +163,40 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/@medgrupo/testes/dialog-test/dialog-test.tsx",
+      "encapsulation": "scoped",
+      "tag": "dialog-test",
+      "readme": "# dialog-test\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-header",
+        "ion-button",
+        "ion-icon",
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "dialog-test": [
+          "ion-header",
+          "ion-button",
+          "ion-icon",
+          "med-type"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
     },
     {
       "filePath": "./src/components/@medgrupo/team/dashboard/filtro-dashboard/filtro-dashboard.tsx",
@@ -2504,6 +2538,7 @@
         }
       ],
       "dependents": [
+        "dialog-test",
         "filtro-dashboard",
         "filtro-modal",
         "med-banner",
@@ -2516,8 +2551,9 @@
         "med-nav-simple",
         "med-offline",
         "med-rate-aula",
-        "med-sheet",
-        "med-video-list-item"
+        "med-video-list-item",
+        "sheet-content-test",
+        "sheet-test"
       ],
       "dependencies": [
         "ion-ripple-effect"
@@ -2525,6 +2561,9 @@
       "dependencyGraph": {
         "ion-button": [
           "ion-ripple-effect"
+        ],
+        "dialog-test": [
+          "ion-button"
         ],
         "filtro-dashboard": [
           "ion-button"
@@ -2562,10 +2601,13 @@
         "med-rate-aula": [
           "ion-button"
         ],
-        "med-sheet": [
+        "med-video-list-item": [
           "ion-button"
         ],
-        "med-video-list-item": [
+        "sheet-content-test": [
+          "ion-button"
+        ],
+        "sheet-test": [
           "ion-button"
         ]
       }
@@ -4402,7 +4444,8 @@
       "dependents": [
         "filtro-modal",
         "med-config",
-        "med-image-zoom"
+        "med-image-zoom",
+        "sheet-content-test"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -4413,6 +4456,9 @@
           "ion-content"
         ],
         "med-image-zoom": [
+          "ion-content"
+        ],
+        "sheet-content-test": [
           "ion-content"
         ]
       }
@@ -5969,11 +6015,19 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "filtro-modal"
+        "filtro-modal",
+        "sheet-content-test",
+        "sheet-test"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "filtro-modal": [
+          "ion-footer"
+        ],
+        "sheet-content-test": [
+          "ion-footer"
+        ],
+        "sheet-test": [
           "ion-footer"
         ]
       }
@@ -6168,11 +6222,19 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "med-sheet"
+        "dialog-test",
+        "sheet-content-test",
+        "sheet-test"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "med-sheet": [
+        "dialog-test": [
+          "ion-header"
+        ],
+        "sheet-content-test": [
+          "ion-header"
+        ],
+        "sheet-test": [
           "ion-header"
         ]
       }
@@ -15163,26 +15225,6 @@
           "required": false
         },
         {
-          "name": "dsName",
-          "type": "\"default\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "default",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -15351,26 +15393,6 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"default\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "default",
               "type": "string"
             },
             {
@@ -25704,7 +25726,7 @@
           "mutable": true,
           "attr": "active",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define o estado active do componente.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25721,7 +25743,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define o estado disabled do componente.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25738,7 +25760,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define a cor do componente.",
           "docsTags": [],
           "values": [
             {
@@ -25757,7 +25779,7 @@
           "mutable": false,
           "attr": "icon",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define o icone do componente.",
           "docsTags": [],
           "values": [
             {
@@ -25837,7 +25859,7 @@
           "mutable": false,
           "attr": "text",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "Define o texto do componente.",
           "docsTags": [],
           "values": [
             {
@@ -26826,7 +26848,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-rate-like/med-rate-like.tsx",
+      "filePath": "./src/components/@medgrupo/core/med-rate-like/med-rate-like.tsx",
       "encapsulation": "shadow",
       "tag": "med-rate-like",
       "readme": "# med-rate-like\r\n\r\n\r\n\r",
@@ -27392,48 +27414,6 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/@medgrupo/core/med-sheet/med-sheet.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-sheet",
-      "readme": "# med-sheet\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [
-        {
-          "event": "medClick",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-header",
-        "ion-button",
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "med-sheet": [
-          "ion-header",
-          "ion-button",
-          "ion-icon"
-        ],
-        "ion-button": [
-          "ion-ripple-effect"
-        ]
-      }
     },
     {
       "filePath": "./src/components/@medgrupo/global/med-subtitle/med-subtitle.tsx",
@@ -28277,6 +28257,7 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "dialog-test",
         "filtro-modal",
         "med-add-card",
         "med-aula-professor",
@@ -28294,10 +28275,15 @@
         "med-piechart",
         "med-rate-aula",
         "med-semana",
-        "med-video-list-item"
+        "med-video-list-item",
+        "sheet-content-test",
+        "sheet-test"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "dialog-test": [
+          "med-type"
+        ],
         "filtro-modal": [
           "med-type"
         ],
@@ -28350,6 +28336,12 @@
           "med-type"
         ],
         "med-video-list-item": [
+          "med-type"
+        ],
+        "sheet-content-test": [
+          "med-type"
+        ],
+        "sheet-test": [
           "med-type"
         ]
       }
@@ -28669,6 +28661,80 @@
       "dependencyGraph": {
         "monta-provas-plusminus": [
           "ion-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/testes/sheet-content-test/sheet-content-test.tsx",
+      "encapsulation": "scoped",
+      "tag": "sheet-content-test",
+      "readme": "# sheet-content-test\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-header",
+        "ion-button",
+        "ion-icon",
+        "ion-content",
+        "med-type",
+        "ion-footer"
+      ],
+      "dependencyGraph": {
+        "sheet-content-test": [
+          "ion-header",
+          "ion-button",
+          "ion-icon",
+          "ion-content",
+          "med-type",
+          "ion-footer"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/testes/sheet-test/sheet-test.tsx",
+      "encapsulation": "scoped",
+      "tag": "sheet-test",
+      "readme": "# sheet-test\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-header",
+        "ion-button",
+        "ion-icon",
+        "med-type",
+        "ion-footer"
+      ],
+      "dependencyGraph": {
+        "sheet-test": [
+          "ion-header",
+          "ion-button",
+          "ion-icon",
+          "med-type",
+          "ion-footer"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ]
       }
     }

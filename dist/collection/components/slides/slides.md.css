@@ -762,12 +762,12 @@ ion-slides {
 
 .swiper-pagination-bullet {
   background: transparent;
-  border: var(--med-border-width-thin) solid #fff;
+  border: 1px solid hsl(var(--med-color-neutral-10));
 }
 
 .swiper-pagination-bullet-active {
   border: none;
-  background: #fff;
+  background: hsl(var(--med-color-neutral-10));
 }
 
 .slides-md {
@@ -787,11 +787,26 @@ ion-slides {
 
 .swiper-pagination-bullet {
   background: transparent;
-  opacity: 1;
-  border: var(--med-border-width-thin) solid #fff;
+  border: 1px solid hsl(var(--med-color-neutral-10));
 }
 
 .swiper-pagination-bullet-active {
   border: none;
-  background: #fff;
+  background: hsl(var(--med-color-neutral-10));
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 0;
+}
+
+.swiper-pagination-bullet {
+  background: transparent;
+  border: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+.swiper-pagination-bullet-active {
+  border: none;
+  background: hsl(var(--med-color-neutral-10));
 }

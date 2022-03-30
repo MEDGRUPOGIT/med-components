@@ -12,10 +12,6 @@ export declare class Segment implements ComponentInterface {
     * Define a cor do componente.
     */
   dsColor?: MedColor;
-  /**
-   * Define a variação do componente.
-   */
-  dsName?: 'default';
   private valueAfterGesture?;
   el: HTMLIonSegmentElement;
   activated: boolean;

@@ -20,29 +20,45 @@
 
     .ion-page {
       position: relative !important;
-      display: block !important;
+      // display: block !important;
       contain: content !important;
+
+      // adicionado
+      display: flex !important;
+      justify-content: flex-start !important;
     }
   }
 }
 
 .tp-sheet-header {
   text-align: right;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
+}
+
+.tp-sheet-content {
+  flex: 1;
+  overflow: auto;
+  --background: hsl(var(--med-color-neutral-2)) !important;
+}
+
+.tp-sheet-footer {
+  padding-top: 24px;
 }
 
 .tp-sheet--ion-content {
   overflow: none !important;
 
   .modal-wrapper {
-    padding: 0 !important;
+    // padding: 0 !important;
+    height: 100% !important;
   }
 
   ion-content {
-    height: 70vh !important;
-    --padding-end: 24px;
+    /* --padding-end: 24px;
     --padding-start: 24px;
-    --padding-top: 24px;
+    --padding-top: 24px; */
+
+    height: 70vh !important;
   }
 }
 

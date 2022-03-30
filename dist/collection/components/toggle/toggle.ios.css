@@ -244,14 +244,18 @@ input {
   width: 32px;
 }
 
-:host(.med-color.med-toggle) {
+:host(.toggle-disabled) {
+  opacity: 0.5;
+}
+
+:host(.med-color) {
   --background-checked: hsl(var(--med-color-3));
 }
 
-:host(.med-color-neutral.med-toggle) {
+:host(.med-color-neutral) {
   --background-checked: hsl(var(--med-color-neutral));
 }
 
-:host(.med-color-feedback.med-toggle) {
+:host(.med-color-feedback) {
   --background-checked: hsl(var(--med-color-feedback));
 }

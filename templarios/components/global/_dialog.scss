@@ -27,6 +27,11 @@
   }
 }
 
+.tp-dialog-header {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
 @media only screen and (max-width: 1200px) {
   .tp-dialog {
     --max-width: 640px !important;
@@ -49,14 +54,4 @@
   .tp-dialog {
     --max-width: calc(100% - 32px) !important;
   }
-}
-
-.tp-dialog-header {
-  text-align: right;
-  margin-bottom: 24px;
-}
-
-.tp-dialog-header {
-  text-align: right;
-  margin-bottom: 24px;
 }

@@ -201,6 +201,7 @@ export const MedIcons = [
 
   'med-retafinal',
   'med-retomar',
+  'med-rever',
   'med-riscar',
   'med-rosto-bom',
 

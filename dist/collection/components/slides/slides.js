@@ -371,11 +371,11 @@ export class Slides {
   }
   static get is() { return "ion-slides"; }
   static get originalStyleUrls() { return {
-    "ios": ["slides.ios.scss"],
+    "ios": ["slides.md.scss"],
     "md": ["slides.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["slides.ios.css"],
+    "ios": ["slides.md.css"],
     "md": ["slides.md.css"]
   }; }
   static get assetsDirs() { return ["swiper"]; }

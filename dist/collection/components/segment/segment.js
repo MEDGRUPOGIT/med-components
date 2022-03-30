@@ -306,12 +306,11 @@ export class Segment {
     });
   }
   render() {
-    const { dsColor, dsName } = this;
+    const { dsColor } = this;
     const mode = getIonMode(this);
     return (h(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
         [mode]: true,
         'med-segment': true,
-        [`med-segment--${dsName}`]: dsName !== undefined,
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
         'segment-activated': this.activated,
@@ -351,23 +350,6 @@ export class Segment {
         "text": "Define a cor do componente."
       },
       "attribute": "ds-color",
-      "reflect": true
-    },
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'default'",
-        "resolved": "\"default\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a varia\u00E7\u00E3o do componente."
-      },
-      "attribute": "ds-name",
       "reflect": true
     },
     "color": {

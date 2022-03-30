@@ -56,6 +56,20 @@
       ]
     },
     {
+      "name": "dialog-test",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/dialog-test/dialog-test.tsx"
+        }
+      ]
+    },
+    {
       "name": "filtro-dashboard",
       "description": {
         "kind": "markdown",
@@ -3889,15 +3903,6 @@
           "description": "Define a cor do componente."
         },
         {
-          "name": "ds-name",
-          "description": "Define a variação do componente.",
-          "values": [
-            {
-              "name": "default"
-            }
-          ]
-        },
-        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -3943,15 +3948,6 @@
         {
           "name": "ds-color",
           "description": "Define a cor do componente."
-        },
-        {
-          "name": "ds-name",
-          "description": "Define a variação do componente.",
-          "values": [
-            {
-              "name": "default"
-            }
-          ]
         },
         {
           "name": "layout",
@@ -6743,19 +6739,19 @@
       "attributes": [
         {
           "name": "active",
-          "description": "TODO."
+          "description": "Define o estado active do componente."
         },
         {
           "name": "disabled",
-          "description": "TODO."
+          "description": "Define o estado disabled do componente."
         },
         {
           "name": "ds-color",
-          "description": "TODO."
+          "description": "Define a cor do componente."
         },
         {
           "name": "icon",
-          "description": "TODO."
+          "description": "Define o icone do componente."
         },
         {
           "name": "icon-only",
@@ -6778,7 +6774,7 @@
         },
         {
           "name": "text",
-          "description": "TODO."
+          "description": "Define o texto do componente."
         }
       ],
       "references": [
@@ -7099,7 +7095,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-rate-like/med-rate-like.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-rate-like/med-rate-like.tsx"
         }
       ]
     },
@@ -7255,20 +7251,6 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-semanas/med-semanas.tsx"
-        }
-      ]
-    },
-    {
-      "name": "med-sheet",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [],
-      "references": [
-        {
-          "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-sheet/med-sheet.tsx"
         }
       ]
     },
@@ -7723,6 +7705,34 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet-content-test",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/sheet-content-test/sheet-content-test.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet-test",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/sheet-test/sheet-test.tsx"
         }
       ]
     }

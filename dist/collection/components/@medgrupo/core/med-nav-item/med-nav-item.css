@@ -46,6 +46,11 @@
   margin-left: var(--margin-left-text);
 }
 
+:host(.button-disabled) {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 :host(.med-nav-item--active) {
   --background: hsl(var(--med-color-brand-1));
   --stroke: hsl(var(--med-color-neutral-10));

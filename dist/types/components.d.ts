@@ -15,7 +15,7 @@ import { MedConfigInterface } from "./components/@medgrupo/global/med-config/med
 import { MedFontSize } from "./global/templarios/font-size.enum";
 import { headerResizeEventDetail } from "./components/@medgrupo/global/med-header/med-header-interface";
 import { MedImageZoomItemInterface } from "./components/@medgrupo/global/med-image-zoom/med-image-zoom-interface";
-import { RateStatus } from "./components/@medgrupo/global/med-rate-like/med-rate-like.enum";
+import { RateStatus } from "./components/@medgrupo/core/med-rate-like/med-rate-like.enum";
 import { MedSemanaInterface } from "./components/@medgrupo/compositions/med-semana/med-semana.interface";
 import { MedTema } from "./components/@medgrupo/global/med-themes/med-themes-interface";
 import { PlusMinusStatus } from "./components/@medgrupo/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.enum";
@@ -47,6 +47,8 @@ export namespace Components {
           * Abre programaticamente o componente.
          */
         "open": boolean;
+    }
+    interface DialogTest {
     }
     interface FiltroDashboard {
     }
@@ -2227,10 +2229,6 @@ export namespace Components {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'default';
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -2256,10 +2254,6 @@ export namespace Components {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
-        /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'default';
         /**
           * Set the layout of the text and icon in the segment.
          */
@@ -3836,19 +3830,19 @@ export namespace Components {
     }
     interface MedNavItem {
         /**
-          * TODO.
+          * Define o estado active do componente.
          */
         "active": boolean;
         /**
-          * TODO.
+          * Define o estado disabled do componente.
          */
         "disabled": boolean;
         /**
-          * TODO.
+          * Define a cor do componente.
          */
         "dsColor"?: MedColor;
         /**
-          * TODO.
+          * Define o icone do componente.
          */
         "icon"?: string;
         /**
@@ -3864,7 +3858,7 @@ export namespace Components {
          */
         "routerDirection": RouterDirection;
         /**
-          * TODO.
+          * Define o texto do componente.
          */
         "text"?: string;
     }
@@ -4091,8 +4085,6 @@ export namespace Components {
     interface MedSemanas {
         "skin"?: 'lista';
     }
-    interface MedSheet {
-    }
     interface MedSubtitle {
         /**
           * Define a cor do componente.
@@ -4275,6 +4267,10 @@ export namespace Components {
          */
         "dsSize"?: 'xl';
     }
+    interface SheetContentTest {
+    }
+    interface SheetTest {
+    }
 }
 declare global {
     interface HTMLAccordionGroupElement extends Components.AccordionGroup, HTMLStencilElement {
@@ -4288,6 +4284,12 @@ declare global {
     var HTMLAccordionItemElement: {
         prototype: HTMLAccordionItemElement;
         new (): HTMLAccordionItemElement;
+    };
+    interface HTMLDialogTestElement extends Components.DialogTest, HTMLStencilElement {
+    }
+    var HTMLDialogTestElement: {
+        prototype: HTMLDialogTestElement;
+        new (): HTMLDialogTestElement;
     };
     interface HTMLFiltroDashboardElement extends Components.FiltroDashboard, HTMLStencilElement {
     }
@@ -5213,12 +5215,6 @@ declare global {
         prototype: HTMLMedSemanasElement;
         new (): HTMLMedSemanasElement;
     };
-    interface HTMLMedSheetElement extends Components.MedSheet, HTMLStencilElement {
-    }
-    var HTMLMedSheetElement: {
-        prototype: HTMLMedSheetElement;
-        new (): HTMLMedSheetElement;
-    };
     interface HTMLMedSubtitleElement extends Components.MedSubtitle, HTMLStencilElement {
     }
     var HTMLMedSubtitleElement: {
@@ -5297,9 +5293,22 @@ declare global {
         prototype: HTMLMontaProvasPlusminusElement;
         new (): HTMLMontaProvasPlusminusElement;
     };
+    interface HTMLSheetContentTestElement extends Components.SheetContentTest, HTMLStencilElement {
+    }
+    var HTMLSheetContentTestElement: {
+        prototype: HTMLSheetContentTestElement;
+        new (): HTMLSheetContentTestElement;
+    };
+    interface HTMLSheetTestElement extends Components.SheetTest, HTMLStencilElement {
+    }
+    var HTMLSheetTestElement: {
+        prototype: HTMLSheetTestElement;
+        new (): HTMLSheetTestElement;
+    };
     interface HTMLElementTagNameMap {
         "accordion-group": HTMLAccordionGroupElement;
         "accordion-item": HTMLAccordionItemElement;
+        "dialog-test": HTMLDialogTestElement;
         "filtro-dashboard": HTMLFiltroDashboardElement;
         "filtro-modal": HTMLFiltroModalElement;
         "ion-action-sheet": HTMLIonActionSheetElement;
@@ -5454,7 +5463,6 @@ declare global {
         "med-rating": HTMLMedRatingElement;
         "med-semana": HTMLMedSemanaElement;
         "med-semanas": HTMLMedSemanasElement;
-        "med-sheet": HTMLMedSheetElement;
         "med-subtitle": HTMLMedSubtitleElement;
         "med-tab-button": HTMLMedTabButtonElement;
         "med-tabs": HTMLMedTabsElement;
@@ -5468,6 +5476,8 @@ declare global {
         "med-video-thumbnail": HTMLMedVideoThumbnailElement;
         "med-vote": HTMLMedVoteElement;
         "monta-provas-plusminus": HTMLMontaProvasPlusminusElement;
+        "sheet-content-test": HTMLSheetContentTestElement;
+        "sheet-test": HTMLSheetTestElement;
     }
 }
 declare namespace LocalJSX {
@@ -5502,6 +5512,8 @@ declare namespace LocalJSX {
           * Abre programaticamente o componente.
          */
         "open"?: boolean;
+    }
+    interface DialogTest {
     }
     interface FiltroDashboard {
     }
@@ -7615,10 +7627,6 @@ declare namespace LocalJSX {
          */
         "dsColor"?: MedColor;
         /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'default';
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -7648,10 +7656,6 @@ declare namespace LocalJSX {
           * Define a cor do componente.
          */
         "dsColor"?: MedColor;
-        /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'default';
         /**
           * Set the layout of the text and icon in the segment.
          */
@@ -9279,19 +9283,19 @@ declare namespace LocalJSX {
     }
     interface MedNavItem {
         /**
-          * TODO.
+          * Define o estado active do componente.
          */
         "active"?: boolean;
         /**
-          * TODO.
+          * Define o estado disabled do componente.
          */
         "disabled"?: boolean;
         /**
-          * TODO.
+          * Define a cor do componente.
          */
         "dsColor"?: MedColor;
         /**
-          * TODO.
+          * Define o icone do componente.
          */
         "icon"?: string;
         /**
@@ -9319,7 +9323,7 @@ declare namespace LocalJSX {
          */
         "routerDirection"?: RouterDirection;
         /**
-          * TODO.
+          * Define o texto do componente.
          */
         "text"?: string;
     }
@@ -9546,9 +9550,6 @@ declare namespace LocalJSX {
     interface MedSemanas {
         "skin"?: 'lista';
     }
-    interface MedSheet {
-        "onMedClick"?: (event: CustomEvent<any>) => void;
-    }
     interface MedSubtitle {
         /**
           * Define a cor do componente.
@@ -9735,9 +9736,14 @@ declare namespace LocalJSX {
          */
         "onMedChange"?: (event: CustomEvent<PlusMinusStatus>) => void;
     }
+    interface SheetContentTest {
+    }
+    interface SheetTest {
+    }
     interface IntrinsicElements {
         "accordion-group": AccordionGroup;
         "accordion-item": AccordionItem;
+        "dialog-test": DialogTest;
         "filtro-dashboard": FiltroDashboard;
         "filtro-modal": FiltroModal;
         "ion-action-sheet": IonActionSheet;
@@ -9892,7 +9898,6 @@ declare namespace LocalJSX {
         "med-rating": MedRating;
         "med-semana": MedSemana;
         "med-semanas": MedSemanas;
-        "med-sheet": MedSheet;
         "med-subtitle": MedSubtitle;
         "med-tab-button": MedTabButton;
         "med-tabs": MedTabs;
@@ -9906,6 +9911,8 @@ declare namespace LocalJSX {
         "med-video-thumbnail": MedVideoThumbnail;
         "med-vote": MedVote;
         "monta-provas-plusminus": MontaProvasPlusminus;
+        "sheet-content-test": SheetContentTest;
+        "sheet-test": SheetTest;
     }
 }
 export { LocalJSX as JSX };
@@ -9914,6 +9921,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "accordion-group": LocalJSX.AccordionGroup & JSXBase.HTMLAttributes<HTMLAccordionGroupElement>;
             "accordion-item": LocalJSX.AccordionItem & JSXBase.HTMLAttributes<HTMLAccordionItemElement>;
+            "dialog-test": LocalJSX.DialogTest & JSXBase.HTMLAttributes<HTMLDialogTestElement>;
             "filtro-dashboard": LocalJSX.FiltroDashboard & JSXBase.HTMLAttributes<HTMLFiltroDashboardElement>;
             "filtro-modal": LocalJSX.FiltroModal & JSXBase.HTMLAttributes<HTMLFiltroModalElement>;
             "ion-action-sheet": LocalJSX.IonActionSheet & JSXBase.HTMLAttributes<HTMLIonActionSheetElement>;
@@ -10068,7 +10076,6 @@ declare module "@stencil/core" {
             "med-rating": LocalJSX.MedRating & JSXBase.HTMLAttributes<HTMLMedRatingElement>;
             "med-semana": LocalJSX.MedSemana & JSXBase.HTMLAttributes<HTMLMedSemanaElement>;
             "med-semanas": LocalJSX.MedSemanas & JSXBase.HTMLAttributes<HTMLMedSemanasElement>;
-            "med-sheet": LocalJSX.MedSheet & JSXBase.HTMLAttributes<HTMLMedSheetElement>;
             "med-subtitle": LocalJSX.MedSubtitle & JSXBase.HTMLAttributes<HTMLMedSubtitleElement>;
             "med-tab-button": LocalJSX.MedTabButton & JSXBase.HTMLAttributes<HTMLMedTabButtonElement>;
             "med-tabs": LocalJSX.MedTabs & JSXBase.HTMLAttributes<HTMLMedTabsElement>;
@@ -10082,6 +10089,8 @@ declare module "@stencil/core" {
             "med-video-thumbnail": LocalJSX.MedVideoThumbnail & JSXBase.HTMLAttributes<HTMLMedVideoThumbnailElement>;
             "med-vote": LocalJSX.MedVote & JSXBase.HTMLAttributes<HTMLMedVoteElement>;
             "monta-provas-plusminus": LocalJSX.MontaProvasPlusminus & JSXBase.HTMLAttributes<HTMLMontaProvasPlusminusElement>;
+            "sheet-content-test": LocalJSX.SheetContentTest & JSXBase.HTMLAttributes<HTMLSheetContentTestElement>;
+            "sheet-test": LocalJSX.SheetTest & JSXBase.HTMLAttributes<HTMLSheetTestElement>;
         }
     }
 }

@@ -1,7 +1,7 @@
 import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
 import { g as generateMedColor } from './med-theme-33df6a63.js';
 
-const medNavItemCss = ":host{--stroke:hsl(var(--med-color-neutral-7));--margin-left-text:16px}:host{display:block}.med-nav-item__button{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:8px;background:var(--background);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer;border-radius:8px;-webkit-transition:background-color 300ms ease-out;transition:background-color 300ms ease-out;border:0;width:100%}.med-nav-item__button::-moz-focus-inner{border:0}.med-nav-item__icon{font-size:24px;stroke:var(--stroke);-webkit-transition:stroke 300ms ease-out;transition:stroke 300ms ease-out}.med-nav-item__text{--color:hsl(var(--med-color-neutral-7));margin-left:var(--margin-left-text)}:host(.med-nav-item--active){--background:hsl(var(--med-color-brand-1));--stroke:hsl(var(--med-color-neutral-10))}:host(.med-nav-item--active) .med-nav-item__text{--color:hsl(var(--med-color-neutral-10))}@media (any-hover: hover){:host(:hover){--background:hsl(var(--med-color-neutral-2));--stroke:hsl(var(--med-color-neutral-10))}:host(:hover) .med-nav-item__text{--color:hsl(var(--med-color-neutral-10))}}:host(.med-color.med-nav-item--active){--background:hsl(var(--med-color-2))}:host(.med-color-neutral.med-nav-item--active){--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback.med-nav-item--active){--background:hsl(var(--med-color-feedback))}";
+const medNavItemCss = ":host{--stroke:hsl(var(--med-color-neutral-7));--margin-left-text:16px}:host{display:block}.med-nav-item__button{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:8px;background:var(--background);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer;border-radius:8px;-webkit-transition:background-color 300ms ease-out;transition:background-color 300ms ease-out;border:0;width:100%}.med-nav-item__button::-moz-focus-inner{border:0}.med-nav-item__icon{font-size:24px;stroke:var(--stroke);-webkit-transition:stroke 300ms ease-out;transition:stroke 300ms ease-out}.med-nav-item__text{--color:hsl(var(--med-color-neutral-7));margin-left:var(--margin-left-text)}:host(.button-disabled){opacity:0.5;pointer-events:none}:host(.med-nav-item--active){--background:hsl(var(--med-color-brand-1));--stroke:hsl(var(--med-color-neutral-10))}:host(.med-nav-item--active) .med-nav-item__text{--color:hsl(var(--med-color-neutral-10))}@media (any-hover: hover){:host(:hover){--background:hsl(var(--med-color-neutral-2));--stroke:hsl(var(--med-color-neutral-10))}:host(:hover) .med-nav-item__text{--color:hsl(var(--med-color-neutral-10))}}:host(.med-color.med-nav-item--active){--background:hsl(var(--med-color-2))}:host(.med-color-neutral.med-nav-item--active){--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback.med-nav-item--active){--background:hsl(var(--med-color-feedback))}";
 
 const MedNavItem = class {
   constructor(hostRef) {
@@ -10,11 +10,11 @@ const MedNavItem = class {
     this.medBlur = createEvent(this, "medBlur", 7);
     this.medClick = createEvent(this, "medClick", 7);
     /**
-      * TODO.
+      * Define o estado active do componente.
       */
     this.active = false;
     /**
-      * TODO.
+      * Define o estado disabled do componente.
       */
     this.disabled = false;
     /**

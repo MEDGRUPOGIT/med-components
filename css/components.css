@@ -52,6 +52,11 @@
   height: 100%;
 }
 
+.tp-dialog-header {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
 @media only screen and (max-width: 1200px) {
   .tp-dialog {
     --max-width: 640px !important;
@@ -72,16 +77,6 @@
     --max-width: calc(100% - 32px) !important;
   }
 }
-.tp-dialog-header {
-  text-align: right;
-  margin-bottom: 24px;
-}
-
-.tp-dialog-header {
-  text-align: right;
-  margin-bottom: 24px;
-}
-
 .med-picker {
   --background: hsl(var(--med-color-neutral-2));
   --border-radius: 16px 16px 0px 0px;
@@ -253,26 +248,37 @@
 }
 .tp-sheet .modal-wrapper .ion-page {
   position: relative !important;
-  display: block !important;
   contain: content !important;
+  display: flex !important;
+  justify-content: flex-start !important;
 }
 
 .tp-sheet-header {
   text-align: right;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
+}
+
+.tp-sheet-content {
+  flex: 1;
+  overflow: auto;
+  --background: hsl(var(--med-color-neutral-2)) !important;
+}
+
+.tp-sheet-footer {
+  padding-top: 24px;
 }
 
 .tp-sheet--ion-content {
   overflow: none !important;
 }
 .tp-sheet--ion-content .modal-wrapper {
-  padding: 0 !important;
+  height: 100% !important;
 }
 .tp-sheet--ion-content ion-content {
-  height: 70vh !important;
-  --padding-end: 24px;
+  /* --padding-end: 24px;
   --padding-start: 24px;
-  --padding-top: 24px;
+  --padding-top: 24px; */
+  height: 70vh !important;
 }
 
 @media (min-width: 992px) {

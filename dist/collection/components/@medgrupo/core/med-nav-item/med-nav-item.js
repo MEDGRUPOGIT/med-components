@@ -3,11 +3,11 @@ import { generateMedColor } from '../../../../utils/med-theme';
 export class MedNavItem {
   constructor() {
     /**
-      * TODO.
+      * Define o estado active do componente.
       */
     this.active = false;
     /**
-      * TODO.
+      * Define o estado disabled do componente.
       */
     this.disabled = false;
     /**
@@ -70,7 +70,7 @@ export class MedNavItem {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "TODO."
+        "text": "Define a cor do componente."
       },
       "attribute": "ds-color",
       "reflect": true
@@ -87,7 +87,7 @@ export class MedNavItem {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "TODO."
+        "text": "Define o estado active do componente."
       },
       "attribute": "active",
       "reflect": true,
@@ -105,7 +105,7 @@ export class MedNavItem {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "TODO."
+        "text": "Define o texto do componente."
       },
       "attribute": "text",
       "reflect": true
@@ -122,7 +122,7 @@ export class MedNavItem {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "TODO."
+        "text": "Define o icone do componente."
       },
       "attribute": "icon",
       "reflect": true
@@ -139,7 +139,7 @@ export class MedNavItem {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "TODO."
+        "text": "Define o estado disabled do componente."
       },
       "attribute": "disabled",
       "reflect": true,

@@ -17,4 +17,4 @@ export { MedType } from './global/templarios/type.enum';
 export { MedColors } from './global/templarios/color.enum';
 export { MedFontSize } from './global/templarios/font-size.enum';
 export { MedSkin } from './global/templarios/skin.enum';
-export { RateStatus } from './components/@medgrupo/global/med-rate-like/med-rate-like.enum';
+export { RateStatus } from './components/@medgrupo/core/med-rate-like/med-rate-like.enum';

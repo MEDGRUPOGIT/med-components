@@ -63,13 +63,12 @@ export class SegmentButton {
     return !!this.el.querySelector('ion-icon');
   }
   render() {
-    const { checked, type, disabled, hasIcon, hasLabel, layout, segmentEl, dsColor, dsName } = this;
+    const { checked, type, disabled, hasIcon, hasLabel, layout, segmentEl, dsColor } = this;
     const mode = getIonMode(this);
     const hasSegmentColor = () => segmentEl !== null && segmentEl.color !== undefined;
     return (h(Host, { "from-stencil": true, "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'med-segment-button': true,
-        [`med-segment-button--${dsName}`]: dsName !== undefined,
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
         'in-segment': hostContext('ion-segment', this.el),
@@ -126,23 +125,6 @@ export class SegmentButton {
         "text": "Define a cor do componente."
       },
       "attribute": "ds-color",
-      "reflect": true
-    },
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'default'",
-        "resolved": "\"default\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a varia\u00E7\u00E3o do componente."
-      },
-      "attribute": "ds-name",
       "reflect": true
     },
     "disabled": {

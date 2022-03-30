@@ -1,0 +1,19 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const index = require('./index-bc2e4509.js');
+
+const sheetContentTestCss = ".sc-sheet-content-test-h{display:block;height:100%}";
+
+const SheetContentTest = class {
+  constructor(hostRef) {
+    index.registerInstance(this, hostRef);
+  }
+  render() {
+    return (index.h(index.Host, null, index.h("ion-header", { class: "tp-sheet-header" }, index.h("ion-button", { "ds-name": "tertiary", "ds-size": "xxs" }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))), index.h("ion-content", { class: "tp-sheet-content" }, index.h("med-type", null, "Sheet"), index.h("med-type", null, "Sheet"), index.h("med-type", null, "Sheet")), index.h("ion-footer", { class: "tp-sheet-footer" }, index.h("ion-button", { expand: "block" }, "button"))));
+  }
+};
+SheetContentTest.style = sheetContentTestCss;
+
+exports.sheet_content_test = SheetContentTest;

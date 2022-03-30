@@ -101,11 +101,11 @@ export class Checkbox {
   static get is() { return "ion-checkbox"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["checkbox.ios.scss"],
+    "ios": ["checkbox.md.scss"],
     "md": ["checkbox.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["checkbox.ios.css"],
+    "ios": ["checkbox.md.css"],
     "md": ["checkbox.md.css"]
   }; }
   static get properties() { return {

@@ -3,23 +3,23 @@ import { AnimationBuilder, MedColor, RouterDirection } from '../../../../interfa
 export declare class MedNavItem {
   hostElement: HTMLElement;
   /**
-    * TODO.
+    * Define a cor do componente.
     */
   dsColor?: MedColor;
   /**
-    * TODO.
+    * Define o estado active do componente.
     */
   active: boolean;
   /**
-    * TODO.
+    * Define o texto do componente.
     */
   text?: string;
   /**
-    * TODO.
+    * Define o icone do componente.
     */
   icon?: string;
   /**
-    * TODO.
+    * Define o estado disabled do componente.
     */
   disabled: boolean;
   /**
