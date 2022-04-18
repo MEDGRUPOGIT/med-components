@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+import { Component, Host, Prop, h, Event } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedChip {
   constructor() {
@@ -10,6 +10,15 @@ export class MedChip {
      * Define o estado active do componente.
      */
     this.active = false;
+    this.onFocus = () => {
+      this.medFocus.emit();
+    };
+    this.onBlur = () => {
+      this.medBlur.emit();
+    };
+    this.onClick = () => {
+      this.medClick.emit();
+    };
   }
   render() {
     const { dsColor, dsName, dsSize, disabled, label, active, iconLeft, iconRight } = this;
@@ -21,7 +30,7 @@ export class MedChip {
         [`med-chip--${dsSize}`]: dsSize !== undefined,
         [`med-chip--icon-left`]: iconLeft !== undefined,
         [`med-chip--icon-right`]: iconRight !== undefined,
-      }) },
+      }), onFocus: this.onFocus, onBlur: this.onBlur, onClick: this.onClick },
       iconLeft !== undefined && h("div", { class: "med-chip__img-warp" },
         h("ion-icon", { class: "med-icon med-chip__icon", name: iconLeft })),
       h("med-type", { class: "med-chip__label" }, label),
@@ -181,4 +190,50 @@ export class MedChip {
       "reflect": true
     }
   }; }
+  static get events() { return [{
+      "method": "medFocus",
+      "name": "medFocus",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": "Emitido quando o chip tem focus."
+      },
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      }
+    }, {
+      "method": "medBlur",
+      "name": "medBlur",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": "Emitido quando o chip perde o focus."
+      },
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      }
+    }, {
+      "method": "medClick",
+      "name": "medClick",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": "Emitido quando o chip \u00E9 clicado."
+      },
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      }
+    }]; }
 }

@@ -1,0 +1,50 @@
+.tp-tooltip-slider ion-slide {
+  text-align: left;
+}
+
+.tp-tooltip-slider .swiper-pagination {
+  position: relative;
+}
+
+.tp-tooltip-slider med-type {
+  --font-size: 14px;
+  --font-weight: 400;
+  --line-height: 20px;
+  --color: hsl(var(--med-color-neutral-10));
+}
+
+.med-tooltip.med-color med-type {
+  --color: hsl(var(--med-color-contrast));
+}
+
+.med-tooltip.med-color .swiper-pagination-bullet-active {
+  background: hsl(var(--med-color-neutral-1));
+}
+
+.med-tooltip.med-color .swiper-pagination-bullet {
+  border: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+.med-tooltip.med-color-neutral med-type {
+  --color: hsl(var(--med-color-neutral-contrast));
+}
+
+.med-tooltip.med-color-neutral .swiper-pagination-bullet-active {
+  background: hsl(var(--med-color-neutral-contrast));
+}
+
+.med-tooltip.med-color-neutral .swiper-pagination-bullet {
+  border: 1px solid hsl(var(--med-color-neutral-contrast));
+}
+
+.med-tooltip.med-color-feedback med-type {
+  --color: hsl(var(--med-color-feedback-contrast));
+}
+
+.med-tooltip.med-color-feedback .swiper-pagination-bullet-active {
+  background: hsl(var(--med-color-feedback-contrast));
+}
+
+.med-tooltip.med-color-feedback .swiper-pagination-bullet {
+  border: 1px solid hsl(var(--med-color-feedback-contrast));
+}

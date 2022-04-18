@@ -173,17 +173,17 @@
 
 :host([ds-name=stacked]) {
   color: var(--med-color-neutral-dark-10);
-  margin-bottom: var(--med-spacing-stack-xxxs);
-  font-size: var(--med-font-size-xxs);
-  font-weight: var(--med-font-weight-regular);
-  line-height: var(--med-line-height-compressed);
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
   display: flex;
 }
 
 :host([ds-name=helper]) {
   color: var(--med-color-neutral-light-30);
-  font-size: var(--med-font-size-xxxs);
-  font-weight: var(--med-font-weight-regular);
+  font-size: 12px;
+  font-weight: 400;
   line-height: 24px;
   display: flex;
 }

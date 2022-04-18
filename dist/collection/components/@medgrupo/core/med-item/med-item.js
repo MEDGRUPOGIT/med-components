@@ -18,7 +18,8 @@ export class MedItem {
     this.labelColorStyles = {};
     this.itemStyles = new Map();
     this.multipleInputs = false;
-    this.padding = false;
+    this.contain = false;
+    this.noPadding = false;
     /**
      * If `true`, a button tag will be rendered and the item will be tappable.
      */
@@ -117,7 +118,8 @@ export class MedItem {
   // that should get the hover, focused and activated states UNLESS it has multiple
   // inputs, then those need to individually get each click
   hasCover() {
-    const inputs = this.el.querySelectorAll('ion-checkbox, ion-datetime, ion-select, ion-radio');
+    const inputs = this.el.querySelectorAll('ion-checkbox, ion-datetime, ion-select, ion-radio, ion-toggle');
+    console.log(inputs);
     return inputs.length === 1 && !this.multipleInputs;
   }
   // If the item has an href or button property it will render a native
@@ -157,7 +159,7 @@ export class MedItem {
     }
   }
   render() {
-    const { dsColor, padding, detail, detailIcon, download, labelColorStyles, lines, disabled, href, rel, target, routerAnimation, routerDirection } = this;
+    const { dsColor, noPadding, detail, detailIcon, download, labelColorStyles, lines, disabled, href, rel, target, routerAnimation, routerDirection } = this;
     const childStyles = {};
     const mode = getIonMode(this);
     const clickable = this.isClickable();
@@ -186,14 +188,14 @@ export class MedItem {
         [`med-item-lines-${lines}`]: lines !== undefined,
         'med-item-disabled': disabled,
         'in-list': hostContext('med-lista', this.el),
-        'med-item-multiple-inputs': this.multipleInputs,
+        'med-item-multiple-inputs': this.multipleInputs || this.contain,
         'ion-activatable': canActivate,
         'ion-focusable': true,
-        'med-item--no-padding': padding
+        'med-item--no-padding': noPadding
       })) },
       h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn),
-        h("slot", { name: "start" }),
         h("div", { class: "item-inner" },
+          h("slot", { name: "start" }),
           h("div", { class: "input-wrapper" },
             h("slot", null)),
           h("slot", { name: "end" }),
@@ -235,7 +237,25 @@ export class MedItem {
       "attribute": "ds-color",
       "reflect": false
     },
-    "padding": {
+    "contain": {
+      "type": "boolean",
+      "mutable": true,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "contain",
+      "reflect": false,
+      "defaultValue": "false"
+    },
+    "noPadding": {
       "type": "boolean",
       "mutable": false,
       "complexType": {
@@ -249,7 +269,7 @@ export class MedItem {
         "tags": [],
         "text": ""
       },
-      "attribute": "padding",
+      "attribute": "no-padding",
       "reflect": false,
       "defaultValue": "false"
     },

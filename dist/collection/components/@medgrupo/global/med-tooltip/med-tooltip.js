@@ -1,29 +1,42 @@
-import { Component, Host, h, Prop, Method, Listen } from '@stencil/core';
+import { Component, Host, h, Prop, Method, Listen, Event } from '@stencil/core';
 import { generateMedColor } from '../../../../utils/med-theme';
 export class MedTooltip {
   constructor() {
     /**
-     * TODO
-     */
+      * TODO
+      */
     this.collapsed = true;
+    this.onBtnLeftClick = () => {
+      this.btnLeftClick.emit();
+    };
+    this.onBtnRightClick = () => {
+      this.btnRightClick.emit();
+    };
   }
   /**
-   * TODO
-   */
+    * Define o estado do componente programaticamente.
+    */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;
   }
   handleClick(event) {
-    if (!this.collapsed) {
-      this.toggle(event);
+    console.log(event);
+    if ((event === null || event === void 0 ? void 0 : event.target.localName) !== 'med-tooltip' && this.titulo) {
+      if (!this.collapsed) {
+        this.toggle(event);
+      }
+    }
+    else if (!this.titulo) {
+      if (!this.collapsed) {
+        this.toggle(event);
+      }
     }
   }
   render() {
-    const { dsName, placement, position, collapsed, titulo, content, dsColor } = this;
+    const { dsColor, placement, position, collapsed, titulo, content, btnLeft, btnRight } = this;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-tooltip': true,
-        [`med-tooltip--${dsName}`]: dsName !== undefined,
         [`med-tooltip--${placement}`]: placement !== undefined,
         [`med-tooltip--${position}`]: position !== undefined,
         'med-tooltip--collapsed': collapsed
@@ -31,9 +44,21 @@ export class MedTooltip {
       h("div", { class: "med-tooltip__input-container", onClick: (event) => { this.toggle(event); } },
         h("slot", { name: "input" })),
       h("div", { class: "med-tooltip__content" },
-        titulo && h("h3", { class: "med-tooltip__titulo" }, titulo),
-        content && h("p", { class: "med-tooltip__text" }, content),
-        h("slot", { name: "content" }))));
+        titulo && h("div", { class: "med-tooltip__header" },
+          h("med-type", { class: "med-tooltip__titulo" }, titulo),
+          h("ion-button", { class: "med-tooltip__button-fechar", "ds-color": !dsColor ? 'neutral-3' : dsColor, "ds-name": "tertiary", "ds-size": "xxs", onClick: (event) => { this.toggle(event); } },
+            h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))),
+        content && h("med-type", { class: "med-tooltip__text" }, content),
+        h("slot", { name: "content" }),
+        (btnLeft || btnRight) && h("div", { class: "med-tooltip__footer" },
+          btnLeft && h("ion-button", { class: "med-tooltip__button", "ds-color": !dsColor ? 'neutral-3' : dsColor, "ds-size": "xxs", "ds-name": "tertiary", onClick: this.onBtnLeftClick },
+            " ",
+            btnLeft,
+            " "),
+          btnRight && h("ion-button", { class: "med-tooltip__button", "ds-color": !dsColor ? 'neutral-3' : dsColor, "ds-size": "xxs", "ds-name": "tertiary", onClick: this.onBtnRightClick },
+            " ",
+            btnRight,
+            " ")))));
   }
   static get is() { return "med-tooltip"; }
   static get encapsulation() { return "shadow"; }
@@ -44,23 +69,6 @@ export class MedTooltip {
     "$": ["med-tooltip.css"]
   }; }
   static get properties() { return {
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'definition'",
-        "resolved": "\"definition\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "TODO"
-      },
-      "attribute": "ds-name",
-      "reflect": false
-    },
     "dsColor": {
       "type": "string",
       "mutable": false,
@@ -151,6 +159,40 @@ export class MedTooltip {
       "attribute": "content",
       "reflect": true
     },
+    "btnLeft": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define o texto do bot\u00E3o esquerdo, se existir."
+      },
+      "attribute": "btn-left",
+      "reflect": false
+    },
+    "btnRight": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define o texto do bot\u00E3o direito, se existir."
+      },
+      "attribute": "btn-right",
+      "reflect": false
+    },
     "collapsed": {
       "type": "boolean",
       "mutable": true,
@@ -170,10 +212,41 @@ export class MedTooltip {
       "defaultValue": "true"
     }
   }; }
+  static get events() { return [{
+      "method": "btnLeftClick",
+      "name": "btnLeftClick",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": "TODO"
+      },
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      }
+    }, {
+      "method": "btnRightClick",
+      "name": "btnRightClick",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": "TODO"
+      },
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      }
+    }]; }
   static get methods() { return {
     "toggle": {
       "complexType": {
-        "signature": "(event?: Event | undefined) => Promise<void>",
+        "signature": "(event?: any) => Promise<void>",
         "parameters": [{
             "tags": [],
             "text": ""
@@ -181,15 +254,12 @@ export class MedTooltip {
         "references": {
           "Promise": {
             "location": "global"
-          },
-          "Event": {
-            "location": "global"
           }
         },
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "TODO",
+        "text": "Define o estado do componente programaticamente.",
         "tags": []
       }
     }

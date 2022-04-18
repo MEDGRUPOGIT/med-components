@@ -1,19 +1,23 @@
-:host(.med-video-thumbnail) {
+:host {
+  --width: 112px;
+  --height: 64px;
+}
+
+:host {
   display: block;
-  width: 112px;
-  height: 64px;
+  width: var(--width);
+  height: var(--height);
   position: relative;
   overflow: hidden;
   border-radius: 4px;
 }
 
-:host(.med-video-thumbnail) .med-video-thumbnail__img {
+.med-video-thumbnail__img {
   width: 100%;
   height: auto;
   display: block;
 }
-
-:host(.med-video-thumbnail) .med-video-thumbnail__icon {
+.med-video-thumbnail__icon {
   stroke: #fff;
   font-size: 20px;
   position: absolute;
@@ -21,8 +25,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-:host(.med-video-thumbnail) .med-video-thumbnail__progress {
+.med-video-thumbnail__progress {
   position: absolute;
   bottom: 0;
   left: 0;

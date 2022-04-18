@@ -24,29 +24,29 @@ export class MedRateAula {
         h("div", { class: "med-rate-aula__item" },
           h("button", { class: "med-rate-aula__button med-rate-aula__button--otimo" },
             h("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--otimo", name: "med-excelente" })),
-          h("h4", { class: "med-rate-aula__label med-rate-aula__label--otimo" }, "\u00D3timo")),
+          h("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-success" }, "\u00D3timo")),
         h("div", { class: "med-rate-aula__item" },
           h("button", { class: "med-rate-aula__button med-rate-aula__button--bom" },
             h("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--bom", name: "med-bom" })),
-          h("h4", { class: "med-rate-aula__label med-rate-aula__label--bom" }, "Bom")),
+          h("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-attention" }, "Bom")),
         h("div", { class: "med-rate-aula__item" },
           h("button", { class: "med-rate-aula__button med-rate-aula__button--regular" },
             h("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--regular", name: "med-regular" })),
-          h("h4", { class: "med-rate-aula__label med-rate-aula__label--regular" }, "Regular")),
+          h("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-caution" }, "Regular")),
         h("div", { class: "med-rate-aula__item" },
           h("button", { class: "med-rate-aula__button med-rate-aula__button--ruim" },
             h("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--ruim", name: "med-ruim" })),
-          h("h4", { class: "med-rate-aula__label med-rate-aula__label--ruim" }, "Rium")),
+          h("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-warning" }, "Ruim")),
         h("div", { class: "med-rate-aula__button-fechar", onClick: (event) => { this.toggle(event); } },
           h("ion-button", { "ds-size": "xs", "ds-name": "primary", class: "" },
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" })))),
       h("div", { class: "med-rate-aula__end", onClick: (event) => { this.toggle(event); } },
         h("ion-button", { "ds-size": "xs", "ds-name": "tertiary" },
           h("ion-icon", { slot: "icon-only", class: "med-rate-aula__icon-abrir", name: "med-avaliar" })),
-        h("med-type", { token: "p12x" }, "Avalie"))));
+        h("med-type", { token: "p12" }, "Avalie"))));
   }
   static get is() { return "med-rate-aula"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-rate-aula.scss"]
   }; }

@@ -36,9 +36,9 @@
 }
 
 :host(.med-segment--default) {
-  border: var(--med-border-width-thin) solid hsl(var(--med-color-neutral-10));
+  border: 2px solid hsl(var(--med-color-neutral-10));
   height: 48px;
-  border-radius: var(--med-border-radius-sm);
+  border-radius: 8px;
 }
 
 :host(.med-color.med-segment--default) {

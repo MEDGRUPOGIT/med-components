@@ -1,0 +1,1 @@
+import{r as registerInstance,h,H as Host}from"./index-70672e81.js";var selectTestCss=":host{display:block}";var SelectTest=function(){function e(e){registerInstance(this,e)}e.prototype.render=function(){return h(Host,null,h("slot",null))};return e}();SelectTest.style=selectTestCss;export{SelectTest as select_test};

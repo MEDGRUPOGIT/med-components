@@ -8,7 +8,7 @@ export declare class MedFontZoom {
     emit: (value: MedFontSize) => void;
   };
   /**
-   * TODO
+   * Define o tamnho da fonte
    */
   value: MedFontSize;
   readonly min: number;

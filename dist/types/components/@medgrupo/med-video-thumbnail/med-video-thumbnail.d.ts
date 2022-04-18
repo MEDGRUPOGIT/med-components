@@ -1,15 +1,15 @@
 import { MedColor } from '../../../interface';
 export declare class MedVideoThumbnail {
   /**
-    * TODO
+    * Define a cor do componente.
     */
   dsColor?: MedColor;
   /**
-    * TODO
+    * Define a url da imagem a ser mostrada.
     */
   url?: string;
   /**
-    * TODO
+    * Define a porcentagem a ser mostrada.
     */
   value: number;
   render(): any;

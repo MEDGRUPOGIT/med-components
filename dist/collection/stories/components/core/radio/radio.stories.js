@@ -1,9 +1,9 @@
 import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
-import { MedColor } from '../../../constants';
+import { MedColors } from "../../../../global/templarios/color.enum";
 
 export default {
-  title: 'Components/Core/Radio',
+  title: 'Components/Core (Revisado: abril 2022)/Radio',
   decorators: [withDesign],
 };
 
@@ -13,12 +13,12 @@ const TemplateDefault = ({dsColor, dsName}) => {
       <ion-content>
         <div class="flex-center">
 
-        <!-- component -->
+        <!-- component markdown-->
         <ion-radio-group value="Storybook">
             <ion-radio .dsColor=${dsColor} ds-name=${dsName} slot="start" value="teste"></ion-radio>
             <ion-radio .dsColor=${dsColor} ds-name=${dsName} slot="start" value="teste 2"></ion-radio>
         </ion-radio-group>
-        <!-- component -->
+        <!-- component markdown-->
 
         </div>
       </ion-content>
@@ -35,11 +35,11 @@ radio.parameters = {
 }
 radio.argTypes = {
   dsColor: {
-    options: MedColor,
+    options: Object.values(MedColors),
     control: { type: 'select'},
     description: "Define a cor do componente.",
     table: {
-      type:  { summary: 'MedColor' },
+      type:  { summary: Object.values(MedColors).join(' |') },
       defaultValue: { summary: 'undefined' },
     },
   },

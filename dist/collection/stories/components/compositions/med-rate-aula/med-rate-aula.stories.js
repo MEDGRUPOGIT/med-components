@@ -2,36 +2,27 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Compositions/Rate Aula',
+  title: 'Components/Compositions/@OK Med Rate Aula(Video Caption)',
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({}) => {
+const Template = () => {
   return html`
-
     <ion-app>
       <ion-content>
-
-        <!-- component -->
-        <med-rate-aula>
-        </med-rate-aula>
-        <!-- component -->
-
+        <!-- component markdown-->
+        <med-rate-aula></med-rate-aula>
+        <!-- component markdown-->
       </ion-content>
     </ion-app>
-  `
-}
+    `;
+};
 
-export const RateAula = TemplateDefault.bind({});
-RateAula.parameters = {
+export const Default = Template.bind({});
+Default.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=3138%3A10553',
+    url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=12007%3A46797',
   },
-  actions: {
-    handles: ['medChange'],
-  },
-}
-RateAula.argTypes = {
-
 };
+Default.argTypes = {};

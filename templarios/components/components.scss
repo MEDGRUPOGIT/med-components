@@ -1,12 +1,19 @@
 @import "../abstracts";
 
 ////////////////////
+// Utils
+////////////////////
+@import "./../utils/utils";
+
+////////////////////
 // Global
 ////////////////////
+
 @import "./global/datetime";
 @import "./global/dialog";
+@import "./global/font-zoom-popover";
+@import "./global/intro-tooltip";
 @import "./global/picker";
-@import "./global/popover";
 @import "./global/scrollbar";
 @import "./global/sheet";
 @import "./global/time-stamp";
@@ -14,6 +21,7 @@
 ////////////////////
 // Compositions
 ////////////////////
+
 @import "./compositions/accordion-list";
 @import "./compositions/card-assuntos-temas";
 @import "./compositions/chart-bar";
@@ -22,11 +30,11 @@
 @import "./compositions/filtro-dashboard";
 @import "./compositions/header-counter";
 @import "./compositions/tabs";
-@import "./compositions/video-caption-feedback";
 
 ////////////////////
 // Monta Provas
 ////////////////////
+
 @import "./monta-provas/accordion-chart-monta-provas";
 @import "./monta-provas/filtros-monta-provas";
 @import "./monta-provas/footer-monta-provas";

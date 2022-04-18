@@ -1,10 +1,10 @@
 :host {
-  --padding: var(--med-spacing-squish-xs);
+  --padding: 8px 16px;
   --background: transparent;
-  --border-radius: var(--med-border-radius-sm);
+  --border-radius: 8px;
   --font-size-title: 14px;
   --color-title: hsl(var(--med-color-neutral-10));
-  --font-size-label: var(--med-font-size-xxxs);
+  --font-size-label: 12px;
   --color-label: hsl(var(--med-color-brand-4));
 }
 
@@ -27,16 +27,16 @@
   margin: 0;
   padding: 0;
   font-size: var(--font-size-title);
-  font-weight: var(--med-font-weight-light);
+  font-weight: 300;
   color: var(--color-title);
 }
 :host(.med-list-item) .med-list-item__label {
   margin: 0;
   padding: 0;
   font-size: var(--font-size-label);
-  font-weight: var(--med-font-weight-regular);
+  font-weight: 400;
   color: var(--color-label);
-  margin-top: var(--med-spacing-inline-nano);
+  margin-top: 4px;
 }
 :host(.med-list-item) .med-list-item__border-radius {
   border-radius: var(--border-radius);
@@ -52,23 +52,23 @@
 }
 
 ::slotted([slot=start]) {
-  margin-right: var(--med-spacing-inline-base);
+  margin-right: 16px;
 }
 
 ::slotted([slot=end]) {
-  margin-left: var(--med-spacing-inline-base);
+  margin-left: 16px;
 }
 
 :host(.med-list-item--xs) {
-  --padding: var(--med-spacing-squish-xs);
+  --padding: 8px 16px;
 }
 
 :host(.med-list-item--sm) {
-  --padding: var(--med-spacing-inset-sm);
+  --padding: 16px;
 }
 
 :host(.med-list-item--md) {
-  --padding: var(--med-spacing-stretch-md);
+  --padding: 24px 16px;
 }
 
 :host(.med-list-item.med-color) ::slotted(ion-checkbox) {
