@@ -7,7 +7,7 @@ const MedFontZoom = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * Define o tamnho da fonte
+     * TODO
      */
     this.value = MedFontSize.XS;
     this.min = 1;
@@ -53,7 +53,7 @@ const MedFontZoom = class {
     };
   }
   render() {
-    return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
+    return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, h("ion-icon", { class: "med-icon", slot: "start", size: "small", name: "med-fontemenor" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
   }
 };
 MedFontZoom.style = medFontZoomCss;

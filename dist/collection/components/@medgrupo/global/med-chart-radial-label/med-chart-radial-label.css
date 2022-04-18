@@ -1,6 +1,6 @@
 :host {
-  --font-size-item: 10px;
-  --font-size-quantia: 24px;
+  --font-size-item: var(--med-font-size-nano);
+  --font-size-quantia: var(--med-font-size-md);
 }
 
 :host(.med-chart-radial-label) {
@@ -17,15 +17,15 @@
 }
 :host(.med-chart-radial-label) .med-chart-radial-label__item {
   font-size: var(--font-size-item);
-  line-height: 100%;
+  line-height: var(--med-line-height-compressed);
   color: hsl(var(--med-color-neutral-5));
   display: flex;
   align-items: center;
-  font-weight: 700;
+  font-weight: var(--med-font-weight-bold);
   text-align: right;
 }
 :host(.med-chart-radial-label) .med-chart-radial-label__item:not(:last-of-type) {
-  padding-bottom: 8px;
+  padding-bottom: var(--med-spacing-stack-xxxs);
 }
 @media (min-width: 992px) {
   :host(.med-chart-radial-label) .med-chart-radial-label__item:not(:last-of-type) {
@@ -34,14 +34,14 @@
 }
 :host(.med-chart-radial-label) .med-chart-radial-label__quantia {
   font-size: var(--font-size-quantia);
-  line-height: 100%;
-  margin-right: 8px;
+  line-height: var(--med-line-height-compressed);
+  margin-right: var(--med-spacing-inline-xxxs);
   color: hsl(var(--med-color-feedback));
-  font-weight: 700;
+  font-weight: var(--med-font-weight-bold);
   min-width: 3ch;
 }
 
 :host(.med-chart-radial-label--lg) {
-  --font-size-item: 16px;
-  --font-size-quantia: 32px;
+  --font-size-item: var(--med-font-size-xs);
+  --font-size-quantia: var(--med-font-size-lg);
 }

@@ -4,7 +4,7 @@ import './ionic-global-10d9ffcf.js';
 import './hardware-back-button-3fda9f12.js';
 import './helpers-6b411283.js';
 
-const medConfigCss = ".sc-med-config-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100%;background-color:var(--med-color-neutral-dark-prime)}.sc-med-config-h .config-header.sc-med-config{position:relative;width:100%;z-index:1;top:0}.sc-med-config-h .config-header__title.sc-med-config{color:var(--med-color-neutral-light-prime);font-size:16px;line-height:100%;font-weight:600}.sc-med-config-h .config-content.sc-med-config{--background:var(--med-color-neutral-dark-prime);height:100%;overflow-y:hidden}";
+const medConfigCss = ".sc-med-config-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100%;background-color:var(--med-color-neutral-dark-prime)}.sc-med-config-h .config-header.sc-med-config{position:relative;width:100%;z-index:1;top:0}.sc-med-config-h .config-header__title.sc-med-config{color:var(--med-color-neutral-light-prime);font-size:var(--med-font-size-xs);line-height:var(--med-line-height-compressed);font-weight:var(--med-font-weight-semibold)}.sc-med-config-h .config-content.sc-med-config{--background:var(--med-color-neutral-dark-prime);height:100%;overflow-y:hidden}";
 
 const MedConfig = class {
   constructor(hostRef) {

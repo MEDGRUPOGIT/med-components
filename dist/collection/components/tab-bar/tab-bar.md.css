@@ -80,6 +80,27 @@
   height: 56px;
 }
 
+/* :host {
+  --background: hsl(var(--med-color-neutral-1));
+
+  height: auto;
+  contain: initial;
+  box-shadow: none;
+}
+
+:host(.med-color-neutral) {
+  --background: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-neutral) ::slotted(ion-tab-button) {
+  --color: hsl(var(--med-color-neutral-contrast));
+  --color-hover: fuck!;
+  --color-focused: fuck!;
+  --color-selected: fuck!;
+  --color-activated: fuck!;
+  --color-icon: hsl(var(--med-color-neutral-contrast));
+}
+ */
 :host {
   --background: hsl(var(--med-color-neutral-1));
   contain: initial;

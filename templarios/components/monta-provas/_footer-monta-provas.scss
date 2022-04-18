@@ -2,10 +2,10 @@
   @include breakpoint-up("lg") {
     display: flex;
     justify-content: space-between;
-    padding-top: 40px;
-    padding-bottom: 48px;
-    padding-right: 56px;
-    padding-left: 56px;
+    padding-top: var(--med-spacing-stack-sm);
+    padding-bottom: var(--med-spacing-stack-md);
+    padding-right: var(--med-spacing-inline-lg);
+    padding-left: var(--med-spacing-inline-lg);
     background: hsl(var(--med-color-neutral-1));
   }
 }
@@ -13,7 +13,7 @@
 .monta-provas-footer__container {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: var(--med-spacing-inset-sm);
   max-width: 1220px;
   margin: 0 auto;
   justify-content: space-between;
@@ -27,7 +27,7 @@
 .monta-provas-footer__container-button {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: var(--med-spacing-inset-sm);
   max-width: 1220px;
   margin: 0 auto;
   justify-content: center;
@@ -39,9 +39,9 @@
 }
 
 .monta-provas-footer__auxiliar {
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 100%;
+  font-size: var(--med-font-size-nano);
+  font-weight: var(--med-font-weight-regular);
+  line-height: var(--med-line-height-compressed);
   color: hsl(var(--med-color-neutral-10));
   text-transform: uppercase;
   margin: 0;
@@ -51,24 +51,24 @@
   text-align: center;
 
   @include breakpoint-up("lg") {
-    margin-right: 32px;
+    margin-right: var(--med-spacing-inline-xs);
   }
 }
 
 .monta-provas-footer__number {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 100%;
+  font-size: var(--med-font-size-xs);
+  font-weight: var(--med-font-weight-semibold);
+  line-height: var(--med-line-height-compressed);
   color: hsl(var(--med-color-brand-4));
   text-transform: uppercase;
   margin: 0;
-  padding: 4px 0;
+  padding: var(--med-spacing-stack-nano) 0;
 }
 
 .monta-provas-footer__text-number {
-  --font-weight: 600;
+  --font-weight: var(--med-font-weight-semibold);
 
   @include breakpoint-up("lg") {
-    --font-size: 32px;
+    --font-size: var(--med-font-size-lg);
   }
 }

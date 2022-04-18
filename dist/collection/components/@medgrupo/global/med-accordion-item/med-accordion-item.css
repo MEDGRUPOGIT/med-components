@@ -2,8 +2,8 @@
   --background-header: linear-gradient(to right, hsl(var(--med-color-brand-1)), hsl(var(--med-color-neutral-2)), hsl(var(--med-color-neutral-2)));
   --background-content: hsl(var(--med-color-neutral-2));
   --icon-color: hsl(var(--med-color-neutral-10));
-  --border-radius: 8px;
-  --padding: 16px;
+  --border-radius: var(--med-border-radius-sm);
+  --padding: var(--med-spacing-inset-sm);
   --icon-font-size: 24px;
   --align-items: initial;
 }
@@ -37,10 +37,10 @@
   display: flex;
 }
 :host(.med-accordion-item) .med-accordion-item__icon-container--left {
-  padding-right: 8px;
+  padding-right: var(--med-spacing-inline-xxxs);
 }
 :host(.med-accordion-item) .med-accordion-item__icon-container--right {
-  padding-left: 8px;
+  padding-left: var(--med-spacing-inline-xxxs);
   margin-left: auto;
 }
 :host(.med-accordion-item) .med-accordion-item__content {
@@ -63,8 +63,8 @@
 }
 
 :host(.med-accordion-item--keep-border) .med-accordion-item__header {
-  border-bottom-left-radius: 8px !important;
-  border-bottom-right-radius: 8px !important;
+  border-bottom-left-radius: var(--med-border-radius-sm) !important;
+  border-bottom-right-radius: var(--med-border-radius-sm) !important;
 }
 
 ::slotted(ion-progress-bar) {

@@ -15,6 +15,14 @@ export declare class ProgressBar implements ComponentInterface {
    */
   dsColor?: MedColor;
   /**
+   * Define a variação do componente.
+   */
+  dsName?: 'minimalist' | 'skin';
+  /**
+    * Esconde ou mostra a porcentagem.
+    */
+  percentage: boolean;
+  /**
    * The state of the progress bar, based on if the time the process takes is known or not.
    * Default options are: `"determinate"` (no animation), `"indeterminate"` (animate from left to right).
    */

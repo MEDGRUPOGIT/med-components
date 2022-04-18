@@ -1,9 +1,9 @@
 import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
-import { MedColors } from "../../../../global/templarios/color.enum";
+import { MedColor } from '../../../constants';
 
 export default {
-  title: 'Components/Core (Revisado: abril 2022)/Progress Bar',
+  title: 'Components/Core/Progress Bar',
   decorators: [withDesign],
 };
 
@@ -13,9 +13,9 @@ const Template = ({dsColor, dsName, value = 0, percentage}) => {
       <ion-content>
         <div class="flex-center">
 
-          <!-- component -->
-          <ion-progress-bar .dsColor=${dsColor} value=${value / 100}></ion-progress-bar>
-          <!-- component -->
+        <!-- component -->
+          <ion-progress-bar .dsColor=${dsColor} ds-name=${dsName} value=${value / 100} ?percentage=${percentage}></ion-progress-bar>
+        <!-- component -->
 
         </div>
       </ion-content>
@@ -27,17 +27,36 @@ export const ProgressBar = Template.bind();
 ProgressBar.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=13766%3A54383',
+    url: 'https://www.figma.com/file/zdbyAa3XpX3loOjJEaXc6E/Quest%C3%B5es?node-id=313%3A107',
   },
 }
 ProgressBar.argTypes = {
   dsColor: {
-    options: Object.values(MedColors),
+    options: MedColor,
     control: { type: 'select'},
     description: "Define a cor do componente.",
     table: {
-      type:  { summary: Object.values(MedColors).join(' |') },
+      type:  { summary: 'MedColor' },
       defaultValue: { summary: 'undefined' },
+    },
+  },
+  dsName: {
+    options: [undefined, 'minimalist', 'skin'],
+    control: { type: 'inline-radio'},
+    description: "Define a variação do componente.",
+    defaultValue: "undefined",
+    table: {
+      type:  { summary: 'minimalist | skin' },
+      defaultValue: { summary: 'minimalist' },
+    },
+  },
+  percentage: {
+    control: { type: 'boolean'},
+    description: "Esconde ou mostra a porcentagem.",
+    defaultValue: true,
+    table: {
+      type:  { summary: 'boolean' },
+      defaultValue: { summary: 'false' },
     },
   },
   value: {
@@ -45,5 +64,6 @@ ProgressBar.argTypes = {
     control: { type: 'range', min: 0, max: 100, step: 1 },
     description: 'Define a porcentagem a ser mostrada.'
   },
+
 };
 

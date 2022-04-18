@@ -1,14 +1,14 @@
 :host {
-  --border-width: 1px;
+  --border-width: var(--med-border-width-hairline);
   --border-style: solid;
   --border-color: hsl(var(--med-color-neutral-3));
   --color: hsl(var(--med-color-neutral-6));
-  --spacing: 4px;
+  --spacing: var(--med-spacing-inset-nano);
   --background: transparent;
-  --font-size: 20px;
-  --font-weight: 400;
-  --line-height: 100%;
-  --icon-opacity: 0.5;
+  --font-size: var(--med-font-size-sm);
+  --font-weight: var(--med-font-weight-regular);
+  --line-height: var(--med-line-height-compressed);
+  --icon-opacity: var(--med-opacity-level-half);
   border-width: var(--border-width);
   border-style: var(--border-style);
   border-color: var(--border-color);

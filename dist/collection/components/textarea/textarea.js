@@ -225,11 +225,11 @@ export class Textarea {
   static get is() { return "ion-textarea"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "ios": ["textarea.md.scss"],
+    "ios": ["textarea.ios.scss"],
     "md": ["textarea.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["textarea.md.css"],
+    "ios": ["textarea.ios.css"],
     "md": ["textarea.md.css"]
   }; }
   static get properties() { return {

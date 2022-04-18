@@ -2,6 +2,60 @@
   "version": 1.1,
   "tags": [
     {
+      "name": "accordion-group",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "no-animation",
+          "description": "TODO."
+        },
+        {
+          "name": "single-open",
+          "description": "TODO."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/accordion-group/accordion-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion-item",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "background",
+          "description": "Define se o componente irá ter background quando aberto."
+        },
+        {
+          "name": "disable",
+          "description": "Desabilita o componente."
+        },
+        {
+          "name": "header-toggle",
+          "description": "Desabilita o componente."
+        },
+        {
+          "name": "open",
+          "description": "Abre programaticamente o componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/accordion-item/accordion-item.tsx"
+        }
+      ]
+    },
+    {
       "name": "dialog-test",
       "description": {
         "kind": "markdown",
@@ -2921,6 +2975,18 @@
           "description": "Define a cor do componente."
         },
         {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "minimalist"
+            },
+            {
+              "name": "skin"
+            }
+          ]
+        },
+        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -2931,6 +2997,10 @@
               "name": "md"
             }
           ]
+        },
+        {
+          "name": "percentage",
+          "description": "Esconde ou mostra a porcentagem."
         },
         {
           "name": "reversed",
@@ -6070,7 +6140,7 @@
       "attributes": [
         {
           "name": "value",
-          "description": "Define o tamnho da fonte"
+          "description": "TODO"
         }
       ],
       "references": [
@@ -6091,6 +6161,58 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-header/med-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-heading",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "high"
+            }
+          ]
+        },
+        {
+          "name": "ds-size",
+          "description": "Define a variação de tamanho do componente.",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            },
+            {
+              "name": "xl"
+            },
+            {
+              "name": "xs"
+            },
+            {
+              "name": "xxs"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-heading/med-heading.tsx"
         }
       ]
     },
@@ -6151,10 +6273,6 @@
           "description": "If `true`, a button tag will be rendered and the item will be tappable."
         },
         {
-          "name": "contain",
-          "description": ""
-        },
-        {
           "name": "detail",
           "description": "If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`\r\nis `ios` and an `href` or `button` property is present."
         },
@@ -6206,7 +6324,7 @@
           ]
         },
         {
-          "name": "no-padding",
+          "name": "padding",
           "description": ""
         },
         {
@@ -6461,6 +6579,29 @@
       },
       "attributes": [
         {
+          "name": "ds-color",
+          "description": ""
+        },
+        {
+          "name": "inset",
+          "description": "If `true`, the list will have margin around it and rounded corners."
+        },
+        {
+          "name": "lines",
+          "description": "How the bottom border should be displayed on all items.",
+          "values": [
+            {
+              "name": "full"
+            },
+            {
+              "name": "inset"
+            },
+            {
+              "name": "none"
+            }
+          ]
+        },
+        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -6471,6 +6612,10 @@
               "name": "md"
             }
           ]
+        },
+        {
+          "name": "padding",
+          "description": ""
         }
       ],
       "references": [
@@ -6719,6 +6864,58 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/questoes/med-option/med-option.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-paragraph",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "double"
+            }
+          ]
+        },
+        {
+          "name": "ds-size",
+          "description": "Define a variação de tamanho do componente.",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            },
+            {
+              "name": "xl"
+            },
+            {
+              "name": "xs"
+            },
+            {
+              "name": "xxs"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-paragraph/med-paragraph.tsx"
         }
       ]
     },
@@ -6985,20 +7182,6 @@
       ]
     },
     {
-      "name": "med-segment",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [],
-      "references": [
-        {
-          "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-segment/med-segment.tsx"
-        }
-      ]
-    },
-    {
       "name": "med-semana",
       "description": {
         "kind": "markdown",
@@ -7068,6 +7251,61 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-semanas/med-semanas.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-subtitle",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "Define a cor do componente."
+        },
+        {
+          "name": "ds-name",
+          "description": "Define a variação do componente.",
+          "values": [
+            {
+              "name": "high"
+            }
+          ]
+        },
+        {
+          "name": "ds-size",
+          "description": "Define a variação de tamanho do componente.",
+          "values": [
+            {
+              "name": "base"
+            },
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            },
+            {
+              "name": "xl"
+            },
+            {
+              "name": "xs"
+            },
+            {
+              "name": "xxs"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/global/med-subtitle/med-subtitle.tsx"
         }
       ]
     },
@@ -7233,14 +7471,6 @@
       },
       "attributes": [
         {
-          "name": "btn-left",
-          "description": "Define o texto do botão esquerdo, se existir."
-        },
-        {
-          "name": "btn-right",
-          "description": "Define o texto do botão direito, se existir."
-        },
-        {
           "name": "collapsed",
           "description": "TODO"
         },
@@ -7251,6 +7481,15 @@
         {
           "name": "ds-color",
           "description": "TODO"
+        },
+        {
+          "name": "ds-name",
+          "description": "TODO",
+          "values": [
+            {
+              "name": "definition"
+            }
+          ]
         },
         {
           "name": "placement",
@@ -7354,7 +7593,7 @@
       ]
     },
     {
-      "name": "med-video-thumbnail",
+      "name": "med-video-list-item",
       "description": {
         "kind": "markdown",
         "value": ""
@@ -7363,14 +7602,33 @@
         {
           "name": "ds-color",
           "description": "Define a cor do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/med-video-list-item/med-video-list-item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "med-video-thumbnail",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "TODO"
         },
         {
           "name": "url",
-          "description": "Define a url da imagem a ser mostrada."
+          "description": "TODO"
         },
         {
           "name": "value",
-          "description": "Define a porcentagem a ser mostrada."
+          "description": "TODO"
         }
       ],
       "references": [
@@ -7389,15 +7647,15 @@
       "attributes": [
         {
           "name": "like",
-          "description": "Define a quantidade de recursos que cabem."
+          "description": "TODO"
         },
         {
           "name": "titulo",
-          "description": "Define o titulo do componente."
+          "description": "TODO"
         },
         {
           "name": "unlike",
-          "description": "Define a quantidade de recursos que não cabem."
+          "description": "TODO"
         }
       ],
       "references": [
@@ -7447,20 +7705,6 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.tsx"
-        }
-      ]
-    },
-    {
-      "name": "select-test",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [],
-      "references": [
-        {
-          "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/select-test/select-test.tsx"
         }
       ]
     },

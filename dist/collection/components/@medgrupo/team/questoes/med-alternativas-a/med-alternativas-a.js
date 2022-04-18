@@ -78,10 +78,10 @@ export class MedAlternativasA {
                 h("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) },
                   h("div", { class: 'image-container__wrapper' },
                     h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }))),
-              h("med-chart-bar-horizontal", { label: true, class: `
+              h("ion-progress-bar", { percentage: true, class: `
                       med-alternativas__progress-bar
                       ${mostraResposta && alternativaSelecionada ? 'med-alternativas__progress-bar--toggle' : ''}
-                    `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })),
+                    `, value: alternativa[this.keyPorcentagem] })),
             h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => { this.baseClass.riscar(event, alternativa); } },
               h("ion-icon", { class: "med-alternativas__riscar-icon med-icon", name: "med-riscar" }),
               h("div", { class: "med-alternativas__riscar-span" },

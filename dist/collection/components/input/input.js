@@ -257,11 +257,11 @@ export class Input {
   static get is() { return "ion-input"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "ios": ["input.md.scss"],
+    "ios": ["input.ios.scss"],
     "md": ["input.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["input.md.css"],
+    "ios": ["input.ios.css"],
     "md": ["input.md.css"]
   }; }
   static get properties() { return {

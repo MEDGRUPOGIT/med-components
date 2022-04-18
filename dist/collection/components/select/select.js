@@ -338,11 +338,11 @@ export class Select {
   static get is() { return "ion-select"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["select.md.scss"],
+    "ios": ["select.ios.scss"],
     "md": ["select.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["select.md.css"],
+    "ios": ["select.ios.css"],
     "md": ["select.md.css"]
   }; }
   static get properties() { return {

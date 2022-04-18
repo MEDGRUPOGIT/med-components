@@ -88,7 +88,7 @@ export class Checkbox {
     }
     return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: generateMedColor(dsColor, {
         [mode]: true,
-        'in-item': hostContext('ion-item', el) || hostContext('med-item', el),
+        'in-item': hostContext('ion-item', el),
         'checkbox-checked': checked,
         'checkbox-disabled': disabled,
         'checkbox-indeterminate': indeterminate,

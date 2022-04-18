@@ -515,7 +515,7 @@ ion-icon {
   --icon-font-size: 32px;
   --padding: 0;
   --padding-text: 0;
-  --border-radius: 50%;
+  --border-radius: var(--med-border-radius-full);
   --min-height: 32px;
   --min-width: 32px;
   --icon-font-size: 24px;

@@ -15,7 +15,7 @@ const TemplateDefault = ({color}) => {
         <!-- component -->
         <ion-slides pager="true">
 
-          <ion-slide slot="content">
+          <ion-slide>
             <div class="slide">
               <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a demonstration of proper code use.</p>
             </div>

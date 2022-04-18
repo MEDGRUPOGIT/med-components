@@ -13,10 +13,10 @@
 :host(.med-question) {
   background: var(--background);
   color: var(--color);
-  padding: 24px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 100%;
+  padding: var(--med-spacing-inset-base);
+  font-size: var(--med-font-size-xxs);
+  font-weight: var(--med-font-weight-regular);
+  line-height: var(--med-line-height-compressed);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +27,7 @@
 }
 
 :host(.med-question) .med-question__icon {
-  margin-top: 8px;
+  margin-top: var(--med-spacing-stack-xxxs);
   font-size: 24px;
   stroke: var(--color);
   transition: 200ms transform ease;

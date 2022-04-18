@@ -1,13 +1,30 @@
 :host {
   --border-radius: 8px;
-  --border-color: transparent;
-  --border: 1px solid var(--border-color);
+  --border: 1px solid color("neutral", "2");
 }
 
 :host {
+  display: block;
+  background: var(--background);
   border-radius: var(--border-radius);
+}
+
+:host(.list-padding) ::slotted(med-item) {
+  --padding: 12px 16px;
 }
 
 ::slotted(med-item:not(:last-child)) {
   border-bottom: var(--border);
+}
+
+:host(.med-color) {
+  --background: hsl(var(--med-color-3));
+}
+
+:host(.med-color-neutral) {
+  --background: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --background: hsl(var(--med-color-feedback));
 }

@@ -1,14 +1,14 @@
 :host {
-  --spacing: 16px;
-  --padding: 8px;
+  --spacing: var(--med-spacing-inline-base);
+  --padding: var(--med-spacing-inset-xs);
   --background: hsl(var(--med-color-neutral-7));
-  --border-radius: 8px;
+  --border-radius: var(--med-border-radius-sm);
   --height: 32px;
-  --label-font-size: 16px;
-  --label-font-weight: 500;
-  --label-line-height: 100%;
+  --label-font-size: var(--med-font-size-xs);
+  --label-font-weight: var(--med-font-weight-medium);
+  --label-line-height: var(--med-line-height-compressed);
   --label-color: hsl(var(--med-color-neutral-10));
-  --label-spacing: 4px;
+  --label-spacing: var(--med-spacing-inline-nano);
   height: var(--height);
 }
 :host .option {

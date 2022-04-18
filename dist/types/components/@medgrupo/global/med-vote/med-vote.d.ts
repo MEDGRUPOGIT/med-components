@@ -1,15 +1,15 @@
 export declare class MedVote {
   /**
-    * Define o titulo do componente.
-    */
+   * TODO
+   */
   titulo?: string | undefined;
   /**
-    * Define a quantidade de recursos que cabem.
-    */
+   * TODO
+   */
   like: number;
   /**
-    * Define a quantidade de recursos que não cabem.
-    */
+   * TODO
+   */
   unlike: number;
   render(): any;
 }

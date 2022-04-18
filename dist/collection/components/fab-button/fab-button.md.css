@@ -307,14 +307,14 @@ ion-ripple-effect {
 }
 :host {
   --background: medsoft-color(neutral-dark, 40);
-  --background-activated-opacity: 0.32;
-  --background-hover-opacity: 0.16;
-  --padding-bottom: 8px;
-  --padding-end: 8px;
-  --padding-start: 8px;
-  --padding-top: 8px;
-  --border-radius: 31.25em;
-  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+  --background-activated-opacity: var(--med-opacity-level-medium);
+  --background-hover-opacity: var(--med-opacity-level-light);
+  --padding-bottom: var(--med-spacing-inset-xs);
+  --padding-end: var(--med-spacing-inset-xs);
+  --padding-start: var(--med-spacing-inset-xs);
+  --padding-top: var(--med-spacing-inset-xs);
+  --border-radius: var(--med-border-radius-pill);
+  --box-shadow: var(--med-shadow-level-2);
   --ripple-color: transparent;
   height: 40px;
   min-width: 40px;
@@ -330,7 +330,7 @@ ion-ripple-effect {
 
 :host(.fab-button-disabled) {
   --background: medsoft-color(neutral-light, 20);
-  opacity: 0.8;
+  opacity: var(--med-opacity-level-semiopaque);
 }
 :host(.fab-button-disabled) ::slotted(ion-icon) {
   fill: medsoft-color(neutral-light, prime);
@@ -338,11 +338,11 @@ ion-ripple-effect {
 
 ::slotted(ion-label) {
   color: medsoft-color(neutral-light, prime);
-  padding-left: 8px;
-  padding-right: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 100%;
+  padding-left: var(--med-spacing-inline-xxxs);
+  padding-right: var(--med-spacing-inline-xxxs);
+  font-size: var(--med-font-size-xxs);
+  font-weight: var(--med-font-weight-semibold);
+  line-height: var(--med-line-height-compressed);
 }
 
 :host(.fab-button-close-active) ::slotted(ion-label) {
@@ -354,8 +354,8 @@ ion-ripple-effect {
   min-width: 48px !important;
 }
 :host([ds-size=md]) ::slotted(ion-label) {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: var(--med-spacing-inline-base);
+  padding-right: var(--med-spacing-inline-base);
 }
 
 :host([ds-size=lg]) {
@@ -363,8 +363,8 @@ ion-ripple-effect {
   min-width: 56px !important;
 }
 :host([ds-size=lg]) ::slotted(ion-label) {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: var(--med-spacing-inline-base);
+  padding-right: var(--med-spacing-inline-base);
 }
 
 :host(.fab-button-close-active) ::slotted([slot=label]) {
@@ -373,12 +373,12 @@ ion-ripple-effect {
 
 :host {
   --background: var(--med-color-brand-gradient);
-  --padding-bottom: 8px;
-  --padding-end: 8px;
-  --padding-start: 8px;
-  --padding-top: 8px;
-  --border-radius: 31.25em;
-  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+  --padding-bottom: var(--med-spacing-inset-xs);
+  --padding-end: var(--med-spacing-inset-xs);
+  --padding-start: var(--med-spacing-inset-xs);
+  --padding-top: var(--med-spacing-inset-xs);
+  --border-radius: var(--med-border-radius-pill);
+  --box-shadow: var(--med-shadow-level-2);
   --ripple-color: transparent;
   height: 40px;
   min-width: 40px;
@@ -394,7 +394,7 @@ ion-ripple-effect {
 
 :host(.fab-button-disabled) {
   --background:hsl(var(--med-color-neutral-8));
-  opacity: 0.8;
+  opacity: var(--med-opacity-level-semiopaque);
 }
 :host(.fab-button-disabled) ::slotted(ion-icon) {
   fill: medsoft-color(neutral-light, prime);
@@ -402,11 +402,11 @@ ion-ripple-effect {
 
 ::slotted(ion-label) {
   color: hsl(var(--med-color-neutral-));
-  padding-left: 8px;
-  padding-right: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 100%;
+  padding-left: var(--med-spacing-inline-xxxs);
+  padding-right: var(--med-spacing-inline-xxxs);
+  font-size: var(--med-font-size-xxs);
+  font-weight: var(--med-font-weight-semibold);
+  line-height: var(--med-line-height-compressed);
 }
 
 :host(.fab-button-close-active) ::slotted(ion-label) {
@@ -418,8 +418,8 @@ ion-ripple-effect {
   min-width: 48px !important;
 }
 :host([ds-size=md]) ::slotted(ion-label) {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: var(--med-spacing-inline-base);
+  padding-right: var(--med-spacing-inline-base);
 }
 
 :host([ds-size=lg]) {
@@ -427,8 +427,8 @@ ion-ripple-effect {
   min-width: 56px !important;
 }
 :host([ds-size=lg]) ::slotted(ion-label) {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: var(--med-spacing-inline-base);
+  padding-right: var(--med-spacing-inline-base);
 }
 
 :host(.fab-button-close-active) ::slotted([slot=label]) {

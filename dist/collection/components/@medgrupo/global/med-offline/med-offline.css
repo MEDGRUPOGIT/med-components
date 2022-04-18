@@ -7,7 +7,7 @@
   z-index: var(--z-index);
 }
 :host .wrapper {
-  background: hsl(var(--med-color-neutral-1), 0.8);
+  background: hsl(var(--med-color-neutral-1), var(--med-opacity-level-semiopaque));
   position: fixed;
   width: 100%;
   height: 100%;
@@ -25,7 +25,7 @@
 :host .icon {
   width: 48px;
   height: 48px;
-  margin-bottom: 24px;
+  margin-bottom: var(--med-spacing-stack-xxs);
 }
 :host .icon-path {
   stroke: hsl(var(--med-color-neutral-10));
@@ -35,15 +35,15 @@
   fill: none;
 }
 :host .title {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 100%;
+  font-size: var(--med-font-size-xs);
+  font-weight: var(--med-font-weight-bold);
+  line-height: var(--med-line-height-compressed);
   color: hsl(var(--med-color-neutral-10));
-  margin-bottom: 8px;
+  margin-bottom: var(--med-spacing-stack-xxxs);
 }
 :host .text {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 100%;
+  font-size: var(--med-font-size-xs);
+  font-weight: var(--med-font-weight-regular);
+  line-height: var(--med-line-height-compressed);
   color: hsl(var(--med-color-neutral-10));
 }

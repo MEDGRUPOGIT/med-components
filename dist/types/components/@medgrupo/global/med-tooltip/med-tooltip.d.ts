@@ -1,52 +1,37 @@
-import { EventEmitter } from '../../../../stencil-public-runtime';
 import { MedColor } from '../../../../interface';
 export declare class MedTooltip {
   /**
-    * TODO
-    */
+   * TODO
+   */
+  dsName?: 'definition';
+  /**
+   * TODO
+   */
   dsColor?: MedColor;
   /**
-    * TODO
-    */
+   * TODO
+   */
   placement?: 'top' | 'bottom' | 'left' | 'right';
   /**
-    * TODO
-    */
+   * TODO
+   */
   position?: 'start' | 'center' | 'end';
   /**
-    * TODO
-    */
+   * TODO
+   */
   titulo?: string;
   /**
-    * TODO
-    */
+   * TODO
+   */
   content?: string;
   /**
-    * Define o texto do botão esquerdo, se existir.
-    */
-  btnLeft?: string;
-  /**
-    * Define o texto do botão direito, se existir.
-    */
-  btnRight?: string;
-  /**
-    * TODO
-    */
+   * TODO
+   */
   collapsed: boolean;
   /**
-    * TODO
-    */
-  btnLeftClick: EventEmitter<void>;
-  /**
-    * TODO
-    */
-  btnRightClick: EventEmitter<void>;
-  /**
-    * Define o estado do componente programaticamente.
-    */
-  toggle(event?: any): Promise<void>;
-  handleClick(event?: any): void;
-  private onBtnLeftClick;
-  private onBtnRightClick;
+   * TODO
+   */
+  toggle(event?: Event): Promise<void>;
+  handleClick(event?: Event): void;
   render(): any;
 }

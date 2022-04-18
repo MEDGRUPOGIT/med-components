@@ -20,7 +20,7 @@
 
 .monta-provas-filtro__accordion-item {
   --background: transparent;
-  --border: 8px solid hsl(var(--med-color-neutral-2));
+  --border: var(--med-spacing-stack-xxxs) solid hsl(var(--med-color-neutral-2));
   --background-header: hsl(var(--med-color-neutral-6));
   --background-content: transparent;
 }
@@ -60,6 +60,7 @@
 
 .monta-prova-filtro__search {
   --background: hsl(var(--med-color-neutral-3));
+  --spacing: var(--med-spacing-inset-xxs);
 
   @include breakpoint-up("lg") {
     flex-basis: 30%;

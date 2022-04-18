@@ -1,4 +1,9 @@
 :host {
+  /**
+    * @prop --color: Define a cor do texto.
+    * @prop --background: Define a cor de background do componente.
+    * @prop --background-footer: Define a cor do background do footer do componente.
+    */
   --color: hsl(var(--med-color-neutral-10));
   --background: hsl(var(--med-color-neutral-2));
   --background-footer: hsl(var(--med-color-neutral-3));
@@ -7,9 +12,9 @@
 :host(.med-message) {
   width: 100%;
   max-width: 1200px;
-  border-radius: 8px;
+  border-radius: var(--med-border-radius-sm);
   background: var(--background);
-  font-size: 14px;
+  font-size: var(--med-font-size-xxs);
   line-height: 24px;
   color: var(--color);
   display: block;
@@ -28,14 +33,14 @@
 }
 
 :host(.med-message) .med-message__content {
-  padding: 16px;
+  padding: var(--med-spacing-inset-sm);
 }
 
 :host(.med-message) .med-message__avatar {
   font-size: 30px;
   display: flex;
   align-items: center;
-  margin-right: 8px;
+  margin-right: var(--med-spacing-inline-xxxs);
 }
 
 :host(.med-message) .med-message__letter {
@@ -48,7 +53,7 @@
 }
 
 :host(.med-message) .med-message__header {
-  padding-bottom: 8px;
+  padding-bottom: var(--med-spacing-stack-xxxs);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,9 +69,9 @@
 }
 
 :host(.med-message) .med-message__number {
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 100%;
+  font-size: var(--med-font-size-xxxs);
+  font-weight: var(--med-font-weight-semibold);
+  line-height: var(--med-line-height-compressed);
   margin: 0;
 }
 
@@ -81,7 +86,7 @@
 }
 
 :host(.med-message) .med-message__text {
-  font-size: 14px;
+  font-size: var(--med-font-size-xxs);
 }
 
 :host(.med-message) .med-message__icon {
@@ -89,14 +94,14 @@
 }
 
 :host(.med-message) .med-message__tooltip {
-  margin-right: 8px;
+  margin-right: var(--med-spacing-inline-xxxs);
 }
 
 :host(.med-message) .med-message__footer {
-  padding: 8px 16px;
+  padding: var(--med-spacing-squish-xs);
   background: var(--background-footer);
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: var(--med-border-radius-sm);
+  border-bottom-right-radius: var(--med-border-radius-sm);
 }
 
 :host(.med-message) .med-message__img {

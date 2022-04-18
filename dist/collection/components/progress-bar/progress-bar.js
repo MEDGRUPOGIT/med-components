@@ -15,6 +15,10 @@ import { generateMedColor } from '../../utils/med-theme';
 export class ProgressBar {
   constructor() {
     /**
+      * Esconde ou mostra a porcentagem.
+      */
+    this.percentage = false;
+    /**
      * The state of the progress bar, based on if the time the process takes is known or not.
      * Default options are: `"determinate"` (no animation), `"indeterminate"` (animate from left to right).
      */
@@ -36,13 +40,15 @@ export class ProgressBar {
     this.buffer = 1;
   }
   render() {
-    const { dsColor, type, reversed, value, buffer } = this;
+    const { dsColor, type, reversed, value, buffer, percentage, dsName } = this;
     const paused = config.getBoolean('_testing');
     const mode = getIonMode(this);
     return (h(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: generateMedColor(dsColor, {
         [mode]: true,
         'med-progress-bar': true,
+        [`med-progress-bar--${dsName}`]: dsName !== undefined,
         [`progress-bar-${type}`]: true,
+        'percentage': percentage,
         'progress-paused': paused,
         'progress-bar-reversed': document.dir === 'rtl' ? !reversed : reversed,
         'in-med-header': hostContext('med-header', this.el),
@@ -82,6 +88,41 @@ export class ProgressBar {
       },
       "attribute": "ds-color",
       "reflect": true
+    },
+    "dsName": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'minimalist' | 'skin'",
+        "resolved": "\"minimalist\" | \"skin\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "Define a varia\u00E7\u00E3o do componente."
+      },
+      "attribute": "ds-name",
+      "reflect": false
+    },
+    "percentage": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Esconde ou mostra a porcentagem."
+      },
+      "attribute": "percentage",
+      "reflect": true,
+      "defaultValue": "false"
     },
     "type": {
       "type": "string",
@@ -188,12 +229,16 @@ const renderIndeterminate = () => {
       h("span", { part: "progress", class: "progress-indeterminate" }))));
 };
 const renderProgress = (value, buffer) => {
-  const finalValue = value !== 0 ? (value * 100) : 1;
+  const finalValue = value !== 0 ? (value * 100) : 8;
   const unit = value !== 0 ? '%' : 'px';
   const finalBuffer = clamp(0, buffer, 1);
+  const renderedNumber = value * 100;
   return [
     h("div", { class: "progress-container" },
-      h("div", { part: "progress", class: `progress ${finalValue === 100 ? 'progress--correct' : ''}`, style: { width: `${finalValue}${unit}` } })),
+      h("div", { part: "progress", class: `progress ${finalValue === 100 ? 'progress--correct' : ''}`, style: { width: `${finalValue}${unit}` } }),
+      h("span", { class: "progress__percentage" },
+        renderedNumber.toFixed(),
+        "%")),
     /**
      * Buffer circles with two container to move
      * the circles behind the buffer progress

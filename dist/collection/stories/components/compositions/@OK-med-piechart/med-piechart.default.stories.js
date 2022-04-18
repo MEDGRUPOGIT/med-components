@@ -14,14 +14,14 @@ const Template = ({ dsColor, dsSize , download, downloaded, label, value, downlo
         <div class="full-height-flex">
 
           <!-- component markdown -->
-          <med-piechart
-            .dsColor=${dsColor}
+          <med-piechart 
+            .dsColor=${dsColor} 
             .dsSize=${dsSize}
-            ?download=${download}
+            ?download=${download} 
             ?downloaded=${downloaded}
-            label=${label}
+            label=${label} 
             value=${value}
-            .downloadProgress=${downloadProgress}
+            .downloadProgress=${downloadProgress} 
             .index=${index}
             identification=${identification}
             ?hide-download=${hideDownload}

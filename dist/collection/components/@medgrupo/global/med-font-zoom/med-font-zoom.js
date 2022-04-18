@@ -3,7 +3,7 @@ import { MedFontSize } from "../../../../global/templarios/font-size.enum";
 export class MedFontZoom {
   constructor() {
     /**
-     * Define o tamnho da fonte
+     * TODO
      */
     this.value = MedFontSize.XS;
     this.min = 1;
@@ -51,7 +51,7 @@ export class MedFontZoom {
   render() {
     return (h(Host, { "from-stencil": true },
       h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) },
-        h("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }),
+        h("ion-icon", { class: "med-icon", slot: "start", size: "small", name: "med-fontemenor" }),
         h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
   }
   static get is() { return "med-font-zoom"; }
@@ -100,7 +100,7 @@ export class MedFontZoom {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Define o tamnho da fonte"
+        "text": "TODO"
       },
       "attribute": "value",
       "reflect": false,

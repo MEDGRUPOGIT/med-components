@@ -73,7 +73,7 @@
   --height: 10px;
   transition: all 300ms ease;
   opacity: 0;
-  transform: translateX(-120%);
+  transform: translateX(-100%);
 }
 
 :host(.med-alternativas) .med-alternativas__riscar-icon {

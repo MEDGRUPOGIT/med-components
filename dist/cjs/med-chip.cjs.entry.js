@@ -10,9 +10,6 @@ const medChipCss = ".sc-med-chip-h{--background:transparent;--text-color:hsl(var
 const MedChip = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    this.medFocus = index.createEvent(this, "medFocus", 7);
-    this.medBlur = index.createEvent(this, "medBlur", 7);
-    this.medClick = index.createEvent(this, "medClick", 7);
     /**
      * Define o estado disabled do componente.
      */
@@ -21,15 +18,6 @@ const MedChip = class {
      * Define o estado active do componente.
      */
     this.active = false;
-    this.onFocus = () => {
-      this.medFocus.emit();
-    };
-    this.onBlur = () => {
-      this.medBlur.emit();
-    };
-    this.onClick = () => {
-      this.medClick.emit();
-    };
   }
   render() {
     const { dsColor, dsName, dsSize, disabled, label, active, iconLeft, iconRight } = this;
@@ -41,7 +29,7 @@ const MedChip = class {
         [`med-chip--${dsSize}`]: dsSize !== undefined,
         [`med-chip--icon-left`]: iconLeft !== undefined,
         [`med-chip--icon-right`]: iconRight !== undefined,
-      }), onFocus: this.onFocus, onBlur: this.onBlur, onClick: this.onClick }, iconLeft !== undefined && index.h("div", { class: "med-chip__img-warp" }, index.h("ion-icon", { class: "med-icon med-chip__icon", name: iconLeft })), index.h("med-type", { class: "med-chip__label" }, label), iconRight && index.h("div", { class: "med-chip__img-warp" }, index.h("ion-icon", { class: "med-icon med-chip__icon", name: iconRight }))));
+      }) }, iconLeft !== undefined && index.h("div", { class: "med-chip__img-warp" }, index.h("ion-icon", { class: "med-icon med-chip__icon", name: iconLeft })), index.h("med-type", { class: "med-chip__label" }, label), iconRight && index.h("div", { class: "med-chip__img-warp" }, index.h("ion-icon", { class: "med-icon med-chip__icon", name: iconRight }))));
   }
 };
 MedChip.style = medChipCss;

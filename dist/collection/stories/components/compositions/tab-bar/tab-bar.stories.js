@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColors } from "../../../../global/templarios/color.enum";
 
 export default {
-  title: 'Components/Compositions/@OK Tab Bar',
+  title: 'Components/Compositions/Tab Bar',
   decorators: [withDesign],
 };
 
@@ -19,30 +19,30 @@ const Template = ({dsColor}) => {
         <ion-tab tab="gabarito-comentado"></ion-tab>
 
         <!-- component -->
-          <ion-tab-bar slot="bottom">
-            <ion-tab-button tab="questao" .dsColor=${dsColor}>
+          <ion-tab-bar .dsColor=${dsColor} slot="bottom">
+            <ion-tab-button tab="questao">
               <ion-icon class="med-icon" name="med-questao"></ion-icon>
-              <med-type token="p10">Questão</ion-label>
+              <med-type>Questão</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button tab="gabarito-comentado" .dsColor=${dsColor}>
+            <ion-tab-button tab="gabarito-comentado">
               <ion-icon class="med-icon" name="med-gabarito"></ion-icon>
-              <med-type token="p10">Gabarito Comentado</med-type>
+              <med-type>Gabarito Comentado</med-type>
             </ion-tab-button>
 
-            <ion-tab-button tab="med-cartao-resposta" .dsColor=${dsColor}>
+            <ion-tab-button tab="med-cartao-resposta">
               <ion-icon class="med-icon" name="med-cartao"></ion-icon>
-              <med-type token="p10">Cartão Resposta</med-type>
+              <med-type>Cartão Resposta</med-type>
             </ion-tab-button>
 
-            <ion-tab-button tab="questao-sec" .dsColor=${dsColor}>
+            <ion-tab-button tab="questao-sec">
               <ion-icon class="med-icon" name="med-duvidas"></ion-icon>
-              <med-type token="p10">Dúvidas</med-type>
+              <med-type>Dúvidas</med-type>
             </ion-tab-button>
 
-            <ion-tab-button tab="gabarito-comentado" .dsColor=${dsColor} disabled>
+            <ion-tab-button tab="gabarito-comentado" disabled>
               <ion-icon class="med-icon" name="med-recursos"></ion-icon>
-              <med-type token="p10">Recursos</med-type>
+              <med-type>Recursos</med-type>
             </ion-tab-button>
           </ion-tab-bar>
         <!-- component -->
@@ -56,7 +56,7 @@ export const TabBar = Template.bind({});
 TabBar.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=1464%3A2481',
+    url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=1466%3A13',
   },
 }
 TabBar.argTypes = {

@@ -24,8 +24,7 @@ export declare class MedItem implements ComponentInterface, AnchorInterface, But
    * For more information on colors, see [theming](/docs/theming/basics).
    */
   dsColor?: MedColor;
-  contain: boolean;
-  noPadding: boolean;
+  padding: boolean;
   /**
    * If `true`, a button tag will be rendered and the item will be tappable.
    */
