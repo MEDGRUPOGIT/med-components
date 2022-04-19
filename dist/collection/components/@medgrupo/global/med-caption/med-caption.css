@@ -1,7 +1,7 @@
 :host {
-  --font-size: var(--med-font-size-xs);
-  --font-weight: var(--med-font-weight-regular);
-  --line-height: var(--med-line-height-compressed);
+  --font-size: 16px;
+  --font-weight: 400;
+  --line-height: 100%;
   --color: hsl(var(--med-color-neutral-10));
 }
 
@@ -19,23 +19,23 @@
 }
 
 :host(.med-caption--xxs) {
-  --font-size: var(--med-font-size-nano);
+  --font-size: 10px;
 }
 
 :host(.med-caption--xs) {
-  --font-size: var(--med-font-size-xxxs);
+  --font-size: 12px;
 }
 
 :host(.med-caption--sm) {
-  --font-size: var(--med-font-size-xxs);
+  --font-size: 14px;
 }
 
 :host(.med-caption--lg) {
-  --font-size: var(--med-font-size-sm);
+  --font-size: 20px;
 }
 
 :host(.med-caption--xl) {
-  --font-size: var(--med-font-size-md);
+  --font-size: 24px;
 }
 
 :host(.med-color) {

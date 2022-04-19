@@ -222,3 +222,11 @@ input {
   --background-checked: hsl(var(--med-color-feedback));
   --border-color-checked: hsl(var(--med-color-feedback));
 }
+
+:host(.in-item[slot=start]) {
+  margin: 0;
+}
+
+:host(.in-item[slot=end]) {
+  margin: 0;
+}

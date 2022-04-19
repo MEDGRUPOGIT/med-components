@@ -770,6 +770,10 @@ ion-slides {
   background: hsl(var(--med-color-neutral-10));
 }
 
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 2px;
+}
+
 .slides-md {
   --bullet-background: var(--ion-color-step-200, #cccccc);
   --bullet-background-active: var(--ion-color-primary, #3880ff);
@@ -793,6 +797,10 @@ ion-slides {
 .swiper-pagination-bullet-active {
   border: none;
   background: hsl(var(--med-color-neutral-10));
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 2px;
 }
 
 .swiper-pagination-fraction,

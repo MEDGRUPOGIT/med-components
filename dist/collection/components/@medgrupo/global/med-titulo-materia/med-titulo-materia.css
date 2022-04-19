@@ -5,7 +5,7 @@
 
 :host(.med-titulo-materia) {
   background: var(--background);
-  padding: var(--med-spacing-inline-base);
+  padding: 16px;
   display: flex;
   align-items: center;
   max-width: 1200px;
@@ -19,26 +19,26 @@
 
 :host(.med-titulo-materia) .med-titulo-materia__titulo {
   margin: 0;
-  font-size: var(--med-font-size-xs);
-  font-weight: var(--med-font-weight-bold);
-  line-height: var(--med-line-height-compressed);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 100%;
   color: var(--color);
 }
 
 :host(.med-titulo-materia) .med-titulo-materia__descricao {
   margin: 0;
-  font-size: var(--med-font-size-xxxs);
-  font-weight: var(--med-font-weight-regular);
-  line-height: var(--med-line-height-default);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
   color: var(--color);
 }
 
 ::slotted([slot=start]) {
-  margin-right: var(--med-spacing-inline-base);
+  margin-right: 16px;
 }
 
 ::slotted([slot=end]) {
-  margin-left: var(--med-spacing-inline-base);
+  margin-left: 16px;
 }
 
 :host(.med-color) {

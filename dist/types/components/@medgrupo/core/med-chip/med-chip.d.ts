@@ -1,3 +1,4 @@
+import { EventEmitter } from '../../../../stencil-public-runtime';
 import { MedColor } from '../../../../interface';
 export declare class MedChip {
   /**
@@ -32,5 +33,20 @@ export declare class MedChip {
     * Define o icone right do componente.
     */
   iconRight: string;
+  /**
+    * Emitido quando o chip tem focus.
+    */
+  medFocus: EventEmitter<void>;
+  /**
+    * Emitido quando o chip perde o focus.
+    */
+  medBlur: EventEmitter<void>;
+  /**
+    * Emitido quando o chip é clicado.
+    */
+  medClick: EventEmitter<void>;
+  private onFocus;
+  private onBlur;
+  private onClick;
   render(): any;
 }

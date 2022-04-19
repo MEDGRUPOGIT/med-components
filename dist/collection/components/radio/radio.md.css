@@ -236,3 +236,11 @@ input {
   border-width: 0;
   background: #fff;
 }
+
+:host(.in-item[slot=start]) {
+  margin: 0;
+}
+
+:host(.in-item[slot=end]) {
+  margin: 0;
+}

@@ -1,12 +1,12 @@
 :host {
-  --padding: var(--med-spacing-inset-sm);
+  --padding: 16px;
   --background: hsl(var(--med-color-neutral-2));
-  --border-radius: var(--med-border-radius-sm);
+  --border-radius: 8px;
   --border-background: hsl(var(--med-color-neutral-5));
   --border-background-selected: hsl(var(--med-color-brand-3));
-  --font-size-title: var(--med-font-size-sm);
+  --font-size-title: 20px;
   --color-title: hsl(var(--med-color-neutral-10));
-  --font-size-label: var(--med-font-size-xs);
+  --font-size-label: 16px;
   --color-label: hsl(var(--med-color-brand-3));
 }
 
@@ -33,19 +33,19 @@
   margin: 0;
   padding: 0;
   font-size: var(--font-size-title);
-  font-weight: var(--med-font-weight-semibold);
-  line-height: var(--med-line-height-compressed);
+  font-weight: 600;
+  line-height: 100%;
   color: var(--color-title);
-  padding-bottom: var(--med-spacing-stack-nano);
+  padding-bottom: 4px;
 }
 :host(.med-tiles) .med-tiles__label {
   margin: 0;
   padding: 0;
   font-size: var(--font-size-label);
-  font-weight: var(--med-font-weight-regular);
-  line-height: var(--med-line-height-compressed);
+  font-weight: 400;
+  line-height: 100%;
   color: var(--color-label);
-  padding-bottom: var(--med-spacing-stack-base);
+  padding-bottom: 16px;
 }
 
 ::slotted(*) {

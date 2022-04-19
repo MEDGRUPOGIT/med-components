@@ -19,33 +19,33 @@
 }
 
 :host(.med-list--xs) ::slotted(med-list-item) {
-  --margin: 0 0 var(--med-spacing-stack-nano) 0;
+  --margin: 0 0 4px 0;
 }
 
 :host(.med-list--sm) ::slotted(med-list-item) {
-  --margin: 0 0 var(--med-spacing-stack-xxxs) 0;
+  --margin: 0 0 8px 0;
 }
 
 :host(.med-list--md) ::slotted(med-list-item) {
-  --margin: 0 0 var(--med-spacing-stack-base) 0;
+  --margin: 0 0 16px 0;
 }
 
 :host(.med-list--lg) ::slotted(med-list-item) {
-  --margin: 0 0 var(--med-spacing-stack-xxs) 0;
+  --margin: 0 0 24px 0;
 }
 
 :host(.med-list--xs) ::slotted(med-list-item-accordion) {
-  --margin: 0 0 var(--med-spacing-stack-nano) 0;
+  --margin: 0 0 4px 0;
 }
 
 :host(.med-list--sm) ::slotted(med-list-item-accordion) {
-  --margin: 0 0 var(--med-spacing-stack-xxxs) 0;
+  --margin: 0 0 8px 0;
 }
 
 :host(.med-list--md) ::slotted(med-list-item-accordion) {
-  --margin: 0 0 var(--med-spacing-stack-base) 0;
+  --margin: 0 0 16px 0;
 }
 
 :host(.med-list--lg) ::slotted(med-list-item-accordion) {
-  --margin: 0 0 var(--med-spacing-stack-xxs) 0;
+  --margin: 0 0 24px 0;
 }

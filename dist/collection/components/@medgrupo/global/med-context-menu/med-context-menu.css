@@ -22,9 +22,9 @@
   min-width: 250px;
   max-width: 250px;
   width: 100%;
-  box-shadow: var(--med-shadow-level-4);
-  border-radius: var(--med-border-radius-nano);
-  padding: var(--med-spacing-inset-sm);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 16px;
   visibility: visible;
   opacity: 1;
   transition: opacity 300ms ease-in-out;

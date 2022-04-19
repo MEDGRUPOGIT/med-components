@@ -3,16 +3,16 @@ import { createColorClasses } from '../../../../utils/theme';
 export class MedVote {
   constructor() {
     /**
-     * TODO
-     */
+      * Define o titulo do componente.
+      */
     this.titulo = 'Cabe recurso?';
     /**
-     * TODO
-     */
+      * Define a quantidade de recursos que cabem.
+      */
     this.like = 0;
     /**
-     * TODO
-     */
+      * Define a quantidade de recursos que não cabem.
+      */
     this.unlike = 0;
   }
   render() {
@@ -58,7 +58,7 @@ export class MedVote {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define o titulo do componente."
       },
       "attribute": "titulo",
       "reflect": false,
@@ -76,7 +76,7 @@ export class MedVote {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define a quantidade de recursos que cabem."
       },
       "attribute": "like",
       "reflect": false,
@@ -94,7 +94,7 @@ export class MedVote {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define a quantidade de recursos que n\u00E3o cabem."
       },
       "attribute": "unlike",
       "reflect": false,

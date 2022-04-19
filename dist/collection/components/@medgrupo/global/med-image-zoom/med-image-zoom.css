@@ -12,9 +12,9 @@
 }
 :host .zoom-header__title {
   color: hsl(var(--med-color-neutral-10));
-  font-size: var(--med-font-size-xs);
-  line-height: var(--med-line-height-compressed);
-  font-weight: var(--med-font-weight-semibold);
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 600;
 }
 :host .zoom-header .med-icon {
   stroke: hsl(var(--med-color-neutral-10));
@@ -93,7 +93,7 @@
 }
 :host .zoom-button-container {
   position: fixed;
-  bottom: var(--med-spacing-stack-md);
+  bottom: 48px;
   right: 15px;
   height: 175px;
   width: 48px;
@@ -115,7 +115,7 @@
   stroke: hsl(var(--med-color-neutral-10));
 }
 :host .zoom-button:not(:last-child) {
-  margin-bottom: var(--med-spacing-stack-base);
+  margin-bottom: 16px;
 }
 :host .zoom-button--close {
   background-color: hsl(var(--med-color-neutral-5));

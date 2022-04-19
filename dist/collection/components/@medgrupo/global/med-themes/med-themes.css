@@ -14,59 +14,59 @@
   display: flex;
 }
 .med-theme:not(:last-child) {
-  margin-bottom: var(--med-spacing-inset-sm);
+  margin-bottom: 16px;
 }
 .med-theme .med-theme__left {
-  padding: var(--med-spacing-stretch-xs);
+  padding: 16px 8px;
   width: 54px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--background-left);
-  border: var(--med-border-width-thin) solid var(--border-color);
-  border-top-left-radius: var(--med-border-radius-sm);
-  border-bottom-left-radius: var(--med-border-radius-sm);
+  border: 2px solid var(--border-color);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 .med-theme .med-theme__circle {
   display: block;
   width: 32px;
   height: 32px;
-  border-radius: var(--med-border-radius-full);
+  border-radius: 50%;
   background: var(--background-circle);
 }
 .med-theme .med-theme__right {
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: var(--med-spacing-inset-sm);
+  padding: 16px;
   background: var(--background-right);
-  border-top-right-radius: var(--med-border-radius-sm);
-  border-bottom-right-radius: var(--med-border-radius-sm);
-  border-top: var(--med-border-width-thin) solid var(--border-color);
-  border-right: var(--med-border-width-thin) solid var(--border-color);
-  border-bottom: var(--med-border-width-thin) solid var(--border-color);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top: 2px solid var(--border-color);
+  border-right: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
 }
 .med-theme .med-theme__bar {
   display: block;
   width: 100%;
   height: 8px;
-  border-radius: var(--med-border-radius-nano);
+  border-radius: 4px;
   background: hsl(var(--med-color-neutral-6));
-  margin: var(--med-spacing-stack-nano) 0;
+  margin: 4px 0;
 }
 .med-theme .med-theme__bar--small {
   width: 80%;
 }
 .med-theme .med-theme__wrapper {
-  margin-top: var(--med-spacing-stack-xxxs);
+  margin-top: 8px;
   display: flex;
   align-items: center;
 }
 .med-theme .med-theme__name {
-  font-size: var(--med-font-size-xs);
-  line-height: var(--med-line-height-compressed);
-  font-weight: var(--med-font-weight-regular);
-  margin-left: var(--med-spacing-inline-base);
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 400;
+  margin-left: 16px;
   color: var(--color-text);
 }
 

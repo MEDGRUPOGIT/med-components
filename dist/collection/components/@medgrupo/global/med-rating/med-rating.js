@@ -18,12 +18,14 @@ export class MedRating {
       h("div", { class: "med-rating__left" },
         h("ion-icon", { name: cabe ? "med-positivo" : "med-negativo", class: "med-icon med-rating__icon" })),
       h("div", { class: "med-rating__right" },
-        h("span", { class: "med-rating__name" }, nome),
+        h("med-type", { class: "med-rating__name" }, nome),
         " ",
-        h("span", { class: "med-rating__date" }, data),
-        h("p", { class: "med-rating__concurso" }, concurso),
-        h("span", { class: "med-rating__text" }, texto),
-        (dsName === 'medgrupo') && h("ion-icon", { name: "med-logo", class: "med-icon med-rating__icon-medgrupo" }))));
+        h("med-type", { class: "med-rating__date" }, data),
+        h("med-type", { class: "med-rating__concurso" }, concurso),
+        h("med-type", { class: "med-rating__text" }, texto),
+        (dsName === 'medgrupo') && h("ion-icon", { name: "med-logo", class: "med-icon med-rating__icon-medgrupo" }),
+        (dsName === 'banca' && cabe) && h("med-type", { class: "med-rating__banca" }, "RECURSO CONCEDIDO"),
+        (dsName === 'banca' && !cabe) && h("med-type", { class: "med-rating__banca" }, "RECURSO N\u00C3O CONCEDIDO"))));
   }
   static get is() { return "med-rating"; }
   static get encapsulation() { return "shadow"; }

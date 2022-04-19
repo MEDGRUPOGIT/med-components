@@ -25,7 +25,7 @@
 
 .monta-provas-content__chart {
   background: hsl(var(--med-color-neutral-2));
-  padding: 0 var(--med-spacing-stretch-md);
+  padding: 0 24px 16px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -43,14 +43,14 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  line-height: var(--med-line-height-compressed);
+  line-height: 100%;
   text-align: center;
-  --font-size-label: var(--med-font-size-xxxs);
+  --font-size-label: 12px;
 
 }
 
 .monta-provas-content__chart-label {
-  --font-size-item: var(--med-font-size-xxxs);
+  --font-size-item: 12px;
 }
 
 .med-chart-radial-label__quantia {
@@ -59,7 +59,7 @@
 
 .monta-provas-content__button {
   display: flex;
-  padding: 0 var(--med-spacing-stretch-xs);
+  padding: 0 16px 8px;
 }
 
 .monta-provas-content__button-realizar {

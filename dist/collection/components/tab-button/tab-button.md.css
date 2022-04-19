@@ -330,7 +330,7 @@ ion-ripple-effect {
   font-size: 24px;
 }
 :host {
-  --color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-4));
   --color-hover: hsl(var(--med-color-neutral-5));
   --color-focused: hsl(var(--med-color-neutral-5));
   --color-selected: hsl(var(--med-color-brand-4));
@@ -401,139 +401,14 @@ ion-ripple-effect {
     stroke: var(--color-selected);
   }
 }
-/* :host {
-  --color: hsl(var(--med-color-neutral-3));
-  --color-hover: hsl(var(--med-color-neutral-5));
-  --color-focused: hsl(var(--med-color-neutral-5));
-  --color-selected:hsl(var(--med-color-brand-4));
-  --color-activated: hsl(var(--med-color-neutral-5));
-  --background-focused: transparent;
-  --background-focused-opacity: 1;
-  --ripple-color: transparent;
-  --padding-bottom:	8px;
-  --padding-end: 4px;
-  --padding-start: 4px;
-  --padding-top: 8px;
-  --color-icon: hsl(var(--med-color-neutral-3));
-  --color-icon-hover: hsl(var(--med-color-neutral-5));
-  --color-icon-focused: hsl(var(--med-color-neutral-5));
-  --color-icon-selected:hsl(var(--med-color-brand-4));
-  --color-icon-activated: hsl(var(--med-color-neutral-5));
-
-  min-width: 0;
-  max-width: 100%;
-  justify-content: start;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 12px;
-  transition: color 300ms;
-
-  @include breakpoint-up('sm') {
-    --padding-bottom:	16px;
-    --padding-end: 8px;
-    --padding-start: 8px;
-    --padding-top: 16px;
-
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-  }
+:host(.med-color) {
+  --color-selected: hsl(var(--med-color-4));
 }
 
-// icon
-:host ::slotted(ion-icon) {
-  min-height: 20px;
-  min-width: 20px;
-  max-width: initial;
-  display: block;
-  contain: unset;
-  overflow: unset;
-  stroke: var(--color-icon);
+:host(.med-color-neutral) {
+  --color-selected: hsl(var(--med-color-neutral));
 }
 
-:host(.tab-layout-icon-top) ::slotted(ion-icon) {
-  margin-top: 0;
-  margin-bottom: 4px;
-
-  @include breakpoint-up('sm') {
-    margin-bottom: 0;
-    margin-right: 6px;
-  }
+:host(.med-color-feedback) {
+  --color-selected: hsl(var(--med-color-feedback));
 }
-
-// label
-:host ::slotted(ion-label) {
-  text-overflow: initial;
-  white-space: initial;
-  overflow: initial;
-}
-
-:host(.tab-layout-icon-top) ::slotted(ion-label) {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-// states
-@media (any-hover: hover) {
-  a:hover {
-    color: var(--color-hover);
-
-    ::slotted(ion-icon) {
-      stroke: var(--color-icon-hover);
-    }
-  }
-}
-
-:host(.ion-focused) .button-native {
-  color: var(--color-focused);
-
-  &::after {
-    background: var(--background-focused);
-    opacity: var(--background-focused-opacity);
-  }
-}
-
-:host(.ion-focused) {
-  ::slotted(ion-icon) {
-    stroke: var(--color-icon-focused);
-  }
-}
-
-:host(.ion-activated) .button-native {
-  color: var(--color-activated);
-}
-
-:host(.ion-activated) {
-  ::slotted(ion-icon) {
-    stroke: var(--color-icon-activated);
-  }
-}
-
-:host(.tab-selected) {
-  color: var(--color-selected);
-
-  ::slotted(ion-icon) {
-    stroke: var(--color-icon-selected);
-  }
-
-  @media (any-hover: hover) {
-    a:hover {
-      ::slotted(ion-icon) {
-        stroke: var(--color-icon-hover);
-      }
-    }
-  }
-}
-
-:host(.tab-disabled) {
-  color: var(--color);
-  opacity: 0.8;
-
-  ::slotted(ion-icon) {
-    stroke: (--color-icon);
-    opacity: 0.8;
-  }
-}
-
- */

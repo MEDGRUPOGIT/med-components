@@ -66,10 +66,10 @@ export class MedAlternativasB {
                   h("div", { class: 'image-container__button' },
                     h("ion-icon", { class: "med-icon image-container__icon", name: "med-busca" }))))),
             h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') + ' alternativa'))),
-        h("ion-progress-bar", { "ds-name": "skin", percentage: true, class: `
+        h("med-chart-bar-horizontal", { label: true, class: `
                 med-alternativas__progress-bar
                 ${mostraResposta && alternativaSelecionada ? 'med-alternativas__progress-bar--toggle' : ''}
-              `, value: alternativa[this.keyPorcentagem] })))))));
+              `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })))))));
   }
   static get is() { return "med-alternativas-b"; }
   static get encapsulation() { return "shadow"; }

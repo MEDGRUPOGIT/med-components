@@ -1,169 +1,11 @@
 {
-  "timestamp": "2022-04-18T19:20:16",
+  "timestamp": "2022-04-19T17:41:28",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
     "typescriptVersion": "4.2.3"
   },
   "components": [
-    {
-      "filePath": "./src/components/@medgrupo/testes/accordion-group/accordion-group.tsx",
-      "encapsulation": "shadow",
-      "tag": "accordion-group",
-      "readme": "# hv-accordion\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "noAnimation",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "no-animation",
-          "reflectToAttr": true,
-          "docs": "TODO.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "singleOpen",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "single-open",
-          "reflectToAttr": true,
-          "docs": "TODO.",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [
-        {
-          "event": "toggle",
-          "capture": false,
-          "passive": false
-        }
-      ],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/@medgrupo/testes/accordion-item/accordion-item.tsx",
-      "encapsulation": "shadow",
-      "tag": "accordion-item",
-      "readme": "# accordion-item\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "background",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "background",
-          "reflectToAttr": true,
-          "docs": "Define se o componente irá ter background quando aberto.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "disable",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "disable",
-          "reflectToAttr": true,
-          "docs": "Desabilita o componente.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "headerToggle",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "header-toggle",
-          "reflectToAttr": true,
-          "docs": "Desabilita o componente.",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "open",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "open",
-          "reflectToAttr": true,
-          "docs": "Abre programaticamente o componente.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [
-        {
-          "event": "toggle",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "Internal",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
     {
       "filePath": "./src/components/@medgrupo/testes/dialog-test/dialog-test.tsx",
       "encapsulation": "scoped",
@@ -216,14 +58,12 @@
       "dependents": [],
       "dependencies": [
         "med-base",
-        "med-heading",
         "ion-button",
         "ion-icon"
       ],
       "dependencyGraph": {
         "filtro-dashboard": [
           "med-base",
-          "med-heading",
           "ion-button",
           "ion-icon"
         ],
@@ -2551,7 +2391,7 @@
         "med-nav-simple",
         "med-offline",
         "med-rate-aula",
-        "med-video-list-item",
+        "med-tooltip",
         "sheet-content-test",
         "sheet-test"
       ],
@@ -2601,7 +2441,7 @@
         "med-rate-aula": [
           "ion-button"
         ],
-        "med-video-list-item": [
+        "med-tooltip": [
           "ion-button"
         ],
         "sheet-content-test": [
@@ -12191,30 +12031,6 @@
           "required": false
         },
         {
-          "name": "dsName",
-          "type": "\"minimalist\" | \"skin\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": false,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "minimalist",
-              "type": "string"
-            },
-            {
-              "value": "skin",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -12233,23 +12049,6 @@
             }
           ],
           "optional": true,
-          "required": false
-        },
-        {
-          "name": "percentage",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "percentage",
-          "reflectToAttr": true,
-          "docs": "Esconde ou mostra a porcentagem.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
           "required": false
         },
         {
@@ -12312,23 +12111,7 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Background of the progress track, or the buffer bar if `buffer` is set"
-        },
-        {
-          "name": "--buffer-background",
-          "annotation": "prop",
-          "docs": "DEPRECATED, use `--background` instead"
-        },
-        {
-          "name": "--progress-background",
-          "annotation": "prop",
-          "docs": "Background of the progress bar representing the current value"
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [
         {
@@ -12345,20 +12128,12 @@
         }
       ],
       "dependents": [
-        "med-alternativas-a",
-        "med-alternativas-b",
         "med-aula-professor",
         "med-item-aulas",
         "med-video-thumbnail"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "med-alternativas-a": [
-          "ion-progress-bar"
-        ],
-        "med-alternativas-b": [
-          "ion-progress-bar"
-        ],
         "med-aula-professor": [
           "ion-progress-bar"
         ],
@@ -14578,7 +14353,7 @@
           "mutable": false,
           "attr": "cancel-button-icon",
           "reflectToAttr": false,
-          "docs": "Set the cancel button icon. Only applies to `md` mode.\nDefaults to `\"arrow-back-sharp\"`.",
+          "docs": "Set the cancel button icon. Only applies to `md` mode.\r\nDefaults to `\"arrow-back-sharp\"`.",
           "docsTags": [],
           "default": "config.get('backButtonIcon', 'arrow-back-sharp') as string",
           "values": [
@@ -14631,7 +14406,7 @@
           "mutable": false,
           "attr": "color",
           "reflectToAttr": false,
-          "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+          "docs": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics).",
           "docsTags": [],
           "values": [
             {
@@ -14704,7 +14479,7 @@
           "mutable": false,
           "attr": "enterkeyhint",
           "reflectToAttr": false,
-          "docs": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
+          "docs": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
           "docsTags": [],
           "values": [
             {
@@ -14748,7 +14523,7 @@
           "mutable": false,
           "attr": "inputmode",
           "reflectToAttr": false,
-          "docs": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "docs": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
           "docsTags": [],
           "values": [
             {
@@ -14834,7 +14609,7 @@
           "mutable": false,
           "attr": "placeholder",
           "reflectToAttr": false,
-          "docs": "Set the input's placeholder.\n`placeholder` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
+          "docs": "Set the input's placeholder.\r\n`placeholder` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
           "docsTags": [],
           "default": "'Search'",
           "values": [
@@ -14851,7 +14626,7 @@
           "mutable": false,
           "attr": "search-icon",
           "reflectToAttr": false,
-          "docs": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\n`ios` mode and `\"search-sharp\"` in `md` mode.",
+          "docs": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\r\n`ios` mode and `\"search-sharp\"` in `md` mode.",
           "docsTags": [],
           "values": [
             {
@@ -14870,7 +14645,7 @@
           "mutable": false,
           "attr": "show-cancel-button",
           "reflectToAttr": false,
-          "docs": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\nSetting to `\"focus\"` shows the cancel button on focus.\nSetting to `\"never\"` hides the cancel button.\nSetting to `\"always\"` shows the cancel button regardless\nof focus state.",
+          "docs": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\r\nSetting to `\"focus\"` shows the cancel button on focus.\r\nSetting to `\"never\"` hides the cancel button.\r\nSetting to `\"always\"` shows the cancel button regardless\r\nof focus state.",
           "docsTags": [],
           "default": "'never'",
           "values": [
@@ -14896,7 +14671,7 @@
           "mutable": false,
           "attr": "show-clear-button",
           "reflectToAttr": false,
-          "docs": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\nSetting to `\"focus\"` shows the clear button on focus if the\ninput is not empty.\nSetting to `\"never\"` hides the clear button.\nSetting to `\"always\"` shows the clear button regardless\nof focus state, but only if the input is not empty.",
+          "docs": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\r\nSetting to `\"focus\"` shows the clear button on focus if the\r\ninput is not empty.\r\nSetting to `\"never\"` hides the clear button.\r\nSetting to `\"always\"` shows the clear button regardless\r\nof focus state, but only if the input is not empty.",
           "docsTags": [],
           "default": "'focus'",
           "values": [
@@ -15019,7 +14794,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\n`input.focus()`.",
+          "docs": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\r\n`input.focus()`.",
           "docsTags": []
         }
       ],
@@ -20062,23 +19837,7 @@
           "passive": false
         }
       ],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Define a cor de background do componente."
-        },
-        {
-          "name": "--border",
-          "annotation": "prop",
-          "docs": "Define a borda entre os itens do componente."
-        },
-        {
-          "name": "--border-radius",
-          "annotation": "prop",
-          "docs": "Define o border-radius do componente."
-        }
-      ],
+      "styles": [],
       "slots": [
         {
           "name": "",
@@ -20529,12 +20288,15 @@
           "med-alternativas-b"
         ],
         "med-alternativas-a": [
-          "ion-progress-bar",
+          "med-chart-bar-horizontal",
           "ion-icon"
+        ],
+        "med-chart-bar-horizontal": [
+          "med-type"
         ],
         "med-alternativas-b": [
           "ion-icon",
-          "ion-progress-bar"
+          "med-chart-bar-horizontal"
         ]
       }
     },
@@ -20811,13 +20573,16 @@
         "med-alternativas"
       ],
       "dependencies": [
-        "ion-progress-bar",
+        "med-chart-bar-horizontal",
         "ion-icon"
       ],
       "dependencyGraph": {
         "med-alternativas-a": [
-          "ion-progress-bar",
+          "med-chart-bar-horizontal",
           "ion-icon"
+        ],
+        "med-chart-bar-horizontal": [
+          "med-type"
         ],
         "med-alternativas": [
           "med-alternativas-a"
@@ -21098,12 +20863,15 @@
       ],
       "dependencies": [
         "ion-icon",
-        "ion-progress-bar"
+        "med-chart-bar-horizontal"
       ],
       "dependencyGraph": {
         "med-alternativas-b": [
           "ion-icon",
-          "ion-progress-bar"
+          "med-chart-bar-horizontal"
+        ],
+        "med-chart-bar-horizontal": [
+          "med-type"
         ],
         "med-alternativas": [
           "med-alternativas-b"
@@ -22367,6 +22135,8 @@
         }
       ],
       "dependents": [
+        "med-alternativas-a",
+        "med-alternativas-b",
         "med-chart-categoria"
       ],
       "dependencies": [
@@ -22375,6 +22145,12 @@
       "dependencyGraph": {
         "med-chart-bar-horizontal": [
           "med-type"
+        ],
+        "med-alternativas-a": [
+          "med-chart-bar-horizontal"
+        ],
+        "med-alternativas-b": [
+          "med-chart-bar-horizontal"
         ],
         "med-chart-categoria": [
           "med-chart-bar-horizontal"
@@ -23261,7 +23037,35 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "medBlur",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitido quando o chip perde o focus.",
+          "docsTags": []
+        },
+        {
+          "event": "medClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitido quando o chip é clicado.",
+          "docsTags": []
+        },
+        {
+          "event": "medFocus",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitido quando o chip tem focus.",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -23926,7 +23730,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "Define o tamnho da fonte",
           "docsTags": [],
           "default": "MedFontSize.XS",
           "values": [
@@ -24008,111 +23812,6 @@
         ],
         "med-offline": [
           "med-header"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/global/med-heading/med-heading.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-heading",
-      "readme": "# med-heading\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"high\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "high",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsSize",
-          "type": "\"lg\" | \"md\" | \"sm\" | \"xl\" | \"xs\" | \"xxs\" | undefined",
-          "mutable": false,
-          "attr": "ds-size",
-          "reflectToAttr": true,
-          "docs": "Define a variação de tamanho do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "lg",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            },
-            {
-              "value": "sm",
-              "type": "string"
-            },
-            {
-              "value": "xl",
-              "type": "string"
-            },
-            {
-              "value": "xs",
-              "type": "string"
-            },
-            {
-              "value": "xxs",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [
-        "filtro-dashboard"
-      ],
-      "dependencies": [],
-      "dependencyGraph": {
-        "filtro-dashboard": [
-          "med-heading"
         ]
       }
     },
@@ -24302,6 +24001,23 @@
           "required": false
         },
         {
+          "name": "contain",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "contain",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "detail",
           "type": "boolean | undefined",
           "mutable": false,
@@ -24461,10 +24177,10 @@
           "required": false
         },
         {
-          "name": "padding",
+          "name": "noPadding",
           "type": "boolean",
           "mutable": false,
-          "attr": "padding",
+          "attr": "no-padding",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
@@ -25218,70 +24934,6 @@
       "usage": {},
       "props": [
         {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "inset",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "inset",
-          "reflectToAttr": false,
-          "docs": "If `true`, the list will have margin around it and rounded corners.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "lines",
-          "type": "\"full\" | \"inset\" | \"none\" | undefined",
-          "mutable": false,
-          "attr": "lines",
-          "reflectToAttr": false,
-          "docs": "How the bottom border should be displayed on all items.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "full",
-              "type": "string"
-            },
-            {
-              "value": "inset",
-              "type": "string"
-            },
-            {
-              "value": "none",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -25301,23 +24953,6 @@
           ],
           "optional": true,
           "required": false
-        },
-        {
-          "name": "padding",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "padding",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
         }
       ],
       "methods": [
@@ -25329,7 +24964,7 @@
           },
           "signature": "closeSlidingItems() => Promise<boolean>",
           "parameters": [],
-          "docs": "If `ion-item-sliding` are used inside the list, this method closes\r\nany open sliding item.\r\n\r\nReturns `true` if an actual `ion-item-sliding` is closed.",
+          "docs": "",
           "docsTags": []
         }
       ],
@@ -25480,23 +25115,7 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Define a cor de background do componente."
-        },
-        {
-          "name": "--background-footer",
-          "annotation": "prop",
-          "docs": "Define a cor do background do footer do componente."
-        },
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Define a cor do texto."
-        }
-      ],
+      "styles": [],
       "slots": [
         {
           "name": "",
@@ -25525,6 +25144,14 @@
         "med-message": [
           "med-tooltip",
           "ion-icon"
+        ],
+        "med-tooltip": [
+          "med-type",
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ]
       }
     },
@@ -26072,18 +25699,7 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Define a cor de background do componente."
-        },
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Define a cor de texto do componente."
-        }
-      ],
+      "styles": [],
       "slots": [
         {
           "name": "left",
@@ -26184,105 +25800,6 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/@medgrupo/global/med-paragraph/med-paragraph.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-paragraph",
-      "readme": "# med-heading\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"double\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "double",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsSize",
-          "type": "\"lg\" | \"md\" | \"sm\" | \"xl\" | \"xs\" | \"xxs\" | undefined",
-          "mutable": false,
-          "attr": "ds-size",
-          "reflectToAttr": true,
-          "docs": "Define a variação de tamanho do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "lg",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            },
-            {
-              "value": "sm",
-              "type": "string"
-            },
-            {
-              "value": "xl",
-              "type": "string"
-            },
-            {
-              "value": "xs",
-              "type": "string"
-            },
-            {
-              "value": "xxs",
               "type": "string"
             },
             {
@@ -26748,7 +26265,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/global/med-rate-aula/med-rate-aula.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-rate-aula",
       "readme": "# med-rate-aula\r\n\r\n\r\n\r",
       "docs": "",
@@ -26794,14 +26311,14 @@
       "dependents": [],
       "dependencies": [
         "ion-icon",
-        "ion-button",
-        "med-type"
+        "med-type",
+        "ion-button"
       ],
       "dependencyGraph": {
         "med-rate-aula": [
           "ion-icon",
-          "ion-button",
-          "med-type"
+          "med-type",
+          "ion-button"
         ],
         "ion-button": [
           "ion-ripple-effect"
@@ -27177,44 +26694,39 @@
       "methods": [],
       "events": [],
       "listeners": [],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Define a cor de background do componente quando cabe ou não cabe."
-        },
-        {
-          "name": "--background-right",
-          "annotation": "prop",
-          "docs": "Define a cor do background do lado direito do componente."
-        },
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Define a cor do texto."
-        },
-        {
-          "name": "--color-date",
-          "annotation": "prop",
-          "docs": "Define a cor do texto da data."
-        },
-        {
-          "name": "--color-icon",
-          "annotation": "prop",
-          "docs": "Define a cor do icone."
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "ion-icon"
+        "ion-icon",
+        "med-type"
       ],
       "dependencyGraph": {
         "med-rating": [
-          "ion-icon"
+          "ion-icon",
+          "med-type"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-segment/med-segment.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-segment",
+      "readme": "# med-segment\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-semana/med-semana.tsx",
@@ -27395,109 +26907,6 @@
           "values": [
             {
               "value": "lista",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/@medgrupo/global/med-subtitle/med-subtitle.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-subtitle",
-      "readme": "# med-heading\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"high\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "high",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsSize",
-          "type": "\"base\" | \"lg\" | \"md\" | \"sm\" | \"xl\" | \"xs\" | \"xxs\" | undefined",
-          "mutable": false,
-          "attr": "ds-size",
-          "reflectToAttr": true,
-          "docs": "Define a variação de tamanho do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "base",
-              "type": "string"
-            },
-            {
-              "value": "lg",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            },
-            {
-              "value": "sm",
-              "type": "string"
-            },
-            {
-              "value": "xl",
-              "type": "string"
-            },
-            {
-              "value": "xs",
-              "type": "string"
-            },
-            {
-              "value": "xxs",
               "type": "string"
             },
             {
@@ -27949,6 +27358,44 @@
       "usage": {},
       "props": [
         {
+          "name": "btnLeft",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "btn-left",
+          "reflectToAttr": false,
+          "docs": "Define o texto do botão esquerdo, se existir.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "btnRight",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "btn-right",
+          "reflectToAttr": false,
+          "docs": "Define o texto do botão direito, se existir.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "collapsed",
           "type": "boolean",
           "mutable": true,
@@ -27994,26 +27441,6 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"definition\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": false,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "definition",
               "type": "string"
             },
             {
@@ -28110,13 +27537,32 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "toggle(event?: Event | undefined) => Promise<void>",
+          "signature": "toggle(event?: any) => Promise<void>",
           "parameters": [],
+          "docs": "Define o estado do componente programaticamente.",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "btnLeftClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "TODO",
+          "docsTags": []
+        },
+        {
+          "event": "btnRightClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
           "docs": "TODO",
           "docsTags": []
         }
       ],
-      "events": [],
       "listeners": [
         {
           "event": "click",
@@ -28125,25 +27571,26 @@
           "passive": false
         }
       ],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Define a cor da borda do componente."
-        },
-        {
-          "name": "--z-index",
-          "annotation": "prop",
-          "docs": "Define o z-index do componente."
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [
         "med-message"
       ],
-      "dependencies": [],
+      "dependencies": [
+        "med-type",
+        "ion-button",
+        "ion-icon"
+      ],
       "dependencyGraph": {
+        "med-tooltip": [
+          "med-type",
+          "ion-button",
+          "ion-icon"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ],
         "med-message": [
           "med-tooltip"
         ]
@@ -28274,8 +27721,9 @@
         "med-nav-item",
         "med-piechart",
         "med-rate-aula",
+        "med-rating",
         "med-semana",
-        "med-video-list-item",
+        "med-tooltip",
         "sheet-content-test",
         "sheet-test"
       ],
@@ -28332,10 +27780,13 @@
         "med-rate-aula": [
           "med-type"
         ],
+        "med-rating": [
+          "med-type"
+        ],
         "med-semana": [
           "med-type"
         ],
-        "med-video-list-item": [
+        "med-tooltip": [
           "med-type"
         ],
         "sheet-content-test": [
@@ -28347,10 +27798,10 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/testes/med-video-list-item/med-video-list-item.tsx",
-      "encapsulation": "scoped",
-      "tag": "med-video-list-item",
-      "readme": "# accordion-item-list\r\n\r\n\r\n\r",
+      "filePath": "./src/components/@medgrupo/med-video-thumbnail/med-video-thumbnail.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-video-thumbnail",
+      "readme": "# med-video-thumbnail\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -28373,58 +27824,6 @@
           ],
           "optional": true,
           "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-icon",
-        "med-type",
-        "ion-button"
-      ],
-      "dependencyGraph": {
-        "med-video-list-item": [
-          "ion-icon",
-          "med-type",
-          "ion-button"
-        ],
-        "ion-button": [
-          "ion-ripple-effect"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/med-video-thumbnail/med-video-thumbnail.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-video-thumbnail",
-      "readme": "# med-video-thumbnail\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
         },
         {
           "name": "url",
@@ -28432,7 +27831,7 @@
           "mutable": false,
           "attr": "url",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "Define a url da imagem a ser mostrada.",
           "docsTags": [],
           "values": [
             {
@@ -28451,7 +27850,7 @@
           "mutable": false,
           "attr": "value",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "Define a porcentagem a ser mostrada.",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -28496,7 +27895,7 @@
           "mutable": false,
           "attr": "like",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "Define a quantidade de recursos que cabem.",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -28513,7 +27912,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "Define o titulo do componente.",
           "docsTags": [],
           "default": "'Cabe recurso?'",
           "values": [
@@ -28533,7 +27932,7 @@
           "mutable": false,
           "attr": "unlike",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "Define a quantidade de recursos que não cabem.",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -28663,6 +28062,25 @@
           "ion-icon"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/testes/select-test/select-test.tsx",
+      "encapsulation": "shadow",
+      "tag": "select-test",
+      "readme": "# select-test\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/@medgrupo/testes/sheet-content-test/sheet-content-test.tsx",

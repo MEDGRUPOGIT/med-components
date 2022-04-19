@@ -3,14 +3,14 @@ import { generateMedColor } from '../../../utils/med-theme';
 export class MedVideoThumbnail {
   constructor() {
     /**
-      * TODO
+      * Define a porcentagem a ser mostrada.
       */
     this.value = 0;
   }
   render() {
-    const { url, value, dsColor } = this;
+    const { dsColor, url, value } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
-        'med-video-thumbnail': true,
+        'med-video-thumbnail': true
       }) },
       h("img", { class: "med-video-thumbnail__img", src: url }),
       h("ion-icon", { class: "med-icon med-icon--lg med-video-thumbnail__icon", name: "med-play" }),
@@ -42,7 +42,7 @@ export class MedVideoThumbnail {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define a cor do componente."
       },
       "attribute": "ds-color",
       "reflect": true
@@ -59,7 +59,7 @@ export class MedVideoThumbnail {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define a url da imagem a ser mostrada."
       },
       "attribute": "url",
       "reflect": true
@@ -76,7 +76,7 @@ export class MedVideoThumbnail {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "TODO"
+        "text": "Define a porcentagem a ser mostrada."
       },
       "attribute": "value",
       "reflect": true,

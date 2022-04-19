@@ -52,13 +52,7 @@
   --background: hsl(var(--med-color-feedback));
 }
 
-:host(.med-color-neutral) ::slotted(*) {
+:host(.med-color-feedback) ::slotted(*) {
   color: hsl(var(--med-color-neutral-1));
-  stroke: hsl(var(--med-color-neutral-10));
-}
-
-::slotted(*) {
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none;
+  stroke: hsl(var(--med-color-neutral-1));
 }

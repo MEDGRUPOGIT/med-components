@@ -1,7 +1,7 @@
 :host {
   --color: hsl(var(--med-color-neutral-10));
-  --font-size-label: var(--med-font-size-nano);
-  --font-size-number: var(--med-font-size-md);
+  --font-size-label: 10px;
+  --font-size-number: 24px;
 }
 
 :host(.med-chart-radial-content) {
@@ -10,20 +10,20 @@
 :host(.med-chart-radial-content) .med-chart-radial-content__label {
   font-size: var(--font-size-label);
   color: var(--color);
-  font-weight: var(--med-font-weight-bold);
+  font-weight: 700;
   display: flex;
   padding-bottom: 2px;
   justify-content: center;
-  line-height: var(--med-line-height-compressed);
+  line-height: 100%;
 }
 :host(.med-chart-radial-content) .med-chart-radial-content__number {
-  font-weight: var(--med-font-weight-bold);
+  font-weight: 700;
   font-size: var(--font-size-number);
   color: var(--color);
-  line-height: var(--med-line-height-compressed);
+  line-height: 100%;
 }
 :host(.med-chart-radial-content) .med-chart-radial-content__number--small {
-  font-size: var(--med-font-size-xs);
+  font-size: 16px;
 }
 
 :host(.med-color) {
@@ -39,6 +39,6 @@
 }
 
 :host(.med-chart-radial-content--lg) {
-  --font-size-label: var(--med-font-size-xxxs);
-  --font-size-number: var(--med-font-size-lg);
+  --font-size-label: 12px;
+  --font-size-number: 32px;
 }

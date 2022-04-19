@@ -4,9 +4,9 @@ import { r as raf } from './helpers-6b411283.js';
 import { h as hostContext, o as openURL } from './theme-3b0eafd2.js';
 import { g as generateMedColor } from './med-theme-33df6a63.js';
 
-const iosMedItemCss = ":host{--padding:12px 16px}:host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;padding:var(--padding);position:relative}:host(.med-item){background:transparent !important}:host(.med-item--no-padding){--padding:0 16px}.item-inner{display:-ms-flexbox;display:flex}.input-wrapper{-ms-flex:1;flex:1}.item-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:0;background:transparent;width:100%;border:0;text-align:left;outline:none}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0;z-index:-1}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}";
+const iosMedItemCss = ":host{--padding:8px 16px;--background:transparent;--border-radius:0}:host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;padding:var(--padding);position:relative;background-color:var(--background);outline:none;border-radius:var(--border-radius)}:host(.med-item--no-padding){--padding:8px 0}.item-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.input-wrapper{-ms-flex:1;flex:1}.item-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:0;background:transparent;width:100%;border:0;text-align:left;outline:none}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0;z-index:-1}button,a{cursor:pointer;outline:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}button:focus{outline:none}.item-highlight,.item-inner-highlight{left:0;right:0;bottom:0;position:absolute;z-index:1}:host(.med-item-multiple-inputs) ::slotted(ion-checkbox),:host(.med-item-multiple-inputs) ::slotted(ion-datetime),:host(.med-item-multiple-inputs) ::slotted(ion-radio),:host(.med-item-multiple-inputs) ::slotted(ion-select),:host(.med-item-multiple-inputs) ::slotted(ion-toggle){position:relative}:host(.med-item-disabled){opacity:0.5;pointer-events:none}::slotted([slot=start]){margin-right:16px}::slotted([slot=end]){margin-left:16px}::slotted(ion-icon){stroke:hsl(var(--med-color-neutral-10))}:host(.med-color){--background:hsl(var(--med-color-3))}:host(.med-color-neutral){--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--background:hsl(var(--med-color-feedback))}";
 
-const mdMedItemCss = ":host{--padding:12px 16px}:host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;padding:var(--padding);position:relative}:host(.med-item){background:transparent !important}:host(.med-item--no-padding){--padding:0 16px}.item-inner{display:-ms-flexbox;display:flex}.input-wrapper{-ms-flex:1;flex:1}.item-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:0;background:transparent;width:100%;border:0;text-align:left;outline:none}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0;z-index:-1}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}";
+const mdMedItemCss = ":host{--padding:8px 16px;--background:transparent;--border-radius:0}:host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;padding:var(--padding);position:relative;background-color:var(--background);outline:none;border-radius:var(--border-radius)}:host(.med-item--no-padding){--padding:8px 0}.item-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.input-wrapper{-ms-flex:1;flex:1}.item-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:0;background:transparent;width:100%;border:0;text-align:left;outline:none}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0;z-index:-1}button,a{cursor:pointer;outline:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}button:focus{outline:none}.item-highlight,.item-inner-highlight{left:0;right:0;bottom:0;position:absolute;z-index:1}:host(.med-item-multiple-inputs) ::slotted(ion-checkbox),:host(.med-item-multiple-inputs) ::slotted(ion-datetime),:host(.med-item-multiple-inputs) ::slotted(ion-radio),:host(.med-item-multiple-inputs) ::slotted(ion-select),:host(.med-item-multiple-inputs) ::slotted(ion-toggle){position:relative}:host(.med-item-disabled){opacity:0.5;pointer-events:none}::slotted([slot=start]){margin-right:16px}::slotted([slot=end]){margin-left:16px}::slotted(ion-icon){stroke:hsl(var(--med-color-neutral-10))}:host(.med-color){--background:hsl(var(--med-color-3))}:host(.med-color-neutral){--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--background:hsl(var(--med-color-feedback))}";
 
 const MedItem = class {
   constructor(hostRef) {
@@ -14,7 +14,8 @@ const MedItem = class {
     this.labelColorStyles = {};
     this.itemStyles = new Map();
     this.multipleInputs = false;
-    this.padding = false;
+    this.contain = false;
+    this.noPadding = false;
     /**
      * If `true`, a button tag will be rendered and the item will be tappable.
      */
@@ -113,7 +114,8 @@ const MedItem = class {
   // that should get the hover, focused and activated states UNLESS it has multiple
   // inputs, then those need to individually get each click
   hasCover() {
-    const inputs = this.el.querySelectorAll('ion-checkbox, ion-datetime, ion-select, ion-radio');
+    const inputs = this.el.querySelectorAll('ion-checkbox, ion-datetime, ion-select, ion-radio, ion-toggle');
+    console.log(inputs);
     return inputs.length === 1 && !this.multipleInputs;
   }
   // If the item has an href or button property it will render a native
@@ -153,7 +155,7 @@ const MedItem = class {
     }
   }
   render() {
-    const { dsColor, padding, detail, detailIcon, download, labelColorStyles, lines, disabled, href, rel, target, routerAnimation, routerDirection } = this;
+    const { dsColor, noPadding, detail, detailIcon, download, labelColorStyles, lines, disabled, href, rel, target, routerAnimation, routerDirection } = this;
     const childStyles = {};
     const mode = getIonMode(this);
     const clickable = this.isClickable();
@@ -182,11 +184,11 @@ const MedItem = class {
         [`med-item-lines-${lines}`]: lines !== undefined,
         'med-item-disabled': disabled,
         'in-list': hostContext('med-lista', this.el),
-        'med-item-multiple-inputs': this.multipleInputs,
+        'med-item-multiple-inputs': this.multipleInputs || this.contain,
         'ion-activatable': canActivate,
         'ion-focusable': true,
-        'med-item--no-padding': padding
-      })) }, h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn), h("slot", { name: "start" }), h("div", { class: "item-inner" }, h("div", { class: "input-wrapper" }, h("slot", null)), h("slot", { name: "end" }), showDetail && h("ion-icon", { icon: detailIcon, lazy: false, class: "med-icon item-detail-icon", part: "detail-icon", "aria-hidden": "true" }), h("div", { class: "item-inner-highlight" }))), h("div", { class: "item-highlight" })));
+        'med-item--no-padding': noPadding
+      })) }, h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn), h("div", { class: "item-inner" }, h("slot", { name: "start" }), h("div", { class: "input-wrapper" }, h("slot", null)), h("slot", { name: "end" }), showDetail && h("ion-icon", { icon: detailIcon, lazy: false, class: "med-icon item-detail-icon", part: "detail-icon", "aria-hidden": "true" }), h("div", { class: "item-inner-highlight" }))), h("div", { class: "item-highlight" })));
   }
   static get delegatesFocus() { return true; }
   get el() { return getElement(this); }
