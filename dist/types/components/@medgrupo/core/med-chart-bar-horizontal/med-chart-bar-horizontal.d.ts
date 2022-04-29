@@ -16,5 +16,9 @@ export declare class MedChartBarHorizontal {
    * Define o valor do componente.
    */
   value: number;
+  /**
+   * Define o valor do componente.
+   */
+  unidade: string;
   render(): any;
 }

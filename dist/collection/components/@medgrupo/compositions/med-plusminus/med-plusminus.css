@@ -1,0 +1,60 @@
+:host {
+  --color: hsl(var(--med-color-neutral-10));
+  --pointer-events: initial;
+}
+
+:host(.med-plusminus) {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--color);
+  max-height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:host(.med-plusminus) .med-plusminus__icon-minus {
+  margin-right: 16px;
+  cursor: pointer;
+  stroke: var(--color);
+}
+:host(.med-plusminus) .med-plusminus__icon-plus {
+  margin-left: 16px;
+  cursor: pointer;
+  stroke: var(--color);
+}
+
+:host(.med-plusminus--disabled-minus) .med-plusminus__icon-minus,
+:host(.med-plusminus--disabled-plus) .med-plusminus__icon-plus {
+  opacity: 0.5;
+  pointer-events: var(--pointer-events);
+}
+
+:host(.med-plusminus--disabled-both) .med-plusminus__icon-minus,
+:host(.med-plusminus--disabled-both) .med-plusminus__icon-plus {
+  opacity: 0.5;
+  pointer-events: var(--pointer-events);
+}
+
+:host(.med-plusminus--lg) {
+  font-size: 48px;
+}
+:host(.med-plusminus--lg) .med-icon {
+  font-size: 48px;
+}
+
+:host(.med-color) {
+  --color: hsl(var(--med-color-3));
+  stroke: hsl(var(--med-color-3));
+}
+
+:host(.med-color-neutral) {
+  --color: hsl(var(--med-color-neutral));
+  stroke: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --color: hsl(var(--med-color-feedback));
+  stroke: hsl(var(--med-color-feedback));
+}

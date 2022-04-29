@@ -1,0 +1,47 @@
+:host {
+  --font-size-item: 12px;
+  --font-size-quantia: 24px;
+}
+
+:host(.med-chart-radial-label) {
+  display: inline-block;
+}
+:host(.med-chart-radial-label) .med-chart-radial-label__list {
+  list-style: none;
+  padding: 0;
+}
+@media (min-width: 992px) {
+  :host(.med-chart-radial-label) .med-chart-radial-label__list {
+    display: flex;
+  }
+}
+:host(.med-chart-radial-label) .med-chart-radial-label__item {
+  font-size: var(--font-size-item);
+  line-height: 100%;
+  color: hsl(var(--med-color-neutral-5));
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  text-align: right;
+}
+:host(.med-chart-radial-label) .med-chart-radial-label__item:not(:last-of-type) {
+  padding-bottom: 8px;
+}
+@media (min-width: 992px) {
+  :host(.med-chart-radial-label) .med-chart-radial-label__item:not(:last-of-type) {
+    padding-bottom: 0;
+  }
+}
+:host(.med-chart-radial-label) .med-chart-radial-label__quantia {
+  font-size: var(--font-size-quantia);
+  line-height: 100%;
+  margin-right: 8px;
+  color: hsl(var(--med-color-feedback));
+  font-weight: 500;
+  min-width: 3ch;
+}
+
+:host(.med-chart-radial-label--lg) {
+  --font-size-item: 16px;
+  --font-size-quantia: 32px;
+}

@@ -16,11 +16,8 @@ const TemplateDefault = ({ collapsed }) => {
       }
 
       .med-context-menu__item {
-        padding-right: var(--med-spacing-inline-xs);
-        margin-bottom: var(--med-spacing-stack-base);
-        font-size: var(--med-font-size-xs);
-        line-height: var(--med-line-height-compressed);
-        color: hsl(var(--med-color-neutral-3));
+        padding-right: 16px;
+        margin-bottom: 16px;
         display: flex;
         align-items: center;
         transition: color 300ms ease-out;
@@ -32,18 +29,14 @@ const TemplateDefault = ({ collapsed }) => {
       }
 
       .med-context-menu__icon {
-        padding-right: var(--med-spacing-inline-xxxs);
-        stroke: hsl(var(--med-color-neutral-3));
+        width: 24px;
+        margin-right: 8px;
+        stroke: hsl(var(--med-color-neutral-10));
       }
 
       .med-context-menu__info {
-        padding: 0;
-        margin: 0;
-        font-size: var(--med-font-size-xs);
-        line-height: var(--med-line-height-compressed);
-        color: hsl(var(--med-color-neutral-5));
-        padding: var(--med-spacing-inset-xs);
         text-align: center;
+        margin-top: 8px;
       }
     </style>
 
@@ -56,18 +49,18 @@ const TemplateDefault = ({ collapsed }) => {
             <ul class="med-context-menu__list">
               <li class="med-context-menu__item">
                 <ion-icon class="med-icon med-context-menu__icon" name="med-filtro"></ion-icon>
-                <span>Ver filtro selecionado</span>
+                <med-type token="p16">Ver filtro selecionado</med-type>
               </li>
               <li class="med-context-menu__item">
                 <ion-icon class="med-icon med-context-menu__icon" name="med-editar"></ion-icon>
-                <span>Renomear Prova</span>
+                <med-type token="p16">Renomear Prova</med-type>
               </li>
               <li class="med-context-menu__item">
                 <ion-icon class="med-icon med-context-menu__icon" name="med-lixeira"></ion-icon>
-                <span>Excluir Prova</span>
+                <med-type token="p16">Excluir Prova</med-type>
               </li>
             </ul>
-            <p class="med-context-menu__info">Criada em 30/12/2020</p>
+            <med-type token="p16b" ds-color="neutral-8" class="med-context-menu__info">Criada em 30/12/2020</med-type>
           </med-context-menu>
           <!-- component -->
 

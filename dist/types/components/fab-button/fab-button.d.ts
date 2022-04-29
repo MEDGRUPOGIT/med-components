@@ -1,7 +1,6 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { AnimationBuilder, Color, RouterDirection, Neutral } from '../../interface';
+import { AnimationBuilder, Color, RouterDirection, MedColor } from '../../interface';
 import { AnchorInterface, ButtonInterface } from '../../utils/element-interface';
-import { MedColor } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -10,18 +9,6 @@ import { MedColor } from '../../interface';
  */
 export declare class FabButton implements ComponentInterface, AnchorInterface, ButtonInterface {
   el: HTMLElement;
-  /**
-   * TODO
-   */
-  dsSize?: 'md' | 'lg';
-  /**
-   * TODO
-   */
-  dsName?: 'label' | 'icon-label';
-  /**
-   * TODO
-   */
-  neutral?: Neutral;
   /**
     * Define a cor do componente.
     */

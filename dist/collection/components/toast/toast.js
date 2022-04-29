@@ -168,11 +168,11 @@ export class Toast {
   static get is() { return "ion-toast"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["toast.ios.scss"],
+    "ios": ["toast.md.scss"],
     "md": ["toast.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["toast.ios.css"],
+    "ios": ["toast.md.css"],
     "md": ["toast.md.css"]
   }; }
   static get properties() { return {

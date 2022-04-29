@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Compositions/@OK Med Rate Aula(Video Caption)',
+  title: 'Components/Compositions/Med Rate Aula (Video Caption)',
   decorators: [withDesign],
 };
 

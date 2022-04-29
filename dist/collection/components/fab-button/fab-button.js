@@ -51,7 +51,7 @@ export class FabButton {
     };
   }
   render() {
-    const { dsColor, el, disabled, href, activated, show, translucent, size } = this;
+    const { el, dsColor, disabled, href, activated, show, translucent, size } = this;
     const inList = hostContext('ion-fab-list', el);
     const mode = getIonMode(this);
     const TagType = href === undefined ? 'button' : 'a';
@@ -76,79 +76,21 @@ export class FabButton {
         [`fab-button-${size}`]: size !== undefined,
       }) },
       h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur, onClick: (ev) => openURL(href, ev, this.routerDirection, this.routerAnimation) }),
-        h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "med-icon close-icon", lazy: false }),
+        h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "close-icon", lazy: false }),
         h("span", { class: "button-inner" },
-          h("slot", null),
-          h("slot", { name: "label" })),
-        mode === 'md' && h("ion-ripple-effect", null))));
+          h("slot", null)))));
   }
   static get is() { return "ion-fab-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["fab-button.md.scss"],
+    "ios": ["fab-button.ios.scss"],
     "md": ["fab-button.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["fab-button.md.css"],
+    "ios": ["fab-button.ios.css"],
     "md": ["fab-button.md.css"]
   }; }
   static get properties() { return {
-    "dsSize": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "TODO"
-      },
-      "attribute": "ds-size",
-      "reflect": false
-    },
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'label' | 'icon-label'",
-        "resolved": "\"icon-label\" | \"label\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "TODO"
-      },
-      "attribute": "ds-name",
-      "reflect": false
-    },
-    "neutral": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Neutral",
-        "resolved": "string | undefined",
-        "references": {
-          "Neutral": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "TODO"
-      },
-      "attribute": "neutral",
-      "reflect": false
-    },
     "dsColor": {
       "type": "string",
       "mutable": false,

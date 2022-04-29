@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-19T17:41:28",
+  "timestamp": "2022-04-29T14:40:33",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -34,78 +34,6 @@
           "ion-button",
           "ion-icon",
           "med-type"
-        ],
-        "ion-button": [
-          "ion-ripple-effect"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/team/dashboard/filtro-dashboard/filtro-dashboard.tsx",
-      "encapsulation": "shadow",
-      "tag": "filtro-dashboard",
-      "readme": "# filtro-dashboard\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "med-base",
-        "ion-button",
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "filtro-dashboard": [
-          "med-base",
-          "ion-button",
-          "ion-icon"
-        ],
-        "ion-button": [
-          "ion-ripple-effect"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/team/dashboard/filtro-modal/filtro-modal.tsx",
-      "encapsulation": "shadow",
-      "tag": "filtro-modal",
-      "readme": "# filtro-modal\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-content",
-        "ion-button",
-        "ion-icon",
-        "med-type",
-        "ion-radio-group",
-        "ion-radio",
-        "ion-footer"
-      ],
-      "dependencyGraph": {
-        "filtro-modal": [
-          "ion-content",
-          "ion-button",
-          "ion-icon",
-          "med-type",
-          "ion-radio-group",
-          "ion-radio",
-          "ion-footer"
         ],
         "ion-button": [
           "ion-ripple-effect"
@@ -2379,8 +2307,6 @@
       ],
       "dependents": [
         "dialog-test",
-        "filtro-dashboard",
-        "filtro-modal",
         "med-banner",
         "med-calendar",
         "med-config",
@@ -2403,12 +2329,6 @@
           "ion-ripple-effect"
         ],
         "dialog-test": [
-          "ion-button"
-        ],
-        "filtro-dashboard": [
-          "ion-button"
-        ],
-        "filtro-modal": [
           "ion-button"
         ],
         "med-banner": [
@@ -4282,16 +4202,12 @@
         }
       ],
       "dependents": [
-        "filtro-modal",
         "med-config",
         "med-image-zoom",
         "sheet-content-test"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "filtro-modal": [
-          "ion-content"
-        ],
         "med-config": [
           "ion-content"
         ],
@@ -5261,54 +5177,6 @@
           "required": false
         },
         {
-          "name": "dsName",
-          "type": "\"icon-label\" | \"label\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": false,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "icon-label",
-              "type": "string"
-            },
-            {
-              "value": "label",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsSize",
-          "type": "\"lg\" | \"md\" | undefined",
-          "mutable": false,
-          "attr": "ds-size",
-          "reflectToAttr": false,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "lg",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "href",
           "type": "string | undefined",
           "mutable": false,
@@ -5343,25 +5211,6 @@
             {
               "value": "md",
               "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "neutral",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "neutral",
-          "reflectToAttr": false,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
             }
           ],
           "optional": true,
@@ -5682,13 +5531,11 @@
       ],
       "dependents": [],
       "dependencies": [
-        "ion-icon",
-        "ion-ripple-effect"
+        "ion-icon"
       ],
       "dependencyGraph": {
         "ion-fab-button": [
-          "ion-icon",
-          "ion-ripple-effect"
+          "ion-icon"
         ]
       }
     },
@@ -5722,30 +5569,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsSize",
-          "type": "\"lg\" | \"md\" | undefined",
-          "mutable": false,
-          "attr": "ds-size",
-          "reflectToAttr": false,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "lg",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -5855,15 +5678,11 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "filtro-modal",
         "sheet-content-test",
         "sheet-test"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "filtro-modal": [
-          "ion-footer"
-        ],
         "sheet-content-test": [
           "ion-footer"
         ],
@@ -12128,18 +11947,10 @@
         }
       ],
       "dependents": [
-        "med-aula-professor",
-        "med-item-aulas",
         "med-video-thumbnail"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "med-aula-professor": [
-          "ion-progress-bar"
-        ],
-        "med-item-aulas": [
-          "ion-progress-bar"
-        ],
         "med-video-thumbnail": [
           "ion-progress-bar"
         ]
@@ -12359,16 +12170,12 @@
         }
       ],
       "dependents": [
-        "filtro-modal",
         "ion-select-popover",
         "med-config",
         "med-themes"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "filtro-modal": [
-          "ion-radio"
-        ],
         "ion-select-popover": [
           "ion-radio"
         ],
@@ -12470,16 +12277,12 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "filtro-modal",
         "ion-select-popover",
         "med-config",
         "med-themes"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "filtro-modal": [
-          "ion-radio-group"
-        ],
         "ion-select-popover": [
           "ion-radio-group"
         ],
@@ -13447,7 +13250,6 @@
         "ion-button",
         "ion-card",
         "ion-chip",
-        "ion-fab-button",
         "ion-item",
         "ion-item-option",
         "ion-menu-button",
@@ -13472,9 +13274,6 @@
           "ion-ripple-effect"
         ],
         "ion-chip": [
-          "ion-ripple-effect"
-        ],
-        "ion-fab-button": [
           "ion-ripple-effect"
         ],
         "ion-item": [
@@ -19499,7 +19298,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-accordion-item/med-accordion-item.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-accordion-item/med-accordion-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-accordion-item",
       "readme": "# accordion-item\r\n\r\n\r\n\r",
@@ -19572,30 +19371,6 @@
           "docsTags": [],
           "values": [
             {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "icon",
-          "type": "\"left\" | \"right\" | undefined",
-          "mutable": false,
-          "attr": "icon",
-          "reflectToAttr": true,
-          "docs": "Define a posição do ícone de abertura do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "left",
-              "type": "string"
-            },
-            {
-              "value": "right",
               "type": "string"
             },
             {
@@ -19731,7 +19506,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-accordion-list/med-accordion-list.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-accordion-list/med-accordion-list.tsx",
       "encapsulation": "shadow",
       "tag": "med-accordion-list",
       "readme": "# hv-accordion\r\n\r\n\r\n\r",
@@ -19782,7 +19557,7 @@
           "mutable": false,
           "attr": "no-animation",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "Remove a animação do componente.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -19813,10 +19588,10 @@
         {
           "name": "singleOpen",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "single-open",
           "reflectToAttr": true,
-          "docs": "Define a variação da borda do componente.",
+          "docs": "Abre um item de cada vez.",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -20028,6 +19803,111 @@
       "dependencyGraph": {
         "med-agrupador": [
           "ion-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-alert-fixed/med-alert-fixed.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-alert-fixed",
+      "readme": "# med-alert-fixed\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"atualizar\" | \"offline\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "Define a variação do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "atualizar",
+              "type": "string"
+            },
+            {
+              "value": "offline",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "labelAtualizar",
+          "type": "string",
+          "mutable": false,
+          "attr": "label-atualizar",
+          "reflectToAttr": true,
+          "docs": "Define o texto no estado active.",
+          "docsTags": [],
+          "default": "'Versão desatualizada'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "labelOffline",
+          "type": "string",
+          "mutable": false,
+          "attr": "label-offline",
+          "reflectToAttr": true,
+          "docs": "Define o texto no estado active.",
+          "docsTags": [],
+          "default": "'Você está offline. Conecte-se para acessar o conteúdo.'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon",
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-alert-fixed": [
+          "ion-icon",
+          "med-type"
         ]
       }
     },
@@ -20879,152 +20759,6 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-aula-professor/med-aula-professor.tsx",
-      "encapsulation": "scoped",
-      "tag": "med-aula-professor",
-      "readme": "# med-aula-professor\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "active",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "active",
-          "reflectToAttr": true,
-          "docs": "TO DO",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "icon",
-          "type": "string",
-          "mutable": false,
-          "attr": "icon",
-          "reflectToAttr": true,
-          "docs": "TO DO",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
-          "name": "professores",
-          "type": "string",
-          "mutable": false,
-          "attr": "professores",
-          "reflectToAttr": true,
-          "docs": "TO DO",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
-          "name": "titulo",
-          "type": "string",
-          "mutable": false,
-          "attr": "titulo",
-          "reflectToAttr": true,
-          "docs": "TO DO",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
-          "name": "value",
-          "type": "number",
-          "mutable": false,
-          "attr": "value",
-          "reflectToAttr": true,
-          "docs": "TO DO",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
-          "name": "videos",
-          "type": "string",
-          "mutable": false,
-          "attr": "videos",
-          "reflectToAttr": true,
-          "docs": "TO DO",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-icon",
-        "med-type",
-        "ion-progress-bar"
-      ],
-      "dependencyGraph": {
-        "med-aula-professor": [
-          "ion-icon",
-          "med-type",
-          "ion-progress-bar"
-        ]
-      }
-    },
-    {
       "filePath": "./src/components/@medgrupo/compositions/med-autocomplete/med-autocomplete.tsx",
       "encapsulation": "scoped",
       "tag": "med-autocomplete",
@@ -21169,7 +20903,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-banner/med-banner.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-banner/med-banner.tsx",
       "encapsulation": "shadow",
       "tag": "med-banner",
       "readme": "# med-banner\r\n\r\n\r\n\r",
@@ -21487,15 +21221,11 @@
       ],
       "parts": [],
       "dependents": [
-        "filtro-dashboard",
         "med-add-card",
         "med-check-card"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "filtro-dashboard": [
-          "med-base"
-        ],
         "med-add-card": [
           "med-base"
         ],
@@ -21505,7 +21235,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-calendar/med-calendar.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-calendar/med-calendar.tsx",
       "encapsulation": "shadow",
       "tag": "med-calendar",
       "readme": "# med-calendar\r\n\r\n\r\n\r",
@@ -21667,7 +21397,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-calendar-day/med-calendar-day.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-calendar-day/med-calendar-day.tsx",
       "encapsulation": "shadow",
       "tag": "med-calendar-day",
       "readme": "# med-calendar-day\r\n\r\n\r\n\r",
@@ -21749,7 +21479,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-caption/med-caption.tsx",
+      "filePath": "./src/components/@medgrupo/legacy/med-caption/med-caption.tsx",
       "encapsulation": "shadow",
       "tag": "med-caption",
       "readme": "# med-heading\r\n\r\n\r\n\r",
@@ -21828,7 +21558,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/team/questoes/med-cartao-resposta-item/med-cartao-resposta-item.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-cartao-resposta-item/med-cartao-resposta-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-cartao-resposta-item",
       "readme": "# med-cartao-resposta\r\n\r\n\r\n\r",
@@ -21918,7 +21648,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/team/questoes/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx",
       "encapsulation": "shadow",
       "tag": "med-cartao-resposta-lista",
       "readme": "# med-cartao-resposta-listas\r\n\r\n\r\n\r",
@@ -22096,6 +21826,23 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "unidade",
+          "type": "string",
+          "mutable": true,
+          "attr": "unidade",
+          "reflectToAttr": true,
+          "docs": "Define o valor do componente.",
+          "docsTags": [],
+          "default": "'%'",
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,
@@ -22433,7 +22180,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-chart-radial-content/med-chart-radial-content.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-chart-radial-content/med-chart-radial-content.tsx",
       "encapsulation": "shadow",
       "tag": "med-chart-radial-content",
       "readme": "# med-chart-radial-content\r\n\r\n\r\n\r",
@@ -22509,7 +22256,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-chart-radial-label/med-chart-radial-label.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-chart-radial-label/med-chart-radial-label.tsx",
       "encapsulation": "scoped",
       "tag": "med-chart-radial-label",
       "readme": "# med-chart-radial-label\r\n\r\n\r\n\r",
@@ -23083,7 +22830,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-config/med-config.tsx",
+      "filePath": "./src/components/@medgrupo/legacy/med-config/med-config.tsx",
       "encapsulation": "scoped",
       "tag": "med-config",
       "readme": "# med-image-zoom\r\n\r\n\r\n\r",
@@ -23171,7 +22918,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-context-menu/med-context-menu.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-context-menu/med-context-menu.tsx",
       "encapsulation": "shadow",
       "tag": "med-context-menu",
       "readme": "# med-context-menu\r\n\r\n\r\n\r",
@@ -23206,7 +22953,7 @@
           },
           "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
-          "docs": "TODO",
+          "docs": "Define o estado do componente programaticamente.",
           "docsTags": []
         }
       ],
@@ -23219,23 +22966,7 @@
           "passive": false
         }
       ],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Define a cor da borda do componente."
-        },
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Define a cor do componente."
-        },
-        {
-          "name": "--z-index",
-          "annotation": "prop",
-          "docs": "Define o z-index do componente."
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -23252,67 +22983,6 @@
           "ion-ripple-effect"
         ]
       }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/global/med-divider/med-divider.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-divider",
-      "readme": "# med-divider\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": false,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "text",
-          "type": "string",
-          "mutable": false,
-          "attr": "text",
-          "reflectToAttr": false,
-          "docs": "Define o texto do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Define a cor do componente."
-        }
-      ],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/@medgrupo/core/med-download-button/med-download-button.tsx",
@@ -23701,7 +23371,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-font-zoom/med-font-zoom.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-font-zoom/med-font-zoom.tsx",
       "encapsulation": "shadow",
       "tag": "med-font-zoom",
       "readme": "# med-font-zoom\r\n\r\n\r\n\r",
@@ -23773,7 +23443,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-header/med-header.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-header/med-header.tsx",
       "encapsulation": "shadow",
       "tag": "med-header",
       "readme": "# med-header\r\n\r\n\r\n\r",
@@ -23816,7 +23486,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-image-zoom/med-image-zoom.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-image-zoom/med-image-zoom.tsx",
       "encapsulation": "scoped",
       "tag": "med-image-zoom",
       "readme": "# med-image-zoom\r\n\r\n\r\n\r",
@@ -24352,120 +24022,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-item-aulas/med-item-aulas.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-item-aulas",
-      "readme": "# med-item-aulas\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [
-        {
-          "text": "avatar - Slot destinado ao avatar.",
-          "name": "slot"
-        },
-        {
-          "text": "rate - Slot destinado ao componete de rate.",
-          "name": "slot"
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "porcentagem",
-          "type": "number",
-          "mutable": false,
-          "attr": "porcentagem",
-          "reflectToAttr": false,
-          "docs": "Define a porcentagem de visualização de vídeos.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
-          "name": "professor",
-          "type": "string",
-          "mutable": false,
-          "attr": "professor",
-          "reflectToAttr": false,
-          "docs": "Define o nome do professor.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
-          "name": "videos",
-          "type": "string",
-          "mutable": false,
-          "attr": "videos",
-          "reflectToAttr": false,
-          "docs": "Define a quantidade de vídeos.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [
-        {
-          "name": "avatar",
-          "docs": "Slot destinado ao avatar."
-        },
-        {
-          "name": "rate",
-          "docs": "Slot destinado ao componete de rate."
-        }
-      ],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-icon",
-        "ion-progress-bar"
-      ],
-      "dependencyGraph": {
-        "med-item-aulas": [
-          "ion-icon",
-          "ion-progress-bar"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/global/med-list/med-list.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-list/med-list.tsx",
       "encapsulation": "shadow",
       "tag": "med-list",
       "readme": "# med-list\r\n\r\n\r\n\r",
@@ -24536,7 +24093,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-list-item/med-list-item.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-list-item/med-list-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-list-item",
       "readme": "# med-list-item\r\n\r\n\r\n\r",
@@ -24692,7 +24249,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-list-item-accordion/med-list-item-accordion.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-list-item-accordion/med-list-item-accordion.tsx",
       "encapsulation": "scoped",
       "tag": "med-list-item-accordion",
       "readme": "# med-list-item-accordion\r\n\r\n\r\n\r",
@@ -24978,225 +24535,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-message/med-message.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-message",
-      "readme": "# med-message\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [
-        {
-          "text": "- Slot destinado a listagem de badges",
-          "name": "slot"
-        },
-        {
-          "text": "avatar - Slot destinado ao avatar.",
-          "name": "slot"
-        },
-        {
-          "text": "menu - Slot destinado ao componete med-context-menu.",
-          "name": "slot"
-        },
-        {
-          "text": "footer - Slot destinado a listagem de botões.",
-          "name": "slot"
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "concurso",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "concurso",
-          "reflectToAttr": false,
-          "docs": "Define o nome do concurso.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"comment\" | \"medgrupo\" | \"response\" | \"user-message\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": false,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "comment",
-              "type": "string"
-            },
-            {
-              "value": "medgrupo",
-              "type": "string"
-            },
-            {
-              "value": "response",
-              "type": "string"
-            },
-            {
-              "value": "user-message",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "messageId",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "message-id",
-          "reflectToAttr": false,
-          "docs": "Define o id da mensagem.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "nome",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "nome",
-          "reflectToAttr": false,
-          "docs": "Define o nome do aluno.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "texto",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "texto",
-          "reflectToAttr": false,
-          "docs": "Define o conteúdo de texto.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [
-        {
-          "name": "",
-          "docs": "Slot destinado a listagem de badges"
-        },
-        {
-          "name": "avatar",
-          "docs": "Slot destinado ao avatar."
-        },
-        {
-          "name": "footer",
-          "docs": "Slot destinado a listagem de botões."
-        },
-        {
-          "name": "menu",
-          "docs": "Slot destinado ao componete med-context-menu."
-        }
-      ],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "med-tooltip",
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "med-message": [
-          "med-tooltip",
-          "ion-icon"
-        ],
-        "med-tooltip": [
-          "med-type",
-          "ion-button",
-          "ion-icon"
-        ],
-        "ion-button": [
-          "ion-ripple-effect"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/global/med-message-list/med-message-list.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-message-list",
-      "readme": "# med-message-list\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [
-        {
-          "name": "--margin-left-comment",
-          "annotation": "prop",
-          "docs": "Define a margin-left dos comentários."
-        },
-        {
-          "name": "--margin-left-response",
-          "annotation": "prop",
-          "docs": "Define a margin-left das respostas."
-        },
-        {
-          "name": "--margin-top-message",
-          "annotation": "prop",
-          "docs": "Define a margin-top da mensagem principal."
-        },
-        {
-          "name": "--margin-top-response",
-          "annotation": "prop",
-          "docs": "Define a margin-top das resposta."
-        }
-      ],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/@medgrupo/core/med-nav/med-nav.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-nav/med-nav.tsx",
       "encapsulation": "shadow",
       "tag": "med-nav",
       "readme": "# med-nav\r\n\r\n\r\n\r",
@@ -25282,7 +24621,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-nav-accordion/med-nav-accordion.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-nav-accordion/med-nav-accordion.tsx",
       "encapsulation": "shadow",
       "tag": "med-nav-accordion",
       "readme": "# med-nav-accordion\r\n\r\n\r\n\r",
@@ -25556,7 +24895,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-nav-simple/med-nav-simple.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-nav-simple/med-nav-simple.tsx",
       "encapsulation": "shadow",
       "tag": "med-nav-simple",
       "readme": "# med-nav-simple\r\n\r\n\r\n\r",
@@ -25627,7 +24966,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-navbar/med-navbar.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-navbar/med-navbar.tsx",
       "encapsulation": "shadow",
       "tag": "med-navbar",
       "readme": "# med-navbar\r\n\r\n\r\n\r",
@@ -25738,7 +25077,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-offline/med-offline.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-offline/med-offline.tsx",
       "encapsulation": "shadow",
       "tag": "med-offline",
       "readme": "# med-offline\r\n\r\n\r\n\r",
@@ -26155,7 +25494,110 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/team/duvidas/med-question/med-question.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-plusminus/med-plusminus.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-plusminus",
+      "readme": "# monta-provas-plusminus\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "\"both\" | \"minus\" | \"plus\" | undefined",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "TODO",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "minus",
+              "type": "string"
+            },
+            {
+              "value": "plus",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "Define a cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"xl\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": true,
+          "docs": "TODO",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "xl",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "medChange",
+          "detail": "PlusMinusStatus.MINUS | PlusMinusStatus.PLUS",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "TODO",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-plusminus": [
+          "ion-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@medgrupo/team/med-question/med-question.tsx",
       "encapsulation": "shadow",
       "tag": "med-question",
       "readme": "# med-question\r\n\r\n\r\n\r",
@@ -26228,29 +25670,13 @@
           },
           "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
-          "docs": "TODO",
+          "docs": "Muda o estado do componente programaticamente.",
           "docsTags": []
         }
       ],
       "events": [],
       "listeners": [],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Define a cor de background do componente."
-        },
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Define a cor do componente."
-        },
-        {
-          "name": "--lines",
-          "annotation": "prop",
-          "docs": "Define o número de linhas visíveis com reticiências."
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -26264,7 +25690,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-rate-aula/med-rate-aula.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-rate-aula/med-rate-aula.tsx",
       "encapsulation": "scoped",
       "tag": "med-rate-aula",
       "readme": "# med-rate-aula\r\n\r\n\r\n\r",
@@ -26326,7 +25752,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-rate-bar/med-rate-bar.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-rate-bar/med-rate-bar.tsx",
       "encapsulation": "shadow",
       "tag": "med-rate-bar",
       "readme": "# med-rate-bar\r\n\r\n\r\n\r",
@@ -26423,130 +25849,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-rate-result/med-rate-result.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-rate-result",
-      "readme": "# med-rate-result\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "bom",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "bom",
-          "reflectToAttr": false,
-          "docs": "Define o valor do item bom.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "excelente",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "excelente",
-          "reflectToAttr": false,
-          "docs": "Define o valor do item excelente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "regular",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "regular",
-          "reflectToAttr": false,
-          "docs": "Define o valor do item regular.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "ruim",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ruim",
-          "reflectToAttr": false,
-          "docs": "Define o valor do item ruim.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [
-        {
-          "name": "--color-bom",
-          "annotation": "prop",
-          "docs": "Define a cor do icone de bom."
-        },
-        {
-          "name": "--color-excelent",
-          "annotation": "prop",
-          "docs": "Define a cor do icone de excelente."
-        },
-        {
-          "name": "--color-regular",
-          "annotation": "prop",
-          "docs": "Define a cor do icone de regular."
-        },
-        {
-          "name": "--color-ruim",
-          "annotation": "prop",
-          "docs": "Define a cor do icone de ruim."
-        }
-      ],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "med-rate-result": [
-          "ion-icon"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/global/med-rating/med-rating.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-rating/med-rating.tsx",
       "encapsulation": "shadow",
       "tag": "med-rating",
       "readme": "# med-rating\r\n\r\n\r\n\r",
@@ -26984,46 +26287,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-tabs/med-tabs.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-tabs",
-      "readme": "# med-tabs\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/@medgrupo/global/med-themes/med-themes.tsx",
+      "filePath": "./src/components/@medgrupo/team/med-themes/med-themes.tsx",
       "encapsulation": "shadow",
       "tag": "med-themes",
       "readme": "# med-theme\r\n\r\n\r\n\r",
@@ -27103,7 +26367,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-tiles/med-tiles.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-tiles/med-tiles.tsx",
       "encapsulation": "shadow",
       "tag": "med-tiles",
       "readme": "# med-tiles\r\n\r\n\r\n\r",
@@ -27229,88 +26493,17 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/@medgrupo/global/med-titulo-materia/med-titulo-materia.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-titulo-materia",
-      "readme": "# med-titulo-materia\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "descricao",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "descricao",
-          "reflectToAttr": false,
-          "docs": "Define o descricao do item.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "titulo",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "titulo",
-          "reflectToAttr": false,
-          "docs": "Define o titulo do item.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
+      "dependencies": [
+        "med-type"
       ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "med-tiles": [
+          "med-type"
+        ]
+      }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-toolbar/med-toolbar.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-toolbar/med-toolbar.tsx",
       "encapsulation": "shadow",
       "tag": "med-toolbar",
       "readme": "# med-toolbar\r\n\r\n\r\n\r",
@@ -27349,7 +26542,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-tooltip/med-tooltip.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-tooltip/med-tooltip.tsx",
       "encapsulation": "shadow",
       "tag": "med-tooltip",
       "readme": "# med-context-menu\r\n\r\n\r\n\r",
@@ -27574,9 +26767,7 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "med-message"
-      ],
+      "dependents": [],
       "dependencies": [
         "med-type",
         "ion-button",
@@ -27590,14 +26781,11 @@
         ],
         "ion-button": [
           "ion-ripple-effect"
-        ],
-        "med-message": [
-          "med-tooltip"
         ]
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-type/med-type.tsx",
+      "filePath": "./src/components/@medgrupo/foundation/med-type/med-type.tsx",
       "encapsulation": "shadow",
       "tag": "med-type",
       "readme": "# med-type\r\n\r\n\r\n\r",
@@ -27705,9 +26893,8 @@
       "parts": [],
       "dependents": [
         "dialog-test",
-        "filtro-modal",
         "med-add-card",
-        "med-aula-professor",
+        "med-alert-fixed",
         "med-banner",
         "med-calendar",
         "med-calendar-day",
@@ -27723,6 +26910,7 @@
         "med-rate-aula",
         "med-rating",
         "med-semana",
+        "med-tiles",
         "med-tooltip",
         "sheet-content-test",
         "sheet-test"
@@ -27732,13 +26920,10 @@
         "dialog-test": [
           "med-type"
         ],
-        "filtro-modal": [
-          "med-type"
-        ],
         "med-add-card": [
           "med-type"
         ],
-        "med-aula-professor": [
+        "med-alert-fixed": [
           "med-type"
         ],
         "med-banner": [
@@ -27786,6 +26971,9 @@
         "med-semana": [
           "med-type"
         ],
+        "med-tiles": [
+          "med-type"
+        ],
         "med-tooltip": [
           "med-type"
         ],
@@ -27798,7 +26986,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/med-video-thumbnail/med-video-thumbnail.tsx",
+      "filePath": "./src/components/@medgrupo/compositions/med-video-thumbnail/med-video-thumbnail.tsx",
       "encapsulation": "shadow",
       "tag": "med-video-thumbnail",
       "readme": "# med-video-thumbnail\r\n\r\n\r\n\r",
@@ -27881,7 +27069,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/global/med-vote/med-vote.tsx",
+      "filePath": "./src/components/@medgrupo/team/med-vote/med-vote.tsx",
       "encapsulation": "shadow",
       "tag": "med-vote",
       "readme": "# med-vote\r\n\r\n\r\n\r",
@@ -27956,109 +27144,6 @@
       ],
       "dependencyGraph": {
         "med-vote": [
-          "ion-icon"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/team/monta-provas/monta-provas-plusminus/monta-provas-plusminus.tsx",
-      "encapsulation": "scoped",
-      "tag": "monta-provas-plusminus",
-      "readme": "# monta-provas-plusminus\r\n\r\n\r\n\r",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "disabled",
-          "type": "\"both\" | \"minus\" | \"plus\" | undefined",
-          "mutable": false,
-          "attr": "disabled",
-          "reflectToAttr": true,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "both",
-              "type": "string"
-            },
-            {
-              "value": "minus",
-              "type": "string"
-            },
-            {
-              "value": "plus",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsSize",
-          "type": "\"xl\" | undefined",
-          "mutable": false,
-          "attr": "ds-size",
-          "reflectToAttr": true,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "xl",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [
-        {
-          "event": "medChange",
-          "detail": "PlusMinusStatus.MINUS | PlusMinusStatus.PLUS",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "TODO",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "monta-provas-plusminus": [
           "ion-icon"
         ]
       }

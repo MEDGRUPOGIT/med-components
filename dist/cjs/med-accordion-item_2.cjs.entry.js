@@ -103,13 +103,16 @@ const Accordion = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     /**
-      * Define a variação da borda do componente.
+      * Abre um item de cada vez.
       */
     this.singleOpen = true;
     /**
       * Define a variação da borda do componente.
       */
     this.noBorder = false;
+    /**
+      * Remove a animação do componente.
+      */
     this.noAnimation = false;
     this.currentlyOpen = null;
   }

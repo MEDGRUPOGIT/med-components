@@ -9,30 +9,14 @@ export default {
 
 const createToastFloatBottom = async () => {
   toastController.create({
-    header: 'Titulo da Notificação.',
-    message: 'Corpo ou subtítulo da notificação.',
+    header: 'Mensagem da Notificação.',
     position: 'bottom',
     showCloseButton: true,
-    cssClass:"ion-toast--float",
+    cssClass:"med-color-feedback med-color-fb-success",
     buttons: [
     {
-      side: 'start',
-      icon: 'med-information',
-      text: '',
-      handler: () => {
-        console.log('clicked');
-      }
-    },
-    {
-      text: 'tente novamente',
-      role: 'cancel',
-      handler: () => {
-        console.log('Cancel clicked');
-      }
-    },
-    {
       side: 'end',
-      icon: 'med-close',
+      icon: 'med-fechar',
       role: 'cancel',
       handler: () => {
         console.log('Cancel clicked');

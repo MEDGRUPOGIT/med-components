@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColors } from "../../../../global/templarios/color.enum";
 
 export default {
-  title: 'Components/Compositions/@OK Tab Bar',
+  title: 'Components/Compositions/Tab Bar',
   decorators: [withDesign],
 };
 

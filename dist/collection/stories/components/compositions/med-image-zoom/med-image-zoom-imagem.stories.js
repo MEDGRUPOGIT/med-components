@@ -45,6 +45,6 @@ export const ImageZoomMultiImagem = TemplateMultiImagem.bind({});
 ImageZoomMultiImagem.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/zdbyAa3XpX3loOjJEaXc6E/Quest%C3%B5es?node-id=657%3A0',
+    url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=5325%3A44104',
   },
 }

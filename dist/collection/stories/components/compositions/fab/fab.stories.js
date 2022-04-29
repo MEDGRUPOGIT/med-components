@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
-import { MedColor } from '../../../constants';
+import { MedColors } from "../../../../global/templarios/color.enum";
 
 export default {
   title: 'Components/Compositions/Fab',
@@ -12,39 +12,47 @@ const TemplateDefault = ({dsColor}) => {
     <ion-app class="storybook-only">
       <div class="storybook-only__container">
 
-        <!-- component -->
+        <!-- component markdown -->
         <ion-fab vertical="center" horizontal="center" slot="fixed">
           <ion-fab-button .dsColor=${dsColor}>
-            <ion-icon class="med-icon" name="add"></ion-icon>
+            <ion-icon class="med-icon" name="med-mais"></ion-icon>
           </ion-fab-button>
           <ion-fab-list side="top">
-            <ion-fab-button><ion-icon class="med-icon" name="logo-vimeo"></ion-icon></ion-fab-button>
-            <ion-fab-button><ion-icon class="med-icon" name="logo-twitter"></ion-icon></ion-fab-button>
-            <ion-fab-button><ion-icon class="med-icon" name="logo-facebook"></ion-icon></ion-fab-button>
-            <ion-fab-button><ion-icon class="med-icon" name="logo-instagram"></ion-icon></ion-fab-button>
+            <ion-fab-button ds-color="neutral-10">
+              <ion-icon class="med-icon" name="med-star-filled"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button ds-color="neutral-10">
+              <ion-icon class="med-icon" name="med-star-filled"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button ds-color="neutral-10">
+              <ion-icon class="med-icon" name="med-star-filled"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button ds-color="neutral-10">
+              <ion-icon class="med-icon" name="med-star-filled"></ion-icon>
+            </ion-fab-button>
           </ion-fab-list>
         </ion-fab>
-        <!-- component -->
+        <!-- component markdown -->
 
       </div>
     </ion-app>
   `
 }
 
-export const FAB = TemplateDefault.bind({});
-FAB.parameters = {
+export const Default = TemplateDefault.bind({});
+Default.parameters = {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=2436%3A21',
   }
 }
-FAB.argTypes = {
+Default.argTypes = {
   dsColor: {
-    options: MedColor,
-    control: { type: 'inline-radio'},
+    options: Object.values(MedColors),
+    control: { type: 'select'},
     description: "Define a cor do componente.",
     table: {
-      type:  { summary: 'Color' },
+      type:  { summary: Object.values(MedColors).join(' |') },
       defaultValue: { summary: 'undefined' },
     },
   },

@@ -10,9 +10,13 @@ export class MedChartBarHorizontal {
      * Define o valor do componente.
      */
     this.value = 0;
+    /**
+     * Define o valor do componente.
+     */
+    this.unidade = '%';
   }
   render() {
-    const { dsColor, dsSize, label, value } = this;
+    const { dsColor, dsSize, label, value, unidade } = this;
     let progressClass, progressWidth;
     if (value > 100) {
       progressClass = 'med-chart-bar-horizontal--spill';
@@ -35,7 +39,7 @@ export class MedChartBarHorizontal {
         h("div", { class: "med-chart-bar-horizontal__track", part: "track" })),
       label && h("med-type", { class: "med-chart-bar-horizontal__label" },
         value,
-        "%")));
+        unidade)));
   }
   static get is() { return "med-chart-bar-horizontal"; }
   static get encapsulation() { return "shadow"; }
@@ -120,6 +124,24 @@ export class MedChartBarHorizontal {
       "attribute": "value",
       "reflect": true,
       "defaultValue": "0"
+    },
+    "unidade": {
+      "type": "string",
+      "mutable": true,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define o valor do componente."
+      },
+      "attribute": "unidade",
+      "reflect": true,
+      "defaultValue": "'%'"
     }
   }; }
 }

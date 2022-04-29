@@ -37,23 +37,6 @@ export class FabList {
     "$": ["fab-list.css"]
   }; }
   static get properties() { return {
-    "dsSize": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "TODO"
-      },
-      "attribute": "ds-size",
-      "reflect": false
-    },
     "activated": {
       "type": "boolean",
       "mutable": false,

@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColors } from "../../../../global/templarios/color.enum";
 
 export default {
-  title: 'Components/Compositions/Banner',
+  title: 'Components/Compositions/Banner (snackbar)',
   decorators: [withDesign],
 };
 
@@ -35,7 +35,7 @@ export const Icone = Template.bind({});
 Icone.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=6870%3A57814',
+    url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=4166%3A17187',
   },
   actions: {
     handles: ['btnLeftClick', 'btnRightClick'],
