@@ -3246,11 +3246,15 @@ export namespace Components {
         /**
           * Define a visibilidade do label.
          */
+        "hideValue": boolean;
+        /**
+          * Define a visibilidade do label.
+         */
         "label": boolean;
         /**
           * Define o valor do componente.
          */
-        "unidade": string;
+        "labelContent": string | undefined;
         /**
           * Define o valor do componente.
          */
@@ -8383,11 +8387,15 @@ declare namespace LocalJSX {
         /**
           * Define a visibilidade do label.
          */
+        "hideValue"?: boolean;
+        /**
+          * Define a visibilidade do label.
+         */
         "label"?: boolean;
         /**
           * Define o valor do componente.
          */
-        "unidade"?: string;
+        "labelContent"?: string | undefined;
         /**
           * Define o valor do componente.
          */

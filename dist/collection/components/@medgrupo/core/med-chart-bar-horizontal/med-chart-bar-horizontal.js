@@ -7,16 +7,16 @@ export class MedChartBarHorizontal {
      */
     this.label = true;
     /**
-     * Define o valor do componente.
+     * Define a visibilidade do label.
      */
-    this.value = 0;
+    this.hideValue = false;
     /**
      * Define o valor do componente.
      */
-    this.unidade = '%';
+    this.value = 0;
   }
   render() {
-    const { dsColor, dsSize, label, value, unidade } = this;
+    const { dsColor, hideValue, dsSize, label, value, labelContent } = this;
     let progressClass, progressWidth;
     if (value > 100) {
       progressClass = 'med-chart-bar-horizontal--spill';
@@ -38,8 +38,8 @@ export class MedChartBarHorizontal {
         h("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }),
         h("div", { class: "med-chart-bar-horizontal__track", part: "track" })),
       label && h("med-type", { class: "med-chart-bar-horizontal__label" },
-        value,
-        unidade)));
+        !hideValue ? `${value}%` : '',
+        labelContent)));
   }
   static get is() { return "med-chart-bar-horizontal"; }
   static get encapsulation() { return "shadow"; }
@@ -107,6 +107,24 @@ export class MedChartBarHorizontal {
       "reflect": true,
       "defaultValue": "true"
     },
+    "hideValue": {
+      "type": "boolean",
+      "mutable": true,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Define a visibilidade do label."
+      },
+      "attribute": "hide-value",
+      "reflect": true,
+      "defaultValue": "false"
+    },
     "value": {
       "type": "number",
       "mutable": true,
@@ -125,12 +143,12 @@ export class MedChartBarHorizontal {
       "reflect": true,
       "defaultValue": "0"
     },
-    "unidade": {
+    "labelContent": {
       "type": "string",
       "mutable": true,
       "complexType": {
-        "original": "string",
-        "resolved": "string",
+        "original": "string | undefined",
+        "resolved": "string | undefined",
         "references": {}
       },
       "required": false,
@@ -139,9 +157,8 @@ export class MedChartBarHorizontal {
         "tags": [],
         "text": "Define o valor do componente."
       },
-      "attribute": "unidade",
-      "reflect": true,
-      "defaultValue": "'%'"
+      "attribute": "label-content",
+      "reflect": true
     }
   }; }
 }

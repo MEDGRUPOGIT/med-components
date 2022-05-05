@@ -31,9 +31,8 @@ export declare class MedImageZoom {
     };
     intialSlide: number;
   };
-  sleep(time?: number): Promise<void>;
-  zoomIn(increment?: number): Promise<void>;
   zoomOut(): Promise<void>;
+  zoomIn(): Promise<void>;
   dismiss(): void;
   render(): any;
 }

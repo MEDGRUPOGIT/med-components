@@ -5485,11 +5485,15 @@
           ]
         },
         {
+          "name": "hide-value",
+          "description": "Define a visibilidade do label."
+        },
+        {
           "name": "label",
           "description": "Define a visibilidade do label."
         },
         {
-          "name": "unidade",
+          "name": "label-content",
           "description": "Define o valor do componente."
         },
         {

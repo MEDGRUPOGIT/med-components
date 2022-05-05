@@ -11,16 +11,16 @@ const MedChartBarHorizontal = class {
      */
     this.label = true;
     /**
-     * Define o valor do componente.
+     * Define a visibilidade do label.
      */
-    this.value = 0;
+    this.hideValue = false;
     /**
      * Define o valor do componente.
      */
-    this.unidade = '%';
+    this.value = 0;
   }
   render() {
-    const { dsColor, dsSize, label, value, unidade } = this;
+    const { dsColor, hideValue, dsSize, label, value, labelContent } = this;
     let progressClass, progressWidth;
     if (value > 100) {
       progressClass = 'med-chart-bar-horizontal--spill';
@@ -37,7 +37,7 @@ const MedChartBarHorizontal = class {
     return (h(Host, { class: generateMedColor(dsColor, {
         [`med-chart-bar-horizontal ${progressClass}`]: true,
         [`med-chart-bar-horizontal--${dsSize}`]: dsSize !== undefined,
-      }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, h("div", { class: "med-chart-bar-horizontal__container" }, h("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }), h("div", { class: "med-chart-bar-horizontal__track", part: "track" })), label && h("med-type", { class: "med-chart-bar-horizontal__label" }, value, unidade)));
+      }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, h("div", { class: "med-chart-bar-horizontal__container" }, h("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }), h("div", { class: "med-chart-bar-horizontal__track", part: "track" })), label && h("med-type", { class: "med-chart-bar-horizontal__label" }, !hideValue ? `${value}%` : '', labelContent)));
   }
 };
 MedChartBarHorizontal.style = medChartBarHorizontalCss;

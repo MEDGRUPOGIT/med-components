@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-29T14:40:33",
+  "timestamp": "2022-05-05T14:19:10",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -21815,6 +21815,23 @@
           "required": false
         },
         {
+          "name": "hideValue",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "hide-value",
+          "reflectToAttr": true,
+          "docs": "Define a visibilidade do label.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "label",
           "type": "boolean",
           "mutable": false,
@@ -21832,17 +21849,19 @@
           "required": false
         },
         {
-          "name": "unidade",
-          "type": "string",
+          "name": "labelContent",
+          "type": "string | undefined",
           "mutable": true,
-          "attr": "unidade",
+          "attr": "label-content",
           "reflectToAttr": true,
           "docs": "Define o valor do componente.",
           "docsTags": [],
-          "default": "'%'",
           "values": [
             {
               "type": "string"
+            },
+            {
+              "type": "undefined"
             }
           ],
           "optional": false,

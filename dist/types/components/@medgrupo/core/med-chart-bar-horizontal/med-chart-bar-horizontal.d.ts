@@ -13,12 +13,16 @@ export declare class MedChartBarHorizontal {
    */
   label: boolean;
   /**
+   * Define a visibilidade do label.
+   */
+  hideValue: boolean;
+  /**
    * Define o valor do componente.
    */
   value: number;
   /**
    * Define o valor do componente.
    */
-  unidade: string;
+  labelContent: string | undefined;
   render(): any;
 }

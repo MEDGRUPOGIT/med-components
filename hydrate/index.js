@@ -15235,16 +15235,16 @@ class MedChartBarHorizontal {
      */
     this.label = true;
     /**
-     * Define o valor do componente.
+     * Define a visibilidade do label.
      */
-    this.value = 0;
+    this.hideValue = false;
     /**
      * Define o valor do componente.
      */
-    this.unidade = '%';
+    this.value = 0;
   }
   render() {
-    const { dsColor, dsSize, label, value, unidade } = this;
+    const { dsColor, hideValue, dsSize, label, value, labelContent } = this;
     let progressClass, progressWidth;
     if (value > 100) {
       progressClass = 'med-chart-bar-horizontal--spill';
@@ -15261,7 +15261,7 @@ class MedChartBarHorizontal {
     return (hAsync(Host, { class: generateMedColor(dsColor, {
         [`med-chart-bar-horizontal ${progressClass}`]: true,
         [`med-chart-bar-horizontal--${dsSize}`]: dsSize !== undefined,
-      }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, hAsync("div", { class: "med-chart-bar-horizontal__container" }, hAsync("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }), hAsync("div", { class: "med-chart-bar-horizontal__track", part: "track" })), label && hAsync("med-type", { class: "med-chart-bar-horizontal__label" }, value, unidade)));
+      }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, hAsync("div", { class: "med-chart-bar-horizontal__container" }, hAsync("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }), hAsync("div", { class: "med-chart-bar-horizontal__track", part: "track" })), label && hAsync("med-type", { class: "med-chart-bar-horizontal__label" }, !hideValue ? `${value}%` : '', labelContent)));
   }
   static get style() { return medChartBarHorizontalCss; }
   static get cmpMeta() { return {
@@ -15271,12 +15271,13 @@ class MedChartBarHorizontal {
       "dsColor": [513, "ds-color"],
       "dsSize": [1, "ds-size"],
       "label": [516],
+      "hideValue": [1540, "hide-value"],
       "value": [1538],
-      "unidade": [1537]
+      "labelContent": [1537, "label-content"]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"], ["label", "label"], ["value", "value"], ["unidade", "unidade"]]
+    "$attrsToReflect$": [["dsColor", "ds-color"], ["label", "label"], ["hideValue", "hide-value"], ["value", "value"], ["labelContent", "label-content"]]
   }; }
 }
 
@@ -15994,7 +15995,7 @@ class MedImageZoom {
      * TODO
      */
     this.imagens = [];
-    this.defaultMaxRatio = 13;
+    this.defaultMaxRatio = 8;
     this.aplicandoZoom = false;
     this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
   }
@@ -16007,35 +16008,13 @@ class MedImageZoom {
     };
     return sliderOpts;
   }
-  async sleep(time = 500) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve();
-      }, time);
-    });
-  }
-  async zoomIn(increment = 3) {
-    if (this.aplicandoZoom) {
-      return;
-    }
-    this.aplicandoZoom = true;
-    const zoom = this.slider.swiper.zoom;
-    let maxRatio = zoom.currentScale + increment;
-    if (maxRatio > this.defaultMaxRatio) {
-      maxRatio = this.defaultMaxRatio;
-    }
-    else if (maxRatio < 1) {
-      maxRatio = 1;
-    }
-    this.sliderOpts = this.getSliderOpts(maxRatio);
-    await this.sleep(45);
-    zoom.in();
-    await this.sleep(45);
-    this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
-    this.aplicandoZoom = false;
-  }
   async zoomOut() {
-    this.zoomIn(-3);
+    const zoom = this.slider.swiper.zoom;
+    zoom.out();
+  }
+  async zoomIn() {
+    const zoom = this.slider.swiper.zoom;
+    zoom.in();
   }
   dismiss() {
     modalController.dismiss();
