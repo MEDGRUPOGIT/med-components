@@ -15,7 +15,7 @@ const Template = ({ dsColor, disabled, noPadding, contain, icon }) => {
 
         <div class="ion-padding">
           <!-- component markdown -->
-          <med-item .dsColor=${dsColor} ?disabled=${disabled} ?no-padding=${noPadding} ?contain=${contain}>
+          <med-item .dsColor=${dsColor} ?disabled=${disabled} ?no-padding=${noPadding} ?contain=${contain} router-link="asaasa">
             <med-type token="p14">Lorem ipsum Dolor</med-type>
           </med-item>
           <!-- component markdown -->

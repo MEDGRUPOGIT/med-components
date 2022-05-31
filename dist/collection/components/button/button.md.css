@@ -88,6 +88,8 @@
   width: 100%;
   clear: both;
   contain: content;
+  display: flex;
+  align-items: center;
 }
 
 :host(.button-block) .button-native::after {
@@ -472,6 +474,11 @@ ion-ripple-effect {
   min-height: var(--min-height);
   line-height: var(--line-height);
   box-shadow: none;
+}
+
+:host a.button-native {
+  display: flex;
+  align-items: center;
 }
 
 :host .button-inner__text {

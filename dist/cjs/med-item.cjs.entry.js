@@ -159,7 +159,7 @@ const MedItem = class {
     }
   }
   render() {
-    const { dsColor, noPadding, detail, detailIcon, download, labelColorStyles, lines, disabled, href, rel, target, routerAnimation, routerDirection } = this;
+    const { dsColor, noPadding, download, labelColorStyles, lines, disabled, href, rel, target, routerAnimation, routerDirection } = this;
     const childStyles = {};
     const mode = ionicGlobal.getIonMode(this);
     const clickable = this.isClickable();
@@ -178,7 +178,7 @@ const MedItem = class {
     const clickFn = clickable ? {
       onClick: (ev) => { theme.openURL(href, ev, routerDirection, routerAnimation); }
     } : {};
-    const showDetail = detail !== undefined ? detail : mode === 'ios' && clickable;
+    // const showDetail = detail !== undefined ? detail : mode === 'ios' && clickable;
     this.itemStyles.forEach(value => {
       Object.assign(childStyles, value);
     });
@@ -192,7 +192,7 @@ const MedItem = class {
         'ion-activatable': canActivate,
         'ion-focusable': true,
         'med-item--no-padding': noPadding
-      })) }, index.h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn), index.h("div", { class: "item-inner" }, index.h("slot", { name: "start" }), index.h("div", { class: "input-wrapper" }, index.h("slot", null)), index.h("slot", { name: "end" }), showDetail && index.h("ion-icon", { icon: detailIcon, lazy: false, class: "med-icon item-detail-icon", part: "detail-icon", "aria-hidden": "true" }), index.h("div", { class: "item-inner-highlight" }))), index.h("div", { class: "item-highlight" })));
+      })) }, index.h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn), index.h("div", { class: "item-inner" }, index.h("slot", { name: "start" }), index.h("div", { class: "input-wrapper" }, index.h("slot", null)), index.h("slot", { name: "end" }), index.h("div", { class: "item-inner-highlight" }))), index.h("div", { class: "item-highlight" })));
   }
   static get delegatesFocus() { return true; }
   get el() { return index.getElement(this); }

@@ -22,9 +22,11 @@ const Template = ({ dsColor, disabled, expand, dsSize, icon, label }) => {
     <ion-app>
       <ion-content>
 
-        <div>
+       <ion-row>
+        <ion-col>
           <ion-button .dsColor=${dsColor} ds-size=${dsSize} ?disabled=${disabled} .expand=${expand}>${label} ${dsSize}</ion-button>
-        </div>
+        </ion-col>
+        </ion-row>
 
         <div>
           <ion-button .dsColor=${dsColor} ds-size=${dsSize} ?disabled=${disabled} .expand=${expand}>

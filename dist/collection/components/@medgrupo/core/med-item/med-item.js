@@ -159,7 +159,7 @@ export class MedItem {
     }
   }
   render() {
-    const { dsColor, noPadding, detail, detailIcon, download, labelColorStyles, lines, disabled, href, rel, target, routerAnimation, routerDirection } = this;
+    const { dsColor, noPadding, download, labelColorStyles, lines, disabled, href, rel, target, routerAnimation, routerDirection } = this;
     const childStyles = {};
     const mode = getIonMode(this);
     const clickable = this.isClickable();
@@ -178,7 +178,7 @@ export class MedItem {
     const clickFn = clickable ? {
       onClick: (ev) => { openURL(href, ev, routerDirection, routerAnimation); }
     } : {};
-    const showDetail = detail !== undefined ? detail : mode === 'ios' && clickable;
+    // const showDetail = detail !== undefined ? detail : mode === 'ios' && clickable;
     this.itemStyles.forEach(value => {
       Object.assign(childStyles, value);
     });
@@ -199,7 +199,6 @@ export class MedItem {
           h("div", { class: "input-wrapper" },
             h("slot", null)),
           h("slot", { name: "end" }),
-          showDetail && h("ion-icon", { icon: detailIcon, lazy: false, class: "med-icon item-detail-icon", part: "detail-icon", "aria-hidden": "true" }),
           h("div", { class: "item-inner-highlight" }))),
       h("div", { class: "item-highlight" })));
   }

@@ -69,6 +69,8 @@ const TemplateIcon = ({ dsColor }) => {
             ${itemTemplates}
           </ul>
 
+          <ion-icon name="med-estrela-fill" class="med-icon med-icon-fill"></ion-icon>
+
         <div>
       </ion-content>
     </ion-app>

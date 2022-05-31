@@ -113,6 +113,7 @@ export const MedIcons = [
   'med-errou',
   'med-esquerda',
   'med-estrela',
+  'med-estrela-fill',
   'med-excelente',
 
   'med-expand',
