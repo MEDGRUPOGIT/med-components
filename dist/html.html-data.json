@@ -4890,6 +4890,37 @@
       ]
     },
     {
+      "name": "med-alert",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "cancel-text",
+          "description": ""
+        },
+        {
+          "name": "confirm-text",
+          "description": ""
+        },
+        {
+          "name": "heading",
+          "description": ""
+        },
+        {
+          "name": "message",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-alert/med-alert.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-alert-fixed",
       "description": {
         "kind": "markdown",

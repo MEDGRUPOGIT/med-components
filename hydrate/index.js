@@ -14394,6 +14394,35 @@ class MedAgrupador {
   }; }
 }
 
+const medAlertCss = ".sc-med-alert-h{display:block}";
+
+class MedAlert {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  dismiss(role) {
+    modalController.dismiss(null, role);
+  }
+  render() {
+    const { heading, message, cancelText, confirmText } = this;
+    return (hAsync(Host, null, hAsync("ion-header", { class: "tp-dialog-header" }, hAsync("ion-button", { "ds-name": "tertiary", "ds-size": "xxs", onClick: () => this.dismiss('cancel') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))), hAsync("div", { class: "tp-dialog-container" }, hAsync("med-type", { class: "tp-dialog-heading", token: "h20x", innerHTML: sanitizeDOMString(heading) }), hAsync("med-type", { "ds-color": "neutral-8", token: "h14x", innerHTML: sanitizeDOMString(message) }), hAsync("div", { class: "tp-dialog-footer" }, cancelText && hAsync("ion-button", { "ds-name": "secondary", onClick: () => this.dismiss('cancel') }, cancelText), confirmText && hAsync("ion-button", { onClick: () => this.dismiss('confirm') }, confirmText)))));
+  }
+  static get style() { return medAlertCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "med-alert",
+    "$members$": {
+      "heading": [1537],
+      "message": [1537],
+      "cancelText": [1537, "cancel-text"],
+      "confirmText": [1537, "confirm-text"]
+    },
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": [["heading", "heading"], ["message", "message"], ["cancelText", "cancel-text"], ["confirmText", "confirm-text"]]
+  }; }
+}
+
 const medAlertFixedCss = "/*!@:host*/.sc-med-alert-fixed-h{--padding:12px}/*!@:host*/.sc-med-alert-fixed-h{padding:var(--padding);background:var(--background);display:block}/*!@:host .med-icon*/.sc-med-alert-fixed-h .med-icon.sc-med-alert-fixed{margin-right:16px;width:16px;height:16px}/*!@.med-alert-fixed__container*/.med-alert-fixed__container.sc-med-alert-fixed{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}/*!@.med-alert-fixed__text*/.med-alert-fixed__text.sc-med-alert-fixed{--font-size:12px;--line-height:16px;--font-weight:400}/*!@:host(.med-alert-fixed--offline)*/.med-alert-fixed--offline.sc-med-alert-fixed-h{--background:hsl(var(--med-color-fb-warning))}/*!@:host(.med-alert-fixed--offline) .med-icon*/.med-alert-fixed--offline.sc-med-alert-fixed-h .med-icon.sc-med-alert-fixed{stroke:hsl(var(--med-color-neutral-10))}/*!@:host(.med-alert-fixed--atualizar)*/.med-alert-fixed--atualizar.sc-med-alert-fixed-h{--background:hsl(var(--med-color-provas-4))}/*!@:host(.med-alert-fixed--atualizar) .med-icon*/.med-alert-fixed--atualizar.sc-med-alert-fixed-h .med-icon.sc-med-alert-fixed{stroke:hsl(var(--med-color-neutral-10))}/*!@:host(.med-color)*/.med-color.sc-med-alert-fixed-h{--background:hsl(var(--med-color-3))}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-med-alert-fixed-h{--background:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-med-alert-fixed-h{--background:hsl(var(--med-color-feedback))}";
 
 class MedAlertFixed {
@@ -29252,6 +29281,7 @@ registerComponents([
   MedAccordionItem,
   MedAddCard,
   MedAgrupador,
+  MedAlert,
   MedAlertFixed,
   MedAlternativas,
   MedAlternativasA,

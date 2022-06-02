@@ -39,6 +39,7 @@
     "./components/@medgrupo/compositions/med-tooltip/med-tooltip.js",
     "./components/@medgrupo/compositions/med-video-thumbnail/med-video-thumbnail.js",
     "./components/@medgrupo/core/med-agrupador/med-agrupador.js",
+    "./components/@medgrupo/core/med-alert/med-alert.js",
     "./components/@medgrupo/core/med-alert-fixed/med-alert-fixed.js",
     "./components/@medgrupo/core/med-avatar/med-avatar.js",
     "./components/@medgrupo/core/med-base/med-base.js",

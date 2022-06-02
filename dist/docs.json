@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-05-31T17:07:18",
+  "timestamp": "2022-06-02T20:08:05",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -2307,6 +2307,7 @@
       ],
       "dependents": [
         "dialog-test",
+        "med-alert",
         "med-banner",
         "med-calendar",
         "med-config",
@@ -2329,6 +2330,9 @@
           "ion-ripple-effect"
         ],
         "dialog-test": [
+          "ion-button"
+        ],
+        "med-alert": [
           "ion-button"
         ],
         "med-banner": [
@@ -5882,12 +5886,16 @@
       "parts": [],
       "dependents": [
         "dialog-test",
+        "med-alert",
         "sheet-content-test",
         "sheet-test"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "dialog-test": [
+          "ion-header"
+        ],
+        "med-alert": [
           "ion-header"
         ],
         "sheet-content-test": [
@@ -19807,6 +19815,117 @@
       }
     },
     {
+      "filePath": "./src/components/@medgrupo/core/med-alert/med-alert.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-alert",
+      "readme": "# med-alert\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "cancelText",
+          "type": "string | undefined",
+          "mutable": true,
+          "attr": "cancel-text",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "confirmText",
+          "type": "string | undefined",
+          "mutable": true,
+          "attr": "confirm-text",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "heading",
+          "type": "string | undefined",
+          "mutable": true,
+          "attr": "heading",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "message",
+          "type": "string | undefined",
+          "mutable": true,
+          "attr": "message",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-header",
+        "ion-button",
+        "ion-icon",
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-alert": [
+          "ion-header",
+          "ion-button",
+          "ion-icon",
+          "med-type"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/@medgrupo/core/med-alert-fixed/med-alert-fixed.tsx",
       "encapsulation": "shadow",
       "tag": "med-alert-fixed",
@@ -26907,6 +27026,7 @@
       "dependents": [
         "dialog-test",
         "med-add-card",
+        "med-alert",
         "med-alert-fixed",
         "med-banner",
         "med-calendar",
@@ -26934,6 +27054,9 @@
           "med-type"
         ],
         "med-add-card": [
+          "med-type"
+        ],
+        "med-alert": [
           "med-type"
         ],
         "med-alert-fixed": [

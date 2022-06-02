@@ -2922,6 +2922,12 @@ export namespace Components {
          */
         "toggle": (event?: Event | undefined) => Promise<void>;
     }
+    interface MedAlert {
+        "cancelText"?: string;
+        "confirmText"?: string;
+        "heading"?: string;
+        "message"?: string;
+    }
     interface MedAlertFixed {
         /**
           * Define a cor do componente.
@@ -4622,6 +4628,12 @@ declare global {
         prototype: HTMLMedAgrupadorElement;
         new (): HTMLMedAgrupadorElement;
     };
+    interface HTMLMedAlertElement extends Components.MedAlert, HTMLStencilElement {
+    }
+    var HTMLMedAlertElement: {
+        prototype: HTMLMedAlertElement;
+        new (): HTMLMedAlertElement;
+    };
     interface HTMLMedAlertFixedElement extends Components.MedAlertFixed, HTMLStencilElement {
     }
     var HTMLMedAlertFixedElement: {
@@ -5117,6 +5129,7 @@ declare global {
         "med-accordion-list": HTMLMedAccordionListElement;
         "med-add-card": HTMLMedAddCardElement;
         "med-agrupador": HTMLMedAgrupadorElement;
+        "med-alert": HTMLMedAlertElement;
         "med-alert-fixed": HTMLMedAlertFixedElement;
         "med-alternativas": HTMLMedAlternativasElement;
         "med-alternativas-a": HTMLMedAlternativasAElement;
@@ -8017,6 +8030,12 @@ declare namespace LocalJSX {
          */
         "labelDefault"?: string;
     }
+    interface MedAlert {
+        "cancelText"?: string;
+        "confirmText"?: string;
+        "heading"?: string;
+        "message"?: string;
+    }
     interface MedAlertFixed {
         /**
           * Define a cor do componente.
@@ -9355,6 +9374,7 @@ declare namespace LocalJSX {
         "med-accordion-list": MedAccordionList;
         "med-add-card": MedAddCard;
         "med-agrupador": MedAgrupador;
+        "med-alert": MedAlert;
         "med-alert-fixed": MedAlertFixed;
         "med-alternativas": MedAlternativas;
         "med-alternativas-a": MedAlternativasA;
@@ -9520,6 +9540,7 @@ declare module "@stencil/core" {
             "med-accordion-list": LocalJSX.MedAccordionList & JSXBase.HTMLAttributes<HTMLMedAccordionListElement>;
             "med-add-card": LocalJSX.MedAddCard & JSXBase.HTMLAttributes<HTMLMedAddCardElement>;
             "med-agrupador": LocalJSX.MedAgrupador & JSXBase.HTMLAttributes<HTMLMedAgrupadorElement>;
+            "med-alert": LocalJSX.MedAlert & JSXBase.HTMLAttributes<HTMLMedAlertElement>;
             "med-alert-fixed": LocalJSX.MedAlertFixed & JSXBase.HTMLAttributes<HTMLMedAlertFixedElement>;
             "med-alternativas": LocalJSX.MedAlternativas & JSXBase.HTMLAttributes<HTMLMedAlternativasElement>;
             "med-alternativas-a": LocalJSX.MedAlternativasA & JSXBase.HTMLAttributes<HTMLMedAlternativasAElement>;
