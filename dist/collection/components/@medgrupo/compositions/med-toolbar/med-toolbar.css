@@ -2,6 +2,7 @@
   --background: hsl(var(--med-color-neutral-2));
   --center-width: auto;
   --center-margin: 0 16px;
+  --justify-content: space-between;
   padding: 8px 16px;
   background: var(--background);
   min-height: 48px;
@@ -17,7 +18,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: var(--justify-content);
 }
 .container__center {
   margin: var(--center-margin);

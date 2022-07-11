@@ -109,7 +109,6 @@
   --background: hsl(var(--med-color-neutral-2)) !important;
   --width: 232px;
   color: hsl(var(--med-color-neutral-8));
-  transform: translateY(20px);
 }
 .med-popover--font-zoom .popover-arrow.sc-ion-popover-ios {
   display: block;
@@ -407,7 +406,7 @@
 }
 .cp-accordion-list__aulas-end {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   padding-bottom: 16px;
 }
 .cp-accordion-list__aulas-btn {
@@ -866,7 +865,7 @@
 .monta-provas-filtro__fechar {
   display: flex;
   padding: 12px 32px;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .monta-provas-filtro__wrap-title {

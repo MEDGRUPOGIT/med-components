@@ -115,7 +115,6 @@ const MedItem = class {
   // inputs, then those need to individually get each click
   hasCover() {
     const inputs = this.el.querySelectorAll('ion-checkbox, ion-datetime, ion-select, ion-radio, ion-toggle');
-    console.log(inputs);
     return inputs.length === 1 && !this.multipleInputs;
   }
   // If the item has an href or button property it will render a native

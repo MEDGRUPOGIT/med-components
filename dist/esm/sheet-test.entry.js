@@ -7,7 +7,7 @@ const SheetTest = class {
     registerInstance(this, hostRef);
   }
   render() {
-    return (h(Host, null, h("ion-header", { class: "tp-sheet-header" }, h("ion-button", { class: "tp-dialog__button", "ds-name": "tertiary", "ds-size": "xxs" }, h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))), h("div", { class: "tp-sheet-content" }, h("med-type", null, "Sheet"), h("med-type", null, "Sheet"), h("med-type", null, "Sheet"), h("med-type", null, "Sheet"), h("med-type", null, "Sheet"), h("med-type", null, "Sheet")), h("ion-footer", { class: "tp-sheet-footer" }, h("ion-button", { class: "tp-dialog__button", expand: "block" }, "button"))));
+    return (h(Host, null, h("ion-header", { class: "tp-sheet-header" }, h("ion-button", { mode: "ios", "icon-only": true, class: "tp-dialog__button", fill: "clear", "ds-size": "xxs" }, h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))), h("div", { class: "tp-sheet-content" }, h("med-type", null, "Sheet"), h("med-type", null, "Sheet"), h("med-type", null, "Sheet"), h("med-type", null, "Sheet"), h("med-type", null, "Sheet"), h("med-type", null, "Sheet")), h("ion-footer", { class: "tp-sheet-footer" }, h("ion-button", { mode: "ios", class: "tp-dialog__button", expand: "block" }, "button"))));
   }
 };
 SheetTest.style = sheetTestCss;

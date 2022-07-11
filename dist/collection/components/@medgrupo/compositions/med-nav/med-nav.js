@@ -25,12 +25,12 @@ export class MedNav {
             h("ion-icon", { class: "med-nav__icon med-icon med-icon--sm", name: "med-logo" })),
           h("med-type", { token: "h24", "ds-color": "neutral-10" }, "MEDSoft")),
         h("slot", null),
-        h("ion-button", { "ds-color": dsColor, class: "med-nav__toggle", "ds-name": "tertiary", onClick: () => this.clickHandle() },
+        h("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() },
           h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" }))),
       h("med-nav-simple", { "ds-color": dsColor })));
   }
   static get is() { return "med-nav"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-nav.scss"]
   }; }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-06-02T20:08:05",
+  "timestamp": "2022-07-11T13:40:49",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -1710,11 +1710,11 @@
         }
       ],
       "usage": {
-        "angular": "\r\n```html\r\n<!-- Default -->\r\n<ion-button>Default</ion-button>\r\n\r\n<!-- Anchor -->\r\n<ion-button href=\"#\">Anchor</ion-button>\r\n\r\n<!-- Colors -->\r\n<ion-button color=\"primary\">Primary</ion-button>\r\n<ion-button color=\"secondary\">Secondary</ion-button>\r\n<ion-button color=\"tertiary\">Tertiary</ion-button>\r\n<ion-button color=\"success\">Success</ion-button>\r\n<ion-button color=\"warning\">Warning</ion-button>\r\n<ion-button color=\"danger\">Danger</ion-button>\r\n<ion-button color=\"light\">Light</ion-button>\r\n<ion-button color=\"medium\">Medium</ion-button>\r\n<ion-button color=\"dark\">Dark</ion-button>\r\n\r\n<!-- Expand -->\r\n<ion-button expand=\"full\">Full Button</ion-button>\r\n<ion-button expand=\"block\">Block Button</ion-button>\r\n\r\n<!-- Round -->\r\n<ion-button shape=\"round\">Round Button</ion-button>\r\n\r\n<!-- Fill -->\r\n<ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>\r\n<ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>\r\n<ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>\r\n\r\n<!-- Icons -->\r\n<ion-button>\r\n  <ion-icon slot=\"start\" name=\"star\"></ion-icon>\r\n  Left Icon\r\n</ion-button>\r\n\r\n<ion-button>\r\n  Right Icon\r\n  <ion-icon slot=\"end\" name=\"star\"></ion-icon>\r\n</ion-button>\r\n\r\n<ion-button>\r\n  <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\r\n</ion-button>\r\n\r\n<!-- Sizes -->\r\n<ion-button size=\"large\">Large</ion-button>\r\n<ion-button>Default</ion-button>\r\n<ion-button size=\"small\">Small</ion-button>\r\n```\r\n",
-        "javascript": "\r\n```html\r\n<!-- Default -->\r\n<ion-button>Default</ion-button>\r\n\r\n<!-- Anchor -->\r\n<ion-button href=\"#\">Anchor</ion-button>\r\n\r\n<!-- Colors -->\r\n<ion-button color=\"primary\">Primary</ion-button>\r\n<ion-button color=\"secondary\">Secondary</ion-button>\r\n<ion-button color=\"tertiary\">Tertiary</ion-button>\r\n<ion-button color=\"success\">Success</ion-button>\r\n<ion-button color=\"warning\">Warning</ion-button>\r\n<ion-button color=\"danger\">Danger</ion-button>\r\n<ion-button color=\"light\">Light</ion-button>\r\n<ion-button color=\"medium\">Medium</ion-button>\r\n<ion-button color=\"dark\">Dark</ion-button>\r\n\r\n<!-- Expand -->\r\n<ion-button expand=\"full\">Full Button</ion-button>\r\n<ion-button expand=\"block\">Block Button</ion-button>\r\n\r\n<!-- Round -->\r\n<ion-button shape=\"round\">Round Button</ion-button>\r\n\r\n<!-- Fill -->\r\n<ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>\r\n<ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>\r\n<ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>\r\n\r\n<!-- Icons -->\r\n<ion-button>\r\n  <ion-icon slot=\"start\" name=\"star\"></ion-icon>\r\n  Left Icon\r\n</ion-button>\r\n\r\n<ion-button>\r\n  Right Icon\r\n  <ion-icon slot=\"end\" name=\"star\"></ion-icon>\r\n</ion-button>\r\n\r\n<ion-button>\r\n  <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\r\n</ion-button>\r\n\r\n<!-- Sizes -->\r\n<ion-button size=\"large\">Large</ion-button>\r\n<ion-button>Default</ion-button>\r\n<ion-button size=\"small\">Small</ion-button>\r\n```\r\n",
-        "react": "```tsx\r\nimport React from 'react';\r\n\r\nimport { IonButton, IonIcon, IonContent } from '@ionic/react';\r\nimport { star } from 'ionicons/icons';\r\n\r\nexport const ButtonExample: React.FC = () => (\r\n  <IonContent>\r\n    {/*-- Default --*/}\r\n    <IonButton>Default</IonButton>\r\n\r\n    {/*-- Anchor --*/}\r\n    <IonButton href=\"#\">Anchor</IonButton>\r\n\r\n    {/*-- Colors --*/}\r\n    <IonButton color=\"primary\">Primary</IonButton>\r\n    <IonButton color=\"secondary\">Secondary</IonButton>\r\n    <IonButton color=\"tertiary\">Tertiary</IonButton>\r\n    <IonButton color=\"success\">Success</IonButton>\r\n    <IonButton color=\"warning\">Warning</IonButton>\r\n    <IonButton color=\"danger\">Danger</IonButton>\r\n    <IonButton color=\"light\">Light</IonButton>\r\n    <IonButton color=\"medium\">Medium</IonButton>\r\n    <IonButton color=\"dark\">Dark</IonButton>\r\n\r\n    {/*-- Expand --*/}\r\n    <IonButton expand=\"full\">Full Button</IonButton>\r\n    <IonButton expand=\"block\">Block Button</IonButton>\r\n\r\n    {/*-- Round --*/}\r\n    <IonButton shape=\"round\">Round Button</IonButton>\r\n\r\n    {/*-- Fill --*/}\r\n    <IonButton expand=\"full\" fill=\"outline\">Outline + Full</IonButton>\r\n    <IonButton expand=\"block\" fill=\"outline\">Outline + Block</IonButton>\r\n    <IonButton shape=\"round\" fill=\"outline\">Outline + Round</IonButton>\r\n\r\n    {/*-- Icons --*/}\r\n    <IonButton>\r\n      <IonIcon slot=\"start\" icon={star} />\r\n      Left Icon\r\n    </IonButton>\r\n\r\n    <IonButton>\r\n      Right Icon\r\n      <IonIcon slot=\"end\" icon={star} />\r\n    </IonButton>\r\n\r\n    <IonButton>\r\n      <IonIcon slot=\"icon-only\" icon={star} />\r\n    </IonButton>\r\n\r\n    {/*-- Sizes --*/}\r\n    <IonButton size=\"large\">Large</IonButton>\r\n    <IonButton>Default</IonButton>\r\n    <IonButton size=\"small\">Small</IonButton>\r\n  </IonContent>\r\n);\r\n\r\n```\r\n",
-        "stencil": "```tsx\r\nimport { Component, h } from '@stencil/core';\r\n\r\n@Component({\r\n  tag: 'button-example',\r\n  styleUrl: 'button-example.css'\r\n})\r\nexport class ButtonExample {\r\n  render() {\r\n    return [\r\n      // Default\r\n      <ion-button>Default</ion-button>,\r\n\r\n      // Anchor\r\n      <ion-button href=\"#\">Anchor</ion-button>,\r\n\r\n      // Colors\r\n      <ion-button color=\"primary\">Primary</ion-button>,\r\n      <ion-button color=\"secondary\">Secondary</ion-button>,\r\n      <ion-button color=\"tertiary\">Tertiary</ion-button>,\r\n      <ion-button color=\"success\">Success</ion-button>,\r\n      <ion-button color=\"warning\">Warning</ion-button>,\r\n      <ion-button color=\"danger\">Danger</ion-button>,\r\n      <ion-button color=\"light\">Light</ion-button>,\r\n      <ion-button color=\"medium\">Medium</ion-button>,\r\n      <ion-button color=\"dark\">Dark</ion-button>,\r\n\r\n      // Expand\r\n      <ion-button expand=\"full\">Full Button</ion-button>,\r\n      <ion-button expand=\"block\">Block Button</ion-button>,\r\n\r\n      // Round\r\n      <ion-button shape=\"round\">Round Button</ion-button>,\r\n\r\n      // Fill\r\n      <ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>,\r\n      <ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>,\r\n      <ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>,\r\n\r\n      // Icons\r\n      <ion-button>\r\n        <ion-icon slot=\"start\" name=\"star\"></ion-icon>\r\n        Left Icon\r\n      </ion-button>,\r\n\r\n      <ion-button>\r\n        Right Icon\r\n        <ion-icon slot=\"end\" name=\"star\"></ion-icon>\r\n      </ion-button>,\r\n\r\n      <ion-button>\r\n        <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\r\n      </ion-button>,\r\n\r\n      // Sizes\r\n      <ion-button size=\"large\">Large</ion-button>,\r\n      <ion-button>Default</ion-button>,\r\n      <ion-button size=\"small\">Small</ion-button>\r\n    ];\r\n  }\r\n}\r\n```",
-        "vue": "```html\r\n<template>\r\n  <!-- Default -->\r\n  <ion-button>Default</ion-button>\r\n\r\n  <!-- Anchor -->\r\n  <ion-button href=\"#\">Anchor</ion-button>\r\n\r\n  <!-- Colors -->\r\n  <ion-button color=\"primary\">Primary</ion-button>\r\n  <ion-button color=\"secondary\">Secondary</ion-button>\r\n  <ion-button color=\"tertiary\">Tertiary</ion-button>\r\n  <ion-button color=\"success\">Success</ion-button>\r\n  <ion-button color=\"warning\">Warning</ion-button>\r\n  <ion-button color=\"danger\">Danger</ion-button>\r\n  <ion-button color=\"light\">Light</ion-button>\r\n  <ion-button color=\"medium\">Medium</ion-button>\r\n  <ion-button color=\"dark\">Dark</ion-button>\r\n\r\n  <!-- Expand -->\r\n  <ion-button expand=\"full\">Full Button</ion-button>\r\n  <ion-button expand=\"block\">Block Button</ion-button>\r\n\r\n  <!-- Round -->\r\n  <ion-button shape=\"round\">Round Button</ion-button>\r\n\r\n  <!-- Fill -->\r\n  <ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>\r\n  <ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>\r\n  <ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>\r\n\r\n  <!-- Icons -->\r\n  <ion-button>\r\n    <ion-icon slot=\"start\" name=\"star\"></ion-icon>\r\n    Left Icon\r\n  </ion-button>\r\n\r\n  <ion-button>\r\n    Right Icon\r\n    <ion-icon slot=\"end\" name=\"star\"></ion-icon>\r\n  </ion-button>\r\n\r\n  <ion-button>\r\n    <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\r\n  </ion-button>\r\n\r\n  <!-- Sizes -->\r\n  <ion-button size=\"large\">Large</ion-button>\r\n  <ion-button>Default</ion-button>\r\n  <ion-button size=\"small\">Small</ion-button>\r\n</template>\r\n\r\n<script>\r\nimport { IonButton } from '@ionic/vue';\r\nimport { defineComponent } from 'vue';\r\n\r\nexport default defineComponent({\r\n  components: { IonButton }\r\n});\r\n</script>\r\n```\r\n"
+        "angular": "\n```html\n<!-- Default -->\n<ion-button>Default</ion-button>\n\n<!-- Anchor -->\n<ion-button href=\"#\">Anchor</ion-button>\n\n<!-- Colors -->\n<ion-button color=\"primary\">Primary</ion-button>\n<ion-button color=\"secondary\">Secondary</ion-button>\n<ion-button color=\"tertiary\">Tertiary</ion-button>\n<ion-button color=\"success\">Success</ion-button>\n<ion-button color=\"warning\">Warning</ion-button>\n<ion-button color=\"danger\">Danger</ion-button>\n<ion-button color=\"light\">Light</ion-button>\n<ion-button color=\"medium\">Medium</ion-button>\n<ion-button color=\"dark\">Dark</ion-button>\n\n<!-- Expand -->\n<ion-button expand=\"full\">Full Button</ion-button>\n<ion-button expand=\"block\">Block Button</ion-button>\n\n<!-- Round -->\n<ion-button shape=\"round\">Round Button</ion-button>\n\n<!-- Fill -->\n<ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>\n<ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>\n<ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>\n\n<!-- Icons -->\n<ion-button>\n  <ion-icon slot=\"start\" name=\"star\"></ion-icon>\n  Left Icon\n</ion-button>\n\n<ion-button>\n  Right Icon\n  <ion-icon slot=\"end\" name=\"star\"></ion-icon>\n</ion-button>\n\n<ion-button>\n  <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n</ion-button>\n\n<!-- Sizes -->\n<ion-button size=\"large\">Large</ion-button>\n<ion-button>Default</ion-button>\n<ion-button size=\"small\">Small</ion-button>\n```\n",
+        "javascript": "\n```html\n<!-- Default -->\n<ion-button>Default</ion-button>\n\n<!-- Anchor -->\n<ion-button href=\"#\">Anchor</ion-button>\n\n<!-- Colors -->\n<ion-button color=\"primary\">Primary</ion-button>\n<ion-button color=\"secondary\">Secondary</ion-button>\n<ion-button color=\"tertiary\">Tertiary</ion-button>\n<ion-button color=\"success\">Success</ion-button>\n<ion-button color=\"warning\">Warning</ion-button>\n<ion-button color=\"danger\">Danger</ion-button>\n<ion-button color=\"light\">Light</ion-button>\n<ion-button color=\"medium\">Medium</ion-button>\n<ion-button color=\"dark\">Dark</ion-button>\n\n<!-- Expand -->\n<ion-button expand=\"full\">Full Button</ion-button>\n<ion-button expand=\"block\">Block Button</ion-button>\n\n<!-- Round -->\n<ion-button shape=\"round\">Round Button</ion-button>\n\n<!-- Fill -->\n<ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>\n<ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>\n<ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>\n\n<!-- Icons -->\n<ion-button>\n  <ion-icon slot=\"start\" name=\"star\"></ion-icon>\n  Left Icon\n</ion-button>\n\n<ion-button>\n  Right Icon\n  <ion-icon slot=\"end\" name=\"star\"></ion-icon>\n</ion-button>\n\n<ion-button>\n  <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n</ion-button>\n\n<!-- Sizes -->\n<ion-button size=\"large\">Large</ion-button>\n<ion-button>Default</ion-button>\n<ion-button size=\"small\">Small</ion-button>\n```\n",
+        "react": "```tsx\nimport React from 'react';\n\nimport { IonButton, IonIcon, IonContent } from '@ionic/react';\nimport { star } from 'ionicons/icons';\n\nexport const ButtonExample: React.FC = () => (\n  <IonContent>\n    {/*-- Default --*/}\n    <IonButton>Default</IonButton>\n\n    {/*-- Anchor --*/}\n    <IonButton href=\"#\">Anchor</IonButton>\n\n    {/*-- Colors --*/}\n    <IonButton color=\"primary\">Primary</IonButton>\n    <IonButton color=\"secondary\">Secondary</IonButton>\n    <IonButton color=\"tertiary\">Tertiary</IonButton>\n    <IonButton color=\"success\">Success</IonButton>\n    <IonButton color=\"warning\">Warning</IonButton>\n    <IonButton color=\"danger\">Danger</IonButton>\n    <IonButton color=\"light\">Light</IonButton>\n    <IonButton color=\"medium\">Medium</IonButton>\n    <IonButton color=\"dark\">Dark</IonButton>\n\n    {/*-- Expand --*/}\n    <IonButton expand=\"full\">Full Button</IonButton>\n    <IonButton expand=\"block\">Block Button</IonButton>\n\n    {/*-- Round --*/}\n    <IonButton shape=\"round\">Round Button</IonButton>\n\n    {/*-- Fill --*/}\n    <IonButton expand=\"full\" fill=\"outline\">Outline + Full</IonButton>\n    <IonButton expand=\"block\" fill=\"outline\">Outline + Block</IonButton>\n    <IonButton shape=\"round\" fill=\"outline\">Outline + Round</IonButton>\n\n    {/*-- Icons --*/}\n    <IonButton>\n      <IonIcon slot=\"start\" icon={star} />\n      Left Icon\n    </IonButton>\n\n    <IonButton>\n      Right Icon\n      <IonIcon slot=\"end\" icon={star} />\n    </IonButton>\n\n    <IonButton>\n      <IonIcon slot=\"icon-only\" icon={star} />\n    </IonButton>\n\n    {/*-- Sizes --*/}\n    <IonButton size=\"large\">Large</IonButton>\n    <IonButton>Default</IonButton>\n    <IonButton size=\"small\">Small</IonButton>\n  </IonContent>\n);\n\n```\n",
+        "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'button-example',\n  styleUrl: 'button-example.css'\n})\nexport class ButtonExample {\n  render() {\n    return [\n      // Default\n      <ion-button>Default</ion-button>,\n\n      // Anchor\n      <ion-button href=\"#\">Anchor</ion-button>,\n\n      // Colors\n      <ion-button color=\"primary\">Primary</ion-button>,\n      <ion-button color=\"secondary\">Secondary</ion-button>,\n      <ion-button color=\"tertiary\">Tertiary</ion-button>,\n      <ion-button color=\"success\">Success</ion-button>,\n      <ion-button color=\"warning\">Warning</ion-button>,\n      <ion-button color=\"danger\">Danger</ion-button>,\n      <ion-button color=\"light\">Light</ion-button>,\n      <ion-button color=\"medium\">Medium</ion-button>,\n      <ion-button color=\"dark\">Dark</ion-button>,\n\n      // Expand\n      <ion-button expand=\"full\">Full Button</ion-button>,\n      <ion-button expand=\"block\">Block Button</ion-button>,\n\n      // Round\n      <ion-button shape=\"round\">Round Button</ion-button>,\n\n      // Fill\n      <ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>,\n      <ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>,\n      <ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>,\n\n      // Icons\n      <ion-button>\n        <ion-icon slot=\"start\" name=\"star\"></ion-icon>\n        Left Icon\n      </ion-button>,\n\n      <ion-button>\n        Right Icon\n        <ion-icon slot=\"end\" name=\"star\"></ion-icon>\n      </ion-button>,\n\n      <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n      </ion-button>,\n\n      // Sizes\n      <ion-button size=\"large\">Large</ion-button>,\n      <ion-button>Default</ion-button>,\n      <ion-button size=\"small\">Small</ion-button>\n    ];\n  }\n}\n```",
+        "vue": "```html\n<template>\n  <!-- Default -->\n  <ion-button>Default</ion-button>\n\n  <!-- Anchor -->\n  <ion-button href=\"#\">Anchor</ion-button>\n\n  <!-- Colors -->\n  <ion-button color=\"primary\">Primary</ion-button>\n  <ion-button color=\"secondary\">Secondary</ion-button>\n  <ion-button color=\"tertiary\">Tertiary</ion-button>\n  <ion-button color=\"success\">Success</ion-button>\n  <ion-button color=\"warning\">Warning</ion-button>\n  <ion-button color=\"danger\">Danger</ion-button>\n  <ion-button color=\"light\">Light</ion-button>\n  <ion-button color=\"medium\">Medium</ion-button>\n  <ion-button color=\"dark\">Dark</ion-button>\n\n  <!-- Expand -->\n  <ion-button expand=\"full\">Full Button</ion-button>\n  <ion-button expand=\"block\">Block Button</ion-button>\n\n  <!-- Round -->\n  <ion-button shape=\"round\">Round Button</ion-button>\n\n  <!-- Fill -->\n  <ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>\n  <ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>\n  <ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>\n\n  <!-- Icons -->\n  <ion-button>\n    <ion-icon slot=\"start\" name=\"star\"></ion-icon>\n    Left Icon\n  </ion-button>\n\n  <ion-button>\n    Right Icon\n    <ion-icon slot=\"end\" name=\"star\"></ion-icon>\n  </ion-button>\n\n  <ion-button>\n    <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n  </ion-button>\n\n  <!-- Sizes -->\n  <ion-button size=\"large\">Large</ion-button>\n  <ion-button>Default</ion-button>\n  <ion-button size=\"small\">Small</ion-button>\n</template>\n\n<script>\nimport { IonButton } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonButton }\n});\n</script>\n```\n"
       },
       "props": [
         {
@@ -1739,7 +1739,7 @@
           "type": "string | undefined",
           "mutable": false,
           "attr": "color",
-          "reflectToAttr": true,
+          "reflectToAttr": false,
           "docs": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics).",
           "docsTags": [],
           "values": [
@@ -1787,89 +1787,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"secondary\" | \"tertiary\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": false,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "value": "tertiary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsSize",
-          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | \"xxxs\" | undefined",
-          "mutable": false,
-          "attr": "ds-size",
-          "reflectToAttr": false,
-          "docs": "Define a variação de tamanho componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "lg",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            },
-            {
-              "value": "sm",
-              "type": "string"
-            },
-            {
-              "value": "xs",
-              "type": "string"
-            },
-            {
-              "value": "xxs",
-              "type": "string"
-            },
-            {
-              "value": "xxxs",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -7151,6 +7068,15 @@
         }
       ],
       "events": [
+        {
+          "event": "iconClicked",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
         {
           "event": "ionBlur",
           "detail": "FocusEvent",
@@ -21023,7 +20949,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-banner/med-banner.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-banner",
       "readme": "# med-banner\r\n\r\n\r\n\r",
       "docs": "",
@@ -21355,7 +21281,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-calendar/med-calendar.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-calendar",
       "readme": "# med-calendar\r\n\r\n\r\n\r",
       "docs": "",
@@ -21675,6 +21601,65 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/@medgrupo/core/med-carregamento/med-carregamento.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-carregamento",
+      "readme": "# med-carregamento\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'#808080'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "mutable": false,
+          "attr": "message",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "med-type"
+      ],
+      "dependencyGraph": {
+        "med-carregamento": [
+          "med-type"
+        ]
+      }
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-cartao-resposta-item/med-cartao-resposta-item.tsx",
@@ -23057,7 +23042,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-context-menu/med-context-menu.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-context-menu",
       "readme": "# med-context-menu\r\n\r\n\r\n\r",
       "docs": "",
@@ -23647,6 +23632,26 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "initialSlide",
+          "type": "number | undefined",
+          "mutable": true,
+          "attr": "initial-slide",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -24668,7 +24673,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-nav/med-nav.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-nav",
       "readme": "# med-nav\r\n\r\n\r\n\r",
       "docs": "",
@@ -25028,7 +25033,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-nav-simple/med-nav-simple.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-nav-simple",
       "readme": "# med-nav-simple\r\n\r\n\r\n\r",
       "docs": "",
@@ -25210,7 +25215,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-offline/med-offline.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-offline",
       "readme": "# med-offline\r\n\r\n\r\n\r",
       "docs": "",
@@ -26420,7 +26425,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/team/med-themes/med-themes.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-themes",
       "readme": "# med-theme\r\n\r\n\r\n\r",
       "docs": "",
@@ -26429,7 +26434,7 @@
       "props": [
         {
           "name": "ativo",
-          "type": "\"theme-gold\" | \"theme-recursos\" | undefined",
+          "type": "string | undefined",
           "mutable": false,
           "attr": "ativo",
           "reflectToAttr": true,
@@ -26437,11 +26442,6 @@
           "docsTags": [],
           "values": [
             {
-              "value": "theme-gold",
-              "type": "string"
-            },
-            {
-              "value": "theme-recursos",
               "type": "string"
             },
             {
@@ -26675,7 +26675,7 @@
     },
     {
       "filePath": "./src/components/@medgrupo/compositions/med-tooltip/med-tooltip.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-tooltip",
       "readme": "# med-context-menu\r\n\r\n\r\n\r",
       "docs": "",
@@ -27031,6 +27031,7 @@
         "med-banner",
         "med-calendar",
         "med-calendar-day",
+        "med-carregamento",
         "med-chart-bar-horizontal",
         "med-chart-categoria",
         "med-chart-radial",
@@ -27069,6 +27070,9 @@
           "med-type"
         ],
         "med-calendar-day": [
+          "med-type"
+        ],
+        "med-carregamento": [
           "med-type"
         ],
         "med-chart-bar-horizontal": [

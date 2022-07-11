@@ -1,8 +1,7 @@
 import { Component, Element, Event, Host, Prop, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { hasShadowDom, inheritAttributes } from '../../utils/helpers';
-import { hostContext, openURL } from '../../utils/theme';
-import { generateMedColor } from '../../utils/med-theme';
+import { createColorClasses, hostContext, openURL } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -73,11 +72,6 @@ export class Button {
     this.inItem = !!this.el.closest('ion-item') || !!this.el.closest('ion-item-divider');
     this.inheritedAttributes = inheritAttributes(this.el, ['aria-label']);
   }
-  componentDidLoad() {
-    if (this.el.classList.contains('button')) {
-      this.el.classList.remove('button');
-    }
-  }
   get hasIconOnly() {
     return !!this.el.querySelector('[slot="icon-only"]');
   }
@@ -92,8 +86,7 @@ export class Button {
   }
   render() {
     const mode = getIonMode(this);
-    const { dsColor, dsName, dsSize } = this;
-    const { buttonType, type, disabled, rel, target, size, href, expand, hasIconOnly, shape, strong, inheritedAttributes } = this;
+    const { buttonType, type, disabled, rel, target, size, href, color, expand, hasIconOnly, shape, strong, inheritedAttributes } = this;
     const finalSize = size === undefined && this.inItem ? 'small' : size;
     const TagType = href === undefined ? 'button' : 'a';
     const attrs = (TagType === 'button')
@@ -108,13 +101,13 @@ export class Button {
     if (fill === undefined) {
       fill = this.inToolbar || this.inListHeader ? 'clear' : 'solid';
     }
-    return (h(Host, { onClick: this.handleClick, "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
+    return (h(Host, { onClick: this.handleClick, "aria-disabled": disabled ? 'true' : null, class: createColorClasses(color, {
         [mode]: true,
         [buttonType]: true,
         [`${buttonType}-${expand}`]: expand !== undefined,
         [`${buttonType}-${finalSize}`]: finalSize !== undefined,
         [`${buttonType}-${shape}`]: shape !== undefined,
-        //[`${buttonType}-${fill}`]: true,
+        [`${buttonType}-${fill}`]: true,
         [`${buttonType}-strong`]: strong,
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
@@ -122,86 +115,26 @@ export class Button {
         'button-disabled': disabled,
         'ion-activatable': true,
         'ion-focusable': true,
-        'med-button': true,
-        [`med-button--${dsName}`]: dsName !== undefined,
-        [`med-button--${dsSize}`]: dsSize !== undefined,
       }) },
       h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes),
         h("span", { class: "button-inner" },
           h("slot", { name: "icon-only" }),
           h("slot", { name: "start" }),
-          h("div", { class: "button-inner__text" },
-            h("slot", null)),
+          h("slot", null),
           h("slot", { name: "end" })),
-        h("ion-ripple-effect", { type: this.rippleType }))));
+        mode === 'md' && h("ion-ripple-effect", { type: this.rippleType }))));
   }
   static get is() { return "ion-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["button.md.scss"],
+    "ios": ["button.ios.scss"],
     "md": ["button.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["button.md.css"],
+    "ios": ["button.ios.css"],
     "md": ["button.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    },
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'secondary' | 'tertiary'",
-        "resolved": "\"secondary\" | \"tertiary\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a varia\u00E7\u00E3o do componente."
-      },
-      "attribute": "ds-name",
-      "reflect": false
-    },
-    "dsSize": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | \"xxxs\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a varia\u00E7\u00E3o de tamanho componente."
-      },
-      "attribute": "ds-size",
-      "reflect": false
-    },
     "color": {
       "type": "string",
       "mutable": false,
@@ -222,7 +155,7 @@ export class Button {
         "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
-      "reflect": true
+      "reflect": false
     },
     "buttonType": {
       "type": "string",

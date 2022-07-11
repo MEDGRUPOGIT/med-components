@@ -1,0 +1,13 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.5 8C14.8807 8 16 6.88071 16 5.5C16 4.11929 14.8807 3 13.5 3C12.1193 3 11 4.11929 11 5.5C11 6.88071 12.1193 8 13.5 8Z" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 9L2 21" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M8 17L8 21" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M8 17H2" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 21L13 8" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 11L17 11" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 12L16 14" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M20 8L21 7" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M21 11H22" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M20 14L21 15" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 21H15" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+</svg>

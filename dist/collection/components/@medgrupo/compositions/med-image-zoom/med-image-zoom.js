@@ -6,6 +6,7 @@ export class MedImageZoom {
      * TODO
      */
     this.imagens = [];
+    this.initialSlide = 0;
     this.defaultMaxRatio = 8;
     this.aplicandoZoom = false;
     this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
@@ -15,7 +16,7 @@ export class MedImageZoom {
       zoom: {
         maxRatio,
       },
-      intialSlide: 0,
+      initialSlide: this.initialSlide,
     };
     return sliderOpts;
   }
@@ -35,7 +36,7 @@ export class MedImageZoom {
       h("med-header", { class: "zoom-header" },
         h("med-navbar", { slot: "navbar", "ds-name": "transparent", "ds-theme": "light" },
           h("span", { slot: "title", innerHTML: this.titulo }),
-          h("ion-button", { "ds-name": "tertiary", slot: "right", onClick: () => this.dismiss() },
+          h("ion-button", { mode: "ios", fill: "clear", slot: "right", "icon-only": true, onClick: () => this.dismiss() },
             h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })))),
       h("ion-content", { class: "zoom-content" },
         h("ion-slides", { ref: (el) => {
@@ -68,7 +69,7 @@ export class MedImageZoom {
       "type": "any",
       "mutable": true,
       "complexType": {
-        "original": "| MedImageZoomItemInterface[]\n    | any",
+        "original": "| MedImageZoomItemInterface[]\r\n    | any",
         "resolved": "any",
         "references": {
           "MedImageZoomItemInterface": {
@@ -137,6 +138,24 @@ export class MedImageZoom {
       },
       "attribute": "titulo",
       "reflect": true
+    },
+    "initialSlide": {
+      "type": "number",
+      "mutable": true,
+      "complexType": {
+        "original": "number | undefined",
+        "resolved": "number | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "initial-slide",
+      "reflect": true,
+      "defaultValue": "0"
     }
   }; }
   static get states() { return {

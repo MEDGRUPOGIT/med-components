@@ -4,7 +4,7 @@ export declare class MedThemes {
   /**
     * Define a variação do componente.
     */
-  ativo?: 'theme-gold' | 'theme-recursos';
+  ativo?: 'theme-gold' | 'theme-recursos' | string;
   /**
     * Define quais os temas
     */

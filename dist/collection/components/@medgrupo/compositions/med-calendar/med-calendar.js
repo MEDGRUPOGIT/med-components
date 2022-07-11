@@ -83,16 +83,16 @@ export class MedCalendar {
       }), style: { '--width': `${this.width}` } },
       h("div", { class: "header" },
         h("div", { class: "header__left" },
-          h("ion-button", { "ds-size": "sm", "ds-name": "tertiary", onClick: () => this.onMonthClick('prev') },
+          h("ion-button", { "icon-only": true, mode: "ios", "ds-size": "xxs", fill: "clear", onClick: () => this.onMonthClick('prev') },
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })),
           h("med-type", { class: "header__type", token: "p16b" },
             mes,
             " ",
             ano),
-          h("ion-button", { "ds-size": "sm", "ds-name": "tertiary", onClick: () => this.onMonthClick('next') },
+          h("ion-button", { "icon-only": true, mode: "ios", "ds-size": "xxs", fill: "clear", onClick: () => this.onMonthClick('next') },
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))),
         h("div", { class: "header__right" },
-          h("ion-button", { "ds-name": "tertiary", onClick: () => this.onChoiceClick() },
+          h("ion-button", { mode: "ios", "ds-size": "sm", fill: "clear", onClick: () => this.onChoiceClick() },
             h("med-type", { class: "choice__type" }, this.choice),
             h("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })))),
       h("div", { class: "content" },
@@ -115,7 +115,7 @@ export class MedCalendar {
           h("slot", null)))));
   }
   static get is() { return "med-calendar"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-calendar.scss"]
   }; }

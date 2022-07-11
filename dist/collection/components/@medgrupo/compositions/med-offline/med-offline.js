@@ -8,7 +8,7 @@ export class MedOffline {
       h("div", { class: "wrapper" },
         h("med-header", null,
           h("med-navbar", { "ds-name": "transparent", slot: "navbar" },
-            h("ion-button", { "ds-name": "tertiary", "ds-size": "xs", slot: "left", onClick: () => this.onClick() },
+            h("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xs", slot: "left", onClick: () => this.onClick() },
               h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-esquerda" })))),
         h("div", { class: "wrapper__content" },
           h("ion-icon", { class: "med-icon med-icon--lg icon-path", name: "med-offline2" }),
@@ -16,7 +16,7 @@ export class MedOffline {
           h("p", { class: "text" }, "Conecte-se \u00E0 internet para visualizar esse conte\u00FAdo")))));
   }
   static get is() { return "med-offline"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-offline.scss"]
   }; }

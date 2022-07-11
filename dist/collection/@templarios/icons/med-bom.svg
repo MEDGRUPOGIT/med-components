@@ -1,0 +1,15 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 8C11.8807 8 13 6.88071 13 5.5C13 4.11929 11.8807 3 10.5 3C9.11929 3 8 4.11929 8 5.5C8 6.88071 9.11929 8 10.5 8Z" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3 9L3 21" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M9 17L9 21" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 14L13 21" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M9 17H3" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 14H8" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M8 14L10 8" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M15 11H12" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M12 11L10 10" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 21H15" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M18 8L19 7" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M19 11H20" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+<path d="M18 14L19 15" stroke="inherit" stroke-width="2" stroke-linecap="round"/>
+</svg>

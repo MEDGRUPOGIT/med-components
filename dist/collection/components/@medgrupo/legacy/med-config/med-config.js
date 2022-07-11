@@ -15,7 +15,7 @@ export class MedConfig {
       h("med-header", { class: "config-header" },
         h("med-navbar", { slot: "navbar", "ds-theme": "light" },
           h("span", { slot: "title" }, "Configura\u00E7\u00F5es"),
-          h("ion-button", { "ds-name": "icon-only", slot: "left", onClick: () => this.dismiss() },
+          h("ion-button", { mode: "ios", "icon-only": true, "ds-name": "icon-only", slot: "left", onClick: () => this.dismiss() },
             h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })))),
       h("ion-content", { class: "config-content" },
         h("ion-segment", { onIonChange: (ev) => this.emitScheme(ev) },

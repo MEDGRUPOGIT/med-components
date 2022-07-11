@@ -203,6 +203,7 @@
   --border-radius: 8px;
   --border-color: transparent;
   --icon-stroke: hsl(var(--med-color-neutral-6));
+  --cursor: default;
 }
 
 :host {
@@ -260,4 +261,8 @@
 
 :host(.has-focus.med-input--invalid) {
   --border-color: hsl(var(--med-color-fb-warning));
+}
+
+.med-icon {
+  cursor: var(--cursor);
 }

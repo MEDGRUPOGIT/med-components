@@ -24,15 +24,15 @@ export class MedContextMenu {
         'med-context-menu': true,
         'med-context-menu--collapsed': this.collapsed
       }, null) },
-      h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", "ds-name": "tertiary", "ds-size": "xs" },
+      h("ion-button", { mode: "ios", "icon-only": true, onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", fill: "clear", "ds-size": "sm" },
         h("ion-icon", { slot: "icon-only", class: "med-icon med-context-menu__icon", name: "med-context-menu" })),
       h("div", { class: "med-context-menu__content" },
-        h("ion-button", { onClick: (event) => { this.toggle(event); }, class: "med-context-menu__inner-button", "ds-name": "tertiary", "ds-size": "xs" },
+        h("ion-button", { mode: "ios", "icon-only": true, onClick: (event) => { this.toggle(event); }, class: "med-context-menu__inner-button", fill: "clear", "ds-size": "sm" },
           h("ion-icon", { slot: "icon-only", class: "med-icon med-context-menu__inner-icon", name: "med-context-menu" })),
         h("slot", null))));
   }
   static get is() { return "med-context-menu"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-context-menu.scss"]
   }; }

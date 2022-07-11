@@ -44,7 +44,7 @@ const MedListItemAccordion = class {
         [`med-list-item-accordion--${dsSize}`]: dsSize !== undefined,
         [`med-list-item-accordion--${margin}`]: margin !== undefined,
         'med-list-item-accordion--collapsed': collapsed
-      }) }, index.h("div", { class: "med-list-item-accordion__item" }, index.h("slot", { name: "start" }), index.h("div", { class: "med-list-item-accordion__content" }, index.h("h3", { class: "med-list-item-accordion__title" }, titulo), index.h("h4", { class: "med-list-item-accordion__label" }, label)), index.h("ion-button", { class: "med-list-item-accordion__button", "ds-color": dsColor, "ds-name": "tertiary", "ds-size": "xs", slot: "left", onClick: (event) => { this.toggle(event); } }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-cima" }))), index.h("div", { class: "med-list-item-accordion__sub-item" }, index.h("slot", { name: "end" }))));
+      }) }, index.h("div", { class: "med-list-item-accordion__item" }, index.h("slot", { name: "start" }), index.h("div", { class: "med-list-item-accordion__content" }, index.h("h3", { class: "med-list-item-accordion__title" }, titulo), index.h("h4", { class: "med-list-item-accordion__label" }, label)), index.h("ion-button", { mode: "ios", "icon-only": true, class: "med-list-item-accordion__button", "ds-color": dsColor, fill: "clear", "ds-size": "xs", slot: "left", onClick: (event) => { this.toggle(event); } }, index.h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-cima" }))), index.h("div", { class: "med-list-item-accordion__sub-item" }, index.h("slot", { name: "end" }))));
   }
 };
 MedListItemAccordion.style = medListItemAccordionCss;

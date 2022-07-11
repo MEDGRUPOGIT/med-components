@@ -42,7 +42,7 @@ export class MedListItemAccordion {
         h("div", { class: "med-list-item-accordion__content" },
           h("h3", { class: "med-list-item-accordion__title" }, titulo),
           h("h4", { class: "med-list-item-accordion__label" }, label)),
-        h("ion-button", { class: "med-list-item-accordion__button", "ds-color": dsColor, "ds-name": "tertiary", "ds-size": "xs", slot: "left", onClick: (event) => { this.toggle(event); } },
+        h("ion-button", { mode: "ios", "icon-only": true, class: "med-list-item-accordion__button", "ds-color": dsColor, fill: "clear", "ds-size": "xs", slot: "left", onClick: (event) => { this.toggle(event); } },
           h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-cima" }))),
       h("div", { class: "med-list-item-accordion__sub-item" },
         h("slot", { name: "end" }))));

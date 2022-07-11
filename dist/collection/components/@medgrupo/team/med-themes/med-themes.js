@@ -7,7 +7,7 @@ export class MedThemes {
   render() {
     const { temas } = this;
     return (h(Host, { "from-stencil": true },
-      h("ion-radio-group", { onIonChange: ev => this.temaSelecionado(ev.detail.value), value: this.ativo }, temas === null || temas === void 0 ? void 0 : temas.map((tema) => (h("div", { class: `med-theme med-theme--${tema.value}` },
+      h("ion-radio-group", { onIonChange: ev => this.temaSelecionado(ev.detail.value), value: this.ativo }, temas === null || temas === void 0 ? void 0 : temas.map((tema) => (h("div", { class: `med-theme med-theme--${tema.value}`, onClick: () => this.ativo = tema.value },
         h("div", { class: "med-theme__left" },
           h("div", { class: "med-theme__circle" })),
         h("div", { class: "med-theme__right" },
@@ -18,7 +18,7 @@ export class MedThemes {
             h("span", { class: "med-theme__name" }, tema.label)))))))));
   }
   static get is() { return "med-themes"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-themes.scss"]
   }; }
@@ -30,8 +30,8 @@ export class MedThemes {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'theme-gold' | 'theme-recursos'",
-        "resolved": "\"theme-gold\" | \"theme-recursos\" | undefined",
+        "original": "'theme-gold' | 'theme-recursos' | string",
+        "resolved": "string | undefined",
         "references": {}
       },
       "required": false,

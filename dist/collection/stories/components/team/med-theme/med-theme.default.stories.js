@@ -6,23 +6,15 @@ export default {
   decorators: [withDesign],
 };
 
-let anteriorTheme = document
-  .querySelector('html')
-  .classList.contains('theme-gold')
-  ? 'theme-gold'
-  : null;
+let anteriorTheme = document.querySelector('html').classList.contains('theme-gold') ? 'theme-gold' : null;
 
 const changeTheme = {
   'theme-gold': () => {
     anteriorTheme = 'theme-gold';
     if (
-      !document
-        .querySelector('html')
-        .classList.contains('theme-gold')
+      !document.querySelector('html').classList.contains('theme-gold')
     ) {
-      document
-        .querySelector('html')
-        .classList.add('theme-gold');
+      document.querySelector('html').classList.add('theme-gold');
     }
   },
   'theme-default': () => {
@@ -33,6 +25,7 @@ const changeTheme = {
 const trocaTema = (ev) =>{
   console.log('troca tema')
   const fun = changeTheme[ev.detail];
+  
   if (fun) {
     fun();
   }
@@ -44,6 +37,28 @@ const TemplateMedConig = () => {
   }, 1000);
 
   return html`
+    <style>
+      .med-theme--theme-gold {
+        --border-color: hsla(46, 65%, 60%, 1);
+      }
+
+      .med-theme--theme-gold .med-theme__left {
+        --background-left: hsla(46, 65%, 20%, 1);
+      }
+
+      .med-theme--theme-gold .med-theme__circle {
+        --background-circle: hsla(46, 65%, 40%, 1);
+      }
+
+      .med-theme--theme-gold .med-theme__bar {
+        background: hsla(46, 10%, 58%, 1);
+      }
+
+      .med-theme--theme-gold ion-radio {
+        --color: hsla(46, 65%, 60%, 1);
+        --color-checked: hsla(46, 65%, 60%, 1);
+      }
+    </style>
     <div style="text-align: center;">
 
       <!-- component -->

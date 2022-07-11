@@ -366,46 +366,6 @@
           "description": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want)."
         },
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
-        },
-        {
-          "name": "ds-name",
-          "description": "Define a variação do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            },
-            {
-              "name": "tertiary"
-            }
-          ]
-        },
-        {
-          "name": "ds-size",
-          "description": "Define a variação de tamanho componente.",
-          "values": [
-            {
-              "name": "lg"
-            },
-            {
-              "name": "md"
-            },
-            {
-              "name": "sm"
-            },
-            {
-              "name": "xs"
-            },
-            {
-              "name": "xxs"
-            },
-            {
-              "name": "xxxs"
-            }
-          ]
-        },
-        {
           "name": "expand",
           "description": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\r\nwithout left and right borders.",
           "values": [
@@ -5420,6 +5380,29 @@
       ]
     },
     {
+      "name": "med-carregamento",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "color",
+          "description": ""
+        },
+        {
+          "name": "message",
+          "description": ""
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-carregamento/med-carregamento.tsx"
+        }
+      ]
+    },
+    {
       "name": "med-cartao-resposta-item",
       "description": {
         "kind": "markdown",
@@ -6036,6 +6019,10 @@
         {
           "name": "imagens",
           "description": "TODO"
+        },
+        {
+          "name": "initial-slide",
+          "description": ""
         },
         {
           "name": "marca-agua-inferior",
@@ -6953,15 +6940,7 @@
       "attributes": [
         {
           "name": "ativo",
-          "description": "Define a variação do componente.",
-          "values": [
-            {
-              "name": "theme-gold"
-            },
-            {
-              "name": "theme-recursos"
-            }
-          ]
+          "description": "Define a variação do componente."
         }
       ],
       "references": [

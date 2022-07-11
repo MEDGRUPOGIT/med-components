@@ -9,14 +9,14 @@ export class MedAlert {
     const { heading, message, cancelText, confirmText } = this;
     return (h(Host, null,
       h("ion-header", { class: "tp-dialog-header" },
-        h("ion-button", { "ds-name": "tertiary", "ds-size": "xxs", onClick: () => this.dismiss('cancel') },
+        h("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xxs", onClick: () => this.dismiss('close') },
           h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))),
       h("div", { class: "tp-dialog-container" },
         h("med-type", { class: "tp-dialog-heading", token: "h20x", innerHTML: sanitizeDOMString(heading) }),
         h("med-type", { "ds-color": "neutral-8", token: "h14x", innerHTML: sanitizeDOMString(message) }),
         h("div", { class: "tp-dialog-footer" },
-          cancelText && h("ion-button", { "ds-name": "secondary", onClick: () => this.dismiss('cancel') }, cancelText),
-          confirmText && h("ion-button", { onClick: () => this.dismiss('confirm') }, confirmText)))));
+          cancelText && h("ion-button", { mode: "ios", fill: "outline", onClick: () => this.dismiss('cancel') }, cancelText),
+          confirmText && h("ion-button", { mode: "ios", onClick: () => this.dismiss('confirm') }, confirmText)))));
   }
   static get is() { return "med-alert"; }
   static get encapsulation() { return "scoped"; }

@@ -20,7 +20,7 @@ const Template = ({ dsColor, dsName }) => {
         <med-type slot="title">Page Title</med-type>
         <med-type slot="subtitle">Page Title</med-type>
 
-        <ion-button ds-name="tertiary" slot="right" ds-size="xxs">
+        <ion-button mode="ios" icon-only fill="clear" slot="right" ds-size="xxs">
           <ion-icon slot="icon-only" class="med-icon" name="med-star-filled"></ion-icon>
         </ion-button>
       </med-navbar>

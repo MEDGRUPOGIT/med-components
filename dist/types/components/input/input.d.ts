@@ -70,6 +70,7 @@ export declare class Input implements ComponentInterface {
    * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
    */
   debounce: number;
+  iconClicked: EventEmitter<string>;
   protected debounceChanged(): void;
   /**
    * If `true`, the user cannot interact with the input.
@@ -207,5 +208,6 @@ export declare class Input implements ComponentInterface {
   private clearTextInput;
   private focusChanged;
   private hasValue;
+  private iconClick;
   render(): any;
 }

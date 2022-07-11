@@ -113,11 +113,12 @@
     "custom:theme:build": "sass templarios/themes:css templarios/schemes:css templarios/components:css templarios/utils:css",
     "custom:build:watch": "stencil build --watch",
     "custom:start": "npm-run-all --parallel start custom:theme:clean",
-    "custom:build": "npm-run-all build custom:theme:clean custom:theme:build",
-    "custom:storybook": "npm run custom:theme:build && npm-run-all --parallel custom:build:watch storybook",
+    "custom:build": "npm-run-all build custom:theme:clean tp:build:sass custom:theme:build",
+    "custom:storybook": "npm run custom:theme:build && npm-run-all --parallel tp:watch:sass custom:build:watch storybook",
     "custom:build:storybook": "npm-run-all build custom:theme:clean custom:theme:build build-storybook",
     "screenshot:loki": "loki test",
-    "tp:watch:sass": "sass --no-source-map src/components/@templarios/scss/:templarios-new/css --watch"
+    "tp:watch:sass": "sass src/@templarios/styles:css --watch",
+    "tp:build:sass": "sass src/@templarios/styles:css"
   },
   "author": "Ionic Team",
   "license": "MIT",

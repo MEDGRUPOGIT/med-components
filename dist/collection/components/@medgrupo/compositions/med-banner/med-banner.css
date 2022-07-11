@@ -60,7 +60,6 @@
     --padding-titulo: 16px;
     --padding-content: 24px 24px 0 24px;
     --padding-footer: 8px 16px 8px 16px;
-    --height-footer: 40px;
   }
   :host__titulo {
     --font-size: 20px;

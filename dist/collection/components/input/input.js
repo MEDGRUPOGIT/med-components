@@ -223,6 +223,9 @@ export class Input {
   hasValue() {
     return this.getValue().length > 0;
   }
+  iconClick() {
+    this.iconClicked.emit();
+  }
   render() {
     const { dsName, icon, status } = this;
     const mode = getIonMode(this);
@@ -252,7 +255,7 @@ export class Input {
       h("input", Object.assign({ class: "native-input", ref: input => this.nativeInput = input, "aria-labelledby": labelId, disabled: this.disabled, accept: this.accept, autoCapitalize: this.autocapitalize, autoComplete: this.autocomplete, autoCorrect: this.autocorrect, autoFocus: this.autofocus, enterKeyHint: this.enterkeyhint, inputMode: this.inputmode, min: this.min, max: this.max, minLength: this.minlength, maxLength: this.maxlength, multiple: this.multiple, name: this.name, pattern: this.pattern, placeholder: this.placeholder || '', readOnly: this.readonly, required: this.required, spellcheck: this.spellcheck, step: this.step, size: this.size, type: this.type, value: value, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, onKeyDown: this.onKeydown }, this.inheritedAttributes)),
       (this.clearInput && !this.readonly && !this.disabled) &&
         h("ion-icon", { class: "med-icon med-input-reset", name: "med-fechar", "aria-label": "reset", onTouchStart: this.clearTextInput, onMouseDown: this.clearTextInput, onKeyDown: this.clearTextOnEnter }),
-      icon && h("ion-icon", { class: "med-icon", name: iconRender })));
+      icon && h("ion-icon", { class: "med-icon", name: iconRender, onClick: () => this.iconClick() })));
   }
   static get is() { return "ion-input"; }
   static get encapsulation() { return "scoped"; }
@@ -829,6 +832,21 @@ export class Input {
     "hasFocus": {}
   }; }
   static get events() { return [{
+      "method": "iconClicked",
+      "name": "iconClicked",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      }
+    }, {
       "method": "ionInput",
       "name": "ionInput",
       "bubbles": true,

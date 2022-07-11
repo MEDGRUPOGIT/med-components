@@ -43,6 +43,7 @@
     "./components/@medgrupo/core/med-alert-fixed/med-alert-fixed.js",
     "./components/@medgrupo/core/med-avatar/med-avatar.js",
     "./components/@medgrupo/core/med-base/med-base.js",
+    "./components/@medgrupo/core/med-carregamento/med-carregamento.js",
     "./components/@medgrupo/core/med-chart-bar/med-chart-bar.js",
     "./components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.js",
     "./components/@medgrupo/core/med-chart-radial/med-chart-radial.js",

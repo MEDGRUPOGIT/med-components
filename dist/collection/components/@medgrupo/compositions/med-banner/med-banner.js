@@ -29,17 +29,17 @@ export class MedBanner {
         image && h("div", { class: "med-notification__right" },
           h("img", { class: "med-notification__image", src: image }))),
       (btnLeft || btnRight) && h("div", { class: "med-notification__footer" },
-        btnLeft && h("ion-button", { class: "med-notification__button", "ds-color": dsColor, "ds-name": "tertiary", onClick: this.onButtonLeftClick },
+        btnLeft && h("ion-button", { class: "med-notification__button", mode: "ios", "ds-color": dsColor, fill: "clear", "ds-size": "xs", onClick: this.onButtonLeftClick },
           " ",
           btnLeft,
           " "),
-        btnRight && h("ion-button", { class: "med-notification__button", "ds-color": dsColor, "ds-name": "tertiary", onClick: this.onButtonRightClick },
+        btnRight && h("ion-button", { class: "med-notification__button", mode: "ios", "ds-color": dsColor, fill: "clear", "ds-size": "xs", onClick: this.onButtonRightClick },
           " ",
           btnRight,
           " "))));
   }
   static get is() { return "med-banner"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-banner.scss"]
   }; }

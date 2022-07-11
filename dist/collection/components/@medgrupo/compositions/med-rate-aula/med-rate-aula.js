@@ -38,10 +38,10 @@ export class MedRateAula {
             h("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--ruim", name: "med-ruim" })),
           h("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-warning" }, "Ruim")),
         h("div", { class: "med-rate-aula__button-fechar", onClick: (event) => { this.toggle(event); } },
-          h("ion-button", { "ds-size": "xs", "ds-name": "primary", class: "" },
+          h("ion-button", { mode: "ios", "icon-only": true, "ds-size": "xs" },
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" })))),
       h("div", { class: "med-rate-aula__end", onClick: (event) => { this.toggle(event); } },
-        h("ion-button", { "ds-size": "xs", "ds-name": "tertiary" },
+        h("ion-button", { mode: "ios", "icon-only": true, "ds-size": "xs", fill: "clear" },
           h("ion-icon", { slot: "icon-only", class: "med-rate-aula__icon-abrir", name: "med-avaliar" })),
         h("med-type", { token: "p12" }, "Avalie"))));
   }

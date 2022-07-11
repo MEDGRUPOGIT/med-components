@@ -16,6 +16,7 @@ export declare class MedImageZoom {
    * TODO
    */
   titulo?: string;
+  initialSlide?: number | undefined;
   slider: any;
   defaultMaxRatio: number;
   aplicandoZoom: boolean;
@@ -23,13 +24,13 @@ export declare class MedImageZoom {
     zoom: {
       maxRatio: number;
     };
-    intialSlide: number;
+    initialSlide: number | undefined;
   };
   getSliderOpts(maxRatio: number): {
     zoom: {
       maxRatio: number;
     };
-    intialSlide: number;
+    initialSlide: number | undefined;
   };
   zoomOut(): Promise<void>;
   zoomIn(): Promise<void>;

@@ -46,22 +46,22 @@ export class MedTooltip {
       h("div", { class: "med-tooltip__content" },
         titulo && h("div", { class: "med-tooltip__header" },
           h("med-type", { class: "med-tooltip__titulo" }, titulo),
-          h("ion-button", { class: "med-tooltip__button-fechar", "ds-color": !dsColor ? 'neutral-3' : dsColor, "ds-name": "tertiary", "ds-size": "xxs", onClick: (event) => { this.toggle(event); } },
+          h("ion-button", { mode: "ios", "icon-only": true, class: "med-tooltip__button-fechar", "ds-color": !dsColor ? 'neutral-10' : dsColor, fill: "clear", "ds-size": "xxs", onClick: (event) => { this.toggle(event); } },
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))),
         content && h("med-type", { class: "med-tooltip__text" }, content),
         h("slot", { name: "content" }),
         (btnLeft || btnRight) && h("div", { class: "med-tooltip__footer" },
-          btnLeft && h("ion-button", { class: "med-tooltip__button", "ds-color": !dsColor ? 'neutral-3' : dsColor, "ds-size": "xxs", "ds-name": "tertiary", onClick: this.onBtnLeftClick },
+          btnLeft && h("ion-button", { mode: "ios", class: "med-tooltip__button", "ds-color": !dsColor ? 'neutral-10' : dsColor, "ds-size": "xxs", fill: "clear", onClick: this.onBtnLeftClick },
             " ",
             btnLeft,
             " "),
-          btnRight && h("ion-button", { class: "med-tooltip__button", "ds-color": !dsColor ? 'neutral-3' : dsColor, "ds-size": "xxs", "ds-name": "tertiary", onClick: this.onBtnRightClick },
+          btnRight && h("ion-button", { mode: "ios", class: "med-tooltip__button", "ds-color": !dsColor ? 'neutral-10' : dsColor, "ds-size": "xxs", fill: "clear", onClick: this.onBtnRightClick },
             " ",
             btnRight,
             " ")))));
   }
   static get is() { return "med-tooltip"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-tooltip.scss"]
   }; }

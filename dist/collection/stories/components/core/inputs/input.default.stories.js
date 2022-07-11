@@ -20,6 +20,7 @@ const Template = ({ dsName, placeholder, disabled, status, clearInput, icon }) =
                 ?disabled=${disabled}
                 ?clear-input=${clearInput}
                 .status=${status}
+                icon="med-visivel"
               >
               </ion-input>
             <!-- component markdown -->
