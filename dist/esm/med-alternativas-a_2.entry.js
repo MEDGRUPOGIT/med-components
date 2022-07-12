@@ -1,5 +1,5 @@
 import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './med-theme-33df6a63.js';
+import { g as generateMedColor } from './med-theme-83c28ab9.js';
 
 function distanciaEuclidiana(pontoA, pontoB) {
   if (!pontoA || !pontoB)

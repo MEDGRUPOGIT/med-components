@@ -1,6 +1,6 @@
 import { r as registerInstance, e as createEvent, h, H as Host } from './index-70672e81.js';
-import { R as RateStatus } from './med-rate-like.enum-1d1c1c7f.js';
-import { g as generateMedColor } from './med-theme-33df6a63.js';
+import { R as RateStatus } from './med-rate-like.enum-87651216.js';
+import { g as generateMedColor } from './med-theme-83c28ab9.js';
 
 const medRateLikeCss = ":host{--spacing:16px;--color:hsl(var(--med-color-neutral-10));--color-like:hsl(var(--med-color-fb-success));--color-dislike:hsl(var(--med-color-fb-warning));display:block}:host .button{background:transparent;border:none;cursor:pointer;padding:0;outline:none}:host .button-spacing{padding-right:var(--spacing)}:host .rate{font-size:24px;stroke:var(--color);-webkit-transition:color 300ms;transition:color 300ms}:host .button--disabled{pointer-events:none;--color:hsl(var(--med-color-neutral-4))}:host .button--like .rate{stroke:var(--color-like)}:host .button--dislike .rate{stroke:var(--color-dislike)}";
 

@@ -215,7 +215,7 @@ export class Checkbox {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The value of the checkbox does not mean if it's checked or not, use the `checked`\r\nproperty for that.\r\n\r\nThe value of a checkbox is analogous to the value of an `<input type=\"checkbox\">`,\r\nit's only used when the checkbox participates in a native `<form>`."
+        "text": "The value of the checkbox does not mean if it's checked or not, use the `checked`\nproperty for that.\n\nThe value of a checkbox is analogous to the value of an `<input type=\"checkbox\">`,\nit's only used when the checkbox participates in a native `<form>`."
       },
       "attribute": "value",
       "reflect": false,

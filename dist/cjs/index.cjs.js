@@ -2,23 +2,23 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const animation = require('./animation-dadce649.js');
-const ios_transition = require('./ios.transition-d78dff5b.js');
-const md_transition = require('./md.transition-8a1ac5c9.js');
-const cubicBezier = require('./cubic-bezier-6f49c00a.js');
-const index = require('./index-adf3c519.js');
-const ionicGlobal = require('./ionic-global-c609be80.js');
-const helpers = require('./helpers-ab0db03b.js');
-const index$1 = require('./index-099f2bcb.js');
-const index$2 = require('./index-a0e14e16.js');
-const index$3 = require('./index-0633c29d.js');
-const overlays = require('./overlays-738b020e.js');
-const fontSize_enum = require('./font-size.enum-941770af.js');
-const skin_enum = require('./skin.enum-96db9662.js');
-const medRateLike_enum = require('./med-rate-like.enum-bb3559f2.js');
-require('./gesture-controller-bcfe01ec.js');
+const animation = require('./animation-13cbbb20.js');
+const ios_transition = require('./ios.transition-3fc3591b.js');
+const md_transition = require('./md.transition-0c82d7a2.js');
+const cubicBezier = require('./cubic-bezier-0b2ccc35.js');
+const index = require('./index-98d43f07.js');
+const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const helpers = require('./helpers-d381ec4d.js');
+const index$1 = require('./index-e1bb33c3.js');
+const index$2 = require('./index-29aebf46.js');
+const index$3 = require('./index-3bb26b58.js');
+const overlays = require('./overlays-e22059c3.js');
+const fontSize_enum = require('./font-size.enum-2233ba2a.js');
+const skin_enum = require('./skin.enum-0657adcf.js');
+const medRateLike_enum = require('./med-rate-like.enum-09a0c949.js');
+require('./gesture-controller-29adda71.js');
 require('./index-bc2e4509.js');
-require('./hardware-back-button-e370df1e.js');
+require('./hardware-back-button-148ce546.js');
 
 const setupConfig = (config) => {
   const win = window;
@@ -71,14 +71,23 @@ exports.MedType = void 0;
 exports.MedColors = void 0;
 (function (MedColors) {
   MedColors["NEUTRAL_1"] = "neutral-1";
+  MedColors["NEUTRAL_15"] = "neutral-15";
   MedColors["NEUTRAL_2"] = "neutral-2";
+  MedColors["NEUTRAL_25"] = "neutral-25";
   MedColors["NEUTRAL_3"] = "neutral-3";
+  MedColors["NEUTRAL_35"] = "neutral-35";
   MedColors["NEUTRAL_4"] = "neutral-4";
+  MedColors["NEUTRAL_45"] = "neutral-45";
   MedColors["NEUTRAL_5"] = "neutral-5";
+  MedColors["NEUTRAL_55"] = "neutral-55";
   MedColors["NEUTRAL_6"] = "neutral-6";
+  MedColors["NEUTRAL_65"] = "neutral-65";
   MedColors["NEUTRAL_7"] = "neutral-7";
+  MedColors["NEUTRAL_75"] = "neutral-75";
   MedColors["NEUTRAL_8"] = "neutral-8";
+  MedColors["NEUTRAL_85"] = "neutral-85";
   MedColors["NEUTRAL_9"] = "neutral-9";
+  MedColors["NEUTRAL_95"] = "neutral-95";
   MedColors["NEUTRAL_10"] = "neutral-10";
   MedColors["FB_ATTENTION"] = "fb-attention";
   MedColors["FB_CAUTION"] = "fb-caution";

@@ -3,10 +3,10 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-c609be80.js');
-const helpers = require('./helpers-ab0db03b.js');
-const theme = require('./theme-21d701cc.js');
-const medTheme = require('./med-theme-42add9fc.js');
+const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const helpers = require('./helpers-d381ec4d.js');
+const theme = require('./theme-f551502d.js');
+const medTheme = require('./med-theme-1bca89cc.js');
 
 const iosSegmentMdCss = ":host{--ripple-color:currentColor;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:stretch;align-items:stretch;-ms-flex-pack:center;justify-content:center;width:100%;background:var(--background);font-family:var(--ion-font-family, inherit);text-align:center;contain:paint;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}:host(.segment-scrollable){-ms-flex-pack:start;justify-content:start;width:auto;overflow-x:auto}:host(.segment-scrollable::-webkit-scrollbar){display:none}:host{--background:transparent}:host(.segment-scrollable) ::slotted(ion-segment-button){min-width:auto}:host(.med-segment--default){border:2px solid hsl(var(--med-color-neutral-10));height:48px;border-radius:8px}:host(.med-color.med-segment--default){border-color:hsl(var(--med-color-3))}:host(.med-color-neutral.med-segment--default){border-color:hsl(var(--med-color-neutral))}:host(.med-color-feedback.med-segment--default){border-color:hsl(var(--med-color-feedback))}";
 
@@ -102,7 +102,7 @@ const Segment = class {
   }
   async componentDidLoad() {
     this.setCheckedClasses();
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-adf3c519.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-98d43f07.js'); })).createGesture({
       el: this.el,
       gestureName: 'segment',
       gesturePriority: 100,

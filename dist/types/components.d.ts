@@ -230,18 +230,6 @@ export namespace Components {
          */
         "color"?: Color;
         /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
-          * Define a variação de tamanho do componente.
-         */
-        "dsSize"?: 'sm' | 'md';
-        /**
-          * Define a variação do componente.
-         */
-        "fill"?: 'outline';
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -5407,18 +5395,6 @@ declare namespace LocalJSX {
           * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
         "color"?: Color;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
-          * Define a variação de tamanho do componente.
-         */
-        "dsSize"?: 'sm' | 'md';
-        /**
-          * Define a variação do componente.
-         */
-        "fill"?: 'outline';
         /**
           * The mode determines which platform styles to use.
          */

@@ -248,7 +248,7 @@ export class Textarea {
             "text": undefined,
             "name": "internal"
           }],
-        "text": "This is required for a WebKit bug which requires us to\r\nblur and focus an input to properly focus the input in\r\nan item with delegatesFocus. It will no longer be needed\r\nwith iOS 14."
+        "text": "This is required for a WebKit bug which requires us to\nblur and focus an input to properly focus the input in\nan item with delegatesFocus. It will no longer be needed\nwith iOS 14."
       },
       "attribute": "fire-focus-events",
       "reflect": false,
@@ -288,7 +288,7 @@ export class Textarea {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -395,7 +395,7 @@ export class Textarea {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
+        "text": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
       },
       "attribute": "inputmode",
       "reflect": false
@@ -412,7 +412,7 @@ export class Textarea {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`."
+        "text": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`."
       },
       "attribute": "enterkeyhint",
       "reflect": false
@@ -745,7 +745,7 @@ export class Textarea {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\r\n`textarea.focus()`.",
+        "text": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.focus()`.",
         "tags": []
       }
     },
@@ -761,7 +761,7 @@ export class Textarea {
         "return": "Promise<void>"
       },
       "docs": {
-        "text": "Sets blur on the native `textarea` in `ion-textarea`. Use this method instead of the global\r\n`textarea.blur()`.",
+        "text": "Sets blur on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.blur()`.",
         "tags": [{
             "name": "internal",
             "text": undefined

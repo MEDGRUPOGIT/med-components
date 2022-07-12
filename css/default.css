@@ -2,6 +2,7 @@
   /* neutral */
   --neutral-saturation: 10%;
   --neutral-luminosity: 8%;
+  --neutral-step-luminosity: 13%;
   /* color */
   --brand-hue: 25;
   --color-saturation: 80%;
@@ -33,14 +34,23 @@
 :root {
   /* neutral tokens */
   --med-color-neutral-1: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity));
+  --med-color-neutral-15: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-step-luminosity));
   --med-color-neutral-2: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity) + 10% * var(--neutral-invert));
+  --med-color-neutral-25: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-step-luminosity) + 10% * var(--neutral-invert));
   --med-color-neutral-3: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity) + 20% * var(--neutral-invert));
+  --med-color-neutral-35: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-step-luminosity) + 20% * var(--neutral-invert));
   --med-color-neutral-4: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity) + 30% * var(--neutral-invert));
+  --med-color-neutral-45: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-step-luminosity) + 30% * var(--neutral-invert));
   --med-color-neutral-5: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-luminosity) + 40% * var(--neutral-invert));
+  --med-color-neutral-55: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-1) + var(--neutral-step-luminosity) + 40% * var(--neutral-invert));
   --med-color-neutral-6: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-luminosity) + 50% * var(--neutral-invert));
+  --med-color-neutral-65: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-step-luminosity) + 50% * var(--neutral-invert));
   --med-color-neutral-7: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-luminosity) + 60% * var(--neutral-invert));
+  --med-color-neutral-75: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-step-luminosity) + 60% * var(--neutral-invert));
   --med-color-neutral-8: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-luminosity) + 70% * var(--neutral-invert));
+  --med-color-neutral-85: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-step-luminosity) + 70% * var(--neutral-invert));
   --med-color-neutral-9: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-luminosity) + 80% * var(--neutral-invert));
+  --med-color-neutral-95: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-step-luminosity) + 80% * var(--neutral-invert));
   --med-color-neutral-10: calc(var(--brand-hue) + var(--hue-fator, 0)), calc(var(--neutral-saturation) + var(--saturation-fator, 0%)), calc(var(--neutral-luminosity-mutable-2) + var(--neutral-luminosity) + 90% * var(--neutral-invert));
   /* color tokens */
   --med-color-contrast-fixed: var(--med-color-neutral-10);
@@ -71,8 +81,18 @@ ion-content {
   --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
 }
 
+.med-color-neutral-15 {
+  --med-color-neutral: var(--med-color-neutral-15) !important;
+  --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
+}
+
 .med-color-neutral-2 {
   --med-color-neutral: var(--med-color-neutral-2) !important;
+  --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
+}
+
+.med-color-neutral-25 {
+  --med-color-neutral: var(--med-color-neutral-25) !important;
   --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
 }
 
@@ -81,8 +101,18 @@ ion-content {
   --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
 }
 
+.med-color-neutral-35 {
+  --med-color-neutral: var(--med-color-neutral-35) !important;
+  --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
+}
+
 .med-color-neutral-4 {
   --med-color-neutral: var(--med-color-neutral-4) !important;
+  --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
+}
+
+.med-color-neutral-45 {
+  --med-color-neutral: var(--med-color-neutral-45) !important;
   --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
 }
 
@@ -91,8 +121,18 @@ ion-content {
   --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
 }
 
+.med-color-neutral-55 {
+  --med-color-neutral: var(--med-color-neutral-55) !important;
+  --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
+}
+
 .med-color-neutral-6 {
   --med-color-neutral: var(--med-color-neutral-6) !important;
+  --med-color-neutral-contrast: var(--med-color-neutral-1) !important;
+}
+
+.med-color-neutral-65 {
+  --med-color-neutral: var(--med-color-neutral-65) !important;
   --med-color-neutral-contrast: var(--med-color-neutral-1) !important;
 }
 
@@ -101,13 +141,28 @@ ion-content {
   --med-color-neutral-contrast: var(--med-color-neutral-1) !important;
 }
 
+.med-color-neutral-75 {
+  --med-color-neutral: var(--med-color-neutral-75) !important;
+  --med-color-neutral-contrast: var(--med-color-neutral-1) !important;
+}
+
 .med-color-neutral-8 {
   --med-color-neutral: var(--med-color-neutral-8) !important;
   --med-color-neutral-contrast: var(--med-color-neutral-1) !important;
 }
 
+.med-color-neutral-85 {
+  --med-color-neutral: var(--med-color-neutral-85) !important;
+  --med-color-neutral-contrast: var(--med-color-neutral-1) !important;
+}
+
 .med-color-neutral-9 {
   --med-color-neutral: var(--med-color-neutral-9) !important;
+  --med-color-neutral-contrast: var(--med-color-neutral-1) !important;
+}
+
+.med-color-neutral-95 {
+  --med-color-neutral: var(--med-color-neutral-95) !important;
   --med-color-neutral-contrast: var(--med-color-neutral-1) !important;
 }
 

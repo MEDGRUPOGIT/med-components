@@ -1,21 +1,9 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
-import { Color, MedColor } from '../../interface';
+import { Color } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export declare class Badge implements ComponentInterface {
-  /**
-    * Define a cor do componente.
-    */
-  dsColor?: MedColor;
-  /**
-   * Define a variação do componente.
-   */
-  fill?: 'outline';
-  /**
-   * Define a variação de tamanho do componente.
-   */
-  dsSize?: 'sm' | 'md';
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

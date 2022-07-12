@@ -1,3 +1,311 @@
+ion-badge {
+  --background: hsl(var(--med-color-brand-3));
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  --padding-start: 8px;
+  --padding-end: 8px;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+ion-badge[ds-size=md] {
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  border: 1px solid transparent;
+}
+
+ion-badge[fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-brand-3));
+  border: 1px solid hsl(var(--med-color-brand-3));
+}
+
+ion-badge[ds-color=brand] {
+  --background: hsl(var(--med-color-brand-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=brand][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-brand-3));
+  border: 1px solid hsl(var(--med-color-brand-3));
+}
+
+ion-badge[ds-color=aula] {
+  --background: hsl(var(--med-color-aula-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=aula][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-aula-3));
+  border: 1px solid hsl(var(--med-color-aula-3));
+}
+
+ion-badge[ds-color=material] {
+  --background: hsl(var(--med-color-material-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=material][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-material-3));
+  border: 1px solid hsl(var(--med-color-material-3));
+}
+
+ion-badge[ds-color=questoes] {
+  --background: hsl(var(--med-color-questoes-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=questoes][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-questoes-3));
+  border: 1px solid hsl(var(--med-color-questoes-3));
+}
+
+ion-badge[ds-color=revalida] {
+  --background: hsl(var(--med-color-revalida-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=revalida][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-revalida-3));
+  border: 1px solid hsl(var(--med-color-revalida-3));
+}
+
+ion-badge[ds-color=neutral-1] {
+  --background: hsl(var(--med-color-neutral-1));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-1][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-1));
+  border: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-badge[ds-color=neutral-2] {
+  --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-2][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-2));
+  border: 1px solid hsl(var(--med-color-neutral-2));
+}
+
+ion-badge[ds-color=neutral-3] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-3][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-3));
+  border: 1px solid hsl(var(--med-color-neutral-3));
+}
+
+ion-badge[ds-color=neutral-4] {
+  --background: hsl(var(--med-color-neutral-4));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-4][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-4));
+  border: 1px solid hsl(var(--med-color-neutral-4));
+}
+
+ion-badge[ds-color=neutral-5] {
+  --background: hsl(var(--med-color-neutral-5));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-5][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+  border: 1px solid hsl(var(--med-color-neutral-5));
+}
+
+ion-badge[ds-color=neutral-6] {
+  --background: hsl(var(--med-color-neutral-6));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=neutral-6][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-6));
+  border: 1px solid hsl(var(--med-color-neutral-6));
+}
+
+ion-badge[ds-color=neutral-7] {
+  --background: hsl(var(--med-color-neutral-7));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=neutral-7][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-7));
+  border: 1px solid hsl(var(--med-color-neutral-7));
+}
+
+ion-badge[ds-color=neutral-8] {
+  --background: hsl(var(--med-color-neutral-8));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=neutral-8][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-8));
+  border: 1px solid hsl(var(--med-color-neutral-8));
+}
+
+ion-badge[ds-color=neutral-9] {
+  --background: hsl(var(--med-color-neutral-9));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=neutral-9][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-9));
+  border: 1px solid hsl(var(--med-color-neutral-9));
+}
+
+ion-badge[ds-color=neutral-10] {
+  --background: hsl(var(--med-color-neutral-10));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=neutral-10][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-10));
+  border: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-badge[ds-color=neutral-15] {
+  --background: hsl(var(--med-color-neutral-15));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-15][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-15));
+  border: 1px solid hsl(var(--med-color-neutral-15));
+}
+
+ion-badge[ds-color=neutral-25] {
+  --background: hsl(var(--med-color-neutral-25));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-25][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-25));
+  border: 1px solid hsl(var(--med-color-neutral-25));
+}
+
+ion-badge[ds-color=neutral-35] {
+  --background: hsl(var(--med-color-neutral-35));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-35][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-35));
+  border: 1px solid hsl(var(--med-color-neutral-35));
+}
+
+ion-badge[ds-color=neutral-45] {
+  --background: hsl(var(--med-color-neutral-45));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-45][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-45));
+  border: 1px solid hsl(var(--med-color-neutral-45));
+}
+
+ion-badge[ds-color=neutral-55] {
+  --background: hsl(var(--med-color-neutral-55));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[ds-color=neutral-55][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-55));
+  border: 1px solid hsl(var(--med-color-neutral-55));
+}
+
+ion-badge[ds-color=neutral-65] {
+  --background: hsl(var(--med-color-neutral-65));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=neutral-65][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-65));
+  border: 1px solid hsl(var(--med-color-neutral-65));
+}
+
+ion-badge[ds-color=neutral-75] {
+  --background: hsl(var(--med-color-neutral-75));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=neutral-75][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-75));
+  border: 1px solid hsl(var(--med-color-neutral-75));
+}
+
+ion-badge[ds-color=neutral-85] {
+  --background: hsl(var(--med-color-neutral-85));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=neutral-85][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-85));
+  border: 1px solid hsl(var(--med-color-neutral-85));
+}
+
+ion-badge[ds-color=neutral-95] {
+  --background: hsl(var(--med-color-neutral-95));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=neutral-95][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-95));
+  border: 1px solid hsl(var(--med-color-neutral-95));
+}
+
+ion-badge[ds-color=fb-attention] {
+  --background: hsl(var(--med-color-fb-attention));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=fb-attention][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-fb-attention));
+  border: 1px solid hsl(var(--med-color-fb-attention));
+}
+
+ion-badge[ds-color=fb-caution] {
+  --background: hsl(var(--med-color-fb-caution));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=fb-caution][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-fb-caution));
+  border: 1px solid hsl(var(--med-color-fb-caution));
+}
+
+ion-badge[ds-color=fb-warning] {
+  --background: hsl(var(--med-color-fb-warning));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=fb-warning][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-fb-warning));
+  border: 1px solid hsl(var(--med-color-fb-warning));
+}
+
+ion-badge[ds-color=fb-success] {
+  --background: hsl(var(--med-color-fb-success));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-badge[ds-color=fb-success][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-fb-success));
+  border: 1px solid hsl(var(--med-color-fb-success));
+}
+
 ion-button {
   --background: hsl(var(--med-color-brand-3));
   --background-activated: hsl(var(--med-color-brand-2));
@@ -542,6 +850,276 @@ ion-button[ds-color=neutral-10]:hover ion-icon {
   stroke: var(--color-hover);
 }
 
+ion-button[ds-color=neutral-15] {
+  --background: hsl(var(--med-color-neutral-15));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+ion-button[ds-color=neutral-15] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-15][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-15][disabled] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-15].ion-activated ion-icon {
+  stroke: var(--color-activated);
+}
+ion-button[ds-color=neutral-15].ion-focused ion-icon {
+  stroke: var(--color-focused);
+}
+ion-button[ds-color=neutral-15]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-25] {
+  --background: hsl(var(--med-color-neutral-25));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+ion-button[ds-color=neutral-25] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-25][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-25][disabled] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-25].ion-activated ion-icon {
+  stroke: var(--color-activated);
+}
+ion-button[ds-color=neutral-25].ion-focused ion-icon {
+  stroke: var(--color-focused);
+}
+ion-button[ds-color=neutral-25]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-35] {
+  --background: hsl(var(--med-color-neutral-35));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+ion-button[ds-color=neutral-35] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-35][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-35][disabled] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-35].ion-activated ion-icon {
+  stroke: var(--color-activated);
+}
+ion-button[ds-color=neutral-35].ion-focused ion-icon {
+  stroke: var(--color-focused);
+}
+ion-button[ds-color=neutral-35]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-45] {
+  --background: hsl(var(--med-color-neutral-45));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+ion-button[ds-color=neutral-45] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-45][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-45][disabled] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-45].ion-activated ion-icon {
+  stroke: var(--color-activated);
+}
+ion-button[ds-color=neutral-45].ion-focused ion-icon {
+  stroke: var(--color-focused);
+}
+ion-button[ds-color=neutral-45]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-55] {
+  --background: hsl(var(--med-color-neutral-55));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+ion-button[ds-color=neutral-55] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-55][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-55][disabled] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-55].ion-activated ion-icon {
+  stroke: var(--color-activated);
+}
+ion-button[ds-color=neutral-55].ion-focused ion-icon {
+  stroke: var(--color-focused);
+}
+ion-button[ds-color=neutral-55]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-65] {
+  --background: hsl(var(--med-color-neutral-65));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+ion-button[ds-color=neutral-65] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-65][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-65][disabled] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-65].ion-activated ion-icon {
+  stroke: var(--color-activated);
+}
+ion-button[ds-color=neutral-65].ion-focused ion-icon {
+  stroke: var(--color-focused);
+}
+ion-button[ds-color=neutral-65]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-75] {
+  --background: hsl(var(--med-color-neutral-75));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+ion-button[ds-color=neutral-75] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-75][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-75][disabled] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-75].ion-activated ion-icon {
+  stroke: var(--color-activated);
+}
+ion-button[ds-color=neutral-75].ion-focused ion-icon {
+  stroke: var(--color-focused);
+}
+ion-button[ds-color=neutral-75]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-85] {
+  --background: hsl(var(--med-color-neutral-85));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+ion-button[ds-color=neutral-85] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-85][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-85][disabled] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-85].ion-activated ion-icon {
+  stroke: var(--color-activated);
+}
+ion-button[ds-color=neutral-85].ion-focused ion-icon {
+  stroke: var(--color-focused);
+}
+ion-button[ds-color=neutral-85]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-95] {
+  --background: hsl(var(--med-color-neutral-95));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+ion-button[ds-color=neutral-95] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-95][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-95][disabled] ion-icon {
+  stroke: var(--color);
+}
+ion-button[ds-color=neutral-95].ion-activated ion-icon {
+  stroke: var(--color-activated);
+}
+ion-button[ds-color=neutral-95].ion-focused ion-icon {
+  stroke: var(--color-focused);
+}
+ion-button[ds-color=neutral-95]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+
 ion-button[ds-color=fb-attention] {
   --background: hsl(var(--med-color-fb-attention));
   --background-activated: hsla(var(--med-color-neutral-1), 0.08);
@@ -1034,6 +1612,231 @@ ion-button[ds-color=neutral-10][fill=outline]:hover {
   --border-color: var(--color-hover);
 }
 
+ion-button[ds-color=neutral-15][fill=outline] {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --border-color: hsl(var(--med-color-neutral-15));
+  --color: hsl(var(--med-color-neutral-15));
+  --color-activated: hsl(var(--med-color-neutral-15));
+  --color-focused: hsl(var(--med-color-neutral-15));
+  --color-hover: hsl(var(--med-color-neutral-15));
+}
+ion-button[ds-color=neutral-15][fill=outline][disabled] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-15][fill=outline].ion-activated {
+  --border-color: var(--color-activated);
+}
+ion-button[ds-color=neutral-15][fill=outline].ion-focused {
+  --border-color: var(--color-focused);
+}
+ion-button[ds-color=neutral-15][fill=outline]:hover {
+  --border-color: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-25][fill=outline] {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --border-color: hsl(var(--med-color-neutral-25));
+  --color: hsl(var(--med-color-neutral-25));
+  --color-activated: hsl(var(--med-color-neutral-25));
+  --color-focused: hsl(var(--med-color-neutral-25));
+  --color-hover: hsl(var(--med-color-neutral-25));
+}
+ion-button[ds-color=neutral-25][fill=outline][disabled] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-25][fill=outline].ion-activated {
+  --border-color: var(--color-activated);
+}
+ion-button[ds-color=neutral-25][fill=outline].ion-focused {
+  --border-color: var(--color-focused);
+}
+ion-button[ds-color=neutral-25][fill=outline]:hover {
+  --border-color: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-35][fill=outline] {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --border-color: hsl(var(--med-color-neutral-35));
+  --color: hsl(var(--med-color-neutral-35));
+  --color-activated: hsl(var(--med-color-neutral-35));
+  --color-focused: hsl(var(--med-color-neutral-35));
+  --color-hover: hsl(var(--med-color-neutral-35));
+}
+ion-button[ds-color=neutral-35][fill=outline][disabled] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-35][fill=outline].ion-activated {
+  --border-color: var(--color-activated);
+}
+ion-button[ds-color=neutral-35][fill=outline].ion-focused {
+  --border-color: var(--color-focused);
+}
+ion-button[ds-color=neutral-35][fill=outline]:hover {
+  --border-color: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-45][fill=outline] {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --border-color: hsl(var(--med-color-neutral-45));
+  --color: hsl(var(--med-color-neutral-45));
+  --color-activated: hsl(var(--med-color-neutral-45));
+  --color-focused: hsl(var(--med-color-neutral-45));
+  --color-hover: hsl(var(--med-color-neutral-45));
+}
+ion-button[ds-color=neutral-45][fill=outline][disabled] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-45][fill=outline].ion-activated {
+  --border-color: var(--color-activated);
+}
+ion-button[ds-color=neutral-45][fill=outline].ion-focused {
+  --border-color: var(--color-focused);
+}
+ion-button[ds-color=neutral-45][fill=outline]:hover {
+  --border-color: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-55][fill=outline] {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --border-color: hsl(var(--med-color-neutral-55));
+  --color: hsl(var(--med-color-neutral-55));
+  --color-activated: hsl(var(--med-color-neutral-55));
+  --color-focused: hsl(var(--med-color-neutral-55));
+  --color-hover: hsl(var(--med-color-neutral-55));
+}
+ion-button[ds-color=neutral-55][fill=outline][disabled] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-55][fill=outline].ion-activated {
+  --border-color: var(--color-activated);
+}
+ion-button[ds-color=neutral-55][fill=outline].ion-focused {
+  --border-color: var(--color-focused);
+}
+ion-button[ds-color=neutral-55][fill=outline]:hover {
+  --border-color: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-65][fill=outline] {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --border-color: hsl(var(--med-color-neutral-65));
+  --color: hsl(var(--med-color-neutral-65));
+  --color-activated: hsl(var(--med-color-neutral-65));
+  --color-focused: hsl(var(--med-color-neutral-65));
+  --color-hover: hsl(var(--med-color-neutral-65));
+}
+ion-button[ds-color=neutral-65][fill=outline][disabled] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-65][fill=outline].ion-activated {
+  --border-color: var(--color-activated);
+}
+ion-button[ds-color=neutral-65][fill=outline].ion-focused {
+  --border-color: var(--color-focused);
+}
+ion-button[ds-color=neutral-65][fill=outline]:hover {
+  --border-color: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-75][fill=outline] {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --border-color: hsl(var(--med-color-neutral-75));
+  --color: hsl(var(--med-color-neutral-75));
+  --color-activated: hsl(var(--med-color-neutral-75));
+  --color-focused: hsl(var(--med-color-neutral-75));
+  --color-hover: hsl(var(--med-color-neutral-75));
+}
+ion-button[ds-color=neutral-75][fill=outline][disabled] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-75][fill=outline].ion-activated {
+  --border-color: var(--color-activated);
+}
+ion-button[ds-color=neutral-75][fill=outline].ion-focused {
+  --border-color: var(--color-focused);
+}
+ion-button[ds-color=neutral-75][fill=outline]:hover {
+  --border-color: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-85][fill=outline] {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --border-color: hsl(var(--med-color-neutral-85));
+  --color: hsl(var(--med-color-neutral-85));
+  --color-activated: hsl(var(--med-color-neutral-85));
+  --color-focused: hsl(var(--med-color-neutral-85));
+  --color-hover: hsl(var(--med-color-neutral-85));
+}
+ion-button[ds-color=neutral-85][fill=outline][disabled] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-85][fill=outline].ion-activated {
+  --border-color: var(--color-activated);
+}
+ion-button[ds-color=neutral-85][fill=outline].ion-focused {
+  --border-color: var(--color-focused);
+}
+ion-button[ds-color=neutral-85][fill=outline]:hover {
+  --border-color: var(--color-hover);
+}
+
+ion-button[ds-color=neutral-95][fill=outline] {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --border-color: hsl(var(--med-color-neutral-95));
+  --color: hsl(var(--med-color-neutral-95));
+  --color-activated: hsl(var(--med-color-neutral-95));
+  --color-focused: hsl(var(--med-color-neutral-95));
+  --color-hover: hsl(var(--med-color-neutral-95));
+}
+ion-button[ds-color=neutral-95][fill=outline][disabled] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+ion-button[ds-color=neutral-95][fill=outline].ion-activated {
+  --border-color: var(--color-activated);
+}
+ion-button[ds-color=neutral-95][fill=outline].ion-focused {
+  --border-color: var(--color-focused);
+}
+ion-button[ds-color=neutral-95][fill=outline]:hover {
+  --border-color: var(--color-hover);
+}
+
 ion-button[ds-color=fb-attention][fill=outline] {
   --background: transparent;
   --background-activated: transparent;
@@ -1268,6 +2071,7 @@ ion-button[ds-color=brand][fill=clear] {
 }
 ion-button[ds-color=brand][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=aula][fill=clear] {
@@ -1277,6 +2081,7 @@ ion-button[ds-color=aula][fill=clear] {
 }
 ion-button[ds-color=aula][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=material][fill=clear] {
@@ -1286,6 +2091,7 @@ ion-button[ds-color=material][fill=clear] {
 }
 ion-button[ds-color=material][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=questoes][fill=clear] {
@@ -1295,6 +2101,7 @@ ion-button[ds-color=questoes][fill=clear] {
 }
 ion-button[ds-color=questoes][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=revalida][fill=clear] {
@@ -1304,6 +2111,7 @@ ion-button[ds-color=revalida][fill=clear] {
 }
 ion-button[ds-color=revalida][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-1][fill=clear] {
@@ -1314,6 +2122,7 @@ ion-button[ds-color=neutral-1][fill=clear] {
 }
 ion-button[ds-color=neutral-1][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-2][fill=clear] {
@@ -1324,6 +2133,7 @@ ion-button[ds-color=neutral-2][fill=clear] {
 }
 ion-button[ds-color=neutral-2][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-3][fill=clear] {
@@ -1334,6 +2144,7 @@ ion-button[ds-color=neutral-3][fill=clear] {
 }
 ion-button[ds-color=neutral-3][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-4][fill=clear] {
@@ -1344,6 +2155,7 @@ ion-button[ds-color=neutral-4][fill=clear] {
 }
 ion-button[ds-color=neutral-4][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-5][fill=clear] {
@@ -1354,6 +2166,7 @@ ion-button[ds-color=neutral-5][fill=clear] {
 }
 ion-button[ds-color=neutral-5][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-6][fill=clear] {
@@ -1364,6 +2177,7 @@ ion-button[ds-color=neutral-6][fill=clear] {
 }
 ion-button[ds-color=neutral-6][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-7][fill=clear] {
@@ -1374,6 +2188,7 @@ ion-button[ds-color=neutral-7][fill=clear] {
 }
 ion-button[ds-color=neutral-7][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-8][fill=clear] {
@@ -1384,6 +2199,7 @@ ion-button[ds-color=neutral-8][fill=clear] {
 }
 ion-button[ds-color=neutral-8][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-9][fill=clear] {
@@ -1394,6 +2210,7 @@ ion-button[ds-color=neutral-9][fill=clear] {
 }
 ion-button[ds-color=neutral-9][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=neutral-10][fill=clear] {
@@ -1404,6 +2221,106 @@ ion-button[ds-color=neutral-10][fill=clear] {
 }
 ion-button[ds-color=neutral-10][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+}
+
+ion-button[ds-color=neutral-15][fill=clear] {
+  --color: hsl(var(--med-color-neutral-15));
+  --color-activated: hsl(var(--med-color-neutral-15));
+  --color-focused: hsl(var(--med-color-neutral-15));
+  --color-hover: hsl(var(--med-color-neutral-15));
+}
+ion-button[ds-color=neutral-15][fill=clear][disabled] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+}
+
+ion-button[ds-color=neutral-25][fill=clear] {
+  --color: hsl(var(--med-color-neutral-25));
+  --color-activated: hsl(var(--med-color-neutral-25));
+  --color-focused: hsl(var(--med-color-neutral-25));
+  --color-hover: hsl(var(--med-color-neutral-25));
+}
+ion-button[ds-color=neutral-25][fill=clear][disabled] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+}
+
+ion-button[ds-color=neutral-35][fill=clear] {
+  --color: hsl(var(--med-color-neutral-35));
+  --color-activated: hsl(var(--med-color-neutral-35));
+  --color-focused: hsl(var(--med-color-neutral-35));
+  --color-hover: hsl(var(--med-color-neutral-35));
+}
+ion-button[ds-color=neutral-35][fill=clear][disabled] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+}
+
+ion-button[ds-color=neutral-45][fill=clear] {
+  --color: hsl(var(--med-color-neutral-45));
+  --color-activated: hsl(var(--med-color-neutral-45));
+  --color-focused: hsl(var(--med-color-neutral-45));
+  --color-hover: hsl(var(--med-color-neutral-45));
+}
+ion-button[ds-color=neutral-45][fill=clear][disabled] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+}
+
+ion-button[ds-color=neutral-55][fill=clear] {
+  --color: hsl(var(--med-color-neutral-55));
+  --color-activated: hsl(var(--med-color-neutral-55));
+  --color-focused: hsl(var(--med-color-neutral-55));
+  --color-hover: hsl(var(--med-color-neutral-55));
+}
+ion-button[ds-color=neutral-55][fill=clear][disabled] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+}
+
+ion-button[ds-color=neutral-65][fill=clear] {
+  --color: hsl(var(--med-color-neutral-65));
+  --color-activated: hsl(var(--med-color-neutral-65));
+  --color-focused: hsl(var(--med-color-neutral-65));
+  --color-hover: hsl(var(--med-color-neutral-65));
+}
+ion-button[ds-color=neutral-65][fill=clear][disabled] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+}
+
+ion-button[ds-color=neutral-75][fill=clear] {
+  --color: hsl(var(--med-color-neutral-75));
+  --color-activated: hsl(var(--med-color-neutral-75));
+  --color-focused: hsl(var(--med-color-neutral-75));
+  --color-hover: hsl(var(--med-color-neutral-75));
+}
+ion-button[ds-color=neutral-75][fill=clear][disabled] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+}
+
+ion-button[ds-color=neutral-85][fill=clear] {
+  --color: hsl(var(--med-color-neutral-85));
+  --color-activated: hsl(var(--med-color-neutral-85));
+  --color-focused: hsl(var(--med-color-neutral-85));
+  --color-hover: hsl(var(--med-color-neutral-85));
+}
+ion-button[ds-color=neutral-85][fill=clear][disabled] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
+}
+
+ion-button[ds-color=neutral-95][fill=clear] {
+  --color: hsl(var(--med-color-neutral-95));
+  --color-activated: hsl(var(--med-color-neutral-95));
+  --color-focused: hsl(var(--med-color-neutral-95));
+  --color-hover: hsl(var(--med-color-neutral-95));
+}
+ion-button[ds-color=neutral-95][fill=clear][disabled] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=fb-attention][fill=clear] {
@@ -1414,6 +2331,7 @@ ion-button[ds-color=fb-attention][fill=clear] {
 }
 ion-button[ds-color=fb-attention][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=fb-caution][fill=clear] {
@@ -1424,6 +2342,7 @@ ion-button[ds-color=fb-caution][fill=clear] {
 }
 ion-button[ds-color=fb-caution][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=fb-warning][fill=clear] {
@@ -1434,6 +2353,7 @@ ion-button[ds-color=fb-warning][fill=clear] {
 }
 ion-button[ds-color=fb-warning][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 ion-button[ds-color=fb-success][fill=clear] {
@@ -1444,6 +2364,7 @@ ion-button[ds-color=fb-success][fill=clear] {
 }
 ion-button[ds-color=fb-success][fill=clear][disabled] {
   --background: transparent;
+  --color: hsl(var(--med-color-neutral-5));
 }
 
 /*# sourceMappingURL=templarios-2.0.css.map */

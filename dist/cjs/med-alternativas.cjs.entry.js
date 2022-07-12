@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const skin_enum = require('./skin.enum-96db9662.js');
+const skin_enum = require('./skin.enum-0657adcf.js');
 
 const medAlternativasCss = ":host{--font-size:16px;display:block}";
 
