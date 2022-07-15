@@ -1,2 +1,1 @@
-export declare type MedColor = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'brand' | 'aula' | 'material' | 'questoes' | 'revalida' | 'provas' | 'fb-attention' | 'fb-caution' | 'fb-warning' | 'fb-success' | undefined | string;
-export declare type Neutral = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | undefined | string;
+export declare type MedColor = '1' | '15' | '2' | '25' | '3' | '35' | '4' | '45' | '5' | '55' | '6' | '65' | '7' | '75' | '8' | '85' | '9' | '95' | '10' | 'brand' | 'aula' | 'material' | 'questoes' | 'revalida' | 'provas' | 'fb-attention' | 'fb-caution' | 'fb-warning' | 'fb-success' | undefined | string;

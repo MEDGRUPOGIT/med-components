@@ -21,13 +21,13 @@
 @function color($name, $variation: null, $contrast: null, $alpha: null) {
   // neutral contrast
   @if ($name == 'neutral' and $contrast != null and $alpha != null) {
-    @if ($variation == '1' or $variation == '2' or $variation == '3' or $variation == '4' or $variation == '5') {
+    @if ($variation == '1' or $variation == '2' or $variation == '3' or $variation == '4' or $variation == '5' or $variation == '15' or $variation == '25' or $variation == '35' or $variation == '45' or $variation == '55') {
       @return hsla(var(--med-color-neutral-10), $alpha);
     } @else {
       @return hsla(var(--med-color-neutral-1), $alpha);
     }
   } @else if ($name == 'neutral' and $contrast != null) {
-    @if ($variation == '1' or $variation == '2' or $variation == '3' or $variation == '4' or $variation == '5') {
+    @if ($variation == '1' or $variation == '2' or $variation == '3' or $variation == '4' or $variation == '5' or $variation == '15' or $variation == '25' or $variation == '35' or $variation == '45' or $variation == '55') {
       @return hsl(var(--med-color-neutral-10));
     } @else {
       @return hsl(var(--med-color-neutral-1));

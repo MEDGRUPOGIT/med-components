@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedIcons } from '../../../constants';
 
 export default {
-  title: 'Components/Core (Revisado: abril 2022)/Inputs',
+  title: 'Components/Core/Inputs',
   decorators: [withDesign],
 };
 

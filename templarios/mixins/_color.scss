@@ -31,7 +31,7 @@
     .med-color-neutral-#{$key} {
       --med-color-neutral: var(--med-color-neutral-#{$key}) !important;
 
-      @if ($index <= 5) {
+      @if ($index <= 10) {
         --med-color-neutral-contrast: var(--med-color-neutral-10) !important;
       } @else {
         --med-color-neutral-contrast: var(--med-color-neutral-1) !important;

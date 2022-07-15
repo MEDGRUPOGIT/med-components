@@ -43,7 +43,7 @@ const Template = ({ value }) => {
         <div class="full-height-flex">
 
           <!-- component markdown -->
-          <ion-button ds-name="tertiary" ds-size="xs" @click="${(e) => createPopover(e, value)}">
+          <ion-button mode="ios" icon-only fill="clear" ds-size="xs" @click="${(e) => createPopover(e, value)}">
             <ion-icon class="med-icon" slot="icon-only" name="med-fontemaior"></ion-icon>
           </ion-button>
           <!-- component markdown -->

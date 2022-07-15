@@ -1,8 +1,7 @@
 import { Component, Element, Event, Host, Prop, Watch, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { getAriaLabel, renderHiddenInput } from '../../utils/helpers';
-import { hostContext } from '../../utils/theme';
-import { generateMedColor } from '../../utils/med-theme';
+import { createColorClasses, hostContext } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -74,7 +73,7 @@ export class Checkbox {
     }
   }
   render() {
-    const { dsColor, checked, disabled, el, indeterminate, inputId, name, value } = this;
+    const { color, checked, disabled, el, indeterminate, inputId, name, value } = this;
     const mode = getIonMode(this);
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     renderHiddenInput(true, el, name, (checked ? value : ''), disabled);
@@ -86,9 +85,9 @@ export class Checkbox {
         ? h("path", { d: "M2 12H22", part: "mark" })
         : h("path", { d: "M1.73,12.91 8.1,19.28 22.79,4.59", part: "mark" });
     }
-    return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: generateMedColor(dsColor, {
+    return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses(color, {
         [mode]: true,
-        'in-item': hostContext('ion-item', el) || hostContext('med-item', el),
+        'in-item': hostContext('ion-item', el),
         'checkbox-checked': checked,
         'checkbox-disabled': disabled,
         'checkbox-indeterminate': indeterminate,
@@ -101,22 +100,22 @@ export class Checkbox {
   static get is() { return "ion-checkbox"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["checkbox.md.scss"],
+    "ios": ["checkbox.ios.scss"],
     "md": ["checkbox.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["checkbox.md.css"],
+    "ios": ["checkbox.ios.css"],
     "md": ["checkbox.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
+    "color": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "MedColor",
+        "original": "Color",
         "resolved": "string | undefined",
         "references": {
-          "MedColor": {
+          "Color": {
             "location": "import",
             "path": "../../interface"
           }
@@ -126,10 +125,10 @@ export class Checkbox {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
-      "attribute": "ds-color",
-      "reflect": true
+      "attribute": "color",
+      "reflect": false
     },
     "name": {
       "type": "string",

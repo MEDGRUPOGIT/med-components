@@ -24,30 +24,30 @@ const TemplateNavbar = () => {
           <med-type slot="title">Page Title</med-type>
           <med-type slot="subtitle">Page Title</med-type>
 
-          <ion-button ds-name="tertiary" slot="right" ds-size="xxs">
+          <ion-button mode="ios" icon-only fill="clear" slot="right" ds-size="xxs">
             <ion-icon slot="icon-only" class="med-icon" name="med-star-filled"></ion-icon>
           </ion-button>
         </med-navbar>
 
         <med-toolbar slot="toolbar">
-          <ion-button slot="start" ds-name="tertiary" ds-size="xxs">
+          <ion-button mode="ios" icon-only fill="clear" slot="start" ds-size="xxs">
             <ion-icon class="med-icon" slot="icon-only" name="med-setaesquerda"></ion-icon>
           </ion-button>
 
-          <ion-button class="med-tollbar__button" ds-name="tertiary" ds-size="xxs">
+          <ion-button mode="ios" icon-only fill="clear" class="med-tollbar__button" ds-size="xs">
             <ion-icon class="med-icon" slot="icon-only" color="brand" name="med-editar"></ion-icon>
           </ion-button>
-          <ion-button class="med-tollbar__button" ds-name="tertiary" ds-size="xxs">
+          <ion-button mode="ios" icon-only fill="clear" class="med-tollbar__button" ds-size="xxs">
             <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
           </ion-button>
-          <ion-button class="med-tollbar__button" ds-name="tertiary" ds-size="xxs">
+          <ion-button mode="ios" icon-only fill="clear" class="med-tollbar__button" ds-size="xxs">
             <ion-icon class="med-icon" slot="icon-only" name="med-visivel"></ion-icon>
           </ion-button>
-          <ion-button class="med-tollbar__button" ds-name="tertiary" ds-size="xxs">
+          <ion-button mode="ios" icon-only fill="clear" class="med-tollbar__button" ds-size="xs">
             <ion-icon class="med-icon" slot="icon-only" name="med-fonte"></ion-icon>
           </ion-button>
 
-          <ion-button slot="end" ds-name="tertiary" ds-size="xxs">
+          <ion-button mode="ios" icon-only fill="clear" slot="end" ds-size="xxs">
             <ion-icon class="med-icon" slot="icon-only" name="med-setadireita"></ion-icon>
           </ion-button>
         </med-toolbar>

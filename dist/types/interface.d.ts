@@ -31,14 +31,13 @@ export * from './components/toggle/toggle-interface';
 export * from './components/virtual-scroll/virtual-scroll-interface';
 
 // medgrupo
-export type MedTypeToken = 'h48' | 'h32' | 'h24' | 'h20' | 'h20x' | 'p16' | 'p16b' | 'p16x' | 'p16xb' | 'p14' | 'p14b' | 'p14x' | 'p14xb' | 'p12' | 'p12b' | 'p12x' | 'p12xb' | 'p10' | 'p10b' | string;
+export * from './@templarios/interfaces/color.interface';
+export * from './@templarios/interfaces/type.interface';
 
 // medgrupo old
 export * from './components/@medgrupo/team/questoes/med-alternativas/med-alternativas-interface';
 export * from './components/@medgrupo/compositions/med-image-zoom/med-image-zoom-interface';
 export * from './components/@medgrupo/core/med-chart-radial/med-chart-radial-interface';
-export type MedColor = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | 'brand' | 'aula' | 'material' | 'questoes' | 'revalida' | 'provas' | 'fb-attention' | 'fb-caution' | 'fb-warning' | 'fb-success' | string;
-export type Neutral = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | string;
 
 // Types from utils
 export { Animation, AnimationBuilder, AnimationCallbackOptions, AnimationDirection, AnimationFill, AnimationKeyFrames, AnimationLifecycle } from './utils/animation/animation-interface';

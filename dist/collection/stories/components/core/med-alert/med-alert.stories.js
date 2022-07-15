@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { modalController } from '../../../../../dist/ionic/index.esm.js';
 
 export default {
-  title: 'Components/Core (Revisado: abril 2022)/Alert',
+  title: 'Components/Core/Alert',
   decorators: [withDesign],
 };
 

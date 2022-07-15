@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { MedColors } from "../../../../global/templarios/color.enum";
 
 export default {
-  title: 'Components/Core (Revisado: abril 2022)/Avatar',
+  title: 'Components/Core/Avatar',
   decorators: [withDesign],
 };
 

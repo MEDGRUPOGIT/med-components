@@ -1,5 +1,5 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { Color, MedColor, StyleEventDetail } from '../../interface';
+import { Color, StyleEventDetail } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -10,14 +10,6 @@ export declare class Radio implements ComponentInterface {
   private inputId;
   private radioGroup;
   el: HTMLIonRadioElement;
-  /**
-   * Define a variação do componente.
-   */
-  dsName?: 'secondary';
-  /**
-   * Define a cor do componente.
-   */
-  dsColor?: MedColor;
   /**
    * If `true`, the radio is selected.
    */

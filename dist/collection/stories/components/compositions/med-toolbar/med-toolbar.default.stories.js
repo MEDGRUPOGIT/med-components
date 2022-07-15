@@ -18,24 +18,24 @@ const Template = ({ dsColor }) => {
 
       <!-- component markup -->
       <med-toolbar .dsColor=${dsColor}>
-        <ion-button slot="start" ds-name="tertiary" ds-size="xxs">
+        <ion-button mode="ios" icon-only fill="clear" slot="start" ds-size="xxs">
           <ion-icon class="med-icon" slot="icon-only" name="med-setaesquerda"></ion-icon>
         </ion-button>
 
-        <ion-button class="med-tollbar__button" ds-name="tertiary" ds-size="xxs">
+        <ion-button mode="ios" icon-only fill="clear" class="med-tollbar__button" ds-size="xs">
           <ion-icon class="med-icon" slot="icon-only" color="brand" name="med-editar"></ion-icon>
         </ion-button>
-        <ion-button class="med-tollbar__button" ds-name="tertiary" ds-size="xxs">
+        <ion-button mode="ios" icon-only fill="clear" class="med-tollbar__button" ds-size="xxs">
           <ion-icon class="med-icon" slot="icon-only" name="med-estrela"></ion-icon>
         </ion-button>
-        <ion-button class="med-tollbar__button" ds-name="tertiary" ds-size="xxs">
+        <ion-button mode="ios" icon-only fill="clear" class="med-tollbar__button" ds-size="xxs">
           <ion-icon class="med-icon" slot="icon-only" name="med-visivel"></ion-icon>
         </ion-button>
-        <ion-button class="med-tollbar__button" ds-name="tertiary" ds-size="xxs">
+        <ion-button mode="ios" icon-only fill="clear" class="med-tollbar__button" ds-size="xs">
           <ion-icon class="med-icon" slot="icon-only" name="med-fonte"></ion-icon>
         </ion-button>
 
-        <ion-button slot="end" ds-name="tertiary" ds-size="xxs">
+        <ion-button mode="ios" icon-only fill="clear" slot="end" ds-size="xxs">
           <ion-icon class="med-icon" slot="icon-only" name="med-setadireita"></ion-icon>
         </ion-button>
       </med-toolbar>

@@ -2367,4 +2367,915 @@ ion-button[ds-color=fb-success][fill=clear][disabled] {
   --color: hsl(var(--med-color-neutral-5));
 }
 
+ion-checkbox {
+  --background: transparent;
+  --border-color: hsl(var(--med-color-brand-4));
+  --border-color-checked: hsl(var(--med-color-brand-4));
+  --background-checked: hsl(var(--med-color-brand-4));
+  --checkmark-color: hsl(var(--med-color-neutral-2));
+  --border-radius: 4px;
+  --size: 20px;
+  --transition: background-color 300ms ease-out, border-color 300ms ease-out;
+}
+ion-checkbox:hover, ion-checkbox:focus {
+  --border-color: hsl(var(--med-color-brand-5));
+  --border-color-checked: hsl(var(--med-color-brand-5));
+  --background-checked: hsl(var(--med-color-brand-5));
+}
+ion-checkbox.checkbox-disabled {
+  opacity: 0.5;
+}
+
+ion-checkbox[ds-color=brand] {
+  --border-color: hsl(var(--med-color-brand-4));
+  --border-color-checked: hsl(var(--med-color-brand-4));
+  --background-checked: hsl(var(--med-color-brand-4));
+}
+ion-checkbox[ds-color=brand]:hover, ion-checkbox[ds-color=brand]:focus {
+  --border-color: hsl(var(--med-color-brand-5));
+  --border-color-checked: hsl(var(--med-color-brand-5));
+  --background-checked: hsl(var(--med-color-brand-5));
+}
+
+ion-checkbox[ds-color=aula] {
+  --border-color: hsl(var(--med-color-aula-4));
+  --border-color-checked: hsl(var(--med-color-aula-4));
+  --background-checked: hsl(var(--med-color-aula-4));
+}
+ion-checkbox[ds-color=aula]:hover, ion-checkbox[ds-color=aula]:focus {
+  --border-color: hsl(var(--med-color-aula-5));
+  --border-color-checked: hsl(var(--med-color-aula-5));
+  --background-checked: hsl(var(--med-color-aula-5));
+}
+
+ion-checkbox[ds-color=material] {
+  --border-color: hsl(var(--med-color-material-4));
+  --border-color-checked: hsl(var(--med-color-material-4));
+  --background-checked: hsl(var(--med-color-material-4));
+}
+ion-checkbox[ds-color=material]:hover, ion-checkbox[ds-color=material]:focus {
+  --border-color: hsl(var(--med-color-material-5));
+  --border-color-checked: hsl(var(--med-color-material-5));
+  --background-checked: hsl(var(--med-color-material-5));
+}
+
+ion-checkbox[ds-color=questoes] {
+  --border-color: hsl(var(--med-color-questoes-4));
+  --border-color-checked: hsl(var(--med-color-questoes-4));
+  --background-checked: hsl(var(--med-color-questoes-4));
+}
+ion-checkbox[ds-color=questoes]:hover, ion-checkbox[ds-color=questoes]:focus {
+  --border-color: hsl(var(--med-color-questoes-5));
+  --border-color-checked: hsl(var(--med-color-questoes-5));
+  --background-checked: hsl(var(--med-color-questoes-5));
+}
+
+ion-checkbox[ds-color=revalida] {
+  --border-color: hsl(var(--med-color-revalida-4));
+  --border-color-checked: hsl(var(--med-color-revalida-4));
+  --background-checked: hsl(var(--med-color-revalida-4));
+}
+ion-checkbox[ds-color=revalida]:hover, ion-checkbox[ds-color=revalida]:focus {
+  --border-color: hsl(var(--med-color-revalida-5));
+  --border-color-checked: hsl(var(--med-color-revalida-5));
+  --background-checked: hsl(var(--med-color-revalida-5));
+}
+
+ion-checkbox[ds-color=neutral-1] {
+  --border-color: hsl(var(--med-color-neutral-1));
+  --border-color-checked: hsl(var(--med-color-neutral-1));
+  --background-checked: hsl(var(--med-color-neutral-1));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-1]:hover, ion-checkbox[ds-color=neutral-1]:focus {
+  --border-color: hsl(var(--med-color-neutral-1));
+  --border-color-checked: hsl(var(--med-color-neutral-1));
+  --background-checked: hsl(var(--med-color-neutral-1));
+}
+
+ion-checkbox[ds-color=neutral-2] {
+  --border-color: hsl(var(--med-color-neutral-2));
+  --border-color-checked: hsl(var(--med-color-neutral-2));
+  --background-checked: hsl(var(--med-color-neutral-2));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-2]:hover, ion-checkbox[ds-color=neutral-2]:focus {
+  --border-color: hsl(var(--med-color-neutral-2));
+  --border-color-checked: hsl(var(--med-color-neutral-2));
+  --background-checked: hsl(var(--med-color-neutral-2));
+}
+
+ion-checkbox[ds-color=neutral-3] {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --border-color-checked: hsl(var(--med-color-neutral-3));
+  --background-checked: hsl(var(--med-color-neutral-3));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-3]:hover, ion-checkbox[ds-color=neutral-3]:focus {
+  --border-color: hsl(var(--med-color-neutral-3));
+  --border-color-checked: hsl(var(--med-color-neutral-3));
+  --background-checked: hsl(var(--med-color-neutral-3));
+}
+
+ion-checkbox[ds-color=neutral-4] {
+  --border-color: hsl(var(--med-color-neutral-4));
+  --border-color-checked: hsl(var(--med-color-neutral-4));
+  --background-checked: hsl(var(--med-color-neutral-4));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-4]:hover, ion-checkbox[ds-color=neutral-4]:focus {
+  --border-color: hsl(var(--med-color-neutral-4));
+  --border-color-checked: hsl(var(--med-color-neutral-4));
+  --background-checked: hsl(var(--med-color-neutral-4));
+}
+
+ion-checkbox[ds-color=neutral-5] {
+  --border-color: hsl(var(--med-color-neutral-5));
+  --border-color-checked: hsl(var(--med-color-neutral-5));
+  --background-checked: hsl(var(--med-color-neutral-5));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-5]:hover, ion-checkbox[ds-color=neutral-5]:focus {
+  --border-color: hsl(var(--med-color-neutral-5));
+  --border-color-checked: hsl(var(--med-color-neutral-5));
+  --background-checked: hsl(var(--med-color-neutral-5));
+}
+
+ion-checkbox[ds-color=neutral-6] {
+  --border-color: hsl(var(--med-color-neutral-6));
+  --border-color-checked: hsl(var(--med-color-neutral-6));
+  --background-checked: hsl(var(--med-color-neutral-6));
+  --checkmark-color: hsl(var(--med-color-neutral-1));
+}
+ion-checkbox[ds-color=neutral-6]:hover, ion-checkbox[ds-color=neutral-6]:focus {
+  --border-color: hsl(var(--med-color-neutral-6));
+  --border-color-checked: hsl(var(--med-color-neutral-6));
+  --background-checked: hsl(var(--med-color-neutral-6));
+}
+
+ion-checkbox[ds-color=neutral-7] {
+  --border-color: hsl(var(--med-color-neutral-7));
+  --border-color-checked: hsl(var(--med-color-neutral-7));
+  --background-checked: hsl(var(--med-color-neutral-7));
+  --checkmark-color: hsl(var(--med-color-neutral-1));
+}
+ion-checkbox[ds-color=neutral-7]:hover, ion-checkbox[ds-color=neutral-7]:focus {
+  --border-color: hsl(var(--med-color-neutral-7));
+  --border-color-checked: hsl(var(--med-color-neutral-7));
+  --background-checked: hsl(var(--med-color-neutral-7));
+}
+
+ion-checkbox[ds-color=neutral-8] {
+  --border-color: hsl(var(--med-color-neutral-8));
+  --border-color-checked: hsl(var(--med-color-neutral-8));
+  --background-checked: hsl(var(--med-color-neutral-8));
+  --checkmark-color: hsl(var(--med-color-neutral-1));
+}
+ion-checkbox[ds-color=neutral-8]:hover, ion-checkbox[ds-color=neutral-8]:focus {
+  --border-color: hsl(var(--med-color-neutral-8));
+  --border-color-checked: hsl(var(--med-color-neutral-8));
+  --background-checked: hsl(var(--med-color-neutral-8));
+}
+
+ion-checkbox[ds-color=neutral-9] {
+  --border-color: hsl(var(--med-color-neutral-9));
+  --border-color-checked: hsl(var(--med-color-neutral-9));
+  --background-checked: hsl(var(--med-color-neutral-9));
+  --checkmark-color: hsl(var(--med-color-neutral-1));
+}
+ion-checkbox[ds-color=neutral-9]:hover, ion-checkbox[ds-color=neutral-9]:focus {
+  --border-color: hsl(var(--med-color-neutral-9));
+  --border-color-checked: hsl(var(--med-color-neutral-9));
+  --background-checked: hsl(var(--med-color-neutral-9));
+}
+
+ion-checkbox[ds-color=neutral-10] {
+  --border-color: hsl(var(--med-color-neutral-10));
+  --border-color-checked: hsl(var(--med-color-neutral-10));
+  --background-checked: hsl(var(--med-color-neutral-10));
+  --checkmark-color: hsl(var(--med-color-neutral-1));
+}
+ion-checkbox[ds-color=neutral-10]:hover, ion-checkbox[ds-color=neutral-10]:focus {
+  --border-color: hsl(var(--med-color-neutral-10));
+  --border-color-checked: hsl(var(--med-color-neutral-10));
+  --background-checked: hsl(var(--med-color-neutral-10));
+}
+
+ion-checkbox[ds-color=neutral-15] {
+  --border-color: hsl(var(--med-color-neutral-15));
+  --border-color-checked: hsl(var(--med-color-neutral-15));
+  --background-checked: hsl(var(--med-color-neutral-15));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-15]:hover, ion-checkbox[ds-color=neutral-15]:focus {
+  --border-color: hsl(var(--med-color-neutral-15));
+  --border-color-checked: hsl(var(--med-color-neutral-15));
+  --background-checked: hsl(var(--med-color-neutral-15));
+}
+
+ion-checkbox[ds-color=neutral-25] {
+  --border-color: hsl(var(--med-color-neutral-25));
+  --border-color-checked: hsl(var(--med-color-neutral-25));
+  --background-checked: hsl(var(--med-color-neutral-25));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-25]:hover, ion-checkbox[ds-color=neutral-25]:focus {
+  --border-color: hsl(var(--med-color-neutral-25));
+  --border-color-checked: hsl(var(--med-color-neutral-25));
+  --background-checked: hsl(var(--med-color-neutral-25));
+}
+
+ion-checkbox[ds-color=neutral-35] {
+  --border-color: hsl(var(--med-color-neutral-35));
+  --border-color-checked: hsl(var(--med-color-neutral-35));
+  --background-checked: hsl(var(--med-color-neutral-35));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-35]:hover, ion-checkbox[ds-color=neutral-35]:focus {
+  --border-color: hsl(var(--med-color-neutral-35));
+  --border-color-checked: hsl(var(--med-color-neutral-35));
+  --background-checked: hsl(var(--med-color-neutral-35));
+}
+
+ion-checkbox[ds-color=neutral-45] {
+  --border-color: hsl(var(--med-color-neutral-45));
+  --border-color-checked: hsl(var(--med-color-neutral-45));
+  --background-checked: hsl(var(--med-color-neutral-45));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-45]:hover, ion-checkbox[ds-color=neutral-45]:focus {
+  --border-color: hsl(var(--med-color-neutral-45));
+  --border-color-checked: hsl(var(--med-color-neutral-45));
+  --background-checked: hsl(var(--med-color-neutral-45));
+}
+
+ion-checkbox[ds-color=neutral-55] {
+  --border-color: hsl(var(--med-color-neutral-55));
+  --border-color-checked: hsl(var(--med-color-neutral-55));
+  --background-checked: hsl(var(--med-color-neutral-55));
+  --checkmark-color: hsl(var(--med-color-neutral-10));
+}
+ion-checkbox[ds-color=neutral-55]:hover, ion-checkbox[ds-color=neutral-55]:focus {
+  --border-color: hsl(var(--med-color-neutral-55));
+  --border-color-checked: hsl(var(--med-color-neutral-55));
+  --background-checked: hsl(var(--med-color-neutral-55));
+}
+
+ion-checkbox[ds-color=neutral-65] {
+  --border-color: hsl(var(--med-color-neutral-65));
+  --border-color-checked: hsl(var(--med-color-neutral-65));
+  --background-checked: hsl(var(--med-color-neutral-65));
+  --checkmark-color: hsl(var(--med-color-neutral-1));
+}
+ion-checkbox[ds-color=neutral-65]:hover, ion-checkbox[ds-color=neutral-65]:focus {
+  --border-color: hsl(var(--med-color-neutral-65));
+  --border-color-checked: hsl(var(--med-color-neutral-65));
+  --background-checked: hsl(var(--med-color-neutral-65));
+}
+
+ion-checkbox[ds-color=neutral-75] {
+  --border-color: hsl(var(--med-color-neutral-75));
+  --border-color-checked: hsl(var(--med-color-neutral-75));
+  --background-checked: hsl(var(--med-color-neutral-75));
+  --checkmark-color: hsl(var(--med-color-neutral-1));
+}
+ion-checkbox[ds-color=neutral-75]:hover, ion-checkbox[ds-color=neutral-75]:focus {
+  --border-color: hsl(var(--med-color-neutral-75));
+  --border-color-checked: hsl(var(--med-color-neutral-75));
+  --background-checked: hsl(var(--med-color-neutral-75));
+}
+
+ion-checkbox[ds-color=neutral-85] {
+  --border-color: hsl(var(--med-color-neutral-85));
+  --border-color-checked: hsl(var(--med-color-neutral-85));
+  --background-checked: hsl(var(--med-color-neutral-85));
+  --checkmark-color: hsl(var(--med-color-neutral-1));
+}
+ion-checkbox[ds-color=neutral-85]:hover, ion-checkbox[ds-color=neutral-85]:focus {
+  --border-color: hsl(var(--med-color-neutral-85));
+  --border-color-checked: hsl(var(--med-color-neutral-85));
+  --background-checked: hsl(var(--med-color-neutral-85));
+}
+
+ion-checkbox[ds-color=neutral-95] {
+  --border-color: hsl(var(--med-color-neutral-95));
+  --border-color-checked: hsl(var(--med-color-neutral-95));
+  --background-checked: hsl(var(--med-color-neutral-95));
+  --checkmark-color: hsl(var(--med-color-neutral-1));
+}
+ion-checkbox[ds-color=neutral-95]:hover, ion-checkbox[ds-color=neutral-95]:focus {
+  --border-color: hsl(var(--med-color-neutral-95));
+  --border-color-checked: hsl(var(--med-color-neutral-95));
+  --background-checked: hsl(var(--med-color-neutral-95));
+}
+
+ion-checkbox[ds-color=fb-attention] {
+  --border-color: hsl(var(--med-color-fb-attention));
+  --border-color-checked: hsl(var(--med-color-fb-attention));
+  --background-checked: hsl(var(--med-color-fb-attention));
+}
+ion-checkbox[ds-color=fb-attention]:hover, ion-checkbox[ds-color=fb-attention]:focus {
+  --border-color: hsl(var(--med-color-fb-attention));
+  --border-color-checked: hsl(var(--med-color-fb-attention));
+  --background-checked: hsl(var(--med-color-fb-attention));
+}
+
+ion-checkbox[ds-color=fb-caution] {
+  --border-color: hsl(var(--med-color-fb-caution));
+  --border-color-checked: hsl(var(--med-color-fb-caution));
+  --background-checked: hsl(var(--med-color-fb-caution));
+}
+ion-checkbox[ds-color=fb-caution]:hover, ion-checkbox[ds-color=fb-caution]:focus {
+  --border-color: hsl(var(--med-color-fb-caution));
+  --border-color-checked: hsl(var(--med-color-fb-caution));
+  --background-checked: hsl(var(--med-color-fb-caution));
+}
+
+ion-checkbox[ds-color=fb-warning] {
+  --border-color: hsl(var(--med-color-fb-warning));
+  --border-color-checked: hsl(var(--med-color-fb-warning));
+  --background-checked: hsl(var(--med-color-fb-warning));
+}
+ion-checkbox[ds-color=fb-warning]:hover, ion-checkbox[ds-color=fb-warning]:focus {
+  --border-color: hsl(var(--med-color-fb-warning));
+  --border-color-checked: hsl(var(--med-color-fb-warning));
+  --background-checked: hsl(var(--med-color-fb-warning));
+}
+
+ion-checkbox[ds-color=fb-success] {
+  --border-color: hsl(var(--med-color-fb-success));
+  --border-color-checked: hsl(var(--med-color-fb-success));
+  --background-checked: hsl(var(--med-color-fb-success));
+}
+ion-checkbox[ds-color=fb-success]:hover, ion-checkbox[ds-color=fb-success]:focus {
+  --border-color: hsl(var(--med-color-fb-success));
+  --border-color-checked: hsl(var(--med-color-fb-success));
+  --background-checked: hsl(var(--med-color-fb-success));
+}
+
+ion-radio {
+  --color: hsl(var(--med-color-brand-4));
+  --color-checked: hsl(var(--med-color-brand-4));
+}
+ion-radio:hover, ion-radio:focus {
+  --color: hsl(var(--med-color-brand-5));
+  --color-checked: hsl(var(--med-color-brand-5));
+}
+ion-radio.radio-disabled {
+  opacity: 0.5;
+}
+
+ion-radio[ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+  width: 16px;
+  height: 16px;
+  background: hsl(var(--med-color-neutral-10));
+  border-radius: 50%;
+}
+ion-radio[ds-name=secondary].radio-checked::before {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: hsl(var(--med-color-brand-4));
+  border-radius: 50%;
+  transform: translate(3px, 3px);
+  content: "";
+}
+ion-radio[ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-brand-5));
+}
+
+ion-radio[ds-color=brand] {
+  --color: hsl(var(--med-color-brand-4));
+  --color-checked: hsl(var(--med-color-brand-4));
+}
+ion-radio[ds-color=brand]:hover, ion-radio[ds-color=brand]:focus {
+  --color: hsl(var(--med-color-brand-5));
+  --color-checked: hsl(var(--med-color-brand-5));
+}
+ion-radio[ds-color=brand][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=brand][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-brand-4));
+}
+ion-radio[ds-color=brand][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=brand][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-brand-5));
+}
+
+ion-radio[ds-color=aula] {
+  --color: hsl(var(--med-color-aula-4));
+  --color-checked: hsl(var(--med-color-aula-4));
+}
+ion-radio[ds-color=aula]:hover, ion-radio[ds-color=aula]:focus {
+  --color: hsl(var(--med-color-aula-5));
+  --color-checked: hsl(var(--med-color-aula-5));
+}
+ion-radio[ds-color=aula][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=aula][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-aula-4));
+}
+ion-radio[ds-color=aula][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=aula][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-aula-5));
+}
+
+ion-radio[ds-color=material] {
+  --color: hsl(var(--med-color-material-4));
+  --color-checked: hsl(var(--med-color-material-4));
+}
+ion-radio[ds-color=material]:hover, ion-radio[ds-color=material]:focus {
+  --color: hsl(var(--med-color-material-5));
+  --color-checked: hsl(var(--med-color-material-5));
+}
+ion-radio[ds-color=material][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=material][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-material-4));
+}
+ion-radio[ds-color=material][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=material][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-material-5));
+}
+
+ion-radio[ds-color=questoes] {
+  --color: hsl(var(--med-color-questoes-4));
+  --color-checked: hsl(var(--med-color-questoes-4));
+}
+ion-radio[ds-color=questoes]:hover, ion-radio[ds-color=questoes]:focus {
+  --color: hsl(var(--med-color-questoes-5));
+  --color-checked: hsl(var(--med-color-questoes-5));
+}
+ion-radio[ds-color=questoes][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=questoes][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-questoes-4));
+}
+ion-radio[ds-color=questoes][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=questoes][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-questoes-5));
+}
+
+ion-radio[ds-color=revalida] {
+  --color: hsl(var(--med-color-revalida-4));
+  --color-checked: hsl(var(--med-color-revalida-4));
+}
+ion-radio[ds-color=revalida]:hover, ion-radio[ds-color=revalida]:focus {
+  --color: hsl(var(--med-color-revalida-5));
+  --color-checked: hsl(var(--med-color-revalida-5));
+}
+ion-radio[ds-color=revalida][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=revalida][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-revalida-4));
+}
+ion-radio[ds-color=revalida][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=revalida][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-revalida-5));
+}
+
+ion-radio[ds-color=neutral-1] {
+  --color: hsl(var(--med-color-neutral-1));
+  --color-checked: hsl(var(--med-color-neutral-1));
+}
+ion-radio[ds-color=neutral-1]:hover, ion-radio[ds-color=neutral-1]:focus {
+  --color: hsl(var(--med-color-neutral-1));
+  --color-checked: hsl(var(--med-color-neutral-1));
+}
+ion-radio[ds-color=neutral-1][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-1][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-1));
+}
+ion-radio[ds-color=neutral-1][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-1][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-1));
+}
+
+ion-radio[ds-color=neutral-2] {
+  --color: hsl(var(--med-color-neutral-2));
+  --color-checked: hsl(var(--med-color-neutral-2));
+}
+ion-radio[ds-color=neutral-2]:hover, ion-radio[ds-color=neutral-2]:focus {
+  --color: hsl(var(--med-color-neutral-2));
+  --color-checked: hsl(var(--med-color-neutral-2));
+}
+ion-radio[ds-color=neutral-2][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-2][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-2));
+}
+ion-radio[ds-color=neutral-2][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-2][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-2));
+}
+
+ion-radio[ds-color=neutral-3] {
+  --color: hsl(var(--med-color-neutral-3));
+  --color-checked: hsl(var(--med-color-neutral-3));
+}
+ion-radio[ds-color=neutral-3]:hover, ion-radio[ds-color=neutral-3]:focus {
+  --color: hsl(var(--med-color-neutral-3));
+  --color-checked: hsl(var(--med-color-neutral-3));
+}
+ion-radio[ds-color=neutral-3][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-3][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-3));
+}
+ion-radio[ds-color=neutral-3][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-3][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-3));
+}
+
+ion-radio[ds-color=neutral-4] {
+  --color: hsl(var(--med-color-neutral-4));
+  --color-checked: hsl(var(--med-color-neutral-4));
+}
+ion-radio[ds-color=neutral-4]:hover, ion-radio[ds-color=neutral-4]:focus {
+  --color: hsl(var(--med-color-neutral-4));
+  --color-checked: hsl(var(--med-color-neutral-4));
+}
+ion-radio[ds-color=neutral-4][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-4][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-4));
+}
+ion-radio[ds-color=neutral-4][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-4][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-4));
+}
+
+ion-radio[ds-color=neutral-5] {
+  --color: hsl(var(--med-color-neutral-5));
+  --color-checked: hsl(var(--med-color-neutral-5));
+}
+ion-radio[ds-color=neutral-5]:hover, ion-radio[ds-color=neutral-5]:focus {
+  --color: hsl(var(--med-color-neutral-5));
+  --color-checked: hsl(var(--med-color-neutral-5));
+}
+ion-radio[ds-color=neutral-5][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-5][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-5));
+}
+ion-radio[ds-color=neutral-5][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-5][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-5));
+}
+
+ion-radio[ds-color=neutral-6] {
+  --color: hsl(var(--med-color-neutral-6));
+  --color-checked: hsl(var(--med-color-neutral-6));
+}
+ion-radio[ds-color=neutral-6]:hover, ion-radio[ds-color=neutral-6]:focus {
+  --color: hsl(var(--med-color-neutral-6));
+  --color-checked: hsl(var(--med-color-neutral-6));
+}
+ion-radio[ds-color=neutral-6][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-6][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-6));
+}
+ion-radio[ds-color=neutral-6][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-6][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-6));
+}
+
+ion-radio[ds-color=neutral-7] {
+  --color: hsl(var(--med-color-neutral-7));
+  --color-checked: hsl(var(--med-color-neutral-7));
+}
+ion-radio[ds-color=neutral-7]:hover, ion-radio[ds-color=neutral-7]:focus {
+  --color: hsl(var(--med-color-neutral-7));
+  --color-checked: hsl(var(--med-color-neutral-7));
+}
+ion-radio[ds-color=neutral-7][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-7][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-7));
+}
+ion-radio[ds-color=neutral-7][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-7][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-7));
+}
+
+ion-radio[ds-color=neutral-8] {
+  --color: hsl(var(--med-color-neutral-8));
+  --color-checked: hsl(var(--med-color-neutral-8));
+}
+ion-radio[ds-color=neutral-8]:hover, ion-radio[ds-color=neutral-8]:focus {
+  --color: hsl(var(--med-color-neutral-8));
+  --color-checked: hsl(var(--med-color-neutral-8));
+}
+ion-radio[ds-color=neutral-8][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-8][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-8));
+}
+ion-radio[ds-color=neutral-8][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-8][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-8));
+}
+
+ion-radio[ds-color=neutral-9] {
+  --color: hsl(var(--med-color-neutral-9));
+  --color-checked: hsl(var(--med-color-neutral-9));
+}
+ion-radio[ds-color=neutral-9]:hover, ion-radio[ds-color=neutral-9]:focus {
+  --color: hsl(var(--med-color-neutral-9));
+  --color-checked: hsl(var(--med-color-neutral-9));
+}
+ion-radio[ds-color=neutral-9][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-9][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-9));
+}
+ion-radio[ds-color=neutral-9][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-9][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-9));
+}
+
+ion-radio[ds-color=neutral-10] {
+  --color: hsl(var(--med-color-neutral-10));
+  --color-checked: hsl(var(--med-color-neutral-10));
+}
+ion-radio[ds-color=neutral-10]:hover, ion-radio[ds-color=neutral-10]:focus {
+  --color: hsl(var(--med-color-neutral-10));
+  --color-checked: hsl(var(--med-color-neutral-10));
+}
+ion-radio[ds-color=neutral-10][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-10][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-10));
+}
+ion-radio[ds-color=neutral-10][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-10][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-radio[ds-color=neutral-15] {
+  --color: hsl(var(--med-color-neutral-15));
+  --color-checked: hsl(var(--med-color-neutral-15));
+}
+ion-radio[ds-color=neutral-15]:hover, ion-radio[ds-color=neutral-15]:focus {
+  --color: hsl(var(--med-color-neutral-15));
+  --color-checked: hsl(var(--med-color-neutral-15));
+}
+ion-radio[ds-color=neutral-15][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-15][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-15));
+}
+ion-radio[ds-color=neutral-15][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-15][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-15));
+}
+
+ion-radio[ds-color=neutral-25] {
+  --color: hsl(var(--med-color-neutral-25));
+  --color-checked: hsl(var(--med-color-neutral-25));
+}
+ion-radio[ds-color=neutral-25]:hover, ion-radio[ds-color=neutral-25]:focus {
+  --color: hsl(var(--med-color-neutral-25));
+  --color-checked: hsl(var(--med-color-neutral-25));
+}
+ion-radio[ds-color=neutral-25][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-25][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-25));
+}
+ion-radio[ds-color=neutral-25][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-25][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-25));
+}
+
+ion-radio[ds-color=neutral-35] {
+  --color: hsl(var(--med-color-neutral-35));
+  --color-checked: hsl(var(--med-color-neutral-35));
+}
+ion-radio[ds-color=neutral-35]:hover, ion-radio[ds-color=neutral-35]:focus {
+  --color: hsl(var(--med-color-neutral-35));
+  --color-checked: hsl(var(--med-color-neutral-35));
+}
+ion-radio[ds-color=neutral-35][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-35][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-35));
+}
+ion-radio[ds-color=neutral-35][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-35][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-35));
+}
+
+ion-radio[ds-color=neutral-45] {
+  --color: hsl(var(--med-color-neutral-45));
+  --color-checked: hsl(var(--med-color-neutral-45));
+}
+ion-radio[ds-color=neutral-45]:hover, ion-radio[ds-color=neutral-45]:focus {
+  --color: hsl(var(--med-color-neutral-45));
+  --color-checked: hsl(var(--med-color-neutral-45));
+}
+ion-radio[ds-color=neutral-45][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-45][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-45));
+}
+ion-radio[ds-color=neutral-45][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-45][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-45));
+}
+
+ion-radio[ds-color=neutral-55] {
+  --color: hsl(var(--med-color-neutral-55));
+  --color-checked: hsl(var(--med-color-neutral-55));
+}
+ion-radio[ds-color=neutral-55]:hover, ion-radio[ds-color=neutral-55]:focus {
+  --color: hsl(var(--med-color-neutral-55));
+  --color-checked: hsl(var(--med-color-neutral-55));
+}
+ion-radio[ds-color=neutral-55][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-55][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-55));
+}
+ion-radio[ds-color=neutral-55][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-55][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-55));
+}
+
+ion-radio[ds-color=neutral-65] {
+  --color: hsl(var(--med-color-neutral-65));
+  --color-checked: hsl(var(--med-color-neutral-65));
+}
+ion-radio[ds-color=neutral-65]:hover, ion-radio[ds-color=neutral-65]:focus {
+  --color: hsl(var(--med-color-neutral-65));
+  --color-checked: hsl(var(--med-color-neutral-65));
+}
+ion-radio[ds-color=neutral-65][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-65][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-65));
+}
+ion-radio[ds-color=neutral-65][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-65][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-65));
+}
+
+ion-radio[ds-color=neutral-75] {
+  --color: hsl(var(--med-color-neutral-75));
+  --color-checked: hsl(var(--med-color-neutral-75));
+}
+ion-radio[ds-color=neutral-75]:hover, ion-radio[ds-color=neutral-75]:focus {
+  --color: hsl(var(--med-color-neutral-75));
+  --color-checked: hsl(var(--med-color-neutral-75));
+}
+ion-radio[ds-color=neutral-75][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-75][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-75));
+}
+ion-radio[ds-color=neutral-75][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-75][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-75));
+}
+
+ion-radio[ds-color=neutral-85] {
+  --color: hsl(var(--med-color-neutral-85));
+  --color-checked: hsl(var(--med-color-neutral-85));
+}
+ion-radio[ds-color=neutral-85]:hover, ion-radio[ds-color=neutral-85]:focus {
+  --color: hsl(var(--med-color-neutral-85));
+  --color-checked: hsl(var(--med-color-neutral-85));
+}
+ion-radio[ds-color=neutral-85][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-85][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-85));
+}
+ion-radio[ds-color=neutral-85][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-85][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-85));
+}
+
+ion-radio[ds-color=neutral-95] {
+  --color: hsl(var(--med-color-neutral-95));
+  --color-checked: hsl(var(--med-color-neutral-95));
+}
+ion-radio[ds-color=neutral-95]:hover, ion-radio[ds-color=neutral-95]:focus {
+  --color: hsl(var(--med-color-neutral-95));
+  --color-checked: hsl(var(--med-color-neutral-95));
+}
+ion-radio[ds-color=neutral-95][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=neutral-95][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-95));
+}
+ion-radio[ds-color=neutral-95][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=neutral-95][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-neutral-95));
+}
+
+ion-radio[ds-color=fb-attention] {
+  --color: hsl(var(--med-color-fb-attention));
+  --color-checked: hsl(var(--med-color-fb-attention));
+}
+ion-radio[ds-color=fb-attention]:hover, ion-radio[ds-color=fb-attention]:focus {
+  --color: hsl(var(--med-color-fb-attention));
+  --color-checked: hsl(var(--med-color-fb-attention));
+}
+ion-radio[ds-color=fb-attention][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=fb-attention][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-fb-attention));
+}
+ion-radio[ds-color=fb-attention][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=fb-attention][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-fb-attention));
+}
+
+ion-radio[ds-color=fb-caution] {
+  --color: hsl(var(--med-color-fb-caution));
+  --color-checked: hsl(var(--med-color-fb-caution));
+}
+ion-radio[ds-color=fb-caution]:hover, ion-radio[ds-color=fb-caution]:focus {
+  --color: hsl(var(--med-color-fb-caution));
+  --color-checked: hsl(var(--med-color-fb-caution));
+}
+ion-radio[ds-color=fb-caution][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=fb-caution][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-fb-caution));
+}
+ion-radio[ds-color=fb-caution][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=fb-caution][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-fb-caution));
+}
+
+ion-radio[ds-color=fb-warning] {
+  --color: hsl(var(--med-color-fb-warning));
+  --color-checked: hsl(var(--med-color-fb-warning));
+}
+ion-radio[ds-color=fb-warning]:hover, ion-radio[ds-color=fb-warning]:focus {
+  --color: hsl(var(--med-color-fb-warning));
+  --color-checked: hsl(var(--med-color-fb-warning));
+}
+ion-radio[ds-color=fb-warning][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=fb-warning][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-fb-warning));
+}
+ion-radio[ds-color=fb-warning][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=fb-warning][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-fb-warning));
+}
+
+ion-radio[ds-color=fb-success] {
+  --color: hsl(var(--med-color-fb-success));
+  --color-checked: hsl(var(--med-color-fb-success));
+}
+ion-radio[ds-color=fb-success]:hover, ion-radio[ds-color=fb-success]:focus {
+  --color: hsl(var(--med-color-fb-success));
+  --color-checked: hsl(var(--med-color-fb-success));
+}
+ion-radio[ds-color=fb-success][ds-name=secondary] {
+  --color: transparent;
+  --color-checked: transparent;
+}
+ion-radio[ds-color=fb-success][ds-name=secondary].radio-checked::before {
+  background-color: hsl(var(--med-color-fb-success));
+}
+ion-radio[ds-color=fb-success][ds-name=secondary]:hover.radio-checked::before, ion-radio[ds-color=fb-success][ds-name=secondary]:focus.radio-checked::before {
+  background-color: hsl(var(--med-color-fb-success));
+}
+
 /*# sourceMappingURL=templarios-2.0.css.map */

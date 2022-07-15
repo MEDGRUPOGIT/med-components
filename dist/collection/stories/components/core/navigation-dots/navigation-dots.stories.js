@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Core (Revisado: abril 2022)/Navigation Dots',
+  title: 'Components/Core/Navigation Dots',
   decorators: [withDesign],
 };
 

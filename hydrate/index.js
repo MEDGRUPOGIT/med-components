@@ -6912,7 +6912,7 @@ const createAnimation = (animationId) => {
 /**
  *  Generates the color classes for the component.
  */
-const generateMedColor = (color, cssClassMap) => {
+const generateMedColor$1 = (color, cssClassMap) => {
   if (typeof color === 'string' && color.length > 0) {
     const colorIdentifier = color.split('-');
     if (colorIdentifier[0] === 'neutral') {
@@ -7050,7 +7050,7 @@ class Accordion {
   }
   render() {
     const { noBorder, margin } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(null, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(null, {
         'med-accordion-list': true,
         'med-accordion-list--no-border': noBorder,
         [`med-accordion-list--${margin}`]: margin !== undefined
@@ -9268,7 +9268,7 @@ class BackButton {
     const { dsName, dsColor, dsSize, defaultHref, disabled, type, hasIconOnly, backButtonIcon, backButtonText } = this;
     const showBackButton = defaultHref !== undefined;
     const mode = getIonMode$1(this);
-    return (hAsync(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { onClick: this.onClick, class: generateMedColor$1(dsColor, {
         [mode]: true,
         //'button': true, // ion-buttons target .button
         'back-button-disabled': disabled,
@@ -9379,9 +9379,9 @@ class Backdrop {
   }; }
 }
 
-const iosBadgeMdCss = "/*!@:host*/.sc-ion-badge-ios-h{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:13px;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-badge-ios-h{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@:host(.ion-color)*/.ion-color.sc-ion-badge-ios-h{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(:empty)*/.sc-ion-badge-ios-h:empty{display:none}/*!@:host*/.sc-ion-badge-ios-h{--padding-top:3px;--padding-end:4px;--padding-bottom:4px;--padding-start:4px;border-radius:4px}/*!@:host*/.sc-ion-badge-ios-h{--background:hsl(var(--med-color-brand-3));--color:hsl(var(--med-color-contrast-fixed));--padding-bottom:0;--padding-end:8px;--padding-start:8px;--padding-top:0;--border-color:hsl(var(--med-color-brand-3))}/*!@:host(.med-badge)*/.med-badge.sc-ion-badge-ios-h{font-size:10x;line-height:12px;font-weight:600;border-radius:4px;border-color:var(--border-color);border-width:1px;font-family:inherit;min-width:auto;border-style:solid;height:24px;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}/*!@:host(.med-badge--sm)*/.med-badge--sm.sc-ion-badge-ios-h{--padding-end:8px;--padding-start:8px;font-size:10x;line-height:12px;height:24px}/*!@:host(.med-badge--md)*/.med-badge--md.sc-ion-badge-ios-h{--padding-end:8px;--padding-start:8px;font-size:14px;line-height:16px;height:32px}/*!@:host(.med-color)*/.med-color.sc-ion-badge-ios-h{--border-color:hsl(var(--med-color-3));background:hsl(var(--med-color-3));color:hsl(var(--med-color-contrast-fixed))}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-ion-badge-ios-h{--border-color:hsl(var(--med-color-neutral));background:hsl(var(--med-color-neutral));color:hsl(var(--med-color-neutral-contrast))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-ion-badge-ios-h{--border-color:hsl(var(--med-color-feedback));background:hsl(var(--med-color-feedback));color:hsl(var(--med-color-feedback-contrast))}/*!@:host(.med-badge--outline)*/.med-badge--outline.sc-ion-badge-ios-h{border-style:solid;background:transparent;color:hsl(var(--med-color-brand-3))}/*!@:host(.med-color.med-badge--outline)*/.med-color.med-badge--outline.sc-ion-badge-ios-h{--border-color:hsl(var(--med-color-3));background:transparent;color:hsl(var(--med-color-3))}/*!@:host(.med-color-neutral.med-badge--outline)*/.med-color-neutral.med-badge--outline.sc-ion-badge-ios-h{--border-color:hsl(var(--med-color-neutral));background:transparent;color:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback.med-badge--outline)*/.med-color-feedback.med-badge--outline.sc-ion-badge-ios-h{--border-color:hsl(var(--med-color-feedback));background:transparent;color:hsl(var(--med-color-feedback))}";
+const badgeIosCss = "/*!@:host*/.sc-ion-badge-ios-h{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:13px;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-badge-ios-h{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@:host(.ion-color)*/.ion-color.sc-ion-badge-ios-h{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(:empty)*/.sc-ion-badge-ios-h:empty{display:none}/*!@:host*/.sc-ion-badge-ios-h{border-radius:10px}";
 
-const badgeMdCss = "/*!@:host*/.sc-ion-badge-md-h{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:13px;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-badge-md-h{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@:host(.ion-color)*/.ion-color.sc-ion-badge-md-h{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(:empty)*/.sc-ion-badge-md-h:empty{display:none}/*!@:host*/.sc-ion-badge-md-h{--padding-top:3px;--padding-end:4px;--padding-bottom:4px;--padding-start:4px;border-radius:4px}/*!@:host*/.sc-ion-badge-md-h{--background:hsl(var(--med-color-brand-3));--color:hsl(var(--med-color-contrast-fixed));--padding-bottom:0;--padding-end:8px;--padding-start:8px;--padding-top:0;--border-color:hsl(var(--med-color-brand-3))}/*!@:host(.med-badge)*/.med-badge.sc-ion-badge-md-h{font-size:10x;line-height:12px;font-weight:600;border-radius:4px;border-color:var(--border-color);border-width:1px;font-family:inherit;min-width:auto;border-style:solid;height:24px;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}/*!@:host(.med-badge--sm)*/.med-badge--sm.sc-ion-badge-md-h{--padding-end:8px;--padding-start:8px;font-size:10x;line-height:12px;height:24px}/*!@:host(.med-badge--md)*/.med-badge--md.sc-ion-badge-md-h{--padding-end:8px;--padding-start:8px;font-size:14px;line-height:16px;height:32px}/*!@:host(.med-color)*/.med-color.sc-ion-badge-md-h{--border-color:hsl(var(--med-color-3));background:hsl(var(--med-color-3));color:hsl(var(--med-color-contrast-fixed))}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-ion-badge-md-h{--border-color:hsl(var(--med-color-neutral));background:hsl(var(--med-color-neutral));color:hsl(var(--med-color-neutral-contrast))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-ion-badge-md-h{--border-color:hsl(var(--med-color-feedback));background:hsl(var(--med-color-feedback));color:hsl(var(--med-color-feedback-contrast))}/*!@:host(.med-badge--outline)*/.med-badge--outline.sc-ion-badge-md-h{border-style:solid;background:transparent;color:hsl(var(--med-color-brand-3))}/*!@:host(.med-color.med-badge--outline)*/.med-color.med-badge--outline.sc-ion-badge-md-h{--border-color:hsl(var(--med-color-3));background:transparent;color:hsl(var(--med-color-3))}/*!@:host(.med-color-neutral.med-badge--outline)*/.med-color-neutral.med-badge--outline.sc-ion-badge-md-h{--border-color:hsl(var(--med-color-neutral));background:transparent;color:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback.med-badge--outline)*/.med-color-feedback.med-badge--outline.sc-ion-badge-md-h{--border-color:hsl(var(--med-color-feedback));background:transparent;color:hsl(var(--med-color-feedback))}";
+const badgeMdCss = "/*!@:host*/.sc-ion-badge-md-h{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);--padding-top:3px;--padding-end:8px;--padding-bottom:3px;--padding-start:8px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:inline-block;min-width:10px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:13px;font-weight:bold;line-height:1;text-align:center;white-space:nowrap;contain:content;vertical-align:baseline}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-badge-md-h{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@:host(.ion-color)*/.ion-color.sc-ion-badge-md-h{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(:empty)*/.sc-ion-badge-md-h:empty{display:none}/*!@:host*/.sc-ion-badge-md-h{--padding-top:3px;--padding-end:4px;--padding-bottom:4px;--padding-start:4px;border-radius:4px}";
 
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -9391,31 +9391,24 @@ class Badge {
     registerInstance(this, hostRef);
   }
   render() {
-    const { dsColor, fill, dsSize } = this;
     const mode = getIonMode$1(this);
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: createColorClasses$1(this.color, {
         [mode]: true,
-        'med-badge': true,
-        [`med-badge--${fill}`]: fill !== undefined,
-        [`med-badge--${dsSize}`]: dsSize !== undefined,
       }) }, hAsync("slot", null)));
   }
   static get style() { return {
-    ios: iosBadgeMdCss,
+    ios: badgeIosCss,
     md: badgeMdCss
   }; }
   static get cmpMeta() { return {
     "$flags$": 41,
     "$tagName$": "ion-badge",
     "$members$": {
-      "dsColor": [513, "ds-color"],
-      "fill": [513],
-      "dsSize": [513, "ds-size"],
       "color": [1]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"], ["fill", "fill"], ["dsSize", "ds-size"]]
+    "$attrsToReflect$": []
   }; }
 }
 
@@ -9844,9 +9837,9 @@ class CardTitle {
   }; }
 }
 
-const iosCheckboxMdCss = "/*!@:host*/.sc-ion-checkbox-ios-h{--background-checked:var(--ion-color-primary, #3880ff);--border-color-checked:var(--ion-color-primary, #3880ff);--checkmark-color:var(--ion-color-primary-contrast, #fff);--checkmark-width:1;--transition:none;display:inline-block;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}/*!@:host(.ion-color)*/.ion-color.sc-ion-checkbox-ios-h{--background-checked:var(--ion-color-base);--border-color-checked:var(--ion-color-base);--checkmark-color:var(--ion-color-contrast)}/*!@label*/label.sc-ion-checkbox-ios{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}/*!@[dir=rtl] label, :host-context([dir=rtl]) label*/[dir=rtl].sc-ion-checkbox-ios label.sc-ion-checkbox-ios,[dir=rtl].sc-ion-checkbox-ios-h label.sc-ion-checkbox-ios,[dir=rtl] .sc-ion-checkbox-ios-h label.sc-ion-checkbox-ios{left:unset;right:unset;right:0}/*!@label::-moz-focus-inner*/label.sc-ion-checkbox-ios::-moz-focus-inner{border:0}/*!@input*/input.sc-ion-checkbox-ios{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}/*!@.checkbox-icon*/.checkbox-icon.sc-ion-checkbox-ios{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-sizing:border-box;box-sizing:border-box}/*!@.checkbox-icon path*/.checkbox-icon.sc-ion-checkbox-ios path.sc-ion-checkbox-ios{fill:none;stroke:var(--checkmark-color);stroke-width:var(--checkmark-width);opacity:0}/*!@:host(.checkbox-checked) .checkbox-icon,\n:host(.checkbox-indeterminate) .checkbox-icon*/.checkbox-checked.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios,.checkbox-indeterminate.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios{border-color:var(--border-color-checked);background:var(--background-checked)}/*!@:host(.checkbox-checked) .checkbox-icon path,\n:host(.checkbox-indeterminate) .checkbox-icon path*/.checkbox-checked.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios path.sc-ion-checkbox-ios,.checkbox-indeterminate.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios path.sc-ion-checkbox-ios{opacity:1}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-ios-h{pointer-events:none}/*!@:host*/.sc-ion-checkbox-ios-h{--border-radius:calc(var(--size) * .125);--border-width:2px;--border-style:solid;--border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.51);--checkmark-width:3;--background:var(--ion-item-background, var(--ion-background-color, #fff));--transition:background 180ms cubic-bezier(0.4, 0, 0.2, 1);--size:18px;width:var(--size);height:var(--size)}/*!@.checkbox-icon path*/.checkbox-icon.sc-ion-checkbox-ios path.sc-ion-checkbox-ios{stroke-dasharray:30;stroke-dashoffset:30}/*!@:host(.checkbox-checked) .checkbox-icon path,\n:host(.checkbox-indeterminate) .checkbox-icon path*/.checkbox-checked.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios path.sc-ion-checkbox-ios,.checkbox-indeterminate.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios path.sc-ion-checkbox-ios{stroke-dashoffset:0;-webkit-transition:stroke-dashoffset 90ms linear 90ms;transition:stroke-dashoffset 90ms linear 90ms}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-ios-h{opacity:0.3}/*!@:host(.in-item)*/.in-item.sc-ion-checkbox-ios-h{margin-left:0;margin-right:0;margin-top:18px;margin-bottom:18px;display:block;position:static}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-ios-h{margin-left:4px;margin-right:36px;margin-top:18px;margin-bottom:18px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-ios-h{margin-left:unset;margin-right:unset;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:36px;margin-inline-end:36px}}/*!@:host*/.sc-ion-checkbox-ios-h{--background:transparent;--background-checked:hsl(var(--med-color-brand-4));--checkmark-color:hsl(var(--med-color-neutral-2));--border-radius:4px;--border-color:hsl(var(--med-color-brand-4));--border-color-checked:hsl(var(--med-color-brand-4));--border-width:2px;--size:20px;--transition:background-color 300ms ease-out, border-color 300ms ease-out,}/*!@:host*/.sc-ion-checkbox-ios-h{min-width:var(--size)}@media (any-hover: hover){/*!@:host(:hover)*/.sc-ion-checkbox-ios-h:hover{--border-color:hsl(var(--med-color-brand-5));--background-checked:hsl(var(--med-color-brand-5));--border-color-checked:hsl(var(--med-color-brand-5))}}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-ios-h{opacity:0.5}/*!@:host(.med-color)*/.med-color.sc-ion-checkbox-ios-h{--border-color:hsl(var(--med-color-4));--background-checked:hsl(var(--med-color-4));--border-color-checked:hsl(var(--med-color-4))}@media (any-hover: hover){/*!@:host(.med-color:hover)*/.med-color.sc-ion-checkbox-ios-h:hover{--border-color:hsl(var(--med-color-5));--background-checked:hsl(var(--med-color-5));--border-color-checked:hsl(var(--med-color-5))}}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-ion-checkbox-ios-h{--border-color:hsl(var(--med-color-neutral));--background-checked:hsl(var(--med-color-neutral));--border-color-checked:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-ion-checkbox-ios-h{--border-color:hsl(var(--med-color-feedback));--background-checked:hsl(var(--med-color-feedback));--border-color-checked:hsl(var(--med-color-feedback))}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-ios-h{margin:0}/*!@:host(.in-item[slot=end])*/.in-item[slot=end].sc-ion-checkbox-ios-h{margin:0}";
+const checkboxIosCss = "/*!@:host*/.sc-ion-checkbox-ios-h{--background-checked:var(--ion-color-primary, #3880ff);--border-color-checked:var(--ion-color-primary, #3880ff);--checkmark-color:var(--ion-color-primary-contrast, #fff);--checkmark-width:1;--transition:none;display:inline-block;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}/*!@:host(.ion-color)*/.ion-color.sc-ion-checkbox-ios-h{--background-checked:var(--ion-color-base);--border-color-checked:var(--ion-color-base);--checkmark-color:var(--ion-color-contrast)}/*!@label*/label.sc-ion-checkbox-ios{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}/*!@[dir=rtl] label, :host-context([dir=rtl]) label*/[dir=rtl].sc-ion-checkbox-ios label.sc-ion-checkbox-ios,[dir=rtl].sc-ion-checkbox-ios-h label.sc-ion-checkbox-ios,[dir=rtl] .sc-ion-checkbox-ios-h label.sc-ion-checkbox-ios{left:unset;right:unset;right:0}/*!@label::-moz-focus-inner*/label.sc-ion-checkbox-ios::-moz-focus-inner{border:0}/*!@input*/input.sc-ion-checkbox-ios{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}/*!@.checkbox-icon*/.checkbox-icon.sc-ion-checkbox-ios{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-sizing:border-box;box-sizing:border-box}/*!@.checkbox-icon path*/.checkbox-icon.sc-ion-checkbox-ios path.sc-ion-checkbox-ios{fill:none;stroke:var(--checkmark-color);stroke-width:var(--checkmark-width);opacity:0}/*!@:host(.checkbox-checked) .checkbox-icon,\n:host(.checkbox-indeterminate) .checkbox-icon*/.checkbox-checked.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios,.checkbox-indeterminate.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios{border-color:var(--border-color-checked);background:var(--background-checked)}/*!@:host(.checkbox-checked) .checkbox-icon path,\n:host(.checkbox-indeterminate) .checkbox-icon path*/.checkbox-checked.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios path.sc-ion-checkbox-ios,.checkbox-indeterminate.sc-ion-checkbox-ios-h .checkbox-icon.sc-ion-checkbox-ios path.sc-ion-checkbox-ios{opacity:1}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-ios-h{pointer-events:none}/*!@:host*/.sc-ion-checkbox-ios-h{--border-radius:50%;--border-width:1px;--border-style:solid;--border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.23);--background:var(--ion-item-background, var(--ion-background-color, #fff));--size:26px;width:var(--size);height:var(--size)}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-ios-h{opacity:0.3}/*!@:host(.in-item)*/.in-item.sc-ion-checkbox-ios-h{margin-left:0;margin-right:8px;margin-top:10px;margin-bottom:9px;display:block;position:static}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item)*/.in-item.sc-ion-checkbox-ios-h{margin-left:unset;margin-right:unset;-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:8px;margin-inline-end:8px}}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-ios-h{margin-left:2px;margin-right:20px;margin-top:8px;margin-bottom:8px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-ios-h{margin-left:unset;margin-right:unset;-webkit-margin-start:2px;margin-inline-start:2px;-webkit-margin-end:20px;margin-inline-end:20px}}";
 
-const checkboxMdCss = "/*!@:host*/.sc-ion-checkbox-md-h{--background-checked:var(--ion-color-primary, #3880ff);--border-color-checked:var(--ion-color-primary, #3880ff);--checkmark-color:var(--ion-color-primary-contrast, #fff);--checkmark-width:1;--transition:none;display:inline-block;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}/*!@:host(.ion-color)*/.ion-color.sc-ion-checkbox-md-h{--background-checked:var(--ion-color-base);--border-color-checked:var(--ion-color-base);--checkmark-color:var(--ion-color-contrast)}/*!@label*/label.sc-ion-checkbox-md{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}/*!@[dir=rtl] label, :host-context([dir=rtl]) label*/[dir=rtl].sc-ion-checkbox-md label.sc-ion-checkbox-md,[dir=rtl].sc-ion-checkbox-md-h label.sc-ion-checkbox-md,[dir=rtl] .sc-ion-checkbox-md-h label.sc-ion-checkbox-md{left:unset;right:unset;right:0}/*!@label::-moz-focus-inner*/label.sc-ion-checkbox-md::-moz-focus-inner{border:0}/*!@input*/input.sc-ion-checkbox-md{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}/*!@.checkbox-icon*/.checkbox-icon.sc-ion-checkbox-md{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-sizing:border-box;box-sizing:border-box}/*!@.checkbox-icon path*/.checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md{fill:none;stroke:var(--checkmark-color);stroke-width:var(--checkmark-width);opacity:0}/*!@:host(.checkbox-checked) .checkbox-icon,\n:host(.checkbox-indeterminate) .checkbox-icon*/.checkbox-checked.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md,.checkbox-indeterminate.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md{border-color:var(--border-color-checked);background:var(--background-checked)}/*!@:host(.checkbox-checked) .checkbox-icon path,\n:host(.checkbox-indeterminate) .checkbox-icon path*/.checkbox-checked.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md,.checkbox-indeterminate.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md{opacity:1}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-md-h{pointer-events:none}/*!@:host*/.sc-ion-checkbox-md-h{--border-radius:calc(var(--size) * .125);--border-width:2px;--border-style:solid;--border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.51);--checkmark-width:3;--background:var(--ion-item-background, var(--ion-background-color, #fff));--transition:background 180ms cubic-bezier(0.4, 0, 0.2, 1);--size:18px;width:var(--size);height:var(--size)}/*!@.checkbox-icon path*/.checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md{stroke-dasharray:30;stroke-dashoffset:30}/*!@:host(.checkbox-checked) .checkbox-icon path,\n:host(.checkbox-indeterminate) .checkbox-icon path*/.checkbox-checked.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md,.checkbox-indeterminate.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md{stroke-dashoffset:0;-webkit-transition:stroke-dashoffset 90ms linear 90ms;transition:stroke-dashoffset 90ms linear 90ms}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-md-h{opacity:0.3}/*!@:host(.in-item)*/.in-item.sc-ion-checkbox-md-h{margin-left:0;margin-right:0;margin-top:18px;margin-bottom:18px;display:block;position:static}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-md-h{margin-left:4px;margin-right:36px;margin-top:18px;margin-bottom:18px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-md-h{margin-left:unset;margin-right:unset;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:36px;margin-inline-end:36px}}/*!@:host*/.sc-ion-checkbox-md-h{--background:transparent;--background-checked:hsl(var(--med-color-brand-4));--checkmark-color:hsl(var(--med-color-neutral-2));--border-radius:4px;--border-color:hsl(var(--med-color-brand-4));--border-color-checked:hsl(var(--med-color-brand-4));--border-width:2px;--size:20px;--transition:background-color 300ms ease-out, border-color 300ms ease-out,}/*!@:host*/.sc-ion-checkbox-md-h{min-width:var(--size)}@media (any-hover: hover){/*!@:host(:hover)*/.sc-ion-checkbox-md-h:hover{--border-color:hsl(var(--med-color-brand-5));--background-checked:hsl(var(--med-color-brand-5));--border-color-checked:hsl(var(--med-color-brand-5))}}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-md-h{opacity:0.5}/*!@:host(.med-color)*/.med-color.sc-ion-checkbox-md-h{--border-color:hsl(var(--med-color-4));--background-checked:hsl(var(--med-color-4));--border-color-checked:hsl(var(--med-color-4))}@media (any-hover: hover){/*!@:host(.med-color:hover)*/.med-color.sc-ion-checkbox-md-h:hover{--border-color:hsl(var(--med-color-5));--background-checked:hsl(var(--med-color-5));--border-color-checked:hsl(var(--med-color-5))}}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-ion-checkbox-md-h{--border-color:hsl(var(--med-color-neutral));--background-checked:hsl(var(--med-color-neutral));--border-color-checked:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-ion-checkbox-md-h{--border-color:hsl(var(--med-color-feedback));--background-checked:hsl(var(--med-color-feedback));--border-color-checked:hsl(var(--med-color-feedback))}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-md-h{margin:0}/*!@:host(.in-item[slot=end])*/.in-item[slot=end].sc-ion-checkbox-md-h{margin:0}";
+const checkboxMdCss = "/*!@:host*/.sc-ion-checkbox-md-h{--background-checked:var(--ion-color-primary, #3880ff);--border-color-checked:var(--ion-color-primary, #3880ff);--checkmark-color:var(--ion-color-primary-contrast, #fff);--checkmark-width:1;--transition:none;display:inline-block;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}/*!@:host(.ion-color)*/.ion-color.sc-ion-checkbox-md-h{--background-checked:var(--ion-color-base);--border-color-checked:var(--ion-color-base);--checkmark-color:var(--ion-color-contrast)}/*!@label*/label.sc-ion-checkbox-md{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}/*!@[dir=rtl] label, :host-context([dir=rtl]) label*/[dir=rtl].sc-ion-checkbox-md label.sc-ion-checkbox-md,[dir=rtl].sc-ion-checkbox-md-h label.sc-ion-checkbox-md,[dir=rtl] .sc-ion-checkbox-md-h label.sc-ion-checkbox-md{left:unset;right:unset;right:0}/*!@label::-moz-focus-inner*/label.sc-ion-checkbox-md::-moz-focus-inner{border:0}/*!@input*/input.sc-ion-checkbox-md{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}/*!@.checkbox-icon*/.checkbox-icon.sc-ion-checkbox-md{border-radius:var(--border-radius);display:block;position:relative;width:100%;height:100%;-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);background:var(--background);-webkit-box-sizing:border-box;box-sizing:border-box}/*!@.checkbox-icon path*/.checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md{fill:none;stroke:var(--checkmark-color);stroke-width:var(--checkmark-width);opacity:0}/*!@:host(.checkbox-checked) .checkbox-icon,\n:host(.checkbox-indeterminate) .checkbox-icon*/.checkbox-checked.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md,.checkbox-indeterminate.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md{border-color:var(--border-color-checked);background:var(--background-checked)}/*!@:host(.checkbox-checked) .checkbox-icon path,\n:host(.checkbox-indeterminate) .checkbox-icon path*/.checkbox-checked.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md,.checkbox-indeterminate.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md{opacity:1}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-md-h{pointer-events:none}/*!@:host*/.sc-ion-checkbox-md-h{--border-radius:calc(var(--size) * .125);--border-width:2px;--border-style:solid;--border-color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.51);--checkmark-width:3;--background:var(--ion-item-background, var(--ion-background-color, #fff));--transition:background 180ms cubic-bezier(0.4, 0, 0.2, 1);--size:18px;width:var(--size);height:var(--size)}/*!@.checkbox-icon path*/.checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md{stroke-dasharray:30;stroke-dashoffset:30}/*!@:host(.checkbox-checked) .checkbox-icon path,\n:host(.checkbox-indeterminate) .checkbox-icon path*/.checkbox-checked.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md,.checkbox-indeterminate.sc-ion-checkbox-md-h .checkbox-icon.sc-ion-checkbox-md path.sc-ion-checkbox-md{stroke-dashoffset:0;-webkit-transition:stroke-dashoffset 90ms linear 90ms;transition:stroke-dashoffset 90ms linear 90ms}/*!@:host(.checkbox-disabled)*/.checkbox-disabled.sc-ion-checkbox-md-h{opacity:0.3}/*!@:host(.in-item)*/.in-item.sc-ion-checkbox-md-h{margin-left:0;margin-right:0;margin-top:18px;margin-bottom:18px;display:block;position:static}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-md-h{margin-left:4px;margin-right:36px;margin-top:18px;margin-bottom:18px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-checkbox-md-h{margin-left:unset;margin-right:unset;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:36px;margin-inline-end:36px}}";
 
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -9924,7 +9917,7 @@ class Checkbox {
     }
   }
   render() {
-    const { dsColor, checked, disabled, el, indeterminate, inputId, name, value } = this;
+    const { color, checked, disabled, el, indeterminate, inputId, name, value } = this;
     const mode = getIonMode$1(this);
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     renderHiddenInput(true, el, name, (checked ? value : ''), disabled);
@@ -9936,9 +9929,9 @@ class Checkbox {
         ? hAsync("path", { d: "M2 12H22", part: "mark" })
         : hAsync("path", { d: "M1.73,12.91 8.1,19.28 22.79,4.59", part: "mark" });
     }
-    return (hAsync(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: generateMedColor(dsColor, {
+    return (hAsync(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses$1(color, {
         [mode]: true,
-        'in-item': hostContext('ion-item', el) || hostContext('med-item', el),
+        'in-item': hostContext('ion-item', el),
         'checkbox-checked': checked,
         'checkbox-disabled': disabled,
         'checkbox-indeterminate': indeterminate,
@@ -9951,14 +9944,14 @@ class Checkbox {
     "disabled": ["disabledChanged"]
   }; }
   static get style() { return {
-    ios: iosCheckboxMdCss,
+    ios: checkboxIosCss,
     md: checkboxMdCss
   }; }
   static get cmpMeta() { return {
     "$flags$": 41,
     "$tagName$": "ion-checkbox",
     "$members$": {
-      "dsColor": [513, "ds-color"],
+      "color": [1],
       "name": [1],
       "checked": [1028],
       "indeterminate": [1028],
@@ -9967,7 +9960,7 @@ class Checkbox {
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"]]
+    "$attrsToReflect$": []
   }; }
 }
 let checkboxIds = 0;
@@ -9980,7 +9973,7 @@ class Child {
   }
   render() {
     const { dsColor, fill } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-child': true,
         [`med-child_${fill}`]: fill !== undefined,
       }) }, hAsync("h3", null, hAsync("slot", null))));
@@ -11719,7 +11712,7 @@ class FabButton {
         rel: this.rel,
         target: this.target
       };
-    return (hAsync(Host, { "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "aria-disabled": disabled ? 'true' : null, class: generateMedColor$1(dsColor, {
         [mode]: true,
         'fab-button-in-list': inList,
         'fab-button-translucent-in-list': inList && translucent,
@@ -13918,7 +13911,7 @@ class List {
     return false;
   }
   render() {
-    return (hAsync(Host, { class: generateMedColor(null, { 'med-lista': true }) }, hAsync("slot", null)));
+    return (hAsync(Host, { class: generateMedColor$1(null, { 'med-lista': true }) }, hAsync("slot", null)));
   }
   get el() { return getElement(this); }
   static get style() { return {
@@ -14285,7 +14278,7 @@ class MedAccordionItem {
   }
   render() {
     const { dsColor, noBorder, isOpen, background } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-accordion-item': true,
         'med-accordion-item--no-border': noBorder,
         'med-accordion-item--open': isOpen,
@@ -14323,7 +14316,7 @@ class MedAddCard {
   }
   render() {
     const { titulo, iconName } = this;
-    return (hAsync(Host, { class: generateMedColor(null, {
+    return (hAsync(Host, { class: generateMedColor$1(null, {
         'med-add-card': true,
       }) }, hAsync("med-base", { class: "med-add-card__container", "spacing-h": "s16", "spacing-v": "s16" }, hAsync("ion-icon", { class: "med-icon med-add-card__icon", name: iconName }), hAsync("med-type", { token: "p16x" }, titulo))));
   }
@@ -14368,7 +14361,7 @@ class MedAgrupador {
   }
   render() {
     const { dsColor, collapsed, labelDefault, labelAlternativo } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-agrupador': true,
         'med-agrupador--collapsed': collapsed
       }), onClick: (event) => { this.toggle(event); } }, hAsync("div", { class: "med-agrupador__expandir" }, labelDefault), hAsync("div", { class: "med-agrupador__ocultar" }, labelAlternativo), hAsync("ion-icon", { class: "med-icon med-agrupador__icon", name: "med-baixo" })));
@@ -14435,7 +14428,7 @@ class MedAlertFixed {
   }
   render() {
     const { dsColor, dsName, labelOffline, labelAtualizar } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-alert-fixed': true,
         [`med-alert-fixed--${dsName}`]: dsName !== undefined,
       }) }, (dsName === 'offline') &&
@@ -14686,7 +14679,7 @@ class MedAlternativasA {
           hasImage = true;
       });
     }
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-alternativas': true,
       }) }, hAsync("div", { class: `
            med-alternativas__list
@@ -14786,7 +14779,7 @@ class MedAlternativasB {
   render() {
     const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-alternativas': true,
       }) }, hAsync("div", { class: "med-alternativas__list", role: "list" }, this.alternativas.map((alternativa, indice) => (hAsync("div", { role: "listitem", onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
                 med-alternativas__item med-alternativas__item--${alternativa[this.keyAlternativa]}
@@ -14861,7 +14854,7 @@ class MedAvatar {
   }
   render() {
     const { dsColor, dsSize, image, letter } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-avatar': true,
         [`med-avatar--${dsSize}`]: dsSize !== undefined,
       }) }, letter && !image && hAsync("span", { class: "med-avatar__letter" }, letter), image && hAsync("img", { class: "med-avatar__image", src: image })));
@@ -14898,7 +14891,7 @@ class MedBanner {
   }
   render() {
     const { dsColor, titulo, texto, btnLeft, btnRight, icon, image } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-notification': true,
       }) }, (titulo || texto) && hAsync("div", { class: "med-notification__content" }, hAsync("div", { class: "med-notification__left" }, hAsync("div", { class: "med-notification__header" }, titulo && hAsync("med-type", { class: "med-notification__titulo" }, " ", titulo, " "), icon && hAsync("ion-icon", { class: "med-notification__icon med-icon", name: icon })), texto && hAsync("med-type", { class: "med-notification__texto" }, " ", texto, " ")), image && hAsync("div", { class: "med-notification__right" }, hAsync("img", { class: "med-notification__image", src: image }))), (btnLeft || btnRight) && hAsync("div", { class: "med-notification__footer" }, btnLeft && hAsync("ion-button", { class: "med-notification__button", mode: "ios", "ds-color": dsColor, fill: "clear", "ds-size": "xs", onClick: this.onButtonLeftClick }, " ", btnLeft, " "), btnRight && hAsync("ion-button", { class: "med-notification__button", mode: "ios", "ds-color": dsColor, fill: "clear", "ds-size": "xs", onClick: this.onButtonRightClick }, " ", btnRight, " "))));
   }
@@ -14935,7 +14928,7 @@ class MedBase {
   }
   render() {
     const { dsColor, radius, gap, spacingV, spacingH } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-base': true,
         [`med-base--radius-${radius}`]: radius !== undefined,
         [`med-base--gap-${gap}`]: gap !== undefined,
@@ -15040,7 +15033,7 @@ class MedCalendar {
   } */
   render() {
     const { dsColor, mes, ano, disable } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-calendar': true,
         'med-calendar--disable': disable,
       }), style: { '--width': `${this.width}` } }, hAsync("div", { class: "header" }, hAsync("div", { class: "header__left" }, hAsync("ion-button", { "icon-only": true, mode: "ios", "ds-size": "xxs", fill: "clear", onClick: () => this.onMonthClick('prev') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })), hAsync("med-type", { class: "header__type", token: "p16b" }, mes, " ", ano), hAsync("ion-button", { "icon-only": true, mode: "ios", "ds-size": "xxs", fill: "clear", onClick: () => this.onMonthClick('next') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))), hAsync("div", { class: "header__right" }, hAsync("ion-button", { mode: "ios", "ds-size": "sm", fill: "clear", onClick: () => this.onChoiceClick() }, hAsync("med-type", { class: "choice__type" }, this.choice), hAsync("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })))), hAsync("div", { class: "content" }, hAsync("div", { class: "content__header" }, hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Seg")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Ter")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Qua")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Qui")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Sex")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Sab")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Dom"))), hAsync("div", { class: "content__container", ref: (el) => { this.containerEl = el; } }, hAsync("slot", null)))));
@@ -15077,7 +15070,7 @@ class MedCalendarDay {
   }
   render() {
     const { dsColor, active, fill } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-calendar-day': true,
         'med-calendar-day--active': active,
         [`med-calendar-day--${fill}`]: fill !== undefined
@@ -15106,7 +15099,7 @@ class MedCaption {
   }
   render() {
     const { dsColor, dsSize } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-caption': true,
         [`med-caption--${dsSize}`]: dsSize !== undefined,
       }) }, hAsync("slot", null)));
@@ -15169,7 +15162,7 @@ class MedCartaoRespostaItem {
   }
   render() {
     const { dsColor, anulada, impressa, ativa } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-cartao-resposta-item': true,
         'med-cartao-resposta-item--anulada': anulada,
         'med-cartao-resposta-item--impressa': impressa,
@@ -15255,7 +15248,7 @@ class MedChartBar {
   render() {
     const { dsColor, value, height, width } = this;
     const percentage = value === 0 ? height - 1 : height - ((height * value) / 100);
-    return (hAsync(Host, { class: generateMedColor(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } }, hAsync("div", { class: "med-chart-bar__container" }, hAsync("div", { class: "med-chart-bar__label" }, hAsync("slot", null)), hAsync("div", { class: "med-chart-bar__progress" }))));
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } }, hAsync("div", { class: "med-chart-bar__container" }, hAsync("div", { class: "med-chart-bar__label" }, hAsync("slot", null)), hAsync("div", { class: "med-chart-bar__progress" }))));
   }
   get hostElement() { return getElement(this); }
   static get style() { return medChartBarCss; }
@@ -15307,7 +15300,7 @@ class MedChartBarHorizontal {
       progressWidth = value;
       progressClass = '';
     }
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         [`med-chart-bar-horizontal ${progressClass}`]: true,
         [`med-chart-bar-horizontal--${dsSize}`]: dsSize !== undefined,
       }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, hAsync("div", { class: "med-chart-bar-horizontal__container" }, hAsync("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }), hAsync("div", { class: "med-chart-bar-horizontal__track", part: "track" })), label && hAsync("med-type", { class: "med-chart-bar-horizontal__label" }, !hideValue ? `${value}%` : '', labelContent)));
@@ -15342,7 +15335,7 @@ class MedChartCategoria {
   }
   render() {
     const { dsColor, value, titulo, meta, realizado } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-chart-categoria': true,
       }) }, hAsync("div", { class: "med-chart-categoria__header" }, hAsync("med-type", { token: "p12b" }, titulo), hAsync("div", { class: "med-chart-categoria__info" }, hAsync("div", { class: "med-chart-categoria__meta" }, hAsync("med-type", { token: "p10", dsColor: "neutral-8" }, "Meta"), hAsync("med-type", { class: "med-chart-categoria__info-type", token: "p10b" }, meta)), hAsync("div", { class: "med-chart-categoria__realizado" }, hAsync("med-type", { token: "p10", dsColor: "neutral-8" }, "Realizado"), hAsync("med-type", { class: "med-chart-categoria__info-type med-chart-categoria__info-type--realizado", token: "p10b" }, realizado)))), hAsync("med-chart-bar-horizontal", { class: "med-chart-categoria__chart", dsColor: dsColor, value: value })));
   }
@@ -15384,7 +15377,7 @@ class MedChartRadial {
       totais.subtotais.push(totais.total);
     });
     const arrayReverse = this.valores.slice(0).reverse();
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-chart-radial': true,
         [`med-chart-radial--${dsName}`]: dsName !== undefined,
         [`med-chart-radial--${dsSize}`]: dsSize !== undefined,
@@ -15439,7 +15432,7 @@ class MedChartRadialContent {
   }
   render() {
     const { total, dsColor, dsSize } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-chart-radial-content': true,
         [`med-chart-radial-content--${dsSize}`]: dsSize !== undefined,
       }) }, hAsync("span", { class: "med-chart-radial-content__label" }, "Total de"), hAsync("span", { class: `med-chart-radial-content__number ${this.fontResize()}` }, total), hAsync("span", { class: "med-chart-radial-content__label" }, "Quest\u00F5es")));
@@ -15475,7 +15468,7 @@ class MedChartRadialLabel {
   render() {
     const { dsColor, dsSize } = this;
     //const arrayReverse = this.valores.slice(0).reverse();
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-chart-radial-label': true,
         [`med-chart-radial-label--${dsSize}`]: dsSize !== undefined,
       }) }, hAsync("ul", { class: "med-chart-radial-label__list" }, this.valores.map((item) => {
@@ -15517,7 +15510,7 @@ class MedCheckCard {
   }
   render() {
     const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, dataInicial, dataFinal, iconName } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
       }) }, hAsync("med-base", { "spacing-v": "s00", "spacing-h": "s00", class: "med-check-card__base" }, hAsync("div", { class: "med-check-card__input-container" }, hAsync("slot", { name: "input" })), hAsync("div", { class: "med-check-card__container", onClick: () => this.onClick() }, hAsync("div", { class: "med-check-card__text-container" }, hAsync("med-type", { class: "med-check-card__title", token: "p16xb" }, titulo), hAsync("div", { class: "med-check-card__title-wrap" }, hAsync("div", { class: "med-check-card__info-container" }, hAsync("div", { class: "med-check-card__container-fix" }, hAsync("ion-icon", { class: "med-check-card__icon med-icon med-icon--xs", name: iconName }), hAsync("med-type", { class: "med-check-card__subtitulo", token: "p12xb" }, categoria)), !dataInicial && !dataFinal && horaInicial && horaFinal && hAsync("med-type", { class: "med-check-card__hora", token: "p12x" }, horaInicial, " \u2013 ", horaFinal), dataInicial && dataFinal && !horaInicial && !horaFinal && hAsync("med-type", { class: "med-check-card__data", token: "p12x" }, dataInicial, " at\u00E9 ", dataFinal))), dataInicial && dataFinal && horaInicial && horaFinal && hAsync("med-type", { class: "med-check-card__data-hora", token: "p12x" }, dataInicial, " - ", horaInicial, " at\u00E9 ", dataFinal, " - ", horaFinal))), hAsync("div", { class: alert ? 'med-check-card__tooltip-container' : '' }, hAsync("slot", { name: "tooltip" })))));
@@ -15572,7 +15565,7 @@ class MedChip {
   }
   render() {
     const { dsColor, dsName, dsSize, disabled, label, active, iconLeft, iconRight } = this;
-    return (hAsync(Host, { "aria-disabled": this.disabled ? 'true' : null, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "aria-disabled": this.disabled ? 'true' : null, class: generateMedColor$1(dsColor, {
         'med-chip': true,
         'med-chip--active': active,
         'med-chip--disabled': disabled,
@@ -15773,7 +15766,7 @@ class MedDownloadButton {
   }
   render() {
     const { dsColor, value, initial, downloading, downloaded } = this;
-    return (hAsync(Host, { onClick: (event) => { this.toggle(event); }, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { onClick: (event) => { this.toggle(event); }, class: generateMedColor$1(dsColor, {
         'med-download-button': true,
         'med-download-button--downloading': downloading && !initial,
         'med-download-button--downloaded': downloaded
@@ -15812,7 +15805,7 @@ class MedDropdown {
   }
   render() {
     const { dsName } = this;
-    return (hAsync(Host, { class: generateMedColor(dsName, {
+    return (hAsync(Host, { class: generateMedColor$1(dsName, {
         'med-dropdown': true,
         [`med-dropdown--${dsName}`]: dsName !== undefined,
       }) }, hAsync("slot", null)));
@@ -15867,7 +15860,7 @@ class MedEnunciado {
       this.imagens = typeof this.imagens === 'string' ? JSON.parse(this.imagens) : this.imagens;
       imagens = (hAsync("ul", { class: 'list' }, this.imagens.map((imagem) => (hAsync("li", { class: "list__item", onClick: () => this.imageRequest(imagem) }, hAsync("img", { class: "list__image", src: imagem, alt: "" }), hAsync("div", { class: "image__zoom" }, hAsync("ion-icon", { class: "med-icon", name: "med-busca" })))))));
     }
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(null, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(null, {
         'med-enunciado': true,
         [`med-enunciado--${dsName}`]: dsName !== undefined,
       }) }, hAsync("slot", null), imagens));
@@ -16296,7 +16289,7 @@ class MedItem {
     this.itemStyles.forEach(value => {
       Object.assign(childStyles, value);
     });
-    return (hAsync(Host, { "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign(Object.assign({}, childStyles), labelColorStyles), generateMedColor(dsColor, {
+    return (hAsync(Host, { "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign(Object.assign({}, childStyles), labelColorStyles), generateMedColor$1(dsColor, {
         [mode]: true,
         'med-item': true,
         [`med-item-lines-${lines}`]: lines !== undefined,
@@ -16388,7 +16381,7 @@ class MedListItem {
   }
   render() {
     const { dsColor, titulo, label, selected, dsSize, border, disabled } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-list-item': true,
         'med-list-item--selected': selected,
         'med-list-item--disabled': disabled,
@@ -16446,7 +16439,7 @@ class MedListItemAccordion {
   }
   render() {
     const { dsColor, titulo, label, selected, dsSize, border, margin, collapsed, disabled } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-list-item-accordion': true,
         'med-list-item-accordion--disabled': disabled,
         'med-list-item-accordion--selected': selected,
@@ -16496,7 +16489,7 @@ class MedNav {
   }
   render() {
     const { dsColor, active } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-nav': true,
         'med-nav--active': active
       }) }, hAsync("nav", { class: "med-nav__container" }, hAsync("div", { class: "med-nav__logo" }, hAsync("div", { class: "med-nav__icon-wrapper" }, hAsync("ion-icon", { class: "med-nav__icon med-icon med-icon--sm", name: "med-logo" })), hAsync("med-type", { token: "h24", "ds-color": "neutral-10" }, "MEDSoft")), hAsync("slot", null), hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" }))), hAsync("med-nav-simple", { "ds-color": dsColor })));
@@ -16523,7 +16516,7 @@ class MedNavAccordion {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-nav-accordion': true,
       }) }, hAsync("med-accordion-list", { class: "med-nav-accordion__list", "single-open": "false" }, hAsync("med-accordion-item", { class: "med-nav-accordion__item", color: "aula", background: true }, hAsync("div", { class: "med-nav-accordion__header", slot: "full-header" }, hAsync("med-type", { token: "p16b" }, "Mentoria"), hAsync("ion-icon", { class: "med-icon med-nav-accordion__icon", name: "med-baixo" })), hAsync("div", { slot: "content" }, hAsync("med-nav-item", { icon: "med-orientacao", text: "Orienta\u00E7\u00F5es" }), hAsync("med-nav-item", { icon: "med-metricas", text: "Desempenho" }))), hAsync("med-accordion-item", { class: "med-nav-accordion__item", color: "aula", background: true }, hAsync("div", { class: "med-nav-accordion__header", slot: "full-header" }, hAsync("med-type", { token: "p16b" }, "Geral"), hAsync("ion-icon", { class: "med-icon med-nav-accordion__icon", name: "med-baixo" })), hAsync("div", { class: "", slot: "content" }, hAsync("med-nav-item", { icon: "med-qrcode", text: "Medcode" }), hAsync("med-nav-item", { icon: "med-slidedeaula", text: "Slides de Aula" }), hAsync("med-nav-item", { icon: "med-duvidasacademicas", text: "D\u00FAvidas Acad\u00EAmicas" }), hAsync("med-nav-item", { icon: "med-cronograma", text: "Cronograma" }), hAsync("med-nav-item", { icon: "med-bonus", text: "B\u00F4nus" }), hAsync("med-nav-item", { icon: "med-drogas", text: "Drogas" }))), hAsync("med-accordion-item", { class: "med-nav-accordion__item", color: "aula", background: true }, hAsync("div", { class: "med-nav-accordion__header", slot: "full-header" }, hAsync("med-type", { token: "p16b" }, "Treinamento"), hAsync("ion-icon", { class: "med-icon med-nav-accordion__icon", name: "med-baixo" })), hAsync("div", { class: "", slot: "content" }, hAsync("med-nav-item", { icon: "med-anotacao", text: "Simulados" }), hAsync("med-nav-item", { icon: "med-multimidia", text: "Multimedia" }), hAsync("med-nav-item", { icon: "med-concursos", text: "Concurso na Integra" }), hAsync("med-nav-item", { icon: "med-montaprovas", text: "Monta Provas" }))))));
   }
@@ -16578,7 +16571,7 @@ class MedNavItem {
   }
   render() {
     const { dsColor, active, text, icon, disabled, iconOnly } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-nav-item': true,
         'med-nav-item--active': active,
         'med-nav-item--icon-only': iconOnly,
@@ -16620,7 +16613,7 @@ class MedNavSimple {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-nav-simple': true,
       }) }, hAsync("nav", { class: "med-nav-simple__wrapper" }, hAsync("div", { class: "med-nav-simple__logo" }, hAsync("div", { class: "med-nav-simple__icon-wrapper" }, hAsync("ion-icon", { class: "med-nav-simple__icon med-icon med-icon--sm", name: "med-logo" }))), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-play", active: true }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-apostila" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-concursos" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-orientacao" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-metricas" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-qrcode" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-slidedeaula" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-duvidasacademicas" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-cronograma" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-bonus" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-drogas" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-anotacao" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-multimidia" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-concursos" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-montaprovas" }), hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })))));
   }
@@ -17626,7 +17619,7 @@ class MedNavbar {
   }
   render() {
     const { dsColor, dsName } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-navbar': true,
         [`med-navbar--${dsName}`]: dsName !== undefined,
       }) }, hAsync("header", { class: "med-navbar__header" }, hAsync("slot", { name: "top" }), hAsync("div", { class: "med-navbar__container" }, hAsync("div", { id: "left", class: "med-navbar__left", ref: (el) => this.leftEl = el }, hAsync("slot", { name: "left" })), hAsync("div", { class: "med-navbar__center", ref: (el) => this.centerEl = el }, hAsync("slot", { name: "title" }), hAsync("slot", { name: "subtitle" })), hAsync("div", { id: "right", class: "med-navbar__right", ref: (el) => this.rightEl = el }, hAsync("slot", { name: "right" }))))));
@@ -17678,7 +17671,7 @@ class MedOption {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-badge': true,
       }) }, hAsync("div", { class: "option" }, hAsync("slot", null), hAsync("slot", { name: "label" }))));
   }
@@ -17739,7 +17732,7 @@ class MedPiechart {
   }
   render() {
     const { dsColor, dsSize, download, downloaded, label, value, downloadProgress, identification, index, hideDownload, disabled } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-piechart': true,
         'med-piechart--download': download,
         'med-piechart--downloaded': downloaded,
@@ -17788,7 +17781,7 @@ class MedPlusminus {
   }
   render() {
     const { dsSize, dsColor, disabled } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-plusminus': true,
         [`med-plusminus--disabled-${disabled}`]: disabled !== undefined,
         [`med-plusminus--${dsSize}`]: dsSize !== undefined,
@@ -17828,7 +17821,7 @@ class MedQuestion {
   }
   render() {
     const { collapsed, texto, dsColor } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-question': true,
         'med-question--collapsed': collapsed
       }), onClick: (event) => { this.toggle(event); } }, hAsync("div", { class: "med-question__text", innerHTML: texto }), hAsync("ion-icon", { class: "med-icon med-question__icon", name: "med-baixo" })));
@@ -17868,7 +17861,7 @@ class MedRateAula {
   }
   render() {
     const { collapsed } = this;
-    return (hAsync(Host, { class: generateMedColor(null, {
+    return (hAsync(Host, { class: generateMedColor$1(null, {
         'med-rate-aula': true,
         'med-rate-aula--collapsed': collapsed
       }) }, hAsync("div", { class: "med-rate-aula__container" }, hAsync("div", { class: "med-rate-aula__item" }, hAsync("button", { class: "med-rate-aula__button med-rate-aula__button--otimo" }, hAsync("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--otimo", name: "med-excelente" })), hAsync("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-success" }, "\u00D3timo")), hAsync("div", { class: "med-rate-aula__item" }, hAsync("button", { class: "med-rate-aula__button med-rate-aula__button--bom" }, hAsync("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--bom", name: "med-bom" })), hAsync("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-attention" }, "Bom")), hAsync("div", { class: "med-rate-aula__item" }, hAsync("button", { class: "med-rate-aula__button med-rate-aula__button--regular" }, hAsync("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--regular", name: "med-regular" })), hAsync("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-caution" }, "Regular")), hAsync("div", { class: "med-rate-aula__item" }, hAsync("button", { class: "med-rate-aula__button med-rate-aula__button--ruim" }, hAsync("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--ruim", name: "med-ruim" })), hAsync("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-warning" }, "Ruim")), hAsync("div", { class: "med-rate-aula__button-fechar", onClick: (event) => { this.toggle(event); } }, hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-size": "xs" }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" })))), hAsync("div", { class: "med-rate-aula__end", onClick: (event) => { this.toggle(event); } }, hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-size": "xs", fill: "clear" }, hAsync("ion-icon", { slot: "icon-only", class: "med-rate-aula__icon-abrir", name: "med-avaliar" })), hAsync("med-type", { token: "p12" }, "Avalie"))));
@@ -17895,7 +17888,7 @@ class MedRateBar {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-rate-bar': true,
       }) }, hAsync("slot", null), hAsync("slot", { name: "avaliacao" })));
   }
@@ -17933,7 +17926,7 @@ class MedRateLike {
     };
   }
   render() {
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(null, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(null, {
         'med-rate-like': true,
       }) }, hAsync("button", { class: `button button-spacing
           ${this.status === RateStatus.LIKE ? 'button--like' : ''}
@@ -17966,7 +17959,7 @@ class MedRating {
   }
   render() {
     const { dsColor, dsName, nome, data, concurso, texto, cabe } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-rating': true,
         'med-rating--cabe': cabe,
         'med-rating--nao-cabe': !cabe,
@@ -18056,7 +18049,7 @@ class MedSemana {
     let piechartContainerEl;
     textContainerEl = this.createTextContainerEl(content, skin);
     piechartContainerEl = this.createPieChartEl(content.Itens, skin);
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         "med-semana": true,
         "med-semana--active": active,
         "med-semana--hide-download": hideDownload,
@@ -18092,7 +18085,7 @@ class MedSemanas {
   }
   render() {
     const { skin } = this;
-    return (hAsync(Host, { class: generateMedColor(null, {
+    return (hAsync(Host, { class: generateMedColor$1(null, {
         'med-semanas': true,
         [`med-semanas--${skin}`]: skin !== undefined,
       }) }, hAsync("slot", null)));
@@ -18122,7 +18115,7 @@ class MedTabButton {
   }
   render() {
     const { dsColor, active } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-tab-button': true,
         'med-tab-button--active': active,
       }) }, hAsync("slot", null)));
@@ -18186,7 +18179,7 @@ class MedTiles {
   }
   render() {
     const { dsColor, titulo, label, selected, solid } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-tiles': true,
         'med-solid': solid,
         'med-tiles--selected': selected
@@ -18218,7 +18211,7 @@ class MedToolbar {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-toolbar': true,
       }) }, hAsync("div", { class: "container" }, hAsync("slot", { name: "start" }), hAsync("div", { class: "container__center" }, hAsync("slot", null)), hAsync("slot", { name: "end" }))));
   }
@@ -18275,7 +18268,7 @@ class MedTooltip {
   }
   render() {
     const { dsColor, placement, position, collapsed, titulo, content, btnLeft, btnRight } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
         'med-tooltip': true,
         [`med-tooltip--${placement}`]: placement !== undefined,
         [`med-tooltip--${position}`]: position !== undefined,
@@ -18303,14 +18296,35 @@ class MedTooltip {
   }; }
 }
 
-const medTypeCss = "/*!@:host*/.sc-med-type-h{--font-size:16px;--font-weight:400;--line-height:16px;--color:hsl(var(--med-color-neutral-10))}/*!@:host*/.sc-med-type-h{display:block;font-size:var(--font-size) !important;font-weight:var(--font-weight) !important;line-height:var(--line-height) !important;color:var(--color) !important;margin:0;padding:0;-webkit-transition:color 300ms ease-out;transition:color 300ms ease-out}/*!@:host(.med-color)*/.med-color.sc-med-type-h{--color:hsl(var(--med-color-3))}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-med-type-h{--color:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-med-type-h{--color:hsl(var(--med-color-feedback))}/*!@:host(.med-type--h48)*/.med-type--h48.sc-med-type-h{--font-size:48px;--font-weight:600;--line-height:48px}/*!@:host(.med-type--h32)*/.med-type--h32.sc-med-type-h{--font-size:32px;--font-weight:600;--line-height:32px}/*!@:host(.med-type--h24)*/.med-type--h24.sc-med-type-h{--font-size:24px;--font-weight:600;--line-height:24px}/*!@:host(.med-type--h24x)*/.med-type--h24x.sc-med-type-h{--font-size:24px;--font-weight:600;--line-height:32px}/*!@:host(.med-type--h20)*/.med-type--h20.sc-med-type-h{--font-size:20px;--font-weight:600;--line-height:20px}/*!@:host(.med-type--h20x)*/.med-type--h20x.sc-med-type-h{--font-size:20px;--font-weight:600;--line-height:24px}/*!@:host(.med-type--p16)*/.med-type--p16.sc-med-type-h{--font-size:16px;--font-weight:400;--line-height:16px}/*!@:host(.med-type--p16b)*/.med-type--p16b.sc-med-type-h{--font-size:16px;--font-weight:600;--line-height:16px}/*!@:host(.med-type--p16x)*/.med-type--p16x.sc-med-type-h{--font-size:16px;--font-weight:400;--line-height:24px}/*!@:host(.med-type--p16xb)*/.med-type--p16xb.sc-med-type-h{--font-size:16px;--font-weight:600;--line-height:24px}/*!@:host(.med-type--p14)*/.med-type--p14.sc-med-type-h{--font-size:14px;--font-weight:400;--line-height:16px}/*!@:host(.med-type--p14b)*/.med-type--p14b.sc-med-type-h{--font-size:14px;--font-weight:600;--line-height:16px}/*!@:host(.med-type--p14x)*/.med-type--p14x.sc-med-type-h{--font-size:14px;--font-weight:400;--line-height:20px}/*!@:host(.med-type--p14xb)*/.med-type--p14xb.sc-med-type-h{--font-size:14px;--font-weight:600;--line-height:20px}/*!@:host(.med-type--p12)*/.med-type--p12.sc-med-type-h{--font-size:12px;--font-weight:400;--line-height:12px}/*!@:host(.med-type--p12b)*/.med-type--p12b.sc-med-type-h{--font-size:12px;--font-weight:600;--line-height:12px}/*!@:host(.med-type--p12x)*/.med-type--p12x.sc-med-type-h{--font-size:12px;--font-weight:400;--line-height:16px}/*!@:host(.med-type--p12xb)*/.med-type--p12xb.sc-med-type-h{--font-size:12px;--font-weight:600;--line-height:16px}/*!@:host(.med-type--p10)*/.med-type--p10.sc-med-type-h{--font-size:10px;--font-weight:400;--line-height:12px}/*!@:host(.med-type--p10b)*/.med-type--p10b.sc-med-type-h{--font-size:10px;--font-weight:600;--line-height:12px}";
+/**
+ *  Generates the color classes for the component.
+ */
+const generateMedColor = (color, cssClassMap) => {
+  if (typeof color === 'string' && color.length > 0) {
+    const colorIdentifier = color.split('-');
+    if (colorIdentifier[0] === 'neutral') {
+      return Object.assign({ 'med-color-neutral': true, [`med-color-${color}`]: true }, cssClassMap);
+    }
+    else if (colorIdentifier[0] === 'fb') {
+      return Object.assign({ 'med-color-feedback': true, [`med-color-${color}`]: true }, cssClassMap);
+    }
+    else {
+      return Object.assign({ 'med-color': true, [`med-color-${color}`]: true }, cssClassMap);
+    }
+  }
+  else {
+    return cssClassMap;
+  }
+};
+
+const medTypeCss = ".sc-med-type-h{--font-size:16px;--font-weight:400;--line-height:16px;--color:hsl(var(--med-color-neutral-10))}.sc-med-type-h{display:block;margin:0;padding:0;color:var(--color) !important;font-weight:var(--font-weight) !important;font-size:var(--font-size) !important;line-height:var(--line-height) !important}.sc-med-type-h *.sc-med-type{margin:0;padding:0;color:var(--color) !important;font-weight:var(--font-weight) !important;font-size:var(--font-size) !important;line-height:var(--line-height) !important}.med-color.sc-med-type-h{--color:hsl(var(--med-color-3))}.med-color-neutral.sc-med-type-h{--color:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-type-h{--color:hsl(var(--med-color-feedback))}.med-type--h48.sc-med-type-h{--font-size:48px;--font-weight:600;--line-height:48px}.med-type--h32.sc-med-type-h{--font-size:32px;--font-weight:600;--line-height:32px}.med-type--h24.sc-med-type-h{--font-size:24px;--font-weight:600;--line-height:24px}.med-type--h24x.sc-med-type-h{--font-size:24px;--font-weight:600;--line-height:32px}.med-type--h20.sc-med-type-h{--font-size:20px;--font-weight:600;--line-height:20px}.med-type--h20x.sc-med-type-h{--font-size:20px;--font-weight:600;--line-height:24px}.med-type--p16.sc-med-type-h{--font-size:16px;--font-weight:400;--line-height:16px}.med-type--p16b.sc-med-type-h{--font-size:16px;--font-weight:600;--line-height:16px}.med-type--p16x.sc-med-type-h{--font-size:16px;--font-weight:400;--line-height:24px}.med-type--p16xb.sc-med-type-h{--font-size:16px;--font-weight:600;--line-height:24px}.med-type--p14.sc-med-type-h{--font-size:14px;--font-weight:400;--line-height:16px}.med-type--p14b.sc-med-type-h{--font-size:14px;--font-weight:600;--line-height:16px}.med-type--p14x.sc-med-type-h{--font-size:14px;--font-weight:400;--line-height:20px}.med-type--p14xb.sc-med-type-h{--font-size:14px;--font-weight:600;--line-height:20px}.med-type--p12.sc-med-type-h{--font-size:12px;--font-weight:400;--line-height:12px}.med-type--p12b.sc-med-type-h{--font-size:12px;--font-weight:600;--line-height:12px}.med-type--p12x.sc-med-type-h{--font-size:12px;--font-weight:400;--line-height:16px}.med-type--p12xb.sc-med-type-h{--font-size:12px;--font-weight:600;--line-height:16px}.med-type--p10.sc-med-type-h{--font-size:10px;--font-weight:400;--line-height:12px}.med-type--p10b.sc-med-type-h{--font-size:10px;--font-weight:600;--line-height:12px}";
 
 class MedType {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define a tag HTML do componente.
-      */
+     * Define a tag HTML do componente.
+     */
     this.tag = 'span';
   }
   render() {
@@ -18323,7 +18337,7 @@ class MedType {
   }
   static get style() { return medTypeCss; }
   static get cmpMeta() { return {
-    "$flags$": 9,
+    "$flags$": 6,
     "$tagName$": "med-type",
     "$members$": {
       "dsColor": [513, "ds-color"],
@@ -18348,7 +18362,7 @@ class MedVideoThumbnail {
   }
   render() {
     const { dsColor, url, value } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-video-thumbnail': true
       }) }, hAsync("img", { class: "med-video-thumbnail__img", src: url }), hAsync("ion-icon", { class: "med-icon med-icon--lg med-video-thumbnail__icon", name: "med-play" }), hAsync("ion-progress-bar", { "ds-color": dsColor, class: "med-video-thumbnail__progress", "ds-name": "minimalist", value: value })));
   }
@@ -21058,7 +21072,7 @@ class Parent {
   }
   render() {
     const { dsColor, fill, child } = this;
-    return (hAsync(Host, { class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
         'med-parent': true,
         [`med-parent--${fill}`]: fill !== undefined,
       }) }, hAsync("h3", null, hAsync("slot", null)), child && hAsync("med-child", { class: "med-parent__child" })));
@@ -22066,7 +22080,7 @@ class ProgressBar {
     const { dsColor, type, reversed, value, buffer } = this;
     const paused = config.getBoolean('_testing');
     const mode = getIonMode$1(this);
-    return (hAsync(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: generateMedColor(dsColor, {
+    return (hAsync(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: generateMedColor$1(dsColor, {
         [mode]: true,
         'med-progress-bar': true,
         [`progress-bar-${type}`]: true,
@@ -22119,9 +22133,9 @@ const renderProgress = (value, buffer) => {
   ];
 };
 
-const iosRadioMdCss = "/*!@:host*/.sc-ion-radio-ios-h{--inner-border-radius:50%;display:inline-block;position:relative;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-ios-h{pointer-events:none}/*!@.radio-icon*/.radio-icon.sc-ion-radio-ios{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;contain:layout size style}/*!@.radio-icon,\n.radio-inner*/.radio-icon.sc-ion-radio-ios,.radio-inner.sc-ion-radio-ios{-webkit-box-sizing:border-box;box-sizing:border-box}/*!@label*/label.sc-ion-radio-ios{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}/*!@[dir=rtl] label, :host-context([dir=rtl]) label*/[dir=rtl].sc-ion-radio-ios label.sc-ion-radio-ios,[dir=rtl].sc-ion-radio-ios-h label.sc-ion-radio-ios,[dir=rtl] .sc-ion-radio-ios-h label.sc-ion-radio-ios{left:unset;right:unset;right:0}/*!@label::-moz-focus-inner*/label.sc-ion-radio-ios::-moz-focus-inner{border:0}/*!@input*/input.sc-ion-radio-ios{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}/*!@:host(:focus)*/.sc-ion-radio-ios-h:focus{outline:none}/*!@:host*/.sc-ion-radio-ios-h{--color:var(--ion-color-step-400, #999999);--color-checked:var(--ion-color-primary, #3880ff);--border-width:2px;--border-style:solid;--border-radius:50%;width:20px;height:20px}/*!@:host(.ion-color) .radio-inner*/.ion-color.sc-ion-radio-ios-h .radio-inner.sc-ion-radio-ios{background:var(--ion-color-base)}/*!@:host(.ion-color.radio-checked) .radio-icon*/.ion-color.radio-checked.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios{border-color:var(--ion-color-base)}/*!@.radio-icon*/.radio-icon.sc-ion-radio-ios{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border-radius:var(--border-radius);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--color)}/*!@.radio-inner*/.radio-inner.sc-ion-radio-ios{border-radius:var(--inner-border-radius);width:calc(50% + var(--border-width));height:calc(50% + var(--border-width));-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0);-webkit-transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);background:var(--color-checked)}/*!@:host(.radio-checked) .radio-icon*/.radio-checked.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios{border-color:var(--color-checked)}/*!@:host(.radio-checked) .radio-inner*/.radio-checked.sc-ion-radio-ios-h .radio-inner.sc-ion-radio-ios{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-ios-h{opacity:0.3}/*!@:host(.ion-focused) .radio-icon::after*/.ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after{border-radius:var(--inner-border-radius);left:-12px;top:-12px;display:block;position:absolute;width:36px;height:36px;background:var(--ion-color-primary-tint, #4c8dff);content:\"\";opacity:0.2}/*!@:host-context([dir=rtl]):host(.ion-focused) .radio-icon::after, :host-context([dir=rtl]).ion-focused .radio-icon::after*/[dir=rtl].sc-ion-radio-ios-h -no-combinator.ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after,[dir=rtl] .sc-ion-radio-ios-h -no-combinator.ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after,[dir=rtl].ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after,[dir=rtl] .ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after{left:unset;right:unset;right:-12px}/*!@:host(.in-item)*/.in-item.sc-ion-radio-ios-h{margin-left:0;margin-right:0;margin-top:9px;margin-bottom:9px;display:block;position:static}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-ios-h{margin-left:4px;margin-right:36px;margin-top:11px;margin-bottom:10px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-ios-h{margin-left:unset;margin-right:unset;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:36px;margin-inline-end:36px}}/*!@:host*/.sc-ion-radio-ios-h{--color:hsl(var(--med-color-brand-4));--color-checked:hsl(var(--med-color-brand-4));-webkit-transition:300ms all ease;transition:300ms all ease}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-ios-h{opacity:0.5}@media (any-hover: hover){/*!@:host(.med-radio:hover)*/.med-radio.sc-ion-radio-ios-h:hover{--color:hsl(var(--med-color-brand-5));--color-checked:hsl(var(--med-color-brand-5))}/*!@:host(.med-radio--secondary:hover)*/.med-radio--secondary.sc-ion-radio-ios-h:hover{--color:hsl(var(--med-color-brand-3));--color-checked:hsl(var(--med-color-brand-3))}}/*!@:host(.med-color)*/.med-color.sc-ion-radio-ios-h{--color:hsl(var(--med-color-4));--color-checked:hsl(var(--med-color-4))}@media (any-hover: hover){/*!@:host(.med-color.med-radio:hover)*/.med-color.med-radio.sc-ion-radio-ios-h:hover{--color:hsl(var(--med-color-5));--color-checked:hsl(var(--med-color-5))}/*!@:host(.med-color.med-radio--secondary:hover)*/.med-color.med-radio--secondary.sc-ion-radio-ios-h:hover{--color:hsl(var(--med-color-3));--color-checked:hsl(var(--med-color-3))}}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-ion-radio-ios-h{--color:hsl(var(--med-color-neutral));--color-checked:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-ion-radio-ios-h{--color:hsl(var(--med-color-feedback));--color-checked:hsl(var(--med-color-feedback))}/*!@:host(.med-radio--secondary)*/.med-radio--secondary.sc-ion-radio-ios-h{--width:16px;--height:16px;--inner-width:10px;--inner-height:10px;width:var(--width);height:var(--height)}/*!@:host(.med-radio--secondary) .radio-icon*/.med-radio--secondary.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios{border-width:0;background:#fff}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-ios-h{margin:0}/*!@:host(.in-item[slot=end])*/.in-item[slot=end].sc-ion-radio-ios-h{margin:0}";
+const radioIosCss = "/*!@:host*/.sc-ion-radio-ios-h{--inner-border-radius:50%;display:inline-block;position:relative;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-ios-h{pointer-events:none}/*!@.radio-icon*/.radio-icon.sc-ion-radio-ios{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;contain:layout size style}/*!@.radio-icon,\n.radio-inner*/.radio-icon.sc-ion-radio-ios,.radio-inner.sc-ion-radio-ios{-webkit-box-sizing:border-box;box-sizing:border-box}/*!@label*/label.sc-ion-radio-ios{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}/*!@[dir=rtl] label, :host-context([dir=rtl]) label*/[dir=rtl].sc-ion-radio-ios label.sc-ion-radio-ios,[dir=rtl].sc-ion-radio-ios-h label.sc-ion-radio-ios,[dir=rtl] .sc-ion-radio-ios-h label.sc-ion-radio-ios{left:unset;right:unset;right:0}/*!@label::-moz-focus-inner*/label.sc-ion-radio-ios::-moz-focus-inner{border:0}/*!@input*/input.sc-ion-radio-ios{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}/*!@:host(:focus)*/.sc-ion-radio-ios-h:focus{outline:none}/*!@:host*/.sc-ion-radio-ios-h{--color-checked:var(--ion-color-primary, #3880ff);width:15px;height:24px}/*!@:host(.ion-color.radio-checked) .radio-inner*/.ion-color.radio-checked.sc-ion-radio-ios-h .radio-inner.sc-ion-radio-ios{border-color:var(--ion-color-base)}/*!@.item-radio.item-ios ion-label*/.item-radio.item-ios.sc-ion-radio-ios ion-label.sc-ion-radio-ios{margin-left:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@.item-radio.item-ios ion-label*/.item-radio.item-ios.sc-ion-radio-ios ion-label.sc-ion-radio-ios{margin-left:unset;-webkit-margin-start:0;margin-inline-start:0}}/*!@.radio-inner*/.radio-inner.sc-ion-radio-ios{width:33%;height:50%}/*!@:host(.radio-checked) .radio-inner*/.radio-checked.sc-ion-radio-ios-h .radio-inner.sc-ion-radio-ios{-webkit-transform:rotate(45deg);transform:rotate(45deg);border-width:2px;border-top-width:0;border-left-width:0;border-style:solid;border-color:var(--color-checked)}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-ios-h{opacity:0.3}/*!@:host(.ion-focused) .radio-icon::after*/.ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after{border-radius:var(--inner-border-radius);left:-9px;top:-8px;display:block;position:absolute;width:36px;height:36px;background:var(--ion-color-primary-tint, #4c8dff);content:\"\";opacity:0.2}/*!@:host-context([dir=rtl]):host(.ion-focused) .radio-icon::after, :host-context([dir=rtl]).ion-focused .radio-icon::after*/[dir=rtl].sc-ion-radio-ios-h -no-combinator.ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after,[dir=rtl] .sc-ion-radio-ios-h -no-combinator.ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after,[dir=rtl].ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after,[dir=rtl] .ion-focused.sc-ion-radio-ios-h .radio-icon.sc-ion-radio-ios::after{left:unset;right:unset;right:-9px}/*!@:host(.in-item)*/.in-item.sc-ion-radio-ios-h{margin-left:10px;margin-right:11px;margin-top:8px;margin-bottom:8px;display:block;position:static}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item)*/.in-item.sc-ion-radio-ios-h{margin-left:unset;margin-right:unset;-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:11px;margin-inline-end:11px}}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-ios-h{margin-left:3px;margin-right:21px;margin-top:8px;margin-bottom:8px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-ios-h{margin-left:unset;margin-right:unset;-webkit-margin-start:3px;margin-inline-start:3px;-webkit-margin-end:21px;margin-inline-end:21px}}";
 
-const radioMdCss = "/*!@:host*/.sc-ion-radio-md-h{--inner-border-radius:50%;display:inline-block;position:relative;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-md-h{pointer-events:none}/*!@.radio-icon*/.radio-icon.sc-ion-radio-md{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;contain:layout size style}/*!@.radio-icon,\n.radio-inner*/.radio-icon.sc-ion-radio-md,.radio-inner.sc-ion-radio-md{-webkit-box-sizing:border-box;box-sizing:border-box}/*!@label*/label.sc-ion-radio-md{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}/*!@[dir=rtl] label, :host-context([dir=rtl]) label*/[dir=rtl].sc-ion-radio-md label.sc-ion-radio-md,[dir=rtl].sc-ion-radio-md-h label.sc-ion-radio-md,[dir=rtl] .sc-ion-radio-md-h label.sc-ion-radio-md{left:unset;right:unset;right:0}/*!@label::-moz-focus-inner*/label.sc-ion-radio-md::-moz-focus-inner{border:0}/*!@input*/input.sc-ion-radio-md{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}/*!@:host(:focus)*/.sc-ion-radio-md-h:focus{outline:none}/*!@:host*/.sc-ion-radio-md-h{--color:var(--ion-color-step-400, #999999);--color-checked:var(--ion-color-primary, #3880ff);--border-width:2px;--border-style:solid;--border-radius:50%;width:20px;height:20px}/*!@:host(.ion-color) .radio-inner*/.ion-color.sc-ion-radio-md-h .radio-inner.sc-ion-radio-md{background:var(--ion-color-base)}/*!@:host(.ion-color.radio-checked) .radio-icon*/.ion-color.radio-checked.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md{border-color:var(--ion-color-base)}/*!@.radio-icon*/.radio-icon.sc-ion-radio-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border-radius:var(--border-radius);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--color)}/*!@.radio-inner*/.radio-inner.sc-ion-radio-md{border-radius:var(--inner-border-radius);width:calc(50% + var(--border-width));height:calc(50% + var(--border-width));-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0);-webkit-transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);background:var(--color-checked)}/*!@:host(.radio-checked) .radio-icon*/.radio-checked.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md{border-color:var(--color-checked)}/*!@:host(.radio-checked) .radio-inner*/.radio-checked.sc-ion-radio-md-h .radio-inner.sc-ion-radio-md{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-md-h{opacity:0.3}/*!@:host(.ion-focused) .radio-icon::after*/.ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after{border-radius:var(--inner-border-radius);left:-12px;top:-12px;display:block;position:absolute;width:36px;height:36px;background:var(--ion-color-primary-tint, #4c8dff);content:\"\";opacity:0.2}/*!@:host-context([dir=rtl]):host(.ion-focused) .radio-icon::after, :host-context([dir=rtl]).ion-focused .radio-icon::after*/[dir=rtl].sc-ion-radio-md-h -no-combinator.ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after,[dir=rtl] .sc-ion-radio-md-h -no-combinator.ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after,[dir=rtl].ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after,[dir=rtl] .ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after{left:unset;right:unset;right:-12px}/*!@:host(.in-item)*/.in-item.sc-ion-radio-md-h{margin-left:0;margin-right:0;margin-top:9px;margin-bottom:9px;display:block;position:static}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-md-h{margin-left:4px;margin-right:36px;margin-top:11px;margin-bottom:10px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-md-h{margin-left:unset;margin-right:unset;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:36px;margin-inline-end:36px}}/*!@:host*/.sc-ion-radio-md-h{--color:hsl(var(--med-color-brand-4));--color-checked:hsl(var(--med-color-brand-4));-webkit-transition:300ms all ease;transition:300ms all ease}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-md-h{opacity:0.5}@media (any-hover: hover){/*!@:host(.med-radio:hover)*/.med-radio.sc-ion-radio-md-h:hover{--color:hsl(var(--med-color-brand-5));--color-checked:hsl(var(--med-color-brand-5))}/*!@:host(.med-radio--secondary:hover)*/.med-radio--secondary.sc-ion-radio-md-h:hover{--color:hsl(var(--med-color-brand-3));--color-checked:hsl(var(--med-color-brand-3))}}/*!@:host(.med-color)*/.med-color.sc-ion-radio-md-h{--color:hsl(var(--med-color-4));--color-checked:hsl(var(--med-color-4))}@media (any-hover: hover){/*!@:host(.med-color.med-radio:hover)*/.med-color.med-radio.sc-ion-radio-md-h:hover{--color:hsl(var(--med-color-5));--color-checked:hsl(var(--med-color-5))}/*!@:host(.med-color.med-radio--secondary:hover)*/.med-color.med-radio--secondary.sc-ion-radio-md-h:hover{--color:hsl(var(--med-color-3));--color-checked:hsl(var(--med-color-3))}}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-ion-radio-md-h{--color:hsl(var(--med-color-neutral));--color-checked:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-ion-radio-md-h{--color:hsl(var(--med-color-feedback));--color-checked:hsl(var(--med-color-feedback))}/*!@:host(.med-radio--secondary)*/.med-radio--secondary.sc-ion-radio-md-h{--width:16px;--height:16px;--inner-width:10px;--inner-height:10px;width:var(--width);height:var(--height)}/*!@:host(.med-radio--secondary) .radio-icon*/.med-radio--secondary.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md{border-width:0;background:#fff}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-md-h{margin:0}/*!@:host(.in-item[slot=end])*/.in-item[slot=end].sc-ion-radio-md-h{margin:0}";
+const radioMdCss = "/*!@:host*/.sc-ion-radio-md-h{--inner-border-radius:50%;display:inline-block;position:relative;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:2}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-md-h{pointer-events:none}/*!@.radio-icon*/.radio-icon.sc-ion-radio-md{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;contain:layout size style}/*!@.radio-icon,\n.radio-inner*/.radio-icon.sc-ion-radio-md,.radio-inner.sc-ion-radio-md{-webkit-box-sizing:border-box;box-sizing:border-box}/*!@label*/label.sc-ion-radio-md{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;opacity:0}/*!@[dir=rtl] label, :host-context([dir=rtl]) label*/[dir=rtl].sc-ion-radio-md label.sc-ion-radio-md,[dir=rtl].sc-ion-radio-md-h label.sc-ion-radio-md,[dir=rtl] .sc-ion-radio-md-h label.sc-ion-radio-md{left:unset;right:unset;right:0}/*!@label::-moz-focus-inner*/label.sc-ion-radio-md::-moz-focus-inner{border:0}/*!@input*/input.sc-ion-radio-md{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;margin:0;padding:0;border:0;outline:0;clip:rect(0 0 0 0);opacity:0;overflow:hidden;-webkit-appearance:none;-moz-appearance:none}/*!@:host(:focus)*/.sc-ion-radio-md-h:focus{outline:none}/*!@:host*/.sc-ion-radio-md-h{--color:var(--ion-color-step-400, #999999);--color-checked:var(--ion-color-primary, #3880ff);--border-width:2px;--border-style:solid;--border-radius:50%;width:20px;height:20px}/*!@:host(.ion-color) .radio-inner*/.ion-color.sc-ion-radio-md-h .radio-inner.sc-ion-radio-md{background:var(--ion-color-base)}/*!@:host(.ion-color.radio-checked) .radio-icon*/.ion-color.radio-checked.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md{border-color:var(--ion-color-base)}/*!@.radio-icon*/.radio-icon.sc-ion-radio-md{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border-radius:var(--border-radius);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--color)}/*!@.radio-inner*/.radio-inner.sc-ion-radio-md{border-radius:var(--inner-border-radius);width:calc(50% + var(--border-width));height:calc(50% + var(--border-width));-webkit-transform:scale3d(0, 0, 0);transform:scale3d(0, 0, 0);-webkit-transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:-webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1);transition:transform 280ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);background:var(--color-checked)}/*!@:host(.radio-checked) .radio-icon*/.radio-checked.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md{border-color:var(--color-checked)}/*!@:host(.radio-checked) .radio-inner*/.radio-checked.sc-ion-radio-md-h .radio-inner.sc-ion-radio-md{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}/*!@:host(.radio-disabled)*/.radio-disabled.sc-ion-radio-md-h{opacity:0.3}/*!@:host(.ion-focused) .radio-icon::after*/.ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after{border-radius:var(--inner-border-radius);left:-12px;top:-12px;display:block;position:absolute;width:36px;height:36px;background:var(--ion-color-primary-tint, #4c8dff);content:\"\";opacity:0.2}/*!@:host-context([dir=rtl]):host(.ion-focused) .radio-icon::after, :host-context([dir=rtl]).ion-focused .radio-icon::after*/[dir=rtl].sc-ion-radio-md-h -no-combinator.ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after,[dir=rtl] .sc-ion-radio-md-h -no-combinator.ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after,[dir=rtl].ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after,[dir=rtl] .ion-focused.sc-ion-radio-md-h .radio-icon.sc-ion-radio-md::after{left:unset;right:unset;right:-12px}/*!@:host(.in-item)*/.in-item.sc-ion-radio-md-h{margin-left:0;margin-right:0;margin-top:9px;margin-bottom:9px;display:block;position:static}/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-md-h{margin-left:4px;margin-right:36px;margin-top:11px;margin-bottom:10px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.in-item[slot=start])*/.in-item[slot=start].sc-ion-radio-md-h{margin-left:unset;margin-right:unset;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:36px;margin-inline-end:36px}}";
 
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -22203,14 +22217,12 @@ class Radio {
     });
   }
   render() {
-    const { inputId, disabled, checked, dsColor, el, buttonTabindex, dsName } = this;
+    const { inputId, disabled, checked, color, el, buttonTabindex } = this;
     const mode = getIonMode$1(this);
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
-    return (hAsync(Host, { "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, "aria-labelledby": label ? labelId : null, role: "radio", tabindex: buttonTabindex, onFocus: this.onFocus, onBlur: this.onBlur, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, "aria-labelledby": label ? labelId : null, role: "radio", tabindex: buttonTabindex, onFocus: this.onFocus, onBlur: this.onBlur, class: createColorClasses$1(color, {
         [mode]: true,
-        'med-radio': true,
-        [`med-radio--${dsName}`]: dsName !== undefined,
-        'in-item': hostContext('ion-item', el) || hostContext('med-option', el) || hostContext('med-item', el),
+        'in-item': hostContext('ion-item', el),
         'interactive': true,
         'radio-checked': checked,
         'radio-disabled': disabled,
@@ -22223,15 +22235,13 @@ class Radio {
     "disabled": ["emitStyle"]
   }; }
   static get style() { return {
-    ios: iosRadioMdCss,
+    ios: radioIosCss,
     md: radioMdCss
   }; }
   static get cmpMeta() { return {
     "$flags$": 41,
     "$tagName$": "ion-radio",
     "$members$": {
-      "dsName": [513, "ds-name"],
-      "dsColor": [513, "ds-color"],
       "color": [1],
       "name": [1],
       "disabled": [4],
@@ -22243,7 +22253,7 @@ class Radio {
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsName", "ds-name"], ["dsColor", "ds-color"]]
+    "$attrsToReflect$": []
   }; }
 }
 let radioButtonIds = 0;
@@ -22718,7 +22728,7 @@ class Range {
       }
     }
     renderHiddenInput(true, el, this.name, JSON.stringify(this.getValue()), disabled);
-    return (hAsync(Host, { onFocusin: this.onFocus, onFocusout: this.onBlur, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { onFocusin: this.onFocus, onFocusout: this.onBlur, class: generateMedColor$1(dsColor, {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'range-disabled': disabled,
@@ -25904,7 +25914,7 @@ class Segment {
   render() {
     const { dsColor } = this;
     const mode = getIonMode$1(this);
-    return (hAsync(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { onClick: this.onClick, class: generateMedColor$1(dsColor, {
         [mode]: true,
         'med-segment': true,
         'in-toolbar': hostContext('ion-toolbar', this.el),
@@ -26011,7 +26021,7 @@ class SegmentButton {
     const { checked, type, disabled, hasIcon, hasLabel, layout, segmentEl, dsColor } = this;
     const mode = getIonMode$1(this);
     const hasSegmentColor = () => segmentEl !== null && segmentEl.color !== undefined;
-    return (hAsync(Host, { "from-stencil": true, "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, "aria-disabled": disabled ? 'true' : null, class: generateMedColor$1(dsColor, {
         [mode]: true,
         'med-segment-button': true,
         'in-toolbar': hostContext('ion-toolbar', this.el),
@@ -27445,7 +27455,7 @@ class TabBar {
     const { dsColor, translucent, keyboardVisible } = this;
     const mode = getIonMode$1(this);
     this.medResize.emit({ height: 1 });
-    return (hAsync(Host, { "from-stencil": true, role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, style: { '--gap': `${this.gap}` }, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, style: { '--gap': `${this.gap}` }, class: generateMedColor$1(dsColor, {
         [mode]: true,
         'tab-bar-translucent': translucent,
         'tab-bar-hidden': keyboardVisible,
@@ -27555,7 +27565,7 @@ class TabButton {
       rel,
       target
     };
-    return (hAsync(Host, { "from-stencil": true, onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: generateMedColor$1(dsColor, {
         [mode]: true,
         'med-tab-button': true,
         'tab-selected': selected,
@@ -28341,7 +28351,7 @@ class Toast {
     };
     return (hAsync(Host, { "from-stencil": true, style: {
         zIndex: `${60000 + this.overlayIndex}`,
-      }, class: generateMedColor(this.dsColor, Object.assign(Object.assign({ [mode]: true }, getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler }, hAsync("div", { class: wrapperClass }, hAsync("div", { class: "toast-container", part: "container" }, this.renderButtons(startButtons, 'start'), hAsync("div", { class: "toast-content" }, this.header !== undefined &&
+      }, class: generateMedColor$1(this.dsColor, Object.assign(Object.assign({ [mode]: true }, getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler }, hAsync("div", { class: wrapperClass }, hAsync("div", { class: "toast-container", part: "container" }, this.renderButtons(startButtons, 'start'), hAsync("div", { class: "toast-content" }, this.header !== undefined &&
       hAsync("div", { class: "toast-header", part: "header" }, this.header), this.message !== undefined &&
       hAsync("div", { class: "toast-message", part: "message", innerHTML: sanitizeDOMString(this.message) })), this.renderButtons(endButtons, 'end')))));
   }
@@ -28504,7 +28514,7 @@ class Toggle {
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     const value = this.getValue();
     renderHiddenInput(true, el, name, (checked ? value : ''), disabled);
-    return (hAsync(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "switch", class: generateMedColor(dsColor, {
+    return (hAsync(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "switch", class: generateMedColor$1(dsColor, {
         [mode]: true,
         'med-toggle': true,
         'in-item': hostContext('ion-item', el) || hostContext('med-item', el),

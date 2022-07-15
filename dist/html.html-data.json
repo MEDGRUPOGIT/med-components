@@ -700,12 +700,12 @@
           "description": "If `true`, the checkbox is selected."
         },
         {
-          "name": "disabled",
-          "description": "If `true`, the user cannot interact with the checkbox."
+          "name": "color",
+          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
+          "name": "disabled",
+          "description": "If `true`, the user cannot interact with the checkbox."
         },
         {
           "name": "indeterminate",
@@ -2841,19 +2841,6 @@
         {
           "name": "disabled",
           "description": "If `true`, the user cannot interact with the radio."
-        },
-        {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
-        },
-        {
-          "name": "ds-name",
-          "description": "Define a variação do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            }
-          ]
         },
         {
           "name": "mode",
@@ -7068,36 +7055,7 @@
         },
         {
           "name": "tag",
-          "description": "Define a tag HTML do componente.",
-          "values": [
-            {
-              "name": "h1"
-            },
-            {
-              "name": "h2"
-            },
-            {
-              "name": "h3"
-            },
-            {
-              "name": "h4"
-            },
-            {
-              "name": "h5"
-            },
-            {
-              "name": "h6"
-            },
-            {
-              "name": "label"
-            },
-            {
-              "name": "p"
-            },
-            {
-              "name": "span"
-            }
-          ]
+          "description": "Define a tag HTML do componente."
         },
         {
           "name": "token",
@@ -7107,7 +7065,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/foundation/med-type/med-type.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-type/med-type.tsx"
         }
       ]
     },

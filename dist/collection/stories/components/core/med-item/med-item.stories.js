@@ -4,7 +4,7 @@ import { MedColors } from "../../../../global/templarios/color.enum";
 import { MedIcons } from '../../../constants';
 
 export default {
-  title: 'Components/Core (Revisado: abril 2022)/Item',
+  title: 'Components/Core/Item',
   decorators: [withDesign],
 };
 
