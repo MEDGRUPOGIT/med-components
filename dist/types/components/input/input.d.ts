@@ -20,18 +20,6 @@ export declare class Input implements ComponentInterface {
   hasFocus: boolean;
   el: HTMLElement;
   /**
-    * Define o icone do componente.
-    */
-  dsName?: 'secondary';
-  /**
-    * Define o status do componente.
-    */
-  status?: 'valid' | 'invalid' | string | undefined;
-  /**
-   * Define o icone do componente.
-   */
-  icon?: string;
-  /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
    * For more information on colors, see [theming](/docs/theming/basics).
@@ -70,7 +58,6 @@ export declare class Input implements ComponentInterface {
    * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
    */
   debounce: number;
-  iconClicked: EventEmitter<string>;
   protected debounceChanged(): void;
   /**
    * If `true`, the user cannot interact with the input.
@@ -208,6 +195,5 @@ export declare class Input implements ComponentInterface {
   private clearTextInput;
   private focusChanged;
   private hasValue;
-  private iconClick;
   render(): any;
 }

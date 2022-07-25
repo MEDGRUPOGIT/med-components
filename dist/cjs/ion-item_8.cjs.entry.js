@@ -187,7 +187,7 @@ const Item = class {
         'item-multiple-inputs': this.multipleInputs,
         'ion-activatable': canActivate,
         'ion-focusable': true,
-      })) }, index.h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn), index.h("slot", { name: "start" }), index.h("div", { class: "item-inner" }, index.h("div", { class: "input-wrapper" }, index.h("slot", null)), index.h("slot", { name: "end" }), showDetail && index.h("ion-icon", { icon: detailIcon, lazy: false, class: "med-icon item-detail-icon", part: "detail-icon", "aria-hidden": "true" }), index.h("div", { class: "item-inner-highlight" })), canActivate && mode === 'md' && index.h("ion-ripple-effect", null)), index.h("div", { class: "item-highlight" })));
+      })) }, index.h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn), index.h("slot", { name: "start" }), index.h("div", { class: "item-inner" }, index.h("div", { class: "input-wrapper" }, index.h("slot", null)), index.h("slot", { name: "end" }), showDetail && index.h("ion-icon", { icon: detailIcon, lazy: false, class: "item-detail-icon", part: "detail-icon", "aria-hidden": "true" }), index.h("div", { class: "item-inner-highlight" })), canActivate && mode === 'md' && index.h("ion-ripple-effect", null)), index.h("div", { class: "item-highlight" })));
   }
   static get delegatesFocus() { return true; }
   get el() { return index.getElement(this); }

@@ -74,6 +74,7 @@
     "./components/@medgrupo/testes/sheet-content-test/sheet-content-test.js",
     "./components/@medgrupo/testes/sheet-test/sheet-test.js",
     "./components/@templarios/core/med-type/med-type.js",
+    "./components/@templarios/core/tp-input-container/tp-input-container.js",
     "./components/action-sheet/action-sheet.js",
     "./components/alert/alert.js",
     "./components/app/app.js",

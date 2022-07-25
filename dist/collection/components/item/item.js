@@ -194,7 +194,7 @@ export class Item {
           h("div", { class: "input-wrapper" },
             h("slot", null)),
           h("slot", { name: "end" }),
-          showDetail && h("ion-icon", { icon: detailIcon, lazy: false, class: "med-icon item-detail-icon", part: "detail-icon", "aria-hidden": "true" }),
+          showDetail && h("ion-icon", { icon: detailIcon, lazy: false, class: "item-detail-icon", part: "detail-icon", "aria-hidden": "true" }),
           h("div", { class: "item-inner-highlight" })),
         canActivate && mode === 'md' && h("ion-ripple-effect", null)),
       h("div", { class: "item-highlight" })));

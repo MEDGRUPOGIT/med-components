@@ -15,14 +15,6 @@ export declare class Select implements ComponentInterface {
   private focusEl?;
   private mutationO?;
   el: HTMLIonSelectElement;
-  /**
-    * Define o icone do componente.
-    */
-  dsName?: 'secondary';
-  /**
-    * Define o icone do componente.
-    */
-  icon?: string | undefined;
   isExpanded: boolean;
   /**
    * If `true`, the user cannot interact with the select.

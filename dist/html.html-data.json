@@ -1670,15 +1670,6 @@
           "description": "If `true`, the user cannot interact with the input."
         },
         {
-          "name": "ds-name",
-          "description": "Define o icone do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            }
-          ]
-        },
-        {
           "name": "enterkeyhint",
           "description": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
           "values": [
@@ -1704,10 +1695,6 @@
               "name": "send"
             }
           ]
-        },
-        {
-          "name": "icon",
-          "description": "Define o icone do componente."
         },
         {
           "name": "inputmode",
@@ -1798,10 +1785,6 @@
         {
           "name": "spellcheck",
           "description": "If `true`, the element will have its spelling and grammar checked."
-        },
-        {
-          "name": "status",
-          "description": "Define o status do componente."
         },
         {
           "name": "step",
@@ -3816,19 +3799,6 @@
           "description": "If `true`, the user cannot interact with the select."
         },
         {
-          "name": "ds-name",
-          "description": "Define o icone do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            }
-          ]
-        },
-        {
-          "name": "icon",
-          "description": "Define o icone do componente."
-        },
-        {
           "name": "interface",
           "description": "The interface the select should use: `action-sheet`, `popover` or `alert`.",
           "values": [
@@ -4299,15 +4269,6 @@
         {
           "name": "disabled",
           "description": "If `true`, the user cannot interact with the textarea."
-        },
-        {
-          "name": "ds-name",
-          "description": "Define o icone do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            }
-          ]
         },
         {
           "name": "enterkeyhint",
@@ -7162,6 +7123,72 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/sheet-test/sheet-test.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tp-input-container",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": ""
+        },
+        {
+          "name": "ds-color",
+          "description": ""
+        },
+        {
+          "name": "ds-name",
+          "description": "",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
+        },
+        {
+          "name": "feedback",
+          "description": ""
+        },
+        {
+          "name": "has-button",
+          "description": "",
+          "values": [
+            {
+              "name": "both"
+            },
+            {
+              "name": "end"
+            },
+            {
+              "name": "start"
+            }
+          ]
+        },
+        {
+          "name": "has-icon",
+          "description": "",
+          "values": [
+            {
+              "name": "both"
+            },
+            {
+              "name": "end"
+            },
+            {
+              "name": "start"
+            }
+          ]
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/tp-input-container/tp-input-container.tsx"
         }
       ]
     }

@@ -1,0 +1,93 @@
+:host {
+  --background: hsl(var(--med-color-neutral-2));
+}
+
+:host {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--background);
+  border-radius: 8px;
+  height: 40px;
+}
+
+::slotted(ion-button[slot=start]),
+::slotted(ion-icon[slot=start]),
+::slotted(ion-button[slot=end]),
+::slotted(ion-icon[slot=end]) {
+  margin: 0 8px 0 8px;
+  stroke: hsl(var(--med-color-neutral-6));
+  --color: hsl(var(--med-color-neutral-6)) !important;
+}
+
+:host(.tp-input-container--has-button-start)::slotted(ion-input), :host(.tp-input-container--has-button-start)::slotted(ion-select),
+:host(.tp-input-container--has-icon-start)::slotted(ion-input),
+:host(.tp-input-container--has-icon-start)::slotted(ion-select) {
+  --padding-start: 0;
+}
+
+:host(.tp--has-button-end)::slotted(ion-input), :host(.tp--has-button-end)::slotted(ion-select),
+:host(.tp-input-container--has-icon-end)::slotted(ion-input),
+:host(.tp-input-container--has-icon-end)::slotted(ion-select) {
+  --padding-end: 0;
+}
+
+:host(.tp-input-container--has-button-both)::slotted(ion-input), :host(.tp-input-container--has-button-both)::slotted(ion-select),
+:host(.tp-input-container--has-icon-both)::slotted(ion-input),
+:host(.tp-input-container--has-icon-both)::slotted(ion-select) {
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+:host(.tp-input-container--disabled)::slotted(ion-button[slot=start]),
+:host(.tp-input-container--disabled)::slotted(ion-icon[slot=start]),
+:host(.tp-input-container--disabled)::slotted(ion-button[slot=end]),
+:host(.tp-input-container--disabled)::slotted(ion-icon[slot=end]) {
+  opacity: 0.4;
+}
+
+:host(.tp-input-container--secondary) {
+  --background: hsl(var(--med-color-neutral-3));
+}
+:host(.tp-input-container--secondary)::slotted(ion-input), :host(.tp-input-container--secondary)::slotted(ion-select) {
+  --background: hsl(var(--med-color-3));
+}
+
+:host(.med-color) {
+  --background: hsl(var(--med-color-3));
+}
+:host(.med-color)::slotted(ion-input), :host(.med-color)::slotted(ion-select) {
+  --background: hsl(var(--med-color-3));
+  --placeholder-color: hsl(var(--med-color-contrast-fixed));
+  --color: hsl(var(--med-color-contrast-fixed));
+}
+:host(.med-color)::slotted(ion-button), :host(.med-color)::slotted(ion-icon) {
+  --color: hsl(var(--med-color-contrast-fixed)) !important;
+  stroke: hsl(var(--med-color-contrast-fixed)) !important;
+}
+
+:host(.med-color-neutral) {
+  --background: hsl(var(--med-color-neutral));
+}
+:host(.med-color-neutral)::slotted(ion-input), :host(.med-color-neutral)::slotted(ion-select) {
+  --background: hsl(var(--med-color-neutral));
+  --placeholder-color: hsl(var(--med-color-neutral-contrast));
+  --color: hsl(var(--med-color-neutral-contrast));
+}
+:host(.med-color-neutral)::slotted(ion-button), :host(.med-color-neutral)::slotted(ion-icon) {
+  --color: hsl(var(--med-color-neutral-contrast)) !important;
+  stroke: hsl(var(--med-color-neutral-contrast)) !important;
+}
+
+:host(.med-color-feedback) {
+  --background: hsl(var(--med-color-feedback));
+}
+:host(.med-color-feedback)::slotted(ion-input), :host(.med-color-feedback)::slotted(ion-select) {
+  --background: hsl(var(--med-color-feedback));
+  --placeholder-color: hsl(var(--med-color-feedback-contrast));
+  --color: hsl(var(--med-color-feedback-contrast));
+}
+:host(.med-color-feedback)::slotted(ion-button), :host(.med-color-feedback)::slotted(ion-icon) {
+  --color: hsl(var(--med-color-feedback-contrast)) !important;
+  stroke: hsl(var(--med-color-neutral-6)) !important;
+}

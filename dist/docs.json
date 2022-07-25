@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-07-15T20:15:19",
+  "timestamp": "2022-07-25T19:35:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -6479,26 +6479,6 @@
           "required": false
         },
         {
-          "name": "dsName",
-          "type": "\"secondary\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define o icone do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "enterkeyhint",
           "type": "\"done\" | \"enter\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined",
           "mutable": false,
@@ -6533,25 +6513,6 @@
             },
             {
               "value": "send",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "icon",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "icon",
-          "reflectToAttr": false,
-          "docs": "Define o icone do componente.",
-          "docsTags": [],
-          "values": [
-            {
               "type": "string"
             },
             {
@@ -6854,25 +6815,6 @@
           "required": false
         },
         {
-          "name": "status",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "status",
-          "reflectToAttr": true,
-          "docs": "Define o status do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "step",
           "type": "string | undefined",
           "mutable": false,
@@ -7006,15 +6948,6 @@
       ],
       "events": [
         {
-          "event": "iconClicked",
-          "detail": "string",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
           "event": "ionBlur",
           "detail": "FocusEvent",
           "bubbles": true,
@@ -7107,14 +7040,8 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "ion-input": [
-          "ion-icon"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/item/item.tsx",
@@ -15181,46 +15108,6 @@
           "required": false
         },
         {
-          "name": "dsName",
-          "type": "\"secondary\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define o icone do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "icon",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "icon",
-          "reflectToAttr": false,
-          "docs": "Define o icone do componente.",
-          "docsTags": [],
-          "default": "'med-baixo'",
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "interface",
           "type": "\"action-sheet\" | \"alert\" | \"popover\"",
           "mutable": false,
@@ -15501,14 +15388,8 @@
         }
       ],
       "dependents": [],
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "ion-select": [
-          "ion-icon"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/select-option/select-option.tsx",
@@ -17302,26 +17183,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"secondary\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define o icone do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -27245,6 +27106,155 @@
           "ion-ripple-effect"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/@templarios/core/tp-input-container/tp-input-container.tsx",
+      "encapsulation": "scoped",
+      "tag": "tp-input-container",
+      "readme": "# tp-input-container\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "feedback",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "feedback",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasButton",
+          "type": "\"both\" | \"end\" | \"start\" | undefined",
+          "mutable": false,
+          "attr": "has-button",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasIcon",
+          "type": "\"both\" | \"end\" | \"start\" | undefined",
+          "mutable": false,
+          "attr": "has-icon",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     }
   ]
 }

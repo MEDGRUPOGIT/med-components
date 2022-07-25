@@ -910,10 +910,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define o icone do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
@@ -925,10 +921,6 @@ export namespace Components {
           * Returns the native `<input>` element used under the hood.
          */
         "getInputElement": () => Promise<HTMLInputElement>;
-        /**
-          * Define o icone do componente.
-         */
-        "icon"?: string;
         /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
@@ -993,10 +985,6 @@ export namespace Components {
           * If `true`, the element will have its spelling and grammar checked.
          */
         "spellcheck": boolean;
-        /**
-          * Define o status do componente.
-         */
-        "status"?: 'valid' | 'invalid' | string | undefined;
         /**
           * Works with the min and max attributes to limit the increments at which a value can be set. Possible values are: `"any"` or a positive floating point number.
          */
@@ -2197,14 +2185,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define o icone do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
-          * Define o icone do componente.
-         */
-        "icon"?: string | undefined;
-        /**
           * The interface the select should use: `action-sheet`, `popover` or `alert`.
          */
         "interface": SelectInterface;
@@ -2549,10 +2529,6 @@ export namespace Components {
           * If `true`, the user cannot interact with the textarea.
          */
         "disabled": boolean;
-        /**
-          * Define o icone do componente.
-         */
-        "dsName"?: 'secondary';
         /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
@@ -4047,6 +4023,14 @@ export namespace Components {
     }
     interface SheetTest {
     }
+    interface TpInputContainer {
+        "disabled": boolean;
+        "dsColor"?: MedColor;
+        "dsName"?: 'secondary';
+        "feedback": boolean;
+        "hasButton"?: 'start' | 'end' | 'both';
+        "hasIcon"?: 'start' | 'end' | 'both';
+    }
 }
 declare global {
     interface HTMLDialogTestElement extends Components.DialogTest, HTMLStencilElement {
@@ -5015,6 +4999,12 @@ declare global {
         prototype: HTMLSheetTestElement;
         new (): HTMLSheetTestElement;
     };
+    interface HTMLTpInputContainerElement extends Components.TpInputContainer, HTMLStencilElement {
+    }
+    var HTMLTpInputContainerElement: {
+        prototype: HTMLTpInputContainerElement;
+        new (): HTMLTpInputContainerElement;
+    };
     interface HTMLElementTagNameMap {
         "dialog-test": HTMLDialogTestElement;
         "ion-action-sheet": HTMLIonActionSheetElement;
@@ -5177,6 +5167,7 @@ declare global {
         "select-test": HTMLSelectTestElement;
         "sheet-content-test": HTMLSheetContentTestElement;
         "sheet-test": HTMLSheetTestElement;
+        "tp-input-container": HTMLTpInputContainerElement;
     }
 }
 declare namespace LocalJSX {
@@ -6100,17 +6091,9 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Define o icone do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
-        /**
-          * Define o icone do componente.
-         */
-        "icon"?: string;
         /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
@@ -6143,7 +6126,6 @@ declare namespace LocalJSX {
           * The name of the control, which is submitted with the form data.
          */
         "name"?: string;
-        "onIconClicked"?: (event: CustomEvent<string>) => void;
         /**
           * Emitted when the input loses focus.
          */
@@ -6184,10 +6166,6 @@ declare namespace LocalJSX {
           * If `true`, the element will have its spelling and grammar checked.
          */
         "spellcheck"?: boolean;
-        /**
-          * Define o status do componente.
-         */
-        "status"?: 'valid' | 'invalid' | string | undefined;
         /**
           * Works with the min and max attributes to limit the increments at which a value can be set. Possible values are: `"any"` or a positive floating point number.
          */
@@ -7295,14 +7273,6 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Define o icone do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
-          * Define o icone do componente.
-         */
-        "icon"?: string | undefined;
-        /**
           * The interface the select should use: `action-sheet`, `popover` or `alert`.
          */
         "interface"?: SelectInterface;
@@ -7640,10 +7610,6 @@ declare namespace LocalJSX {
           * If `true`, the user cannot interact with the textarea.
          */
         "disabled"?: boolean;
-        /**
-          * Define o icone do componente.
-         */
-        "dsName"?: 'secondary';
         /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
@@ -9235,6 +9201,14 @@ declare namespace LocalJSX {
     }
     interface SheetTest {
     }
+    interface TpInputContainer {
+        "disabled"?: boolean;
+        "dsColor"?: MedColor;
+        "dsName"?: 'secondary';
+        "feedback"?: boolean;
+        "hasButton"?: 'start' | 'end' | 'both';
+        "hasIcon"?: 'start' | 'end' | 'both';
+    }
     interface IntrinsicElements {
         "dialog-test": DialogTest;
         "ion-action-sheet": IonActionSheet;
@@ -9397,6 +9371,7 @@ declare namespace LocalJSX {
         "select-test": SelectTest;
         "sheet-content-test": SheetContentTest;
         "sheet-test": SheetTest;
+        "tp-input-container": TpInputContainer;
     }
 }
 export { LocalJSX as JSX };
@@ -9564,6 +9539,7 @@ declare module "@stencil/core" {
             "select-test": LocalJSX.SelectTest & JSXBase.HTMLAttributes<HTMLSelectTestElement>;
             "sheet-content-test": LocalJSX.SheetContentTest & JSXBase.HTMLAttributes<HTMLSheetContentTestElement>;
             "sheet-test": LocalJSX.SheetTest & JSXBase.HTMLAttributes<HTMLSheetTestElement>;
+            "tp-input-container": LocalJSX.TpInputContainer & JSXBase.HTMLAttributes<HTMLTpInputContainerElement>;
         }
     }
 }
