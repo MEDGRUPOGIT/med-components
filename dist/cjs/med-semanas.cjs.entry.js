@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const medTheme = require('./med-theme-1bca89cc.js');
+const color = require('./color-2d4645aa.js');
 
 const medSemanasCss = ":host{--padding:16px}:host(.med-semanas){display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;padding:var(--padding)}::slotted(*){margin:4px}";
 
@@ -13,7 +13,7 @@ const MedSemanas = class {
   }
   render() {
     const { skin } = this;
-    return (index.h(index.Host, { class: medTheme.generateMedColor(null, {
+    return (index.h(index.Host, { class: color.generateMedColor(null, {
         'med-semanas': true,
         [`med-semanas--${skin}`]: skin !== undefined,
       }) }, index.h("slot", null)));

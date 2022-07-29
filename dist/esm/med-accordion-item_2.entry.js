@@ -1,5 +1,5 @@
 import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './med-theme-83c28ab9.js';
+import { g as generateMedColor } from './color-49be71bc.js';
 import { c as createAnimation } from './animation-096c6391.js';
 import './helpers-dd7e4b7b.js';
 
@@ -12,25 +12,28 @@ const MedAccordionItem = class {
     this.opened = createEvent(this, "opened", 7);
     this.medClick = createEvent(this, "medClick", 7);
     /**
-      * Define a variação da borda do componente.
-      */
+     * todo
+     */
     this.noBorder = false;
     /**
-      * Define se o componente irá ter background quando aberto.
-      */
+     * todo
+     */
     this.background = false;
     /**
-     * Permite que a abertura do accordion seja bloqueada pelo front.
+     * todo
      */
     this.canCollapse = true;
     /**
-     * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
+     * todo
      */
     this.isOpened = false;
     /**
-    * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
-    */
+     * todo
+     */
     this.slotsToggle = [];
+    /**
+     * todo
+     */
     this.isOpen = false;
     this.isTransitioning = false;
     this.onClick = (slot) => {
@@ -99,16 +102,16 @@ const Accordion = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Abre um item de cada vez.
-      */
+     * todo
+     */
     this.singleOpen = true;
     /**
-      * Define a variação da borda do componente.
-      */
+     * todo
+     */
     this.noBorder = false;
     /**
-      * Remove a animação do componente.
-      */
+     * todo
+     */
     this.noAnimation = false;
     this.currentlyOpen = null;
   }

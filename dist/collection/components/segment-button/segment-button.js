@@ -1,8 +1,8 @@
-import { Component, Element, Host, Prop, State, forceUpdate, h } from '@stencil/core';
+import { Component, Element, forceUpdate, h, Host, Prop, State } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { addEventListener, removeEventListener } from '../../utils/helpers';
+import { generateMedColor } from '../../@templarios/utilities/color';
 import { hostContext } from '../../utils/theme';
-import { generateMedColor } from '../../utils/med-theme';
 let ids = 0;
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -114,7 +114,7 @@ export class SegmentButton {
         "references": {
           "MedColor": {
             "location": "import",
-            "path": "../../interface"
+            "path": "../../@templarios/types/color.type"
           }
         }
       },

@@ -30,14 +30,13 @@ export * from './components/toast/toast-interface';
 export * from './components/toggle/toggle-interface';
 export * from './components/virtual-scroll/virtual-scroll-interface';
 
-// medgrupo
-export * from './@templarios/interfaces/color.interface';
-export * from './@templarios/interfaces/type.interface';
-
-// medgrupo old
-export * from './components/@medgrupo/team/questoes/med-alternativas/med-alternativas-interface';
-export * from './components/@medgrupo/compositions/med-image-zoom/med-image-zoom-interface';
-export * from './components/@medgrupo/core/med-chart-radial/med-chart-radial-interface';
+// templarios
+export { MedAlternativaInterface, MedAlternativasInterface, MedAlternativasInternoInterface } from './@templarios/interfaces/alternativas.interface';
+export { MedChartRadiaItem } from './@templarios/interfaces/chart-radial.interface';
+export { headerResizeEventDetail } from './@templarios/interfaces/header.interface';
+export { MedImageZoomItemInterface, MedImageZoomInterface } from './@templarios/interfaces/image-zoom.interface';
+export { MedSemanaInterface, ItensInterface } from './@templarios/interfaces/semana.interface';
+export { MedTema } from './@templarios/interfaces/themes.interface';
 
 // Types from utils
 export { Animation, AnimationBuilder, AnimationCallbackOptions, AnimationDirection, AnimationFill, AnimationKeyFrames, AnimationLifecycle } from './utils/animation/animation-interface';

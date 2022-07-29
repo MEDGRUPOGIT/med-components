@@ -10,7 +10,13 @@ const tpInputContainerCss = ".sc-tp-input-container-h{--background:hsl(var(--med
 const TpInputContainer = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    /**
+     * todo
+     */
     this.disabled = false;
+    /**
+     * todo
+     */
     this.feedback = false;
   }
   render() {

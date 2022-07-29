@@ -18,12 +18,10 @@
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: uppercase !important;
   }
-
   .ion-text-sm-lowercase {
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: lowercase !important;
   }
-
   .ion-text-sm-capitalize {
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: capitalize !important;
@@ -34,12 +32,10 @@
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: uppercase !important;
   }
-
   .ion-text-md-lowercase {
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: lowercase !important;
   }
-
   .ion-text-md-capitalize {
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: capitalize !important;
@@ -50,12 +46,10 @@
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: uppercase !important;
   }
-
   .ion-text-lg-lowercase {
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: lowercase !important;
   }
-
   .ion-text-lg-capitalize {
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: capitalize !important;
@@ -66,12 +60,10 @@
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: uppercase !important;
   }
-
   .ion-text-xl-lowercase {
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: lowercase !important;
   }
-
   .ion-text-xl-capitalize {
     /* stylelint-disable-next-line declaration-no-important */
     text-transform: capitalize !important;

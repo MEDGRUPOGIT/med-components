@@ -2,7 +2,7 @@ import { r as registerInstance, e as createEvent, h, H as Host, i as getElement 
 import { b as getIonMode } from './ionic-global-4bc7e399.js';
 import { a as attachComponent, d as detachComponent } from './framework-delegate-4392cd63.js';
 import { B as BACKDROP, e as prepareOverlay, d as present, f as dismiss, g as eventMethod } from './overlays-e8ede0be.js';
-import { g as getClassMap } from './theme-40db79c9.js';
+import { g as getClassMap } from './theme-ff3fc52f.js';
 import { e as deepReady } from './index-36075612.js';
 import { c as createAnimation } from './animation-096c6391.js';
 import './helpers-dd7e4b7b.js';

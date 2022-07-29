@@ -1,9 +1,9 @@
-import { Component, Element, Event, Host, Method, Prop, h } from '@stencil/core';
+import { Component, Element, Event, h, Host, Method, Prop } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
+import { generateMedColor } from '../../@templarios/utilities/color';
 import { dismiss, eventMethod, isCancel, prepareOverlay, present, safeCall } from '../../utils/overlays';
 import { sanitizeDOMString } from '../../utils/sanitization';
 import { getClassMap } from '../../utils/theme';
-import { generateMedColor } from '../../utils/med-theme';
 import { iosEnterAnimation } from './animations/ios.enter';
 import { iosLeaveAnimation } from './animations/ios.leave';
 import { mdEnterAnimation } from './animations/md.enter';
@@ -205,7 +205,7 @@ export class Toast {
         "references": {
           "MedColor": {
             "location": "import",
-            "path": "../../interface"
+            "path": "../../@templarios/types/color.type"
           }
         }
       },

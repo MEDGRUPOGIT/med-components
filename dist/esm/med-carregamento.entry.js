@@ -5,6 +5,9 @@ const medCarregamentoCss = ".sc-med-carregamento-h{display:block}.loader.sc-med-
 const MedCarregamento = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    /**
+     * todo
+     */
     this.color = '#808080';
   }
   render() {

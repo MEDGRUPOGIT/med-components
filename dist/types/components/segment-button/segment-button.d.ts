@@ -1,5 +1,6 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
-import { SegmentButtonLayout, MedColor } from '../../interface';
+import { MedColor } from '../../@templarios/types/color.type';
+import { SegmentButtonLayout } from '../../interface';
 import { ButtonInterface } from '../../utils/element-interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.

@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const index = require('./index-bc2e4509.js');
 const ionicGlobal = require('./ionic-global-50e8bb29.js');
 const helpers = require('./helpers-d381ec4d.js');
-const theme = require('./theme-f551502d.js');
+const theme = require('./theme-30b7a575.js');
 
 let CACHED_MAP;
 const getIconMap = () => {

@@ -1,5 +1,5 @@
 import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './med-theme-83c28ab9.js';
+import { g as generateMedColor } from './color-49be71bc.js';
 
 const medHeaderCss = ":host{display:block}";
 

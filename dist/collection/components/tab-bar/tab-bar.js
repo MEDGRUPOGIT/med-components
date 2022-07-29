@@ -1,6 +1,6 @@
-import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
+import { Component, Element, Event, h, Host, Prop, State, Watch } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
-import { generateMedColor } from '../../utils/med-theme';
+import { generateMedColor } from '../../@templarios/utilities/color';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
@@ -103,7 +103,7 @@ export class TabBar {
         "references": {
           "MedColor": {
             "location": "import",
-            "path": "../../interface"
+            "path": "../../@templarios/types/color.type"
           }
         }
       },

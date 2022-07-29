@@ -1,5 +1,6 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { AnimationBuilder, Color, RouterDirection, MedColor } from '../../interface';
+import { MedColor } from '../../@templarios/types/color.type';
+import { AnimationBuilder, Color, RouterDirection } from '../../interface';
 import { AnchorInterface, ButtonInterface } from '../../utils/element-interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.

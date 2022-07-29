@@ -1,6 +1,6 @@
 import { r as registerInstance, h, H as Host, i as getElement, e as createEvent, f as readTask, j as forceUpdate, c as writeTask } from './index-70672e81.js';
 import { b as getIonMode, c as config, a as isPlatform } from './ionic-global-4bc7e399.js';
-import { c as createColorClasses, h as hostContext } from './theme-40db79c9.js';
+import { c as createColorClasses, h as hostContext } from './theme-ff3fc52f.js';
 import { j as clamp } from './helpers-dd7e4b7b.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-eea9a7a9.js';
 import { a as attachComponent, d as detachComponent } from './framework-delegate-4392cd63.js';

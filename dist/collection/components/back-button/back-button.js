@@ -1,8 +1,8 @@
-import { Component, Element, Host, Prop, h } from '@stencil/core';
+import { Component, Element, h, Host, Prop } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
+import { generateMedColor } from '../../@templarios/utilities/color';
 import { hostContext, openURL } from '../../utils/theme';
-import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -104,7 +104,7 @@ export class BackButton {
         "references": {
           "MedColor": {
             "location": "import",
-            "path": "../../interface"
+            "path": "../../@templarios/types/color.type"
           }
         }
       },

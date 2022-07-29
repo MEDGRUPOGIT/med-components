@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-07-25T19:35:42",
+  "timestamp": "2022-07-29T11:56:09",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -7,7 +7,7 @@
   },
   "components": [
     {
-      "filePath": "./src/components/@medgrupo/testes/dialog-test/dialog-test.tsx",
+      "filePath": "./src/components/@templarios/testes/dialog-test/dialog-test.tsx",
       "encapsulation": "scoped",
       "tag": "dialog-test",
       "readme": "# dialog-test\n\n\n",
@@ -18991,7 +18991,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-accordion-item/med-accordion-item.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-accordion-item/med-accordion-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-accordion-item",
       "readme": "# accordion-item\n\n\n",
@@ -19026,7 +19026,7 @@
           "mutable": false,
           "attr": "background",
           "reflectToAttr": true,
-          "docs": "Define se o componente irá ter background quando aberto.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -19043,7 +19043,7 @@
           "mutable": true,
           "attr": "can-collapse",
           "reflectToAttr": true,
-          "docs": "Permite que a abertura do accordion seja bloqueada pelo front.",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -19060,7 +19060,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19079,7 +19079,7 @@
           "mutable": true,
           "attr": "is-opened",
           "reflectToAttr": true,
-          "docs": "Permite que o front consiga definir quando o accordion vem aberto ou fechado.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -19096,7 +19096,7 @@
           "mutable": false,
           "attr": "no-border",
           "reflectToAttr": true,
-          "docs": "Define a variação da borda do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -19113,7 +19113,7 @@
           "mutable": true,
           "attr": "slots-toggle",
           "reflectToAttr": true,
-          "docs": "Permite que o front consiga definir quando o accordion vem aberto ou fechado.",
+          "docs": "todo",
           "docsTags": [],
           "default": "[]",
           "values": [
@@ -19141,7 +19141,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -19150,7 +19150,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -19159,7 +19159,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Internal",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -19199,7 +19199,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-accordion-list/med-accordion-list.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-accordion-list/med-accordion-list.tsx",
       "encapsulation": "shadow",
       "tag": "med-accordion-list",
       "readme": "# hv-accordion\n\n\n",
@@ -19218,7 +19218,7 @@
           "mutable": false,
           "attr": "margin",
           "reflectToAttr": false,
-          "docs": "Define a margin entre os itens do accordion.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19250,7 +19250,7 @@
           "mutable": false,
           "attr": "no-animation",
           "reflectToAttr": true,
-          "docs": "Remove a animação do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -19267,7 +19267,7 @@
           "mutable": false,
           "attr": "no-border",
           "reflectToAttr": true,
-          "docs": "Define a variação da borda do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -19284,7 +19284,7 @@
           "mutable": true,
           "attr": "single-open",
           "reflectToAttr": true,
-          "docs": "Abre um item de cada vez.",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -19324,7 +19324,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-add-card/med-add-card.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-add-card/med-add-card.tsx",
       "encapsulation": "shadow",
       "tag": "med-add-card",
       "readme": "# med-add-card\n\n\n",
@@ -19338,7 +19338,7 @@
           "mutable": false,
           "attr": "icon-name",
           "reflectToAttr": true,
-          "docs": "Define o icone.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19357,7 +19357,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": true,
-          "docs": "Define o titulo.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19392,7 +19392,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-agrupador/med-agrupador.tsx",
+      "filePath": "./src/components/@templarios/core/med-agrupador/med-agrupador.tsx",
       "encapsulation": "shadow",
       "tag": "med-agrupador",
       "readme": "# med-agrupador\n\n\n",
@@ -19406,7 +19406,7 @@
           "mutable": true,
           "attr": "collapsed",
           "reflectToAttr": true,
-          "docs": "Define o estado do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -19423,7 +19423,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19442,7 +19442,7 @@
           "mutable": false,
           "attr": "label-alternativo",
           "reflectToAttr": true,
-          "docs": "Define o texto no estado active.",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Ocultar a lista'",
           "values": [
@@ -19459,7 +19459,7 @@
           "mutable": false,
           "attr": "label-default",
           "reflectToAttr": true,
-          "docs": "Define o texto no estado default.",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Expandir a lista'",
           "values": [
@@ -19480,7 +19480,7 @@
           },
           "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
-          "docs": "Define o estado do componente programaticamente.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -19500,7 +19500,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-alert/med-alert.tsx",
+      "filePath": "./src/components/@templarios/core/med-alert/med-alert.tsx",
       "encapsulation": "scoped",
       "tag": "med-alert",
       "readme": "# med-alert\n\n\n",
@@ -19514,7 +19514,7 @@
           "mutable": true,
           "attr": "cancel-text",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19533,7 +19533,7 @@
           "mutable": true,
           "attr": "confirm-text",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19552,7 +19552,7 @@
           "mutable": true,
           "attr": "heading",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19571,7 +19571,7 @@
           "mutable": true,
           "attr": "message",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19611,7 +19611,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-alert-fixed/med-alert-fixed.tsx",
+      "filePath": "./src/components/@templarios/core/med-alert-fixed/med-alert-fixed.tsx",
       "encapsulation": "shadow",
       "tag": "med-alert-fixed",
       "readme": "# med-alert-fixed\n\n\n",
@@ -19625,7 +19625,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19644,7 +19644,7 @@
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19668,7 +19668,7 @@
           "mutable": false,
           "attr": "label-atualizar",
           "reflectToAttr": true,
-          "docs": "Define o texto no estado active.",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Versão desatualizada'",
           "values": [
@@ -19685,7 +19685,7 @@
           "mutable": false,
           "attr": "label-offline",
           "reflectToAttr": true,
-          "docs": "Define o texto no estado active.",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Você está offline. Conecte-se para acessar o conteúdo.'",
           "values": [
@@ -19716,7 +19716,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/team/questoes/med-alternativas/med-alternativas.tsx",
+      "filePath": "./src/components/@templarios/team/questoes/med-alternativas/med-alternativas.tsx",
       "encapsulation": "shadow",
       "tag": "med-alternativas",
       "readme": "# med-alternativas\n\n\n",
@@ -19730,7 +19730,7 @@
           "mutable": true,
           "attr": "alternativa-selecionada",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19746,7 +19746,7 @@
           "mutable": true,
           "attr": "alternativas",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "[]",
           "values": [
@@ -19763,7 +19763,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19782,7 +19782,7 @@
           "mutable": false,
           "attr": "ds-skin-config",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19798,7 +19798,7 @@
           "mutable": false,
           "attr": "key-alternativa",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Alternativa'",
           "values": [
@@ -19815,7 +19815,7 @@
           "mutable": false,
           "attr": "key-enunciado",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Enunciado'",
           "values": [
@@ -19832,7 +19832,7 @@
           "mutable": false,
           "attr": "key-imagem",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Imagem'",
           "values": [
@@ -19849,7 +19849,7 @@
           "mutable": false,
           "attr": "key-porcentagem",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Porcentagem'",
           "values": [
@@ -19866,7 +19866,7 @@
           "mutable": false,
           "attr": "key-riscada",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Riscada'",
           "values": [
@@ -19883,7 +19883,7 @@
           "mutable": true,
           "attr": "mostra-resposta",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19899,7 +19899,7 @@
           "mutable": true,
           "attr": "permite-riscar",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -19916,7 +19916,7 @@
           "mutable": true,
           "attr": "resposta-correta",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -19935,7 +19935,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -19944,7 +19944,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -19953,7 +19953,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -19985,7 +19985,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/team/questoes/med-alternativas-a/med-alternativas-a.tsx",
+      "filePath": "./src/components/@templarios/team/questoes/med-alternativas-a/med-alternativas-a.tsx",
       "encapsulation": "shadow",
       "tag": "med-alternativas-a",
       "readme": "# med-alternativas\n\n\n",
@@ -19999,7 +19999,7 @@
           "mutable": true,
           "attr": "alternativa-selecionada",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20015,7 +20015,7 @@
           "mutable": true,
           "attr": "alternativas",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "[]",
           "values": [
@@ -20032,7 +20032,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20051,7 +20051,7 @@
           "mutable": false,
           "attr": "ds-skin",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20067,7 +20067,7 @@
           "mutable": false,
           "attr": "ds-skin-config",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20083,7 +20083,7 @@
           "mutable": false,
           "attr": "key-alternativa",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Alternativa'",
           "values": [
@@ -20100,7 +20100,7 @@
           "mutable": false,
           "attr": "key-enunciado",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Enunciado'",
           "values": [
@@ -20117,7 +20117,7 @@
           "mutable": false,
           "attr": "key-imagem",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Imagem'",
           "values": [
@@ -20134,7 +20134,7 @@
           "mutable": false,
           "attr": "key-porcentagem",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Porcentagem'",
           "values": [
@@ -20151,7 +20151,7 @@
           "mutable": false,
           "attr": "key-riscada",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Riscada'",
           "values": [
@@ -20168,7 +20168,7 @@
           "mutable": true,
           "attr": "mostra-resposta",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20184,7 +20184,7 @@
           "mutable": true,
           "attr": "permite-riscar",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -20201,7 +20201,7 @@
           "mutable": true,
           "attr": "resposta-correta",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20220,7 +20220,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -20229,7 +20229,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -20238,7 +20238,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -20274,7 +20274,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/team/questoes/med-alternativas-b/med-alternativas-b.tsx",
+      "filePath": "./src/components/@templarios/team/questoes/med-alternativas-b/med-alternativas-b.tsx",
       "encapsulation": "shadow",
       "tag": "med-alternativas-b",
       "readme": "# med-alternativas-skin\n\n\n",
@@ -20288,7 +20288,7 @@
           "mutable": true,
           "attr": "alternativa-selecionada",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20304,7 +20304,7 @@
           "mutable": true,
           "attr": "alternativas",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "[]",
           "values": [
@@ -20321,7 +20321,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20340,7 +20340,7 @@
           "mutable": false,
           "attr": "ds-skin",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20356,7 +20356,7 @@
           "mutable": false,
           "attr": "ds-skin-config",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20372,7 +20372,7 @@
           "mutable": false,
           "attr": "key-alternativa",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Alternativa'",
           "values": [
@@ -20389,7 +20389,7 @@
           "mutable": false,
           "attr": "key-enunciado",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Enunciado'",
           "values": [
@@ -20406,7 +20406,7 @@
           "mutable": false,
           "attr": "key-imagem",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Imagem'",
           "values": [
@@ -20423,7 +20423,7 @@
           "mutable": false,
           "attr": "key-porcentagem",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Porcentagem'",
           "values": [
@@ -20440,7 +20440,7 @@
           "mutable": false,
           "attr": "key-riscada",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Riscada'",
           "values": [
@@ -20457,7 +20457,7 @@
           "mutable": true,
           "attr": "mostra-resposta",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20473,7 +20473,7 @@
           "mutable": true,
           "attr": "permite-riscar",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -20490,7 +20490,7 @@
           "mutable": true,
           "attr": "resposta-correta",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20509,7 +20509,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -20518,7 +20518,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -20527,7 +20527,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -20563,7 +20563,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-autocomplete/med-autocomplete.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-autocomplete/med-autocomplete.tsx",
       "encapsulation": "scoped",
       "tag": "med-autocomplete",
       "readme": "# med-autocomplete\n\n\n",
@@ -20582,7 +20582,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-avatar/med-avatar.tsx",
+      "filePath": "./src/components/@templarios/core/med-avatar/med-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "med-avatar",
       "readme": "# med-avatar\n\n\n",
@@ -20596,7 +20596,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20615,7 +20615,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "Define a variação de tamanho do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20663,7 +20663,7 @@
           "mutable": false,
           "attr": "image",
           "reflectToAttr": false,
-          "docs": "Define a url da imagem, se existir.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20682,7 +20682,7 @@
           "mutable": false,
           "attr": "letter",
           "reflectToAttr": false,
-          "docs": "Define a letra a ser exibida, se existir.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20707,7 +20707,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-banner/med-banner.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-banner/med-banner.tsx",
       "encapsulation": "scoped",
       "tag": "med-banner",
       "readme": "# med-banner\n\n\n",
@@ -20721,7 +20721,7 @@
           "mutable": false,
           "attr": "btn-left",
           "reflectToAttr": false,
-          "docs": "Define o texto do botão esquerdo, se existir.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20737,7 +20737,7 @@
           "mutable": false,
           "attr": "btn-right",
           "reflectToAttr": false,
-          "docs": "Define o texto do botão direito, se existir.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20753,7 +20753,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20772,7 +20772,7 @@
           "mutable": false,
           "attr": "icon",
           "reflectToAttr": false,
-          "docs": "Define o icone, se existir.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20788,7 +20788,7 @@
           "mutable": false,
           "attr": "image",
           "reflectToAttr": false,
-          "docs": "Define a url da imagem, se existir.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20804,7 +20804,7 @@
           "mutable": false,
           "attr": "texto",
           "reflectToAttr": false,
-          "docs": "Define o texto do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20823,7 +20823,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": false,
-          "docs": "Define o título do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20845,7 +20845,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitido quando há um click no botão esquerdo.",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -20854,7 +20854,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitido quando há um click no botão direito.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -20880,29 +20880,12 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-base/med-base.tsx",
+      "filePath": "./src/components/@templarios/core/med-base/med-base.tsx",
       "encapsulation": "scoped",
       "tag": "med-base",
       "readme": "# med-base\n\n\n",
       "docs": "",
-      "docsTags": [
-        {
-          "text": "- Slot default.",
-          "name": "slot"
-        },
-        {
-          "text": "start - Conteúdo é posicionado a esquerda do componente.",
-          "name": "slot"
-        },
-        {
-          "text": "middle - Conteúdo é posicionado ao centro do componente.",
-          "name": "slot"
-        },
-        {
-          "text": "end - Conteúdo é posicionado a direita do componente.",
-          "name": "slot"
-        }
-      ],
+      "docsTags": [],
       "usage": {},
       "props": [
         {
@@ -20911,7 +20894,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20930,7 +20913,7 @@
           "mutable": false,
           "attr": "gap",
           "reflectToAttr": true,
-          "docs": "Define o gap entre slots.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20949,7 +20932,7 @@
           "mutable": false,
           "attr": "radius",
           "reflectToAttr": true,
-          "docs": "Define a variação de borde-radius do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20968,7 +20951,7 @@
           "mutable": false,
           "attr": "spacing-h",
           "reflectToAttr": true,
-          "docs": "Define a variação de padding horizontal do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -20987,7 +20970,7 @@
           "mutable": false,
           "attr": "spacing-v",
           "reflectToAttr": true,
-          "docs": "Define a variação de padding vertical do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21005,24 +20988,7 @@
       "events": [],
       "listeners": [],
       "styles": [],
-      "slots": [
-        {
-          "name": "",
-          "docs": "Slot default."
-        },
-        {
-          "name": "end",
-          "docs": "Conteúdo é posicionado a direita do componente."
-        },
-        {
-          "name": "middle",
-          "docs": "Conteúdo é posicionado ao centro do componente."
-        },
-        {
-          "name": "start",
-          "docs": "Conteúdo é posicionado a esquerda do componente."
-        }
-      ],
+      "slots": [],
       "parts": [],
       "dependents": [
         "med-add-card",
@@ -21039,7 +21005,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-calendar/med-calendar.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-calendar/med-calendar.tsx",
       "encapsulation": "scoped",
       "tag": "med-calendar",
       "readme": "# med-calendar\n\n\n",
@@ -21053,7 +21019,7 @@
           "mutable": false,
           "attr": "ano",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21072,7 +21038,7 @@
           "mutable": true,
           "attr": "choice",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Semana'",
           "values": [
@@ -21089,7 +21055,7 @@
           "mutable": true,
           "attr": "container",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21108,7 +21074,7 @@
           "mutable": false,
           "attr": "disable",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -21125,7 +21091,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21144,7 +21110,7 @@
           "mutable": false,
           "attr": "mes",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21166,7 +21132,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -21175,7 +21141,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -21201,7 +21167,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-calendar-day/med-calendar-day.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-calendar-day/med-calendar-day.tsx",
       "encapsulation": "shadow",
       "tag": "med-calendar-day",
       "readme": "# med-calendar-day\n\n\n",
@@ -21215,7 +21181,7 @@
           "mutable": false,
           "attr": "active",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -21232,7 +21198,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21251,7 +21217,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21283,7 +21249,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/legacy/med-caption/med-caption.tsx",
+      "filePath": "./src/components/@templarios/legacy/med-caption/med-caption.tsx",
       "encapsulation": "shadow",
       "tag": "med-caption",
       "readme": "# med-heading\n\n\n",
@@ -21297,7 +21263,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21316,7 +21282,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": true,
-          "docs": "Define a variação de tamanho do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21362,7 +21328,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-carregamento/med-carregamento.tsx",
+      "filePath": "./src/components/@templarios/core/med-carregamento/med-carregamento.tsx",
       "encapsulation": "scoped",
       "tag": "med-carregamento",
       "readme": "# med-carregamento\n\n\n",
@@ -21376,7 +21342,7 @@
           "mutable": false,
           "attr": "color",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "default": "'#808080'",
           "values": [
@@ -21393,7 +21359,7 @@
           "mutable": false,
           "attr": "message",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21421,7 +21387,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-cartao-resposta-item/med-cartao-resposta-item.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-cartao-resposta-item/med-cartao-resposta-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-cartao-resposta-item",
       "readme": "# med-cartao-resposta\n\n\n",
@@ -21435,7 +21401,7 @@
           "mutable": false,
           "attr": "anulada",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -21452,7 +21418,7 @@
           "mutable": false,
           "attr": "ativa",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -21469,7 +21435,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21488,7 +21454,7 @@
           "mutable": false,
           "attr": "impressa",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -21511,7 +21477,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx",
       "encapsulation": "shadow",
       "tag": "med-cartao-resposta-lista",
       "readme": "# med-cartao-resposta-listas\n\n\n",
@@ -21530,7 +21496,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-chart-bar/med-chart-bar.tsx",
+      "filePath": "./src/components/@templarios/core/med-chart-bar/med-chart-bar.tsx",
       "encapsulation": "shadow",
       "tag": "med-chart-bar",
       "readme": "# med-chart-bar\n\n\n",
@@ -21549,7 +21515,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21568,7 +21534,7 @@
           "mutable": false,
           "attr": "height",
           "reflectToAttr": true,
-          "docs": "Define a valor da altura do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "50",
           "values": [
@@ -21585,7 +21551,7 @@
           "mutable": false,
           "attr": "value",
           "reflectToAttr": true,
-          "docs": "Define a valor da %(porcentagem) do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -21602,7 +21568,7 @@
           "mutable": false,
           "attr": "width",
           "reflectToAttr": true,
-          "docs": "Define a valor da largura do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "32",
           "values": [
@@ -21630,7 +21596,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.tsx",
+      "filePath": "./src/components/@templarios/core/med-chart-bar-horizontal/med-chart-bar-horizontal.tsx",
       "encapsulation": "shadow",
       "tag": "med-chart-bar-horizontal",
       "readme": "# chart-bar-horizontal\n",
@@ -21644,7 +21610,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21663,7 +21629,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "Define a variação de tamanho do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21683,7 +21649,7 @@
           "mutable": true,
           "attr": "hide-value",
           "reflectToAttr": true,
-          "docs": "Define a visibilidade do label.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -21700,7 +21666,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": true,
-          "docs": "Define a visibilidade do label.",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -21717,7 +21683,7 @@
           "mutable": true,
           "attr": "label-content",
           "reflectToAttr": true,
-          "docs": "Define o valor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21736,7 +21702,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": true,
-          "docs": "Define o valor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -21753,16 +21719,7 @@
       "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [
-        {
-          "name": "progress",
-          "docs": ""
-        },
-        {
-          "name": "track",
-          "docs": ""
-        }
-      ],
+      "parts": [],
       "dependents": [
         "med-alternativas-a",
         "med-alternativas-b",
@@ -21787,7 +21744,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-chart-categoria/med-chart-categoria.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-chart-categoria/med-chart-categoria.tsx",
       "encapsulation": "scoped",
       "tag": "med-chart-categoria",
       "readme": "# med-chart-categoria\n\n\n",
@@ -21801,7 +21758,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21820,7 +21777,7 @@
           "mutable": false,
           "attr": "meta",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21839,7 +21796,7 @@
           "mutable": false,
           "attr": "realizado",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21858,7 +21815,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21877,7 +21834,7 @@
           "mutable": false,
           "attr": "value",
           "reflectToAttr": true,
-          "docs": "Define o valor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -21911,7 +21868,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-chart-radial/med-chart-radial.tsx",
+      "filePath": "./src/components/@templarios/core/med-chart-radial/med-chart-radial.tsx",
       "encapsulation": "scoped",
       "tag": "med-chart-radial",
       "readme": "# med-chart-radial\n\n\n",
@@ -21925,7 +21882,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21944,7 +21901,7 @@
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21964,7 +21921,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "Define a variação de tamanho.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -21996,7 +21953,7 @@
           "mutable": false,
           "attr": "subtitulo",
           "reflectToAttr": false,
-          "docs": "Define o texto secundario.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22015,7 +21972,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": false,
-          "docs": "Define o texto primario.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22033,7 +21990,7 @@
           "type": "MedChartRadiaItem[]",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "Define os valores do gráfico",
+          "docs": "todo",
           "docsTags": [],
           "default": "[]",
           "values": [
@@ -22062,7 +22019,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-chart-radial-content/med-chart-radial-content.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-chart-radial-content/med-chart-radial-content.tsx",
       "encapsulation": "shadow",
       "tag": "med-chart-radial-content",
       "readme": "# med-chart-radial-content\n\n\n",
@@ -22076,7 +22033,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22095,7 +22052,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "Define a variação de tamanho do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22115,7 +22072,7 @@
           "mutable": false,
           "attr": "total",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -22138,7 +22095,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-chart-radial-label/med-chart-radial-label.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-chart-radial-label/med-chart-radial-label.tsx",
       "encapsulation": "scoped",
       "tag": "med-chart-radial-label",
       "readme": "# med-chart-radial-label\n\n\n",
@@ -22152,7 +22109,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22171,7 +22128,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "Define a variação de tamanho do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22190,7 +22147,7 @@
           "type": "MedChartRadiaItem[]",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "[]",
           "values": [
@@ -22213,7 +22170,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-check-card/med-check-card.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-check-card/med-check-card.tsx",
       "encapsulation": "shadow",
       "tag": "med-check-card",
       "readme": "# med-check-card\n\n\n",
@@ -22227,7 +22184,7 @@
           "mutable": false,
           "attr": "alert",
           "reflectToAttr": true,
-          "docs": "Define o estado.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -22244,7 +22201,7 @@
           "mutable": false,
           "attr": "categoria",
           "reflectToAttr": true,
-          "docs": "Define a categoria.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22263,7 +22220,7 @@
           "mutable": false,
           "attr": "data-final",
           "reflectToAttr": true,
-          "docs": "Define a data de termino.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22282,7 +22239,7 @@
           "mutable": false,
           "attr": "data-inicial",
           "reflectToAttr": true,
-          "docs": "Define a data de inicio.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22301,7 +22258,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22320,7 +22277,7 @@
           "mutable": false,
           "attr": "finalizada",
           "reflectToAttr": true,
-          "docs": "Define se a task foi finalizada.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22339,7 +22296,7 @@
           "mutable": false,
           "attr": "hora-final",
           "reflectToAttr": true,
-          "docs": "Define a hora de termino.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22358,7 +22315,7 @@
           "mutable": false,
           "attr": "hora-inicial",
           "reflectToAttr": true,
-          "docs": "Define a hora de inicio.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22377,7 +22334,7 @@
           "mutable": false,
           "attr": "icon-name",
           "reflectToAttr": true,
-          "docs": "Define o icone.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22396,7 +22353,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": true,
-          "docs": "Define o titulo.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22418,7 +22375,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -22427,7 +22384,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -22450,72 +22407,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/cores/child/child.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-child",
-      "readme": "# med-child\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": false,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "fill",
-          "type": "\"outline\" | undefined",
-          "mutable": false,
-          "attr": "fill",
-          "reflectToAttr": true,
-          "docs": "Define o fill do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "outline",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [
-        "med-parent"
-      ],
-      "dependencies": [],
-      "dependencyGraph": {
-        "med-parent": [
-          "med-child"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/core/med-chip/med-chip.tsx",
+      "filePath": "./src/components/@templarios/core/med-chip/med-chip.tsx",
       "encapsulation": "scoped",
       "tag": "med-chip",
       "readme": "# ion-chip\n\nChips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.\n",
@@ -22529,7 +22421,7 @@
           "mutable": false,
           "attr": "active",
           "reflectToAttr": true,
-          "docs": "Define o estado active do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -22546,7 +22438,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "Define o estado disabled do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -22563,7 +22455,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22582,7 +22474,7 @@
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22602,7 +22494,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": true,
-          "docs": "Define a variação de tamanho componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22622,7 +22514,7 @@
           "mutable": false,
           "attr": "icon-left",
           "reflectToAttr": true,
-          "docs": "Define o icone left do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22638,7 +22530,7 @@
           "mutable": false,
           "attr": "icon-right",
           "reflectToAttr": true,
-          "docs": "Define o icone right do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22654,7 +22546,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": true,
-          "docs": "Define o texto do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22673,7 +22565,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitido quando o chip perde o focus.",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -22682,7 +22574,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitido quando o chip é clicado.",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -22691,7 +22583,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitido quando o chip tem focus.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -22712,7 +22604,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/legacy/med-config/med-config.tsx",
+      "filePath": "./src/components/@templarios/legacy/med-config/med-config.tsx",
       "encapsulation": "scoped",
       "tag": "med-config",
       "readme": "# med-image-zoom\n\n\n",
@@ -22725,7 +22617,7 @@
           "type": "{ scheme: (value: string) => void; theme: (value: string) => void; }",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22740,7 +22632,7 @@
           "type": "MedConfigInterface",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22800,7 +22692,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-context-menu/med-context-menu.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-context-menu/med-context-menu.tsx",
       "encapsulation": "scoped",
       "tag": "med-context-menu",
       "readme": "# med-context-menu\n\n\n",
@@ -22814,7 +22706,7 @@
           "mutable": true,
           "attr": "collapsed",
           "reflectToAttr": true,
-          "docs": "Define o estado do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -22835,7 +22727,7 @@
           },
           "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
-          "docs": "Define o estado do componente programaticamente.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -22867,7 +22759,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-download-button/med-download-button.tsx",
+      "filePath": "./src/components/@templarios/core/med-download-button/med-download-button.tsx",
       "encapsulation": "shadow",
       "tag": "med-download-button",
       "readme": "# med-download-button\n\n\n",
@@ -22881,7 +22773,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "Define o estado habilitado ou desabilitado do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -22898,7 +22790,7 @@
           "mutable": false,
           "attr": "downloaded",
           "reflectToAttr": true,
-          "docs": "Define o estado do componente quando download tiver concluído.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -22915,7 +22807,7 @@
           "mutable": false,
           "attr": "downloading",
           "reflectToAttr": true,
-          "docs": "Define o estado do componente durante o download.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -22932,7 +22824,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22951,7 +22843,7 @@
           "mutable": false,
           "attr": "identification",
           "reflectToAttr": true,
-          "docs": "Identificador do pieChart para emissão de eventos",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22973,7 +22865,7 @@
           "mutable": false,
           "attr": "index",
           "reflectToAttr": true,
-          "docs": "Define qual a posição do array se encontra esse chart. Opcional.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -22992,7 +22884,7 @@
           "mutable": true,
           "attr": "initial",
           "reflectToAttr": true,
-          "docs": "Define o estado inicial do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -23009,7 +22901,7 @@
           "mutable": false,
           "attr": "value",
           "reflectToAttr": true,
-          "docs": "Define o valor da progress bar do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -23029,7 +22921,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitido quando download for cancelado.",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -23038,7 +22930,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitido quando download está concluído.",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -23047,7 +22939,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitido quando download for iniciado.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -23070,7 +22962,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-dropdown/med-dropdown.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-dropdown/med-dropdown.tsx",
       "encapsulation": "shadow",
       "tag": "med-dropdown",
       "readme": "# med-dropdown\n\n\n",
@@ -23084,7 +22976,7 @@
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23110,7 +23002,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-dropdown-container/med-dropdown-container.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-dropdown-container/med-dropdown-container.tsx",
       "encapsulation": "scoped",
       "tag": "med-dropdown-container",
       "readme": "# med-dropdown-container\n\n\n",
@@ -23129,7 +23021,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/team/questoes/med-enunciado/med-enunciado.tsx",
+      "filePath": "./src/components/@templarios/team/questoes/med-enunciado/med-enunciado.tsx",
       "encapsulation": "shadow",
       "tag": "med-enunciado",
       "readme": "# med-enunciado\n\n\n",
@@ -23143,7 +23035,7 @@
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23163,7 +23055,7 @@
           "mutable": true,
           "attr": "imagens",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23185,7 +23077,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -23204,7 +23096,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/team/questoes/med-enunciado-discursiva/med-enunciado-discursiva.tsx",
+      "filePath": "./src/components/@templarios/team/questoes/med-enunciado-discursiva/med-enunciado-discursiva.tsx",
       "encapsulation": "shadow",
       "tag": "med-enunciado-discursiva",
       "readme": "# med-enunciado-discursiva\n\n\n",
@@ -23218,7 +23110,7 @@
           "mutable": true,
           "attr": "imagens",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23240,7 +23132,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -23253,7 +23145,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-font-zoom/med-font-zoom.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-font-zoom/med-font-zoom.tsx",
       "encapsulation": "shadow",
       "tag": "med-font-zoom",
       "readme": "# med-font-zoom\n\n\n",
@@ -23266,7 +23158,7 @@
           "type": "{ emit: (value: MedFontSize) => void; }",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23282,7 +23174,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "Define o tamnho da fonte",
+          "docs": "todo",
           "docsTags": [],
           "default": "MedFontSize.XS",
           "values": [
@@ -23325,7 +23217,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-header/med-header.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-header/med-header.tsx",
       "encapsulation": "shadow",
       "tag": "med-header",
       "readme": "# med-header\n\n\n",
@@ -23341,7 +23233,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -23368,7 +23260,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-image-zoom/med-image-zoom.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-image-zoom/med-image-zoom.tsx",
       "encapsulation": "scoped",
       "tag": "med-image-zoom",
       "readme": "# med-image-zoom\n\n\n",
@@ -23382,7 +23274,7 @@
           "mutable": true,
           "attr": "imagens",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "[]",
           "values": [
@@ -23399,7 +23291,7 @@
           "mutable": true,
           "attr": "initial-slide",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -23419,7 +23311,7 @@
           "mutable": true,
           "attr": "marca-agua-inferior",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23438,7 +23330,7 @@
           "mutable": true,
           "attr": "marca-agua-superior",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23457,7 +23349,7 @@
           "mutable": true,
           "attr": "titulo",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23503,7 +23395,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-input/med-input.tsx",
+      "filePath": "./src/components/@templarios/core/med-input/med-input.tsx",
       "encapsulation": "shadow",
       "tag": "med-input",
       "readme": "# med-input\n\n\n",
@@ -23522,7 +23414,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-item/med-item.tsx",
+      "filePath": "./src/components/@templarios/core/med-item/med-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-item",
       "readme": "# med-item\n\n\n",
@@ -23578,7 +23470,7 @@
           "mutable": true,
           "attr": "contain",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -23754,7 +23646,7 @@
           "mutable": false,
           "attr": "no-padding",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -23918,7 +23810,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-list/med-list.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-list/med-list.tsx",
       "encapsulation": "shadow",
       "tag": "med-list",
       "readme": "# med-list\n\n\n",
@@ -23932,7 +23824,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23951,7 +23843,7 @@
           "mutable": false,
           "attr": "margin",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -23989,7 +23881,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-list-item/med-list-item.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-list-item/med-list-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-list-item",
       "readme": "# med-list-item\n\n\n",
@@ -24003,7 +23895,7 @@
           "mutable": false,
           "attr": "border",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24020,7 +23912,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "If `true`, the user cannot interact with the button.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24037,7 +23929,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24056,7 +23948,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24084,7 +23976,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24103,7 +23995,7 @@
           "mutable": false,
           "attr": "selected",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24120,7 +24012,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24145,7 +24037,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-list-item-accordion/med-list-item-accordion.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-list-item-accordion/med-list-item-accordion.tsx",
       "encapsulation": "scoped",
       "tag": "med-list-item-accordion",
       "readme": "# med-list-item-accordion\n\n\n",
@@ -24159,7 +24051,7 @@
           "mutable": false,
           "attr": "border",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24176,7 +24068,7 @@
           "mutable": true,
           "attr": "collapsed",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -24193,7 +24085,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "If `true`, the user cannot interact with the button.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24210,7 +24102,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24229,7 +24121,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24257,7 +24149,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24276,7 +24168,7 @@
           "mutable": false,
           "attr": "margin",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24308,7 +24200,7 @@
           "mutable": false,
           "attr": "selected",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24325,7 +24217,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24348,7 +24240,7 @@
           },
           "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -24373,7 +24265,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-lista/med-lista.tsx",
+      "filePath": "./src/components/@templarios/core/med-lista/med-lista.tsx",
       "encapsulation": "shadow",
       "tag": "med-lista",
       "readme": "# med-lista\n\n\n",
@@ -24417,7 +24309,7 @@
           },
           "signature": "closeSlidingItems() => Promise<boolean>",
           "parameters": [],
-          "docs": "",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -24431,7 +24323,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-nav/med-nav.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-nav/med-nav.tsx",
       "encapsulation": "scoped",
       "tag": "med-nav",
       "readme": "# med-nav\n\n\n",
@@ -24445,7 +24337,7 @@
           "mutable": false,
           "attr": "active",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24462,7 +24354,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24517,7 +24409,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-nav-accordion/med-nav-accordion.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-nav-accordion/med-nav-accordion.tsx",
       "encapsulation": "shadow",
       "tag": "med-nav-accordion",
       "readme": "# med-nav-accordion\n\n\n",
@@ -24531,7 +24423,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24574,7 +24466,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-nav-item/med-nav-item.tsx",
+      "filePath": "./src/components/@templarios/core/med-nav-item/med-nav-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-nav-item",
       "readme": "# med-nav-item\n\n\n",
@@ -24588,7 +24480,7 @@
           "mutable": true,
           "attr": "active",
           "reflectToAttr": true,
-          "docs": "Define o estado active do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24605,7 +24497,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "Define o estado disabled do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24622,7 +24514,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24641,7 +24533,7 @@
           "mutable": false,
           "attr": "icon",
           "reflectToAttr": true,
-          "docs": "Define o icone do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24660,7 +24552,7 @@
           "mutable": false,
           "attr": "icon-only",
           "reflectToAttr": true,
-          "docs": "TODO.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -24676,7 +24568,7 @@
           "type": "((baseEl: any, opts?: any) => Animation) | undefined",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "TODO.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24695,7 +24587,7 @@
           "mutable": false,
           "attr": "router-direction",
           "reflectToAttr": false,
-          "docs": "TODO.",
+          "docs": "todo",
           "docsTags": [],
           "default": "'forward'",
           "values": [
@@ -24721,7 +24613,7 @@
           "mutable": false,
           "attr": "text",
           "reflectToAttr": true,
-          "docs": "Define o texto do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24743,7 +24635,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO.",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -24752,7 +24644,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO.",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -24761,7 +24653,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -24791,7 +24683,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-nav-simple/med-nav-simple.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-nav-simple/med-nav-simple.tsx",
       "encapsulation": "scoped",
       "tag": "med-nav-simple",
       "readme": "# med-nav-simple\n\n\n",
@@ -24805,7 +24697,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24827,7 +24719,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -24862,29 +24754,12 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-navbar/med-navbar.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-navbar/med-navbar.tsx",
       "encapsulation": "shadow",
       "tag": "med-navbar",
       "readme": "# med-navbar\n\n\n",
       "docs": "",
-      "docsTags": [
-        {
-          "text": "left - Posiciona um elemento ao lado esquerdo ao navbar",
-          "name": "slot"
-        },
-        {
-          "text": "title - Titulo da navbar.",
-          "name": "slot"
-        },
-        {
-          "text": "subtitle - Subtitulo da navbar.",
-          "name": "slot"
-        },
-        {
-          "text": "right - Posiciona um elemento ao lado direito da navbar.",
-          "name": "slot"
-        }
-      ],
+      "docsTags": [],
       "usage": {},
       "props": [
         {
@@ -24893,7 +24768,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24912,7 +24787,7 @@
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": false,
-          "docs": "Define a variação do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -24935,24 +24810,7 @@
       "events": [],
       "listeners": [],
       "styles": [],
-      "slots": [
-        {
-          "name": "left",
-          "docs": "Posiciona um elemento ao lado esquerdo ao navbar"
-        },
-        {
-          "name": "right",
-          "docs": "Posiciona um elemento ao lado direito da navbar."
-        },
-        {
-          "name": "subtitle",
-          "docs": "Subtitulo da navbar."
-        },
-        {
-          "name": "title",
-          "docs": "Titulo da navbar."
-        }
-      ],
+      "slots": [],
       "parts": [],
       "dependents": [
         "med-config",
@@ -24973,7 +24831,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-offline/med-offline.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-offline/med-offline.tsx",
       "encapsulation": "scoped",
       "tag": "med-offline",
       "readme": "# med-offline\n\n\n",
@@ -24989,7 +24847,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -25017,7 +24875,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/team/questoes/med-option/med-option.tsx",
+      "filePath": "./src/components/@templarios/team/questoes/med-option/med-option.tsx",
       "encapsulation": "shadow",
       "tag": "med-option",
       "readme": "# med-option\n\n\n",
@@ -25031,7 +24889,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25056,89 +24914,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/cores/parent/parent.tsx",
-      "encapsulation": "shadow",
-      "tag": "med-parent",
-      "readme": "# tst-base\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "child",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "child",
-          "reflectToAttr": true,
-          "docs": "Teste.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "fill",
-          "type": "\"outline\" | undefined",
-          "mutable": false,
-          "attr": "fill",
-          "reflectToAttr": true,
-          "docs": "Define o fill do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "outline",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "med-child"
-      ],
-      "dependencyGraph": {
-        "med-parent": [
-          "med-child"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/@medgrupo/compositions/med-piechart/med-piechart.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-piechart/med-piechart.tsx",
       "encapsulation": "shadow",
       "tag": "med-piechart",
       "readme": "# med-piechart\n\n\n",
@@ -25152,7 +24928,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "Define o estado habilitado ou desabilitado do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25169,7 +24945,7 @@
           "mutable": false,
           "attr": "download",
           "reflectToAttr": true,
-          "docs": "Define o estado de download do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25186,7 +24962,7 @@
           "mutable": true,
           "attr": "download-progress",
           "reflectToAttr": true,
-          "docs": "Define o valor do progresso do componente de download.",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -25203,7 +24979,7 @@
           "mutable": false,
           "attr": "downloaded",
           "reflectToAttr": true,
-          "docs": "Define o estado de downloaded do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25220,7 +24996,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25239,7 +25015,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "Define a variação de tamanho do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25259,7 +25035,7 @@
           "mutable": false,
           "attr": "hide-download",
           "reflectToAttr": true,
-          "docs": "Esconde o download do pie-chart.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25276,7 +25052,7 @@
           "mutable": false,
           "attr": "identification",
           "reflectToAttr": true,
-          "docs": "Identificador do pie-chart para emissão de eventos.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25298,7 +25074,7 @@
           "mutable": false,
           "attr": "index",
           "reflectToAttr": true,
-          "docs": "Define qual a posição do array se encontra esse chart. Opcional.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25317,7 +25093,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": true,
-          "docs": "Define a porcentagem a ser mostrada.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25336,7 +25112,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": true,
-          "docs": "Define o valor do progresso do componente do piechart.",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -25357,7 +25133,7 @@
           },
           "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
-          "docs": "Define o estado do componente programaticamente.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -25390,7 +25166,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-plusminus/med-plusminus.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-plusminus/med-plusminus.tsx",
       "encapsulation": "scoped",
       "tag": "med-plusminus",
       "readme": "# monta-provas-plusminus\n\n\n",
@@ -25404,7 +25180,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25432,7 +25208,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25451,7 +25227,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25474,7 +25250,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -25493,7 +25269,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/team/med-question/med-question.tsx",
+      "filePath": "./src/components/@templarios/team/med-question/med-question.tsx",
       "encapsulation": "shadow",
       "tag": "med-question",
       "readme": "# med-question\n\n\n",
@@ -25507,7 +25283,7 @@
           "mutable": true,
           "attr": "collapsed",
           "reflectToAttr": true,
-          "docs": "Define o estado do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25524,7 +25300,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25543,7 +25319,7 @@
           "mutable": false,
           "attr": "texto",
           "reflectToAttr": false,
-          "docs": "Define o conteúdo de texto do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25566,7 +25342,7 @@
           },
           "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
-          "docs": "Muda o estado do componente programaticamente.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -25586,7 +25362,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-rate-aula/med-rate-aula.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-rate-aula/med-rate-aula.tsx",
       "encapsulation": "scoped",
       "tag": "med-rate-aula",
       "readme": "# med-rate-aula\n\n\n",
@@ -25600,7 +25376,7 @@
           "mutable": true,
           "attr": "collapsed",
           "reflectToAttr": true,
-          "docs": "Define o estado do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25621,7 +25397,7 @@
           },
           "signature": "toggle(event?: Event | undefined) => Promise<void>",
           "parameters": [],
-          "docs": "Define o estado do componente programaticamente.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -25648,7 +25424,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-rate-bar/med-rate-bar.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-rate-bar/med-rate-bar.tsx",
       "encapsulation": "shadow",
       "tag": "med-rate-bar",
       "readme": "# med-rate-bar\n\n\n",
@@ -25662,7 +25438,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25687,7 +25463,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-rate-like/med-rate-like.tsx",
+      "filePath": "./src/components/@templarios/core/med-rate-like/med-rate-like.tsx",
       "encapsulation": "shadow",
       "tag": "med-rate-like",
       "readme": "# med-rate-like\n\n\n",
@@ -25701,7 +25477,7 @@
           "mutable": true,
           "attr": "status",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25726,7 +25502,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -25745,7 +25521,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-rating/med-rating.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-rating/med-rating.tsx",
       "encapsulation": "shadow",
       "tag": "med-rating",
       "readme": "# med-rating\n\n\n",
@@ -25759,7 +25535,7 @@
           "mutable": false,
           "attr": "cabe",
           "reflectToAttr": false,
-          "docs": "Define o estado cabe ou não cabe recurso.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25776,7 +25552,7 @@
           "mutable": false,
           "attr": "concurso",
           "reflectToAttr": false,
-          "docs": "Define o nome do concurso.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25795,7 +25571,7 @@
           "mutable": false,
           "attr": "data",
           "reflectToAttr": false,
-          "docs": "Define a data da postagem.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25814,7 +25590,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25833,7 +25609,7 @@
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": false,
-          "docs": "Define a variação do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25857,7 +25633,7 @@
           "mutable": false,
           "attr": "nome",
           "reflectToAttr": false,
-          "docs": "Define o nome do aluno.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25876,7 +25652,7 @@
           "mutable": false,
           "attr": "texto",
           "reflectToAttr": false,
-          "docs": "Define o conteúdo de texto.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25909,7 +25685,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-segment/med-segment.tsx",
+      "filePath": "./src/components/@templarios/core/med-segment/med-segment.tsx",
       "encapsulation": "shadow",
       "tag": "med-segment",
       "readme": "# med-segment\n\n\n",
@@ -25928,7 +25704,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-semana/med-semana.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-semana/med-semana.tsx",
       "encapsulation": "scoped",
       "tag": "med-semana",
       "readme": "# med-semana\n\n\n",
@@ -25942,7 +25718,7 @@
           "mutable": false,
           "attr": "active",
           "reflectToAttr": true,
-          "docs": "Define o estado active do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25958,7 +25734,7 @@
           "type": "MedSemanaInterface",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "Define o conteudo da semana.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -25974,7 +25750,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "Define o estado habilitado ou desabilitado do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -25991,7 +25767,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26010,7 +25786,7 @@
           "mutable": false,
           "attr": "ds-size",
           "reflectToAttr": false,
-          "docs": "Define a variação de tamanho do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26030,7 +25806,7 @@
           "mutable": false,
           "attr": "hide-download",
           "reflectToAttr": true,
-          "docs": "Esconde o botão de download.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -26047,7 +25823,7 @@
           "mutable": false,
           "attr": "skin",
           "reflectToAttr": true,
-          "docs": "Define a skin do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26087,7 +25863,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-semanas/med-semanas.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-semanas/med-semanas.tsx",
       "encapsulation": "shadow",
       "tag": "med-semanas",
       "readme": "# med-semanas\n\n\n",
@@ -26101,7 +25877,7 @@
           "mutable": false,
           "attr": "skin",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26127,7 +25903,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/core/med-tab-button/med-tab-button.tsx",
+      "filePath": "./src/components/@templarios/core/med-tab-button/med-tab-button.tsx",
       "encapsulation": "shadow",
       "tag": "med-tab-button",
       "readme": "# med-tab-button\n\n\n",
@@ -26141,7 +25917,7 @@
           "mutable": false,
           "attr": "active",
           "reflectToAttr": true,
-          "docs": "Define a variação da borda do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -26158,7 +25934,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26183,7 +25959,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/team/med-themes/med-themes.tsx",
+      "filePath": "./src/components/@templarios/team/med-themes/med-themes.tsx",
       "encapsulation": "scoped",
       "tag": "med-themes",
       "readme": "# med-theme\n\n\n",
@@ -26197,7 +25973,7 @@
           "mutable": false,
           "attr": "ativo",
           "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26215,7 +25991,7 @@
           "type": "MedTema[] | undefined",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "Define quais os temas",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26237,7 +26013,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Retornar a cor selecionada",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -26258,7 +26034,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-tiles/med-tiles.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-tiles/med-tiles.tsx",
       "encapsulation": "shadow",
       "tag": "med-tiles",
       "readme": "# med-tiles\n\n\n",
@@ -26272,7 +26048,7 @@
           "mutable": false,
           "attr": "badge",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26291,7 +26067,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26310,7 +26086,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26329,7 +26105,7 @@
           "mutable": false,
           "attr": "selected",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -26346,7 +26122,7 @@
           "mutable": false,
           "attr": "solid",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -26363,7 +26139,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": false,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26394,7 +26170,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-toolbar/med-toolbar.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-toolbar/med-toolbar.tsx",
       "encapsulation": "shadow",
       "tag": "med-toolbar",
       "readme": "# med-toolbar\n\n\n",
@@ -26408,7 +26184,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26433,7 +26209,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-tooltip/med-tooltip.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-tooltip/med-tooltip.tsx",
       "encapsulation": "scoped",
       "tag": "med-tooltip",
       "readme": "# med-context-menu\n\n\n",
@@ -26447,7 +26223,7 @@
           "mutable": false,
           "attr": "btn-left",
           "reflectToAttr": false,
-          "docs": "Define o texto do botão esquerdo, se existir.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26466,7 +26242,7 @@
           "mutable": false,
           "attr": "btn-right",
           "reflectToAttr": false,
-          "docs": "Define o texto do botão direito, se existir.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26485,7 +26261,7 @@
           "mutable": true,
           "attr": "collapsed",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -26502,7 +26278,7 @@
           "mutable": false,
           "attr": "content",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26521,7 +26297,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26540,7 +26316,7 @@
           "mutable": false,
           "attr": "placement",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26572,7 +26348,7 @@
           "mutable": false,
           "attr": "position",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26600,7 +26376,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26623,7 +26399,7 @@
           },
           "signature": "toggle(event?: any) => Promise<void>",
           "parameters": [],
-          "docs": "Define o estado do componente programaticamente.",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -26634,7 +26410,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         },
         {
@@ -26643,7 +26419,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "TODO",
+          "docs": "todo",
           "docsTags": []
         }
       ],
@@ -26690,7 +26466,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26709,7 +26485,7 @@
           "mutable": false,
           "attr": "tag",
           "reflectToAttr": true,
-          "docs": "Define a tag HTML do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "'span'",
           "values": [
@@ -26729,7 +26505,7 @@
           "mutable": false,
           "attr": "token",
           "reflectToAttr": true,
-          "docs": "Define o token do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26852,7 +26628,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/compositions/med-video-thumbnail/med-video-thumbnail.tsx",
+      "filePath": "./src/components/@templarios/compositions/med-video-thumbnail/med-video-thumbnail.tsx",
       "encapsulation": "shadow",
       "tag": "med-video-thumbnail",
       "readme": "# med-video-thumbnail\n\n\n",
@@ -26866,7 +26642,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26885,7 +26661,7 @@
           "mutable": false,
           "attr": "url",
           "reflectToAttr": true,
-          "docs": "Define a url da imagem a ser mostrada.",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -26904,7 +26680,7 @@
           "mutable": false,
           "attr": "value",
           "reflectToAttr": true,
-          "docs": "Define a porcentagem a ser mostrada.",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -26935,7 +26711,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/team/med-vote/med-vote.tsx",
+      "filePath": "./src/components/@templarios/team/med-vote/med-vote.tsx",
       "encapsulation": "shadow",
       "tag": "med-vote",
       "readme": "# med-vote\n\n\n",
@@ -26949,7 +26725,7 @@
           "mutable": false,
           "attr": "like",
           "reflectToAttr": false,
-          "docs": "Define a quantidade de recursos que cabem.",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -26966,7 +26742,7 @@
           "mutable": false,
           "attr": "titulo",
           "reflectToAttr": false,
-          "docs": "Define o titulo do componente.",
+          "docs": "todo",
           "docsTags": [],
           "default": "'Cabe recurso?'",
           "values": [
@@ -26986,7 +26762,7 @@
           "mutable": false,
           "attr": "unlike",
           "reflectToAttr": false,
-          "docs": "Define a quantidade de recursos que não cabem.",
+          "docs": "todo",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -27015,7 +26791,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/testes/select-test/select-test.tsx",
+      "filePath": "./src/components/@templarios/testes/select-test/select-test.tsx",
       "encapsulation": "shadow",
       "tag": "select-test",
       "readme": "# select-test\n\n\n",
@@ -27034,7 +26810,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/@medgrupo/testes/sheet-content-test/sheet-content-test.tsx",
+      "filePath": "./src/components/@templarios/testes/sheet-content-test/sheet-content-test.tsx",
       "encapsulation": "scoped",
       "tag": "sheet-content-test",
       "readme": "# sheet-content-test\n\n\n",
@@ -27072,7 +26848,7 @@
       }
     },
     {
-      "filePath": "./src/components/@medgrupo/testes/sheet-test/sheet-test.tsx",
+      "filePath": "./src/components/@templarios/testes/sheet-test/sheet-test.tsx",
       "encapsulation": "scoped",
       "tag": "sheet-test",
       "readme": "# sheet-test\n\n\n",
@@ -27122,7 +26898,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -27139,7 +26915,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -27158,7 +26934,7 @@
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -27178,7 +26954,7 @@
           "mutable": false,
           "attr": "feedback",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -27195,7 +26971,7 @@
           "mutable": false,
           "attr": "has-button",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {
@@ -27223,7 +26999,7 @@
           "mutable": false,
           "attr": "has-icon",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "todo",
           "docsTags": [],
           "values": [
             {

@@ -3,7 +3,7 @@ import { b as getIonMode } from './ionic-global-4bc7e399.js';
 import { c as createButtonActiveGesture } from './button-active-2f180c52.js';
 import { B as BACKDROP, i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-e8ede0be.js';
 import { s as sanitizeDOMString } from './index-9e3fe806.js';
-import { g as getClassMap } from './theme-40db79c9.js';
+import { g as getClassMap } from './theme-ff3fc52f.js';
 import { c as createAnimation } from './animation-096c6391.js';
 import './haptic-27b3f981.js';
 import './index-f49d994d.js';

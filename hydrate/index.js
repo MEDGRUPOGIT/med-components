@@ -5715,6 +5715,27 @@ const cmpModules = new Map, getModule = e => {
 }, styles$1 = new Map, modeResolutionChain = [];
 
 /**
+ *  Generates the color classes for the component.
+ */
+const generateMedColor = (color, cssClassMap) => {
+  if (typeof color === 'string' && color.length > 0) {
+    const colorIdentifier = color.split('-');
+    if (colorIdentifier[0] === 'neutral') {
+      return Object.assign({ 'med-color-neutral': true, [`med-color-${color}`]: true }, cssClassMap);
+    }
+    else if (colorIdentifier[0] === 'fb') {
+      return Object.assign({ 'med-color-feedback': true, [`med-color-${color}`]: true }, cssClassMap);
+    }
+    else {
+      return Object.assign({ 'med-color': true, [`med-color-${color}`]: true }, cssClassMap);
+    }
+  }
+  else {
+    return cssClassMap;
+  }
+};
+
+/**
  * Waits for a component to be ready for
  * both custom element and non-custom element builds.
  * If non-custom element build, el.componentOnReady
@@ -6909,27 +6930,6 @@ const createAnimation = (animationId) => {
   };
 };
 
-/**
- *  Generates the color classes for the component.
- */
-const generateMedColor$1 = (color, cssClassMap) => {
-  if (typeof color === 'string' && color.length > 0) {
-    const colorIdentifier = color.split('-');
-    if (colorIdentifier[0] === 'neutral') {
-      return Object.assign({ 'med-color-neutral': true, [`med-color-${color}`]: true }, cssClassMap);
-    }
-    else if (colorIdentifier[0] === 'fb') {
-      return Object.assign({ 'med-color-feedback': true, [`med-color-${color}`]: true }, cssClassMap);
-    }
-    else {
-      return Object.assign({ 'med-color': true, [`med-color-${color}`]: true }, cssClassMap);
-    }
-  }
-  else {
-    return cssClassMap;
-  }
-};
-
 const medAccordionListCss = "/*!@:host*/.sc-med-accordion-list-h{--background:hsl(var(--med-color-neutral-1));--border:8px solid hsl(var(--med-color-neutral-1));--border-radius:8px}/*!@:host(.med-accordion-list)*/.med-accordion-list.sc-med-accordion-list-h{display:block}/*!@:host(.med-accordion-list) .med-accordion-list__blocker*/.med-accordion-list.sc-med-accordion-list-h .med-accordion-list__blocker.sc-med-accordion-list{background-color:var(--background);will-change:transform;border-radius:var(--border-radius)}/*!@:host(.med-accordion-list) ::slotted(med-accordion-item)*/.sc-med-accordion-list-h.med-accordion-list .sc-med-accordion-list-s>med-accordion-item{border-bottom:var(--border)}/*!@:host(.med-accordion-list) ::slotted(med-accordion-item:last-child)*/.sc-med-accordion-list-h.med-accordion-list .sc-med-accordion-list-s>med-accordion-item:last-child{border-bottom:none !important}/*!@:host(.med-accordion-list--xs) ::slotted(med-accordion-item)*/.sc-med-accordion-list-h.med-accordion-list--xs .sc-med-accordion-list-s>med-accordion-item{--border:4px solid hsl(var(--med-color-neutral-1))}/*!@:host(.med-accordion-list--sm) ::slotted(med-accordion-item)*/.sc-med-accordion-list-h.med-accordion-list--sm .sc-med-accordion-list-s>med-accordion-item{--border:8px solid hsl(var(--med-color-neutral-1))}/*!@:host(.med-accordion-list--md) ::slotted(med-accordion-item)*/.sc-med-accordion-list-h.med-accordion-list--md .sc-med-accordion-list-s>med-accordion-item{--border:16px solid hsl(var(--med-color-neutral-1))}/*!@:host(.med-accordion-list--lg) ::slotted(med-accordion-item)*/.sc-med-accordion-list-h.med-accordion-list--lg .sc-med-accordion-list-s>med-accordion-item{--border:24px solid hsl(var(--med-color-neutral-1))}/*!@:host(.med-accordion-list--no-border) .med-accordion-list__blocker*/.med-accordion-list--no-border.sc-med-accordion-list-h .med-accordion-list__blocker.sc-med-accordion-list{--border-radius:0}";
 
 /**
@@ -6939,16 +6939,16 @@ class Accordion {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Abre um item de cada vez.
-      */
+     * todo
+     */
     this.singleOpen = true;
     /**
-      * Define a variação da borda do componente.
-      */
+     * todo
+     */
     this.noBorder = false;
     /**
-      * Remove a animação do componente.
-      */
+     * todo
+     */
     this.noAnimation = false;
     this.currentlyOpen = null;
   }
@@ -7050,7 +7050,7 @@ class Accordion {
   }
   render() {
     const { noBorder, margin } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(null, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(null, {
         'med-accordion-list': true,
         'med-accordion-list--no-border': noBorder,
         [`med-accordion-list--${margin}`]: margin !== undefined
@@ -8232,22 +8232,8 @@ const hostContext = (selector, el) => {
 /**
  * Create the mode and color classes for the component based on the classes passed in
  */
-const createColorClasses$1 = (color, cssClassMap, neutral) => {
-  /* return (typeof color === 'string' && color.length > 0) ? {
-    'ion-color': true,
-    [`ion-color-${color}`]: true,
-    ...cssClassMap
-  } : cssClassMap;
- */
-  if (typeof color === 'string' && color.length > 0) {
-    return Object.assign({ 'ion-color': true, [`ion-color-${color}`]: true }, cssClassMap);
-  }
-  else if (neutral) {
-    return Object.assign({ 'med-neutral': true, [`med-neutral-${neutral}`]: true }, cssClassMap);
-  }
-  else {
-    return cssClassMap;
-  }
+const createColorClasses$1 = (color, cssClassMap) => {
+  return (typeof color === 'string' && color.length > 0) ? Object.assign({ 'ion-color': true, [`ion-color-${color}`]: true }, cssClassMap) : cssClassMap;
 };
 const getClassList = (classes) => {
   if (classes !== undefined) {
@@ -9268,7 +9254,7 @@ class BackButton {
     const { dsName, dsColor, dsSize, defaultHref, disabled, type, hasIconOnly, backButtonIcon, backButtonText } = this;
     const showBackButton = defaultHref !== undefined;
     const mode = getIonMode$1(this);
-    return (hAsync(Host, { onClick: this.onClick, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
         [mode]: true,
         //'button': true, // ion-buttons target .button
         'back-button-disabled': disabled,
@@ -9964,33 +9950,6 @@ class Checkbox {
   }; }
 }
 let checkboxIds = 0;
-
-const childCss = "/*!@:host*/.sc-med-child-h{--background:hsl(var(--med-color-neutral-5));--color:hsl(var(--med-color-neutral-10));--border-color:hsl(var(--med-color-neutral-5))}/*!@:host(.med-child)*/.med-child.sc-med-child-h{background:var(--background);display:inline-block;width:30px;height:30px;text-align:center;border:1px solid;border-color:var(--border-color)}/*!@:host(.med-child) h3*/.med-child.sc-med-child-h h3.sc-med-child{color:var(--color);margin:0}/*!@:host(.med-color)*/.med-color.sc-med-child-h{--background:hsl(var(--med-color-3));--color:hsl(var(--med-color-contrast-fixed));--border-color:hsl(var(--med-color-3))}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-med-child-h{--background:hsl(var(--med-color-neutral));--color:hsl(var(--med-color-neutral-contrast));--border-color:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-med-child-h{--background:hsl(var(--med-color-feedback));--color:hsl(var(--med-color-feedback-contrast));--border-color:hsl(var(--med-color-feedback))}/*!@:host(.med-child--outline)*/.med-child--outline.sc-med-child-h{--background:transparent;--color:hsl(var(--med-color-neutral-5));--border-color:hsl(var(--med-color-neutral-5))}/*!@:host(.med-child--outline.med-color)*/.med-child--outline.med-color.sc-med-child-h{--background:transparent;--color:hsl(var(--med-color-3));--border-color:hsl(var(--med-color-3))}/*!@:host(.med-child--outline.med-color-neutral)*/.med-child--outline.med-color-neutral.sc-med-child-h{--background:transparent;--color:hsl(var(--med-color-neutral-contrast));--border-color:hsl(var(--med-color-neutral))}/*!@:host(.med-child--outline.med-color-feedback)*/.med-child--outline.med-color-feedback.sc-med-child-h{--background:transparent;--color:hsl(var(--med-color-feedback));--border-color:hsl(var(--med-color-feedback))}/*!@:host(.med-child--gradient)*/.med-child--gradient.sc-med-child-h{--background:var(--med-color-brand-gradient);--color:hsl(var(--med-color-contrast-fixed));border:0}/*!@:host(.med-child--gradient.med-color)*/.med-child--gradient.med-color.sc-med-child-h{--background:var(--med-color-gradient);--color:hsl(var(--med-color-contrast-fixed))}/*!@:host(.med-child--gradient.med-color-neutral)*/.med-child--gradient.med-color-neutral.sc-med-child-h{--background:hsl(var(--med-color-neutral));--color:hsl(var(--med-color-neutral-contrast))}/*!@:host(.med-child--gradient.med-color-feedback)*/.med-child--gradient.med-color-feedback.sc-med-child-h{--background:hsl(var(--med-color-feedback));--color:hsl(var(--med-color-feedback-contrast))}/*!@:host(.med-child.med-color.darkest)*/.med-child.med-color.darkest.sc-med-child-h{--background:hsl(var(--med-color-1));--color:hsl(var(--med-color-neutral-10));--border-color:hsl(var(--med-color-1))}/*!@:host(.med-child.med-color.dark)*/.med-child.med-color.dark.sc-med-child-h{--background:hsl(var(--med-color-2));--color:hsl(var(--med-color-neutral-10));--border-color:hsl(var(--med-color-2))}/*!@:host(.med-child.med-color.light)*/.med-child.med-color.light.sc-med-child-h{--background:hsl(var(--med-color-4));--color:hsl(var(--med-color-neutral-1));--border-color:hsl(var(--med-color-4))}/*!@:host(.med-child.med-color.lightest)*/.med-child.med-color.lightest.sc-med-child-h{--background:hsl(var(--med-color-5));--color:hsl(var(--med-color-neutral-1));--border-color:hsl(var(--med-color-5))}";
-
-class Child {
-  constructor(hostRef) {
-    registerInstance(this, hostRef);
-  }
-  render() {
-    const { dsColor, fill } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
-        'med-child': true,
-        [`med-child_${fill}`]: fill !== undefined,
-      }) }, hAsync("h3", null, hAsync("slot", null))));
-  }
-  static get style() { return childCss; }
-  static get cmpMeta() { return {
-    "$flags$": 9,
-    "$tagName$": "med-child",
-    "$members$": {
-      "dsColor": [1, "ds-color"],
-      "fill": [513]
-    },
-    "$listeners$": undefined,
-    "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["fill", "fill"]]
-  }; }
-}
 
 const chipIosCss = "/*!@:host*/.sc-ion-chip-ios-h{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.12);--color:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.87);border-radius:16px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin-left:4px;margin-right:4px;margin-top:4px;margin-bottom:4px;padding-left:12px;padding-right:12px;padding-top:7px;padding-bottom:7px;display:-ms-inline-flexbox;display:inline-flex;position:relative;-ms-flex-align:center;align-items:center;height:32px;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);font-size:14px;line-height:1;cursor:pointer;overflow:hidden;vertical-align:middle;-webkit-box-sizing:border-box;box-sizing:border-box}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-chip-ios-h{margin-left:unset;margin-right:unset;-webkit-margin-start:4px;margin-inline-start:4px;-webkit-margin-end:4px;margin-inline-end:4px}}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host*/.sc-ion-chip-ios-h{padding-left:unset;padding-right:unset;-webkit-padding-start:12px;padding-inline-start:12px;-webkit-padding-end:12px;padding-inline-end:12px}}/*!@:host(.chip-disabled)*/.chip-disabled.sc-ion-chip-ios-h{cursor:default;opacity:0.4;pointer-events:none}/*!@:host(.ion-color)*/.ion-color.sc-ion-chip-ios-h{background:rgba(var(--ion-color-base-rgb), 0.08);color:var(--ion-color-shade)}/*!@:host(.ion-color:focus)*/.ion-color.sc-ion-chip-ios-h:focus{background:rgba(var(--ion-color-base-rgb), 0.12)}/*!@:host(.ion-color.ion-activated)*/.ion-color.ion-activated.sc-ion-chip-ios-h{background:rgba(var(--ion-color-base-rgb), 0.16)}/*!@:host(.chip-outline)*/.chip-outline.sc-ion-chip-ios-h{border-width:1px;border-style:solid}/*!@:host(.chip-outline)*/.chip-outline.sc-ion-chip-ios-h{border-color:rgba(0, 0, 0, 0.32);background:transparent}/*!@:host(.chip-outline.ion-color)*/.chip-outline.ion-color.sc-ion-chip-ios-h{border-color:rgba(var(--ion-color-base-rgb), 0.32)}/*!@:host(.chip-outline:not(.ion-color):focus)*/.chip-outline.sc-ion-chip-ios-h:not(.ion-color):focus{background:rgba(0, 0, 0, 0.04)}/*!@:host(.chip-outline.ion-activated:not(.ion-color))*/.chip-outline.ion-activated.sc-ion-chip-ios-h:not(.ion-color){background:rgba(0, 0, 0, 0.08)}/*!@::slotted(ion-icon)*/.sc-ion-chip-ios-s>ion-icon{font-size:20px}/*!@:host(:not(.ion-color)) ::slotted(ion-icon)*/.sc-ion-chip-ios-h:not(.ion-color) .sc-ion-chip-ios-s>ion-icon{color:rgba(0, 0, 0, 0.54)}/*!@::slotted(ion-icon:first-child)*/.sc-ion-chip-ios-s>ion-icon:first-child{margin-left:-4px;margin-right:8px;margin-top:-4px;margin-bottom:-4px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@::slotted(ion-icon:first-child)*/.sc-ion-chip-ios-s>ion-icon:first-child{margin-left:unset;margin-right:unset;-webkit-margin-start:-4px;margin-inline-start:-4px;-webkit-margin-end:8px;margin-inline-end:8px}}/*!@::slotted(ion-icon:last-child)*/.sc-ion-chip-ios-s>ion-icon:last-child{margin-left:8px;margin-right:-4px;margin-top:-4px;margin-bottom:-4px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@::slotted(ion-icon:last-child)*/.sc-ion-chip-ios-s>ion-icon:last-child{margin-left:unset;margin-right:unset;-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:-4px;margin-inline-end:-4px}}/*!@::slotted(ion-avatar)*/.sc-ion-chip-ios-s>ion-avatar{width:24px;height:24px}/*!@::slotted(ion-avatar:first-child)*/.sc-ion-chip-ios-s>ion-avatar:first-child{margin-left:-8px;margin-right:8px;margin-top:-4px;margin-bottom:-4px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@::slotted(ion-avatar:first-child)*/.sc-ion-chip-ios-s>ion-avatar:first-child{margin-left:unset;margin-right:unset;-webkit-margin-start:-8px;margin-inline-start:-8px;-webkit-margin-end:8px;margin-inline-end:8px}}/*!@::slotted(ion-avatar:last-child)*/.sc-ion-chip-ios-s>ion-avatar:last-child{margin-left:8px;margin-right:-8px;margin-top:-4px;margin-bottom:-4px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@::slotted(ion-avatar:last-child)*/.sc-ion-chip-ios-s>ion-avatar:last-child{margin-left:unset;margin-right:unset;-webkit-margin-start:8px;margin-inline-start:8px;-webkit-margin-end:-8px;margin-inline-end:-8px}}/*!@:host(:focus)*/.sc-ion-chip-ios-h:focus{outline:none}/*!@:host(:focus)*/.sc-ion-chip-ios-h:focus{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.16)}/*!@:host(.ion-activated)*/.ion-activated.sc-ion-chip-ios-h{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)}@media (any-hover: hover){/*!@:host(:hover)*/.sc-ion-chip-ios-h:hover{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.16)}/*!@:host(.ion-color:hover)*/.ion-color.sc-ion-chip-ios-h:hover{background:rgba(var(--ion-color-base-rgb), 0.12)}/*!@:host(.chip-outline:not(.ion-color):hover)*/.chip-outline.sc-ion-chip-ios-h:not(.ion-color):hover{background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.04)}}";
 
@@ -11712,7 +11671,7 @@ class FabButton {
         rel: this.rel,
         target: this.target
       };
-    return (hAsync(Host, { "aria-disabled": disabled ? 'true' : null, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'fab-button-in-list': inList,
         'fab-button-translucent-in-list': inList && translucent,
@@ -13726,9 +13685,9 @@ const swipeShouldReset = (isResetDirection, isMovingFast, isOnResetZone) => {
   return (!isMovingFast && isOnResetZone) || (isResetDirection && isMovingFast);
 };
 
-const iosLabelMdCss = ".item.sc-ion-label-ios-h,.item .sc-ion-label-ios-h{--color:initial;display:block;color:var(--color);font-family:var(--ion-font-family, inherit);font-size:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box}.ion-color.sc-ion-label-ios-h{color:var(--ion-color-base)}.ion-text-wrap.sc-ion-label-ios-h,[text-wrap].sc-ion-label-ios-h{white-space:normal}.item-interactive-disabled.sc-ion-label-ios-h:not(.item-multiple-inputs),.item-interactive-disabled:not(.item-multiple-inputs) .sc-ion-label-ios-h{cursor:default;opacity:0.3;pointer-events:none}.item-input.sc-ion-label-ios-h,.item-input .sc-ion-label-ios-h{-ms-flex:initial;flex:initial;max-width:200px;pointer-events:none}.item-textarea.sc-ion-label-ios-h,.item-textarea .sc-ion-label-ios-h{-ms-flex-item-align:baseline;align-self:baseline}.label-fixed.sc-ion-label-ios-h{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.label-stacked.sc-ion-label-ios-h,.label-floating.sc-ion-label-ios-h{margin-bottom:0;-ms-flex-item-align:stretch;align-self:stretch;width:auto;max-width:100%}.label-no-animate.label-floating.sc-ion-label-ios-h{-webkit-transition:none;transition:none}.sc-ion-label-ios-s h1,.sc-ion-label-ios-s h2,.sc-ion-label-ios-s h3,.sc-ion-label-ios-s h4,.sc-ion-label-ios-s h5,.sc-ion-label-ios-s h6{text-overflow:inherit;overflow:inherit}.ion-text-wrap.sc-ion-label-ios-h,[text-wrap].sc-ion-label-ios-h{line-height:1.5}.label-stacked.sc-ion-label-ios-h{-webkit-transform-origin:left top;transform-origin:left top;-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1)}[dir=rtl].sc-ion-label-ios-h -no-combinator.label-stacked.sc-ion-label-ios-h,[dir=rtl] .sc-ion-label-ios-h -no-combinator.label-stacked.sc-ion-label-ios-h,[dir=rtl].label-stacked.sc-ion-label-ios-h,[dir=rtl] .label-stacked.sc-ion-label-ios-h{-webkit-transform-origin:right top;transform-origin:right top}.label-floating.sc-ion-label-ios-h{-webkit-transform:translateY(96%);transform:translateY(96%);-webkit-transform-origin:left top;transform-origin:left top;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1)}[dir=rtl].sc-ion-label-ios-h -no-combinator.label-floating.sc-ion-label-ios-h,[dir=rtl] .sc-ion-label-ios-h -no-combinator.label-floating.sc-ion-label-ios-h,[dir=rtl].label-floating.sc-ion-label-ios-h,[dir=rtl] .label-floating.sc-ion-label-ios-h{-webkit-transform-origin:right top;transform-origin:right top}.item-textarea.label-floating.sc-ion-label-ios-h,.item-textarea .label-floating.sc-ion-label-ios-h{-webkit-transform:translateY(185%);transform:translateY(185%)}.label-stacked.sc-ion-label-ios-h,.label-floating.sc-ion-label-ios-h{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}.item-has-focus.label-floating.sc-ion-label-ios-h,.item-has-focus .label-floating.sc-ion-label-ios-h,.item-has-placeholder.sc-ion-label-ios-h:not(.item-input).label-floating,.item-has-placeholder:not(.item-input) .label-floating.sc-ion-label-ios-h,.item-has-value.label-floating.sc-ion-label-ios-h,.item-has-value .label-floating.sc-ion-label-ios-h{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75)}.item-has-focus.label-stacked.sc-ion-label-ios-h:not(.ion-color),.item-has-focus .label-stacked.sc-ion-label-ios-h:not(.ion-color),.item-has-focus.label-floating.sc-ion-label-ios-h:not(.ion-color),.item-has-focus .label-floating.sc-ion-label-ios-h:not(.ion-color){color:var(--ion-color-primary, #3880ff)}.item-has-focus.ion-color.label-stacked.sc-ion-label-ios-h:not(.ion-color),.item-has-focus.ion-color .label-stacked.sc-ion-label-ios-h:not(.ion-color),.item-has-focus.ion-color.label-floating.sc-ion-label-ios-h:not(.ion-color),.item-has-focus.ion-color .label-floating.sc-ion-label-ios-h:not(.ion-color){color:var(--ion-color-contrast)}.sc-ion-label-ios-s h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:24px;font-weight:normal}.sc-ion-label-ios-s h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:16px;font-weight:normal}.sc-ion-label-ios-s h3,.sc-ion-label-ios-s h4,.sc-ion-label-ios-s h5,.sc-ion-label-ios-s h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:14px;font-weight:normal;line-height:normal}.sc-ion-label-ios-s p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:14px;line-height:20px;text-overflow:inherit;overflow:inherit}.sc-ion-label-ios-s>p{color:var(--ion-color-step-600, #666666)}.sc-ion-label-ios-h.ion-color.sc-ion-label-ios-s>p,.ion-color .sc-ion-label-ios-h.sc-ion-label-ios-s>p{color:inherit}[ds-name=stacked].sc-ion-label-ios-h{color:var(--med-color-neutral-dark-10);margin-bottom:8px;font-size:14px;font-weight:400;line-height:100%;display:-ms-flexbox;display:flex}[ds-name=helper].sc-ion-label-ios-h{color:var(--med-color-neutral-light-30);font-size:12px;font-weight:400;line-height:24px;display:-ms-flexbox;display:flex}[ds-name=helper][error].sc-ion-label-ios-h{color:var(--med-color-feedback-error-medium)}";
+const iosLabelMdCss = ".item.sc-ion-label-ios-h,.item .sc-ion-label-ios-h{--color:initial;display:block;color:var(--color);font-family:var(--ion-font-family, inherit);font-size:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box}.ion-color.sc-ion-label-ios-h{color:var(--ion-color-base)}.ion-text-wrap.sc-ion-label-ios-h,[text-wrap].sc-ion-label-ios-h{white-space:normal}.item-interactive-disabled.sc-ion-label-ios-h:not(.item-multiple-inputs),.item-interactive-disabled:not(.item-multiple-inputs) .sc-ion-label-ios-h{cursor:default;opacity:0.3;pointer-events:none}.item-input.sc-ion-label-ios-h,.item-input .sc-ion-label-ios-h{-ms-flex:initial;flex:initial;max-width:200px;pointer-events:none}.item-textarea.sc-ion-label-ios-h,.item-textarea .sc-ion-label-ios-h{-ms-flex-item-align:baseline;align-self:baseline}.label-fixed.sc-ion-label-ios-h{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.label-stacked.sc-ion-label-ios-h,.label-floating.sc-ion-label-ios-h{margin-bottom:0;-ms-flex-item-align:stretch;align-self:stretch;width:auto;max-width:100%}.label-no-animate.label-floating.sc-ion-label-ios-h{-webkit-transition:none;transition:none}.sc-ion-label-ios-s h1,.sc-ion-label-ios-s h2,.sc-ion-label-ios-s h3,.sc-ion-label-ios-s h4,.sc-ion-label-ios-s h5,.sc-ion-label-ios-s h6{text-overflow:inherit;overflow:inherit}.ion-text-wrap.sc-ion-label-ios-h,[text-wrap].sc-ion-label-ios-h{line-height:1.5}.label-stacked.sc-ion-label-ios-h{-webkit-transform-origin:left top;transform-origin:left top;-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1)}[dir=rtl].sc-ion-label-ios-h -no-combinator.label-stacked.sc-ion-label-ios-h,[dir=rtl] .sc-ion-label-ios-h -no-combinator.label-stacked.sc-ion-label-ios-h,[dir=rtl].label-stacked.sc-ion-label-ios-h,[dir=rtl] .label-stacked.sc-ion-label-ios-h{-webkit-transform-origin:right top;transform-origin:right top}.label-floating.sc-ion-label-ios-h{-webkit-transform:translateY(96%);transform:translateY(96%);-webkit-transform-origin:left top;transform-origin:left top;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1)}[dir=rtl].sc-ion-label-ios-h -no-combinator.label-floating.sc-ion-label-ios-h,[dir=rtl] .sc-ion-label-ios-h -no-combinator.label-floating.sc-ion-label-ios-h,[dir=rtl].label-floating.sc-ion-label-ios-h,[dir=rtl] .label-floating.sc-ion-label-ios-h{-webkit-transform-origin:right top;transform-origin:right top}.item-textarea.label-floating.sc-ion-label-ios-h,.item-textarea .label-floating.sc-ion-label-ios-h{-webkit-transform:translateY(185%);transform:translateY(185%)}.label-stacked.sc-ion-label-ios-h,.label-floating.sc-ion-label-ios-h{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}.item-has-focus.label-floating.sc-ion-label-ios-h,.item-has-focus .label-floating.sc-ion-label-ios-h,.item-has-placeholder.sc-ion-label-ios-h:not(.item-input).label-floating,.item-has-placeholder:not(.item-input) .label-floating.sc-ion-label-ios-h,.item-has-value.label-floating.sc-ion-label-ios-h,.item-has-value .label-floating.sc-ion-label-ios-h{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75)}.item-has-focus.label-stacked.sc-ion-label-ios-h:not(.ion-color),.item-has-focus .label-stacked.sc-ion-label-ios-h:not(.ion-color),.item-has-focus.label-floating.sc-ion-label-ios-h:not(.ion-color),.item-has-focus .label-floating.sc-ion-label-ios-h:not(.ion-color){color:var(--ion-color-primary, #3880ff)}.item-has-focus.ion-color.label-stacked.sc-ion-label-ios-h:not(.ion-color),.item-has-focus.ion-color .label-stacked.sc-ion-label-ios-h:not(.ion-color),.item-has-focus.ion-color.label-floating.sc-ion-label-ios-h:not(.ion-color),.item-has-focus.ion-color .label-floating.sc-ion-label-ios-h:not(.ion-color){color:var(--ion-color-contrast)}.sc-ion-label-ios-s h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:24px;font-weight:normal}.sc-ion-label-ios-s h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:16px;font-weight:normal}.sc-ion-label-ios-s h3,.sc-ion-label-ios-s h4,.sc-ion-label-ios-s h5,.sc-ion-label-ios-s h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:14px;font-weight:normal;line-height:normal}.sc-ion-label-ios-s p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:14px;line-height:20px;text-overflow:inherit;overflow:inherit}.sc-ion-label-ios-s>p{color:var(--ion-color-step-600, #666666)}.sc-ion-label-ios-h.ion-color.sc-ion-label-ios-s>p,.ion-color .sc-ion-label-ios-h.sc-ion-label-ios-s>p{color:inherit}[ds-name=stacked].sc-ion-label-ios-h{color:var(--med-color-neutral-dark-10);margin-bottom:8px;font-size:14px;font-weight:400;line-height:100%;display:-ms-flexbox;display:flex}[ds-name=helper].sc-ion-label-ios-h{color:var(--med-color-neutral-light-30);font-size:12px;font-weight:400;line-height:line-height();display:-ms-flexbox;display:flex}[ds-name=helper][error].sc-ion-label-ios-h{color:var(--med-color-feedback-error-medium)}";
 
-const labelMdCss = ".item.sc-ion-label-md-h,.item .sc-ion-label-md-h{--color:initial;display:block;color:var(--color);font-family:var(--ion-font-family, inherit);font-size:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box}.ion-color.sc-ion-label-md-h{color:var(--ion-color-base)}.ion-text-wrap.sc-ion-label-md-h,[text-wrap].sc-ion-label-md-h{white-space:normal}.item-interactive-disabled.sc-ion-label-md-h:not(.item-multiple-inputs),.item-interactive-disabled:not(.item-multiple-inputs) .sc-ion-label-md-h{cursor:default;opacity:0.3;pointer-events:none}.item-input.sc-ion-label-md-h,.item-input .sc-ion-label-md-h{-ms-flex:initial;flex:initial;max-width:200px;pointer-events:none}.item-textarea.sc-ion-label-md-h,.item-textarea .sc-ion-label-md-h{-ms-flex-item-align:baseline;align-self:baseline}.label-fixed.sc-ion-label-md-h{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.label-stacked.sc-ion-label-md-h,.label-floating.sc-ion-label-md-h{margin-bottom:0;-ms-flex-item-align:stretch;align-self:stretch;width:auto;max-width:100%}.label-no-animate.label-floating.sc-ion-label-md-h{-webkit-transition:none;transition:none}.sc-ion-label-md-s h1,.sc-ion-label-md-s h2,.sc-ion-label-md-s h3,.sc-ion-label-md-s h4,.sc-ion-label-md-s h5,.sc-ion-label-md-s h6{text-overflow:inherit;overflow:inherit}.ion-text-wrap.sc-ion-label-md-h,[text-wrap].sc-ion-label-md-h{line-height:1.5}.label-stacked.sc-ion-label-md-h{-webkit-transform-origin:left top;transform-origin:left top;-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1)}[dir=rtl].sc-ion-label-md-h -no-combinator.label-stacked.sc-ion-label-md-h,[dir=rtl] .sc-ion-label-md-h -no-combinator.label-stacked.sc-ion-label-md-h,[dir=rtl].label-stacked.sc-ion-label-md-h,[dir=rtl] .label-stacked.sc-ion-label-md-h{-webkit-transform-origin:right top;transform-origin:right top}.label-floating.sc-ion-label-md-h{-webkit-transform:translateY(96%);transform:translateY(96%);-webkit-transform-origin:left top;transform-origin:left top;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1)}[dir=rtl].sc-ion-label-md-h -no-combinator.label-floating.sc-ion-label-md-h,[dir=rtl] .sc-ion-label-md-h -no-combinator.label-floating.sc-ion-label-md-h,[dir=rtl].label-floating.sc-ion-label-md-h,[dir=rtl] .label-floating.sc-ion-label-md-h{-webkit-transform-origin:right top;transform-origin:right top}.item-textarea.label-floating.sc-ion-label-md-h,.item-textarea .label-floating.sc-ion-label-md-h{-webkit-transform:translateY(185%);transform:translateY(185%)}.label-stacked.sc-ion-label-md-h,.label-floating.sc-ion-label-md-h{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}.item-has-focus.label-floating.sc-ion-label-md-h,.item-has-focus .label-floating.sc-ion-label-md-h,.item-has-placeholder.sc-ion-label-md-h:not(.item-input).label-floating,.item-has-placeholder:not(.item-input) .label-floating.sc-ion-label-md-h,.item-has-value.label-floating.sc-ion-label-md-h,.item-has-value .label-floating.sc-ion-label-md-h{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75)}.item-has-focus.label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus .label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus.label-floating.sc-ion-label-md-h:not(.ion-color),.item-has-focus .label-floating.sc-ion-label-md-h:not(.ion-color){color:var(--ion-color-primary, #3880ff)}.item-has-focus.ion-color.label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color .label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color.label-floating.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color .label-floating.sc-ion-label-md-h:not(.ion-color){color:var(--ion-color-contrast)}.sc-ion-label-md-s h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:24px;font-weight:normal}.sc-ion-label-md-s h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:16px;font-weight:normal}.sc-ion-label-md-s h3,.sc-ion-label-md-s h4,.sc-ion-label-md-s h5,.sc-ion-label-md-s h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:14px;font-weight:normal;line-height:normal}.sc-ion-label-md-s p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:14px;line-height:20px;text-overflow:inherit;overflow:inherit}.sc-ion-label-md-s>p{color:var(--ion-color-step-600, #666666)}.sc-ion-label-md-h.ion-color.sc-ion-label-md-s>p,.ion-color .sc-ion-label-md-h.sc-ion-label-md-s>p{color:inherit}[ds-name=stacked].sc-ion-label-md-h{color:var(--med-color-neutral-dark-10);margin-bottom:8px;font-size:14px;font-weight:400;line-height:100%;display:-ms-flexbox;display:flex}[ds-name=helper].sc-ion-label-md-h{color:var(--med-color-neutral-light-30);font-size:12px;font-weight:400;line-height:24px;display:-ms-flexbox;display:flex}[ds-name=helper][error].sc-ion-label-md-h{color:var(--med-color-feedback-error-medium)}";
+const labelMdCss = ".item.sc-ion-label-md-h,.item .sc-ion-label-md-h{--color:initial;display:block;color:var(--color);font-family:var(--ion-font-family, inherit);font-size:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;-webkit-box-sizing:border-box;box-sizing:border-box}.ion-color.sc-ion-label-md-h{color:var(--ion-color-base)}.ion-text-wrap.sc-ion-label-md-h,[text-wrap].sc-ion-label-md-h{white-space:normal}.item-interactive-disabled.sc-ion-label-md-h:not(.item-multiple-inputs),.item-interactive-disabled:not(.item-multiple-inputs) .sc-ion-label-md-h{cursor:default;opacity:0.3;pointer-events:none}.item-input.sc-ion-label-md-h,.item-input .sc-ion-label-md-h{-ms-flex:initial;flex:initial;max-width:200px;pointer-events:none}.item-textarea.sc-ion-label-md-h,.item-textarea .sc-ion-label-md-h{-ms-flex-item-align:baseline;align-self:baseline}.label-fixed.sc-ion-label-md-h{-ms-flex:0 0 100px;flex:0 0 100px;width:100px;min-width:100px;max-width:200px}.label-stacked.sc-ion-label-md-h,.label-floating.sc-ion-label-md-h{margin-bottom:0;-ms-flex-item-align:stretch;align-self:stretch;width:auto;max-width:100%}.label-no-animate.label-floating.sc-ion-label-md-h{-webkit-transition:none;transition:none}.sc-ion-label-md-s h1,.sc-ion-label-md-s h2,.sc-ion-label-md-s h3,.sc-ion-label-md-s h4,.sc-ion-label-md-s h5,.sc-ion-label-md-s h6{text-overflow:inherit;overflow:inherit}.ion-text-wrap.sc-ion-label-md-h,[text-wrap].sc-ion-label-md-h{line-height:1.5}.label-stacked.sc-ion-label-md-h{-webkit-transform-origin:left top;transform-origin:left top;-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75);-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1)}[dir=rtl].sc-ion-label-md-h -no-combinator.label-stacked.sc-ion-label-md-h,[dir=rtl] .sc-ion-label-md-h -no-combinator.label-stacked.sc-ion-label-md-h,[dir=rtl].label-stacked.sc-ion-label-md-h,[dir=rtl] .label-stacked.sc-ion-label-md-h{-webkit-transform-origin:right top;transform-origin:right top}.label-floating.sc-ion-label-md-h{-webkit-transform:translateY(96%);transform:translateY(96%);-webkit-transform-origin:left top;transform-origin:left top;-webkit-transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);transition:color 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1)}[dir=rtl].sc-ion-label-md-h -no-combinator.label-floating.sc-ion-label-md-h,[dir=rtl] .sc-ion-label-md-h -no-combinator.label-floating.sc-ion-label-md-h,[dir=rtl].label-floating.sc-ion-label-md-h,[dir=rtl] .label-floating.sc-ion-label-md-h{-webkit-transform-origin:right top;transform-origin:right top}.item-textarea.label-floating.sc-ion-label-md-h,.item-textarea .label-floating.sc-ion-label-md-h{-webkit-transform:translateY(185%);transform:translateY(185%)}.label-stacked.sc-ion-label-md-h,.label-floating.sc-ion-label-md-h{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}.item-has-focus.label-floating.sc-ion-label-md-h,.item-has-focus .label-floating.sc-ion-label-md-h,.item-has-placeholder.sc-ion-label-md-h:not(.item-input).label-floating,.item-has-placeholder:not(.item-input) .label-floating.sc-ion-label-md-h,.item-has-value.label-floating.sc-ion-label-md-h,.item-has-value .label-floating.sc-ion-label-md-h{-webkit-transform:translateY(50%) scale(0.75);transform:translateY(50%) scale(0.75)}.item-has-focus.label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus .label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus.label-floating.sc-ion-label-md-h:not(.ion-color),.item-has-focus .label-floating.sc-ion-label-md-h:not(.ion-color){color:var(--ion-color-primary, #3880ff)}.item-has-focus.ion-color.label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color .label-stacked.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color.label-floating.sc-ion-label-md-h:not(.ion-color),.item-has-focus.ion-color .label-floating.sc-ion-label-md-h:not(.ion-color){color:var(--ion-color-contrast)}.sc-ion-label-md-s h1{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:24px;font-weight:normal}.sc-ion-label-md-s h2{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:16px;font-weight:normal}.sc-ion-label-md-s h3,.sc-ion-label-md-s h4,.sc-ion-label-md-s h5,.sc-ion-label-md-s h6{margin-left:0;margin-right:0;margin-top:2px;margin-bottom:2px;font-size:14px;font-weight:normal;line-height:normal}.sc-ion-label-md-s p{margin-left:0;margin-right:0;margin-top:0;margin-bottom:2px;font-size:14px;line-height:20px;text-overflow:inherit;overflow:inherit}.sc-ion-label-md-s>p{color:var(--ion-color-step-600, #666666)}.sc-ion-label-md-h.ion-color.sc-ion-label-md-s>p,.ion-color .sc-ion-label-md-h.sc-ion-label-md-s>p{color:inherit}[ds-name=stacked].sc-ion-label-md-h{color:var(--med-color-neutral-dark-10);margin-bottom:8px;font-size:14px;font-weight:400;line-height:100%;display:-ms-flexbox;display:flex}[ds-name=helper].sc-ion-label-md-h{color:var(--med-color-neutral-light-30);font-size:12px;font-weight:400;line-height:line-height();display:-ms-flexbox;display:flex}[ds-name=helper][error].sc-ion-label-md-h{color:var(--med-color-feedback-error-medium)}";
 
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -13882,6 +13841,9 @@ class List {
   constructor(hostRef) {
     registerInstance(this, hostRef);
   }
+  /**
+   * todo
+   */
   async closeSlidingItems() {
     const item = this.el.querySelector('ion-item-sliding');
     if (item && item.closeOpened) {
@@ -13890,7 +13852,7 @@ class List {
     return false;
   }
   render() {
-    return (hAsync(Host, { class: generateMedColor$1(null, { 'med-lista': true }) }, hAsync("slot", null)));
+    return (hAsync(Host, { class: generateMedColor(null, { 'med-lista': true }) }, hAsync("slot", null)));
   }
   get el() { return getElement(this); }
   static get style() { return {
@@ -14190,25 +14152,28 @@ class MedAccordionItem {
     this.opened = createEvent(this, "opened", 7);
     this.medClick = createEvent(this, "medClick", 7);
     /**
-      * Define a variação da borda do componente.
-      */
+     * todo
+     */
     this.noBorder = false;
     /**
-      * Define se o componente irá ter background quando aberto.
-      */
+     * todo
+     */
     this.background = false;
     /**
-     * Permite que a abertura do accordion seja bloqueada pelo front.
+     * todo
      */
     this.canCollapse = true;
     /**
-     * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
+     * todo
      */
     this.isOpened = false;
     /**
-    * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
-    */
+     * todo
+     */
     this.slotsToggle = [];
+    /**
+     * todo
+     */
     this.isOpen = false;
     this.isTransitioning = false;
     this.onClick = (slot) => {
@@ -14257,7 +14222,7 @@ class MedAccordionItem {
   }
   render() {
     const { dsColor, noBorder, isOpen, background } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-accordion-item': true,
         'med-accordion-item--no-border': noBorder,
         'med-accordion-item--open': isOpen,
@@ -14295,7 +14260,7 @@ class MedAddCard {
   }
   render() {
     const { titulo, iconName } = this;
-    return (hAsync(Host, { class: generateMedColor$1(null, {
+    return (hAsync(Host, { class: generateMedColor(null, {
         'med-add-card': true,
       }) }, hAsync("med-base", { class: "med-add-card__container", "spacing-h": "s16", "spacing-v": "s16" }, hAsync("ion-icon", { class: "med-icon med-add-card__icon", name: iconName }), hAsync("med-type", { token: "p16x" }, titulo))));
   }
@@ -14319,28 +14284,28 @@ class MedAgrupador {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define o texto no estado default.
-      */
+     * todo
+     */
     this.labelDefault = 'Expandir a lista';
     /**
-      * Define o texto no estado active.
-      */
+     * todo
+     */
     this.labelAlternativo = 'Ocultar a lista';
     /**
-      * Define o estado do componente.
-      */
+     * todo
+     */
     this.collapsed = false;
   }
   /**
-    * Define o estado do componente programaticamente.
-    */
+   * todo
+   */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;
   }
   render() {
     const { dsColor, collapsed, labelDefault, labelAlternativo } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-agrupador': true,
         'med-agrupador--collapsed': collapsed
       }), onClick: (event) => { this.toggle(event); } }, hAsync("div", { class: "med-agrupador__expandir" }, labelDefault), hAsync("div", { class: "med-agrupador__ocultar" }, labelAlternativo), hAsync("ion-icon", { class: "med-icon med-agrupador__icon", name: "med-baixo" })));
@@ -14397,17 +14362,17 @@ class MedAlertFixed {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define o texto no estado active.
-      */
+     * todo
+     */
     this.labelOffline = 'Você está offline. Conecte-se para acessar o conteúdo.';
     /**
-     * Define o texto no estado active.
+     * todo
      */
     this.labelAtualizar = 'Versão desatualizada';
   }
   render() {
     const { dsColor, dsName, labelOffline, labelAtualizar } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-alert-fixed': true,
         [`med-alert-fixed--${dsName}`]: dsName !== undefined,
       }) }, (dsName === 'offline') &&
@@ -14430,11 +14395,143 @@ class MedAlertFixed {
   }; }
 }
 
+var TemplariosBadgeSize;
+(function (TemplariosBadgeSize) {
+  TemplariosBadgeSize["SM"] = "sm";
+  TemplariosBadgeSize["MD"] = "md";
+})(TemplariosBadgeSize || (TemplariosBadgeSize = {}));
+
+var BreakPointPixelEnum;
+(function (BreakPointPixelEnum) {
+  BreakPointPixelEnum[BreakPointPixelEnum["XXS"] = 340] = "XXS";
+  BreakPointPixelEnum[BreakPointPixelEnum["XS"] = 380] = "XS";
+  BreakPointPixelEnum[BreakPointPixelEnum["SM"] = 576] = "SM";
+  BreakPointPixelEnum[BreakPointPixelEnum["MD"] = 768] = "MD";
+  BreakPointPixelEnum[BreakPointPixelEnum["LG"] = 992] = "LG";
+  BreakPointPixelEnum[BreakPointPixelEnum["XL"] = 1200] = "XL";
+})(BreakPointPixelEnum || (BreakPointPixelEnum = {}));
+var BreakPointNameEnum;
+(function (BreakPointNameEnum) {
+  BreakPointNameEnum["XXS"] = "xxs";
+  BreakPointNameEnum["XS"] = "xs";
+  BreakPointNameEnum["SM"] = "sm";
+  BreakPointNameEnum["MD"] = "md";
+  BreakPointNameEnum["LG"] = "lg";
+  BreakPointNameEnum["XL"] = "xl";
+})(BreakPointNameEnum || (BreakPointNameEnum = {}));
+
+var TemplariosButtonSize;
+(function (TemplariosButtonSize) {
+  TemplariosButtonSize["XXXS"] = "xxxs";
+  TemplariosButtonSize["XXS"] = "xxs";
+  TemplariosButtonSize["XS"] = "xs";
+  TemplariosButtonSize["SM"] = "sm";
+  TemplariosButtonSize["MD"] = "md";
+  TemplariosButtonSize["LG"] = "lg";
+})(TemplariosButtonSize || (TemplariosButtonSize = {}));
+
+var MedColors;
+(function (MedColors) {
+  MedColors["NEUTRAL_1"] = "neutral-1";
+  MedColors["NEUTRAL_15"] = "neutral-15";
+  MedColors["NEUTRAL_2"] = "neutral-2";
+  MedColors["NEUTRAL_25"] = "neutral-25";
+  MedColors["NEUTRAL_3"] = "neutral-3";
+  MedColors["NEUTRAL_35"] = "neutral-35";
+  MedColors["NEUTRAL_4"] = "neutral-4";
+  MedColors["NEUTRAL_45"] = "neutral-45";
+  MedColors["NEUTRAL_5"] = "neutral-5";
+  MedColors["NEUTRAL_55"] = "neutral-55";
+  MedColors["NEUTRAL_6"] = "neutral-6";
+  MedColors["NEUTRAL_65"] = "neutral-65";
+  MedColors["NEUTRAL_7"] = "neutral-7";
+  MedColors["NEUTRAL_75"] = "neutral-75";
+  MedColors["NEUTRAL_8"] = "neutral-8";
+  MedColors["NEUTRAL_85"] = "neutral-85";
+  MedColors["NEUTRAL_9"] = "neutral-9";
+  MedColors["NEUTRAL_95"] = "neutral-95";
+  MedColors["NEUTRAL_10"] = "neutral-10";
+  MedColors["FB_ATTENTION"] = "fb-attention";
+  MedColors["FB_CAUTION"] = "fb-caution";
+  MedColors["FB_WARNING"] = "fb-warning";
+  MedColors["FB_SUCCESS"] = "fb-success";
+  MedColors["BRAND"] = "brand";
+  MedColors["AULA"] = "aula";
+  MedColors["MATERIAL"] = "material";
+  MedColors["QUESTOES"] = "questoes";
+  MedColors["REVALIDA"] = "revalida";
+  MedColors["PROVAS"] = "provas";
+})(MedColors || (MedColors = {}));
+
+var MedFontSize;
+(function (MedFontSize) {
+  MedFontSize["XXXS"] = "12px";
+  MedFontSize["XXS"] = "14px";
+  MedFontSize["XS"] = "16px";
+  MedFontSize["SM"] = "20px";
+  MedFontSize["MD"] = "24px";
+})(MedFontSize || (MedFontSize = {}));
+
+var TemplariosIconSize;
+(function (TemplariosIconSize) {
+  TemplariosIconSize["LG"] = "lg";
+  TemplariosIconSize["MD"] = "md";
+  TemplariosIconSize["BASE"] = "base";
+  TemplariosIconSize["SM"] = "sm";
+})(TemplariosIconSize || (TemplariosIconSize = {}));
+
+var PlusMinusStatus;
+(function (PlusMinusStatus) {
+  PlusMinusStatus["MINUS"] = "minus";
+  PlusMinusStatus["PLUS"] = "plus";
+})(PlusMinusStatus || (PlusMinusStatus = {}));
+
+var RateStatus;
+(function (RateStatus) {
+  RateStatus["LIKE"] = "like";
+  RateStatus["DISLIKE"] = "dislike";
+})(RateStatus || (RateStatus = {}));
+
 var MedSkin;
 (function (MedSkin) {
   MedSkin["A"] = "A";
   MedSkin["B"] = "B";
 })(MedSkin || (MedSkin = {}));
+
+var MedTypeTag;
+(function (MedTypeTag) {
+  MedTypeTag["H1"] = "h1";
+  MedTypeTag["H2"] = "h2";
+  MedTypeTag["H3"] = "h3";
+  MedTypeTag["H4"] = "h4";
+  MedTypeTag["H5"] = "h5";
+  MedTypeTag["H6"] = "h6";
+  MedTypeTag["P"] = "p";
+  MedTypeTag["SPAN"] = "span";
+  MedTypeTag["LABEL"] = "label";
+})(MedTypeTag || (MedTypeTag = {}));
+var MedType$1;
+(function (MedType) {
+  MedType["H48"] = "h48";
+  MedType["H32"] = "h32";
+  MedType["H24"] = "h24";
+  MedType["H20"] = "h20";
+  MedType["H20X"] = "h20x";
+  MedType["P16"] = "p16";
+  MedType["P16B"] = "p16b";
+  MedType["P16X"] = "p16x";
+  MedType["P16XB"] = "p16xb";
+  MedType["P14"] = "p14";
+  MedType["P14B"] = "p14b";
+  MedType["P14X"] = "p14x";
+  MedType["P14XB"] = "p14xb";
+  MedType["P12"] = "p12";
+  MedType["P12B"] = "p12b";
+  MedType["P12X"] = "p12x";
+  MedType["P12XB"] = "p12xb";
+  MedType["P10"] = "p10";
+  MedType["P10B"] = "p10b";
+})(MedType$1 || (MedType$1 = {}));
 
 const medAlternativasCss = "/*!@:host*/.sc-med-alternativas-h{--font-size:16px;display:block}";
 
@@ -14445,31 +14542,31 @@ class MedAlternativas {
     this.medRiscada = createEvent(this, "medRiscada", 7);
     this.medGalleryRequest = createEvent(this, "medGalleryRequest", 7);
     /**
-     * TODO
+     * todo
      */
     this.alternativas = [];
     /**
-     * TODO
+     * todo
      */
     this.keyAlternativa = 'Alternativa';
     /**
-     * TODO
+     * todo
      */
     this.keyEnunciado = 'Enunciado';
     /**
-     * TODO
+     * todo
      */
     this.keyImagem = 'Imagem';
     /**
-     * TODO
+     * todo
      */
     this.keyPorcentagem = 'Porcentagem';
     /**
-     * TODO
+     * todo
      */
     this.keyRiscada = 'Riscada';
     /**
-     * TODO
+     * todo
      */
     this.permiteRiscar = true;
   }
@@ -14602,7 +14699,7 @@ class MedAlternativasBase {
   }
 }
 
-const medAlternativasACss = "/*!@:host(.med-alternativas) .med-alternativas__container*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__container.sc-med-alternativas-a{display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .med-alternativas__item*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item.sc-med-alternativas-a{cursor:pointer;position:relative;-webkit-transition:background-color 300ms;transition:background-color 300ms;min-height:80px}/*!@:host(.med-alternativas) .option*/.med-alternativas.sc-med-alternativas-a-h .option.sc-med-alternativas-a{background:hsl(var(--med-color-neutral-8));padding:8px;border-radius:8px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer}/*!@:host(.med-alternativas) .option__letter*/.med-alternativas.sc-med-alternativas-a-h .option__letter.sc-med-alternativas-a{font-size:16px;font-weight:500;line-height:100%;color:hsl(var(--med-color-neutral-1))}/*!@:host(.med-alternativas) .option__fake*/.med-alternativas.sc-med-alternativas-a-h .option__fake.sc-med-alternativas-a{height:16px;width:16px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;background:#fff;border-radius:50%;margin:0 4px 0 0;position:relative}/*!@.option__fake:before*/.option__fake.sc-med-alternativas-a:before{content:\"\";display:inline-block;width:8px;height:8px;background:hsl(var(--med-color-brand-3));opacity:0;-webkit-transition:opacity 300ms;transition:opacity 300ms;border-radius:50%}/*!@:host(.med-alternativas) .med-alternativas__left*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__left.sc-med-alternativas-a{padding:16px 16px 6px 16px}/*!@:host(.med-alternativas) .med-alternativas__right*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__right.sc-med-alternativas-a{-ms-flex:1 1 0%;flex:1 1 0%;overflow:hidden;text-align:left;padding:16px 16px 6px 16px;font-size:var(--font-size);font-weight:400;line-height:24px;text-align:justify;color:hsl(var(--med-color-neutral-9));cursor:pointer}/*!@:host(.med-alternativas) .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__wrapper.sc-med-alternativas-a{min-height:80px}/*!@:host(.med-alternativas) .med-alternativas__progress-bar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__progress-bar.sc-med-alternativas-a{--height:10px;-webkit-transition:all 300ms ease;transition:all 300ms ease;opacity:0;-webkit-transform:translateX(-120%);transform:translateX(-120%)}/*!@:host(.med-alternativas) .med-alternativas__riscar-icon*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-icon.sc-med-alternativas-a{stroke:hsl(var(--med-color-neutral-10));--ionicon-stroke-width:1px}@media (min-width: 768px){/*!@:host(.med-alternativas) .med-alternativas__list--has-image*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__list--has-image.sc-med-alternativas-a{display:grid;grid-template-columns:1fr 1fr;gap:16px}}/*!@:host(.med-alternativas) .med-alternativas__list--has-image .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__list--has-image.sc-med-alternativas-a .med-alternativas__riscar.sc-med-alternativas-a{position:absolute;top:10px;right:10px;height:auto;z-index:1;background:#000;padding:8px;border-radius:5px;opacity:0.5}/*!@:host(.med-alternativas) .image-container__image*/.med-alternativas.sc-med-alternativas-a-h .image-container__image.sc-med-alternativas-a{max-width:360px;width:100%;height:auto;display:block}/*!@:host(.med-alternativas) .med-alternativas__progress-bar--toggle*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__progress-bar--toggle.sc-med-alternativas-a{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}/*!@:host(.med-alternativas) .med-alternativas__item--selecionada .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--selecionada.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-brand-3))}/*!@:host(.med-alternativas) .med-alternativas__item--certa .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--certa.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--correta .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--correta.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--incorreta .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--incorreta.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-fb-warning))}/*!@:host(.med-alternativas) .med-alternativas__item--selecionada .option__fake:before,\n:host(.med-alternativas) .med-alternativas__item--correta .option__fake:before,\n:host(.med-alternativas) .med-alternativas__item--incorreta .option__fake:before*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--selecionada.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--correta.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--incorreta.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before{opacity:1}/*!@:host(.med-alternativas) .med-alternativas__item--certa .option__fake:before*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--certa.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before{opacity:0}/*!@:host(.med-alternativas) .med-alternativas__item--show*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--show.sc-med-alternativas-a{background:hsl(var(--med-color-neutral-2))}/*!@:host(.med-alternativas) .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar.sc-med-alternativas-a{color:hsl(var(--med-color-neutral-10));padding:0 16px;font-size:14px;font-weight:400;line-height:100%;display:-ms-flexbox;display:flex;height:100%;visibility:hidden;opacity:0;pointer-events:none;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;position:absolute;right:0px;top:0px;background:hsl(var(--med-color-neutral-2));-webkit-transition:opacity 300ms;transition:opacity 300ms}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__left,\n:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right,\n:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__progress-bar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__left.sc-med-alternativas-a,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__right.sc-med-alternativas-a,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__progress-bar.sc-med-alternativas-a{opacity:0.5}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__right.sc-med-alternativas-a{text-decoration:line-through}/*!@:host(.med-alternativas) .med-alternativas__riscar--show*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar--show.sc-med-alternativas-a{visibility:visible;opacity:1;pointer-events:all}/*!@:host(.med-alternativas) .med-alternativas__riscar-span*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-span.sc-med-alternativas-a{display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .med-alternativas__riscar-desktop*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-desktop.sc-med-alternativas-a{display:none;padding-left:4px}@media (min-width: 768px){/*!@:host(.med-alternativas) .med-alternativas__riscar-desktop*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-desktop.sc-med-alternativas-a{display:-ms-flexbox;display:flex}}@media (min-width: 768px){/*!@:host(.med-alternativas) .image-container__button*/.med-alternativas.sc-med-alternativas-a-h .image-container__button.sc-med-alternativas-a{display:none}}@media (any-hover: hover) and (pointer: fine){/*!@:host(.med-alternativas) .med-alternativas__item--permite-riscar:hover*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--permite-riscar.sc-med-alternativas-a:hover{background:hsl(var(--med-color-neutral-2))}/*!@:host(.med-alternativas) .med-alternativas__item--permite-riscar:hover .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--permite-riscar.sc-med-alternativas-a:hover .med-alternativas__riscar.sc-med-alternativas-a{visibility:visible;opacity:1;pointer-events:all}}";
+const medAlternativasACss = "/*!@:host(.med-alternativas) .med-alternativas__container*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__container.sc-med-alternativas-a{display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .med-alternativas__item*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item.sc-med-alternativas-a{cursor:pointer;position:relative;-webkit-transition:background-color 300ms;transition:background-color 300ms;min-height:80px}/*!@:host(.med-alternativas) .option*/.med-alternativas.sc-med-alternativas-a-h .option.sc-med-alternativas-a{background:hsl(var(--med-color-neutral-8));padding:8px;border-radius:8px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer}/*!@:host(.med-alternativas) .option__letter*/.med-alternativas.sc-med-alternativas-a-h .option__letter.sc-med-alternativas-a{font-size:16px;font-weight:500;line-height:100%;color:hsl(var(--med-color-neutral-1))}/*!@:host(.med-alternativas) .option__fake*/.med-alternativas.sc-med-alternativas-a-h .option__fake.sc-med-alternativas-a{height:16px;width:16px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;background:#fff;border-radius:50%;margin:0 4px 0 0;position:relative}/*!@.option__fake:before*/.option__fake.sc-med-alternativas-a:before{content:\"\";display:inline-block;width:8px;height:8px;background:hsl(var(--med-color-brand-3));opacity:0;-webkit-transition:opacity 300ms;transition:opacity 300ms;border-radius:50%}/*!@:host(.med-alternativas) .med-alternativas__left*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__left.sc-med-alternativas-a{padding:16px 16px 6px 16px}/*!@:host(.med-alternativas) .med-alternativas__right*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__right.sc-med-alternativas-a{-ms-flex:1 1 0%;flex:1 1 0%;overflow:hidden;text-align:left;padding:16px 16px 6px 16px;font-size:var(--font-size);font-weight:400;line-height:line-height(16px);text-align:justify;color:hsl(var(--med-color-neutral-9));cursor:pointer}/*!@:host(.med-alternativas) .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__wrapper.sc-med-alternativas-a{min-height:80px}/*!@:host(.med-alternativas) .med-alternativas__progress-bar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__progress-bar.sc-med-alternativas-a{--height:10px;-webkit-transition:all 300ms ease;transition:all 300ms ease;opacity:0;-webkit-transform:translateX(-120%);transform:translateX(-120%)}/*!@:host(.med-alternativas) .med-alternativas__riscar-icon*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-icon.sc-med-alternativas-a{stroke:hsl(var(--med-color-neutral-10));--ionicon-stroke-width:1px}@media (min-width: 768px){/*!@:host(.med-alternativas) .med-alternativas__list--has-image*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__list--has-image.sc-med-alternativas-a{display:grid;grid-template-columns:1fr 1fr;gap:16px}}/*!@:host(.med-alternativas) .med-alternativas__list--has-image .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__list--has-image.sc-med-alternativas-a .med-alternativas__riscar.sc-med-alternativas-a{position:absolute;top:10px;right:10px;height:auto;z-index:1;background:#000;padding:8px;border-radius:5px;opacity:0.5}/*!@:host(.med-alternativas) .image-container__image*/.med-alternativas.sc-med-alternativas-a-h .image-container__image.sc-med-alternativas-a{max-width:360px;width:100%;height:auto;display:block}/*!@:host(.med-alternativas) .med-alternativas__progress-bar--toggle*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__progress-bar--toggle.sc-med-alternativas-a{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}/*!@:host(.med-alternativas) .med-alternativas__item--selecionada .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--selecionada.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-brand-3))}/*!@:host(.med-alternativas) .med-alternativas__item--certa .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--certa.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--correta .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--correta.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--incorreta .option*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--incorreta.sc-med-alternativas-a .option.sc-med-alternativas-a{background:hsl(var(--med-color-fb-warning))}/*!@:host(.med-alternativas) .med-alternativas__item--selecionada .option__fake:before,\n:host(.med-alternativas) .med-alternativas__item--correta .option__fake:before,\n:host(.med-alternativas) .med-alternativas__item--incorreta .option__fake:before*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--selecionada.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--correta.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--incorreta.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before{opacity:1}/*!@:host(.med-alternativas) .med-alternativas__item--certa .option__fake:before*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--certa.sc-med-alternativas-a .option__fake.sc-med-alternativas-a:before{opacity:0}/*!@:host(.med-alternativas) .med-alternativas__item--show*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--show.sc-med-alternativas-a{background:hsl(var(--med-color-neutral-2))}/*!@:host(.med-alternativas) .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar.sc-med-alternativas-a{color:hsl(var(--med-color-neutral-10));padding:0 16px;font-size:14px;font-weight:400;line-height:100%;display:-ms-flexbox;display:flex;height:100%;visibility:hidden;opacity:0;pointer-events:none;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;position:absolute;right:0px;top:0px;background:hsl(var(--med-color-neutral-2));-webkit-transition:opacity 300ms;transition:opacity 300ms}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__left,\n:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right,\n:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__progress-bar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__left.sc-med-alternativas-a,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__right.sc-med-alternativas-a,.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__progress-bar.sc-med-alternativas-a{opacity:0.5}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--riscado.sc-med-alternativas-a .med-alternativas__right.sc-med-alternativas-a{text-decoration:line-through}/*!@:host(.med-alternativas) .med-alternativas__riscar--show*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar--show.sc-med-alternativas-a{visibility:visible;opacity:1;pointer-events:all}/*!@:host(.med-alternativas) .med-alternativas__riscar-span*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-span.sc-med-alternativas-a{display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .med-alternativas__riscar-desktop*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-desktop.sc-med-alternativas-a{display:none;padding-left:4px}@media (min-width: 768px){/*!@:host(.med-alternativas) .med-alternativas__riscar-desktop*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__riscar-desktop.sc-med-alternativas-a{display:-ms-flexbox;display:flex}}@media (min-width: 768px){/*!@:host(.med-alternativas) .image-container__button*/.med-alternativas.sc-med-alternativas-a-h .image-container__button.sc-med-alternativas-a{display:none}}@media (any-hover: hover) and (pointer: fine){/*!@:host(.med-alternativas) .med-alternativas__item--permite-riscar:hover*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--permite-riscar.sc-med-alternativas-a:hover{background:hsl(var(--med-color-neutral-2))}/*!@:host(.med-alternativas) .med-alternativas__item--permite-riscar:hover .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-a-h .med-alternativas__item--permite-riscar.sc-med-alternativas-a:hover .med-alternativas__riscar.sc-med-alternativas-a{visibility:visible;opacity:1;pointer-events:all}}";
 
 class MedAlternativasA {
   constructor(hostRef) {
@@ -14611,31 +14708,31 @@ class MedAlternativasA {
     this.medRiscada = createEvent(this, "medRiscada", 7);
     this.medGalleryRequest = createEvent(this, "medGalleryRequest", 7);
     /**
-     * TODO
+     * todo
      */
     this.alternativas = [];
     /**
-     * TODO
+     * todo
      */
     this.keyAlternativa = 'Alternativa';
     /**
-     * TODO
+     * todo
      */
     this.keyEnunciado = 'Enunciado';
     /**
-     * TODO
+     * todo
      */
     this.keyImagem = 'Imagem';
     /**
-     * TODO
+     * todo
      */
     this.keyPorcentagem = 'Porcentagem';
     /**
-     * TODO
+     * todo
      */
     this.keyRiscada = 'Riscada';
     /**
-     * TODO
+     * todo
      */
     this.permiteRiscar = true;
     this.permiteAlterar = true;
@@ -14658,7 +14755,7 @@ class MedAlternativasA {
           hasImage = true;
       });
     }
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-alternativas': true,
       }) }, hAsync("div", { class: `
            med-alternativas__list
@@ -14709,7 +14806,7 @@ class MedAlternativasA {
   }; }
 }
 
-const medAlternativasBCss = "/*!@:host*/.sc-med-alternativas-b-h{--background:hsl(var(--med-color-brand-1));--background-selecionada:hsl(var(--med-color-brand-1));--font-size:14px;--color-alternativa:hsl(var(--med-color-brand-3))}/*!@:host(.med-alternativas)*/.med-alternativas.sc-med-alternativas-b-h{display:block}/*!@:host(.med-alternativas) .med-alternativas__container*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__container.sc-med-alternativas-b{position:relative;display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__wrapper.sc-med-alternativas-b{min-height:68px;background:hsl(var(--med-color-neutral-2));border-radius:8px;cursor:pointer;overflow:hidden;position:relative}/*!@:host(.med-alternativas) .med-alternativas__left*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__left.sc-med-alternativas-b{background:var(--background);min-width:40px;text-align:center;padding-top:16px;font-size:24px;line-height:20px;font-weight:500;color:var(--color-alternativa);border-top-left-radius:8px;border-bottom-left-radius:8px}/*!@:host(.med-alternativas) .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__right.sc-med-alternativas-b{-ms-flex:1;flex:1;text-align:left;overflow:hidden;padding:16px;font-size:var(--font-size);line-height:24px;font-weight:400;color:hsl(var(--med-color-neutral-10));border-top-right-radius:8px;border-bottom-right-radius:8px}/*!@:host(.med-alternativas) .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__wrapper.sc-med-alternativas-b{min-height:unset}/*!@:host(.med-alternativas) .med-alternativas__progress-bar*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__progress-bar.sc-med-alternativas-b{--background:hsl(var(--med-color-neutral-2));--height:10px;margin-top:8px;margin-bottom:16px;-webkit-transition:all 300ms ease;transition:all 300ms ease;opacity:0;-webkit-transform:translateX(-100%);transform:translateX(-100%)}/*!@:host(.med-alternativas) .image-container*/.med-alternativas.sc-med-alternativas-b-h .image-container.sc-med-alternativas-b{display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap}/*!@:host(.med-alternativas) .image-container--margin*/.med-alternativas.sc-med-alternativas-b-h .image-container--margin.sc-med-alternativas-b{margin-top:16px}/*!@:host(.med-alternativas) .image-container__wrapper*/.med-alternativas.sc-med-alternativas-b-h .image-container__wrapper.sc-med-alternativas-b{position:relative;display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .image-container__image*/.med-alternativas.sc-med-alternativas-b-h .image-container__image.sc-med-alternativas-b{width:auto;max-height:100px;display:block;display:inline-block}/*!@:host(.med-alternativas) .image-container__button*/.med-alternativas.sc-med-alternativas-b-h .image-container__button.sc-med-alternativas-b{width:24px;height:24px;display:-ms-flexbox;display:flex;background:hsl(var(--med-color-brand-1));position:absolute;bottom:4px;right:4px;pointer-events:none;border-radius:50%;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}/*!@:host(.med-alternativas) .image-container__icon*/.med-alternativas.sc-med-alternativas-b-h .image-container__icon.sc-med-alternativas-b{stroke:hsl(var(--med-color-neutral-10));pointer-events:none;font-size:16px}/*!@:host(.med-alternativas) .med-alternativas__progress-bar--toggle*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__progress-bar--toggle.sc-med-alternativas-b{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}/*!@:host(.med-alternativas) .med-alternativas__item--selecionada .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--selecionada.sc-med-alternativas-b .med-alternativas__wrapper.sc-med-alternativas-b{background:hsl(var(--med-color-brand-1))}/*!@:host(.med-alternativas) .med-alternativas__item--certa*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--certa.sc-med-alternativas-b{--background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--certa .med-alternativas__left*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--certa.sc-med-alternativas-b .med-alternativas__left.sc-med-alternativas-b{color:hsl(var(--med-color-neutral-1));font-weight:500}/*!@:host(.med-alternativas) .med-alternativas__item--correta*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--correta.sc-med-alternativas-b{--background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--correta .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--correta.sc-med-alternativas-b .med-alternativas__wrapper.sc-med-alternativas-b{background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--correta .med-alternativas__left,\n:host(.med-alternativas) .med-alternativas__item--correta .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--correta.sc-med-alternativas-b .med-alternativas__left.sc-med-alternativas-b,.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--correta.sc-med-alternativas-b .med-alternativas__right.sc-med-alternativas-b{color:hsl(var(--med-color-neutral-1));font-weight:500}/*!@:host(.med-alternativas) .med-alternativas__item--incorreta*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--incorreta.sc-med-alternativas-b{--background:hsl(var(--med-color-fb-warning))}/*!@:host(.med-alternativas) .med-alternativas__item--incorreta .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--incorreta.sc-med-alternativas-b .med-alternativas__wrapper.sc-med-alternativas-b{background:hsl(var(--med-color-fb-warning))}/*!@:host(.med-alternativas) .med-alternativas__item--incorreta .med-alternativas__left,\n:host(.med-alternativas) .med-alternativas__item--incorreta .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--incorreta.sc-med-alternativas-b .med-alternativas__left.sc-med-alternativas-b,.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--incorreta.sc-med-alternativas-b .med-alternativas__right.sc-med-alternativas-b{color:hsl(var(--med-color-neutral-1));font-weight:500}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__left,\n:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--riscado.sc-med-alternativas-b .med-alternativas__left.sc-med-alternativas-b,.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--riscado.sc-med-alternativas-b .med-alternativas__right.sc-med-alternativas-b{opacity:0.5}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--riscado.sc-med-alternativas-b .med-alternativas__right.sc-med-alternativas-b{text-decoration:line-through}/*!@:host(.med-alternativas) .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__riscar.sc-med-alternativas-b{background-color:hsl(var(--med-color-fb-attention));color:hsl(var(--med-color-neutral-1));padding:0 16px;border-top-right-radius:8px;border-bottom-right-radius:8px;font-size:14px;font-weight:500;line-height:100%;position:absolute;top:0;right:0;width:85px;height:100%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-webkit-transform:translateX(120px);transform:translateX(120px);-webkit-transition:-webkit-transform 300ms;transition:-webkit-transform 300ms;transition:transform 300ms;transition:transform 300ms, -webkit-transform 300ms}/*!@:host(.med-alternativas) .med-alternativas__riscar--show*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__riscar--show.sc-med-alternativas-b{-webkit-transform:translateX(0);transform:translateX(0)}@media (any-hover: hover) and (pointer: fine){/*!@:host(.med-alternativas) .med-alternativas__item--permite-riscar .med-alternativas__wrapper:hover .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--permite-riscar.sc-med-alternativas-b .med-alternativas__wrapper.sc-med-alternativas-b:hover .med-alternativas__riscar.sc-med-alternativas-b{-webkit-transform:translateX(0);transform:translateX(0)}}/*!@:host(.med-color)*/.med-color.sc-med-alternativas-b-h{--background:hsl(var(--med-color-1));--background-selecionada:hsl(var(--med-color-1));--color-alternativa:hsl(var(--med-color-3))}/*!@:host(.med-color) .med-alternativas__progress-bar*/.med-color.sc-med-alternativas-b-h .med-alternativas__progress-bar.sc-med-alternativas-b{--progress-background:hsl(var(--med-color-4))}";
+const medAlternativasBCss = "/*!@:host*/.sc-med-alternativas-b-h{--background:hsl(var(--med-color-brand-1));--background-selecionada:hsl(var(--med-color-brand-1));--font-size:14px;--color-alternativa:hsl(var(--med-color-brand-3))}/*!@:host(.med-alternativas)*/.med-alternativas.sc-med-alternativas-b-h{display:block}/*!@:host(.med-alternativas) .med-alternativas__container*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__container.sc-med-alternativas-b{position:relative;display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__wrapper.sc-med-alternativas-b{min-height:68px;background:hsl(var(--med-color-neutral-2));border-radius:8px;cursor:pointer;overflow:hidden;position:relative}/*!@:host(.med-alternativas) .med-alternativas__left*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__left.sc-med-alternativas-b{background:var(--background);min-width:40px;text-align:center;padding-top:16px;font-size:24px;line-height:20px;font-weight:500;color:var(--color-alternativa);border-top-left-radius:8px;border-bottom-left-radius:8px}/*!@:host(.med-alternativas) .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__right.sc-med-alternativas-b{-ms-flex:1;flex:1;text-align:left;overflow:hidden;padding:16px;font-size:var(--font-size);line-height:line-height(14px);font-weight:400;color:hsl(var(--med-color-neutral-10));border-top-right-radius:8px;border-bottom-right-radius:8px}/*!@:host(.med-alternativas) .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__wrapper.sc-med-alternativas-b{min-height:unset}/*!@:host(.med-alternativas) .med-alternativas__progress-bar*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__progress-bar.sc-med-alternativas-b{--background:hsl(var(--med-color-neutral-2));--height:10px;margin-top:8px;margin-bottom:16px;-webkit-transition:all 300ms ease;transition:all 300ms ease;opacity:0;-webkit-transform:translateX(-100%);transform:translateX(-100%)}/*!@:host(.med-alternativas) .image-container*/.med-alternativas.sc-med-alternativas-b-h .image-container.sc-med-alternativas-b{display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap}/*!@:host(.med-alternativas) .image-container--margin*/.med-alternativas.sc-med-alternativas-b-h .image-container--margin.sc-med-alternativas-b{margin-top:16px}/*!@:host(.med-alternativas) .image-container__wrapper*/.med-alternativas.sc-med-alternativas-b-h .image-container__wrapper.sc-med-alternativas-b{position:relative;display:-ms-flexbox;display:flex}/*!@:host(.med-alternativas) .image-container__image*/.med-alternativas.sc-med-alternativas-b-h .image-container__image.sc-med-alternativas-b{width:auto;max-height:100px;display:block;display:inline-block}/*!@:host(.med-alternativas) .image-container__button*/.med-alternativas.sc-med-alternativas-b-h .image-container__button.sc-med-alternativas-b{width:24px;height:24px;display:-ms-flexbox;display:flex;background:hsl(var(--med-color-brand-1));position:absolute;bottom:4px;right:4px;pointer-events:none;border-radius:50%;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}/*!@:host(.med-alternativas) .image-container__icon*/.med-alternativas.sc-med-alternativas-b-h .image-container__icon.sc-med-alternativas-b{stroke:hsl(var(--med-color-neutral-10));pointer-events:none;font-size:16px}/*!@:host(.med-alternativas) .med-alternativas__progress-bar--toggle*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__progress-bar--toggle.sc-med-alternativas-b{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}/*!@:host(.med-alternativas) .med-alternativas__item--selecionada .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--selecionada.sc-med-alternativas-b .med-alternativas__wrapper.sc-med-alternativas-b{background:hsl(var(--med-color-brand-1))}/*!@:host(.med-alternativas) .med-alternativas__item--certa*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--certa.sc-med-alternativas-b{--background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--certa .med-alternativas__left*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--certa.sc-med-alternativas-b .med-alternativas__left.sc-med-alternativas-b{color:hsl(var(--med-color-neutral-1));font-weight:500}/*!@:host(.med-alternativas) .med-alternativas__item--correta*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--correta.sc-med-alternativas-b{--background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--correta .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--correta.sc-med-alternativas-b .med-alternativas__wrapper.sc-med-alternativas-b{background:hsl(var(--med-color-fb-success))}/*!@:host(.med-alternativas) .med-alternativas__item--correta .med-alternativas__left,\n:host(.med-alternativas) .med-alternativas__item--correta .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--correta.sc-med-alternativas-b .med-alternativas__left.sc-med-alternativas-b,.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--correta.sc-med-alternativas-b .med-alternativas__right.sc-med-alternativas-b{color:hsl(var(--med-color-neutral-1));font-weight:500}/*!@:host(.med-alternativas) .med-alternativas__item--incorreta*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--incorreta.sc-med-alternativas-b{--background:hsl(var(--med-color-fb-warning))}/*!@:host(.med-alternativas) .med-alternativas__item--incorreta .med-alternativas__wrapper*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--incorreta.sc-med-alternativas-b .med-alternativas__wrapper.sc-med-alternativas-b{background:hsl(var(--med-color-fb-warning))}/*!@:host(.med-alternativas) .med-alternativas__item--incorreta .med-alternativas__left,\n:host(.med-alternativas) .med-alternativas__item--incorreta .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--incorreta.sc-med-alternativas-b .med-alternativas__left.sc-med-alternativas-b,.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--incorreta.sc-med-alternativas-b .med-alternativas__right.sc-med-alternativas-b{color:hsl(var(--med-color-neutral-1));font-weight:500}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__left,\n:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--riscado.sc-med-alternativas-b .med-alternativas__left.sc-med-alternativas-b,.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--riscado.sc-med-alternativas-b .med-alternativas__right.sc-med-alternativas-b{opacity:0.5}/*!@:host(.med-alternativas) .med-alternativas__item--riscado .med-alternativas__right*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--riscado.sc-med-alternativas-b .med-alternativas__right.sc-med-alternativas-b{text-decoration:line-through}/*!@:host(.med-alternativas) .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__riscar.sc-med-alternativas-b{background-color:hsl(var(--med-color-fb-attention));color:hsl(var(--med-color-neutral-1));padding:0 16px;border-top-right-radius:8px;border-bottom-right-radius:8px;font-size:14px;font-weight:500;line-height:100%;position:absolute;top:0;right:0;width:85px;height:100%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-webkit-transform:translateX(120px);transform:translateX(120px);-webkit-transition:-webkit-transform 300ms;transition:-webkit-transform 300ms;transition:transform 300ms;transition:transform 300ms, -webkit-transform 300ms}/*!@:host(.med-alternativas) .med-alternativas__riscar--show*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__riscar--show.sc-med-alternativas-b{-webkit-transform:translateX(0);transform:translateX(0)}@media (any-hover: hover) and (pointer: fine){/*!@:host(.med-alternativas) .med-alternativas__item--permite-riscar .med-alternativas__wrapper:hover .med-alternativas__riscar*/.med-alternativas.sc-med-alternativas-b-h .med-alternativas__item--permite-riscar.sc-med-alternativas-b .med-alternativas__wrapper.sc-med-alternativas-b:hover .med-alternativas__riscar.sc-med-alternativas-b{-webkit-transform:translateX(0);transform:translateX(0)}}/*!@:host(.med-color)*/.med-color.sc-med-alternativas-b-h{--background:hsl(var(--med-color-1));--background-selecionada:hsl(var(--med-color-1));--color-alternativa:hsl(var(--med-color-3))}/*!@:host(.med-color) .med-alternativas__progress-bar*/.med-color.sc-med-alternativas-b-h .med-alternativas__progress-bar.sc-med-alternativas-b{--progress-background:hsl(var(--med-color-4))}";
 
 class MedAlternativasB {
   constructor(hostRef) {
@@ -14718,31 +14815,31 @@ class MedAlternativasB {
     this.medRiscada = createEvent(this, "medRiscada", 7);
     this.medGalleryRequest = createEvent(this, "medGalleryRequest", 7);
     /**
-     * TODO
+     * todo
      */
     this.alternativas = [];
     /**
-     * TODO
+     * todo
      */
     this.keyAlternativa = 'Alternativa';
     /**
-     * TODO
+     * todo
      */
     this.keyEnunciado = 'Enunciado';
     /**
-     * TODO
+     * todo
      */
     this.keyImagem = 'Imagem';
     /**
-     * TODO
+     * todo
      */
     this.keyPorcentagem = 'Porcentagem';
     /**
-     * TODO
+     * todo
      */
     this.keyRiscada = 'Riscada';
     /**
-     * TODO
+     * todo
      */
     this.permiteRiscar = true;
     this.permiteAlterar = true;
@@ -14758,7 +14855,7 @@ class MedAlternativasB {
   render() {
     const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-alternativas': true,
       }) }, hAsync("div", { class: "med-alternativas__list", role: "list" }, this.alternativas.map((alternativa, indice) => (hAsync("div", { role: "listitem", onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
                 med-alternativas__item med-alternativas__item--${alternativa[this.keyAlternativa]}
@@ -14833,7 +14930,7 @@ class MedAvatar {
   }
   render() {
     const { dsColor, dsSize, image, letter } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-avatar': true,
         [`med-avatar--${dsSize}`]: dsSize !== undefined,
       }) }, letter && !image && hAsync("span", { class: "med-avatar__letter" }, letter), image && hAsync("img", { class: "med-avatar__image", src: image })));
@@ -14870,7 +14967,7 @@ class MedBanner {
   }
   render() {
     const { dsColor, titulo, texto, btnLeft, btnRight, icon, image } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-notification': true,
       }) }, (titulo || texto) && hAsync("div", { class: "med-notification__content" }, hAsync("div", { class: "med-notification__left" }, hAsync("div", { class: "med-notification__header" }, titulo && hAsync("med-type", { class: "med-notification__titulo" }, " ", titulo, " "), icon && hAsync("ion-icon", { class: "med-notification__icon med-icon", name: icon })), texto && hAsync("med-type", { class: "med-notification__texto" }, " ", texto, " ")), image && hAsync("div", { class: "med-notification__right" }, hAsync("img", { class: "med-notification__image", src: image }))), (btnLeft || btnRight) && hAsync("div", { class: "med-notification__footer" }, btnLeft && hAsync("ion-button", { class: "med-notification__button", mode: "ios", "ds-color": dsColor, fill: "clear", "ds-size": "xs", onClick: this.onButtonLeftClick }, " ", btnLeft, " "), btnRight && hAsync("ion-button", { class: "med-notification__button", mode: "ios", "ds-color": dsColor, fill: "clear", "ds-size": "xs", onClick: this.onButtonRightClick }, " ", btnRight, " "))));
   }
@@ -14895,19 +14992,13 @@ class MedBanner {
 
 const medBaseCss = ".sc-med-base-h{--background:hsl(var(--med-color-neutral-2));--text-color:hsl(var(--med-color-neutral-10));--border-radius:8px;--padding-horizontal:16px;--padding-vertical:16px;--gap:8px}.sc-med-base-h{display:-ms-flexbox;display:flex;background:var(--background);border-radius:var(--border-radius);padding:var(--padding-vertical) var(--padding-horizontal);color:var(--color)}.sc-med-base-s>med-type{--color:var(--text-color)}.sc-med-base-s>[slot=middle]{-ms-flex-positive:1;flex-grow:1}.sc-med-base-h.sc-med-base-s>[slot=middle]{padding-left:var(--gap);padding-right:var(--gap)}.med-color.sc-med-base-h{--background:hsl(var(--med-color-1));--text-color:hsl(var(--med-color-neutral-10))}.med-color-neutral.sc-med-base-h{--background:hsl(var(--med-color-neutral));--text-color:hsl(var(--med-color-neutral-contrast))}.med-color-feedback.sc-med-base-h{--background:hsl(var(--med-color-feedback));--text-color:hsl(var(--med-color-feedback-contrast))}.med-base--radius-s00.sc-med-base-h{--border-radius:0px}.med-base--radius-s02.sc-med-base-h{--border-radius:2px}.med-base--radius-s04.sc-med-base-h{--border-radius:4px}.med-base--radius-s08.sc-med-base-h{--border-radius:8px}.sc-med-base-h.med-base--gap-s00.sc-med-base-s>[slot=middle]{--gap:0}.sc-med-base-h.med-base--gap-s02.sc-med-base-s>[slot=middle]{--gap:1px}.sc-med-base-h.med-base--gap-s04.sc-med-base-s>[slot=middle]{--gap:2px}.sc-med-base-h.med-base--gap-s08.sc-med-base-s>[slot=middle]{--gap:4px}.sc-med-base-h.med-base--gap-s12.sc-med-base-s>[slot=middle]{--gap:6px}.sc-med-base-h.med-base--gap-s16.sc-med-base-s>[slot=middle]{--gap:8px}.sc-med-base-h.med-base--gap-s20.sc-med-base-s>[slot=middle]{--gap:10px}.sc-med-base-h.med-base--gap-s24.sc-med-base-s>[slot=middle]{--gap:12px}.med-base--spacing-h-s00.sc-med-base-h{--padding-horizontal:0}.med-base--spacing-h-s02.sc-med-base-h{--padding-horizontal:2px}.med-base--spacing-h-s04.sc-med-base-h{--padding-horizontal:4px}.med-base--spacing-h-s08.sc-med-base-h{--padding-horizontal:8px}.med-base--spacing-h-s12.sc-med-base-h{--padding-horizontal:12px}.med-base--spacing-h-s16.sc-med-base-h{--padding-horizontal:16px}.med-base--spacing-h-s20.sc-med-base-h{--padding-horizontal:20px}.med-base--spacing-h-s24.sc-med-base-h{--padding-horizontal:24px}.med-base--spacing-v-s00.sc-med-base-h{--padding-vertical:0}.med-base--spacing-v-s02.sc-med-base-h{--padding-vertical:2px}.med-base--spacing-v-s04.sc-med-base-h{--padding-vertical:4px}.med-base--spacing-v-s08.sc-med-base-h{--padding-vertical:8px}.med-base--spacing-v-s12.sc-med-base-h{--padding-vertical:12px}.med-base--spacing-v-s16.sc-med-base-h{--padding-vertical:16px}.med-base--spacing-v-s20.sc-med-base-h{--padding-vertical:20px}.med-base--spacing-v-s24.sc-med-base-h{--padding-vertical:24px}";
 
-/**
- * @slot - Slot default.
- * @slot start - Conteúdo é posicionado a esquerda do componente.
- * @slot middle - Conteúdo é posicionado ao centro do componente.
- * @slot end - Conteúdo é posicionado a direita do componente.
- */
 class MedBase {
   constructor(hostRef) {
     registerInstance(this, hostRef);
   }
   render() {
     const { dsColor, radius, gap, spacingV, spacingH } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-base': true,
         [`med-base--radius-${radius}`]: radius !== undefined,
         [`med-base--gap-${gap}`]: gap !== undefined,
@@ -14939,8 +15030,17 @@ class MedCalendar {
     registerInstance(this, hostRef);
     this.medClick = createEvent(this, "medClick", 7);
     this.medSwipe = createEvent(this, "medSwipe", 7);
+    /**
+     * todo
+     */
     this.disable = false;
+    /**
+     * todo
+     */
     this.choice = 'Semana';
+    /**
+     * todo
+     */
     this.width = 166;
   }
   connectedCallback() {
@@ -15012,7 +15112,7 @@ class MedCalendar {
   } */
   render() {
     const { dsColor, mes, ano, disable } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-calendar': true,
         'med-calendar--disable': disable,
       }), style: { '--width': `${this.width}` } }, hAsync("div", { class: "header" }, hAsync("div", { class: "header__left" }, hAsync("ion-button", { "icon-only": true, mode: "ios", "ds-size": "xxs", fill: "clear", onClick: () => this.onMonthClick('prev') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })), hAsync("med-type", { class: "header__type", token: "p16b" }, mes, " ", ano), hAsync("ion-button", { "icon-only": true, mode: "ios", "ds-size": "xxs", fill: "clear", onClick: () => this.onMonthClick('next') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))), hAsync("div", { class: "header__right" }, hAsync("ion-button", { mode: "ios", "ds-size": "sm", fill: "clear", onClick: () => this.onChoiceClick() }, hAsync("med-type", { class: "choice__type" }, this.choice), hAsync("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })))), hAsync("div", { class: "content" }, hAsync("div", { class: "content__header" }, hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Seg")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Ter")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Qua")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Qui")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Sex")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Sab")), hAsync("div", { class: "content__week-day" }, hAsync("med-type", { class: "content__week-type" }, "Dom"))), hAsync("div", { class: "content__container", ref: (el) => { this.containerEl = el; } }, hAsync("slot", null)))));
@@ -15045,11 +15145,14 @@ const medCalendarDayCss = "/*!@:host*/.sc-med-calendar-day-h{--border-color:hsl(
 class MedCalendarDay {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    /**
+     * todo
+     */
     this.active = false;
   }
   render() {
     const { dsColor, active, fill } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-calendar-day': true,
         'med-calendar-day--active': active,
         [`med-calendar-day--${fill}`]: fill !== undefined
@@ -15078,7 +15181,7 @@ class MedCaption {
   }
   render() {
     const { dsColor, dsSize } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-caption': true,
         [`med-caption--${dsSize}`]: dsSize !== undefined,
       }) }, hAsync("slot", null)));
@@ -15102,6 +15205,9 @@ const medCarregamentoCss = ".sc-med-carregamento-h{display:block}.loader.sc-med-
 class MedCarregamento {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    /**
+     * todo
+     */
     this.color = '#808080';
   }
   render() {
@@ -15127,21 +15233,21 @@ class MedCartaoRespostaItem {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-    * TODO
+    * todo
     */
     this.anulada = false;
     /**
-     * TODO
+     * todo
      */
     this.impressa = false;
     /**
-     * TODO
+     * todo
      */
     this.ativa = false;
   }
   render() {
     const { dsColor, anulada, impressa, ativa } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-cartao-resposta-item': true,
         'med-cartao-resposta-item--anulada': anulada,
         'med-cartao-resposta-item--impressa': impressa,
@@ -15194,16 +15300,16 @@ class MedChartBar {
     registerInstance(this, hostRef);
     this.hostHeight = 0;
     /**
-      * Define a valor da %(porcentagem) do componente.
-      */
+     * todo
+     */
     this.value = 0;
     /**
-      * Define a valor da altura do componente.
-      */
+     * todo
+     */
     this.height = 50;
     /**
-      * Define a valor da largura do componente.
-      */
+     * todo
+     */
     this.width = 32;
   }
   componentDidLoad() {
@@ -15227,7 +15333,7 @@ class MedChartBar {
   render() {
     const { dsColor, value, height, width } = this;
     const percentage = value === 0 ? height - 1 : height - ((height * value) / 100);
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } }, hAsync("div", { class: "med-chart-bar__container" }, hAsync("div", { class: "med-chart-bar__label" }, hAsync("slot", null)), hAsync("div", { class: "med-chart-bar__progress" }))));
+    return (hAsync(Host, { class: generateMedColor(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } }, hAsync("div", { class: "med-chart-bar__container" }, hAsync("div", { class: "med-chart-bar__label" }, hAsync("slot", null)), hAsync("div", { class: "med-chart-bar__progress" }))));
   }
   get hostElement() { return getElement(this); }
   static get style() { return medChartBarCss; }
@@ -15252,15 +15358,15 @@ class MedChartBarHorizontal {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * Define a visibilidade do label.
+     * todo
      */
     this.label = true;
     /**
-     * Define a visibilidade do label.
+     * todo
      */
     this.hideValue = false;
     /**
-     * Define o valor do componente.
+     * todo
      */
     this.value = 0;
   }
@@ -15279,10 +15385,10 @@ class MedChartBarHorizontal {
       progressWidth = value;
       progressClass = '';
     }
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         [`med-chart-bar-horizontal ${progressClass}`]: true,
         [`med-chart-bar-horizontal--${dsSize}`]: dsSize !== undefined,
-      }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, hAsync("div", { class: "med-chart-bar-horizontal__container" }, hAsync("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }), hAsync("div", { class: "med-chart-bar-horizontal__track", part: "track" })), label && hAsync("med-type", { class: "med-chart-bar-horizontal__label" }, !hideValue ? `${value}%` : '', labelContent)));
+      }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, hAsync("div", { class: "med-chart-bar-horizontal__container" }, hAsync("div", { class: "med-chart-bar-horizontal__progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }), hAsync("div", { class: "med-chart-bar-horizontal__track" })), label && hAsync("med-type", { class: "med-chart-bar-horizontal__label" }, !hideValue ? `${value}%` : '', labelContent)));
   }
   static get style() { return medChartBarHorizontalCss; }
   static get cmpMeta() { return {
@@ -15308,13 +15414,13 @@ class MedChartCategoria {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define o valor do componente.
-      */
+     * todo
+     */
     this.value = 0;
   }
   render() {
     const { dsColor, value, titulo, meta, realizado } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-chart-categoria': true,
       }) }, hAsync("div", { class: "med-chart-categoria__header" }, hAsync("med-type", { token: "p12b" }, titulo), hAsync("div", { class: "med-chart-categoria__info" }, hAsync("div", { class: "med-chart-categoria__meta" }, hAsync("med-type", { token: "p10", dsColor: "neutral-8" }, "Meta"), hAsync("med-type", { class: "med-chart-categoria__info-type", token: "p10b" }, meta)), hAsync("div", { class: "med-chart-categoria__realizado" }, hAsync("med-type", { token: "p10", dsColor: "neutral-8" }, "Realizado"), hAsync("med-type", { class: "med-chart-categoria__info-type med-chart-categoria__info-type--realizado", token: "p10b" }, realizado)))), hAsync("med-chart-bar-horizontal", { class: "med-chart-categoria__chart", dsColor: dsColor, value: value })));
   }
@@ -15341,8 +15447,8 @@ class MedChartRadial {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-       * Define os valores do gráfico
-       */
+     * todo
+     */
     this.valores = [];
   }
   render() {
@@ -15356,7 +15462,7 @@ class MedChartRadial {
       totais.subtotais.push(totais.total);
     });
     const arrayReverse = this.valores.slice(0).reverse();
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-chart-radial': true,
         [`med-chart-radial--${dsName}`]: dsName !== undefined,
         [`med-chart-radial--${dsSize}`]: dsSize !== undefined,
@@ -15393,7 +15499,7 @@ class MedChartRadialContent {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * TODO
+     * todo
      */
     this.total = 0;
   }
@@ -15411,7 +15517,7 @@ class MedChartRadialContent {
   }
   render() {
     const { total, dsColor, dsSize } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-chart-radial-content': true,
         [`med-chart-radial-content--${dsSize}`]: dsSize !== undefined,
       }) }, hAsync("span", { class: "med-chart-radial-content__label" }, "Total de"), hAsync("span", { class: `med-chart-radial-content__number ${this.fontResize()}` }, total), hAsync("span", { class: "med-chart-radial-content__label" }, "Quest\u00F5es")));
@@ -15440,14 +15546,14 @@ class MedChartRadialLabel {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * TODO
+     * todo
      */
     this.valores = [];
   }
   render() {
     const { dsColor, dsSize } = this;
     //const arrayReverse = this.valores.slice(0).reverse();
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-chart-radial-label': true,
         [`med-chart-radial-label--${dsSize}`]: dsSize !== undefined,
       }) }, hAsync("ul", { class: "med-chart-radial-label__list" }, this.valores.map((item) => {
@@ -15477,8 +15583,8 @@ class MedCheckCard {
     this.medClick = createEvent(this, "medClick", 7);
     this.medTooltipClose = createEvent(this, "medTooltipClose", 7);
     /**
-      * Define o estado.
-      */
+     * todo
+     */
     this.alert = false;
   }
   onClick() {
@@ -15489,7 +15595,7 @@ class MedCheckCard {
   }
   render() {
     const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, dataInicial, dataFinal, iconName } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-check-card': true,
         'med-check-card--alert': alert,
       }) }, hAsync("med-base", { "spacing-v": "s00", "spacing-h": "s00", class: "med-check-card__base" }, hAsync("div", { class: "med-check-card__input-container" }, hAsync("slot", { name: "input" })), hAsync("div", { class: "med-check-card__container", onClick: () => this.onClick() }, hAsync("div", { class: "med-check-card__text-container" }, hAsync("med-type", { class: "med-check-card__title", token: "p16xb" }, titulo), hAsync("div", { class: "med-check-card__title-wrap" }, hAsync("div", { class: "med-check-card__info-container" }, hAsync("div", { class: "med-check-card__container-fix" }, hAsync("ion-icon", { class: "med-check-card__icon med-icon med-icon--xs", name: iconName }), hAsync("med-type", { class: "med-check-card__subtitulo", token: "p12xb" }, categoria)), !dataInicial && !dataFinal && horaInicial && horaFinal && hAsync("med-type", { class: "med-check-card__hora", token: "p12x" }, horaInicial, " \u2013 ", horaFinal), dataInicial && dataFinal && !horaInicial && !horaFinal && hAsync("med-type", { class: "med-check-card__data", token: "p12x" }, dataInicial, " at\u00E9 ", dataFinal))), dataInicial && dataFinal && horaInicial && horaFinal && hAsync("med-type", { class: "med-check-card__data-hora", token: "p12x" }, dataInicial, " - ", horaInicial, " at\u00E9 ", dataFinal, " - ", horaFinal))), hAsync("div", { class: alert ? 'med-check-card__tooltip-container' : '' }, hAsync("slot", { name: "tooltip" })))));
@@ -15525,11 +15631,11 @@ class MedChip {
     this.medBlur = createEvent(this, "medBlur", 7);
     this.medClick = createEvent(this, "medClick", 7);
     /**
-     * Define o estado disabled do componente.
+     * todo
      */
     this.disabled = false;
     /**
-     * Define o estado active do componente.
+     * todo
      */
     this.active = false;
     this.onFocus = () => {
@@ -15544,7 +15650,7 @@ class MedChip {
   }
   render() {
     const { dsColor, dsName, dsSize, disabled, label, active, iconLeft, iconRight } = this;
-    return (hAsync(Host, { "aria-disabled": this.disabled ? 'true' : null, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "aria-disabled": this.disabled ? 'true' : null, class: generateMedColor(dsColor, {
         'med-chip': true,
         'med-chip--active': active,
         'med-chip--disabled': disabled,
@@ -15612,12 +15718,12 @@ class MedContextMenu {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * Define o estado do componente.
+     * todo
      */
     this.collapsed = true;
   }
   /**
-   * Define o estado do componente programaticamente.
+   * todo
    */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
@@ -15629,10 +15735,10 @@ class MedContextMenu {
     }
   }
   render() {
-    return (hAsync(Host, { "from-stencil": true, class: createColorClasses$1(null, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(null, {
         'med-context-menu': true,
         'med-context-menu--collapsed': this.collapsed
-      }, null) }, hAsync("ion-button", { mode: "ios", "icon-only": true, onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", fill: "clear", "ds-size": "sm" }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon med-context-menu__icon", name: "med-context-menu" })), hAsync("div", { class: "med-context-menu__content" }, hAsync("ion-button", { mode: "ios", "icon-only": true, onClick: (event) => { this.toggle(event); }, class: "med-context-menu__inner-button", fill: "clear", "ds-size": "sm" }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon med-context-menu__inner-icon", name: "med-context-menu" })), hAsync("slot", null))));
+      }) }, hAsync("ion-button", { mode: "ios", "icon-only": true, onClick: (event) => { this.toggle(event); }, class: "med-context-menu__button", fill: "clear", "ds-size": "sm" }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon med-context-menu__icon", name: "med-context-menu" })), hAsync("div", { class: "med-context-menu__content" }, hAsync("ion-button", { mode: "ios", "icon-only": true, onClick: (event) => { this.toggle(event); }, class: "med-context-menu__inner-button", fill: "clear", "ds-size": "sm" }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon med-context-menu__inner-icon", name: "med-context-menu" })), hAsync("slot", null))));
   }
   static get style() { return medContextMenuCss; }
   static get cmpMeta() { return {
@@ -15657,23 +15763,23 @@ class MedDownloadButton {
     this.medCancelar = createEvent(this, "medCancelar", 7);
     this.medDownloading = createEvent(this, "medDownloading", 7);
     /**
-      * Define o valor da progress bar do componente.
-      */
+     * todo
+     */
     this.value = 0;
     /**
-      * Define o estado inicial do componente.
-      */
+     * todo
+     */
     this.initial = true;
     /**
-      * Define o estado do componente durante o download.
-      */
+     * todo
+     */
     this.downloading = false;
     /**
-      * Define o estado do componente quando download tiver concluído.
-      */
+     * todo
+     */
     this.downloaded = false;
     /**
-     * Define o estado habilitado ou desabilitado do componente.
+     * todo
      */
     this.disabled = false;
   }
@@ -15745,7 +15851,7 @@ class MedDownloadButton {
   }
   render() {
     const { dsColor, value, initial, downloading, downloaded } = this;
-    return (hAsync(Host, { onClick: (event) => { this.toggle(event); }, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { onClick: (event) => { this.toggle(event); }, class: generateMedColor(dsColor, {
         'med-download-button': true,
         'med-download-button--downloading': downloading && !initial,
         'med-download-button--downloaded': downloaded
@@ -15784,7 +15890,7 @@ class MedDropdown {
   }
   render() {
     const { dsName } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsName, {
+    return (hAsync(Host, { class: generateMedColor(null, {
         'med-dropdown': true,
         [`med-dropdown--${dsName}`]: dsName !== undefined,
       }) }, hAsync("slot", null)));
@@ -15822,7 +15928,7 @@ class MedDropdownContainer {
   }; }
 }
 
-const medEnunciadoCss = "/*!@:host*/.sc-med-enunciado-h{--font-size:16px;--font-weight:400;--line-height:200%;--color:hsl(var(--med-color-neutral-10));--text-align:justify;--image-list-padding-top:16px;display:block;font-size:var(--font-size);font-weight:var(--font-weight);line-height:var(--line-height);color:var(--color);text-align:var(--text-align)}/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{padding:0;margin:0;list-style:none;display:-ms-flexbox;display:flex;-ms-flex-pack:space-evenly;justify-content:space-evenly;padding-top:var(--image-list-padding-top);-ms-flex-direction:column;flex-direction:column}@media (min-width: 768px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}@media (min-width: 992px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:100%;cursor:pointer;position:relative;max-height:250px}@media (min-width: 768px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:50%}}@media (min-width: 992px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:33.33%}}/*!@:host .list__image*/.sc-med-enunciado-h .list__image.sc-med-enunciado{width:100%;height:auto;display:block;max-height:250px}/*!@:host .list .image__zoom*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado{background:hsl(var(--med-color-brand-1));width:24px;height:24px;border-radius:50px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;position:absolute;bottom:4px;right:4px}/*!@:host .list .image__zoom .med-icon*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado .med-icon.sc-med-enunciado{stroke:hsl(var(--med-color-neutral-10));font-size:14px}/*!@:host(.med-enunciado--skin)*/.med-enunciado--skin.sc-med-enunciado-h{--font-size:14px;--line-height:24px}";
+const medEnunciadoCss = "/*!@:host*/.sc-med-enunciado-h{--font-size:16px;--font-weight:400;--line-height:200%;--color:hsl(var(--med-color-neutral-10));--text-align:justify;--image-list-padding-top:16px;display:block;font-size:var(--font-size);font-weight:var(--font-weight);line-height:var(--line-height);color:var(--color);text-align:var(--text-align)}/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{padding:0;margin:0;list-style:none;display:-ms-flexbox;display:flex;-ms-flex-pack:space-evenly;justify-content:space-evenly;padding-top:var(--image-list-padding-top);-ms-flex-direction:column;flex-direction:column}@media (min-width: 768px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}@media (min-width: 992px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:100%;cursor:pointer;position:relative;max-height:250px}@media (min-width: 768px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:50%}}@media (min-width: 992px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:33.33%}}/*!@:host .list__image*/.sc-med-enunciado-h .list__image.sc-med-enunciado{width:100%;height:auto;display:block;max-height:250px}/*!@:host .list .image__zoom*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado{background:hsl(var(--med-color-brand-1));width:24px;height:24px;border-radius:50px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;position:absolute;bottom:4px;right:4px}/*!@:host .list .image__zoom .med-icon*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado .med-icon.sc-med-enunciado{stroke:hsl(var(--med-color-neutral-10));font-size:14px}/*!@:host(.med-enunciado--skin)*/.med-enunciado--skin.sc-med-enunciado-h{--font-size:14px;--line-height:line-height(14px)}";
 
 class MedEnunciado {
   constructor(hostRef) {
@@ -15839,7 +15945,7 @@ class MedEnunciado {
       this.imagens = typeof this.imagens === 'string' ? JSON.parse(this.imagens) : this.imagens;
       imagens = (hAsync("ul", { class: 'list' }, this.imagens.map((imagem) => (hAsync("li", { class: "list__item", onClick: () => this.imageRequest(imagem) }, hAsync("img", { class: "list__image", src: imagem, alt: "" }), hAsync("div", { class: "image__zoom" }, hAsync("ion-icon", { class: "med-icon", name: "med-busca" })))))));
     }
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(null, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(null, {
         'med-enunciado': true,
         [`med-enunciado--${dsName}`]: dsName !== undefined,
       }) }, hAsync("slot", null), imagens));
@@ -15889,22 +15995,13 @@ class MedEnunciadoDiscursiva {
   }; }
 }
 
-var MedFontSize;
-(function (MedFontSize) {
-  MedFontSize["XXXS"] = "12px";
-  MedFontSize["XXS"] = "14px";
-  MedFontSize["XS"] = "16px";
-  MedFontSize["SM"] = "20px";
-  MedFontSize["MD"] = "24px";
-})(MedFontSize || (MedFontSize = {}));
-
 const medFontZoomCss = "/*!@:host*/.sc-med-font-zoom-h{display:block}/*!@:host .med-icon*/.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}";
 
 class MedFontZoom {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * Define o tamnho da fonte
+     * todo
      */
     this.value = MedFontSize.XS;
     this.min = 1;
@@ -16013,12 +16110,18 @@ class MedImageZoom {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * TODO
+     * todo
      */
     this.imagens = [];
+    /**
+     * todo
+     */
     this.initialSlide = 0;
     this.defaultMaxRatio = 8;
     this.aplicandoZoom = false;
+    /**
+     * todo
+     */
     this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
   }
   getSliderOpts(maxRatio) {
@@ -16105,7 +16208,13 @@ class MedItem {
     this.labelColorStyles = {};
     this.itemStyles = new Map();
     this.multipleInputs = false;
+    /**
+     * todo
+     */
     this.contain = false;
+    /**
+     * todo
+     */
     this.noPadding = false;
     /**
      * If `true`, a button tag will be rendered and the item will be tappable.
@@ -16268,7 +16377,7 @@ class MedItem {
     this.itemStyles.forEach(value => {
       Object.assign(childStyles, value);
     });
-    return (hAsync(Host, { "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign(Object.assign({}, childStyles), labelColorStyles), generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "aria-disabled": disabled ? 'true' : null, class: Object.assign(Object.assign(Object.assign({}, childStyles), labelColorStyles), generateMedColor(dsColor, {
         [mode]: true,
         'med-item': true,
         [`med-item-lines-${lines}`]: lines !== undefined,
@@ -16321,7 +16430,7 @@ class MedList {
   }
   render() {
     const { dsColor, margin } = this;
-    return (hAsync(Host, { "from-stencil": true, class: createColorClasses$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-list': true,
         [`med-list--${margin}`]: margin !== undefined
       }) }, hAsync("slot", null)));
@@ -16346,21 +16455,21 @@ class MedListItem {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * TODO
+     * todo
      */
     this.selected = false;
     /**
-     * TODO
+     * todo
      */
     this.border = false;
     /**
-     * If `true`, the user cannot interact with the button.
+     * todo
      */
     this.disabled = false;
   }
   render() {
     const { dsColor, titulo, label, selected, dsSize, border, disabled } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-list-item': true,
         'med-list-item--selected': selected,
         'med-list-item--disabled': disabled,
@@ -16393,24 +16502,24 @@ class MedListItemAccordion {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * TODO
+     * todo
      */
     this.selected = false;
     /**
-     * TODO
+     * todo
      */
     this.border = false;
     /**
-     * TODO
+     * todo
      */
     this.collapsed = true;
     /**
-     * If `true`, the user cannot interact with the button.
+     * todo
      */
     this.disabled = false;
   }
   /**
-   * TODO
+   * todo
    */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
@@ -16418,7 +16527,7 @@ class MedListItemAccordion {
   }
   render() {
     const { dsColor, titulo, label, selected, dsSize, border, margin, collapsed, disabled } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-list-item-accordion': true,
         'med-list-item-accordion--disabled': disabled,
         'med-list-item-accordion--selected': selected,
@@ -16456,8 +16565,8 @@ class MedNav {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * TODO.
-      */
+     * todo
+     */
     this.active = false;
   }
   async watchClick() {
@@ -16468,7 +16577,7 @@ class MedNav {
   }
   render() {
     const { dsColor, active } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-nav': true,
         'med-nav--active': active
       }) }, hAsync("nav", { class: "med-nav__container" }, hAsync("div", { class: "med-nav__logo" }, hAsync("div", { class: "med-nav__icon-wrapper" }, hAsync("ion-icon", { class: "med-nav__icon med-icon med-icon--sm", name: "med-logo" })), hAsync("med-type", { token: "h24", "ds-color": "neutral-10" }, "MEDSoft")), hAsync("slot", null), hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" }))), hAsync("med-nav-simple", { "ds-color": dsColor })));
@@ -16495,7 +16604,7 @@ class MedNavAccordion {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-nav-accordion': true,
       }) }, hAsync("med-accordion-list", { class: "med-nav-accordion__list", "single-open": "false" }, hAsync("med-accordion-item", { class: "med-nav-accordion__item", color: "aula", background: true }, hAsync("div", { class: "med-nav-accordion__header", slot: "full-header" }, hAsync("med-type", { token: "p16b" }, "Mentoria"), hAsync("ion-icon", { class: "med-icon med-nav-accordion__icon", name: "med-baixo" })), hAsync("div", { slot: "content" }, hAsync("med-nav-item", { icon: "med-orientacao", text: "Orienta\u00E7\u00F5es" }), hAsync("med-nav-item", { icon: "med-metricas", text: "Desempenho" }))), hAsync("med-accordion-item", { class: "med-nav-accordion__item", color: "aula", background: true }, hAsync("div", { class: "med-nav-accordion__header", slot: "full-header" }, hAsync("med-type", { token: "p16b" }, "Geral"), hAsync("ion-icon", { class: "med-icon med-nav-accordion__icon", name: "med-baixo" })), hAsync("div", { class: "", slot: "content" }, hAsync("med-nav-item", { icon: "med-qrcode", text: "Medcode" }), hAsync("med-nav-item", { icon: "med-slidedeaula", text: "Slides de Aula" }), hAsync("med-nav-item", { icon: "med-duvidasacademicas", text: "D\u00FAvidas Acad\u00EAmicas" }), hAsync("med-nav-item", { icon: "med-cronograma", text: "Cronograma" }), hAsync("med-nav-item", { icon: "med-bonus", text: "B\u00F4nus" }), hAsync("med-nav-item", { icon: "med-drogas", text: "Drogas" }))), hAsync("med-accordion-item", { class: "med-nav-accordion__item", color: "aula", background: true }, hAsync("div", { class: "med-nav-accordion__header", slot: "full-header" }, hAsync("med-type", { token: "p16b" }, "Treinamento"), hAsync("ion-icon", { class: "med-icon med-nav-accordion__icon", name: "med-baixo" })), hAsync("div", { class: "", slot: "content" }, hAsync("med-nav-item", { icon: "med-anotacao", text: "Simulados" }), hAsync("med-nav-item", { icon: "med-multimidia", text: "Multimedia" }), hAsync("med-nav-item", { icon: "med-concursos", text: "Concurso na Integra" }), hAsync("med-nav-item", { icon: "med-montaprovas", text: "Monta Provas" }))))));
   }
@@ -16521,20 +16630,20 @@ class MedNavItem {
     this.medBlur = createEvent(this, "medBlur", 7);
     this.medClick = createEvent(this, "medClick", 7);
     /**
-      * Define o estado active do componente.
-      */
+     * todo
+     */
     this.active = false;
     /**
-      * Define o estado disabled do componente.
-      */
+     * todo
+     */
     this.disabled = false;
     /**
-      * TODO.
-      */
+     * todo
+     */
     this.routerDirection = 'forward';
     /**
-      * TODO.
-      */
+     * todo
+     */
     this.iconOnly = false;
     this.onFocus = () => {
       this.medBlur.emit();
@@ -16550,7 +16659,7 @@ class MedNavItem {
   }
   render() {
     const { dsColor, active, text, icon, disabled, iconOnly } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-nav-item': true,
         'med-nav-item--active': active,
         'med-nav-item--icon-only': iconOnly,
@@ -16592,7 +16701,7 @@ class MedNavSimple {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-nav-simple': true,
       }) }, hAsync("nav", { class: "med-nav-simple__wrapper" }, hAsync("div", { class: "med-nav-simple__logo" }, hAsync("div", { class: "med-nav-simple__icon-wrapper" }, hAsync("ion-icon", { class: "med-nav-simple__icon med-icon med-icon--sm", name: "med-logo" }))), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-play", active: true }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-apostila" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-concursos" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-orientacao" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-metricas" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-qrcode" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-slidedeaula" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-duvidasacademicas" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-cronograma" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-bonus" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-drogas" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-anotacao" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-multimidia" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-concursos" }), hAsync("med-nav-item", { "ds-color": dsColor, class: "med-nav-simple__item", icon: "med-montaprovas" }), hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" })))));
   }
@@ -17538,12 +17647,6 @@ var index$1 = (function () {
 
 const medNavbarCss = "/*!@:host*/.sc-med-navbar-h{--background:hsl(var(--med-color-neutral-1));--main-color:hsl(var(--med-color-neutral-10));--subtitle-color:hsl(var(--med-color-brand-4))}/*!@:host(.med-navbar)*/.med-navbar.sc-med-navbar-h{display:block}/*!@:host(.med-navbar) .med-navbar__header*/.med-navbar.sc-med-navbar-h .med-navbar__header.sc-med-navbar{background:var(--background)}/*!@:host(.med-navbar) .med-navbar__container*/.med-navbar.sc-med-navbar-h .med-navbar__container.sc-med-navbar{padding:var(--ion-safe-area-top, 20px) 16px 0 16px;position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-sizing:border-box;box-sizing:border-box;min-height:48px}/*!@:host(.med-navbar) .med-navbar__left, :host(.med-navbar) .med-navbar__right*/.med-navbar.sc-med-navbar-h .med-navbar__left.sc-med-navbar,.med-navbar.sc-med-navbar-h .med-navbar__right.sc-med-navbar{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}/*!@:host(.med-navbar) .med-navbar__left*/.med-navbar.sc-med-navbar-h .med-navbar__left.sc-med-navbar{-ms-flex-pack:start;justify-content:flex-start}/*!@:host(.med-navbar) .med-navbar__right*/.med-navbar.sc-med-navbar-h .med-navbar__right.sc-med-navbar{-ms-flex-pack:end;justify-content:flex-end}/*!@:host(.med-navbar) .med-navbar__center*/.med-navbar.sc-med-navbar-h .med-navbar__center.sc-med-navbar{padding-left:var(--padding-left);padding-right:var(--padding-right);padding-top:var(--spacing-stack-xxxs);padding-bottom:var(--spacing-stack-xxxs);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;-ms-flex-direction:column;flex-direction:column;text-align:center;width:100%}/*!@:host(.med-navbar) ::slotted(*)*/.sc-med-navbar-h.med-navbar .sc-med-navbar-s>*{margin:0 !important;padding:0 !important}/*!@:host(.med-navbar) ::slotted([slot=left])*/.sc-med-navbar-h.med-navbar .sc-med-navbar-s>[slot=left]{color:var(--main-color);margin-right:16px !important;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:start;justify-content:flex-start}/*!@:host(.med-navbar) ::slotted([slot=title])*/.sc-med-navbar-h.med-navbar .sc-med-navbar-s>[slot=title]{--color:var(--main-color);--font-size:16px;--font-weight:600;--line-height:16px;color:var(--main-color);font-size:16px;font-weight:600;line-height:16px;display:block}/*!@:host(.med-navbar) ::slotted([slot=subtitle])*/.sc-med-navbar-h.med-navbar .sc-med-navbar-s>[slot=subtitle]{--color:var(--subtitle-color);--font-size:12px;--font-weight:400;--line-height:16px;color:var(--subtitle-color);font-size:12px;font-weight:400;line-height:16px;display:block}/*!@:host(.med-navbar) ::slotted([slot=right])*/.sc-med-navbar-h.med-navbar .sc-med-navbar-s>[slot=right]{color:var(--main-color);margin-left:16px !important;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:end;justify-content:flex-end}/*!@:host(.med-color) ::slotted([slot=subtitle])*/.sc-med-navbar-h.med-color .sc-med-navbar-s>[slot=subtitle]{--subtitle-color:hsl(var(--med-color-4))}/*!@:host(.med-color-neutral) ::slotted([slot=subtitle])*/.sc-med-navbar-h.med-color-neutral .sc-med-navbar-s>[slot=subtitle]{--subtitle-color:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback) ::slotted([slot=subtitle])*/.sc-med-navbar-h.med-color-feedback .sc-med-navbar-s>[slot=subtitle]{--subtitle-color:hsl(var(--med-color-feedback))}/*!@:host(.med-navbar--transparent)*/.med-navbar--transparent.sc-med-navbar-h{--background:transparent}";
 
-/**
- * @slot left - Posiciona um elemento ao lado esquerdo ao navbar
- * @slot title - Titulo da navbar.
- * @slot subtitle - Subtitulo da navbar.
- * @slot right - Posiciona um elemento ao lado direito da navbar.
- */
 class MedNavbar {
   constructor(hostRef) {
     registerInstance(this, hostRef);
@@ -17598,7 +17701,7 @@ class MedNavbar {
   }
   render() {
     const { dsColor, dsName } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-navbar': true,
         [`med-navbar--${dsName}`]: dsName !== undefined,
       }) }, hAsync("header", { class: "med-navbar__header" }, hAsync("slot", { name: "top" }), hAsync("div", { class: "med-navbar__container" }, hAsync("div", { id: "left", class: "med-navbar__left", ref: (el) => this.leftEl = el }, hAsync("slot", { name: "left" })), hAsync("div", { class: "med-navbar__center", ref: (el) => this.centerEl = el }, hAsync("slot", { name: "title" }), hAsync("slot", { name: "subtitle" })), hAsync("div", { id: "right", class: "med-navbar__right", ref: (el) => this.rightEl = el }, hAsync("slot", { name: "right" }))))));
@@ -17650,7 +17753,7 @@ class MedOption {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-badge': true,
       }) }, hAsync("div", { class: "option" }, hAsync("slot", null), hAsync("slot", { name: "label" }))));
   }
@@ -17674,44 +17777,47 @@ class MedPiechart {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define o estado de download do componente.
-      */
+     * todo
+     */
     this.download = false;
     /**
-      * Define o estado de downloaded do componente.
-      */
+     * todo
+     */
     this.downloaded = false;
     /**
-      * Define o valor do progresso do componente do piechart.
-      */
+     * todo
+     */
     this.value = 0;
     /**
-    * Define o valor do progresso do componente de download.
-    */
+     * todo
+     */
     this.downloadProgress = 0;
     /**
-      * Esconde o download do pie-chart.
-      */
+     * todo
+     */
     this.hideDownload = false;
     /**
-     * Define o estado habilitado ou desabilitado do componente.
+     * todo
      */
     this.disabled = false;
   }
   /**
-    * Define o estado do componente programaticamente.
-    */
+   * todo
+   */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.download = !this.download;
   }
+  /**
+   * todo
+   */
   Isdownloaded(event) {
     var _a;
     this.downloaded = (_a = event === null || event === void 0 ? void 0 : event.detail) === null || _a === void 0 ? void 0 : _a.downloaded;
   }
   render() {
     const { dsColor, dsSize, download, downloaded, label, value, downloadProgress, identification, index, hideDownload, disabled } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-piechart': true,
         'med-piechart--download': download,
         'med-piechart--downloaded': downloaded,
@@ -17742,12 +17848,6 @@ class MedPiechart {
   }; }
 }
 
-var PlusMinusStatus;
-(function (PlusMinusStatus) {
-  PlusMinusStatus["MINUS"] = "minus";
-  PlusMinusStatus["PLUS"] = "plus";
-})(PlusMinusStatus || (PlusMinusStatus = {}));
-
 const medPlusminusCss = ".sc-med-plusminus-h{--color:hsl(var(--med-color-neutral-10));--pointer-events:initial}.med-plusminus.sc-med-plusminus-h{font-size:32px;font-weight:600;line-height:32px;color:var(--color);max-height:400px;width:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}.med-plusminus.sc-med-plusminus-h .med-plusminus__icon-minus.sc-med-plusminus{margin-right:16px;cursor:pointer;stroke:var(--color)}.med-plusminus.sc-med-plusminus-h .med-plusminus__icon-plus.sc-med-plusminus{margin-left:16px;cursor:pointer;stroke:var(--color)}.med-plusminus--disabled-minus.sc-med-plusminus-h .med-plusminus__icon-minus.sc-med-plusminus,.med-plusminus--disabled-plus.sc-med-plusminus-h .med-plusminus__icon-plus.sc-med-plusminus{opacity:0.5;pointer-events:var(--pointer-events)}.med-plusminus--disabled-both.sc-med-plusminus-h .med-plusminus__icon-minus.sc-med-plusminus,.med-plusminus--disabled-both.sc-med-plusminus-h .med-plusminus__icon-plus.sc-med-plusminus{opacity:0.5;pointer-events:var(--pointer-events)}.med-plusminus--lg.sc-med-plusminus-h{font-size:48px}.med-plusminus--lg.sc-med-plusminus-h .med-icon.sc-med-plusminus{font-size:48px}.med-color.sc-med-plusminus-h{--color:hsl(var(--med-color-3));stroke:hsl(var(--med-color-3))}.med-color-neutral.sc-med-plusminus-h{--color:hsl(var(--med-color-neutral));stroke:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-plusminus-h{--color:hsl(var(--med-color-feedback));stroke:hsl(var(--med-color-feedback))}";
 
 class MedPlusminus {
@@ -17760,7 +17860,7 @@ class MedPlusminus {
   }
   render() {
     const { dsSize, dsColor, disabled } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-plusminus': true,
         [`med-plusminus--disabled-${disabled}`]: disabled !== undefined,
         [`med-plusminus--${dsSize}`]: dsSize !== undefined,
@@ -17787,12 +17887,12 @@ class MedQuestion {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define o estado do componente.
-      */
+     * todo
+     */
     this.collapsed = false;
   }
   /**
-   * Muda o estado do componente programaticamente.
+   * todo
    */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
@@ -17800,7 +17900,7 @@ class MedQuestion {
   }
   render() {
     const { collapsed, texto, dsColor } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-question': true,
         'med-question--collapsed': collapsed
       }), onClick: (event) => { this.toggle(event); } }, hAsync("div", { class: "med-question__text", innerHTML: texto }), hAsync("ion-icon", { class: "med-icon med-question__icon", name: "med-baixo" })));
@@ -17827,20 +17927,20 @@ class MedRateAula {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define o estado do componente.
-      */
+     * todo
+     */
     this.collapsed = false;
   }
   /**
-    * Define o estado do componente programaticamente.
-    */
+   * todo
+   */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;
   }
   render() {
     const { collapsed } = this;
-    return (hAsync(Host, { class: generateMedColor$1(null, {
+    return (hAsync(Host, { class: generateMedColor(null, {
         'med-rate-aula': true,
         'med-rate-aula--collapsed': collapsed
       }) }, hAsync("div", { class: "med-rate-aula__container" }, hAsync("div", { class: "med-rate-aula__item" }, hAsync("button", { class: "med-rate-aula__button med-rate-aula__button--otimo" }, hAsync("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--otimo", name: "med-excelente" })), hAsync("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-success" }, "\u00D3timo")), hAsync("div", { class: "med-rate-aula__item" }, hAsync("button", { class: "med-rate-aula__button med-rate-aula__button--bom" }, hAsync("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--bom", name: "med-bom" })), hAsync("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-attention" }, "Bom")), hAsync("div", { class: "med-rate-aula__item" }, hAsync("button", { class: "med-rate-aula__button med-rate-aula__button--regular" }, hAsync("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--regular", name: "med-regular" })), hAsync("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-caution" }, "Regular")), hAsync("div", { class: "med-rate-aula__item" }, hAsync("button", { class: "med-rate-aula__button med-rate-aula__button--ruim" }, hAsync("ion-icon", { class: "med-icon med-rate-aula__icon med-rate-aula__icon--ruim", name: "med-ruim" })), hAsync("med-type", { token: "p12", class: "med-rate-aula__label", "ds-color": "fb-warning" }, "Ruim")), hAsync("div", { class: "med-rate-aula__button-fechar", onClick: (event) => { this.toggle(event); } }, hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-size": "xs" }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" })))), hAsync("div", { class: "med-rate-aula__end", onClick: (event) => { this.toggle(event); } }, hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-size": "xs", fill: "clear" }, hAsync("ion-icon", { slot: "icon-only", class: "med-rate-aula__icon-abrir", name: "med-avaliar" })), hAsync("med-type", { token: "p12" }, "Avalie"))));
@@ -17867,7 +17967,7 @@ class MedRateBar {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-rate-bar': true,
       }) }, hAsync("slot", null), hAsync("slot", { name: "avaliacao" })));
   }
@@ -17884,12 +17984,6 @@ class MedRateBar {
   }; }
 }
 
-var RateStatus;
-(function (RateStatus) {
-  RateStatus["LIKE"] = "like";
-  RateStatus["DISLIKE"] = "dislike";
-})(RateStatus || (RateStatus = {}));
-
 const medRateLikeCss = "/*!@:host*/.sc-med-rate-like-h{--spacing:16px;--color:hsl(var(--med-color-neutral-10));--color-like:hsl(var(--med-color-fb-success));--color-dislike:hsl(var(--med-color-fb-warning));display:block}/*!@:host .button*/.sc-med-rate-like-h .button.sc-med-rate-like{background:transparent;border:none;cursor:pointer;padding:0;outline:none}/*!@:host .button-spacing*/.sc-med-rate-like-h .button-spacing.sc-med-rate-like{padding-right:var(--spacing)}/*!@:host .rate*/.sc-med-rate-like-h .rate.sc-med-rate-like{font-size:24px;stroke:var(--color);-webkit-transition:color 300ms;transition:color 300ms}/*!@:host .button--disabled*/.sc-med-rate-like-h .button--disabled.sc-med-rate-like{pointer-events:none;--color:hsl(var(--med-color-neutral-4))}/*!@:host .button--like .rate*/.sc-med-rate-like-h .button--like.sc-med-rate-like .rate.sc-med-rate-like{stroke:var(--color-like)}/*!@:host .button--dislike .rate*/.sc-med-rate-like-h .button--dislike.sc-med-rate-like .rate.sc-med-rate-like{stroke:var(--color-dislike)}";
 
 class MedRateLike {
@@ -17905,7 +17999,7 @@ class MedRateLike {
     };
   }
   render() {
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(null, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(null, {
         'med-rate-like': true,
       }) }, hAsync("button", { class: `button button-spacing
           ${this.status === RateStatus.LIKE ? 'button--like' : ''}
@@ -17932,13 +18026,13 @@ class MedRating {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-    * Define o estado cabe ou não cabe recurso.
-    */
+     * todo
+     */
     this.cabe = false;
   }
   render() {
     const { dsColor, dsName, nome, data, concurso, texto, cabe } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-rating': true,
         'med-rating--cabe': cabe,
         'med-rating--nao-cabe': !cabe,
@@ -17990,17 +18084,20 @@ class MedSemana {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * Define o estado active do componente.
+     * todo
      */
     this.active = false;
     /**
-     * Define o estado habilitado ou desabilitado do componente.
+     * todo
      */
     this.disabled = false;
     /**
-     * Esconde o botão de download.
+     * todo
      */
     this.hideDownload = false;
+    /**
+     * todo
+     */
     this.flipped = false;
   }
   handleFlip() {
@@ -18028,7 +18125,7 @@ class MedSemana {
     let piechartContainerEl;
     textContainerEl = this.createTextContainerEl(content, skin);
     piechartContainerEl = this.createPieChartEl(content.Itens, skin);
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         "med-semana": true,
         "med-semana--active": active,
         "med-semana--hide-download": hideDownload,
@@ -18064,7 +18161,7 @@ class MedSemanas {
   }
   render() {
     const { skin } = this;
-    return (hAsync(Host, { class: generateMedColor$1(null, {
+    return (hAsync(Host, { class: generateMedColor(null, {
         'med-semanas': true,
         [`med-semanas--${skin}`]: skin !== undefined,
       }) }, hAsync("slot", null)));
@@ -18088,13 +18185,13 @@ class MedTabButton {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-    * Define a variação da borda do componente.
-    */
+     * todo
+     */
     this.active = false;
   }
   render() {
     const { dsColor, active } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-tab-button': true,
         'med-tab-button--active': active,
       }) }, hAsync("slot", null)));
@@ -18148,17 +18245,17 @@ class MedTiles {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * TODO
+     * todo
      */
     this.solid = false;
     /**
-     * TODO
+     * todo
      */
     this.selected = false;
   }
   render() {
     const { dsColor, titulo, label, selected, solid } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-tiles': true,
         'med-solid': solid,
         'med-tiles--selected': selected
@@ -18190,7 +18287,7 @@ class MedToolbar {
   }
   render() {
     const { dsColor } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-toolbar': true,
       }) }, hAsync("div", { class: "container" }, hAsync("slot", { name: "start" }), hAsync("div", { class: "container__center" }, hAsync("slot", null)), hAsync("slot", { name: "end" }))));
   }
@@ -18215,8 +18312,8 @@ class MedTooltip {
     this.btnLeftClick = createEvent(this, "btnLeftClick", 7);
     this.btnRightClick = createEvent(this, "btnRightClick", 7);
     /**
-      * TODO
-      */
+     * todo
+     */
     this.collapsed = true;
     this.onBtnLeftClick = () => {
       this.btnLeftClick.emit();
@@ -18226,8 +18323,8 @@ class MedTooltip {
     };
   }
   /**
-    * Define o estado do componente programaticamente.
-    */
+   * todo
+   */
   async toggle(event) {
     event === null || event === void 0 ? void 0 : event.stopPropagation();
     this.collapsed = !this.collapsed;
@@ -18247,7 +18344,7 @@ class MedTooltip {
   }
   render() {
     const { dsColor, placement, position, collapsed, titulo, content, btnLeft, btnRight } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-tooltip': true,
         [`med-tooltip--${placement}`]: placement !== undefined,
         [`med-tooltip--${position}`]: position !== undefined,
@@ -18275,34 +18372,13 @@ class MedTooltip {
   }; }
 }
 
-/**
- *  Generates the color classes for the component.
- */
-const generateMedColor = (color, cssClassMap) => {
-  if (typeof color === 'string' && color.length > 0) {
-    const colorIdentifier = color.split('-');
-    if (colorIdentifier[0] === 'neutral') {
-      return Object.assign({ 'med-color-neutral': true, [`med-color-${color}`]: true }, cssClassMap);
-    }
-    else if (colorIdentifier[0] === 'fb') {
-      return Object.assign({ 'med-color-feedback': true, [`med-color-${color}`]: true }, cssClassMap);
-    }
-    else {
-      return Object.assign({ 'med-color': true, [`med-color-${color}`]: true }, cssClassMap);
-    }
-  }
-  else {
-    return cssClassMap;
-  }
-};
-
 const medTypeCss = ".sc-med-type-h{--font-size:16px;--font-weight:400;--line-height:16px;--color:hsl(var(--med-color-neutral-10))}.sc-med-type-h{display:block;margin:0;padding:0;color:var(--color) !important;font-weight:var(--font-weight) !important;font-size:var(--font-size) !important;line-height:var(--line-height) !important}.sc-med-type-h *.sc-med-type{margin:0;padding:0;color:var(--color) !important;font-weight:var(--font-weight) !important;font-size:var(--font-size) !important;line-height:var(--line-height) !important}.med-color.sc-med-type-h{--color:hsl(var(--med-color-3))}.med-color-neutral.sc-med-type-h{--color:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-type-h{--color:hsl(var(--med-color-feedback))}.med-type--h48.sc-med-type-h{--font-size:48px;--font-weight:600;--line-height:48px}.med-type--h32.sc-med-type-h{--font-size:32px;--font-weight:600;--line-height:32px}.med-type--h24.sc-med-type-h{--font-size:24px;--font-weight:600;--line-height:24px}.med-type--h24x.sc-med-type-h{--font-size:24px;--font-weight:600;--line-height:32px}.med-type--h20.sc-med-type-h{--font-size:20px;--font-weight:600;--line-height:20px}.med-type--h20x.sc-med-type-h{--font-size:20px;--font-weight:600;--line-height:24px}.med-type--p16.sc-med-type-h{--font-size:16px;--font-weight:400;--line-height:16px}.med-type--p16b.sc-med-type-h{--font-size:16px;--font-weight:600;--line-height:16px}.med-type--p16x.sc-med-type-h{--font-size:16px;--font-weight:400;--line-height:24px}.med-type--p16xb.sc-med-type-h{--font-size:16px;--font-weight:600;--line-height:24px}.med-type--p14.sc-med-type-h{--font-size:14px;--font-weight:400;--line-height:16px}.med-type--p14b.sc-med-type-h{--font-size:14px;--font-weight:600;--line-height:16px}.med-type--p14x.sc-med-type-h{--font-size:14px;--font-weight:400;--line-height:20px}.med-type--p14xb.sc-med-type-h{--font-size:14px;--font-weight:600;--line-height:20px}.med-type--p12.sc-med-type-h{--font-size:12px;--font-weight:400;--line-height:12px}.med-type--p12b.sc-med-type-h{--font-size:12px;--font-weight:600;--line-height:12px}.med-type--p12x.sc-med-type-h{--font-size:12px;--font-weight:400;--line-height:16px}.med-type--p12xb.sc-med-type-h{--font-size:12px;--font-weight:600;--line-height:16px}.med-type--p10.sc-med-type-h{--font-size:10px;--font-weight:400;--line-height:12px}.med-type--p10b.sc-med-type-h{--font-size:10px;--font-weight:600;--line-height:12px}";
 
 class MedType {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-     * Define a tag HTML do componente.
+     * todo
      */
     this.tag = 'span';
   }
@@ -18335,13 +18411,13 @@ class MedVideoThumbnail {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define a porcentagem a ser mostrada.
-      */
+     * todo
+     */
     this.value = 0;
   }
   render() {
     const { dsColor, url, value } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-video-thumbnail': true
       }) }, hAsync("img", { class: "med-video-thumbnail__img", src: url }), hAsync("ion-icon", { class: "med-icon med-icon--lg med-video-thumbnail__icon", name: "med-play" }), hAsync("ion-progress-bar", { "ds-color": dsColor, class: "med-video-thumbnail__progress", "ds-name": "minimalist", value: value })));
   }
@@ -18366,16 +18442,16 @@ class MedVote {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     /**
-      * Define o titulo do componente.
-      */
+     * todo
+     */
     this.titulo = 'Cabe recurso?';
     /**
-      * Define a quantidade de recursos que cabem.
-      */
+     * todo
+     */
     this.like = 0;
     /**
-      * Define a quantidade de recursos que não cabem.
-      */
+     * todo
+     */
     this.unlike = 0;
   }
   render() {
@@ -18385,9 +18461,9 @@ class MedVote {
     const total = like + unlike;
     const likePercent = unlike === 0 && like === 0 ? 50 : ((like * 100) / total);
     const unlikePercent = unlike === 0 && like === 0 ? 50 : ((unlike * 100) / total);
-    return (hAsync(Host, { "from-stencil": true, class: createColorClasses$1(null, {
+    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(null, {
         'med-vote': true,
-      }, null) }, hAsync("div", { class: "med-vote__row" }, hAsync("div", { class: "med-vote__icon-container" }, hAsync("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--cabe", name: "med-positivo" }), hAsync("div", { class: "med-vote__badge med-vote__badge--cabe" }, like)), hAsync("h3", { class: "med-vote__heading", innerHTML: titulo }), hAsync("div", { class: "med-vote__icon-container" }, hAsync("div", { class: "med-vote__badge med-vote__badge--nao-cabe" }, unlike), hAsync("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--nao-cabe", name: "med-negativo" }))), hAsync("div", { class: "med-vote__row" }, hAsync("div", { class: "med-vote__chart med-vote__chart--cabe", style: { width: `${likePercent}%` } }), hAsync("div", { class: "med-vote__chart med-vote__chart--nao-cabe", style: { width: `${unlikePercent}%` } }))));
+      }) }, hAsync("div", { class: "med-vote__row" }, hAsync("div", { class: "med-vote__icon-container" }, hAsync("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--cabe", name: "med-positivo" }), hAsync("div", { class: "med-vote__badge med-vote__badge--cabe" }, like)), hAsync("h3", { class: "med-vote__heading", innerHTML: titulo }), hAsync("div", { class: "med-vote__icon-container" }, hAsync("div", { class: "med-vote__badge med-vote__badge--nao-cabe" }, unlike), hAsync("ion-icon", { class: "med-icon med-vote__icon med-vote__icon--nao-cabe", name: "med-negativo" }))), hAsync("div", { class: "med-vote__row" }, hAsync("div", { class: "med-vote__chart med-vote__chart--cabe", style: { width: `${likePercent}%` } }), hAsync("div", { class: "med-vote__chart med-vote__chart--nao-cabe", style: { width: `${unlikePercent}%` } }))));
   }
   static get style() { return medVoteCss; }
   static get cmpMeta() { return {
@@ -21039,38 +21115,6 @@ class Note {
   }; }
 }
 
-const parentCss = "/*!@:host*/.sc-med-parent-h{--background:hsl(var(--med-color-brand-3));--color:hsl(var(--med-color-contrast-fixed));--border-color:hsl(var(--med-color-brand-3))}/*!@:host(.med-parent)*/.med-parent.sc-med-parent-h{background:var(--background);display:inline-block;padding:16px;min-width:100px;text-align:center;border:1px solid;border-color:var(--border-color)}/*!@:host(.med-parent) h3*/.med-parent.sc-med-parent-h h3.sc-med-parent{color:var(--color);margin:0}/*!@:host(.med-parent) .med-parent__child*/.med-parent.sc-med-parent-h .med-parent__child.sc-med-parent{--background:red;--color:red;--border-color:red}/*!@:host(.med-color)*/.med-color.sc-med-parent-h{--background:hsl(var(--med-color-3));--color:hsl(var(--med-color-contrast-fixed));--border-color:hsl(var(--med-color-3))}/*!@:host(.med-color) .med-parent__child*/.med-color.sc-med-parent-h .med-parent__child.sc-med-parent{--background:hsl(var(--med-color-3));--color:hsl(var(--med-color-contrast-fixed));--border-color:hsl(var(--med-color-3))}/*!@:host(.med-color-neutral)*/.med-color-neutral.sc-med-parent-h{--background:hsl(var(--med-color-neutral));--color:hsl(var(--med-color-neutral-contrast));--border-color:hsl(var(--med-color-neutral))}/*!@:host(.med-color-neutral) .med-parent__child*/.med-color-neutral.sc-med-parent-h .med-parent__child.sc-med-parent{--background:hsl(var(--med-color-neutral));--color:hsl(var(--med-color-neutral-contrast));--border-color:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback)*/.med-color-feedback.sc-med-parent-h{--background:hsl(var(--med-color-feedback));--color:hsl(var(--med-color-feedback-contrast));--border-color:hsl(var(--med-color-feedback))}/*!@:host(.med-color-feedback) .med-parent__child*/.med-color-feedback.sc-med-parent-h .med-parent__child.sc-med-parent{--background:hsl(var(--med-color-feedback));--color:hsl(var(--med-color-feedback-contrast));--border-color:hsl(var(--med-color-feedback))}/*!@:host(.med-parent--outline)*/.med-parent--outline.sc-med-parent-h{--background:transparent;--color:hsl(var(--med-color-neutral-5));--border-color:hsl(var(--med-color-neutral-5))}/*!@:host(.med-parent--outline.med-color)*/.med-parent--outline.med-color.sc-med-parent-h{--background:transparent;--color:hsl(var(--med-color-3));--border-color:hsl(var(--med-color-3))}/*!@:host(.med-parent--outline.med-color-neutral)*/.med-parent--outline.med-color-neutral.sc-med-parent-h{--background:transparent;--color:hsl(var(--med-color-neutral-contrast));--border-color:hsl(var(--med-color-neutral))}/*!@:host(.med-parent--outline.med-color-feedback)*/.med-parent--outline.med-color-feedback.sc-med-parent-h{--background:transparent;--color:hsl(var(--med-color-feedback));--border-color:hsl(var(--med-color-feedback))}/*!@:host(.med-parent--gradient)*/.med-parent--gradient.sc-med-parent-h{--background:var(--med-color-brand-gradient);--color:hsl(var(--med-color-contrast-fixed));border:0}/*!@:host(.med-parent--gradient.med-color)*/.med-parent--gradient.med-color.sc-med-parent-h{--background:var(--med-color-gradient);--color:hsl(var(--med-color-contrast-fixed))}/*!@:host(.med-parent--gradient.med-color-neutral)*/.med-parent--gradient.med-color-neutral.sc-med-parent-h{--background:hsl(var(--med-color-neutral));--color:hsl(var(--med-color-neutral-contrast))}/*!@:host(.med-parent--gradient.med-color-feedback)*/.med-parent--gradient.med-color-feedback.sc-med-parent-h{--background:hsl(var(--med-color-feedback));--color:hsl(var(--med-color-feedback-contrast))}/*!@:host(.med-parent.med-color.darkest)*/.med-parent.med-color.darkest.sc-med-parent-h{--background:hsl(var(--med-color-1));--color:hsl(var(--med-color-neutral-10));--border-color:hsl(var(--med-color-1))}/*!@:host(.med-parent.med-color.dark)*/.med-parent.med-color.dark.sc-med-parent-h{--background:hsl(var(--med-color-2));--color:hsl(var(--med-color-neutral-10));--border-color:hsl(var(--med-color-2))}/*!@:host(.med-parent.med-color.light)*/.med-parent.med-color.light.sc-med-parent-h{--background:hsl(var(--med-color-4));--color:hsl(var(--med-color-neutral-1));--border-color:hsl(var(--med-color-4))}/*!@:host(.med-parent.med-color.lightest)*/.med-parent.med-color.lightest.sc-med-parent-h{--background:hsl(var(--med-color-5));--color:hsl(var(--med-color-neutral-1));--border-color:hsl(var(--med-color-5))}";
-
-class Parent {
-  constructor(hostRef) {
-    registerInstance(this, hostRef);
-    /**
-      * Teste.
-      */
-    this.child = false;
-  }
-  render() {
-    const { dsColor, fill, child } = this;
-    return (hAsync(Host, { class: generateMedColor$1(dsColor, {
-        'med-parent': true,
-        [`med-parent--${fill}`]: fill !== undefined,
-      }) }, hAsync("h3", null, hAsync("slot", null)), child && hAsync("med-child", { class: "med-parent__child" })));
-  }
-  static get style() { return parentCss; }
-  static get cmpMeta() { return {
-    "$flags$": 9,
-    "$tagName$": "med-parent",
-    "$members$": {
-      "dsColor": [513, "ds-color"],
-      "fill": [513],
-      "child": [516]
-    },
-    "$listeners$": undefined,
-    "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"], ["fill", "fill"], ["child", "child"]]
-  }; }
-}
-
 /**
  * iOS Picker Enter Animation
  */
@@ -22059,7 +22103,7 @@ class ProgressBar {
     const { dsColor, type, reversed, value, buffer } = this;
     const paused = config.getBoolean('_testing');
     const mode = getIonMode$1(this);
-    return (hAsync(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: generateMedColor(dsColor, {
         [mode]: true,
         'med-progress-bar': true,
         [`progress-bar-${type}`]: true,
@@ -22707,7 +22751,7 @@ class Range {
       }
     }
     renderHiddenInput(true, el, this.name, JSON.stringify(this.getValue()), disabled);
-    return (hAsync(Host, { onFocusin: this.onFocus, onFocusout: this.onBlur, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { onFocusin: this.onFocus, onFocusout: this.onBlur, class: generateMedColor(dsColor, {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'range-disabled': disabled,
@@ -25893,7 +25937,7 @@ class Segment {
   render() {
     const { dsColor } = this;
     const mode = getIonMode$1(this);
-    return (hAsync(Host, { onClick: this.onClick, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
         [mode]: true,
         'med-segment': true,
         'in-toolbar': hostContext('ion-toolbar', this.el),
@@ -26000,7 +26044,7 @@ class SegmentButton {
     const { checked, type, disabled, hasIcon, hasLabel, layout, segmentEl, dsColor } = this;
     const mode = getIonMode$1(this);
     const hasSegmentColor = () => segmentEl !== null && segmentEl.color !== undefined;
-    return (hAsync(Host, { "from-stencil": true, "aria-disabled": disabled ? 'true' : null, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'med-segment-button': true,
         'in-toolbar': hostContext('ion-toolbar', this.el),
@@ -27427,7 +27471,7 @@ class TabBar {
     const { dsColor, translucent, keyboardVisible } = this;
     const mode = getIonMode$1(this);
     this.medResize.emit({ height: 1 });
-    return (hAsync(Host, { "from-stencil": true, role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, style: { '--gap': `${this.gap}` }, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, style: { '--gap': `${this.gap}` }, class: generateMedColor(dsColor, {
         [mode]: true,
         'tab-bar-translucent': translucent,
         'tab-bar-hidden': keyboardVisible,
@@ -27537,7 +27581,7 @@ class TabButton {
       rel,
       target
     };
-    return (hAsync(Host, { "from-stencil": true, onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: generateMedColor(dsColor, {
         [mode]: true,
         'med-tab-button': true,
         'tab-selected': selected,
@@ -28320,7 +28364,7 @@ class Toast {
     };
     return (hAsync(Host, { "from-stencil": true, style: {
         zIndex: `${60000 + this.overlayIndex}`,
-      }, class: generateMedColor$1(this.dsColor, Object.assign(Object.assign({ [mode]: true }, getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler }, hAsync("div", { class: wrapperClass }, hAsync("div", { class: "toast-container", part: "container" }, this.renderButtons(startButtons, 'start'), hAsync("div", { class: "toast-content" }, this.header !== undefined &&
+      }, class: generateMedColor(this.dsColor, Object.assign(Object.assign({ [mode]: true }, getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler }, hAsync("div", { class: wrapperClass }, hAsync("div", { class: "toast-container", part: "container" }, this.renderButtons(startButtons, 'start'), hAsync("div", { class: "toast-content" }, this.header !== undefined &&
       hAsync("div", { class: "toast-header", part: "header" }, this.header), this.message !== undefined &&
       hAsync("div", { class: "toast-message", part: "message", innerHTML: sanitizeDOMString(this.message) })), this.renderButtons(endButtons, 'end')))));
   }
@@ -28483,7 +28527,7 @@ class Toggle {
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     const value = this.getValue();
     renderHiddenInput(true, el, name, (checked ? value : ''), disabled);
-    return (hAsync(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "switch", class: generateMedColor$1(dsColor, {
+    return (hAsync(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "switch", class: generateMedColor(dsColor, {
         [mode]: true,
         'med-toggle': true,
         'in-item': hostContext('ion-item', el) || hostContext('med-item', el),
@@ -28674,7 +28718,13 @@ const tpInputContainerCss = ".sc-tp-input-container-h{--background:hsl(var(--med
 class TpInputContainer {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    /**
+     * todo
+     */
     this.disabled = false;
+    /**
+     * todo
+     */
     this.feedback = false;
   }
   render() {
@@ -29287,7 +29337,6 @@ registerComponents([
   CardSubtitle,
   CardTitle,
   Checkbox,
-  Child,
   Chip,
   Col,
   Content,
@@ -29388,7 +29437,6 @@ registerComponents([
   Nav,
   NavLink,
   Note,
-  Parent,
   Picker,
   PickerColumnCmp,
   Popover,

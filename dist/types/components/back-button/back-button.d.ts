@@ -1,5 +1,6 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
-import { AnimationBuilder, Color, MedColor } from '../../interface';
+import { MedColor } from '../../@templarios/types/color.type';
+import { AnimationBuilder, Color } from '../../interface';
 import { ButtonInterface } from '../../utils/element-interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -57,7 +58,7 @@ export declare class BackButton implements ComponentInterface, ButtonInterface {
   get backButtonIcon(): any;
   get backButtonText(): any;
   get hasIconOnly(): any;
-  get rippleType(): "bounded" | "unbounded";
+  get rippleType(): "unbounded" | "bounded";
   private onClick;
   render(): any;
 }

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index$1 = require('./index-bc2e4509.js');
-const medTheme = require('./med-theme-1bca89cc.js');
+const color = require('./color-2d4645aa.js');
 
 const medHeaderCss = ":host{display:block}";
 
@@ -1021,7 +1021,7 @@ const MedNavbar = class {
   }
   render() {
     const { dsColor, dsName } = this;
-    return (index$1.h(index$1.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, {
+    return (index$1.h(index$1.Host, { "from-stencil": true, class: color.generateMedColor(dsColor, {
         'med-navbar': true,
         [`med-navbar--${dsName}`]: dsName !== undefined,
       }) }, index$1.h("header", { class: "med-navbar__header" }, index$1.h("slot", { name: "top" }), index$1.h("div", { class: "med-navbar__container" }, index$1.h("div", { id: "left", class: "med-navbar__left", ref: (el) => this.leftEl = el }, index$1.h("slot", { name: "left" })), index$1.h("div", { class: "med-navbar__center", ref: (el) => this.centerEl = el }, index$1.h("slot", { name: "title" }), index$1.h("slot", { name: "subtitle" })), index$1.h("div", { id: "right", class: "med-navbar__right", ref: (el) => this.rightEl = el }, index$1.h("slot", { name: "right" }))))));

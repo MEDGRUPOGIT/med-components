@@ -1,5 +1,6 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { Color, StyleEventDetail, ToggleChangeEventDetail, MedColor } from '../../interface';
+import { MedColor } from '../../@templarios/types/color.type';
+import { Color, StyleEventDetail, ToggleChangeEventDetail } from '../../interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *

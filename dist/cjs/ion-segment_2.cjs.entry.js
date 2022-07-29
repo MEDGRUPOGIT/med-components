@@ -5,8 +5,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const index = require('./index-bc2e4509.js');
 const ionicGlobal = require('./ionic-global-50e8bb29.js');
 const helpers = require('./helpers-d381ec4d.js');
-const theme = require('./theme-f551502d.js');
-const medTheme = require('./med-theme-1bca89cc.js');
+const color = require('./color-2d4645aa.js');
+const theme = require('./theme-30b7a575.js');
 
 const iosSegmentMdCss = ":host{--ripple-color:currentColor;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:stretch;align-items:stretch;-ms-flex-pack:center;justify-content:center;width:100%;background:var(--background);font-family:var(--ion-font-family, inherit);text-align:center;contain:paint;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}:host(.segment-scrollable){-ms-flex-pack:start;justify-content:start;width:auto;overflow-x:auto}:host(.segment-scrollable::-webkit-scrollbar){display:none}:host{--background:transparent}:host(.segment-scrollable) ::slotted(ion-segment-button){min-width:auto}:host(.med-segment--default){border:2px solid hsl(var(--med-color-neutral-10));height:48px;border-radius:8px}:host(.med-color.med-segment--default){border-color:hsl(var(--med-color-3))}:host(.med-color-neutral.med-segment--default){border-color:hsl(var(--med-color-neutral))}:host(.med-color-feedback.med-segment--default){border-color:hsl(var(--med-color-feedback))}";
 
@@ -317,7 +317,7 @@ const Segment = class {
   render() {
     const { dsColor } = this;
     const mode = ionicGlobal.getIonMode(this);
-    return (index.h(index.Host, { onClick: this.onClick, class: medTheme.generateMedColor(dsColor, {
+    return (index.h(index.Host, { onClick: this.onClick, class: color.generateMedColor(dsColor, {
         [mode]: true,
         'med-segment': true,
         'in-toolbar': theme.hostContext('ion-toolbar', this.el),
@@ -401,7 +401,7 @@ const SegmentButton = class {
     const { checked, type, disabled, hasIcon, hasLabel, layout, segmentEl, dsColor } = this;
     const mode = ionicGlobal.getIonMode(this);
     const hasSegmentColor = () => segmentEl !== null && segmentEl.color !== undefined;
-    return (index.h(index.Host, { "from-stencil": true, "aria-disabled": disabled ? 'true' : null, class: medTheme.generateMedColor(dsColor, {
+    return (index.h(index.Host, { "from-stencil": true, "aria-disabled": disabled ? 'true' : null, class: color.generateMedColor(dsColor, {
         [mode]: true,
         'med-segment-button': true,
         'in-toolbar': theme.hostContext('ion-toolbar', this.el),

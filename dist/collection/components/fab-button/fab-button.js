@@ -1,7 +1,7 @@
-import { Component, Element, Event, Host, Prop, h } from '@stencil/core';
+import { Component, Element, Event, h, Host, Prop } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
+import { generateMedColor } from '../../@templarios/utilities/color';
 import { hostContext, openURL } from '../../utils/theme';
-import { generateMedColor } from '../../utils/med-theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -100,7 +100,7 @@ export class FabButton {
         "references": {
           "MedColor": {
             "location": "import",
-            "path": "../../interface"
+            "path": "../../@templarios/types/color.type"
           }
         }
       },

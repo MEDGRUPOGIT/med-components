@@ -3,7 +3,9 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const fontSize_enum = require('./font-size.enum-2233ba2a.js');
+const type_enum = require('./type.enum-25ca4458.js');
+require('./plusminus.enum-43139314.js');
+require('./rate-like.enum-0930ca84.js');
 
 const medFontZoomCss = ":host{display:block}:host .med-icon{stroke:hsl(var(--med-color-neutral-8))}";
 
@@ -11,23 +13,23 @@ const MedFontZoom = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     /**
-     * Define o tamnho da fonte
+     * todo
      */
-    this.value = fontSize_enum.MedFontSize.XS;
+    this.value = type_enum.MedFontSize.XS;
     this.min = 1;
     this.max = 5;
     this.step = 1;
     this.fontSizeToValue = (fontSize) => {
       switch (fontSize) {
-        case fontSize_enum.MedFontSize.XXXS:
+        case type_enum.MedFontSize.XXXS:
           return 1;
-        case fontSize_enum.MedFontSize.XXS:
+        case type_enum.MedFontSize.XXS:
           return 2;
-        case fontSize_enum.MedFontSize.XS:
+        case type_enum.MedFontSize.XS:
           return 3;
-        case fontSize_enum.MedFontSize.SM:
+        case type_enum.MedFontSize.SM:
           return 4;
-        case fontSize_enum.MedFontSize.MD:
+        case type_enum.MedFontSize.MD:
           return 5;
       }
     };
@@ -35,22 +37,22 @@ const MedFontZoom = class {
       if (this.emitter) {
         switch (rangeValue) {
           case 1:
-            this.value = fontSize_enum.MedFontSize.XXXS;
+            this.value = type_enum.MedFontSize.XXXS;
             break;
           case 2:
-            this.value = fontSize_enum.MedFontSize.XXS;
+            this.value = type_enum.MedFontSize.XXS;
             break;
           case 3:
-            this.value = fontSize_enum.MedFontSize.XS;
+            this.value = type_enum.MedFontSize.XS;
             break;
           case 4:
-            this.value = fontSize_enum.MedFontSize.SM;
+            this.value = type_enum.MedFontSize.SM;
             break;
           case 5:
-            this.value = fontSize_enum.MedFontSize.MD;
+            this.value = type_enum.MedFontSize.MD;
             break;
           default:
-            this.value = fontSize_enum.MedFontSize.XS;
+            this.value = type_enum.MedFontSize.XS;
         }
         this.emitter.emit(this.value);
       }

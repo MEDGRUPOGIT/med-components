@@ -12,9 +12,5 @@ export { getMode, setupConfig } from './utils/config';
 export { LIFECYCLE_WILL_ENTER, LIFECYCLE_DID_ENTER, LIFECYCLE_WILL_LEAVE, LIFECYCLE_DID_LEAVE, LIFECYCLE_WILL_UNLOAD } from './components/nav/constants';
 export { menuController } from './utils/menu-controller';
 export { alertController, actionSheetController, modalController, loadingController, pickerController, popoverController, toastController } from './utils/overlays';
-export { MedType } from './global/templarios/type.enum';
-// med-components old
-export { MedColors } from './global/templarios/color.enum';
-export { MedFontSize } from './global/templarios/font-size.enum';
-export { MedSkin } from './global/templarios/skin.enum';
-export { RateStatus } from './components/@medgrupo/core/med-rate-like/med-rate-like.enum';
+// templarios
+export * from './@templarios/templarios';

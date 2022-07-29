@@ -1,8 +1,8 @@
 import { r as registerInstance, e as createEvent, c as writeTask, h, H as Host, i as getElement, j as forceUpdate } from './index-70672e81.js';
 import { c as config, b as getIonMode } from './ionic-global-4bc7e399.js';
 import { p as pointerCoord, a as addEventListener, b as removeEventListener } from './helpers-dd7e4b7b.js';
-import { h as hostContext } from './theme-40db79c9.js';
-import { g as generateMedColor } from './med-theme-83c28ab9.js';
+import { g as generateMedColor } from './color-49be71bc.js';
+import { h as hostContext } from './theme-ff3fc52f.js';
 
 const iosSegmentMdCss = ":host{--ripple-color:currentColor;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:stretch;align-items:stretch;-ms-flex-pack:center;justify-content:center;width:100%;background:var(--background);font-family:var(--ion-font-family, inherit);text-align:center;contain:paint;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}:host(.segment-scrollable){-ms-flex-pack:start;justify-content:start;width:auto;overflow-x:auto}:host(.segment-scrollable::-webkit-scrollbar){display:none}:host{--background:transparent}:host(.segment-scrollable) ::slotted(ion-segment-button){min-width:auto}:host(.med-segment--default){border:2px solid hsl(var(--med-color-neutral-10));height:48px;border-radius:8px}:host(.med-color.med-segment--default){border-color:hsl(var(--med-color-3))}:host(.med-color-neutral.med-segment--default){border-color:hsl(var(--med-color-neutral))}:host(.med-color-feedback.med-segment--default){border-color:hsl(var(--med-color-feedback))}";
 

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const medTheme = require('./med-theme-1bca89cc.js');
+const color = require('./color-2d4645aa.js');
 const animation = require('./animation-13cbbb20.js');
 require('./helpers-d381ec4d.js');
 
@@ -16,25 +16,28 @@ const MedAccordionItem = class {
     this.opened = index.createEvent(this, "opened", 7);
     this.medClick = index.createEvent(this, "medClick", 7);
     /**
-      * Define a variação da borda do componente.
-      */
+     * todo
+     */
     this.noBorder = false;
     /**
-      * Define se o componente irá ter background quando aberto.
-      */
+     * todo
+     */
     this.background = false;
     /**
-     * Permite que a abertura do accordion seja bloqueada pelo front.
+     * todo
      */
     this.canCollapse = true;
     /**
-     * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
+     * todo
      */
     this.isOpened = false;
     /**
-    * Permite que o front consiga definir quando o accordion vem aberto ou fechado.
-    */
+     * todo
+     */
     this.slotsToggle = [];
+    /**
+     * todo
+     */
     this.isOpen = false;
     this.isTransitioning = false;
     this.onClick = (slot) => {
@@ -83,7 +86,7 @@ const MedAccordionItem = class {
   }
   render() {
     const { dsColor, noBorder, isOpen, background } = this;
-    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(dsColor, {
+    return (index.h(index.Host, { "from-stencil": true, class: color.generateMedColor(dsColor, {
         'med-accordion-item': true,
         'med-accordion-item--no-border': noBorder,
         'med-accordion-item--open': isOpen,
@@ -103,16 +106,16 @@ const Accordion = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     /**
-      * Abre um item de cada vez.
-      */
+     * todo
+     */
     this.singleOpen = true;
     /**
-      * Define a variação da borda do componente.
-      */
+     * todo
+     */
     this.noBorder = false;
     /**
-      * Remove a animação do componente.
-      */
+     * todo
+     */
     this.noAnimation = false;
     this.currentlyOpen = null;
   }
@@ -214,7 +217,7 @@ const Accordion = class {
   }
   render() {
     const { noBorder, margin } = this;
-    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(null, {
+    return (index.h(index.Host, { "from-stencil": true, class: color.generateMedColor(null, {
         'med-accordion-list': true,
         'med-accordion-list--no-border': noBorder,
         [`med-accordion-list--${margin}`]: margin !== undefined

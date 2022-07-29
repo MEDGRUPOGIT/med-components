@@ -1,5 +1,5 @@
 import { r as registerInstance, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './med-theme-83c28ab9.js';
+import { g as generateMedColor } from './color-49be71bc.js';
 
 const iosMedListaCss = ":host{--border-radius:8px;--border-color:transparent;--border:1px solid var(--border-color)}:host{border-radius:var(--border-radius)}::slotted(med-item:not(:last-child)){border-bottom:var(--border)}";
 
@@ -9,6 +9,9 @@ const List = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
   }
+  /**
+   * todo
+   */
   async closeSlidingItems() {
     const item = this.el.querySelector('ion-item-sliding');
     if (item && item.closeOpened) {

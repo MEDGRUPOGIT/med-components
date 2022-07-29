@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
 const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const color = require('./color-2d4645aa.js');
 const overlays = require('./overlays-e22059c3.js');
 const index$1 = require('./index-e1bb33c3.js');
-const theme = require('./theme-f551502d.js');
-const medTheme = require('./med-theme-1bca89cc.js');
+const theme = require('./theme-30b7a575.js');
 const animation = require('./animation-13cbbb20.js');
 require('./hardware-back-button-148ce546.js');
 require('./helpers-d381ec4d.js');
@@ -267,7 +267,7 @@ const Toast = class {
     };
     return (index.h(index.Host, { "from-stencil": true, style: {
         zIndex: `${60000 + this.overlayIndex}`,
-      }, class: medTheme.generateMedColor(this.dsColor, Object.assign(Object.assign({ [mode]: true }, theme.getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler }, index.h("div", { class: wrapperClass }, index.h("div", { class: "toast-container", part: "container" }, this.renderButtons(startButtons, 'start'), index.h("div", { class: "toast-content" }, this.header !== undefined &&
+      }, class: color.generateMedColor(this.dsColor, Object.assign(Object.assign({ [mode]: true }, theme.getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler }, index.h("div", { class: wrapperClass }, index.h("div", { class: "toast-container", part: "container" }, this.renderButtons(startButtons, 'start'), index.h("div", { class: "toast-content" }, this.header !== undefined &&
       index.h("div", { class: "toast-header", part: "header" }, this.header), this.message !== undefined &&
       index.h("div", { class: "toast-message", part: "message", innerHTML: index$1.sanitizeDOMString(this.message) })), this.renderButtons(endButtons, 'end')))));
   }

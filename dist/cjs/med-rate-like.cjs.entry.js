@@ -3,8 +3,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const medRateLike_enum = require('./med-rate-like.enum-09a0c949.js');
-const medTheme = require('./med-theme-1bca89cc.js');
+const color = require('./color-2d4645aa.js');
+const rateLike_enum = require('./rate-like.enum-0930ca84.js');
 
 const medRateLikeCss = ":host{--spacing:16px;--color:hsl(var(--med-color-neutral-10));--color-like:hsl(var(--med-color-fb-success));--color-dislike:hsl(var(--med-color-fb-warning));display:block}:host .button{background:transparent;border:none;cursor:pointer;padding:0;outline:none}:host .button-spacing{padding-right:var(--spacing)}:host .rate{font-size:24px;stroke:var(--color);-webkit-transition:color 300ms;transition:color 300ms}:host .button--disabled{pointer-events:none;--color:hsl(var(--med-color-neutral-4))}:host .button--like .rate{stroke:var(--color-like)}:host .button--dislike .rate{stroke:var(--color-dislike)}";
 
@@ -21,13 +21,13 @@ const MedRateLike = class {
     };
   }
   render() {
-    return (index.h(index.Host, { "from-stencil": true, class: medTheme.generateMedColor(null, {
+    return (index.h(index.Host, { "from-stencil": true, class: color.generateMedColor(null, {
         'med-rate-like': true,
       }) }, index.h("button", { class: `button button-spacing
-          ${this.status === medRateLike_enum.RateStatus.LIKE ? 'button--like' : ''}
-          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(medRateLike_enum.RateStatus.LIKE) }, index.h("ion-icon", { name: "med-positivo", class: "med-icon rate" })), index.h("button", { class: `button
-          ${this.status === medRateLike_enum.RateStatus.DISLIKE ? 'button--dislike' : ''}
-          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(medRateLike_enum.RateStatus.DISLIKE) }, index.h("ion-icon", { name: "med-negativo", class: "med-icon rate" }))));
+          ${this.status === rateLike_enum.RateStatus.LIKE ? 'button--like' : ''}
+          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(rateLike_enum.RateStatus.LIKE) }, index.h("ion-icon", { name: "med-positivo", class: "med-icon rate" })), index.h("button", { class: `button
+          ${this.status === rateLike_enum.RateStatus.DISLIKE ? 'button--dislike' : ''}
+          ${this.status ? 'button--disabled' : ''}`, onClick: () => this.onClick(rateLike_enum.RateStatus.DISLIKE) }, index.h("ion-icon", { name: "med-negativo", class: "med-icon rate" }))));
   }
 };
 MedRateLike.style = medRateLikeCss;

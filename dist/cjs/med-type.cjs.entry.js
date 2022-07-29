@@ -11,7 +11,7 @@ const MedType = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     /**
-     * Define a tag HTML do componente.
+     * todo
      */
     this.tag = 'span';
   }

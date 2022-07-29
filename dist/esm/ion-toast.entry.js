@@ -1,9 +1,9 @@
 import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
 import { b as getIonMode } from './ionic-global-4bc7e399.js';
+import { g as generateMedColor } from './color-49be71bc.js';
 import { i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-e8ede0be.js';
 import { s as sanitizeDOMString } from './index-9e3fe806.js';
-import { g as getClassMap } from './theme-40db79c9.js';
-import { g as generateMedColor } from './med-theme-83c28ab9.js';
+import { g as getClassMap } from './theme-ff3fc52f.js';
 import { c as createAnimation } from './animation-096c6391.js';
 import './hardware-back-button-4a6b37fb.js';
 import './helpers-dd7e4b7b.js';

@@ -11,7 +11,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/dialog-test/dialog-test.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/testes/dialog-test/dialog-test.tsx"
         }
       ]
     },
@@ -4635,27 +4635,27 @@
       "attributes": [
         {
           "name": "background",
-          "description": "Define se o componente irá ter background quando aberto."
+          "description": "todo"
         },
         {
           "name": "can-collapse",
-          "description": "Permite que a abertura do accordion seja bloqueada pelo front."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "is-opened",
-          "description": "Permite que o front consiga definir quando o accordion vem aberto ou fechado."
+          "description": "todo"
         },
         {
           "name": "no-border",
-          "description": "Define a variação da borda do componente."
+          "description": "todo"
         },
         {
           "name": "slots-toggle",
-          "description": "Permite que o front consiga definir quando o accordion vem aberto ou fechado.",
+          "description": "todo",
           "values": [
             {
               "name": "middle"
@@ -4669,7 +4669,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-accordion-item/med-accordion-item.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-accordion-item/med-accordion-item.tsx"
         }
       ]
     },
@@ -4682,7 +4682,7 @@
       "attributes": [
         {
           "name": "margin",
-          "description": "Define a margin entre os itens do accordion.",
+          "description": "todo",
           "values": [
             {
               "name": "lg"
@@ -4700,21 +4700,21 @@
         },
         {
           "name": "no-animation",
-          "description": "Remove a animação do componente."
+          "description": "todo"
         },
         {
           "name": "no-border",
-          "description": "Define a variação da borda do componente."
+          "description": "todo"
         },
         {
           "name": "single-open",
-          "description": "Abre um item de cada vez."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-accordion-list/med-accordion-list.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-accordion-list/med-accordion-list.tsx"
         }
       ]
     },
@@ -4727,17 +4727,17 @@
       "attributes": [
         {
           "name": "icon-name",
-          "description": "Define o icone."
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": "Define o titulo."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-add-card/med-add-card.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-add-card/med-add-card.tsx"
         }
       ]
     },
@@ -4750,25 +4750,25 @@
       "attributes": [
         {
           "name": "collapsed",
-          "description": "Define o estado do componente."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "label-alternativo",
-          "description": "Define o texto no estado active."
+          "description": "todo"
         },
         {
           "name": "label-default",
-          "description": "Define o texto no estado default."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-agrupador/med-agrupador.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-agrupador/med-agrupador.tsx"
         }
       ]
     },
@@ -4781,25 +4781,25 @@
       "attributes": [
         {
           "name": "cancel-text",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "confirm-text",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "heading",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "message",
-          "description": ""
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-alert/med-alert.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-alert/med-alert.tsx"
         }
       ]
     },
@@ -4812,11 +4812,11 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-name",
-          "description": "Define a variação do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "atualizar"
@@ -4828,17 +4828,17 @@
         },
         {
           "name": "label-atualizar",
-          "description": "Define o texto no estado active."
+          "description": "todo"
         },
         {
           "name": "label-offline",
-          "description": "Define o texto no estado active."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-alert-fixed/med-alert-fixed.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-alert-fixed/med-alert-fixed.tsx"
         }
       ]
     },
@@ -4851,57 +4851,57 @@
       "attributes": [
         {
           "name": "alternativa-selecionada",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "alternativas",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-skin-config",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-alternativa",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-enunciado",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-imagem",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-porcentagem",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-riscada",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "mostra-resposta",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "permite-riscar",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "resposta-correta",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/questoes/med-alternativas/med-alternativas.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/team/questoes/med-alternativas/med-alternativas.tsx"
         }
       ]
     },
@@ -4914,61 +4914,61 @@
       "attributes": [
         {
           "name": "alternativa-selecionada",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "alternativas",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-skin",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-skin-config",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-alternativa",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-enunciado",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-imagem",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-porcentagem",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-riscada",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "mostra-resposta",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "permite-riscar",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "resposta-correta",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/questoes/med-alternativas-a/med-alternativas-a.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/team/questoes/med-alternativas-a/med-alternativas-a.tsx"
         }
       ]
     },
@@ -4981,61 +4981,61 @@
       "attributes": [
         {
           "name": "alternativa-selecionada",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "alternativas",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-skin",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-skin-config",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-alternativa",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-enunciado",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-imagem",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-porcentagem",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "key-riscada",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "mostra-resposta",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "permite-riscar",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "resposta-correta",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/questoes/med-alternativas-b/med-alternativas-b.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/team/questoes/med-alternativas-b/med-alternativas-b.tsx"
         }
       ]
     },
@@ -5049,7 +5049,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-autocomplete/med-autocomplete.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-autocomplete/med-autocomplete.tsx"
         }
       ]
     },
@@ -5062,11 +5062,11 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "Define a variação de tamanho do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "base"
@@ -5096,17 +5096,17 @@
         },
         {
           "name": "image",
-          "description": "Define a url da imagem, se existir."
+          "description": "todo"
         },
         {
           "name": "letter",
-          "description": "Define a letra a ser exibida, se existir."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-avatar/med-avatar.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-avatar/med-avatar.tsx"
         }
       ]
     },
@@ -5119,37 +5119,37 @@
       "attributes": [
         {
           "name": "btn-left",
-          "description": "Define o texto do botão esquerdo, se existir."
+          "description": "todo"
         },
         {
           "name": "btn-right",
-          "description": "Define o texto do botão direito, se existir."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "icon",
-          "description": "Define o icone, se existir."
+          "description": "todo"
         },
         {
           "name": "image",
-          "description": "Define a url da imagem, se existir."
+          "description": "todo"
         },
         {
           "name": "texto",
-          "description": "Define o texto do componente."
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": "Define o título do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-banner/med-banner.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-banner/med-banner.tsx"
         }
       ]
     },
@@ -5162,29 +5162,29 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "gap",
-          "description": "Define o gap entre slots."
+          "description": "todo"
         },
         {
           "name": "radius",
-          "description": "Define a variação de borde-radius do componente."
+          "description": "todo"
         },
         {
           "name": "spacing-h",
-          "description": "Define a variação de padding horizontal do componente."
+          "description": "todo"
         },
         {
           "name": "spacing-v",
-          "description": "Define a variação de padding vertical do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-base/med-base.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-base/med-base.tsx"
         }
       ]
     },
@@ -5197,33 +5197,33 @@
       "attributes": [
         {
           "name": "ano",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "choice",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "container",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "disable",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "mes",
-          "description": ""
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-calendar/med-calendar.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-calendar/med-calendar.tsx"
         }
       ]
     },
@@ -5236,15 +5236,15 @@
       "attributes": [
         {
           "name": "active",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "fill",
-          "description": "",
+          "description": "todo",
           "values": [
             {
               "name": "outline"
@@ -5255,7 +5255,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-calendar-day/med-calendar-day.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-calendar-day/med-calendar-day.tsx"
         }
       ]
     },
@@ -5268,11 +5268,11 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "Define a variação de tamanho do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "lg"
@@ -5298,7 +5298,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/legacy/med-caption/med-caption.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/legacy/med-caption/med-caption.tsx"
         }
       ]
     },
@@ -5311,17 +5311,17 @@
       "attributes": [
         {
           "name": "color",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "message",
-          "description": ""
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-carregamento/med-carregamento.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-carregamento/med-carregamento.tsx"
         }
       ]
     },
@@ -5334,25 +5334,25 @@
       "attributes": [
         {
           "name": "anulada",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ativa",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "impressa",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-cartao-resposta-item/med-cartao-resposta-item.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-cartao-resposta-item/med-cartao-resposta-item.tsx"
         }
       ]
     },
@@ -5366,7 +5366,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-cartao-resposta-lista/med-cartao-resposta-lista.tsx"
         }
       ]
     },
@@ -5379,25 +5379,25 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "height",
-          "description": "Define a valor da altura do componente."
+          "description": "todo"
         },
         {
           "name": "value",
-          "description": "Define a valor da %(porcentagem) do componente."
+          "description": "todo"
         },
         {
           "name": "width",
-          "description": "Define a valor da largura do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-chart-bar/med-chart-bar.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-chart-bar/med-chart-bar.tsx"
         }
       ]
     },
@@ -5410,11 +5410,11 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "Define a variação de tamanho do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "md"
@@ -5423,25 +5423,25 @@
         },
         {
           "name": "hide-value",
-          "description": "Define a visibilidade do label."
+          "description": "todo"
         },
         {
           "name": "label",
-          "description": "Define a visibilidade do label."
+          "description": "todo"
         },
         {
           "name": "label-content",
-          "description": "Define o valor do componente."
+          "description": "todo"
         },
         {
           "name": "value",
-          "description": "Define o valor do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-chart-bar-horizontal/med-chart-bar-horizontal.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-chart-bar-horizontal/med-chart-bar-horizontal.tsx"
         }
       ]
     },
@@ -5454,29 +5454,29 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "meta",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "realizado",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "value",
-          "description": "Define o valor do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-chart-categoria/med-chart-categoria.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-chart-categoria/med-chart-categoria.tsx"
         }
       ]
     },
@@ -5489,11 +5489,11 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-name",
-          "description": "Define a variação do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "secondary"
@@ -5502,7 +5502,7 @@
         },
         {
           "name": "ds-size",
-          "description": "Define a variação de tamanho.",
+          "description": "todo",
           "values": [
             {
               "name": "lg"
@@ -5520,17 +5520,17 @@
         },
         {
           "name": "subtitulo",
-          "description": "Define o texto secundario."
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": "Define o texto primario."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-chart-radial/med-chart-radial.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-chart-radial/med-chart-radial.tsx"
         }
       ]
     },
@@ -5543,11 +5543,11 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "Define a variação de tamanho do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "lg"
@@ -5556,13 +5556,13 @@
         },
         {
           "name": "total",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-chart-radial-content/med-chart-radial-content.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-chart-radial-content/med-chart-radial-content.tsx"
         }
       ]
     },
@@ -5575,11 +5575,11 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "Define a variação de tamanho do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "lg"
@@ -5590,7 +5590,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-chart-radial-label/med-chart-radial-label.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-chart-radial-label/med-chart-radial-label.tsx"
         }
       ]
     },
@@ -5603,77 +5603,49 @@
       "attributes": [
         {
           "name": "alert",
-          "description": "Define o estado."
+          "description": "todo"
         },
         {
           "name": "categoria",
-          "description": "Define a categoria."
+          "description": "todo"
         },
         {
           "name": "data-final",
-          "description": "Define a data de termino."
+          "description": "todo"
         },
         {
           "name": "data-inicial",
-          "description": "Define a data de inicio."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor."
+          "description": "todo"
         },
         {
           "name": "finalizada",
-          "description": "Define se a task foi finalizada."
+          "description": "todo"
         },
         {
           "name": "hora-final",
-          "description": "Define a hora de termino."
+          "description": "todo"
         },
         {
           "name": "hora-inicial",
-          "description": "Define a hora de inicio."
+          "description": "todo"
         },
         {
           "name": "icon-name",
-          "description": "Define o icone."
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": "Define o titulo."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-check-card/med-check-card.tsx"
-        }
-      ]
-    },
-    {
-      "name": "med-child",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [
-        {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
-        },
-        {
-          "name": "fill",
-          "description": "Define o fill do componente.",
-          "values": [
-            {
-              "name": "outline"
-            }
-          ]
-        }
-      ],
-      "references": [
-        {
-          "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/cores/child/child.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-check-card/med-check-card.tsx"
         }
       ]
     },
@@ -5686,19 +5658,19 @@
       "attributes": [
         {
           "name": "active",
-          "description": "Define o estado active do componente."
+          "description": "todo"
         },
         {
           "name": "disabled",
-          "description": "Define o estado disabled do componente."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-name",
-          "description": "Define a variação do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "secondary"
@@ -5707,7 +5679,7 @@
         },
         {
           "name": "ds-size",
-          "description": "Define a variação de tamanho componente.",
+          "description": "todo",
           "values": [
             {
               "name": "md"
@@ -5716,21 +5688,21 @@
         },
         {
           "name": "icon-left",
-          "description": "Define o icone left do componente."
+          "description": "todo"
         },
         {
           "name": "icon-right",
-          "description": "Define o icone right do componente."
+          "description": "todo"
         },
         {
           "name": "label",
-          "description": "Define o texto do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-chip/med-chip.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-chip/med-chip.tsx"
         }
       ]
     },
@@ -5744,7 +5716,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/legacy/med-config/med-config.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/legacy/med-config/med-config.tsx"
         }
       ]
     },
@@ -5757,13 +5729,13 @@
       "attributes": [
         {
           "name": "collapsed",
-          "description": "Define o estado do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-context-menu/med-context-menu.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-context-menu/med-context-menu.tsx"
         }
       ]
     },
@@ -5776,41 +5748,41 @@
       "attributes": [
         {
           "name": "disabled",
-          "description": "Define o estado habilitado ou desabilitado do componente."
+          "description": "todo"
         },
         {
           "name": "downloaded",
-          "description": "Define o estado do componente quando download tiver concluído."
+          "description": "todo"
         },
         {
           "name": "downloading",
-          "description": "Define o estado do componente durante o download."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "identification",
-          "description": "Identificador do pieChart para emissão de eventos"
+          "description": "todo"
         },
         {
           "name": "index",
-          "description": "Define qual a posição do array se encontra esse chart. Opcional."
+          "description": "todo"
         },
         {
           "name": "initial",
-          "description": "Define o estado inicial do componente."
+          "description": "todo"
         },
         {
           "name": "value",
-          "description": "Define o valor da progress bar do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-download-button/med-download-button.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-download-button/med-download-button.tsx"
         }
       ]
     },
@@ -5823,7 +5795,7 @@
       "attributes": [
         {
           "name": "ds-name",
-          "description": "Define a variação do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "secondary"
@@ -5834,7 +5806,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-dropdown/med-dropdown.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-dropdown/med-dropdown.tsx"
         }
       ]
     },
@@ -5848,7 +5820,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-dropdown-container/med-dropdown-container.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-dropdown-container/med-dropdown-container.tsx"
         }
       ]
     },
@@ -5861,7 +5833,7 @@
       "attributes": [
         {
           "name": "ds-name",
-          "description": "TODO",
+          "description": "todo",
           "values": [
             {
               "name": "skin"
@@ -5870,13 +5842,13 @@
         },
         {
           "name": "imagens",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/questoes/med-enunciado/med-enunciado.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/team/questoes/med-enunciado/med-enunciado.tsx"
         }
       ]
     },
@@ -5889,13 +5861,13 @@
       "attributes": [
         {
           "name": "imagens",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/questoes/med-enunciado-discursiva/med-enunciado-discursiva.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/team/questoes/med-enunciado-discursiva/med-enunciado-discursiva.tsx"
         }
       ]
     },
@@ -5908,13 +5880,13 @@
       "attributes": [
         {
           "name": "value",
-          "description": "Define o tamnho da fonte"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-font-zoom/med-font-zoom.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-font-zoom/med-font-zoom.tsx"
         }
       ]
     },
@@ -5928,7 +5900,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-header/med-header.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-header/med-header.tsx"
         }
       ]
     },
@@ -5941,29 +5913,29 @@
       "attributes": [
         {
           "name": "imagens",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "initial-slide",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "marca-agua-inferior",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "marca-agua-superior",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-image-zoom/med-image-zoom.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-image-zoom/med-image-zoom.tsx"
         }
       ]
     },
@@ -5977,7 +5949,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-input/med-input.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-input/med-input.tsx"
         }
       ]
     },
@@ -5994,7 +5966,7 @@
         },
         {
           "name": "contain",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "detail",
@@ -6049,7 +6021,7 @@
         },
         {
           "name": "no-padding",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "rel",
@@ -6093,7 +6065,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-item/med-item.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-item/med-item.tsx"
         }
       ]
     },
@@ -6106,11 +6078,11 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "margin",
-          "description": "TODO",
+          "description": "todo",
           "values": [
             {
               "name": "lg"
@@ -6130,7 +6102,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-list/med-list.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-list/med-list.tsx"
         }
       ]
     },
@@ -6143,19 +6115,19 @@
       "attributes": [
         {
           "name": "border",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "disabled",
-          "description": "If `true`, the user cannot interact with the button."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "TODO",
+          "description": "todo",
           "values": [
             {
               "name": "md"
@@ -6170,21 +6142,21 @@
         },
         {
           "name": "label",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "selected",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-list-item/med-list-item.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-list-item/med-list-item.tsx"
         }
       ]
     },
@@ -6197,23 +6169,23 @@
       "attributes": [
         {
           "name": "border",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "collapsed",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "disabled",
-          "description": "If `true`, the user cannot interact with the button."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "TODO",
+          "description": "todo",
           "values": [
             {
               "name": "md"
@@ -6228,11 +6200,11 @@
         },
         {
           "name": "label",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "margin",
-          "description": "TODO",
+          "description": "todo",
           "values": [
             {
               "name": "lg"
@@ -6250,17 +6222,17 @@
         },
         {
           "name": "selected",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-list-item-accordion/med-list-item-accordion.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-list-item-accordion/med-list-item-accordion.tsx"
         }
       ]
     },
@@ -6287,7 +6259,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-lista/med-lista.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-lista/med-lista.tsx"
         }
       ]
     },
@@ -6300,17 +6272,17 @@
       "attributes": [
         {
           "name": "active",
-          "description": "TODO."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-nav/med-nav.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-nav/med-nav.tsx"
         }
       ]
     },
@@ -6323,13 +6295,13 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": ""
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-nav-accordion/med-nav-accordion.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-nav-accordion/med-nav-accordion.tsx"
         }
       ]
     },
@@ -6342,27 +6314,27 @@
       "attributes": [
         {
           "name": "active",
-          "description": "Define o estado active do componente."
+          "description": "todo"
         },
         {
           "name": "disabled",
-          "description": "Define o estado disabled do componente."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "icon",
-          "description": "Define o icone do componente."
+          "description": "todo"
         },
         {
           "name": "icon-only",
-          "description": "TODO."
+          "description": "todo"
         },
         {
           "name": "router-direction",
-          "description": "TODO.",
+          "description": "todo",
           "values": [
             {
               "name": "back"
@@ -6377,13 +6349,13 @@
         },
         {
           "name": "text",
-          "description": "Define o texto do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-nav-item/med-nav-item.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-nav-item/med-nav-item.tsx"
         }
       ]
     },
@@ -6396,13 +6368,13 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-nav-simple/med-nav-simple.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-nav-simple/med-nav-simple.tsx"
         }
       ]
     },
@@ -6415,11 +6387,11 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-name",
-          "description": "Define a variação do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "secondary"
@@ -6433,7 +6405,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-navbar/med-navbar.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-navbar/med-navbar.tsx"
         }
       ]
     },
@@ -6447,7 +6419,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-offline/med-offline.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-offline/med-offline.tsx"
         }
       ]
     },
@@ -6460,45 +6432,13 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/questoes/med-option/med-option.tsx"
-        }
-      ]
-    },
-    {
-      "name": "med-parent",
-      "description": {
-        "kind": "markdown",
-        "value": ""
-      },
-      "attributes": [
-        {
-          "name": "child",
-          "description": "Teste."
-        },
-        {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
-        },
-        {
-          "name": "fill",
-          "description": "Define o fill do componente.",
-          "values": [
-            {
-              "name": "outline"
-            }
-          ]
-        }
-      ],
-      "references": [
-        {
-          "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/cores/parent/parent.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/team/questoes/med-option/med-option.tsx"
         }
       ]
     },
@@ -6511,27 +6451,27 @@
       "attributes": [
         {
           "name": "disabled",
-          "description": "Define o estado habilitado ou desabilitado do componente."
+          "description": "todo"
         },
         {
           "name": "download",
-          "description": "Define o estado de download do componente."
+          "description": "todo"
         },
         {
           "name": "download-progress",
-          "description": "Define o valor do progresso do componente de download."
+          "description": "todo"
         },
         {
           "name": "downloaded",
-          "description": "Define o estado de downloaded do componente."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "Define a variação de tamanho do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "sm"
@@ -6540,29 +6480,29 @@
         },
         {
           "name": "hide-download",
-          "description": "Esconde o download do pie-chart."
+          "description": "todo"
         },
         {
           "name": "identification",
-          "description": "Identificador do pie-chart para emissão de eventos."
+          "description": "todo"
         },
         {
           "name": "index",
-          "description": "Define qual a posição do array se encontra esse chart. Opcional."
+          "description": "todo"
         },
         {
           "name": "label",
-          "description": "Define a porcentagem a ser mostrada."
+          "description": "todo"
         },
         {
           "name": "value",
-          "description": "Define o valor do progresso do componente do piechart."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-piechart/med-piechart.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-piechart/med-piechart.tsx"
         }
       ]
     },
@@ -6575,7 +6515,7 @@
       "attributes": [
         {
           "name": "disabled",
-          "description": "TODO",
+          "description": "todo",
           "values": [
             {
               "name": "both"
@@ -6590,11 +6530,11 @@
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "TODO",
+          "description": "todo",
           "values": [
             {
               "name": "xl"
@@ -6605,7 +6545,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-plusminus/med-plusminus.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-plusminus/med-plusminus.tsx"
         }
       ]
     },
@@ -6618,21 +6558,21 @@
       "attributes": [
         {
           "name": "collapsed",
-          "description": "Define o estado do componente."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "texto",
-          "description": "Define o conteúdo de texto do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/med-question/med-question.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/team/med-question/med-question.tsx"
         }
       ]
     },
@@ -6645,13 +6585,13 @@
       "attributes": [
         {
           "name": "collapsed",
-          "description": "Define o estado do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-rate-aula/med-rate-aula.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-rate-aula/med-rate-aula.tsx"
         }
       ]
     },
@@ -6664,13 +6604,13 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-rate-bar/med-rate-bar.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-rate-bar/med-rate-bar.tsx"
         }
       ]
     },
@@ -6683,13 +6623,13 @@
       "attributes": [
         {
           "name": "status",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-rate-like/med-rate-like.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-rate-like/med-rate-like.tsx"
         }
       ]
     },
@@ -6702,23 +6642,23 @@
       "attributes": [
         {
           "name": "cabe",
-          "description": "Define o estado cabe ou não cabe recurso."
+          "description": "todo"
         },
         {
           "name": "concurso",
-          "description": "Define o nome do concurso."
+          "description": "todo"
         },
         {
           "name": "data",
-          "description": "Define a data da postagem."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-name",
-          "description": "Define a variação do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "banca"
@@ -6730,17 +6670,17 @@
         },
         {
           "name": "nome",
-          "description": "Define o nome do aluno."
+          "description": "todo"
         },
         {
           "name": "texto",
-          "description": "Define o conteúdo de texto."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-rating/med-rating.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-rating/med-rating.tsx"
         }
       ]
     },
@@ -6754,7 +6694,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-segment/med-segment.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-segment/med-segment.tsx"
         }
       ]
     },
@@ -6767,19 +6707,19 @@
       "attributes": [
         {
           "name": "active",
-          "description": "Define o estado active do componente."
+          "description": "todo"
         },
         {
           "name": "disabled",
-          "description": "Define o estado habilitado ou desabilitado do componente."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "ds-size",
-          "description": "Define a variação de tamanho do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "sm"
@@ -6788,11 +6728,11 @@
         },
         {
           "name": "hide-download",
-          "description": "Esconde o botão de download."
+          "description": "todo"
         },
         {
           "name": "skin",
-          "description": "Define a skin do componente.",
+          "description": "todo",
           "values": [
             {
               "name": "lista"
@@ -6803,7 +6743,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-semana/med-semana.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-semana/med-semana.tsx"
         }
       ]
     },
@@ -6816,7 +6756,7 @@
       "attributes": [
         {
           "name": "skin",
-          "description": "",
+          "description": "todo",
           "values": [
             {
               "name": "lista"
@@ -6827,7 +6767,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-semanas/med-semanas.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-semanas/med-semanas.tsx"
         }
       ]
     },
@@ -6840,17 +6780,17 @@
       "attributes": [
         {
           "name": "active",
-          "description": "Define a variação da borda do componente."
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/core/med-tab-button/med-tab-button.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/med-tab-button/med-tab-button.tsx"
         }
       ]
     },
@@ -6863,13 +6803,13 @@
       "attributes": [
         {
           "name": "ativo",
-          "description": "Define a variação do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/med-themes/med-themes.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/team/med-themes/med-themes.tsx"
         }
       ]
     },
@@ -6882,33 +6822,33 @@
       "attributes": [
         {
           "name": "badge",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "label",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "selected",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "solid",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-tiles/med-tiles.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-tiles/med-tiles.tsx"
         }
       ]
     },
@@ -6921,13 +6861,13 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-toolbar/med-toolbar.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-toolbar/med-toolbar.tsx"
         }
       ]
     },
@@ -6940,27 +6880,27 @@
       "attributes": [
         {
           "name": "btn-left",
-          "description": "Define o texto do botão esquerdo, se existir."
+          "description": "todo"
         },
         {
           "name": "btn-right",
-          "description": "Define o texto do botão direito, se existir."
+          "description": "todo"
         },
         {
           "name": "collapsed",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "content",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": "TODO"
+          "description": "todo"
         },
         {
           "name": "placement",
-          "description": "TODO",
+          "description": "todo",
           "values": [
             {
               "name": "bottom"
@@ -6978,7 +6918,7 @@
         },
         {
           "name": "position",
-          "description": "TODO",
+          "description": "todo",
           "values": [
             {
               "name": "center"
@@ -6993,13 +6933,13 @@
         },
         {
           "name": "titulo",
-          "description": "TODO"
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-tooltip/med-tooltip.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-tooltip/med-tooltip.tsx"
         }
       ]
     },
@@ -7012,15 +6952,15 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "tag",
-          "description": "Define a tag HTML do componente."
+          "description": "todo"
         },
         {
           "name": "token",
-          "description": "Define o token do componente."
+          "description": "todo"
         }
       ],
       "references": [
@@ -7039,21 +6979,21 @@
       "attributes": [
         {
           "name": "ds-color",
-          "description": "Define a cor do componente."
+          "description": "todo"
         },
         {
           "name": "url",
-          "description": "Define a url da imagem a ser mostrada."
+          "description": "todo"
         },
         {
           "name": "value",
-          "description": "Define a porcentagem a ser mostrada."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/compositions/med-video-thumbnail/med-video-thumbnail.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/compositions/med-video-thumbnail/med-video-thumbnail.tsx"
         }
       ]
     },
@@ -7066,21 +7006,21 @@
       "attributes": [
         {
           "name": "like",
-          "description": "Define a quantidade de recursos que cabem."
+          "description": "todo"
         },
         {
           "name": "titulo",
-          "description": "Define o titulo do componente."
+          "description": "todo"
         },
         {
           "name": "unlike",
-          "description": "Define a quantidade de recursos que não cabem."
+          "description": "todo"
         }
       ],
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/team/med-vote/med-vote.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/team/med-vote/med-vote.tsx"
         }
       ]
     },
@@ -7094,7 +7034,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/select-test/select-test.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/testes/select-test/select-test.tsx"
         }
       ]
     },
@@ -7108,7 +7048,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/sheet-content-test/sheet-content-test.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/testes/sheet-content-test/sheet-content-test.tsx"
         }
       ]
     },
@@ -7122,7 +7062,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@medgrupo/testes/sheet-test/sheet-test.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/testes/sheet-test/sheet-test.tsx"
         }
       ]
     },
@@ -7135,15 +7075,15 @@
       "attributes": [
         {
           "name": "disabled",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "ds-color",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "ds-name",
-          "description": "",
+          "description": "todo",
           "values": [
             {
               "name": "secondary"
@@ -7152,11 +7092,11 @@
         },
         {
           "name": "feedback",
-          "description": ""
+          "description": "todo"
         },
         {
           "name": "has-button",
-          "description": "",
+          "description": "todo",
           "values": [
             {
               "name": "both"
@@ -7171,7 +7111,7 @@
         },
         {
           "name": "has-icon",
-          "description": "",
+          "description": "todo",
           "values": [
             {
               "name": "both"

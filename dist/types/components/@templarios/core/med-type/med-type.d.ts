@@ -1,16 +1,17 @@
 import { ComponentInterface } from '../../../../stencil-public-runtime';
-import { MedColor, MedTypeTag, MedTypeToken } from '../../../../interface';
+import { MedColor } from '../../../../@templarios/types/color.type';
+import { MedTypeTag, MedTypeToken } from '../../../../@templarios/types/type.type';
 export declare class MedType implements ComponentInterface {
   /**
-   * Define a cor do componente.
+   * todo
    */
   dsColor?: MedColor;
   /**
-   * Define o token do componente.
+   * todo
    */
   token?: MedTypeToken;
   /**
-   * Define a tag HTML do componente.
+   * todo
    */
   tag?: MedTypeTag;
   render(): any;

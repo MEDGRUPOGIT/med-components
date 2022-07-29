@@ -1,8 +1,14 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class TpInputContainer {
   constructor() {
+    /**
+     * todo
+     */
     this.disabled = false;
+    /**
+     * todo
+     */
     this.feedback = false;
   }
   render() {
@@ -37,7 +43,7 @@ export class TpInputContainer {
         "references": {
           "MedColor": {
             "location": "import",
-            "path": "../../../../interface"
+            "path": "../../../../@templarios/types/color.type"
           }
         }
       },
@@ -45,7 +51,7 @@ export class TpInputContainer {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "todo"
       },
       "attribute": "ds-color",
       "reflect": true
@@ -62,7 +68,7 @@ export class TpInputContainer {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "todo"
       },
       "attribute": "ds-name",
       "reflect": true
@@ -79,7 +85,7 @@ export class TpInputContainer {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "todo"
       },
       "attribute": "disabled",
       "reflect": true,
@@ -97,7 +103,7 @@ export class TpInputContainer {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "todo"
       },
       "attribute": "feedback",
       "reflect": true,
@@ -115,7 +121,7 @@ export class TpInputContainer {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "todo"
       },
       "attribute": "has-button",
       "reflect": true
@@ -132,7 +138,7 @@ export class TpInputContainer {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": ""
+        "text": "todo"
       },
       "attribute": "has-icon",
       "reflect": true

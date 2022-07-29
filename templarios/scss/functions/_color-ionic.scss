@@ -1,0 +1,36 @@
+//
+// color
+//
+@function tp-color($color, $i) {
+  @return hsl(var(--med-color-#{$color}-#{$i}));
+}
+
+@function tp-contrast-color($i) {
+  @return if($i <= 3, hsl(var(--med-color-neutral-10)), hsl(var(--med-color-neutral-1)));
+}
+
+//
+// neutral
+//
+@function tp-neutral($i, $modifier: null, $alpha: null) {
+  @if ($alpha) {
+    @return hsl(var(--med-color-neutral-#{$i}#{$modifier}), $alpha);
+  }
+
+  @return hsl(var(--med-color-neutral-#{$i}#{$modifier}));
+}
+
+@function tp-contrast-neutral($i, $alpha: null) {
+  @if ($alpha) {
+    @return if($i <= 5, hsla(var(--med-color-neutral-10), $alpha), hsl(var(--med-color-neutral-1), $alpha));
+  }
+
+  @return if($i <= 5, hsl(var(--med-color-neutral-10)), hsl(var(--med-color-neutral-1)));
+}
+
+//
+// feedback
+//
+@function tp-feedback($color) {
+  @return hsl(var(--med-color-fb-#{$color}));
+}

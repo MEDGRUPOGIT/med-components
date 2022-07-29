@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const medTheme = require('./med-theme-1bca89cc.js');
+const color = require('./color-2d4645aa.js');
 
 const medChartBarHorizontalCss = ":host{--track-background:hsl(var(--med-color-neutral-1));--progress-background:hsl(var(--med-color-brand-4));--label-color:hsl(var(--med-color-brand-4));--border-radius:4px;--height:8px}:host{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.med-chart-bar-horizontal__container{position:relative;width:100%;border-radius:var(--border-radius);overflow:hidden}.med-chart-bar-horizontal__progress,.med-chart-bar-horizontal__track{-webkit-transform-origin:left;transform-origin:left;-webkit-transition:-webkit-transform 150ms linear;transition:-webkit-transform 150ms linear;transition:transform 150ms linear;transition:transform 150ms linear, -webkit-transform 150ms linear;height:var(--height);border-radius:var(--border-radius)}.med-chart-bar-horizontal__progress{background:var(--progress-background);-webkit-transform:translate(calc(var(--progress) * 1%), -50%);transform:translate(calc(var(--progress) * 1%), -50%);position:absolute;right:0;left:0;-webkit-animation:start 300ms linear;animation:start 300ms linear;top:50%}.med-chart-bar-horizontal__track{background:var(--track-background)}.med-chart-bar-horizontal__label{--color:var(--label-color);--font-size:10px;--font-weight:600;--line-height:12px;min-width:40px;text-align:right}:host(.med-color){--progress-background:hsl(var(--med-color-4));--label-color:hsl(var(--med-color-4))}:host(.med-color-neutral){--progress-background:hsl(var(--med-color-neutral));--label-color:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--progress-background:hsl(var(--med-color-feedback));--label-color:hsl(var(--med-color-feedback))}:host(.med-chart-bar-horizontal--md){--border-radius:6px;--height:12px}:host(.med-chart-bar-horizontal--md) .med-chart-bar-horizontal__label{--font-size:12px;--font-weight:600;--line-height:12px;min-width:48px}:host(.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__progress{background-image:linear-gradient(-45deg, hsl(var(--med-color-brand-4)) 50%, hsl(var(--med-color-neutral-2), 0.2) 50%, hsl(var(--med-color-neutral-2), 0.2) 75%, hsl(var(--med-color-brand-4)) 75%, hsl(var(--med-color-brand-4)) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%);background-size:24.04px 24.04px}:host(.med-color.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__progress{--label-color:hsl(var(--med-color-4));background-image:linear-gradient(-45deg, hsl(var(--med-color-4)) 50%, hsl(var(--med-color-neutral-2), 0.2) 50%, hsl(var(--med-color-neutral-2), 0.2) 75%, hsl(var(--med-color-4)) 75%, hsl(var(--med-color-4)) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%)}:host(.med-color-neutral.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__progress{--label-color:hsl(var(--med-color-neutral));background-image:linear-gradient(-45deg, hsl(var(--med-color-neutral)) 50%, hsl(var(--med-color-neutral-2), 0.2) 50%, hsl(var(--med-color-neutral-2), 0.2) 75%, hsl(var(--med-color-neutral)) 75%, hsl(var(--med-color-neutral)) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%)}:host(.med-color-feedback.med-chart-bar-horizontal--spill) .med-chart-bar-horizontal__progress{--label-color:hsl(var(--med-color-feedback));background-image:linear-gradient(-45deg, hsl(var(--med-color-feedback)) 50%, hsl(var(--med-color-neutral-2), 0.2) 50%, hsl(var(--med-color-neutral-2), 0.2) 75%, hsl(var(--med-color-feedback)) 75%, hsl(var(--med-color-feedback)) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%, hsl(var(--med-color-neutral-2), 0.2) 100%)}@-webkit-keyframes start{from{-webkit-transform:translateX(-100%);transform:translateX(-100%)}to{-webkit-transform:translateX(calc(var(--progress) * 1%));transform:translateX(calc(var(--progress) * 1%))}}@keyframes start{from{-webkit-transform:translateX(-100%);transform:translateX(-100%)}to{-webkit-transform:translateX(calc(var(--progress) * 1%));transform:translateX(calc(var(--progress) * 1%))}}";
 
@@ -11,15 +11,15 @@ const MedChartBarHorizontal = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     /**
-     * Define a visibilidade do label.
+     * todo
      */
     this.label = true;
     /**
-     * Define a visibilidade do label.
+     * todo
      */
     this.hideValue = false;
     /**
-     * Define o valor do componente.
+     * todo
      */
     this.value = 0;
   }
@@ -38,10 +38,10 @@ const MedChartBarHorizontal = class {
       progressWidth = value;
       progressClass = '';
     }
-    return (index.h(index.Host, { class: medTheme.generateMedColor(dsColor, {
+    return (index.h(index.Host, { class: color.generateMedColor(dsColor, {
         [`med-chart-bar-horizontal ${progressClass}`]: true,
         [`med-chart-bar-horizontal--${dsSize}`]: dsSize !== undefined,
-      }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, index.h("div", { class: "med-chart-bar-horizontal__container" }, index.h("div", { class: "med-chart-bar-horizontal__progress", part: "progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }), index.h("div", { class: "med-chart-bar-horizontal__track", part: "track" })), label && index.h("med-type", { class: "med-chart-bar-horizontal__label" }, !hideValue ? `${value}%` : '', labelContent)));
+      }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" }, index.h("div", { class: "med-chart-bar-horizontal__container" }, index.h("div", { class: "med-chart-bar-horizontal__progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }), index.h("div", { class: "med-chart-bar-horizontal__track" })), label && index.h("med-type", { class: "med-chart-bar-horizontal__label" }, !hideValue ? `${value}%` : '', labelContent)));
   }
 };
 MedChartBarHorizontal.style = medChartBarHorizontalCss;

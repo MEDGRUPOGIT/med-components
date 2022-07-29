@@ -1,5 +1,7 @@
 import { r as registerInstance, e as createEvent, h, H as Host } from './index-70672e81.js';
-import { M as MedSkin } from './skin.enum-baf4fd5b.js';
+import { e as MedSkin } from './type.enum-807f0128.js';
+import './plusminus.enum-87dfaf79.js';
+import './rate-like.enum-01831b55.js';
 
 const medAlternativasCss = ":host{--font-size:16px;display:block}";
 
@@ -10,31 +12,31 @@ const MedAlternativas = class {
     this.medRiscada = createEvent(this, "medRiscada", 7);
     this.medGalleryRequest = createEvent(this, "medGalleryRequest", 7);
     /**
-     * TODO
+     * todo
      */
     this.alternativas = [];
     /**
-     * TODO
+     * todo
      */
     this.keyAlternativa = 'Alternativa';
     /**
-     * TODO
+     * todo
      */
     this.keyEnunciado = 'Enunciado';
     /**
-     * TODO
+     * todo
      */
     this.keyImagem = 'Imagem';
     /**
-     * TODO
+     * todo
      */
     this.keyPorcentagem = 'Porcentagem';
     /**
-     * TODO
+     * todo
      */
     this.keyRiscada = 'Riscada';
     /**
-     * TODO
+     * todo
      */
     this.permiteRiscar = true;
   }

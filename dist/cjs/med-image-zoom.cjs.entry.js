@@ -14,12 +14,18 @@ const MedImageZoom = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     /**
-     * TODO
+     * todo
      */
     this.imagens = [];
+    /**
+     * todo
+     */
     this.initialSlide = 0;
     this.defaultMaxRatio = 8;
     this.aplicandoZoom = false;
+    /**
+     * todo
+     */
     this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
   }
   getSliderOpts(maxRatio) {

@@ -3,7 +3,7 @@ import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedType {
   constructor() {
     /**
-     * Define a tag HTML do componente.
+     * todo
      */
     this.tag = 'span';
   }
@@ -35,7 +35,7 @@ export class MedType {
         "references": {
           "MedColor": {
             "location": "import",
-            "path": "../../../../interface"
+            "path": "../../../../@templarios/types/color.type"
           }
         }
       },
@@ -43,7 +43,7 @@ export class MedType {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": "todo"
       },
       "attribute": "ds-color",
       "reflect": true
@@ -57,7 +57,7 @@ export class MedType {
         "references": {
           "MedTypeToken": {
             "location": "import",
-            "path": "../../../../interface"
+            "path": "../../../../@templarios/types/type.type"
           }
         }
       },
@@ -65,7 +65,7 @@ export class MedType {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define o token do componente."
+        "text": "todo"
       },
       "attribute": "token",
       "reflect": true
@@ -79,7 +79,7 @@ export class MedType {
         "references": {
           "MedTypeTag": {
             "location": "import",
-            "path": "../../../../interface"
+            "path": "../../../../@templarios/types/type.type"
           }
         }
       },
@@ -87,7 +87,7 @@ export class MedType {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a tag HTML do componente."
+        "text": "todo"
       },
       "attribute": "tag",
       "reflect": true,
