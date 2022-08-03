@@ -1,5 +1,4 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { MedColor } from '../../@templarios/types/color.type';
 import { AnimationBuilder, Color, RouterDirection } from '../../interface';
 import { AnchorInterface, ButtonInterface } from '../../utils/element-interface';
 /**
@@ -10,10 +9,6 @@ import { AnchorInterface, ButtonInterface } from '../../utils/element-interface'
  */
 export declare class FabButton implements ComponentInterface, AnchorInterface, ButtonInterface {
   el: HTMLElement;
-  /**
-    * Define a cor do componente.
-    */
-  dsColor?: MedColor;
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

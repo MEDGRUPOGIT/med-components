@@ -180,18 +180,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
-          * Define a variação solida de background do componente.
-         */
-        "dsName"?: 'secondary' | 'tertiary';
-        /**
-          * Define a variação de tamanho componente.
-         */
-        "dsSize"?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
-        /**
           * The icon name to use for the back button.
          */
         "icon"?: string | null;
@@ -628,17 +616,9 @@ export namespace Components {
          */
         "doneText": string;
         /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
-        /**
-          * Define o icone do componente.
-         */
-        "iconName": string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
          */
@@ -671,10 +651,6 @@ export namespace Components {
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
-        /**
-          * Remove o estilo de input do componente.
-         */
-        "noStyle": boolean;
         /**
           * Opens the datetime overlay.
          */
@@ -747,10 +723,6 @@ export namespace Components {
           * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
          */
         "download": string | undefined;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
@@ -2061,10 +2033,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define o icone do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
@@ -2080,10 +2048,6 @@ export namespace Components {
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
-        /**
-          * Define o icone do componente.
-         */
-        "noIcon": boolean;
         /**
           * Set the input's placeholder. `placeholder` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
          */
@@ -2698,10 +2662,6 @@ export namespace Components {
           * If `true`, the user cannot interact with the toggle.
          */
         "disabled": boolean;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * The mode determines which platform styles to use.
          */
@@ -5374,18 +5334,6 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
-          * Define a variação solida de background do componente.
-         */
-        "dsName"?: 'secondary' | 'tertiary';
-        /**
-          * Define a variação de tamanho componente.
-         */
-        "dsSize"?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
-        /**
           * The icon name to use for the back button.
          */
         "icon"?: string | null;
@@ -5830,17 +5778,9 @@ declare namespace LocalJSX {
          */
         "doneText"?: string;
         /**
-          * Define a variação do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
-        /**
-          * Define o icone do componente.
-         */
-        "iconName"?: string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
          */
@@ -5873,10 +5813,6 @@ declare namespace LocalJSX {
           * The name of the control, which is submitted with the form data.
          */
         "name"?: string;
-        /**
-          * Remove o estilo de input do componente.
-         */
-        "noStyle"?: boolean;
         /**
           * Emitted when the datetime loses focus.
          */
@@ -5957,10 +5893,6 @@ declare namespace LocalJSX {
           * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
          */
         "download"?: string | undefined;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
@@ -7178,10 +7110,6 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Define o icone do componente.
-         */
-        "dsName"?: 'secondary';
-        /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
@@ -7193,10 +7121,6 @@ declare namespace LocalJSX {
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
-        /**
-          * Define o icone do componente.
-         */
-        "noIcon"?: boolean;
         /**
           * Emitted when the input loses focus.
          */
@@ -7825,10 +7749,6 @@ declare namespace LocalJSX {
           * If `true`, the user cannot interact with the toggle.
          */
         "disabled"?: boolean;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * The mode determines which platform styles to use.
          */

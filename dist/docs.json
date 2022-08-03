@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-07-29T11:56:09",
+  "timestamp": "2022-08-03T17:30:33",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -1050,89 +1050,6 @@
           "required": false
         },
         {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"secondary\" | \"tertiary\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": false,
-          "docs": "Define a variação solida de background do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "value": "tertiary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsSize",
-          "type": "\"lg\" | \"md\" | \"sm\" | \"xs\" | \"xxs\" | \"xxxs\" | undefined",
-          "mutable": false,
-          "attr": "ds-size",
-          "reflectToAttr": false,
-          "docs": "Define a variação de tamanho componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "lg",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            },
-            {
-              "value": "sm",
-              "type": "string"
-            },
-            {
-              "value": "xs",
-              "type": "string"
-            },
-            {
-              "value": "xxs",
-              "type": "string"
-            },
-            {
-              "value": "xxxs",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "icon",
           "type": "null | string | undefined",
           "mutable": false,
@@ -1252,16 +1169,6 @@
           "docs": "Background of the button"
         },
         {
-          "name": "--background-activated",
-          "annotation": "prop",
-          "docs": "Background of the button when pressed. Note: setting this will interfere with the Material Design ripple."
-        },
-        {
-          "name": "--background-activated-opacity",
-          "annotation": "prop",
-          "docs": "Opacity of the button when pressed"
-        },
-        {
           "name": "--background-focused",
           "annotation": "prop",
           "docs": "Background of the button when focused with the tab key"
@@ -1269,7 +1176,7 @@
         {
           "name": "--background-focused-opacity",
           "annotation": "prop",
-          "docs": "Opacity of the button when focused with the tab key"
+          "docs": "Opacity of the button background when focused with the tab key"
         },
         {
           "name": "--background-hover",
@@ -1282,39 +1189,14 @@
           "docs": "Opacity of the background on hover"
         },
         {
-          "name": "--border-color",
-          "annotation": "prop",
-          "docs": "Border color of the button"
-        },
-        {
           "name": "--border-radius",
           "annotation": "prop",
           "docs": "Border radius of the button"
         },
         {
-          "name": "--border-style",
-          "annotation": "prop",
-          "docs": "Border style of the button"
-        },
-        {
-          "name": "--border-width",
-          "annotation": "prop",
-          "docs": "Border width of the button"
-        },
-        {
-          "name": "--box-shadow",
-          "annotation": "prop",
-          "docs": "Box shadow of the button"
-        },
-        {
           "name": "--color",
           "annotation": "prop",
           "docs": "Text color of the button"
-        },
-        {
-          "name": "--color-activated",
-          "annotation": "prop",
-          "docs": "Text color of the button when pressed"
         },
         {
           "name": "--color-focused",
@@ -1324,7 +1206,87 @@
         {
           "name": "--color-hover",
           "annotation": "prop",
-          "docs": "Text color of the button when hover"
+          "docs": "Text color of the button on hover"
+        },
+        {
+          "name": "--icon-font-size",
+          "annotation": "prop",
+          "docs": "Font size of the button icon"
+        },
+        {
+          "name": "--icon-font-weight",
+          "annotation": "prop",
+          "docs": "Font weight of the button icon"
+        },
+        {
+          "name": "--icon-margin-bottom",
+          "annotation": "prop",
+          "docs": "Bottom margin of the button icon"
+        },
+        {
+          "name": "--icon-margin-end",
+          "annotation": "prop",
+          "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button icon"
+        },
+        {
+          "name": "--icon-margin-start",
+          "annotation": "prop",
+          "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button icon"
+        },
+        {
+          "name": "--icon-margin-top",
+          "annotation": "prop",
+          "docs": "Top margin of the button icon"
+        },
+        {
+          "name": "--icon-padding-bottom",
+          "annotation": "prop",
+          "docs": "Bottom padding of the button icon"
+        },
+        {
+          "name": "--icon-padding-end",
+          "annotation": "prop",
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button icon"
+        },
+        {
+          "name": "--icon-padding-start",
+          "annotation": "prop",
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button icon"
+        },
+        {
+          "name": "--icon-padding-top",
+          "annotation": "prop",
+          "docs": "Top padding of the button icon"
+        },
+        {
+          "name": "--margin-bottom",
+          "annotation": "prop",
+          "docs": "Bottom margin of the button"
+        },
+        {
+          "name": "--margin-end",
+          "annotation": "prop",
+          "docs": "Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button"
+        },
+        {
+          "name": "--margin-start",
+          "annotation": "prop",
+          "docs": "Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button"
+        },
+        {
+          "name": "--margin-top",
+          "annotation": "prop",
+          "docs": "Top margin of the button"
+        },
+        {
+          "name": "--min-height",
+          "annotation": "prop",
+          "docs": "Minimum height of the button"
+        },
+        {
+          "name": "--min-width",
+          "annotation": "prop",
+          "docs": "Minimum width of the button"
         },
         {
           "name": "--opacity",
@@ -1379,12 +1341,10 @@
       ],
       "dependents": [],
       "dependencies": [
-        "ion-icon",
         "ion-ripple-effect"
       ],
       "dependencyGraph": {
         "ion-back-button": [
-          "ion-icon",
           "ion-ripple-effect"
         ]
       }
@@ -4262,26 +4222,6 @@
           "required": false
         },
         {
-          "name": "dsName",
-          "type": "\"secondary\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define a variação do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "hourValues",
           "type": "number | number[] | string | undefined",
           "mutable": false,
@@ -4304,23 +4244,6 @@
             }
           ],
           "optional": true,
-          "required": false
-        },
-        {
-          "name": "iconName",
-          "type": "string",
-          "mutable": false,
-          "attr": "icon-name",
-          "reflectToAttr": false,
-          "docs": "Define o icone do componente.",
-          "docsTags": [],
-          "default": "this.noStyle ? '' : 'med-semana'",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
           "required": false
         },
         {
@@ -4488,23 +4411,6 @@
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "noStyle",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "no-style",
-          "reflectToAttr": false,
-          "docs": "Remove o estilo de input do componente.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,
@@ -4761,14 +4667,8 @@
         }
       ],
       "dependents": [],
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "ion-datetime": [
-          "ion-icon"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/fab/fab.tsx",
@@ -5013,25 +4913,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -5389,11 +5270,13 @@
       ],
       "dependents": [],
       "dependencies": [
-        "ion-icon"
+        "ion-icon",
+        "ion-ripple-effect"
       ],
       "dependencyGraph": {
         "ion-fab-button": [
-          "ion-icon"
+          "ion-icon",
+          "ion-ripple-effect"
         ]
       }
     },
@@ -13009,6 +12892,7 @@
         "ion-button",
         "ion-card",
         "ion-chip",
+        "ion-fab-button",
         "ion-item",
         "ion-item-option",
         "ion-menu-button",
@@ -13033,6 +12917,9 @@
           "ion-ripple-effect"
         ],
         "ion-chip": [
+          "ion-ripple-effect"
+        ],
+        "ion-fab-button": [
           "ion-ripple-effect"
         ],
         "ion-item": [
@@ -14012,26 +13899,6 @@
           "required": false
         },
         {
-          "name": "dsName",
-          "type": "\"secondary\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "Define o icone do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "enterkeyhint",
           "type": "\"done\" | \"enter\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined",
           "mutable": false,
@@ -14142,23 +14009,6 @@
             }
           ],
           "optional": true,
-          "required": false
-        },
-        {
-          "name": "noIcon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "no-icon",
-          "reflectToAttr": true,
-          "docs": "Define o icone do componente.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
           "required": false
         },
         {
@@ -18316,25 +18166,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {

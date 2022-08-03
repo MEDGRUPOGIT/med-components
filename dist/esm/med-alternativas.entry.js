@@ -1,5 +1,5 @@
 import { r as registerInstance, e as createEvent, h, H as Host } from './index-70672e81.js';
-import { e as MedSkin } from './type.enum-807f0128.js';
+import { j as MedSkin } from './type.enum-81ff75b3.js';
 import './plusminus.enum-87dfaf79.js';
 import './rate-like.enum-01831b55.js';
 

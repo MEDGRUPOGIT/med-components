@@ -11,14 +11,6 @@ export declare class Searchbar implements ComponentInterface {
   focused: boolean;
   noAnimate: boolean;
   /**
-    * Define o icone do componente.
-    */
-  dsName?: 'secondary';
-  /**
-    * Define o icone do componente.
-    */
-  noIcon: boolean;
-  /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
    * For more information on colors, see [theming](/docs/theming/basics).

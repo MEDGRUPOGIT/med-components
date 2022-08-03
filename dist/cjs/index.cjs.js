@@ -13,7 +13,7 @@ const index$1 = require('./index-e1bb33c3.js');
 const index$2 = require('./index-29aebf46.js');
 const index$3 = require('./index-3bb26b58.js');
 const overlays = require('./overlays-e22059c3.js');
-const type_enum = require('./type.enum-25ca4458.js');
+const type_enum = require('./type.enum-ef81b7bf.js');
 const plusminus_enum = require('./plusminus.enum-43139314.js');
 const rateLike_enum = require('./rate-like.enum-0930ca84.js');
 require('./gesture-controller-29adda71.js');
@@ -68,6 +68,24 @@ exports.modalController = overlays.modalController;
 exports.pickerController = overlays.pickerController;
 exports.popoverController = overlays.popoverController;
 exports.toastController = overlays.toastController;
+Object.defineProperty(exports, 'BaseGap', {
+  enumerable: true,
+  get: function () {
+    return type_enum.BaseGap;
+  }
+});
+Object.defineProperty(exports, 'BaseRadius', {
+  enumerable: true,
+  get: function () {
+    return type_enum.BaseRadius;
+  }
+});
+Object.defineProperty(exports, 'BaseSpacing', {
+  enumerable: true,
+  get: function () {
+    return type_enum.BaseSpacing;
+  }
+});
 Object.defineProperty(exports, 'BreakPointNameEnum', {
   enumerable: true,
   get: function () {
@@ -110,6 +128,12 @@ Object.defineProperty(exports, 'MedTypeTag', {
     return type_enum.MedTypeTag;
   }
 });
+Object.defineProperty(exports, 'TemplariosAvatarSize', {
+  enumerable: true,
+  get: function () {
+    return type_enum.TemplariosAvatarSize;
+  }
+});
 Object.defineProperty(exports, 'TemplariosBadgeSize', {
   enumerable: true,
   get: function () {
@@ -120,6 +144,12 @@ Object.defineProperty(exports, 'TemplariosButtonSize', {
   enumerable: true,
   get: function () {
     return type_enum.TemplariosButtonSize;
+  }
+});
+Object.defineProperty(exports, 'TemplariosChipSize', {
+  enumerable: true,
+  get: function () {
+    return type_enum.TemplariosChipSize;
   }
 });
 Object.defineProperty(exports, 'TemplariosIconSize', {

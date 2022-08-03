@@ -1,4 +1,37 @@
 //
+// base
+//
+$tp-base-radius: (
+  s00: 0,
+  s02: 2px,
+  s04: 4px,
+  s08: 8px,
+);
+
+$tp-base-gap: (
+  s00: 0,
+  s02: 2px,
+  s04: 4px,
+  s08: 8px,
+  s12: 12px,
+  s16: 16px,
+  s20: 20px,
+  s24: 24px,
+);
+
+$tp-base-spacing: (
+  s00: 0,
+  s02: 2px,
+  s04: 4px,
+  s08: 8px,
+  s12: 12px,
+  s16: 16px,
+  s20: 20px,
+  s24: 24px,
+);
+
+
+//
 // type
 //
 $tp-type: (

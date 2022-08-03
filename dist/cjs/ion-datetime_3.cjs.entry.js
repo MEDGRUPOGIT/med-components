@@ -566,7 +566,7 @@ const VALID_AMPM_PREFIX = [
   FORMAT_hh, FORMAT_h, FORMAT_mm, FORMAT_m, FORMAT_ss, FORMAT_s
 ];
 
-const datetimeIosCss = ":host{padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;min-width:16px;min-height:1.2em;font-family:var(--ion-font-family, inherit);text-overflow:ellipsis;white-space:nowrap;overflow:hidden;z-index:2}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}:host(.in-item){position:static}:host(.datetime-placeholder){color:var(--placeholder-color)}:host(.datetime-disabled){opacity:0.3;pointer-events:none}:host(.datetime-readonly){pointer-events:none}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.datetime-text{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;-ms-flex:1;flex:1;min-height:inherit;direction:ltr;overflow:inherit}[dir=rtl] .datetime-text,:host-context([dir=rtl]) .datetime-text{direction:rtl}:host{--placeholder-color:var(--ion-color-step-400, #999999);--padding-top:10px;--padding-end:10px;--padding-bottom:10px;--padding-start:20px}:host{--padding-top:8px;--padding-end:8px;--padding-bottom:8px;--padding-start:16px;--icon-color:hsl(var(--med-color-neutral-6));--background:hsl(var(--med-color-neutral-2));--placeholder-color:hsl(var(--med-color-neutral-5));--border-radius:8px;--font-size:14px;--font-weight:400;--line-height:16px;--color:hsl(var(--med-color-neutral-5));--border-color:transparent}:host{background:var(--background);border-radius:var(--border-radius);border:1px solid var(--border-color)}:host .datetime-text{font-size:var(--font-size);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;font-weight:var(--font-weight);color:var(--color);line-height:var(--line-height)}:host .datetime-icon{stroke:var(--icon-color)}:host button{padding:0}:host(.med-datetime--secondary){--background:hsl(var(--med-color-neutral-3));--color:hsl(var(--med-color-neutral-6))}:host(.has-focus){--border-color:hsl(var(--med-color-neutral-3))}:host(.has-focus.med-datetime--secondary){--border-color:hsl(var(--med-color-neutral-4))}:host(.med-datetime--no-style){--background:transparent;--font-size:32px;--padding-top:0;--padding-end:0;--padding-bottom:0;--padding-start:0;--line-height:32px}";
+const datetimeIosCss = ":host{padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;min-width:16px;min-height:1.2em;font-family:var(--ion-font-family, inherit);text-overflow:ellipsis;white-space:nowrap;overflow:hidden;z-index:2}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}:host(.in-item){position:static}:host(.datetime-placeholder){color:var(--placeholder-color)}:host(.datetime-disabled){opacity:0.3;pointer-events:none}:host(.datetime-readonly){pointer-events:none}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.datetime-text{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;-ms-flex:1;flex:1;min-height:inherit;direction:ltr;overflow:inherit}[dir=rtl] .datetime-text,:host-context([dir=rtl]) .datetime-text{direction:rtl}:host{--placeholder-color:var(--ion-color-step-400, #999999);--padding-top:10px;--padding-end:10px;--padding-bottom:10px;--padding-start:20px}";
 
 const datetimeMdCss = ":host{padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;min-width:16px;min-height:1.2em;font-family:var(--ion-font-family, inherit);text-overflow:ellipsis;white-space:nowrap;overflow:hidden;z-index:2}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}:host(.in-item){position:static}:host(.datetime-placeholder){color:var(--placeholder-color)}:host(.datetime-disabled){opacity:0.3;pointer-events:none}:host(.datetime-readonly){pointer-events:none}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.datetime-text{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;-ms-flex:1;flex:1;min-height:inherit;direction:ltr;overflow:inherit}[dir=rtl] .datetime-text,:host-context([dir=rtl]) .datetime-text{direction:rtl}:host{--placeholder-color:var(--ion-placeholder-color, var(--ion-color-step-400, #999999));--padding-top:10px;--padding-end:0;--padding-bottom:11px;--padding-start:16px}";
 
@@ -597,15 +597,6 @@ const Datetime = class {
      */
     this.readonly = false;
     /**
-      * Remove o estilo de input do componente.
-      */
-    this.noStyle = false;
-    /**
-      * Define o icone do componente.
-      */
-    this.iconName = this.noStyle ? '' : 'med-semana';
-    this.hasFocus = false;
-    /**
      * The display format of the date and time as text that shows
      * within the item. When the `pickerFormat` input is not used, then the
      * `displayFormat` is used for both display the formatted text, and determining
@@ -627,11 +618,9 @@ const Datetime = class {
     };
     this.onFocus = () => {
       this.ionFocus.emit();
-      this.hasFocus = true;
     };
     this.onBlur = () => {
       this.ionBlur.emit();
-      this.hasFocus = false;
     };
   }
   disabledChanged() {
@@ -936,7 +925,7 @@ const Datetime = class {
     }
   }
   render() {
-    const { inputId, text, disabled, readonly, isExpanded, el, placeholder, dsName, iconName, noStyle } = this;
+    const { inputId, text, disabled, readonly, isExpanded, el, placeholder } = this;
     const mode = ionicGlobal.getIonMode(this);
     const labelId = inputId + '-lbl';
     const label = helpers.findItemLabel(el);
@@ -958,11 +947,8 @@ const Datetime = class {
         'datetime-disabled': disabled,
         'datetime-readonly': readonly,
         'datetime-placeholder': addPlaceholderClass,
-        'in-item': theme.hostContext('ion-item', el),
-        [`med-datetime--${dsName}`]: dsName !== undefined,
-        'med-datetime--no-style': noStyle,
-        'has-focus': this.hasFocus,
-      } }, index.h("div", { class: "datetime-text", part: datetimeTextPart }, datetimeText), !noStyle && index.h("ion-icon", { class: "datetime-icon med-icon", slot: "icon-only", name: iconName }), index.h("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: this.disabled, ref: btnEl => this.buttonEl = btnEl })));
+        'in-item': theme.hostContext('ion-item', el)
+      } }, index.h("div", { class: "datetime-text", part: datetimeTextPart }, datetimeText), index.h("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: this.disabled, ref: btnEl => this.buttonEl = btnEl })));
   }
   get el() { return index.getElement(this); }
   static get watchers() { return {

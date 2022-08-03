@@ -1,7 +1,6 @@
-import { Component, Element, Event, h, Host, Prop } from '@stencil/core';
+import { Component, Element, Event, Host, Prop, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
-import { generateMedColor } from '../../@templarios/utilities/color';
-import { hostContext, openURL } from '../../utils/theme';
+import { createColorClasses, hostContext, openURL } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -51,7 +50,7 @@ export class FabButton {
     };
   }
   render() {
-    const { el, dsColor, disabled, href, activated, show, translucent, size } = this;
+    const { el, disabled, color, href, activated, show, translucent, size } = this;
     const inList = hostContext('ion-fab-list', el);
     const mode = getIonMode(this);
     const TagType = href === undefined ? 'button' : 'a';
@@ -63,7 +62,7 @@ export class FabButton {
         rel: this.rel,
         target: this.target
       };
-    return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
+    return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: createColorClasses(color, {
         [mode]: true,
         'fab-button-in-list': inList,
         'fab-button-translucent-in-list': inList && translucent,
@@ -78,7 +77,8 @@ export class FabButton {
       h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur, onClick: (ev) => openURL(href, ev, this.routerDirection, this.routerAnimation) }),
         h("ion-icon", { icon: this.closeIcon, part: "close-icon", class: "close-icon", lazy: false }),
         h("span", { class: "button-inner" },
-          h("slot", null)))));
+          h("slot", null)),
+        mode === 'md' && h("ion-ripple-effect", null))));
   }
   static get is() { return "ion-fab-button"; }
   static get encapsulation() { return "shadow"; }
@@ -91,28 +91,6 @@ export class FabButton {
     "md": ["fab-button.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../@templarios/types/color.type"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    },
     "color": {
       "type": "string",
       "mutable": false,

@@ -15,9 +15,9 @@
 ::slotted(ion-icon[slot=start]),
 ::slotted(ion-button[slot=end]),
 ::slotted(ion-icon[slot=end]) {
+  --color: hsl(var(--med-color-neutral-6)) !important;
   margin: 0 8px 0 8px;
   stroke: hsl(var(--med-color-neutral-6));
-  --color: hsl(var(--med-color-neutral-6)) !important;
 }
 
 :host(.tp-input-container--has-button-start)::slotted(ion-input), :host(.tp-input-container--has-button-start)::slotted(ion-select),
@@ -89,5 +89,5 @@
 }
 :host(.med-color-feedback)::slotted(ion-button), :host(.med-color-feedback)::slotted(ion-icon) {
   --color: hsl(var(--med-color-feedback-contrast)) !important;
-  stroke: hsl(var(--med-color-neutral-6)) !important;
+  stroke: hsl(var(--med-color-feedback-contrast)) !important;
 }

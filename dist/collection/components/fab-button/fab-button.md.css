@@ -248,7 +248,7 @@ ion-ripple-effect {
 }
 
 :host {
-  --background: hsl(var(--med-color-brand-3));
+  --background: var(--ion-color-primary, #3880ff);
   --background-activated: transparent;
   --background-focused: currentColor;
   --background-hover: currentColor;
@@ -304,62 +304,4 @@ ion-ripple-effect {
   :host(.ion-color:hover) .button-native::after {
     background: var(--ion-color-contrast);
   }
-}
-:host {
-  --background: hsl(var(--med-color-brand-3));
-  width: 48px;
-  height: 48px;
-}
-:host .close-icon {
-  font-size: 24px;
-  color: hsl(var(--med-color-contrast-fixed));
-}
-
-::slotted(ion-icon) {
-  width: 24px;
-  height: 24px;
-  stroke: hsl(var(--med-color-contrast-fixed));
-}
-
-:host(.med-color) {
-  --background: hsl(var(--med-color-3));
-}
-:host(.med-color) .close-icon {
-  width: 24px;
-  color: hsl(var(--med-color-contrast-fixed));
-}
-:host(.med-color)::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-contrast-fixed));
-}
-
-:host(.fab-button-in-list.med-color) ::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-contrast-fixed));
-}
-
-:host(.med-color-neutral) {
-  --background: hsl(var(--med-color-neutral));
-}
-:host(.med-color-neutral) .close-icon {
-  color: hsl(var(--med-color-neutral-contrast));
-}
-:host(.med-color-neutral)::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-neutral-contrast));
-}
-
-:host(.fab-button-in-list.med-color-neutral) ::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-neutral-contrast));
-}
-
-:host(.med-color-feedback) {
-  --background: hsl(var(--med-color-feedback));
-}
-:host(.med-color-feedback) .close-icon {
-  color: hsl(var(--med-color-feedback-contrast));
-}
-:host(.med-color-feedback)::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-feedback-contrast));
-}
-
-:host(.fab-button-in-list.med-color-feedback) ::slotted(ion-icon) {
-  stroke: hsl(var(--med-color-feedback-contrast));
 }

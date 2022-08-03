@@ -13,10 +13,6 @@ export class Searchbar {
     this.focused = false;
     this.noAnimate = true;
     /**
-      * Define o icone do componente.
-      */
-    this.noIcon = false;
-    /**
      * If `true`, enable searchbar animation.
      */
     this.animated = false;
@@ -325,15 +321,15 @@ export class Searchbar {
     return true;
   }
   render() {
-    const { cancelButtonText, dsName, noIcon } = this;
+    const { cancelButtonText } = this;
     const animated = this.animated && config.getBoolean('animated', true);
     const mode = getIonMode(this);
-    const clearIcon = this.clearIcon || (mode === 'ios' ? 'med-fechar' : 'med-fechar');
-    const searchIcon = this.searchIcon || (mode === 'ios' ? 'med-busca' : 'search-sharp');
+    const clearIcon = this.clearIcon || (mode === 'ios' ? 'close-circle' : 'close-sharp');
+    const searchIcon = this.searchIcon || (mode === 'ios' ? 'search-outline' : 'search-sharp');
     const shouldShowCancelButton = this.shouldShowCancelButton();
     const cancelButton = (this.showCancelButton !== 'never') && (h("button", { "aria-label": cancelButtonText, "aria-hidden": shouldShowCancelButton ? undefined : 'true', type: "button", tabIndex: mode === 'ios' && !shouldShowCancelButton ? -1 : undefined, onMouseDown: this.onCancelSearchbar, onTouchStart: this.onCancelSearchbar, class: "searchbar-cancel-button" },
       h("div", { "aria-hidden": "true" }, mode === 'md'
-        ? h("ion-icon", { "aria-hidden": "true", class: "med-icon", mode: mode, icon: this.cancelButtonIcon, lazy: false })
+        ? h("ion-icon", { "aria-hidden": "true", mode: mode, icon: this.cancelButtonIcon, lazy: false })
         : cancelButtonText)));
     return (h(Host, { role: "search", "aria-disabled": this.disabled ? 'true' : null, class: createColorClasses(this.color, {
         [mode]: true,
@@ -344,16 +340,14 @@ export class Searchbar {
         'searchbar-left-aligned': this.shouldAlignLeft,
         'searchbar-has-focus': this.focused,
         'searchbar-should-show-clear': this.shouldShowClearButton(),
-        'searchbar-should-show-cancel': this.shouldShowCancelButton(),
-        'med-searchbar--no-icon': noIcon,
-        [`med-searchbar--${dsName}`]: dsName !== undefined,
+        'searchbar-should-show-cancel': this.shouldShowCancelButton()
       }) },
       h("div", { class: "searchbar-input-container" },
-        h("ion-icon", { "aria-hidden": "true", class: "med-icon med-icon-search", mode: mode, icon: searchIcon, lazy: false }),
         h("input", { "aria-label": "search text", disabled: this.disabled, ref: el => this.nativeInput = el, class: "searchbar-input", inputMode: this.inputmode, enterKeyHint: this.enterkeyhint, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, placeholder: this.placeholder, type: this.type, value: this.getValue(), autoComplete: this.autocomplete, autoCorrect: this.autocorrect, spellcheck: this.spellcheck }),
         mode === 'md' && cancelButton,
+        h("ion-icon", { "aria-hidden": "true", mode: mode, name: searchIcon, lazy: false, class: "med-icon searchbar-search-icon" }),
         h("button", { "aria-label": "reset", type: "button", "no-blur": true, class: "searchbar-clear-button", onMouseDown: ev => this.onClearInput(ev, true), onTouchStart: ev => this.onClearInput(ev, true) },
-          h("ion-icon", { "aria-hidden": "true", class: "med-icon searchbar-clear-icon", mode: mode, icon: clearIcon, lazy: false }))),
+          h("ion-icon", { "aria-hidden": "true", mode: mode, name: clearIcon, lazy: false, class: "med-icon searchbar-clear-icon" }))),
       mode === 'ios' && cancelButton));
   }
   static get is() { return "ion-searchbar"; }
@@ -367,41 +361,6 @@ export class Searchbar {
     "md": ["searchbar.md.css"]
   }; }
   static get properties() { return {
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'secondary'",
-        "resolved": "\"secondary\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define o icone do componente."
-      },
-      "attribute": "ds-name",
-      "reflect": true
-    },
-    "noIcon": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Define o icone do componente."
-      },
-      "attribute": "no-icon",
-      "reflect": true,
-      "defaultValue": "false"
-    },
     "color": {
       "type": "string",
       "mutable": false,

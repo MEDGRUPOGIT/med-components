@@ -114,8 +114,3 @@
   right: unset;
   right: 0;
 }
-
-:host {
-  min-width: 48px;
-  min-height: 48px;
-}

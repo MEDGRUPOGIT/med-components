@@ -177,46 +177,6 @@
           "description": "If `true`, the user cannot interact with the button."
         },
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
-        },
-        {
-          "name": "ds-name",
-          "description": "Define a variação solida de background do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            },
-            {
-              "name": "tertiary"
-            }
-          ]
-        },
-        {
-          "name": "ds-size",
-          "description": "Define a variação de tamanho componente.",
-          "values": [
-            {
-              "name": "lg"
-            },
-            {
-              "name": "md"
-            },
-            {
-              "name": "sm"
-            },
-            {
-              "name": "xs"
-            },
-            {
-              "name": "xxs"
-            },
-            {
-              "name": "xxxs"
-            }
-          ]
-        },
-        {
           "name": "icon",
           "description": "The icon name to use for the back button."
         },
@@ -968,21 +928,8 @@
           "description": "The text to display on the picker's \"Done\" button."
         },
         {
-          "name": "ds-name",
-          "description": "Define a variação do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            }
-          ]
-        },
-        {
           "name": "hour-values",
           "description": "Values used to create the list of selectable hours. By default\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\nto control exactly which hours to display, the `hourValues` input can take a number, an\narray of numbers, or a string of comma separated numbers."
-        },
-        {
-          "name": "icon-name",
-          "description": "Define o icone do componente."
         },
         {
           "name": "max",
@@ -1023,10 +970,6 @@
         {
           "name": "name",
           "description": "The name of the control, which is submitted with the form data."
-        },
-        {
-          "name": "no-style",
-          "description": "Remove o estilo de input do componente."
         },
         {
           "name": "picker-format",
@@ -1135,10 +1078,6 @@
         {
           "name": "download",
           "description": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
-        },
-        {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
         },
         {
           "name": "href",
@@ -3488,15 +3427,6 @@
           "description": "If `true`, the user cannot interact with the input."
         },
         {
-          "name": "ds-name",
-          "description": "Define o icone do componente.",
-          "values": [
-            {
-              "name": "secondary"
-            }
-          ]
-        },
-        {
           "name": "enterkeyhint",
           "description": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
           "values": [
@@ -3564,10 +3494,6 @@
               "name": "md"
             }
           ]
-        },
-        {
-          "name": "no-icon",
-          "description": "Define o icone do componente."
         },
         {
           "name": "placeholder",
@@ -4535,10 +4461,6 @@
         {
           "name": "disabled",
           "description": "If `true`, the user cannot interact with the toggle."
-        },
-        {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
         },
         {
           "name": "mode",

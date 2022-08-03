@@ -1,9 +1,8 @@
-import { Component, Element, Event, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { getAriaLabel, renderHiddenInput } from '../../utils/helpers';
-import { generateMedColor } from '../../@templarios/utilities/color';
 import { hapticSelection } from '../../utils/native/haptic';
-import { hostContext } from '../../utils/theme';
+import { createColorClasses, hostContext } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -113,15 +112,14 @@ export class Toggle {
     }
   }
   render() {
-    const { activated, dsColor, checked, disabled, el, inputId, name } = this;
+    const { activated, color, checked, disabled, el, inputId, name } = this;
     const mode = getIonMode(this);
     const { label, labelId, labelText } = getAriaLabel(el, inputId);
     const value = this.getValue();
     renderHiddenInput(true, el, name, (checked ? value : ''), disabled);
-    return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "switch", class: generateMedColor(dsColor, {
+    return (h(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "switch", class: createColorClasses(color, {
         [mode]: true,
-        'med-toggle': true,
-        'in-item': hostContext('ion-item', el) || hostContext('med-item', el),
+        'in-item': hostContext('ion-item', el),
         'toggle-activated': activated,
         'toggle-checked': checked,
         'toggle-disabled': disabled,
@@ -137,35 +135,13 @@ export class Toggle {
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
     "ios": ["toggle.ios.scss"],
-    "md": ["toggle.ios.scss"]
+    "md": ["toggle.md.scss"]
   }; }
   static get styleUrls() { return {
     "ios": ["toggle.ios.css"],
-    "md": ["toggle.ios.css"]
+    "md": ["toggle.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../@templarios/types/color.type"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    },
     "color": {
       "type": "string",
       "mutable": false,

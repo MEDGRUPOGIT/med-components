@@ -1,5 +1,5 @@
 import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { c as MedFontSize } from './type.enum-807f0128.js';
+import { h as MedFontSize } from './type.enum-81ff75b3.js';
 import './plusminus.enum-87dfaf79.js';
 import './rate-like.enum-01831b55.js';
 

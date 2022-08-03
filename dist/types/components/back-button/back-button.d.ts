@@ -1,5 +1,4 @@
 import { ComponentInterface } from '../../stencil-public-runtime';
-import { MedColor } from '../../@templarios/types/color.type';
 import { AnimationBuilder, Color } from '../../interface';
 import { ButtonInterface } from '../../utils/element-interface';
 /**
@@ -11,18 +10,6 @@ import { ButtonInterface } from '../../utils/element-interface';
  */
 export declare class BackButton implements ComponentInterface, ButtonInterface {
   el: HTMLElement;
-  /**
-    * Define a cor do componente.
-    */
-  dsColor?: MedColor;
-  /**
-    * Define a variação de tamanho componente.
-    */
-  dsSize?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
-  /**
-    * Define a variação solida de background do componente.
-    */
-  dsName?: 'secondary' | 'tertiary';
   /**
    * The color to use from your application's color palette.
    * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.

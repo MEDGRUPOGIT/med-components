@@ -31,15 +31,6 @@ export class Datetime {
      */
     this.readonly = false;
     /**
-      * Remove o estilo de input do componente.
-      */
-    this.noStyle = false;
-    /**
-      * Define o icone do componente.
-      */
-    this.iconName = this.noStyle ? '' : 'med-semana';
-    this.hasFocus = false;
-    /**
      * The display format of the date and time as text that shows
      * within the item. When the `pickerFormat` input is not used, then the
      * `displayFormat` is used for both display the formatted text, and determining
@@ -61,11 +52,9 @@ export class Datetime {
     };
     this.onFocus = () => {
       this.ionFocus.emit();
-      this.hasFocus = true;
     };
     this.onBlur = () => {
       this.ionBlur.emit();
-      this.hasFocus = false;
     };
   }
   disabledChanged() {
@@ -370,7 +359,7 @@ export class Datetime {
     }
   }
   render() {
-    const { inputId, text, disabled, readonly, isExpanded, el, placeholder, dsName, iconName, noStyle } = this;
+    const { inputId, text, disabled, readonly, isExpanded, el, placeholder } = this;
     const mode = getIonMode(this);
     const labelId = inputId + '-lbl';
     const label = findItemLabel(el);
@@ -392,13 +381,9 @@ export class Datetime {
         'datetime-disabled': disabled,
         'datetime-readonly': readonly,
         'datetime-placeholder': addPlaceholderClass,
-        'in-item': hostContext('ion-item', el),
-        [`med-datetime--${dsName}`]: dsName !== undefined,
-        'med-datetime--no-style': noStyle,
-        'has-focus': this.hasFocus,
+        'in-item': hostContext('ion-item', el)
       } },
       h("div", { class: "datetime-text", part: datetimeTextPart }, datetimeText),
-      !noStyle && h("ion-icon", { class: "datetime-icon med-icon", slot: "icon-only", name: iconName }),
       h("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: this.disabled, ref: btnEl => this.buttonEl = btnEl })));
   }
   static get is() { return "ion-datetime"; }
@@ -465,59 +450,6 @@ export class Datetime {
       "attribute": "readonly",
       "reflect": false,
       "defaultValue": "false"
-    },
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'secondary'",
-        "resolved": "\"secondary\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a varia\u00E7\u00E3o do componente."
-      },
-      "attribute": "ds-name",
-      "reflect": true
-    },
-    "noStyle": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Remove o estilo de input do componente."
-      },
-      "attribute": "no-style",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "iconName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Define o icone do componente."
-      },
-      "attribute": "icon-name",
-      "reflect": false,
-      "defaultValue": "this.noStyle ? '' : 'med-semana'"
     },
     "min": {
       "type": "string",
@@ -850,8 +782,7 @@ export class Datetime {
     }
   }; }
   static get states() { return {
-    "isExpanded": {},
-    "hasFocus": {}
+    "isExpanded": {}
   }; }
   static get events() { return [{
       "method": "ionCancel",
