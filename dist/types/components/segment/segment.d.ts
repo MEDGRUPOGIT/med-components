@@ -1,5 +1,4 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { MedColor } from '../../@templarios/types/color.type';
 import { Color, SegmentChangeEventDetail, StyleEventDetail } from '../../interface';
 import { GestureDetail } from '../../utils/gesture';
 /**
@@ -9,10 +8,6 @@ export declare class Segment implements ComponentInterface {
   private gesture?;
   private didInit;
   private checked?;
-  /**
-    * Define a cor do componente.
-    */
-  dsColor?: MedColor;
   private valueAfterGesture?;
   el: HTMLIonSegmentElement;
   activated: boolean;

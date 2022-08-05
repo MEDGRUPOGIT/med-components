@@ -9,7 +9,6 @@ export interface ToastOptions {
   position?: 'top' | 'bottom' | 'middle';
   translucent?: boolean;
   animated?: boolean;
-  dsColor?: string;
   color?: Color;
   mode?: Mode;
   keyboardClose?: boolean;

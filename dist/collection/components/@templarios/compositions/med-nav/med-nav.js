@@ -1,4 +1,4 @@
-import { Component, h, Host, Listen, Prop } from '@stencil/core';
+import { Component, h, Host, Event, Listen, Prop } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedNav {
   constructor() {
@@ -12,6 +12,7 @@ export class MedNav {
   }
   clickHandle() {
     this.active = !this.active;
+    this.clicked.emit(this.active);
   }
   render() {
     const { dsColor, active } = this;
@@ -79,6 +80,22 @@ export class MedNav {
       "defaultValue": "false"
     }
   }; }
+  static get events() { return [{
+      "method": "clicked",
+      "name": "clicked",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": {
+        "tags": [],
+        "text": "todo"
+      },
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      }
+    }]; }
   static get listeners() { return [{
       "name": "close",
       "method": "watchClick",

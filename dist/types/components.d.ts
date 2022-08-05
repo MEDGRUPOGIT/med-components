@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "./stencil-public-runtime";
-import { ActionSheetButton, AlertButton, AlertInput, AnimationBuilder, AutocompleteTypes, CheckboxChangeEventDetail, Color, ComponentProps, ComponentRef, DatetimeChangeEventDetail, DatetimeOptions, DomRenderFn, FooterHeightFn, FrameworkDelegate, HeaderFn, HeaderHeightFn, InputChangeEventDetail, ItemHeightFn, ItemRenderFn, ItemReorderEventDetail, MenuChangeEventDetail, NavComponent, NavComponentWithProps, NavOptions, OverlayEventDetail, PickerButton, PickerColumn, RadioGroupChangeEventDetail, RangeChangeEventDetail, RangeValue, RefresherEventDetail, RouteID, RouterDirection, RouterEventDetail, RouterOutletOptions, RouteWrite, ScrollBaseDetail, ScrollDetail, SearchbarChangeEventDetail, SegmentButtonLayout, SegmentChangeEventDetail, SelectChangeEventDetail, SelectInterface, SelectPopoverOption, Side, SpinnerTypes, StyleEventDetail, SwipeGestureHandler, TabBarChangedEventDetail, TabBarResizeEventDetail, TabButtonClickEventDetail, TabButtonLayout, TextareaChangeEventDetail, TextFieldTypes, ToastButton, ToggleChangeEventDetail, TransitionDoneFn, TransitionInstruction, ViewController } from "./interface";
+import { ActionSheetButton, AlertButton, AlertInput, AnimationBuilder, AutocompleteTypes, CheckboxChangeEventDetail, Color, ComponentProps, ComponentRef, DatetimeChangeEventDetail, DatetimeOptions, DomRenderFn, FooterHeightFn, FrameworkDelegate, HeaderFn, HeaderHeightFn, InputChangeEventDetail, ItemHeightFn, ItemRenderFn, ItemReorderEventDetail, MenuChangeEventDetail, NavComponent, NavComponentWithProps, NavOptions, OverlayEventDetail, PickerButton, PickerColumn, RadioGroupChangeEventDetail, RangeChangeEventDetail, RangeValue, RefresherEventDetail, RouteID, RouterDirection, RouterEventDetail, RouterOutletOptions, RouteWrite, ScrollBaseDetail, ScrollDetail, SearchbarChangeEventDetail, SegmentButtonLayout, SegmentChangeEventDetail, SelectChangeEventDetail, SelectInterface, SelectPopoverOption, Side, SpinnerTypes, StyleEventDetail, SwipeGestureHandler, TabBarChangedEventDetail, TabButtonClickEventDetail, TabButtonLayout, TextareaChangeEventDetail, TextFieldTypes, ToastButton, ToggleChangeEventDetail, TransitionDoneFn, TransitionInstruction, ViewController } from "./interface";
 import { IonicSafeString } from "./utils/sanitization";
 import { MedColor } from "@templarios/types/color.type";
 import { NavigationHookCallback } from "./components/route/route-interface";
@@ -1124,10 +1124,6 @@ export namespace Components {
          */
         "color"?: Color;
         /**
-          * TODO
-         */
-        "dsName"?: 'stacked' | 'helper' | undefined;
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -1641,10 +1637,6 @@ export namespace Components {
          */
         "dismiss": (data?: any, role?: string | undefined) => Promise<boolean>;
         /**
-          * TODO
-         */
-        "dsName": 'tooltip';
-        /**
           * Animation to use when the popover is presented.
          */
         "enterAnimation"?: AnimationBuilder;
@@ -1767,10 +1759,6 @@ export namespace Components {
           * If `true`, the user cannot interact with the range.
          */
         "disabled": boolean;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * Show two knobs.
          */
@@ -2091,10 +2079,6 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -2116,10 +2100,6 @@ export namespace Components {
           * If `true`, the user cannot interact with the segment button.
          */
         "disabled": boolean;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * Set the layout of the text and icon in the segment.
          */
@@ -2375,10 +2355,6 @@ export namespace Components {
          */
         "color"?: Color;
         /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -2400,10 +2376,6 @@ export namespace Components {
           * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
          */
         "download": string | undefined;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
@@ -2586,6 +2558,10 @@ export namespace Components {
          */
         "buttons"?: (ToastButton | string)[];
         /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
           * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
          */
         "cssClass"?: string | string[];
@@ -2595,10 +2571,6 @@ export namespace Components {
           * @param role The role of the element that is dismissing the toast. This can be useful in a button handler for determining which button was clicked to dismiss the toast. Some examples include: ``"cancel"`, `"destructive"`, "selected"`, and `"backdrop"`.
          */
         "dismiss": (data?: any, role?: string | undefined) => Promise<boolean>;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * How many milliseconds to wait before hiding the toast. By default, it will show until `dismiss()` is called.
          */
@@ -3661,6 +3633,7 @@ export namespace Components {
           * todo
          */
         "dsColor"?: MedColor;
+        "titulo"?: MedColor;
     }
     interface MedNavItem {
         /**
@@ -6300,10 +6273,6 @@ declare namespace LocalJSX {
          */
         "color"?: Color;
         /**
-          * TODO
-         */
-        "dsName"?: 'stacked' | 'helper' | undefined;
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -6702,10 +6671,6 @@ declare namespace LocalJSX {
          */
         "cssClass"?: string | string[];
         /**
-          * TODO
-         */
-        "dsName": 'tooltip';
-        /**
           * Animation to use when the popover is presented.
          */
         "enterAnimation"?: AnimationBuilder;
@@ -6841,10 +6806,6 @@ declare namespace LocalJSX {
           * If `true`, the user cannot interact with the range.
          */
         "disabled"?: boolean;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * Show two knobs.
          */
@@ -7184,10 +7145,6 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -7213,10 +7170,6 @@ declare namespace LocalJSX {
           * If `true`, the user cannot interact with the segment button.
          */
         "disabled"?: boolean;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * Set the layout of the text and icon in the segment.
          */
@@ -7470,17 +7423,9 @@ declare namespace LocalJSX {
          */
         "color"?: Color;
         /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
-        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
-        /**
-          * TODO
-         */
-        "onMedResize"?: (event: CustomEvent<TabBarResizeEventDetail>) => void;
         /**
           * The selected tab component
          */
@@ -7499,10 +7444,6 @@ declare namespace LocalJSX {
           * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
          */
         "download"?: string | undefined;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
@@ -7676,13 +7617,13 @@ declare namespace LocalJSX {
          */
         "buttons"?: (ToastButton | string)[];
         /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
           * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
          */
         "cssClass"?: string | string[];
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * How many milliseconds to wait before hiding the toast. By default, it will show until `dismiss()` is called.
          */
@@ -8833,12 +8774,17 @@ declare namespace LocalJSX {
           * todo
          */
         "dsColor"?: MedColor;
+        /**
+          * todo
+         */
+        "onClicked"?: (event: CustomEvent<any>) => void;
     }
     interface MedNavAccordion {
         /**
           * todo
          */
         "dsColor"?: MedColor;
+        "titulo"?: MedColor;
     }
     interface MedNavItem {
         /**

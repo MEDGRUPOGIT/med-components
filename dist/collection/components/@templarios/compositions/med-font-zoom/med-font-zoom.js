@@ -55,7 +55,7 @@ export class MedFontZoom {
         h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
   }
   static get is() { return "med-font-zoom"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-font-zoom.scss"]
   }; }

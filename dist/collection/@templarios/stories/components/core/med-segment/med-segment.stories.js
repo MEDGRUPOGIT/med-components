@@ -16,12 +16,12 @@ const Template = ({ dsColor, dsName, dsSize, label, active, disabled }) => {
 
           <!-- component markdown-->
           <med-segment>
-            <med-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></med-chip>
-            <med-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></med-chip>
-            <med-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></med-chip>
-            <med-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></med-chip>
-            <med-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></med-chip>
-            <med-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></med-chip>
+            <ion-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></ion-chip>
+            <ion-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></ion-chip>
+            <ion-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></ion-chip>
+            <ion-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></ion-chip>
+            <ion-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></ion-chip>
+            <ion-chip .dsColor=${dsColor} ds-name=${dsName} ds-size=${dsSize} label=${label} ?active=${active} ?disabled=${disabled}></ion-chip>
           </med-segment>
           <!-- component markdown-->
 

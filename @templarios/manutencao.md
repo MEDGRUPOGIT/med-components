@@ -8,3 +8,11 @@
 
 - refatorar tudo que estiver com o comentario `refatorar`
 - refatorar tudo que estiver com o comentario `legado` e atualizar nos produtos
+
+## Passar para o ioic
+
+
+## Revisados Bleggi
+
+- med-agrupador
+- ion-modal/alert -> criar componente example-dialog

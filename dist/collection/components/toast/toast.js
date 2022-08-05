@@ -1,9 +1,8 @@
-import { Component, Element, Event, h, Host, Method, Prop } from '@stencil/core';
+import { Component, Element, Event, Host, Method, Prop, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
-import { generateMedColor } from '../../@templarios/utilities/color';
 import { dismiss, eventMethod, isCancel, prepareOverlay, present, safeCall } from '../../utils/overlays';
 import { sanitizeDOMString } from '../../utils/sanitization';
-import { getClassMap } from '../../utils/theme';
+import { createColorClasses, getClassMap } from '../../utils/theme';
 import { iosEnterAnimation } from './animations/ios.enter';
 import { iosLeaveAnimation } from './animations/ios.leave';
 import { mdEnterAnimation } from './animations/md.enter';
@@ -139,7 +138,8 @@ export class Toast {
     return (h("div", { class: buttonGroupsClasses }, buttons.map(b => h("button", { type: "button", class: buttonClass(b), tabIndex: 0, onClick: () => this.buttonClick(b), part: "button" },
       h("div", { class: "toast-button-inner" },
         b.icon &&
-          h("ion-icon", { icon: b.icon, slot: b.text === undefined ? 'icon-only' : undefined, class: "med-icon toast-icon" }),
+          h("ion-icon", { icon: b.icon, slot: b.text === undefined ? 'icon-only' : undefined, class: "med-icon toast-icon" // templarios
+           }),
         b.text),
       mode === 'md' && h("ion-ripple-effect", { type: b.icon !== undefined && b.text === undefined ? 'unbounded' : 'bounded' })))));
   }
@@ -152,9 +152,9 @@ export class Toast {
       'toast-wrapper': true,
       [`toast-${this.position}`]: true
     };
-    return (h(Host, { "from-stencil": true, style: {
+    return (h(Host, { style: {
         zIndex: `${60000 + this.overlayIndex}`,
-      }, class: generateMedColor(this.dsColor, Object.assign(Object.assign({ [mode]: true }, getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler },
+      }, class: createColorClasses(this.color, Object.assign(Object.assign({ [mode]: true }, getClassMap(this.cssClass)), { 'toast-translucent': this.translucent })), tabindex: "-1", onIonToastWillDismiss: this.dispatchCancelHandler },
       h("div", { class: wrapperClass },
         h("div", { class: "toast-container", part: "container" },
           this.renderButtons(startButtons, 'start'),
@@ -166,13 +166,13 @@ export class Toast {
           this.renderButtons(endButtons, 'end')))));
   }
   static get is() { return "ion-toast"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "ios": ["toast.md.scss"],
+    "ios": ["toast.ios.scss"],
     "md": ["toast.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["toast.md.css"],
+    "ios": ["toast.ios.css"],
     "md": ["toast.md.css"]
   }; }
   static get properties() { return {
@@ -196,16 +196,16 @@ export class Toast {
       "attribute": "overlay-index",
       "reflect": false
     },
-    "dsColor": {
+    "color": {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "MedColor",
+        "original": "Color",
         "resolved": "string | undefined",
         "references": {
-          "MedColor": {
+          "Color": {
             "location": "import",
-            "path": "../../@templarios/types/color.type"
+            "path": "../../interface"
           }
         }
       },
@@ -213,10 +213,10 @@ export class Toast {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "Define a cor do componente."
+        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
-      "attribute": "ds-color",
-      "reflect": true
+      "attribute": "color",
+      "reflect": false
     },
     "enterAnimation": {
       "type": "unknown",

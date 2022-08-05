@@ -59,31 +59,14 @@ export class Label {
   static get is() { return "ion-label"; }
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
-    "ios": ["label.md.scss"],
+    "ios": ["label.ios.scss"],
     "md": ["label.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["label.md.css"],
+    "ios": ["label.ios.css"],
     "md": ["label.md.css"]
   }; }
   static get properties() { return {
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'stacked' | 'helper' | undefined",
-        "resolved": "\"helper\" | \"stacked\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "TODO"
-      },
-      "attribute": "ds-name",
-      "reflect": false
-    },
     "color": {
       "type": "string",
       "mutable": false,

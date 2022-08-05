@@ -1,7 +1,6 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
 import { TabBarChangedEventDetail, TabButtonClickEventDetail, TabButtonLayout } from '../../interface';
 import { AnchorInterface } from '../../utils/element-interface';
-import { MedColor } from '../../@templarios/types/color.type';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -9,10 +8,6 @@ import { MedColor } from '../../@templarios/types/color.type';
  */
 export declare class TabButton implements ComponentInterface, AnchorInterface {
   el: HTMLElement;
-  /**
-    * Define a cor do componente.
-    */
-  dsColor?: MedColor;
   /**
    * If `true`, the user cannot interact with the tab button.
    */

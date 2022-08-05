@@ -1,7 +1,6 @@
 import { Component, Element, Event, Host, Listen, Prop, h } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
-import { generateMedColor } from '../../@templarios/utilities/color';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -67,7 +66,7 @@ export class TabButton {
     return 0;
   }
   render() {
-    const { dsColor, disabled, hasIcon, hasLabel, tabIndex, href, rel, target, layout, selected, tab } = this;
+    const { disabled, hasIcon, hasLabel, tabIndex, href, rel, target, layout, selected, tab } = this;
     const mode = getIonMode(this);
     const attrs = {
       download: this.download,
@@ -75,9 +74,8 @@ export class TabButton {
       rel,
       target
     };
-    return (h(Host, { "from-stencil": true, onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: generateMedColor(dsColor, {
+    return (h(Host, { onClick: this.onClick, onKeyup: this.onKeyUp, role: "tab", tabindex: tabIndex, "aria-selected": selected ? 'true' : null, id: tab !== undefined ? `tab-button-${tab}` : null, class: {
         [mode]: true,
-        'med-tab-button': true,
         'tab-selected': selected,
         'tab-disabled': disabled,
         'tab-has-label': hasLabel,
@@ -88,44 +86,23 @@ export class TabButton {
         'ion-activatable': true,
         'ion-selectable': true,
         'ion-focusable': true
-      }) },
+      } },
       h("a", Object.assign({}, attrs, { tabIndex: -1, class: "button-native", part: "native" }),
         h("span", { class: "button-inner" },
-          h("slot", null)))));
+          h("slot", null)),
+        mode === 'md' && h("ion-ripple-effect", { type: "unbounded" }))));
   }
   static get is() { return "ion-tab-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["tab-button.md.scss"],
+    "ios": ["tab-button.ios.scss"],
     "md": ["tab-button.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["tab-button.md.css"],
+    "ios": ["tab-button.ios.css"],
     "md": ["tab-button.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../@templarios/types/color.type"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    },
     "disabled": {
       "type": "boolean",
       "mutable": false,

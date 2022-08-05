@@ -418,29 +418,3 @@ ion-ripple-effect {
 :host(.in-toolbar-color:not(.in-segment-color)) .segment-button-indicator-background {
   background: var(--ion-color-contrast);
 }
-
-:host {
-  --color-checked: hsl(var(--med-color-neutral-10));
-  --color: hsl(var(--med-color-neutral-5));
-  --indicator-color: hsl(var(--med-color-brand-3));
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-  max-width: 100%;
-}
-
-:host(.med-color) {
-  --indicator-color: hsl(var(--med-color-3));
-}
-
-:host(.med-color-neutral) {
-  --indicator-color: hsl(var(--med-color-neutral));
-}
-
-:host(.med-color-feedback) {
-  --indicator-color: hsl(var(--med-color-feedback));
-}
-
-:host(.segment-button-disabled) {
-  opacity: 0.5;
-}

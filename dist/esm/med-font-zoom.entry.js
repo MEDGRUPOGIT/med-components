@@ -3,7 +3,7 @@ import { h as MedFontSize } from './type.enum-81ff75b3.js';
 import './plusminus.enum-87dfaf79.js';
 import './rate-like.enum-01831b55.js';
 
-const medFontZoomCss = ":host{display:block}:host .med-icon{stroke:hsl(var(--med-color-neutral-8))}";
+const medFontZoomCss = ".sc-med-font-zoom-h{display:block}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}";
 
 const MedFontZoom = class {
   constructor(hostRef) {

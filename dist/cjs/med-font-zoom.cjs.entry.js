@@ -7,7 +7,7 @@ const type_enum = require('./type.enum-ef81b7bf.js');
 require('./plusminus.enum-43139314.js');
 require('./rate-like.enum-0930ca84.js');
 
-const medFontZoomCss = ":host{display:block}:host .med-icon{stroke:hsl(var(--med-color-neutral-8))}";
+const medFontZoomCss = ".sc-med-font-zoom-h{display:block}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}";
 
 const MedFontZoom = class {
   constructor(hostRef) {

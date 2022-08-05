@@ -1,6 +1,5 @@
 import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { MedColor } from '../../@templarios/types/color.type';
-import { AnimationBuilder, OverlayEventDetail, OverlayInterface, ToastButton } from '../../interface';
+import { AnimationBuilder, Color, OverlayEventDetail, OverlayInterface, ToastButton } from '../../interface';
 import { IonicSafeString } from '../../utils/sanitization';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -19,9 +18,11 @@ export declare class Toast implements ComponentInterface, OverlayInterface {
    */
   overlayIndex: number;
   /**
-    * Define a cor do componente.
-    */
-  dsColor?: MedColor;
+   * The color to use from your application's color palette.
+   * Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.
+   * For more information on colors, see [theming](/docs/theming/basics).
+   */
+  color?: Color;
   /**
    * Animation to use when the toast is presented.
    */

@@ -155,6 +155,9 @@
     padding-inline-end: var(--padding-end);
   }
 }
+.button-native::after {
+  border-radius: var(--border-radius);
+}
 
 .button-inner {
   display: flex;

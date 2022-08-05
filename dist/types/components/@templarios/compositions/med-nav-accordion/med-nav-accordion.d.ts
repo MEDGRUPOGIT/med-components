@@ -4,5 +4,6 @@ export declare class MedNavAccordion {
    * todo
    */
   dsColor?: MedColor;
+  titulo?: MedColor;
   render(): any;
 }

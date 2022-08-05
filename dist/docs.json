@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-08-03T17:30:33",
+  "timestamp": "2022-08-05T15:31:37",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -8158,30 +8158,6 @@
           "required": false
         },
         {
-          "name": "dsName",
-          "type": "\"helper\" | \"stacked\" | undefined",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": false,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "helper",
-              "type": "string"
-            },
-            {
-              "value": "stacked",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -11149,23 +11125,6 @@
           "required": false
         },
         {
-          "name": "dsName",
-          "type": "\"tooltip\"",
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": false,
-          "docs": "TODO",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "tooltip",
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": true
-        },
-        {
           "name": "enterAnimation",
           "type": "((baseEl: any, opts?: any) => Animation) | undefined",
           "mutable": false,
@@ -12042,25 +12001,6 @@
           "required": false
         },
         {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "dualKnobs",
           "type": "boolean",
           "mutable": false,
@@ -12896,7 +12836,7 @@
         "ion-item",
         "ion-item-option",
         "ion-menu-button",
-        "ion-segment-button",
+        "ion-tab-button",
         "ion-toast"
       ],
       "dependencies": [],
@@ -12931,7 +12871,7 @@
         "ion-menu-button": [
           "ion-ripple-effect"
         ],
-        "ion-segment-button": [
+        "ion-tab-button": [
           "ion-ripple-effect"
         ],
         "ion-toast": [
@@ -14389,25 +14329,6 @@
           "required": false
         },
         {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -14564,25 +14485,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -14854,13 +14756,8 @@
       "dependents": [
         "med-config"
       ],
-      "dependencies": [
-        "ion-ripple-effect"
-      ],
+      "dependencies": [],
       "dependencyGraph": {
-        "ion-segment-button": [
-          "ion-ripple-effect"
-        ],
         "med-config": [
           "ion-segment-button"
         ]
@@ -16270,25 +16167,6 @@
           "required": false
         },
         {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -16347,17 +16225,7 @@
         }
       ],
       "methods": [],
-      "events": [
-        {
-          "event": "medResize",
-          "detail": "TabBarResizeEventDetail",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "TODO",
-          "docsTags": []
-        }
-      ],
+      "events": [],
       "listeners": [],
       "styles": [
         {
@@ -16440,25 +16308,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -16691,8 +16540,14 @@
         }
       ],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "ion-ripple-effect"
+      ],
+      "dependencyGraph": {
+        "ion-tab-button": [
+          "ion-ripple-effect"
+        ]
+      }
     },
     {
       "filePath": "./src/components/tabs/tabs.tsx",
@@ -17586,7 +17441,7 @@
     },
     {
       "filePath": "./src/components/toast/toast.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "ion-toast",
       "readme": "# ion-toast\n\nA Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.\n\n## Positioning\n\nToasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.\n\n## Dismissing\n\nThe toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `\"cancel\"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.\n\n",
       "docs": "A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.",
@@ -17659,6 +17514,25 @@
           "required": false
         },
         {
+          "name": "color",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "cssClass",
           "type": "string | string[] | undefined",
           "mutable": false,
@@ -17672,25 +17546,6 @@
             },
             {
               "type": "string[]"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "Define a cor do componente.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
             },
             {
               "type": "undefined"
@@ -22513,9 +22368,6 @@
         "ion-button": [
           "ion-ripple-effect"
         ],
-        "ion-segment-button": [
-          "ion-ripple-effect"
-        ],
         "ion-item": [
           "ion-icon",
           "ion-ripple-effect"
@@ -22977,7 +22829,7 @@
     },
     {
       "filePath": "./src/components/@templarios/compositions/med-font-zoom/med-font-zoom.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-font-zoom",
       "readme": "# med-font-zoom\n\n\n",
       "docs": "",
@@ -24200,7 +24052,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "clicked",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "todo",
+          "docsTags": []
+        }
+      ],
       "listeners": [
         {
           "event": "close",
@@ -24230,12 +24092,7 @@
         ],
         "med-nav-simple": [
           "ion-icon",
-          "med-nav-item",
           "ion-button"
-        ],
-        "med-nav-item": [
-          "ion-icon",
-          "med-type"
         ]
       }
     },
@@ -24266,6 +24123,25 @@
           ],
           "optional": true,
           "required": false
+        },
+        {
+          "name": "titulo",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "titulo",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
@@ -24279,20 +24155,14 @@
         "med-accordion-list",
         "med-accordion-item",
         "med-type",
-        "ion-icon",
-        "med-nav-item"
+        "ion-icon"
       ],
       "dependencyGraph": {
         "med-nav-accordion": [
           "med-accordion-list",
           "med-accordion-item",
           "med-type",
-          "ion-icon",
-          "med-nav-item"
-        ],
-        "med-nav-item": [
-          "ion-icon",
-          "med-type"
+          "ion-icon"
         ]
       }
     },
@@ -24492,10 +24362,7 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "med-nav-accordion",
-        "med-nav-simple"
-      ],
+      "dependents": [],
       "dependencies": [
         "ion-icon",
         "med-type"
@@ -24504,12 +24371,6 @@
         "med-nav-item": [
           "ion-icon",
           "med-type"
-        ],
-        "med-nav-accordion": [
-          "med-nav-item"
-        ],
-        "med-nav-simple": [
-          "med-nav-item"
         ]
       }
     },
@@ -24563,18 +24424,12 @@
       ],
       "dependencies": [
         "ion-icon",
-        "med-nav-item",
         "ion-button"
       ],
       "dependencyGraph": {
         "med-nav-simple": [
           "ion-icon",
-          "med-nav-item",
           "ion-button"
-        ],
-        "med-nav-item": [
-          "ion-icon",
-          "med-type"
         ],
         "ion-button": [
           "ion-ripple-effect"

@@ -118,30 +118,13 @@ export class Popover {
   static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "ios": ["popover.ios.scss"],
-    "md": ["popover.ios.scss"]
+    "md": ["popover.md.scss"]
   }; }
   static get styleUrls() { return {
     "ios": ["popover.ios.css"],
-    "md": ["popover.ios.css"]
+    "md": ["popover.md.css"]
   }; }
   static get properties() { return {
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'tooltip'",
-        "resolved": "\"tooltip\"",
-        "references": {}
-      },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "TODO"
-      },
-      "attribute": "ds-name",
-      "reflect": false
-    },
     "delegate": {
       "type": "unknown",
       "mutable": false,

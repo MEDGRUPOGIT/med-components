@@ -1,11 +1,10 @@
 :host {
   --logo-background: hsl(var(--med-color-brand-2));
+  --padding: 24px 0;
   display: block;
   overflow: auto;
-  padding-top: calc(24px + var(--ion-safe-area-top, 0));
-  padding-bottom: calc(24px + var(--ion-safe-area-bottom));
   overflow: auto;
-  height: calc(100vh - calc(24px + var(--ion-safe-area-top, 0)) - calc(24px + var(--ion-safe-area-bottom)));
+  height: 100vh;
 }
 
 .med-nav-simple__wrapper {
@@ -16,6 +15,7 @@
   width: 80px;
   min-height: 100vh;
   background: hsl(var(--med-color-neutral-1));
+  padding: var(--padding);
 }
 .med-nav-simple__logo {
   display: flex;

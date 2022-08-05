@@ -1,9 +1,8 @@
-import { Component, Element, Event, h, Host, Prop, State, Watch, writeTask } from '@stencil/core';
+import { Component, Element, Event, Host, Prop, State, Watch, h, writeTask } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { pointerCoord } from '../../utils/helpers';
-import { generateMedColor } from '../../@templarios/utilities/color';
-import { hostContext } from '../../utils/theme';
+import { createColorClasses, hostContext } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
@@ -306,11 +305,9 @@ export class Segment {
     });
   }
   render() {
-    const { dsColor } = this;
     const mode = getIonMode(this);
-    return (h(Host, { onClick: this.onClick, class: generateMedColor(dsColor, {
+    return (h(Host, { onClick: this.onClick, class: createColorClasses(this.color, {
         [mode]: true,
-        'med-segment': true,
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
         'segment-activated': this.activated,
@@ -322,36 +319,14 @@ export class Segment {
   static get is() { return "ion-segment"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["segment.md.scss"],
+    "ios": ["segment.ios.scss"],
     "md": ["segment.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["segment.md.css"],
+    "ios": ["segment.ios.css"],
     "md": ["segment.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../@templarios/types/color.type"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    },
     "color": {
       "type": "string",
       "mutable": false,

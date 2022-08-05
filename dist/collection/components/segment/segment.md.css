@@ -34,21 +34,3 @@
 :host(.segment-scrollable) ::slotted(ion-segment-button) {
   min-width: auto;
 }
-
-:host(.med-segment--default) {
-  border: 2px solid hsl(var(--med-color-neutral-10));
-  height: 48px;
-  border-radius: 8px;
-}
-
-:host(.med-color.med-segment--default) {
-  border-color: hsl(var(--med-color-3));
-}
-
-:host(.med-color-neutral.med-segment--default) {
-  border-color: hsl(var(--med-color-neutral));
-}
-
-:host(.med-color-feedback.med-segment--default) {
-  border-color: hsl(var(--med-color-feedback));
-}

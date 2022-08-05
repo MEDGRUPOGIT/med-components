@@ -79,13 +79,3 @@
   --color-selected: var(--ion-tab-bar-color-selected, var(--ion-color-primary, #3880ff));
   height: 56px;
 }
-
-:host {
-  --background: hsl(var(--med-color-neutral-1));
-  contain: initial;
-  padding: 8px 0;
-}
-
-::slotted(ion-tab-button) {
-  --padding-gap: var(--gap);
-}

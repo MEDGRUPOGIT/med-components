@@ -1,8 +1,7 @@
-import { Component, Element, Event, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { clamp, debounceEvent, renderHiddenInput } from '../../utils/helpers';
-import { generateMedColor } from '../../@templarios/utilities/color';
-import { hostContext } from '../../utils/theme';
+import { createColorClasses, hostContext } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -300,7 +299,7 @@ export class Range {
     }
   }
   render() {
-    const { dsColor, min, max, step, el, handleKeyboard, pressedKnob, disabled, pin, ratioLower, ratioUpper } = this;
+    const { min, max, step, el, handleKeyboard, pressedKnob, disabled, pin, ratioLower, ratioUpper } = this;
     const mode = getIonMode(this);
     const barStart = `${ratioLower * 100}%`;
     const barEnd = `${100 - ratioUpper * 100}%`;
@@ -330,7 +329,7 @@ export class Range {
       }
     }
     renderHiddenInput(true, el, this.name, JSON.stringify(this.getValue()), disabled);
-    return (h(Host, { onFocusin: this.onFocus, onFocusout: this.onBlur, class: generateMedColor(dsColor, {
+    return (h(Host, { onFocusin: this.onFocus, onFocusout: this.onBlur, class: createColorClasses(this.color, {
         [mode]: true,
         'in-item': hostContext('ion-item', el),
         'range-disabled': disabled,
@@ -372,36 +371,14 @@ export class Range {
   static get is() { return "ion-range"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["range.md.scss"],
+    "ios": ["range.ios.scss"],
     "md": ["range.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["range.md.css"],
+    "ios": ["range.ios.css"],
     "md": ["range.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../@templarios/types/color.type"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    },
     "color": {
       "type": "string",
       "mutable": false,

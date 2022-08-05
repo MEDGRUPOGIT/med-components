@@ -1,7 +1,6 @@
-import { Component, Element, forceUpdate, h, Host, Prop, State } from '@stencil/core';
+import { Component, Element, Host, Prop, State, forceUpdate, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { addEventListener, removeEventListener } from '../../utils/helpers';
-import { generateMedColor } from '../../@templarios/utilities/color';
 import { hostContext } from '../../utils/theme';
 let ids = 0;
 /**
@@ -63,12 +62,11 @@ export class SegmentButton {
     return !!this.el.querySelector('ion-icon');
   }
   render() {
-    const { checked, type, disabled, hasIcon, hasLabel, layout, segmentEl, dsColor } = this;
+    const { checked, type, disabled, hasIcon, hasLabel, layout, segmentEl } = this;
     const mode = getIonMode(this);
     const hasSegmentColor = () => segmentEl !== null && segmentEl.color !== undefined;
-    return (h(Host, { "from-stencil": true, "aria-disabled": disabled ? 'true' : null, class: generateMedColor(dsColor, {
+    return (h(Host, { "aria-disabled": disabled ? 'true' : null, class: {
         [mode]: true,
-        'med-segment-button': true,
         'in-toolbar': hostContext('ion-toolbar', this.el),
         'in-toolbar-color': hostContext('ion-toolbar[color]', this.el),
         'in-segment': hostContext('ion-segment', this.el),
@@ -83,11 +81,10 @@ export class SegmentButton {
         'ion-activatable': true,
         'ion-activatable-instant': true,
         'ion-focusable': true,
-      }) },
+      } },
       h("button", { type: type, "aria-pressed": checked ? 'true' : 'false', class: "button-native", part: "native", disabled: disabled },
         h("span", { class: "button-inner" },
-          h("slot", null)),
-        mode === 'md' && h("ion-ripple-effect", null)),
+          h("slot", null))),
       h("div", { part: "indicator", class: {
           'segment-button-indicator': true,
           'segment-button-indicator-animated': true
@@ -97,36 +94,14 @@ export class SegmentButton {
   static get is() { return "ion-segment-button"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["segment-button.md.scss"],
+    "ios": ["segment-button.ios.scss"],
     "md": ["segment-button.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["segment-button.md.css"],
+    "ios": ["segment-button.ios.css"],
     "md": ["segment-button.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../@templarios/types/color.type"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    },
     "disabled": {
       "type": "boolean",
       "mutable": false,

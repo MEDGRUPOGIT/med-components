@@ -1,12 +1,11 @@
-import { Component, Element, Event, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
-import { generateMedColor } from '../../@templarios/utilities/color';
+import { createColorClasses } from '../../utils/theme';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
 export class TabBar {
   constructor() {
-    this.hostHeight = 0;
     this.keyboardVisible = false;
     /**
      * If `true`, the tab bar will be translucent.
@@ -24,10 +23,8 @@ export class TabBar {
   }
   componentWillLoad() {
     this.selectedTabChanged();
-    this.setSize();
   }
   connectedCallback() {
-    this.updateGap();
     if (typeof window !== 'undefined') {
       this.keyboardWillShowHandler = () => {
         if (this.el.getAttribute('slot') !== 'top') {
@@ -48,35 +45,10 @@ export class TabBar {
       this.keyboardWillShowHandler = this.keyboardWillHideHandler = undefined;
     }
   }
-  /**
-  * Med Resize
-  */
-  updateGap() {
-    let gap = '2px';
-    if (this.el.children.length <= 3) {
-      gap = '8px';
-    }
-    if (this.el.children.length === 4) {
-      gap = '4px';
-    }
-    this.gap = gap;
-  }
-  setSize() {
-    this.medResize.emit({ height: 1 });
-    this.hostResizeObserver = new ResizeObserver(() => {
-      let newHostHeight = Number(this.el.getBoundingClientRect().height);
-      if (newHostHeight !== this.hostHeight) {
-        this.medResize.emit({ height: newHostHeight });
-        this.hostHeight = newHostHeight;
-      }
-    });
-    this.hostResizeObserver.observe(this.el);
-  }
   render() {
-    const { dsColor, translucent, keyboardVisible } = this;
+    const { color, translucent, keyboardVisible } = this;
     const mode = getIonMode(this);
-    this.medResize.emit({ height: 1 });
-    return (h(Host, { "from-stencil": true, role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, style: { '--gap': `${this.gap}` }, class: generateMedColor(dsColor, {
+    return (h(Host, { role: "tablist", "aria-hidden": keyboardVisible ? 'true' : null, class: createColorClasses(color, {
         [mode]: true,
         'tab-bar-translucent': translucent,
         'tab-bar-hidden': keyboardVisible,
@@ -86,36 +58,14 @@ export class TabBar {
   static get is() { return "ion-tab-bar"; }
   static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() { return {
-    "ios": ["tab-bar.md.scss"],
+    "ios": ["tab-bar.ios.scss"],
     "md": ["tab-bar.md.scss"]
   }; }
   static get styleUrls() { return {
-    "ios": ["tab-bar.md.css"],
+    "ios": ["tab-bar.ios.css"],
     "md": ["tab-bar.md.css"]
   }; }
   static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../@templarios/types/color.type"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    },
     "color": {
       "type": "string",
       "mutable": false,
@@ -175,30 +125,9 @@ export class TabBar {
     }
   }; }
   static get states() { return {
-    "gap": {},
     "keyboardVisible": {}
   }; }
   static get events() { return [{
-      "method": "medResize",
-      "name": "medResize",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "TODO"
-      },
-      "complexType": {
-        "original": "TabBarResizeEventDetail",
-        "resolved": "TabBarResizeEventDetail",
-        "references": {
-          "TabBarResizeEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      }
-    }, {
       "method": "ionTabBarChanged",
       "name": "ionTabBarChanged",
       "bubbles": true,

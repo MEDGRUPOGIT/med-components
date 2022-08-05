@@ -170,24 +170,3 @@
 :host-context(.ion-color)::slotted(p) {
   color: inherit;
 }
-
-:host([ds-name=stacked]) {
-  color: var(--med-color-neutral-dark-10);
-  margin-bottom: 8px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 100%;
-  display: flex;
-}
-
-:host([ds-name=helper]) {
-  color: var(--med-color-neutral-light-30);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: line-height();
-  display: flex;
-}
-
-:host([ds-name=helper][error]) {
-  color: var(--med-color-feedback-error-medium);
-}

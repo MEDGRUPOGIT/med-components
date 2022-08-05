@@ -2068,18 +2068,6 @@
           "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
-          "name": "ds-name",
-          "description": "TODO",
-          "values": [
-            {
-              "name": "helper"
-            },
-            {
-              "name": "stacked"
-            }
-          ]
-        },
-        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -2646,15 +2634,6 @@
           "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
         },
         {
-          "name": "ds-name",
-          "description": "TODO",
-          "values": [
-            {
-              "name": "tooltip"
-            }
-          ]
-        },
-        {
           "name": "event",
           "description": "The event to pass to the popover animation."
         },
@@ -2837,10 +2816,6 @@
         {
           "name": "disabled",
           "description": "If `true`, the user cannot interact with the range."
-        },
-        {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
         },
         {
           "name": "dual-knobs",
@@ -3592,10 +3567,6 @@
           "description": "If `true`, the user cannot interact with the segment."
         },
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
-        },
-        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -3637,10 +3608,6 @@
         {
           "name": "disabled",
           "description": "If `true`, the user cannot interact with the segment button."
-        },
-        {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
         },
         {
           "name": "layout",
@@ -3998,10 +3965,6 @@
           "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
-        },
-        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [
@@ -4043,10 +4006,6 @@
         {
           "name": "download",
           "description": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
-        },
-        {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
         },
         {
           "name": "href",
@@ -4381,12 +4340,12 @@
           "description": "If `true`, the toast will animate."
         },
         {
-          "name": "css-class",
-          "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+          "name": "color",
+          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         {
-          "name": "ds-color",
-          "description": "Define a cor do componente."
+          "name": "css-class",
+          "description": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
         },
         {
           "name": "duration",
@@ -6218,6 +6177,10 @@
         {
           "name": "ds-color",
           "description": "todo"
+        },
+        {
+          "name": "titulo",
+          "description": ""
         }
       ],
       "references": [
