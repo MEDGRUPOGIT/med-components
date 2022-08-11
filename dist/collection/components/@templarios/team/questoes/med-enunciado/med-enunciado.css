@@ -36,6 +36,7 @@
   cursor: pointer;
   position: relative;
   max-height: 250px;
+  margin-bottom: 15px;
 }
 @media (min-width: 768px) {
   :host .list__item {

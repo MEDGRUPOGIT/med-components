@@ -3,6 +3,10 @@ import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedNav {
   constructor() {
     /**
+    * todo
+    */
+    this.titulo = 'MEDSoft';
+    /**
      * todo
      */
     this.active = false;
@@ -24,7 +28,7 @@ export class MedNav {
         h("div", { class: "med-nav__logo" },
           h("div", { class: "med-nav__icon-wrapper" },
             h("ion-icon", { class: "med-nav__icon med-icon med-icon--sm", name: "med-logo" })),
-          h("med-type", { token: "h24", "ds-color": "neutral-10" }, "MEDSoft")),
+          h("med-type", { token: "h24", "ds-color": "neutral-10" }, this.titulo)),
         h("slot", null),
         h("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() },
           h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" }))),
@@ -39,6 +43,24 @@ export class MedNav {
     "$": ["med-nav.css"]
   }; }
   static get properties() { return {
+    "titulo": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "todo"
+      },
+      "attribute": "titulo",
+      "reflect": true,
+      "defaultValue": "'MEDSoft'"
+    },
     "dsColor": {
       "type": "string",
       "mutable": false,

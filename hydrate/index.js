@@ -15950,7 +15950,7 @@ class MedDropdownContainer {
   }; }
 }
 
-const medEnunciadoCss = "/*!@:host*/.sc-med-enunciado-h{--font-size:16px;--font-weight:400;--line-height:200%;--color:hsl(var(--med-color-neutral-10));--text-align:justify;--image-list-padding-top:16px;display:block;font-size:var(--font-size);font-weight:var(--font-weight);line-height:var(--line-height);color:var(--color);text-align:var(--text-align)}/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{padding:0;margin:0;list-style:none;display:-ms-flexbox;display:flex;-ms-flex-pack:space-evenly;justify-content:space-evenly;padding-top:var(--image-list-padding-top);-ms-flex-direction:column;flex-direction:column}@media (min-width: 768px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}@media (min-width: 992px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:100%;cursor:pointer;position:relative;max-height:250px}@media (min-width: 768px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:50%}}@media (min-width: 992px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:33.33%}}/*!@:host .list__image*/.sc-med-enunciado-h .list__image.sc-med-enunciado{width:100%;height:auto;display:block;max-height:250px}/*!@:host .list .image__zoom*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado{background:hsl(var(--med-color-brand-1));width:24px;height:24px;border-radius:50px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;position:absolute;bottom:4px;right:4px}/*!@:host .list .image__zoom .med-icon*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado .med-icon.sc-med-enunciado{stroke:hsl(var(--med-color-neutral-10));font-size:14px}/*!@:host(.med-enunciado--skin)*/.med-enunciado--skin.sc-med-enunciado-h{--font-size:14px;--line-height:line-height(14px)}";
+const medEnunciadoCss = "/*!@:host*/.sc-med-enunciado-h{--font-size:16px;--font-weight:400;--line-height:200%;--color:hsl(var(--med-color-neutral-10));--text-align:justify;--image-list-padding-top:16px;display:block;font-size:var(--font-size);font-weight:var(--font-weight);line-height:var(--line-height);color:var(--color);text-align:var(--text-align)}/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{padding:0;margin:0;list-style:none;display:-ms-flexbox;display:flex;-ms-flex-pack:space-evenly;justify-content:space-evenly;padding-top:var(--image-list-padding-top);-ms-flex-direction:column;flex-direction:column}@media (min-width: 768px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}@media (min-width: 992px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:100%;cursor:pointer;position:relative;max-height:250px;margin-bottom:15px}@media (min-width: 768px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:50%}}@media (min-width: 992px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:33.33%}}/*!@:host .list__image*/.sc-med-enunciado-h .list__image.sc-med-enunciado{width:100%;height:auto;display:block;max-height:250px}/*!@:host .list .image__zoom*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado{background:hsl(var(--med-color-brand-1));width:24px;height:24px;border-radius:50px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;position:absolute;bottom:4px;right:4px}/*!@:host .list .image__zoom .med-icon*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado .med-icon.sc-med-enunciado{stroke:hsl(var(--med-color-neutral-10));font-size:14px}/*!@:host(.med-enunciado--skin)*/.med-enunciado--skin.sc-med-enunciado-h{--font-size:14px;--line-height:line-height(14px)}";
 
 class MedEnunciado {
   constructor(hostRef) {
@@ -16139,7 +16139,7 @@ class MedImageZoom {
      * todo
      */
     this.initialSlide = 0;
-    this.defaultMaxRatio = 8;
+    this.defaultMaxRatio = 2;
     this.aplicandoZoom = false;
     /**
      * todo
@@ -16581,12 +16581,16 @@ class MedListItemAccordion {
   }; }
 }
 
-const medNavCss = ".sc-med-nav-h{--logo-background:hsl(var(--med-color-brand-2))}.sc-med-nav-h{position:relative;display:block}.med-nav__container.sc-med-nav{padding:24px;padding-top:calc(24px + var(--ion-safe-area-top, 0));padding-bottom:calc(24px + var(--ion-safe-area-bottom));background:hsl(var(--med-color-neutral-1));min-width:240px;height:100vh;overflow:auto;-webkit-transition:300ms all ease;transition:300ms all ease}.med-nav__container.sc-med-nav::after{content:\"\";background:-webkit-gradient(linear, left bottom, left top, from(#121616), to(rgba(18, 22, 22, 0)));background:linear-gradient(360deg, #121616 0%, rgba(18, 22, 22, 0) 100%);width:100%;height:24px;position:fixed;bottom:0;left:0}.med-nav__logo.sc-med-nav{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;margin-bottom:24px}.med-nav__icon-wrapper.sc-med-nav{border-radius:50%;min-width:40px;height:40px;-ms-flex-align:center;align-items:center;background:var(--logo-background);display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;margin-right:16px}.med-nav__icon.sc-med-nav{stroke:hsl(var(--med-color-neutral-10))}.med-nav__toggle.sc-med-nav{position:absolute;bottom:24px;right:24px}.sc-med-nav-s>med-nav-item{margin-bottom:8px}.med-color.sc-med-nav-h{--logo-background:hsl(var(--med-color-2))}.med-color-neutral.sc-med-nav-h{--logo-background:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-nav-h{--logo-background:hsl(var(--med-color-feedback))}.med-nav-simple.sc-med-nav{position:absolute;top:0;-webkit-transform:translateX(-100%);transform:translateX(-100%);-webkit-transition:300ms all ease;transition:300ms all ease}.med-nav--active.sc-med-nav-h .med-nav__container.sc-med-nav{-webkit-transform:translateX(-100%);transform:translateX(-100%);position:absolute}.med-nav--active.sc-med-nav-h .med-nav-simple.sc-med-nav{-webkit-transform:translateX(0);transform:translateX(0);position:relative;-webkit-transition-delay:300ms;transition-delay:300ms}";
+const medNavCss = ".sc-med-nav-h{--logo-background:hsl(var(--med-color-brand-2))}.sc-med-nav-h{position:relative;display:block}.med-nav__container.sc-med-nav{padding:24px;padding-top:calc(24px + var(--ion-safe-area-top, 0));padding-bottom:calc(24px + var(--ion-safe-area-bottom));background:hsl(var(--med-color-neutral-1));width:240px;height:100vh;overflow:auto;-webkit-transition:300ms all ease;transition:300ms all ease}.med-nav__logo.sc-med-nav{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;margin-bottom:24px}.med-nav__icon-wrapper.sc-med-nav{border-radius:50%;min-width:40px;height:40px;-ms-flex-align:center;align-items:center;background:var(--logo-background);display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;margin-right:16px}.med-nav__icon.sc-med-nav{stroke:hsl(var(--med-color-neutral-10))}.med-nav__toggle.sc-med-nav{position:absolute;bottom:24px;right:24px}.sc-med-nav-s>med-nav-item{margin-bottom:8px}.med-color.sc-med-nav-h{--logo-background:hsl(var(--med-color-2))}.med-color-neutral.sc-med-nav-h{--logo-background:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-nav-h{--logo-background:hsl(var(--med-color-feedback))}.med-nav-simple.sc-med-nav{position:absolute;top:0;-webkit-transform:translateX(-100%);transform:translateX(-100%);-webkit-transition:300ms all ease;transition:300ms all ease}.med-nav--active.sc-med-nav-h .med-nav__container.sc-med-nav{-webkit-transform:translateX(-100%);transform:translateX(-100%);position:absolute}.med-nav--active.sc-med-nav-h .med-nav-simple.sc-med-nav{-webkit-transform:translateX(0);transform:translateX(0);position:relative;-webkit-transition-delay:300ms;transition-delay:300ms}";
 
 class MedNav {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.clicked = createEvent(this, "clicked", 7);
+    /**
+    * todo
+    */
+    this.titulo = 'MEDSoft';
     /**
      * todo
      */
@@ -16604,19 +16608,20 @@ class MedNav {
     return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-nav': true,
         'med-nav--active': active
-      }) }, hAsync("nav", { class: "med-nav__container" }, hAsync("div", { class: "med-nav__logo" }, hAsync("div", { class: "med-nav__icon-wrapper" }, hAsync("ion-icon", { class: "med-nav__icon med-icon med-icon--sm", name: "med-logo" })), hAsync("med-type", { token: "h24", "ds-color": "neutral-10" }, "MEDSoft")), hAsync("slot", null), hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" }))), hAsync("med-nav-simple", { "ds-color": dsColor })));
+      }) }, hAsync("nav", { class: "med-nav__container" }, hAsync("div", { class: "med-nav__logo" }, hAsync("div", { class: "med-nav__icon-wrapper" }, hAsync("ion-icon", { class: "med-nav__icon med-icon med-icon--sm", name: "med-logo" })), hAsync("med-type", { token: "h24", "ds-color": "neutral-10" }, this.titulo)), hAsync("slot", null), hAsync("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" }))), hAsync("med-nav-simple", { "ds-color": dsColor })));
   }
   static get style() { return medNavCss; }
   static get cmpMeta() { return {
     "$flags$": 6,
     "$tagName$": "med-nav",
     "$members$": {
+      "titulo": [513],
       "dsColor": [513, "ds-color"],
       "active": [516]
     },
     "$listeners$": [[0, "close", "watchClick"]],
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"], ["active", "active"]]
+    "$attrsToReflect$": [["titulo", "titulo"], ["dsColor", "ds-color"], ["active", "active"]]
   }; }
 }
 

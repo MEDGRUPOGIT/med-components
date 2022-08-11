@@ -21,7 +21,7 @@ const MedImageZoom = class {
      * todo
      */
     this.initialSlide = 0;
-    this.defaultMaxRatio = 8;
+    this.defaultMaxRatio = 2;
     this.aplicandoZoom = false;
     /**
      * todo

@@ -6158,6 +6158,10 @@
         {
           "name": "ds-color",
           "description": "todo"
+        },
+        {
+          "name": "titulo",
+          "description": "todo"
         }
       ],
       "references": [

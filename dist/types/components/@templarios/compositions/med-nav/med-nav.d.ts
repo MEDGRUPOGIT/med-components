@@ -2,6 +2,10 @@ import { EventEmitter } from '../../../../stencil-public-runtime';
 import { MedColor } from '../../../../@templarios/types/color.type';
 export declare class MedNav {
   /**
+  * todo
+  */
+  titulo: string;
+  /**
    * todo
    */
   dsColor?: MedColor;
