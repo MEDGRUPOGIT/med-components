@@ -1,0 +1,1328 @@
+[tp-button] {
+  --background: hsl(var(--med-color-brand-3));
+  --background-focused: hsl(var(--med-color-brand-2));
+  --background-hover: hsl(var(--med-color-brand-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  --padding-start: 32px;
+  --padding-end: 32px;
+  --font-size: 16px;
+  --line-height: 16px;
+  --height: 48px;
+  --width: initial;
+  --display: inline-block;
+  --height-icon: 24px;
+  --width-icon: 24px;
+  --border: 1px solid transparent;
+  --border-radius: 100px;
+  --transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  --icon-transition: stroke 0.3s;
+}
+
+[tp-button] {
+  cursor: pointer;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+  padding-left: var(--padding-start);
+  padding-right: var(--padding-end);
+  font-size: var(--font-size);
+  font-weight: 600;
+  color: var(--color);
+  background-color: var(--background);
+  line-height: var(--line-height);
+  height: var(--height);
+  width: var(--width);
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  position: relative;
+}
+[tp-button]::after {
+  content: "";
+  height: calc(100% + 2px);
+  width: calc(100% + 2px);
+  border-radius: var(--border-radius);
+  background: transparent;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  overflow: hidden;
+}
+
+[tp-button]:hover {
+  --background: var(--background-hover);
+}
+
+[tp-button]:focus {
+  --background: var(--background-focused);
+  --color: var(--color-focused);
+}
+
+[tp-button]:disabled {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+  pointer-events: none;
+}
+
+[tp-button][ds-size=sm] {
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  height: 40px;
+}
+[tp-button][ds-size=sm] ion-icon {
+  font-size: 24px;
+}
+[tp-button][ds-size=xs] {
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  height: 32px;
+  font-size: 14px;
+}
+[tp-button][ds-size=xs] ion-icon {
+  font-size: 16px;
+}
+[tp-button][ds-size=xxs] {
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  height: 24px;
+  font-size: 12px;
+  line-height: 12px;
+}
+[tp-button][ds-size=xxs] ion-icon {
+  font-size: 16px;
+}
+
+[tp-button][expand=block] {
+  --width: 100%;
+  --display: block;
+}
+
+[tp-button][ds-color=brand] {
+  --background: hsl(var(--med-color-brand-3));
+  --background-focused: hsl(var(--med-color-brand-2));
+  --background-hover: hsl(var(--med-color-brand-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=brand][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=brand][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=brand]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=brand]:focus {
+  --background: var(--background-focused);
+  --color: var(--color-focused);
+}
+
+[tp-button][ds-color=aula] {
+  --background: hsl(var(--med-color-aula-3));
+  --background-focused: hsl(var(--med-color-aula-2));
+  --background-hover: hsl(var(--med-color-aula-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=aula][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=aula][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=aula]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=aula]:focus {
+  --background: var(--background-focused);
+  --color: var(--color-focused);
+}
+
+[tp-button][ds-color=material] {
+  --background: hsl(var(--med-color-material-3));
+  --background-focused: hsl(var(--med-color-material-2));
+  --background-hover: hsl(var(--med-color-material-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=material][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=material][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=material]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=material]:focus {
+  --background: var(--background-focused);
+  --color: var(--color-focused);
+}
+
+[tp-button][ds-color=questoes] {
+  --background: hsl(var(--med-color-questoes-3));
+  --background-focused: hsl(var(--med-color-questoes-2));
+  --background-hover: hsl(var(--med-color-questoes-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=questoes][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=questoes][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=questoes]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=questoes]:focus {
+  --background: var(--background-focused);
+  --color: var(--color-focused);
+}
+
+[tp-button][ds-color=revalida] {
+  --background: hsl(var(--med-color-revalida-3));
+  --background-focused: hsl(var(--med-color-revalida-2));
+  --background-hover: hsl(var(--med-color-revalida-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=revalida][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=revalida][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=revalida]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=revalida]:focus {
+  --background: var(--background-focused);
+  --color: var(--color-focused);
+}
+
+[tp-button][ds-color=provas] {
+  --background: hsl(var(--med-color-provas-3));
+  --background-focused: hsl(var(--med-color-provas-2));
+  --background-hover: hsl(var(--med-color-provas-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=provas][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=provas][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=provas]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=provas]:focus {
+  --background: var(--background-focused);
+  --color: var(--color-focused);
+}
+
+[tp-button][ds-color=neutral-1] {
+  --background: hsl(var(--med-color-neutral-1));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-1] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-1][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-1][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-1]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-1]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-2] {
+  --background: hsl(var(--med-color-neutral-2));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-2] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-2][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-2][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-2]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-2]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-3] {
+  --background: hsl(var(--med-color-neutral-3));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-3] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-3][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-3][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-3]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-3]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-4] {
+  --background: hsl(var(--med-color-neutral-4));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-4] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-4][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-4][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-4]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-4]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-5] {
+  --background: hsl(var(--med-color-neutral-5));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-5] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-5][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-5][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-5]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-5]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-6] {
+  --background: hsl(var(--med-color-neutral-6));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=neutral-6] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-6][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-6][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-6]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-6]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-7] {
+  --background: hsl(var(--med-color-neutral-7));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=neutral-7] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-7][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-7][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-7]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-7]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-8] {
+  --background: hsl(var(--med-color-neutral-8));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=neutral-8] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-8][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-8][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-8]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-8]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-9] {
+  --background: hsl(var(--med-color-neutral-9));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=neutral-9] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-9][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-9][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-9]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-9]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-10] {
+  --background: hsl(var(--med-color-neutral-10));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=neutral-10] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-10][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-10][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-10]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-10]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-15] {
+  --background: hsl(var(--med-color-neutral-15));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-15] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-15][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-15][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-15]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-15]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-25] {
+  --background: hsl(var(--med-color-neutral-25));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-25] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-25][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-25][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-25]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-25]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-35] {
+  --background: hsl(var(--med-color-neutral-35));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-35] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-35][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-35][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-35]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-35]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-45] {
+  --background: hsl(var(--med-color-neutral-45));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-45] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-45][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-45][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-45]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-45]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-55] {
+  --background: hsl(var(--med-color-neutral-55));
+  --background-activated: hsla(var(--med-color-neutral-10), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-10), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-10), 0.08);
+  --color: hsl(var(--med-color-neutral-10));
+  --color-activated: hsl(var(--med-color-neutral-10));
+  --color-focused: hsl(var(--med-color-neutral-10));
+  --color-hover: hsl(var(--med-color-neutral-10));
+}
+[tp-button][ds-color=neutral-55] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-55][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-55][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-55]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-55]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-65] {
+  --background: hsl(var(--med-color-neutral-65));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=neutral-65] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-65][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-65][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-65]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-65]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-75] {
+  --background: hsl(var(--med-color-neutral-75));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=neutral-75] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-75][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-75][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-75]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-75]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-85] {
+  --background: hsl(var(--med-color-neutral-85));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=neutral-85] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-85][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-85][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-85]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-85]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=neutral-95] {
+  --background: hsl(var(--med-color-neutral-95));
+  --background-activated: hsl(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsl(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsl(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=neutral-95] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-95][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=neutral-95][disabled] ion-icon {
+  stroke: var(--color);
+}
+[tp-button][ds-color=neutral-95]:hover ion-icon {
+  stroke: var(--color-hover);
+}
+[tp-button][ds-color=neutral-95]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=fb-attention] {
+  --background: hsl(var(--med-color-fb-attention));
+  --background-activated: hsla(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=fb-attention] ion-icon {
+  stroke: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=fb-attention][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=fb-attention][disabled] ion-icon {
+  stroke: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=fb-attention]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=fb-caution] {
+  --background: hsl(var(--med-color-fb-caution));
+  --background-activated: hsla(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=fb-caution] ion-icon {
+  stroke: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=fb-caution][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=fb-caution][disabled] ion-icon {
+  stroke: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=fb-caution]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=fb-warning] {
+  --background: hsl(var(--med-color-fb-warning));
+  --background-activated: hsla(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=fb-warning] ion-icon {
+  stroke: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=fb-warning][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=fb-warning][disabled] ion-icon {
+  stroke: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=fb-warning]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-button][ds-color=fb-success] {
+  --background: hsl(var(--med-color-fb-success));
+  --background-activated: hsla(var(--med-color-neutral-1), 0.08);
+  --background-focused: hsla(var(--med-color-neutral-1), 0.08);
+  --background-hover: hsla(var(--med-color-neutral-1), 0.08);
+  --color: hsl(var(--med-color-neutral-1));
+  --color-activated: hsl(var(--med-color-neutral-1));
+  --color-focused: hsl(var(--med-color-neutral-1));
+  --color-hover: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=fb-success] ion-icon {
+  stroke: hsl(var(--med-color-neutral-1));
+}
+[tp-button][ds-color=fb-success][disabled] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=fb-success][disabled] ion-icon {
+  stroke: hsl(var(--med-color-neutral-5));
+}
+[tp-button][ds-color=fb-success]:focus::after {
+  background: var(--background-focused);
+}
+
+[tp-input] {
+  --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --padding-end: 16px;
+  --padding-start: 16px;
+  --padding-bottom: 12px;
+  --padding-top: 12px;
+  --placeholder-color: hsl(var(--med-color-neutral-6));
+  border: none;
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+  padding-left: var(--padding-start);
+  padding-right: var(--padding-end);
+  font-size: 14px;
+  line-height: 16px;
+  border-radius: 8px;
+  height: 40px;
+  width: 100%;
+  background: var(--background);
+  color: var(--color);
+}
+[tp-input]::placeholder {
+  color: var(--placeholder-color);
+}
+[tp-input]:focus {
+  outline: none;
+}
+
+[tp-label] ~ [tp-input] {
+  margin-top: 8px;
+}
+
+[tp-input][ds-name=secondary] {
+  --background: hsl(var(--med-color-neutral-3));
+}
+
+[tp-input][ds-color=brand] {
+  --background: hsl(var(--med-color-brand-3));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=aula] {
+  --background: hsl(var(--med-color-aula-3));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=material] {
+  --background: hsl(var(--med-color-material-3));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=questoes] {
+  --background: hsl(var(--med-color-questoes-3));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=revalida] {
+  --background: hsl(var(--med-color-revalida-3));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=provas] {
+  --background: hsl(var(--med-color-provas-3));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-1] {
+  --background: hsl(var(--med-color-neutral-1));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-2] {
+  --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-3] {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-4] {
+  --background: hsl(var(--med-color-neutral-4));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-5] {
+  --background: hsl(var(--med-color-neutral-5));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-6] {
+  --background: hsl(var(--med-color-neutral-6));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=neutral-7] {
+  --background: hsl(var(--med-color-neutral-7));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=neutral-8] {
+  --background: hsl(var(--med-color-neutral-8));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=neutral-9] {
+  --background: hsl(var(--med-color-neutral-9));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=neutral-10] {
+  --background: hsl(var(--med-color-neutral-10));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=neutral-15] {
+  --background: hsl(var(--med-color-neutral-15));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-25] {
+  --background: hsl(var(--med-color-neutral-25));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-35] {
+  --background: hsl(var(--med-color-neutral-35));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-45] {
+  --background: hsl(var(--med-color-neutral-45));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-55] {
+  --background: hsl(var(--med-color-neutral-55));
+  --color: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-input][ds-color=neutral-65] {
+  --background: hsl(var(--med-color-neutral-65));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=neutral-75] {
+  --background: hsl(var(--med-color-neutral-75));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=neutral-85] {
+  --background: hsl(var(--med-color-neutral-85));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=neutral-95] {
+  --background: hsl(var(--med-color-neutral-95));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=fb-attention] {
+  --background: hsl(var(--med-color-fb-attention));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=fb-caution] {
+  --background: hsl(var(--med-color-fb-caution));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=fb-warning] {
+  --background: hsl(var(--med-color-fb-warning));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-input][ds-color=fb-success] {
+  --background: hsl(var(--med-color-fb-success));
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-label] {
+  color: hsl(var(--med-color-neutral-10));
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+[tp-label][token=h48] {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+}
+[tp-label][token=h32] {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 32px;
+}
+[tp-label][token=h24] {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+}
+[tp-label][token=h24x] {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+[tp-label][token=h20] {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+[tp-label][token=h20x] {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+[tp-label][token=p16] {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+}
+[tp-label][token=p16b] {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+}
+[tp-label][token=p16x] {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+[tp-label][token=p16xb] {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+[tp-label][token=p14] {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+[tp-label][token=p14b] {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+}
+[tp-label][token=p14x] {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+[tp-label][token=p14xb] {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+[tp-label][token=p12] {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+[tp-label][token=p12b] {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+}
+[tp-label][token=p12x] {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+[tp-label][token=p12xb] {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+[tp-label][token=p10] {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+}
+[tp-label][token=p10b] {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 12px;
+}
+
+[tp-label][ds-color=brand] {
+  color: hsl(var(--med-color-brand-3));
+}
+
+[tp-label][ds-color=aula] {
+  color: hsl(var(--med-color-aula-3));
+}
+
+[tp-label][ds-color=material] {
+  color: hsl(var(--med-color-material-3));
+}
+
+[tp-label][ds-color=questoes] {
+  color: hsl(var(--med-color-questoes-3));
+}
+
+[tp-label][ds-color=revalida] {
+  color: hsl(var(--med-color-revalida-3));
+}
+
+[tp-label][ds-color=provas] {
+  color: hsl(var(--med-color-provas-3));
+}
+
+[tp-label][ds-color=neutral-1] {
+  color: hsl(var(--med-color-neutral-1));
+}
+
+[tp-label][ds-color=neutral-2] {
+  color: hsl(var(--med-color-neutral-2));
+}
+
+[tp-label][ds-color=neutral-3] {
+  color: hsl(var(--med-color-neutral-3));
+}
+
+[tp-label][ds-color=neutral-4] {
+  color: hsl(var(--med-color-neutral-4));
+}
+
+[tp-label][ds-color=neutral-5] {
+  color: hsl(var(--med-color-neutral-5));
+}
+
+[tp-label][ds-color=neutral-6] {
+  color: hsl(var(--med-color-neutral-6));
+}
+
+[tp-label][ds-color=neutral-7] {
+  color: hsl(var(--med-color-neutral-7));
+}
+
+[tp-label][ds-color=neutral-8] {
+  color: hsl(var(--med-color-neutral-8));
+}
+
+[tp-label][ds-color=neutral-9] {
+  color: hsl(var(--med-color-neutral-9));
+}
+
+[tp-label][ds-color=neutral-10] {
+  color: hsl(var(--med-color-neutral-10));
+}
+
+[tp-label][ds-color=neutral-15] {
+  color: hsl(var(--med-color-neutral-15));
+}
+
+[tp-label][ds-color=neutral-25] {
+  color: hsl(var(--med-color-neutral-25));
+}
+
+[tp-label][ds-color=neutral-35] {
+  color: hsl(var(--med-color-neutral-35));
+}
+
+[tp-label][ds-color=neutral-45] {
+  color: hsl(var(--med-color-neutral-45));
+}
+
+[tp-label][ds-color=neutral-55] {
+  color: hsl(var(--med-color-neutral-55));
+}
+
+[tp-label][ds-color=neutral-65] {
+  color: hsl(var(--med-color-neutral-65));
+}
+
+[tp-label][ds-color=neutral-75] {
+  color: hsl(var(--med-color-neutral-75));
+}
+
+[tp-label][ds-color=neutral-85] {
+  color: hsl(var(--med-color-neutral-85));
+}
+
+[tp-label][ds-color=neutral-95] {
+  color: hsl(var(--med-color-neutral-95));
+}
+
+[tp-label][ds-color=fb-attention] {
+  color: hsl(var(--med-color-fb-attention));
+}
+
+[tp-label][ds-color=fb-caution] {
+  color: hsl(var(--med-color-fb-caution));
+}
+
+[tp-label][ds-color=fb-warning] {
+  color: hsl(var(--med-color-fb-warning));
+}
+
+[tp-label][ds-color=fb-success] {
+  color: hsl(var(--med-color-fb-success));
+}
+
+[tp-select] {
+  --placeholder-color: hsl(var(--med-color-neutral-6));
+  --placeholder-opacity: 1;
+  width: 100%;
+  border: none;
+  margin-top: 0px;
+  color: hsl(var(--med-color-neutral-10));
+  font-size: 14px;
+  line-height: 16px;
+  background: hsl(var(--med-color-neutral-2));
+  border-radius: 8px;
+  height: 40px;
+}
+[tp-select]:focus {
+  outline: none;
+}
+[tp-select] ~ .med-icon {
+  height: 24px;
+  width: 24px;
+  stroke: hsl(var(--med-color-neutral-6));
+}
+
+.sc-tp-input-container-h {
+  --padding-end: 8px;
+  --padding-start: 16px;
+  --padding-bottom: 12px;
+  --padding-top: 12px;
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+  padding-left: var(--padding-start);
+  padding-right: var(--padding-end);
+}
+
+[tp-label] ~ .sc-tp-input-container-h {
+  margin-top: 8px;
+}
+
+/*# sourceMappingURL=templarios-css-framework.css.map */

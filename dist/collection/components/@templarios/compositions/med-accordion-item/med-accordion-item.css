@@ -45,7 +45,6 @@
 }
 :host(.med-accordion-item) .med-accordion-item__content {
   display: none;
-  overflow: auto;
   background: var(--background-content);
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
