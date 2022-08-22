@@ -1,5 +1,5 @@
-import { EventEmitter } from '../../../../stencil-public-runtime';
-import { MedColor } from '../../../../@templarios/types/color.type';
+import { EventEmitter } from "../../../../stencil-public-runtime";
+import { MedColor } from "../../../../@templarios/types/color.type";
 export declare class MedCheckCard {
   /**
    * todo

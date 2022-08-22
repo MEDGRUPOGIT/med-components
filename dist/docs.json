@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-08-11T12:36:25",
+  "timestamp": "2022-08-22T14:44:44",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -21857,7 +21857,7 @@
     },
     {
       "filePath": "./src/components/@templarios/compositions/med-check-card/med-check-card.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-check-card",
       "readme": "# med-check-card\n\n\n",
       "docs": "",

@@ -1,5 +1,5 @@
-import { Component, Event, h, Host, Prop } from '@stencil/core';
-import { generateMedColor } from '../../../../@templarios/utilities/color';
+import { Component, Event, h, Host, Prop } from "@stencil/core";
+import { generateMedColor } from "../../../../@templarios/utilities/color";
 export class MedCheckCard {
   constructor() {
     /**
@@ -14,10 +14,10 @@ export class MedCheckCard {
     this.medTooltipClose.emit();
   }
   render() {
-    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, dataInicial, dataFinal, iconName } = this;
+    const { dsColor, alert, titulo, categoria, horaInicial, horaFinal, dataInicial, dataFinal, iconName, } = this;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
-        'med-check-card': true,
-        'med-check-card--alert': alert,
+        "med-check-card": true,
+        "med-check-card--alert": alert,
       }) },
       h("med-base", { "spacing-v": "s00", "spacing-h": "s00", class: "med-check-card__base" },
         h("div", { class: "med-check-card__input-container" },
@@ -30,27 +30,27 @@ export class MedCheckCard {
                 h("div", { class: "med-check-card__container-fix" },
                   h("ion-icon", { class: "med-check-card__icon med-icon med-icon--xs", name: iconName }),
                   h("med-type", { class: "med-check-card__subtitulo", token: "p12xb" }, categoria)),
-                !dataInicial && !dataFinal && horaInicial && horaFinal && h("med-type", { class: "med-check-card__hora", token: "p12x" },
+                !dataInicial && !dataFinal && horaInicial && horaFinal && (h("med-type", { class: "med-check-card__hora", token: "p12x" },
                   horaInicial,
                   " \u2013 ",
-                  horaFinal),
-                dataInicial && dataFinal && !horaInicial && !horaFinal && h("med-type", { class: "med-check-card__data", token: "p12x" },
+                  horaFinal)),
+                dataInicial && dataFinal && !horaInicial && !horaFinal && (h("med-type", { class: "med-check-card__data", token: "p12x" },
                   dataInicial,
                   " at\u00E9 ",
-                  dataFinal))),
-            dataInicial && dataFinal && horaInicial && horaFinal && h("med-type", { class: "med-check-card__data-hora", token: "p12x" },
+                  dataFinal)))),
+            dataInicial && dataFinal && horaInicial && horaFinal && (h("med-type", { class: "med-check-card__data-hora", token: "p12x" },
               dataInicial,
               " - ",
               horaInicial,
               " at\u00E9 ",
               dataFinal,
               " - ",
-              horaFinal))),
-        h("div", { class: alert ? 'med-check-card__tooltip-container' : '' },
+              horaFinal)))),
+        h("div", { class: alert ? "med-check-card__tooltip-container" : "" },
           h("slot", { name: "tooltip" })))));
   }
   static get is() { return "med-check-card"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-check-card.scss"]
   }; }
