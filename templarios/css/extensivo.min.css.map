@@ -1,0 +1,1 @@
+{"version":3,"sources":["templarios/css/themes/extensivo.css"],"names":[],"mappings":"AAAA,iBACE,YAAa","sourcesContent":[".theme-extensivo {\n  --brand-hue: 122;\n}\n\n/*# sourceMappingURL=extensivo.css.map */\n"]}

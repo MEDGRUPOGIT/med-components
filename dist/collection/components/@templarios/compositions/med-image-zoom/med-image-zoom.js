@@ -10,7 +10,7 @@ export class MedImageZoom {
      * todo
      */
     this.initialSlide = 0;
-    this.defaultMaxRatio = 2;
+    this.defaultMaxRatio = 4;
     this.aplicandoZoom = false;
     /**
      * todo
