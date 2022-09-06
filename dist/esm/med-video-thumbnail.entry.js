@@ -1,5 +1,5 @@
 import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { g as generateMedColor } from './color-a516669b.js';
+import { g as generateMedColor } from './color-49be71bc.js';
 
 const medVideoThumbnailCss = ":host{--width:112px;--height:64px}:host{display:block;width:var(--width);height:var(--height);position:relative;overflow:hidden;border-radius:4px}.med-video-thumbnail__img{width:100%;height:auto;display:block}.med-video-thumbnail__icon{stroke:#fff;font-size:20px;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}.med-video-thumbnail__progress{position:absolute;bottom:0;left:0}";
 
