@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const color = require('./color-2d4645aa.js');
+const color = require('./color-4ca1bfd7.js');
 
 const medAddCardCss = ":host{cursor:pointer;display:block}.med-add-card__container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.med-add-card__icon{stroke:hsl(var(--med-color-neutral-10));margin-right:16px}";
 

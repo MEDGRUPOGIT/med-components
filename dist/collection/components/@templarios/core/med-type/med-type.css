@@ -42,10 +42,22 @@
   --line-height: 48px;
 }
 
+:host(.med-type--h48x) {
+  --font-size: 48px;
+  --font-weight: 600;
+  --line-height: 64px;
+}
+
 :host(.med-type--h32) {
   --font-size: 32px;
   --font-weight: 600;
   --line-height: 32px;
+}
+
+:host(.med-type--h32x) {
+  --font-size: 32px;
+  --font-weight: 600;
+  --line-height: 40px;
 }
 
 :host(.med-type--h24) {
