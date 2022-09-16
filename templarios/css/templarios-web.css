@@ -1,0 +1,45 @@
+.templarios-web [tp-container-input] {
+  height: 48px;
+}
+.templarios-web [tp-container-input] [tp-input] {
+  height: auto;
+}
+
+.templarios-web [tp-input] {
+  height: 48px;
+}
+.templarios-web [tp-input-help] {
+  margin-top: 8px;
+}
+
+.templarios-web [tp-select-header] {
+  --height: 48px;
+}
+.templarios-web [tp-select-content] {
+  top: 48px;
+}
+
+.templarios-web tp-input-container {
+  height: 48px;
+}
+.templarios-web tp-input-container ion-input.sc-ion-input-md-h {
+  height: auto;
+}
+.templarios-web tp-input-container + ion-label {
+  display: block;
+  margin-top: 8px;
+}
+
+.templarios-web ion-input.sc-ion-input-md-h {
+  height: 48px;
+}
+.templarios-web ion-input.sc-ion-input-md-h + ion-label {
+  display: block;
+  margin-top: 8px;
+}
+
+.templarios-web ion-select {
+  height: 48px;
+}
+
+/*# sourceMappingURL=templarios-web.css.map */

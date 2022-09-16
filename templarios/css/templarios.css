@@ -2801,6 +2801,11 @@ ion-button[fill=clear][icon-only][ds-size=xxxs] ion-icon {
   height: 16px;
 }
 
+ion-button[fill=clear][no-padding=true] {
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
 ion-button[ds-color=brand][fill=clear] {
   --color-activated: hsl(var(--med-color-brand-3));
   --color-focused: hsl(var(--med-color-brand-3));
@@ -6394,6 +6399,16 @@ ion-label[token=h20x] {
   font-weight: 600;
   line-height: 24px;
 }
+ion-label[token=p18x] {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+}
+ion-label[token=p18xb] {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 32px;
+}
 ion-label[token=p16] {
   font-size: 16px;
   font-weight: 400;
@@ -9590,6 +9605,16 @@ ion-title[token=h20x] {
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
+}
+ion-title[token=p18x] {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+}
+ion-title[token=p18xb] {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 32px;
 }
 ion-title[token=p16] {
   font-size: 16px;

@@ -77,6 +77,7 @@ export const MedIcons = [
 
   'med-cartao-resposta',
   'med-cartao',
+  'med-chart3',
   'med-check-circle',
   'med-check',
 
@@ -192,6 +193,7 @@ export const MedIcons = [
   'med-print',
 
   'med-proibido',
+  'med-prova-smart',
   'med-provas-irmas',
   'med-qrcode',
   'med-questao-old',

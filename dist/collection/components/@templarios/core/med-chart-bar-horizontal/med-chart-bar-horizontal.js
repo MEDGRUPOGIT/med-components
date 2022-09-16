@@ -35,7 +35,7 @@ export class MedChartBarHorizontal {
         [`med-chart-bar-horizontal--${dsSize}`]: dsSize !== undefined,
       }), "aria-valuenow": value, "aria-valuemin": "0", "aria-valuemax": "1", role: "progressbar" },
       h("div", { class: "med-chart-bar-horizontal__container" },
-        h("div", { class: "med-chart-bar-horizontal__progress", style: { '--progress': `${progressWidth === 0 ? -100 : progressWidth - 100}` } }),
+        h("div", { class: "med-chart-bar-horizontal__progress", style: { '--progress': `${progressWidth === 0 ? -99 : progressWidth - 100}` } }),
         h("div", { class: "med-chart-bar-horizontal__track" })),
       label && h("med-type", { class: "med-chart-bar-horizontal__label" },
         !hideValue ? `${value}%` : '',

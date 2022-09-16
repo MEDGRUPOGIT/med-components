@@ -19,6 +19,8 @@ export var MedType;
   MedType["H24"] = "h24";
   MedType["H20"] = "h20";
   MedType["H20X"] = "h20x";
+  MedType["P18XB"] = "p18xb";
+  MedType["P18X"] = "p18x";
   MedType["P16"] = "p16";
   MedType["P16B"] = "p16b";
   MedType["P16X"] = "p16x";

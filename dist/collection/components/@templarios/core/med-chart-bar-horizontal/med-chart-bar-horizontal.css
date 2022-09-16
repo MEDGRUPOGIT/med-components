@@ -13,7 +13,7 @@
 
 .med-chart-bar-horizontal__container {
   position: relative;
-  width: 100%;
+  width: calc(100% - 62px);
   border-radius: var(--border-radius);
   overflow: hidden;
 }
@@ -42,6 +42,7 @@
   --line-height: 12px;
   min-width: 40px;
   text-align: right;
+  white-space: nowrap;
 }
 
 :host(.med-color) {
