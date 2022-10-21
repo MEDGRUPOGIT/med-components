@@ -16,6 +16,10 @@ const MedTooltip = class {
      * todo
      */
     this.collapsed = true;
+    // @Listen('mouseover', { target: '' })
+    // handleScroll(ev) {
+    //   console.log('the body was scrolled', ev);
+    // }
     this.onBtnLeftClick = () => {
       this.btnLeftClick.emit();
     };
@@ -27,8 +31,16 @@ const MedTooltip = class {
    * todo
    */
   async toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
-    this.collapsed = !this.collapsed;
+    if (!this.enableHover) {
+      event === null || event === void 0 ? void 0 : event.stopPropagation();
+      this.collapsed = !this.collapsed;
+    }
+  }
+  async toggleOnHover(event) {
+    if (this.enableHover) {
+      event === null || event === void 0 ? void 0 : event.stopPropagation();
+      this.collapsed = !this.collapsed;
+    }
   }
   handleClick(event) {
     console.log(event);
@@ -45,7 +57,7 @@ const MedTooltip = class {
   }
   render() {
     const { dsColor, placement, position, collapsed, titulo, content, btnLeft, btnRight } = this;
-    return (index.h(index.Host, { "from-stencil": true, class: color.generateMedColor(dsColor, {
+    return (index.h(index.Host, { "from-stencil": true, onMouseenter: (event) => { this.toggleOnHover(event); }, onMouseleave: (event) => { this.toggleOnHover(event); }, class: color.generateMedColor(dsColor, {
         'med-tooltip': true,
         [`med-tooltip--${placement}`]: placement !== undefined,
         [`med-tooltip--${position}`]: position !== undefined,

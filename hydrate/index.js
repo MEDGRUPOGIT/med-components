@@ -14227,7 +14227,7 @@ class MedAccordionItem {
   }; }
 }
 
-const medAddCardCss = "/*!@:host*/.sc-med-add-card-h{cursor:pointer;display:block}/*!@.med-add-card__container*/.med-add-card__container.sc-med-add-card{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}/*!@.med-add-card__icon*/.med-add-card__icon.sc-med-add-card{stroke:hsl(var(--med-color-neutral-10));margin-right:16px}";
+const medAddCardCss = ".sc-med-add-card-h{cursor:pointer;display:block}.med-add-card__container.sc-med-add-card{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.med-add-card__icon.sc-med-add-card{stroke:hsl(var(--med-color-neutral-10));margin-right:16px}";
 
 class MedAddCard {
   constructor(hostRef) {
@@ -14241,7 +14241,7 @@ class MedAddCard {
   }
   static get style() { return medAddCardCss; }
   static get cmpMeta() { return {
-    "$flags$": 9,
+    "$flags$": 2,
     "$tagName$": "med-add-card",
     "$members$": {
       "titulo": [513],
@@ -18349,6 +18349,10 @@ class MedTooltip {
      * todo
      */
     this.collapsed = true;
+    // @Listen('mouseover', { target: '' })
+    // handleScroll(ev) {
+    //   console.log('the body was scrolled', ev);
+    // }
     this.onBtnLeftClick = () => {
       this.btnLeftClick.emit();
     };
@@ -18360,8 +18364,16 @@ class MedTooltip {
    * todo
    */
   async toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
-    this.collapsed = !this.collapsed;
+    if (!this.enableHover) {
+      event === null || event === void 0 ? void 0 : event.stopPropagation();
+      this.collapsed = !this.collapsed;
+    }
+  }
+  async toggleOnHover(event) {
+    if (this.enableHover) {
+      event === null || event === void 0 ? void 0 : event.stopPropagation();
+      this.collapsed = !this.collapsed;
+    }
   }
   handleClick(event) {
     console.log(event);
@@ -18378,7 +18390,7 @@ class MedTooltip {
   }
   render() {
     const { dsColor, placement, position, collapsed, titulo, content, btnLeft, btnRight } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { "from-stencil": true, onMouseenter: (event) => { this.toggleOnHover(event); }, onMouseleave: (event) => { this.toggleOnHover(event); }, class: generateMedColor(dsColor, {
         'med-tooltip': true,
         [`med-tooltip--${placement}`]: placement !== undefined,
         [`med-tooltip--${position}`]: position !== undefined,
@@ -18390,6 +18402,7 @@ class MedTooltip {
     "$flags$": 6,
     "$tagName$": "med-tooltip",
     "$members$": {
+      "enableHover": [4, "enable-hover"],
       "dsColor": [513, "ds-color"],
       "placement": [513],
       "position": [513],
@@ -18398,7 +18411,8 @@ class MedTooltip {
       "btnLeft": [1, "btn-left"],
       "btnRight": [1, "btn-right"],
       "collapsed": [1540],
-      "toggle": [64]
+      "toggle": [64],
+      "toggleOnHover": [64]
     },
     "$listeners$": [[8, "click", "handleClick"]],
     "$lazyBundleId$": "-",
@@ -18439,7 +18453,7 @@ class MedType {
   }; }
 }
 
-const medVideoThumbnailCss = "/*!@:host*/.sc-med-video-thumbnail-h{--width:112px;--height:64px}/*!@:host*/.sc-med-video-thumbnail-h{display:block;width:var(--width);height:var(--height);position:relative;overflow:hidden;border-radius:4px}/*!@.med-video-thumbnail__img*/.med-video-thumbnail__img.sc-med-video-thumbnail{width:100%;height:auto;display:block}/*!@.med-video-thumbnail__icon*/.med-video-thumbnail__icon.sc-med-video-thumbnail{stroke:#fff;font-size:20px;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}/*!@.med-video-thumbnail__progress*/.med-video-thumbnail__progress.sc-med-video-thumbnail{position:absolute;bottom:0;left:0}";
+const medVideoThumbnailCss = ".sc-med-video-thumbnail-h{--width:112px;--height:64px}.sc-med-video-thumbnail-h{display:block;width:var(--width);height:var(--height);position:relative;overflow:hidden;border-radius:4px}.med-video-thumbnail__img.sc-med-video-thumbnail{width:100%;height:auto;display:block}.med-video-thumbnail__icon.sc-med-video-thumbnail{stroke:#fff;font-size:20px;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}.med-video-thumbnail__progress.sc-med-video-thumbnail{position:absolute;bottom:0;left:0}";
 
 class MedVideoThumbnail {
   constructor(hostRef) {
@@ -18457,7 +18471,7 @@ class MedVideoThumbnail {
   }
   static get style() { return medVideoThumbnailCss; }
   static get cmpMeta() { return {
-    "$flags$": 9,
+    "$flags$": 2,
     "$tagName$": "med-video-thumbnail",
     "$members$": {
       "dsColor": [513, "ds-color"],

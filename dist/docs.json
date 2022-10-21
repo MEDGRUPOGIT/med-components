@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-09-23T11:40:24",
+  "timestamp": "2022-10-21T15:58:28",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -19011,7 +19011,7 @@
     },
     {
       "filePath": "./src/components/@templarios/compositions/med-add-card/med-add-card.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-add-card",
       "readme": "# med-add-card\n\n\n",
       "docs": "",
@@ -26014,6 +26014,25 @@
           "required": false
         },
         {
+          "name": "enableHover",
+          "type": "boolean | undefined",
+          "mutable": false,
+          "attr": "enable-hover",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "placement",
           "type": "\"bottom\" | \"left\" | \"right\" | \"top\" | undefined",
           "mutable": false,
@@ -26103,6 +26122,17 @@
           "signature": "toggle(event?: any) => Promise<void>",
           "parameters": [],
           "docs": "todo",
+          "docsTags": []
+        },
+        {
+          "name": "toggleOnHover",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "toggleOnHover(event?: any) => Promise<void>",
+          "parameters": [],
+          "docs": "",
           "docsTags": []
         }
       ],
@@ -26332,7 +26362,7 @@
     },
     {
       "filePath": "./src/components/@templarios/compositions/med-video-thumbnail/med-video-thumbnail.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-video-thumbnail",
       "readme": "# med-video-thumbnail\n\n\n",
       "docs": "",

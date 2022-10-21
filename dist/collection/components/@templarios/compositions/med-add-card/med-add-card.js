@@ -11,7 +11,7 @@ export class MedAddCard {
         h("med-type", { token: "p16x" }, titulo))));
   }
   static get is() { return "med-add-card"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-add-card.scss"]
   }; }

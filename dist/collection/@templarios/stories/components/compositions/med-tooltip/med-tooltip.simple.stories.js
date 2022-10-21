@@ -7,7 +7,7 @@ export default {
   decorators: [withDesign],
 };
 
-const Template = ({ dsColor, dsName, collapsed, placement, position, content }) => {
+const Template = ({ dsColor, dsName, collapsed, enableHover, placement, position, content }) => {
   return html`
     <style>
       .med-icon {
@@ -20,7 +20,7 @@ const Template = ({ dsColor, dsName, collapsed, placement, position, content }) 
         <div class="full-height-flex">
 
           <!-- component markdown -->
-          <med-tooltip .dsColor=${dsColor} .dsName=${dsName} .content=${content} .collapsed=${collapsed} .placement=${placement} .position=${position}>
+          <med-tooltip .dsColor=${dsColor} .dsName=${dsName} .content=${content} .collapsed=${collapsed} .enableHover=${enableHover} .placement=${placement} .position=${position}>
             <ion-icon class="med-icon" name="med-fechar" slot="input"></ion-icon>
           </med-tooltip>
           <!-- component markdown -->
@@ -51,6 +51,15 @@ Simple.argTypes = {
   collapsed: {
     control: { type: 'boolean' },
     description: 'Define o estado do componente.',
+    defaultValue: true,
+    table: {
+      type:  { summary: 'boolean' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+  enableHover: {
+    control: { type: 'boolean' },
+    description: 'Habilita o toggle no hover.',
     defaultValue: true,
     table: {
       type:  { summary: 'boolean' },

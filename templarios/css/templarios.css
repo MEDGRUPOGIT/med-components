@@ -5599,8 +5599,77 @@ ion-input.sc-ion-input-md-h {
   height: 40px;
 }
 
+tp-input-container ion-icon.med-icon--alerta[slot=start] {
+  margin: 0 0 0 8px;
+}
+tp-input-container ion-icon.med-icon--alerta[slot=end] {
+  margin: 0 8px 0 0;
+}
+
+ion-input.sc-ion-input-md-h,
+tp-input-container {
+  --border: 1px solid transparent;
+  border: var(--border);
+}
+
 ion-input[ds-name=secondary].sc-ion-input-md-h {
   --background: hsl(var(--med-color-neutral-3));
+}
+
+ion-input[state=attention].sc-ion-input-md-h {
+  --border: 1px solid hsl(var(--med-color-fb-attention));
+}
+
+tp-input-container[state=attention] {
+  --border: 1px solid hsl(var(--med-color-fb-attention));
+}
+tp-input-container[state=attention] ion-input.sc-ion-input-md-h {
+  height: 38px;
+}
+tp-input-container[state=attention] ion-icon.med-icon--alerta {
+  stroke: hsl(var(--med-color-fb-attention));
+}
+
+ion-input[state=caution].sc-ion-input-md-h {
+  --border: 1px solid hsl(var(--med-color-fb-caution));
+}
+
+tp-input-container[state=caution] {
+  --border: 1px solid hsl(var(--med-color-fb-caution));
+}
+tp-input-container[state=caution] ion-input.sc-ion-input-md-h {
+  height: 38px;
+}
+tp-input-container[state=caution] ion-icon.med-icon--alerta {
+  stroke: hsl(var(--med-color-fb-caution));
+}
+
+ion-input[state=warning].sc-ion-input-md-h {
+  --border: 1px solid hsl(var(--med-color-fb-warning));
+}
+
+tp-input-container[state=warning] {
+  --border: 1px solid hsl(var(--med-color-fb-warning));
+}
+tp-input-container[state=warning] ion-input.sc-ion-input-md-h {
+  height: 38px;
+}
+tp-input-container[state=warning] ion-icon.med-icon--alerta {
+  stroke: hsl(var(--med-color-fb-warning));
+}
+
+ion-input[state=success].sc-ion-input-md-h {
+  --border: 1px solid hsl(var(--med-color-fb-success));
+}
+
+tp-input-container[state=success] {
+  --border: 1px solid hsl(var(--med-color-fb-success));
+}
+tp-input-container[state=success] ion-input.sc-ion-input-md-h {
+  height: 38px;
+}
+tp-input-container[state=success] ion-icon.med-icon--alerta {
+  stroke: hsl(var(--med-color-fb-success));
 }
 
 ion-input[ds-color=brand].sc-ion-input-md-h {
@@ -7189,6 +7258,41 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
     --max-width: calc(100% - 32px) !important;
   }
 }
+.tp-modal {
+  --background: hsl(var(--med-color-neutral-1)) !important;
+  --height: 100% !important;
+  --min-height: 50px !important;
+  --width: 100% !important;
+  --max-width: 640px !important;
+  backdrop-filter: blur(10px);
+}
+.tp-modal ion-backdrop {
+  --ion-backdrop-color: hsl(var(--med-color-neutral-1)) !important;
+  --backdrop-opacity: 0.8 !important;
+}
+
+@media (min-width: 576px) {
+  .tp-modal {
+    --max-width: 880px !important;
+    --max-height: 600px !important;
+  }
+  .tp-modal .ion-page {
+    left: unset;
+    bottom: unset;
+    top: unset;
+    right: unset;
+    position: initial;
+    display: block;
+    contain: unset;
+    height: 100%;
+  }
+}
+@media (max-width: 575.98px) {
+  .tp-modal {
+    --max-width: 100% !important;
+    --min-height: 100% !important;
+  }
+}
 ion-progress-bar {
   --progress-background: hsl(var(--med-color-brand-4));
   --background: hsl(var(--med-color-brand-1));
@@ -8598,6 +8702,34 @@ ion-select {
 
 ion-select[ds-name=secondary] {
   background: hsl(var(--med-color-neutral-3));
+}
+
+tp-input-container[state=attention] {
+  --border: 1px solid hsl(var(--med-color-fb-attention));
+}
+tp-input-container[state=attention] ion-select {
+  height: 38px;
+}
+
+tp-input-container[state=caution] {
+  --border: 1px solid hsl(var(--med-color-fb-caution));
+}
+tp-input-container[state=caution] ion-select {
+  height: 38px;
+}
+
+tp-input-container[state=warning] {
+  --border: 1px solid hsl(var(--med-color-fb-warning));
+}
+tp-input-container[state=warning] ion-select {
+  height: 38px;
+}
+
+tp-input-container[state=success] {
+  --border: 1px solid hsl(var(--med-color-fb-success));
+}
+tp-input-container[state=success] ion-select {
+  height: 38px;
 }
 
 ion-select[ds-color=brand] {

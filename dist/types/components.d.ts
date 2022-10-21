@@ -3942,6 +3942,7 @@ export namespace Components {
           * todo
          */
         "dsColor"?: MedColor;
+        "enableHover"?: boolean;
         /**
           * todo
          */
@@ -3958,6 +3959,7 @@ export namespace Components {
           * todo
          */
         "toggle": (event?: any) => Promise<void>;
+        "toggleOnHover": (event?: any) => Promise<void>;
     }
     interface MedType {
         /**
@@ -9117,6 +9119,7 @@ declare namespace LocalJSX {
           * todo
          */
         "dsColor"?: MedColor;
+        "enableHover"?: boolean;
         /**
           * todo
          */

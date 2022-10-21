@@ -126,6 +126,7 @@ export const MedIcons = [
 
   'med-fecharcirculo',
   'med-filtro',
+  'med-filter2',
   'med-financeiro',
   'med-flashcards',
   'med-font-decrease',
@@ -190,6 +191,7 @@ export const MedIcons = [
   'med-play',
   'med-plus',
   'med-positivo',
+  'med-positivox2',
   'med-print',
 
   'med-proibido',

@@ -3,20 +3,14 @@ import { withDesign } from 'storybook-addon-designs';
 import { modalController } from '../../../../../../dist/ionic/index.esm.js';
 
 export default {
-  title: 'Components/Ionic/Modal/Dialog',
+  title: 'Components/Ionic/Modal/Modal',
   decorators: [withDesign],
 };
 
 const createModal = async () => {
   modalController.create({
     component: 'med-alert',
-    cssClass: 'tp-dialog',
-    componentProps:{
-      heading: 'Heading',
-      message: 'Content',
-      cancelText: 'Cancelar',
-      confirmText: 'Confirm'
-    }
+    cssClass: 'tp-modal',
   }).then((modal)=>{
     modal.present()
   });
@@ -27,7 +21,7 @@ const TemplateDefault = () => {
     <ion-app>
       <ion-content>
 
-        <ion-button ds-name="primary" @click="${createModal}">Abrir Zoom de Imagens</ion-button>
+        <ion-button ds-name="primary" @click="${createModal}">Abrir Modal</ion-button>
 
       </ion-content>
     </ion-app>

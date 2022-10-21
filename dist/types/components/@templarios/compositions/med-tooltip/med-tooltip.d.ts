@@ -1,6 +1,7 @@
 import { EventEmitter } from '../../../../stencil-public-runtime';
 import { MedColor } from '../../../../@templarios/types/color.type';
 export declare class MedTooltip {
+  enableHover?: boolean;
   /**
    * todo
    */
@@ -45,6 +46,7 @@ export declare class MedTooltip {
    * todo
    */
   toggle(event?: any): Promise<void>;
+  toggleOnHover(event?: any): Promise<void>;
   handleClick(event?: any): void;
   private onBtnLeftClick;
   private onBtnRightClick;

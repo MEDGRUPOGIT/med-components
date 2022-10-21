@@ -17,7 +17,7 @@ export class MedVideoThumbnail {
       h("ion-progress-bar", { "ds-color": dsColor, class: "med-video-thumbnail__progress", "ds-name": "minimalist", value: value })));
   }
   static get is() { return "med-video-thumbnail"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-video-thumbnail.scss"]
   }; }

@@ -6,6 +6,10 @@ export class MedTooltip {
      * todo
      */
     this.collapsed = true;
+    // @Listen('mouseover', { target: '' })
+    // handleScroll(ev) {
+    //   console.log('the body was scrolled', ev);
+    // }
     this.onBtnLeftClick = () => {
       this.btnLeftClick.emit();
     };
@@ -17,8 +21,16 @@ export class MedTooltip {
    * todo
    */
   async toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
-    this.collapsed = !this.collapsed;
+    if (!this.enableHover) {
+      event === null || event === void 0 ? void 0 : event.stopPropagation();
+      this.collapsed = !this.collapsed;
+    }
+  }
+  async toggleOnHover(event) {
+    if (this.enableHover) {
+      event === null || event === void 0 ? void 0 : event.stopPropagation();
+      this.collapsed = !this.collapsed;
+    }
   }
   handleClick(event) {
     console.log(event);
@@ -35,7 +47,7 @@ export class MedTooltip {
   }
   render() {
     const { dsColor, placement, position, collapsed, titulo, content, btnLeft, btnRight } = this;
-    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (h(Host, { "from-stencil": true, onMouseenter: (event) => { this.toggleOnHover(event); }, onMouseleave: (event) => { this.toggleOnHover(event); }, class: generateMedColor(dsColor, {
         'med-tooltip': true,
         [`med-tooltip--${placement}`]: placement !== undefined,
         [`med-tooltip--${position}`]: position !== undefined,
@@ -69,6 +81,23 @@ export class MedTooltip {
     "$": ["med-tooltip.css"]
   }; }
   static get properties() { return {
+    "enableHover": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "enable-hover",
+      "reflect": false
+    },
     "dsColor": {
       "type": "string",
       "mutable": false,
@@ -260,6 +289,25 @@ export class MedTooltip {
       },
       "docs": {
         "text": "todo",
+        "tags": []
+      }
+    },
+    "toggleOnHover": {
+      "complexType": {
+        "signature": "(event?: any) => Promise<void>",
+        "parameters": [{
+            "tags": [],
+            "text": ""
+          }],
+        "references": {
+          "Promise": {
+            "location": "global"
+          }
+        },
+        "return": "Promise<void>"
+      },
+      "docs": {
+        "text": "",
         "tags": []
       }
     }

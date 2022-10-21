@@ -6788,6 +6788,10 @@
           "description": "todo"
         },
         {
+          "name": "enable-hover",
+          "description": ""
+        },
+        {
           "name": "placement",
           "description": "todo",
           "values": [
