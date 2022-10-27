@@ -1,0 +1,51 @@
+.container {
+  height: calc(100vh - 82px);
+}
+
+.content-medcode {
+  background: hsl(var(--med-color-neutral-2));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-medcode__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content-medcode__text {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.content-medcode__button {
+  width: 130px !important;
+  height: 130px;
+}
+.content-medcode__button .med-icon {
+  width: 90px;
+  height: 90px;
+}
+
+.container {
+  height: calc(100vh - 82px);
+}
+
+.product-select-button__text {
+  text-transform: uppercase;
+}
+
+.subheader {
+  --justify-content: center;
+}
+
+.content-slide {
+  padding-top: 10px;
+}
+.content-slide__clinica {
+  margin-bottom: 8px;
+}
+
+/*# sourceMappingURL=templarios-medsoft.css.map */
