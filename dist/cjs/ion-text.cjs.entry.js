@@ -3,8 +3,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const theme = require('./theme-30b7a575.js');
+const ionicGlobal = require('./ionic-global-c609be80.js');
+const theme = require('./theme-04439550.js');
 
 const textCss = ":host(.ion-color){color:var(--ion-color-base)}";
 

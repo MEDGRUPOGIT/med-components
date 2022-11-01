@@ -2,7 +2,32 @@
   height: calc(100vh - 82px);
 }
 
-.content-medcode {
+.header {
+  min-height: 56px;
+}
+.header__title {
+  text-transform: uppercase;
+}
+
+.subheader {
+  --justify-content: center;
+  max-height: 48px;
+}
+.subheader__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subheader__title {
+  text-transform: uppercase;
+}
+
+.button-qrcode {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.medcode {
   background: hsl(var(--med-color-neutral-2));
   width: 100%;
   height: 100%;
@@ -10,42 +35,193 @@
   justify-content: center;
   align-items: center;
 }
-.content-medcode__container {
+.medcode__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.content-medcode__text {
+.medcode__text {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-.content-medcode__button {
+.medcode__button {
   width: 130px !important;
   height: 130px;
 }
-.content-medcode__button .med-icon {
+.medcode__button .med-icon {
   width: 90px;
   height: 90px;
 }
 
-.container {
-  height: calc(100vh - 82px);
+.product-select {
+  display: flex;
+  align-items: center;
 }
-
-.product-select-button__text {
+.product-select__logo-container {
+  background: hsl(var(--med-color-neutral-2));
+  border-radius: 8px;
+  padding: 4px;
+  max-width: 40px;
+  max-height: 40px;
+  margin-right: 16px;
+}
+.product-select__logo {
+  min-height: 32px;
+  min-width: 32px;
+}
+.product-select__text {
   text-transform: uppercase;
 }
 
-.subheader {
-  --justify-content: center;
+.slide-de-aula {
+  padding-top: 8px;
+}
+.slide-de-aula__item {
+  --inner-padding-end: 0px;
+  --min-height: 32px;
+  margin-bottom: 8px;
+}
+.slide-de-aula__text {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+  text-transform: uppercase;
 }
 
-.content-slide {
-  padding-top: 10px;
+.accordion {
+  --align-items: center;
+  overflow: hidden;
 }
-.content-slide__clinica {
-  margin-bottom: 8px;
+.accordion__title {
+  text-transform: uppercase;
+}
+
+.materia__ano {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: hsl(var(--med-color-neutral-25));
+}
+.materia__list-container {
+  display: flex;
+  align-items: center;
+}
+.materia__list-container:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-3));
+}
+.materia__list-container:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.materia__item-left {
+  flex: 0 25%;
+  text-align: right;
+  border-right: 1px solid hsl(var(--med-color-neutral-3));
+}
+.materia__item-right {
+  flex: 0 75%;
+}
+.materia__codigo {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+}
+.materia__descricao {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 16px !important;
+}
+
+.aulas {
+  margin: 8px 16px 24px 16px;
+}
+.aulas__item {
+  flex-direction: column;
+}
+.aulas__item:not(:last-child) {
+  margin-bottom: 16px;
+}
+.aulas__item--avaliando .aulas__observacao-container {
+  display: block;
+}
+.aulas__item--avaliando .aulas__button {
+  display: none;
+}
+.aulas__item--avaliando .aulas__button--avaliar {
+  display: inline-block;
+}
+.aulas__item--avaliada .aulas__middle {
+  display: none;
+}
+.aulas__item--avaliada .aulas__button {
+  display: none;
+}
+.aulas__item--avaliada .aulas__image {
+  display: block;
+}
+.aulas__top {
+  display: flex;
+  margin-bottom: 16px;
+}
+.aulas__avatar {
+  margin-right: 16px;
+}
+.aulas__text-container {
+  display: flex;
+  flex-direction: column;
+}
+.aulas__middle {
+  margin-bottom: 16px;
+  padding: 0 !important;
+}
+.aulas__avaliar-container {
+  display: flex;
+}
+.aulas__button-avaliar {
+  flex: 1;
+}
+.aulas__button-avaliar:not(:last-child) {
+  margin-right: 8px;
+}
+.aulas__observacao-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  display: none;
+}
+.aulas__erro {
+  margin-top: 8px;
+}
+.aulas__button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aulas__button--avaliar {
+  display: none;
+}
+.aulas__image {
+  max-width: 100px;
+  max-height: 100px;
+  display: none;
+  margin-left: auto;
+}
+
+.slides {
+  height: calc(100% - 56px);
+  padding: 16px;
+}
+.slides__content {
+  height: 95%;
+}
+.slides .swiper-pagination {
+  display: none;
+}
+.slides__contador {
+  text-align: center;
+  margin-top: 8px;
 }
 
 /*# sourceMappingURL=templarios-medsoft.css.map */
