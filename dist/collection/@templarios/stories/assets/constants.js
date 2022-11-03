@@ -244,6 +244,7 @@ export const MedIcons = [
   'med-trendingup',
   'med-trofeu',
   'med-usuario',
+  'med-viagens',
   'med-video',
   'med-visivel',
 ];
