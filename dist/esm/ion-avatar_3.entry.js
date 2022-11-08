@@ -1,6 +1,6 @@
 import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { c as createColorClasses } from './theme-ff3fc52f.js';
+import { b as getIonMode } from './ionic-global-10d9ffcf.js';
+import { c as createColorClasses } from './theme-0269729a.js';
 
 const avatarIosCss = ":host{border-radius:var(--border-radius);display:block}::slotted(ion-img),::slotted(img){border-radius:var(--border-radius);width:100%;height:100%;-o-object-fit:cover;object-fit:cover;overflow:hidden}:host{--border-radius:50%;width:48px;height:48px}";
 
