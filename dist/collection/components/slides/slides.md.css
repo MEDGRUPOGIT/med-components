@@ -767,7 +767,7 @@ ion-slides {
 
 .swiper-pagination-bullet-active {
   border: none;
-  background: hsl(var(--med-color-neutral-10));
+  background: hsl(var(--med-color-neutral-10)) !important;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
@@ -796,7 +796,7 @@ ion-slides {
 
 .swiper-pagination-bullet-active {
   border: none;
-  background: hsl(var(--med-color-neutral-10));
+  background: hsl(var(--med-color-neutral-10)) !important;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
