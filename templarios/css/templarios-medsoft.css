@@ -1,5 +1,9 @@
 .container {
-  height: calc(100vh - 136px);
+  overflow: hidden;
+  height: 100%;
+}
+.container--concursos {
+  height: 100vh;
 }
 
 .header {
@@ -20,6 +24,20 @@
 }
 .subheader__title {
   text-transform: uppercase;
+}
+
+.ano {
+  background: hsl(var(--med-color-neutral-25));
+  display: block;
+  text-align: center;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.ano--concursos {
+  top: -16px;
 }
 
 .button-qrcode {
@@ -358,14 +376,60 @@
     flex-direction: column;
   }
 }
-.concursos--height-auto {
-  height: auto !important;
+.concursos__content {
+  height: calc(100% - 182px);
+  overflow: auto;
+  padding-bottom: 42px;
+}
+
+.concursos__title {
+  padding: 16px;
+  text-align: center;
+}
+.concursos__subheader {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.concursos__button-bottom {
+  text-align: center;
+}
+.concursos__questoes {
+  padding: 8px 0 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-concursos__header {
+  margin-bottom: 8px;
+}
+.list-concursos__text-left {
+  max-width: 64px;
+  text-align: center;
+}
+.list-concursos__text-middle {
+  padding: 0 16px;
+  min-width: 170px;
+  width: 100%;
+}
+.list-concursos__especialidade:not(:last-child) {
+  margin-bottom: 8px;
+}
+.list-concursos__especialidade .list-concursos__text-left {
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 16px !important;
+}
+.list-concursos__especialidade .list-concursos__text-middle {
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
 }
 
 .concursos {
   background: hsl(var(--med-color-neutral-15));
   height: 100%;
-  padding: 16px;
 }
 .concursos__input {
   padding: 16px;
@@ -382,6 +446,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 16px;
 }
 .concursos__middle .med-icon {
   width: 64px;
@@ -390,13 +455,14 @@
 }
 .concursos__text {
   margin-top: 8px;
+  text-align: center;
 }
 
-.concursos__content {
-  padding: 16px;
-}
 .concursos__tiles:not(:last-child) {
   margin-bottom: 8px;
+}
+.concursos__container {
+  padding: 16px;
 }
 
 /*# sourceMappingURL=templarios-medsoft.css.map */
