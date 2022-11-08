@@ -83,6 +83,8 @@ export const MedIcons = [
 
   'med-checkcirculo',
   'med-chevron-left',
+  'med-chevron-leftx2',
+  'med-chevron-rightx2',
   'med-cima',
   'med-close',
 

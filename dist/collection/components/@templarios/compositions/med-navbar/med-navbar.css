@@ -2,7 +2,6 @@
   --background: hsl(var(--med-color-neutral-1));
   --main-color: hsl(var(--med-color-neutral-10));
   --subtitle-color: hsl(var(--med-color-brand-4));
-  --height: 48px;
 }
 
 :host(.med-navbar) {
@@ -18,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  min-height: var(--height);
+  min-height: 48px;
 }
 :host(.med-navbar) .med-navbar__left, :host(.med-navbar) .med-navbar__right {
   display: flex;
