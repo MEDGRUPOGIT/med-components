@@ -994,6 +994,7 @@ ion-button[disabled] ion-icon {
 
 ion-button.button {
   background-color: transparent !important;
+  color: var(--color);
 }
 
 ion-button[ds-size=sm] {
