@@ -1,0 +1,19 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const index = require('./index-bc2e4509.js');
+
+const realizacoesModalCss = ".sc-realizacoes-modal-h{display:block;border-radius:0}.modal-content.sc-realizacoes-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__item.sc-realizacoes-modal{cursor:pointer;display:-ms-flexbox;display:flex;min-height:64px}.modal-content__item.sc-realizacoes-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-content__item--agendado.sc-realizacoes-modal{background:hsl(var(--med-color-brand-3))}.modal-content__item--aviso.sc-realizacoes-modal{background:hsl(var(--med-color-neutral-6))}.modal-content__item--aviso.sc-realizacoes-modal .modal-content__modo.sc-realizacoes-modal{display:none}.modal-content__text-container.sc-realizacoes-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;width:100%}.modal-content__data.sc-realizacoes-modal{font-size:14px !important}.modal-content__modo.sc-realizacoes-modal{font-size:12px !important;margin-top:4px !important}.modal-footer.sc-realizacoes-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+const RealizacoesModal = class {
+  constructor(hostRef) {
+    index.registerInstance(this, hostRef);
+  }
+  render() {
+    return (index.h(index.Host, null, index.h("med-header", null, index.h("med-navbar", { class: "header", slot: "navbar" }, index.h("ion-label", { class: "header__title", slot: "title" }, "Realiza\u00E7\u00F5es"))), index.h("ion-content", { class: "modal-content" }, index.h("ion-item", { class: "modal-content__item modal-content__item--agendado", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, index.h("div", { class: "modal-content__text-container" }, index.h("ion-label", { class: "modal-content__data" }, "Em 10/06/22 18:15:00"), index.h("ion-label", { class: "modal-content__modo" }, "(Simulado Agendado)"))), index.h("ion-item", { class: "modal-content__item modal-content__item--aviso", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, index.h("div", { class: "modal-content__text-container" }, index.h("ion-label", { class: "modal-content__data" }, "Voc\u00EA n\u00E3o realizou o simulado agendado."), index.h("ion-label", { class: "modal-content__modo" }, "(Modo Prova)"))), index.h("ion-item", { class: "modal-content__item", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, index.h("div", { class: "modal-content__text-container" }, index.h("ion-label", { class: "modal-content__data" }, "Em 10/06/22 18:15:00"), index.h("ion-label", { class: "modal-content__modo" }, "(Modo Prova)"))), index.h("ion-item", { class: "modal-content__item", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, index.h("div", { class: "modal-content__text-container" }, index.h("ion-label", { class: "modal-content__data" }, "Em 10/06/22 18:15:00"), index.h("ion-label", { class: "modal-content__modo" }, "(Modo Prova)"))), index.h("ion-item", { class: "modal-content__item", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, index.h("div", { class: "modal-content__text-container" }, index.h("ion-label", { class: "modal-content__data" }, "Em 10/06/22 18:15:00"), index.h("ion-label", { class: "modal-content__modo" }, "(Modo Prova)")))), index.h("ion-footer", { class: "modal-footer" }, index.h("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "FECHAR"))));
+  }
+};
+RealizacoesModal.style = realizacoesModalCss;
+
+exports.realizacoes_modal = RealizacoesModal;

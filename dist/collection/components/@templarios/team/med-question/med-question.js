@@ -20,7 +20,9 @@ export class MedQuestion {
         'med-question': true,
         'med-question--collapsed': collapsed
       }), onClick: (event) => { this.toggle(event); } },
-      h("div", { class: "med-question__text", innerHTML: texto }),
+      texto && h("div", { class: "med-question__text", innerHTML: texto }),
+      h("div", { class: "med-question__text" },
+        h("slot", null)),
       h("ion-icon", { class: "med-icon med-question__icon", name: "med-baixo" })));
   }
   static get is() { return "med-question"; }

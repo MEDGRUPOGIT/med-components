@@ -1,0 +1,15 @@
+import { r as registerInstance, h, H as Host } from './index-70672e81.js';
+
+const apostilaModalCss = ".sc-apostila-modal-h{display:block;border-radius:0}.modal-content.sc-apostila-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__input.sc-apostila-modal{padding:16px}.modal-content__opcoes.sc-apostila-modal{cursor:pointer}.modal-content__opcoes.sc-apostila-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-footer.sc-apostila-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+const ApostilaModal = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (h(Host, null, h("med-header", null, h("med-navbar", { class: "header", slot: "navbar" }, h("ion-button", { slot: "left", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xxs" }, h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })), h("ion-label", { class: "header__title", slot: "title" }, "Apostilas"))), h("ion-content", { class: "modal-content" }, h("div", { class: "modal-content__input" }, h("tp-input-container", { "has-icon": "start" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-busca" }), h("ion-input", { mode: "md", placeholder: "Procurar o termo ou palavra-chave" }))), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "CAR 01")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "CAR 02")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "CAR 03")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "CIR 01")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "CIR 02")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "CIR 03")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "GO 01")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "GO 02")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "GO 03")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "PED 01")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "PED 02")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "PED 03"))), h("ion-footer", { class: "modal-footer" }, h("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "APLICAR"))));
+  }
+};
+ApostilaModal.style = apostilaModalCss;
+
+export { ApostilaModal as apostila_modal };

@@ -22,7 +22,23 @@ import { MedSemanaInterface } from "@templarios/interfaces/semana.interface";
 import { MedTema } from "@templarios/interfaces/themes.interface";
 import { MedTypeTag, MedTypeToken } from "@templarios/types/type.type";
 export namespace Components {
+    interface AjudaModal {
+    }
+    interface ApostilaModal {
+    }
+    interface AvisoModal {
+    }
+    interface ConcursoModal {
+    }
+    interface DenunciarModal {
+    }
     interface DialogTest {
+    }
+    interface EspecialidadeModal {
+    }
+    interface ExcluirModal {
+    }
+    interface FiltroModal {
     }
     interface IonActionSheet {
         /**
@@ -2724,6 +2740,8 @@ export namespace Components {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
+    interface LocalModal {
+    }
     interface MedAccordionItem {
         /**
           * todo
@@ -4003,11 +4021,15 @@ export namespace Components {
          */
         "unlike": number;
     }
+    interface RealizacoesModal {
+    }
     interface SelectTest {
     }
     interface SheetContentTest {
     }
     interface SheetTest {
+    }
+    interface SimuladoModal {
     }
     interface TpInputContainer {
         /**
@@ -4035,13 +4057,65 @@ export namespace Components {
          */
         "hasIcon"?: 'start' | 'end' | 'both';
     }
+    interface TutorialModal {
+    }
+    interface UnidadesModal {
+    }
 }
 declare global {
+    interface HTMLAjudaModalElement extends Components.AjudaModal, HTMLStencilElement {
+    }
+    var HTMLAjudaModalElement: {
+        prototype: HTMLAjudaModalElement;
+        new (): HTMLAjudaModalElement;
+    };
+    interface HTMLApostilaModalElement extends Components.ApostilaModal, HTMLStencilElement {
+    }
+    var HTMLApostilaModalElement: {
+        prototype: HTMLApostilaModalElement;
+        new (): HTMLApostilaModalElement;
+    };
+    interface HTMLAvisoModalElement extends Components.AvisoModal, HTMLStencilElement {
+    }
+    var HTMLAvisoModalElement: {
+        prototype: HTMLAvisoModalElement;
+        new (): HTMLAvisoModalElement;
+    };
+    interface HTMLConcursoModalElement extends Components.ConcursoModal, HTMLStencilElement {
+    }
+    var HTMLConcursoModalElement: {
+        prototype: HTMLConcursoModalElement;
+        new (): HTMLConcursoModalElement;
+    };
+    interface HTMLDenunciarModalElement extends Components.DenunciarModal, HTMLStencilElement {
+    }
+    var HTMLDenunciarModalElement: {
+        prototype: HTMLDenunciarModalElement;
+        new (): HTMLDenunciarModalElement;
+    };
     interface HTMLDialogTestElement extends Components.DialogTest, HTMLStencilElement {
     }
     var HTMLDialogTestElement: {
         prototype: HTMLDialogTestElement;
         new (): HTMLDialogTestElement;
+    };
+    interface HTMLEspecialidadeModalElement extends Components.EspecialidadeModal, HTMLStencilElement {
+    }
+    var HTMLEspecialidadeModalElement: {
+        prototype: HTMLEspecialidadeModalElement;
+        new (): HTMLEspecialidadeModalElement;
+    };
+    interface HTMLExcluirModalElement extends Components.ExcluirModal, HTMLStencilElement {
+    }
+    var HTMLExcluirModalElement: {
+        prototype: HTMLExcluirModalElement;
+        new (): HTMLExcluirModalElement;
+    };
+    interface HTMLFiltroModalElement extends Components.FiltroModal, HTMLStencilElement {
+    }
+    var HTMLFiltroModalElement: {
+        prototype: HTMLFiltroModalElement;
+        new (): HTMLFiltroModalElement;
     };
     interface HTMLIonActionSheetElement extends Components.IonActionSheet, HTMLStencilElement {
     }
@@ -4565,6 +4639,12 @@ declare global {
         prototype: HTMLIonVirtualScrollElement;
         new (): HTMLIonVirtualScrollElement;
     };
+    interface HTMLLocalModalElement extends Components.LocalModal, HTMLStencilElement {
+    }
+    var HTMLLocalModalElement: {
+        prototype: HTMLLocalModalElement;
+        new (): HTMLLocalModalElement;
+    };
     interface HTMLMedAccordionItemElement extends Components.MedAccordionItem, HTMLStencilElement {
     }
     var HTMLMedAccordionItemElement: {
@@ -4973,6 +5053,12 @@ declare global {
         prototype: HTMLMedVoteElement;
         new (): HTMLMedVoteElement;
     };
+    interface HTMLRealizacoesModalElement extends Components.RealizacoesModal, HTMLStencilElement {
+    }
+    var HTMLRealizacoesModalElement: {
+        prototype: HTMLRealizacoesModalElement;
+        new (): HTMLRealizacoesModalElement;
+    };
     interface HTMLSelectTestElement extends Components.SelectTest, HTMLStencilElement {
     }
     var HTMLSelectTestElement: {
@@ -4991,14 +5077,40 @@ declare global {
         prototype: HTMLSheetTestElement;
         new (): HTMLSheetTestElement;
     };
+    interface HTMLSimuladoModalElement extends Components.SimuladoModal, HTMLStencilElement {
+    }
+    var HTMLSimuladoModalElement: {
+        prototype: HTMLSimuladoModalElement;
+        new (): HTMLSimuladoModalElement;
+    };
     interface HTMLTpInputContainerElement extends Components.TpInputContainer, HTMLStencilElement {
     }
     var HTMLTpInputContainerElement: {
         prototype: HTMLTpInputContainerElement;
         new (): HTMLTpInputContainerElement;
     };
+    interface HTMLTutorialModalElement extends Components.TutorialModal, HTMLStencilElement {
+    }
+    var HTMLTutorialModalElement: {
+        prototype: HTMLTutorialModalElement;
+        new (): HTMLTutorialModalElement;
+    };
+    interface HTMLUnidadesModalElement extends Components.UnidadesModal, HTMLStencilElement {
+    }
+    var HTMLUnidadesModalElement: {
+        prototype: HTMLUnidadesModalElement;
+        new (): HTMLUnidadesModalElement;
+    };
     interface HTMLElementTagNameMap {
+        "ajuda-modal": HTMLAjudaModalElement;
+        "apostila-modal": HTMLApostilaModalElement;
+        "aviso-modal": HTMLAvisoModalElement;
+        "concurso-modal": HTMLConcursoModalElement;
+        "denunciar-modal": HTMLDenunciarModalElement;
         "dialog-test": HTMLDialogTestElement;
+        "especialidade-modal": HTMLEspecialidadeModalElement;
+        "excluir-modal": HTMLExcluirModalElement;
+        "filtro-modal": HTMLFiltroModalElement;
         "ion-action-sheet": HTMLIonActionSheetElement;
         "ion-alert": HTMLIonAlertElement;
         "ion-app": HTMLIonAppElement;
@@ -5086,6 +5198,7 @@ declare global {
         "ion-toggle": HTMLIonToggleElement;
         "ion-toolbar": HTMLIonToolbarElement;
         "ion-virtual-scroll": HTMLIonVirtualScrollElement;
+        "local-modal": HTMLLocalModalElement;
         "med-accordion-item": HTMLMedAccordionItemElement;
         "med-accordion-list": HTMLMedAccordionListElement;
         "med-add-card": HTMLMedAddCardElement;
@@ -5154,14 +5267,34 @@ declare global {
         "med-type": HTMLMedTypeElement;
         "med-video-thumbnail": HTMLMedVideoThumbnailElement;
         "med-vote": HTMLMedVoteElement;
+        "realizacoes-modal": HTMLRealizacoesModalElement;
         "select-test": HTMLSelectTestElement;
         "sheet-content-test": HTMLSheetContentTestElement;
         "sheet-test": HTMLSheetTestElement;
+        "simulado-modal": HTMLSimuladoModalElement;
         "tp-input-container": HTMLTpInputContainerElement;
+        "tutorial-modal": HTMLTutorialModalElement;
+        "unidades-modal": HTMLUnidadesModalElement;
     }
 }
 declare namespace LocalJSX {
+    interface AjudaModal {
+    }
+    interface ApostilaModal {
+    }
+    interface AvisoModal {
+    }
+    interface ConcursoModal {
+    }
+    interface DenunciarModal {
+    }
     interface DialogTest {
+    }
+    interface EspecialidadeModal {
+    }
+    interface ExcluirModal {
+    }
+    interface FiltroModal {
     }
     interface IonActionSheet {
         /**
@@ -7785,6 +7918,8 @@ declare namespace LocalJSX {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
+    interface LocalModal {
+    }
     interface MedAccordionItem {
         /**
           * todo
@@ -9183,11 +9318,15 @@ declare namespace LocalJSX {
          */
         "unlike"?: number;
     }
+    interface RealizacoesModal {
+    }
     interface SelectTest {
     }
     interface SheetContentTest {
     }
     interface SheetTest {
+    }
+    interface SimuladoModal {
     }
     interface TpInputContainer {
         /**
@@ -9215,8 +9354,20 @@ declare namespace LocalJSX {
          */
         "hasIcon"?: 'start' | 'end' | 'both';
     }
+    interface TutorialModal {
+    }
+    interface UnidadesModal {
+    }
     interface IntrinsicElements {
+        "ajuda-modal": AjudaModal;
+        "apostila-modal": ApostilaModal;
+        "aviso-modal": AvisoModal;
+        "concurso-modal": ConcursoModal;
+        "denunciar-modal": DenunciarModal;
         "dialog-test": DialogTest;
+        "especialidade-modal": EspecialidadeModal;
+        "excluir-modal": ExcluirModal;
+        "filtro-modal": FiltroModal;
         "ion-action-sheet": IonActionSheet;
         "ion-alert": IonAlert;
         "ion-app": IonApp;
@@ -9304,6 +9455,7 @@ declare namespace LocalJSX {
         "ion-toggle": IonToggle;
         "ion-toolbar": IonToolbar;
         "ion-virtual-scroll": IonVirtualScroll;
+        "local-modal": LocalModal;
         "med-accordion-item": MedAccordionItem;
         "med-accordion-list": MedAccordionList;
         "med-add-card": MedAddCard;
@@ -9372,17 +9524,29 @@ declare namespace LocalJSX {
         "med-type": MedType;
         "med-video-thumbnail": MedVideoThumbnail;
         "med-vote": MedVote;
+        "realizacoes-modal": RealizacoesModal;
         "select-test": SelectTest;
         "sheet-content-test": SheetContentTest;
         "sheet-test": SheetTest;
+        "simulado-modal": SimuladoModal;
         "tp-input-container": TpInputContainer;
+        "tutorial-modal": TutorialModal;
+        "unidades-modal": UnidadesModal;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ajuda-modal": LocalJSX.AjudaModal & JSXBase.HTMLAttributes<HTMLAjudaModalElement>;
+            "apostila-modal": LocalJSX.ApostilaModal & JSXBase.HTMLAttributes<HTMLApostilaModalElement>;
+            "aviso-modal": LocalJSX.AvisoModal & JSXBase.HTMLAttributes<HTMLAvisoModalElement>;
+            "concurso-modal": LocalJSX.ConcursoModal & JSXBase.HTMLAttributes<HTMLConcursoModalElement>;
+            "denunciar-modal": LocalJSX.DenunciarModal & JSXBase.HTMLAttributes<HTMLDenunciarModalElement>;
             "dialog-test": LocalJSX.DialogTest & JSXBase.HTMLAttributes<HTMLDialogTestElement>;
+            "especialidade-modal": LocalJSX.EspecialidadeModal & JSXBase.HTMLAttributes<HTMLEspecialidadeModalElement>;
+            "excluir-modal": LocalJSX.ExcluirModal & JSXBase.HTMLAttributes<HTMLExcluirModalElement>;
+            "filtro-modal": LocalJSX.FiltroModal & JSXBase.HTMLAttributes<HTMLFiltroModalElement>;
             "ion-action-sheet": LocalJSX.IonActionSheet & JSXBase.HTMLAttributes<HTMLIonActionSheetElement>;
             "ion-alert": LocalJSX.IonAlert & JSXBase.HTMLAttributes<HTMLIonAlertElement>;
             "ion-app": LocalJSX.IonApp & JSXBase.HTMLAttributes<HTMLIonAppElement>;
@@ -9470,6 +9634,7 @@ declare module "@stencil/core" {
             "ion-toggle": LocalJSX.IonToggle & JSXBase.HTMLAttributes<HTMLIonToggleElement>;
             "ion-toolbar": LocalJSX.IonToolbar & JSXBase.HTMLAttributes<HTMLIonToolbarElement>;
             "ion-virtual-scroll": LocalJSX.IonVirtualScroll & JSXBase.HTMLAttributes<HTMLIonVirtualScrollElement>;
+            "local-modal": LocalJSX.LocalModal & JSXBase.HTMLAttributes<HTMLLocalModalElement>;
             "med-accordion-item": LocalJSX.MedAccordionItem & JSXBase.HTMLAttributes<HTMLMedAccordionItemElement>;
             "med-accordion-list": LocalJSX.MedAccordionList & JSXBase.HTMLAttributes<HTMLMedAccordionListElement>;
             "med-add-card": LocalJSX.MedAddCard & JSXBase.HTMLAttributes<HTMLMedAddCardElement>;
@@ -9538,10 +9703,14 @@ declare module "@stencil/core" {
             "med-type": LocalJSX.MedType & JSXBase.HTMLAttributes<HTMLMedTypeElement>;
             "med-video-thumbnail": LocalJSX.MedVideoThumbnail & JSXBase.HTMLAttributes<HTMLMedVideoThumbnailElement>;
             "med-vote": LocalJSX.MedVote & JSXBase.HTMLAttributes<HTMLMedVoteElement>;
+            "realizacoes-modal": LocalJSX.RealizacoesModal & JSXBase.HTMLAttributes<HTMLRealizacoesModalElement>;
             "select-test": LocalJSX.SelectTest & JSXBase.HTMLAttributes<HTMLSelectTestElement>;
             "sheet-content-test": LocalJSX.SheetContentTest & JSXBase.HTMLAttributes<HTMLSheetContentTestElement>;
             "sheet-test": LocalJSX.SheetTest & JSXBase.HTMLAttributes<HTMLSheetTestElement>;
+            "simulado-modal": LocalJSX.SimuladoModal & JSXBase.HTMLAttributes<HTMLSimuladoModalElement>;
             "tp-input-container": LocalJSX.TpInputContainer & JSXBase.HTMLAttributes<HTMLTpInputContainerElement>;
+            "tutorial-modal": LocalJSX.TutorialModal & JSXBase.HTMLAttributes<HTMLTutorialModalElement>;
+            "unidades-modal": LocalJSX.UnidadesModal & JSXBase.HTMLAttributes<HTMLUnidadesModalElement>;
         }
     }
 }

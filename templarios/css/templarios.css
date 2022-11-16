@@ -2680,6 +2680,9 @@ ion-button[fill=clear].ion-activated ion-icon {
 ion-button[fill=clear].ion-focused ion-icon {
   stroke: var(--color-focused);
 }
+ion-button[fill=clear]:hover {
+  color: var(--color-hover);
+}
 ion-button[fill=clear]:hover ion-icon {
   stroke: var(--color-hover);
 }
@@ -5843,11 +5846,131 @@ tp-input-container[ds-color=neutral-95] ion-button:hover .med-icon {
   stroke: var(--color);
 }
 
+ion-input[ds-color=neutral-1] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-2] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-2));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-3] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-3));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-4] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-4));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-5] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-5));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-6] {
+  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-6));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+ion-input[ds-color=neutral-7] {
+  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-7));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+ion-input[ds-color=neutral-8] {
+  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-8));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+ion-input[ds-color=neutral-9] {
+  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-9));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+ion-input[ds-color=neutral-10] {
+  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-10));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+ion-input[ds-color=neutral-15] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-25] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-2));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-35] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-3));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-45] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-4));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-55] {
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-5));
+  --placeholder-color: hsl(var(--med-color-neutral-10));
+}
+
+ion-input[ds-color=neutral-65] {
+  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-6));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+ion-input[ds-color=neutral-75] {
+  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-7));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+ion-input[ds-color=neutral-85] {
+  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-8));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
+ion-input[ds-color=neutral-95] {
+  --color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-neutral-9));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+}
+
 tp-input-container[ds-color=fb-attention] {
   --color: hsl(var(--med-color-neutral-1));
 }
 tp-input-container[ds-color=fb-attention] ion-button:hover .med-icon {
   stroke: var(--color);
+}
+
+ion-input[ds-color=fb-attention] {
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-fb-attention));
 }
 
 tp-input-container[ds-color=fb-caution] {
@@ -5857,6 +5980,12 @@ tp-input-container[ds-color=fb-caution] ion-button:hover .med-icon {
   stroke: var(--color);
 }
 
+ion-input[ds-color=fb-caution] {
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-fb-caution));
+}
+
 tp-input-container[ds-color=fb-warning] {
   --color: hsl(var(--med-color-neutral-1));
 }
@@ -5864,11 +5993,23 @@ tp-input-container[ds-color=fb-warning] ion-button:hover .med-icon {
   stroke: var(--color);
 }
 
+ion-input[ds-color=fb-warning] {
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-fb-warning));
+}
+
 tp-input-container[ds-color=fb-success] {
   --color: hsl(var(--med-color-neutral-1));
 }
 tp-input-container[ds-color=fb-success] ion-button:hover .med-icon {
   stroke: var(--color);
+}
+
+ion-input[ds-color=fb-success] {
+  --color: hsl(var(--med-color-neutral-1));
+  --placeholder-color: hsl(var(--med-color-neutral-1));
+  --background: hsl(var(--med-color-fb-success));
 }
 
 ion-item {
@@ -7271,6 +7412,14 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
 .tp-modal ion-backdrop {
   --ion-backdrop-color: hsl(var(--med-color-neutral-1)) !important;
   --backdrop-opacity: 0.8 !important;
+}
+
+.plt-desktop .platform-macintel .tp-modal ion-backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.plt-electron.plt-desktop .tp-modal ion-backdrop {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 @media (min-width: 576px) {

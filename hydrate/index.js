@@ -8535,6 +8535,26 @@ const buttonClass$3 = (button) => {
   return Object.assign({ 'action-sheet-button': true, 'ion-activatable': true, 'ion-focusable': true, [`action-sheet-${button.role}`]: button.role !== undefined }, getClassMap(button.cssClass));
 };
 
+const ajudaModalCss = ".sc-ajuda-modal-h{display:block;border-radius:0}.modal-content.sc-ajuda-modal{height:calc(100% - 56px)}.ajuda.sc-ajuda-modal{height:100%;padding:16px}.ajuda__slides.sc-ajuda-modal{height:100%}.ajuda__slide.sc-ajuda-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.ajuda__icon.sc-ajuda-modal{min-width:100px;min-height:100px;stroke:hsl(var(--med-color-neutral-10));fill:transparent;margin-bottom:24px}.ajuda__subtitle.sc-ajuda-modal{font-weight:600;font-size:24px;line-height:32px;margin-bottom:16px}.ajuda__text.sc-ajuda-modal{font-weight:400;font-size:14px;line-height:20px}@media only screen and (max-height: 500px){.ajuda__slides.sc-ajuda-modal{height:auto;overflow:auto}}";
+
+class AjudaModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-back-button", { slot: "left", mode: "ios", text: "", "ds-size": "xxs" }, hAsync("ion-icon", { class: "med-icon", name: "med-esquerda" })), hAsync("ion-label", { class: "header__title", slot: "title" }, "Realizar simulado"))), hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "ajuda" }, hAsync("ion-slides", { class: "ajuda__slides", pager: true }, hAsync("ion-slide", { class: "ajuda__slide" }, hAsync("ion-icon", { class: "ajuda__icon", name: "med-montaprovas" }), hAsync("ion-label", { class: "ajuda__subtitle", "ds-color": "neutral-10" }, "Modo Prova"), hAsync("ion-label", { class: "ajuda__text", "ds-color": "neutral-10" }, "O objetivo \u00E9 que voc\u00EA experimente o simulado como se estivesse na \u00E9poca em que ele aconteceu."), hAsync("ion-label", { class: "ajuda__text", "ds-color": "neutral-10" }, "Um cron\u00F4metro regressivo informa a voc\u00EA quanto tempo falta para o fim do simulado."), hAsync("ion-label", { class: "ajuda__text", "ds-color": "neutral-10" }, "Ao final, voc\u00EA pode comparar o seu resultado com os resultados de todos os que fizeram a prova, na \u00E9poca em que ela aconteceu."), hAsync("ion-label", { class: "ajuda__text", "ds-color": "neutral-10" }, "Fa\u00E7a e refa\u00E7a este simulado, quantas vezes desejar.")), hAsync("ion-slide", { class: "ajuda__slide" }, hAsync("ion-icon", { class: "ajuda__icon", name: "med-faculdade" }), hAsync("ion-label", { class: "ajuda__subtitle", "ds-color": "neutral-10" }, "Modo Estudo"), hAsync("ion-label", { class: "ajuda__text", "ds-color": "neutral-10" }, "Voc\u00EA realiza as quest\u00F5es do simulado, sem tempo."), hAsync("ion-label", { class: "ajuda__text", "ds-color": "neutral-10" }, "A cada quest\u00E3o respondida, voc\u00EA pode conferir seu gabarito, ver as estat\u00EDsticas de resposta dos outros alunos e estudar os coment\u00E1rios dos professores.")))))));
+  }
+  static get style() { return ajudaModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "ajuda-modal",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
 /**
  * Does a simple sanitization of all elements
  * in an untrusted string
@@ -9133,6 +9153,26 @@ const buttonClass$2 = (button) => {
   return Object.assign({ 'alert-button': true, 'ion-focusable': true, 'ion-activatable': true, [`alert-button-role-${button.role}`]: button.role !== undefined }, getClassMap(button.cssClass));
 };
 
+const apostilaModalCss = ".sc-apostila-modal-h{display:block;border-radius:0}.modal-content.sc-apostila-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__input.sc-apostila-modal{padding:16px}.modal-content__opcoes.sc-apostila-modal{cursor:pointer}.modal-content__opcoes.sc-apostila-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-footer.sc-apostila-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+class ApostilaModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "left", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xxs" }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })), hAsync("ion-label", { class: "header__title", slot: "title" }, "Apostilas"))), hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "modal-content__input" }, hAsync("tp-input-container", { "has-icon": "start" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-busca" }), hAsync("ion-input", { mode: "md", placeholder: "Procurar o termo ou palavra-chave" }))), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "CAR 01")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "CAR 02")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "CAR 03")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "CIR 01")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "CIR 02")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "CIR 03")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "GO 01")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "GO 02")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "GO 03")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PED 01")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PED 02")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PED 03"))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "APLICAR"))));
+  }
+  static get style() { return apostilaModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "apostila-modal",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
 const appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html.plt-mobile ion-app [contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
 
 class App {
@@ -9179,6 +9219,26 @@ class Avatar {
   static get cmpMeta() { return {
     "$flags$": 41,
     "$tagName$": "ion-avatar",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const avisoModalCss = ".sc-aviso-modal-h{display:block;border-radius:0}.modal-content.sc-aviso-modal{height:calc(100% - 80px)}.aviso.sc-aviso-modal{height:100%;padding:16px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.aviso__subheading.sc-aviso-modal{display:block;font-weight:600;font-size:16px;line-height:24px;text-align:center}.aviso__title.sc-aviso-modal{display:block;font-weight:600;font-size:32px;line-height:40px;margin-bottom:48px;text-align:center}.aviso__text.sc-aviso-modal{display:block;font-weight:600;font-size:20px;line-height:20px;text-align:center}.aviso__text.sc-aviso-modal:not(:last-child){margin-bottom:8px}.aviso__observacao.sc-aviso-modal{display:block;font-weight:400;font-size:14px;line-height:20px;margin-top:48px;text-align:center}.modal-footer.sc-aviso-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px}@media only screen and (max-height: 500px){.aviso.sc-aviso-modal{height:auto;overflow:auto}}";
+
+class AvisoModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "aviso" }, hAsync("ion-label", { class: "aviso__subheading", "ds-color": "neutral-10" }, "Confira mais esta novidade"), hAsync("ion-label", { class: "aviso__title", "ds-color": "neutral-10" }, "D\u00FAvidas Acad\u00EAmicas"), hAsync("ion-label", { class: "aviso__text", "ds-color": "neutral-10" }, "Poste suas d\u00FAvidas e confira as respostas de quem tamb\u00E9m estuda conosco."), hAsync("ion-label", { class: "aviso__text", "ds-color": "neutral-10" }, "Veja, neste tutorial, como postar e responder d\u00FAvidas."), hAsync("ion-label", { class: "aviso__observacao", "ds-color": "neutral-10" }, "Esta funcionalidade est\u00E1 dispon\u00EDvel para todos os materiais did\u00E1ticos do MEDSoft Pro e para todas as quest\u00F5es do nosso banco."))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "ENTENDI E CONCORDO"))));
+  }
+  static get style() { return avisoModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "aviso-modal",
     "$members$": undefined,
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
@@ -10130,6 +10190,26 @@ class Col {
       "sizeXl": [1, "size-xl"]
     },
     "$listeners$": [[9, "resize", "onResize"]],
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const concursoModalCss = ".sc-concurso-modal-h{display:block;border-radius:0}.modal-content.sc-concurso-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__input.sc-concurso-modal{padding:16px}.modal-content__opcoes.sc-concurso-modal{cursor:pointer}.modal-content__opcoes.sc-concurso-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-footer.sc-concurso-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+class ConcursoModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "left", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xxs" }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })), hAsync("ion-label", { class: "header__title", slot: "title" }, "Concursos"))), hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "modal-content__input" }, hAsync("tp-input-container", { "has-icon": "start" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-busca" }), hAsync("ion-input", { mode: "md", placeholder: "Procurar o termo ou palavra-chave" }))), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PUC - PR - ALIAN\u00C7A SA\u00DADE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "SCO - ASSOCIA\u00C7\u00C3O DA SANTA CASA")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "AMS - APUCARANA - AUTARQUIA MUNICIPAL")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "CCANSPS - CASA DE CARIDADE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PUC - PR - ALIAN\u00C7A SA\u00DADE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PUC - PR - ALIAN\u00C7A SA\u00DADE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PUC - PR - ALIAN\u00C7A SA\u00DADE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PUC - PR - ALIAN\u00C7A SA\u00DADE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PUC - PR - ALIAN\u00C7A SA\u00DADE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PUC - PR - ALIAN\u00C7A SA\u00DADE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PUC - PR - ALIAN\u00C7A SA\u00DADE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "PUC - PR - ALIAN\u00C7A SA\u00DADE"))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "APLICAR"))));
+  }
+  static get style() { return concursoModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "concurso-modal",
+    "$members$": undefined,
+    "$listeners$": undefined,
     "$lazyBundleId$": "-",
     "$attrsToReflect$": []
   }; }
@@ -11480,6 +11560,26 @@ const divyColumns = (columns) => {
 const DEFAULT_FORMAT = 'MMM D, YYYY';
 let datetimeIds = 0;
 
+const denunciarModalCss = ".sc-denunciar-modal-h{display:block;border-radius:0}.modal-content.sc-denunciar-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.denunciar.sc-denunciar-modal{padding:16px}.denunciar__list.sc-denunciar-modal{margin-bottom:16px}.denunciar__text.sc-denunciar-modal{font-size:14px;display:block;margin-bottom:8px}.modal-footer.sc-denunciar-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+class DenunciarModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "left", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xxs" }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })), hAsync("ion-label", { class: "header__title", slot: "title" }, "Denuciar d\u00FAvida"))), hAsync("ion-content", { class: "modal-content" }, hAsync("main", { class: "denunciar" }, hAsync("div", { class: "denunciar__list" }, hAsync("ion-item", { mode: "ios", lines: "none" }, hAsync("ion-label", { "ds-color": "neutral-10" }, "Cr\u00EDtica sobre conte\u00FAdo"), hAsync("ion-checkbox", { slot: "start", value: "value-1", mode: "md" })), hAsync("ion-item", { mode: "ios", lines: "none" }, hAsync("ion-label", { "ds-color": "neutral-10" }, "Obseva\u00E7\u00F5es sobre o App"), hAsync("ion-checkbox", { slot: "start", value: "value-2", mode: "md" })), hAsync("ion-item", { mode: "ios", lines: "none" }, hAsync("ion-label", { "ds-color": "neutral-10" }, "Administrativo"), hAsync("ion-checkbox", { slot: "start", value: "value-3", mode: "md" }))), hAsync("div", { class: "denunciar__text-container" }, hAsync("ion-label", { class: "denunciar__text", "ds-color": "neutral-8" }, "Descreva sua den\u00FAncia (opcional)"), hAsync("ion-textarea", { class: "denunciar__campo", mode: "md", placeholder: "Digite aqui" })))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "CONFIRMAR"))));
+  }
+  static get style() { return denunciarModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "denunciar-modal",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
 const dialogTestCss = ".sc-dialog-test-h{display:block;border-radius:0}";
 
 class DialogTest {
@@ -11493,6 +11593,46 @@ class DialogTest {
   static get cmpMeta() { return {
     "$flags$": 2,
     "$tagName$": "dialog-test",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const especialidadeModalCss = ".sc-especialidade-modal-h{display:block;border-radius:0}.modal-content.sc-especialidade-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__opcoes.sc-especialidade-modal{cursor:pointer}.modal-content__opcoes.sc-especialidade-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-footer.sc-especialidade-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+class EspecialidadeModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-label", { class: "header__title", slot: "title" }, "Especialidade"))), hAsync("ion-content", { class: "modal-content" }, hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Acupuntura")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Alergia e imunologia")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Anestesiologia")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Aperfei\u00E7oamento")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cardiologia")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Especialidade")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Especialidade")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Especialidade")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Especialidade")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Especialidade")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Especialidade")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Especialidade")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Especialidade"))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "FECHAR"))));
+  }
+  static get style() { return especialidadeModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "especialidade-modal",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const excluirModalCss = ".sc-excluir-modal-h{display:block;border-radius:0}.modal-content.sc-excluir-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.excluir.sc-excluir-modal{height:100%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.excluir__text.sc-excluir-modal{font-weight:600;font-size:16px;line-height:24px}.modal-footer.sc-excluir-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-footer__button.sc-excluir-modal:not(:last-child){margin-right:16px}";
+
+class ExcluirModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-label", { class: "header__title", slot: "title" }, "Excluir Postagem"))), hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "excluir" }, hAsync("ion-label", { class: "excluir__text" }, "Tem certeza que deseja excluir a postagem selecionada?"))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm", "ds-color": "neutral-5" }, "CANCELAR"), hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "CONFIRMAR"))));
+  }
+  static get style() { return excluirModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "excluir-modal",
     "$members$": undefined,
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
@@ -11733,6 +11873,26 @@ class FabList {
       "activated": [4],
       "side": [1]
     },
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const filtroModalCss = ".sc-filtro-modal-h{display:block;border-radius:0}.modal-content.sc-filtro-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.filtros.sc-filtro-modal{height:100%}.filtros__top.sc-filtro-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;padding:16px}.filtros__title.sc-filtro-modal{display:block;margin-bottom:16px}.filtros__button-container.sc-filtro-modal{display:-ms-flexbox;display:flex}.filtros__button-container--margin-bottom.sc-filtro-modal{margin-bottom:16px}.filtros__button.sc-filtro-modal:not(:last-child){margin-right:16px}.filtros__middle.sc-filtro-modal{padding:16px}.filtros__ordenacao.sc-filtro-modal{display:block;margin-bottom:8px}.filtros__apostila-container.sc-filtro-modal{margin:16px 0}.filtros__apostila.sc-filtro-modal{display:block}.filtros__input-container.sc-filtro-modal{padding:16px}.filtros__input-label.sc-filtro-modal{font-size:14px;margin-bottom:4px}.filtros__input.sc-filtro-modal{margin-bottom:16px}.filtros__item.sc-filtro-modal .med-icon.sc-filtro-modal{stroke:hsl(var(--med-color-neutral-8))}.filtros__carregando.sc-filtro-modal{font-size:14px;display:block;margin-top:24px}.filtros__filtrar-container.sc-filtro-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;padding:16px}.filtros__filtrar.sc-filtro-modal{font-size:14px;margin-bottom:8px}.hidden.sc-filtro-modal{display:none}.modal-footer.sc-filtro-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}@media (max-width: 575.98px){.filtros__button-container.sc-filtro-modal{-ms-flex-direction:column;flex-direction:column}.filtros__button.sc-filtro-modal:not(:last-child){margin-right:0;margin-bottom:8px}}";
+
+class FiltroModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "left", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xxs" }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })), hAsync("ion-label", { class: "header__title", slot: "title" }, "Filtros"), hAsync("ion-button", { slot: "right", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xs" }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-limparfiltro" })))), hAsync("ion-content", { class: "modal-content" }, hAsync("main", { class: "filtros" }, hAsync("div", { class: "filtros__top" }, hAsync("ion-label", { class: "filtros__title" }, "Exibi\u00E7\u00E3o das d\u00FAvidas"), hAsync("div", { class: "filtros__button-container" }, hAsync("ion-button", { class: "filtros__button", "ds-color": "neutral-10", "ds-size": "md", mode: "ios" }, "TODAS"), hAsync("ion-button", { class: "filtros__button", "ds-size": "md", fill: "outline", "ds-color": "neutral-10", mode: "ios" }, "MATERIAL"), hAsync("ion-button", { class: "filtros__button", "ds-size": "md", fill: "outline", "ds-color": "neutral-10", mode: "ios" }, "QUEST\u00D5ES"))), hAsync("div", { class: "filtros__middle" }, hAsync("div", { class: "filtros__duvida-container" }, hAsync("ion-label", { class: "filtros__ordenacao" }, "Ordena\u00E7\u00E3o das d\u00FAvidas:"), hAsync("tp-input-container", { "has-icon": "end" }, hAsync("ion-select", { mode: "md", placeholder: "Concursos Premium / Mais recentes" }), hAsync("ion-icon", { class: "med-icon", slot: "end", name: "med-baixo" })), hAsync("div", { class: "filtros__apostila-container" }, hAsync("ion-button", { mode: "ios", fill: "clear", "ds-size": "xs", "no-padding": "true" }, "Selecione uma Apostila"), hAsync("ion-label", { class: "filtros__apostila" }, "CAR 1 2019")), hAsync("div", { class: "filtros__input-container" }, hAsync("ion-label", { class: "filtros__input-label", "ds-color": "neutral-8" }, "ID da d\u00FAvida"), hAsync("ion-input", { class: "filtros__input", mode: "md", placeholder: "Digite aqui" }), hAsync("ion-label", { class: "filtros__input-label", "ds-color": "neutral-8" }, "ID da quest\u00E3o"), hAsync("ion-input", { class: "filtros__input", mode: "md", placeholder: "Digite aqui" }))), hAsync("div", { class: "filtros__list" }, hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-apostila" }), hAsync("ion-label", null, "Minhas atribui\u00E7\u00F5es pendentes"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-informacao" }), hAsync("ion-label", null, "Sem intera\u00E7\u00E3o da Equipe Acad\u00EAmica"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-estrela" }), hAsync("ion-label", null, "Favoritas / Seguindo"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-checkcirculo" }), hAsync("ion-label", null, "Com resposta da Equipe Acad\u00EAmica"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-equipe-homologada" }), hAsync("ion-label", null, "Com resposta homologada pela Equipe Acad\u00EAmica"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-contribuicao" }), hAsync("ion-label", null, "Com minhas respostas"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-anotacao" }), hAsync("ion-label", null, "Meus rascunhos"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-alerta" }), hAsync("ion-label", null, "Denunciadas e Privadas n\u00E3o Homologadas"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-enviar" }), hAsync("ion-label", null, "Encaminhadas"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-naorespondida" }), hAsync("ion-label", null, "Sem v\u00EDnculo"), hAsync("ion-toggle", { slot: "end", mode: "ios" })), hAsync("ion-item", { class: "filtros__item", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-retafinal" }), hAsync("ion-label", null, "Mais de 7 dias sem resposta"), hAsync("ion-toggle", { slot: "end", mode: "ios" }))), hAsync("ion-label", { class: "filtros__carregando", "ds-color": "neutral-8" }, "Estamos carregando mais filtros, aguarde!"), hAsync("div", { class: "filtros__filtrar-container" }, hAsync("ion-label", { class: "filtros__filtrar" }, "Filtrar por Concursos"), hAsync("div", { class: "filtros__button-container filtros__button-container--margin-bottom" }, hAsync("ion-button", { class: "filtros__button", "ds-color": "neutral-10", "ds-size": "xs", mode: "ios" }, "ESCOLHER"), hAsync("ion-button", { class: "filtros__button", "ds-size": "xs", disabled: true, "ds-color": "neutral-10", mode: "ios" }, "TODOS")), hAsync("ion-label", { class: "filtros__filtrar" }, "Filtrar por Simulados"), hAsync("div", { class: "filtros__button-container filtros__button-container--margin-bottom" }, hAsync("ion-button", { class: "filtros__button", "ds-color": "neutral-10", "ds-size": "xs", mode: "ios" }, "ESCOLHER"), hAsync("ion-button", { class: "filtros__button", "ds-size": "xs", disabled: true, "ds-color": "neutral-10", mode: "ios" }, "TODOS")), hAsync("ion-label", { class: "filtros__filtrar" }, "Filtrar por Apostilas"), hAsync("div", { class: "filtros__button-container filtros__button-container--margin-bottom" }, hAsync("ion-button", { class: "filtros__button", "ds-color": "neutral-10", "ds-size": "xs", mode: "ios" }, "ESCOLHER"), hAsync("ion-button", { class: "filtros__button", "ds-size": "xs", disabled: true, "ds-color": "neutral-10", mode: "ios" }, "TODOS")))))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "APLICAR FILTRO"))));
+  }
+  static get style() { return filtroModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "filtro-modal",
+    "$members$": undefined,
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
     "$attrsToReflect$": []
@@ -14105,6 +14265,26 @@ class Loading {
       "onDidDismiss": [64],
       "onWillDismiss": [64]
     },
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const localModalCss = ".sc-local-modal-h{display:block;border-radius:0}.modal-content.sc-local-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__opcoes.sc-local-modal{cursor:pointer}.modal-content__opcoes.sc-local-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-footer.sc-local-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+class LocalModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-label", { class: "header__title", slot: "title" }, "Selecione os estados"))), hAsync("ion-content", { class: "modal-content" }, hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "AL")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "AL")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "AM")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "BA")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "CE")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "DF")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "EAD")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "GO")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "MA")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "MG")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "MS"))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "FECHAR"))));
+  }
+  static get style() { return localModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "local-modal",
+    "$members$": undefined,
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
     "$attrsToReflect$": []
@@ -17937,7 +18117,7 @@ class MedQuestion {
     return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-question': true,
         'med-question--collapsed': collapsed
-      }), onClick: (event) => { this.toggle(event); } }, hAsync("div", { class: "med-question__text", innerHTML: texto }), hAsync("ion-icon", { class: "med-icon med-question__icon", name: "med-baixo" })));
+      }), onClick: (event) => { this.toggle(event); } }, texto && hAsync("div", { class: "med-question__text", innerHTML: texto }), hAsync("div", { class: "med-question__text" }, hAsync("slot", null)), hAsync("ion-icon", { class: "med-icon med-question__icon", name: "med-baixo" })));
   }
   static get style() { return medQuestionCss; }
   static get cmpMeta() { return {
@@ -22905,6 +23085,26 @@ const valueToRatio = (value, min, max) => {
   return clamp(0, (value - min) / (max - min), 1);
 };
 
+const realizacoesModalCss = ".sc-realizacoes-modal-h{display:block;border-radius:0}.modal-content.sc-realizacoes-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__item.sc-realizacoes-modal{cursor:pointer;display:-ms-flexbox;display:flex;min-height:64px}.modal-content__item.sc-realizacoes-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-content__item--agendado.sc-realizacoes-modal{background:hsl(var(--med-color-brand-3))}.modal-content__item--aviso.sc-realizacoes-modal{background:hsl(var(--med-color-neutral-6))}.modal-content__item--aviso.sc-realizacoes-modal .modal-content__modo.sc-realizacoes-modal{display:none}.modal-content__text-container.sc-realizacoes-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;width:100%}.modal-content__data.sc-realizacoes-modal{font-size:14px !important}.modal-content__modo.sc-realizacoes-modal{font-size:12px !important;margin-top:4px !important}.modal-footer.sc-realizacoes-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+class RealizacoesModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-label", { class: "header__title", slot: "title" }, "Realiza\u00E7\u00F5es"))), hAsync("ion-content", { class: "modal-content" }, hAsync("ion-item", { class: "modal-content__item modal-content__item--agendado", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, hAsync("div", { class: "modal-content__text-container" }, hAsync("ion-label", { class: "modal-content__data" }, "Em 10/06/22 18:15:00"), hAsync("ion-label", { class: "modal-content__modo" }, "(Simulado Agendado)"))), hAsync("ion-item", { class: "modal-content__item modal-content__item--aviso", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, hAsync("div", { class: "modal-content__text-container" }, hAsync("ion-label", { class: "modal-content__data" }, "Voc\u00EA n\u00E3o realizou o simulado agendado."), hAsync("ion-label", { class: "modal-content__modo" }, "(Modo Prova)"))), hAsync("ion-item", { class: "modal-content__item", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, hAsync("div", { class: "modal-content__text-container" }, hAsync("ion-label", { class: "modal-content__data" }, "Em 10/06/22 18:15:00"), hAsync("ion-label", { class: "modal-content__modo" }, "(Modo Prova)"))), hAsync("ion-item", { class: "modal-content__item", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, hAsync("div", { class: "modal-content__text-container" }, hAsync("ion-label", { class: "modal-content__data" }, "Em 10/06/22 18:15:00"), hAsync("ion-label", { class: "modal-content__modo" }, "(Modo Prova)"))), hAsync("ion-item", { class: "modal-content__item", "spacing-v": "s16", "spacing-h": "s16", mode: "ios", lines: "none" }, hAsync("div", { class: "modal-content__text-container" }, hAsync("ion-label", { class: "modal-content__data" }, "Em 10/06/22 18:15:00"), hAsync("ion-label", { class: "modal-content__modo" }, "(Modo Prova)")))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "FECHAR"))));
+  }
+  static get style() { return realizacoesModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "realizacoes-modal",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
 const getRefresherAnimationType = (contentEl) => {
   const previousSibling = contentEl.previousElementSibling;
   const hasHeader = previousSibling !== null && previousSibling.tagName === 'ION-HEADER';
@@ -26711,6 +26911,26 @@ class SheetTest {
   }; }
 }
 
+const simuladoModalCss = ".sc-simulado-modal-h{display:block;border-radius:0}.modal-content.sc-simulado-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__input.sc-simulado-modal{padding:16px}.modal-content__opcoes.sc-simulado-modal{cursor:pointer}.modal-content__opcoes.sc-simulado-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-footer.sc-simulado-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+class SimuladoModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "left", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xxs" }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })), hAsync("ion-label", { class: "header__title", slot: "title" }, "Simulados"))), hAsync("ion-content", { class: "modal-content" }, hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - Geral 01")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - Geral 02")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - Geral 03")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - Geral 04")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - Geral 05")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - Geral 06")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - Geral 07")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - UNIFESP")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - UNIFESP")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - UNIFESP")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - UNIFESP")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "2021 R1 SIM 01 - UNIFESP"))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "APLICAR"))));
+  }
+  static get style() { return simuladoModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "simulado-modal",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
 const skeletonTextCss = "/*!@:host*/.sc-ion-skeleton-text-h{--background:rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065);border-radius:var(--border-radius, inherit);display:block;width:100%;height:inherit;margin-top:4px;margin-bottom:4px;background:var(--background);line-height:10px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}/*!@span*/span.sc-ion-skeleton-text{display:inline-block}/*!@:host(.in-media)*/.in-media.sc-ion-skeleton-text-h{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;height:100%}/*!@:host(.skeleton-text-animated)*/.skeleton-text-animated.sc-ion-skeleton-text-h{position:relative;background:-webkit-gradient(linear, left top, right top, color-stop(8%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065)), color-stop(18%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.135)), color-stop(33%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065)));background:linear-gradient(to right, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065) 8%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.135) 18%, rgba(var(--background-rgb, var(--ion-text-color-rgb, 0, 0, 0)), 0.065) 33%);background-size:800px 104px;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-name:shimmer;animation-name:shimmer;-webkit-animation-timing-function:linear;animation-timing-function:linear}@-webkit-keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}@keyframes shimmer{0%{background-position:-468px 0}100%{background-position:468px 0}}";
 
 class SkeletonText {
@@ -28754,6 +28974,46 @@ class TpInputContainer {
   }; }
 }
 
+const tutorialModalCss = ".sc-tutorial-modal-h{display:block;border-radius:0}.modal-content.sc-tutorial-modal{height:calc(100% - 136px);padding:16px}.tutorial.sc-tutorial-modal{height:100%;padding:16px}.tutorial__slides.sc-tutorial-modal{height:100%}.tutorial__slide.sc-tutorial-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.tutorial__image.sc-tutorial-modal{margin-bottom:16px}.tutorial__text.sc-tutorial-modal{display:block;font-weight:600;font-size:20px;line-height:20px;text-align:center;margin-bottom:32px}.modal-footer.sc-tutorial-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px}@media only screen and (max-height: 500px){.tutorial__slides.sc-tutorial-modal{height:auto;overflow:auto}}";
+
+class TutorialModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "right", mode: "ios", fill: "clear", "ds-size": "xs", "no-padding": "true" }, "Pular tutorial"))), hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "tutorial" }, hAsync("ion-slides", { class: "tutorial", pager: true }, hAsync("ion-slide", { class: "tutorial__slide" }, hAsync("img", { class: "tutorial__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "tutorial__text", "ds-color": "neutral-10" }, "Como e onde postar sua d\u00FAvida em uma QUEST\u00C3O.")), hAsync("ion-slide", { class: "tutorial__slide" }, hAsync("img", { class: "tutorial__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "tutorial__text", "ds-color": "neutral-10" }, "Como ver as d\u00FAvidas de uma QUEST\u00C3O."))))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "ENTENDI"))));
+  }
+  static get style() { return tutorialModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "tutorial-modal",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const unidadesModalCss = ".sc-unidades-modal-h{display:block;border-radius:0}.modal-content.sc-unidades-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__opcoes.sc-unidades-modal{cursor:pointer}.modal-content__opcoes.sc-unidades-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-footer.sc-unidades-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+class UnidadesModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-label", { class: "header__title", slot: "title" }, "Selecione as unidades"))), hAsync("ion-content", { class: "modal-content" }, hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)")), hAsync("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, hAsync("ion-label", null, "Cidade (ES)"))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "FECHAR"))));
+  }
+  static get style() { return unidadesModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "unidades-modal",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
 const CELL_TYPE_ITEM = 'item';
 const CELL_TYPE_HEADER = 'header';
 const CELL_TYPE_FOOTER = 'footer';
@@ -29321,9 +29581,12 @@ const VirtualProxy = ({ dom }, children, utils) => {
 registerComponents([
   Accordion,
   ActionSheet,
+  AjudaModal,
   Alert,
+  ApostilaModal,
   App,
   Avatar,
+  AvisoModal,
   BackButton,
   Backdrop,
   Badge,
@@ -29337,12 +29600,17 @@ registerComponents([
   Checkbox,
   Chip,
   Col,
+  ConcursoModal,
   Content,
   Datetime,
+  DenunciarModal,
   DialogTest,
+  EspecialidadeModal,
+  ExcluirModal,
   Fab,
   FabButton,
   FabList,
+  FiltroModal,
   Footer,
   Grid,
   Header,
@@ -29362,6 +29630,7 @@ registerComponents([
   List,
   ListHeader,
   Loading,
+  LocalModal,
   MedAccordionItem,
   MedAddCard,
   MedAgrupador,
@@ -29442,6 +29711,7 @@ registerComponents([
   Radio,
   RadioGroup,
   Range,
+  RealizacoesModal,
   Refresher,
   RefresherContent,
   Reorder,
@@ -29462,6 +29732,7 @@ registerComponents([
   SelectTest,
   SheetContentTest,
   SheetTest,
+  SimuladoModal,
   SkeletonText,
   Slide,
   Slides,
@@ -29479,6 +29750,8 @@ registerComponents([
   Toolbar,
   ToolbarTitle,
   TpInputContainer,
+  TutorialModal,
+  UnidadesModal,
   VirtualScroll,
 ]);
 

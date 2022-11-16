@@ -1,0 +1,64 @@
+:host {
+  display: block;
+  border-radius: 0;
+}
+
+.modal-content {
+  height: calc(100% - 80px);
+}
+
+.aviso {
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.aviso__subheading {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+.aviso__title {
+  display: block;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+.aviso__text {
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+.aviso__text:not(:last-child) {
+  margin-bottom: 8px;
+}
+.aviso__observacao {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 48px;
+  text-align: center;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+@media only screen and (max-height: 500px) {
+  .aviso {
+    height: auto;
+    overflow: auto;
+  }
+}

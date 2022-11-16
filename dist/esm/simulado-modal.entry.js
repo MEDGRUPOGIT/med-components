@@ -1,0 +1,15 @@
+import { r as registerInstance, h, H as Host } from './index-70672e81.js';
+
+const simuladoModalCss = ".sc-simulado-modal-h{display:block;border-radius:0}.modal-content.sc-simulado-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__input.sc-simulado-modal{padding:16px}.modal-content__opcoes.sc-simulado-modal{cursor:pointer}.modal-content__opcoes.sc-simulado-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-footer.sc-simulado-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+const SimuladoModal = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (h(Host, null, h("med-header", null, h("med-navbar", { class: "header", slot: "navbar" }, h("ion-button", { slot: "left", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xxs" }, h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })), h("ion-label", { class: "header__title", slot: "title" }, "Simulados"))), h("ion-content", { class: "modal-content" }, h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - Geral 01")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - Geral 02")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - Geral 03")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - Geral 04")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - Geral 05")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - Geral 06")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - Geral 07")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - UNIFESP")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - UNIFESP")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - UNIFESP")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - UNIFESP")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "2021 R1 SIM 01 - UNIFESP"))), h("ion-footer", { class: "modal-footer" }, h("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "APLICAR"))));
+  }
+};
+SimuladoModal.style = simuladoModalCss;
+
+export { SimuladoModal as simulado_modal };

@@ -1,0 +1,15 @@
+import { r as registerInstance, h, H as Host } from './index-70672e81.js';
+
+const localModalCss = ".sc-local-modal-h{display:block;border-radius:0}.modal-content.sc-local-modal{height:calc(100% - 136px);overflow:auto;border-top:1px solid hsl(var(--med-color-neutral-4))}.modal-content__opcoes.sc-local-modal{cursor:pointer}.modal-content__opcoes.sc-local-modal:not(:last-child){border-bottom:1px solid hsl(var(--med-color-neutral-2))}.modal-footer.sc-local-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px;border-top:1px solid hsl(var(--med-color-neutral-4))}";
+
+const LocalModal = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (h(Host, null, h("med-header", null, h("med-navbar", { class: "header", slot: "navbar" }, h("ion-label", { class: "header__title", slot: "title" }, "Selecione os estados"))), h("ion-content", { class: "modal-content" }, h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "AL")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "AL")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "AM")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "BA")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "CE")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "DF")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "EAD")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "GO")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "MA")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "MG")), h("ion-item", { class: "modal-content__opcoes", mode: "ios", lines: "none" }, h("ion-label", null, "MS"))), h("ion-footer", { class: "modal-footer" }, h("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "FECHAR"))));
+  }
+};
+LocalModal.style = localModalCss;
+
+export { LocalModal as local_modal };
