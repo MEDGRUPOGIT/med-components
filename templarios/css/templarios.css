@@ -9656,11 +9656,14 @@ ion-textarea.sc-ion-textarea-md-h {
   --padding-top: 12px;
   --placeholder-color: hsl(var(--med-color-neutral-5));
   --placeholder-opacity: 1;
+  --height: auto;
   margin-top: 0px;
   font-size: 14px;
   border-radius: 8px;
+  height: var(--height);
 }
 ion-textarea.sc-ion-textarea-md-h .sc-ion-textarea-md {
+  height: var(--height);
   min-height: 80px;
 }
 

@@ -618,6 +618,9 @@
 .card-resposta--check .card-resposta__imagem {
   display: block;
 }
+.card-resposta--comentar .card-resposta__comentar {
+  display: flex;
+}
 .card-resposta__top {
   display: flex;
   align-items: flex-start;
@@ -653,10 +656,20 @@
 }
 .card-resposta__bottom {
   display: flex;
+  flex-direction: column;
+}
+.card-resposta__button-container {
+  display: flex;
   align-items: center;
 }
 .card-resposta__like {
   margin-right: 8px;
+}
+.card-resposta__comentar {
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+  margin-top: 8px;
 }
 
 .duvidas {
@@ -706,10 +719,10 @@
 }
 
 .questao {
-  height: 100%;
+  height: calc(100% - 128px);
 }
 .questao__container {
-  height: calc(100% - 104px);
+  height: calc(100% - 40px);
   overflow: scroll;
   padding: 16px;
 }
@@ -738,6 +751,11 @@
 }
 .questao__card-resposta:not(:last-child) {
   margin-bottom: 16px;
+}
+
+.questao-footer__button {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .med-context-menu__list {
@@ -817,17 +835,6 @@
 }
 .sem-duvidas__text {
   text-align: center;
-}
-
-.text-area {
-  height: calc(100vh - 56px);
-  padding: 16px;
-}
-.text-area__campo {
-  height: 100%;
-}
-.text-area .native-textarea {
-  height: calc(100vh - 88px);
 }
 
 .busca-apostila {

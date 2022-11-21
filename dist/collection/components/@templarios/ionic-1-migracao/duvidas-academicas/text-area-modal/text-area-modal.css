@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  border-radius: 0;
+}
+
+.modal-content {
+  border-top: 1px solid hsl(var(--med-color-neutral-4));
+}
+
+.text-area {
+  height: calc(100% - 56px);
+  padding: 16px;
+}
+.text-area ion-textarea {
+  --height: 100%;
+}
+.text-area__campo {
+  height: 100%;
+}

@@ -128,6 +128,20 @@
       ]
     },
     {
+      "name": "informativo-modal",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/ionic-1-migracao/apostila/informativo-modal/informativo-modal.tsx"
+        }
+      ]
+    },
+    {
       "name": "ion-action-sheet",
       "description": {
         "kind": "markdown",
@@ -7110,6 +7124,20 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/ionic-1-migracao/duvidas-academicas/simulado-modal/simulado-modal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "text-area-modal",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/ionic-1-migracao/duvidas-academicas/text-area-modal/text-area-modal.tsx"
         }
       ]
     },

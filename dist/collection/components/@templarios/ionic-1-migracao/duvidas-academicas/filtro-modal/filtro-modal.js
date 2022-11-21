@@ -10,7 +10,7 @@ export class FiltroModal {
           h("ion-button", { slot: "right", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xs" },
             h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-limparfiltro" })))),
       h("ion-content", { class: "modal-content" },
-        h("main", { class: "filtros" },
+        h("div", { class: "filtros" },
           h("div", { class: "filtros__top" },
             h("ion-label", { class: "filtros__title" }, "Exibi\u00E7\u00E3o das d\u00FAvidas"),
             h("div", { class: "filtros__button-container" },

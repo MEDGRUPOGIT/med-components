@@ -40,6 +40,8 @@ export namespace Components {
     }
     interface FiltroModal {
     }
+    interface InformativoModal {
+    }
     interface IonActionSheet {
         /**
           * If `true`, the action sheet will animate.
@@ -4031,6 +4033,8 @@ export namespace Components {
     }
     interface SimuladoModal {
     }
+    interface TextAreaModal {
+    }
     interface TpInputContainer {
         /**
           * todo
@@ -4116,6 +4120,12 @@ declare global {
     var HTMLFiltroModalElement: {
         prototype: HTMLFiltroModalElement;
         new (): HTMLFiltroModalElement;
+    };
+    interface HTMLInformativoModalElement extends Components.InformativoModal, HTMLStencilElement {
+    }
+    var HTMLInformativoModalElement: {
+        prototype: HTMLInformativoModalElement;
+        new (): HTMLInformativoModalElement;
     };
     interface HTMLIonActionSheetElement extends Components.IonActionSheet, HTMLStencilElement {
     }
@@ -5083,6 +5093,12 @@ declare global {
         prototype: HTMLSimuladoModalElement;
         new (): HTMLSimuladoModalElement;
     };
+    interface HTMLTextAreaModalElement extends Components.TextAreaModal, HTMLStencilElement {
+    }
+    var HTMLTextAreaModalElement: {
+        prototype: HTMLTextAreaModalElement;
+        new (): HTMLTextAreaModalElement;
+    };
     interface HTMLTpInputContainerElement extends Components.TpInputContainer, HTMLStencilElement {
     }
     var HTMLTpInputContainerElement: {
@@ -5111,6 +5127,7 @@ declare global {
         "especialidade-modal": HTMLEspecialidadeModalElement;
         "excluir-modal": HTMLExcluirModalElement;
         "filtro-modal": HTMLFiltroModalElement;
+        "informativo-modal": HTMLInformativoModalElement;
         "ion-action-sheet": HTMLIonActionSheetElement;
         "ion-alert": HTMLIonAlertElement;
         "ion-app": HTMLIonAppElement;
@@ -5272,6 +5289,7 @@ declare global {
         "sheet-content-test": HTMLSheetContentTestElement;
         "sheet-test": HTMLSheetTestElement;
         "simulado-modal": HTMLSimuladoModalElement;
+        "text-area-modal": HTMLTextAreaModalElement;
         "tp-input-container": HTMLTpInputContainerElement;
         "tutorial-modal": HTMLTutorialModalElement;
         "unidades-modal": HTMLUnidadesModalElement;
@@ -5295,6 +5313,8 @@ declare namespace LocalJSX {
     interface ExcluirModal {
     }
     interface FiltroModal {
+    }
+    interface InformativoModal {
     }
     interface IonActionSheet {
         /**
@@ -9328,6 +9348,8 @@ declare namespace LocalJSX {
     }
     interface SimuladoModal {
     }
+    interface TextAreaModal {
+    }
     interface TpInputContainer {
         /**
           * todo
@@ -9368,6 +9390,7 @@ declare namespace LocalJSX {
         "especialidade-modal": EspecialidadeModal;
         "excluir-modal": ExcluirModal;
         "filtro-modal": FiltroModal;
+        "informativo-modal": InformativoModal;
         "ion-action-sheet": IonActionSheet;
         "ion-alert": IonAlert;
         "ion-app": IonApp;
@@ -9529,6 +9552,7 @@ declare namespace LocalJSX {
         "sheet-content-test": SheetContentTest;
         "sheet-test": SheetTest;
         "simulado-modal": SimuladoModal;
+        "text-area-modal": TextAreaModal;
         "tp-input-container": TpInputContainer;
         "tutorial-modal": TutorialModal;
         "unidades-modal": UnidadesModal;
@@ -9547,6 +9571,7 @@ declare module "@stencil/core" {
             "especialidade-modal": LocalJSX.EspecialidadeModal & JSXBase.HTMLAttributes<HTMLEspecialidadeModalElement>;
             "excluir-modal": LocalJSX.ExcluirModal & JSXBase.HTMLAttributes<HTMLExcluirModalElement>;
             "filtro-modal": LocalJSX.FiltroModal & JSXBase.HTMLAttributes<HTMLFiltroModalElement>;
+            "informativo-modal": LocalJSX.InformativoModal & JSXBase.HTMLAttributes<HTMLInformativoModalElement>;
             "ion-action-sheet": LocalJSX.IonActionSheet & JSXBase.HTMLAttributes<HTMLIonActionSheetElement>;
             "ion-alert": LocalJSX.IonAlert & JSXBase.HTMLAttributes<HTMLIonAlertElement>;
             "ion-app": LocalJSX.IonApp & JSXBase.HTMLAttributes<HTMLIonAppElement>;
@@ -9708,6 +9733,7 @@ declare module "@stencil/core" {
             "sheet-content-test": LocalJSX.SheetContentTest & JSXBase.HTMLAttributes<HTMLSheetContentTestElement>;
             "sheet-test": LocalJSX.SheetTest & JSXBase.HTMLAttributes<HTMLSheetTestElement>;
             "simulado-modal": LocalJSX.SimuladoModal & JSXBase.HTMLAttributes<HTMLSimuladoModalElement>;
+            "text-area-modal": LocalJSX.TextAreaModal & JSXBase.HTMLAttributes<HTMLTextAreaModalElement>;
             "tp-input-container": LocalJSX.TpInputContainer & JSXBase.HTMLAttributes<HTMLTpInputContainerElement>;
             "tutorial-modal": LocalJSX.TutorialModal & JSXBase.HTMLAttributes<HTMLTutorialModalElement>;
             "unidades-modal": LocalJSX.UnidadesModal & JSXBase.HTMLAttributes<HTMLUnidadesModalElement>;
