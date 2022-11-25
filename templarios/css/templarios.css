@@ -9202,6 +9202,12 @@ ion-select[ds-color=fb-success][ds-name=secondary] {
   background: hsl(var(--med-color-fb-success));
 }
 
+ion-skeleton-text {
+  --border-radius: 4px;
+  margin: 0;
+  background-image: linear-gradient(to right, hsl(var(--med-color-neutral-15)) 8%, hsl(var(--med-color-neutral-2)) 18%, hsl(var(--med-color-neutral-15)) 33%);
+}
+
 ion-tab-bar {
   --background: hsl(var(--med-color-neutral-1));
   padding: 8px 12px;

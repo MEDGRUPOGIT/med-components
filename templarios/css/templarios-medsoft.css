@@ -2,6 +2,12 @@
   overflow: hidden;
   height: 100vh;
 }
+.container--resumo-simulado {
+  height: calc(100vh - 72px);
+}
+.container--historico {
+  height: calc(100vh - 48px);
+}
 
 .header {
   --height: 56px;
@@ -54,6 +60,11 @@
   cursor: pointer;
 }
 
+@media (max-width: 575.98px) {
+  .container--resumo-simulado {
+    height: calc(100vh - 128px);
+  }
+}
 .button-qrcode {
   width: 32px !important;
   height: 32px !important;
@@ -263,7 +274,7 @@
 
 .resumo {
   background: hsl(var(--med-color-neutral-15));
-  height: calc(100% - 128px);
+  height: calc(100% - 56px);
 }
 .resumo__button {
   margin: 0 auto;
@@ -349,9 +360,6 @@
 }
 
 @media (max-width: 575.98px) {
-  .resumo {
-    height: calc(100% - 184px);
-  }
   .resumo__classificacao {
     flex-direction: column;
   }
@@ -609,9 +617,6 @@
   border-radius: 8px;
   padding: 16px;
 }
-.card-resposta--resposta-oficial {
-  background: hsl(var(--med-color-brand-2));
-}
 .card-resposta--resposta-oficial .card-resposta__badge {
   display: block;
 }
@@ -680,9 +685,12 @@
   max-width: initial;
 }
 .duvidas__container {
-  padding: 16px;
-  height: calc(100% - 152px);
+  height: calc(100% - 104px);
   overflow: auto;
+  padding: 16px;
+}
+.duvidas__container--user-select {
+  height: calc(100% - 152px);
 }
 .duvidas__button {
   --background: hsl(var(--med-color-brand-1));
@@ -719,12 +727,15 @@
 }
 
 .questao {
-  height: calc(100% - 128px);
+  height: calc(100% - 56px);
 }
 .questao__container {
-  height: calc(100% - 40px);
+  height: 100%;
   overflow: scroll;
-  padding: 16px;
+  padding: 16px 16px 75px 16px;
+}
+.questao__container--user-select {
+  height: calc(100% - 48px);
 }
 .questao__title {
   display: block;
@@ -746,16 +757,15 @@
 .questao__card-duvidas {
   margin-bottom: 16px;
 }
-.questao__card-resposta-container {
-  padding: 0 16px;
-}
 .questao__card-resposta:not(:last-child) {
   margin-bottom: 16px;
 }
-
-.questao-footer__button {
-  margin-left: auto;
-  margin-right: auto;
+.questao__encaminhar {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
 .med-context-menu__list {
@@ -821,11 +831,14 @@
 }
 
 .sem-duvidas {
-  height: calc(100% - 152px);
+  height: calc(100% - 104px);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.sem-duvidas--user-select {
+  height: calc(100% - 152px);
 }
 .sem-duvidas .med-icon {
   min-width: 100px;
@@ -867,6 +880,15 @@
   width: 40px;
   height: 40px;
   margin-bottom: 8px;
+}
+
+.historico-footer .med-icon {
+  width: 24px;
+  height: 24px;
+  stroke: hsl(var(--med-color-neutral-10));
+}
+.historico-footer__marcador-rotate {
+  transform: rotate(90deg);
 }
 
 .indice {

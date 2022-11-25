@@ -12727,14 +12727,14 @@ class InfiniteScrollContent {
   }; }
 }
 
-const informativoModalCss = ".sc-informativo-modal-h{display:block;border-radius:0}.modal-content.sc-informativo-modal{height:calc(100% - 136px);padding:16px}.modal-footer.sc-informativo-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px}";
+const informativoModalCss = ".sc-informativo-modal-h{display:block;border-radius:0}.informativo.sc-informativo-modal{height:calc(100% - 120px);padding:8px}.informativo__slides.sc-informativo-modal{height:calc(100% - 20px)}.informativo__slide.sc-informativo-modal{height:95%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.informativo__image.sc-informativo-modal{margin-bottom:8px;max-height:calc(100% - 56px)}.informativo__title.sc-informativo-modal{display:block;font-weight:600;font-size:16px;line-height:20px;text-align:center;padding-bottom:8px}.informativo__text.sc-informativo-modal{display:block;font-weight:400;font-size:14px;line-height:20px;text-align:center}.modal-footer.sc-informativo-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:8px}";
 
 class InformativoModal {
   constructor(hostRef) {
     registerInstance(this, hostRef);
   }
   render() {
-    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "right", mode: "ios", fill: "clear", "ds-size": "xs", "no-padding": "true" }, "Pular tutorial"))), hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "tutorial" }, hAsync("ion-slides", { class: "tutorial", pager: true }, hAsync("ion-slide", { class: "tutorial__slide" }, hAsync("img", { class: "tutorial__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "tutorial__text", "ds-color": "neutral-10" }, "Como e onde postar sua d\u00FAvida em uma QUEST\u00C3O.")), hAsync("ion-slide", { class: "tutorial__slide" }, hAsync("img", { class: "tutorial__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "tutorial__text", "ds-color": "neutral-10" }, "Como ver as d\u00FAvidas de uma QUEST\u00C3O."))))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "ENTENDI"))));
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "right", mode: "ios", fill: "clear", "ds-size": "xs", "no-padding": "true" }, "Pular tutorial"))), hAsync("div", { class: "informativo" }, hAsync("ion-slides", { class: "informativo__slides", pager: true }, hAsync("ion-slide", { class: "informativo__slide" }, hAsync("img", { class: "informativo__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "informativo__title", "ds-color": "brand" }, "Marca\u00E7\u00F5es"), hAsync("ion-label", { class: "informativo__text", "ds-color": "neutral-10" }, "Para marcar ou interagir com sua apostila, selecione o texto e utilize o menu +")), hAsync("ion-slide", { class: "informativo__slide" }, hAsync("img", { class: "informativo__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "informativo__title", "ds-color": "brand" }, "Hist\u00F3rico de Marca\u00E7\u00F5es"), hAsync("ion-label", { class: "informativo__text", "ds-color": "neutral-10" }, "Como ver as d\u00FAvidas de uma QUEST\u00C3O.")))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "ENTENDI"))));
   }
   static get style() { return informativoModalCss; }
   static get cmpMeta() { return {
@@ -15801,7 +15801,7 @@ class MedChartRadialLabel {
   }; }
 }
 
-const medCheckCardCss = ".sc-med-check-card-h{display:block}.med-check-card__title.sc-med-check-card{margin-right:16px}.med-check-card__title-wrap.sc-med-check-card{display:-ms-flexbox;display:flex;margin-top:4px}.med-check-card__base.sc-med-check-card{--padding:0;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;border:1px solid transparent}.med-check-card__container.sc-med-check-card{padding:12px 0 12px 0;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer;-ms-flex:1;flex:1}.med-check-card__input-container.sc-med-check-card{padding:12px 0 12px 16px;display:-ms-flexbox;display:flex}.med-check-card__text-container.sc-med-check-card{padding:0 18px;-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-direction:column;flex-direction:column}.med-check-card__info-container.sc-med-check-card{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-wrap:wrap;flex-wrap:wrap}.med-check-card__icon.sc-med-check-card{stroke:hsl(var(--med-color-neutral-8))}.med-check-card__container-fix.sc-med-check-card{display:-ms-flexbox;display:flex}.med-check-card__subtitulo.sc-med-check-card{--color:hsl(var(--med-color-neutral-8));margin:0 8px;stroke:hsl(var(--med-color-neutral-8))}.med-check-card__hora.sc-med-check-card{--color:hsl(var(--med-color-neutral-8))}.med-check-card__data.sc-med-check-card{--color:hsl(var(--med-color-neutral-8))}.med-check-card__data-hora.sc-med-check-card{margin-top:8px;--color:hsl(var(--med-color-neutral-8))}.med-check-card__tooltip-container.sc-med-check-card{padding:12px 16px 12px 0}.med-check-card--alert.sc-med-check-card-h .med-check-card__base.sc-med-check-card{border:1px solid hsl(var(--med-color-fb-warning))}";
+const medCheckCardCss = ".sc-med-check-card-h{display:block}.med-check-card__title.sc-med-check-card{margin-right:16px}.med-check-card__title-wrap.sc-med-check-card{display:-ms-flexbox;display:flex;margin-top:4px}.med-check-card__base.sc-med-check-card{--padding:0;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;border:1px solid transparent}.med-check-card__container.sc-med-check-card{padding:12px 0 12px 0;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer;-ms-flex:1;flex:1}.med-check-card__input-container.sc-med-check-card{padding:12px 0 12px 16px}.med-check-card__text-container.sc-med-check-card{padding:0 18px;-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-direction:column;flex-direction:column}.med-check-card__info-container.sc-med-check-card{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-wrap:wrap;flex-wrap:wrap}.med-check-card__icon.sc-med-check-card{stroke:hsl(var(--med-color-neutral-8))}.med-check-card__container-fix.sc-med-check-card{display:-ms-flexbox;display:flex}.med-check-card__subtitulo.sc-med-check-card{--color:hsl(var(--med-color-neutral-8));margin:0 8px;stroke:hsl(var(--med-color-neutral-8))}.med-check-card__hora.sc-med-check-card{--color:hsl(var(--med-color-neutral-8))}.med-check-card__data.sc-med-check-card{--color:hsl(var(--med-color-neutral-8))}.med-check-card__data-hora.sc-med-check-card{margin-top:8px;--color:hsl(var(--med-color-neutral-8))}.med-check-card__tooltip-container.sc-med-check-card{padding:12px 16px 12px 0}.med-check-card--alert.sc-med-check-card-h .med-check-card__base.sc-med-check-card{border:1px solid hsl(var(--med-color-fb-warning))}";
 
 class MedCheckCard {
   constructor(hostRef) {
@@ -18722,6 +18722,26 @@ class MedVote {
       "like": [2],
       "unlike": [2]
     },
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const medreaderProModalCss = ".sc-medreader-pro-modal-h{display:block;border-radius:0}.modal-content.sc-medreader-pro-modal{height:calc(100% - 136px);padding:16px}.medreader.sc-medreader-pro-modal{height:100%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}.medreader__top.sc-medreader-pro-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center}.medreader__text.sc-medreader-pro-modal{font-size:18px;line-height:28px;font-weight:400}.medreader__text-destaque.sc-medreader-pro-modal{font-size:28px;line-height:28px;font-weight:600}.medreader__text-no-destaque.sc-medreader-pro-modal{font-size:14px;line-height:28px;margin-top:16px}.medreader__middle.sc-medreader-pro-modal{margin-top:24px;padding:16px}.medreader__item.sc-medreader-pro-modal:not(:last-child){margin-bottom:8px}.modal-footer.sc-medreader-pro-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px}";
+
+class MedreaderProModal {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "medreader" }, hAsync("div", { class: "medreader__top" }, hAsync("ion-label", { class: "medreader__text" }, "Bem vindo ao"), hAsync("ion-label", { class: "medreader__text-destaque" }, "MEDReader Pro"), hAsync("ion-label", { class: "medreader__text" }, "A nova maneira de ler as suas apostilas."), hAsync("ion-label", { class: "medreader__text-no-destaque" }, "Antes de come\u00E7armos, vamos ver algumas informa\u00E7\u00F5es importantes para seu estudo.")), hAsync("div", { class: "medreader__middle" }, hAsync("ion-item", { class: "medreader__item", "ds-color": "neutral-2", "spacing-v": "s12", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-proibido" }), hAsync("ion-label", null, "O MEDReader Pro n\u00E3o compartilha suas marca\u00E7\u00F5es e anota\u00E7\u00F5es com o MEDREADER.")), hAsync("ion-item", { class: "medreader__item", "ds-color": "neutral-2", "spacing-v": "s12", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-offline2" }), hAsync("ion-label", null, "Anota\u00E7\u00F5es e Marca\u00E7\u00F5es feitas sem conex\u00E3o com a internet, n\u00E3o s\u00E3o salvas nos servidores do MEDGRUPO.")), hAsync("ion-item", { class: "medreader__item", "ds-color": "neutral-2", "spacing-v": "s12", mode: "ios", lines: "none" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-online" }), hAsync("ion-label", null, "Algumas funcionalidades da apostila somente s\u00E3o disponiveis quando seu dispositivo est\u00E1 conectado na internet e aos servidores do MEDGRUPO."))))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "ENTENDI E CONCORDO!"))));
+  }
+  static get style() { return medreaderProModalCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "medreader-pro-modal",
+    "$members$": undefined,
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
     "$attrsToReflect$": []
@@ -29014,14 +29034,14 @@ class TpInputContainer {
   }; }
 }
 
-const tutorialModalCss = ".sc-tutorial-modal-h{display:block;border-radius:0}.modal-content.sc-tutorial-modal{height:calc(100% - 136px);padding:16px}.tutorial.sc-tutorial-modal{height:100%;padding:16px}.tutorial__slides.sc-tutorial-modal{height:100%}.tutorial__slide.sc-tutorial-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.tutorial__image.sc-tutorial-modal{margin-bottom:16px}.tutorial__text.sc-tutorial-modal{display:block;font-weight:600;font-size:20px;line-height:20px;text-align:center;margin-bottom:32px}.modal-footer.sc-tutorial-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:16px}@media only screen and (max-height: 500px){.tutorial__slides.sc-tutorial-modal{height:auto;overflow:auto}}";
+const tutorialModalCss = ".sc-tutorial-modal-h{display:block;border-radius:0}.modal-content.sc-tutorial-modal{height:calc(100% - 120px);padding:16px}.tutorial.sc-tutorial-modal{height:100%;padding:8px}.tutorial__slides.sc-tutorial-modal{height:100%}.tutorial__slide.sc-tutorial-modal{height:calc(100% - 20px);display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.tutorial__image.sc-tutorial-modal{margin-bottom:8px;max-height:calc(100% - 28px)}.tutorial__text.sc-tutorial-modal{display:block;font-weight:600;font-size:20px;line-height:20px;text-align:center}.modal-footer.sc-tutorial-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:8px}";
 
 class TutorialModal {
   constructor(hostRef) {
     registerInstance(this, hostRef);
   }
   render() {
-    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "right", mode: "ios", fill: "clear", "ds-size": "xs", "no-padding": "true" }, "Pular tutorial"))), hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "tutorial" }, hAsync("ion-slides", { class: "tutorial", pager: true }, hAsync("ion-slide", { class: "tutorial__slide" }, hAsync("img", { class: "tutorial__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "tutorial__text", "ds-color": "neutral-10" }, "Como e onde postar sua d\u00FAvida em uma QUEST\u00C3O.")), hAsync("ion-slide", { class: "tutorial__slide" }, hAsync("img", { class: "tutorial__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "tutorial__text", "ds-color": "neutral-10" }, "Como ver as d\u00FAvidas de uma QUEST\u00C3O."))))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "ENTENDI"))));
+    return (hAsync(Host, null, hAsync("med-header", null, hAsync("med-navbar", { class: "header", slot: "navbar" }, hAsync("ion-button", { slot: "right", mode: "ios", fill: "clear", "ds-size": "xs", "no-padding": "true" }, "Pular tutorial"))), hAsync("ion-content", { class: "modal-content" }, hAsync("div", { class: "tutorial" }, hAsync("ion-slides", { class: "tutorial__slides", pager: true }, hAsync("ion-slide", { class: "tutorial__slide" }, hAsync("img", { class: "tutorial__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "tutorial__text", "ds-color": "neutral-10" }, "Como e onde postar sua d\u00FAvida em uma QUEST\u00C3O.")), hAsync("ion-slide", { class: "tutorial__slide" }, hAsync("img", { class: "tutorial__image", src: "https://via.placeholder.com/500" }), hAsync("ion-label", { class: "tutorial__text", "ds-color": "neutral-10" }, "Como ver as d\u00FAvidas de uma QUEST\u00C3O."))))), hAsync("ion-footer", { class: "modal-footer" }, hAsync("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "ENTENDI"))));
   }
   static get style() { return tutorialModalCss; }
   static get cmpMeta() { return {
@@ -29738,6 +29758,7 @@ registerComponents([
   MedType,
   MedVideoThumbnail,
   MedVote,
+  MedreaderProModal,
   Menu,
   MenuButton,
   MenuToggle,
