@@ -4023,6 +4023,8 @@ export namespace Components {
          */
         "unlike": number;
     }
+    interface MedreaderProModal {
+    }
     interface RealizacoesModal {
     }
     interface SelectTest {
@@ -5063,6 +5065,12 @@ declare global {
         prototype: HTMLMedVoteElement;
         new (): HTMLMedVoteElement;
     };
+    interface HTMLMedreaderProModalElement extends Components.MedreaderProModal, HTMLStencilElement {
+    }
+    var HTMLMedreaderProModalElement: {
+        prototype: HTMLMedreaderProModalElement;
+        new (): HTMLMedreaderProModalElement;
+    };
     interface HTMLRealizacoesModalElement extends Components.RealizacoesModal, HTMLStencilElement {
     }
     var HTMLRealizacoesModalElement: {
@@ -5284,6 +5292,7 @@ declare global {
         "med-type": HTMLMedTypeElement;
         "med-video-thumbnail": HTMLMedVideoThumbnailElement;
         "med-vote": HTMLMedVoteElement;
+        "medreader-pro-modal": HTMLMedreaderProModalElement;
         "realizacoes-modal": HTMLRealizacoesModalElement;
         "select-test": HTMLSelectTestElement;
         "sheet-content-test": HTMLSheetContentTestElement;
@@ -9338,6 +9347,8 @@ declare namespace LocalJSX {
          */
         "unlike"?: number;
     }
+    interface MedreaderProModal {
+    }
     interface RealizacoesModal {
     }
     interface SelectTest {
@@ -9547,6 +9558,7 @@ declare namespace LocalJSX {
         "med-type": MedType;
         "med-video-thumbnail": MedVideoThumbnail;
         "med-vote": MedVote;
+        "medreader-pro-modal": MedreaderProModal;
         "realizacoes-modal": RealizacoesModal;
         "select-test": SelectTest;
         "sheet-content-test": SheetContentTest;
@@ -9728,6 +9740,7 @@ declare module "@stencil/core" {
             "med-type": LocalJSX.MedType & JSXBase.HTMLAttributes<HTMLMedTypeElement>;
             "med-video-thumbnail": LocalJSX.MedVideoThumbnail & JSXBase.HTMLAttributes<HTMLMedVideoThumbnailElement>;
             "med-vote": LocalJSX.MedVote & JSXBase.HTMLAttributes<HTMLMedVoteElement>;
+            "medreader-pro-modal": LocalJSX.MedreaderProModal & JSXBase.HTMLAttributes<HTMLMedreaderProModalElement>;
             "realizacoes-modal": LocalJSX.RealizacoesModal & JSXBase.HTMLAttributes<HTMLRealizacoesModalElement>;
             "select-test": LocalJSX.SelectTest & JSXBase.HTMLAttributes<HTMLSelectTestElement>;
             "sheet-content-test": LocalJSX.SheetContentTest & JSXBase.HTMLAttributes<HTMLSheetContentTestElement>;

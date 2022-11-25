@@ -4,23 +4,25 @@
 }
 
 .modal-content {
-  height: calc(100% - 136px);
+  height: calc(100% - 120px);
   padding: 16px;
 }
 
 .tutorial {
   height: 100%;
-  padding: 16px;
+  padding: 8px;
 }
 .tutorial__slides {
   height: 100%;
 }
 .tutorial__slide {
+  height: calc(100% - 20px);
   display: flex;
   flex-direction: column;
 }
 .tutorial__image {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+  max-height: calc(100% - 28px);
 }
 .tutorial__text {
   display: block;
@@ -28,19 +30,11 @@
   font-size: 20px;
   line-height: 20px;
   text-align: center;
-  margin-bottom: 32px;
 }
 
 .modal-footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
-}
-
-@media only screen and (max-height: 500px) {
-  .tutorial__slides {
-    height: auto;
-    overflow: auto;
-  }
+  padding: 8px;
 }

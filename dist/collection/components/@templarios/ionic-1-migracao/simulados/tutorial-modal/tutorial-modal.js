@@ -7,7 +7,7 @@ export class TutorialModal {
           h("ion-button", { slot: "right", mode: "ios", fill: "clear", "ds-size": "xs", "no-padding": "true" }, "Pular tutorial"))),
       h("ion-content", { class: "modal-content" },
         h("div", { class: "tutorial" },
-          h("ion-slides", { class: "tutorial", pager: true },
+          h("ion-slides", { class: "tutorial__slides", pager: true },
             h("ion-slide", { class: "tutorial__slide" },
               h("img", { class: "tutorial__image", src: "https://via.placeholder.com/500" }),
               h("ion-label", { class: "tutorial__text", "ds-color": "neutral-10" }, "Como e onde postar sua d\u00FAvida em uma QUEST\u00C3O.")),

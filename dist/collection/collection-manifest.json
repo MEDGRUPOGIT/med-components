@@ -59,6 +59,7 @@
     "./components/@templarios/core/med-type/med-type.js",
     "./components/@templarios/core/tp-input-container/tp-input-container.js",
     "./components/@templarios/ionic-1-migracao/apostila/informativo-modal/informativo-modal.js",
+    "./components/@templarios/ionic-1-migracao/apostila/medreader-pro-modal/medreader-pro-modal.js",
     "./components/@templarios/ionic-1-migracao/duvidas-academicas/apostila-modal/apostila-modal.js",
     "./components/@templarios/ionic-1-migracao/duvidas-academicas/concurso-modal/concurso-modal.js",
     "./components/@templarios/ionic-1-migracao/duvidas-academicas/denunciar-modal/denunciar-modal.js",
