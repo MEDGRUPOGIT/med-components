@@ -101,7 +101,7 @@ export class MedCalendar {
           h("ion-button", { "icon-only": true, mode: "ios", "ds-size": "xxs", fill: "clear", onClick: () => this.onMonthClick('next') },
             h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-direita" }))),
         h("div", { class: "header__right" },
-          h("ion-button", { mode: "ios", "ds-size": "sm", fill: "clear", onClick: () => this.onChoiceClick() },
+          h("ion-button", { mode: "ios", "ds-size": "xxs", fill: "clear", onClick: () => this.onChoiceClick() },
             h("med-type", { class: "choice__type" }, this.choice),
             h("ion-icon", { class: "med-icon header__icon", name: "med-baixo" })))),
       h("div", { class: "content" },
