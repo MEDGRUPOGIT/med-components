@@ -42,6 +42,7 @@
 }
 .med-check-card__container-fix {
   display: flex;
+  align-items: center;
 }
 .med-check-card__subtitulo {
   --color: hsl(var(--med-color-neutral-8));
