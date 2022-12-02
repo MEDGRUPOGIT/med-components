@@ -30,25 +30,36 @@ const MedDownloadButton = class {
      */
     this.disabled = false;
   }
+  /* @Watch('downloaded')
   downloadedChanged() {
-    this.medDownloaded.emit({
-      downloaded: this.downloaded,
-      id: this.identification,
-      index: this.index
-    });
-  }
-  downloadingChange() {
+    this.medDownloaded.emit(
+      {
+        downloaded: this.downloaded,
+        id: this.identification,
+        index: this.index
+      }
+      );
+  } */
+  /* @Watch('downloading')
+  downloadingChange(){
+    console.log('fuck');
+
     this.medDownloading.emit({
       downloading: this.downloading,
       id: this.identification,
       index: this.index
     });
-  }
+  } */
   valueChanged() {
     if (this.value !== 0 && this.value !== 100) {
       this.initial = false;
       this.downloaded = false;
       this.downloading = true;
+      this.medDownloading.emit({
+        downloading: this.downloading,
+        id: this.identification,
+        index: this.index
+      });
     }
     if (this.value === 0) {
       this.initial = true;
@@ -58,22 +69,32 @@ const MedDownloadButton = class {
     if (this.value === 100) {
       this.downloaded = true;
       this.downloading = false;
-    }
-  }
-  toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
-    if (this.downloaded) {
       this.medDownloaded.emit({
         downloaded: this.downloaded,
         id: this.identification,
         index: this.index
       });
     }
+  }
+  toggle(event) {
+    event === null || event === void 0 ? void 0 : event.stopPropagation();
+    if (this.downloaded) {
+      console.log('1');
+      this.initial = true;
+      this.downloaded = false;
+      this.downloading = false;
+    }
     else if (this.initial) {
+      console.log('2');
       this.initial = false;
       if (this.value !== 100) {
         this.downloaded = false;
         this.downloading = true;
+        this.medDownloading.emit({
+          downloading: this.downloading,
+          id: this.identification,
+          index: this.index
+        });
       }
       else if (this.value === 100) {
         this.downloaded = true;
@@ -86,6 +107,7 @@ const MedDownloadButton = class {
       }
     }
     else {
+      console.log('3');
       this.medCancelar.emit({
         id: this.identification,
         index: this.index
@@ -105,8 +127,6 @@ const MedDownloadButton = class {
       }) }, h("div", { class: "med-download-button__icon" }, h("svg", { viewBox: "0 0 36 36", class: "med-download-button__svg" }, h("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle" }), h("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle med-download-button__circle--value", style: { '--value': `${value}` } })))));
   }
   static get watchers() { return {
-    "downloaded": ["downloadedChanged"],
-    "downloading": ["downloadingChange"],
     "value": ["valueChanged"]
   }; }
 };

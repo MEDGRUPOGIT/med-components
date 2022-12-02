@@ -12285,7 +12285,7 @@ const isSrc = (str) => str.length > 0 && /(\/|\.)/.test(str);
 const isStr = (val) => typeof val === 'string';
 const toLower = (val) => val.toLowerCase();
 
-const iconCss = "/*!@:host*/.sc-ion-icon-h{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}/*!@:host .ionicon*/.sc-ion-icon-h .ionicon.sc-ion-icon{stroke:currentColor}/*!@.ionicon-fill-none*/.ionicon-fill-none.sc-ion-icon{fill:none}/*!@.ionicon-stroke-width*/.ionicon-stroke-width.sc-ion-icon{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}/*!@.icon-inner,\n.ionicon,\nsvg*/.icon-inner.sc-ion-icon,.ionicon.sc-ion-icon,svg.sc-ion-icon{display:block;height:100%;width:100%}/*!@:host(.flip-rtl) .icon-inner*/.flip-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}/*!@:host(.icon-small)*/.icon-small.sc-ion-icon-h{font-size:18px !important}/*!@:host(.icon-large)*/.icon-large.sc-ion-icon-h{font-size:32px !important}/*!@:host(.ion-color)*/.ion-color.sc-ion-icon-h{color:var(--ion-color-base) !important}/*!@:host(.ion-color-primary)*/.ion-color-primary.sc-ion-icon-h{--ion-color-base:var(--ion-color-primary, #3880ff)}/*!@:host(.ion-color-secondary)*/.ion-color-secondary.sc-ion-icon-h{--ion-color-base:var(--ion-color-secondary, #0cd1e8)}/*!@:host(.ion-color-tertiary)*/.ion-color-tertiary.sc-ion-icon-h{--ion-color-base:var(--ion-color-tertiary, #f4a942)}/*!@:host(.ion-color-success)*/.ion-color-success.sc-ion-icon-h{--ion-color-base:var(--ion-color-success, #10dc60)}/*!@:host(.ion-color-warning)*/.ion-color-warning.sc-ion-icon-h{--ion-color-base:var(--ion-color-warning, #ffce00)}/*!@:host(.ion-color-danger)*/.ion-color-danger.sc-ion-icon-h{--ion-color-base:var(--ion-color-danger, #f14141)}/*!@:host(.ion-color-light)*/.ion-color-light.sc-ion-icon-h{--ion-color-base:var(--ion-color-light, #f4f5f8)}/*!@:host(.ion-color-medium)*/.ion-color-medium.sc-ion-icon-h{--ion-color-base:var(--ion-color-medium, #989aa2)}/*!@:host(.ion-color-dark)*/.ion-color-dark.sc-ion-icon-h{--ion-color-base:var(--ion-color-dark, #222428)}/*!@:host(.med-icon)*/.med-icon.sc-ion-icon-h{--ionicon-stroke-width:2;font-size:24px;stroke:inherit}/*!@:host(.med-icon) path*/.med-icon.sc-ion-icon-h path.sc-ion-icon{stroke-width:var(--ionicon-stroke-width, 32px);fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:inherit}/*!@:host(.med-icon.med-color)*/.med-icon.med-color.sc-ion-icon-h{color:hsl(var(--med-color-3)) !important;stroke:hsl(var(--med-color-3)) !important}/*!@:host(.med-icon.med-color-neutral)*/.med-icon.med-color-neutral.sc-ion-icon-h{color:hsl(var(--med-color-neutral)) !important;stroke:hsl(var(--med-color-neutral)) !important}/*!@:host(.med-icon.med-color-feedback)*/.med-icon.med-color-feedback.sc-ion-icon-h{color:hsl(var(--med-color-feedback)) !important;stroke:hsl(var(--med-color-feedback)) !important}/*!@:host(.med-icon.med-icon--xxs)*/.med-icon.med-icon--xxs.sc-ion-icon-h{font-size:12px}/*!@:host(.med-icon.med-icon--xs)*/.med-icon.med-icon--xs.sc-ion-icon-h{font-size:16px}/*!@:host(.med-icon.med-icon--sm)*/.med-icon.med-icon--sm.sc-ion-icon-h{font-size:24px}/*!@:host(.med-icon.med-icon--md)*/.med-icon.med-icon--md.sc-ion-icon-h{font-size:32px}/*!@:host(.med-icon.med-icon--lg)*/.med-icon.med-icon--lg.sc-ion-icon-h{font-size:48px}/*!@:host(.med-icon.med-icon--stroke-1)*/.med-icon.med-icon--stroke-1.sc-ion-icon-h{--ionicon-stroke-width:1}";
+const iconCss = "/*!@:host*/.sc-ion-icon-h{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}/*!@:host .ionicon*/.sc-ion-icon-h .ionicon.sc-ion-icon{stroke:currentColor}/*!@.ionicon-fill-none*/.ionicon-fill-none.sc-ion-icon{fill:none}/*!@.ionicon-stroke-width*/.ionicon-stroke-width.sc-ion-icon{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}/*!@.icon-inner,\n.ionicon,\nsvg*/.icon-inner.sc-ion-icon,.ionicon.sc-ion-icon,svg.sc-ion-icon{display:block;height:100%;width:100%}/*!@:host(.flip-rtl) .icon-inner*/.flip-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}/*!@:host(.icon-small)*/.icon-small.sc-ion-icon-h{font-size:18px !important}/*!@:host(.icon-large)*/.icon-large.sc-ion-icon-h{font-size:32px !important}/*!@:host(.ion-color)*/.ion-color.sc-ion-icon-h{color:var(--ion-color-base) !important}/*!@:host(.ion-color-primary)*/.ion-color-primary.sc-ion-icon-h{--ion-color-base:var(--ion-color-primary, #3880ff)}/*!@:host(.ion-color-secondary)*/.ion-color-secondary.sc-ion-icon-h{--ion-color-base:var(--ion-color-secondary, #0cd1e8)}/*!@:host(.ion-color-tertiary)*/.ion-color-tertiary.sc-ion-icon-h{--ion-color-base:var(--ion-color-tertiary, #f4a942)}/*!@:host(.ion-color-success)*/.ion-color-success.sc-ion-icon-h{--ion-color-base:var(--ion-color-success, #10dc60)}/*!@:host(.ion-color-warning)*/.ion-color-warning.sc-ion-icon-h{--ion-color-base:var(--ion-color-warning, #ffce00)}/*!@:host(.ion-color-danger)*/.ion-color-danger.sc-ion-icon-h{--ion-color-base:var(--ion-color-danger, #f14141)}/*!@:host(.ion-color-light)*/.ion-color-light.sc-ion-icon-h{--ion-color-base:var(--ion-color-light, #f4f5f8)}/*!@:host(.ion-color-medium)*/.ion-color-medium.sc-ion-icon-h{--ion-color-base:var(--ion-color-medium, #989aa2)}/*!@:host(.ion-color-dark)*/.ion-color-dark.sc-ion-icon-h{--ion-color-base:var(--ion-color-dark, #222428)}";
 
 class Icon {
   constructor(hostRef) {
@@ -16009,25 +16009,36 @@ class MedDownloadButton {
      */
     this.disabled = false;
   }
+  /* @Watch('downloaded')
   downloadedChanged() {
-    this.medDownloaded.emit({
-      downloaded: this.downloaded,
-      id: this.identification,
-      index: this.index
-    });
-  }
-  downloadingChange() {
+    this.medDownloaded.emit(
+      {
+        downloaded: this.downloaded,
+        id: this.identification,
+        index: this.index
+      }
+      );
+  } */
+  /* @Watch('downloading')
+  downloadingChange(){
+    console.log('fuck');
+
     this.medDownloading.emit({
       downloading: this.downloading,
       id: this.identification,
       index: this.index
     });
-  }
+  } */
   valueChanged() {
     if (this.value !== 0 && this.value !== 100) {
       this.initial = false;
       this.downloaded = false;
       this.downloading = true;
+      this.medDownloading.emit({
+        downloading: this.downloading,
+        id: this.identification,
+        index: this.index
+      });
     }
     if (this.value === 0) {
       this.initial = true;
@@ -16037,22 +16048,32 @@ class MedDownloadButton {
     if (this.value === 100) {
       this.downloaded = true;
       this.downloading = false;
-    }
-  }
-  toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
-    if (this.downloaded) {
       this.medDownloaded.emit({
         downloaded: this.downloaded,
         id: this.identification,
         index: this.index
       });
     }
+  }
+  toggle(event) {
+    event === null || event === void 0 ? void 0 : event.stopPropagation();
+    if (this.downloaded) {
+      console.log('1');
+      this.initial = true;
+      this.downloaded = false;
+      this.downloading = false;
+    }
     else if (this.initial) {
+      console.log('2');
       this.initial = false;
       if (this.value !== 100) {
         this.downloaded = false;
         this.downloading = true;
+        this.medDownloading.emit({
+          downloading: this.downloading,
+          id: this.identification,
+          index: this.index
+        });
       }
       else if (this.value === 100) {
         this.downloaded = true;
@@ -16065,6 +16086,7 @@ class MedDownloadButton {
       }
     }
     else {
+      console.log('3');
       this.medCancelar.emit({
         id: this.identification,
         index: this.index
@@ -16084,8 +16106,6 @@ class MedDownloadButton {
       }) }, hAsync("div", { class: "med-download-button__icon" }, hAsync("svg", { viewBox: "0 0 36 36", class: "med-download-button__svg" }, hAsync("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle" }), hAsync("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle med-download-button__circle--value", style: { '--value': `${value}` } })))));
   }
   static get watchers() { return {
-    "downloaded": ["downloadedChanged"],
-    "downloading": ["downloadingChange"],
     "value": ["valueChanged"]
   }; }
   static get style() { return medDownloadButtonCss; }

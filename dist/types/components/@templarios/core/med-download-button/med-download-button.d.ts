@@ -45,8 +45,6 @@ export declare class MedDownloadButton {
    * todo
    */
   medDownloading: EventEmitter;
-  downloadedChanged(): void;
-  downloadingChange(): void;
   valueChanged(): void;
   toggle(event?: Event): void;
   render(): any;
