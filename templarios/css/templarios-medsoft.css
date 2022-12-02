@@ -52,17 +52,32 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
+  margin: 0 auto;
   padding: 16px;
+  max-width: 1096px;
 }
 .grid__tiles {
   cursor: pointer;
 }
 
+@media (max-width: 991.98px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 767.98px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media (max-width: 575.98px) {
   .container--resumo-simulado {
     height: calc(100vh - 128px);
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .button-qrcode {
@@ -455,11 +470,16 @@
   text-align: center;
 }
 
-.concursos__tiles:not(:last-child) {
-  margin-bottom: 8px;
-}
 .concursos__container {
   padding: 16px;
+  margin: 0 auto;
+  max-width: 1096px;
+}
+.concursos__tiles {
+  cursor: pointer;
+}
+.concursos__tiles:not(:last-child) {
+  margin-bottom: 16px;
 }
 
 .button-filter {
