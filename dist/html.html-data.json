@@ -5784,6 +5784,15 @@
           "description": "todo"
         },
         {
+          "name": "ds-size",
+          "description": "todo",
+          "values": [
+            {
+              "name": "lg"
+            }
+          ]
+        },
+        {
           "name": "identification",
           "description": "todo"
         },

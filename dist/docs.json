@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-02T17:54:22",
+  "timestamp": "2022-12-06T13:29:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -23312,6 +23312,26 @@
           "docsTags": [],
           "values": [
             {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsSize",
+          "type": "\"lg\" | undefined",
+          "mutable": false,
+          "attr": "ds-size",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "lg",
               "type": "string"
             },
             {

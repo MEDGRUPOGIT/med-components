@@ -112,11 +112,12 @@ export class MedDownloadButton {
     }
   }
   render() {
-    const { dsColor, value, initial, downloading, downloaded } = this;
+    const { dsColor, value, initial, downloading, downloaded, dsSize } = this;
     return (h(Host, { onClick: (event) => { this.toggle(event); }, class: generateMedColor(dsColor, {
         'med-download-button': true,
         'med-download-button--downloading': downloading && !initial,
-        'med-download-button--downloaded': downloaded
+        'med-download-button--downloaded': downloaded,
+        [`med-download-button--${dsSize}`]: dsSize !== undefined,
       }) },
       h("div", { class: "med-download-button__icon" },
         h("svg", { viewBox: "0 0 36 36", class: "med-download-button__svg" },
@@ -277,6 +278,23 @@ export class MedDownloadButton {
       "attribute": "disabled",
       "reflect": true,
       "defaultValue": "false"
+    },
+    "dsSize": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "'lg'",
+        "resolved": "\"lg\" | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "todo"
+      },
+      "attribute": "ds-size",
+      "reflect": true
     }
   }; }
   static get events() { return [{

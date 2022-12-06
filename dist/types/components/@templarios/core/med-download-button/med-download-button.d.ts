@@ -36,6 +36,10 @@ export declare class MedDownloadButton {
   /**
    * todo
    */
+  dsSize?: 'lg';
+  /**
+   * todo
+   */
   medDownloaded: EventEmitter;
   /**
    * todo

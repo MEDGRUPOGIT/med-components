@@ -101,3 +101,30 @@
 :host(.med-download-button--downloaded) .med-download-button__icon__circle {
   transform-origin: revert;
 }
+
+:host(.med-download-button--lg) .med-download-button__icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+:host(.med-download-button--lg) .med-download-button__icon::after {
+  width: 2px;
+  height: 9px;
+}
+:host(.med-download-button--lg) .med-download-button__icon::before {
+  width: 6px;
+  height: 6px;
+  left: 8px;
+  border-bottom: 2px solid var(--color-1);
+  border-right: 2px solid var(--color-1);
+}
+
+:host(.med-download-button--downloading.med-download-button--lg) .med-download-button__icon::before {
+  width: 6px;
+  height: 6px;
+}
+
+:host(.med-download-button--downloaded.med-download-button--lg) .med-download-button__icon::before {
+  border-bottom: 2px solid var(--color-2);
+  border-right: 2px solid var(--color-2);
+}
