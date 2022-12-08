@@ -1,4 +1,4 @@
-import { Component, Event, h, Host, Prop, Watch } from '@stencil/core';
+import { Component, Event, h, Host, Prop } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedDownloadButton {
   constructor() {
@@ -6,10 +6,6 @@ export class MedDownloadButton {
      * todo
      */
     this.value = 0;
-    /**
-     * todo
-     */
-    this.initial = true;
     /**
      * todo
      */
@@ -23,99 +19,11 @@ export class MedDownloadButton {
      */
     this.disabled = false;
   }
-  /* @Watch('downloaded')
-  downloadedChanged() {
-    this.medDownloaded.emit(
-      {
-        downloaded: this.downloaded,
-        id: this.identification,
-        index: this.index
-      }
-      );
-  } */
-  /* @Watch('downloading')
-  downloadingChange(){
-    console.log('fuck');
-
-    this.medDownloading.emit({
-      downloading: this.downloading,
-      id: this.identification,
-      index: this.index
-    });
-  } */
-  valueChanged() {
-    if (this.value !== 0 && this.value !== 100) {
-      this.initial = false;
-      this.downloaded = false;
-      this.downloading = true;
-      this.medDownloading.emit({
-        downloading: this.downloading,
-        id: this.identification,
-        index: this.index
-      });
-    }
-    if (this.value === 0) {
-      this.initial = true;
-      this.downloaded = false;
-      this.downloading = false;
-    }
-    if (this.value === 100) {
-      this.downloaded = true;
-      this.downloading = false;
-      this.medDownloaded.emit({
-        downloaded: this.downloaded,
-        id: this.identification,
-        index: this.index
-      });
-    }
-  }
-  toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
-    if (this.downloaded) {
-      console.log('1');
-      this.initial = true;
-      this.downloaded = false;
-      this.downloading = false;
-    }
-    else if (this.initial) {
-      console.log('2');
-      this.initial = false;
-      if (this.value !== 100) {
-        this.downloaded = false;
-        this.downloading = true;
-        this.medDownloading.emit({
-          downloading: this.downloading,
-          id: this.identification,
-          index: this.index
-        });
-      }
-      else if (this.value === 100) {
-        this.downloaded = true;
-        this.downloading = false;
-        this.medDownloaded.emit({
-          downloaded: this.downloaded,
-          id: this.identification,
-          index: this.index
-        });
-      }
-    }
-    else {
-      console.log('3');
-      this.medCancelar.emit({
-        id: this.identification,
-        index: this.index
-      });
-      this.initial = true;
-      this.downloaded = false;
-      this.downloading = false;
-      this.value = 0;
-    }
-  }
   render() {
-    const { dsColor, value, initial, downloading, downloaded, dsSize } = this;
-    return (h(Host, { onClick: (event) => { this.toggle(event); }, class: generateMedColor(dsColor, {
+    const { dsColor, value, downloading, downloaded, dsSize } = this;
+    return (h(Host, { class: generateMedColor(dsColor, {
         'med-download-button': true,
-        'med-download-button--downloading': downloading && !initial,
+        'med-download-button--downloading': downloading && !downloaded,
         'med-download-button--downloaded': downloaded,
         [`med-download-button--${dsSize}`]: dsSize !== undefined,
       }) },
@@ -157,7 +65,7 @@ export class MedDownloadButton {
     },
     "value": {
       "type": "number",
-      "mutable": false,
+      "mutable": true,
       "complexType": {
         "original": "number",
         "resolved": "number",
@@ -173,27 +81,9 @@ export class MedDownloadButton {
       "reflect": true,
       "defaultValue": "0"
     },
-    "initial": {
-      "type": "boolean",
-      "mutable": true,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "initial",
-      "reflect": true,
-      "defaultValue": "true"
-    },
     "downloading": {
       "type": "boolean",
-      "mutable": false,
+      "mutable": true,
       "complexType": {
         "original": "boolean",
         "resolved": "boolean",
@@ -211,7 +101,7 @@ export class MedDownloadButton {
     },
     "downloaded": {
       "type": "boolean",
-      "mutable": false,
+      "mutable": true,
       "complexType": {
         "original": "boolean",
         "resolved": "boolean",
@@ -239,7 +129,7 @@ export class MedDownloadButton {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "todo"
+        "text": "remover"
       },
       "attribute": "index",
       "reflect": true
@@ -256,7 +146,7 @@ export class MedDownloadButton {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "todo"
+        "text": "remover"
       },
       "attribute": "identification",
       "reflect": true
@@ -298,8 +188,8 @@ export class MedDownloadButton {
     }
   }; }
   static get events() { return [{
-      "method": "medDownloaded",
-      "name": "medDownloaded",
+      "method": "medDownloadRequested",
+      "name": "medDownloadRequested",
       "bubbles": true,
       "cancelable": true,
       "composed": true,
@@ -312,39 +202,5 @@ export class MedDownloadButton {
         "resolved": "any",
         "references": {}
       }
-    }, {
-      "method": "medCancelar",
-      "name": "medCancelar",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "complexType": {
-        "original": "any",
-        "resolved": "any",
-        "references": {}
-      }
-    }, {
-      "method": "medDownloading",
-      "name": "medDownloading",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "complexType": {
-        "original": "any",
-        "resolved": "any",
-        "references": {}
-      }
-    }]; }
-  static get watchers() { return [{
-      "propName": "value",
-      "methodName": "valueChanged"
     }]; }
 }

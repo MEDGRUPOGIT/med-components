@@ -10215,7 +10215,7 @@ class ConcursoModal {
   }; }
 }
 
-const contentCss = "/*!@:host*/.sc-ion-content-h{--background:var(--ion-background-color, #fff);--color:var(--ion-text-color, #000);--padding-top:0px;--padding-bottom:0px;--padding-start:0px;--padding-end:0px;--keyboard-offset:0px;--offset-top:0px;--offset-bottom:0px;--overflow:auto;--style:thin;--width:7px;--height:7px;--padding:10px;display:block;position:relative;-ms-flex:1;flex:1;width:100%;height:100%;margin:0 !important;padding:0 !important;font-family:var(--ion-font-family, inherit);contain:size style}/*!@:host(.ion-color) .inner-scroll*/.ion-color.sc-ion-content-h .inner-scroll.sc-ion-content{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(.outer-content)*/.outer-content.sc-ion-content-h{--background:var(--ion-color-step-50, #f2f2f2)}/*!@#background-content*/#background-content.sc-ion-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);position:absolute;background:var(--background)}/*!@.inner-scroll*/.inner-scroll.sc-ion-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:calc(var(--padding-top) + var(--offset-top));padding-bottom:calc(var(--padding-bottom) + var(--keyboard-offset) + var(--offset-bottom));position:absolute;color:var(--color);-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@.inner-scroll*/.inner-scroll.sc-ion-content{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@.scroll-y,\n.scroll-x*/.scroll-y.sc-ion-content,.scroll-x.sc-ion-content{-webkit-overflow-scrolling:touch;z-index:0;will-change:scroll-position}/*!@.scroll-y*/.scroll-y.sc-ion-content{-ms-touch-action:pan-y;touch-action:pan-y;overflow-y:var(--overflow);overscroll-behavior-y:contain}/*!@.scroll-x*/.scroll-x.sc-ion-content{-ms-touch-action:pan-x;touch-action:pan-x;overflow-x:var(--overflow);overscroll-behavior-x:contain}/*!@.scroll-x.scroll-y*/.scroll-x.scroll-y.sc-ion-content{-ms-touch-action:auto;touch-action:auto}/*!@.overscroll::before,\n.overscroll::after*/.overscroll.sc-ion-content::before,.overscroll.sc-ion-content::after{position:absolute;width:1px;height:1px;content:\"\"}/*!@.overscroll::before*/.overscroll.sc-ion-content::before{bottom:-1px}/*!@.overscroll::after*/.overscroll.sc-ion-content::after{top:-1px}/*!@:host(.content-sizing)*/.content-sizing.sc-ion-content-h{contain:none}/*!@:host(.content-sizing) .inner-scroll*/.content-sizing.sc-ion-content-h .inner-scroll.sc-ion-content{position:relative}/*!@.transition-effect*/.transition-effect.sc-ion-content{display:none;position:absolute;left:-100%;width:100%;height:100vh;opacity:0;pointer-events:none}/*!@.transition-cover*/.transition-cover.sc-ion-content{position:absolute;right:0;width:100%;height:100%;background:black;opacity:0.1}/*!@.transition-shadow*/.transition-shadow.sc-ion-content{display:block;position:absolute;right:0;width:10px;height:100%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAgCAYAAAAIXrg4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTE3MDgzRkQ5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTE3MDgzRkU5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMTcwODNGQjlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMTcwODNGQzlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmePEuQAAABNSURBVHjaYvz//z8DIxAwMDAwATGMhmFmPDQuOSZks0AMmoJBaQHjkPfB0Lfg/2gQjVow+HPy/yHvg9GiYjQfjMbBqAWjFgy/4hogwADYqwdzxy5BuwAAAABJRU5ErkJggg==);background-repeat:repeat-y;background-size:10px 16px}/*!@::slotted([slot=fixed])*/.sc-ion-content-s>[slot=fixed]{position:absolute}/*!@:host*/.sc-ion-content-h{--tp-scroll-color-content:hsl(var(--med-color-brand-3));-webkit-scroll-snap-type:both mandatory;-ms-scroll-snap-type:both mandatory;scroll-snap-type:both mandatory;scroll-padding-top:30px;scroll-behavior:smooth}/*!@::-webkit-scrollbar*/.sc-ion-content::-webkit-scrollbar{width:0px;height:9px}/*!@::-webkit-scrollbar-track*/.sc-ion-content::-webkit-scrollbar-track{background:transparent}/*!@::-webkit-scrollbar-thumb*/.sc-ion-content::-webkit-scrollbar-thumb{color:transparent}/*!@::-webkit-scrollbar-thumb:hover*/.sc-ion-content::-webkit-scrollbar-thumb:hover{background:var(--tp-scroll-color-content)}/*!@::-webkit-scrollbar-thumb*/.sc-ion-content::-webkit-scrollbar-thumb{background-clip:content-box;border:4px solid transparent;border-radius:7px;-webkit-box-shadow:inset 0 0 0 10px;box-shadow:inset 0 0 0 10px}/*!@::-webkit-scrollbar-button*/.sc-ion-content::-webkit-scrollbar-button{width:0;height:0;display:none}/*!@::-webkit-scrollbar-corner*/.sc-ion-content::-webkit-scrollbar-corner{background-color:transparent}/*!@.inner-scroll:hover::-webkit-scrollbar-thumb*/.inner-scroll.sc-ion-content:hover::-webkit-scrollbar-thumb{color:var(--tp-scroll-color-content)}";
+const contentCss = "/*!@:host*/.sc-ion-content-h{--background:var(--ion-background-color, #fff);--color:var(--ion-text-color, #000);--padding-top:0px;--padding-bottom:0px;--padding-start:0px;--padding-end:0px;--keyboard-offset:0px;--offset-top:0px;--offset-bottom:0px;--overflow:auto;--style:thin;--width:7px;--height:7px;--padding:10px;display:block;position:relative;-ms-flex:1;flex:1;width:100%;height:100%;margin:0 !important;padding:0 !important;font-family:var(--ion-font-family, inherit);contain:size style}/*!@:host(.ion-color) .inner-scroll*/.ion-color.sc-ion-content-h .inner-scroll.sc-ion-content{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(.outer-content)*/.outer-content.sc-ion-content-h{--background:var(--ion-color-step-50, #f2f2f2)}/*!@#background-content*/#background-content.sc-ion-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);position:absolute;background:var(--background)}/*!@.inner-scroll*/.inner-scroll.sc-ion-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:calc(var(--padding-top) + var(--offset-top));padding-bottom:calc(var(--padding-bottom) + var(--keyboard-offset) + var(--offset-bottom));position:absolute;color:var(--color);-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@.inner-scroll*/.inner-scroll.sc-ion-content{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@.scroll-y,\n.scroll-x*/.scroll-y.sc-ion-content,.scroll-x.sc-ion-content{-webkit-overflow-scrolling:touch;z-index:0;will-change:scroll-position}/*!@.scroll-y*/.scroll-y.sc-ion-content{-ms-touch-action:pan-y;touch-action:pan-y;overflow-y:var(--overflow);overscroll-behavior-y:contain}/*!@.scroll-x*/.scroll-x.sc-ion-content{-ms-touch-action:pan-x;touch-action:pan-x;overflow-x:var(--overflow);overscroll-behavior-x:contain}/*!@.scroll-x.scroll-y*/.scroll-x.scroll-y.sc-ion-content{-ms-touch-action:auto;touch-action:auto}/*!@.overscroll::before,\n.overscroll::after*/.overscroll.sc-ion-content::before,.overscroll.sc-ion-content::after{position:absolute;width:1px;height:1px;content:\"\"}/*!@.overscroll::before*/.overscroll.sc-ion-content::before{bottom:-1px}/*!@.overscroll::after*/.overscroll.sc-ion-content::after{top:-1px}/*!@:host(.content-sizing)*/.content-sizing.sc-ion-content-h{contain:none}/*!@:host(.content-sizing) .inner-scroll*/.content-sizing.sc-ion-content-h .inner-scroll.sc-ion-content{position:relative}/*!@.transition-effect*/.transition-effect.sc-ion-content{display:none;position:absolute;left:-100%;width:100%;height:100vh;opacity:0;pointer-events:none}/*!@.transition-cover*/.transition-cover.sc-ion-content{position:absolute;right:0;width:100%;height:100%;background:black;opacity:0.1}/*!@.transition-shadow*/.transition-shadow.sc-ion-content{display:block;position:absolute;right:0;width:10px;height:100%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAgCAYAAAAIXrg4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTE3MDgzRkQ5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTE3MDgzRkU5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMTcwODNGQjlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMTcwODNGQzlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmePEuQAAABNSURBVHjaYvz//z8DIxAwMDAwATGMhmFmPDQuOSZks0AMmoJBaQHjkPfB0Lfg/2gQjVow+HPy/yHvg9GiYjQfjMbBqAWjFgy/4hogwADYqwdzxy5BuwAAAABJRU5ErkJggg==);background-repeat:repeat-y;background-size:10px 16px}/*!@::slotted([slot=fixed])*/.sc-ion-content-s>[slot=fixed]{position:absolute}/*!@:host*/.sc-ion-content-h{--tp-scroll-color-content:hsl(var(--med-color-brand-3));--tp-scroll-width:9px;-webkit-scroll-snap-type:both mandatory;-ms-scroll-snap-type:both mandatory;scroll-snap-type:both mandatory;scroll-padding-top:30px;scroll-behavior:smooth}/*!@::-webkit-scrollbar*/.sc-ion-content::-webkit-scrollbar{width:var(--tp-scroll-width);height:9px}/*!@::-webkit-scrollbar-track*/.sc-ion-content::-webkit-scrollbar-track{background:transparent}/*!@::-webkit-scrollbar-thumb*/.sc-ion-content::-webkit-scrollbar-thumb{color:transparent}/*!@::-webkit-scrollbar-thumb:hover*/.sc-ion-content::-webkit-scrollbar-thumb:hover{background:var(--tp-scroll-color-content)}/*!@::-webkit-scrollbar-thumb*/.sc-ion-content::-webkit-scrollbar-thumb{background-clip:content-box;border:4px solid transparent;border-radius:7px;-webkit-box-shadow:inset 0 0 0 10px;box-shadow:inset 0 0 0 10px}/*!@::-webkit-scrollbar-button*/.sc-ion-content::-webkit-scrollbar-button{width:0;height:0;display:none}/*!@::-webkit-scrollbar-corner*/.sc-ion-content::-webkit-scrollbar-corner{background-color:transparent}/*!@.inner-scroll:hover::-webkit-scrollbar-thumb*/.inner-scroll.sc-ion-content:hover::-webkit-scrollbar-thumb{color:var(--tp-scroll-color-content)}";
 
 /**
  * @slot - Content is placed in the scrollable area if provided without a slot.
@@ -15985,17 +15985,11 @@ const medDownloadButtonCss = "/*!@:host*/.sc-med-download-button-h{--color-1:hsl
 class MedDownloadButton {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    this.medDownloaded = createEvent(this, "medDownloaded", 7);
-    this.medCancelar = createEvent(this, "medCancelar", 7);
-    this.medDownloading = createEvent(this, "medDownloading", 7);
+    this.medDownloadRequested = createEvent(this, "medDownloadRequested", 7);
     /**
      * todo
      */
     this.value = 0;
-    /**
-     * todo
-     */
-    this.initial = true;
     /**
      * todo
      */
@@ -16009,116 +16003,24 @@ class MedDownloadButton {
      */
     this.disabled = false;
   }
-  /* @Watch('downloaded')
-  downloadedChanged() {
-    this.medDownloaded.emit(
-      {
-        downloaded: this.downloaded,
-        id: this.identification,
-        index: this.index
-      }
-      );
-  } */
-  /* @Watch('downloading')
-  downloadingChange(){
-    console.log('fuck');
-
-    this.medDownloading.emit({
-      downloading: this.downloading,
-      id: this.identification,
-      index: this.index
-    });
-  } */
-  valueChanged() {
-    if (this.value !== 0 && this.value !== 100) {
-      this.initial = false;
-      this.downloaded = false;
-      this.downloading = true;
-      this.medDownloading.emit({
-        downloading: this.downloading,
-        id: this.identification,
-        index: this.index
-      });
-    }
-    if (this.value === 0) {
-      this.initial = true;
-      this.downloaded = false;
-      this.downloading = false;
-    }
-    if (this.value === 100) {
-      this.downloaded = true;
-      this.downloading = false;
-      this.medDownloaded.emit({
-        downloaded: this.downloaded,
-        id: this.identification,
-        index: this.index
-      });
-    }
-  }
-  toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
-    if (this.downloaded) {
-      console.log('1');
-      this.initial = true;
-      this.downloaded = false;
-      this.downloading = false;
-    }
-    else if (this.initial) {
-      console.log('2');
-      this.initial = false;
-      if (this.value !== 100) {
-        this.downloaded = false;
-        this.downloading = true;
-        this.medDownloading.emit({
-          downloading: this.downloading,
-          id: this.identification,
-          index: this.index
-        });
-      }
-      else if (this.value === 100) {
-        this.downloaded = true;
-        this.downloading = false;
-        this.medDownloaded.emit({
-          downloaded: this.downloaded,
-          id: this.identification,
-          index: this.index
-        });
-      }
-    }
-    else {
-      console.log('3');
-      this.medCancelar.emit({
-        id: this.identification,
-        index: this.index
-      });
-      this.initial = true;
-      this.downloaded = false;
-      this.downloading = false;
-      this.value = 0;
-    }
-  }
   render() {
-    const { dsColor, value, initial, downloading, downloaded, dsSize } = this;
-    return (hAsync(Host, { onClick: (event) => { this.toggle(event); }, class: generateMedColor(dsColor, {
+    const { dsColor, value, downloading, downloaded, dsSize } = this;
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-download-button': true,
-        'med-download-button--downloading': downloading && !initial,
+        'med-download-button--downloading': downloading && !downloaded,
         'med-download-button--downloaded': downloaded,
         [`med-download-button--${dsSize}`]: dsSize !== undefined,
       }) }, hAsync("div", { class: "med-download-button__icon" }, hAsync("svg", { viewBox: "0 0 36 36", class: "med-download-button__svg" }, hAsync("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle" }), hAsync("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle med-download-button__circle--value", style: { '--value': `${value}` } })))));
   }
-  static get watchers() { return {
-    "value": ["valueChanged"]
-  }; }
   static get style() { return medDownloadButtonCss; }
   static get cmpMeta() { return {
     "$flags$": 9,
     "$tagName$": "med-download-button",
     "$members$": {
       "dsColor": [513, "ds-color"],
-      "value": [514],
-      "initial": [1540],
-      "downloading": [516],
-      "downloaded": [516],
+      "value": [1538],
+      "downloading": [1540],
+      "downloaded": [1540],
       "index": [514],
       "identification": [520],
       "disabled": [516],
@@ -16126,7 +16028,7 @@ class MedDownloadButton {
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"], ["value", "value"], ["initial", "initial"], ["downloading", "downloading"], ["downloaded", "downloaded"], ["index", "index"], ["identification", "identification"], ["disabled", "disabled"], ["dsSize", "ds-size"]]
+    "$attrsToReflect$": [["dsColor", "ds-color"], ["value", "value"], ["downloading", "downloading"], ["downloaded", "downloaded"], ["index", "index"], ["identification", "identification"], ["disabled", "disabled"], ["dsSize", "ds-size"]]
   }; }
 }
 

@@ -3407,17 +3407,13 @@ export namespace Components {
          */
         "dsSize"?: 'lg';
         /**
-          * todo
+          * remover
          */
         "identification"?: string|number|undefined;
         /**
-          * todo
+          * remover
          */
         "index"?: number;
-        /**
-          * todo
-         */
-        "initial": boolean;
         /**
           * todo
          */
@@ -8692,29 +8688,17 @@ declare namespace LocalJSX {
          */
         "dsSize"?: 'lg';
         /**
-          * todo
+          * remover
          */
         "identification"?: string|number|undefined;
         /**
-          * todo
+          * remover
          */
         "index"?: number;
         /**
           * todo
          */
-        "initial"?: boolean;
-        /**
-          * todo
-         */
-        "onMedCancelar"?: (event: CustomEvent<any>) => void;
-        /**
-          * todo
-         */
-        "onMedDownloaded"?: (event: CustomEvent<any>) => void;
-        /**
-          * todo
-         */
-        "onMedDownloading"?: (event: CustomEvent<any>) => void;
+        "onMedDownloadRequested"?: (event: CustomEvent<any>) => void;
         /**
           * todo
          */

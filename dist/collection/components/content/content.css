@@ -189,13 +189,14 @@
 
 :host {
   --tp-scroll-color-content: hsl(var(--med-color-brand-3));
+  --tp-scroll-width: 9px;
   scroll-snap-type: both mandatory;
   scroll-padding-top: 30px;
   scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: var(--tp-scroll-width);
   height: 9px;
 }
 

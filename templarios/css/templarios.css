@@ -10407,6 +10407,7 @@ ion-toggle[ds-color=fb-success] {
   scroll-padding-top: 30px;
   scroll-behavior: smooth;
   color: inherit;
+  overflow: auto;
 }
 .tp-scroll:hover::-webkit-scrollbar-thumb {
   color: var(--tp-scroll-color);

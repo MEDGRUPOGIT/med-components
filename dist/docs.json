@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-06T13:29:26",
+  "timestamp": "2022-12-08T18:29:25",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -23271,7 +23271,7 @@
         {
           "name": "downloaded",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "downloaded",
           "reflectToAttr": true,
           "docs": "todo",
@@ -23288,7 +23288,7 @@
         {
           "name": "downloading",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "downloading",
           "reflectToAttr": true,
           "docs": "todo",
@@ -23347,7 +23347,7 @@
           "mutable": false,
           "attr": "identification",
           "reflectToAttr": true,
-          "docs": "todo",
+          "docs": "remover",
           "docsTags": [],
           "values": [
             {
@@ -23369,7 +23369,7 @@
           "mutable": false,
           "attr": "index",
           "reflectToAttr": true,
-          "docs": "todo",
+          "docs": "remover",
           "docsTags": [],
           "values": [
             {
@@ -23383,26 +23383,9 @@
           "required": false
         },
         {
-          "name": "initial",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "initial",
-          "reflectToAttr": true,
-          "docs": "todo",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "value",
           "type": "number",
-          "mutable": false,
+          "mutable": true,
           "attr": "value",
           "reflectToAttr": true,
           "docs": "todo",
@@ -23420,25 +23403,7 @@
       "methods": [],
       "events": [
         {
-          "event": "medCancelar",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "todo",
-          "docsTags": []
-        },
-        {
-          "event": "medDownloaded",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "todo",
-          "docsTags": []
-        },
-        {
-          "event": "medDownloading",
+          "event": "medDownloadRequested",
           "detail": "any",
           "bubbles": true,
           "cancelable": true,

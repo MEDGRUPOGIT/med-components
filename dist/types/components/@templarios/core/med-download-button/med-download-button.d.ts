@@ -12,21 +12,17 @@ export declare class MedDownloadButton {
   /**
    * todo
    */
-  initial: boolean;
-  /**
-   * todo
-   */
   downloading: boolean;
   /**
    * todo
    */
   downloaded: boolean;
   /**
-   * todo
+   * remover
    */
   index?: number;
   /**
-   * todo
+   * remover
    */
   identification?: string | number | undefined;
   /**
@@ -40,16 +36,6 @@ export declare class MedDownloadButton {
   /**
    * todo
    */
-  medDownloaded: EventEmitter;
-  /**
-   * todo
-   */
-  medCancelar: EventEmitter;
-  /**
-   * todo
-   */
-  medDownloading: EventEmitter;
-  valueChanged(): void;
-  toggle(event?: Event): void;
+  medDownloadRequested: EventEmitter;
   render(): any;
 }

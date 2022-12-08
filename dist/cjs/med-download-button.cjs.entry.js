@@ -10,17 +10,11 @@ const medDownloadButtonCss = ":host{--color-1:hsl(var(--med-color-brand-4));--co
 const MedDownloadButton = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    this.medDownloaded = index.createEvent(this, "medDownloaded", 7);
-    this.medCancelar = index.createEvent(this, "medCancelar", 7);
-    this.medDownloading = index.createEvent(this, "medDownloading", 7);
+    this.medDownloadRequested = index.createEvent(this, "medDownloadRequested", 7);
     /**
      * todo
      */
     this.value = 0;
-    /**
-     * todo
-     */
-    this.initial = true;
     /**
      * todo
      */
@@ -34,106 +28,15 @@ const MedDownloadButton = class {
      */
     this.disabled = false;
   }
-  /* @Watch('downloaded')
-  downloadedChanged() {
-    this.medDownloaded.emit(
-      {
-        downloaded: this.downloaded,
-        id: this.identification,
-        index: this.index
-      }
-      );
-  } */
-  /* @Watch('downloading')
-  downloadingChange(){
-    console.log('fuck');
-
-    this.medDownloading.emit({
-      downloading: this.downloading,
-      id: this.identification,
-      index: this.index
-    });
-  } */
-  valueChanged() {
-    if (this.value !== 0 && this.value !== 100) {
-      this.initial = false;
-      this.downloaded = false;
-      this.downloading = true;
-      this.medDownloading.emit({
-        downloading: this.downloading,
-        id: this.identification,
-        index: this.index
-      });
-    }
-    if (this.value === 0) {
-      this.initial = true;
-      this.downloaded = false;
-      this.downloading = false;
-    }
-    if (this.value === 100) {
-      this.downloaded = true;
-      this.downloading = false;
-      this.medDownloaded.emit({
-        downloaded: this.downloaded,
-        id: this.identification,
-        index: this.index
-      });
-    }
-  }
-  toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
-    if (this.downloaded) {
-      console.log('1');
-      this.initial = true;
-      this.downloaded = false;
-      this.downloading = false;
-    }
-    else if (this.initial) {
-      console.log('2');
-      this.initial = false;
-      if (this.value !== 100) {
-        this.downloaded = false;
-        this.downloading = true;
-        this.medDownloading.emit({
-          downloading: this.downloading,
-          id: this.identification,
-          index: this.index
-        });
-      }
-      else if (this.value === 100) {
-        this.downloaded = true;
-        this.downloading = false;
-        this.medDownloaded.emit({
-          downloaded: this.downloaded,
-          id: this.identification,
-          index: this.index
-        });
-      }
-    }
-    else {
-      console.log('3');
-      this.medCancelar.emit({
-        id: this.identification,
-        index: this.index
-      });
-      this.initial = true;
-      this.downloaded = false;
-      this.downloading = false;
-      this.value = 0;
-    }
-  }
   render() {
-    const { dsColor, value, initial, downloading, downloaded, dsSize } = this;
-    return (index.h(index.Host, { onClick: (event) => { this.toggle(event); }, class: color.generateMedColor(dsColor, {
+    const { dsColor, value, downloading, downloaded, dsSize } = this;
+    return (index.h(index.Host, { class: color.generateMedColor(dsColor, {
         'med-download-button': true,
-        'med-download-button--downloading': downloading && !initial,
+        'med-download-button--downloading': downloading && !downloaded,
         'med-download-button--downloaded': downloaded,
         [`med-download-button--${dsSize}`]: dsSize !== undefined,
       }) }, index.h("div", { class: "med-download-button__icon" }, index.h("svg", { viewBox: "0 0 36 36", class: "med-download-button__svg" }, index.h("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle" }), index.h("circle", { cx: "18", cy: "18", r: "16", class: "med-download-button__circle med-download-button__circle--value", style: { '--value': `${value}` } })))));
   }
-  static get watchers() { return {
-    "value": ["valueChanged"]
-  }; }
 };
 MedDownloadButton.style = medDownloadButtonCss;
 
