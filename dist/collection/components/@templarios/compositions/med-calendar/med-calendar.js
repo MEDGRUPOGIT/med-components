@@ -30,19 +30,20 @@ export class MedCalendar {
     }
   }
   init() {
-    if (this.container) {
+    /* if(this.container) {
       const container = document.querySelector(`.${this.container}`);
-      const containerWidth = container === null || container === void 0 ? void 0 : container.clientWidth;
-      if (containerWidth < 1200) {
+      const containerWidth: any = container?.clientWidth;
+
+      if(containerWidth < 1200) {
         this.width = containerWidth / 7;
       }
-    }
-    else {
+    } else {
       const windowWidth = window.innerWidth;
-      if (windowWidth < 1200) {
+
+      if(windowWidth < 1200) {
         this.width = windowWidth / 7;
       }
-    }
+    } */
   }
   watchPropHandler(newValue) {
     if (newValue !== this.container) { }
@@ -81,9 +82,6 @@ export class MedCalendar {
   onMonthClick(type) {
     this.medClick.emit(type);
   }
-  /* private onGraficoClick() {
-    this.medClick.emit('graph');
-  } */
   render() {
     const { dsColor, mes, ano, disable } = this;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {

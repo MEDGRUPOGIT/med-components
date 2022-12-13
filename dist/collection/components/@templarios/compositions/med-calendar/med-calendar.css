@@ -1,6 +1,5 @@
 :host {
   --background: hsl(var(--med-color-neutral-1));
-  --width: 166;
 }
 
 :host {
@@ -44,7 +43,6 @@
   align-items: center;
   justify-content: center;
   height: 24px;
-  width: calc(var(--width) * 1px);
   margin: 0 auto;
 }
 .content__week-type {
@@ -55,7 +53,7 @@
 }
 .content__container {
   display: grid;
-  grid-template-columns: repeat(7, minmax(calc(var(--width) * 1px), 1fr));
+  grid-template-columns: repeat(7, 1fr);
   height: 100%;
 }
 
