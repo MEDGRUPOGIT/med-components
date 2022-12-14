@@ -1,6 +1,6 @@
 :host {
-  --color-1: hsl(var(--med-color-brand-4));
-  --color-2: hsl(var(--med-color-neutral-2));
+  --color-1: hsl(var(--med-color-neutral-10));
+  --color-2: hsl(var(--med-color-neutral-10));
   --padding: 5px;
 }
 
@@ -58,19 +58,36 @@
   stroke-dasharray: 100 100;
 }
 
-:host(.med-color) {
+:host(.med-color.med-download-button--downloading) {
   --color-1: hsl(var(--med-color-4));
   --color-2: hsl(var(--med-color-2));
 }
 
-:host(.med-color-neutral) {
+:host(.med-color.med-download-button--downloaded) {
+  --color-1: hsl(var(--med-color-4));
+  --color-2: hsl(var(--med-color-2));
+}
+
+:host(.med-color-neutral.med-download-button--downloading) {
   --color-1: hsl(var(--med-color-neutral));
 }
 
-:host(.med-color-feedback) {
+:host(.med-color-neutral.med-download-button--downloaded) {
+  --color-1: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback.med-download-button--downloading) {
   --color-1: hsl(var(--med-color-feedback));
 }
 
+:host(.med-color-feedback.med-download-button--downloaded) {
+  --color-1: hsl(var(--med-color-feedback));
+}
+
+:host(.med-download-button--downloading) {
+  --color-1: hsl(var(--med-color-brand-4));
+  --color-2: hsl(var(--med-color-neutral-2));
+}
 :host(.med-download-button--downloading) .med-download-button__icon::after {
   background: transparent;
 }
@@ -88,6 +105,10 @@
   stroke-dasharray: var(--value) 100;
 }
 
+:host(.med-download-button--downloaded) {
+  --color-1: hsl(var(--med-color-brand-4));
+  --color-2: hsl(var(--med-color-neutral-2));
+}
 :host(.med-download-button--downloaded) .med-download-button__icon {
   background: var(--color-1);
 }
