@@ -80,6 +80,25 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.erratas {
+  background: hsl(var(--med-color-neutral-1));
+  height: calc(100% - 104px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.erratas__icon {
+  height: 48px;
+  width: 48px;
+  margin-bottom: 24px;
+  stroke: hsl(var(--med-color-neutral-10));
+  fill: transparent;
+}
+.erratas__text {
+  text-transform: uppercase;
+}
+
 .button-qrcode {
   width: 32px !important;
   height: 32px !important;
@@ -87,7 +106,7 @@
 
 .medcode {
   background: hsl(var(--med-color-neutral-2));
-  height: 100%;
+  height: calc(100% - 56px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,6 +123,20 @@
 .medcode__button .med-icon {
   width: 90px;
   height: 90px;
+}
+
+.video {
+  background: hsl(var(--med-color-neutral-1));
+  height: calc(100% - 104px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.video__player {
+  width: 100%;
+  height: 70%;
+  background: hsl(var(--med-color-neutral-3));
 }
 
 .aulas {

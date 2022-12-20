@@ -3,8 +3,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const index$1 = require('./index-e1bb33c3.js');
+const ionicGlobal = require('./ionic-global-c609be80.js');
+const index$1 = require('./index-099f2bcb.js');
 
 const infiniteScrollCss = "ion-infinite-scroll{display:none;width:100%}.infinite-scroll-enabled{display:block}";
 
