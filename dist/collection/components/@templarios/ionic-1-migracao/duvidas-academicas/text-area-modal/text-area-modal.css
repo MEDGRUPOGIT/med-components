@@ -52,6 +52,9 @@
     margin-bottom: 24px;
   }
 }
+.text-area__campo {
+  --height: 100%;
+}
 .text-area__button-container {
   display: flex;
   align-items: center;

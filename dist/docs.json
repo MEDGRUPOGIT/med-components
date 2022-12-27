@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-20T18:02:17",
+  "timestamp": "2022-12-27T17:28:47",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -23,27 +23,25 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
-        "ion-back-button",
+        "ion-header",
+        "ion-button",
         "ion-icon",
-        "ion-label",
         "ion-content",
+        "ion-label",
         "ion-slides",
         "ion-slide"
       ],
       "dependencyGraph": {
         "ajuda-modal": [
-          "med-header",
-          "med-navbar",
-          "ion-back-button",
+          "ion-header",
+          "ion-button",
           "ion-icon",
-          "ion-label",
           "ion-content",
+          "ion-label",
           "ion-slides",
           "ion-slide"
         ],
-        "ion-back-button": [
+        "ion-button": [
           "ion-ripple-effect"
         ]
       }
@@ -52,7 +50,7 @@
       "filePath": "./src/components/@templarios/ionic-1-migracao/duvidas-academicas/apostila-modal/apostila-modal.tsx",
       "encapsulation": "scoped",
       "tag": "apostila-modal",
-      "readme": "# apostila-modal\n\n\n",
+      "readme": "# apostila-modal\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -65,12 +63,11 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
+        "ion-header",
         "ion-button",
         "ion-icon",
-        "ion-label",
         "ion-content",
+        "ion-label",
         "tp-input-container",
         "ion-input",
         "ion-item",
@@ -78,12 +75,11 @@
       ],
       "dependencyGraph": {
         "apostila-modal": [
-          "med-header",
-          "med-navbar",
+          "ion-header",
           "ion-button",
           "ion-icon",
-          "ion-label",
           "ion-content",
+          "ion-label",
           "tp-input-container",
           "ion-input",
           "ion-item",
@@ -115,17 +111,19 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
+        "ion-header",
+        "ion-button",
+        "ion-icon",
         "ion-content",
-        "ion-label",
-        "ion-footer",
-        "ion-button"
+        "ion-label"
       ],
       "dependencyGraph": {
         "aviso-modal": [
+          "ion-header",
+          "ion-button",
+          "ion-icon",
           "ion-content",
-          "ion-label",
-          "ion-footer",
-          "ion-button"
+          "ion-label"
         ],
         "ion-button": [
           "ion-ripple-effect"
@@ -136,7 +134,7 @@
       "filePath": "./src/components/@templarios/ionic-1-migracao/duvidas-academicas/concurso-modal/concurso-modal.tsx",
       "encapsulation": "scoped",
       "tag": "concurso-modal",
-      "readme": "# concurso-modal\n\n\n",
+      "readme": "# concurso-modal\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -149,12 +147,11 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
+        "ion-header",
         "ion-button",
         "ion-icon",
-        "ion-label",
         "ion-content",
+        "ion-label",
         "tp-input-container",
         "ion-input",
         "ion-item",
@@ -162,12 +159,11 @@
       ],
       "dependencyGraph": {
         "concurso-modal": [
-          "med-header",
-          "med-navbar",
+          "ion-header",
           "ion-button",
           "ion-icon",
-          "ion-label",
           "ion-content",
+          "ion-label",
           "tp-input-container",
           "ion-input",
           "ion-item",
@@ -186,7 +182,7 @@
       "filePath": "./src/components/@templarios/ionic-1-migracao/duvidas-academicas/denunciar-modal/denunciar-modal.tsx",
       "encapsulation": "scoped",
       "tag": "denunciar-modal",
-      "readme": "# denunciar-modal\n\n\n",
+      "readme": "# denunciar-modal\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -199,29 +195,25 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
+        "ion-header",
         "ion-button",
         "ion-icon",
-        "ion-label",
         "ion-content",
+        "ion-label",
         "ion-item",
         "ion-checkbox",
-        "ion-textarea",
-        "ion-footer"
+        "ion-textarea"
       ],
       "dependencyGraph": {
         "denunciar-modal": [
-          "med-header",
-          "med-navbar",
+          "ion-header",
           "ion-button",
           "ion-icon",
-          "ion-label",
           "ion-content",
+          "ion-label",
           "ion-item",
           "ion-checkbox",
-          "ion-textarea",
-          "ion-footer"
+          "ion-textarea"
         ],
         "ion-button": [
           "ion-ripple-effect"
@@ -283,29 +275,29 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
-        "ion-label",
+        "ion-header",
+        "ion-button",
+        "ion-icon",
         "ion-content",
+        "ion-label",
         "ion-item",
-        "ion-footer",
-        "ion-button"
+        "ion-footer"
       ],
       "dependencyGraph": {
         "especialidade-modal": [
-          "med-header",
-          "med-navbar",
-          "ion-label",
+          "ion-header",
+          "ion-button",
+          "ion-icon",
           "ion-content",
+          "ion-label",
           "ion-item",
-          "ion-footer",
-          "ion-button"
+          "ion-footer"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ],
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect"
-        ],
-        "ion-button": [
           "ion-ripple-effect"
         ]
       }
@@ -314,7 +306,7 @@
       "filePath": "./src/components/@templarios/ionic-1-migracao/duvidas-academicas/excluir-modal/excluir-modal.tsx",
       "encapsulation": "scoped",
       "tag": "excluir-modal",
-      "readme": "# excluir-modal\n\n\n",
+      "readme": "# excluir-modal\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -327,21 +319,19 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
-        "ion-label",
+        "ion-header",
+        "ion-button",
+        "ion-icon",
         "ion-content",
-        "ion-footer",
-        "ion-button"
+        "ion-label"
       ],
       "dependencyGraph": {
         "excluir-modal": [
-          "med-header",
-          "med-navbar",
-          "ion-label",
+          "ion-header",
+          "ion-button",
+          "ion-icon",
           "ion-content",
-          "ion-footer",
-          "ion-button"
+          "ion-label"
         ],
         "ion-button": [
           "ion-ripple-effect"
@@ -352,7 +342,7 @@
       "filePath": "./src/components/@templarios/ionic-1-migracao/duvidas-academicas/filtro-modal/filtro-modal.tsx",
       "encapsulation": "scoped",
       "tag": "filtro-modal",
-      "readme": "# filtro-modal\n\n\n",
+      "readme": "# filtro-modal\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -365,12 +355,11 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
+        "ion-header",
         "ion-button",
         "ion-icon",
-        "ion-label",
         "ion-content",
+        "ion-label",
         "tp-input-container",
         "ion-select",
         "ion-input",
@@ -380,12 +369,11 @@
       ],
       "dependencyGraph": {
         "filtro-modal": [
-          "med-header",
-          "med-navbar",
+          "ion-header",
           "ion-button",
           "ion-icon",
-          "ion-label",
           "ion-content",
+          "ion-label",
           "tp-input-container",
           "ion-select",
           "ion-input",
@@ -419,9 +407,10 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
+        "ion-header",
         "ion-button",
+        "ion-icon",
+        "ion-content",
         "ion-slides",
         "ion-slide",
         "ion-label",
@@ -429,9 +418,10 @@
       ],
       "dependencyGraph": {
         "informativo-modal": [
-          "med-header",
-          "med-navbar",
+          "ion-header",
           "ion-button",
+          "ion-icon",
+          "ion-content",
           "ion-slides",
           "ion-slide",
           "ion-label",
@@ -1741,18 +1731,13 @@
           "docs": "The back button text."
         }
       ],
-      "dependents": [
-        "ajuda-modal"
-      ],
+      "dependents": [],
       "dependencies": [
         "ion-ripple-effect"
       ],
       "dependencyGraph": {
         "ion-back-button": [
           "ion-ripple-effect"
-        ],
-        "ajuda-modal": [
-          "ion-back-button"
         ]
       }
     },
@@ -2527,6 +2512,7 @@
         }
       ],
       "dependents": [
+        "ajuda-modal",
         "apostila-modal",
         "aviso-modal",
         "concurso-modal",
@@ -2564,6 +2550,9 @@
       "dependencyGraph": {
         "ion-button": [
           "ion-ripple-effect"
+        ],
+        "ajuda-modal": [
+          "ion-button"
         ],
         "apostila-modal": [
           "ion-button"
@@ -4501,6 +4490,7 @@
         "especialidade-modal",
         "excluir-modal",
         "filtro-modal",
+        "informativo-modal",
         "local-modal",
         "med-config",
         "med-image-zoom",
@@ -4536,6 +4526,9 @@
           "ion-content"
         ],
         "filtro-modal": [
+          "ion-content"
+        ],
+        "informativo-modal": [
           "ion-content"
         ],
         "local-modal": [
@@ -5953,15 +5946,11 @@
       "parts": [],
       "dependents": [
         "apostila-modal",
-        "aviso-modal",
         "concurso-modal",
-        "denunciar-modal",
         "especialidade-modal",
-        "excluir-modal",
         "filtro-modal",
         "informativo-modal",
         "local-modal",
-        "medreader-pro-modal",
         "realizacoes-modal",
         "sheet-content-test",
         "sheet-test",
@@ -5974,19 +5963,10 @@
         "apostila-modal": [
           "ion-footer"
         ],
-        "aviso-modal": [
-          "ion-footer"
-        ],
         "concurso-modal": [
           "ion-footer"
         ],
-        "denunciar-modal": [
-          "ion-footer"
-        ],
         "especialidade-modal": [
-          "ion-footer"
-        ],
-        "excluir-modal": [
           "ion-footer"
         ],
         "filtro-modal": [
@@ -5996,9 +5976,6 @@
           "ion-footer"
         ],
         "local-modal": [
-          "ion-footer"
-        ],
-        "medreader-pro-modal": [
           "ion-footer"
         ],
         "realizacoes-modal": [
@@ -6211,18 +6188,69 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "ajuda-modal",
+        "apostila-modal",
+        "aviso-modal",
+        "concurso-modal",
+        "denunciar-modal",
         "dialog-test",
+        "especialidade-modal",
+        "excluir-modal",
+        "filtro-modal",
+        "informativo-modal",
+        "local-modal",
         "med-alert",
+        "medreader-pro-modal",
+        "realizacoes-modal",
         "sheet-content-test",
         "sheet-test",
-        "text-area-modal"
+        "simulado-modal",
+        "text-area-modal",
+        "tutorial-modal",
+        "unidades-modal"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "ajuda-modal": [
+          "ion-header"
+        ],
+        "apostila-modal": [
+          "ion-header"
+        ],
+        "aviso-modal": [
+          "ion-header"
+        ],
+        "concurso-modal": [
+          "ion-header"
+        ],
+        "denunciar-modal": [
+          "ion-header"
+        ],
         "dialog-test": [
           "ion-header"
         ],
+        "especialidade-modal": [
+          "ion-header"
+        ],
+        "excluir-modal": [
+          "ion-header"
+        ],
+        "filtro-modal": [
+          "ion-header"
+        ],
+        "informativo-modal": [
+          "ion-header"
+        ],
+        "local-modal": [
+          "ion-header"
+        ],
         "med-alert": [
+          "ion-header"
+        ],
+        "medreader-pro-modal": [
+          "ion-header"
+        ],
+        "realizacoes-modal": [
           "ion-header"
         ],
         "sheet-content-test": [
@@ -6231,7 +6259,16 @@
         "sheet-test": [
           "ion-header"
         ],
+        "simulado-modal": [
+          "ion-header"
+        ],
         "text-area-modal": [
+          "ion-header"
+        ],
+        "tutorial-modal": [
+          "ion-header"
+        ],
+        "unidades-modal": [
           "ion-header"
         ]
       }
@@ -19450,29 +19487,29 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
-        "ion-label",
+        "ion-header",
+        "ion-button",
+        "ion-icon",
         "ion-content",
+        "ion-label",
         "ion-item",
-        "ion-footer",
-        "ion-button"
+        "ion-footer"
       ],
       "dependencyGraph": {
         "local-modal": [
-          "med-header",
-          "med-navbar",
-          "ion-label",
+          "ion-header",
+          "ion-button",
+          "ion-icon",
           "ion-content",
+          "ion-label",
           "ion-item",
-          "ion-footer",
-          "ion-button"
+          "ion-footer"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ],
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect"
-        ],
-        "ion-button": [
           "ion-ripple-effect"
         ]
       }
@@ -23711,52 +23748,12 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "ajuda-modal",
-        "apostila-modal",
-        "concurso-modal",
-        "denunciar-modal",
-        "especialidade-modal",
-        "excluir-modal",
-        "filtro-modal",
-        "informativo-modal",
-        "local-modal",
         "med-config",
         "med-image-zoom",
-        "med-offline",
-        "realizacoes-modal",
-        "simulado-modal",
-        "tutorial-modal",
-        "unidades-modal"
+        "med-offline"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "ajuda-modal": [
-          "med-header"
-        ],
-        "apostila-modal": [
-          "med-header"
-        ],
-        "concurso-modal": [
-          "med-header"
-        ],
-        "denunciar-modal": [
-          "med-header"
-        ],
-        "especialidade-modal": [
-          "med-header"
-        ],
-        "excluir-modal": [
-          "med-header"
-        ],
-        "filtro-modal": [
-          "med-header"
-        ],
-        "informativo-modal": [
-          "med-header"
-        ],
-        "local-modal": [
-          "med-header"
-        ],
         "med-config": [
           "med-header"
         ],
@@ -23764,18 +23761,6 @@
           "med-header"
         ],
         "med-offline": [
-          "med-header"
-        ],
-        "realizacoes-modal": [
-          "med-header"
-        ],
-        "simulado-modal": [
-          "med-header"
-        ],
-        "tutorial-modal": [
-          "med-header"
-        ],
-        "unidades-modal": [
           "med-header"
         ]
       }
@@ -25354,52 +25339,12 @@
       "slots": [],
       "parts": [],
       "dependents": [
-        "ajuda-modal",
-        "apostila-modal",
-        "concurso-modal",
-        "denunciar-modal",
-        "especialidade-modal",
-        "excluir-modal",
-        "filtro-modal",
-        "informativo-modal",
-        "local-modal",
         "med-config",
         "med-image-zoom",
-        "med-offline",
-        "realizacoes-modal",
-        "simulado-modal",
-        "tutorial-modal",
-        "unidades-modal"
+        "med-offline"
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "ajuda-modal": [
-          "med-navbar"
-        ],
-        "apostila-modal": [
-          "med-navbar"
-        ],
-        "concurso-modal": [
-          "med-navbar"
-        ],
-        "denunciar-modal": [
-          "med-navbar"
-        ],
-        "especialidade-modal": [
-          "med-navbar"
-        ],
-        "excluir-modal": [
-          "med-navbar"
-        ],
-        "filtro-modal": [
-          "med-navbar"
-        ],
-        "informativo-modal": [
-          "med-navbar"
-        ],
-        "local-modal": [
-          "med-navbar"
-        ],
         "med-config": [
           "med-navbar"
         ],
@@ -25407,18 +25352,6 @@
           "med-navbar"
         ],
         "med-offline": [
-          "med-navbar"
-        ],
-        "realizacoes-modal": [
-          "med-navbar"
-        ],
-        "simulado-modal": [
-          "med-navbar"
-        ],
-        "tutorial-modal": [
-          "med-navbar"
-        ],
-        "unidades-modal": [
           "med-navbar"
         ]
       }
@@ -27430,27 +27363,27 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
+        "ion-header",
+        "ion-button",
+        "ion-icon",
         "ion-content",
         "ion-label",
-        "ion-item",
-        "ion-icon",
-        "ion-footer",
-        "ion-button"
+        "ion-item"
       ],
       "dependencyGraph": {
         "medreader-pro-modal": [
+          "ion-header",
+          "ion-button",
+          "ion-icon",
           "ion-content",
           "ion-label",
-          "ion-item",
-          "ion-icon",
-          "ion-footer",
-          "ion-button"
+          "ion-item"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ],
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect"
-        ],
-        "ion-button": [
           "ion-ripple-effect"
         ]
       }
@@ -27472,29 +27405,29 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
-        "ion-label",
+        "ion-header",
+        "ion-button",
+        "ion-icon",
         "ion-content",
+        "ion-label",
         "ion-item",
-        "ion-footer",
-        "ion-button"
+        "ion-footer"
       ],
       "dependencyGraph": {
         "realizacoes-modal": [
-          "med-header",
-          "med-navbar",
-          "ion-label",
+          "ion-header",
+          "ion-button",
+          "ion-icon",
           "ion-content",
+          "ion-label",
           "ion-item",
-          "ion-footer",
-          "ion-button"
+          "ion-footer"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ],
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect"
-        ],
-        "ion-button": [
           "ion-ripple-effect"
         ]
       }
@@ -27596,7 +27529,7 @@
       "filePath": "./src/components/@templarios/ionic-1-migracao/duvidas-academicas/simulado-modal/simulado-modal.tsx",
       "encapsulation": "scoped",
       "tag": "simulado-modal",
-      "readme": "# simulado-modal\n\n\n",
+      "readme": "# simulado-modal\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -27609,23 +27542,21 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
+        "ion-header",
         "ion-button",
         "ion-icon",
-        "ion-label",
         "ion-content",
+        "ion-label",
         "ion-item",
         "ion-footer"
       ],
       "dependencyGraph": {
         "simulado-modal": [
-          "med-header",
-          "med-navbar",
+          "ion-header",
           "ion-button",
           "ion-icon",
-          "ion-label",
           "ion-content",
+          "ion-label",
           "ion-item",
           "ion-footer"
         ],
@@ -27856,9 +27787,9 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
+        "ion-header",
         "ion-button",
+        "ion-icon",
         "ion-content",
         "ion-slides",
         "ion-slide",
@@ -27867,9 +27798,9 @@
       ],
       "dependencyGraph": {
         "tutorial-modal": [
-          "med-header",
-          "med-navbar",
+          "ion-header",
           "ion-button",
+          "ion-icon",
           "ion-content",
           "ion-slides",
           "ion-slide",
@@ -27898,29 +27829,29 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "med-header",
-        "med-navbar",
-        "ion-label",
+        "ion-header",
+        "ion-button",
+        "ion-icon",
         "ion-content",
+        "ion-label",
         "ion-item",
-        "ion-footer",
-        "ion-button"
+        "ion-footer"
       ],
       "dependencyGraph": {
         "unidades-modal": [
-          "med-header",
-          "med-navbar",
-          "ion-label",
+          "ion-header",
+          "ion-button",
+          "ion-icon",
           "ion-content",
+          "ion-label",
           "ion-item",
-          "ion-footer",
-          "ion-button"
+          "ion-footer"
+        ],
+        "ion-button": [
+          "ion-ripple-effect"
         ],
         "ion-item": [
           "ion-icon",
-          "ion-ripple-effect"
-        ],
-        "ion-button": [
           "ion-ripple-effect"
         ]
       }

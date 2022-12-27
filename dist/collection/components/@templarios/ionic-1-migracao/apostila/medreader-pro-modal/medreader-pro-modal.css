@@ -3,48 +3,99 @@
   border-radius: 0;
 }
 
-.modal-content {
-  height: calc(100% - 136px);
-  padding: 16px;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: hsl(var(--med-color-neutral-1));
+  padding-top: calc(28px + var(--ion-safe-area-top));
+  padding-right: 40px;
+  padding-bottom: 28px;
+  padding-left: 40px;
+  max-height: 80px;
+}
+@media (max-width: 575.98px) {
+  .header {
+    padding-top: calc(24px + var(--ion-safe-area-top));
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    max-height: 72px;
+  }
+}
+.header__left {
+  display: flex;
+  align-items: center;
 }
 
-.medreader {
-  height: 100%;
+.modal-content {
+  height: calc(100% - 80px);
+}
+@media (max-width: 575.98px) {
+  .modal-content {
+    height: calc(100% - 72px);
+  }
+}
+
+.modal-medreader {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 40px 64px;
 }
-.medreader__top {
+@media (max-width: 575.98px) {
+  .modal-medreader {
+    height: 100%;
+    padding: 24px;
+  }
+}
+.modal-medreader__top {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.medreader__text {
+.modal-medreader__text {
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
 }
-.medreader__text-destaque {
+.modal-medreader__text-destaque {
   font-size: 28px;
   line-height: 28px;
   font-weight: 600;
 }
-.medreader__text-no-destaque {
+.modal-medreader__text-no-destaque {
   font-size: 14px;
   line-height: 28px;
   margin-top: 16px;
+  text-align: center;
 }
-.medreader__middle {
+.modal-medreader__middle {
   margin-top: 24px;
   padding: 16px;
 }
-.medreader__item:not(:last-child) {
+.modal-medreader__item {
+  --border-radius: 8px;
+}
+.modal-medreader__item:not(:last-child) {
   margin-bottom: 8px;
 }
-
-.modal-footer {
+.modal-medreader__item .med-icon {
+  margin-right: 16px;
+}
+.modal-medreader__button-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  margin-top: 40px;
+}
+@media (max-width: 575.98px) {
+  .modal-medreader__button-container {
+    margin-top: auto;
+  }
+}
+@media (max-width: 575.98px) {
+  .modal-medreader__button {
+    flex: 1;
+  }
 }

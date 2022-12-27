@@ -55,7 +55,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 24px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 32px 40px;
   max-width: 1096px;
 }
 .grid__tiles {
@@ -78,6 +78,7 @@
   }
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 24px;
   }
 }
 .erratas {
@@ -331,33 +332,48 @@
   height: calc(100% - 40px);
   overflow: auto;
 }
+.resumo__container {
+  margin: 0 auto;
+  padding: 32px 40px;
+  width: 100%;
+  max-width: 1096px;
+}
+@media (max-width: 575.98px) {
+  .resumo__container {
+    padding: 24px;
+  }
+}
 .resumo__classificacao {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 16px;
+}
+@media (max-width: 575.98px) {
+  .resumo__classificacao {
+    flex-direction: column;
+  }
 }
 .resumo__linha {
   display: flex;
   align-items: center;
 }
 .resumo__opcoes {
-  height: 16px !important;
   margin: 0;
+  height: 16px;
 }
 .resumo__range-container {
-  padding: 4px 16px;
-  margin: 16px 0 48px 0;
-  position: relative;
   display: flex;
+  position: relative;
   align-items: center;
+  margin: 40px 0 48px;
+  padding: 4px 0;
 }
 .resumo__range-container .med-icon {
   stroke: hsl(var(--med-color-neutral-10));
 }
 .resumo__progress {
-  flex: 1;
   position: relative;
+  flex: 1;
 }
 .resumo__icon {
   min-width: 24px;
@@ -372,12 +388,12 @@
   margin-left: 16px;
 }
 .resumo__posicao-container {
-  position: absolute;
   display: flex;
+  position: absolute;
+  top: -20px;
+  left: calc(var(--porcentagem) * 1%);
   flex-direction: column;
   align-items: center;
-  top: -12px;
-  left: calc(var(--porcentagem) * 1%);
   transform: translateX(-50%);
   min-width: 80px;
 }
@@ -391,9 +407,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 24px;
 }
 .resumo__questoes {
-  padding: 24px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,28 +419,35 @@
   align-items: center;
   margin: 0 auto;
 }
-.resumo__modo:not(:last-child) {
-  margin-right: 16px;
-}
-
 @media (max-width: 575.98px) {
-  .resumo__classificacao {
-    flex-direction: column;
-  }
   .resumo__modo-container {
     flex-direction: column;
   }
+}
+.resumo__modo:not(:last-child) {
+  margin-right: 16px;
+}
+@media (max-width: 575.98px) {
   .resumo__modo:not(:last-child) {
     margin-right: 0;
   }
 }
+
 .concursos__content {
   height: calc(100% - 128px);
   overflow: auto;
-  padding-bottom: 42px;
+  padding: 0 40px 64px;
+}
+@media (max-width: 575.98px) {
+  .concursos__content {
+    padding: 0 24px 64px;
+  }
 }
 .concursos__content--desempenho {
   height: calc(100% - 168px);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1096px;
 }
 
 .concursos__title {
@@ -440,10 +463,15 @@
   text-align: center;
 }
 .concursos__questoes {
-  padding: 8px 0 24px 0;
+  margin: 32px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 575.98px) {
+  .concursos__questoes {
+    margin: 24px 0;
+  }
 }
 
 .list-concursos__header {
@@ -477,9 +505,25 @@
   height: 100%;
 }
 .concursos__input {
-  padding: 16px;
+  padding: 32px 40px;
   display: flex;
   align-items: center;
+  max-width: 1096px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 575.98px) {
+  .concursos__input {
+    padding: 24px;
+  }
+}
+.concursos__input--desempenho {
+  padding: 32px 0;
+}
+@media (max-width: 575.98px) {
+  .concursos__input--desempenho {
+    padding: 24px 0;
+  }
 }
 .concursos__input .med-icon {
   width: 24px;
@@ -504,9 +548,14 @@
 }
 
 .concursos__container {
-  padding: 16px;
+  padding: 32px 40px;
   margin: 0 auto;
   max-width: 1096px;
+}
+@media (max-width: 575.98px) {
+  .concursos__container {
+    padding: 24px;
+  }
 }
 .concursos__tiles {
   cursor: pointer;

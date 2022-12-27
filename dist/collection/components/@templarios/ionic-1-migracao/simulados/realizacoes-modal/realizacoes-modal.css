@@ -3,39 +3,89 @@
   border-radius: 0;
 }
 
-.modal-content {
-  height: calc(100% - 136px);
-  overflow: auto;
-  border-top: 1px solid hsl(var(--med-color-neutral-4));
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: hsl(var(--med-color-neutral-1));
+  padding-top: calc(28px + var(--ion-safe-area-top));
+  padding-right: 40px;
+  padding-bottom: 28px;
+  padding-left: 40px;
+  max-height: 80px;
 }
-.modal-content__item {
+@media (max-width: 575.98px) {
+  .header {
+    padding-top: calc(24px + var(--ion-safe-area-top));
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    max-height: 72px;
+  }
+}
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.modal-content {
+  height: calc(100% - 176px);
+}
+@media (max-width: 575.98px) {
+  .modal-content {
+    height: calc(100% - 168px);
+  }
+}
+
+.modal-realizacoes {
+  padding: 40px 64px;
+}
+@media (max-width: 575.98px) {
+  .modal-realizacoes {
+    padding: 24px;
+  }
+}
+.modal-realizacoes__title {
+  margin-bottom: 40px;
+  display: block;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+@media (max-width: 575.98px) {
+  .modal-realizacoes__title {
+    margin-bottom: 24px;
+  }
+}
+.modal-realizacoes__item {
+  --border-radius: 8px;
   cursor: pointer;
   display: flex;
   min-height: 64px;
 }
-.modal-content__item:not(:last-child) {
-  border-bottom: 1px solid hsl(var(--med-color-neutral-2));
+.modal-realizacoes__item:not(:last-child) {
+  margin-bottom: 8px;
 }
-.modal-content__item--agendado {
-  background: hsl(var(--med-color-brand-3));
+.modal-realizacoes__item--agendado {
+  --background: hsl(var(--med-color-brand-3));
 }
-.modal-content__item--aviso {
-  background: hsl(var(--med-color-neutral-6));
+.modal-realizacoes__item--aviso {
+  --background: hsl(var(--med-color-neutral-6));
 }
-.modal-content__item--aviso .modal-content__modo {
+.modal-realizacoes__item--aviso .modal-content__modo {
   display: none;
 }
-.modal-content__text-container {
+.modal-realizacoes__text-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.modal-content__data {
+.modal-realizacoes__data {
   font-size: 14px !important;
 }
-.modal-content__modo {
+.modal-realizacoes__modo {
   font-size: 12px !important;
   margin-top: 4px !important;
 }
@@ -44,6 +94,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
-  border-top: 1px solid hsl(var(--med-color-neutral-4));
+  padding: 24px;
 }

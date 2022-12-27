@@ -2,14 +2,15 @@ import { Component, h, Host } from '@stencil/core';
 export class DenunciarModal {
   render() {
     return (h(Host, null,
-      h("med-header", null,
-        h("med-navbar", { class: "header", slot: "navbar" },
-          h("ion-button", { slot: "left", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xxs" },
-            h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-fechar" })),
-          h("ion-label", { class: "header__title", slot: "title" }, "Denuciar d\u00FAvida"))),
+      h("ion-header", { class: "header" },
+        h("div", { class: "header__left" },
+          h("div", null,
+            h("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xxs" },
+              h("ion-icon", { class: "med-icon", name: "med-fechar" }))))),
       h("ion-content", { class: "modal-content" },
-        h("div", { class: "denunciar" },
-          h("div", { class: "denunciar__list" },
+        h("div", { class: "modal-denunciar" },
+          h("ion-label", { class: "modal-denunciar__title" }, "Denuciar d\u00FAvida"),
+          h("div", { class: "modal-denunciar__list" },
             h("ion-item", { mode: "ios", lines: "none" },
               h("ion-label", { "ds-color": "neutral-10" }, "Cr\u00EDtica sobre conte\u00FAdo"),
               h("ion-checkbox", { slot: "start", value: "value-1", mode: "md" })),
@@ -19,11 +20,11 @@ export class DenunciarModal {
             h("ion-item", { mode: "ios", lines: "none" },
               h("ion-label", { "ds-color": "neutral-10" }, "Administrativo"),
               h("ion-checkbox", { slot: "start", value: "value-3", mode: "md" }))),
-          h("div", { class: "denunciar__text-container" },
-            h("ion-label", { class: "denunciar__text", "ds-color": "neutral-8" }, "Descreva sua den\u00FAncia (opcional)"),
-            h("ion-textarea", { class: "denunciar__campo", mode: "md", placeholder: "Digite aqui" })))),
-      h("ion-footer", { class: "modal-footer" },
-        h("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "CONFIRMAR"))));
+          h("div", { class: "modal-denunciar__text-container" },
+            h("ion-label", { class: "modal-denunciar__text", "ds-color": "neutral-8" }, "Descreva sua den\u00FAncia (opcional)"),
+            h("ion-textarea", { class: "modal-denunciar__campo", mode: "md", placeholder: "Digite aqui" })),
+          h("div", { class: "modal-denunciar__button-container" },
+            h("ion-button", { class: "modal-denunciar__button", mode: "ios", "ds-size": "sm" }, "CONFIRMAR"))))));
   }
   static get is() { return "denunciar-modal"; }
   static get encapsulation() { return "scoped"; }

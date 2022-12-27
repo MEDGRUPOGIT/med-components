@@ -3,43 +3,94 @@
   border-radius: 0;
 }
 
-.modal-content {
-  height: calc(100% - 56px);
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: hsl(var(--med-color-neutral-1));
+  padding-top: calc(28px + var(--ion-safe-area-top));
+  padding-right: 40px;
+  padding-bottom: 28px;
+  padding-left: 40px;
+  max-height: 80px;
+}
+@media (max-width: 575.98px) {
+  .header {
+    padding-top: calc(24px + var(--ion-safe-area-top));
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    max-height: 72px;
+  }
+}
+.header__left {
+  display: flex;
+  align-items: center;
 }
 
-.ajuda {
-  height: 100%;
-  padding: 16px;
+.modal-content {
+  height: calc(100% - 80px);
 }
-.ajuda__slides {
-  height: 100%;
+@media (max-width: 575.98px) {
+  .modal-content {
+    height: calc(100% - 72px);
+  }
 }
-.ajuda__slide {
+
+.modal-ajuda {
+  height: 100%;
+  padding: 40px 64px;
+}
+@media (max-width: 575.98px) {
+  .modal-ajuda {
+    padding: 24px;
+  }
+}
+.modal-ajuda__title {
+  margin-bottom: 40px;
+  display: block;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+@media (max-width: 575.98px) {
+  .modal-ajuda__title {
+    margin-bottom: 24px;
+  }
+}
+.modal-ajuda__slides {
+  height: calc(100% - 72px);
+}
+@media (max-width: 575.98px) {
+  .modal-ajuda__slides {
+    height: calc(100% - 56px);
+  }
+}
+@media only screen and (max-height: 500px) {
+  .modal-ajuda__slides {
+    height: auto;
+    overflow: auto;
+  }
+}
+.modal-ajuda__slide {
   display: flex;
   flex-direction: column;
 }
-.ajuda__icon {
+.modal-ajuda__icon {
   min-width: 100px;
   min-height: 100px;
   stroke: hsl(var(--med-color-neutral-10));
   fill: transparent;
   margin-bottom: 24px;
 }
-.ajuda__subtitle {
+.modal-ajuda__subtitle {
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
   margin-bottom: 16px;
 }
-.ajuda__text {
+.modal-ajuda__text {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-}
-
-@media only screen and (max-height: 500px) {
-  .ajuda__slides {
-    height: auto;
-    overflow: auto;
-  }
 }
