@@ -95,6 +95,7 @@ export const MedIcons = [
 
   'med-contribuicao',
   'med-covid',
+  'med-customize',
   'med-cronograma',
   'med-direita',
 
