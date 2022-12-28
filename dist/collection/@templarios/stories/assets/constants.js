@@ -75,6 +75,7 @@ export const MedIcons = [
   'med-busca',
   'med-cadeado',
 
+  'med-cards',
   'med-cartao-resposta',
   'med-cartao',
   'med-chart3',
