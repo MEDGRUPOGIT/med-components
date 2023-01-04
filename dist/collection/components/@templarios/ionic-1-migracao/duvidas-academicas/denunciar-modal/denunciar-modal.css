@@ -78,6 +78,7 @@
   .modal-denunciar__button-container {
     display: block;
     margin-top: auto;
+    padding-top: 40px;
   }
 }
 @media (max-width: 575.98px) {

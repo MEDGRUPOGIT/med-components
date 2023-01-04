@@ -5428,45 +5428,96 @@
   --stroke: hsl(var(--med-color-neutral-10));
   height: 94px;
   width: 94px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-[tp-loader] [tp-loader-svg] {
+
+[tp-loader-circle],
+[tp-loader-polyline],
+[tp-loader-line] {
+  fill: none;
   stroke: var(--stroke);
-  height: 40px;
-  width: 40px;
-  transform: scale(2.35);
+  stroke-width: 6;
+  stroke-miterlimit: 10;
 }
-[tp-loader] [tp-loader-rectangles] {
-  stroke: var(--stroke);
-  animation-name: animate-stroke;
-  animation-duration: 4s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-  stroke-dashoffset: 1000;
-  stroke-dasharray: 1000;
-}
-[tp-loader] [tp-loader-circle] {
-  animation-name: animate-stroke-2;
-  animation-duration: 4s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-  stroke-dashoffset: 1000;
-  stroke-dasharray: 1000;
+
+[tp-loader-rect] {
   fill: var(--stroke);
 }
 
-@keyframes animate-stroke {
+[tp-loader-circle] {
+  animation: loadingcircle 1s linear infinite alternate, rotate 2s linear infinite;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  transform-origin: 50px 50px;
+}
+
+[tp-loader-line] {
+  animation: loading 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
+}
+
+[tp-loader-line]:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+[tp-loader-line]:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+[tp-loader-line]:nth-of-type(4) {
+  animation-delay: 0.3s;
+}
+
+[tp-loader-line]:nth-of-type(5) {
+  animation-delay: 0.4s;
+}
+
+[tp-loader-line]:nth-of-type(6) {
+  animation-delay: 0.5s;
+}
+
+[tp-loader-line]:nth-of-type(7) {
+  animation-delay: 0.6s;
+}
+
+[tp-loader-line]:nth-of-type(8) {
+  animation-delay: 0.7s;
+}
+
+[tp-loader-polyline] {
+  animation: loading 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+}
+
+[tp-loader-polyline]:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+[tp-loader-polyline]:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+
+[tp-loader-polyline]:nth-of-type(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes loading {
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes loadingcircle {
   to {
     stroke-dashoffset: 0;
   }
 }
-@keyframes animate-stroke-2 {
+@keyframes rotate {
   to {
-    stroke-dashoffset: 0;
+    transform: rotate(1turn);
   }
 }
 [tp-loader][ds-color=brand] {

@@ -607,9 +607,6 @@
   border-radius: 8px;
   overflow: hidden;
 }
-.card-duvidas:not(:last-child) {
-  margin-bottom: 16px;
-}
 .card-duvidas--minha .card-duvidas__badge {
   display: block;
 }
@@ -786,26 +783,30 @@
 }
 
 .duvidas {
-  height: 100%;
+  height: calc(100% - 56px);
   position: relative;
 }
 .duvidas__tab {
   max-width: initial;
 }
 .duvidas__container {
-  height: calc(100% - 104px);
+  height: calc(100% - 48px);
   margin: 0 auto;
-  padding: 32px 40px;
+  padding: 32px 40px 64px;
   width: 100%;
   max-width: 1096px;
+  overflow: scroll;
 }
 @media (max-width: 575.98px) {
   .duvidas__container {
-    padding: 24px;
+    padding: 24px 24px 64px;
   }
 }
 .duvidas__container--user-select {
-  height: calc(100% - 152px);
+  height: calc(100% - 96px);
+}
+.duvidas__card:not(:last-child) {
+  margin-bottom: 24px;
 }
 .duvidas__button {
   --background: hsl(var(--med-color-brand-1));
@@ -847,7 +848,15 @@
 .questao__container {
   height: 100%;
   overflow: scroll;
-  padding: 16px 16px 75px 16px;
+  margin: 0 auto;
+  padding: 32px 40px 75px;
+  width: 100%;
+  max-width: 1096px;
+}
+@media (max-width: 575.98px) {
+  .questao__container {
+    padding: 24px 24px 75px;
+  }
 }
 .questao__container--user-select {
   height: calc(100% - 48px);
@@ -870,10 +879,10 @@
   margin-bottom: 16px;
 }
 .questao__card-duvidas {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 .questao__card-resposta:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 .questao__encaminhar {
   position: absolute;

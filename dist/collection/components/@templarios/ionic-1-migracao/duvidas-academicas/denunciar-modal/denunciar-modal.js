@@ -9,7 +9,7 @@ export class DenunciarModal {
               h("ion-icon", { class: "med-icon", name: "med-fechar" }))))),
       h("ion-content", { class: "modal-content" },
         h("div", { class: "modal-denunciar" },
-          h("ion-label", { class: "modal-denunciar__title" }, "Denuciar d\u00FAvida"),
+          h("ion-label", { class: "modal-denunciar__title" }, "Denunciar d\u00FAvida"),
           h("div", { class: "modal-denunciar__list" },
             h("ion-item", { mode: "ios", lines: "none" },
               h("ion-label", { "ds-color": "neutral-10" }, "Cr\u00EDtica sobre conte\u00FAdo"),
