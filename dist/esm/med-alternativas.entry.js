@@ -1,7 +1,7 @@
 import { r as registerInstance, e as createEvent, h, H as Host } from './index-70672e81.js';
-import { j as MedSkin } from './type.enum-075d9cd8.js';
-import './plusminus.enum-87dfaf79.js';
-import './rate-like.enum-01831b55.js';
+import { j as MedSkin } from './type.enum-ff88cb85.js';
+import './plusminus.enum-a0ce4fb8.js';
+import './rate-like.enum-403a54dc.js';
 
 const medAlternativasCss = ":host{--font-size:16px;display:block}";
 
@@ -42,7 +42,7 @@ const MedAlternativas = class {
   }
   render() {
     const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar } = this;
-    return (h(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && h("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedChange: ev => this.medChange.emit(ev.detail), onMedRiscada: (ev) => { this.medRiscada.emit(ev.detail), console.log('para ricar'); }, onMedGalleryRequest: ev => this.medGalleryRequest.emit(ev.detail) }), dsSkinConfig.alternativas === MedSkin.B && h("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedChange: ev => this.medChange.emit(ev.detail), onMedRiscada: ev => this.medRiscada.emit(ev.detail), onMedGalleryRequest: ev => this.medGalleryRequest.emit(ev.detail) })));
+    return (h(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && h("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedChange: ev => this.medChange.emit(ev.detail), onMedRiscada: (ev) => { this.medRiscada.emit(ev.detail); }, onMedGalleryRequest: ev => this.medGalleryRequest.emit(ev.detail) }), dsSkinConfig.alternativas === MedSkin.B && h("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedChange: ev => this.medChange.emit(ev.detail), onMedRiscada: ev => this.medRiscada.emit(ev.detail), onMedGalleryRequest: ev => this.medGalleryRequest.emit(ev.detail) })));
   }
 };
 MedAlternativas.style = medAlternativasCss;

@@ -6,10 +6,6 @@ export class MedTooltip {
      * todo
      */
     this.collapsed = true;
-    // @Listen('mouseover', { target: '' })
-    // handleScroll(ev) {
-    //   console.log('the body was scrolled', ev);
-    // }
     this.onBtnLeftClick = () => {
       this.btnLeftClick.emit();
     };
@@ -33,7 +29,6 @@ export class MedTooltip {
     }
   }
   handleClick(event) {
-    console.log(event);
     if ((event === null || event === void 0 ? void 0 : event.target.localName) !== 'med-tooltip' && this.titulo) {
       if (!this.collapsed) {
         this.toggle(event);
