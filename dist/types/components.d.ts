@@ -3175,6 +3175,7 @@ export namespace Components {
           * todo
          */
         "height": number;
+        "noLabel": boolean;
         /**
           * todo
          */
@@ -3850,6 +3851,12 @@ export namespace Components {
           * todo
          */
         "texto"?: string;
+    }
+    interface MedSearchBar {
+        /**
+          * todo
+         */
+        "dsColor"?: MedColor;
     }
     interface MedSegment {
     }
@@ -4999,6 +5006,12 @@ declare global {
         prototype: HTMLMedRatingElement;
         new (): HTMLMedRatingElement;
     };
+    interface HTMLMedSearchBarElement extends Components.MedSearchBar, HTMLStencilElement {
+    }
+    var HTMLMedSearchBarElement: {
+        prototype: HTMLMedSearchBarElement;
+        new (): HTMLMedSearchBarElement;
+    };
     interface HTMLMedSegmentElement extends Components.MedSegment, HTMLStencilElement {
     }
     var HTMLMedSegmentElement: {
@@ -5281,6 +5294,7 @@ declare global {
         "med-rate-bar": HTMLMedRateBarElement;
         "med-rate-like": HTMLMedRateLikeElement;
         "med-rating": HTMLMedRatingElement;
+        "med-search-bar": HTMLMedSearchBarElement;
         "med-segment": HTMLMedSegmentElement;
         "med-semana": HTMLMedSemanaElement;
         "med-semanas": HTMLMedSemanasElement;
@@ -8440,6 +8454,7 @@ declare namespace LocalJSX {
           * todo
          */
         "height"?: number;
+        "noLabel"?: boolean;
         /**
           * todo
          */
@@ -9160,6 +9175,12 @@ declare namespace LocalJSX {
          */
         "texto"?: string;
     }
+    interface MedSearchBar {
+        /**
+          * todo
+         */
+        "dsColor"?: MedColor;
+    }
     interface MedSegment {
     }
     interface MedSemana {
@@ -9539,6 +9560,7 @@ declare namespace LocalJSX {
         "med-rate-bar": MedRateBar;
         "med-rate-like": MedRateLike;
         "med-rating": MedRating;
+        "med-search-bar": MedSearchBar;
         "med-segment": MedSegment;
         "med-semana": MedSemana;
         "med-semanas": MedSemanas;
@@ -9721,6 +9743,7 @@ declare module "@stencil/core" {
             "med-rate-bar": LocalJSX.MedRateBar & JSXBase.HTMLAttributes<HTMLMedRateBarElement>;
             "med-rate-like": LocalJSX.MedRateLike & JSXBase.HTMLAttributes<HTMLMedRateLikeElement>;
             "med-rating": LocalJSX.MedRating & JSXBase.HTMLAttributes<HTMLMedRatingElement>;
+            "med-search-bar": LocalJSX.MedSearchBar & JSXBase.HTMLAttributes<HTMLMedSearchBarElement>;
             "med-segment": LocalJSX.MedSegment & JSXBase.HTMLAttributes<HTMLMedSegmentElement>;
             "med-semana": LocalJSX.MedSemana & JSXBase.HTMLAttributes<HTMLMedSemanaElement>;
             "med-semanas": LocalJSX.MedSemanas & JSXBase.HTMLAttributes<HTMLMedSemanasElement>;

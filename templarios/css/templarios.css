@@ -10402,7 +10402,7 @@ ion-toggle[ds-color=fb-success] {
 }
 
 .tp-scroll {
-  --tp-scroll-color: hsl(var(--med-color-brand-3));
+  --tp-scroll-color: hsl(var(--med-color-neutral-3));
   scroll-snap-type: both mandatory;
   scroll-padding-top: 30px;
   scroll-behavior: smooth;
@@ -10447,6 +10447,40 @@ ion-toggle[ds-color=fb-success] {
   background-color: transparent;
 }
 
+[tp-search-bar].sc-ion-searchbar-md-h {
+  --background: transparent !important;
+  --color: hsl(var(--med-color-neutral-10)) !important;
+  --placeholder-color: hsl(var(--med-color-neutral-3)) !important;
+  --placeholder-opacity: 1 !important;
+  height: 72px;
+  padding: 0px !important;
+}
+
+[tp-search-bar] .searchbar-input.sc-ion-searchbar-md {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  height: 72px;
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0 !important;
+}
+
+[tp-search-bar] .searchbar-input-container.sc-ion-searchbar-md {
+  height: 72px;
+}
+
+[tp-search-bar] .searchbar-search-icon.sc-ion-searchbar-md {
+  display: none !important;
+}
+
+[tp-search-bar] .searchbar-clear-button.sc-ion-searchbar-md {
+  display: none !important;
+}
+
+[tp-search-bar] .searchbar-clear-icon.sc-ion-searchbar-md {
+  display: none !important;
+}
+
 .tp-sheet {
   --background: hsl(var(--med-color-neutral-2)) !important;
   --border-radius: 15px 15px 0 0 !important;
@@ -10455,7 +10489,7 @@ ion-toggle[ds-color=fb-success] {
   padding-bottom: var(--ion-safe-area-bottom) !important;
 }
 .tp-sheet .modal-wrapper {
-  position: fixed !important;
+  position: absolute !important;
   bottom: 0 !important;
   max-height: 90vh !important;
   overflow: auto !important;

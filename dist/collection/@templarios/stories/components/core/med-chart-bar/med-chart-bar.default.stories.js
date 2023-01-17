@@ -9,6 +9,16 @@ export default {
 
 const Template = ({dsColor, value, height, width}) => {
   return html`
+    <style>
+      .full-height-flex {
+        align-items: flex-end;
+      }
+
+      med-chart-bar:not(:last-child) {
+        margin-right: 24px;
+      }
+    </style>
+
     <ion-app>
       <ion-content>
         <div class="full-height-flex">
@@ -16,6 +26,9 @@ const Template = ({dsColor, value, height, width}) => {
           <!-- component markdown -->
           <med-chart-bar .dsColor=${dsColor} value=${value} height=${height} width=${width}>
             <med-type token="p12b">50%</med-type>
+          </med-chart-bar>
+
+          <med-chart-bar .dsColor=${dsColor} value=${value} height=${height} width=${width} no-label>
           </med-chart-bar>
           <!-- component markdown -->
 

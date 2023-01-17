@@ -22,6 +22,7 @@ export declare class MedChartBar {
    * todo
    */
   width: number;
+  noLabel: boolean;
   componentDidLoad(): void;
   disconnectedCallback(): void;
   private setSize;

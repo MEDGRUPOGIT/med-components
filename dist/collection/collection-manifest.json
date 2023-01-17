@@ -54,6 +54,7 @@
     "./components/@templarios/core/med-lista/med-lista.js",
     "./components/@templarios/core/med-nav-item/med-nav-item.js",
     "./components/@templarios/core/med-rate-like/med-rate-like.js",
+    "./components/@templarios/core/med-search-bar/med-search-bar.js",
     "./components/@templarios/core/med-segment/med-segment.js",
     "./components/@templarios/core/med-tab-button/med-tab-button.js",
     "./components/@templarios/core/med-type/med-type.js",

@@ -18,6 +18,7 @@ export class MedChartBar {
      * todo
      */
     this.width = 32;
+    this.noLabel = false;
   }
   componentDidLoad() {
     this.setSize();
@@ -39,11 +40,11 @@ export class MedChartBar {
   }
   render() {
     const { dsColor, value, height, width } = this;
-    const percentage = value === 0 ? height - 1 : height - ((height * value) / 100);
+    const percentage = value === 0 ? height : height - ((height * value) / 100);
     return (h(Host, { class: generateMedColor(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } },
       h("div", { class: "med-chart-bar__container" },
-        h("div", { class: "med-chart-bar__label" },
-          h("slot", null)),
+        !this.noLabel && (h("div", { class: "med-chart-bar__label" },
+          h("slot", null))),
         h("div", { class: "med-chart-bar__progress" }))));
   }
   static get is() { return "med-chart-bar"; }
@@ -130,6 +131,24 @@ export class MedChartBar {
       "attribute": "width",
       "reflect": true,
       "defaultValue": "32"
+    },
+    "noLabel": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "no-label",
+      "reflect": true,
+      "defaultValue": "false"
     }
   }; }
   static get elementRef() { return "hostElement"; }

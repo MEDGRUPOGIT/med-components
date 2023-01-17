@@ -1,8 +1,8 @@
 import { r as registerInstance, h, H as Host, i as getElement } from './index-70672e81.js';
-import { c as config, b as getIonMode } from './ionic-global-10d9ffcf.js';
-import { j as clamp } from './helpers-6b411283.js';
-import { g as generateMedColor } from './color-a516669b.js';
-import { h as hostContext } from './theme-0269729a.js';
+import { c as config, b as getIonMode } from './ionic-global-4bc7e399.js';
+import { j as clamp } from './helpers-dd7e4b7b.js';
+import { g as generateMedColor } from './color-49be71bc.js';
+import { h as hostContext } from './theme-ff3fc52f.js';
 
 const iosProgressBarMedCss = ":host{--background:hsl(var(--med-color-brand-1));--progress-background:hsl(var(--med-color-brand-4));--buffer-background:transparent;--progress-correct-background:hsl(var(--med-color-fb-success));--height:4px;display:block;position:relative;contain:strict;overflow:hidden;width:100%;height:var(--height)}.progress-container{display:-ms-flexbox;display:flex;background-color:var(--background)}:host(.in-med-header) .progress-container{background:hsl(var(--med-color-neutral-8));border-radius:0}:host(.in-med-header) .progress--correct{background:hsl(var(--med-color-brand-4))}.progress{width:100%;height:100%;height:var(--height);background:var(--progress-background)}.progress--correct{background:var(--progress-correct-background)}:host(.med-color){--progress-background:hsl(var(--med-color-4));--background:hsl(var(--med-color-1))}:host(.med-color-neutral){--progress-background:hsl(var(--med-color-neutral));--background:hsl(var(--med-color-neutral-contrast))}:host(.med-color-feedback){--progress-background:hsl(var(--med-color-feedback));--background:hsl(var(--med-color-feedback-contrast))}";
 

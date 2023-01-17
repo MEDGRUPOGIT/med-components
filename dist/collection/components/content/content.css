@@ -188,7 +188,7 @@
 }
 
 :host {
-  --tp-scroll-color-content: hsl(var(--med-color-brand-3));
+  --tp-scroll-color-content:hsl(var(--med-color-neutral-3));
   --tp-scroll-width: 9px;
   scroll-snap-type: both mandatory;
   scroll-padding-top: 30px;
