@@ -15,6 +15,6 @@ export declare class MedQuestion {
   /**
    * todo
    */
-  toggle(event?: Event): Promise<void>;
+  toggle(): void;
   render(): any;
 }

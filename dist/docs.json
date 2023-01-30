@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-17T17:52:47",
+  "timestamp": "2023-01-23T13:40:35",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -25876,19 +25876,7 @@
           "required": false
         }
       ],
-      "methods": [
-        {
-          "name": "toggle",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "toggle(event?: Event | undefined) => Promise<void>",
-          "parameters": [],
-          "docs": "todo",
-          "docsTags": []
-        }
-      ],
+      "methods": [],
       "events": [],
       "listeners": [],
       "styles": [],

@@ -3795,10 +3795,6 @@ export namespace Components {
           * todo
          */
         "texto"?: string;
-        /**
-          * todo
-         */
-        "toggle": (event?: Event | undefined) => Promise<void>;
     }
     interface MedRateAula {
         /**

@@ -1,4 +1,4 @@
-import { Component, h, Host, Method, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedQuestion {
   constructor() {
@@ -10,16 +10,17 @@ export class MedQuestion {
   /**
    * todo
    */
-  async toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
+  // @Method()
+  toggle() {
+    // event?.stopPropagation();
     this.collapsed = !this.collapsed;
   }
   render() {
     const { collapsed, texto, dsColor } = this;
-    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (h(Host, { class: generateMedColor(dsColor, {
         'med-question': true,
         'med-question--collapsed': collapsed
-      }), onClick: (event) => { this.toggle(event); } },
+      }), onClick: () => { this.toggle(); } },
       texto && h("div", { class: "med-question__text", innerHTML: texto }),
       h("div", { class: "med-question__text" },
         h("slot", null)),
@@ -90,30 +91,6 @@ export class MedQuestion {
       },
       "attribute": "texto",
       "reflect": false
-    }
-  }; }
-  static get methods() { return {
-    "toggle": {
-      "complexType": {
-        "signature": "(event?: Event | undefined) => Promise<void>",
-        "parameters": [{
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          },
-          "Event": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<void>"
-      },
-      "docs": {
-        "text": "todo",
-        "tags": []
-      }
     }
   }; }
 }

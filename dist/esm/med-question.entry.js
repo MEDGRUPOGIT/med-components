@@ -14,16 +14,17 @@ const MedQuestion = class {
   /**
    * todo
    */
-  async toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
+  // @Method()
+  toggle() {
+    // event?.stopPropagation();
     this.collapsed = !this.collapsed;
   }
   render() {
     const { collapsed, texto, dsColor } = this;
-    return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (h(Host, { class: generateMedColor(dsColor, {
         'med-question': true,
         'med-question--collapsed': collapsed
-      }), onClick: (event) => { this.toggle(event); } }, texto && h("div", { class: "med-question__text", innerHTML: texto }), h("div", { class: "med-question__text" }, h("slot", null)), h("ion-icon", { class: "med-icon med-question__icon", name: "med-baixo" })));
+      }), onClick: () => { this.toggle(); } }, texto && h("div", { class: "med-question__text", innerHTML: texto }), h("div", { class: "med-question__text" }, h("slot", null)), h("ion-icon", { class: "med-icon med-question__icon", name: "med-baixo" })));
   }
 };
 MedQuestion.style = medQuestionCss;

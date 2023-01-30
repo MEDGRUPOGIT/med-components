@@ -18052,16 +18052,17 @@ class MedQuestion {
   /**
    * todo
    */
-  async toggle(event) {
-    event === null || event === void 0 ? void 0 : event.stopPropagation();
+  // @Method()
+  toggle() {
+    // event?.stopPropagation();
     this.collapsed = !this.collapsed;
   }
   render() {
     const { collapsed, texto, dsColor } = this;
-    return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         'med-question': true,
         'med-question--collapsed': collapsed
-      }), onClick: (event) => { this.toggle(event); } }, texto && hAsync("div", { class: "med-question__text", innerHTML: texto }), hAsync("div", { class: "med-question__text" }, hAsync("slot", null)), hAsync("ion-icon", { class: "med-icon med-question__icon", name: "med-baixo" })));
+      }), onClick: () => { this.toggle(); } }, texto && hAsync("div", { class: "med-question__text", innerHTML: texto }), hAsync("div", { class: "med-question__text" }, hAsync("slot", null)), hAsync("ion-icon", { class: "med-icon med-question__icon", name: "med-baixo" })));
   }
   static get style() { return medQuestionCss; }
   static get cmpMeta() { return {
@@ -18070,8 +18071,7 @@ class MedQuestion {
     "$members$": {
       "dsColor": [513, "ds-color"],
       "collapsed": [1540],
-      "texto": [1],
-      "toggle": [64]
+      "texto": [1]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
