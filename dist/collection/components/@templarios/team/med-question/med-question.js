@@ -10,9 +10,7 @@ export class MedQuestion {
   /**
    * todo
    */
-  // @Method()
   toggle() {
-    // event?.stopPropagation();
     this.collapsed = !this.collapsed;
   }
   render() {

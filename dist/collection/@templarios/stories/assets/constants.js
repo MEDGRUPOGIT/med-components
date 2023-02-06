@@ -186,6 +186,9 @@ export const MedIcons = [
   'med-notasfiscais',
   'med-notes',
   'med-notificacao',
+  'med-nuvem',
+  'med-nuvem-on',
+  'med-nuvem-off',
 
   'med-offline',
   'med-offline2',
