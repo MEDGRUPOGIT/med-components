@@ -79,6 +79,7 @@
     "./components/@templarios/legacy/med-config/med-config.js",
     "./components/@templarios/team/med-question/med-question.js",
     "./components/@templarios/team/med-themes/med-themes.js",
+    "./components/@templarios/team/med-toggle/med-toggle.js",
     "./components/@templarios/team/med-vote/med-vote.js",
     "./components/@templarios/team/questoes/med-alternativas/med-alternativas.js",
     "./components/@templarios/team/questoes/med-alternativas-a/med-alternativas-a.js",

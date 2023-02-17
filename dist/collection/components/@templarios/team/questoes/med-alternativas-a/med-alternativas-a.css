@@ -65,6 +65,10 @@
   cursor: pointer;
 }
 
+:host(.med-alternativas) .med-alternativas__span {
+  padding: 16px;
+}
+
 :host(.med-alternativas) .med-alternativas__wrapper {
   min-height: 80px;
 }

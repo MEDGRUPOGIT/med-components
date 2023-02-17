@@ -73,7 +73,8 @@ export class MedAlternativasA {
               h("div", { class: "option" },
                 h("span", { class: "option__fake" }),
                 h("span", { class: "option__letter" }, alternativa[this.keyAlternativa]))),
-            h("div", { class: "med-alternativas__right", innerHTML: alternativa[this.keyEnunciado] },
+            h("div", { class: "med-alternativas__right" },
+              h("span", { class: "med-alternativas__span", innerHTML: alternativa[this.keyEnunciado] }),
               alternativa[this.keyImagem] &&
                 h("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) },
                   h("div", { class: 'image-container__wrapper' },

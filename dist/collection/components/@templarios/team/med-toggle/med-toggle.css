@@ -1,0 +1,52 @@
+:host {
+  --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --padding: 24px;
+  --border-radius: 0;
+  --initial-max-height: 20px;
+}
+
+:host {
+  background: var(--background);
+  color: var(--color);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+:host .med-toggle__content {
+  max-height: var(--initial-max-height);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+:host .med-toggle__icon {
+  align-self: center;
+  margin-top: 8px;
+  font-size: 24px;
+  stroke: var(--color);
+  transition: 0.3s transform ease;
+}
+
+:host(.med-toggle--collapsed) .med-toggle__icon {
+  transform: rotate(180deg);
+}
+
+:host(.med-color) {
+  --color: fuck!;
+  --background: hsl(var(--med-color-1));
+}
+
+:host(.med-color-neutral) {
+  --color: hsl(var(--med-color-neutral-contrast));
+  --background: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --color: hsl(var(--med-color-feedback-contrast));
+  --background: hsl(var(--med-color-feedback));
+}

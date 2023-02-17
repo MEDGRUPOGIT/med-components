@@ -3938,6 +3938,16 @@ export namespace Components {
          */
         "titulo"?: string;
     }
+    interface MedToggle {
+        /**
+          * todo
+         */
+        "collapsed": boolean;
+        /**
+          * todo
+         */
+        "dsColor"?: MedColor;
+    }
     interface MedToolbar {
         /**
           * todo
@@ -5044,6 +5054,12 @@ declare global {
         prototype: HTMLMedTilesElement;
         new (): HTMLMedTilesElement;
     };
+    interface HTMLMedToggleElement extends Components.MedToggle, HTMLStencilElement {
+    }
+    var HTMLMedToggleElement: {
+        prototype: HTMLMedToggleElement;
+        new (): HTMLMedToggleElement;
+    };
     interface HTMLMedToolbarElement extends Components.MedToolbar, HTMLStencilElement {
     }
     var HTMLMedToolbarElement: {
@@ -5297,6 +5313,7 @@ declare global {
         "med-tab-button": HTMLMedTabButtonElement;
         "med-themes": HTMLMedThemesElement;
         "med-tiles": HTMLMedTilesElement;
+        "med-toggle": HTMLMedToggleElement;
         "med-toolbar": HTMLMedToolbarElement;
         "med-tooltip": HTMLMedTooltipElement;
         "med-type": HTMLMedTypeElement;
@@ -9265,6 +9282,16 @@ declare namespace LocalJSX {
          */
         "titulo"?: string;
     }
+    interface MedToggle {
+        /**
+          * todo
+         */
+        "collapsed"?: boolean;
+        /**
+          * todo
+         */
+        "dsColor"?: MedColor;
+    }
     interface MedToolbar {
         /**
           * todo
@@ -9563,6 +9590,7 @@ declare namespace LocalJSX {
         "med-tab-button": MedTabButton;
         "med-themes": MedThemes;
         "med-tiles": MedTiles;
+        "med-toggle": MedToggle;
         "med-toolbar": MedToolbar;
         "med-tooltip": MedTooltip;
         "med-type": MedType;
@@ -9746,6 +9774,7 @@ declare module "@stencil/core" {
             "med-tab-button": LocalJSX.MedTabButton & JSXBase.HTMLAttributes<HTMLMedTabButtonElement>;
             "med-themes": LocalJSX.MedThemes & JSXBase.HTMLAttributes<HTMLMedThemesElement>;
             "med-tiles": LocalJSX.MedTiles & JSXBase.HTMLAttributes<HTMLMedTilesElement>;
+            "med-toggle": LocalJSX.MedToggle & JSXBase.HTMLAttributes<HTMLMedToggleElement>;
             "med-toolbar": LocalJSX.MedToolbar & JSXBase.HTMLAttributes<HTMLMedToolbarElement>;
             "med-tooltip": LocalJSX.MedTooltip & JSXBase.HTMLAttributes<HTMLMedTooltipElement>;
             "med-type": LocalJSX.MedType & JSXBase.HTMLAttributes<HTMLMedTypeElement>;
