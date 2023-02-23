@@ -1,3 +1,13 @@
 :host {
+  --background: hsl(var(--med-color-neutral-1));
+}
+
+:host {
+  background: var(--background);
   display: block;
+  padding-top: var(--ion-safe-area-top);
+}
+
+:host-context(.platform-macintel) {
+  padding-top: 20px !important;
 }
