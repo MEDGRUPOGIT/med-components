@@ -1,7 +1,8 @@
-import { Component, h, Host, Prop } from '@stencil/core';
-import { generateMedColor } from '../../../../@templarios/utilities/color';
+import { Component, h, Host, Prop, Element, Listen, State, } from "@stencil/core";
+import { generateMedColor } from "../../../../@templarios/utilities/color";
 export class TpInputContainer {
   constructor() {
+    this.clicked = false;
     /**
      * todo
      */
@@ -11,12 +12,34 @@ export class TpInputContainer {
      */
     this.feedback = false;
   }
+  getTpInputContainerWidth(e) {
+    this.clicked = this.host.contains(e.target);
+    this.hostWidth = this.host.clientWidth + 2;
+  }
+  setPopoverWidthOnResize() {
+    if (!this.clicked)
+      return;
+    const popoverElement = document.querySelector(".select-popover");
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + 2}px`);
+  }
+  setPopoverWidth() {
+    if (!this.clicked)
+      return;
+    const popoverElement = document.querySelector(".select-popover");
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
+  }
+  unsetClikedState() {
+    if (!this.clicked)
+      return;
+    this.clicked = false;
+  }
   render() {
     const { dsColor, dsName, disabled, feedback, hasButton, hasIcon } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
-        'tp-input-container': true,
-        'tp-input-container--disabled': disabled,
-        'tp-input-container--feedback': feedback,
+        "tp-input-container": true,
+        [`tp-input-container--clicked`]: this.clicked,
+        "tp-input-container--disabled": disabled,
+        "tp-input-container--feedback": feedback,
         [`tp-input-container--${dsName}`]: dsName !== undefined,
         [`tp-input-container--has-button-${hasButton}`]: hasButton !== undefined,
         [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined,
@@ -60,7 +83,7 @@ export class TpInputContainer {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'secondary'",
+        "original": "\"secondary\"",
         "resolved": "\"secondary\" | undefined",
         "references": {}
       },
@@ -113,7 +136,7 @@ export class TpInputContainer {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'start' | 'end' | 'both'",
+        "original": "\"start\" | \"end\" | \"both\"",
         "resolved": "\"both\" | \"end\" | \"start\" | undefined",
         "references": {}
       },
@@ -130,7 +153,7 @@ export class TpInputContainer {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "'start' | 'end' | 'both'",
+        "original": "\"start\" | \"end\" | \"both\"",
         "resolved": "\"both\" | \"end\" | \"start\" | undefined",
         "references": {}
       },
@@ -144,4 +167,33 @@ export class TpInputContainer {
       "reflect": true
     }
   }; }
+  static get states() { return {
+    "clicked": {}
+  }; }
+  static get elementRef() { return "host"; }
+  static get listeners() { return [{
+      "name": "click",
+      "method": "getTpInputContainerWidth",
+      "target": "body",
+      "capture": false,
+      "passive": false
+    }, {
+      "name": "resize",
+      "method": "setPopoverWidthOnResize",
+      "target": "window",
+      "capture": false,
+      "passive": true
+    }, {
+      "name": "ionPopoverWillPresent",
+      "method": "setPopoverWidth",
+      "target": "body",
+      "capture": false,
+      "passive": false
+    }, {
+      "name": "ionPopoverWillDismiss",
+      "method": "unsetClikedState",
+      "target": "body",
+      "capture": false,
+      "passive": false
+    }]; }
 }

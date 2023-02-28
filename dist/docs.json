@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-27T13:28:12",
+  "timestamp": "2023-02-28T22:01:52",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -27860,7 +27860,32 @@
       ],
       "methods": [],
       "events": [],
-      "listeners": [],
+      "listeners": [
+        {
+          "event": "click",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        },
+        {
+          "event": "ionPopoverWillPresent",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ionPopoverWillDismiss",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
       "parts": [],

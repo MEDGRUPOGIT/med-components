@@ -1,5 +1,8 @@
-import { MedColor } from '../../../../@templarios/types/color.type';
+import { MedColor } from "../../../../@templarios/types/color.type";
 export declare class TpInputContainer {
+  host: HTMLElement;
+  hostWidth: number | undefined;
+  clicked: boolean;
   /**
    * todo
    */
@@ -7,7 +10,7 @@ export declare class TpInputContainer {
   /**
    * todo
    */
-  dsName?: 'secondary';
+  dsName?: "secondary";
   /**
    * todo
    */
@@ -19,10 +22,14 @@ export declare class TpInputContainer {
   /**
    * todo
    */
-  hasButton?: 'start' | 'end' | 'both';
+  hasButton?: "start" | "end" | "both";
   /**
    * todo
    */
-  hasIcon?: 'start' | 'end' | 'both';
+  hasIcon?: "start" | "end" | "both";
+  getTpInputContainerWidth(e: MouseEvent): void;
+  setPopoverWidthOnResize(): void;
+  setPopoverWidth(): void;
+  unsetClikedState(): void;
   render(): any;
 }

@@ -7445,6 +7445,28 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
     --min-height: 100% !important;
   }
 }
+ion-popover.tp-popover .popover-content {
+  --background: hsl(var(--med-color-neutral-3));
+  --border-radius: 0 0 8px 8px;
+  --max-height: 220px;
+  border-radius: var(--border-radius) !important;
+  transform: translateX(-1px) !important;
+}
+ion-popover.tp-popover .select-interface-option {
+  --border-style: initial;
+  --color: hsl(var(--med-color-neutral-10));
+  --background: hsl(var(--med-color-neutral-3));
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  cursor: pointer;
+}
+ion-popover.tp-popover .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-4));
+}
+ion-popover.tp-popover .select-interface-option ion-radio {
+  display: none;
+}
+
 ion-progress-bar {
   --progress-background: hsl(var(--med-color-brand-4));
   --background: hsl(var(--med-color-brand-1));
