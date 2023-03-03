@@ -2,7 +2,7 @@ import { Component, h, Host, Prop, Element, Listen, State, } from "@stencil/core
 import { generateMedColor } from "../../../../@templarios/utilities/color";
 export class TpInputContainer {
   constructor() {
-    this.clicked = false;
+    this.selectClicked = false;
     /**
      * todo
      */
@@ -13,31 +13,36 @@ export class TpInputContainer {
     this.feedback = false;
   }
   getTpInputContainerWidth(e) {
-    this.clicked = this.host.contains(e.target);
+    const target = e.target;
+    this.selectClicked =
+      this.host.contains(target) && target.nodeName === "ION-SELECT";
     this.hostWidth = this.host.clientWidth + 2;
   }
   setPopoverWidthOnResize() {
-    if (!this.clicked)
+    if (!this.selectClicked)
       return;
     const popoverElement = document.querySelector(".select-popover");
     popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + 2}px`);
   }
   setPopoverWidth() {
-    if (!this.clicked)
+    if (!this.selectClicked)
       return;
     const popoverElement = document.querySelector(".select-popover");
     popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
+    if (this.dsName === "secondary") {
+      popoverElement.classList.add("tp-popover--secondary");
+    }
   }
   unsetClikedState() {
-    if (!this.clicked)
+    if (!this.selectClicked)
       return;
-    this.clicked = false;
+    this.selectClicked = false;
   }
   render() {
     const { dsColor, dsName, disabled, feedback, hasButton, hasIcon } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         "tp-input-container": true,
-        [`tp-input-container--clicked`]: this.clicked,
+        [`tp-input-container--select-clicked`]: this.selectClicked,
         "tp-input-container--disabled": disabled,
         "tp-input-container--feedback": feedback,
         [`tp-input-container--${dsName}`]: dsName !== undefined,
@@ -168,7 +173,7 @@ export class TpInputContainer {
     }
   }; }
   static get states() { return {
-    "clicked": {}
+    "selectClicked": {}
   }; }
   static get elementRef() { return "host"; }
   static get listeners() { return [{

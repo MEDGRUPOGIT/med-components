@@ -2,18 +2,24 @@ import { Component, h, Host, Prop } from '@stencil/core';
 import { modalController } from "../../../../utils/overlays";
 import { sanitizeDOMString } from '../../../../utils/sanitization';
 export class MedAlert {
+  constructor() {
+    /**
+     * todo
+     */
+    this.disableSanitize = false;
+  }
   dismiss(role) {
     modalController.dismiss(null, role);
   }
   render() {
-    const { heading, message, cancelText, confirmText } = this;
+    const { heading, message, cancelText, confirmText, disableSanitize } = this;
     return (h(Host, null,
       h("ion-header", { class: "tp-dialog-header" },
         h("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xxs", onClick: () => this.dismiss('close') },
           h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))),
       h("div", { class: "tp-dialog-container" },
-        h("med-type", { class: "tp-dialog-heading", token: "h20x", innerHTML: sanitizeDOMString(heading) }),
-        h("med-type", { "ds-color": "neutral-8", token: "h14x", innerHTML: sanitizeDOMString(message) }),
+        h("med-type", { class: "tp-dialog-heading", token: "h20x", innerHTML: !disableSanitize ? sanitizeDOMString(heading) : heading }),
+        h("med-type", { "ds-color": "neutral-8", token: "h14x", innerHTML: !disableSanitize ? sanitizeDOMString(message) : message }),
         h("div", { class: "tp-dialog-footer" },
           cancelText && h("ion-button", { mode: "ios", fill: "outline", onClick: () => this.dismiss('cancel') }, cancelText),
           confirmText && h("ion-button", { mode: "ios", onClick: () => this.dismiss('confirm') }, confirmText)))));
@@ -94,6 +100,24 @@ export class MedAlert {
       },
       "attribute": "confirm-text",
       "reflect": true
+    },
+    "disableSanitize": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "todo"
+      },
+      "attribute": "disable-sanitize",
+      "reflect": true,
+      "defaultValue": "false"
     }
   }; }
 }

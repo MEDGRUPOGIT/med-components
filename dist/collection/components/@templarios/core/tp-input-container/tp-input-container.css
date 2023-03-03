@@ -53,7 +53,7 @@
   --background: hsl(var(--med-color-3));
 }
 
-:host(.tp-input-container.tp-input-container--clicked) {
+:host(.tp-input-container.tp-input-container--select-clicked) {
   border-radius: 8px 8px 0 0 !important;
 }
 
