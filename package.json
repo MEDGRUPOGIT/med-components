@@ -118,7 +118,8 @@
     "tp:minify:css": "cleancss -O2 --format --with-rebase --source-map --source-map-inline-sources --output templarios/css --batch --batch-suffix .min templarios/css/**/*.css",
     "tp:test:loki": "loki test",
     "tp:start": "npm-run-all tp:clean:css --parallel tp:watch:sass tp:watch:stencil tp:start:storybook",
-    "tp:build": "npm-run-all tp:clean:css tp:clean:sass tp:copy:sass tp:build:sass tp:minify:css build"
+    "tp:build": "npm-run-all tp:clean:css tp:clean:sass tp:copy:sass tp:build:sass tp:minify:css build",
+    "tp:doc:start": "cd @templarios/processos && npm start"
   },
   "author": "Ionic Team",
   "license": "MIT",

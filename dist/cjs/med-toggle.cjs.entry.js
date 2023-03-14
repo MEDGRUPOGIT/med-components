@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const color = require('./color-4ca1bfd7.js');
+const color = require('./color-2d4645aa.js');
 
 const medToggleCss = ":host{--background:hsl(var(--med-color-neutral-2));--color:hsl(var(--med-color-neutral-10));--padding:24px;--border-radius:0;--initial-max-height:20px}:host{background:var(--background);color:var(--color);padding:var(--padding);border-radius:var(--border-radius);width:100%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;cursor:pointer}:host .med-toggle__content{max-height:var(--initial-max-height);overflow:hidden;-webkit-transition:all 0.3s;transition:all 0.3s}:host .med-toggle__icon{-ms-flex-item-align:center;align-self:center;margin-top:8px;font-size:24px;stroke:var(--color);-webkit-transition:0.3s -webkit-transform ease;transition:0.3s -webkit-transform ease;transition:0.3s transform ease;transition:0.3s transform ease, 0.3s -webkit-transform ease}:host(.med-toggle--collapsed) .med-toggle__icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}:host(.med-color){--color:fuck!;--background:hsl(var(--med-color-1))}:host(.med-color-neutral){--color:hsl(var(--med-color-neutral-contrast));--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--color:hsl(var(--med-color-feedback-contrast));--background:hsl(var(--med-color-feedback))}";
 

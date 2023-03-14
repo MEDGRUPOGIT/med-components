@@ -3,6 +3,8 @@ import { generateMedColor } from "../../../../@templarios/utilities/color";
 export class TpInputContainer {
   constructor() {
     this.selectClicked = false;
+    this.pointerOnSelect = false;
+    this.selectAndPopoverDiffWidth = 2;
     /**
      * todo
      */
@@ -11,38 +13,81 @@ export class TpInputContainer {
      * todo
      */
     this.feedback = false;
+    /**
+     * todo
+     */
+    this.inverted = false;
   }
   getTpInputContainerWidth(e) {
+    if (this.disabled)
+      return;
     const target = e.target;
     this.selectClicked =
-      this.host.contains(target) && target.nodeName === "ION-SELECT";
-    this.hostWidth = this.host.clientWidth + 2;
+      this.host.contains(target) &&
+        this.host.querySelector("ion-select") !== null;
+    // querySelector vai garantir que só seja afetado o tp-input-container usado como container de um ion-select
+    if (this.selectClicked) {
+      this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
+    }
+  }
+  catchSelectIconClick(e) {
+    const target = e.target;
+    const shouldPropagateClick = this.host.contains(target) &&
+      (target.nodeName === "ION-ICON" ||
+        target.nodeName === "TP-INPUT-CONTAINER");
+    if (shouldPropagateClick) {
+      const event = new MouseEvent("click", {
+        view: window,
+        bubbles: true,
+      });
+      const ionSelect = this.host.querySelector("ION-SELECT");
+      ionSelect === null || ionSelect === void 0 ? void 0 : ionSelect.dispatchEvent(event);
+    }
   }
   setPopoverWidthOnResize() {
     if (!this.selectClicked)
       return;
     const popoverElement = document.querySelector(".select-popover");
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + 2}px`);
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
   }
-  setPopoverWidth() {
-    if (!this.selectClicked)
-      return;
-    const popoverElement = document.querySelector(".select-popover");
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
-    if (this.dsName === "secondary") {
-      popoverElement.classList.add("tp-popover--secondary");
-    }
+  setPopoverCharacteristics() {
+    // setTimeout para animação acontecer de forma suave
+    setTimeout(() => {
+      if (!this.selectClicked)
+        return;
+      const popoverElement = document.querySelector(".select-popover");
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
+      if (this.dsName === "secondary") {
+        popoverElement.classList.add("tp-popover--secondary");
+      }
+      if (popoverElement.classList.contains("popover-bottom")) {
+        this.inverted = true;
+      }
+      if (this.inverted) {
+        popoverElement.classList.add("tp-popover--inverted");
+        const { top, left } = this.host.getBoundingClientRect();
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
+      }
+    }, 0);
   }
   unsetClikedState() {
     if (!this.selectClicked)
       return;
     this.selectClicked = false;
   }
+  componentDidLoad() {
+    if (this.host.querySelector("ION-SELECT")) {
+      this.pointerOnSelect = true;
+    }
+  }
   render() {
-    const { dsColor, dsName, disabled, feedback, hasButton, hasIcon } = this;
+    const { dsColor, dsName, selectClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon, } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         "tp-input-container": true,
-        [`tp-input-container--select-clicked`]: this.selectClicked,
+        "tp-input-container--with-select": pointerOnSelect,
+        [`tp-input-container--select-clicked`]: selectClicked,
+        [`tp-input-container--inverted`]: inverted,
         "tp-input-container--disabled": disabled,
         "tp-input-container--feedback": feedback,
         [`tp-input-container--${dsName}`]: dsName !== undefined,
@@ -137,6 +182,24 @@ export class TpInputContainer {
       "reflect": true,
       "defaultValue": "false"
     },
+    "inverted": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "todo"
+      },
+      "attribute": "inverted",
+      "reflect": true,
+      "defaultValue": "false"
+    },
     "hasButton": {
       "type": "string",
       "mutable": false,
@@ -173,13 +236,20 @@ export class TpInputContainer {
     }
   }; }
   static get states() { return {
-    "selectClicked": {}
+    "selectClicked": {},
+    "pointerOnSelect": {}
   }; }
   static get elementRef() { return "host"; }
   static get listeners() { return [{
       "name": "click",
       "method": "getTpInputContainerWidth",
       "target": "body",
+      "capture": false,
+      "passive": false
+    }, {
+      "name": "click",
+      "method": "catchSelectIconClick",
+      "target": undefined,
       "capture": false,
       "passive": false
     }, {
@@ -190,7 +260,7 @@ export class TpInputContainer {
       "passive": true
     }, {
       "name": "ionPopoverWillPresent",
-      "method": "setPopoverWidth",
+      "method": "setPopoverCharacteristics",
       "target": "body",
       "capture": false,
       "passive": false

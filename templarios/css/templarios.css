@@ -7453,6 +7453,12 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
     --min-height: 100% !important;
   }
 }
+ion-popover.tp-popover {
+  --top: auto;
+  --left: auto;
+  --bottom: auto;
+  --right: auto;
+}
 ion-popover.tp-popover .popover-content {
   --background: hsl(var(--med-color-neutral-3));
   --border-radius: 0 0 8px 8px;
@@ -7498,6 +7504,15 @@ ion-popover.tp-popover--secondary .select-interface-option {
 }
 ion-popover.tp-popover--secondary .select-interface-option:not(:last-child) {
   border-bottom: 1px solid hsl(var(--med-color-neutral-5));
+}
+ion-popover.tp-popover--inverted .popover-content {
+  --border-radius: 8px 8px 0 0;
+  top: var(--top) !important;
+  left: var(--left) !important;
+  bottom: var(--bottom) !important;
+  right: var(--right) !important;
+  border-radius: var(--border-radius) !important;
+  transform: none !important;
 }
 
 ion-progress-bar {

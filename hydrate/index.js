@@ -29014,12 +29014,14 @@ class ToolbarTitle {
   }; }
 }
 
-const tpInputContainerCss = ".sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-2))}.sc-tp-input-container-h{position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background-color:var(--background);border-radius:8px;height:40px}.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-s>ion-icon[slot=end]{--color:hsl(var(--med-color-neutral-6)) !important;margin:0 8px 0 8px;stroke:hsl(var(--med-color-neutral-6))}.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-select{--padding-start:0}.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-select{--padding-end:0}.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-select{--padding-start:0;--padding-end:0}.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=end]{opacity:0.4}.tp-input-container--secondary.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-3))}.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3))}.tp-input-container.tp-input-container--select-clicked.sc-tp-input-container-h{border-radius:8px 8px 0 0 !important}.med-color.sc-tp-input-container-h{--background:hsl(var(--med-color-3))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3));--placeholder-color:hsl(var(--med-color-contrast-fixed));--color:hsl(var(--med-color-contrast-fixed))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-contrast-fixed)) !important;stroke:hsl(var(--med-color-contrast-fixed)) !important}.med-color-neutral.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-neutral));--placeholder-color:hsl(var(--med-color-neutral-contrast));--color:hsl(var(--med-color-neutral-contrast))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-neutral-contrast)) !important;stroke:hsl(var(--med-color-neutral-contrast)) !important}.med-color-feedback.sc-tp-input-container-h{--background:hsl(var(--med-color-feedback))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-feedback));--placeholder-color:hsl(var(--med-color-feedback-contrast));--color:hsl(var(--med-color-feedback-contrast))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-feedback-contrast)) !important;stroke:hsl(var(--med-color-feedback-contrast)) !important}";
+const tpInputContainerCss = ".sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-2))}.sc-tp-input-container-h{position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background-color:var(--background);border-radius:8px;height:40px}.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-s>ion-icon[slot=end]{--color:hsl(var(--med-color-neutral-6)) !important;margin:0 8px 0 8px;stroke:hsl(var(--med-color-neutral-6))}.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-select{--padding-start:0}.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-select{--padding-end:0}.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-select{--padding-start:0;--padding-end:0}.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=end]{opacity:0.4}.tp-input-container--secondary.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-3))}.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3))}.tp-input-container.tp-input-container--select-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:8px 8px 0 0 !important;-webkit-transition:border-radius 400ms ease-in-out;transition:border-radius 400ms ease-in-out}.sc-tp-input-container-h.tp-input-container.tp-input-container--inverted.sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.tp-input-container.tp-input-container--inverted.tp-input-container--select-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:0 0 8px 8px !important}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h{cursor:not-allowed}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h:not(.tp-input-container--disabled){cursor:pointer}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transition:-webkit-transform 400ms linear;transition:-webkit-transform 400ms linear;transition:transform 400ms linear;transition:transform 400ms linear, -webkit-transform 400ms linear}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-clicked:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-clicked.tp-input-container--inverted:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(0deg);transform:rotate(0deg)}.med-color.sc-tp-input-container-h{--background:hsl(var(--med-color-3))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3));--placeholder-color:hsl(var(--med-color-contrast-fixed));--color:hsl(var(--med-color-contrast-fixed))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-contrast-fixed)) !important;stroke:hsl(var(--med-color-contrast-fixed)) !important}.med-color-neutral.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-neutral));--placeholder-color:hsl(var(--med-color-neutral-contrast));--color:hsl(var(--med-color-neutral-contrast))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-neutral-contrast)) !important;stroke:hsl(var(--med-color-neutral-contrast)) !important}.med-color-feedback.sc-tp-input-container-h{--background:hsl(var(--med-color-feedback))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-feedback));--placeholder-color:hsl(var(--med-color-feedback-contrast));--color:hsl(var(--med-color-feedback-contrast))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-feedback-contrast)) !important;stroke:hsl(var(--med-color-feedback-contrast)) !important}";
 
 class TpInputContainer {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.selectClicked = false;
+    this.pointerOnSelect = false;
+    this.selectAndPopoverDiffWidth = 2;
     /**
      * todo
      */
@@ -29028,38 +29030,81 @@ class TpInputContainer {
      * todo
      */
     this.feedback = false;
+    /**
+     * todo
+     */
+    this.inverted = false;
   }
   getTpInputContainerWidth(e) {
+    if (this.disabled)
+      return;
     const target = e.target;
     this.selectClicked =
-      this.host.contains(target) && target.nodeName === "ION-SELECT";
-    this.hostWidth = this.host.clientWidth + 2;
+      this.host.contains(target) &&
+        this.host.querySelector("ion-select") !== null;
+    // querySelector vai garantir que só seja afetado o tp-input-container usado como container de um ion-select
+    if (this.selectClicked) {
+      this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
+    }
+  }
+  catchSelectIconClick(e) {
+    const target = e.target;
+    const shouldPropagateClick = this.host.contains(target) &&
+      (target.nodeName === "ION-ICON" ||
+        target.nodeName === "TP-INPUT-CONTAINER");
+    if (shouldPropagateClick) {
+      const event = new MouseEvent("click", {
+        view: window,
+        bubbles: true,
+      });
+      const ionSelect = this.host.querySelector("ION-SELECT");
+      ionSelect === null || ionSelect === void 0 ? void 0 : ionSelect.dispatchEvent(event);
+    }
   }
   setPopoverWidthOnResize() {
     if (!this.selectClicked)
       return;
     const popoverElement = document.querySelector(".select-popover");
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + 2}px`);
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
   }
-  setPopoverWidth() {
-    if (!this.selectClicked)
-      return;
-    const popoverElement = document.querySelector(".select-popover");
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
-    if (this.dsName === "secondary") {
-      popoverElement.classList.add("tp-popover--secondary");
-    }
+  setPopoverCharacteristics() {
+    // setTimeout para animação acontecer de forma suave
+    setTimeout(() => {
+      if (!this.selectClicked)
+        return;
+      const popoverElement = document.querySelector(".select-popover");
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
+      if (this.dsName === "secondary") {
+        popoverElement.classList.add("tp-popover--secondary");
+      }
+      if (popoverElement.classList.contains("popover-bottom")) {
+        this.inverted = true;
+      }
+      if (this.inverted) {
+        popoverElement.classList.add("tp-popover--inverted");
+        const { top, left } = this.host.getBoundingClientRect();
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
+      }
+    }, 0);
   }
   unsetClikedState() {
     if (!this.selectClicked)
       return;
     this.selectClicked = false;
   }
+  componentDidLoad() {
+    if (this.host.querySelector("ION-SELECT")) {
+      this.pointerOnSelect = true;
+    }
+  }
   render() {
-    const { dsColor, dsName, disabled, feedback, hasButton, hasIcon } = this;
+    const { dsColor, dsName, selectClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon, } = this;
     return (hAsync(Host, { class: generateMedColor(dsColor, {
         "tp-input-container": true,
-        [`tp-input-container--select-clicked`]: this.selectClicked,
+        "tp-input-container--with-select": pointerOnSelect,
+        [`tp-input-container--select-clicked`]: selectClicked,
+        [`tp-input-container--inverted`]: inverted,
         "tp-input-container--disabled": disabled,
         "tp-input-container--feedback": feedback,
         [`tp-input-container--${dsName}`]: dsName !== undefined,
@@ -29077,13 +29122,43 @@ class TpInputContainer {
       "dsName": [513, "ds-name"],
       "disabled": [516],
       "feedback": [516],
+      "inverted": [516],
       "hasButton": [513, "has-button"],
       "hasIcon": [513, "has-icon"],
-      "selectClicked": [32]
+      "selectClicked": [32],
+      "pointerOnSelect": [32]
     },
-    "$listeners$": [[16, "click", "getTpInputContainerWidth"], [9, "resize", "setPopoverWidthOnResize"], [16, "ionPopoverWillPresent", "setPopoverWidth"], [16, "ionPopoverWillDismiss", "unsetClikedState"]],
+    "$listeners$": [[16, "click", "getTpInputContainerWidth"], [0, "click", "catchSelectIconClick"], [9, "resize", "setPopoverWidthOnResize"], [16, "ionPopoverWillPresent", "setPopoverCharacteristics"], [16, "ionPopoverWillDismiss", "unsetClikedState"]],
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"], ["dsName", "ds-name"], ["disabled", "disabled"], ["feedback", "feedback"], ["hasButton", "has-button"], ["hasIcon", "has-icon"]]
+    "$attrsToReflect$": [["dsColor", "ds-color"], ["dsName", "ds-name"], ["disabled", "disabled"], ["feedback", "feedback"], ["inverted", "inverted"], ["hasButton", "has-button"], ["hasIcon", "has-icon"]]
+  }; }
+}
+
+const tpLoaderCss = ".sc-tp-loader-h{--stroke:hsl(var(--med-color-neutral-10));--background:hsl(var(--med-color-neutral-10))}.sc-tp-loader-h{display:block;height:94px;width:94px}.med-color.sc-tp-loader-h{--stroke:hsl(var(--med-color-4));--background:hsl(var(--med-color-4))}.med-color-neutral.sc-tp-loader-h{--stroke:hsl(var(--med-color-neutral));--background:hsl(var(--med-color-neutral))}.med-color-feedback.sc-tp-loader-h{--stroke:hsl(var(--med-color-feedback));--background:hsl(var(--med-color-feedback))}[tp-loader-circle].sc-tp-loader,[tp-loader-polyline].sc-tp-loader,[tp-loader-line].sc-tp-loader{fill:none;stroke:var(--stroke, hsl(var(--med-color-neutral-10)));stroke-width:6;stroke-miterlimit:10}[tp-loader-rect].sc-tp-loader{fill:var(--stroke, hsl(var(--med-color-neutral-10)))}[tp-loader-circle].sc-tp-loader{-webkit-animation:loadingcircle 1s linear infinite alternate, rotate 2s linear infinite;animation:loadingcircle 1s linear infinite alternate, rotate 2s linear infinite;stroke-dasharray:300;stroke-dashoffset:300;-webkit-transform-origin:50px 50px;transform-origin:50px 50px}[tp-loader-line].sc-tp-loader{-webkit-animation:loading 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;animation:loading 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;stroke-dasharray:25;stroke-dashoffset:25}[tp-loader-line].sc-tp-loader:nth-of-type(2){-webkit-animation-delay:0.1s;animation-delay:0.1s}[tp-loader-line].sc-tp-loader:nth-of-type(3){-webkit-animation-delay:0.2s;animation-delay:0.2s}[tp-loader-line].sc-tp-loader:nth-of-type(4){-webkit-animation-delay:0.3s;animation-delay:0.3s}[tp-loader-line].sc-tp-loader:nth-of-type(5){-webkit-animation-delay:0.4s;animation-delay:0.4s}[tp-loader-line].sc-tp-loader:nth-of-type(6){-webkit-animation-delay:0.5s;animation-delay:0.5s}[tp-loader-line].sc-tp-loader:nth-of-type(7){-webkit-animation-delay:0.6s;animation-delay:0.6s}[tp-loader-line].sc-tp-loader:nth-of-type(8){-webkit-animation-delay:0.7s;animation-delay:0.7s}[tp-loader-polyline].sc-tp-loader{-webkit-animation:loading 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;animation:loading 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;stroke-dasharray:50;stroke-dashoffset:50}[tp-loader-polyline].sc-tp-loader:nth-of-type(2){-webkit-animation-delay:0.2s;animation-delay:0.2s}[tp-loader-polyline].sc-tp-loader:nth-of-type(3){-webkit-animation-delay:0.4s;animation-delay:0.4s}[tp-loader-polyline].sc-tp-loader:nth-of-type(4){-webkit-animation-delay:0.6s;animation-delay:0.6s}@-webkit-keyframes loading{50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@keyframes loading{50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@-webkit-keyframes loadingcircle{to{stroke-dashoffset:0}}@keyframes loadingcircle{to{stroke-dashoffset:0}}@-webkit-keyframes rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.tp-loader-secondary.sc-tp-loader-h{display:inline-block;position:relative;width:24px;height:24px}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader{-webkit-transform-origin:12px 12px;transform-origin:12px 12px;-webkit-animation:loader-spinner 0.8s linear infinite;animation:loader-spinner 0.8s linear infinite}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader::after{content:\" \";display:block;position:absolute;top:1px;left:11px;width:2px;height:6px;border-radius:10px;background:var(--background, hsl(var(--med-color-neutral-10)))}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(1){-webkit-transform:rotate(0deg);transform:rotate(0deg);-webkit-animation-delay:-0.7s;animation-delay:-0.7s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(2){-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation-delay:-0.6s;animation-delay:-0.6s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(3){-webkit-transform:rotate(90deg);transform:rotate(90deg);-webkit-animation-delay:-0.5s;animation-delay:-0.5s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(4){-webkit-transform:rotate(135deg);transform:rotate(135deg);-webkit-animation-delay:-0.4s;animation-delay:-0.4s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(5){-webkit-transform:rotate(180deg);transform:rotate(180deg);-webkit-animation-delay:-0.3s;animation-delay:-0.3s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(6){-webkit-transform:rotate(225deg);transform:rotate(225deg);-webkit-animation-delay:-0.2s;animation-delay:-0.2s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(7){-webkit-transform:rotate(270deg);transform:rotate(270deg);-webkit-animation-delay:-0.1s;animation-delay:-0.1s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(8){-webkit-transform:rotate(315deg);transform:rotate(315deg);-webkit-animation-delay:0s;animation-delay:0s}@-webkit-keyframes loader-spinner{0%{opacity:1}100%{opacity:0.3}}@keyframes loader-spinner{0%{opacity:1}100%{opacity:0.3}}";
+
+class TpLoader {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    const { dsColor, dsName } = this;
+    return dsName === "secondary" ? (hAsync(Host, { "tp-loader-secondary": true, "ds-color": dsColor, class: generateMedColor(dsColor, {
+        "tp-loader-secondary": true,
+      }) }, hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null))) : (hAsync(Host, { "tp-loader": true, "ds-color": dsColor, class: generateMedColor(dsColor, {
+        "tp-loader-secondary": false,
+      }) }, hAsync("svg", { "tp-loader-svg": true, viewBox: "0 0 100 100", xmlns: "http://www.w3.org/2000/svg" }, hAsync("circle", { "tp-loader-circle": true, cx: "50", cy: "50", r: "47" }), hAsync("polyline", { "tp-loader-polyline": true, points: "85,37 63,37 63,15 " }), hAsync("polyline", { "tp-loader-polyline": true, points: "63,86 63,64 85,64 " }), hAsync("polyline", { "tp-loader-polyline": true, points: "14,64 36,64 36,86 " }), hAsync("polyline", { "tp-loader-polyline": true, points: "36,15 36,37 14,37 " }), hAsync("line", { "tp-loader-line": true, x1: "45", y1: "40", x2: "45", y2: "15" }), hAsync("line", { "tp-loader-line": true, x1: "54", y1: "40", x2: "54", y2: "15" }), hAsync("line", { "tp-loader-line": true, x1: "60", y1: "46", x2: "85", y2: "46" }), hAsync("line", { "tp-loader-line": true, x1: "60", y1: "55", x2: "85", y2: "55" }), hAsync("line", { "tp-loader-line": true, x1: "54", y1: "61", x2: "54", y2: "86" }), hAsync("line", { "tp-loader-line": true, x1: "45", y1: "61", x2: "45", y2: "86" }), hAsync("line", { "tp-loader-line": true, x1: "39", y1: "55", x2: "14", y2: "55" }), hAsync("line", { "tp-loader-line": true, x1: "39", y1: "46", x2: "14", y2: "46" }), hAsync("rect", { "tp-loader-rect": true, x: "42", y: "43", width: "6", height: "6" }), hAsync("rect", { "tp-loader-rect": true, x: "42", y: "52", width: "6", height: "6" }), hAsync("rect", { "tp-loader-rect": true, x: "51", y: "43", width: "6", height: "6" }), hAsync("rect", { "tp-loader-rect": true, x: "51", y: "52", width: "6", height: "6" }))));
+  }
+  static get style() { return tpLoaderCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "tp-loader",
+    "$members$": {
+      "dsColor": [513, "ds-color"],
+      "dsName": [513, "ds-name"]
+    },
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": [["dsColor", "ds-color"], ["dsName", "ds-name"]]
   }; }
 }
 
@@ -29868,6 +29943,7 @@ registerComponents([
   Toolbar,
   ToolbarTitle,
   TpInputContainer,
+  TpLoader,
   TutorialModal,
   UnidadesModal,
   VirtualScroll,
