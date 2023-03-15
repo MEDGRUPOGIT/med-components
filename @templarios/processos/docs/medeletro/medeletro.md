@@ -1,60 +1,79 @@
 # Medeletro
 
+Clonar repositório a partir do link abaixo:
+
+- **[Repositório](https://github.com/MEDGRUPOGIT/Medeletro)**
 ## Instalação
+
+```bash
+npm install
+```
 
 ## Configuração
 
-### Android Studio
+### IOS
 
-1. lorem ipsum
+Instalação do capacitor
 
-2. lorem ipsum
+```
+npm install @capacitor/ios
+```
 
-3. lorem ipsum
+```
+npx cap add ios
+```
 
-4. lorem ipsum
+>OBS: Em alguns casos a platform IOS ja pode estar adicionada, nesses casos o terminal informará.
 
-### XCode
+Documentação abaixo do Capacitor para consultas:
 
-1. lorem ipsum
+- **[Documentação Capacitor](https://capacitorjs.com/docs/ios)**
 
-2. lorem ipsum
+#### Issues
 
-3. lorem ipsum
+**Problemas relacionados ao processador M1: (**[Link Stackoverflow](https://stackoverflow.com/questions/64698820/ignoring-ffi-1-13-1-because-its-extensions-are-not-built-try-gem-pristine-ffi)**)**
 
-4. lorem ipsum
+Instalar gem  ffi com o comando abaixo:
 
+```
+arch -x86_64 sudo gem install ffi --version 1.15.5 --user-install
+```
+
+Instalar cocoapods:
+
+```
+brew install cocoapods
+```
+
+### Android
 ## Desenvolvimento
 
-### Android Studio
+### Build Serve
 
-1. lorem ipsum
+Utilizar versão do node: **14.17.3**
 
-2. lorem ipsum
+```
+npm start
+```
 
-3. lorem ipsum
+Após rodar este comando o terminal disponibilizará o localhost para abertura no browser.
 
-4. lorem ipsum
+### Build IOS
 
-### XCode
+Executar o seguinte comando no terminal do projeto.
 
-1. lorem ipsum
+```
+npm run build:ios:prod   
+```
 
-2. lorem ipsum
+Para alteração de Devices IOS clicar no campo destacado abaixo:
 
-3. lorem ipsum
+![](../../static/img/docs/medeletro/alteracao-device.png)
 
-4. lorem ipsum
+Para executar o XCode e abrir o simulador clicar no campo destacado abaixo:
+
+![](../../static/img/docs/medeletro/play-xcode.png)
+
+### Build Android
 
 
-## Produção
-
-### XCode
-
-1. lorem ipsum
-
-2. lorem ipsum
-
-3. lorem ipsum
-
-4. lorem ipsum

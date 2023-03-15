@@ -5,7 +5,7 @@
 
 ## Buckets
 
-### FileZila
+### FileZila (homologação)
 
 ```
 templarios-combo
@@ -33,7 +33,7 @@ npm start
 publicPath: "/templarios-combo/",
 ```
 
-![](../../static/img/docs/hotsite-institucional-combos-vue-config.png)
+![](../../static/img/docs/institucional-combos/institucional-combos-vue-config.png)
 
 2. Gerar build:
 
@@ -41,10 +41,16 @@ publicPath: "/templarios-combo/",
 npm run build:prod
 ```
 
-3. Publicação ordomederi: Enviar pasta dist para Bleggi.
+3. Publicação ordomederi: enviar pasta dist para Bleggi.
 
 ## Publicação produção
 
-1. No arquivo `vue.config`, desfazer a alteração do `publicPath`.
+1. No arquivo `vue.config`, desfazer a alteração do `publicPath`:
+
+```javascript
+publicPath: process.env.VUE_APP_PUBLIC_PATH,
+```
+
+![](../../static/img/docs/institucional-combos/institucional-combos-vue-config-undo.png)
 
 2. Time responsável Fenix.

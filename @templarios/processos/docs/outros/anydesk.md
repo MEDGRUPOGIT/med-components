@@ -1,5 +1,43 @@
 # AnyDesk
 
+- **[Site AnyDesk](https://anydesk.com/pt/downloads/mac-os)**
+
 ## Instalação
 
-## Configuração
+### MAC
+
+Selecione o sistema operacional de sua utilização:
+
+![](../../static/img/docs/anydesk/sistema-operacional.png)
+
+Após selecionar o sistema operacional, clique em **"BAIXAR AGORA"**.
+
+Após o download completo abrir o arquivo no Finder:
+
+![](../../static/img/docs/anydesk/arquivo-anydesk.png)
+
+Arrastar Icone AnyDesk para a pasta Application:
+
+![](../../static/img/docs/anydesk/arrastar-anydesk.png)
+
+## Desenvolvimento
+
+Inserir ID do Computador que deseja acessar no campo destacado abaixo:
+
+![](../../static/img/docs/anydesk/id-anydesk.png)
+
+ID MAC Brandão:
+
+```
+967427861
+```
+
+Clicar em Conectar:
+
+![](../../static/img/docs/anydesk/conectar-anydesk.png)
+
+## Úteis
+
+É possivel que o seu teclado não esteja sincronizado com o teclado da máquina que esta acessando. Neste caso clique no ícone destacado abaixo para selecionar a opção **"Mapear 1:1"**
+
+![](../../static/img/docs/anydesk/teclado-anydesk.png)

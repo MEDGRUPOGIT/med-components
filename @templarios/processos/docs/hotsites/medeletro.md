@@ -6,7 +6,7 @@
 
 ## Buckets
 
-### FileZila
+### FileZila (homologação)
 
 ```
 templarios-medeletro
@@ -30,9 +30,9 @@ Rodar index.html com live server.
 
 ## Publicação homologação
 
-1. Publicação Wordpress: Enviar pasta src para Miguel.
+1. Publicação Wordpress: enviar pasta src para Miguel.
 
-2. Publicação ordomederi: Enviar pasta src para Bleggi.
+2. Publicação ordomederi: enviar pasta src para Bleggi.
 
 ## Publicação produção
 
