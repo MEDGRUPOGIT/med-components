@@ -1,102 +1,110 @@
 :host {
   --stroke: hsl(var(--med-color-neutral-10));
-  --background: hsl(var(--med-color-neutral-10));
-}
-
-:host {
-  display: block;
-  height: 94px;
-  width: 94px;
+  --background-secondary: hsl(var(--med-color-neutral-10));
 }
 
 :host(.med-color) {
   --stroke: hsl(var(--med-color-4));
-  --background: hsl(var(--med-color-4));
+  --background-secondary: hsl(var(--med-color-4));
 }
 
 :host(.med-color-neutral) {
   --stroke: hsl(var(--med-color-neutral));
-  --background: hsl(var(--med-color-neutral));
+  --background-secondary: hsl(var(--med-color-neutral));
 }
 
 :host(.med-color-feedback) {
   --stroke: hsl(var(--med-color-feedback));
-  --background: hsl(var(--med-color-feedback));
+  --background-secondary: hsl(var(--med-color-feedback));
 }
 
-[tp-loader-circle],
-[tp-loader-polyline],
-[tp-loader-line] {
+:host(:not(.tp-loader-secondary)) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 100vh;
+  min-height: 100vh;
+  background: var(--background, #1a1a1a);
+}
+:host(:not(.tp-loader-secondary)) .loader-container {
+  display: block;
+  height: 94px;
+  width: 94px;
+}
+:host(:not(.tp-loader-secondary)) [tp-loader-circle],
+:host(:not(.tp-loader-secondary)) [tp-loader-polyline],
+:host(:not(.tp-loader-secondary)) [tp-loader-line] {
   fill: none;
   stroke: var(--stroke, hsl(var(--med-color-neutral-10)));
   stroke-width: 6;
   stroke-miterlimit: 10;
 }
-
-[tp-loader-rect] {
+:host(:not(.tp-loader-secondary)) [tp-loader-rect] {
   fill: var(--stroke, hsl(var(--med-color-neutral-10)));
 }
-
-[tp-loader-circle] {
+:host(:not(.tp-loader-secondary)) [tp-loader-circle] {
   animation: loadingcircle 1s linear infinite alternate, rotate 2s linear infinite;
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
   transform-origin: 50px 50px;
 }
-
-[tp-loader-line] {
-  animation: loading 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;
+:host(:not(.tp-loader-secondary)) [tp-loader-line] {
+  animation: loadingline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;
   stroke-dasharray: 25;
   stroke-dashoffset: 25;
 }
-
-[tp-loader-line]:nth-of-type(2) {
+:host(:not(.tp-loader-secondary)) [tp-loader-line]:nth-of-type(2) {
   animation-delay: 0.1s;
 }
-
-[tp-loader-line]:nth-of-type(3) {
+:host(:not(.tp-loader-secondary)) [tp-loader-line]:nth-of-type(3) {
   animation-delay: 0.2s;
 }
-
-[tp-loader-line]:nth-of-type(4) {
+:host(:not(.tp-loader-secondary)) [tp-loader-line]:nth-of-type(4) {
   animation-delay: 0.3s;
 }
-
-[tp-loader-line]:nth-of-type(5) {
+:host(:not(.tp-loader-secondary)) [tp-loader-line]:nth-of-type(5) {
   animation-delay: 0.4s;
 }
-
-[tp-loader-line]:nth-of-type(6) {
+:host(:not(.tp-loader-secondary)) [tp-loader-line]:nth-of-type(6) {
   animation-delay: 0.5s;
 }
-
-[tp-loader-line]:nth-of-type(7) {
+:host(:not(.tp-loader-secondary)) [tp-loader-line]:nth-of-type(7) {
   animation-delay: 0.6s;
 }
-
-[tp-loader-line]:nth-of-type(8) {
+:host(:not(.tp-loader-secondary)) [tp-loader-line]:nth-of-type(8) {
   animation-delay: 0.7s;
 }
-
-[tp-loader-polyline] {
-  animation: loading 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;
+:host(:not(.tp-loader-secondary)) [tp-loader-polyline] {
+  animation: loadingpolyline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
 }
-
-[tp-loader-polyline]:nth-of-type(2) {
+:host(:not(.tp-loader-secondary)) [tp-loader-polyline]:nth-of-type(2) {
   animation-delay: 0.2s;
 }
-
-[tp-loader-polyline]:nth-of-type(3) {
+:host(:not(.tp-loader-secondary)) [tp-loader-polyline]:nth-of-type(3) {
   animation-delay: 0.4s;
 }
-
-[tp-loader-polyline]:nth-of-type(4) {
+:host(:not(.tp-loader-secondary)) [tp-loader-polyline]:nth-of-type(4) {
   animation-delay: 0.6s;
 }
-
-@keyframes loading {
+@keyframes loadingline {
+  0% {
+    stroke-dashoffset: 25;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes loadingpolyline {
+  0% {
+    stroke-dashoffset: 50;
+  }
   50% {
     stroke-dashoffset: 0;
   }
@@ -114,6 +122,14 @@
     transform: rotate(1turn);
   }
 }
+
+:host(.tp-loader--fixed) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 :host(.tp-loader-secondary) {
   display: inline-block;
   position: relative;
@@ -133,41 +149,40 @@
   width: 2px;
   height: 6px;
   border-radius: 10px;
-  background: var(--background, hsl(var(--med-color-neutral-10)));
+  background: var(--background-secondary, hsl(var(--med-color-neutral-10)));
 }
-:host(.tp-loader-secondary) div:nth-child(1) {
+:host(.tp-loader-secondary) div:nth-of-type(1) {
   transform: rotate(0deg);
   animation-delay: -0.7s;
 }
-:host(.tp-loader-secondary) div:nth-child(2) {
+:host(.tp-loader-secondary) div:nth-of-type(2) {
   transform: rotate(45deg);
   animation-delay: -0.6s;
 }
-:host(.tp-loader-secondary) div:nth-child(3) {
+:host(.tp-loader-secondary) div:nth-of-type(3) {
   transform: rotate(90deg);
   animation-delay: -0.5s;
 }
-:host(.tp-loader-secondary) div:nth-child(4) {
+:host(.tp-loader-secondary) div:nth-of-type(4) {
   transform: rotate(135deg);
   animation-delay: -0.4s;
 }
-:host(.tp-loader-secondary) div:nth-child(5) {
+:host(.tp-loader-secondary) div:nth-of-type(5) {
   transform: rotate(180deg);
   animation-delay: -0.3s;
 }
-:host(.tp-loader-secondary) div:nth-child(6) {
+:host(.tp-loader-secondary) div:nth-of-type(6) {
   transform: rotate(225deg);
   animation-delay: -0.2s;
 }
-:host(.tp-loader-secondary) div:nth-child(7) {
+:host(.tp-loader-secondary) div:nth-of-type(7) {
   transform: rotate(270deg);
   animation-delay: -0.1s;
 }
-:host(.tp-loader-secondary) div:nth-child(8) {
+:host(.tp-loader-secondary) div:nth-of-type(8) {
   transform: rotate(315deg);
   animation-delay: 0s;
 }
-
 @keyframes loader-spinner {
   0% {
     opacity: 1;

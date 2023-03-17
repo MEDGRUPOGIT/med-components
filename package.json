@@ -117,9 +117,10 @@
     "tp:copy:sass": "shx cp -r src/@templarios/styles/functions src/@templarios/styles/mixins src/@templarios/styles/variables templarios/scss",
     "tp:minify:css": "cleancss -O2 --format --with-rebase --source-map --source-map-inline-sources --output templarios/css --batch --batch-suffix .min templarios/css/**/*.css",
     "tp:test:loki": "loki test",
-    "tp:start": "npm-run-all tp:clean:css --parallel tp:watch:sass tp:watch:stencil tp:start:storybook",
+    "tp:start": "nvm use 14.17.3 && npm-run-all tp:clean:css --parallel tp:watch:sass tp:watch:stencil tp:start:storybook",
     "tp:build": "npm-run-all tp:clean:css tp:clean:sass tp:copy:sass tp:build:sass tp:minify:css build",
-    "tp:doc:start": "cd @templarios/processos && npm start"
+    "tp:doc:start": "nvm use 18.14.1 && cd @templarios/processos && npm start",
+    "tp:doc:build": "nvm use 18.14.1 && cd @templarios/processos && npm run build"
   },
   "author": "Ionic Team",
   "license": "MIT",

@@ -16,9 +16,12 @@ Após o download completo abrir o arquivo no Finder:
 
 ![](../../static/img/docs/anydesk/arquivo-anydesk.png)
 
-Arrastar Icone AnyDesk para a pasta Application:
+Arraste o Icone AnyDesk para a pasta Application:
 
 ![](../../static/img/docs/anydesk/arrastar-anydesk.png)
+### Windows
+
+### Linux
 
 ## Desenvolvimento
 
@@ -31,6 +34,8 @@ ID MAC Brandão:
 ```
 967427861
 ```
+
+Senha: meddesenv!12
 
 Clicar em Conectar:
 

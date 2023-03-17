@@ -32,3 +32,7 @@
 .hero {
   flex: 1;
 }
+
+.button + .button {
+  margin-left: 16px;
+}

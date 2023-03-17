@@ -20,6 +20,11 @@ function HomepageHeader() {
             to="/docs/hotsites/medeletro">
             Processos
           </Link>
+          <Link
+            className="button button--secondary button--lg"
+            href="https://desenv.ordomederi.com/templarios">
+            Storybook
+          </Link>
         </div>
       </div>
     </header>

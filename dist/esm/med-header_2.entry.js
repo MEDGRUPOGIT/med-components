@@ -1,5 +1,5 @@
 import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './color-a516669b.js';
+import { g as generateMedColor } from './color-49be71bc.js';
 
 const medHeaderCss = ":host{--background:hsl(var(--med-color-neutral-1))}:host{background:var(--background);display:block;padding-top:var(--ion-safe-area-top)}:host-context(.platform-macintel){padding-top:20px !important}";
 

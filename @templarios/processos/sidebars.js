@@ -54,8 +54,11 @@ const sidebars = {
       type: 'category',
       label: 'Outros',
       items: [
+        'outros/android-studio',
         'outros/anydesk',
+        'outros/diawi',
         'outros/nvm',
+        'outros/obs',
       ],
     },
   ],
