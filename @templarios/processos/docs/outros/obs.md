@@ -1,3 +1,7 @@
+---
+toc_max_heading_level: 4
+---
+
 # OBS
 
 - **[Site OBS](https://obsproject.com/)**

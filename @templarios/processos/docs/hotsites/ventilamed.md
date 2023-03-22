@@ -1,3 +1,7 @@
+---
+toc_max_heading_level: 4
+---
+
 # VentilaMED
 
 - **[Homologação](http://desenv.ordomederi.com/templarios-ventilamed/#/)**

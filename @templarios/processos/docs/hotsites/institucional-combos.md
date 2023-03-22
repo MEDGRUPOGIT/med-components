@@ -1,3 +1,7 @@
+---
+toc_max_heading_level: 4
+---
+
 # Institucional (Combos)
 
 - **[Homologação](http://desenv.ordomederi.com/templarios-combo/#/combos)**

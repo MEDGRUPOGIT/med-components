@@ -1,3 +1,7 @@
+---
+toc_max_heading_level: 4
+---
+
 # AnyDesk
 
 - **[Site AnyDesk](https://anydesk.com/pt/downloads/mac-os)**

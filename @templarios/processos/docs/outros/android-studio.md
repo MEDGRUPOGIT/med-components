@@ -1,3 +1,7 @@
+---
+toc_max_heading_level: 4
+---
+
 # Android Studio
 
 - **[Site Android Studio](https://developer.android.com/studio)**

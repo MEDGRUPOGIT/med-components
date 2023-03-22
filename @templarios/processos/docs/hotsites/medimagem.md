@@ -1,3 +1,7 @@
+---
+toc_max_heading_level: 4
+---
+
 # MEDImagem
 
 - **[Homologação](http://desenv.ordomederi.com/templarios-medimagemr/#/)**

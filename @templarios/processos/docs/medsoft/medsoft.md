@@ -1,3 +1,7 @@
+---
+toc_max_heading_level: 4
+---
+
 # Medsoft
 
 Clonar repositório através do link abaixo:
@@ -109,6 +113,14 @@ Este processo pode ser feito para as demais execuções (Eletron e IOS).
 
 ### Electron
 
+No arquivo main.js descomentar o código da linha 136 para habilitar devtools:
+
+![](../../static/img/docs/medsoft/devtools-medsoft.png)
+
+:::caution
+**Não commitar essa alteração**
+:::
+
 Retornar se necessario para a pasta Medsoft-Pro-Desktop
 
 ```bash
@@ -122,7 +134,43 @@ npm run bee
 ```
 ### Android Studio
 
-1. lorem ipsum
+1. Abrir o Android Studio, clicar em File > Open. Abrir arquivo android na pasta do projeto do MEDSoft (Medsoft-Pro-Desktop\medsoft-pro-angular-ts\platforms\android).
+
+![](../../static/img/docs/medsoft/medsoft-android-studio.png)
+
+2. No Device Manager > Virtual, escolher o device que se quer testar, e clicar no play.
+
+![](../../static/img/docs/medsoft/medsoft-android-studio-device-play.png)
+
+3. No VSCode, ir para a pasta medsoft-pro-angular-ts (caso necessário).
+
+```bash
+cd medsoft-pro-angular-ts
+```
+
+4. Gerar build android:
+
+```bash
+ionic cordova run android
+```
+
+5. Quando acabar de gerar o build, no Android Studio, o emulador irá abrir o MEDSoft automaticamente.
+
+![](../../static/img/docs/medsoft/medsoft-android-studio-open.png)
+
+6. Para inspecionar, abrir Google Chrome na url:
+
+```
+chrome://inspect/#devices
+```
+
+7. Clicar em inspect, que aparece abaixo do emulador:
+
+![](../../static/img/docs/medsoft/medsoft-android-studio-inspect.png)
+
+8. Vai abrir uma janela mostrando a tela do emulador e o inspetor.
+
+![](../../static/img/docs/medsoft/medsoft-android-studio-inspect-2.png)
 
 ### XCode
 
@@ -135,7 +183,7 @@ Utilização via Anydesk
 2. Mudar para Branch desejada:
 
 ```bash
-git checkout (nome da branch)
+git checkout [nome-da-branch]
 ```
 
 ```bash
@@ -215,7 +263,7 @@ Inspecionar através do inspetor do safari:
 
 2. Criar uma Branch a partir da Release-Branch com o mesmo nome da branch de trabalho (ex.: git checkout correcao-videoaula).
 
-3. Alterar a linha 15 do arquivo pre-build.sh (trocar Release-Branch pelo nome da Branch criada):
+3. No Medsoft-Pro-Desktop, pasta scripts, alterar a linha 15 do arquivo pre-build.sh (trocar Release-Branch pelo nome da Branch criada):
 
 ![](../../static/img/docs/medsoft/pre-build-medsoft.png)
 
@@ -228,7 +276,7 @@ Inspecionar através do inspetor do safari:
 6. Inserir o comando abaixo para que o bot inicie o processo de criação do build desktop:
 
 ```
-/medbot-build-desktop-homol (nome da branch)
+/medbot-build-desktop-homol [nome-da-branch]
 ```
 
 :::note
@@ -246,7 +294,7 @@ Acompanhar na thread a evolução do processo. Se ao fim do processo o build for
 2. Inserir o comando abaixo para que o bot inicie o processo de criação do build IOS:
 
 ```
-/medbot-build-IOS-homol (nome da branch)
+/medbot-build-IOS-homol [nome-da-branch]
 ```
 
 :::note
@@ -276,7 +324,7 @@ Devido problemas no bot de build-homol, o build de Android deve ser feito atrav�
 6. Inserir o comando abaixo para que o bot inicie o processo de criação do build Android:
 
 ```
-/medbot-build-android-rc (nome da branch)
+/medbot-build-android-rc [nome-da-branch]
 ```
 
 :::note

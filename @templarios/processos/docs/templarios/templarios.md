@@ -1,24 +1,32 @@
+---
+toc_max_heading_level: 4
+---
+
 # Templarios
 
 ## Instalação
 
 ### ionic-framework
 
-Clonar repositório:
+1. Clonar **[repositório](https://github.com/MEDGRUPOGIT/ionic-framework)**.
 
-- **[Repositório ionic-framework](https://github.com/MEDGRUPOGIT/ionic-framework)**
-
-Utilizar versão do node: **14.17.3**
+2. Instalar Dependências:
 
 ```bash
 npm install
 ```
 
-Entrar na pasta /core: 
+:::note
+Utilizar versão do node: **14.17.3**.
+:::
+
+3. Entrar na pasta `core`: 
 
 ```bash
 cd core
 ```
+
+4. Instalar Dependências:
 
 ```bash
 npm install
@@ -26,9 +34,9 @@ npm install
 
 ### med-components
 
-Clonar repositório:
+1. Clonar **[repositório](https://github.com/MEDGRUPOGIT/med-components)**.
 
-- **[Repositório med-components](https://github.com/MEDGRUPOGIT/med-components)**
+2. Instalar Dependências:
 
 ```bash
 npm install
@@ -36,32 +44,37 @@ npm install
 
 ## Desenvolvimento
 
-Entrar na pasta /core: 
+No projeto **ionic-framework**:
+
+1. Entrar na pasta `core`:
 
 ```bash
 cd core
 ```
 
-Rodar projeto:
+2. Rodar projeto:
 
 ```bash
 npm run tp:start
 ```
 
 ## Fluxo git
-diagrama das branchs
+
+![](../../static/img/docs/templarios/fluxo-git-1.jpg)
+
+![](../../static/img/docs/templarios/fluxo-git-2.jpg)
 
 ## Publicação 
 
 ### Homologação (Hashes)
 
-1. No projeto **ionic-framework**, atualizar a branch de trabalho (ex: week11):
+1. No projeto **ionic-framework**, atualizar a branch de trabalho *(ex: week11)*:
 
 ```bash
 git pull
 ```
 
-2. Entrar na pasta /core:
+2. Entrar na pasta `core`:
 
 ```bash
 cd core
@@ -73,13 +86,14 @@ cd core
 npm run tp:build
 ```
 
-4. Abrir projeto **med-components** em nova janela do VSCode. Atualizar a branch de trabalho (ex: week11):
+4. No projeto **med-components**. Atualizar a branch de trabalho *(ex: week11)*:
 
 ```bash
 git pull
 ```
 
-5. Após o término da geração do build no projeto **ionic-framework**, copiar as seguintes pastas (que estão dentro da pasta core) para o projeto **med-components**:
+5. Após o término da geração do build no projeto **ionic-framework**, copiar as seguintes pastas para o projeto **med-components**:
+
 - @templarios
 - css
 - dist
@@ -87,19 +101,21 @@ git pull
 - loader
 - templarios
 
-Selecionar Copy folders, e depois Replace para todas as pastas:
+6. Selecionar `copy folders`, e após `replace` para todas as pastas:
 
 ![](../../static/img/docs/templarios/hash-copy-folders.png)
 
 ![](../../static/img/docs/templarios/hash-copy-folders-replace.png)
 
-6. No projeto **med-components**, comitar os arquivos copiados (e dar push).
+6. No projeto **med-components**, *comitar* os arquivos copiados e dar *push*.
 
-7. No repositório do projeto **[med-component](https://github.com/MEDGRUPOGIT/med-components)**, selecionar a branch de trabalho e clicar no commit que foi feito. Copiar a hash criada da URL do navegador
+#### Geração de hash
+
+7. No repositório do projeto **[med-component](https://github.com/MEDGRUPOGIT/med-components)**, selecionar a branch de trabalho e clicar no commit que foi feito. *Copiar* a hash criada da URL do navegador:
 
 ![](../../static/img/docs/templarios/hash-github.png)
 
-8. Abrir projeto que se deseja testar. Abrir arquivo `package.json`, colar a hash gerada na url do @ionic/core nas dependencies. Abaixo um exemplo do MEDSoft:
+8. Abrir projeto que se deseja testar. Abrir arquivo `package.json`, colar a hash gerada na url do `@ionic/core` nas dependencies. *Abaixo um exemplo do MEDSoft*:
 
 ![](../../static/img/docs/templarios/hash-ex.png)
 
@@ -113,13 +129,13 @@ npm install
 
 ### Produção (Tag)
 
-1. No projeto **ionic-framework**, atualizar a branch de trabalho (ex: week11):
+1. No projeto **ionic-framework**, atualizar a branch de trabalho *(ex: week11)*:
 
 ```bash
 git pull
 ```
 
-2. Mudar para branch release e atualizar ela:
+2. Mudar para branch `release` e atualizar ela:
 
 ```bash
 git checkout release
@@ -129,15 +145,15 @@ git checkout release
 git pull
 ```
 
-3. Mergear a branch de trabalho com squash, na release:
+3. Mergear a branch de `trabalho` com squash, na release:
 
 ```bash
 git merge [nome-da-branch] --squash
+
+# comitar e dar push.
 ```
 
-Comitar e dar push.
-
-4. Mudar para branch master e atualizar ela:
+4. Mudar para branch `master` e atualizar ela:
 
 ```bash
 git checkout master
@@ -147,27 +163,33 @@ git checkout master
 git pull
 ```
 
-5. Mergear a release sem squash, na master:
+5. Mergear a `release` sem squash, na `master`:
 
 ```bash
 git merge release
+
+# comitar e dar push.
 ```
 
-Comitar e dar push.
+6. Entrar na pasta `core`:
 
-6. Gerar build (branch master):
+```bash
+cd core
+```
+
+7. Gerar build na branch `master`:
 
 ```bash
 npm run tp:build
 ```
 
-7. Abrir projeto **med-components** em nova janela do VSCode. Atualizar a branch de trabalho (ex: week11):
+8. Abrir projeto **med-components**. Atualizar a branch de `trabalho` *(ex: week11)*:
 
 ```bash
 git pull
 ```
 
-8. Mudar para branch main e atualizar ela:
+9. Mudar para branch `main` e atualizar ela:
 
 ```bash
 git checkout main
@@ -177,7 +199,8 @@ git checkout main
 git pull
 ```
 
-9. Após o término da geração do build no projeto **ionic-framework**, copiar as seguintes pastas e arquivos (que estão dentro da pasta core) para o projeto **med-components**:
+10. Após o término da geração do build no projeto **ionic-framework**, copiar as seguintes pastas para o projeto **med-components**:
+
 - Pastas:
   - @templarios
   - css
@@ -190,15 +213,17 @@ git pull
   - package.json
   - README.md
 
-Selecionar Copy folders, e depois Replace para todas as pastas/arquivos:
+11. Selecionar `copy folders`, e após `replace` para todas as pastas:
 
 ![](../../static/img/docs/templarios/tag-copy-folders.png)
 
 ![](../../static/img/docs/templarios/tag-copy-folders-replace.png)
 
-10. No projeto **med-components**, comitar os arquivos copiados (e dar push).
+#### Geração de tag
 
-11. Verificar a numeração da última tag (**[repositório med-components/tags](https://github.com/MEDGRUPOGIT/med-components/tags)**), e gerar a próxima tag:
+11. No projeto **med-components**, *comitar* os arquivos copiados e dar *push*.
+
+12. Verificar a numeração da última tag (**[repositório med-components/tags](https://github.com/MEDGRUPOGIT/med-components/tags)**), e gerar a próxima tag:
 
 ```bash
 git tag -a [numero-da-nova-tag] -m "[numero-da-nova-tag]"
@@ -210,25 +235,37 @@ Após gerada, dar push na tag:
 git push origin --tags
 ```
 
-12. Acessar o repositório do Github **[med-component](https://github.com/MEDGRUPOGIT/med-components)**, clicar em tags e verificar se a nova tag foi publicada.
+13. Acessar o repositório **[med-component](https://github.com/MEDGRUPOGIT/med-components)**, clicar em tags e verificar se a nova tag foi publicada.
 
 ![](../../static/img/docs/templarios/tag-number.png)
 
-13. Abrir projeto que se deseja atualizar. Abrir arquivo `package.json`, colar a nova tag gerada na url do @ionic/core nas dependencies. Abaixo um exemplo do MEDSoft:
+#### Geração de release
+
+14. Na tag gerada, clicar nos três pontos localizados no lado direito > Create release.
+
+![](../../static/img/docs/templarios/tag-create-release.png)
+
+15. Preencher o número da tag e descrever as alterações que foram feitas nos componentes. Clicar em `Publish release`.
+
+![](../../static/img/docs/templarios/tag-descricao.png)
+
+#### Utilização de tag
+
+16. Abrir projeto que se deseja testar. Abrir arquivo `package.json`, colar a hash gerada na url do `@ionic/core` nas dependencies. *Abaixo um exemplo do MEDSoft*:
 
 ![](../../static/img/docs/templarios/tag-ex.png)
 
-14. Instalar dependências do projeto:
+17. Instalar dependências do projeto:
 
 ```bash
 npm install
 ```
 
-15. Rodar projeto e verificar as atualizações feitas no DS.
+18. Rodar projeto e verificar as atualizações feitas no DS.
 
-### Limpeza de branchs após publicação de tag
+#### Limpeza de branchs após publicação de tag
 
-16. No projetos **ionic-framework**, excluir a branch de trabalho (ex: week11) e criar nova branch a partir da release:
+19. No projetos **ionic-framework**, excluir a branch de `trabalho` *(ex: week11)* e criar nova branch *(ex: week12)* a partir da `release`:
 
 ```bash
 git checkout release
@@ -236,12 +273,59 @@ git checkout release
 
 ```bash
 git checkout -b [nome-da-nova-branch]
+
+# Publicar nova branch de trabalho.
 ```
 
-17. No projetos **med-components**, excluir a branch de trabalho (ex: week11) e criar nova branch a partir da main:
+20. No projetos **med-components**, excluir a branch de `trabalho` *(ex: week11)* e criar nova branch *(ex: week12)* a partir da `main`:
 
 ```bash
 git checkout -b [nome-da-nova-branch]
+
+# Publicar nova branch de trabalho.
 ```
 
-18. Informar os outros membros do time da criação das novas branchs de trabalho.
+21. Informar os outros membros do time da criação das novas branchs de trabalho.
+
+## Docusaurus
+
+:::note
+Utilizar versão do node: **18.14.1**.
+:::
+
+1. Entrar na pasta `@templarios/processos`.
+
+```bash
+cd @templarios/processos
+```
+
+2. Instalar Dependências:
+
+```bash
+npm install
+```
+
+3. Voltar para a pasta `core`.
+
+4. Rodar projeto:
+
+```bash
+npm run tp:doc:start
+```
+
+## Resumo
+
+### Branch da semana
+
+- mergear branch `anterior` com squash na `release`
+- mergear `release` sem squash com `master`
+- criar nova branch a partir `release` *(ex: week10)*
+
+### Geração de tag
+
+- mergear branch `anterior` com squash na `release`
+- mergear `release` sem squash com `master`
+- gerar build da `master`
+- **med-components:** na branch `main` colocar os artefatos, `commitar` *(ex: 1.5.0)* e `push`
+- git tag -a `1.5.0` -m `"1.5.0"`
+- git push origin --tags
