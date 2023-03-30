@@ -151,35 +151,35 @@
   border-radius: 10px;
   background: var(--background-secondary, hsl(var(--med-color-neutral-10)));
 }
-:host(.tp-loader-secondary) div:nth-of-type(1) {
+:host(.tp-loader-secondary) div:nth-child(1) {
   transform: rotate(0deg);
   animation-delay: -0.7s;
 }
-:host(.tp-loader-secondary) div:nth-of-type(2) {
+:host(.tp-loader-secondary) div:nth-child(2) {
   transform: rotate(45deg);
   animation-delay: -0.6s;
 }
-:host(.tp-loader-secondary) div:nth-of-type(3) {
+:host(.tp-loader-secondary) div:nth-child(3) {
   transform: rotate(90deg);
   animation-delay: -0.5s;
 }
-:host(.tp-loader-secondary) div:nth-of-type(4) {
+:host(.tp-loader-secondary) div:nth-child(4) {
   transform: rotate(135deg);
   animation-delay: -0.4s;
 }
-:host(.tp-loader-secondary) div:nth-of-type(5) {
+:host(.tp-loader-secondary) div:nth-child(5) {
   transform: rotate(180deg);
   animation-delay: -0.3s;
 }
-:host(.tp-loader-secondary) div:nth-of-type(6) {
+:host(.tp-loader-secondary) div:nth-child(6) {
   transform: rotate(225deg);
   animation-delay: -0.2s;
 }
-:host(.tp-loader-secondary) div:nth-of-type(7) {
+:host(.tp-loader-secondary) div:nth-child(7) {
   transform: rotate(270deg);
   animation-delay: -0.1s;
 }
-:host(.tp-loader-secondary) div:nth-of-type(8) {
+:host(.tp-loader-secondary) div:nth-child(8) {
   transform: rotate(315deg);
   animation-delay: 0s;
 }

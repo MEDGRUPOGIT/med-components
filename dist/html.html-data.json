@@ -7293,7 +7293,12 @@
         },
         {
           "name": "ds-name",
-          "description": ""
+          "description": "",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
         },
         {
           "name": "fixed",

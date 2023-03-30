@@ -4086,7 +4086,7 @@ export namespace Components {
     }
     interface TpLoader {
         "dsColor"?: MedColor;
-        "dsName"?: MedColor;
+        "dsName"?: "secondary";
         "fixed": boolean;
     }
     interface TutorialModal {
@@ -9453,7 +9453,7 @@ declare namespace LocalJSX {
     }
     interface TpLoader {
         "dsColor"?: MedColor;
-        "dsName"?: MedColor;
+        "dsName"?: "secondary";
         "fixed"?: boolean;
     }
     interface TutorialModal {

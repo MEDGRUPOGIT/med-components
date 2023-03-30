@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-03-17T18:48:18",
+  "timestamp": "2023-03-30T19:06:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -27976,7 +27976,7 @@
         },
         {
           "name": "dsName",
-          "type": "string | undefined",
+          "type": "\"secondary\" | undefined",
           "mutable": false,
           "attr": "ds-name",
           "reflectToAttr": true,
@@ -27984,6 +27984,7 @@
           "docsTags": [],
           "values": [
             {
+              "value": "secondary",
               "type": "string"
             },
             {

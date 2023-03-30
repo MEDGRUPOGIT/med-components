@@ -13,7 +13,7 @@ const index$1 = require('./index-e1bb33c3.js');
 const index$2 = require('./index-29aebf46.js');
 const index$3 = require('./index-3bb26b58.js');
 const overlays = require('./overlays-e22059c3.js');
-const type_enum = require('./type.enum-764113bc.js');
+const type_enum = require('./type.enum-025e3a26.js');
 const plusminus_enum = require('./plusminus.enum-43139314.js');
 const rateLike_enum = require('./rate-like.enum-0930ca84.js');
 require('./gesture-controller-29adda71.js');

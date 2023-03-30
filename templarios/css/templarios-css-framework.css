@@ -5187,6 +5187,11 @@
   margin: 0;
   padding: 0;
 }
+[tp-label][token=h64] {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 64px;
+}
 [tp-label][token=h48] {
   font-size: 48px;
   font-weight: 600;

@@ -93,14 +93,9 @@ export class TpLoader {
       "type": "string",
       "mutable": false,
       "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../../../@templarios/types/color.type"
-          }
-        }
+        "original": "\"secondary\"",
+        "resolved": "\"secondary\" | undefined",
+        "references": {}
       },
       "required": false,
       "optional": true,

@@ -12,6 +12,7 @@ export var MedTypeTag;
 })(MedTypeTag || (MedTypeTag = {}));
 export var MedType;
 (function (MedType) {
+  MedType["H64"] = "h64";
   MedType["H48"] = "h48";
   MedType["H48X"] = "h48x";
   MedType["H32"] = "h32";

@@ -6038,18 +6038,22 @@ ion-item {
 
 ion-item[radius=s00] {
   border-radius: 0;
+  --border-radius: 0;
 }
 
 ion-item[radius=s02] {
   border-radius: 2px;
+  --border-radius: 2px;
 }
 
 ion-item[radius=s04] {
   border-radius: 4px;
+  --border-radius: 4px;
 }
 
 ion-item[radius=s08] {
   border-radius: 8px;
+  --border-radius: 8px;
 }
 
 ion-item[spacing-v=s00] {
@@ -6578,6 +6582,11 @@ ion-label {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+}
+ion-label[token=h64] {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 64px;
 }
 ion-label[token=h48] {
   font-size: 48px;
@@ -9928,6 +9937,11 @@ ion-title {
   line-height: 16px;
   font-weight: 600;
   letter-spacing: initial;
+}
+ion-title[token=h64] {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 64px;
 }
 ion-title[token=h48] {
   font-size: 48px;

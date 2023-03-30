@@ -36,6 +36,12 @@
   --color: hsl(var(--med-color-feedback));
 }
 
+:host(.med-type--h64) {
+  --font-size: 64px;
+  --font-weight: 600;
+  --line-height: 64px;
+}
+
 :host(.med-type--h48) {
   --font-size: 48px;
   --font-weight: 600;
