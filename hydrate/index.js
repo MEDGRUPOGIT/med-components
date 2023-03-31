@@ -16219,7 +16219,7 @@ class MedFontZoom {
   }; }
 }
 
-const medHeaderCss = "/*!@:host*/.sc-med-header-h{--background:hsl(var(--med-color-neutral-1))}/*!@:host*/.sc-med-header-h{background:var(--background);display:block;padding-top:var(--ion-safe-area-top)}/*!@:host-context(.platform-macintel)*/.platform-macintel.sc-med-header-h,.platform-macintel .sc-med-header-h{padding-top:20px !important}";
+const medHeaderCss = "/*!@:host*/.sc-med-header-h{--background:hsl(var(--med-color-neutral-1))}/*!@:host*/.sc-med-header-h{background:var(--background);display:block;padding-top:var(--ion-safe-area-top)}";
 
 class MedHeader {
   constructor(hostRef) {

@@ -6034,6 +6034,7 @@ ion-item {
   --tp-label-font-size: 14px;
   --tp-label-line-height: 14px;
   --tp-label-margin: 0;
+  contain: content;
 }
 
 ion-item[radius=s00] {
