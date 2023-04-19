@@ -3,13 +3,16 @@ import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedToggle {
   constructor() {
     /**
-   * todo
-   */
+    * todo
+    */
     this.collapsed = true;
+    /**
+    * todo
+    */
+    this.iconClick = false;
   }
   componentDidLoad() {
-    var _a;
-    this.element = (_a = this.host.shadowRoot) === null || _a === void 0 ? void 0 : _a.querySelector('.med-toggle__content');
+    this.element = this.host.querySelector('.med-toggle__content');
   }
   setHeight() {
     var _a;
@@ -36,18 +39,30 @@ export class MedToggle {
       this.close();
     }
   }
+  onClickComponent() {
+    if (!this.iconClick) {
+      this.collapsed = !this.collapsed;
+    }
+  }
+  onClickIcon() {
+    if (this.iconClick) {
+      this.collapsed = !this.collapsed;
+    }
+  }
   render() {
-    const { collapsed, dsColor } = this;
+    const { collapsed, dsColor, iconClick } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-toggle': true,
-        'med-toggle--collapsed': collapsed
-      }), onClick: () => { this.collapsed = !this.collapsed; } },
+        'med-toggle--collapsed': collapsed,
+        'med-toggle--icon-click': iconClick
+      }), onClick: () => { this.onClickComponent(); } },
       h("div", { class: "med-toggle__content" },
         h("slot", null)),
-      h("ion-icon", { class: "med-icon med-toggle__icon", name: "med-cima" })));
+      h("div", { class: "med-toggle__bottom", onClick: () => { this.onClickIcon(); } },
+        h("ion-icon", { class: "med-icon med-toggle__icon", name: "med-cima" }))));
   }
   static get is() { return "med-toggle"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() { return {
     "$": ["med-toggle.scss"]
   }; }
@@ -94,6 +109,24 @@ export class MedToggle {
       "attribute": "collapsed",
       "reflect": true,
       "defaultValue": "true"
+    },
+    "iconClick": {
+      "type": "boolean",
+      "mutable": true,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "todo"
+      },
+      "attribute": "icon-click",
+      "reflect": true,
+      "defaultValue": "false"
     }
   }; }
   static get elementRef() { return "host"; }

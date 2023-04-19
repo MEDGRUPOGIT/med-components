@@ -24,6 +24,13 @@
   transition: all 0.3s;
 }
 
+:host .med-toggle__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 :host .med-toggle__icon {
   align-self: center;
   margin-top: 8px;
@@ -34,6 +41,14 @@
 
 :host(.med-toggle--collapsed) .med-toggle__icon {
   transform: rotate(180deg);
+}
+
+:host(.med-toggle--icon-click) {
+  cursor: unset;
+}
+
+:host(.med-toggle--icon-click) .med-toggle__bottom {
+  cursor: pointer;
 }
 
 :host(.med-color) {

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-03-31T19:18:16",
+  "timestamp": "2023-04-19T14:23:11",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -8920,6 +8920,7 @@
         "realizacoes-modal",
         "simulado-modal",
         "text-area-modal",
+        "tp-chart-bar",
         "tutorial-modal",
         "unidades-modal"
       ],
@@ -8971,6 +8972,9 @@
           "ion-label"
         ],
         "text-area-modal": [
+          "ion-label"
+        ],
+        "tp-chart-bar": [
           "ion-label"
         ],
         "tutorial-modal": [
@@ -26764,7 +26768,7 @@
     },
     {
       "filePath": "./src/components/@templarios/team/med-toggle/med-toggle.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-toggle",
       "readme": "# med-toggle\n\n\n",
       "docs": "",
@@ -26805,6 +26809,23 @@
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconClick",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "icon-click",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
           "required": false
         }
       ],
@@ -27733,6 +27754,173 @@
         ],
         "ion-button": [
           "ion-ripple-effect"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/@templarios/core/tp-chart-bar/tp-chart-bar.tsx",
+      "encapsulation": "scoped",
+      "tag": "tp-chart-bar",
+      "readme": "# med-chart-bar\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "bar",
+          "type": "TpChartBarItem",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "{\n    color: \"med-color-brand-4\",\n    value: 0,\n  }",
+          "values": [
+            {
+              "type": "TpChartBarItem"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasMarker",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-marker",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "mutable": false,
+          "attr": "height",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "200",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "labelSize",
+          "type": "number",
+          "mutable": false,
+          "attr": "label-size",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "10",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "marker",
+          "type": "TpChartBarItem",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "{\n    color: \"med-color-fb-caution\",\n    value: 0,\n  }",
+          "values": [
+            {
+              "type": "TpChartBarItem"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-label"
+      ],
+      "dependencyGraph": {
+        "tp-chart-bar": [
+          "ion-label"
         ]
       }
     },

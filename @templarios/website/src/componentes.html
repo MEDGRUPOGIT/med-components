@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-medsoft outros" color-scheme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medgrupo - Design System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/main.scss" />
+  </head>
+
+  <body>
+    <div class="site-container">
+      <header class="header">
+        <a href="/">
+          <ion-label class="header__title" ds-color="brand" token="h16x">
+            <svg
+              class="header__logo"
+              width="141"
+              height="36"
+              viewBox="0 0 141 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.0123 12.0453H5.05713V14.0827H14.0498V5.0918H12.0123V12.0453Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M17.2103 18.3667H15.1729V20.4042H17.2103V18.3667Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M20.3705 5.09375H18.333V14.0829H20.3705V5.09375Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M17.2103 21.5273H15.1729V30.5183H17.2103V21.5273Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M17.2103 15.2061H15.1729V17.2435H17.2103V15.2061Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M14.0481 15.2061H5.05713V17.2435H14.0481V15.2061Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M5.05713 23.5648H12.0123V30.5183H14.0481V21.5273H5.05713V23.5648Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M14.0481 18.3667H5.05713V20.4042H14.0481V18.3667Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M17.2103 5.09375H15.1729V14.0829H17.2103V5.09375Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M30.4873 18.3667H21.4946V20.4042H30.4873V18.3667Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M23.5321 5.09375H21.4946V14.0829H30.4873V12.0455H23.5321V5.09375Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M30.4873 15.2061H21.4946V17.2435H30.4873V15.2061Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M20.3724 15.2061H18.335V17.2435H20.3724V15.2061Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M20.3724 18.3667H18.335V20.4042H20.3724V18.3667Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M20.3705 21.5273H18.333V30.5183H20.3705V21.5273Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M21.4927 30.5183H23.5319V23.5648H30.4854V21.5273H21.4927V30.5183Z"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M35.5214 16.7542C34.9885 7.35575 27.2062 0 17.7729 0C13.0258 0 8.56255 1.84938 5.20509 5.2051C1.84938 8.56255 0 13.0258 0 17.7729C0 22.52 1.84938 26.985 5.20509 30.3407C8.5608 33.6982 13.0258 35.5458 17.7729 35.5458C27.2062 35.5458 34.9885 28.1918 35.5197 18.7899H35.5475V16.7524H35.5197L35.5214 16.7542ZM33.5101 17.7712C33.5101 21.9749 31.8731 25.9262 28.9006 28.8988C25.9297 31.8714 21.9749 33.5083 17.7712 33.5083C13.5674 33.5083 9.61436 31.8714 6.6435 28.8988C3.67091 25.9262 2.03223 21.9749 2.03223 17.7712C2.03223 13.5674 3.67091 9.61436 6.6435 6.64176C9.6161 3.66917 13.5674 2.03223 17.7712 2.03223C21.9749 2.03223 25.9297 3.66917 28.9006 6.64176C31.8731 9.61436 33.5101 13.5674 33.5101 17.7712"
+                fill="#F9FAFA"
+              />
+              <path
+                d="M122.142 12.0454H117.174V23.5649H120.267V20.1779H122.527C124.246 20.1779 125.289 19.8122 126.055 19.0477C126.714 18.3703 127.097 17.3446 127.097 16.042C127.097 14.8073 126.75 13.853 126.106 13.2087C125.289 12.3937 124.056 12.0454 122.144 12.0454M123.708 17.3794C123.553 17.6406 123.414 17.6929 123.119 17.6929H120.269V14.6349H122.111C122.928 14.6349 123.361 14.7046 123.64 14.9832C123.849 15.1904 123.971 15.6258 123.971 16.0612C123.971 16.4965 123.882 17.0851 123.708 17.3811M89.9452 17.3463H85.8616V19.3455H87.4602V20.3363C87.4602 20.4582 87.4428 20.5261 87.3035 20.5784C86.8177 20.7351 85.8964 20.8396 85.2173 20.8396H85.1825C83.2721 20.8396 82.1942 19.7094 82.1942 17.7468C82.1942 15.7843 83.3418 14.6715 84.7314 14.6715C85.4106 14.6715 85.879 14.8282 86.5042 15.2096L88.2944 16.305L90.1194 15.0024C89.4246 13.2122 87.3558 11.8748 84.9578 11.8748C81.6561 11.8748 78.9621 14.1334 78.9621 17.8165C78.9621 21.1531 81.0988 23.7408 84.5225 23.7408C85.4263 23.7408 86.1733 23.5492 87.0075 23.0634L87.859 22.5758L88.3449 23.5667H90.4816V17.8148C90.4816 17.4491 90.3597 17.3463 89.9435 17.3463M134.099 11.873C130.867 11.873 128.155 14.2187 128.155 17.8148C128.155 21.4108 130.867 23.7391 134.099 23.7391C137.331 23.7391 140.041 21.4108 140.041 17.8148C140.041 14.2187 137.329 11.873 134.099 11.873ZM134.099 20.716C132.361 20.716 131.387 19.6398 131.387 17.8148C131.387 15.9898 132.361 14.8961 134.099 14.8961C135.837 14.8961 136.809 15.9915 136.809 17.8148C136.809 19.638 135.837 20.716 134.099 20.716ZM112.187 18.823C112.187 19.5022 112.049 19.9358 111.718 20.2301C111.354 20.561 110.692 20.7525 109.909 20.7525C109.125 20.7525 108.432 20.561 108.068 20.2301C107.739 19.9358 107.598 19.5022 107.598 18.823V12.0472H104.505V18.5967C104.505 20.2824 104.923 21.5153 105.825 22.386C106.713 23.2375 108.086 23.7408 109.874 23.7408C111.662 23.7408 113.038 23.2375 113.925 22.386C114.828 21.517 115.229 20.2824 115.229 18.5967V12.0472H112.187V18.823ZM71.0038 12.0472H66.7983V23.5667H71.0038C73.3669 23.5667 75.2094 23.0634 76.4249 21.8461C77.3461 20.9267 77.8842 19.5875 77.8842 17.8148C77.8842 16.042 77.3461 14.6872 76.4249 13.766C75.2076 12.5505 73.3669 12.0472 71.0038 12.0472ZM73.818 20.2127C73.1928 20.7699 72.2542 20.9075 70.9168 20.9075H69.8911V14.7046H70.9168C72.2542 14.7046 73.1928 14.8439 73.818 15.3994C74.3578 15.8696 74.6695 16.6341 74.6695 17.8148C74.6695 18.9954 74.3561 19.7443 73.818 20.2127ZM102.527 15.833C102.527 14.6854 102.161 13.7642 101.538 13.1391C100.737 12.3572 99.469 12.0454 97.5413 12.0454H92.4999V23.5649H95.5944V19.9341H97.2975C97.6301 19.9341 97.6632 19.9689 97.853 20.2806L99.6084 23.2706C99.7651 23.5318 99.8522 23.5649 100.129 23.5649H103.206L100.617 19.3942C101.677 18.7168 102.527 17.4665 102.527 15.833ZM99.1399 17.1704C98.9658 17.4317 98.8091 17.4839 98.513 17.4839H95.5944V14.6332H97.5935C98.358 14.6332 98.7916 14.7028 99.0703 14.9641C99.2601 15.1556 99.3994 15.5718 99.3994 15.9898C99.3994 16.3363 99.3297 16.8744 99.1399 17.1704ZM58.8418 18.9954H64.1775V16.493H58.8418V14.6001H64.6982V12.0454H55.749V23.5649H64.8549V21.0103H58.8435V18.9954H58.8418ZM50.6397 12.3397L47.3032 16.5279H47.2509L43.897 12.3397C43.688 12.0785 43.6009 12.0454 43.2544 12.0454H40.752V23.5649H43.7054V16.4582H43.7228L45.9483 19.2723C46.0877 19.4465 46.2096 19.5005 46.469 19.5005H48.1913L50.6397 16.4582H50.6571V23.5649H53.6297V12.0454H51.284C50.9358 12.0454 50.8487 12.0785 50.6397 12.3397Z"
+                fill="#F9FAFA"
+              />
+            </svg>
+            <span>Design System</span>
+          </ion-label>
+        </a>
+
+        <nav class="header__navigation">
+          <ul class="header__nav-links">
+            <li class="header__nav-link">
+              <ion-label ds-color="neutral-4" token="p14">
+                <a href="/src/marcas.html">Marcas</a>
+              </ion-label>
+            </li>
+            <li class="header__nav-link">
+              <ion-label ds-color="neutral-4" token="p14">
+                <a href="/src/guias.html">Guias</a>
+              </ion-label>
+            </li>
+            <li class="header__nav-link">
+              <ion-label ds-color="neutral-4" token="p14" data-active="true">
+                <a href="/src/componentes.html">Componentes</a>
+              </ion-label>
+            </li>
+            <li class="header__nav-link">
+              <ion-label ds-color="neutral-4" token="p14">
+                <a href="/src/padroes.html">Padrões</a>
+              </ion-label>
+            </li>
+            <li class="header__nav-link">
+              <ion-label ds-color="neutral-4" token="p14">
+                <a href="/src/recursos.html">Recursos</a>
+              </ion-label>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__utilities">
+          <div class="header__color-mode">
+            <ion-toggle checked mode="ios"></ion-toggle>
+
+            <ion-icon name="sunny-outline"></ion-icon>
+
+            <ion-icon name="moon-outline"></ion-icon>
+          </div>
+          <ion-icon name="search-outline"></ion-icon>
+        </div>
+
+        <button class="header__menu-button" title="menu" type="button">
+          <div class="header__menu-button-animation">
+            <div></div>
+          </div>
+        </button>
+
+        <div class="header__menu">
+          <a href="/">
+            <ion-label class="header__title" ds-color="brand" token="h16x">
+              <svg
+                class="header__logo"
+                width="141"
+                height="36"
+                viewBox="0 0 141 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.0123 12.0453H5.05713V14.0827H14.0498V5.0918H12.0123V12.0453Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M17.2103 18.3667H15.1729V20.4042H17.2103V18.3667Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M20.3705 5.09375H18.333V14.0829H20.3705V5.09375Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M17.2103 21.5273H15.1729V30.5183H17.2103V21.5273Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M17.2103 15.2061H15.1729V17.2435H17.2103V15.2061Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M14.0481 15.2061H5.05713V17.2435H14.0481V15.2061Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M5.05713 23.5648H12.0123V30.5183H14.0481V21.5273H5.05713V23.5648Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M14.0481 18.3667H5.05713V20.4042H14.0481V18.3667Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M17.2103 5.09375H15.1729V14.0829H17.2103V5.09375Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M30.4873 18.3667H21.4946V20.4042H30.4873V18.3667Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M23.5321 5.09375H21.4946V14.0829H30.4873V12.0455H23.5321V5.09375Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M30.4873 15.2061H21.4946V17.2435H30.4873V15.2061Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M20.3724 15.2061H18.335V17.2435H20.3724V15.2061Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M20.3724 18.3667H18.335V20.4042H20.3724V18.3667Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M20.3705 21.5273H18.333V30.5183H20.3705V21.5273Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M21.4927 30.5183H23.5319V23.5648H30.4854V21.5273H21.4927V30.5183Z"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M35.5214 16.7542C34.9885 7.35575 27.2062 0 17.7729 0C13.0258 0 8.56255 1.84938 5.20509 5.2051C1.84938 8.56255 0 13.0258 0 17.7729C0 22.52 1.84938 26.985 5.20509 30.3407C8.5608 33.6982 13.0258 35.5458 17.7729 35.5458C27.2062 35.5458 34.9885 28.1918 35.5197 18.7899H35.5475V16.7524H35.5197L35.5214 16.7542ZM33.5101 17.7712C33.5101 21.9749 31.8731 25.9262 28.9006 28.8988C25.9297 31.8714 21.9749 33.5083 17.7712 33.5083C13.5674 33.5083 9.61436 31.8714 6.6435 28.8988C3.67091 25.9262 2.03223 21.9749 2.03223 17.7712C2.03223 13.5674 3.67091 9.61436 6.6435 6.64176C9.6161 3.66917 13.5674 2.03223 17.7712 2.03223C21.9749 2.03223 25.9297 3.66917 28.9006 6.64176C31.8731 9.61436 33.5101 13.5674 33.5101 17.7712"
+                  fill="#F9FAFA"
+                />
+                <path
+                  d="M122.142 12.0454H117.174V23.5649H120.267V20.1779H122.527C124.246 20.1779 125.289 19.8122 126.055 19.0477C126.714 18.3703 127.097 17.3446 127.097 16.042C127.097 14.8073 126.75 13.853 126.106 13.2087C125.289 12.3937 124.056 12.0454 122.144 12.0454M123.708 17.3794C123.553 17.6406 123.414 17.6929 123.119 17.6929H120.269V14.6349H122.111C122.928 14.6349 123.361 14.7046 123.64 14.9832C123.849 15.1904 123.971 15.6258 123.971 16.0612C123.971 16.4965 123.882 17.0851 123.708 17.3811M89.9452 17.3463H85.8616V19.3455H87.4602V20.3363C87.4602 20.4582 87.4428 20.5261 87.3035 20.5784C86.8177 20.7351 85.8964 20.8396 85.2173 20.8396H85.1825C83.2721 20.8396 82.1942 19.7094 82.1942 17.7468C82.1942 15.7843 83.3418 14.6715 84.7314 14.6715C85.4106 14.6715 85.879 14.8282 86.5042 15.2096L88.2944 16.305L90.1194 15.0024C89.4246 13.2122 87.3558 11.8748 84.9578 11.8748C81.6561 11.8748 78.9621 14.1334 78.9621 17.8165C78.9621 21.1531 81.0988 23.7408 84.5225 23.7408C85.4263 23.7408 86.1733 23.5492 87.0075 23.0634L87.859 22.5758L88.3449 23.5667H90.4816V17.8148C90.4816 17.4491 90.3597 17.3463 89.9435 17.3463M134.099 11.873C130.867 11.873 128.155 14.2187 128.155 17.8148C128.155 21.4108 130.867 23.7391 134.099 23.7391C137.331 23.7391 140.041 21.4108 140.041 17.8148C140.041 14.2187 137.329 11.873 134.099 11.873ZM134.099 20.716C132.361 20.716 131.387 19.6398 131.387 17.8148C131.387 15.9898 132.361 14.8961 134.099 14.8961C135.837 14.8961 136.809 15.9915 136.809 17.8148C136.809 19.638 135.837 20.716 134.099 20.716ZM112.187 18.823C112.187 19.5022 112.049 19.9358 111.718 20.2301C111.354 20.561 110.692 20.7525 109.909 20.7525C109.125 20.7525 108.432 20.561 108.068 20.2301C107.739 19.9358 107.598 19.5022 107.598 18.823V12.0472H104.505V18.5967C104.505 20.2824 104.923 21.5153 105.825 22.386C106.713 23.2375 108.086 23.7408 109.874 23.7408C111.662 23.7408 113.038 23.2375 113.925 22.386C114.828 21.517 115.229 20.2824 115.229 18.5967V12.0472H112.187V18.823ZM71.0038 12.0472H66.7983V23.5667H71.0038C73.3669 23.5667 75.2094 23.0634 76.4249 21.8461C77.3461 20.9267 77.8842 19.5875 77.8842 17.8148C77.8842 16.042 77.3461 14.6872 76.4249 13.766C75.2076 12.5505 73.3669 12.0472 71.0038 12.0472ZM73.818 20.2127C73.1928 20.7699 72.2542 20.9075 70.9168 20.9075H69.8911V14.7046H70.9168C72.2542 14.7046 73.1928 14.8439 73.818 15.3994C74.3578 15.8696 74.6695 16.6341 74.6695 17.8148C74.6695 18.9954 74.3561 19.7443 73.818 20.2127ZM102.527 15.833C102.527 14.6854 102.161 13.7642 101.538 13.1391C100.737 12.3572 99.469 12.0454 97.5413 12.0454H92.4999V23.5649H95.5944V19.9341H97.2975C97.6301 19.9341 97.6632 19.9689 97.853 20.2806L99.6084 23.2706C99.7651 23.5318 99.8522 23.5649 100.129 23.5649H103.206L100.617 19.3942C101.677 18.7168 102.527 17.4665 102.527 15.833ZM99.1399 17.1704C98.9658 17.4317 98.8091 17.4839 98.513 17.4839H95.5944V14.6332H97.5935C98.358 14.6332 98.7916 14.7028 99.0703 14.9641C99.2601 15.1556 99.3994 15.5718 99.3994 15.9898C99.3994 16.3363 99.3297 16.8744 99.1399 17.1704ZM58.8418 18.9954H64.1775V16.493H58.8418V14.6001H64.6982V12.0454H55.749V23.5649H64.8549V21.0103H58.8435V18.9954H58.8418ZM50.6397 12.3397L47.3032 16.5279H47.2509L43.897 12.3397C43.688 12.0785 43.6009 12.0454 43.2544 12.0454H40.752V23.5649H43.7054V16.4582H43.7228L45.9483 19.2723C46.0877 19.4465 46.2096 19.5005 46.469 19.5005H48.1913L50.6397 16.4582H50.6571V23.5649H53.6297V12.0454H51.284C50.9358 12.0454 50.8487 12.0785 50.6397 12.3397Z"
+                  fill="#F9FAFA"
+                />
+              </svg>
+              <span>Design System</span>
+            </ion-label>
+          </a>
+
+          <nav class="header__navigation header__navigation--menu">
+            <ul class="header__nav-links">
+              <li class="header__nav-link">
+                <ion-label ds-color="neutral-4" token="p14">
+                  <a href="/src/marcas.html">Marcas</a>
+                </ion-label>
+              </li>
+              <li class="header__nav-link">
+                <ion-label ds-color="neutral-4" token="p14">
+                  <a href="/src/guias.html">Guias</a>
+                </ion-label>
+              </li>
+              <li class="header__nav-link">
+                <ion-label ds-color="neutral-4" token="p14" data-active="true">
+                  <a href="/src/componentes.html">Componentes</a>
+                </ion-label>
+              </li>
+              <li class="header__nav-link">
+                <ion-label ds-color="neutral-4" token="p14">
+                  <a href="/src/padroes.html">Padrões</a>
+                </ion-label>
+              </li>
+              <li class="header__nav-link">
+                <ion-label ds-color="neutral-4" token="p14">
+                  <a href="/src/recursos.html">Recursos</a>
+                </ion-label>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header__utilities header__utilities--menu">
+            <div class="header__color-mode">
+              <ion-toggle mode="ios" checked></ion-toggle>
+
+              <ion-icon name="sunny-outline"></ion-icon>
+
+              <ion-icon name="moon-outline"></ion-icon>
+            </div>
+            <ion-icon name="search-outline"></ion-icon>
+          </div>
+        </div>
+      </header>
+
+      <main class="main main--aside">
+        <aside class="aside">
+          <nav class="aside__nav">
+            <ion-label ds-color="brand" token="h20"> Componentes </ion-label>
+
+            <ul class="aside__links">
+              <li
+                class="aside__link"
+                data-section="accordion"
+                data-active="true"
+              >
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Accordion
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="alert-fixed">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Alert Fixed
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="avatar">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Avatar
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="badge">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Badge
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="base">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14"> Base </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="button">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Button
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="button-cluster">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Button Cluster
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="chart-bar">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Chart Bar
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="chart-column">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Chart Column
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="chart-radial">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Chart Radial
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="checkbox">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14">
+                    Checkbox
+                  </ion-label>
+                </a>
+              </li>
+
+              <li class="aside__link" data-section="etc">
+                <a href="#">
+                  <ion-label ds-color="neutral-4" token="p14"> ETC </ion-label>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <div class="main__content">
+          <section class="section" id="accordion" data-active="true">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32">
+                Accordion
+              </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+
+            <div class="tab">
+              <nav class="tab__nav">
+                <ul class="tab__links">
+                  <li
+                    class="tab__link"
+                    data-tab="exemplos-acc"
+                    data-active="true"
+                  >
+                    <a href="#">
+                      <ion-label ds-color="neutral-4" token="p16b">
+                        Exemplos
+                      </ion-label>
+                    </a>
+                  </li>
+
+                  <li class="tab__link" data-tab="codigo-acc">
+                    <a href="#">
+                      <ion-label ds-color="neutral-4" token="p16b">
+                        Código
+                      </ion-label>
+                    </a>
+                  </li>
+
+                  <li class="tab__link" data-tab="uso-acc">
+                    <a href="#">
+                      <ion-label ds-color="neutral-4" token="p16b">
+                        Uso
+                      </ion-label>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="tab__content-container">
+                <div class="tab__content" id="exemplos-acc" data-active="true">
+                  <div class="section__subsection">
+                    <ion-label ds-color="neutral-8" token="h24">
+                      Padrão
+                    </ion-label>
+
+                    <ion-label ds-color="neutral-8" token="p16x">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Fusce feugiat aliquam dapibus. Nam malesuada, dui at
+                      suscipit iaculis, odio tortor gravida turpis, at convallis
+                      neque tellus et lectus. Nulla quis elit ipsum. Fusce ut
+                      vulputate eros. Vivamus et nibh luctus, cursus mauris sit
+                      amet, iaculis enim. Praesent faucibus ex lorem.
+                    </ion-label>
+
+                    <display-case
+                      component="legado-accordion--default"
+                      height="300"
+                    ></display-case>
+                  </div>
+                </div>
+
+                <div class="tab__content" id="codigo-acc">
+                  <div class="section__subsection">
+                    <ion-label ds-color="neutral-8" token="h24">
+                      Subtítulo tab "código"
+                    </ion-label>
+
+                    <ion-label ds-color="neutral-8" token="p16x">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Fusce feugiat aliquam dapibus. Nam malesuada, dui at
+                      suscipit iaculis, odio tortor gravida turpis, at convallis
+                      neque tellus et lectus. Nulla quis elit ipsum. Fusce ut
+                      vulputate eros. Vivamus et nibh luctus, cursus mauris sit
+                      amet, iaculis enim. Praesent faucibus ex lorem.
+                    </ion-label>
+                  </div>
+                </div>
+
+                <div class="tab__content" id="uso-acc">
+                  <div class="section__subsection">
+                    <ion-label ds-color="neutral-8" token="h24">
+                      Subtítulo tab "uso"
+                    </ion-label>
+
+                    <ion-label ds-color="neutral-8" token="p16x">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Fusce feugiat aliquam dapibus. Nam malesuada, dui at
+                      suscipit iaculis, odio tortor gravida turpis, at convallis
+                      neque tellus et lectus. Nulla quis elit ipsum. Fusce ut
+                      vulputate eros. Vivamus et nibh luctus, cursus mauris sit
+                      amet, iaculis enim. Praesent faucibus ex lorem.
+                    </ion-label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" id="alert-fixed">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32">
+                Alert Fixed
+              </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <section class="section" id="avatar">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32"> Avatar </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <section class="section" id="badge">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32"> Badge </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <section class="section" id="base">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32"> Base </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <section class="section" id="button">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32"> Button </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+
+            <div class="tab">
+              <nav class="tab__nav">
+                <ul class="tab__links">
+                  <li
+                    class="tab__link"
+                    data-tab="exemplos-btn"
+                    data-active="true"
+                  >
+                    <a href="#">
+                      <ion-label ds-color="neutral-4" token="p16b">
+                        Exemplos
+                      </ion-label>
+                    </a>
+                  </li>
+
+                  <li class="tab__link" data-tab="codigo-btn">
+                    <a href="#">
+                      <ion-label ds-color="neutral-4" token="p16b">
+                        Código
+                      </ion-label>
+                    </a>
+                  </li>
+
+                  <li class="tab__link" data-tab="uso-btn">
+                    <a href="#">
+                      <ion-label ds-color="neutral-4" token="p16b">
+                        Uso
+                      </ion-label>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="tab__content-container">
+                <div class="tab__content" id="exemplos-btn" data-active="true">
+                  <div class="section__subsection">
+                    <ion-label ds-color="neutral-8" token="h24">
+                      Padrão
+                    </ion-label>
+
+                    <ion-label ds-color="neutral-8" token="p16x">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Fusce feugiat aliquam dapibus. Nam malesuada, dui at
+                      suscipit iaculis, odio tortor gravida turpis, at convallis
+                      neque tellus et lectus. Nulla quis elit ipsum. Fusce ut
+                      vulputate eros. Vivamus et nibh luctus, cursus mauris sit
+                      amet, iaculis enim. Praesent faucibus ex lorem.
+                    </ion-label>
+
+                    <display-case
+                      component="ionic-button--primary"
+                      height="150"
+                    ></display-case>
+                  </div>
+
+                  <div class="section__subsection">
+                    <ion-label ds-color="neutral-8" token="h24">
+                      Variantes
+                    </ion-label>
+
+                    <div class="section__subsection">
+                      <ion-label ds-color="neutral-8" token="h20">
+                        Secondary
+                      </ion-label>
+
+                      <ion-label ds-color="neutral-8" token="p16x">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Fusce feugiat aliquam dapibus. Nam malesuada, dui at
+                        suscipit iaculis, odio tortor gravida turpis, at
+                        convallis neque tellus et lectus. Nulla quis elit ipsum.
+                        Fusce ut vulputate eros. Vivamus et nibh luctus, cursus
+                        mauris sit amet, iaculis enim. Praesent faucibus ex
+                        lorem.
+                      </ion-label>
+
+                      <display-case
+                        component="ionic-button--secondary"
+                        height="150"
+                      ></display-case>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab__content" id="codigo-btn">
+                  <div class="section__subsection">
+                    <ion-label ds-color="neutral-8" token="h24">
+                      Subtítulo tab "código"
+                    </ion-label>
+
+                    <ion-label ds-color="neutral-8" token="p16x">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Fusce feugiat aliquam dapibus. Nam malesuada, dui at
+                      suscipit iaculis, odio tortor gravida turpis, at convallis
+                      neque tellus et lectus. Nulla quis elit ipsum. Fusce ut
+                      vulputate eros. Vivamus et nibh luctus, cursus mauris sit
+                      amet, iaculis enim. Praesent faucibus ex lorem.
+                    </ion-label>
+                  </div>
+                </div>
+
+                <div class="tab__content" id="uso-btn">
+                  <div class="section__subsection">
+                    <ion-label ds-color="neutral-8" token="h24">
+                      Subtítulo tab "uso"
+                    </ion-label>
+
+                    <ion-label ds-color="neutral-8" token="p16x">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Fusce feugiat aliquam dapibus. Nam malesuada, dui at
+                      suscipit iaculis, odio tortor gravida turpis, at convallis
+                      neque tellus et lectus. Nulla quis elit ipsum. Fusce ut
+                      vulputate eros. Vivamus et nibh luctus, cursus mauris sit
+                      amet, iaculis enim. Praesent faucibus ex lorem.
+                    </ion-label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" id="button-cluster">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32">
+                Button Cluster
+              </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <section class="section" id="chart-bar">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32">
+                Chart Bar
+              </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <section class="section" id="chart-column">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32">
+                Chart Column
+              </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <section class="section" id="chart-radial">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32">
+                Chart Radial
+              </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <section class="section" id="checkbox">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32">
+                Checkbox
+              </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <section class="section" id="etc">
+            <div class="section__intro">
+              <ion-label ds-color="neutral-10" token="h32"> ETC </ion-label>
+
+              <ion-label ds-color="neutral-8" token="p16x">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                feugiat aliquam dapibus. Nam malesuada, dui at suscipit iaculis,
+                odio tortor gravida turpis, at convallis neque tellus et lectus.
+                Nulla quis elit ipsum. Fusce ut vulputate eros. Vivamus et nibh
+                luctus, cursus mauris sit amet, iaculis enim. Praesent faucibus
+                ex lorem.
+              </ion-label>
+            </div>
+          </section>
+
+          <div class="suggestion">
+            <ion-label ds-color="neutral-8" token="h24">
+              Encontrou algum erro ou tem alguma sugestão?
+            </ion-label>
+            <ion-button>Enviar Sugestão</ion-button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <ion-label ds-color="neutral-9" token="h14x">
+          <svg
+            class="footer__logo"
+            width="109"
+            height="20"
+            viewBox="0 0 109 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.5 10C0.5 4.75329 4.75329 0.5 10 0.5C15.2467 0.5 19.5 4.75329 19.5 10C19.5 15.2467 15.2467 19.5 10 19.5C4.75329 19.5 0.5 15.2467 0.5 10Z"
+              stroke="#F9FAFA"
+            />
+            <path
+              d="M9.72006 10.2798H8.69676V11.3031H9.72006V10.2798ZM11.303 3.63635H10.2797V8.13727H11.303V3.63635ZM7.12184 7.11397H3.64423V8.13727H8.14514V3.63635H7.12184V7.11397ZM8.70475 16.3636H9.72805V11.8627H8.70475V16.3636ZM8.70475 8.13727H9.72805V3.63635H8.70475V8.13727ZM3.63623 9.72018H8.13714V8.69688H3.63623V9.72018ZM9.72006 8.69688H8.69676V9.72018H9.72006V8.69688ZM3.63623 12.886H7.11384V16.3636H8.13714V11.8627H3.63623V12.886ZM3.63623 11.3031H8.13714V10.2798H3.63623V11.3031ZM11.8626 11.3031H16.3635V10.2798H11.8626V11.3031ZM12.8859 3.63635H11.8626V8.13727H16.3635V7.11397H12.8859V3.63635ZM11.8626 9.72018H16.3635V8.69688H11.8626V9.72018ZM10.2877 11.3031H11.303V10.2798H10.2797L10.2877 11.3031ZM10.2797 16.3636H11.303V11.8627H10.2797V16.3636ZM11.8626 16.3636H12.8859V12.886H16.3635V11.8627H11.8626V16.3636ZM10.2877 9.72018H11.303V8.69688H10.2797L10.2877 9.72018Z"
+              fill="#F9FAFA"
+            />
+            <path
+              d="M36.932 4.942C37.0067 4.83933 37.0673 4.77867 37.114 4.76C37.17 4.732 37.2587 4.718 37.38 4.718H39.088V14H36.974V7.924L34.72 10.752H33.488C33.3947 10.752 33.3247 10.7427 33.278 10.724C33.2313 10.7053 33.1753 10.6587 33.11 10.584L31.01 7.924V14H28.91V4.718H30.688C30.8 4.718 30.884 4.732 30.94 4.76C30.996 4.77867 31.0613 4.83933 31.136 4.942L34.034 8.568H34.062L36.932 4.942ZM47.8159 4.718V6.538H43.0979V8.386H47.3959V10.178H43.0979V12.18H47.9559V14H40.9139V4.718H47.8159ZM49.5682 14V4.718H52.8582C53.7635 4.718 54.5569 4.81133 55.2382 4.998C55.9195 5.17533 56.4982 5.474 56.9742 5.894C57.4035 6.27667 57.7349 6.75733 57.9682 7.336C58.2015 7.90533 58.3182 8.582 58.3182 9.366C58.3182 10.1407 58.2015 10.8173 57.9682 11.396C57.7349 11.9653 57.4035 12.4413 56.9742 12.824C56.4982 13.244 55.9195 13.5473 55.2382 13.734C54.5569 13.9113 53.7635 14 52.8582 14H49.5682ZM52.7742 12.11C53.3902 12.11 53.9129 12.0587 54.3422 11.956C54.7809 11.8533 55.1309 11.6713 55.3922 11.41C55.6069 11.1953 55.7702 10.9247 55.8822 10.598C55.9942 10.262 56.0502 9.85133 56.0502 9.366C56.0502 8.87133 55.9942 8.46067 55.8822 8.134C55.7702 7.798 55.6069 7.52267 55.3922 7.308C55.1309 7.04667 54.7809 6.86467 54.3422 6.762C53.9129 6.65933 53.3902 6.608 52.7742 6.608H51.7522V12.11H52.7742ZM66.7271 7.994L65.6351 7.252C65.3177 7.03733 65.0237 6.87867 64.7531 6.776C64.4917 6.664 64.1931 6.608 63.8571 6.608C63.5304 6.608 63.2271 6.66867 62.9471 6.79C62.6671 6.902 62.4197 7.07467 62.2051 7.308C61.9997 7.532 61.8364 7.81667 61.7151 8.162C61.6031 8.498 61.5471 8.89 61.5471 9.338C61.5471 10.234 61.7617 10.9153 62.1911 11.382C62.6297 11.8393 63.2691 12.068 64.1091 12.068C64.4171 12.068 64.7531 12.04 65.1171 11.984C65.4811 11.928 65.7844 11.8533 66.0271 11.76C66.1391 11.7133 66.2044 11.676 66.2231 11.648C66.2417 11.6107 66.2511 11.5453 66.2511 11.452V10.598H64.8371V9.044H68.0711C68.1924 9.044 68.2717 9.06267 68.3091 9.1C68.3557 9.13733 68.3791 9.212 68.3791 9.324V14H66.8251L66.4891 13.188L65.8031 13.566C65.4577 13.7527 65.1217 13.8973 64.7951 14C64.4684 14.0933 64.1091 14.14 63.7171 14.14C63.0264 14.14 62.4057 14.0187 61.8551 13.776C61.3044 13.5333 60.8377 13.202 60.4551 12.782C60.0724 12.3527 59.7784 11.8487 59.5731 11.27C59.3677 10.682 59.2651 10.0473 59.2651 9.366C59.2651 8.61933 59.3911 7.952 59.6431 7.364C59.9044 6.76667 60.2497 6.26267 60.6791 5.852C61.1177 5.44133 61.6217 5.12867 62.1911 4.914C62.7604 4.69 63.3577 4.578 63.9831 4.578C64.9537 4.578 65.7937 4.80667 66.5031 5.264C67.2217 5.712 67.7444 6.314 68.0711 7.07L66.7271 7.994ZM72.2874 14H70.1034V4.718H73.9254C74.6907 4.718 75.3347 4.788 75.8574 4.928C76.38 5.068 76.8047 5.292 77.1314 5.6C77.6447 6.104 77.9014 6.82267 77.9014 7.756C77.9014 8.38133 77.7567 8.932 77.4674 9.408C77.1874 9.87467 76.8234 10.2573 76.3754 10.556L78.4894 14H76.2774C76.1747 14 76.0954 13.986 76.0394 13.958C75.9834 13.9207 75.932 13.8647 75.8854 13.79L74.3454 11.172C74.2894 11.0787 74.2427 11.0227 74.2054 11.004C74.168 10.9853 74.0934 10.976 73.9814 10.976H72.2874V14ZM74.8774 9.198C75.1014 9.198 75.2647 9.12333 75.3674 8.974C75.47 8.82467 75.5447 8.652 75.5914 8.456C75.638 8.26 75.6614 8.05 75.6614 7.826C75.6614 7.39667 75.5587 7.084 75.3534 6.888C75.2227 6.76667 75.0454 6.68267 74.8214 6.636C74.6067 6.58 74.322 6.552 73.9674 6.552H72.2874V9.198H74.8774ZM85.7917 4.718H87.9337V10.22C87.9337 10.892 87.845 11.4473 87.6677 11.886C87.4997 12.3247 87.2523 12.7073 86.9257 13.034C86.5523 13.4073 86.095 13.6873 85.5537 13.874C85.0123 14.0513 84.4103 14.14 83.7477 14.14C83.085 14.14 82.483 14.0513 81.9417 13.874C81.4003 13.6873 80.943 13.4073 80.5697 13.034C80.243 12.7073 79.991 12.3247 79.8137 11.886C79.6457 11.4473 79.5617 10.892 79.5617 10.22V4.718H81.7457V10.08C81.7457 10.416 81.7783 10.696 81.8437 10.92C81.9183 11.144 82.0303 11.3353 82.1797 11.494C82.5063 11.8487 83.0383 12.026 83.7757 12.026C84.1303 12.026 84.4383 11.984 84.6997 11.9C84.9703 11.816 85.1897 11.6807 85.3577 11.494C85.507 11.3353 85.6143 11.144 85.6797 10.92C85.7543 10.696 85.7917 10.416 85.7917 10.08V4.718ZM91.8245 14H89.6405V4.718H93.3785C94.0785 4.718 94.6991 4.78333 95.2405 4.914C95.7818 5.04467 96.2251 5.28267 96.5705 5.628C96.8225 5.88 97.0185 6.19267 97.1585 6.566C97.2985 6.93933 97.3685 7.38267 97.3685 7.896C97.3685 8.4 97.2985 8.85733 97.1585 9.268C97.0185 9.66933 96.8038 10.01 96.5145 10.29C96.2251 10.57 95.8518 10.7847 95.3945 10.934C94.9465 11.074 94.4005 11.144 93.7565 11.144H91.8245V14ZM94.3165 9.366C94.5591 9.366 94.7318 9.29133 94.8345 9.142C94.9371 8.99267 95.0118 8.81067 95.0585 8.596C95.1145 8.372 95.1425 8.14333 95.1425 7.91C95.1425 7.44333 95.0445 7.112 94.8485 6.916C94.7178 6.78533 94.5405 6.692 94.3165 6.636C94.1018 6.58 93.8171 6.552 93.4625 6.552H91.8245V9.366H94.3165ZM107.748 9.366C107.748 10.094 107.617 10.7567 107.356 11.354C107.104 11.942 106.763 12.4413 106.334 12.852C105.905 13.2627 105.401 13.58 104.822 13.804C104.253 14.028 103.655 14.14 103.03 14.14C102.395 14.14 101.793 14.028 101.224 13.804C100.655 13.58 100.155 13.2627 99.7259 12.852C99.2966 12.4413 98.9513 11.942 98.6899 11.354C98.4379 10.7567 98.3119 10.094 98.3119 9.366C98.3119 8.638 98.4379 7.98 98.6899 7.392C98.9513 6.79467 99.2966 6.29067 99.7259 5.88C100.155 5.46 100.655 5.138 101.224 4.914C101.793 4.69 102.395 4.578 103.03 4.578C103.655 4.578 104.253 4.69 104.822 4.914C105.401 5.138 105.905 5.46 106.334 5.88C106.763 6.29067 107.104 6.79467 107.356 7.392C107.617 7.98 107.748 8.638 107.748 9.366ZM105.466 9.366C105.466 8.47933 105.251 7.81667 104.822 7.378C104.393 6.93933 103.795 6.72 103.03 6.72C102.265 6.72 101.667 6.944 101.238 7.392C100.809 7.83067 100.594 8.48867 100.594 9.366C100.594 10.2713 100.809 10.9387 101.238 11.368C101.667 11.788 102.265 11.998 103.03 11.998C103.795 11.998 104.393 11.7787 104.822 11.34C105.251 10.9013 105.466 10.2433 105.466 9.366Z"
+              fill="#F9FAFA"
+            />
+          </svg>
+          <div class="footer__email">medgrupo@medgrupo.com.br</div>
+        </ion-label>
+
+        <ul class="footer__infos">
+          <li class="footer__info">
+            <ion-label ds-color="neutral-9" token="h16x">
+              Central de Atendimento
+            </ion-label>
+            <ion-label ds-color="neutral-8" token="p14">
+              Seg. a Sex. 10h às 19h
+            </ion-label>
+            <ion-label ds-color="neutral-8" token="p14">
+              Sab. 09h às 14h
+            </ion-label>
+          </li>
+
+          <li class="footer__info">
+            <ion-label ds-color="neutral-9" token="h16x">
+              Ligação Local
+            </ion-label>
+            <ion-label ds-color="neutral-8" token="p14">
+              4062-0660* Ramal 8008
+            </ion-label>
+            <ion-label ds-color="neutral-8" token="p14">
+              4004-0435* Ramal 8008
+            </ion-label>
+          </li>
+
+          <li class="footer__info">
+            <ion-label ds-color="neutral-9" token="h16x">
+              Rio de Janeiro
+            </ion-label>
+            <ion-label ds-color="neutral-8" token="p14">
+              (21) 2131-0031
+            </ion-label>
+            <ion-label ds-color="neutral-8" token="p14">
+              (21) 3180-0060
+            </ion-label>
+          </li>
+
+          <li class="footer__info">
+            <ion-label ds-color="neutral-9" token="h16x"> São Paulo </ion-label>
+            <ion-label ds-color="neutral-8" token="p14">
+              (11) 3262-3000
+            </ion-label>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/scripts/pages/componentes.js"></script>
+    <!-- ../core -->
+    <!-- ../main.js -->
+  </body>
+</html>

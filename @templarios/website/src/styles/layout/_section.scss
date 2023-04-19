@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+.section {
+  display: none;
+
+  ion-label {
+    display: block;
+  }
+
+  &[data-active='true'] {
+    display: initial;
+    opacity: 0;
+    animation: show-section 2s forwards;
+
+    @keyframes show-section {
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__intro {
+    & > ion-label:first-child {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__subsection {
+    margin-top: 64px;
+
+    & > ion-label:first-child {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    margin-top: 24px;
+  }
+}

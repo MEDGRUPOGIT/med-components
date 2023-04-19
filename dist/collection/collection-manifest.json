@@ -58,6 +58,7 @@
     "./components/@templarios/core/med-segment/med-segment.js",
     "./components/@templarios/core/med-tab-button/med-tab-button.js",
     "./components/@templarios/core/med-type/med-type.js",
+    "./components/@templarios/core/tp-chart-bar/tp-chart-bar.js",
     "./components/@templarios/core/tp-input-container/tp-input-container.js",
     "./components/@templarios/core/tp-loader/tp-loader.js",
     "./components/@templarios/ionic-1-migracao/apostila/informativo-modal/informativo-modal.js",

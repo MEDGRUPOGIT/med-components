@@ -57,6 +57,9 @@ cd core
 ```bash
 npm run tp:start
 ```
+:::note
+Devido a atualização da versão do storybook, talvez seja necessário deletar a pasta node_modules e package-lock.json e instalar o ionic-framework novamente.
+:::
 
 ## Fluxo git
 
@@ -307,10 +310,48 @@ npm install
 
 3. Voltar para a pasta `core`.
 
-4. Rodar projeto:
+#### Rodar projeto
 
 ```bash
 npm run tp:doc:start
+```
+
+#### Buildar projeto
+
+```bash
+npm run tp:doc:build
+```
+
+## Website Design System
+
+:::note
+Versão mínima do node: **14.17.3**.
+:::
+
+1. Entrar na pasta `@templarios/website`.
+
+```bash
+cd @templarios/website
+```
+
+2. Instalar Dependências:
+
+```bash
+npm install
+```
+
+3. Voltar para a pasta `core`.
+
+#### Rodar projeto
+
+```bash
+npm run tp:website:start
+```
+
+#### Buildar projeto
+
+```bash
+npm run tp:website:build
 ```
 
 ## Resumo

@@ -1,0 +1,46 @@
+.tab {
+  width: 100%;
+  margin: 64px 0 24px;
+
+  &__links {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid hsl(var(--med-color-brand-4)) !important;
+  }
+
+  &__link {
+    a {
+      display: block;
+    }
+
+    ion-label {
+      transition: color 200ms ease-in;
+    }
+
+    &:hover ion-label {
+      color: hsl(var(--med-color-neutral-6)) !important;
+    }
+
+    &[data-active='true'] ion-label {
+      color: hsl(var(--med-color-brand-4)) !important;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &[data-active='true'] {
+      display: block;
+      opacity: 0;
+      animation: show-tab 2s forwards;
+
+      @keyframes show-tab {
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

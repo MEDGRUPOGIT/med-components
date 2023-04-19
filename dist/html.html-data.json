@@ -6927,6 +6927,10 @@
         {
           "name": "ds-color",
           "description": "todo"
+        },
+        {
+          "name": "icon-click",
+          "description": "todo"
         }
       ],
       "references": [
@@ -7207,6 +7211,50 @@
         {
           "name": "Source code",
           "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/ionic-1-migracao/duvidas-academicas/text-area-modal/text-area-modal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tp-chart-bar",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "ds-color",
+          "description": "todo"
+        },
+        {
+          "name": "ds-name",
+          "description": "todo",
+          "values": [
+            {
+              "name": "secondary"
+            }
+          ]
+        },
+        {
+          "name": "has-marker",
+          "description": "todo"
+        },
+        {
+          "name": "height",
+          "description": "todo"
+        },
+        {
+          "name": "label",
+          "description": "todo"
+        },
+        {
+          "name": "label-size",
+          "description": "todo"
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/tp-chart-bar/tp-chart-bar.tsx"
         }
       ]
     },

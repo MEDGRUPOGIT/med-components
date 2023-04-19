@@ -5,19 +5,22 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const index = require('./index-bc2e4509.js');
 const color = require('./color-2d4645aa.js');
 
-const medToggleCss = ":host{--background:hsl(var(--med-color-neutral-2));--color:hsl(var(--med-color-neutral-10));--padding:24px;--border-radius:0;--initial-max-height:20px}:host{background:var(--background);color:var(--color);padding:var(--padding);border-radius:var(--border-radius);width:100%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;cursor:pointer}:host .med-toggle__content{max-height:var(--initial-max-height);overflow:hidden;-webkit-transition:all 0.3s;transition:all 0.3s}:host .med-toggle__icon{-ms-flex-item-align:center;align-self:center;margin-top:8px;font-size:24px;stroke:var(--color);-webkit-transition:0.3s -webkit-transform ease;transition:0.3s -webkit-transform ease;transition:0.3s transform ease;transition:0.3s transform ease, 0.3s -webkit-transform ease}:host(.med-toggle--collapsed) .med-toggle__icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}:host(.med-color){--color:fuck!;--background:hsl(var(--med-color-1))}:host(.med-color-neutral){--color:hsl(var(--med-color-neutral-contrast));--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--color:hsl(var(--med-color-feedback-contrast));--background:hsl(var(--med-color-feedback))}";
+const medToggleCss = ".sc-med-toggle-h{--background:hsl(var(--med-color-neutral-2));--color:hsl(var(--med-color-neutral-10));--padding:24px;--border-radius:0;--initial-max-height:20px}.sc-med-toggle-h{background:var(--background);color:var(--color);padding:var(--padding);border-radius:var(--border-radius);width:100%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;cursor:pointer}.sc-med-toggle-h .med-toggle__content.sc-med-toggle{max-height:var(--initial-max-height);overflow:hidden;-webkit-transition:all 0.3s;transition:all 0.3s}.sc-med-toggle-h .med-toggle__bottom.sc-med-toggle{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%}.sc-med-toggle-h .med-toggle__icon.sc-med-toggle{-ms-flex-item-align:center;align-self:center;margin-top:8px;font-size:24px;stroke:var(--color);-webkit-transition:0.3s -webkit-transform ease;transition:0.3s -webkit-transform ease;transition:0.3s transform ease;transition:0.3s transform ease, 0.3s -webkit-transform ease}.med-toggle--collapsed.sc-med-toggle-h .med-toggle__icon.sc-med-toggle{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.med-toggle--icon-click.sc-med-toggle-h{cursor:unset}.med-toggle--icon-click.sc-med-toggle-h .med-toggle__bottom.sc-med-toggle{cursor:pointer}.med-color.sc-med-toggle-h{--color:fuck!;--background:hsl(var(--med-color-1))}.med-color-neutral.sc-med-toggle-h{--color:hsl(var(--med-color-neutral-contrast));--background:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-toggle-h{--color:hsl(var(--med-color-feedback-contrast));--background:hsl(var(--med-color-feedback))}";
 
 const MedToggle = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     /**
-   * todo
-   */
+    * todo
+    */
     this.collapsed = true;
+    /**
+    * todo
+    */
+    this.iconClick = false;
   }
   componentDidLoad() {
-    var _a;
-    this.element = (_a = this.host.shadowRoot) === null || _a === void 0 ? void 0 : _a.querySelector('.med-toggle__content');
+    this.element = this.host.querySelector('.med-toggle__content');
   }
   setHeight() {
     var _a;
@@ -44,12 +47,23 @@ const MedToggle = class {
       this.close();
     }
   }
+  onClickComponent() {
+    if (!this.iconClick) {
+      this.collapsed = !this.collapsed;
+    }
+  }
+  onClickIcon() {
+    if (this.iconClick) {
+      this.collapsed = !this.collapsed;
+    }
+  }
   render() {
-    const { collapsed, dsColor } = this;
+    const { collapsed, dsColor, iconClick } = this;
     return (index.h(index.Host, { class: color.generateMedColor(dsColor, {
         'med-toggle': true,
-        'med-toggle--collapsed': collapsed
-      }), onClick: () => { this.collapsed = !this.collapsed; } }, index.h("div", { class: "med-toggle__content" }, index.h("slot", null)), index.h("ion-icon", { class: "med-icon med-toggle__icon", name: "med-cima" })));
+        'med-toggle--collapsed': collapsed,
+        'med-toggle--icon-click': iconClick
+      }), onClick: () => { this.onClickComponent(); } }, index.h("div", { class: "med-toggle__content" }, index.h("slot", null)), index.h("div", { class: "med-toggle__bottom", onClick: () => { this.onClickIcon(); } }, index.h("ion-icon", { class: "med-icon med-toggle__icon", name: "med-cima" }))));
   }
   get host() { return index.getElement(this); }
   static get watchers() { return {

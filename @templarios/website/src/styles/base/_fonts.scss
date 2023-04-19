@@ -1,0 +1,54 @@
+@mixin font-face($font-name, $font-path, $weight, $style, $svg-id) {
+  @font-face {
+    font-weight: $weight;
+    font-family: quote($font-name);
+    font-style: unquote($style);
+    src: url($font-path + '.eot');
+    src: url($font-path + '.eot?#iefix') format('embedded-opentype'),
+      url($font-path + '.woff') format('woff'),
+      url($font-path + '.svg##{$svg-id}') format('svg');
+  }
+}
+
+@include font-face(
+  'fsemeric',
+  '/src/fonts/fsemeric-heavy-normal',
+  900,
+  'normal',
+  'fsemeric-heavy-normal'
+);
+@include font-face(
+  'fsemeric',
+  '/src/fonts/fsemeric-bold-normal',
+  700,
+  'normal',
+  'fsemeric-bold-normal'
+);
+@include font-face(
+  'fsemeric',
+  '/src/fonts/fsemeric-semibold-normal',
+  600,
+  'normal',
+  'fsemeric-semibold-normal'
+);
+@include font-face(
+  'fsemeric',
+  '/src/fonts/fsemeric-medium-normal',
+  500,
+  'normal',
+  'fsemeric-medium-normal'
+);
+@include font-face(
+  'fsemeric',
+  '/src/fonts/fsemeric-regular-normal',
+  400,
+  'normal',
+  'fsemeric-regular-normal'
+);
+@include font-face(
+  'fsemeric',
+  '/src/fonts/fsemeric-light-normal',
+  300,
+  'normal',
+  'fsemeric-light-normal'
+);

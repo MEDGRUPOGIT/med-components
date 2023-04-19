@@ -345,7 +345,7 @@ export class Searchbar {
       h("div", { class: "searchbar-input-container" },
         h("input", { "aria-label": "search text", disabled: this.disabled, ref: el => this.nativeInput = el, class: "searchbar-input", inputMode: this.inputmode, enterKeyHint: this.enterkeyhint, onInput: this.onInput, onBlur: this.onBlur, onFocus: this.onFocus, placeholder: this.placeholder, type: this.type, value: this.getValue(), autoComplete: this.autocomplete, autoCorrect: this.autocorrect, spellcheck: this.spellcheck }),
         mode === 'md' && cancelButton,
-        h("ion-icon", { "aria-hidden": "true", mode: mode, name: searchIcon, lazy: false, class: "med-icon searchbar-search-icon" }),
+        this.searchIcon && h("ion-icon", { "aria-hidden": "true", mode: mode, name: searchIcon, lazy: false, class: "med-icon searchbar-search-icon" }),
         h("button", { "aria-label": "reset", type: "button", "no-blur": true, class: "searchbar-clear-button", onMouseDown: ev => this.onClearInput(ev, true), onTouchStart: ev => this.onClearInput(ev, true) },
           h("ion-icon", { "aria-hidden": "true", mode: mode, name: clearIcon, lazy: false, class: "med-icon searchbar-clear-icon" }))),
       mode === 'ios' && cancelButton));

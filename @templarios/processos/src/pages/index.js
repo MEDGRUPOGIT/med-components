@@ -25,6 +25,11 @@ function HomepageHeader() {
             href="https://desenv.ordomederi.com/templarios">
             Storybook
           </Link>
+          <Link
+            className="button button--secondary button--lg"
+            href="https://desenv.ordomederi.com/templarios/website">
+            Website
+          </Link>
         </div>
       </div>
     </header>
