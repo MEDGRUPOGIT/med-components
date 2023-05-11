@@ -1,1 +1,0 @@
-import{r as o,h as e,H as s}from"./p-4d70e85a.js";const t=class{constructor(e){o(this,e)}render(){return e(s,null,e("slot",null))}};t.style=".sc-med-autocomplete-h{display:block;position:relative}.sc-med-autocomplete-s>med-dropdown+ion-searchbar{--border-radius:8px 8px 0 0}.sc-med-autocomplete-s>med-dropdown{--top:40px}";export{t as med_autocomplete}

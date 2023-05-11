@@ -9,4 +9,7 @@
 
 ::slotted(med-dropdown) {
   --top: 40px;
+  max-height: 164px;
+  background: hsl(var(--med-color-neutral-2));
+  cursor: pointer;
 }

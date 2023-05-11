@@ -2,7 +2,7 @@ import { MedColor } from "../../../../@templarios/types/color.type";
 export declare class TpInputContainer {
   host: HTMLElement;
   hostWidth: number | undefined;
-  selectClicked: boolean;
+  selectWithPopoverClicked: boolean;
   pointerOnSelect: boolean;
   readonly selectAndPopoverDiffWidth: number;
   /**

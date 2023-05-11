@@ -80,6 +80,7 @@ exports.TemplariosChipSize = void 0;
 (function (TemplariosChipSize) {
   TemplariosChipSize["SM"] = "sm";
   TemplariosChipSize["MD"] = "md";
+  TemplariosChipSize["LG"] = "lg";
 })(exports.TemplariosChipSize || (exports.TemplariosChipSize = {}));
 
 exports.MedColors = void 0;

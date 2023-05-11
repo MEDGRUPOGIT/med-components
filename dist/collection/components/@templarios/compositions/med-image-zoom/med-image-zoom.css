@@ -46,6 +46,7 @@
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
+  padding-top: 48px;
 }
 :host .swiper-slide-zoomed .zoom-legenda-container {
   display: none !important;

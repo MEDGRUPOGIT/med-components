@@ -1,3 +1,7 @@
+ion-alert.tp-hide {
+  display: none !important;
+}
+
 ion-avatar {
   width: 48px;
   height: 48px;
@@ -3592,6 +3596,41 @@ ion-chip[ds-size=md] ion-label {
   line-height: 16px;
 }
 ion-chip[ds-size=md] ion-icon {
+  padding: 4px;
+}
+
+ion-chip[simple][ds-size=md] {
+  height: 32px;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+ion-chip[simple][ds-size=md] ion-label {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 4px 2px;
+}
+ion-chip[simple][ds-size=md] ion-icon {
+  --icon-color: var(--color);
+  --icon-background: transparent;
+  margin: 0;
+  padding: 4px;
+}
+ion-chip[simple][ds-size=lg] {
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+ion-chip[simple][ds-size=lg] ion-label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 4px 2px;
+}
+ion-chip[simple][ds-size=lg] ion-icon {
+  --icon-color: var(--color);
+  --icon-background: transparent;
+  margin: 0;
   padding: 4px;
 }
 
@@ -7468,15 +7507,15 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
   }
 }
 @media only screen and (min-width: 768px) and (min-height: 600px) {
-  :host(.med-image-zoom) {
-    --width: 100%;
-    --height: 100%;
+  .med-image-zoom {
+    --width: 100% !important;
+    --height: 100% !important;
   }
 }
 @media only screen and (min-width: 768px) and (min-height: 768px) {
-  :host(.med-image-zoom) {
-    --width: 100%;
-    --height: 100%;
+  .med-image-zoom {
+    --width: 100% !important;
+    --height: 100% !important;
   }
 }
 ion-popover.tp-popover {
@@ -7489,6 +7528,7 @@ ion-popover.tp-popover .popover-content {
   --background: hsl(var(--med-color-neutral-3));
   --border-radius: 0 0 8px 8px;
   --max-height: 220px;
+  left: var(--left) !important;
   border-radius: var(--border-radius) !important;
   transform: translateX(-1px) !important;
 }
@@ -7519,8 +7559,12 @@ ion-popover.tp-popover .select-interface-option ion-label {
 }
 ion-popover.tp-popover .select-interface-option ion-radio {
   position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
   width: 100%;
+  height: 100%;
+  margin: 0;
 }
 ion-popover.tp-popover--secondary .popover-content {
   --background: hsl(var(--med-color-neutral-4));
@@ -10754,7 +10798,8 @@ ion-toggle[ds-color=fb-success] {
   transition: transform 300ms ease;
 }
 
-.accordion-item--open .med-rotate {
+.accordion-item--open .med-rotate,
+.med-accordion-item--open .med-rotate {
   --rotate: rotate(180deg);
 }
 

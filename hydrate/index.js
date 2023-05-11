@@ -14655,6 +14655,7 @@ var TemplariosChipSize;
 (function (TemplariosChipSize) {
   TemplariosChipSize["SM"] = "sm";
   TemplariosChipSize["MD"] = "md";
+  TemplariosChipSize["LG"] = "lg";
 })(TemplariosChipSize || (TemplariosChipSize = {}));
 
 var MedColors;
@@ -15134,7 +15135,7 @@ class MedAlternativasB {
   }; }
 }
 
-const medAutocompleteCss = ".sc-med-autocomplete-h{display:block;position:relative}.sc-med-autocomplete-s>med-dropdown+ion-searchbar{--border-radius:8px 8px 0 0}.sc-med-autocomplete-s>med-dropdown{--top:40px}";
+const medAutocompleteCss = ".sc-med-autocomplete-h{display:block;position:relative}.sc-med-autocomplete-s>med-dropdown+ion-searchbar{--border-radius:8px 8px 0 0}.sc-med-autocomplete-s>med-dropdown{--top:40px;max-height:164px;background:hsl(var(--med-color-neutral-2));cursor:pointer}";
 
 class MedAutocomplete {
   constructor(hostRef) {
@@ -16260,7 +16261,7 @@ class MedHeader {
   }; }
 }
 
-const medImageZoomCss = ".sc-med-image-zoom-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100%;background-color:hsl(var(--med-color-neutral-1))}.sc-med-image-zoom-h .zoom-header.sc-med-image-zoom{position:fixed;width:100%;z-index:1;top:0}.sc-med-image-zoom-h .zoom-header__title.sc-med-image-zoom{color:hsl(var(--med-color-neutral-10));font-size:16px;line-height:100%;font-weight:600}.sc-med-image-zoom-h .zoom-header.sc-med-image-zoom .med-icon.sc-med-image-zoom{stroke:hsl(var(--med-color-neutral-10))}.sc-med-image-zoom-h .zoom-content.sc-med-image-zoom{--background:hsl(var(--med-color-neutral-1));height:100%;overflow-y:hidden}.sc-med-image-zoom-h ion-slides.sc-med-image-zoom{--bullet-background-active:hsl(var(--med-color-brand-3));display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;height:100%}.sc-med-image-zoom-h ion-slides.sc-med-image-zoom .swiper-pagination-bullet-active.sc-med-image-zoom{border:2px solid hsl(var(--med-color-brand-3))}.sc-med-image-zoom-h .swiper-zoom-container.sc-med-image-zoom{-ms-flex-direction:column;flex-direction:column}.sc-med-image-zoom-h .zoom-imagem.sc-med-image-zoom{width:auto;max-width:calc(100% - 50px);height:auto;max-height:calc(100% - 100px);-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}.sc-med-image-zoom-h .swiper-slide-zoomed.sc-med-image-zoom .zoom-legenda-container.sc-med-image-zoom{display:none !important}.sc-med-image-zoom-h .zoom-legenda-container.sc-med-image-zoom{padding:16px 52px;text-align:justify}@media (max-width: 992px){.sc-med-image-zoom-h .zoom-legenda-container.sc-med-image-zoom{padding:16px 52px;padding-right:70px;text-align:justify}}.sc-med-image-zoom-h .zoom-legenda.sc-med-image-zoom{display:inline-block;color:hsl(var(--med-color-neutral-10));font-size:14px;max-width:992px;overflow-y:auto;max-height:60px}.sc-med-image-zoom-h .marca-agua-superior.sc-med-image-zoom{position:absolute;top:29%;z-index:1;width:100%;text-align:center;font-size:2.5em;opacity:0.01;color:hsl(var(--med-color-brand-3));pointer-events:none}.sc-med-image-zoom-h .marca-agua-inferior.sc-med-image-zoom{position:absolute;top:52%;z-index:1;width:100%;text-align:center;font-size:2.5em;opacity:0.02;color:hsl(var(--med-color-brand-3));pointer-events:none}.sc-med-image-zoom-h .zoom-button-container.sc-med-image-zoom{position:fixed;bottom:48px;right:15px;height:175px;width:48px}.sc-med-image-zoom-h .zoom-button.sc-med-image-zoom{width:48px;height:48px;border:none;border-radius:50%;cursor:pointer;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;background-color:hsl(var(--med-color-neutral-10))}.sc-med-image-zoom-h .zoom-button.sc-med-image-zoom ion-icon.sc-med-image-zoom{font-size:24px;stroke:hsl(var(--med-color-neutral-1))}.sc-med-image-zoom-h .zoom-button.sc-med-image-zoom:not(:last-child){margin-bottom:16px}.sc-med-image-zoom-h .zoom-button--close.sc-med-image-zoom{background-color:hsl(var(--med-color-neutral-2))}.sc-med-image-zoom-h .zoom-button--close.sc-med-image-zoom ion-icon.sc-med-image-zoom{stroke:hsl(var(--med-color-neutral-10))}";
+const medImageZoomCss = ".sc-med-image-zoom-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100%;background-color:hsl(var(--med-color-neutral-1))}.sc-med-image-zoom-h .zoom-header.sc-med-image-zoom{position:fixed;width:100%;z-index:1;top:0}.sc-med-image-zoom-h .zoom-header__title.sc-med-image-zoom{color:hsl(var(--med-color-neutral-10));font-size:16px;line-height:100%;font-weight:600}.sc-med-image-zoom-h .zoom-header.sc-med-image-zoom .med-icon.sc-med-image-zoom{stroke:hsl(var(--med-color-neutral-10))}.sc-med-image-zoom-h .zoom-content.sc-med-image-zoom{--background:hsl(var(--med-color-neutral-1));height:100%;overflow-y:hidden}.sc-med-image-zoom-h ion-slides.sc-med-image-zoom{--bullet-background-active:hsl(var(--med-color-brand-3));display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;height:100%}.sc-med-image-zoom-h ion-slides.sc-med-image-zoom .swiper-pagination-bullet-active.sc-med-image-zoom{border:2px solid hsl(var(--med-color-brand-3))}.sc-med-image-zoom-h .swiper-zoom-container.sc-med-image-zoom{-ms-flex-direction:column;flex-direction:column}.sc-med-image-zoom-h .zoom-imagem.sc-med-image-zoom{width:auto;max-width:calc(100% - 50px);height:auto;max-height:calc(100% - 100px);-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;padding-top:48px}.sc-med-image-zoom-h .swiper-slide-zoomed.sc-med-image-zoom .zoom-legenda-container.sc-med-image-zoom{display:none !important}.sc-med-image-zoom-h .zoom-legenda-container.sc-med-image-zoom{padding:16px 52px;text-align:justify}@media (max-width: 992px){.sc-med-image-zoom-h .zoom-legenda-container.sc-med-image-zoom{padding:16px 52px;padding-right:70px;text-align:justify}}.sc-med-image-zoom-h .zoom-legenda.sc-med-image-zoom{display:inline-block;color:hsl(var(--med-color-neutral-10));font-size:14px;max-width:992px;overflow-y:auto;max-height:60px}.sc-med-image-zoom-h .marca-agua-superior.sc-med-image-zoom{position:absolute;top:29%;z-index:1;width:100%;text-align:center;font-size:2.5em;opacity:0.01;color:hsl(var(--med-color-brand-3));pointer-events:none}.sc-med-image-zoom-h .marca-agua-inferior.sc-med-image-zoom{position:absolute;top:52%;z-index:1;width:100%;text-align:center;font-size:2.5em;opacity:0.02;color:hsl(var(--med-color-brand-3));pointer-events:none}.sc-med-image-zoom-h .zoom-button-container.sc-med-image-zoom{position:fixed;bottom:48px;right:15px;height:175px;width:48px}.sc-med-image-zoom-h .zoom-button.sc-med-image-zoom{width:48px;height:48px;border:none;border-radius:50%;cursor:pointer;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;outline:none;background-color:hsl(var(--med-color-neutral-10))}.sc-med-image-zoom-h .zoom-button.sc-med-image-zoom ion-icon.sc-med-image-zoom{font-size:24px;stroke:hsl(var(--med-color-neutral-1))}.sc-med-image-zoom-h .zoom-button.sc-med-image-zoom:not(:last-child){margin-bottom:16px}.sc-med-image-zoom-h .zoom-button--close.sc-med-image-zoom{background-color:hsl(var(--med-color-neutral-2))}.sc-med-image-zoom-h .zoom-button--close.sc-med-image-zoom ion-icon.sc-med-image-zoom{stroke:hsl(var(--med-color-neutral-10))}";
 
 class MedImageZoom {
   constructor(hostRef) {
@@ -29096,12 +29097,12 @@ class TpChartBar {
   }; }
 }
 
-const tpInputContainerCss = ".sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-2))}.sc-tp-input-container-h{position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background-color:var(--background);border-radius:8px;height:40px}.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-s>ion-icon[slot=end]{--color:hsl(var(--med-color-neutral-6)) !important;margin:0 8px 0 8px;stroke:hsl(var(--med-color-neutral-6))}.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-select{--padding-start:0}.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-select{--padding-end:0}.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-select{--padding-start:0;--padding-end:0}.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=end]{opacity:0.4}.tp-input-container--secondary.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-3))}.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3))}.tp-input-container.tp-input-container--select-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:8px 8px 0 0 !important;-webkit-transition:border-radius 400ms ease-in-out;transition:border-radius 400ms ease-in-out}.sc-tp-input-container-h.tp-input-container.tp-input-container--inverted.sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.tp-input-container.tp-input-container--inverted.tp-input-container--select-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:0 0 8px 8px !important}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h{cursor:not-allowed}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h:not(.tp-input-container--disabled){cursor:pointer}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transition:-webkit-transform 400ms linear;transition:-webkit-transform 400ms linear;transition:transform 400ms linear;transition:transform 400ms linear, -webkit-transform 400ms linear}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-clicked:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-clicked.tp-input-container--inverted:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(0deg);transform:rotate(0deg)}.med-color.sc-tp-input-container-h{--background:hsl(var(--med-color-3))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3));--placeholder-color:hsl(var(--med-color-contrast-fixed));--color:hsl(var(--med-color-contrast-fixed))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-contrast-fixed)) !important;stroke:hsl(var(--med-color-contrast-fixed)) !important}.med-color-neutral.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-neutral));--placeholder-color:hsl(var(--med-color-neutral-contrast));--color:hsl(var(--med-color-neutral-contrast))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-neutral-contrast)) !important;stroke:hsl(var(--med-color-neutral-contrast)) !important}.med-color-feedback.sc-tp-input-container-h{--background:hsl(var(--med-color-feedback))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-feedback));--placeholder-color:hsl(var(--med-color-feedback-contrast));--color:hsl(var(--med-color-feedback-contrast))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-feedback-contrast)) !important;stroke:hsl(var(--med-color-feedback-contrast)) !important}";
+const tpInputContainerCss = ".sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-2))}.sc-tp-input-container-h{position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background-color:var(--background);border-radius:8px;height:40px}.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-s>ion-icon[slot=end]{--color:hsl(var(--med-color-neutral-6)) !important;margin:0 8px 0 8px;stroke:hsl(var(--med-color-neutral-6))}.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-icon[slot=end]{min-width:24px}.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-select{--padding-start:0}.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-select{--padding-end:0}.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-select{--padding-start:0;--padding-end:0}.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=end]{opacity:0.4}.tp-input-container--secondary.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-3))}.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3))}.tp-input-container.tp-input-container--select-popover-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:8px 8px 0 0 !important;-webkit-transition:border-radius 400ms ease-in-out;transition:border-radius 400ms ease-in-out}.sc-tp-input-container-h.tp-input-container.tp-input-container--inverted.sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.tp-input-container.tp-input-container--inverted.tp-input-container--select-popover-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:0 0 8px 8px !important}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h{cursor:not-allowed}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h:not(.tp-input-container--disabled){cursor:pointer}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transition:-webkit-transform 400ms linear;transition:-webkit-transform 400ms linear;transition:transform 400ms linear;transition:transform 400ms linear, -webkit-transform 400ms linear}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked.tp-input-container--inverted:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(0deg);transform:rotate(0deg)}.med-color.sc-tp-input-container-h{--background:hsl(var(--med-color-3))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3));--placeholder-color:hsl(var(--med-color-contrast-fixed));--color:hsl(var(--med-color-contrast-fixed))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-contrast-fixed)) !important;stroke:hsl(var(--med-color-contrast-fixed)) !important}.med-color-neutral.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-neutral));--placeholder-color:hsl(var(--med-color-neutral-contrast));--color:hsl(var(--med-color-neutral-contrast))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-neutral-contrast)) !important;stroke:hsl(var(--med-color-neutral-contrast)) !important}.med-color-feedback.sc-tp-input-container-h{--background:hsl(var(--med-color-feedback))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-feedback));--placeholder-color:hsl(var(--med-color-feedback-contrast));--color:hsl(var(--med-color-feedback-contrast))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-feedback-contrast)) !important;stroke:hsl(var(--med-color-feedback-contrast)) !important}";
 
 class TpInputContainer {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    this.selectClicked = false;
+    this.selectWithPopoverClicked = false;
     this.pointerOnSelect = false;
     this.selectAndPopoverDiffWidth = 2;
     /**
@@ -29121,30 +29122,29 @@ class TpInputContainer {
     if (this.disabled)
       return;
     const target = e.target;
-    this.selectClicked =
+    const ionSelect = this.host.querySelector("ion-select");
+    this.selectWithPopoverClicked =
       this.host.contains(target) &&
-        this.host.querySelector("ion-select") !== null;
+        ionSelect !== null &&
+        ionSelect.interface === "popover";
     // querySelector vai garantir que só seja afetado o tp-input-container usado como container de um ion-select
-    if (this.selectClicked) {
+    if (this.selectWithPopoverClicked) {
       this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
     }
   }
   catchSelectIconClick(e) {
     const target = e.target;
-    const shouldPropagateClick = this.host.contains(target) &&
+    const ionSelect = this.host.querySelector("ion-select");
+    const shouldOpenOverlay = this.host.contains(target) &&
+      ionSelect.hasAttribute("interface") &&
       (target.nodeName === "ION-ICON" ||
         target.nodeName === "TP-INPUT-CONTAINER");
-    if (shouldPropagateClick) {
-      const event = new MouseEvent("click", {
-        view: window,
-        bubbles: true,
-      });
-      const ionSelect = this.host.querySelector("ION-SELECT");
-      ionSelect === null || ionSelect === void 0 ? void 0 : ionSelect.dispatchEvent(event);
+    if (shouldOpenOverlay) {
+      ionSelect.open(e);
     }
   }
   setPopoverWidthOnResize() {
-    if (!this.selectClicked)
+    if (!this.selectWithPopoverClicked)
       return;
     const popoverElement = document.querySelector(".select-popover");
     popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
@@ -29152,7 +29152,7 @@ class TpInputContainer {
   setPopoverCharacteristics() {
     // setTimeout para animação acontecer de forma suave
     setTimeout(() => {
-      if (!this.selectClicked)
+      if (!this.selectWithPopoverClicked)
         return;
       const popoverElement = document.querySelector(".select-popover");
       popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
@@ -29162,30 +29162,37 @@ class TpInputContainer {
       if (popoverElement.classList.contains("popover-bottom")) {
         this.inverted = true;
       }
+      const { top, left } = this.host.getBoundingClientRect();
       if (this.inverted) {
         popoverElement.classList.add("tp-popover--inverted");
-        const { top, left } = this.host.getBoundingClientRect();
         popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
         popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
+      }
+      else {
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left + 1}px`);
       }
     }, 0);
   }
   unsetClikedState() {
-    if (!this.selectClicked)
+    if (!this.selectWithPopoverClicked)
       return;
-    this.selectClicked = false;
+    this.selectWithPopoverClicked = false;
   }
   componentDidLoad() {
-    if (this.host.querySelector("ION-SELECT")) {
+    const ionSelect = this.host.querySelector("ION-SELECT");
+    if (ionSelect) {
       this.pointerOnSelect = true;
+      if (!ionSelect.hasAttribute("interface")) {
+        ionSelect.interfaceOptions = { cssClass: "tp-hide" };
+      }
     }
   }
   render() {
-    const { dsColor, dsName, selectClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon, } = this;
+    const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon, } = this;
     return (hAsync(Host, { class: generateMedColor(dsColor, {
         "tp-input-container": true,
         "tp-input-container--with-select": pointerOnSelect,
-        [`tp-input-container--select-clicked`]: selectClicked,
+        [`tp-input-container--select-popover-clicked`]: selectWithPopoverClicked,
         [`tp-input-container--inverted`]: inverted,
         "tp-input-container--disabled": disabled,
         "tp-input-container--feedback": feedback,
@@ -29207,7 +29214,7 @@ class TpInputContainer {
       "inverted": [516],
       "hasButton": [513, "has-button"],
       "hasIcon": [513, "has-icon"],
-      "selectClicked": [32],
+      "selectWithPopoverClicked": [32],
       "pointerOnSelect": [32]
     },
     "$listeners$": [[16, "click", "getTpInputContainerWidth"], [0, "click", "catchSelectIconClick"], [9, "resize", "setPopoverWidthOnResize"], [16, "ionPopoverWillPresent", "setPopoverCharacteristics"], [16, "ionPopoverWillDismiss", "unsetClikedState"]],

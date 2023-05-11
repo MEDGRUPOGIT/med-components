@@ -160,6 +160,7 @@ export const MedIcons = [
 
   'med-linkexterno',
   'med-lixeira',
+  'med-localizacao',
   'med-logincode',
   'med-logo',
   'med-main',
@@ -193,6 +194,7 @@ export const MedIcons = [
   'med-offline',
   'med-offline2',
   'med-online',
+  'med-order',
   'med-orientacao',
   'med-outros',
 
@@ -212,6 +214,7 @@ export const MedIcons = [
   'med-questaoerrada',
   'med-recursos',
   'med-regular',
+  'med-repeat',
 
   'med-retafinal',
   'med-retomar',

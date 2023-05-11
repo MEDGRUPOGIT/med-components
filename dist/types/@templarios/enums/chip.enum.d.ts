@@ -1,4 +1,5 @@
 export declare enum TemplariosChipSize {
   SM = "sm",
-  MD = "md"
+  MD = "md",
+  LG = "lg"
 }
