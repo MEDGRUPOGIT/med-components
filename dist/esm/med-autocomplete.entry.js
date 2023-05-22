@@ -1,14 +1,85 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
+import { r as registerInstance, h, H as Host, i as getElement } from './index-70672e81.js';
 
-const medAutocompleteCss = ".sc-med-autocomplete-h{display:block;position:relative}.sc-med-autocomplete-s>med-dropdown+ion-searchbar{--border-radius:8px 8px 0 0}.sc-med-autocomplete-s>med-dropdown{--top:40px;max-height:164px;background:hsl(var(--med-color-neutral-2));cursor:pointer}";
+const medAutocompleteCss = ".sc-med-autocomplete-h{--autocomplete-base-height:40px;--autocomplete-height:auto;--dropdown-max-height:164px;display:block;position:relative;border-radius:8px;overflow:hidden}.sc-med-autocomplete-s>med-dropdown+ion-searchbar{--border-radius:8px}.sc-med-autocomplete-s>med-dropdown{--top:40px;max-height:var(--dropdown-max-height);background:hsl(var(--med-color-neutral-2));cursor:pointer}.med-autocomplete--dropdown-hide.sc-med-autocomplete-h{opacity:1;-webkit-animation-name:shorten;animation-name:shorten;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes shorten{0%{height:var(--autocomplete-height)}100%{height:var(--autocomplete-base-height)}}@keyframes shorten{0%{height:var(--autocomplete-height)}100%{height:var(--autocomplete-base-height)}}.sc-med-autocomplete-h.med-autocomplete--dropdown-hide.sc-med-autocomplete-s>med-dropdown{opacity:0;pointer-events:none;-webkit-animation-name:fadeAndShrink;animation-name:fadeAndShrink;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}@-webkit-keyframes fadeAndShrink{0%{opacity:1}100%{opacity:0}}@keyframes fadeAndShrink{0%{opacity:1}100%{opacity:0}}.med-autocomplete--dropdown-show.sc-med-autocomplete-h{opacity:1;-webkit-animation-name:heighten;animation-name:heighten;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes heighten{0%{height:var(--autocomplete-base-height)}100%{height:var(--autocomplete-height)}}@keyframes heighten{0%{height:var(--autocomplete-base-height)}100%{height:var(--autocomplete-height)}}.sc-med-autocomplete-h.med-autocomplete--dropdown-show.sc-med-autocomplete-s>ion-searchbar{--border-radius:8px 8px 0 0}.sc-med-autocomplete-h.med-autocomplete--dropdown-show.sc-med-autocomplete-s>med-dropdown{opacity:1;-webkit-animation-name:showUp;animation-name:showUp;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}@-webkit-keyframes showUp{0%{opacity:0}100%{opacity:1}}@keyframes showUp{0%{opacity:0}100%{opacity:1}}";
 
 const MedAutocomplete = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    /**
+     * Se a pesquisa por items possuir debounce time até o item ser inserido
+     *  no dom, deve ser indicado por essa propriedade (defaults to 0)
+     */
+    this.debounceTime = 0;
+  }
+  closeOnOutsideClick(e) {
+    const target = e.target;
+    if (!this.host.contains(target)) {
+      this.open = false;
+    }
+  }
+  handleInput() {
+    this.open = true;
+    /**
+     * debounceTime deve ser setado de acordo com o tempo de debounce
+     * do método de busca de items
+     */
+    setTimeout(() => {
+      const extraHeight = this.dropdownElement.getBoundingClientRect().height;
+      return this.host.style.setProperty("--autocomplete-height", `${this.baseHeight + extraHeight}px`);
+    }, this.debounceTime);
+  }
+  handleFocus() {
+    this.handleInput();
+  }
+  handleOpenChange() {
+    if (!this.dropdownElement) {
+      this.dropdownElement = this.host.querySelector("med-dropdown");
+    }
+    if (this.open) {
+      const extraHeight = this.dropdownElement.getBoundingClientRect().height;
+      return this.host.style.setProperty("--autocomplete-height", `${this.baseHeight + extraHeight}px`);
+    }
+  }
+  toggleDropdown() {
+    this.open = !this.open;
+  }
+  componentWillLoad() {
+    var _a;
+    this.open = (_a = this.dropdown) !== null && _a !== void 0 ? _a : false;
+  }
+  componentDidLoad() {
+    var _a, _b;
+    const searchbar = this.host.querySelector("ion-searchbar");
+    const searchbarHeight = (_b = (_a = searchbar === null || searchbar === void 0 ? void 0 : searchbar.getBoundingClientRect()) === null || _a === void 0 ? void 0 : _a.height) !== null && _b !== void 0 ? _b : 0;
+    if (searchbarHeight) {
+      this.baseHeight = searchbar.getBoundingClientRect().height;
+      this.host.style.setProperty("--autocomplete-base-height", `${this.baseHeight}px`);
+    }
+    else {
+      const poll = setInterval(() => {
+        const searchbar = this.host.querySelector("ion-searchbar");
+        if (searchbar) {
+          this.baseHeight = searchbar.getBoundingClientRect().height;
+          if (this.baseHeight) {
+            this.host.style.setProperty("--autocomplete-base-height", `${this.baseHeight}px`);
+          }
+          clearInterval(this.pollTrigger);
+        }
+      }, 200);
+      this.pollTrigger = poll;
+    }
   }
   render() {
-    return (h(Host, null, h("slot", null)));
+    const { open } = this;
+    return (h(Host, { class: {
+        "med-autocomplete--dropdown-hide": !open,
+        "med-autocomplete--dropdown-show": open,
+      } }, h("slot", null)));
   }
+  get host() { return getElement(this); }
+  static get watchers() { return {
+    "open": ["handleOpenChange"]
+  }; }
 };
 MedAutocomplete.style = medAutocompleteCss;
 

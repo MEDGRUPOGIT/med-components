@@ -1,15 +1,84 @@
 :host {
+  --autocomplete-base-height: 40px;
+  --autocomplete-height: auto;
+  --dropdown-max-height: 164px;
   display: block;
   position: relative;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 ::slotted(med-dropdown + ion-searchbar) {
-  --border-radius: 8px 8px 0 0;
+  --border-radius: 8px;
 }
 
 ::slotted(med-dropdown) {
   --top: 40px;
-  max-height: 164px;
+  max-height: var(--dropdown-max-height);
   background: hsl(var(--med-color-neutral-2));
   cursor: pointer;
+}
+
+:host(.med-autocomplete--dropdown-hide) {
+  opacity: 1;
+  animation-name: shorten;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes shorten {
+  0% {
+    height: var(--autocomplete-height);
+  }
+  100% {
+    height: var(--autocomplete-base-height);
+  }
+}
+:host(.med-autocomplete--dropdown-hide)::slotted(med-dropdown) {
+  opacity: 0;
+  pointer-events: none;
+  animation-name: fadeAndShrink;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes fadeAndShrink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+:host(.med-autocomplete--dropdown-show) {
+  opacity: 1;
+  animation-name: heighten;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes heighten {
+  0% {
+    height: var(--autocomplete-base-height);
+  }
+  100% {
+    height: var(--autocomplete-height);
+  }
+}
+:host(.med-autocomplete--dropdown-show)::slotted(ion-searchbar) {
+  --border-radius: 8px 8px 0 0;
+}
+:host(.med-autocomplete--dropdown-show)::slotted(med-dropdown) {
+  opacity: 1;
+  animation-name: showUp;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+@keyframes showUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

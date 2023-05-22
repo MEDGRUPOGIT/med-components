@@ -58,6 +58,8 @@
     "./components/@templarios/core/med-segment/med-segment.js",
     "./components/@templarios/core/med-tab-button/med-tab-button.js",
     "./components/@templarios/core/med-type/med-type.js",
+    "./components/@templarios/core/tp-accordion/tp-accordion.js",
+    "./components/@templarios/core/tp-accordion-group/tp-accordion-group.js",
     "./components/@templarios/core/tp-chart-bar/tp-chart-bar.js",
     "./components/@templarios/core/tp-input-container/tp-input-container.js",
     "./components/@templarios/core/tp-loader/tp-loader.js",

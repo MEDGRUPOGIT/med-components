@@ -1,5 +1,6 @@
-import { EventEmitter } from '../stencil-public-runtime';
-import { Side } from '../interface';
+import { EventEmitter } from "../stencil-public-runtime";
+import { Side } from "../interface";
+export declare const transitionEndAsync: (el: HTMLElement | null, expectedDuration?: number) => Promise<unknown>;
 /**
  * Waits for a component to be ready for
  * both custom element and non-custom element builds.

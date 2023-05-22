@@ -5,9 +5,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 const index = require('./index-bc2e4509.js');
 const ionicGlobal = require('./ionic-global-50e8bb29.js');
 const cubicBezier = require('./cubic-bezier-0b2ccc35.js');
-const helpers = require('./helpers-d381ec4d.js');
-const index$1 = require('./index-29aebf46.js');
-const frameworkDelegate = require('./framework-delegate-45524d8c.js');
+const helpers = require('./helpers-ba3c117b.js');
+const index$1 = require('./index-a7d54975.js');
+const frameworkDelegate = require('./framework-delegate-bebbd221.js');
 
 const VIEW_STATE_NEW = 1;
 const VIEW_STATE_ATTACHED = 2;
@@ -144,7 +144,7 @@ const Nav = class {
   }
   async componentDidLoad() {
     this.rootChanged();
-    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-8578d83a.js'); })).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
+    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-726665a3.js'); })).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
     this.swipeGestureChanged();
   }
   disconnectedCallback() {

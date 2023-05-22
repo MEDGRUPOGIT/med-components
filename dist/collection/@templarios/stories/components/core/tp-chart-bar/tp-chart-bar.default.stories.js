@@ -15,6 +15,7 @@ const Template = ({
   height,
   bar,
   hasMarker,
+  deactivated,
   marker,
 }) => {
   setInterval(() => {
@@ -46,6 +47,7 @@ const Template = ({
             .dsColor=${dsColor}
             .dsName=${dsName}
             .hasMarker=${hasMarker}
+            .deactivated=${deactivated}
             .height=${height}
           >
           </tp-chart-bar>
@@ -129,6 +131,15 @@ Default.argTypes = {
     description:
       "Define se o componente vai mostrar um marcador de comparação.",
     defaultValue: true,
+    table: {
+      type: { summary: "boolean" },
+      defaultValue: { summary: "undefined" },
+    },
+  },
+  deactivated: {
+    control: { type: "boolean" },
+    description: "Define se o componente esta no estado desativado.",
+    defaultValue: false,
     table: {
       type: { summary: "boolean" },
       defaultValue: { summary: "undefined" },

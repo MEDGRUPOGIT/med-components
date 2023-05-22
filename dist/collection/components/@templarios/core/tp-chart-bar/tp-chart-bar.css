@@ -25,14 +25,7 @@
   --value-bar: 0%;
   --value-marker: 0%;
   --display-marker: initial;
-}
-
-:host(.tp-chart-bar--no-marker) {
-  --display-marker: none;
-}
-
-:host(.tp-chart-bar--secondary) {
-  --background: hsl(var(--med-color-neutral-3));
+  --opacity: 1;
 }
 
 .tp-chart-bar__bar-container {
@@ -87,6 +80,22 @@
   font-size: var(--label-size);
   line-height: 1;
   color: var(--label-color) !important;
+}
+
+:host(.tp-chart-bar--no-marker) {
+  --display-marker: none;
+}
+
+:host(.tp-chart-bar--secondary) {
+  --background: hsl(var(--med-color-neutral-3));
+}
+
+:host(.tp-chart-bar--deactivated) {
+  --background: hsl(var(--med-color-neutral-15));
+}
+
+:host(.tp-chart-bar--deactivated) .tp-chart-bar__bar {
+  --color-bar: hsl(var(--med-color-neutral-5));
 }
 
 @keyframes load-bar {

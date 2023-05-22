@@ -1,5 +1,5 @@
 import { r as registerInstance, e as createEvent, i as getElement, h, H as Host } from './index-70672e81.js';
-import { c as componentOnReady, n as debounce } from './helpers-dd7e4b7b.js';
+import { c as componentOnReady, n as debounce } from './helpers-462f8de3.js';
 import { b as getIonMode } from './ionic-global-4bc7e399.js';
 import { o as openURL, c as createColorClasses } from './theme-ff3fc52f.js';
 

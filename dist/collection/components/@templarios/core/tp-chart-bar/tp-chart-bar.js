@@ -24,17 +24,22 @@ export class TpChartBar {
     /**
      * todo
      */
+    this.deactivated = false;
+    /**
+     * todo
+     */
     this.marker = {
       color: "med-color-fb-caution",
       value: 0,
     };
   }
   render() {
-    const { dsColor, dsName, label, labelSize, height, bar, hasMarker, marker, } = this;
+    const { dsColor, dsName, label, labelSize, height, bar, hasMarker, deactivated, marker, } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
         "tp-chart-bar": true,
         "tp-chart-bar--no-marker": !hasMarker,
         "tp-chart-bar--secondary": dsName === "secondary",
+        "tp-chart-bar--deactivated": deactivated,
       }), style: {
         "--label-size": `${labelSize}px`,
         "--height": `${height}px`,
@@ -183,6 +188,24 @@ export class TpChartBar {
         "text": "todo"
       },
       "attribute": "has-marker",
+      "reflect": true,
+      "defaultValue": "false"
+    },
+    "deactivated": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "todo"
+      },
+      "attribute": "deactivated",
       "reflect": true,
       "defaultValue": "false"
     },

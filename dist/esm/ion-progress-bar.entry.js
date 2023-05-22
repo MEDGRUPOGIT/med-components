@@ -1,6 +1,6 @@
 import { r as registerInstance, h, H as Host, i as getElement } from './index-70672e81.js';
 import { c as config, b as getIonMode } from './ionic-global-4bc7e399.js';
-import { j as clamp } from './helpers-dd7e4b7b.js';
+import { j as clamp } from './helpers-462f8de3.js';
 import { g as generateMedColor } from './color-49be71bc.js';
 import { h as hostContext } from './theme-ff3fc52f.js';
 

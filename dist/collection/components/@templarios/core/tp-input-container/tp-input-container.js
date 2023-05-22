@@ -2,9 +2,19 @@ import { Component, h, Host, Prop, Element, Listen, State, } from "@stencil/core
 import { generateMedColor } from "../../../../@templarios/utilities/color";
 export class TpInputContainer {
   constructor() {
-    this.selectWithPopoverClicked = false;
-    this.pointerOnSelect = false;
+    /**
+     * Acrescimo ao hostWidth necessário para contabilizar as bordas
+     */
     this.selectAndPopoverDiffWidth = 2;
+    /**
+     * Monitoria se o Select foi clicado e está ativo. A propriedade é usada para
+     * aplicar estilização e evitar processamentos desnecessários em alguns métodos
+     */
+    this.selectWithPopoverClicked = false;
+    /**
+     * todo
+     */
+    this.pointerOnSelect = false;
     /**
      * todo
      */
@@ -18,19 +28,10 @@ export class TpInputContainer {
      */
     this.inverted = false;
   }
-  getTpInputContainerWidth(e) {
+  setClickTarget(e) {
     if (this.disabled)
       return;
-    const target = e.target;
-    const ionSelect = this.host.querySelector("ion-select");
-    this.selectWithPopoverClicked =
-      this.host.contains(target) &&
-        ionSelect !== null &&
-        ionSelect.interface === "popover";
-    // querySelector vai garantir que só seja afetado o tp-input-container usado como container de um ion-select
-    if (this.selectWithPopoverClicked) {
-      this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
-    }
+    this.clickTarget = e.target;
   }
   catchSelectIconClick(e) {
     const target = e.target;
@@ -50,32 +51,30 @@ export class TpInputContainer {
     popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
   }
   setPopoverCharacteristics() {
-    // setTimeout para animação acontecer de forma suave
-    setTimeout(() => {
-      if (!this.selectWithPopoverClicked)
-        return;
-      const popoverElement = document.querySelector(".select-popover");
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
-      if (this.dsName === "secondary") {
-        popoverElement.classList.add("tp-popover--secondary");
-      }
-      if (popoverElement.classList.contains("popover-bottom")) {
-        this.inverted = true;
-      }
-      const { top, left } = this.host.getBoundingClientRect();
-      if (this.inverted) {
-        popoverElement.classList.add("tp-popover--inverted");
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
-      }
-      else {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left + 1}px`);
-      }
-    }, 0);
+    if (!this.host.contains(this.clickTarget))
+      return;
+    this.selectWithPopoverClicked = true;
+    this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
+    const popoverElement = document.querySelector(".select-popover");
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
+    if (this.dsName === "secondary") {
+      popoverElement.classList.add("tp-popover--secondary");
+    }
+    if (popoverElement.classList.contains("popover-bottom")) {
+      this.inverted = true;
+    }
+    const { top, bottom, left } = this.host.getBoundingClientRect();
+    if (this.inverted) {
+      popoverElement.classList.add("tp-popover--inverted");
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
+    }
+    else {
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left + 1}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--top", `${bottom}px`);
+    }
   }
   unsetClikedState() {
-    if (!this.selectWithPopoverClicked)
-      return;
     this.selectWithPopoverClicked = false;
   }
   componentDidLoad() {
@@ -242,13 +241,14 @@ export class TpInputContainer {
     }
   }; }
   static get states() { return {
+    "clickTarget": {},
     "selectWithPopoverClicked": {},
     "pointerOnSelect": {}
   }; }
   static get elementRef() { return "host"; }
   static get listeners() { return [{
       "name": "click",
-      "method": "getTpInputContainerWidth",
+      "method": "setClickTarget",
       "target": "body",
       "capture": false,
       "passive": false

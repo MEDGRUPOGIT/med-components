@@ -1,3 +1,32 @@
+tp-accordion {
+  --margin-bottom: 8px;
+  border-radius: 8px;
+  background: hsl(var(--med-color-neutral-2));
+}
+tp-accordion:not(:last-child) {
+  margin-bottom: var(--margin-bottom);
+}
+tp-accordion ion-item[slot=header] {
+  --inner-padding-end: 0;
+}
+tp-accordion ion-item[slot=header] ion-label {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+}
+tp-accordion div[slot=content] {
+  padding: 16px;
+}
+tp-accordion.accordion-expanding .med-rotate, tp-accordion.accordion-expanded .med-rotate {
+  --rotate: rotate(180deg);
+}
+tp-accordion[ds-name=secondary] {
+  background: hsl(var(--med-color-neutral-3));
+}
+tp-accordion[ds-name=secondary] ion-item[slot=header] {
+  --background: hsl(var(--med-color-neutral-3));
+}
+
 ion-alert.tp-hide {
   display: none !important;
 }
@@ -7529,6 +7558,7 @@ ion-popover.tp-popover .popover-content {
   --border-radius: 0 0 8px 8px;
   --max-height: 220px;
   left: var(--left) !important;
+  top: var(--top) !important;
   border-radius: var(--border-radius) !important;
   transform: translateX(-1px) !important;
 }

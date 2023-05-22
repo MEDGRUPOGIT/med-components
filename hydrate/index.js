@@ -4747,7 +4747,7 @@ const isTablet = (win) => {
     ((smallest > 460 && smallest < 820) &&
       (largest > 780 && largest < 1400)));
 };
-const isMobile = (win) => matchMedia(win, '(any-pointer:coarse)');
+const isMobile = (win) => matchMedia$1(win, '(any-pointer:coarse)');
 const isDesktop = (win) => !isMobile(win);
 const isHybrid = (win) => isCordova(win) || isCapacitorNative(win);
 const isCordova = (win) => !!(win['cordova'] || win['phonegap'] || win['PhoneGap']);
@@ -4758,7 +4758,7 @@ const isCapacitorNative = (win) => {
 const isElectron = (win) => testUserAgent(win, /electron/i);
 const isPWA = (win) => !!(win.matchMedia('(display-mode: standalone)').matches || win.navigator.standalone);
 const testUserAgent = (win, expr) => expr.test(win.navigator.userAgent);
-const matchMedia = (win, query) => win.matchMedia(query).matches;
+const matchMedia$1 = (win, query) => win.matchMedia(query).matches;
 const PLATFORMS_MAP = {
   'ipad': isIpad,
   'iphone': isIphone,
@@ -5735,6 +5735,49 @@ const generateMedColor = (color, cssClassMap) => {
   }
 };
 
+const transitionEndAsync$1 = (el, expectedDuration = 0) => {
+  return new Promise((resolve) => {
+    transitionEnd$3(el, expectedDuration, resolve);
+  });
+};
+/**
+ * Allows developer to wait for a transition
+ * to finish and fallback to a timer if the
+ * transition is cancelled or otherwise
+ * never finishes. Also see transitionEndAsync
+ * which is an await-able version of this.
+ */
+const transitionEnd$3 = (el, expectedDuration = 0, callback) => {
+  let unRegTrans;
+  let animationTimeout;
+  const opts = { passive: true };
+  const ANIMATION_FALLBACK_TIMEOUT = 500;
+  const unregister = () => {
+    if (unRegTrans) {
+      unRegTrans();
+    }
+  };
+  const onTransitionEnd = (ev) => {
+    if (ev === undefined || el === ev.target) {
+      unregister();
+      callback(ev);
+    }
+  };
+  if (el) {
+    el.addEventListener("webkitTransitionEnd", onTransitionEnd, opts);
+    el.addEventListener("transitionend", onTransitionEnd, opts);
+    animationTimeout = setTimeout(onTransitionEnd, expectedDuration + ANIMATION_FALLBACK_TIMEOUT);
+    unRegTrans = () => {
+      if (animationTimeout) {
+        clearTimeout(animationTimeout);
+        animationTimeout = undefined;
+      }
+      el.removeEventListener("webkitTransitionEnd", onTransitionEnd, opts);
+      el.removeEventListener("transitionend", onTransitionEnd, opts);
+    };
+  }
+  return unregister;
+};
 /**
  * Waits for a component to be ready for
  * both custom element and non-custom element builds.
@@ -5767,7 +5810,7 @@ const componentOnReady = (el, callback) => {
  */
 const inheritAttributes = (el, attributes = []) => {
   const attributeObject = {};
-  attributes.forEach(attr => {
+  attributes.forEach((attr) => {
     if (el.hasAttribute(attr)) {
       const value = el.getAttribute(attr);
       if (value !== null) {
@@ -5779,11 +5822,11 @@ const inheritAttributes = (el, attributes = []) => {
   return attributeObject;
 };
 const addEventListener$1 = (el, eventName, callback, opts) => {
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     const win = window;
     const config = win && win.Ionic && win.Ionic.config;
     if (config) {
-      const ael = config.get('_ael');
+      const ael = config.get("_ael");
       if (ael) {
         return ael(el, eventName, callback, opts);
       }
@@ -5795,11 +5838,11 @@ const addEventListener$1 = (el, eventName, callback, opts) => {
   return el.addEventListener(eventName, callback, opts);
 };
 const removeEventListener = (el, eventName, callback, opts) => {
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     const win = window;
     const config = win && win.Ionic && win.Ionic.config;
     if (config) {
-      const rel = config.get('_rel');
+      const rel = config.get("_rel");
       if (rel) {
         return rel(el, eventName, callback, opts);
       }
@@ -5827,10 +5870,10 @@ const getElementRoot = (el, fallback = el) => {
  * Use only when you know ngzone should not run
  */
 const raf = (h) => {
-  if (typeof __zone_symbol__requestAnimationFrame === 'function') {
+  if (typeof __zone_symbol__requestAnimationFrame === "function") {
     return __zone_symbol__requestAnimationFrame(h);
   }
-  if (typeof requestAnimationFrame === 'function') {
+  if (typeof requestAnimationFrame === "function") {
     return requestAnimationFrame(h);
   }
   return setTimeout(h);
@@ -5839,9 +5882,9 @@ const hasShadowDom = (el) => {
   return !!el.shadowRoot && !!el.attachShadow;
 };
 const findItemLabel = (componentEl) => {
-  const itemEl = componentEl.closest('ion-item');
+  const itemEl = componentEl.closest("ion-item");
   if (itemEl) {
-    return itemEl.querySelector('ion-label');
+    return itemEl.querySelector("ion-label");
   }
   return null;
 };
@@ -5862,14 +5905,14 @@ const getAriaLabel = (componentEl, inputId) => {
   let labelText;
   // If the user provides their own label via the aria-labelledby attr
   // we should use that instead of looking for an ion-label
-  const labelledBy = componentEl.getAttribute('aria-labelledby');
+  const labelledBy = componentEl.getAttribute("aria-labelledby");
   // Grab the id off of the component in case they are using
   // a custom label using the label element
   const componentId = componentEl.id;
-  let labelId = labelledBy !== null && labelledBy.trim() !== ''
+  let labelId = labelledBy !== null && labelledBy.trim() !== ""
     ? labelledBy
-    : inputId + '-lbl';
-  let label = labelledBy !== null && labelledBy.trim() !== ''
+    : inputId + "-lbl";
+  let label = labelledBy !== null && labelledBy.trim() !== ""
     ? document.getElementById(labelledBy)
     : findItemLabel(componentEl);
   if (label) {
@@ -5877,14 +5920,14 @@ const getAriaLabel = (componentEl, inputId) => {
       label.id = labelId;
     }
     labelText = label.textContent;
-    label.setAttribute('aria-hidden', 'true');
+    label.setAttribute("aria-hidden", "true");
     // if there is no label, check to see if the user has provided
     // one by setting an id on the component and using the label element
   }
-  else if (componentId.trim() !== '') {
+  else if (componentId.trim() !== "") {
     label = document.querySelector(`label[for="${componentId}"]`);
     if (label) {
-      if (label.id !== '') {
+      if (label.id !== "") {
         labelId = label.id;
       }
       else {
@@ -5909,16 +5952,16 @@ const getAriaLabel = (componentEl, inputId) => {
  */
 const renderHiddenInput = (always, container, name, value, disabled) => {
   if (always || hasShadowDom(container)) {
-    let input = container.querySelector('input.aux-input');
+    let input = container.querySelector("input.aux-input");
     if (!input) {
-      input = container.ownerDocument.createElement('input');
-      input.type = 'hidden';
-      input.classList.add('aux-input');
+      input = container.ownerDocument.createElement("input");
+      input.type = "hidden";
+      input.classList.add("aux-input");
       container.appendChild(input);
     }
     input.disabled = disabled;
     input.name = name;
-    input.value = value || '';
+    input.value = value || "";
   }
 };
 const clamp = (min, n, max) => {
@@ -5926,7 +5969,7 @@ const clamp = (min, n, max) => {
 };
 const assert = (actual, reason) => {
   if (!actual) {
-    const message = 'ASSERT: ' + reason;
+    const message = "ASSERT: " + reason;
     console.error(message);
     debugger; // tslint:disable-line
     throw new Error(message);
@@ -5955,10 +5998,12 @@ const pointerCoord = (ev) => {
  * @param isRTL whether the application dir is rtl
  */
 const isEndSide = (side) => {
-  const isRTL = document.dir === 'rtl';
+  const isRTL = document.dir === "rtl";
   switch (side) {
-    case 'start': return isRTL;
-    case 'end': return !isRTL;
+    case "start":
+      return isRTL;
+    case "end":
+      return !isRTL;
     default:
       throw new Error(`"${side}" is not a valid value for [side]. Use "start" or "end" instead.`);
   }
@@ -5967,7 +6012,7 @@ const debounceEvent = (event, wait) => {
   const original = event._original || event;
   return {
     _original: event,
-    emit: debounce(original.emit.bind(original), wait)
+    emit: debounce(original.emit.bind(original), wait),
   };
 };
 const debounce = (func, wait = 0) => {
@@ -15135,23 +15180,100 @@ class MedAlternativasB {
   }; }
 }
 
-const medAutocompleteCss = ".sc-med-autocomplete-h{display:block;position:relative}.sc-med-autocomplete-s>med-dropdown+ion-searchbar{--border-radius:8px 8px 0 0}.sc-med-autocomplete-s>med-dropdown{--top:40px;max-height:164px;background:hsl(var(--med-color-neutral-2));cursor:pointer}";
+const medAutocompleteCss = ".sc-med-autocomplete-h{--autocomplete-base-height:40px;--autocomplete-height:auto;--dropdown-max-height:164px;display:block;position:relative;border-radius:8px;overflow:hidden}.sc-med-autocomplete-s>med-dropdown+ion-searchbar{--border-radius:8px}.sc-med-autocomplete-s>med-dropdown{--top:40px;max-height:var(--dropdown-max-height);background:hsl(var(--med-color-neutral-2));cursor:pointer}.med-autocomplete--dropdown-hide.sc-med-autocomplete-h{opacity:1;-webkit-animation-name:shorten;animation-name:shorten;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes shorten{0%{height:var(--autocomplete-height)}100%{height:var(--autocomplete-base-height)}}@keyframes shorten{0%{height:var(--autocomplete-height)}100%{height:var(--autocomplete-base-height)}}.sc-med-autocomplete-h.med-autocomplete--dropdown-hide.sc-med-autocomplete-s>med-dropdown{opacity:0;pointer-events:none;-webkit-animation-name:fadeAndShrink;animation-name:fadeAndShrink;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}@-webkit-keyframes fadeAndShrink{0%{opacity:1}100%{opacity:0}}@keyframes fadeAndShrink{0%{opacity:1}100%{opacity:0}}.med-autocomplete--dropdown-show.sc-med-autocomplete-h{opacity:1;-webkit-animation-name:heighten;animation-name:heighten;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes heighten{0%{height:var(--autocomplete-base-height)}100%{height:var(--autocomplete-height)}}@keyframes heighten{0%{height:var(--autocomplete-base-height)}100%{height:var(--autocomplete-height)}}.sc-med-autocomplete-h.med-autocomplete--dropdown-show.sc-med-autocomplete-s>ion-searchbar{--border-radius:8px 8px 0 0}.sc-med-autocomplete-h.med-autocomplete--dropdown-show.sc-med-autocomplete-s>med-dropdown{opacity:1;-webkit-animation-name:showUp;animation-name:showUp;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}@-webkit-keyframes showUp{0%{opacity:0}100%{opacity:1}}@keyframes showUp{0%{opacity:0}100%{opacity:1}}";
 
 class MedAutocomplete {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    /**
+     * Se a pesquisa por items possuir debounce time até o item ser inserido
+     *  no dom, deve ser indicado por essa propriedade (defaults to 0)
+     */
+    this.debounceTime = 0;
+  }
+  closeOnOutsideClick(e) {
+    const target = e.target;
+    if (!this.host.contains(target)) {
+      this.open = false;
+    }
+  }
+  handleInput() {
+    this.open = true;
+    /**
+     * debounceTime deve ser setado de acordo com o tempo de debounce
+     * do método de busca de items
+     */
+    setTimeout(() => {
+      const extraHeight = this.dropdownElement.getBoundingClientRect().height;
+      return this.host.style.setProperty("--autocomplete-height", `${this.baseHeight + extraHeight}px`);
+    }, this.debounceTime);
+  }
+  handleFocus() {
+    this.handleInput();
+  }
+  handleOpenChange() {
+    if (!this.dropdownElement) {
+      this.dropdownElement = this.host.querySelector("med-dropdown");
+    }
+    if (this.open) {
+      const extraHeight = this.dropdownElement.getBoundingClientRect().height;
+      return this.host.style.setProperty("--autocomplete-height", `${this.baseHeight + extraHeight}px`);
+    }
+  }
+  toggleDropdown() {
+    this.open = !this.open;
+  }
+  componentWillLoad() {
+    var _a;
+    this.open = (_a = this.dropdown) !== null && _a !== void 0 ? _a : false;
+  }
+  componentDidLoad() {
+    var _a, _b;
+    const searchbar = this.host.querySelector("ion-searchbar");
+    const searchbarHeight = (_b = (_a = searchbar === null || searchbar === void 0 ? void 0 : searchbar.getBoundingClientRect()) === null || _a === void 0 ? void 0 : _a.height) !== null && _b !== void 0 ? _b : 0;
+    if (searchbarHeight) {
+      this.baseHeight = searchbar.getBoundingClientRect().height;
+      this.host.style.setProperty("--autocomplete-base-height", `${this.baseHeight}px`);
+    }
+    else {
+      const poll = setInterval(() => {
+        const searchbar = this.host.querySelector("ion-searchbar");
+        if (searchbar) {
+          this.baseHeight = searchbar.getBoundingClientRect().height;
+          if (this.baseHeight) {
+            this.host.style.setProperty("--autocomplete-base-height", `${this.baseHeight}px`);
+          }
+          clearInterval(this.pollTrigger);
+        }
+      }, 200);
+      this.pollTrigger = poll;
+    }
   }
   render() {
-    return (hAsync(Host, null, hAsync("slot", null)));
+    const { open } = this;
+    return (hAsync(Host, { class: {
+        "med-autocomplete--dropdown-hide": !open,
+        "med-autocomplete--dropdown-show": open,
+      } }, hAsync("slot", null)));
   }
+  get host() { return getElement(this); }
+  static get watchers() { return {
+    "open": ["handleOpenChange"]
+  }; }
   static get style() { return medAutocompleteCss; }
   static get cmpMeta() { return {
     "$flags$": 6,
     "$tagName$": "med-autocomplete",
-    "$members$": undefined,
-    "$listeners$": undefined,
+    "$members$": {
+      "dropdown": [516],
+      "debounceTime": [514, "debounce-time"],
+      "open": [32],
+      "baseHeight": [32],
+      "toggleDropdown": [64]
+    },
+    "$listeners$": [[16, "click", "closeOnOutsideClick"], [0, "ionInput", "handleInput"], [0, "ionFocus", "handleFocus"]],
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": []
+    "$attrsToReflect$": [["dropdown", "dropdown"], ["debounceTime", "debounce-time"]]
   }; }
 }
 
@@ -29031,7 +29153,641 @@ class ToolbarTitle {
   }; }
 }
 
-const tpChartBarCss = ".sc-tp-chart-bar-h{--background:hsl(var(--med-color-neutral-2));--label-color:hsl(var(--med-color-neutral-95))}.med-color.sc-tp-chart-bar-h{--label-color:hsl(var(--med-color-4))}.med-color-neutral.sc-tp-chart-bar-h{--label-color:hsl(var(--med-color-neutral))}.med-color-feedback.sc-tp-chart-bar-h{--label-color:hsl(var(--med-color-feedback))}.sc-tp-chart-bar-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;--label-size:10px;--height:200px;--value-bar:0%;--value-marker:0%;--display-marker:initial}.tp-chart-bar--no-marker.sc-tp-chart-bar-h{--display-marker:none}.tp-chart-bar--secondary.sc-tp-chart-bar-h{--background:hsl(var(--med-color-neutral-3))}.tp-chart-bar__bar-container.sc-tp-chart-bar{position:relative;background:var(--background);height:var(--height);width:8px;margin:0 auto;border-radius:4px}.tp-chart-bar__bar.sc-tp-chart-bar{position:absolute;bottom:0;left:0;width:100%;height:0%;border-radius:4px;background:var(--color-bar);-webkit-animation:load-bar 1s forwards ease-in-out;animation:load-bar 1s forwards ease-in-out}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color\"].sc-tp-chart-bar{--color-bar:hsl(var(--med-color-4))}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color-neutral\"].sc-tp-chart-bar{--color-bar:hsl(var(--med-color-neutral))}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color-fb\"].sc-tp-chart-bar{--color-bar:hsl(var(--med-color-feedback))}.tp-chart-bar__marker.sc-tp-chart-bar{position:absolute;left:0;bottom:var(--value-marker);display:var(--display-marker);width:24px;height:6px;-webkit-transform:translate(-8px, 50%);transform:translate(-8px, 50%);border-radius:3px;background:var(--color-marker)}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color\"].sc-tp-chart-bar{--color-marker:hsl(var(--med-color-4))}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color-neutral\"].sc-tp-chart-bar{--color-marker:hsl(var(--med-color-neutral))}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color-fb\"].sc-tp-chart-bar{--color-marker:hsl(var(--med-color-feedback))}.tp-chart-bar__label.sc-tp-chart-bar{margin-top:10px;font-size:var(--label-size);line-height:1;color:var(--label-color) !important}@-webkit-keyframes load-bar{from{height:0%}to{height:var(--value-bar)}}@keyframes load-bar{from{height:0%}to{height:var(--value-bar)}}";
+/* Ionicons v5.5.1, ES Modules */
+const chevronDown = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Down</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M112 184l144 144 144-144' class='ionicon-fill-none'/></svg>";
+
+const tpAccordionIosCss = "/*!@:host*/.sc-tp-accordion-ios-h{display:block;position:relative;width:100%;background-color:var(--ion-background-color, #ffffff);overflow:hidden;z-index:0}/*!@:host(.accordion-expanding) ::slotted(ion-item[slot=header]),\n:host(.accordion-expanded) ::slotted(ion-item[slot=header])*/.sc-tp-accordion-ios-h.accordion-expanding .sc-tp-accordion-ios-s>ion-item[slot=header],.sc-tp-accordion-ios-h.accordion-expanded .sc-tp-accordion-ios-s>ion-item[slot=header]{--border-width:0px}/*!@:host(.accordion-animated)*/.accordion-animated.sc-tp-accordion-ios-h{-webkit-transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@:host(.accordion-animated) #content*/.accordion-animated.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{-webkit-transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@#content*/#content.sc-tp-accordion-ios{overflow:hidden;will-change:max-height}/*!@:host(.accordion-collapsing) #content*/.accordion-collapsing.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{max-height:0 !important}/*!@:host(.accordion-collapsed) #content*/.accordion-collapsed.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{display:none}/*!@:host(.accordion-expanding) #content*/.accordion-expanding.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{max-height:0}/*!@:host(.accordion-expanding) #content-wrapper*/.accordion-expanding.sc-tp-accordion-ios-h #content-wrapper.sc-tp-accordion-ios{overflow:auto}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-readonly) #header,\n:host(.accordion-disabled) #content,\n:host(.accordion-readonly) #content*/.accordion-disabled.sc-tp-accordion-ios-h #header.sc-tp-accordion-ios,.accordion-readonly.sc-tp-accordion-ios-h #header.sc-tp-accordion-ios,.accordion-disabled.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios,.accordion-readonly.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{pointer-events:none}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-disabled) #content*/.accordion-disabled.sc-tp-accordion-ios-h #header.sc-tp-accordion-ios,.accordion-disabled.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{opacity:0.4}@media (prefers-reduced-motion: reduce){/*!@:host,\n#content*/.sc-tp-accordion-ios-h,#content.sc-tp-accordion-ios{-webkit-transition:none !important;transition:none !important}}/*!@:host(.accordion-next) ::slotted(ion-item[slot=header])*/.sc-tp-accordion-ios-h.accordion-next .sc-tp-accordion-ios-s>ion-item[slot=header]{--border-width:0.55px 0px 0.55px 0px}";
+
+const tpAccordionMdCss = "/*!@:host*/.sc-tp-accordion-md-h{display:block;position:relative;width:100%;background-color:var(--ion-background-color, #ffffff);overflow:hidden;z-index:0}/*!@:host(.accordion-expanding) ::slotted(ion-item[slot=header]),\n:host(.accordion-expanded) ::slotted(ion-item[slot=header])*/.sc-tp-accordion-md-h.accordion-expanding .sc-tp-accordion-md-s>ion-item[slot=header],.sc-tp-accordion-md-h.accordion-expanded .sc-tp-accordion-md-s>ion-item[slot=header]{--border-width:0px}/*!@:host(.accordion-animated)*/.accordion-animated.sc-tp-accordion-md-h{-webkit-transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@:host(.accordion-animated) #content*/.accordion-animated.sc-tp-accordion-md-h #content.sc-tp-accordion-md{-webkit-transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@#content*/#content.sc-tp-accordion-md{overflow:hidden;will-change:max-height}/*!@:host(.accordion-collapsing) #content*/.accordion-collapsing.sc-tp-accordion-md-h #content.sc-tp-accordion-md{max-height:0 !important}/*!@:host(.accordion-collapsed) #content*/.accordion-collapsed.sc-tp-accordion-md-h #content.sc-tp-accordion-md{display:none}/*!@:host(.accordion-expanding) #content*/.accordion-expanding.sc-tp-accordion-md-h #content.sc-tp-accordion-md{max-height:0}/*!@:host(.accordion-expanding) #content-wrapper*/.accordion-expanding.sc-tp-accordion-md-h #content-wrapper.sc-tp-accordion-md{overflow:auto}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-readonly) #header,\n:host(.accordion-disabled) #content,\n:host(.accordion-readonly) #content*/.accordion-disabled.sc-tp-accordion-md-h #header.sc-tp-accordion-md,.accordion-readonly.sc-tp-accordion-md-h #header.sc-tp-accordion-md,.accordion-disabled.sc-tp-accordion-md-h #content.sc-tp-accordion-md,.accordion-readonly.sc-tp-accordion-md-h #content.sc-tp-accordion-md{pointer-events:none}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-disabled) #content*/.accordion-disabled.sc-tp-accordion-md-h #header.sc-tp-accordion-md,.accordion-disabled.sc-tp-accordion-md-h #content.sc-tp-accordion-md{opacity:0.4}@media (prefers-reduced-motion: reduce){/*!@:host,\n#content*/.sc-tp-accordion-md-h,#content.sc-tp-accordion-md{-webkit-transition:none !important;transition:none !important}}";
+
+/**
+ * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
+ *
+ * @slot header - Content is placed at the top and is used to
+ * expand or collapse the accordion item.
+ * @slot content - Content is placed below the header and is
+ * shown or hidden based on expanded state.
+ *
+ * @part header - The wrapper element for the header slot.
+ * @part content - The wrapper element for the content slot.
+ * @part expanded - The expanded element. Can be used in combination
+ * with the `header` and `content` parts (i.e. `::part(header expanded)`).
+ */
+class TpAccordion {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+    this.updateListener = () => this.updateState(false);
+    this.state = 1 /* Collapsed */;
+    this.isNext = false;
+    this.isPrevious = false;
+    /**
+     * The value of the accordion. Defaults to an autogenerated
+     * value.
+     */
+    this.value = `ion-accordion-${accordionIds++}`;
+    /**
+     * If `true`, the accordion cannot be interacted with.
+     */
+    this.disabled = false;
+    /**
+     * If `true`, the accordion cannot be interacted with,
+     * but does not alter the opacity.
+     */
+    this.readonly = false;
+    /**
+     * The toggle icon to use. This icon will be
+     * rotated when the accordion is expanded
+     * or collapsed.
+     */
+    this.toggleIcon = chevronDown;
+    /**
+     * The slot inside of `ion-item` to
+     * place the toggle icon. Defaults to `"end"`.
+     */
+    this.toggleIconSlot = "end";
+    this.setItemDefaults = () => {
+      const ionItem = this.getSlottedHeaderIonItem();
+      if (!ionItem) {
+        return;
+      }
+      /**
+       * For a11y purposes, we make
+       * the ion-item a button so users
+       * can tab to it and use keyboard
+       * navigation to get around.
+       */
+      ionItem.button = true;
+      ionItem.detail = false;
+      /**
+       * By default, the lines in an
+       * item should be full here, but
+       * only do that if a user has
+       * not explicitly overridden them
+       */
+      if (ionItem.lines === undefined) {
+        ionItem.lines = "full";
+      }
+    };
+    this.getSlottedHeaderIonItem = () => {
+      const { headerEl } = this;
+      if (!headerEl) {
+        return;
+      }
+      /**
+       * Get the first ion-item
+       * slotted in the header slot
+       */
+      const slot = headerEl.querySelector("slot");
+      if (!slot) {
+        return;
+      }
+      // This is not defined in unit tests
+      if (slot.assignedElements === undefined)
+        return;
+      return slot.assignedElements().find((el) => el.tagName === "ION-ITEM");
+    };
+    this.setAria = (expanded = false) => {
+      const ionItem = this.getSlottedHeaderIonItem();
+      if (!ionItem) {
+        return;
+      }
+      /**
+       * Get the native <button> element inside of
+       * ion-item because that is what will be focused
+       */
+      const root = getElementRoot(ionItem);
+      const button = root.querySelector("button");
+      if (!button) {
+        return;
+      }
+      button.setAttribute("aria-expanded", `${expanded}`);
+    };
+    this.slotToggleIcon = () => {
+      const ionItem = this.getSlottedHeaderIonItem();
+      if (!ionItem) {
+        return;
+      }
+      const { toggleIconSlot, toggleIcon } = this;
+      /**
+       * Check if there already is a toggle icon.
+       * If so, do not add another one.
+       */
+      const existingToggleIcon = ionItem.querySelector(".ion-accordion-toggle-icon");
+      if (existingToggleIcon) {
+        return;
+      }
+      const iconEl = document.createElement("ion-icon");
+      iconEl.slot = toggleIconSlot;
+      iconEl.lazy = false;
+      iconEl.classList.add("ion-accordion-toggle-icon");
+      iconEl.icon = toggleIcon;
+      iconEl.setAttribute("aria-hidden", "true");
+      //ionItem.appendChild(iconEl);
+    };
+    this.expandAccordion = (initialUpdate = false) => {
+      const { contentEl, contentElWrapper } = this;
+      if (initialUpdate ||
+        contentEl === undefined ||
+        contentElWrapper === undefined) {
+        this.state = 4 /* Expanded */;
+        return;
+      }
+      if (this.state === 4 /* Expanded */) {
+        return;
+      }
+      if (this.currentRaf !== undefined) {
+        cancelAnimationFrame(this.currentRaf);
+      }
+      if (this.shouldAnimate()) {
+        raf(() => {
+          this.state = 8 /* Expanding */;
+          this.currentRaf = raf(async () => {
+            const contentHeight = contentElWrapper.offsetHeight;
+            const waitForTransition = transitionEndAsync$1(contentEl, 2000);
+            contentEl.style.setProperty("max-height", `${contentHeight}px`);
+            await waitForTransition;
+            this.state = 4 /* Expanded */;
+            contentEl.style.removeProperty("max-height");
+          });
+        });
+      }
+      else {
+        this.state = 4 /* Expanded */;
+      }
+    };
+    this.collapseAccordion = (initialUpdate = false) => {
+      const { contentEl } = this;
+      if (initialUpdate || contentEl === undefined) {
+        this.state = 1 /* Collapsed */;
+        return;
+      }
+      if (this.state === 1 /* Collapsed */) {
+        return;
+      }
+      if (this.currentRaf !== undefined) {
+        cancelAnimationFrame(this.currentRaf);
+      }
+      if (this.shouldAnimate()) {
+        this.currentRaf = raf(async () => {
+          const contentHeight = contentEl.offsetHeight;
+          contentEl.style.setProperty("max-height", `${contentHeight}px`);
+          raf(async () => {
+            const waitForTransition = transitionEndAsync$1(contentEl, 2000);
+            this.state = 2 /* Collapsing */;
+            await waitForTransition;
+            this.state = 1 /* Collapsed */;
+            contentEl.style.removeProperty("max-height");
+          });
+        });
+      }
+      else {
+        this.state = 1 /* Collapsed */;
+      }
+    };
+    /**
+     * Helper function to determine if
+     * something should animate.
+     * If prefers-reduced-motion is set
+     * then we should not animate, regardless
+     * of what is set in the config.
+     */
+    this.shouldAnimate = () => {
+      if (typeof window === "undefined") {
+        return false;
+      }
+      const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) {
+        return false;
+      }
+      const animated = config.get("animated", true);
+      if (!animated) {
+        return false;
+      }
+      if (this.accordionGroupEl && !this.accordionGroupEl.animated) {
+        return false;
+      }
+      return true;
+    };
+    this.updateState = async (initialUpdate = false) => {
+      const accordionGroup = this.accordionGroupEl;
+      const accordionValue = this.value;
+      if (!accordionGroup) {
+        return;
+      }
+      const value = accordionGroup.value;
+      const shouldExpand = Array.isArray(value)
+        ? value.includes(accordionValue)
+        : value === accordionValue;
+      if (shouldExpand) {
+        this.expandAccordion(initialUpdate);
+        this.isNext = this.isPrevious = false;
+      }
+      else {
+        this.collapseAccordion(initialUpdate);
+        /**
+         * When using popout or inset,
+         * the collapsed accordion items
+         * may need additional border radius
+         * applied. Check to see if the
+         * next or previous accordion is selected.
+         */
+        const nextAccordion = this.getNextSibling();
+        const nextAccordionValue = nextAccordion === null || nextAccordion === void 0 ? void 0 : nextAccordion.value;
+        if (nextAccordionValue !== undefined) {
+          this.isPrevious = Array.isArray(value)
+            ? value.includes(nextAccordionValue)
+            : value === nextAccordionValue;
+        }
+        const previousAccordion = this.getPreviousSibling();
+        const previousAccordionValue = previousAccordion === null || previousAccordion === void 0 ? void 0 : previousAccordion.value;
+        if (previousAccordionValue !== undefined) {
+          this.isNext = Array.isArray(value)
+            ? value.includes(previousAccordionValue)
+            : value === previousAccordionValue;
+        }
+      }
+    };
+    this.getNextSibling = () => {
+      if (!this.el) {
+        return;
+      }
+      const nextSibling = this.el.nextElementSibling;
+      if ((nextSibling === null || nextSibling === void 0 ? void 0 : nextSibling.tagName) !== "ION-ACCORDION") {
+        return;
+      }
+      return nextSibling;
+    };
+    this.getPreviousSibling = () => {
+      if (!this.el) {
+        return;
+      }
+      const previousSibling = this.el.previousElementSibling;
+      if ((previousSibling === null || previousSibling === void 0 ? void 0 : previousSibling.tagName) !== "ION-ACCORDION") {
+        return;
+      }
+      return previousSibling;
+    };
+  }
+  valueChanged() {
+    this.updateState();
+  }
+  connectedCallback() {
+    var _a;
+    const accordionGroupEl = (this.accordionGroupEl =
+      (_a = this.el) === null || _a === void 0 ? void 0 : _a.closest("tp-accordion-group"));
+    if (accordionGroupEl) {
+      this.updateState(true);
+      addEventListener$1(accordionGroupEl, "ionValueChange", this.updateListener);
+    }
+  }
+  disconnectedCallback() {
+    const accordionGroupEl = this.accordionGroupEl;
+    if (accordionGroupEl) {
+      removeEventListener(accordionGroupEl, "ionValueChange", this.updateListener);
+    }
+  }
+  componentDidLoad() {
+    this.setItemDefaults();
+    this.slotToggleIcon();
+    /**
+     * We need to wait a tick because we
+     * just set ionItem.button = true and
+     * the button has not have been rendered yet.
+     */
+    raf(() => {
+      /**
+       * Set aria label on button inside of ion-item
+       * once the inner content has been rendered.
+       */
+      const expanded = this.state === 4 /* Expanded */ ||
+        this.state === 8 /* Expanding */;
+      this.setAria(expanded);
+    });
+  }
+  toggleExpanded() {
+    const { accordionGroupEl, value, state } = this;
+    if (accordionGroupEl) {
+      /**
+       * Because the accordion group may or may
+       * not allow multiple accordions open, we
+       * need to request the toggling of this
+       * accordion and the accordion group will
+       * make the decision on whether or not
+       * to allow it.
+       */
+      const expand = state === 1 /* Collapsed */ ||
+        state === 2 /* Collapsing */;
+      accordionGroupEl.requestAccordionToggle(value, expand);
+    }
+  }
+  render() {
+    const { disabled, readonly } = this;
+    const mode = getIonMode$1(this);
+    const expanded = this.state === 4 /* Expanded */ ||
+      this.state === 8 /* Expanding */;
+    const headerPart = expanded ? "header expanded" : "header";
+    const contentPart = expanded ? "content expanded" : "content";
+    this.setAria(expanded);
+    return (hAsync(Host, { class: {
+        [mode]: true,
+        "accordion-expanding": this.state === 8 /* Expanding */,
+        "accordion-expanded": this.state === 4 /* Expanded */,
+        "accordion-collapsing": this.state === 2 /* Collapsing */,
+        "accordion-collapsed": this.state === 1 /* Collapsed */,
+        "accordion-next": this.isNext,
+        "accordion-previous": this.isPrevious,
+        "accordion-disabled": disabled,
+        "accordion-readonly": readonly,
+        "accordion-animated": this.shouldAnimate(),
+      } }, hAsync("div", { onClick: () => this.toggleExpanded(), id: "header", part: headerPart, "aria-controls": "content", ref: (headerEl) => (this.headerEl = headerEl) }, hAsync("slot", { name: "header" })), hAsync("div", { id: "content", part: contentPart, role: "region", "aria-labelledby": "header", ref: (contentEl) => (this.contentEl = contentEl) }, hAsync("div", { id: "content-wrapper", ref: (contentElWrapper) => (this.contentElWrapper = contentElWrapper) }, hAsync("slot", { name: "content" })))));
+  }
+  static get delegatesFocus() { return true; }
+  get el() { return getElement(this); }
+  static get watchers() { return {
+    "value": ["valueChanged"]
+  }; }
+  static get style() { return {
+    ios: tpAccordionIosCss,
+    md: tpAccordionMdCss
+  }; }
+  static get cmpMeta() { return {
+    "$flags$": 57,
+    "$tagName$": "tp-accordion",
+    "$members$": {
+      "value": [1],
+      "disabled": [4],
+      "readonly": [4],
+      "toggleIcon": [1, "toggle-icon"],
+      "toggleIconSlot": [1, "toggle-icon-slot"],
+      "state": [32],
+      "isNext": [32],
+      "isPrevious": [32]
+    },
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+let accordionIds = 0;
+
+/**
+ * Logs a warning to the console with an Ionic prefix
+ * to indicate the library that is warning the developer.
+ *
+ * @param message - The string message to be logged to the console.
+ */
+const printIonWarning = (message, ...params) => {
+  return console.warn(`[Ionic Warning]: ${message}`, ...params);
+};
+
+const tpAccordionGroupIosCss = "/*!@:host*/.sc-tp-accordion-group-ios-h{display:block}/*!@:host(.accordion-group-expand-inset)*/.accordion-group-expand-inset.sc-tp-accordion-group-ios-h{margin-left:16px;margin-right:16px;margin-top:16px;margin-bottom:16px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.accordion-group-expand-inset)*/.accordion-group-expand-inset.sc-tp-accordion-group-ios-h{margin-left:unset;margin-right:unset;-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px}}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanding),\n:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanded)*/.sc-tp-accordion-group-ios-h.accordion-group-expand-inset .sc-tp-accordion-group-ios-s>ion-accordion.accordion-expanding,.sc-tp-accordion-group-ios-h.accordion-group-expand-inset .sc-tp-accordion-group-ios-s>ion-accordion.accordion-expanded{border-bottom:none}";
+
+const tpAccordionGroupMdCss = "/*!@:host*/.sc-tp-accordion-group-md-h{display:block}/*!@:host(.accordion-group-expand-inset)*/.accordion-group-expand-inset.sc-tp-accordion-group-md-h{margin-left:16px;margin-right:16px;margin-top:16px;margin-bottom:16px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@:host(.accordion-group-expand-inset)*/.accordion-group-expand-inset.sc-tp-accordion-group-md-h{margin-left:unset;margin-right:unset;-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px}}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion{-webkit-box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanding),\n:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanded)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-expanding,.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-expanded{margin-left:0;margin-right:0;margin-top:16px;margin-bottom:16px;border-radius:6px}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-previous)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous{border-bottom-right-radius:6px;border-bottom-left-radius:6px}/*!@:host-context([dir=rtl]):host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-previous), :host-context([dir=rtl]).accordion-group-expand-inset ::slotted(ion-accordion.accordion-previous)*/.sc-tp-accordion-group-md-h[dir=rtl].sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-tp-accordion-group-md-h.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous,.sc-tp-accordion-group-md-h[dir=rtl].accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous{border-bottom-right-radius:6px;border-bottom-left-radius:6px}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-next)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next{border-top-left-radius:6px;border-top-right-radius:6px}/*!@:host-context([dir=rtl]):host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-next), :host-context([dir=rtl]).accordion-group-expand-inset ::slotted(ion-accordion.accordion-next)*/.sc-tp-accordion-group-md-h[dir=rtl].sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-tp-accordion-group-md-h.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next,.sc-tp-accordion-group-md-h[dir=rtl].accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next{border-top-left-radius:6px;border-top-right-radius:6px}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion):first-of-type,\n:host(.accordion-group-expand-inset) ::slotted(ion-accordion):first-of-type*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion:first-of-type{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}";
+
+/**
+ * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
+ */
+class TpAccordionGroup {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+    this.ionChange = createEvent(this, "ionChange", 7);
+    this.ionValueChange = createEvent(this, "ionValueChange", 7);
+    /**
+     * If `true`, all accordions inside of the
+     * accordion group will animate when expanding
+     * or collapsing.
+     */
+    this.animated = true;
+    /**
+     * If `true`, the accordion group cannot be interacted with.
+     */
+    this.disabled = false;
+    /**
+     * If `true`, the accordion group cannot be interacted with,
+     * but does not alter the opacity.
+     */
+    this.readonly = false;
+    /**
+     * Describes the expansion behavior for each accordion.
+     * Possible values are `"compact"` and `"inset"`.
+     * Defaults to `"compact"`.
+     */
+    this.expand = "compact";
+  }
+  valueChanged() {
+    const { value, multiple } = this;
+    if (!multiple && Array.isArray(value)) {
+      /**
+       * We do some processing on the `value` array so
+       * that it looks more like an array when logged to
+       * the console.
+       * Example given ['a', 'b']
+       * Default toString() behavior: a,b
+       * Custom behavior: ['a', 'b']
+       */
+      printIonWarning(`ion-accordion-group was passed an array of values, but multiple="false". This is incorrect usage and may result in unexpected behaviors. To dismiss this warning, pass a string to the "value" property when multiple="false".
+
+  Value Passed: [${value.map((v) => `'${v}'`).join(", ")}]
+`, this.el);
+    }
+    /**
+     * Do not use `value` here as that will be
+     * not account for the adjustment we make above.
+     */
+    this.ionValueChange.emit({ value: this.value });
+  }
+  async disabledChanged() {
+    const { disabled } = this;
+    const accordions = await this.getAccordions();
+    for (const accordion of accordions) {
+      accordion.disabled = disabled;
+    }
+  }
+  async readonlyChanged() {
+    const { readonly } = this;
+    const accordions = await this.getAccordions();
+    for (const accordion of accordions) {
+      accordion.readonly = readonly;
+    }
+  }
+  async onKeydown(ev) {
+    const activeElement = document.activeElement;
+    if (!activeElement) {
+      return;
+    }
+    /**
+     * Make sure focus is in the header, not the body, of the accordion. This ensures
+     * that if there are any interactable elements in the body, their keyboard
+     * interaction doesn't get stolen by the accordion. Example: using up/down keys
+     * in ion-textarea.
+     */
+    const activeAccordionHeader = activeElement.closest('ion-accordion [slot="header"]');
+    if (!activeAccordionHeader) {
+      return;
+    }
+    const accordionEl = activeElement.tagName === "ION-ACCORDION"
+      ? activeElement
+      : activeElement.closest("ion-accordion");
+    if (!accordionEl) {
+      return;
+    }
+    const closestGroup = accordionEl.closest("ion-accordion-group");
+    if (closestGroup !== this.el) {
+      return;
+    }
+    // If the active accordion is not in the current array of accordions, do not do anything
+    const accordions = await this.getAccordions();
+    const startingIndex = accordions.findIndex((a) => a === accordionEl);
+    if (startingIndex === -1) {
+      return;
+    }
+    let accordion;
+    if (ev.key === "ArrowDown") {
+      accordion = this.findNextAccordion(accordions, startingIndex);
+    }
+    else if (ev.key === "ArrowUp") {
+      accordion = this.findPreviousAccordion(accordions, startingIndex);
+    }
+    else if (ev.key === "Home") {
+      accordion = accordions[0];
+    }
+    else if (ev.key === "End") {
+      accordion = accordions[accordions.length - 1];
+    }
+    if (accordion !== undefined && accordion !== activeElement) {
+      accordion.focus();
+    }
+  }
+  async componentDidLoad() {
+    if (this.disabled) {
+      this.disabledChanged();
+    }
+    if (this.readonly) {
+      this.readonlyChanged();
+    }
+  }
+  /**
+   * Sets the value property and emits ionChange.
+   * This should only be called when the user interacts
+   * with the accordion and not for any update
+   * to the value property. The exception is when
+   * the app sets the value of a single-select
+   * accordion group to an array.
+   */
+  setValue(accordionValue) {
+    const value = (this.value = accordionValue);
+    this.ionChange.emit({ value });
+  }
+  /**
+   * This method is used to ensure that the value
+   * of ion-accordion-group is being set in a valid
+   * way. This method should only be called in
+   * response to a user generated action.
+   * @internal
+   */
+  async requestAccordionToggle(accordionValue, accordionExpand) {
+    const { multiple, value, readonly, disabled } = this;
+    if (readonly || disabled) {
+      return;
+    }
+    if (accordionExpand) {
+      /**
+       * If group accepts multiple values
+       * check to see if value is already in
+       * in values array. If not, add it
+       * to the array.
+       */
+      if (multiple) {
+        const groupValue = value !== null && value !== void 0 ? value : [];
+        const processedValue = Array.isArray(groupValue)
+          ? groupValue
+          : [groupValue];
+        const valueExists = processedValue.find((v) => v === accordionValue);
+        if (valueExists === undefined && accordionValue !== undefined) {
+          this.setValue([...processedValue, accordionValue]);
+        }
+      }
+      else {
+        this.setValue(accordionValue);
+      }
+    }
+    else {
+      /**
+       * If collapsing accordion, either filter the value
+       * out of the values array or unset the value.
+       */
+      if (multiple) {
+        const groupValue = value !== null && value !== void 0 ? value : [];
+        const processedValue = Array.isArray(groupValue)
+          ? groupValue
+          : [groupValue];
+        this.setValue(processedValue.filter((v) => v !== accordionValue));
+      }
+      else {
+        this.setValue(undefined);
+      }
+    }
+  }
+  findNextAccordion(accordions, startingIndex) {
+    const nextAccordion = accordions[startingIndex + 1];
+    if (nextAccordion === undefined) {
+      return accordions[0];
+    }
+    return nextAccordion;
+  }
+  findPreviousAccordion(accordions, startingIndex) {
+    const prevAccordion = accordions[startingIndex - 1];
+    if (prevAccordion === undefined) {
+      return accordions[accordions.length - 1];
+    }
+    return prevAccordion;
+  }
+  /**
+   * @internal
+   */
+  async getAccordions() {
+    return Array.from(this.el.querySelectorAll(":scope > ion-accordion"));
+  }
+  render() {
+    const { disabled, readonly, expand } = this;
+    const mode = getIonMode$1(this);
+    return (hAsync(Host, { class: {
+        [mode]: true,
+        "accordion-group-disabled": disabled,
+        "accordion-group-readonly": readonly,
+        [`accordion-group-expand-${expand}`]: true,
+      }, role: "presentation" }, hAsync("slot", null)));
+  }
+  get el() { return getElement(this); }
+  static get watchers() { return {
+    "value": ["valueChanged"],
+    "disabled": ["disabledChanged"],
+    "readonly": ["readonlyChanged"]
+  }; }
+  static get style() { return {
+    ios: tpAccordionGroupIosCss,
+    md: tpAccordionGroupMdCss
+  }; }
+  static get cmpMeta() { return {
+    "$flags$": 41,
+    "$tagName$": "tp-accordion-group",
+    "$members$": {
+      "animated": [4],
+      "multiple": [4],
+      "value": [1025],
+      "disabled": [4],
+      "readonly": [4],
+      "expand": [1],
+      "requestAccordionToggle": [64],
+      "getAccordions": [64]
+    },
+    "$listeners$": [[0, "keydown", "onKeydown"]],
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
+const tpChartBarCss = ".sc-tp-chart-bar-h{--background:hsl(var(--med-color-neutral-2));--label-color:hsl(var(--med-color-neutral-95))}.med-color.sc-tp-chart-bar-h{--label-color:hsl(var(--med-color-4))}.med-color-neutral.sc-tp-chart-bar-h{--label-color:hsl(var(--med-color-neutral))}.med-color-feedback.sc-tp-chart-bar-h{--label-color:hsl(var(--med-color-feedback))}.sc-tp-chart-bar-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;--label-size:10px;--height:200px;--value-bar:0%;--value-marker:0%;--display-marker:initial;--opacity:1}.tp-chart-bar__bar-container.sc-tp-chart-bar{position:relative;background:var(--background);height:var(--height);width:8px;margin:0 auto;border-radius:4px}.tp-chart-bar__bar.sc-tp-chart-bar{position:absolute;bottom:0;left:0;width:100%;height:0%;border-radius:4px;background:var(--color-bar);-webkit-animation:load-bar 1s forwards ease-in-out;animation:load-bar 1s forwards ease-in-out}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color\"].sc-tp-chart-bar{--color-bar:hsl(var(--med-color-4))}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color-neutral\"].sc-tp-chart-bar{--color-bar:hsl(var(--med-color-neutral))}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color-fb\"].sc-tp-chart-bar{--color-bar:hsl(var(--med-color-feedback))}.tp-chart-bar__marker.sc-tp-chart-bar{position:absolute;left:0;bottom:var(--value-marker);display:var(--display-marker);width:24px;height:6px;-webkit-transform:translate(-8px, 50%);transform:translate(-8px, 50%);border-radius:3px;background:var(--color-marker)}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color\"].sc-tp-chart-bar{--color-marker:hsl(var(--med-color-4))}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color-neutral\"].sc-tp-chart-bar{--color-marker:hsl(var(--med-color-neutral))}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color-fb\"].sc-tp-chart-bar{--color-marker:hsl(var(--med-color-feedback))}.tp-chart-bar__label.sc-tp-chart-bar{margin-top:10px;font-size:var(--label-size);line-height:1;color:var(--label-color) !important}.tp-chart-bar--no-marker.sc-tp-chart-bar-h{--display-marker:none}.tp-chart-bar--secondary.sc-tp-chart-bar-h{--background:hsl(var(--med-color-neutral-3))}.tp-chart-bar--deactivated.sc-tp-chart-bar-h{--background:hsl(var(--med-color-neutral-15))}.tp-chart-bar--deactivated.sc-tp-chart-bar-h .tp-chart-bar__bar.sc-tp-chart-bar{--color-bar:hsl(var(--med-color-neutral-5))}@-webkit-keyframes load-bar{from{height:0%}to{height:var(--value-bar)}}@keyframes load-bar{from{height:0%}to{height:var(--value-bar)}}";
 
 class TpChartBar {
   constructor(hostRef) {
@@ -29058,17 +29814,22 @@ class TpChartBar {
     /**
      * todo
      */
+    this.deactivated = false;
+    /**
+     * todo
+     */
     this.marker = {
       color: "med-color-fb-caution",
       value: 0,
     };
   }
   render() {
-    const { dsColor, dsName, label, labelSize, height, bar, hasMarker, marker, } = this;
+    const { dsColor, dsName, label, labelSize, height, bar, hasMarker, deactivated, marker, } = this;
     return (hAsync(Host, { class: generateMedColor(dsColor, {
         "tp-chart-bar": true,
         "tp-chart-bar--no-marker": !hasMarker,
         "tp-chart-bar--secondary": dsName === "secondary",
+        "tp-chart-bar--deactivated": deactivated,
       }), style: {
         "--label-size": `${labelSize}px`,
         "--height": `${height}px`,
@@ -29089,22 +29850,33 @@ class TpChartBar {
       "height": [514],
       "bar": [16],
       "hasMarker": [516, "has-marker"],
+      "deactivated": [516],
       "marker": [16]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"], ["dsName", "ds-name"], ["label", "label"], ["labelSize", "label-size"], ["height", "height"], ["hasMarker", "has-marker"]]
+    "$attrsToReflect$": [["dsColor", "ds-color"], ["dsName", "ds-name"], ["label", "label"], ["labelSize", "label-size"], ["height", "height"], ["hasMarker", "has-marker"], ["deactivated", "deactivated"]]
   }; }
 }
 
-const tpInputContainerCss = ".sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-2))}.sc-tp-input-container-h{position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background-color:var(--background);border-radius:8px;height:40px}.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-s>ion-icon[slot=end]{--color:hsl(var(--med-color-neutral-6)) !important;margin:0 8px 0 8px;stroke:hsl(var(--med-color-neutral-6))}.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-icon[slot=end]{min-width:24px}.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-select{--padding-start:0}.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-select{--padding-end:0}.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-select{--padding-start:0;--padding-end:0}.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=end]{opacity:0.4}.tp-input-container--secondary.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-3))}.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3))}.tp-input-container.tp-input-container--select-popover-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:8px 8px 0 0 !important;-webkit-transition:border-radius 400ms ease-in-out;transition:border-radius 400ms ease-in-out}.sc-tp-input-container-h.tp-input-container.tp-input-container--inverted.sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.tp-input-container.tp-input-container--inverted.tp-input-container--select-popover-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:0 0 8px 8px !important}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h{cursor:not-allowed}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h:not(.tp-input-container--disabled){cursor:pointer}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transition:-webkit-transform 400ms linear;transition:-webkit-transform 400ms linear;transition:transform 400ms linear;transition:transform 400ms linear, -webkit-transform 400ms linear}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked.tp-input-container--inverted:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(0deg);transform:rotate(0deg)}.med-color.sc-tp-input-container-h{--background:hsl(var(--med-color-3))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3));--placeholder-color:hsl(var(--med-color-contrast-fixed));--color:hsl(var(--med-color-contrast-fixed))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-contrast-fixed)) !important;stroke:hsl(var(--med-color-contrast-fixed)) !important}.med-color-neutral.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-neutral));--placeholder-color:hsl(var(--med-color-neutral-contrast));--color:hsl(var(--med-color-neutral-contrast))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-neutral-contrast)) !important;stroke:hsl(var(--med-color-neutral-contrast)) !important}.med-color-feedback.sc-tp-input-container-h{--background:hsl(var(--med-color-feedback))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-feedback));--placeholder-color:hsl(var(--med-color-feedback-contrast));--color:hsl(var(--med-color-feedback-contrast))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-feedback-contrast)) !important;stroke:hsl(var(--med-color-feedback-contrast)) !important}";
+const tpInputContainerCss = ".sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-2))}.sc-tp-input-container-h{position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background-color:var(--background);border-radius:8px;height:40px}.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-s>ion-icon[slot=end]{--color:hsl(var(--med-color-neutral-6)) !important;margin:0 8px 0 8px;stroke:hsl(var(--med-color-neutral-6))}.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-icon[slot=end]{min-width:24px}.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-select{--padding-start:0}.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-select{--padding-end:0}.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-select{--padding-start:0;--padding-end:0}.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=end]{opacity:0.4}.tp-input-container--secondary.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-3))}.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3))}.tp-input-container.tp-input-container--select-popover-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:8px 8px 0 0 !important;-webkit-transition:border-radius 400ms ease-in-out;transition:border-radius 400ms ease-in-out;pointer-events:none}.sc-tp-input-container-h.tp-input-container.tp-input-container--inverted.sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.tp-input-container.tp-input-container--inverted.tp-input-container--select-popover-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:0 0 8px 8px !important}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h{cursor:not-allowed}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h:not(.tp-input-container--disabled){cursor:pointer}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transition:-webkit-transform 400ms linear;transition:-webkit-transform 400ms linear;transition:transform 400ms linear;transition:transform 400ms linear, -webkit-transform 400ms linear}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked.tp-input-container--inverted:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(0deg);transform:rotate(0deg)}.med-color.sc-tp-input-container-h{--background:hsl(var(--med-color-3))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3));--placeholder-color:hsl(var(--med-color-contrast-fixed));--color:hsl(var(--med-color-contrast-fixed))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-contrast-fixed)) !important;stroke:hsl(var(--med-color-contrast-fixed)) !important}.med-color-neutral.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-neutral));--placeholder-color:hsl(var(--med-color-neutral-contrast));--color:hsl(var(--med-color-neutral-contrast))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-neutral-contrast)) !important;stroke:hsl(var(--med-color-neutral-contrast)) !important}.med-color-feedback.sc-tp-input-container-h{--background:hsl(var(--med-color-feedback))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-feedback));--placeholder-color:hsl(var(--med-color-feedback-contrast));--color:hsl(var(--med-color-feedback-contrast))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-feedback-contrast)) !important;stroke:hsl(var(--med-color-feedback-contrast)) !important}";
 
 class TpInputContainer {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    this.selectWithPopoverClicked = false;
-    this.pointerOnSelect = false;
+    /**
+     * Acrescimo ao hostWidth necessário para contabilizar as bordas
+     */
     this.selectAndPopoverDiffWidth = 2;
+    /**
+     * Monitoria se o Select foi clicado e está ativo. A propriedade é usada para
+     * aplicar estilização e evitar processamentos desnecessários em alguns métodos
+     */
+    this.selectWithPopoverClicked = false;
+    /**
+     * todo
+     */
+    this.pointerOnSelect = false;
     /**
      * todo
      */
@@ -29118,19 +29890,10 @@ class TpInputContainer {
      */
     this.inverted = false;
   }
-  getTpInputContainerWidth(e) {
+  setClickTarget(e) {
     if (this.disabled)
       return;
-    const target = e.target;
-    const ionSelect = this.host.querySelector("ion-select");
-    this.selectWithPopoverClicked =
-      this.host.contains(target) &&
-        ionSelect !== null &&
-        ionSelect.interface === "popover";
-    // querySelector vai garantir que só seja afetado o tp-input-container usado como container de um ion-select
-    if (this.selectWithPopoverClicked) {
-      this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
-    }
+    this.clickTarget = e.target;
   }
   catchSelectIconClick(e) {
     const target = e.target;
@@ -29150,32 +29913,30 @@ class TpInputContainer {
     popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
   }
   setPopoverCharacteristics() {
-    // setTimeout para animação acontecer de forma suave
-    setTimeout(() => {
-      if (!this.selectWithPopoverClicked)
-        return;
-      const popoverElement = document.querySelector(".select-popover");
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
-      if (this.dsName === "secondary") {
-        popoverElement.classList.add("tp-popover--secondary");
-      }
-      if (popoverElement.classList.contains("popover-bottom")) {
-        this.inverted = true;
-      }
-      const { top, left } = this.host.getBoundingClientRect();
-      if (this.inverted) {
-        popoverElement.classList.add("tp-popover--inverted");
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
-      }
-      else {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left + 1}px`);
-      }
-    }, 0);
+    if (!this.host.contains(this.clickTarget))
+      return;
+    this.selectWithPopoverClicked = true;
+    this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
+    const popoverElement = document.querySelector(".select-popover");
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
+    if (this.dsName === "secondary") {
+      popoverElement.classList.add("tp-popover--secondary");
+    }
+    if (popoverElement.classList.contains("popover-bottom")) {
+      this.inverted = true;
+    }
+    const { top, bottom, left } = this.host.getBoundingClientRect();
+    if (this.inverted) {
+      popoverElement.classList.add("tp-popover--inverted");
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
+    }
+    else {
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left + 1}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--top", `${bottom}px`);
+    }
   }
   unsetClikedState() {
-    if (!this.selectWithPopoverClicked)
-      return;
     this.selectWithPopoverClicked = false;
   }
   componentDidLoad() {
@@ -29214,10 +29975,11 @@ class TpInputContainer {
       "inverted": [516],
       "hasButton": [513, "has-button"],
       "hasIcon": [513, "has-icon"],
+      "clickTarget": [32],
       "selectWithPopoverClicked": [32],
       "pointerOnSelect": [32]
     },
-    "$listeners$": [[16, "click", "getTpInputContainerWidth"], [0, "click", "catchSelectIconClick"], [9, "resize", "setPopoverWidthOnResize"], [16, "ionPopoverWillPresent", "setPopoverCharacteristics"], [16, "ionPopoverWillDismiss", "unsetClikedState"]],
+    "$listeners$": [[16, "click", "setClickTarget"], [0, "click", "catchSelectIconClick"], [9, "resize", "setPopoverWidthOnResize"], [16, "ionPopoverWillPresent", "setPopoverCharacteristics"], [16, "ionPopoverWillDismiss", "unsetClikedState"]],
     "$lazyBundleId$": "-",
     "$attrsToReflect$": [["dsColor", "ds-color"], ["dsName", "ds-name"], ["disabled", "disabled"], ["feedback", "feedback"], ["inverted", "inverted"], ["hasButton", "has-button"], ["hasIcon", "has-icon"]]
   }; }
@@ -30034,6 +30796,8 @@ registerComponents([
   Toggle,
   Toolbar,
   ToolbarTitle,
+  TpAccordion,
+  TpAccordionGroup,
   TpChartBar,
   TpInputContainer,
   TpLoader,

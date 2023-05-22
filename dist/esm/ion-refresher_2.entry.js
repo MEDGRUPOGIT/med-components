@@ -1,9 +1,9 @@
 import { c as writeTask, r as registerInstance, e as createEvent, f as readTask, h, i as getElement, H as Host } from './index-70672e81.js';
 import { a as isPlatform, b as getIonMode, c as config } from './ionic-global-4bc7e399.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-eea9a7a9.js';
-import { c as componentOnReady, j as clamp, g as getElementRoot, r as raf } from './helpers-dd7e4b7b.js';
+import { c as componentOnReady, j as clamp, g as getElementRoot, r as raf } from './helpers-462f8de3.js';
 import { d as hapticImpact } from './haptic-27b3f981.js';
-import { c as createAnimation } from './animation-096c6391.js';
+import { c as createAnimation } from './animation-560b991d.js';
 import { s as sanitizeDOMString } from './index-9e3fe806.js';
 import { S as SPINNERS } from './spinner-configs-cd7845af.js';
 

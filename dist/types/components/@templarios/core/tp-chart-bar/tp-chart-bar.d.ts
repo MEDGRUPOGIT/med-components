@@ -33,6 +33,10 @@ export declare class TpChartBar {
   /**
    * todo
    */
+  deactivated: boolean;
+  /**
+   * todo
+   */
   marker: TpChartBarItem;
   render(): any;
 }

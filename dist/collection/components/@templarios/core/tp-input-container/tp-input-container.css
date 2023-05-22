@@ -61,6 +61,7 @@
 :host(.tp-input-container.tp-input-container--select-popover-clicked):not(.tp-input-container--disabled) {
   border-radius: 8px 8px 0 0 !important;
   transition: border-radius 400ms ease-in-out;
+  pointer-events: none;
 }
 
 :host(.tp-input-container.tp-input-container--inverted)::slotted(ion-icon) {
