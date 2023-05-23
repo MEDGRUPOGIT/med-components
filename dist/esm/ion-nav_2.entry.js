@@ -1,9 +1,9 @@
 import { r as registerInstance, e as createEvent, h, i as getElement, H as Host } from './index-70672e81.js';
-import { b as getIonMode, c as config } from './ionic-global-4bc7e399.js';
-import { g as getTimeGivenProgression } from './cubic-bezier-eea9a7a9.js';
-import { l as assert } from './helpers-462f8de3.js';
-import { l as lifecycle, t as transition, s as setPageHidden, d as LIFECYCLE_WILL_UNLOAD, b as LIFECYCLE_WILL_LEAVE, c as LIFECYCLE_DID_LEAVE } from './index-571d3eba.js';
-import { a as attachComponent } from './framework-delegate-b8b7134c.js';
+import { b as getIonMode, c as config } from './ionic-global-10d9ffcf.js';
+import { g as getTimeGivenProgression } from './cubic-bezier-c3ea3c34.js';
+import { l as assert } from './helpers-43f61e58.js';
+import { l as lifecycle, t as transition, s as setPageHidden, d as LIFECYCLE_WILL_UNLOAD, b as LIFECYCLE_WILL_LEAVE, c as LIFECYCLE_DID_LEAVE } from './index-71676fb7.js';
+import { a as attachComponent } from './framework-delegate-b05add65.js';
 
 const VIEW_STATE_NEW = 1;
 const VIEW_STATE_ATTACHED = 2;
@@ -140,7 +140,7 @@ const Nav = class {
   }
   async componentDidLoad() {
     this.rootChanged();
-    this.gesture = (await import('./swipe-back-f64d93b1.js')).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
+    this.gesture = (await import('./swipe-back-92763673.js')).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
     this.swipeGestureChanged();
   }
   disconnectedCallback() {

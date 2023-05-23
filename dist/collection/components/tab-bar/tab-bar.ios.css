@@ -71,6 +71,12 @@
   display: none !important;
 }
 
+@media (min-width: 576px) {
+  :host(.tab-bar-hidden.tab-bar-fix) {
+    display: flex !important;
+  }
+}
+
 :host {
   --background: var(--ion-tab-bar-background, var(--ion-background-color, #fff));
   --background-focused: var(--ion-tab-bar-background-focused, #e0e0e0);

@@ -1,11 +1,11 @@
 import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { a as addEventListener, j as clamp, h as findItemLabel, e as renderHiddenInput } from './helpers-462f8de3.js';
-import { p as pickerController, B as BACKDROP, i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-dc3151a0.js';
-import { h as hostContext, g as getClassMap } from './theme-ff3fc52f.js';
-import { c as createAnimation } from './animation-560b991d.js';
-import { b as hapticSelectionChanged, h as hapticSelectionEnd, a as hapticSelectionStart } from './haptic-27b3f981.js';
-import './hardware-back-button-4a6b37fb.js';
+import { b as getIonMode } from './ionic-global-10d9ffcf.js';
+import { a as addEventListener, j as clamp, h as findItemLabel, e as renderHiddenInput } from './helpers-43f61e58.js';
+import { p as pickerController, B as BACKDROP, i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-8d3bce77.js';
+import { h as hostContext, g as getClassMap } from './theme-0269729a.js';
+import { c as createAnimation } from './animation-2df15ad5.js';
+import { b as hapticSelectionChanged, h as hapticSelectionEnd, a as hapticSelectionStart } from './haptic-3835cb22.js';
+import './hardware-back-button-3fda9f12.js';
 
 /**
  * Gets a date value given a format
@@ -1219,7 +1219,7 @@ const PickerColumnCmp = class {
     }
     this.rotateFactor = pickerRotateFactor;
     this.scaleFactor = pickerScaleFactor;
-    this.gesture = (await import('./index-f49d994d.js')).createGesture({
+    this.gesture = (await import('./index-a148eeb5.js')).createGesture({
       el: this.el,
       gestureName: 'picker-swipe',
       gesturePriority: 100,

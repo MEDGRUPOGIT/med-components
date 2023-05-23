@@ -3,8 +3,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const frameworkDelegate = require('./framework-delegate-bebbd221.js');
-require('./helpers-ba3c117b.js');
+const frameworkDelegate = require('./framework-delegate-19275a15.js');
+require('./helpers-ce522603.js');
 
 const tabCss = ":host(.tab-hidden){display:none !important}";
 
