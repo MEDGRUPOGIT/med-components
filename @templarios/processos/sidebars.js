@@ -31,6 +31,8 @@ const sidebars = {
       label: 'Medsoft',
       items: [
         'medsoft/medsoft',
+        'medsoft/vr-tests',
+        'medsoft/vr-tests-creating-project',
       ],
     },
     {

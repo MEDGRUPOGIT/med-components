@@ -195,6 +195,7 @@ export const MedIcons = [
   'med-offline2',
   'med-online',
   'med-order',
+  'med-order2',
   'med-orientacao',
   'med-outros',
 

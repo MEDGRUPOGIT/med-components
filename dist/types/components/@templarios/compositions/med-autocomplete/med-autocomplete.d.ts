@@ -35,7 +35,7 @@ export declare class MedAutocomplete {
   handleInput(): void;
   handleFocus(): void;
   handleOpenChange(): void;
-  toggleDropdown(): void;
+  toggleDropdown(): Promise<void>;
   componentWillLoad(): void;
   componentDidLoad(): void;
   render(): any;

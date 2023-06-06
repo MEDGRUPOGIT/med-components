@@ -981,6 +981,28 @@ ion-badge[ds-color=fb-success][fill=outline] {
   border: 1px solid hsl(var(--med-color-fb-success));
 }
 
+ion-badge,
+ion-badge[ds-color=brand] {
+  --background: hsl(var(--med-color-brand-2));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-badge[fill=outline],
+ion-badge[ds-color=brand][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-brand-3));
+  border: 1px solid hsl(var(--med-color-brand-3));
+}
+
+ion-badge[ds-color=neutral-2] {
+  --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-8));
+}
+ion-badge[ds-color=neutral-2][fill=outline] {
+  --background: transparent;
+  --color: hsl(var(--med-color-neutral-8));
+  border: 1px solid hsl(var(--med-color-neutral-8));
+}
+
 ion-button {
   --background: hsl(var(--med-color-brand-3));
   --background-activated: hsl(var(--med-color-brand-2));

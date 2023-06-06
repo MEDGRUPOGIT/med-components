@@ -36,7 +36,7 @@ export class MedAutocomplete {
       return this.host.style.setProperty("--autocomplete-height", `${this.baseHeight + extraHeight}px`);
     }
   }
-  toggleDropdown() {
+  async toggleDropdown() {
     this.open = !this.open;
   }
   componentWillLoad() {
@@ -127,7 +127,11 @@ export class MedAutocomplete {
       "complexType": {
         "signature": "() => Promise<void>",
         "parameters": [],
-        "references": {},
+        "references": {
+          "Promise": {
+            "location": "global"
+          }
+        },
         "return": "Promise<void>"
       },
       "docs": {
