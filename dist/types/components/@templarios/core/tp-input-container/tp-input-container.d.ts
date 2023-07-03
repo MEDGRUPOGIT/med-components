@@ -1,4 +1,4 @@
-import { MedColor } from "../../../../@templarios/types/color.type";
+import { MedColor } from '../../../../@templarios/types/color.type';
 export declare class TpInputContainer {
   /**
    * Quando usado em conjunto com Select, representa a largura
@@ -34,7 +34,7 @@ export declare class TpInputContainer {
   /**
    * todo
    */
-  dsName?: "secondary";
+  dsName?: 'secondary';
   /**
    * todo
    */
@@ -50,15 +50,16 @@ export declare class TpInputContainer {
   /**
    * todo
    */
-  hasButton?: "start" | "end" | "both";
+  hasButton?: 'start' | 'end' | 'both';
   /**
    * todo
    */
-  hasIcon?: "start" | "end" | "both";
+  hasIcon?: 'start' | 'end' | 'both';
   setClickTarget(e: MouseEvent): void;
   catchSelectIconClick(e: MouseEvent): void;
   setPopoverWidthOnResize(): void;
   setPopoverCharacteristics(): void;
+  fixPopover(): void;
   unsetClikedState(): void;
   componentDidLoad(): void;
   render(): any;

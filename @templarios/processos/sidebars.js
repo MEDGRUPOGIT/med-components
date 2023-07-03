@@ -21,6 +21,13 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: 'category',
+      label: 'Backoffice-admin',
+      items: [
+        'backoffice-admin/backoffice-admin',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Templarios',
       items: [
         'templarios/templarios',

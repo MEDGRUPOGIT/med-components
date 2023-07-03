@@ -7637,6 +7637,528 @@ ion-popover.tp-popover--inverted .popover-content {
   transform: none !important;
 }
 
+ion-popover[ds-color=brand] .popover-content {
+  --background: hsl(var(--med-color-brand-3));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=brand] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=brand] .sc-ion-select-popover {
+  background: hsl(var(--med-color-brand-3));
+}
+ion-popover[ds-color=brand] .select-interface-option {
+  --background: hsl(var(--med-color-brand-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=brand] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=aula] .popover-content {
+  --background: hsl(var(--med-color-aula-3));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=aula] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=aula] .sc-ion-select-popover {
+  background: hsl(var(--med-color-aula-3));
+}
+ion-popover[ds-color=aula] .select-interface-option {
+  --background: hsl(var(--med-color-aula-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=aula] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=material] .popover-content {
+  --background: hsl(var(--med-color-material-3));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=material] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=material] .sc-ion-select-popover {
+  background: hsl(var(--med-color-material-3));
+}
+ion-popover[ds-color=material] .select-interface-option {
+  --background: hsl(var(--med-color-material-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=material] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=questoes] .popover-content {
+  --background: hsl(var(--med-color-questoes-3));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=questoes] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=questoes] .sc-ion-select-popover {
+  background: hsl(var(--med-color-questoes-3));
+}
+ion-popover[ds-color=questoes] .select-interface-option {
+  --background: hsl(var(--med-color-questoes-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=questoes] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=revalida] .popover-content {
+  --background: hsl(var(--med-color-revalida-3));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=revalida] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=revalida] .sc-ion-select-popover {
+  background: hsl(var(--med-color-revalida-3));
+}
+ion-popover[ds-color=revalida] .select-interface-option {
+  --background: hsl(var(--med-color-revalida-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=revalida] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=provas] .popover-content {
+  --background: hsl(var(--med-color-provas-3));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=provas] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=provas] .sc-ion-select-popover {
+  background: hsl(var(--med-color-provas-3));
+}
+ion-popover[ds-color=provas] .select-interface-option {
+  --background: hsl(var(--med-color-provas-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=provas] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-1] .popover-content {
+  --background: hsl(var(--med-color-neutral-1));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-1] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-1] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-1] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-1));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-1] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-2] .popover-content {
+  --background: hsl(var(--med-color-neutral-2));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-2] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-2] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-2));
+}
+ion-popover[ds-color=neutral-2] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-2] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-3] .popover-content {
+  --background: hsl(var(--med-color-neutral-3));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-3] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-3] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-3));
+}
+ion-popover[ds-color=neutral-3] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-3] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-4] .popover-content {
+  --background: hsl(var(--med-color-neutral-4));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-4] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-4] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-4));
+}
+ion-popover[ds-color=neutral-4] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-4));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-4] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-5] .popover-content {
+  --background: hsl(var(--med-color-neutral-5));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-5] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-5] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-5));
+}
+ion-popover[ds-color=neutral-5] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-5));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-5] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-6] .popover-content {
+  --background: hsl(var(--med-color-neutral-6));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-6] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-6] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-6));
+}
+ion-popover[ds-color=neutral-6] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-6));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-6] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=neutral-7] .popover-content {
+  --background: hsl(var(--med-color-neutral-7));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-7] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-7] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-7));
+}
+ion-popover[ds-color=neutral-7] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-7));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-7] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=neutral-8] .popover-content {
+  --background: hsl(var(--med-color-neutral-8));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-8] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-8] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-8));
+}
+ion-popover[ds-color=neutral-8] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-8));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-8] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=neutral-9] .popover-content {
+  --background: hsl(var(--med-color-neutral-9));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-9] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-9] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-9));
+}
+ion-popover[ds-color=neutral-9] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-9));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-9] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=neutral-10] .popover-content {
+  --background: hsl(var(--med-color-neutral-10));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-10] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-10] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-10] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-10));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-10] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=neutral-15] .popover-content {
+  --background: hsl(var(--med-color-neutral-15));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-15] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-15] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-15));
+}
+ion-popover[ds-color=neutral-15] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-15));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-15] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-25] .popover-content {
+  --background: hsl(var(--med-color-neutral-25));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-25] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-25] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-25));
+}
+ion-popover[ds-color=neutral-25] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-25));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-25] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-35] .popover-content {
+  --background: hsl(var(--med-color-neutral-35));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-35] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-35] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-35));
+}
+ion-popover[ds-color=neutral-35] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-35));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-35] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-45] .popover-content {
+  --background: hsl(var(--med-color-neutral-45));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-45] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-45] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-45));
+}
+ion-popover[ds-color=neutral-45] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-45));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-45] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-55] .popover-content {
+  --background: hsl(var(--med-color-neutral-55));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-55] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-55] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-55));
+}
+ion-popover[ds-color=neutral-55] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-55));
+  --color: hsl(var(--med-color-neutral-10));
+}
+ion-popover[ds-color=neutral-55] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-10));
+}
+
+ion-popover[ds-color=neutral-65] .popover-content {
+  --background: hsl(var(--med-color-neutral-65));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-65] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-65] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-65));
+}
+ion-popover[ds-color=neutral-65] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-65));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-65] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=neutral-75] .popover-content {
+  --background: hsl(var(--med-color-neutral-75));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-75] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-75] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-75));
+}
+ion-popover[ds-color=neutral-75] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-75));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-75] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=neutral-85] .popover-content {
+  --background: hsl(var(--med-color-neutral-85));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-85] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-85] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-85));
+}
+ion-popover[ds-color=neutral-85] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-85));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-85] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=neutral-95] .popover-content {
+  --background: hsl(var(--med-color-neutral-95));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-95] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-95] .sc-ion-select-popover {
+  background: hsl(var(--med-color-neutral-95));
+}
+ion-popover[ds-color=neutral-95] .select-interface-option {
+  --background: hsl(var(--med-color-neutral-95));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=neutral-95] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=fb-attention] .popover-content {
+  --background: hsl(var(--med-color-fb-attention));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-attention] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-attention] .sc-ion-select-popover {
+  background: hsl(var(--med-color-fb-attention));
+}
+ion-popover[ds-color=fb-attention] .select-interface-option {
+  --background: hsl(var(--med-color-fb-attention));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-attention] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=fb-caution] .popover-content {
+  --background: hsl(var(--med-color-fb-caution));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-caution] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-caution] .sc-ion-select-popover {
+  background: hsl(var(--med-color-fb-caution));
+}
+ion-popover[ds-color=fb-caution] .select-interface-option {
+  --background: hsl(var(--med-color-fb-caution));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-caution] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=fb-warning] .popover-content {
+  --background: hsl(var(--med-color-fb-warning));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-warning] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-warning] .sc-ion-select-popover {
+  background: hsl(var(--med-color-fb-warning));
+}
+ion-popover[ds-color=fb-warning] .select-interface-option {
+  --background: hsl(var(--med-color-fb-warning));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-warning] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
+ion-popover[ds-color=fb-success] .popover-content {
+  --background: hsl(var(--med-color-fb-success));
+  --tp-scroll-color-content: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-success] .popover-content::-webkit-scrollbar-thumb {
+  color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-success] .sc-ion-select-popover {
+  background: hsl(var(--med-color-fb-success));
+}
+ion-popover[ds-color=fb-success] .select-interface-option {
+  --background: hsl(var(--med-color-fb-success));
+  --color: hsl(var(--med-color-neutral-1));
+}
+ion-popover[ds-color=fb-success] .select-interface-option:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--med-color-neutral-1));
+}
+
 ion-progress-bar {
   --progress-background: hsl(var(--med-color-brand-4));
   --background: hsl(var(--med-color-brand-1));

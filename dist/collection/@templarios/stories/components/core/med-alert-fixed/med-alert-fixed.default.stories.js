@@ -13,7 +13,7 @@ const TemplateDefault = ({dsColor, dsName}) => {
       <ion-content>
 
         <!-- component markdown -->
-        <med-alert-fixed .dsColor=${dsColor} .dsName=${dsName}></med-avatar>
+        <med-alert-fixed .dsColor=${dsColor} .dsName=${dsName}></med-alert-fixed>
         <!-- component markdown -->
 
       </ion-content>

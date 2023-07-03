@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-06-06T15:22:59",
+  "timestamp": "2023-07-03T17:49:57",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -28545,6 +28545,12 @@
         },
         {
           "event": "ionPopoverWillPresent",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ionPopoverDidPresent",
           "target": "body",
           "capture": false,
           "passive": false
