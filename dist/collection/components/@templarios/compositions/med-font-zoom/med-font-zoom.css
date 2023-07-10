@@ -1,5 +1,7 @@
 :host {
   display: block;
+  opacity: 0;
+  transition: opacity 0.1s;
 }
 :host .med-icon {
   stroke: hsl(var(--med-color-neutral-8));

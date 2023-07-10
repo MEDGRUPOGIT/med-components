@@ -11029,6 +11029,7 @@ ion-toggle[ds-color=fb-success] {
   border-bottom: 15px solid var(--background);
 }
 .med-popover--font-zoom .popover-content {
+  --min-height: 56px;
   padding: 16px;
   border-radius: 8px;
 }

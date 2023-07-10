@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from "@stencil/core";
+import { Component, h, Host, Listen, Prop } from "@stencil/core";
 import { MedFontSize } from "../../../../@templarios/templarios";
 export class MedFontZoom {
   constructor() {
@@ -47,6 +47,17 @@ export class MedFontZoom {
         this.emitter.emit(this.value);
       }
     };
+  }
+  // fix para conflito com popover API do chrome
+  // pode remover depois de migração pro ionic 7
+  fixPopover() {
+    const popover = document.querySelector('med-font-zoom');
+    if (!popover)
+      return;
+    if (popover === null || popover === void 0 ? void 0 : popover.hasAttribute('popover')) {
+      popover.removeAttribute('popover');
+    }
+    popover.style.opacity = '1';
   }
   render() {
     return (h(Host, { "from-stencil": true },
@@ -107,4 +118,11 @@ export class MedFontZoom {
       "defaultValue": "MedFontSize.XS"
     }
   }; }
+  static get listeners() { return [{
+      "name": "ionPopoverDidPresent",
+      "method": "fixPopover",
+      "target": "body",
+      "capture": false,
+      "passive": false
+    }]; }
 }

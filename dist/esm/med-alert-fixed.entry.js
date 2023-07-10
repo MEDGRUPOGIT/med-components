@@ -1,5 +1,5 @@
 import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { g as generateMedColor } from './color-a516669b.js';
+import { g as generateMedColor } from './color-49be71bc.js';
 
 const medAlertFixedCss = ":host{--padding:12px}:host{padding:var(--padding);background:var(--background);display:block}:host .med-icon{margin-right:16px;width:16px;height:16px}.med-alert-fixed__container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.med-alert-fixed__text{--font-size:12px;--line-height:16px;--font-weight:400}:host(.med-alert-fixed--offline){--background:hsl(var(--med-color-fb-warning))}:host(.med-alert-fixed--offline) .med-icon{stroke:hsl(var(--med-color-neutral-10))}:host(.med-alert-fixed--atualizar){--background:hsl(var(--med-color-provas-4))}:host(.med-alert-fixed--atualizar) .med-icon{stroke:hsl(var(--med-color-neutral-10))}:host(.med-color){--background:hsl(var(--med-color-3))}:host(.med-color-neutral){--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--background:hsl(var(--med-color-feedback))}";
 

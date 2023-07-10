@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index$1 = require('./index-bc2e4509.js');
-const color = require('./color-4ca1bfd7.js');
+const color = require('./color-2d4645aa.js');
 
 const medHeaderCss = ":host{--background:hsl(var(--med-color-neutral-1))}:host{background:var(--background);display:block;padding-top:var(--ion-safe-area-top)}";
 

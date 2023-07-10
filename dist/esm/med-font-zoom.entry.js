@@ -1,9 +1,9 @@
 import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { h as MedFontSize } from './type.enum-5cac8202.js';
-import './plusminus.enum-a0ce4fb8.js';
-import './rate-like.enum-403a54dc.js';
+import { h as MedFontSize } from './type.enum-b1689c26.js';
+import './plusminus.enum-87dfaf79.js';
+import './rate-like.enum-01831b55.js';
 
-const medFontZoomCss = ".sc-med-font-zoom-h{display:block}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}";
+const medFontZoomCss = ".sc-med-font-zoom-h{display:block;opacity:0;-webkit-transition:opacity 0.1s;transition:opacity 0.1s}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}";
 
 const MedFontZoom = class {
   constructor(hostRef) {
@@ -53,6 +53,17 @@ const MedFontZoom = class {
         this.emitter.emit(this.value);
       }
     };
+  }
+  // fix para conflito com popover API do chrome
+  // pode remover depois de migração pro ionic 7
+  fixPopover() {
+    const popover = document.querySelector('med-font-zoom');
+    if (!popover)
+      return;
+    if (popover === null || popover === void 0 ? void 0 : popover.hasAttribute('popover')) {
+      popover.removeAttribute('popover');
+    }
+    popover.style.opacity = '1';
   }
   render() {
     return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
