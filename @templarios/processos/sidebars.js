@@ -35,6 +35,13 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Questionario Especialidade',
+      items: [
+        'questionario-especialidade/questionario-especialidade',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Medsoft',
       items: [
         'medsoft/medsoft',

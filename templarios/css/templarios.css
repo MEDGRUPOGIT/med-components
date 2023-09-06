@@ -1050,6 +1050,7 @@ ion-button[disabled] ion-icon {
 ion-button.button {
   background-color: transparent !important;
   color: var(--color);
+  opacity: 1 !important;
 }
 
 ion-button[ds-size=sm] {
@@ -4587,11 +4588,36 @@ ion-chip[ds-color=fb-success][active][ds-name=secondary], ion-chip[ds-color=fb-s
   }
 }
 
+ion-chip {
+  --color: hsl(var(--med-color-neutral-7));
+  --border-color: hsl(var(--med-color-neutral-25));
+}
+ion-chip:hover {
+  --border-color: hsl(var(--med-color-neutral-7));
+  --background: hsl(var(--med-color-neutral-7));
+  --color: hsl(var(--med-color-neutral-2));
+}
+ion-chip:hover .med-icon {
+  --icon-color: hsl(var(--med-color-neutral-2));
+}
+ion-chip .med-icon {
+  --icon-color: hsl(var(--med-color-neutral-7));
+  --icon-background: transparent;
+}
+ion-chip[active] {
+  --border-color: hsl(var(--med-color-neutral-7));
+  --background: hsl(var(--med-color-neutral-7));
+  --color: hsl(var(--med-color-neutral-2));
+}
+ion-chip[active] .med-icon {
+  --icon-color: hsl(var(--med-color-neutral-2));
+}
+
 ion-datetime {
   --padding-end: 16px;
   --padding-start: 16px;
-  --padding-bottom: 12px;
-  --padding-top: 12px;
+  --padding-bottom: 10px;
+  --padding-top: 10px;
   --placeholder-color: hsl(var(--med-color-neutral-5));
   width: 100%;
   margin-top: 0px;
@@ -6126,6 +6152,7 @@ ion-item {
   --tp-label-line-height: 14px;
   --tp-label-margin: 0;
   contain: content;
+  --inner-padding-end: 0 !important;
 }
 
 ion-item[radius=s00] {

@@ -170,6 +170,11 @@
   left: unset;
   right: -6px;
 }
+@media (max-width: 575.98px) {
+  :host(.med-tooltip--end:not(.med-tooltip--right):not(.med-tooltip--left)) .med-tooltip__input-container::after {
+    right: -10px;
+  }
+}
 
 :host(.med-color) {
   --background: hsl(var(--med-color-4));

@@ -53,14 +53,6 @@ export declare class MedAlternativas implements MedAlternativasInterface {
   /**
    * todo
    */
-  medChange: EventEmitter<MedAlternativaInterface>;
-  /**
-   * todo
-   */
-  medRiscada: EventEmitter<MedAlternativaInterface>;
-  /**
-   * todo
-   */
   medGalleryRequest: EventEmitter<MedAlternativaInterface>;
   render(): any;
 }

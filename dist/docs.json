@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-07-10T16:24:45",
+  "timestamp": "2023-09-06T13:35:35",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.5.0",
@@ -20475,25 +20475,7 @@
       "methods": [],
       "events": [
         {
-          "event": "medChange",
-          "detail": "MedAlternativaInterface",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "todo",
-          "docsTags": []
-        },
-        {
           "event": "medGalleryRequest",
-          "detail": "MedAlternativaInterface",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "todo",
-          "docsTags": []
-        },
-        {
-          "event": "medRiscada",
           "detail": "MedAlternativaInterface",
           "bubbles": true,
           "cancelable": true,

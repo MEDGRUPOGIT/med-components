@@ -17,8 +17,8 @@ const TemplateNavbar = () => {
       <!-- component -->
       <med-header>
         <med-navbar slot="navbar" >
-          <ion-back-button slot="left" ds-name="tertiary" ds-size="xxs">
-            <ion-icon slot="icon-only" class="med-icon"></ion-icon>
+          <ion-back-button slot="left" mode="ios" text="" ds-size="xxs">
+            <ion-icon class="med-icon" name="med-esquerda"></ion-icon>
           </ion-back-button>
 
           <med-type slot="title">Page Title</med-type>

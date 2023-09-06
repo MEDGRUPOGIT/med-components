@@ -8299,15 +8299,7 @@ declare namespace LocalJSX {
         /**
           * todo
          */
-        "onMedChange"?: (event: CustomEvent<MedAlternativaInterface>) => void;
-        /**
-          * todo
-         */
         "onMedGalleryRequest"?: (event: CustomEvent<MedAlternativaInterface>) => void;
-        /**
-          * todo
-         */
-        "onMedRiscada"?: (event: CustomEvent<MedAlternativaInterface>) => void;
         /**
           * todo
          */
