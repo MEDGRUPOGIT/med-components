@@ -6,7 +6,7 @@ export class MedEnunciado {
   }
   render() {
     let imagens;
-    const { dsName } = this;
+    const { content, dsName } = this;
     if (this.imagens) {
       this.imagens = typeof this.imagens === 'string' ? JSON.parse(this.imagens) : this.imagens;
       imagens = (h("ul", { class: 'list' }, this.imagens.map((imagem) => (h("li", { class: "list__item", onClick: () => this.imageRequest(imagem) },
@@ -19,6 +19,8 @@ export class MedEnunciado {
         [`med-enunciado--${dsName}`]: dsName !== undefined,
       }) },
       h("slot", null),
+      content &&
+        h("span", { innerHTML: content }),
       imagens));
   }
   static get is() { return "med-enunciado"; }
@@ -62,6 +64,23 @@ export class MedEnunciado {
         "text": "todo"
       },
       "attribute": "ds-name",
+      "reflect": true
+    },
+    "content": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "todo"
+      },
+      "attribute": "content",
       "reflect": true
     }
   }; }

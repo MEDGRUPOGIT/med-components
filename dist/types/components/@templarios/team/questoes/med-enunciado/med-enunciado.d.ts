@@ -12,6 +12,10 @@ export declare class MedEnunciado {
    * todo
    */
   dsName?: 'skin';
+  /**
+ * todo
+ */
+  content?: string;
   private imageRequest;
   render(): any;
 }

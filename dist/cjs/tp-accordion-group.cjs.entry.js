@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const ionicGlobal = require('./ionic-global-c609be80.js');
 
 /**
  * Logs a warning to the console with an Ionic prefix

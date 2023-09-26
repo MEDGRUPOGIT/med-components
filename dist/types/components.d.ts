@@ -3447,6 +3447,10 @@ export namespace Components {
         /**
           * todo
          */
+        "content"?: string;
+        /**
+          * todo
+         */
         "dsName"?: 'skin';
         /**
           * todo
@@ -8900,6 +8904,10 @@ declare namespace LocalJSX {
     interface MedDropdownContainer {
     }
     interface MedEnunciado {
+        /**
+          * todo
+         */
+        "content"?: string;
         /**
           * todo
          */
