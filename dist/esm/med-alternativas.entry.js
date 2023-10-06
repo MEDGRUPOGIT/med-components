@@ -1,7 +1,7 @@
 import { r as registerInstance, e as createEvent, h, H as Host } from './index-70672e81.js';
-import { j as MedSkin } from './type.enum-5cac8202.js';
-import './plusminus.enum-a0ce4fb8.js';
-import './rate-like.enum-403a54dc.js';
+import { j as MedSkin } from './type.enum-b1689c26.js';
+import './plusminus.enum-87dfaf79.js';
+import './rate-like.enum-01831b55.js';
 
 const medAlternativasCss = ":host{--font-size:16px;display:block}";
 

@@ -102,6 +102,7 @@ export const MedIcons = [
 
   'med-discursiva',
   'med-dislike',
+  'med-download-mobile',
   'med-download',
   'med-drogas',
 

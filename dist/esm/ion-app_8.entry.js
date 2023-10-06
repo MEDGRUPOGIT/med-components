@@ -1,10 +1,10 @@
 import { r as registerInstance, h, H as Host, i as getElement, e as createEvent, f as readTask, j as forceUpdate, c as writeTask } from './index-70672e81.js';
-import { b as getIonMode, c as config, a as isPlatform } from './ionic-global-10d9ffcf.js';
-import { c as createColorClasses, h as hostContext } from './theme-0269729a.js';
-import { j as clamp } from './helpers-43f61e58.js';
-import { g as getTimeGivenProgression } from './cubic-bezier-c3ea3c34.js';
-import { a as attachComponent, d as detachComponent } from './framework-delegate-b05add65.js';
-import { t as transition } from './index-71676fb7.js';
+import { b as getIonMode, c as config, a as isPlatform } from './ionic-global-4bc7e399.js';
+import { c as createColorClasses, h as hostContext } from './theme-ff3fc52f.js';
+import { j as clamp } from './helpers-462f8de3.js';
+import { g as getTimeGivenProgression } from './cubic-bezier-eea9a7a9.js';
+import { a as attachComponent, d as detachComponent } from './framework-delegate-b8b7134c.js';
+import { t as transition } from './index-571d3eba.js';
 
 const appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html.plt-mobile ion-app [contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
 
@@ -17,15 +17,15 @@ const App = class {
       rIC(async () => {
         const isHybrid = isPlatform(window, 'hybrid');
         if (!config.getBoolean('_testing')) {
-          import('./tap-click-34c2d346.js').then(module => module.startTapClick(config));
+          import('./tap-click-09a599f5.js').then(module => module.startTapClick(config));
         }
         if (config.getBoolean('statusTap', isHybrid)) {
-          import('./status-tap-218f7a6c.js').then(module => module.startStatusTap());
+          import('./status-tap-6aad547b.js').then(module => module.startStatusTap());
         }
         if (config.getBoolean('inputShims', needInputShims())) {
-          import('./input-shims-5325b3e7.js').then(module => module.startInputShims(config));
+          import('./input-shims-305f01ab.js').then(module => module.startInputShims(config));
         }
-        const hardwareBackButtonModule = await import('./hardware-back-button-3fda9f12.js');
+        const hardwareBackButtonModule = await import('./hardware-back-button-4a6b37fb.js');
         if (config.getBoolean('hardwareBackButton', isHybrid)) {
           hardwareBackButtonModule.startHardwareBackButton();
         }
@@ -33,9 +33,9 @@ const App = class {
           hardwareBackButtonModule.blockHardwareBackButton();
         }
         if (typeof window !== 'undefined') {
-          import('./keyboard-be273df9.js').then(module => module.startKeyboardAssist(window));
+          import('./keyboard-5742b5da.js').then(module => module.startKeyboardAssist(window));
         }
-        import('./focus-visible-bd79ee5f.js').then(module => module.startFocusVisible());
+        import('./focus-visible-f4ad4f1a.js').then(module => module.startFocusVisible());
       });
     }
   }
@@ -714,7 +714,7 @@ const RouterOutlet = class {
     }
   }
   async connectedCallback() {
-    this.gesture = (await import('./swipe-back-92763673.js')).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
+    this.gesture = (await import('./swipe-back-f64d93b1.js')).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
       if (this.ani) {
         this.animationEnabled = false;
         this.ani.onFinish(() => {

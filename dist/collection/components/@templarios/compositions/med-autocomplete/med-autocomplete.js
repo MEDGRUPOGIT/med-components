@@ -111,7 +111,7 @@ export class MedAutocomplete {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "Se a pesquisa por items possuir debounce time at\u00E9 o item ser inserido\r\n no dom, deve ser indicado por essa propriedade (defaults to 0)"
+        "text": "Se a pesquisa por items possuir debounce time at\u00E9 o item ser inserido\n no dom, deve ser indicado por essa propriedade (defaults to 0)"
       },
       "attribute": "debounce-time",
       "reflect": true,

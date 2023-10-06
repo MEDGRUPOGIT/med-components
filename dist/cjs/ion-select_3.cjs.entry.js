@@ -3,11 +3,11 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-c609be80.js');
-const helpers = require('./helpers-ce522603.js');
-const overlays = require('./overlays-92ca803b.js');
-const theme = require('./theme-04439550.js');
-require('./hardware-back-button-e370df1e.js');
+const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const helpers = require('./helpers-ba3c117b.js');
+const overlays = require('./overlays-9895f6f3.js');
+const theme = require('./theme-30b7a575.js');
+require('./hardware-back-button-148ce546.js');
 
 const watchForOptions = (containerEl, tagName, onChange) => {
   /* tslint:disable-next-line */

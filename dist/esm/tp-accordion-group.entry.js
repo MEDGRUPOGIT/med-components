@@ -1,5 +1,5 @@
 import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-10d9ffcf.js';
+import { b as getIonMode } from './ionic-global-4bc7e399.js';
 
 /**
  * Logs a warning to the console with an Ionic prefix

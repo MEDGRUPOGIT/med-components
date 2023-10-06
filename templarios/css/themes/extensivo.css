@@ -1,12 +1,12 @@
 .theme-extensivo {
-  --brand-hue: 128;
+  --brand-hue: 266;
   --neutral-hue: 188;
-  --color-saturation: 80%;
-  --color-luminosity-1: 65%;
-  --color-luminosity-2: 65%;
-  --color-luminosity-3: 65%;
-  --color-luminosity-4: 65%;
-  --color-luminosity-5: 65%;
+  --color-saturation: 50%;
+  --color-luminosity-1: 56%;
+  --color-luminosity-2: 56%;
+  --color-luminosity-3: 56%;
+  --color-luminosity-4: 56%;
+  --color-luminosity-5: 56%;
 }
 
 /*# sourceMappingURL=extensivo.css.map */

@@ -1,5 +1,5 @@
 import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { g as generateMedColor } from './color-a516669b.js';
+import { g as generateMedColor } from './color-49be71bc.js';
 
 const medSemanasCss = ":host{--padding:16px}:host(.med-semanas){display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;padding:var(--padding)}::slotted(*){margin:4px}";
 
