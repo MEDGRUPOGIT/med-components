@@ -1,9 +1,12 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const helpers = require('./helpers-ba3c117b.js');
+const index = require('./index-a17b061b.js');
+const helpers = require('./helpers-4478bffd.js');
 
 const CELL_TYPE_ITEM = 'item';
 const CELL_TYPE_HEADER = 'header';
@@ -270,42 +273,24 @@ const VirtualScroll = class {
     this.currentScrollTop = 0;
     this.indexDirty = 0;
     this.lastItemLen = 0;
-    this.totalHeight = 0;
-    /**
-     * It is important to provide this
-     * if virtual item height will be significantly larger than the default
-     * The approximate height of each virtual item template's cell.
-     * This dimension is used to help determine how many cells should
-     * be created when initialized, and to help calculate the height of
-     * the scrollable area. This height value can only use `px` units.
-     * Note that the actual rendered size of each cell comes from the
-     * app's CSS, whereas this approximation is used to help calculate
-     * initial dimensions before the item has been rendered.
-     */
-    this.approxItemHeight = 45;
-    /**
-     * The approximate height of each header template's cell.
-     * This dimension is used to help determine how many cells should
-     * be created when initialized, and to help calculate the height of
-     * the scrollable area. This height value can only use `px` units.
-     * Note that the actual rendered size of each cell comes from the
-     * app's CSS, whereas this approximation is used to help calculate
-     * initial dimensions before the item has been rendered.
-     */
-    this.approxHeaderHeight = 30;
-    /**
-     * The approximate width of each footer template's cell.
-     * This dimension is used to help determine how many cells should
-     * be created when initialized, and to help calculate the height of
-     * the scrollable area. This height value can only use `px` units.
-     * Note that the actual rendered size of each cell comes from the
-     * app's CSS, whereas this approximation is used to help calculate
-     * initial dimensions before the item has been rendered.
-     */
-    this.approxFooterHeight = 30;
     this.onScroll = () => {
       this.updateVirtualScroll();
     };
+    this.totalHeight = 0;
+    this.approxItemHeight = 45;
+    this.approxHeaderHeight = 30;
+    this.approxFooterHeight = 30;
+    this.headerFn = undefined;
+    this.footerFn = undefined;
+    this.items = undefined;
+    this.itemHeight = undefined;
+    this.headerHeight = undefined;
+    this.footerHeight = undefined;
+    this.renderItem = undefined;
+    this.renderHeader = undefined;
+    this.renderFooter = undefined;
+    this.nodeRender = undefined;
+    this.domRender = undefined;
   }
   itemsChanged() {
     this.calcCells();

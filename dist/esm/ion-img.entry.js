@@ -1,5 +1,8 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
 
 const imgCss = ":host{display:block;-o-object-fit:contain;object-fit:contain}img{display:block;width:100%;height:100%;-o-object-fit:inherit;object-fit:inherit;-o-object-position:inherit;object-position:inherit}";
 
@@ -15,6 +18,10 @@ const Img = class {
     this.onError = () => {
       this.ionError.emit();
     };
+    this.loadSrc = undefined;
+    this.loadError = undefined;
+    this.alt = undefined;
+    this.src = undefined;
   }
   srcChanged() {
     this.addIO();

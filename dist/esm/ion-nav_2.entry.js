@@ -1,9 +1,12 @@
-import { r as registerInstance, e as createEvent, h, i as getElement, H as Host } from './index-70672e81.js';
-import { b as getIonMode, c as config } from './ionic-global-4bc7e399.js';
-import { g as getTimeGivenProgression } from './cubic-bezier-eea9a7a9.js';
-import { l as assert } from './helpers-462f8de3.js';
-import { l as lifecycle, t as transition, s as setPageHidden, d as LIFECYCLE_WILL_UNLOAD, b as LIFECYCLE_WILL_LEAVE, c as LIFECYCLE_DID_LEAVE } from './index-571d3eba.js';
-import { a as attachComponent } from './framework-delegate-b8b7134c.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, j as getElement, H as Host } from './index-336c66d9.js';
+import { b as getIonMode, c as config } from './ionic-global-e35a57a3.js';
+import { g as getTimeGivenProgression } from './cubic-bezier-154a53a5.js';
+import { l as assert } from './helpers-d6be6e4a.js';
+import { l as lifecycle, t as transition, s as setPageHidden, d as LIFECYCLE_WILL_UNLOAD, b as LIFECYCLE_WILL_LEAVE, c as LIFECYCLE_DID_LEAVE } from './index-9b38c108.js';
+import { a as attachComponent } from './framework-delegate-f297f7e6.js';
 
 const VIEW_STATE_NEW = 1;
 const VIEW_STATE_ATTACHED = 2;
@@ -111,10 +114,12 @@ const Nav = class {
     this.isTransitioning = false;
     this.destroyed = false;
     this.views = [];
-    /**
-     * If `true`, the nav should animate the transition of components.
-     */
+    this.delegate = undefined;
+    this.swipeGesture = undefined;
     this.animated = true;
+    this.animation = undefined;
+    this.rootParams = undefined;
+    this.root = undefined;
   }
   swipeGestureChanged() {
     if (this.gesture) {
@@ -140,7 +145,7 @@ const Nav = class {
   }
   async componentDidLoad() {
     this.rootChanged();
-    this.gesture = (await import('./swipe-back-f64d93b1.js')).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
+    this.gesture = (await import('./swipe-back-fea11a4f.js')).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
     this.swipeGestureChanged();
   }
   disconnectedCallback() {
@@ -875,13 +880,13 @@ const navLink = (el, routerDirection, component, componentProps, routerAnimation
 const NavLink = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * The transition direction when navigating to another page.
-     */
-    this.routerDirection = 'forward';
     this.onClick = () => {
       return navLink(this.el, this.routerDirection, this.component, this.componentProps, this.routerAnimation);
     };
+    this.component = undefined;
+    this.componentProps = undefined;
+    this.routerDirection = 'forward';
+    this.routerAnimation = undefined;
   }
   render() {
     return (h(Host, { onClick: this.onClick }));

@@ -1,1 +1,0 @@
-var n;!function(n){n.MINUS="minus",n.PLUS="plus"}(n||(n={}));export{n as P}

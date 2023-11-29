@@ -1,8 +1,11 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
+const index = require('./index-a17b061b.js');
 
 const denunciarModalCss = ".sc-denunciar-modal-h{display:block;border-radius:0}.header.sc-denunciar-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;background:hsl(var(--med-color-neutral-1));padding-top:calc(28px + var(--ion-safe-area-top));padding-right:40px;padding-bottom:28px;padding-left:40px;max-height:80px}@media (max-width: 575.98px){.header.sc-denunciar-modal{padding-top:calc(24px + var(--ion-safe-area-top));padding-right:24px;padding-bottom:24px;padding-left:24px;max-height:72px}}.header__left.sc-denunciar-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.modal-content.sc-denunciar-modal{height:calc(100% - 80px)}@media (max-width: 575.98px){.modal-content.sc-denunciar-modal{height:calc(100% - 72px)}}.modal-denunciar.sc-denunciar-modal{padding:40px 64px}@media (max-width: 575.98px){.modal-denunciar.sc-denunciar-modal{padding:24px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100%}}.modal-denunciar__title.sc-denunciar-modal{margin-bottom:40px;display:block;font-weight:600;font-size:24px;line-height:32px}@media (max-width: 575.98px){.modal-denunciar__title.sc-denunciar-modal{margin-bottom:24px}}.modal-denunciar__list.sc-denunciar-modal{margin-bottom:16px}.modal-denunciar__text.sc-denunciar-modal{font-size:14px;display:block;margin-bottom:8px}.modal-denunciar__button-container.sc-denunciar-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:start;justify-content:flex-start;margin-top:40px}@media (max-width: 575.98px){.modal-denunciar__button-container.sc-denunciar-modal{display:block;margin-top:auto;padding-top:40px}}@media (max-width: 575.98px){.modal-denunciar__button.sc-denunciar-modal{display:block}}";
 

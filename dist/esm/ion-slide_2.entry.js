@@ -1,6 +1,9 @@
-import { r as registerInstance, h, H as Host, e as createEvent, i as getElement } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { c as componentOnReady } from './helpers-462f8de3.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host, f as createEvent, j as getElement } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { c as componentOnReady } from './helpers-d6be6e4a.js';
 
 const slideCss = "ion-slide{display:block;width:100%;height:100%}.slide-zoom{display:block;width:100%;text-align:center}.swiper-slide{display:-ms-flexbox;display:flex;position:relative;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;font-size:18px;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box}.swiper-slide img{width:auto;max-width:100%;height:auto;max-height:100%}";
 
@@ -45,18 +48,8 @@ const Slides = class {
     this.swiperReady = false;
     this.swiper = new Promise(resolve => { this.readySwiper = resolve; });
     this.didInit = false;
-    /**
-     * Options to pass to the swiper instance.
-     * See http://idangero.us/swiper/api/ for valid options
-     */
-    this.options = {}; // SwiperOptions;  // TODO
-    /**
-     * If `true`, show the pagination.
-     */
+    this.options = {};
     this.pager = false;
-    /**
-     * If `true`, show the scrollbar.
-     */
     this.scrollbar = false;
   }
   async optionsChanged() {
@@ -253,7 +246,7 @@ const Slides = class {
     const finalOptions = this.normalizeOptions();
     // init swiper core
     // @ts-ignore
-    const { Swiper } = await import('./swiper.bundle-44a9b1f9.js');
+    const { Swiper } = await import('./swiper.bundle-31ceaa19.js');
     await waitForSlides(this.el);
     const swiper = new Swiper(this.el, finalOptions);
     this.swiperReady = true;

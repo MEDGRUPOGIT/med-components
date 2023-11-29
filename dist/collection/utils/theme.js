@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const hostContext = (selector, el) => {
   return el.closest(selector) !== null;
 };

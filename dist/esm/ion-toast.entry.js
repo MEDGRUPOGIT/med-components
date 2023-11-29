@@ -1,11 +1,14 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-dc3151a0.js';
-import { s as sanitizeDOMString } from './index-9e3fe806.js';
-import { g as getClassMap, c as createColorClasses } from './theme-ff3fc52f.js';
-import { c as createAnimation } from './animation-560b991d.js';
-import './hardware-back-button-4a6b37fb.js';
-import './helpers-462f8de3.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-52f7bca4.js';
+import { s as sanitizeDOMString } from './index-c841c933.js';
+import { g as getClassMap, c as createColorClasses } from './theme-a24ff1ad.js';
+import { c as createAnimation } from './animation-41df7b1a.js';
+import './hardware-back-button-ace6a71b.js';
+import './helpers-d6be6e4a.js';
 
 /**
  * iOS Toast Enter Animation
@@ -130,29 +133,6 @@ const Toast = class {
     this.willDismiss = createEvent(this, "ionToastWillDismiss", 7);
     this.didDismiss = createEvent(this, "ionToastDidDismiss", 7);
     this.presented = false;
-    /**
-     * How many milliseconds to wait before hiding the toast. By default, it will show
-     * until `dismiss()` is called.
-     */
-    this.duration = 0;
-    /**
-     * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
-     */
-    this.keyboardClose = false;
-    /**
-     * The position of the toast on the screen.
-     */
-    this.position = 'bottom';
-    /**
-     * If `true`, the toast will be translucent.
-     * Only applies when the mode is `"ios"` and the device supports
-     * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
-     */
-    this.translucent = false;
-    /**
-     * If `true`, the toast will animate.
-     */
-    this.animated = true;
     this.dispatchCancelHandler = (ev) => {
       const role = ev.detail.role;
       if (isCancel(role)) {
@@ -160,6 +140,19 @@ const Toast = class {
         this.callButtonHandler(cancelButton);
       }
     };
+    this.overlayIndex = undefined;
+    this.color = undefined;
+    this.enterAnimation = undefined;
+    this.leaveAnimation = undefined;
+    this.cssClass = undefined;
+    this.duration = 0;
+    this.header = undefined;
+    this.message = undefined;
+    this.keyboardClose = false;
+    this.position = 'bottom';
+    this.buttons = undefined;
+    this.translucent = false;
+    this.animated = true;
   }
   connectedCallback() {
     prepareOverlay(this.el);

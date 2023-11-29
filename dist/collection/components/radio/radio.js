@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Method, Prop, State, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { addEventListener, getAriaLabel, removeEventListener } from '../../utils/helpers';
 import { createColorClasses, hostContext } from '../../utils/theme';
@@ -12,23 +15,6 @@ export class Radio {
   constructor() {
     this.inputId = `ion-rb-${radioButtonIds++}`;
     this.radioGroup = null;
-    /**
-     * If `true`, the radio is selected.
-     */
-    this.checked = false;
-    /**
-     * The tabindex of the radio button.
-     * @internal
-     */
-    this.buttonTabindex = -1;
-    /**
-     * The name of the control, which is submitted with the form data.
-     */
-    this.name = this.inputId;
-    /**
-     * If `true`, the user cannot interact with the radio.
-     */
-    this.disabled = false;
     this.updateState = () => {
       if (this.radioGroup) {
         this.checked = this.radioGroup.value === this.value;
@@ -40,6 +26,12 @@ export class Radio {
     this.onBlur = () => {
       this.ionBlur.emit();
     };
+    this.checked = false;
+    this.buttonTabindex = -1;
+    this.color = undefined;
+    this.name = this.inputId;
+    this.disabled = false;
+    this.value = undefined;
   }
   /** @internal */
   async setFocus(ev) {
@@ -87,214 +79,223 @@ export class Radio {
         'interactive': true,
         'radio-checked': checked,
         'radio-disabled': disabled,
-      }) },
-      h("div", { class: "radio-icon", part: "container" },
-        h("div", { class: "radio-inner", part: "mark" }),
-        h("div", { class: "radio-ripple" })),
-      h("label", { htmlFor: inputId }, labelText),
-      h("input", { type: "radio", checked: checked, disabled: disabled, tabindex: "-1", id: inputId })));
+      }) }, h("div", { class: "radio-icon", part: "container" }, h("div", { class: "radio-inner", part: "mark" }), h("div", { class: "radio-ripple" })), h("label", { htmlFor: inputId }, labelText), h("input", { type: "radio", checked: checked, disabled: disabled, tabindex: "-1", id: inputId })));
   }
   static get is() { return "ion-radio"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["radio.ios.scss"],
-    "md": ["radio.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["radio.ios.css"],
-    "md": ["radio.md.css"]
-  }; }
-  static get properties() { return {
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
-      },
-      "attribute": "color",
-      "reflect": false
-    },
-    "name": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The name of the control, which is submitted with the form data."
-      },
-      "attribute": "name",
-      "reflect": false,
-      "defaultValue": "this.inputId"
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the user cannot interact with the radio."
-      },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "value": {
-      "type": "any",
-      "mutable": false,
-      "complexType": {
-        "original": "any | null",
-        "resolved": "any",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "the value of the radio."
-      },
-      "attribute": "value",
-      "reflect": false
-    }
-  }; }
-  static get states() { return {
-    "checked": {},
-    "buttonTabindex": {}
-  }; }
-  static get events() { return [{
-      "method": "ionStyle",
-      "name": "ionStyle",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the styles change."
-      },
-      "complexType": {
-        "original": "StyleEventDetail",
-        "resolved": "StyleEventDetail",
-        "references": {
-          "StyleEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      }
-    }, {
-      "method": "ionFocus",
-      "name": "ionFocus",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the radio button has focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionBlur",
-      "name": "ionBlur",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the radio button loses focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }]; }
-  static get methods() { return {
-    "setFocus": {
-      "complexType": {
-        "signature": "(ev: any) => Promise<void>",
-        "parameters": [{
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
+  static get originalStyleUrls() {
+    return {
+      "ios": ["radio.ios.scss"],
+      "md": ["radio.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["radio.ios.css"],
+      "md": ["radio.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "color": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Color",
+          "resolved": "string | undefined",
+          "references": {
+            "Color": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         },
-        "return": "Promise<void>"
-      },
-      "docs": {
-        "text": "",
-        "tags": [{
-            "name": "internal",
-            "text": undefined
-          }]
-      }
-    },
-    "setButtonTabindex": {
-      "complexType": {
-        "signature": "(value: number) => Promise<void>",
-        "parameters": [{
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
-        "return": "Promise<void>"
+        "attribute": "color",
+        "reflect": false
       },
-      "docs": {
-        "text": "",
-        "tags": [{
-            "name": "internal",
-            "text": undefined
-          }]
+      "name": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The name of the control, which is submitted with the form data."
+        },
+        "attribute": "name",
+        "reflect": false,
+        "defaultValue": "this.inputId"
+      },
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the user cannot interact with the radio."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "value": {
+        "type": "any",
+        "mutable": false,
+        "complexType": {
+          "original": "any | null",
+          "resolved": "any",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "the value of the radio."
+        },
+        "attribute": "value",
+        "reflect": false
       }
-    }
-  }; }
+    };
+  }
+  static get states() {
+    return {
+      "checked": {},
+      "buttonTabindex": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionStyle",
+        "name": "ionStyle",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the styles change."
+        },
+        "complexType": {
+          "original": "StyleEventDetail",
+          "resolved": "StyleEventDetail",
+          "references": {
+            "StyleEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }, {
+        "method": "ionFocus",
+        "name": "ionFocus",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the radio button has focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionBlur",
+        "name": "ionBlur",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the radio button loses focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }];
+  }
+  static get methods() {
+    return {
+      "setFocus": {
+        "complexType": {
+          "signature": "(ev: any) => Promise<void>",
+          "parameters": [{
+              "tags": [],
+              "text": ""
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
+        },
+        "docs": {
+          "text": "",
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }]
+        }
+      },
+      "setButtonTabindex": {
+        "complexType": {
+          "signature": "(value: number) => Promise<void>",
+          "parameters": [{
+              "tags": [],
+              "text": ""
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
+        },
+        "docs": {
+          "text": "",
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }]
+        }
+      }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "color",
-      "methodName": "emitStyle"
-    }, {
-      "propName": "checked",
-      "methodName": "emitStyle"
-    }, {
-      "propName": "disabled",
-      "methodName": "emitStyle"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "color",
+        "methodName": "emitStyle"
+      }, {
+        "propName": "checked",
+        "methodName": "emitStyle"
+      }, {
+        "propName": "disabled",
+        "methodName": "emitStyle"
+      }];
+  }
 }
 let radioButtonIds = 0;

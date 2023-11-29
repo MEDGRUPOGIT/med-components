@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 /**
  * @part image - The inner `img` element.
@@ -11,6 +14,10 @@ export class Img {
     this.onError = () => {
       this.ionError.emit();
     };
+    this.loadSrc = undefined;
+    this.loadError = undefined;
+    this.alt = undefined;
+    this.src = undefined;
   }
   srcChanged() {
     this.addIO();
@@ -55,106 +62,117 @@ export class Img {
     }
   }
   render() {
-    return (h(Host, { class: getIonMode(this) },
-      h("img", { decoding: "async", src: this.loadSrc, alt: this.alt, onLoad: this.onLoad, onError: this.loadError, part: "image" })));
+    return (h(Host, { class: getIonMode(this) }, h("img", { decoding: "async", src: this.loadSrc, alt: this.alt, onLoad: this.onLoad, onError: this.loadError, part: "image" })));
   }
   static get is() { return "ion-img"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "$": ["img.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["img.css"]
-  }; }
-  static get properties() { return {
-    "alt": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+  static get originalStyleUrls() {
+    return {
+      "$": ["img.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["img.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "alt": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "This attribute defines the alternative text describing the image.\nUsers will see this text displayed if the image URL is wrong,\nthe image is not in one of the supported formats, or if the image is not yet downloaded."
+        },
+        "attribute": "alt",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "This attribute defines the alternative text describing the image.\nUsers will see this text displayed if the image URL is wrong,\nthe image is not in one of the supported formats, or if the image is not yet downloaded."
-      },
-      "attribute": "alt",
-      "reflect": false
-    },
-    "src": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The image URL. This attribute is mandatory for the `<img>` element."
-      },
-      "attribute": "src",
-      "reflect": false
-    }
-  }; }
-  static get states() { return {
-    "loadSrc": {},
-    "loadError": {}
-  }; }
-  static get events() { return [{
-      "method": "ionImgWillLoad",
-      "name": "ionImgWillLoad",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the img src has been set"
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
+      "src": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The image URL. This attribute is mandatory for the `<img>` element."
+        },
+        "attribute": "src",
+        "reflect": false
       }
-    }, {
-      "method": "ionImgDidLoad",
-      "name": "ionImgDidLoad",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the image has finished loading"
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionError",
-      "name": "ionError",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the img fails to load"
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }]; }
+    };
+  }
+  static get states() {
+    return {
+      "loadSrc": {},
+      "loadError": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionImgWillLoad",
+        "name": "ionImgWillLoad",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the img src has been set"
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionImgDidLoad",
+        "name": "ionImgDidLoad",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the image has finished loading"
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionError",
+        "name": "ionError",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the img fails to load"
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }];
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "src",
-      "methodName": "srcChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "src",
+        "methodName": "srcChanged"
+      }];
+  }
 }

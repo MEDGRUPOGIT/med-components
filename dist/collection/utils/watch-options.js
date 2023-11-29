@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const watchForOptions = (containerEl, tagName, onChange) => {
   /* tslint:disable-next-line */
   if (typeof MutationObserver === 'undefined') {

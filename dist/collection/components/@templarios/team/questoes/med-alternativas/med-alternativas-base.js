@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { distanciaEuclidiana, getPositionFromEvent } from '../../../../../@templarios/utilities/position';
 export class MedAlternativasBase {
   constructor(parent) {

@@ -1,4 +1,3 @@
-import { Component, Element, Event, Listen, Method, Prop } from '@stencil/core';
 import { debounce } from '../../utils/helpers';
 import { ROUTER_INTENT_BACK, ROUTER_INTENT_FORWARD, ROUTER_INTENT_NONE } from './utils/constants';
 import { printRedirects, printRoutes } from './utils/debug';
@@ -12,26 +11,7 @@ export class Router {
     this.busy = false;
     this.state = 0;
     this.lastState = 0;
-    /**
-     * By default `ion-router` will match the routes at the root path ("/").
-     * That can be changed when
-     *
-     */
     this.root = '/';
-    /**
-     * The router can work in two "modes":
-     * - With hash: `/index.html#/path/to/page`
-     * - Without hash: `/path/to/page`
-     *
-     * Using one or another might depend in the requirements of your app and/or where it's deployed.
-     *
-     * Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might
-     * requires additional server-side configuration in order to properly work.
-     *
-     * On the otherside hash-navigation is much easier to deploy, it even works over the file protocol.
-     *
-     * By default, this property is `true`, change to `false` to allow hash-less URLs.
-     */
     this.useHash = true;
   }
   async componentWillLoad() {
@@ -275,224 +255,232 @@ export class Router {
     };
   }
   static get is() { return "ion-router"; }
-  static get properties() { return {
-    "root": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+  static get properties() {
+    return {
+      "root": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "By default `ion-router` will match the routes at the root path (\"/\").\nThat can be changed when"
+        },
+        "attribute": "root",
+        "reflect": false,
+        "defaultValue": "'/'"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "By default `ion-router` will match the routes at the root path (\"/\").\nThat can be changed when"
-      },
-      "attribute": "root",
-      "reflect": false,
-      "defaultValue": "'/'"
-    },
-    "useHash": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the otherside hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs."
-      },
-      "attribute": "use-hash",
-      "reflect": false,
-      "defaultValue": "true"
-    }
-  }; }
-  static get events() { return [{
-      "method": "ionRouteWillChange",
-      "name": "ionRouteWillChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Event emitted when the route is about to change"
-      },
-      "complexType": {
-        "original": "RouterEventDetail",
-        "resolved": "RouterEventDetail",
-        "references": {
-          "RouterEventDetail": {
-            "location": "import",
-            "path": "../../interface"
+      "useHash": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the otherside hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs."
+        },
+        "attribute": "use-hash",
+        "reflect": false,
+        "defaultValue": "true"
+      }
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionRouteWillChange",
+        "name": "ionRouteWillChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Event emitted when the route is about to change"
+        },
+        "complexType": {
+          "original": "RouterEventDetail",
+          "resolved": "RouterEventDetail",
+          "references": {
+            "RouterEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      }
-    }, {
-      "method": "ionRouteDidChange",
-      "name": "ionRouteDidChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the route had changed"
-      },
-      "complexType": {
-        "original": "RouterEventDetail",
-        "resolved": "RouterEventDetail",
-        "references": {
-          "RouterEventDetail": {
-            "location": "import",
-            "path": "../../interface"
+      }, {
+        "method": "ionRouteDidChange",
+        "name": "ionRouteDidChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the route had changed"
+        },
+        "complexType": {
+          "original": "RouterEventDetail",
+          "resolved": "RouterEventDetail",
+          "references": {
+            "RouterEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      }
-    }]; }
-  static get methods() { return {
-    "canTransition": {
-      "complexType": {
-        "signature": "() => Promise<string | boolean>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<string | boolean>"
-      },
-      "docs": {
-        "text": "",
-        "tags": [{
-            "name": "internal",
-            "text": undefined
-          }]
-      }
-    },
-    "push": {
-      "complexType": {
-        "signature": "(url: string, direction?: RouterDirection, animation?: AnimationBuilder | undefined) => Promise<boolean>",
-        "parameters": [{
-            "tags": [{
-                "text": "url The url to navigate to.",
-                "name": "param"
-              }],
-            "text": "The url to navigate to."
-          }, {
-            "tags": [{
-                "text": "direction The direction of the animation. Defaults to `\"forward\"`.",
-                "name": "param"
-              }],
-            "text": "The direction of the animation. Defaults to `\"forward\"`."
-          }, {
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
+      }];
+  }
+  static get methods() {
+    return {
+      "canTransition": {
+        "complexType": {
+          "signature": "() => Promise<string | boolean>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
           },
-          "RouterDirection": {
-            "location": "import",
-            "path": "../../interface"
+          "return": "Promise<string | boolean>"
+        },
+        "docs": {
+          "text": "",
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }]
+        }
+      },
+      "push": {
+        "complexType": {
+          "signature": "(url: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
+          "parameters": [{
+              "tags": [{
+                  "name": "param",
+                  "text": "url The url to navigate to."
+                }],
+              "text": "The url to navigate to."
+            }, {
+              "tags": [{
+                  "name": "param",
+                  "text": "direction The direction of the animation. Defaults to `\"forward\"`."
+                }],
+              "text": "The direction of the animation. Defaults to `\"forward\"`."
+            }, {
+              "tags": [],
+              "text": ""
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            },
+            "RouterDirection": {
+              "location": "import",
+              "path": "../../interface"
+            },
+            "AnimationBuilder": {
+              "location": "import",
+              "path": "../../interface"
+            }
           },
-          "AnimationBuilder": {
-            "location": "import",
-            "path": "../../interface"
-          }
+          "return": "Promise<boolean>"
         },
-        "return": "Promise<boolean>"
+        "docs": {
+          "text": "Navigate to the specified URL.",
+          "tags": [{
+              "name": "param",
+              "text": "url The url to navigate to."
+            }, {
+              "name": "param",
+              "text": "direction The direction of the animation. Defaults to `\"forward\"`."
+            }]
+        }
       },
-      "docs": {
-        "text": "Navigate to the specified URL.",
-        "tags": [{
-            "name": "param",
-            "text": "url The url to navigate to."
-          }, {
-            "name": "param",
-            "text": "direction The direction of the animation. Defaults to `\"forward\"`."
-          }]
-      }
-    },
-    "back": {
-      "complexType": {
-        "signature": "() => Promise<void>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<void>"
-      },
-      "docs": {
-        "text": "Go back to previous page in the window.history.",
-        "tags": []
-      }
-    },
-    "printDebug": {
-      "complexType": {
-        "signature": "() => Promise<void>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<void>"
-      },
-      "docs": {
-        "text": "",
-        "tags": [{
-            "name": "internal",
-            "text": undefined
-          }]
-      }
-    },
-    "navChanged": {
-      "complexType": {
-        "signature": "(direction: RouterDirection) => Promise<boolean>",
-        "parameters": [{
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
+      "back": {
+        "complexType": {
+          "signature": "() => Promise<void>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
           },
-          "RouterDirection": {
-            "location": "import",
-            "path": "../../interface"
-          }
+          "return": "Promise<void>"
         },
-        "return": "Promise<boolean>"
+        "docs": {
+          "text": "Go back to previous page in the window.history.",
+          "tags": []
+        }
       },
-      "docs": {
-        "text": "",
-        "tags": [{
-            "name": "internal",
-            "text": undefined
-          }]
+      "printDebug": {
+        "complexType": {
+          "signature": "() => Promise<void>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
+        },
+        "docs": {
+          "text": "",
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }]
+        }
+      },
+      "navChanged": {
+        "complexType": {
+          "signature": "(direction: RouterDirection) => Promise<boolean>",
+          "parameters": [{
+              "tags": [],
+              "text": ""
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            },
+            "RouterDirection": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          },
+          "return": "Promise<boolean>"
+        },
+        "docs": {
+          "text": "",
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }]
+        }
       }
-    }
-  }; }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get listeners() { return [{
-      "name": "popstate",
-      "method": "onPopState",
-      "target": "window",
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "ionBackButton",
-      "method": "onBackButton",
-      "target": "document",
-      "capture": false,
-      "passive": false
-    }]; }
+  static get listeners() {
+    return [{
+        "name": "popstate",
+        "method": "onPopState",
+        "target": "window",
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "ionBackButton",
+        "method": "onBackButton",
+        "target": "document",
+        "capture": false,
+        "passive": false
+      }];
+  }
 }

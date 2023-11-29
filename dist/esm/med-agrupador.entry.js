@@ -1,22 +1,17 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { g as generateMedColor } from './color-49be71bc.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
+import { g as generateMedColor } from './color-2567dca3.js';
 
 const medAgrupadorCss = ":host{--color:hsl(var(--med-color-brand-4))}:host{font-size:12px;font-weight:400;line-height:12px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;color:var(--color);cursor:pointer}.med-agrupador__expandir{display:block}.med-agrupador__ocultar{display:none}.med-agrupador__icon{font-size:24px;stroke:var(--color)}:host(.med-color){--color:hsl(var(--med-color-4))}:host(.med-color-neutral){--color:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--color:hsl(var(--med-color-feedback))}:host(.med-agrupador--collapsed){-ms-flex-direction:column-reverse;flex-direction:column-reverse}:host(.med-agrupador--collapsed) .med-agrupador__expandir{display:none}:host(.med-agrupador--collapsed) .med-agrupador__ocultar{display:block}:host(.med-agrupador--collapsed) .med-agrupador__icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}";
 
 const MedAgrupador = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
     this.labelDefault = 'Expandir a lista';
-    /**
-     * todo
-     */
     this.labelAlternativo = 'Ocultar a lista';
-    /**
-     * todo
-     */
     this.collapsed = false;
   }
   /**

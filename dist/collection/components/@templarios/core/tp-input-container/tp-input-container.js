@@ -1,4 +1,7 @@
-import { Component, h, Host, Prop, Element, Listen, State } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class TpInputContainer {
   constructor() {
@@ -6,27 +9,16 @@ export class TpInputContainer {
      * Acrescimo ao hostWidth necessário para contabilizar as bordas
      */
     this.selectAndPopoverDiffWidth = 2;
-    /**
-     * Monitoria se o Select foi clicado e está ativo. A propriedade é usada para
-     * aplicar estilização e evitar processamentos desnecessários em alguns métodos
-     */
+    this.clickTarget = undefined;
     this.selectWithPopoverClicked = false;
-    /**
-     * todo
-     */
     this.pointerOnSelect = false;
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
+    this.dsName = undefined;
     this.disabled = false;
-    /**
-     * todo
-     */
     this.feedback = false;
-    /**
-     * todo
-     */
     this.inverted = false;
+    this.hasButton = undefined;
+    this.hasIcon = undefined;
   }
   setClickTarget(e) {
     if (this.disabled)
@@ -110,189 +102,196 @@ export class TpInputContainer {
         [`tp-input-container--${dsName}`]: dsName !== undefined,
         [`tp-input-container--has-button-${hasButton}`]: hasButton !== undefined,
         [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined
-      }) },
-      h("slot", { name: 'start' }),
-      h("slot", null),
-      h("slot", { name: 'end' })));
+      }) }, h("slot", { name: 'start' }), h("slot", null), h("slot", { name: 'end' })));
   }
   static get is() { return "tp-input-container"; }
   static get encapsulation() { return "scoped"; }
-  static get originalStyleUrls() { return {
-    "$": ["tp-input-container.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["tp-input-container.css"]
-  }; }
-  static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../../../@templarios/types/color.type"
+  static get originalStyleUrls() {
+    return {
+      "$": ["tp-input-container.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["tp-input-container.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "dsColor": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "MedColor",
+          "resolved": "string | undefined",
+          "references": {
+            "MedColor": {
+              "location": "import",
+              "path": "../../../../@templarios/types/color.type"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "ds-color",
+        "reflect": true
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "dsName": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'secondary'",
+          "resolved": "\"secondary\" | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "ds-name",
+        "reflect": true
       },
-      "attribute": "ds-color",
-      "reflect": true
-    },
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'secondary'",
-        "resolved": "\"secondary\" | undefined",
-        "references": {}
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "disabled",
+        "reflect": true,
+        "defaultValue": "false"
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "feedback": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "feedback",
+        "reflect": true,
+        "defaultValue": "false"
       },
-      "attribute": "ds-name",
-      "reflect": true
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
+      "inverted": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "inverted",
+        "reflect": true,
+        "defaultValue": "false"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "hasButton": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'start' | 'end' | 'both'",
+          "resolved": "\"both\" | \"end\" | \"start\" | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "has-button",
+        "reflect": true
       },
-      "attribute": "disabled",
-      "reflect": true,
-      "defaultValue": "false"
-    },
-    "feedback": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "feedback",
-      "reflect": true,
-      "defaultValue": "false"
-    },
-    "inverted": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "inverted",
-      "reflect": true,
-      "defaultValue": "false"
-    },
-    "hasButton": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'start' | 'end' | 'both'",
-        "resolved": "\"both\" | \"end\" | \"start\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "has-button",
-      "reflect": true
-    },
-    "hasIcon": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'start' | 'end' | 'both'",
-        "resolved": "\"both\" | \"end\" | \"start\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "has-icon",
-      "reflect": true
-    }
-  }; }
-  static get states() { return {
-    "clickTarget": {},
-    "selectWithPopoverClicked": {},
-    "pointerOnSelect": {}
-  }; }
+      "hasIcon": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'start' | 'end' | 'both'",
+          "resolved": "\"both\" | \"end\" | \"start\" | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "has-icon",
+        "reflect": true
+      }
+    };
+  }
+  static get states() {
+    return {
+      "clickTarget": {},
+      "selectWithPopoverClicked": {},
+      "pointerOnSelect": {}
+    };
+  }
   static get elementRef() { return "host"; }
-  static get listeners() { return [{
-      "name": "click",
-      "method": "setClickTarget",
-      "target": "body",
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "click",
-      "method": "catchSelectIconClick",
-      "target": undefined,
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "resize",
-      "method": "setPopoverWidthOnResize",
-      "target": "window",
-      "capture": false,
-      "passive": true
-    }, {
-      "name": "ionPopoverWillPresent",
-      "method": "setPopoverCharacteristics",
-      "target": "body",
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "ionPopoverDidPresent",
-      "method": "fixPopover",
-      "target": "body",
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "ionPopoverWillDismiss",
-      "method": "unsetClikedState",
-      "target": "body",
-      "capture": false,
-      "passive": false
-    }]; }
+  static get listeners() {
+    return [{
+        "name": "click",
+        "method": "setClickTarget",
+        "target": "body",
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "click",
+        "method": "catchSelectIconClick",
+        "target": undefined,
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "resize",
+        "method": "setPopoverWidthOnResize",
+        "target": "window",
+        "capture": false,
+        "passive": true
+      }, {
+        "name": "ionPopoverWillPresent",
+        "method": "setPopoverCharacteristics",
+        "target": "body",
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "ionPopoverDidPresent",
+        "method": "fixPopover",
+        "target": "body",
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "ionPopoverWillDismiss",
+        "method": "unsetClikedState",
+        "target": "body",
+        "capture": false,
+        "passive": false
+      }];
+  }
 }

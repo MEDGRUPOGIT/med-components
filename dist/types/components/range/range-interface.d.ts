@@ -1,5 +1,5 @@
-export declare type KnobName = 'A' | 'B' | undefined;
-export declare type RangeValue = number | {
+export type KnobName = 'A' | 'B' | undefined;
+export type RangeValue = number | {
   lower: number;
   upper: number;
 };

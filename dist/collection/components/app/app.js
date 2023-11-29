@@ -1,4 +1,7 @@
-import { Build, Component, Element, Host, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Build, Host, h } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { isPlatform } from '../../utils/platform';
@@ -39,12 +42,16 @@ export class App {
       } }));
   }
   static get is() { return "ion-app"; }
-  static get originalStyleUrls() { return {
-    "$": ["app.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["app.css"]
-  }; }
+  static get originalStyleUrls() {
+    return {
+      "$": ["app.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["app.css"]
+    };
+  }
   static get elementRef() { return "el"; }
 }
 const needInputShims = () => {

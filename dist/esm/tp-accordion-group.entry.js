@@ -1,5 +1,8 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
 
 /**
  * Logs a warning to the console with an Ionic prefix
@@ -20,26 +23,11 @@ const TpAccordionGroup = class {
     registerInstance(this, hostRef);
     this.ionChange = createEvent(this, "ionChange", 7);
     this.ionValueChange = createEvent(this, "ionValueChange", 7);
-    /**
-     * If `true`, all accordions inside of the
-     * accordion group will animate when expanding
-     * or collapsing.
-     */
     this.animated = true;
-    /**
-     * If `true`, the accordion group cannot be interacted with.
-     */
+    this.multiple = undefined;
+    this.value = undefined;
     this.disabled = false;
-    /**
-     * If `true`, the accordion group cannot be interacted with,
-     * but does not alter the opacity.
-     */
     this.readonly = false;
-    /**
-     * Describes the expansion behavior for each accordion.
-     * Possible values are `"compact"` and `"inset"`.
-     * Defaults to `"compact"`.
-     */
     this.expand = "compact";
   }
   valueChanged() {

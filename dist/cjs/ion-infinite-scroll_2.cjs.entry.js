@@ -1,10 +1,13 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const index$1 = require('./index-e1bb33c3.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const index$1 = require('./index-365d7fb3.js');
 
 const infiniteScrollCss = "ion-infinite-scroll{display:none;width:100%}.infinite-scroll-enabled{display:block}";
 
@@ -16,32 +19,6 @@ const InfiniteScroll = class {
     this.thrPc = 0;
     this.didFire = false;
     this.isBusy = false;
-    this.isLoading = false;
-    /**
-     * The threshold distance from the bottom
-     * of the content to call the `infinite` output event when scrolled.
-     * The threshold value can be either a percent, or
-     * in pixels. For example, use the value of `10%` for the `infinite`
-     * output event to get called when the user has scrolled 10%
-     * from the bottom of the page. Use the value `100px` when the
-     * scroll is within 100 pixels from the bottom of the page.
-     */
-    this.threshold = '15%';
-    /**
-     * If `true`, the infinite scroll will be hidden and scroll event listeners
-     * will be removed.
-     *
-     * Set this to true to disable the infinite scroll from actively
-     * trying to receive new data while scrolling. This is useful
-     * when it is known that there is no more data that can be added, and
-     * the infinite scroll is no longer needed.
-     */
-    this.disabled = false;
-    /**
-     * The position of the infinite scroll element.
-     * The value can be either `top` or `bottom`.
-     */
-    this.position = 'bottom';
     this.onScroll = () => {
       const scrollEl = this.scrollEl;
       if (!scrollEl || !this.canStart()) {
@@ -72,6 +49,10 @@ const InfiniteScroll = class {
       }
       return 4;
     };
+    this.isLoading = false;
+    this.threshold = '15%';
+    this.disabled = false;
+    this.position = 'bottom';
   }
   thresholdChanged() {
     const val = this.threshold;
@@ -211,6 +192,8 @@ const infiniteScrollContentMdCss = "ion-infinite-scroll-content{display:-ms-flex
 const InfiniteScrollContent = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    this.loadingSpinner = undefined;
+    this.loadingText = undefined;
   }
   componentDidLoad() {
     if (this.loadingSpinner === undefined) {

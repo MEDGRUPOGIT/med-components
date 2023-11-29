@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const createPanRecognizer = (direction, thresh, maxAngle) => {
   const radians = maxAngle * (Math.PI / 180);
   const isDirX = direction === 'x';

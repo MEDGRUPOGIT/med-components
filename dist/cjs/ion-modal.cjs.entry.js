@@ -1,19 +1,22 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index$1 = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const frameworkDelegate = require('./framework-delegate-bebbd221.js');
-const overlays = require('./overlays-9895f6f3.js');
-const theme = require('./theme-30b7a575.js');
-const index$2 = require('./index-a7d54975.js');
-const animation = require('./animation-550bbf23.js');
-const cubicBezier = require('./cubic-bezier-0b2ccc35.js');
-const index = require('./index-98d43f07.js');
-const helpers = require('./helpers-ba3c117b.js');
-require('./hardware-back-button-148ce546.js');
-require('./gesture-controller-29adda71.js');
+const index$1 = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const frameworkDelegate = require('./framework-delegate-8b8d88ef.js');
+const overlays = require('./overlays-12a6887f.js');
+const theme = require('./theme-a4c4a7eb.js');
+const index$2 = require('./index-d49aaaa3.js');
+const animation = require('./animation-96c88a0a.js');
+const cubicBezier = require('./cubic-bezier-1060abff.js');
+const index = require('./index-212d93af.js');
+const helpers = require('./helpers-4478bffd.js');
+require('./hardware-back-button-a7dedc7d.js');
+require('./gesture-controller-3d1daf69.js');
 
 // Defaults for the card swipe animation
 const SwipeToCloseDefaults = {
@@ -325,26 +328,6 @@ const Modal = class {
     // Whether or not modal is being dismissed via gesture
     this.gestureAnimationDismissing = false;
     this.presented = false;
-    /**
-     * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
-     */
-    this.keyboardClose = true;
-    /**
-     * If `true`, the modal will be dismissed when the backdrop is clicked.
-     */
-    this.backdropDismiss = true;
-    /**
-     * If `true`, a backdrop will be displayed behind the modal.
-     */
-    this.showBackdrop = true;
-    /**
-     * If `true`, the modal will animate.
-     */
-    this.animated = true;
-    /**
-     * If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.
-     */
-    this.swipeToClose = false;
     this.onBackdropTap = () => {
       this.dismiss(undefined, overlays.BACKDROP);
     };
@@ -365,6 +348,19 @@ const Modal = class {
         el.dispatchEvent(ev);
       }
     };
+    this.overlayIndex = undefined;
+    this.delegate = undefined;
+    this.keyboardClose = true;
+    this.enterAnimation = undefined;
+    this.leaveAnimation = undefined;
+    this.component = undefined;
+    this.componentProps = undefined;
+    this.cssClass = undefined;
+    this.backdropDismiss = true;
+    this.showBackdrop = true;
+    this.animated = true;
+    this.swipeToClose = false;
+    this.presentingElement = undefined;
   }
   swipeToCloseChanged(enable) {
     if (this.gesture) {

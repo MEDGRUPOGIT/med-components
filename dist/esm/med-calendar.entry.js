@@ -1,7 +1,10 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './color-49be71bc.js';
-import { createGesture } from './index-f49d994d.js';
-import './gesture-controller-31cb6bb9.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { g as generateMedColor } from './color-2567dca3.js';
+import { createGesture } from './index-ad966da4.js';
+import './gesture-controller-68c023a4.js';
 
 const medCalendarCss = ".sc-med-calendar-h{--background:hsl(var(--med-color-neutral-1))}.sc-med-calendar-h{background:var(--background)}.header.sc-med-calendar{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;padding-bottom:24px;background-color:transparent}.header__type.sc-med-calendar{-ms-flex:1;flex:1}.header__left.sc-med-calendar{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;text-align:center;width:210px}.header__right.sc-med-calendar{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.header__button-icon.sc-med-calendar{font-size:18px}.header__icon.sc-med-calendar{stroke:hsl(var(--med-color-neutral-8))}.content__header.sc-med-calendar{display:grid;grid-template-columns:repeat(7, 1fr);text-align:center}.content__week-day.sc-med-calendar{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;height:24px;margin:0 auto}.content__week-type.sc-med-calendar{--font-size:12px;--font-weight:400;--line-height:12px;--color:hsl(var(--med-color-neutral-8))}.content__container.sc-med-calendar{display:grid;grid-template-columns:repeat(7, 1fr);height:100%}.choice__type.sc-med-calendar{--font-size:16px;--font-weight:400;--line-height:16px;--color:hsl(var(--med-color-neutral-10));text-transform:none;margin-right:4px}.med-calendar--disable.sc-med-calendar-h .header__right.sc-med-calendar .med-button.sc-med-calendar{pointer-events:none}.med-color.sc-med-calendar-h{--main-color:hsl(var(--med-color-3))}.med-color-neutral.sc-med-calendar-h{--main-color:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-calendar-h{--main-color:hsl(var(--med-color-feedback))}";
 
@@ -10,17 +13,12 @@ const MedCalendar = class {
     registerInstance(this, hostRef);
     this.medClick = createEvent(this, "medClick", 7);
     this.medSwipe = createEvent(this, "medSwipe", 7);
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
+    this.mes = undefined;
+    this.ano = undefined;
+    this.container = undefined;
     this.disable = false;
-    /**
-     * todo
-     */
     this.choice = 'Semana';
-    /**
-     * todo
-     */
     this.width = 166;
   }
   connectedCallback() {

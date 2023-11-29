@@ -1,4 +1,7 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 /**
  * @slot  Slot default.
@@ -6,17 +9,9 @@ import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedChartBar {
   constructor() {
     this.hostHeight = 0;
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
     this.value = 0;
-    /**
-     * todo
-     */
     this.height = 50;
-    /**
-     * todo
-     */
     this.width = 32;
     this.noLabel = false;
   }
@@ -41,115 +36,117 @@ export class MedChartBar {
   render() {
     const { dsColor, value, height, width } = this;
     const percentage = value === 0 ? height : height - ((height * value) / 100);
-    return (h(Host, { class: generateMedColor(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } },
-      h("div", { class: "med-chart-bar__container" },
-        !this.noLabel && (h("div", { class: "med-chart-bar__label" },
-          h("slot", null))),
-        h("div", { class: "med-chart-bar__progress" }))));
+    return (h(Host, { class: generateMedColor(dsColor, { 'med-chart-bar': true }), style: { '--value': `${percentage}`, '--height': `${height}`, '--width': `${width}` } }, h("div", { class: "med-chart-bar__container" }, !this.noLabel && (h("div", { class: "med-chart-bar__label" }, h("slot", null))), h("div", { class: "med-chart-bar__progress" }))));
   }
   static get is() { return "med-chart-bar"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "$": ["med-chart-bar.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["med-chart-bar.css"]
-  }; }
-  static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../../../@templarios/types/color.type"
+  static get originalStyleUrls() {
+    return {
+      "$": ["med-chart-bar.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["med-chart-bar.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "dsColor": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "MedColor",
+          "resolved": "string | undefined",
+          "references": {
+            "MedColor": {
+              "location": "import",
+              "path": "../../../../@templarios/types/color.type"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "ds-color",
+        "reflect": true
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "value": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "value",
+        "reflect": true,
+        "defaultValue": "0"
       },
-      "attribute": "ds-color",
-      "reflect": true
-    },
-    "value": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
+      "height": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "height",
+        "reflect": true,
+        "defaultValue": "50"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "width": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "width",
+        "reflect": true,
+        "defaultValue": "32"
       },
-      "attribute": "value",
-      "reflect": true,
-      "defaultValue": "0"
-    },
-    "height": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "height",
-      "reflect": true,
-      "defaultValue": "50"
-    },
-    "width": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "width",
-      "reflect": true,
-      "defaultValue": "32"
-    },
-    "noLabel": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "no-label",
-      "reflect": true,
-      "defaultValue": "false"
-    }
-  }; }
+      "noLabel": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": ""
+        },
+        "attribute": "no-label",
+        "reflect": true,
+        "defaultValue": "false"
+      }
+    };
+  }
   static get elementRef() { return "hostElement"; }
 }

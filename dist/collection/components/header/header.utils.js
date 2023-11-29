@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { readTask, writeTask } from '@stencil/core';
 import { clamp } from '../../utils/helpers';
 const TRANSITION = 'all 0.2s ease-in-out';

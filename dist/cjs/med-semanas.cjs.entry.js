@@ -1,15 +1,19 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const color = require('./color-2d4645aa.js');
+const index = require('./index-a17b061b.js');
+const color = require('./color-c29da9e4.js');
 
 const medSemanasCss = ":host{--padding:16px}:host(.med-semanas){display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;padding:var(--padding)}::slotted(*){margin:4px}";
 
 const MedSemanas = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    this.skin = undefined;
   }
   render() {
     const { skin } = this;

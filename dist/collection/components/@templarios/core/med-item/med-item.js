@@ -1,4 +1,7 @@
-import { Component, Element, forceUpdate, h, Host, Listen, Prop, State } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { forceUpdate, h, Host } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 import { getIonMode } from '../../../../global/ionic-global';
 import { raf } from '../../../../utils/helpers';
@@ -18,34 +21,20 @@ export class MedItem {
     this.labelColorStyles = {};
     this.itemStyles = new Map();
     this.multipleInputs = false;
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
     this.contain = false;
-    /**
-     * todo
-     */
     this.noPadding = false;
-    /**
-     * If `true`, a button tag will be rendered and the item will be tappable.
-     */
     this.button = false;
-    /**
-     * The icon to use when `detail` is set to `true`.
-     */
+    this.detail = undefined;
     this.detailIcon = 'chevron-forward';
-    /**
-     * If `true`, the user cannot interact with the item.
-     */
     this.disabled = false;
-    /**
-     * When using a router, it specifies the transition direction when navigating to
-     * another page using `href`.
-     */
+    this.download = undefined;
+    this.href = undefined;
+    this.rel = undefined;
+    this.lines = undefined;
+    this.routerAnimation = undefined;
     this.routerDirection = 'forward';
-    /**
-     * The type of the button. Only used when an `onclick` or `button` property is present.
-     */
+    this.target = undefined;
     this.type = 'button';
   }
   labelColorChanged(ev) {
@@ -197,319 +186,321 @@ export class MedItem {
         'ion-activatable': canActivate,
         'ion-focusable': true,
         'med-item--no-padding': noPadding
-      })) },
-      h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn),
-        h("div", { class: "item-inner" },
-          h("slot", { name: "start" }),
-          h("div", { class: "input-wrapper" },
-            h("slot", null)),
-          h("slot", { name: "end" }),
-          h("div", { class: "item-inner-highlight" }))),
-      h("div", { class: "item-highlight" })));
+      })) }, h(TagType, Object.assign({}, attrs, { class: "item-native", part: "native", disabled: disabled }, clickFn), h("div", { class: "item-inner" }, h("slot", { name: "start" }), h("div", { class: "input-wrapper" }, h("slot", null)), h("slot", { name: "end" }), h("div", { class: "item-inner-highlight" }))), h("div", { class: "item-highlight" })));
   }
   static get is() { return "med-item"; }
   static get encapsulation() { return "shadow"; }
   static get delegatesFocus() { return true; }
-  static get originalStyleUrls() { return {
-    "ios": ["med-item.scss"],
-    "md": ["med-item.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["med-item.css"],
-    "md": ["med-item.css"]
-  }; }
-  static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../../../@templarios/types/color.type"
+  static get originalStyleUrls() {
+    return {
+      "ios": ["med-item.scss"],
+      "md": ["med-item.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["med-item.css"],
+      "md": ["med-item.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "dsColor": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "MedColor",
+          "resolved": "string | undefined",
+          "references": {
+            "MedColor": {
+              "location": "import",
+              "path": "../../../../@templarios/types/color.type"
+            }
           }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        },
+        "attribute": "ds-color",
+        "reflect": false
+      },
+      "contain": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "contain",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "noPadding": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "no-padding",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "button": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, a button tag will be rendered and the item will be tappable."
+        },
+        "attribute": "button",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "detail": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`\nis `ios` and an `href` or `button` property is present."
+        },
+        "attribute": "detail",
+        "reflect": false
+      },
+      "detailIcon": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The icon to use when `detail` is set to `true`."
+        },
+        "attribute": "detail-icon",
+        "reflect": false,
+        "defaultValue": "'chevron-forward'"
+      },
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the user cannot interact with the item."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "download": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | undefined",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+        },
+        "attribute": "download",
+        "reflect": false
+      },
+      "href": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | undefined",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+        },
+        "attribute": "href",
+        "reflect": false
+      },
+      "rel": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | undefined",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+        },
+        "attribute": "rel",
+        "reflect": false
+      },
+      "lines": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'full' | 'inset' | 'none'",
+          "resolved": "\"full\" | \"inset\" | \"none\" | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "How the bottom border should be displayed on the item."
+        },
+        "attribute": "lines",
+        "reflect": false
+      },
+      "routerAnimation": {
+        "type": "unknown",
+        "mutable": false,
+        "complexType": {
+          "original": "AnimationBuilder | undefined",
+          "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+          "references": {
+            "AnimationBuilder": {
+              "location": "import",
+              "path": "../../../../interface"
+            }
+          }
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`."
         }
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
-      },
-      "attribute": "ds-color",
-      "reflect": false
-    },
-    "contain": {
-      "type": "boolean",
-      "mutable": true,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "contain",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "noPadding": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "no-padding",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "button": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, a button tag will be rendered and the item will be tappable."
-      },
-      "attribute": "button",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "detail": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`\nis `ios` and an `href` or `button` property is present."
-      },
-      "attribute": "detail",
-      "reflect": false
-    },
-    "detailIcon": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The icon to use when `detail` is set to `true`."
-      },
-      "attribute": "detail-icon",
-      "reflect": false,
-      "defaultValue": "'chevron-forward'"
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the user cannot interact with the item."
-      },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "download": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | undefined",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
-      },
-      "attribute": "download",
-      "reflect": false
-    },
-    "href": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | undefined",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
-      },
-      "attribute": "href",
-      "reflect": false
-    },
-    "rel": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | undefined",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
-      },
-      "attribute": "rel",
-      "reflect": false
-    },
-    "lines": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'full' | 'inset' | 'none'",
-        "resolved": "\"full\" | \"inset\" | \"none\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "How the bottom border should be displayed on the item."
-      },
-      "attribute": "lines",
-      "reflect": false
-    },
-    "routerAnimation": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "AnimationBuilder | undefined",
-        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
-        "references": {
-          "AnimationBuilder": {
-            "location": "import",
-            "path": "../../../../interface"
+      "routerDirection": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "RouterDirection",
+          "resolved": "\"back\" | \"forward\" | \"root\"",
+          "references": {
+            "RouterDirection": {
+              "location": "import",
+              "path": "../../../../interface"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`."
+        },
+        "attribute": "router-direction",
+        "reflect": false,
+        "defaultValue": "'forward'"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`."
+      "target": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | undefined",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+        },
+        "attribute": "target",
+        "reflect": false
+      },
+      "type": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'submit' | 'reset' | 'button'",
+          "resolved": "\"button\" | \"reset\" | \"submit\"",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The type of the button. Only used when an `onclick` or `button` property is present."
+        },
+        "attribute": "type",
+        "reflect": false,
+        "defaultValue": "'button'"
       }
-    },
-    "routerDirection": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "RouterDirection",
-        "resolved": "\"back\" | \"forward\" | \"root\"",
-        "references": {
-          "RouterDirection": {
-            "location": "import",
-            "path": "../../../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`."
-      },
-      "attribute": "router-direction",
-      "reflect": false,
-      "defaultValue": "'forward'"
-    },
-    "target": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | undefined",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
-      },
-      "attribute": "target",
-      "reflect": false
-    },
-    "type": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'submit' | 'reset' | 'button'",
-        "resolved": "\"button\" | \"reset\" | \"submit\"",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The type of the button. Only used when an `onclick` or `button` property is present."
-      },
-      "attribute": "type",
-      "reflect": false,
-      "defaultValue": "'button'"
-    }
-  }; }
-  static get states() { return {
-    "multipleInputs": {}
-  }; }
+    };
+  }
+  static get states() {
+    return {
+      "multipleInputs": {}
+    };
+  }
   static get elementRef() { return "el"; }
-  static get listeners() { return [{
-      "name": "ionColor",
-      "method": "labelColorChanged",
-      "target": undefined,
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "ionStyle",
-      "method": "itemStyle",
-      "target": undefined,
-      "capture": false,
-      "passive": false
-    }]; }
+  static get listeners() {
+    return [{
+        "name": "ionColor",
+        "method": "labelColorChanged",
+        "target": undefined,
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "ionStyle",
+        "method": "itemStyle",
+        "target": undefined,
+        "capture": false,
+        "passive": false
+      }];
+  }
 }

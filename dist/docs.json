@@ -1,9 +1,9 @@
 {
-  "timestamp": "2023-10-06T12:56:28",
+  "timestamp": "2023-11-29T18:54:45",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.5.0",
-    "typescriptVersion": "4.2.3"
+    "version": "2.22.3",
+    "typescriptVersion": "4.9.4"
   },
   "components": [
     {
@@ -440,8 +440,8 @@
       "docs": "An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. Destructive options are made obvious in `ios` mode. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -664,7 +664,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the action sheet overlay after it has been presented.",
           "docsTags": [
@@ -892,8 +892,8 @@
       "docs": "An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. It can also optionally have a `header`, `subHeader` and `message`.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -1154,7 +1154,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the alert overlay after it has been presented.",
           "docsTags": [
@@ -1362,20 +1362,20 @@
       "docs": "The back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.\n\nTo change what is displayed in the back button, use the `text` and `icon` properties.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "native - The native HTML button element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML button element that wraps all child elements."
         },
         {
-          "text": "icon - The back button icon (uses ion-icon).",
-          "name": "part"
+          "name": "part",
+          "text": "icon - The back button icon (uses ion-icon)."
         },
         {
-          "text": "text - The back button text.",
-          "name": "part"
+          "name": "part",
+          "text": "text - The back button text."
         }
       ],
       "usage": {
@@ -1872,8 +1872,8 @@
       "docs": "Badges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -1974,28 +1974,28 @@
       "docs": "Buttons provide a clickable element, which can be used in forms, or anywhere that needs simple, standard button functionality. They may display text, icons, or both. Buttons can be styled with several attributes to look a specific way.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "- Content is placed between the named slots if provided without a slot.",
-          "name": "slot"
+          "name": "slot",
+          "text": "- Content is placed between the named slots if provided without a slot."
         },
         {
-          "text": "icon-only - Should be used on an icon in a button that has no text.",
-          "name": "slot"
+          "name": "slot",
+          "text": "icon-only - Should be used on an icon in a button that has no text."
         },
         {
-          "text": "start - Content is placed to the left of the button text in LTR, and to the right in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "start - Content is placed to the left of the button text in LTR, and to the right in RTL."
         },
         {
-          "text": "end - Content is placed to the right of the button text in LTR, and to the left in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "end - Content is placed to the right of the button text in LTR, and to the left in RTL."
         },
         {
-          "text": "native - The native HTML button or anchor element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML button or anchor element that wraps all child elements."
         }
       ],
       "usage": {
@@ -2697,12 +2697,12 @@
       "docs": "Cards are a standard piece of UI that serves as an entry point to more detailed\ninformation. A card can be a single component, but is often made up of some\nheader, title, subtitle, and content. `ion-card` is broken up into several\nsub-components to reflect this. Please see `ion-card-content`,\n`ion-card-header`, `ion-card-title`, `ion-card-subtitle`.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "native - The native HTML button, anchor, or div element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML button, anchor, or div element that wraps all child elements."
         }
       ],
       "usage": {
@@ -2974,8 +2974,8 @@
       "docs": "`ion-card-content` is child component of `ion-card` that adds some content padding.\nIt is recommended that any text content for a card should be placed in an `ion-card-content`.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {},
@@ -3020,8 +3020,8 @@
       "docs": "`ion-card-header` is a header component for `ion-card`.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {},
@@ -3102,8 +3102,8 @@
       "docs": "`ion-card-subtitle` is a child component of `ion-card`",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {},
@@ -3173,8 +3173,8 @@
       "docs": "`ion-card-title` is a child component of `ion-card`",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {},
@@ -3244,16 +3244,16 @@
       "docs": "Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "container - The container for the checkbox mark.",
-          "name": "part"
+          "name": "part",
+          "text": "container - The container for the checkbox mark."
         },
         {
-          "text": "mark - The checkmark used to indicate the checked state.",
-          "name": "part"
+          "name": "part",
+          "text": "mark - The checkmark used to indicate the checked state."
         }
       ],
       "usage": {
@@ -3507,8 +3507,8 @@
       "docs": "Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -4148,20 +4148,20 @@
       "docs": "The content component provides an easy to use content area with some useful methods\nto control the scrollable area. There should only be one content in a single\nview.\n\nContent, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).",
       "docsTags": [
         {
-          "text": "- Content is placed in the scrollable area if provided without a slot.",
-          "name": "slot"
+          "name": "slot",
+          "text": "- Content is placed in the scrollable area if provided without a slot."
         },
         {
-          "text": "fixed - Should be used for fixed content that should not scroll.",
-          "name": "slot"
+          "name": "slot",
+          "text": "fixed - Should be used for fixed content that should not scroll."
         },
         {
-          "text": "background - The background of the content.",
-          "name": "part"
+          "name": "part",
+          "text": "background - The background of the content."
         },
         {
-          "text": "scroll - The scrollable container of the content.",
-          "name": "part"
+          "name": "part",
+          "text": "scroll - The scrollable container of the content."
         }
       ],
       "usage": {
@@ -4571,16 +4571,16 @@
       "docs": "Datetimes present a picker interface from the bottom of a page, making it easy for\nusers to select dates and times. The picker displays scrollable columns that can be\nused to individually select years, months, days, hours and minute values. Datetimes\nare similar to the native `input` elements of type `datetime-local`, however, Ionic's\nDatetime component makes it easy to display the date and time in a preferred format,\nand manage the datetime values.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "text - The value of the datetime.",
-          "name": "part"
+          "name": "part",
+          "text": "text - The value of the datetime."
         },
         {
-          "text": "placeholder - The placeholder of the datetime.",
-          "name": "part"
+          "name": "part",
+          "text": "placeholder - The placeholder of the datetime."
         }
       ],
       "usage": {
@@ -5332,16 +5332,16 @@
       "docs": "Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.\n\nIf the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "native - The native HTML button or anchor element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML button or anchor element that wraps all child elements."
         },
         {
-          "text": "close-icon - The close icon that is displayed when a fab list opens (uses ion-icon).",
-          "name": "part"
+          "name": "part",
+          "text": "close-icon - The close icon that is displayed when a fab list opens (uses ion-icon)."
         }
       ],
       "usage": {
@@ -5887,8 +5887,8 @@
       "docs": "Footer is a root component of a page that sits at the bottom of the page.\nFooter can be a wrapper for ion-toolbar to make sure the content area is sized correctly.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -6110,8 +6110,8 @@
       "docs": "Header is a parent component that holds the toolbar component.\nIt's important to note that ion-header needs to be the one of the three root elements of a page",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -6281,8 +6281,8 @@
       "docs": "Img is a tag that will lazily load an image when ever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browser, but falls back to a `setTimeout` when it is not supported.",
       "docsTags": [
         {
-          "text": "image - The inner `img` element.",
-          "name": "part"
+          "name": "part",
+          "text": "image - The inner `img` element."
         }
       ],
       "usage": {
@@ -6585,8 +6585,8 @@
       "docs": "The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input, but works great on desktop devices and integrates with the keyboard on mobile devices.\n\nIt is meant for text `type` inputs only, such as `\"text\"`, `\"password\"`, `\"email\"`, `\"number\"`, `\"search\"`, `\"tel\"`, and `\"url\"`. It supports all standard text input events including keyup, keydown, keypress, and more.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -6635,7 +6635,7 @@
         },
         {
           "name": "autocomplete",
-          "type": "\"on\" | \"off\" | \"name\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
+          "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
           "mutable": false,
           "attr": "autocomplete",
           "reflectToAttr": false,
@@ -6644,15 +6644,27 @@
           "default": "'off'",
           "values": [
             {
+              "value": "name",
+              "type": "string"
+            },
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "url",
+              "type": "string"
+            },
+            {
               "value": "on",
               "type": "string"
             },
             {
               "value": "off",
-              "type": "string"
-            },
-            {
-              "value": "name",
               "type": "string"
             },
             {
@@ -6677,10 +6689,6 @@
             },
             {
               "value": "nickname",
-              "type": "string"
-            },
-            {
-              "value": "email",
               "type": "string"
             },
             {
@@ -6824,10 +6832,6 @@
               "type": "string"
             },
             {
-              "value": "tel",
-              "type": "string"
-            },
-            {
               "value": "tel-country-code",
               "type": "string"
             },
@@ -6849,10 +6853,6 @@
             },
             {
               "value": "impp",
-              "type": "string"
-            },
-            {
-              "value": "url",
               "type": "string"
             },
             {
@@ -7578,28 +7578,28 @@
       "docs": "Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a list with other items. Items can be swiped, deleted, reordered, edited, and more.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "- Content is placed between the named slots if provided without a slot.",
-          "name": "slot"
+          "name": "slot",
+          "text": "- Content is placed between the named slots if provided without a slot."
         },
         {
-          "text": "start - Content is placed to the left of the item text in LTR, and to the right in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "start - Content is placed to the left of the item text in LTR, and to the right in RTL."
         },
         {
-          "text": "end - Content is placed to the right of the item text in LTR, and to the left in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "end - Content is placed to the right of the item text in LTR, and to the left in RTL."
         },
         {
-          "text": "native - The native HTML button, anchor or div element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML button, anchor or div element that wraps all child elements."
         },
         {
-          "text": "detail-icon - The chevron icon for the item. Only applies when `detail=\"true\"`.",
-          "name": "part"
+          "name": "part",
+          "text": "detail-icon - The chevron icon for the item. Only applies when `detail=\"true\"`."
         }
       ],
       "usage": {
@@ -8179,20 +8179,20 @@
       "docs": "Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead of being placed at the top of a list, they should go in between groups of items.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "- Content is placed between the named slots if provided without a slot.",
-          "name": "slot"
+          "name": "slot",
+          "text": "- Content is placed between the named slots if provided without a slot."
         },
         {
-          "text": "start - Content is placed to the left of the divider text in LTR, and to the right in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "start - Content is placed to the left of the divider text in LTR, and to the right in RTL."
         },
         {
-          "text": "end - Content is placed to the right of the divider text in LTR, and to the left in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "end - Content is placed to the right of the divider text in LTR, and to the left in RTL."
         }
       ],
       "usage": {
@@ -8368,36 +8368,36 @@
       "docs": "The option button for an `ion-item-sliding`. Must be placed inside of an `<ion-item-options>`.\nYou can combine the `ionSwipe` event and the `expandable` directive to create a full swipe\naction for the item.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "- Content is placed between the named slots if provided without a slot.",
-          "name": "slot"
+          "name": "slot",
+          "text": "- Content is placed between the named slots if provided without a slot."
         },
         {
-          "text": "start - Content is placed to the left of the option text in LTR, and to the right in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "start - Content is placed to the left of the option text in LTR, and to the right in RTL."
         },
         {
-          "text": "top - Content is placed above the option text.",
-          "name": "slot"
+          "name": "slot",
+          "text": "top - Content is placed above the option text."
         },
         {
-          "text": "icon-only - Should be used on an icon in an option that has no text.",
-          "name": "slot"
+          "name": "slot",
+          "text": "icon-only - Should be used on an icon in an option that has no text."
         },
         {
-          "text": "bottom - Content is placed below the option text.",
-          "name": "slot"
+          "name": "slot",
+          "text": "bottom - Content is placed below the option text."
         },
         {
-          "text": "end - Content is placed to the right of the option text in LTR, and to the left in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "end - Content is placed to the right of the option text in LTR, and to the left in RTL."
         },
         {
-          "text": "native - The native HTML button or anchor element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML button or anchor element that wraps all child elements."
         }
       ],
       "usage": {},
@@ -8810,8 +8810,8 @@
       "docs": "Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -8993,8 +8993,8 @@
       "docs": "Lists are made up of multiple rows of items which can contain text, buttons, toggles,\nicons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.\n\nLists support several interactions including swiping items to reveal options, dragging to reorder items within the list, and deleting items.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -9112,8 +9112,8 @@
       "docs": "ListHeader a header component for a list.\nUnlike ItemDivider, ListHeaders are styled to be stand-out from the rest of the list items.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -9248,8 +9248,8 @@
       "docs": "An overlay that can be used to indicate activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app. It includes an optional backdrop, which can be disabled by setting `showBackdrop: false` upon creation.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -9518,7 +9518,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the loading overlay after it has been presented.",
           "docsTags": [
@@ -9674,12 +9674,12 @@
       "docs": "The Menu component is a navigation drawer that slides in from the side of the current view.\nBy default, it slides in from the left, but the side can be overridden.\nThe menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.\nThe menu element should be a sibling to the root content element.\nThere can be any number of menus attached to the content.\nThese can be controlled from the templates, or programmatically using the MenuController.",
       "docsTags": [
         {
-          "text": "container - The container for the menu content.",
-          "name": "part"
+          "name": "part",
+          "text": "container - The container for the menu content."
         },
         {
-          "text": "backdrop - The backdrop that appears over the main content when the menu is open.",
-          "name": "part"
+          "name": "part",
+          "text": "backdrop - The backdrop that appears over the main content when the menu is open."
         }
       ],
       "usage": {
@@ -10006,16 +10006,16 @@
       "docs": "Menu Button is component that automatically creates the icon and functionality to open a menu on a page.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "native - The native HTML button element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML button element that wraps all child elements."
         },
         {
-          "text": "icon - The menu button icon (uses ion-icon).",
-          "name": "part"
+          "name": "part",
+          "text": "icon - The menu button icon (uses ion-icon)."
         }
       ],
       "usage": {},
@@ -10323,8 +10323,8 @@
       "docs": "A Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -10568,7 +10568,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the modal overlay after it has been presented.",
           "docsTags": [
@@ -10849,7 +10849,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "canGoBack(view?: ViewController | undefined) => Promise<boolean>",
+          "signature": "canGoBack(view?: ViewController) => Promise<boolean>",
           "parameters": [],
           "docs": "Returns `true` if the current view can go back.",
           "docsTags": [
@@ -10892,7 +10892,7 @@
             "type": "Promise<ViewController | undefined>",
             "docs": ""
           },
-          "signature": "getPrevious(view?: ViewController | undefined) => Promise<ViewController | undefined>",
+          "signature": "getPrevious(view?: ViewController) => Promise<ViewController | undefined>",
           "parameters": [],
           "docs": "Get the previous view.",
           "docsTags": [
@@ -10908,7 +10908,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Inserts a component into the navigation stack at the specified index.\nThis is useful to add a component at any point in the navigation stack.",
           "docsTags": [
@@ -10940,7 +10940,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Inserts an array of components into the navigation stack at the specified index.\nThe last component in the array will become instantiated as a view, and animate\nin to become the active view.",
           "docsTags": [
@@ -10968,7 +10968,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "pop(opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "pop(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Pop a component off of the navigation stack. Navigates back from the current\ncomponent.",
           "docsTags": [
@@ -10988,7 +10988,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Pop to a specific index in the navigation stack.",
           "docsTags": [
@@ -11012,7 +11012,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "popToRoot(opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "popToRoot(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Navigate back to the root of the stack, no matter how far back that is.",
           "docsTags": [
@@ -11032,7 +11032,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Push a new component onto the current navigation stack. Pass any additional\ninformation along as an object. This additional information is accessible\nthrough NavParams.",
           "docsTags": [
@@ -11060,7 +11060,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Removes a component from the navigation stack at the specified index.",
           "docsTags": [
@@ -11088,7 +11088,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "setPages(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "setPages(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Set the views of the current navigation stack and navigate to the last view.\nBy default animations are disabled, but they can be enabled by passing options\nto the navigation controller. Navigation parameters can also be passed to the\nindividual pages in the array.",
           "docsTags": [
@@ -11112,7 +11112,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Set the root for the current navigation stack to a component.",
           "docsTags": [
@@ -11284,8 +11284,8 @@
       "docs": "Notes are text elements generally used as subtitles that provide more information. Notes are styled to appear grey by default. Notes can be used in an item as metadata text.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -11361,8 +11361,8 @@
       "docs": "A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -11573,7 +11573,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the picker overlay after it has been presented.",
           "docsTags": [
@@ -11765,8 +11765,8 @@
       "docs": "A Popover is a dialog that appears on top of the current page. It can be used for anything, but generally it is used for overflow actions that don't fit in the navigation bar.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -12008,7 +12008,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the popover overlay after it has been presented.",
           "docsTags": [
@@ -12162,20 +12162,20 @@
       "docs": "Progress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "progress - The progress bar that shows the current value when `type` is `\"determinate\"` and slides back and forth when `type` is `\"indeterminate\"`.",
-          "name": "part"
+          "name": "part",
+          "text": "progress - The progress bar that shows the current value when `type` is `\"determinate\"` and slides back and forth when `type` is `\"indeterminate\"`."
         },
         {
-          "text": "stream - The animated circles that appear while buffering. This only shows when `buffer` is set and `type` is `\"determinate\"`.",
-          "name": "part"
+          "name": "part",
+          "text": "stream - The animated circles that appear while buffering. This only shows when `buffer` is set and `type` is `\"determinate\"`."
         },
         {
-          "text": "track - The track bar behind the progress bar. If the `buffer` property is set and `type` is `\"determinate\"` the track will be the\nwidth of the `buffer` value.",
-          "name": "part"
+          "name": "part",
+          "text": "track - The track bar behind the progress bar. If the `buffer` property is set and `type` is `\"determinate\"` the track will be the\nwidth of the `buffer` value."
         }
       ],
       "usage": {
@@ -12356,16 +12356,16 @@
       "docs": "Radios should be used inside of an [`ion-radio-group`](../radio-group). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.\n\nWhen radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "container - The container for the radio mark.",
-          "name": "part"
+          "name": "part",
+          "text": "container - The container for the radio mark."
         },
         {
-          "text": "mark - The checkmark or dot used to indicate the checked state.",
-          "name": "part"
+          "name": "part",
+          "text": "mark - The checkmark or dot used to indicate the checked state."
         }
       ],
       "usage": {
@@ -12655,40 +12655,40 @@
       "docs": "The Range slider lets users select from a range of values by moving\nthe slider knob. It can accept dual knobs, but by default one knob\ncontrols the value of the range.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "start - Content is placed to the left of the range slider in LTR, and to the right in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "start - Content is placed to the left of the range slider in LTR, and to the right in RTL."
         },
         {
-          "text": "end - Content is placed to the right of the range slider in LTR, and to the left in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "end - Content is placed to the right of the range slider in LTR, and to the left in RTL."
         },
         {
-          "text": "tick - An inactive tick mark.",
-          "name": "part"
+          "name": "part",
+          "text": "tick - An inactive tick mark."
         },
         {
-          "text": "tick-active - An active tick mark.",
-          "name": "part"
+          "name": "part",
+          "text": "tick-active - An active tick mark."
         },
         {
-          "text": "pin - The counter that appears above a knob.",
-          "name": "part"
+          "name": "part",
+          "text": "pin - The counter that appears above a knob."
         },
         {
-          "text": "knob - The handle that is used to drag the range.",
-          "name": "part"
+          "name": "part",
+          "text": "knob - The handle that is used to drag the range."
         },
         {
-          "text": "bar - The inactive part of the bar.",
-          "name": "part"
+          "name": "part",
+          "text": "bar - The inactive part of the bar."
         },
         {
-          "text": "bar-active - The active part of the bar.",
-          "name": "part"
+          "name": "part",
+          "text": "bar-active - The active part of the bar."
         }
       ],
       "usage": {
@@ -13403,8 +13403,8 @@
       "docs": "Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.\n\n`ion-reorder` is the anchor used to drag and drop the items inside of the `ion-reorder-group`. See the [Reorder Group](../reorder-group) for more information on how to complete the reorder operation.",
       "docsTags": [
         {
-          "text": "icon - The icon of the reorder handle (uses ion-icon).",
-          "name": "part"
+          "name": "part",
+          "text": "icon - The icon of the reorder handle (uses ion-icon)."
         }
       ],
       "usage": {
@@ -13482,7 +13482,7 @@
             "type": "Promise<any>",
             "docs": ""
           },
-          "signature": "complete(listOrReorder?: boolean | any[] | undefined) => Promise<any>",
+          "signature": "complete(listOrReorder?: boolean | any[]) => Promise<any>",
           "parameters": [],
           "docs": "Completes the reorder operation. Must be called by the `ionItemReorder` event.\n\nIf a list of items is passed, the list will be reordered and returned in the\nproper order.\n\nIf no parameters are passed or if `true` is passed in, the reorder will complete\nand the item will remain in the position it was dragged to. If `false` is passed,\nthe reorder will complete and the item will bounce back to its original position.",
           "docsTags": [
@@ -13892,7 +13892,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "push(url: string, direction?: RouterDirection, animation?: AnimationBuilder | undefined) => Promise<boolean>",
+          "signature": "push(url: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
           "parameters": [],
           "docs": "Navigate to the specified URL.",
           "docsTags": [
@@ -14203,8 +14203,8 @@
       "docs": "Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\n\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -14234,7 +14234,7 @@
         },
         {
           "name": "autocomplete",
-          "type": "\"on\" | \"off\" | \"name\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
+          "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
           "mutable": false,
           "attr": "autocomplete",
           "reflectToAttr": false,
@@ -14243,15 +14243,27 @@
           "default": "'off'",
           "values": [
             {
+              "value": "name",
+              "type": "string"
+            },
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "url",
+              "type": "string"
+            },
+            {
               "value": "on",
               "type": "string"
             },
             {
               "value": "off",
-              "type": "string"
-            },
-            {
-              "value": "name",
               "type": "string"
             },
             {
@@ -14276,10 +14288,6 @@
             },
             {
               "value": "nickname",
-              "type": "string"
-            },
-            {
-              "value": "email",
               "type": "string"
             },
             {
@@ -14423,10 +14431,6 @@
               "type": "string"
             },
             {
-              "value": "tel",
-              "type": "string"
-            },
-            {
               "value": "tel-country-code",
               "type": "string"
             },
@@ -14448,10 +14452,6 @@
             },
             {
               "value": "impp",
-              "type": "string"
-            },
-            {
-              "value": "url",
               "type": "string"
             },
             {
@@ -15032,8 +15032,8 @@
       "docs": "Segments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.\n\nTheir functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -15198,20 +15198,20 @@
       "docs": "Segment buttons are groups of related buttons inside of a [Segment](../segment). They are displayed in a horizontal row. A segment button can be checked by default by setting the `value` of the segment to the `value` of the segment button. Only one segment button can be selected at a time.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "native - The native HTML button element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML button element that wraps all child elements."
         },
         {
-          "text": "indicator - The indicator displayed on the checked segment button.",
-          "name": "part"
+          "name": "part",
+          "text": "indicator - The indicator displayed on the checked segment button."
         },
         {
-          "text": "indicator-background - The background element for the indicator displayed on the checked segment button.",
-          "name": "part"
+          "name": "part",
+          "text": "indicator-background - The background element for the indicator displayed on the checked segment button."
         }
       ],
       "usage": {
@@ -15523,20 +15523,20 @@
       "docs": "Selects are form controls to select an option, or options, from a set of options, similar to a native `<select>` element. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.\n\nA select should be used with child `<ion-select-option>` elements. If the child option is not given a `value` attribute then its text will be used as the value.\n\nIf `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "placeholder - The text displayed in the select when there is no value.",
-          "name": "part"
+          "name": "part",
+          "text": "placeholder - The text displayed in the select when there is no value."
         },
         {
-          "text": "text - The displayed value of the select.",
-          "name": "part"
+          "name": "part",
+          "text": "text - The displayed value of the select."
         },
         {
-          "text": "icon - The select icon container.",
-          "name": "part"
+          "name": "part",
+          "text": "icon - The select icon container."
         }
       ],
       "usage": {
@@ -15789,7 +15789,7 @@
             "type": "Promise<any>",
             "docs": ""
           },
-          "signature": "open(event?: UIEvent | undefined) => Promise<any>",
+          "signature": "open(event?: UIEvent) => Promise<any>",
           "parameters": [],
           "docs": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
           "docsTags": [
@@ -16058,8 +16058,8 @@
       "docs": "The Slides component is a multi-section container. Each section can be swiped\nor dragged between. It contains any number of [Slide](../slide) components.\n\n\nAdopted from Swiper.js:\nThe most modern mobile touch slider and framework with hardware accelerated transitions.\n\nhttp://www.idangero.us/swiper/\n\nCopyright 2016, Vladimir Kharlampidi\nThe iDangero.us\nhttp://www.idangero.us/\n\nLicensed under MIT",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -16264,7 +16264,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "slideNext(speed?: number | undefined, runCallbacks?: boolean | undefined) => Promise<void>",
+          "signature": "slideNext(speed?: number, runCallbacks?: boolean) => Promise<void>",
           "parameters": [],
           "docs": "Transition to the next slide.",
           "docsTags": [
@@ -16284,7 +16284,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "slidePrev(speed?: number | undefined, runCallbacks?: boolean | undefined) => Promise<void>",
+          "signature": "slidePrev(speed?: number, runCallbacks?: boolean) => Promise<void>",
           "parameters": [],
           "docs": "Transition to the previous slide.",
           "docsTags": [
@@ -16304,7 +16304,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "slideTo(index: number, speed?: number | undefined, runCallbacks?: boolean | undefined) => Promise<void>",
+          "signature": "slideTo(index: number, speed?: number, runCallbacks?: boolean) => Promise<void>",
           "parameters": [],
           "docs": "Transition to the specified slide.",
           "docsTags": [
@@ -16361,7 +16361,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "updateAutoHeight(speed?: number | undefined) => Promise<void>",
+          "signature": "updateAutoHeight(speed?: number) => Promise<void>",
           "parameters": [],
           "docs": "Force swiper to update its height (when autoHeight is enabled) for the duration\nequal to 'speed' parameter.",
           "docsTags": [
@@ -16917,8 +16917,8 @@
       "docs": "The tab bar is a UI component that contains a set of [tab buttons](../tab-button). A tab bar must be provided inside of [tabs](../tabs) to communicate with each [tab](../tab).",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -17040,12 +17040,12 @@
       "docs": "A tab button is a UI component that is placed inside of a [tab bar](../tab-bar). The tab button can specify the layout of the icon and label and connect to a [tab view](../tab).\n\nSee the [tabs documentation](../tabs) for more details on configuring tabs.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "native - The native HTML anchor element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML anchor element that wraps all child elements."
         }
       ],
       "usage": {
@@ -17339,16 +17339,16 @@
       "docs": "Tabs are a top level navigation component to implement a tab-based navigation.\nThe component is a container of individual [Tab](../tab/) components.\n\nThe `ion-tabs` component does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`.\n\nBoth `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that behaves like a native app.\n\nThe `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.",
       "docsTags": [
         {
-          "text": "- Content is placed between the named slots if provided without a slot.",
-          "name": "slot"
+          "name": "slot",
+          "text": "- Content is placed between the named slots if provided without a slot."
         },
         {
-          "text": "top - Content is placed at the top of the screen.",
-          "name": "slot"
+          "name": "slot",
+          "text": "top - Content is placed at the top of the screen."
         },
         {
-          "text": "bottom - Content is placed at the bottom of the screen.",
-          "name": "slot"
+          "name": "slot",
+          "text": "bottom - Content is placed at the bottom of the screen."
         }
       ],
       "usage": {
@@ -17453,8 +17453,8 @@
       "docs": "The text component is a simple component that can be used to style the text color of any element. The `ion-text` element should wrap the element in order to change the text color of that element.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -17520,8 +17520,8 @@
       "docs": "The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\n\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\n\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {
@@ -18239,24 +18239,24 @@
       "docs": "A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "button - Any button element that is displayed inside of the toast.",
-          "name": "part"
+          "name": "part",
+          "text": "button - Any button element that is displayed inside of the toast."
         },
         {
-          "text": "container - The element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "container - The element that wraps all child elements."
         },
         {
-          "text": "header - The header text of the toast.",
-          "name": "part"
+          "name": "part",
+          "text": "header - The header text of the toast."
         },
         {
-          "text": "message - The body text of the toast.",
-          "name": "part"
+          "name": "part",
+          "text": "message - The body text of the toast."
         }
       ],
       "usage": {
@@ -18529,7 +18529,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the toast overlay after it has been presented.",
           "docsTags": [
@@ -18742,16 +18742,16 @@
       "docs": "Toggles change the state of a single option. Toggles can be switched on or off by pressing or swiping them. They can also be checked programmatically by setting the `checked` property.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "track - The background track of the toggle.",
-          "name": "part"
+          "name": "part",
+          "text": "track - The background track of the toggle."
         },
         {
-          "text": "handle - The toggle handle, or knob, used to change the checked state.",
-          "name": "part"
+          "name": "part",
+          "text": "handle - The toggle handle, or knob, used to change the checked state."
         }
       ],
       "usage": {
@@ -18999,28 +18999,28 @@
       "docs": "Toolbars are positioned above or below content. When a toolbar is placed in an `<ion-header>` it will appear fixed at the top of the content, and when it is in an `<ion-footer>` it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. When placed within an `<ion-content>`, toolbars will scroll with the content.",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "- Content is placed between the named slots if provided without a slot.",
-          "name": "slot"
+          "name": "slot",
+          "text": "- Content is placed between the named slots if provided without a slot."
         },
         {
-          "text": "start - Content is placed to the left of the toolbar text in LTR, and to the right in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "start - Content is placed to the left of the toolbar text in LTR, and to the right in RTL."
         },
         {
-          "text": "secondary - Content is placed to the left of the toolbar text in `ios` mode, and directly to the right in `md` mode.",
-          "name": "slot"
+          "name": "slot",
+          "text": "secondary - Content is placed to the left of the toolbar text in `ios` mode, and directly to the right in `md` mode."
         },
         {
-          "text": "primary - Content is placed to the right of the toolbar text in `ios` mode, and to the far right in `md` mode.",
-          "name": "slot"
+          "name": "slot",
+          "text": "primary - Content is placed to the right of the toolbar text in `ios` mode, and to the far right in `md` mode."
         },
         {
-          "text": "end - Content is placed to the right of the toolbar text in LTR, and to the left in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "end - Content is placed to the right of the toolbar text in LTR, and to the left in RTL."
         }
       ],
       "usage": {
@@ -19526,24 +19526,24 @@
       "docs": "",
       "docsTags": [
         {
-          "text": "header - Define o conteúdo do header do componente.",
-          "name": "slot"
+          "name": "slot",
+          "text": "header - Define o conteúdo do header do componente."
         },
         {
-          "text": "button - Se houver botões no componente eles devem ser inseridos nesse slot.",
-          "name": "slot"
+          "name": "slot",
+          "text": "button - Se houver botões no componente eles devem ser inseridos nesse slot."
         },
         {
-          "text": "content - Define o conteúdo do componente.",
-          "name": "slot"
+          "name": "slot",
+          "text": "content - Define o conteúdo do componente."
         },
         {
-          "text": "auxiliar - Define o conteúdo auxiliar do componente.",
-          "name": "slot"
+          "name": "slot",
+          "text": "auxiliar - Define o conteúdo auxiliar do componente."
         },
         {
-          "text": "progress - Slot destinado a progress-bar.",
-          "name": "slot"
+          "name": "slot",
+          "text": "progress - Slot destinado a progress-bar."
         }
       ],
       "usage": {},
@@ -19734,8 +19734,8 @@
       "docs": "",
       "docsTags": [
         {
-          "text": "- Slot default destinado ao componente `med-accordion-item`",
-          "name": "slot"
+          "name": "slot",
+          "text": "- Slot default destinado ao componente `med-accordion-item`"
         }
       ],
       "usage": {},
@@ -20006,7 +20006,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "toggle(event?: Event | undefined) => Promise<void>",
+          "signature": "toggle(event?: Event) => Promise<void>",
           "parameters": [],
           "docs": "todo",
           "docsTags": []
@@ -22093,8 +22093,8 @@
       "docs": "",
       "docsTags": [
         {
-          "text": "Slot default.",
-          "name": "slot"
+          "name": "slot",
+          "text": "Slot default."
         }
       ],
       "usage": {},
@@ -23329,7 +23329,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "toggle(event?: Event | undefined) => Promise<void>",
+          "signature": "toggle(event?: Event) => Promise<void>",
           "parameters": [],
           "docs": "todo",
           "docsTags": []
@@ -24036,28 +24036,28 @@
       "docs": "",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "- Content is placed between the named slots if provided without a slot.",
-          "name": "slot"
+          "name": "slot",
+          "text": "- Content is placed between the named slots if provided without a slot."
         },
         {
-          "text": "start - Content is placed to the left of the item text in LTR, and to the right in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "start - Content is placed to the left of the item text in LTR, and to the right in RTL."
         },
         {
-          "text": "end - Content is placed to the right of the item text in LTR, and to the left in RTL.",
-          "name": "slot"
+          "name": "slot",
+          "text": "end - Content is placed to the right of the item text in LTR, and to the left in RTL."
         },
         {
-          "text": "native - The native HTML button, anchor or div element that wraps all child elements.",
-          "name": "part"
+          "name": "part",
+          "text": "native - The native HTML button, anchor or div element that wraps all child elements."
         },
         {
-          "text": "detail-icon - The chevron icon for the item. Only applies when `detail=\"true\"`.",
-          "name": "part"
+          "name": "part",
+          "text": "detail-icon - The chevron icon for the item. Only applies when `detail=\"true\"`."
         }
       ],
       "usage": {},
@@ -24853,7 +24853,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "toggle(event?: Event | undefined) => Promise<void>",
+          "signature": "toggle(event?: Event) => Promise<void>",
           "parameters": [],
           "docs": "todo",
           "docsTags": []
@@ -24887,8 +24887,8 @@
       "docs": "",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {},
@@ -25766,7 +25766,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "toggle(event?: Event | undefined) => Promise<void>",
+          "signature": "toggle(event?: Event) => Promise<void>",
           "parameters": [],
           "docs": "todo",
           "docsTags": []
@@ -26018,7 +26018,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "toggle(event?: Event | undefined) => Promise<void>",
+          "signature": "toggle(event?: Event) => Promise<void>",
           "parameters": [],
           "docs": "todo",
           "docsTags": []
@@ -27836,28 +27836,28 @@
       "docs": "",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         },
         {
-          "text": "header - Content is placed at the top and is used to\nexpand or collapse the accordion item.",
-          "name": "slot"
+          "name": "slot",
+          "text": "header - Content is placed at the top and is used to\nexpand or collapse the accordion item."
         },
         {
-          "text": "content - Content is placed below the header and is\nshown or hidden based on expanded state.",
-          "name": "slot"
+          "name": "slot",
+          "text": "content - Content is placed below the header and is\nshown or hidden based on expanded state."
         },
         {
-          "text": "header - The wrapper element for the header slot.",
-          "name": "part"
+          "name": "part",
+          "text": "header - The wrapper element for the header slot."
         },
         {
-          "text": "content - The wrapper element for the content slot.",
-          "name": "part"
+          "name": "part",
+          "text": "content - The wrapper element for the content slot."
         },
         {
-          "text": "expanded - The expanded element. Can be used in combination\nwith the `header` and `content` parts (i.e. `::part(header expanded)`).",
-          "name": "part"
+          "name": "part",
+          "text": "expanded - The expanded element. Can be used in combination\nwith the `header` and `content` parts (i.e. `::part(header expanded)`)."
         }
       ],
       "usage": {},
@@ -28020,8 +28020,8 @@
       "docs": "",
       "docsTags": [
         {
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-          "name": "virtualProp"
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
         }
       ],
       "usage": {},

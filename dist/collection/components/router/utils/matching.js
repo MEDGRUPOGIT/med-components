@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const matchesRedirect = (input, route) => {
   const { from, to } = route;
   if (to === undefined) {

@@ -1,6 +1,9 @@
-import { r as registerInstance, e as createEvent, h, H as Host } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { G as GESTURE_CONTROLLER } from './gesture-controller-31cb6bb9.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, H as Host } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { G as GESTURE_CONTROLLER } from './gesture-controller-68c023a4.js';
 
 const backdropIosCss = ":host{left:0;right:0;top:0;bottom:0;display:block;position:absolute;-webkit-transform:translateZ(0);transform:translateZ(0);contain:strict;cursor:pointer;opacity:0.01;-ms-touch-action:none;touch-action:none;z-index:2}:host(.backdrop-hide){background:transparent}:host(.backdrop-no-tappable){cursor:auto}:host{background-color:var(--ion-backdrop-color, #000)}";
 
@@ -13,17 +16,8 @@ const Backdrop = class {
     this.blocker = GESTURE_CONTROLLER.createBlocker({
       disableScroll: true
     });
-    /**
-     * If `true`, the backdrop will be visible.
-     */
     this.visible = true;
-    /**
-     * If `true`, the backdrop will can be clicked and will emit the `ionBackdropTap` event.
-     */
     this.tappable = true;
-    /**
-     * If `true`, the backdrop will stop propagation on tap.
-     */
     this.stopPropagation = true;
   }
   connectedCallback() {

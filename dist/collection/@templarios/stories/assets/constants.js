@@ -49,6 +49,16 @@ export const MedColor = [
 ];
 
 export const MedIcons = [
+  'img-assimilacao',
+  'img-autofeedback',
+  'img-covid-19',
+  'img-organizacao',
+  'img-orientacoes',
+  'img-prova-integra',
+  'img-provas-irmas',
+  'img-segredos',
+  'img-top-temas',
+
   'med-acerto',
   'med-acertou',
   'med-add-circle',
@@ -68,6 +78,7 @@ export const MedIcons = [
   'med-audio',
   'med-avaliar',
   'med-baixo',
+  'med-boleto',
   'med-bom',
 
   'med-bonus',
@@ -83,6 +94,7 @@ export const MedIcons = [
   'med-check',
 
   'med-checkcirculo',
+  'med-cheque',
   'med-chevron-left',
   'med-chevronx2-left',
   'med-chevronx2-right',
@@ -96,6 +108,8 @@ export const MedIcons = [
 
   'med-contribuicao',
   'med-covid',
+  'med-cpf',
+  'med-credito',
   'med-customize',
   'med-cronograma',
   'med-direita',
@@ -144,6 +158,9 @@ export const MedIcons = [
   'med-fontemenor',
   'med-gabarito',
   'med-grafico',
+
+  'med-headset',
+
   'med-ilustracao-tema',
   'med-ilustracao-treino',
   'med-imagem',
@@ -200,6 +217,8 @@ export const MedIcons = [
   'med-orientacao',
   'med-outros',
 
+  'med-passaporte',
+  'med-pix',
   'med-play',
   'med-plus',
   'med-positivo',
@@ -216,6 +235,7 @@ export const MedIcons = [
   'med-questaoerrada',
   'med-recursos',
   'med-regular',
+  'med-reload',
   'med-repeat',
 
   'med-retafinal',
@@ -259,6 +279,8 @@ export const MedIcons = [
   'med-viagens',
   'med-video',
   'med-visivel',
+
+  'med-zap',
 ];
 
 export const MedLabels = [

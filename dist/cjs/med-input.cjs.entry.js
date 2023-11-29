@@ -1,8 +1,11 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
+const index = require('./index-a17b061b.js');
 
 const medInputCss = ":host{display:block}::slotted(med-type){padding-bottom:8px}::slotted(ion-textarea){margin:0}";
 

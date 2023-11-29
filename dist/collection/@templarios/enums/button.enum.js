@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export var TemplariosButtonSize;
 (function (TemplariosButtonSize) {
   TemplariosButtonSize["XXXS"] = "xxxs";

@@ -1,18 +1,22 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { m as modalController } from './overlays-dc3151a0.js';
-import { s as sanitizeDOMString } from './index-9e3fe806.js';
-import './ionic-global-4bc7e399.js';
-import './hardware-back-button-4a6b37fb.js';
-import './helpers-462f8de3.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
+import { m as modalController } from './overlays-52f7bca4.js';
+import { s as sanitizeDOMString } from './index-c841c933.js';
+import './ionic-global-e35a57a3.js';
+import './hardware-back-button-ace6a71b.js';
+import './helpers-d6be6e4a.js';
 
 const medAlertCss = ".sc-med-alert-h{display:block}";
 
 const MedAlert = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * todo
-     */
+    this.heading = undefined;
+    this.message = undefined;
+    this.cancelText = undefined;
+    this.confirmText = undefined;
     this.disableSanitize = false;
   }
   dismiss(role) {

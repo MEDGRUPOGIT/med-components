@@ -1,4 +1,7 @@
-import { Component, Element, Host, Prop, h, writeTask } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h, writeTask } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { cloneElement, createHeaderIndex, handleContentScroll, handleToolbarIntersection, setHeaderActive, setToolbarBackgroundOpacity } from './header.utils';
 /**
@@ -7,14 +10,7 @@ import { cloneElement, createHeaderIndex, handleContentScroll, handleToolbarInte
 export class Header {
   constructor() {
     this.collapsibleHeaderInitialized = false;
-    /**
-     * If `true`, the header will be translucent.
-     * Only applies when the mode is `"ios"` and the device supports
-     * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
-     *
-     * Note: In order to scroll content behind the header, the `fullscreen`
-     * attribute needs to be set on the content.
-     */
+    this.collapse = undefined;
     this.translucent = false;
   }
   async componentDidLoad() {
@@ -116,56 +112,60 @@ export class Header {
         [`header-translucent`]: this.translucent,
         [`header-collapse-${collapse}`]: true,
         [`header-translucent-${mode}`]: this.translucent,
-      } },
-      mode === 'ios' && translucent &&
-        h("div", { class: "header-background" }),
-      h("slot", null)));
+      } }, mode === 'ios' && translucent &&
+      h("div", { class: "header-background" }), h("slot", null)));
   }
   static get is() { return "ion-header"; }
-  static get originalStyleUrls() { return {
-    "ios": ["header.ios.scss"],
-    "md": ["header.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["header.ios.css"],
-    "md": ["header.md.css"]
-  }; }
-  static get properties() { return {
-    "collapse": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'condense'",
-        "resolved": "\"condense\" | undefined",
-        "references": {}
+  static get originalStyleUrls() {
+    return {
+      "ios": ["header.ios.scss"],
+      "md": ["header.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["header.ios.css"],
+      "md": ["header.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "collapse": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'condense'",
+          "resolved": "\"condense\" | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Describes the scroll effect that will be applied to the header\n`condense` only applies in iOS mode.\n\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)"
+        },
+        "attribute": "collapse",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Describes the scroll effect that will be applied to the header\n`condense` only applies in iOS mode.\n\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)"
-      },
-      "attribute": "collapse",
-      "reflect": false
-    },
-    "translucent": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the header will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\n\nNote: In order to scroll content behind the header, the `fullscreen`\nattribute needs to be set on the content."
-      },
-      "attribute": "translucent",
-      "reflect": false,
-      "defaultValue": "false"
-    }
-  }; }
+      "translucent": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the header will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\n\nNote: In order to scroll content behind the header, the `fullscreen`\nattribute needs to be set on the content."
+        },
+        "attribute": "translucent",
+        "reflect": false,
+        "defaultValue": "false"
+      }
+    };
+  }
   static get elementRef() { return "el"; }
 }

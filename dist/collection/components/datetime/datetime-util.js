@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 /**
  * Gets a date value given a format
  * Defaults to the current date if

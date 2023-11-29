@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Method, Prop, State, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { hapticSelectionChanged, hapticSelectionEnd, hapticSelectionStart } from '../../utils/native/haptic';
 export class ReorderGroup {
@@ -10,10 +13,7 @@ export class ReorderGroup {
     this.scrollElInitial = 0;
     this.containerTop = 0;
     this.containerBottom = 0;
-    this.state = 0 /* Idle */;
-    /**
-     * If `true`, the reorder will be hidden.
-     */
+    this.state = 0 /* ReorderGroupState.Idle */;
     this.disabled = true;
   }
   disabledChanged() {
@@ -64,7 +64,7 @@ export class ReorderGroup {
     return Promise.resolve(this.completeSync(listOrReorder));
   }
   canStart(ev) {
-    if (this.selectedItemEl || this.state !== 0 /* Idle */) {
+    if (this.selectedItemEl || this.state !== 0 /* ReorderGroupState.Idle */) {
       return false;
     }
     const target = ev.event.target;
@@ -112,7 +112,7 @@ export class ReorderGroup {
     }
     this.lastToIndex = indexForItem(item);
     this.selectedItemHeight = item.offsetHeight;
-    this.state = 1 /* Active */;
+    this.state = 1 /* ReorderGroupState.Active */;
     item.classList.add(ITEM_REORDER_SELECTED);
     hapticSelectionStart();
   }
@@ -141,9 +141,9 @@ export class ReorderGroup {
   }
   onEnd() {
     const selectedItemEl = this.selectedItemEl;
-    this.state = 2 /* Complete */;
+    this.state = 2 /* ReorderGroupState.Complete */;
     if (!selectedItemEl) {
-      this.state = 0 /* Idle */;
+      this.state = 0 /* ReorderGroupState.Idle */;
       return;
     }
     const toIndex = this.lastToIndex;
@@ -162,7 +162,7 @@ export class ReorderGroup {
   }
   completeSync(listOrReorder) {
     const selectedItemEl = this.selectedItemEl;
-    if (selectedItemEl && this.state === 2 /* Complete */) {
+    if (selectedItemEl && this.state === 2 /* ReorderGroupState.Complete */) {
       const children = this.el.children;
       const len = children.length;
       const toIndex = this.lastToIndex;
@@ -182,7 +182,7 @@ export class ReorderGroup {
       selectedItemEl.style.transition = '';
       selectedItemEl.classList.remove(ITEM_REORDER_SELECTED);
       this.selectedItemEl = undefined;
-      this.state = 0 /* Idle */;
+      this.state = 0 /* ReorderGroupState.Idle */;
     }
     return listOrReorder;
   }
@@ -236,92 +236,106 @@ export class ReorderGroup {
     return (h(Host, { class: {
         [mode]: true,
         'reorder-enabled': !this.disabled,
-        'reorder-list-active': this.state !== 0 /* Idle */,
+        'reorder-list-active': this.state !== 0 /* ReorderGroupState.Idle */,
       } }));
   }
   static get is() { return "ion-reorder-group"; }
-  static get originalStyleUrls() { return {
-    "$": ["reorder-group.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["reorder-group.css"]
-  }; }
-  static get properties() { return {
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the reorder will be hidden."
-      },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "true"
-    }
-  }; }
-  static get states() { return {
-    "state": {}
-  }; }
-  static get events() { return [{
-      "method": "ionItemReorder",
-      "name": "ionItemReorder",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Event that needs to be listened to in order to complete the reorder action.\nOnce the event has been emitted, the `complete()` method then needs\nto be called in order to finalize the reorder action."
-      },
-      "complexType": {
-        "original": "ItemReorderEventDetail",
-        "resolved": "ItemReorderEventDetail",
-        "references": {
-          "ItemReorderEventDetail": {
-            "location": "import",
-            "path": "../../interface"
+  static get originalStyleUrls() {
+    return {
+      "$": ["reorder-group.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["reorder-group.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the reorder will be hidden."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "true"
+      }
+    };
+  }
+  static get states() {
+    return {
+      "state": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionItemReorder",
+        "name": "ionItemReorder",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Event that needs to be listened to in order to complete the reorder action.\nOnce the event has been emitted, the `complete()` method then needs\nto be called in order to finalize the reorder action."
+        },
+        "complexType": {
+          "original": "ItemReorderEventDetail",
+          "resolved": "ItemReorderEventDetail",
+          "references": {
+            "ItemReorderEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      }
-    }]; }
-  static get methods() { return {
-    "complete": {
-      "complexType": {
-        "signature": "(listOrReorder?: boolean | any[] | undefined) => Promise<any>",
-        "parameters": [{
-            "tags": [{
-                "text": "listOrReorder A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item.",
-                "name": "param"
-              }],
-            "text": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
+      }];
+  }
+  static get methods() {
+    return {
+      "complete": {
+        "complexType": {
+          "signature": "(listOrReorder?: boolean | any[]) => Promise<any>",
+          "parameters": [{
+              "tags": [{
+                  "name": "param",
+                  "text": "listOrReorder A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
+                }],
+              "text": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<any>"
         },
-        "return": "Promise<any>"
-      },
-      "docs": {
-        "text": "Completes the reorder operation. Must be called by the `ionItemReorder` event.\n\nIf a list of items is passed, the list will be reordered and returned in the\nproper order.\n\nIf no parameters are passed or if `true` is passed in, the reorder will complete\nand the item will remain in the position it was dragged to. If `false` is passed,\nthe reorder will complete and the item will bounce back to its original position.",
-        "tags": [{
-            "name": "param",
-            "text": "listOrReorder A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
-          }]
+        "docs": {
+          "text": "Completes the reorder operation. Must be called by the `ionItemReorder` event.\n\nIf a list of items is passed, the list will be reordered and returned in the\nproper order.\n\nIf no parameters are passed or if `true` is passed in, the reorder will complete\nand the item will remain in the position it was dragged to. If `false` is passed,\nthe reorder will complete and the item will bounce back to its original position.",
+          "tags": [{
+              "name": "param",
+              "text": "listOrReorder A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
+            }]
+        }
       }
-    }
-  }; }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "disabled",
-      "methodName": "disabledChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "disabled",
+        "methodName": "disabledChanged"
+      }];
+  }
 }
 const indexForItem = (element) => {
   return element['$ionIndex'];

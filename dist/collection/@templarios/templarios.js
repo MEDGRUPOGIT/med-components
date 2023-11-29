@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export * from './enums/avatar.enum';
 export * from './enums/badge.enum';
 export * from './enums/base.enum';

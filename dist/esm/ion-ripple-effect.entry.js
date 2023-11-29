@@ -1,20 +1,14 @@
-import { r as registerInstance, f as readTask, c as writeTask, h, i as getElement, H as Host } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, h as readTask, e as writeTask, i as h, j as getElement, H as Host } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
 
 const rippleEffectCss = ":host{--ripple-opacity:0.16;--ripple-color:currentColor;left:0;right:0;top:0;bottom:0;position:absolute;contain:strict;pointer-events:none}:host(.unbounded){contain:layout size style}.ripple-effect{border-radius:50%;position:absolute;background-color:var(--ripple-color);color:inherit;contain:strict;opacity:0;-webkit-animation:225ms rippleAnimation forwards, 75ms fadeInAnimation forwards;animation:225ms rippleAnimation forwards, 75ms fadeInAnimation forwards;will-change:transform, opacity;pointer-events:none}.fade-out{-webkit-transform:translate(var(--translate-end)) scale(var(--final-scale, 1));transform:translate(var(--translate-end)) scale(var(--final-scale, 1));-webkit-animation:150ms fadeOutAnimation forwards;animation:150ms fadeOutAnimation forwards}@-webkit-keyframes rippleAnimation{from{-webkit-animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);-webkit-transform:scale(1);transform:scale(1)}to{-webkit-transform:translate(var(--translate-end)) scale(var(--final-scale, 1));transform:translate(var(--translate-end)) scale(var(--final-scale, 1))}}@keyframes rippleAnimation{from{-webkit-animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);-webkit-transform:scale(1);transform:scale(1)}to{-webkit-transform:translate(var(--translate-end)) scale(var(--final-scale, 1));transform:translate(var(--translate-end)) scale(var(--final-scale, 1))}}@-webkit-keyframes fadeInAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0}to{opacity:var(--ripple-opacity)}}@keyframes fadeInAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:0}to{opacity:var(--ripple-opacity)}}@-webkit-keyframes fadeOutAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:var(--ripple-opacity)}to{opacity:0}}@keyframes fadeOutAnimation{from{-webkit-animation-timing-function:linear;animation-timing-function:linear;opacity:var(--ripple-opacity)}to{opacity:0}}";
 
 const RippleEffect = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * Sets the type of ripple-effect:
-     *
-     * - `bounded`: the ripple effect expands from the user's click position
-     * - `unbounded`: the ripple effect expands from the center of the button and overflows the container.
-     *
-     * NOTE: Surfaces for bounded ripples should have the overflow property set to hidden,
-     * while surfaces for unbounded ripples should have it set to visible.
-     */
     this.type = 'bounded';
   }
   /**

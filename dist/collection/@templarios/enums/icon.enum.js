@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export var TemplariosIconSize;
 (function (TemplariosIconSize) {
   TemplariosIconSize["LG"] = "lg";

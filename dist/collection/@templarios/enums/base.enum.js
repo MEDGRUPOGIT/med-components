@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export var BaseRadius;
 (function (BaseRadius) {
   BaseRadius["S00"] = "s00";

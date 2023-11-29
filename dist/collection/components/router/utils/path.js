@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { ROUTER_INTENT_FORWARD } from './constants';
 export const generatePath = (segments) => {
   const path = segments

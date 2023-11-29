@@ -1,6 +1,9 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { o as openURL, c as createColorClasses } from './theme-ff3fc52f.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { o as openURL, c as createColorClasses } from './theme-a24ff1ad.js';
 
 const cardIosCss = ":host{--ion-safe-area-left:0px;--ion-safe-area-right:0px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;position:relative;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);overflow:hidden}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.card-disabled){cursor:default;opacity:0.3;pointer-events:none}.card-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;display:block;width:100%;min-height:var(--min-height);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:inherit}.card-native::-moz-focus-inner{border:0}button,a{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}ion-ripple-effect{color:var(--ripple-color)}:host{--background:var(--ion-card-background, var(--ion-item-background, var(--ion-background-color, #fff)));--color:var(--ion-card-color, var(--ion-item-color, var(--ion-color-step-600, #666666)));margin-left:16px;margin-right:16px;margin-top:24px;margin-bottom:24px;border-radius:8px;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-transition:-webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);transition:-webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);transition:transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);transition:transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1), -webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1);font-size:14px;-webkit-box-shadow:0 4px 16px rgba(0, 0, 0, 0.12);box-shadow:0 4px 16px rgba(0, 0, 0, 0.12)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{margin-left:unset;margin-right:unset;-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px}}:host(.ion-activated){-webkit-transform:scale3d(0.97, 0.97, 1);transform:scale3d(0.97, 0.97, 1)}";
 
@@ -9,23 +12,16 @@ const cardMdCss = ":host{--ion-safe-area-left:0px;--ion-safe-area-right:0px;-moz
 const Card = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * If `true`, a button tag will be rendered and the card will be tappable.
-     */
+    this.color = undefined;
     this.button = false;
-    /**
-     * The type of the button. Only used when an `onclick` or `button` property is present.
-     */
     this.type = 'button';
-    /**
-     * If `true`, the user cannot interact with the card.
-     */
     this.disabled = false;
-    /**
-     * When using a router, it specifies the transition direction when navigating to
-     * another page using `href`.
-     */
+    this.download = undefined;
+    this.href = undefined;
+    this.rel = undefined;
     this.routerDirection = 'forward';
+    this.routerAnimation = undefined;
+    this.target = undefined;
   }
   isClickable() {
     return (this.href !== undefined || this.button);
@@ -92,11 +88,7 @@ const cardHeaderMdCss = ":host{--background:transparent;--color:inherit;display:
 const CardHeader = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * If `true`, the card header will be translucent.
-     * Only applies when the mode is `"ios"` and the device supports
-     * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
-     */
+    this.color = undefined;
     this.translucent = false;
   }
   render() {
@@ -120,6 +112,7 @@ const cardSubtitleMdCss = ":host{display:block;position:relative;color:var(--col
 const CardSubtitle = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    this.color = undefined;
   }
   render() {
     const mode = getIonMode(this);
@@ -141,6 +134,7 @@ const cardTitleMdCss = ":host{display:block;position:relative;color:var(--color)
 const CardTitle = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    this.color = undefined;
   }
   render() {
     const mode = getIonMode(this);

@@ -1,14 +1,12 @@
-import { Component, h, Host, Prop, Element, Watch } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedToggle {
   constructor() {
-    /**
-    * todo
-    */
+    this.dsColor = undefined;
     this.collapsed = true;
-    /**
-    * todo
-    */
     this.iconClick = false;
   }
   componentDidLoad() {
@@ -55,83 +53,87 @@ export class MedToggle {
         'med-toggle': true,
         'med-toggle--collapsed': collapsed,
         'med-toggle--icon-click': iconClick
-      }), onClick: () => { this.onClickComponent(); } },
-      h("div", { class: "med-toggle__content" },
-        h("slot", null)),
-      h("div", { class: "med-toggle__bottom", onClick: () => { this.onClickIcon(); } },
-        h("ion-icon", { class: "med-icon med-toggle__icon", name: "med-cima" }))));
+      }), onClick: () => { this.onClickComponent(); } }, h("div", { class: "med-toggle__content" }, h("slot", null)), h("div", { class: "med-toggle__bottom", onClick: () => { this.onClickIcon(); } }, h("ion-icon", { class: "med-icon med-toggle__icon", name: "med-cima" }))));
   }
   static get is() { return "med-toggle"; }
   static get encapsulation() { return "scoped"; }
-  static get originalStyleUrls() { return {
-    "$": ["med-toggle.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["med-toggle.css"]
-  }; }
-  static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../../../@templarios/types/color.type"
+  static get originalStyleUrls() {
+    return {
+      "$": ["med-toggle.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["med-toggle.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "dsColor": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "MedColor",
+          "resolved": "string | undefined",
+          "references": {
+            "MedColor": {
+              "location": "import",
+              "path": "../../../../@templarios/types/color.type"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "ds-color",
+        "reflect": true
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "collapsed": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "collapsed",
+        "reflect": true,
+        "defaultValue": "true"
       },
-      "attribute": "ds-color",
-      "reflect": true
-    },
-    "collapsed": {
-      "type": "boolean",
-      "mutable": true,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "collapsed",
-      "reflect": true,
-      "defaultValue": "true"
-    },
-    "iconClick": {
-      "type": "boolean",
-      "mutable": true,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "icon-click",
-      "reflect": true,
-      "defaultValue": "false"
-    }
-  }; }
+      "iconClick": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "icon-click",
+        "reflect": true,
+        "defaultValue": "false"
+      }
+    };
+  }
   static get elementRef() { return "host"; }
-  static get watchers() { return [{
-      "propName": "collapsed",
-      "methodName": "toggle"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "collapsed",
+        "methodName": "toggle"
+      }];
+  }
 }

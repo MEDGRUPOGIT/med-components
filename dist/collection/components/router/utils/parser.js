@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { parsePath } from './path';
 export const readRedirects = (root) => {
   return Array.from(root.children)

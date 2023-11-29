@@ -1,4 +1,7 @@
-import { Component, Host, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -13,12 +16,16 @@ export class CardContent {
       } }));
   }
   static get is() { return "ion-card-content"; }
-  static get originalStyleUrls() { return {
-    "ios": ["card-content.ios.scss"],
-    "md": ["card-content.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["card-content.ios.css"],
-    "md": ["card-content.md.css"]
-  }; }
+  static get originalStyleUrls() {
+    return {
+      "ios": ["card-content.ios.scss"],
+      "md": ["card-content.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["card-content.ios.css"],
+      "md": ["card-content.md.css"]
+    };
+  }
 }

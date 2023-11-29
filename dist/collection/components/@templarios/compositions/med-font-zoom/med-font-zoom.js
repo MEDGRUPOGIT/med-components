@@ -1,11 +1,10 @@
-import { Component, h, Host, Listen, Prop } from "@stencil/core";
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from "@stencil/core";
 import { MedFontSize } from "../../../../@templarios/templarios";
 export class MedFontZoom {
   constructor() {
-    /**
-     * todo
-     */
-    this.value = MedFontSize.XS;
     this.min = 1;
     this.max = 5;
     this.step = 1;
@@ -47,6 +46,8 @@ export class MedFontZoom {
         this.emitter.emit(this.value);
       }
     };
+    this.emitter = undefined;
+    this.value = MedFontSize.XS;
   }
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7
@@ -60,69 +61,74 @@ export class MedFontZoom {
     popover.style.opacity = '1';
   }
   render() {
-    return (h(Host, { "from-stencil": true },
-      h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) },
-        h("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }),
-        h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
+    return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
   }
   static get is() { return "med-font-zoom"; }
   static get encapsulation() { return "scoped"; }
-  static get originalStyleUrls() { return {
-    "$": ["med-font-zoom.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["med-font-zoom.css"]
-  }; }
-  static get properties() { return {
-    "emitter": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "{ emit: (value: MedFontSize) => void }",
-        "resolved": "{ emit: (value: MedFontSize) => void; }",
-        "references": {
-          "MedFontSize": {
-            "location": "import",
-            "path": "../../../../@templarios/templarios"
+  static get originalStyleUrls() {
+    return {
+      "$": ["med-font-zoom.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["med-font-zoom.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "emitter": {
+        "type": "unknown",
+        "mutable": false,
+        "complexType": {
+          "original": "{ emit: (value: MedFontSize) => void }",
+          "resolved": "{ emit: (value: MedFontSize) => void; }",
+          "references": {
+            "MedFontSize": {
+              "location": "import",
+              "path": "../../../../@templarios/templarios"
+            }
           }
+        },
+        "required": true,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
         }
       },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "value": {
+        "type": "string",
+        "mutable": true,
+        "complexType": {
+          "original": "MedFontSize",
+          "resolved": "MedFontSize.MD | MedFontSize.SM | MedFontSize.XS | MedFontSize.XXS | MedFontSize.XXXS",
+          "references": {
+            "MedFontSize": {
+              "location": "import",
+              "path": "../../../../@templarios/templarios"
+            }
+          }
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "value",
+        "reflect": false,
+        "defaultValue": "MedFontSize.XS"
       }
-    },
-    "value": {
-      "type": "string",
-      "mutable": true,
-      "complexType": {
-        "original": "MedFontSize",
-        "resolved": "MedFontSize.MD | MedFontSize.SM | MedFontSize.XS | MedFontSize.XXS | MedFontSize.XXXS",
-        "references": {
-          "MedFontSize": {
-            "location": "import",
-            "path": "../../../../@templarios/templarios"
-          }
-        }
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "value",
-      "reflect": false,
-      "defaultValue": "MedFontSize.XS"
-    }
-  }; }
-  static get listeners() { return [{
-      "name": "ionPopoverDidPresent",
-      "method": "fixPopover",
-      "target": "body",
-      "capture": false,
-      "passive": false
-    }]; }
+    };
+  }
+  static get listeners() {
+    return [{
+        "name": "ionPopoverDidPresent",
+        "method": "fixPopover",
+        "target": "body",
+        "capture": false,
+        "passive": false
+      }];
+  }
 }

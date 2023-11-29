@@ -1,10 +1,10 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 export class Grid {
   constructor() {
-    /**
-     * If `true`, the grid will have a fixed width based on the screen size.
-     */
     this.fixed = false;
   }
   render() {
@@ -12,35 +12,40 @@ export class Grid {
     return (h(Host, { class: {
         [mode]: true,
         'grid-fixed': this.fixed
-      } },
-      h("slot", null)));
+      } }, h("slot", null)));
   }
   static get is() { return "ion-grid"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "$": ["./med/med-grid.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["./med/med-grid.css"]
-  }; }
-  static get properties() { return {
-    "fixed": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the grid will have a fixed width based on the screen size."
-      },
-      "attribute": "fixed",
-      "reflect": false,
-      "defaultValue": "false"
-    }
-  }; }
+  static get originalStyleUrls() {
+    return {
+      "$": ["./med/med-grid.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["./med/med-grid.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "fixed": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the grid will have a fixed width based on the screen size."
+        },
+        "attribute": "fixed",
+        "reflect": false,
+        "defaultValue": "false"
+      }
+    };
+  }
 }

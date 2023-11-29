@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { writeTask } from '@stencil/core';
 import { hapticSelectionChanged, hapticSelectionEnd, hapticSelectionStart } from '../native/haptic';
 import { createGesture } from './index';

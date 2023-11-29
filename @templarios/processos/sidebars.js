@@ -21,16 +21,25 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: 'Backoffice-admin',
+      label: 'Templarios',
       items: [
-        'backoffice-admin/backoffice-admin',
+        'templarios/templarios',
       ],
     },
     {
       type: 'category',
-      label: 'Templarios',
+      label: 'Institucional',
       items: [
-        'templarios/templarios',
+        'institucional/configuracao',
+        'institucional/desenvolvimento',
+        'institucional/producao',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Backoffice-admin',
+      items: [
+        'backoffice-admin/backoffice-admin',
       ],
     },
     {

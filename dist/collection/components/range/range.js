@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { clamp, debounceEvent, renderHiddenInput } from '../../utils/helpers';
 import { createColorClasses, hostContext } from '../../utils/theme';
@@ -20,57 +23,6 @@ export class Range {
     this.didLoad = false;
     this.noUpdate = false;
     this.hasFocus = false;
-    this.ratioA = 0;
-    this.ratioB = 0;
-    /**
-     * How long, in milliseconds, to wait to trigger the
-     * `ionChange` event after each change in the range value.
-     * This also impacts form bindings such as `ngModel` or `v-model`.
-     */
-    this.debounce = 0;
-    /**
-     * The name of the control, which is submitted with the form data.
-     */
-    this.name = '';
-    /**
-     * Show two knobs.
-     */
-    this.dualKnobs = false;
-    /**
-     * Minimum integer value of the range.
-     */
-    this.min = 0;
-    /**
-     * Maximum integer value of the range.
-     */
-    this.max = 100;
-    /**
-     * If `true`, a pin with integer value is shown when the knob
-     * is pressed.
-     */
-    this.pin = false;
-    /**
-     * If `true`, the knob snaps to tick marks evenly spaced based
-     * on the step property value.
-     */
-    this.snaps = false;
-    /**
-     * Specifies the value granularity.
-     */
-    this.step = 1;
-    /**
-     * If `true`, tick marks are displayed based on the step value.
-     * Only applies when `snaps` is `true`.
-     */
-    this.ticks = true;
-    /**
-     * If `true`, the user cannot interact with the range.
-     */
-    this.disabled = false;
-    /**
-     * the value of the range.
-     */
-    this.value = 0;
     this.clampBounds = (value) => {
       return clamp(this.min, value, this.max);
     };
@@ -129,6 +81,21 @@ export class Range {
         this.emitStyle();
       }
     };
+    this.ratioA = 0;
+    this.ratioB = 0;
+    this.pressedKnob = undefined;
+    this.color = undefined;
+    this.debounce = 0;
+    this.name = '';
+    this.dualKnobs = false;
+    this.min = 0;
+    this.max = 100;
+    this.pin = false;
+    this.snaps = false;
+    this.step = 1;
+    this.ticks = true;
+    this.disabled = false;
+    this.value = 0;
   }
   debounceChanged() {
     this.ionChange = debounceEvent(this.ionChange, this.debounce);
@@ -335,372 +302,376 @@ export class Range {
         'range-disabled': disabled,
         'range-pressed': pressedKnob !== undefined,
         'range-has-pin': pin
-      }) },
-      h("slot", { name: "start" }),
-      h("div", { class: "range-slider", ref: rangeEl => this.rangeSlider = rangeEl },
-        ticks.map(tick => (h("div", { style: tickStyle(tick), role: "presentation", class: {
-            'range-tick': true,
-            'range-tick-active': tick.active
-          }, part: tick.active ? 'tick-active' : 'tick' }))),
-        h("div", { class: "range-bar", role: "presentation", part: "bar" }),
-        h("div", { class: "range-bar range-bar-active", role: "presentation", style: barStyle, part: "bar-active" }),
-        renderKnob(isRTL, {
-          knob: 'A',
-          pressed: pressedKnob === 'A',
-          value: this.valA,
-          ratio: this.ratioA,
-          pin,
-          disabled,
-          handleKeyboard,
-          min,
-          max
-        }),
-        this.dualKnobs && renderKnob(isRTL, {
-          knob: 'B',
-          pressed: pressedKnob === 'B',
-          value: this.valB,
-          ratio: this.ratioB,
-          pin,
-          disabled,
-          handleKeyboard,
-          min,
-          max
-        })),
-      h("slot", { name: "end" })));
+      }) }, h("slot", { name: "start" }), h("div", { class: "range-slider", ref: rangeEl => this.rangeSlider = rangeEl }, ticks.map(tick => (h("div", { style: tickStyle(tick), role: "presentation", class: {
+        'range-tick': true,
+        'range-tick-active': tick.active
+      }, part: tick.active ? 'tick-active' : 'tick' }))), h("div", { class: "range-bar", role: "presentation", part: "bar" }), h("div", { class: "range-bar range-bar-active", role: "presentation", style: barStyle, part: "bar-active" }), renderKnob(isRTL, {
+      knob: 'A',
+      pressed: pressedKnob === 'A',
+      value: this.valA,
+      ratio: this.ratioA,
+      pin,
+      disabled,
+      handleKeyboard,
+      min,
+      max
+    }), this.dualKnobs && renderKnob(isRTL, {
+      knob: 'B',
+      pressed: pressedKnob === 'B',
+      value: this.valB,
+      ratio: this.ratioB,
+      pin,
+      disabled,
+      handleKeyboard,
+      min,
+      max
+    })), h("slot", { name: "end" })));
   }
   static get is() { return "ion-range"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["range.ios.scss"],
-    "md": ["range.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["range.ios.css"],
-    "md": ["range.md.css"]
-  }; }
-  static get properties() { return {
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../interface"
+  static get originalStyleUrls() {
+    return {
+      "ios": ["range.ios.scss"],
+      "md": ["range.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["range.ios.css"],
+      "md": ["range.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "color": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Color",
+          "resolved": "string | undefined",
+          "references": {
+            "Color": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        },
+        "attribute": "color",
+        "reflect": false
+      },
+      "debounce": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "How long, in milliseconds, to wait to trigger the\n`ionChange` event after each change in the range value.\nThis also impacts form bindings such as `ngModel` or `v-model`."
+        },
+        "attribute": "debounce",
+        "reflect": false,
+        "defaultValue": "0"
+      },
+      "name": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The name of the control, which is submitted with the form data."
+        },
+        "attribute": "name",
+        "reflect": false,
+        "defaultValue": "''"
+      },
+      "dualKnobs": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Show two knobs."
+        },
+        "attribute": "dual-knobs",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "min": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Minimum integer value of the range."
+        },
+        "attribute": "min",
+        "reflect": false,
+        "defaultValue": "0"
+      },
+      "max": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Maximum integer value of the range."
+        },
+        "attribute": "max",
+        "reflect": false,
+        "defaultValue": "100"
+      },
+      "pin": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, a pin with integer value is shown when the knob\nis pressed."
+        },
+        "attribute": "pin",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "snaps": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the knob snaps to tick marks evenly spaced based\non the step property value."
+        },
+        "attribute": "snaps",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "step": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Specifies the value granularity."
+        },
+        "attribute": "step",
+        "reflect": false,
+        "defaultValue": "1"
+      },
+      "ticks": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, tick marks are displayed based on the step value.\nOnly applies when `snaps` is `true`."
+        },
+        "attribute": "ticks",
+        "reflect": false,
+        "defaultValue": "true"
+      },
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the user cannot interact with the range."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "value": {
+        "type": "number",
+        "mutable": true,
+        "complexType": {
+          "original": "RangeValue",
+          "resolved": "number | { lower: number; upper: number; }",
+          "references": {
+            "RangeValue": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "the value of the range."
+        },
+        "attribute": "value",
+        "reflect": false,
+        "defaultValue": "0"
+      }
+    };
+  }
+  static get states() {
+    return {
+      "ratioA": {},
+      "ratioB": {},
+      "pressedKnob": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionChange",
+        "name": "ionChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the value property has changed."
+        },
+        "complexType": {
+          "original": "RangeChangeEventDetail",
+          "resolved": "RangeChangeEventDetail",
+          "references": {
+            "RangeChangeEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
-      },
-      "attribute": "color",
-      "reflect": false
-    },
-    "debounce": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "How long, in milliseconds, to wait to trigger the\n`ionChange` event after each change in the range value.\nThis also impacts form bindings such as `ngModel` or `v-model`."
-      },
-      "attribute": "debounce",
-      "reflect": false,
-      "defaultValue": "0"
-    },
-    "name": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The name of the control, which is submitted with the form data."
-      },
-      "attribute": "name",
-      "reflect": false,
-      "defaultValue": "''"
-    },
-    "dualKnobs": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Show two knobs."
-      },
-      "attribute": "dual-knobs",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "min": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Minimum integer value of the range."
-      },
-      "attribute": "min",
-      "reflect": false,
-      "defaultValue": "0"
-    },
-    "max": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Maximum integer value of the range."
-      },
-      "attribute": "max",
-      "reflect": false,
-      "defaultValue": "100"
-    },
-    "pin": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, a pin with integer value is shown when the knob\nis pressed."
-      },
-      "attribute": "pin",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "snaps": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the knob snaps to tick marks evenly spaced based\non the step property value."
-      },
-      "attribute": "snaps",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "step": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Specifies the value granularity."
-      },
-      "attribute": "step",
-      "reflect": false,
-      "defaultValue": "1"
-    },
-    "ticks": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, tick marks are displayed based on the step value.\nOnly applies when `snaps` is `true`."
-      },
-      "attribute": "ticks",
-      "reflect": false,
-      "defaultValue": "true"
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the user cannot interact with the range."
-      },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "value": {
-      "type": "number",
-      "mutable": true,
-      "complexType": {
-        "original": "RangeValue",
-        "resolved": "number | { lower: number; upper: number; }",
-        "references": {
-          "RangeValue": {
-            "location": "import",
-            "path": "../../interface"
+      }, {
+        "method": "ionStyle",
+        "name": "ionStyle",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the styles change."
+        },
+        "complexType": {
+          "original": "StyleEventDetail",
+          "resolved": "StyleEventDetail",
+          "references": {
+            "StyleEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "the value of the range."
-      },
-      "attribute": "value",
-      "reflect": false,
-      "defaultValue": "0"
-    }
-  }; }
-  static get states() { return {
-    "ratioA": {},
-    "ratioB": {},
-    "pressedKnob": {}
-  }; }
-  static get events() { return [{
-      "method": "ionChange",
-      "name": "ionChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the value property has changed."
-      },
-      "complexType": {
-        "original": "RangeChangeEventDetail",
-        "resolved": "RangeChangeEventDetail",
-        "references": {
-          "RangeChangeEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
+      }, {
+        "method": "ionFocus",
+        "name": "ionFocus",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the range has focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
         }
-      }
-    }, {
-      "method": "ionStyle",
-      "name": "ionStyle",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the styles change."
-      },
-      "complexType": {
-        "original": "StyleEventDetail",
-        "resolved": "StyleEventDetail",
-        "references": {
-          "StyleEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
+      }, {
+        "method": "ionBlur",
+        "name": "ionBlur",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the range loses focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
         }
-      }
-    }, {
-      "method": "ionFocus",
-      "name": "ionFocus",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the range has focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionBlur",
-      "name": "ionBlur",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the range loses focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }]; }
+      }];
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "debounce",
-      "methodName": "debounceChanged"
-    }, {
-      "propName": "min",
-      "methodName": "minChanged"
-    }, {
-      "propName": "max",
-      "methodName": "maxChanged"
-    }, {
-      "propName": "disabled",
-      "methodName": "disabledChanged"
-    }, {
-      "propName": "value",
-      "methodName": "valueChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "debounce",
+        "methodName": "debounceChanged"
+      }, {
+        "propName": "min",
+        "methodName": "minChanged"
+      }, {
+        "propName": "max",
+        "methodName": "maxChanged"
+      }, {
+        "propName": "disabled",
+        "methodName": "disabledChanged"
+      }, {
+        "propName": "value",
+        "methodName": "valueChanged"
+      }];
+  }
 }
 const renderKnob = (isRTL, { knob, value, ratio, min, max, disabled, pressed, pin, handleKeyboard }) => {
   const start = isRTL ? 'right' : 'left';
@@ -728,9 +699,7 @@ const renderKnob = (isRTL, { knob, value, ratio, min, max, disabled, pressed, pi
       'range-knob-pressed': pressed,
       'range-knob-min': value === min,
       'range-knob-max': value === max
-    }, style: knobStyle(), role: "slider", tabindex: disabled ? -1 : 0, "aria-valuemin": min, "aria-valuemax": max, "aria-disabled": disabled ? 'true' : null, "aria-valuenow": value },
-    pin && h("div", { class: "range-pin", role: "presentation", part: "pin" }, Math.round(value)),
-    h("div", { class: "range-knob", role: "presentation", part: "knob" })));
+    }, style: knobStyle(), role: "slider", tabindex: disabled ? -1 : 0, "aria-valuemin": min, "aria-valuemax": max, "aria-disabled": disabled ? 'true' : null, "aria-valuenow": value }, pin && h("div", { class: "range-pin", role: "presentation", part: "pin" }, Math.round(value)), h("div", { class: "range-knob", role: "presentation", part: "knob" })));
 };
 const ratioToValue = (ratio, min, max, step) => {
   let value = (max - min) * ratio;

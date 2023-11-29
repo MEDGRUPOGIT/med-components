@@ -1,18 +1,23 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const overlays = require('./overlays-9895f6f3.js');
-require('./ionic-global-50e8bb29.js');
-require('./hardware-back-button-148ce546.js');
-require('./helpers-ba3c117b.js');
+const index = require('./index-a17b061b.js');
+const overlays = require('./overlays-12a6887f.js');
+require('./ionic-global-8b32527f.js');
+require('./hardware-back-button-a7dedc7d.js');
+require('./helpers-4478bffd.js');
 
 const medConfigCss = ".sc-med-config-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100%;background-color:var(--med-color-neutral-dark-prime)}.sc-med-config-h .config-header.sc-med-config{position:relative;width:100%;z-index:1;top:0}.sc-med-config-h .config-header__title.sc-med-config{color:var(--med-color-neutral-light-prime);font-size:16px;line-height:100%;font-weight:600}.sc-med-config-h .config-content.sc-med-config{--background:var(--med-color-neutral-dark-prime);height:100%;overflow-y:hidden}";
 
 const MedConfig = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    this.emitter = undefined;
+    this.opcoes = undefined;
   }
   dismiss() {
     overlays.modalController.dismiss();

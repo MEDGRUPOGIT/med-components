@@ -1,15 +1,18 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const cubicBezier = require('./cubic-bezier-0b2ccc35.js');
-const helpers = require('./helpers-ba3c117b.js');
-const haptic = require('./haptic-9f199ada.js');
-const animation = require('./animation-550bbf23.js');
-const index$1 = require('./index-e1bb33c3.js');
-const spinnerConfigs = require('./spinner-configs-a5915c04.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const cubicBezier = require('./cubic-bezier-1060abff.js');
+const helpers = require('./helpers-4478bffd.js');
+const haptic = require('./haptic-c4a1d647.js');
+const animation = require('./animation-96c88a0a.js');
+const index$1 = require('./index-365d7fb3.js');
+const spinnerConfigs = require('./spinner-configs-eb498ea5.js');
 
 const getRefresherAnimationType = (contentEl) => {
   const previousSibling = contentEl.previousElementSibling;
@@ -207,62 +210,12 @@ const Refresher = class {
     this.lastVelocityY = 0;
     this.animations = [];
     this.nativeRefresher = false;
-    /**
-     * The current state which the refresher is in. The refresher's states include:
-     *
-     * - `inactive` - The refresher is not being pulled down or refreshing and is currently hidden.
-     * - `pulling` - The user is actively pulling down the refresher, but has not reached the point yet that if the user lets go, it'll refresh.
-     * - `cancelling` - The user pulled down the refresher and let go, but did not pull down far enough to kick off the `refreshing` state. After letting go, the refresher is in the `cancelling` state while it is closing, and will go back to the `inactive` state once closed.
-     * - `ready` - The user has pulled down the refresher far enough that if they let go, it'll begin the `refreshing` state.
-     * - `refreshing` - The refresher is actively waiting on the async operation to end. Once the refresh handler calls `complete()` it will begin the `completing` state.
-     * - `completing` - The `refreshing` state has finished and the refresher is in the way of closing itself. Once closed, the refresher will go back to the `inactive` state.
-     */
-    this.state = 1 /* Inactive */;
-    /**
-     * The minimum distance the user must pull down until the
-     * refresher will go into the `refreshing` state.
-     * Does not apply when the refresher content uses a spinner,
-     * enabling the native refresher.
-     */
+    this.state = 1 /* RefresherState.Inactive */;
     this.pullMin = 60;
-    /**
-     * The maximum distance of the pull until the refresher
-     * will automatically go into the `refreshing` state.
-     * Defaults to the result of `pullMin + 60`.
-     * Does not apply when  the refresher content uses a spinner,
-     * enabling the native refresher.
-     */
     this.pullMax = this.pullMin + 60;
-    /**
-     * Time it takes to close the refresher.
-     * Does not apply when the refresher content uses a spinner,
-     * enabling the native refresher.
-     */
     this.closeDuration = '280ms';
-    /**
-     * Time it takes the refresher to to snap back to the `refreshing` state.
-     * Does not apply when the refresher content uses a spinner,
-     * enabling the native refresher.
-     */
     this.snapbackDuration = '280ms';
-    /**
-     * How much to multiply the pull speed by. To slow the pull animation down,
-     * pass a number less than `1`. To speed up the pull, pass a number greater
-     * than `1`. The default value is `1` which is equal to the speed of the cursor.
-     * If a negative value is passed in, the factor will be `1` instead.
-     *
-     * For example: If the value passed is `1.2` and the content is dragged by
-     * `10` pixels, instead of `10` pixels the content will be pulled by `12` pixels
-     * (an increase of 20 percent). If the value passed is `0.8`, the dragged amount
-     * will be `8` pixels, less than the amount the cursor has moved.
-     *
-     * Does not apply when the refresher content uses a spinner,
-     * enabling the native refresher.
-     */
     this.pullFactor = 1;
-    /**
-     * If `true`, the refresher will be hidden.
-     */
     this.disabled = false;
   }
   disabledChanged() {
@@ -301,7 +254,7 @@ const Refresher = class {
     this.animations.forEach(ani => ani.destroy());
     this.animations = [];
     this.progress = 0;
-    this.state = 1 /* Inactive */;
+    this.state = 1 /* RefresherState.Inactive */;
   }
   async setupiOSNativeRefresher(pullingSpinner, refreshingSpinner) {
     this.elementToTransform = this.scrollEl;
@@ -311,7 +264,7 @@ const Refresher = class {
     index.writeTask(() => ticks.forEach(el => el.style.setProperty('animation', 'none')));
     this.scrollListenerCallback = () => {
       // If pointer is not on screen or refresher is not active, ignore scroll
-      if (!this.pointerDown && this.state === 1 /* Inactive */) {
+      if (!this.pointerDown && this.state === 1 /* RefresherState.Inactive */) {
         return;
       }
       index.readTask(() => {
@@ -323,7 +276,7 @@ const Refresher = class {
            * If refresher is refreshing and user tries to scroll
            * progressively fade refresher out/in
            */
-          if (this.state === 8 /* Refreshing */) {
+          if (this.state === 8 /* RefresherState.Refreshing */) {
             const ratio = helpers.clamp(0, scrollTop / (refresherHeight * 0.5), 1);
             index.writeTask(() => setSpinnerOpacity(refreshingSpinner, 1 - ratio));
             return;
@@ -345,7 +298,7 @@ const Refresher = class {
         const opacity = helpers.clamp(0, Math.abs(scrollTop) / refresherHeight, 0.99);
         const pullAmount = this.progress = helpers.clamp(0, (Math.abs(scrollTop) - 30) / MAX_PULL, 1);
         const currentTickToShow = helpers.clamp(0, Math.floor(pullAmount * NUM_TICKS), NUM_TICKS - 1);
-        const shouldShowRefreshingSpinner = this.state === 8 /* Refreshing */ || currentTickToShow === NUM_TICKS - 1;
+        const shouldShowRefreshingSpinner = this.state === 8 /* RefresherState.Refreshing */ || currentTickToShow === NUM_TICKS - 1;
         if (shouldShowRefreshingSpinner) {
           if (this.pointerDown) {
             handleScrollWhileRefreshing(refreshingSpinner, this.lastVelocityY);
@@ -364,13 +317,13 @@ const Refresher = class {
           }
         }
         else {
-          this.state = 2 /* Pulling */;
+          this.state = 2 /* RefresherState.Pulling */;
           handleScrollWhilePulling(pullingSpinner, ticks, opacity, currentTickToShow);
         }
       });
     };
     this.scrollEl.addEventListener('scroll', this.scrollListenerCallback);
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-98d43f07.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-212d93af.js'); })).createGesture({
       el: this.scrollEl,
       gestureName: 'refresher',
       gesturePriority: 31,
@@ -400,7 +353,7 @@ const Refresher = class {
         this.pointerDown = false;
         this.didStart = false;
         if (this.needsCompletion) {
-          this.resetNativeRefresher(this.elementToTransform, 32 /* Completing */);
+          this.resetNativeRefresher(this.elementToTransform, 32 /* RefresherState.Completing */);
           this.needsCompletion = false;
         }
         else if (this.didRefresh) {
@@ -422,16 +375,16 @@ const Refresher = class {
         refreshingCircle.style.setProperty('animation-delay', '-655ms');
       });
     }
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-98d43f07.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-212d93af.js'); })).createGesture({
       el: this.scrollEl,
       gestureName: 'refresher',
       gesturePriority: 31,
       direction: 'y',
       threshold: 5,
-      canStart: () => this.state !== 8 /* Refreshing */ && this.state !== 32 /* Completing */ && this.scrollEl.scrollTop === 0,
+      canStart: () => this.state !== 8 /* RefresherState.Refreshing */ && this.state !== 32 /* RefresherState.Completing */ && this.scrollEl.scrollTop === 0,
       onStart: (ev) => {
         ev.data = { animation: undefined, didStart: false, cancelled: false };
-        this.state = 2 /* Pulling */;
+        this.state = 2 /* RefresherState.Pulling */;
       },
       onMove: (ev) => {
         if ((ev.velocityY < 0 && this.progress === 0 && !ev.data.didStart) || ev.data.cancelled) {
@@ -467,7 +420,7 @@ const Refresher = class {
             this.animations.forEach(ani => ani.destroy());
             this.animations = [];
             this.gesture.enable(true);
-            this.state = 1 /* Inactive */;
+            this.state = 1 /* RefresherState.Inactive */;
           });
           return;
         }
@@ -527,7 +480,7 @@ const Refresher = class {
       this.setupNativeRefresher(contentEl);
     }
     else {
-      this.gesture = (await Promise.resolve().then(function () { return require('./index-98d43f07.js'); })).createGesture({
+      this.gesture = (await Promise.resolve().then(function () { return require('./index-212d93af.js'); })).createGesture({
         el: contentEl,
         gestureName: 'refresher',
         gesturePriority: 31,
@@ -564,11 +517,11 @@ const Refresher = class {
       this.needsCompletion = true;
       // Do not reset scroll el until user removes pointer from screen
       if (!this.pointerDown) {
-        helpers.raf(() => helpers.raf(() => this.resetNativeRefresher(this.elementToTransform, 32 /* Completing */)));
+        helpers.raf(() => helpers.raf(() => this.resetNativeRefresher(this.elementToTransform, 32 /* RefresherState.Completing */)));
       }
     }
     else {
-      this.close(32 /* Completing */, '120ms');
+      this.close(32 /* RefresherState.Completing */, '120ms');
     }
   }
   /**
@@ -578,11 +531,11 @@ const Refresher = class {
     if (this.nativeRefresher) {
       // Do not reset scroll el until user removes pointer from screen
       if (!this.pointerDown) {
-        helpers.raf(() => helpers.raf(() => this.resetNativeRefresher(this.elementToTransform, 16 /* Cancelling */)));
+        helpers.raf(() => helpers.raf(() => this.resetNativeRefresher(this.elementToTransform, 16 /* RefresherState.Cancelling */)));
       }
     }
     else {
-      this.close(16 /* Cancelling */, '');
+      this.close(16 /* RefresherState.Cancelling */, '');
     }
   }
   /**
@@ -601,7 +554,7 @@ const Refresher = class {
     if (!this.scrollEl) {
       return false;
     }
-    if (this.state !== 1 /* Inactive */) {
+    if (this.state !== 1 /* RefresherState.Inactive */) {
       return false;
     }
     // if the scrollTop is greater than zero then it's
@@ -613,7 +566,7 @@ const Refresher = class {
   }
   onStart() {
     this.progress = 0;
-    this.state = 1 /* Inactive */;
+    this.state = 1 /* RefresherState.Inactive */;
   }
   onMove(detail) {
     if (!this.scrollEl) {
@@ -630,7 +583,7 @@ const Refresher = class {
     // do nothing if it's actively refreshing
     // or it's in the way of closing
     // or this was never a startY
-    if ((this.state & 56 /* _BUSY_ */) !== 0) {
+    if ((this.state & 56 /* RefresherState._BUSY_ */) !== 0) {
       return;
     }
     const pullFactor = (Number.isNaN(this.pullFactor) || this.pullFactor < 0) ? 1 : this.pullFactor;
@@ -641,7 +594,7 @@ const Refresher = class {
       // the current Y is higher than the starting Y
       // so they scrolled up enough to be ignored
       this.progress = 0;
-      this.state = 1 /* Inactive */;
+      this.state = 1 /* RefresherState.Inactive */;
       if (this.appliedStyles) {
         // reset the styles only if they were applied
         this.setCss(0, '', false, '');
@@ -649,7 +602,7 @@ const Refresher = class {
       }
       return;
     }
-    if (this.state === 1 /* Inactive */) {
+    if (this.state === 1 /* RefresherState.Inactive */) {
       // this refresh is not already actively pulling down
       // get the content's scrollTop
       const scrollHostScrollTop = this.scrollEl.scrollTop;
@@ -660,7 +613,7 @@ const Refresher = class {
         return;
       }
       // content scrolled all the way to the top, and dragging down
-      this.state = 2 /* Pulling */;
+      this.state = 2 /* RefresherState.Pulling */;
     }
     // prevent native scroll events
     if (ev.cancelable) {
@@ -687,7 +640,7 @@ const Refresher = class {
     // do nothing if the delta is less than the pull threshold
     if (deltaY < pullMin) {
       // ensure it stays in the pulling state, cuz its not ready yet
-      this.state = 2 /* Pulling */;
+      this.state = 2 /* RefresherState.Pulling */;
       return;
     }
     if (deltaY > this.pullMax) {
@@ -698,16 +651,16 @@ const Refresher = class {
     // pulled farther than the pull min!!
     // it is now in the `ready` state!!
     // if they let go then it'll refresh, kerpow!!
-    this.state = 4 /* Ready */;
+    this.state = 4 /* RefresherState.Ready */;
     return;
   }
   onEnd() {
     // only run in a zone when absolutely necessary
-    if (this.state === 4 /* Ready */) {
+    if (this.state === 4 /* RefresherState.Ready */) {
       // they pulled down far enough, so it's ready to refresh
       this.beginRefresh();
     }
-    else if (this.state === 2 /* Pulling */) {
+    else if (this.state === 2 /* RefresherState.Pulling */) {
       // they were pulling down, but didn't pull down far enough
       // set the content back to it's original location
       // and close the refresher
@@ -718,7 +671,7 @@ const Refresher = class {
   beginRefresh() {
     // assumes we're already back in a zone
     // they pulled down far enough, so it's ready to refresh
-    this.state = 8 /* Refreshing */;
+    this.state = 8 /* RefresherState.Refreshing */;
     // place the content in a hangout position while it thinks
     this.setCss(this.pullMin, this.snapbackDuration, true, '');
     // emit "refresh" because it was pulled down far enough
@@ -730,7 +683,7 @@ const Refresher = class {
   close(state, delay) {
     // create fallback timer incase something goes wrong with transitionEnd event
     setTimeout(() => {
-      this.state = 1 /* Inactive */;
+      this.state = 1 /* RefresherState.Inactive */;
       this.progress = 0;
       this.didStart = false;
       this.setCss(0, '0ms', false, '');
@@ -764,12 +717,12 @@ const Refresher = class {
         // Used internally for styling
         [`refresher-${mode}`]: true,
         'refresher-native': this.nativeRefresher,
-        'refresher-active': this.state !== 1 /* Inactive */,
-        'refresher-pulling': this.state === 2 /* Pulling */,
-        'refresher-ready': this.state === 4 /* Ready */,
-        'refresher-refreshing': this.state === 8 /* Refreshing */,
-        'refresher-cancelling': this.state === 16 /* Cancelling */,
-        'refresher-completing': this.state === 32 /* Completing */,
+        'refresher-active': this.state !== 1 /* RefresherState.Inactive */,
+        'refresher-pulling': this.state === 2 /* RefresherState.Pulling */,
+        'refresher-ready': this.state === 4 /* RefresherState.Ready */,
+        'refresher-refreshing': this.state === 8 /* RefresherState.Refreshing */,
+        'refresher-cancelling': this.state === 16 /* RefresherState.Cancelling */,
+        'refresher-completing': this.state === 32 /* RefresherState.Completing */,
       } }));
   }
   get el() { return index.getElement(this); }
@@ -785,6 +738,10 @@ Refresher.style = {
 const RefresherContent = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    this.pullingIcon = undefined;
+    this.pullingText = undefined;
+    this.refreshingSpinner = undefined;
+    this.refreshingText = undefined;
   }
   componentWillLoad() {
     if (this.pullingIcon === undefined) {

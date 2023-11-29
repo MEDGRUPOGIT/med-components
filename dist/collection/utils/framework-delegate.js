@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { componentOnReady } from './helpers';
 export const attachComponent = async (delegate, container, component, cssClasses, componentProps) => {
   if (delegate) {

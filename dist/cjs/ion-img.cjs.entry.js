@@ -1,9 +1,12 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
 
 const imgCss = ":host{display:block;-o-object-fit:contain;object-fit:contain}img{display:block;width:100%;height:100%;-o-object-fit:inherit;object-fit:inherit;-o-object-position:inherit;object-position:inherit}";
 
@@ -19,6 +22,10 @@ const Img = class {
     this.onError = () => {
       this.ionError.emit();
     };
+    this.loadSrc = undefined;
+    this.loadError = undefined;
+    this.alt = undefined;
+    this.src = undefined;
   }
   srcChanged() {
     this.addIO();

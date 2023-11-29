@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 class GestureController {
   constructor() {
     this.gestureId = 0;

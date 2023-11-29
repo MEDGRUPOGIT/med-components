@@ -1,4 +1,7 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
 
 const dialogTestCss = ".sc-dialog-test-h{display:block;border-radius:0}";
 

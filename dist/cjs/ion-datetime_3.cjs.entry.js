@@ -1,15 +1,18 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const helpers = require('./helpers-ba3c117b.js');
-const overlays = require('./overlays-9895f6f3.js');
-const theme = require('./theme-30b7a575.js');
-const animation = require('./animation-550bbf23.js');
-const haptic = require('./haptic-9f199ada.js');
-require('./hardware-back-button-148ce546.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const helpers = require('./helpers-4478bffd.js');
+const overlays = require('./overlays-12a6887f.js');
+const theme = require('./theme-a4c4a7eb.js');
+const animation = require('./animation-96c88a0a.js');
+const haptic = require('./haptic-c4a1d647.js');
+require('./hardware-back-button-a7dedc7d.js');
 
 /**
  * Gets a date value given a format
@@ -583,35 +586,6 @@ const Datetime = class {
     this.datetimeMin = {};
     this.datetimeMax = {};
     this.datetimeValue = {};
-    this.isExpanded = false;
-    /**
-     * The name of the control, which is submitted with the form data.
-     */
-    this.name = this.inputId;
-    /**
-     * If `true`, the user cannot interact with the datetime.
-     */
-    this.disabled = false;
-    /**
-     * If `true`, the datetime appears normal but is not interactive.
-     */
-    this.readonly = false;
-    /**
-     * The display format of the date and time as text that shows
-     * within the item. When the `pickerFormat` input is not used, then the
-     * `displayFormat` is used for both display the formatted text, and determining
-     * the datetime picker's columns. See the `pickerFormat` input description for
-     * more info. Defaults to `MMM D, YYYY`.
-     */
-    this.displayFormat = 'MMM D, YYYY';
-    /**
-     * The text to display on the picker's cancel button.
-     */
-    this.cancelText = 'Cancel';
-    /**
-     * The text to display on the picker's "Done" button.
-     */
-    this.doneText = 'Done';
     this.onClick = () => {
       this.setFocus();
       this.open();
@@ -622,6 +596,29 @@ const Datetime = class {
     this.onBlur = () => {
       this.ionBlur.emit();
     };
+    this.isExpanded = false;
+    this.name = this.inputId;
+    this.disabled = false;
+    this.readonly = false;
+    this.min = undefined;
+    this.max = undefined;
+    this.displayFormat = 'MMM D, YYYY';
+    this.displayTimezone = undefined;
+    this.pickerFormat = undefined;
+    this.cancelText = 'Cancel';
+    this.doneText = 'Done';
+    this.yearValues = undefined;
+    this.monthValues = undefined;
+    this.dayValues = undefined;
+    this.hourValues = undefined;
+    this.minuteValues = undefined;
+    this.monthNames = undefined;
+    this.monthShortNames = undefined;
+    this.dayNames = undefined;
+    this.dayShortNames = undefined;
+    this.pickerOptions = undefined;
+    this.placeholder = undefined;
+    this.value = undefined;
   }
   disabledChanged() {
     this.emitStyle();
@@ -1047,35 +1044,6 @@ const Picker = class {
     this.willPresent = index.createEvent(this, "ionPickerWillPresent", 7);
     this.willDismiss = index.createEvent(this, "ionPickerWillDismiss", 7);
     this.didDismiss = index.createEvent(this, "ionPickerDidDismiss", 7);
-    this.presented = false;
-    /**
-     * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
-     */
-    this.keyboardClose = true;
-    /**
-     * Array of buttons to be displayed at the top of the picker.
-     */
-    this.buttons = [];
-    /**
-     * Array of columns to be displayed in the picker.
-     */
-    this.columns = [];
-    /**
-     * Number of milliseconds to wait before dismissing the picker.
-     */
-    this.duration = 0;
-    /**
-     * If `true`, a backdrop will be displayed behind the picker.
-     */
-    this.showBackdrop = true;
-    /**
-     * If `true`, the picker will be dismissed when the backdrop is clicked.
-     */
-    this.backdropDismiss = true;
-    /**
-     * If `true`, the picker will animate.
-     */
-    this.animated = true;
     this.onBackdropTap = () => {
       this.dismiss(undefined, overlays.BACKDROP);
     };
@@ -1086,6 +1054,18 @@ const Picker = class {
         this.callButtonHandler(cancelButton);
       }
     };
+    this.presented = false;
+    this.overlayIndex = undefined;
+    this.keyboardClose = true;
+    this.enterAnimation = undefined;
+    this.leaveAnimation = undefined;
+    this.buttons = [];
+    this.columns = [];
+    this.cssClass = undefined;
+    this.duration = 0;
+    this.showBackdrop = true;
+    this.backdropDismiss = true;
+    this.animated = true;
   }
   connectedCallback() {
     overlays.prepareOverlay(this.el);
@@ -1209,6 +1189,7 @@ const PickerColumnCmp = class {
     this.velocity = 0;
     this.y = 0;
     this.noAnimate = true;
+    this.col = undefined;
   }
   colChanged() {
     this.refresh();
@@ -1223,7 +1204,7 @@ const PickerColumnCmp = class {
     }
     this.rotateFactor = pickerRotateFactor;
     this.scaleFactor = pickerScaleFactor;
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-98d43f07.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-212d93af.js'); })).createGesture({
       el: this.el,
       gestureName: 'picker-swipe',
       gesturePriority: 100,

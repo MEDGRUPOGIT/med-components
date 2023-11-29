@@ -1,13 +1,16 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const helpers = require('./helpers-ba3c117b.js');
-const overlays = require('./overlays-9895f6f3.js');
-const theme = require('./theme-30b7a575.js');
-require('./hardware-back-button-148ce546.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const helpers = require('./helpers-4478bffd.js');
+const overlays = require('./overlays-12a6887f.js');
+const theme = require('./theme-a4c4a7eb.js');
+require('./hardware-back-button-a7dedc7d.js');
 
 const watchForOptions = (containerEl, tagName, onChange) => {
   /* tslint:disable-next-line */
@@ -57,41 +60,6 @@ const Select = class {
     this.ionStyle = index.createEvent(this, "ionStyle", 7);
     this.inputId = `ion-sel-${selectIds++}`;
     this.didInit = false;
-    this.isExpanded = false;
-    /**
-     * If `true`, the user cannot interact with the select.
-     */
-    this.disabled = false;
-    /**
-     * The text to display on the cancel button.
-     */
-    this.cancelText = 'Cancel';
-    /**
-     * The text to display on the ok button.
-     */
-    this.okText = 'OK';
-    /**
-     * The name of the control, which is submitted with the form data.
-     */
-    this.name = this.inputId;
-    /**
-     * If `true`, the select can accept multiple values.
-     */
-    this.multiple = false;
-    /**
-     * The interface the select should use: `action-sheet`, `popover` or `alert`.
-     */
-    this.interface = 'alert';
-    /**
-     * Any additional options that the `alert`, `action-sheet` or `popover` interface
-     * can take. See the [ion-alert docs](../alert), the
-     * [ion-action-sheet docs](../action-sheet) and the
-     * [ion-popover docs](../popover) for the
-     * create options for each interface.
-     *
-     * Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
-     */
-    this.interfaceOptions = {};
     this.onClick = (ev) => {
       this.setFocus();
       this.open(ev);
@@ -102,6 +70,18 @@ const Select = class {
     this.onBlur = () => {
       this.ionBlur.emit();
     };
+    this.isExpanded = false;
+    this.disabled = false;
+    this.cancelText = 'Cancel';
+    this.okText = 'OK';
+    this.placeholder = undefined;
+    this.name = this.inputId;
+    this.selectedText = undefined;
+    this.multiple = false;
+    this.interface = 'alert';
+    this.interfaceOptions = {};
+    this.compareWith = undefined;
+    this.value = undefined;
   }
   disabledChanged() {
     this.emitStyle();
@@ -447,10 +427,8 @@ const SelectOption = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     this.inputId = `ion-selopt-${selectOptionIds++}`;
-    /**
-     * If `true`, the user cannot interact with the select option. This property does not apply when `interface="action-sheet"` as `ion-action-sheet` does not allow for disabled buttons.
-     */
     this.disabled = false;
+    this.value = undefined;
   }
   render() {
     return (index.h(index.Host, { role: "option", id: this.inputId, class: ionicGlobal.getIonMode(this) }));
@@ -465,7 +443,9 @@ const selectPopoverCss = ".sc-ion-select-popover-h ion-list.sc-ion-select-popove
 const SelectPopover = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /** Array of options for the popover */
+    this.header = undefined;
+    this.subHeader = undefined;
+    this.message = undefined;
     this.options = [];
   }
   onSelect(ev) {

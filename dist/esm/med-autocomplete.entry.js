@@ -1,14 +1,16 @@
-import { r as registerInstance, h, H as Host, i as getElement } from './index-70672e81.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host, j as getElement } from './index-336c66d9.js';
 
 const medAutocompleteCss = ".sc-med-autocomplete-h{--autocomplete-base-height:40px;--autocomplete-height:auto;--dropdown-max-height:164px;display:block;position:relative;border-radius:8px}.sc-med-autocomplete-s>med-dropdown+ion-searchbar{--border-radius:8px}.sc-med-autocomplete-s>med-dropdown{--top:40px;max-height:var(--dropdown-max-height);background:hsl(var(--med-color-neutral-2));cursor:pointer}.med-autocomplete--dropdown-hide.sc-med-autocomplete-h{opacity:1;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes shorten{0%{height:var(--autocomplete-height)}100%{height:var(--autocomplete-base-height)}}@keyframes shorten{0%{height:var(--autocomplete-height)}100%{height:var(--autocomplete-base-height)}}.sc-med-autocomplete-h.med-autocomplete--dropdown-hide.sc-med-autocomplete-s>med-dropdown{opacity:0;pointer-events:none;-webkit-animation-name:fadeAndShrink;animation-name:fadeAndShrink;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}@-webkit-keyframes fadeAndShrink{0%{opacity:1}100%{opacity:0}}@keyframes fadeAndShrink{0%{opacity:1}100%{opacity:0}}.med-autocomplete--dropdown-show.sc-med-autocomplete-h{opacity:1;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes heighten{0%{height:var(--autocomplete-base-height)}100%{height:var(--autocomplete-height)}}@keyframes heighten{0%{height:var(--autocomplete-base-height)}100%{height:var(--autocomplete-height)}}.sc-med-autocomplete-h.med-autocomplete--dropdown-show.sc-med-autocomplete-s>ion-searchbar{--border-radius:8px 8px 0 0}.sc-med-autocomplete-h.med-autocomplete--dropdown-show.sc-med-autocomplete-s>med-dropdown{opacity:1;-webkit-animation-name:showUp;animation-name:showUp;-webkit-animation-duration:300ms;animation-duration:300ms;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}@-webkit-keyframes showUp{0%{opacity:0}100%{opacity:1}}@keyframes showUp{0%{opacity:0}100%{opacity:1}}";
 
 const MedAutocomplete = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * Se a pesquisa por items possuir debounce time até o item ser inserido
-     *  no dom, deve ser indicado por essa propriedade (defaults to 0)
-     */
+    this.open = undefined;
+    this.baseHeight = undefined;
+    this.dropdown = undefined;
     this.debounceTime = 0;
   }
   closeOnOutsideClick(e) {

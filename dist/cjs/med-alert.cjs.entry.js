@@ -1,22 +1,26 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const overlays = require('./overlays-9895f6f3.js');
-const index$1 = require('./index-e1bb33c3.js');
-require('./ionic-global-50e8bb29.js');
-require('./hardware-back-button-148ce546.js');
-require('./helpers-ba3c117b.js');
+const index = require('./index-a17b061b.js');
+const overlays = require('./overlays-12a6887f.js');
+const index$1 = require('./index-365d7fb3.js');
+require('./ionic-global-8b32527f.js');
+require('./hardware-back-button-a7dedc7d.js');
+require('./helpers-4478bffd.js');
 
 const medAlertCss = ".sc-med-alert-h{display:block}";
 
 const MedAlert = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /**
-     * todo
-     */
+    this.heading = undefined;
+    this.message = undefined;
+    this.cancelText = undefined;
+    this.confirmText = undefined;
     this.disableSanitize = false;
   }
   dismiss(role) {

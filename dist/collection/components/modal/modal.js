@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Method, Prop, Watch, h, writeTask } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h, writeTask } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { attachComponent, detachComponent } from '../../utils/framework-delegate';
@@ -18,26 +21,6 @@ export class Modal {
     // Whether or not modal is being dismissed via gesture
     this.gestureAnimationDismissing = false;
     this.presented = false;
-    /**
-     * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
-     */
-    this.keyboardClose = true;
-    /**
-     * If `true`, the modal will be dismissed when the backdrop is clicked.
-     */
-    this.backdropDismiss = true;
-    /**
-     * If `true`, a backdrop will be displayed behind the modal.
-     */
-    this.showBackdrop = true;
-    /**
-     * If `true`, the modal will animate.
-     */
-    this.animated = true;
-    /**
-     * If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.
-     */
-    this.swipeToClose = false;
     this.onBackdropTap = () => {
       this.dismiss(undefined, BACKDROP);
     };
@@ -58,6 +41,19 @@ export class Modal {
         el.dispatchEvent(ev);
       }
     };
+    this.overlayIndex = undefined;
+    this.delegate = undefined;
+    this.keyboardClose = true;
+    this.enterAnimation = undefined;
+    this.leaveAnimation = undefined;
+    this.component = undefined;
+    this.componentProps = undefined;
+    this.cssClass = undefined;
+    this.backdropDismiss = true;
+    this.showBackdrop = true;
+    this.animated = true;
+    this.swipeToClose = false;
+    this.presentingElement = undefined;
   }
   swipeToCloseChanged(enable) {
     if (this.gesture) {
@@ -156,450 +152,457 @@ export class Modal {
     const mode = getIonMode(this);
     return (h(Host, { "no-router": true, "aria-modal": "true", tabindex: "-1", class: Object.assign({ [mode]: true, [`modal-card`]: this.presentingElement !== undefined && mode === 'ios' }, getClassMap(this.cssClass)), style: {
         zIndex: `${20000 + this.overlayIndex}`,
-      }, onIonBackdropTap: this.onBackdropTap, onIonDismiss: this.onDismiss, onIonModalDidPresent: this.onLifecycle, onIonModalWillPresent: this.onLifecycle, onIonModalWillDismiss: this.onLifecycle, onIonModalDidDismiss: this.onLifecycle },
-      h("ion-backdrop", { visible: this.showBackdrop, tappable: this.backdropDismiss }),
-      mode === 'ios' && h("div", { class: "modal-shadow" }),
-      h("div", { tabindex: "0" }),
-      h("div", { role: "dialog", class: "modal-wrapper ion-overlay-wrapper" }),
-      h("div", { tabindex: "0" })));
+      }, onIonBackdropTap: this.onBackdropTap, onIonDismiss: this.onDismiss, onIonModalDidPresent: this.onLifecycle, onIonModalWillPresent: this.onLifecycle, onIonModalWillDismiss: this.onLifecycle, onIonModalDidDismiss: this.onLifecycle }, h("ion-backdrop", { visible: this.showBackdrop, tappable: this.backdropDismiss }), mode === 'ios' && h("div", { class: "modal-shadow" }), h("div", { tabindex: "0" }), h("div", { role: "dialog", class: "modal-wrapper ion-overlay-wrapper" }), h("div", { tabindex: "0" })));
   }
   static get is() { return "ion-modal"; }
   static get encapsulation() { return "scoped"; }
-  static get originalStyleUrls() { return {
-    "ios": ["modal.md.scss"],
-    "md": ["modal.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["modal.md.css"],
-    "md": ["modal.md.css"]
-  }; }
-  static get properties() { return {
-    "overlayIndex": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
+  static get originalStyleUrls() {
+    return {
+      "ios": ["modal.md.scss"],
+      "md": ["modal.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["modal.md.css"],
+      "md": ["modal.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "overlayIndex": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": true,
+        "optional": false,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": ""
+        },
+        "attribute": "overlay-index",
+        "reflect": false
       },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": ""
-      },
-      "attribute": "overlay-index",
-      "reflect": false
-    },
-    "delegate": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "FrameworkDelegate",
-        "resolved": "FrameworkDelegate | undefined",
-        "references": {
-          "FrameworkDelegate": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": ""
-      }
-    },
-    "keyboardClose": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the keyboard will be automatically dismissed when the overlay is presented."
-      },
-      "attribute": "keyboard-close",
-      "reflect": false,
-      "defaultValue": "true"
-    },
-    "enterAnimation": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "AnimationBuilder",
-        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
-        "references": {
-          "AnimationBuilder": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Animation to use when the modal is presented."
-      }
-    },
-    "leaveAnimation": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "AnimationBuilder",
-        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
-        "references": {
-          "AnimationBuilder": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Animation to use when the modal is dismissed."
-      }
-    },
-    "component": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "ComponentRef",
-        "resolved": "Function | HTMLElement | null | string",
-        "references": {
-          "ComponentRef": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The component to display inside of the modal."
-      },
-      "attribute": "component",
-      "reflect": false
-    },
-    "componentProps": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "ComponentProps",
-        "resolved": "undefined | { [key: string]: any; }",
-        "references": {
-          "ComponentProps": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The data to pass to the modal component."
-      }
-    },
-    "cssClass": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | string[]",
-        "resolved": "string | string[] | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
-      },
-      "attribute": "css-class",
-      "reflect": false
-    },
-    "backdropDismiss": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the modal will be dismissed when the backdrop is clicked."
-      },
-      "attribute": "backdrop-dismiss",
-      "reflect": false,
-      "defaultValue": "true"
-    },
-    "showBackdrop": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, a backdrop will be displayed behind the modal."
-      },
-      "attribute": "show-backdrop",
-      "reflect": false,
-      "defaultValue": "true"
-    },
-    "animated": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the modal will animate."
-      },
-      "attribute": "animated",
-      "reflect": false,
-      "defaultValue": "true"
-    },
-    "swipeToClose": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the modal can be swiped to dismiss. Only applies in iOS mode."
-      },
-      "attribute": "swipe-to-close",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "presentingElement": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "HTMLElement",
-        "resolved": "HTMLElement | undefined",
-        "references": {
-          "HTMLElement": {
-            "location": "global"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The element that presented the modal. This is used for card presentation effects\nand for stacking multiple modals on top of each other. Only applies in iOS mode."
-      }
-    }
-  }; }
-  static get events() { return [{
-      "method": "didPresent",
-      "name": "ionModalDidPresent",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted after the modal has presented."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "willPresent",
-      "name": "ionModalWillPresent",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted before the modal has presented."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "willDismiss",
-      "name": "ionModalWillDismiss",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted before the modal has dismissed."
-      },
-      "complexType": {
-        "original": "OverlayEventDetail",
-        "resolved": "OverlayEventDetail<any>",
-        "references": {
-          "OverlayEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      }
-    }, {
-      "method": "didDismiss",
-      "name": "ionModalDidDismiss",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted after the modal has dismissed."
-      },
-      "complexType": {
-        "original": "OverlayEventDetail",
-        "resolved": "OverlayEventDetail<any>",
-        "references": {
-          "OverlayEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      }
-    }]; }
-  static get methods() { return {
-    "present": {
-      "complexType": {
-        "signature": "() => Promise<void>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
+      "delegate": {
+        "type": "unknown",
+        "mutable": false,
+        "complexType": {
+          "original": "FrameworkDelegate",
+          "resolved": "FrameworkDelegate | undefined",
+          "references": {
+            "FrameworkDelegate": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         },
-        "return": "Promise<void>"
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": ""
+        }
       },
-      "docs": {
-        "text": "Present the modal overlay after it has been created.",
-        "tags": []
-      }
-    },
-    "dismiss": {
-      "complexType": {
-        "signature": "(data?: any, role?: string | undefined) => Promise<boolean>",
-        "parameters": [{
-            "tags": [{
-                "text": "data Any data to emit in the dismiss events.",
-                "name": "param"
-              }],
-            "text": "Any data to emit in the dismiss events."
-          }, {
-            "tags": [{
-                "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.",
-                "name": "param"
-              }],
-            "text": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
+      "keyboardClose": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the keyboard will be automatically dismissed when the overlay is presented."
+        },
+        "attribute": "keyboard-close",
+        "reflect": false,
+        "defaultValue": "true"
+      },
+      "enterAnimation": {
+        "type": "unknown",
+        "mutable": false,
+        "complexType": {
+          "original": "AnimationBuilder",
+          "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+          "references": {
+            "AnimationBuilder": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         },
-        "return": "Promise<boolean>"
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Animation to use when the modal is presented."
+        }
       },
-      "docs": {
-        "text": "Dismiss the modal overlay after it has been presented.",
-        "tags": [{
-            "name": "param",
-            "text": "data Any data to emit in the dismiss events."
-          }, {
-            "name": "param",
-            "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
-          }]
-      }
-    },
-    "onDidDismiss": {
-      "complexType": {
-        "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
-          },
-          "OverlayEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          },
-          "T": {
-            "location": "global"
+      "leaveAnimation": {
+        "type": "unknown",
+        "mutable": false,
+        "complexType": {
+          "original": "AnimationBuilder",
+          "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+          "references": {
+            "AnimationBuilder": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         },
-        "return": "Promise<OverlayEventDetail<T>>"
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Animation to use when the modal is dismissed."
+        }
       },
-      "docs": {
-        "text": "Returns a promise that resolves when the modal did dismiss.",
-        "tags": []
-      }
-    },
-    "onWillDismiss": {
-      "complexType": {
-        "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
-          },
-          "OverlayEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          },
-          "T": {
-            "location": "global"
+      "component": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "ComponentRef",
+          "resolved": "Function | HTMLElement | null | string",
+          "references": {
+            "ComponentRef": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         },
-        "return": "Promise<OverlayEventDetail<T>>"
+        "required": true,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The component to display inside of the modal."
+        },
+        "attribute": "component",
+        "reflect": false
       },
-      "docs": {
-        "text": "Returns a promise that resolves when the modal will dismiss.",
-        "tags": []
+      "componentProps": {
+        "type": "unknown",
+        "mutable": false,
+        "complexType": {
+          "original": "ComponentProps",
+          "resolved": "undefined | { [key: string]: any; }",
+          "references": {
+            "ComponentProps": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The data to pass to the modal component."
+        }
+      },
+      "cssClass": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | string[]",
+          "resolved": "string | string[] | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+        },
+        "attribute": "css-class",
+        "reflect": false
+      },
+      "backdropDismiss": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the modal will be dismissed when the backdrop is clicked."
+        },
+        "attribute": "backdrop-dismiss",
+        "reflect": false,
+        "defaultValue": "true"
+      },
+      "showBackdrop": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, a backdrop will be displayed behind the modal."
+        },
+        "attribute": "show-backdrop",
+        "reflect": false,
+        "defaultValue": "true"
+      },
+      "animated": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the modal will animate."
+        },
+        "attribute": "animated",
+        "reflect": false,
+        "defaultValue": "true"
+      },
+      "swipeToClose": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the modal can be swiped to dismiss. Only applies in iOS mode."
+        },
+        "attribute": "swipe-to-close",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "presentingElement": {
+        "type": "unknown",
+        "mutable": false,
+        "complexType": {
+          "original": "HTMLElement",
+          "resolved": "HTMLElement | undefined",
+          "references": {
+            "HTMLElement": {
+              "location": "global"
+            }
+          }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The element that presented the modal. This is used for card presentation effects\nand for stacking multiple modals on top of each other. Only applies in iOS mode."
+        }
       }
-    }
-  }; }
+    };
+  }
+  static get events() {
+    return [{
+        "method": "didPresent",
+        "name": "ionModalDidPresent",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted after the modal has presented."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "willPresent",
+        "name": "ionModalWillPresent",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted before the modal has presented."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "willDismiss",
+        "name": "ionModalWillDismiss",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted before the modal has dismissed."
+        },
+        "complexType": {
+          "original": "OverlayEventDetail",
+          "resolved": "OverlayEventDetail<any>",
+          "references": {
+            "OverlayEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }, {
+        "method": "didDismiss",
+        "name": "ionModalDidDismiss",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted after the modal has dismissed."
+        },
+        "complexType": {
+          "original": "OverlayEventDetail",
+          "resolved": "OverlayEventDetail<any>",
+          "references": {
+            "OverlayEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }];
+  }
+  static get methods() {
+    return {
+      "present": {
+        "complexType": {
+          "signature": "() => Promise<void>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
+        },
+        "docs": {
+          "text": "Present the modal overlay after it has been created.",
+          "tags": []
+        }
+      },
+      "dismiss": {
+        "complexType": {
+          "signature": "(data?: any, role?: string) => Promise<boolean>",
+          "parameters": [{
+              "tags": [{
+                  "name": "param",
+                  "text": "data Any data to emit in the dismiss events."
+                }],
+              "text": "Any data to emit in the dismiss events."
+            }, {
+              "tags": [{
+                  "name": "param",
+                  "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+                }],
+              "text": "The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<boolean>"
+        },
+        "docs": {
+          "text": "Dismiss the modal overlay after it has been presented.",
+          "tags": [{
+              "name": "param",
+              "text": "data Any data to emit in the dismiss events."
+            }, {
+              "name": "param",
+              "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+            }]
+        }
+      },
+      "onDidDismiss": {
+        "complexType": {
+          "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            },
+            "OverlayEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            },
+            "T": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<OverlayEventDetail<T>>"
+        },
+        "docs": {
+          "text": "Returns a promise that resolves when the modal did dismiss.",
+          "tags": []
+        }
+      },
+      "onWillDismiss": {
+        "complexType": {
+          "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            },
+            "OverlayEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            },
+            "T": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<OverlayEventDetail<T>>"
+        },
+        "docs": {
+          "text": "Returns a promise that resolves when the modal will dismiss.",
+          "tags": []
+        }
+      }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "swipeToClose",
-      "methodName": "swipeToCloseChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "swipeToClose",
+        "methodName": "swipeToCloseChanged"
+      }];
+  }
 }
 const LIFECYCLE_MAP = {
   'ionModalDidPresent': 'ionViewDidEnter',

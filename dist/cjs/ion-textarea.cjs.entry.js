@@ -1,11 +1,14 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const helpers = require('./helpers-ba3c117b.js');
-const theme = require('./theme-30b7a575.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const helpers = require('./helpers-4478bffd.js');
+const theme = require('./theme-a4c4a7eb.js');
 
 const textareaIosCss = ".sc-ion-textarea-ios-h{--background:initial;--color:initial;--placeholder-color:initial;--placeholder-font-style:initial;--placeholder-font-weight:initial;--placeholder-opacity:.5;--padding-top:0;--padding-end:0;--padding-bottom:0;--padding-start:0;--border-radius:0;display:block;position:relative;-ms-flex:1;flex:1;width:100%;background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit);white-space:pre-wrap;z-index:2;-webkit-box-sizing:border-box;box-sizing:border-box}.ion-color.sc-ion-textarea-ios-h{background:initial}.ion-color.sc-ion-textarea-ios-h{color:var(--ion-color-base)}ion-item.sc-ion-textarea-ios-h,ion-item .sc-ion-textarea-ios-h{-ms-flex-item-align:baseline;align-self:baseline}ion-item.sc-ion-textarea-ios-h:not(.item-label),ion-item:not(.item-label) .sc-ion-textarea-ios-h{--padding-start:0}.textarea-wrapper.sc-ion-textarea-ios{min-width:inherit;max-width:inherit;min-height:inherit;max-height:inherit}.native-textarea.sc-ion-textarea-ios{border-radius:var(--border-radius);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:block;width:100%;max-width:100%;max-height:100%;border:0;outline:none;background:transparent;-webkit-box-sizing:border-box;box-sizing:border-box;resize:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.native-textarea.sc-ion-textarea-ios{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.native-textarea.sc-ion-textarea-ios::-webkit-input-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-ios::-moz-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-ios:-ms-input-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-ios::-ms-input-placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea.sc-ion-textarea-ios::placeholder{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;color:var(--placeholder-color);font-family:inherit;font-style:var(--placeholder-font-style);font-weight:var(--placeholder-font-weight);opacity:var(--placeholder-opacity)}.native-textarea[disabled].sc-ion-textarea-ios{opacity:0.4}.cloned-input.sc-ion-textarea-ios{left:0;top:0;position:absolute;pointer-events:none}[dir=rtl].sc-ion-textarea-ios .cloned-input.sc-ion-textarea-ios,[dir=rtl].sc-ion-textarea-ios-h .cloned-input.sc-ion-textarea-ios,[dir=rtl] .sc-ion-textarea-ios-h .cloned-input.sc-ion-textarea-ios{left:unset;right:unset;right:0}.item-label-floating.item-has-placeholder.sc-ion-textarea-ios-h:not(.item-has-value),.item-label-floating.item-has-placeholder:not(.item-has-value) .sc-ion-textarea-ios-h{opacity:0}.item-label-floating.item-has-placeholder.sc-ion-textarea-ios-h:not(.item-has-value).item-has-focus,.item-label-floating.item-has-placeholder:not(.item-has-value).item-has-focus .sc-ion-textarea-ios-h{-webkit-transition:opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);transition:opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);opacity:1}.sc-ion-textarea-ios-h{--padding-top:10px;--padding-end:10px;--padding-bottom:10px;--padding-start:0;font-size:inherit}.item-label-stacked.sc-ion-textarea-ios-h,.item-label-stacked .sc-ion-textarea-ios-h,.item-label-floating.sc-ion-textarea-ios-h,.item-label-floating .sc-ion-textarea-ios-h{--padding-top:8px;--padding-bottom:8px;--padding-start:0px}";
 
@@ -22,60 +25,6 @@ const Textarea = class {
     this.inputId = `ion-textarea-${textareaIds++}`;
     this.didBlurAfterEdit = false;
     this.inheritedAttributes = {};
-    /**
-     * This is required for a WebKit bug which requires us to
-     * blur and focus an input to properly focus the input in
-     * an item with delegatesFocus. It will no longer be needed
-     * with iOS 14.
-     *
-     * @internal
-     */
-    this.fireFocusEvents = true;
-    this.hasFocus = false;
-    /**
-     * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
-     */
-    this.autocapitalize = 'none';
-    /**
-     * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
-     */
-    this.autofocus = false;
-    /**
-     * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
-     */
-    this.clearOnEdit = false;
-    /**
-     * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
-     */
-    this.debounce = 0;
-    /**
-     * If `true`, the user cannot interact with the textarea.
-     */
-    this.disabled = false;
-    /**
-     * The name of the control, which is submitted with the form data.
-     */
-    this.name = this.inputId;
-    /**
-     * If `true`, the user cannot modify the value.
-     */
-    this.readonly = false;
-    /**
-     * If `true`, the user must fill in a value before submitting a form.
-     */
-    this.required = false;
-    /**
-     * If `true`, the element will have its spelling and grammar checked.
-     */
-    this.spellcheck = false;
-    /**
-     * If `true`, the element height will increase based on the value.
-     */
-    this.autoGrow = false;
-    /**
-     * The value of the textarea.
-     */
-    this.value = '';
     this.onInput = (ev) => {
       if (this.nativeInput) {
         this.value = this.nativeInput.value;
@@ -100,6 +49,28 @@ const Textarea = class {
     this.onKeyDown = () => {
       this.checkClearOnEdit();
     };
+    this.fireFocusEvents = true;
+    this.hasFocus = false;
+    this.color = undefined;
+    this.autocapitalize = 'none';
+    this.autofocus = false;
+    this.clearOnEdit = false;
+    this.debounce = 0;
+    this.disabled = false;
+    this.inputmode = undefined;
+    this.enterkeyhint = undefined;
+    this.maxlength = undefined;
+    this.minlength = undefined;
+    this.name = this.inputId;
+    this.placeholder = undefined;
+    this.readonly = false;
+    this.required = false;
+    this.spellcheck = false;
+    this.cols = undefined;
+    this.rows = undefined;
+    this.wrap = undefined;
+    this.autoGrow = false;
+    this.value = '';
   }
   debounceChanged() {
     this.ionChange = helpers.debounceEvent(this.ionChange, this.debounce);

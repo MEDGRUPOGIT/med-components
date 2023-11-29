@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Listen, Method, Prop, Watch, h, } from "@stencil/core";
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h, } from "@stencil/core";
 import { getIonMode } from "../../../../global/ionic-global";
 import { printIonWarning } from "../../../../utils/logging";
 /**
@@ -6,26 +9,11 @@ import { printIonWarning } from "../../../../utils/logging";
  */
 export class TpAccordionGroup {
   constructor() {
-    /**
-     * If `true`, all accordions inside of the
-     * accordion group will animate when expanding
-     * or collapsing.
-     */
     this.animated = true;
-    /**
-     * If `true`, the accordion group cannot be interacted with.
-     */
+    this.multiple = undefined;
+    this.value = undefined;
     this.disabled = false;
-    /**
-     * If `true`, the accordion group cannot be interacted with,
-     * but does not alter the opacity.
-     */
     this.readonly = false;
-    /**
-     * Describes the expansion behavior for each accordion.
-     * Possible values are `"compact"` and `"inset"`.
-     * Defaults to `"compact"`.
-     */
     this.expand = "compact";
   }
   valueChanged() {
@@ -210,236 +198,249 @@ export class TpAccordionGroup {
         "accordion-group-disabled": disabled,
         "accordion-group-readonly": readonly,
         [`accordion-group-expand-${expand}`]: true,
-      }, role: "presentation" },
-      h("slot", null)));
+      }, role: "presentation" }, h("slot", null)));
   }
   static get is() { return "tp-accordion-group"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["tp-accordion-group.ios.scss"],
-    "md": ["tp-accordion-group.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["tp-accordion-group.ios.css"],
-    "md": ["tp-accordion-group.md.css"]
-  }; }
-  static get properties() { return {
-    "animated": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, all accordions inside of the\naccordion group will animate when expanding\nor collapsing."
-      },
-      "attribute": "animated",
-      "reflect": false,
-      "defaultValue": "true"
-    },
-    "multiple": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the accordion group can have multiple\naccordion components expanded at the same time."
-      },
-      "attribute": "multiple",
-      "reflect": false
-    },
-    "value": {
-      "type": "string",
-      "mutable": true,
-      "complexType": {
-        "original": "string | string[] | null",
-        "resolved": "null | string | string[] | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The value of the accordion group. This controls which\naccordions are expanded.\nThis should be an array of strings only when `multiple=\"true\"`"
-      },
-      "attribute": "value",
-      "reflect": false
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the accordion group cannot be interacted with."
-      },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "readonly": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the accordion group cannot be interacted with,\nbut does not alter the opacity."
-      },
-      "attribute": "readonly",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "expand": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "\"compact\" | \"inset\"",
-        "resolved": "\"compact\" | \"inset\"",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Describes the expansion behavior for each accordion.\nPossible values are `\"compact\"` and `\"inset\"`.\nDefaults to `\"compact\"`."
-      },
-      "attribute": "expand",
-      "reflect": false,
-      "defaultValue": "\"compact\""
-    }
-  }; }
-  static get events() { return [{
-      "method": "ionChange",
-      "name": "ionChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the value property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically setting\nthe value property."
-      },
-      "complexType": {
-        "original": "TpAccordionGroupChangeEventDetail",
-        "resolved": "TpAccordionGroupChangeEventDetail<any>",
-        "references": {
-          "TpAccordionGroupChangeEventDetail": {
-            "location": "import",
-            "path": "./tp-accordion-group-interface"
-          }
-        }
-      }
-    }, {
-      "method": "ionValueChange",
-      "name": "ionValueChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the value property has changed.\nThis is used to ensure that ion-accordion can respond\nto any value property changes."
-      },
-      "complexType": {
-        "original": "TpAccordionGroupChangeEventDetail",
-        "resolved": "TpAccordionGroupChangeEventDetail<any>",
-        "references": {
-          "TpAccordionGroupChangeEventDetail": {
-            "location": "import",
-            "path": "./tp-accordion-group-interface"
-          }
-        }
-      }
-    }]; }
-  static get methods() { return {
-    "requestAccordionToggle": {
-      "complexType": {
-        "signature": "(accordionValue: string | undefined, accordionExpand: boolean) => Promise<void>",
-        "parameters": [{
-            "tags": [],
-            "text": ""
-          }, {
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
+  static get originalStyleUrls() {
+    return {
+      "ios": ["tp-accordion-group.ios.scss"],
+      "md": ["tp-accordion-group.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["tp-accordion-group.ios.css"],
+      "md": ["tp-accordion-group.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "animated": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
         },
-        "return": "Promise<void>"
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, all accordions inside of the\naccordion group will animate when expanding\nor collapsing."
+        },
+        "attribute": "animated",
+        "reflect": false,
+        "defaultValue": "true"
       },
-      "docs": {
-        "text": "This method is used to ensure that the value\nof ion-accordion-group is being set in a valid\nway. This method should only be called in\nresponse to a user generated action.",
-        "tags": [{
-            "name": "internal",
-            "text": undefined
-          }]
+      "multiple": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the accordion group can have multiple\naccordion components expanded at the same time."
+        },
+        "attribute": "multiple",
+        "reflect": false
+      },
+      "value": {
+        "type": "string",
+        "mutable": true,
+        "complexType": {
+          "original": "string | string[] | null",
+          "resolved": "null | string | string[] | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The value of the accordion group. This controls which\naccordions are expanded.\nThis should be an array of strings only when `multiple=\"true\"`"
+        },
+        "attribute": "value",
+        "reflect": false
+      },
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the accordion group cannot be interacted with."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "readonly": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the accordion group cannot be interacted with,\nbut does not alter the opacity."
+        },
+        "attribute": "readonly",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "expand": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "\"compact\" | \"inset\"",
+          "resolved": "\"compact\" | \"inset\"",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Describes the expansion behavior for each accordion.\nPossible values are `\"compact\"` and `\"inset\"`.\nDefaults to `\"compact\"`."
+        },
+        "attribute": "expand",
+        "reflect": false,
+        "defaultValue": "\"compact\""
       }
-    },
-    "getAccordions": {
-      "complexType": {
-        "signature": "() => Promise<HTMLTpAccordionElement[]>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionChange",
+        "name": "ionChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the value property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically setting\nthe value property."
+        },
+        "complexType": {
+          "original": "TpAccordionGroupChangeEventDetail",
+          "resolved": "TpAccordionGroupChangeEventDetail<any>",
+          "references": {
+            "TpAccordionGroupChangeEventDetail": {
+              "location": "import",
+              "path": "./tp-accordion-group-interface"
+            }
+          }
+        }
+      }, {
+        "method": "ionValueChange",
+        "name": "ionValueChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the value property has changed.\nThis is used to ensure that ion-accordion can respond\nto any value property changes."
+        },
+        "complexType": {
+          "original": "TpAccordionGroupChangeEventDetail",
+          "resolved": "TpAccordionGroupChangeEventDetail<any>",
+          "references": {
+            "TpAccordionGroupChangeEventDetail": {
+              "location": "import",
+              "path": "./tp-accordion-group-interface"
+            }
+          }
+        }
+      }];
+  }
+  static get methods() {
+    return {
+      "requestAccordionToggle": {
+        "complexType": {
+          "signature": "(accordionValue: string | undefined, accordionExpand: boolean) => Promise<void>",
+          "parameters": [{
+              "tags": [],
+              "text": ""
+            }, {
+              "tags": [],
+              "text": ""
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
           },
-          "HTMLTpAccordionElement": {
-            "location": "global"
-          }
+          "return": "Promise<void>"
         },
-        "return": "Promise<HTMLTpAccordionElement[]>"
+        "docs": {
+          "text": "This method is used to ensure that the value\nof ion-accordion-group is being set in a valid\nway. This method should only be called in\nresponse to a user generated action.",
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }]
+        }
       },
-      "docs": {
-        "text": "",
-        "tags": [{
-            "name": "internal",
-            "text": undefined
-          }]
+      "getAccordions": {
+        "complexType": {
+          "signature": "() => Promise<HTMLTpAccordionElement[]>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            },
+            "HTMLTpAccordionElement": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<HTMLTpAccordionElement[]>"
+        },
+        "docs": {
+          "text": "",
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }]
+        }
       }
-    }
-  }; }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "value",
-      "methodName": "valueChanged"
-    }, {
-      "propName": "disabled",
-      "methodName": "disabledChanged"
-    }, {
-      "propName": "readonly",
-      "methodName": "readonlyChanged"
-    }]; }
-  static get listeners() { return [{
-      "name": "keydown",
-      "method": "onKeydown",
-      "target": undefined,
-      "capture": false,
-      "passive": false
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "value",
+        "methodName": "valueChanged"
+      }, {
+        "propName": "disabled",
+        "methodName": "disabledChanged"
+      }, {
+        "propName": "readonly",
+        "methodName": "readonlyChanged"
+      }];
+  }
+  static get listeners() {
+    return [{
+        "name": "keydown",
+        "method": "onKeydown",
+        "target": undefined,
+        "capture": false,
+        "passive": false
+      }];
+  }
 }

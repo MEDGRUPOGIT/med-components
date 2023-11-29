@@ -1,10 +1,12 @@
-import { Component, Host, Element, Listen, h, Prop, State, Method, Watch, } from "@stencil/core";
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h, } from "@stencil/core";
 export class MedAutocomplete {
   constructor() {
-    /**
-     * Se a pesquisa por items possuir debounce time até o item ser inserido
-     *  no dom, deve ser indicado por essa propriedade (defaults to 0)
-     */
+    this.open = undefined;
+    this.baseHeight = undefined;
+    this.dropdown = undefined;
     this.debounceTime = 0;
   }
   closeOnOutsideClick(e) {
@@ -70,98 +72,111 @@ export class MedAutocomplete {
     return (h(Host, { class: {
         "med-autocomplete--dropdown-hide": !open,
         "med-autocomplete--dropdown-show": open,
-      } },
-      h("slot", null)));
+      } }, h("slot", null)));
   }
   static get is() { return "med-autocomplete"; }
   static get encapsulation() { return "scoped"; }
-  static get originalStyleUrls() { return {
-    "$": ["med-autocomplete.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["med-autocomplete.css"]
-  }; }
-  static get properties() { return {
-    "dropdown": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Indica se o componente deve ser renderizado mostrando o dropdown ou n\u00E3o"
-      },
-      "attribute": "dropdown",
-      "reflect": true
-    },
-    "debounceTime": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Se a pesquisa por items possuir debounce time at\u00E9 o item ser inserido\n no dom, deve ser indicado por essa propriedade (defaults to 0)"
-      },
-      "attribute": "debounce-time",
-      "reflect": true,
-      "defaultValue": "0"
-    }
-  }; }
-  static get states() { return {
-    "open": {},
-    "baseHeight": {}
-  }; }
-  static get methods() { return {
-    "toggleDropdown": {
-      "complexType": {
-        "signature": "() => Promise<void>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
+  static get originalStyleUrls() {
+    return {
+      "$": ["med-autocomplete.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["med-autocomplete.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "dropdown": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
         },
-        "return": "Promise<void>"
+        "required": true,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Indica se o componente deve ser renderizado mostrando o dropdown ou n\u00E3o"
+        },
+        "attribute": "dropdown",
+        "reflect": true
       },
-      "docs": {
-        "text": "",
-        "tags": []
+      "debounceTime": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Se a pesquisa por items possuir debounce time at\u00E9 o item ser inserido\n no dom, deve ser indicado por essa propriedade (defaults to 0)"
+        },
+        "attribute": "debounce-time",
+        "reflect": true,
+        "defaultValue": "0"
       }
-    }
-  }; }
+    };
+  }
+  static get states() {
+    return {
+      "open": {},
+      "baseHeight": {}
+    };
+  }
+  static get methods() {
+    return {
+      "toggleDropdown": {
+        "complexType": {
+          "signature": "() => Promise<void>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
+        },
+        "docs": {
+          "text": "",
+          "tags": []
+        }
+      }
+    };
+  }
   static get elementRef() { return "host"; }
-  static get watchers() { return [{
-      "propName": "open",
-      "methodName": "handleOpenChange"
-    }]; }
-  static get listeners() { return [{
-      "name": "click",
-      "method": "closeOnOutsideClick",
-      "target": "body",
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "ionInput",
-      "method": "handleInput",
-      "target": undefined,
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "ionFocus",
-      "method": "handleFocus",
-      "target": undefined,
-      "capture": false,
-      "passive": false
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "open",
+        "methodName": "handleOpenChange"
+      }];
+  }
+  static get listeners() {
+    return [{
+        "name": "click",
+        "method": "closeOnOutsideClick",
+        "target": "body",
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "ionInput",
+        "method": "handleInput",
+        "target": undefined,
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "ionFocus",
+        "method": "handleFocus",
+        "target": undefined,
+        "capture": false,
+        "passive": false
+      }];
+  }
 }

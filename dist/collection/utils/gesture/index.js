@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { GESTURE_CONTROLLER } from './gesture-controller';
 import { createPointerEvents } from './pointer-events';
 import { createPanRecognizer } from './recognizers';

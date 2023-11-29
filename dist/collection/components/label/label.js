@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { createColorClasses } from '../../utils/theme';
 /**
@@ -7,6 +10,8 @@ import { createColorClasses } from '../../utils/theme';
 export class Label {
   constructor() {
     this.inRange = false;
+    this.color = undefined;
+    this.position = undefined;
     this.noAnimate = false;
   }
   componentWillLoad() {
@@ -58,111 +63,123 @@ export class Label {
   }
   static get is() { return "ion-label"; }
   static get encapsulation() { return "scoped"; }
-  static get originalStyleUrls() { return {
-    "ios": ["label.ios.scss"],
-    "md": ["label.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["label.ios.css"],
-    "md": ["label.md.css"]
-  }; }
-  static get properties() { return {
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../interface"
+  static get originalStyleUrls() {
+    return {
+      "ios": ["label.ios.scss"],
+      "md": ["label.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["label.ios.css"],
+      "md": ["label.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "color": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Color",
+          "resolved": "string | undefined",
+          "references": {
+            "Color": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        },
+        "attribute": "color",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
-      },
-      "attribute": "color",
-      "reflect": false
-    },
-    "position": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'fixed' | 'stacked' | 'floating'",
-        "resolved": "\"fixed\" | \"floating\" | \"stacked\" | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The position determines where and how the label behaves inside an item."
-      },
-      "attribute": "position",
-      "reflect": false
-    }
-  }; }
-  static get states() { return {
-    "noAnimate": {}
-  }; }
-  static get events() { return [{
-      "method": "ionColor",
-      "name": "ionColor",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the color changes."
-      },
-      "complexType": {
-        "original": "StyleEventDetail",
-        "resolved": "StyleEventDetail",
-        "references": {
-          "StyleEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
+      "position": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'fixed' | 'stacked' | 'floating'",
+          "resolved": "\"fixed\" | \"floating\" | \"stacked\" | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The position determines where and how the label behaves inside an item."
+        },
+        "attribute": "position",
+        "reflect": false
       }
-    }, {
-      "method": "ionStyle",
-      "name": "ionStyle",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the styles change."
-      },
-      "complexType": {
-        "original": "StyleEventDetail",
-        "resolved": "StyleEventDetail",
-        "references": {
-          "StyleEventDetail": {
-            "location": "import",
-            "path": "../../interface"
+    };
+  }
+  static get states() {
+    return {
+      "noAnimate": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionColor",
+        "name": "ionColor",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the color changes."
+        },
+        "complexType": {
+          "original": "StyleEventDetail",
+          "resolved": "StyleEventDetail",
+          "references": {
+            "StyleEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      }
-    }]; }
+      }, {
+        "method": "ionStyle",
+        "name": "ionStyle",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the styles change."
+        },
+        "complexType": {
+          "original": "StyleEventDetail",
+          "resolved": "StyleEventDetail",
+          "references": {
+            "StyleEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }];
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "color",
-      "methodName": "colorChanged"
-    }, {
-      "propName": "position",
-      "methodName": "positionChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "color",
+        "methodName": "colorChanged"
+      }, {
+        "propName": "position",
+        "methodName": "positionChanged"
+      }];
+  }
 }

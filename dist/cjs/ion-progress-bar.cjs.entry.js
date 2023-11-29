@@ -1,12 +1,15 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const helpers = require('./helpers-ba3c117b.js');
-const color = require('./color-2d4645aa.js');
-const theme = require('./theme-30b7a575.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const helpers = require('./helpers-4478bffd.js');
+const color = require('./color-c29da9e4.js');
+const theme = require('./theme-a4c4a7eb.js');
 
 const iosProgressBarMedCss = ":host{--background:hsl(var(--med-color-brand-1));--progress-background:hsl(var(--med-color-brand-4));--buffer-background:transparent;--progress-correct-background:hsl(var(--med-color-fb-success));--height:4px;display:block;position:relative;contain:strict;overflow:hidden;width:100%;height:var(--height)}.progress-container{display:-ms-flexbox;display:flex;background-color:var(--background)}:host(.in-med-header) .progress-container{background:hsl(var(--med-color-neutral-8));border-radius:0}:host(.in-med-header) .progress--correct{background:hsl(var(--med-color-brand-4))}.progress{width:100%;height:100%;height:var(--height);background:var(--progress-background)}.progress--correct{background:var(--progress-correct-background)}:host(.med-color){--progress-background:hsl(var(--med-color-4));--background:hsl(var(--med-color-1))}:host(.med-color-neutral){--progress-background:hsl(var(--med-color-neutral));--background:hsl(var(--med-color-neutral-contrast))}:host(.med-color-feedback){--progress-background:hsl(var(--med-color-feedback));--background:hsl(var(--med-color-feedback-contrast))}";
 
@@ -15,26 +18,12 @@ const mdProgressBarMedCss = ":host{--background:hsl(var(--med-color-brand-1));--
 const ProgressBar = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /**
-     * The state of the progress bar, based on if the time the process takes is known or not.
-     * Default options are: `"determinate"` (no animation), `"indeterminate"` (animate from left to right).
-     */
+    this.dsColor = undefined;
     this.type = 'determinate';
-    /**
-     * If true, reverse the progress bar direction.
-     */
     this.reversed = false;
-    /**
-     * The value determines how much of the active bar should display when the
-     * `type` is `"determinate"`.
-     * The value should be between [0, 1].
-     */
     this.value = 0;
-    /**
-     * If the buffer and value are smaller than 1, the buffer circles will show.
-     * The buffer should be between [0, 1].
-     */
     this.buffer = 1;
+    this.color = undefined;
   }
   render() {
     const { dsColor, type, reversed, value, buffer } = this;

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const addEventListener = (el, eventName, callback, opts) => {
   // use event listener options when supported
   // otherwise it's just a boolean for the "capture" arg

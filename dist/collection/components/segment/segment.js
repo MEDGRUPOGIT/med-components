@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Prop, State, Watch, h, writeTask } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h, writeTask } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { pointerCoord } from '../../utils/helpers';
@@ -9,21 +12,6 @@ import { createColorClasses, hostContext } from '../../utils/theme';
 export class Segment {
   constructor() {
     this.didInit = false;
-    this.activated = false;
-    /**
-     * If `true`, the user cannot interact with the segment.
-     */
-    this.disabled = false;
-    /**
-     * If `true`, the segment buttons will overflow and the user can swipe to see them.
-     * In addition, this will disable the gesture to drag the indicator between the buttons
-     * in order to swipe to see hidden buttons.
-     */
-    this.scrollable = false;
-    /**
-     * If `true`, users will be able to swipe between segment buttons to activate them.
-     */
-    this.swipeGesture = true;
     this.onClick = (ev) => {
       const current = ev.target;
       const previous = this.checked;
@@ -45,6 +33,12 @@ export class Segment {
       }
       this.checked = current;
     };
+    this.activated = false;
+    this.color = undefined;
+    this.disabled = false;
+    this.scrollable = false;
+    this.swipeGesture = true;
+    this.value = undefined;
   }
   colorChanged(value, oldValue) {
     /**
@@ -313,196 +307,207 @@ export class Segment {
         'segment-activated': this.activated,
         'segment-disabled': this.disabled,
         'segment-scrollable': this.scrollable
-      }) },
-      h("slot", null)));
+      }) }, h("slot", null)));
   }
   static get is() { return "ion-segment"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["segment.ios.scss"],
-    "md": ["segment.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["segment.ios.css"],
-    "md": ["segment.md.css"]
-  }; }
-  static get properties() { return {
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../interface"
+  static get originalStyleUrls() {
+    return {
+      "ios": ["segment.ios.scss"],
+      "md": ["segment.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["segment.ios.css"],
+      "md": ["segment.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "color": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Color",
+          "resolved": "string | undefined",
+          "references": {
+            "Color": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        },
+        "attribute": "color",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the user cannot interact with the segment."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "attribute": "color",
-      "reflect": false
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
+      "scrollable": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the segment buttons will overflow and the user can swipe to see them.\nIn addition, this will disable the gesture to drag the indicator between the buttons\nin order to swipe to see hidden buttons."
+        },
+        "attribute": "scrollable",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the user cannot interact with the segment."
+      "swipeGesture": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, users will be able to swipe between segment buttons to activate them."
+        },
+        "attribute": "swipe-gesture",
+        "reflect": false,
+        "defaultValue": "true"
       },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "scrollable": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the segment buttons will overflow and the user can swipe to see them.\nIn addition, this will disable the gesture to drag the indicator between the buttons\nin order to swipe to see hidden buttons."
-      },
-      "attribute": "scrollable",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "swipeGesture": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, users will be able to swipe between segment buttons to activate them."
-      },
-      "attribute": "swipe-gesture",
-      "reflect": false,
-      "defaultValue": "true"
-    },
-    "value": {
-      "type": "string",
-      "mutable": true,
-      "complexType": {
-        "original": "string | null",
-        "resolved": "null | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "the value of the segment."
-      },
-      "attribute": "value",
-      "reflect": false
-    }
-  }; }
-  static get states() { return {
-    "activated": {}
-  }; }
-  static get events() { return [{
-      "method": "ionChange",
-      "name": "ionChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the value property has changed and any\ndragging pointer has been released from `ion-segment`."
-      },
-      "complexType": {
-        "original": "SegmentChangeEventDetail",
-        "resolved": "SegmentChangeEventDetail",
-        "references": {
-          "SegmentChangeEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
+      "value": {
+        "type": "string",
+        "mutable": true,
+        "complexType": {
+          "original": "string | null",
+          "resolved": "null | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "the value of the segment."
+        },
+        "attribute": "value",
+        "reflect": false
       }
-    }, {
-      "method": "ionSelect",
-      "name": "ionSelect",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when user has dragged over a new button"
-      },
-      "complexType": {
-        "original": "SegmentChangeEventDetail",
-        "resolved": "SegmentChangeEventDetail",
-        "references": {
-          "SegmentChangeEventDetail": {
-            "location": "import",
-            "path": "../../interface"
+    };
+  }
+  static get states() {
+    return {
+      "activated": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionChange",
+        "name": "ionChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the value property has changed and any\ndragging pointer has been released from `ion-segment`."
+        },
+        "complexType": {
+          "original": "SegmentChangeEventDetail",
+          "resolved": "SegmentChangeEventDetail",
+          "references": {
+            "SegmentChangeEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      }
-    }, {
-      "method": "ionStyle",
-      "name": "ionStyle",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the styles change."
-      },
-      "complexType": {
-        "original": "StyleEventDetail",
-        "resolved": "StyleEventDetail",
-        "references": {
-          "StyleEventDetail": {
-            "location": "import",
-            "path": "../../interface"
+      }, {
+        "method": "ionSelect",
+        "name": "ionSelect",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when user has dragged over a new button"
+        },
+        "complexType": {
+          "original": "SegmentChangeEventDetail",
+          "resolved": "SegmentChangeEventDetail",
+          "references": {
+            "SegmentChangeEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      }
-    }]; }
+      }, {
+        "method": "ionStyle",
+        "name": "ionStyle",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the styles change."
+        },
+        "complexType": {
+          "original": "StyleEventDetail",
+          "resolved": "StyleEventDetail",
+          "references": {
+            "StyleEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }];
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "color",
-      "methodName": "colorChanged"
-    }, {
-      "propName": "swipeGesture",
-      "methodName": "swipeGestureChanged"
-    }, {
-      "propName": "value",
-      "methodName": "valueChanged"
-    }, {
-      "propName": "disabled",
-      "methodName": "disabledChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "color",
+        "methodName": "colorChanged"
+      }, {
+        "propName": "swipeGesture",
+        "methodName": "swipeGestureChanged"
+      }, {
+        "propName": "value",
+        "methodName": "valueChanged"
+      }, {
+        "propName": "disabled",
+        "methodName": "disabledChanged"
+      }];
+  }
 }

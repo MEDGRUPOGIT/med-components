@@ -16,6 +16,7 @@
   width: 100%;
   border-radius: var(--border-radius);
   overflow: hidden;
+  margin-right: 12px;
 }
 .med-chart-bar-horizontal__progress, .med-chart-bar-horizontal__track {
   transform-origin: left;
@@ -40,7 +41,6 @@
   --font-size: 10px;
   --font-weight: 600;
   --line-height: 12px;
-  min-width: 40px;
   text-align: right;
   white-space: nowrap;
 }

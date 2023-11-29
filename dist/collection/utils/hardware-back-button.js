@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 /**
  * When hardwareBackButton: false in config,
  * we need to make sure we also block the default

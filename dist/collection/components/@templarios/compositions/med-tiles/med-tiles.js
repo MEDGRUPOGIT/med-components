@@ -1,14 +1,15 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedTiles {
   constructor() {
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
+    this.titulo = undefined;
+    this.label = undefined;
+    this.badge = undefined;
     this.solid = false;
-    /**
-     * todo
-     */
     this.selected = false;
   }
   render() {
@@ -17,130 +18,131 @@ export class MedTiles {
         'med-tiles': true,
         'med-solid': solid,
         'med-tiles--selected': selected
-      }) },
-      h("div", { class: "med-tiles__border" }),
-      h("div", { class: "med-tiles__content" },
-        h("med-type", { class: "med-tiles__title", innerHTML: titulo }),
-        h("med-type", { class: "med-tiles__label", innerHTML: label }),
-        h("slot", null))));
+      }) }, h("div", { class: "med-tiles__border" }), h("div", { class: "med-tiles__content" }, h("med-type", { class: "med-tiles__title", innerHTML: titulo }), h("med-type", { class: "med-tiles__label", innerHTML: label }), h("slot", null))));
   }
   static get is() { return "med-tiles"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "$": ["med-tiles.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["med-tiles.css"]
-  }; }
-  static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../../../@templarios/types/color.type"
+  static get originalStyleUrls() {
+    return {
+      "$": ["med-tiles.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["med-tiles.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "dsColor": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "MedColor",
+          "resolved": "string | undefined",
+          "references": {
+            "MedColor": {
+              "location": "import",
+              "path": "../../../../@templarios/types/color.type"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "ds-color",
+        "reflect": true
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "titulo": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "titulo",
+        "reflect": false
       },
-      "attribute": "ds-color",
-      "reflect": true
-    },
-    "titulo": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+      "label": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "label",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "badge": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "badge",
+        "reflect": false
       },
-      "attribute": "titulo",
-      "reflect": false
-    },
-    "label": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+      "solid": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "solid",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "label",
-      "reflect": false
-    },
-    "badge": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "badge",
-      "reflect": false
-    },
-    "solid": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "solid",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "selected": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "selected",
-      "reflect": true,
-      "defaultValue": "false"
-    }
-  }; }
+      "selected": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "selected",
+        "reflect": true,
+        "defaultValue": "false"
+      }
+    };
+  }
 }

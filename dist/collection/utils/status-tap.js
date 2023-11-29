@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { readTask, writeTask } from '@stencil/core';
 import { componentOnReady } from './helpers';
 export const startStatusTap = () => {

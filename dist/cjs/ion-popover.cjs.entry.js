@@ -1,16 +1,19 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const frameworkDelegate = require('./framework-delegate-bebbd221.js');
-const overlays = require('./overlays-9895f6f3.js');
-const theme = require('./theme-30b7a575.js');
-const index$1 = require('./index-a7d54975.js');
-const animation = require('./animation-550bbf23.js');
-require('./helpers-ba3c117b.js');
-require('./hardware-back-button-148ce546.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const frameworkDelegate = require('./framework-delegate-8b8d88ef.js');
+const overlays = require('./overlays-12a6887f.js');
+const theme = require('./theme-a4c4a7eb.js');
+const index$1 = require('./index-d49aaaa3.js');
+const animation = require('./animation-96c88a0a.js');
+require('./helpers-4478bffd.js');
+require('./hardware-back-button-a7dedc7d.js');
 
 /**
  * iOS Popover Enter Animation
@@ -255,28 +258,6 @@ const Popover = class {
     this.willDismiss = index.createEvent(this, "ionPopoverWillDismiss", 7);
     this.didDismiss = index.createEvent(this, "ionPopoverDidDismiss", 7);
     this.presented = false;
-    /**
-     * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
-     */
-    this.keyboardClose = true;
-    /**
-     * If `true`, the popover will be dismissed when the backdrop is clicked.
-     */
-    this.backdropDismiss = true;
-    /**
-     * If `true`, a backdrop will be displayed behind the popover.
-     */
-    this.showBackdrop = true;
-    /**
-     * If `true`, the popover will be translucent.
-     * Only applies when the mode is `"ios"` and the device supports
-     * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
-     */
-    this.translucent = false;
-    /**
-     * If `true`, the popover will animate.
-     */
-    this.animated = true;
     this.onDismiss = (ev) => {
       ev.stopPropagation();
       ev.preventDefault();
@@ -297,6 +278,19 @@ const Popover = class {
         el.dispatchEvent(event);
       }
     };
+    this.delegate = undefined;
+    this.overlayIndex = undefined;
+    this.enterAnimation = undefined;
+    this.leaveAnimation = undefined;
+    this.component = undefined;
+    this.componentProps = undefined;
+    this.keyboardClose = true;
+    this.cssClass = undefined;
+    this.backdropDismiss = true;
+    this.event = undefined;
+    this.showBackdrop = true;
+    this.translucent = false;
+    this.animated = true;
   }
   connectedCallback() {
     overlays.prepareOverlay(this.el);

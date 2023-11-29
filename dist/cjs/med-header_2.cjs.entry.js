@@ -1,9 +1,12 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index$1 = require('./index-bc2e4509.js');
-const color = require('./color-2d4645aa.js');
+const index$1 = require('./index-a17b061b.js');
+const color = require('./color-c29da9e4.js');
 
 const medHeaderCss = ":host{--background:hsl(var(--med-color-neutral-1))}:host{background:var(--background);display:block;padding-top:var(--ion-safe-area-top)}";
 
@@ -970,6 +973,8 @@ const medNavbarCss = ":host{--background:hsl(var(--med-color-neutral-1));--main-
 const MedNavbar = class {
   constructor(hostRef) {
     index$1.registerInstance(this, hostRef);
+    this.dsColor = undefined;
+    this.dsName = undefined;
   }
   componentDidLoad() {
     this.setSize();

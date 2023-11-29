@@ -1,13 +1,16 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const cubicBezier = require('./cubic-bezier-0b2ccc35.js');
-const helpers = require('./helpers-ba3c117b.js');
-const index$1 = require('./index-a7d54975.js');
-const frameworkDelegate = require('./framework-delegate-bebbd221.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const cubicBezier = require('./cubic-bezier-1060abff.js');
+const helpers = require('./helpers-4478bffd.js');
+const index$1 = require('./index-d49aaaa3.js');
+const frameworkDelegate = require('./framework-delegate-8b8d88ef.js');
 
 const VIEW_STATE_NEW = 1;
 const VIEW_STATE_ATTACHED = 2;
@@ -115,10 +118,12 @@ const Nav = class {
     this.isTransitioning = false;
     this.destroyed = false;
     this.views = [];
-    /**
-     * If `true`, the nav should animate the transition of components.
-     */
+    this.delegate = undefined;
+    this.swipeGesture = undefined;
     this.animated = true;
+    this.animation = undefined;
+    this.rootParams = undefined;
+    this.root = undefined;
   }
   swipeGestureChanged() {
     if (this.gesture) {
@@ -144,7 +149,7 @@ const Nav = class {
   }
   async componentDidLoad() {
     this.rootChanged();
-    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-726665a3.js'); })).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
+    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-4a41436e.js'); })).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this));
     this.swipeGestureChanged();
   }
   disconnectedCallback() {
@@ -879,13 +884,13 @@ const navLink = (el, routerDirection, component, componentProps, routerAnimation
 const NavLink = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /**
-     * The transition direction when navigating to another page.
-     */
-    this.routerDirection = 'forward';
     this.onClick = () => {
       return navLink(this.el, this.routerDirection, this.component, this.componentProps, this.routerAnimation);
     };
+    this.component = undefined;
+    this.componentProps = undefined;
+    this.routerDirection = 'forward';
+    this.routerAnimation = undefined;
   }
   render() {
     return (index.h(index.Host, { onClick: this.onClick }));

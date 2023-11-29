@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { pointerCoord, raf } from '../../helpers';
 import { isFocused, relocateInput } from './common';
 import { getScrollData } from './scroll-data';

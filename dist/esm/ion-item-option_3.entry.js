@@ -1,7 +1,10 @@
-import { r as registerInstance, h, H as Host, i as getElement, e as createEvent } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { c as createColorClasses } from './theme-ff3fc52f.js';
-import { m as isEndSide } from './helpers-462f8de3.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host, j as getElement, f as createEvent } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { c as createColorClasses } from './theme-a24ff1ad.js';
+import { m as isEndSide } from './helpers-d6be6e4a.js';
 
 const itemOptionIosCss = ":host{--background:var(--ion-color-primary, #3880ff);--color:var(--ion-color-primary-contrast, #fff);background:var(--background);color:var(--color);font-family:var(--ion-font-family, inherit)}:host(.in-list.item-options-end:last-child){padding-right:calc(.7em + var(--ion-safe-area-right))}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-list.item-options-end:last-child){padding-right:unset;-webkit-padding-end:calc(.7em + var(--ion-safe-area-right));padding-inline-end:calc(.7em + var(--ion-safe-area-right))}}:host(.in-list.item-options-start:first-child){padding-left:calc(.7em + var(--ion-safe-area-left))}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-list.item-options-start:first-child){padding-left:unset;-webkit-padding-start:calc(.7em + var(--ion-safe-area-left));padding-inline-start:calc(.7em + var(--ion-safe-area-left))}}:host(.ion-color){background:var(--ion-color-base);color:var(--ion-color-contrast)}.button-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;padding-left:0.7em;padding-right:0.7em;padding-top:0;padding-bottom:0;display:inline-block;position:relative;width:100%;height:100%;border:0;outline:none;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;box-sizing:border-box}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:0.7em;padding-inline-start:0.7em;-webkit-padding-end:0.7em;padding-inline-end:0.7em}}.button-inner{display:-ms-flexbox;display:flex;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}.horizontal-wrapper{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%}::slotted(*){-ms-flex-negative:0;flex-shrink:0}::slotted([slot=start]){margin-left:0;margin-right:5px;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=start]){margin-left:unset;margin-right:unset;-webkit-margin-start:0;margin-inline-start:0;-webkit-margin-end:5px;margin-inline-end:5px}}::slotted([slot=end]){margin-left:5px;margin-right:0;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=end]){margin-left:unset;margin-right:unset;-webkit-margin-start:5px;margin-inline-start:5px;-webkit-margin-end:0;margin-inline-end:0}}::slotted([slot=icon-only]){padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;margin-left:10px;margin-right:10px;margin-top:0;margin-bottom:0;min-width:0.9em;font-size:1.8em}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){::slotted([slot=icon-only]){margin-left:unset;margin-right:unset;-webkit-margin-start:10px;margin-inline-start:10px;-webkit-margin-end:10px;margin-inline-end:10px}}:host(.item-option-expandable){-ms-flex-negative:0;flex-shrink:0;-webkit-transition-duration:0;transition-duration:0;-webkit-transition-property:none;transition-property:none;-webkit-transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1);transition-timing-function:cubic-bezier(0.65, 0.05, 0.36, 1)}:host(.item-option-disabled){pointer-events:none}:host(.item-option-disabled) .button-native{cursor:default;opacity:0.5;pointer-events:none}:host{font-size:16px}:host(.ion-activated){background:var(--ion-color-primary-shade, #3171e0)}:host(.ion-color.ion-activated){background:var(--ion-color-shade)}";
 
@@ -10,24 +13,20 @@ const itemOptionMdCss = ":host{--background:var(--ion-color-primary, #3880ff);--
 const ItemOption = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * If `true`, the user cannot interact with the item option.
-     */
-    this.disabled = false;
-    /**
-     * If `true`, the option will expand to take up the available width and cover any other options.
-     */
-    this.expandable = false;
-    /**
-     * The type of the button.
-     */
-    this.type = 'button';
     this.onClick = (ev) => {
       const el = ev.target.closest('ion-item-option');
       if (el) {
         ev.preventDefault();
       }
     };
+    this.color = undefined;
+    this.disabled = false;
+    this.download = undefined;
+    this.expandable = false;
+    this.href = undefined;
+    this.rel = undefined;
+    this.target = undefined;
+    this.type = 'button';
   }
   render() {
     const { disabled, expandable, href } = this;
@@ -62,10 +61,6 @@ const ItemOptions = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.ionSwipe = createEvent(this, "ionSwipe", 7);
-    /**
-     * The side the option button should be on. Possible values: `"start"` and `"end"`. If you have multiple `ion-item-options`, a side must be provided for each.
-     *
-     */
     this.side = 'end';
   }
   /** @internal */
@@ -106,12 +101,9 @@ const ItemSliding = class {
     this.initialOpenAmount = 0;
     this.optsWidthRightSide = 0;
     this.optsWidthLeftSide = 0;
-    this.sides = 0 /* None */;
+    this.sides = 0 /* ItemSide.None */;
     this.optsDirty = true;
-    this.state = 2 /* Disabled */;
-    /**
-     * If `true`, the user cannot interact with the sliding item.
-     */
+    this.state = 2 /* SlidingState.Disabled */;
     this.disabled = false;
   }
   disabledChanged() {
@@ -122,7 +114,7 @@ const ItemSliding = class {
   async connectedCallback() {
     this.item = this.el.querySelector('ion-item');
     await this.updateOptions();
-    this.gesture = (await import('./index-f49d994d.js')).createGesture({
+    this.gesture = (await import('./index-ad966da4.js')).createGesture({
       el: this.el,
       gestureName: 'item-swipe',
       gesturePriority: 100,
@@ -196,13 +188,13 @@ const ItemSliding = class {
       return;
     }
     this.closeOpened();
-    this.state = 4 /* Enabled */;
+    this.state = 4 /* SlidingState.Enabled */;
     requestAnimationFrame(() => {
       this.calculateOptsWidth();
       const width = (side === 'end') ? this.optsWidthRightSide : -this.optsWidthLeftSide;
       openSlidingItem = this.el;
       this.setOpenAmount(width, false);
-      this.state = (side === 'end') ? 8 /* End */ : 16 /* Start */;
+      this.state = (side === 'end') ? 8 /* SlidingState.End */ : 16 /* SlidingState.Start */;
     });
   }
   /**
@@ -255,11 +247,11 @@ const ItemSliding = class {
       const side = isEndSide(option.side) ? 'end' : 'start';
       if (side === 'start') {
         this.leftOptions = option;
-        sides |= 1 /* Start */;
+        sides |= 1 /* ItemSide.Start */;
       }
       else {
         this.rightOptions = option;
-        sides |= 2 /* End */;
+        sides |= 2 /* ItemSide.End */;
       }
     }
     this.optsDirty = true;
@@ -291,7 +283,7 @@ const ItemSliding = class {
     }
     if (this.openAmount === 0) {
       this.optsDirty = true;
-      this.state = 4 /* Enabled */;
+      this.state = 4 /* SlidingState.Enabled */;
     }
     this.initialOpenAmount = this.openAmount;
     if (this.item) {
@@ -304,14 +296,14 @@ const ItemSliding = class {
     }
     let openAmount = this.initialOpenAmount - gesture.deltaX;
     switch (this.sides) {
-      case 2 /* End */:
+      case 2 /* ItemSide.End */:
         openAmount = Math.max(0, openAmount);
         break;
-      case 1 /* Start */:
+      case 1 /* ItemSide.Start */:
         openAmount = Math.min(0, openAmount);
         break;
-      case 3 /* Both */: break;
-      case 0 /* None */: return;
+      case 3 /* ItemSide.Both */: break;
+      case 0 /* ItemSide.None */: return;
       default:
         console.warn('invalid ItemSideFlags value', this.sides);
         break;
@@ -342,10 +334,10 @@ const ItemSliding = class {
     }
     const state = this.state;
     this.setOpenAmount(restingPoint, true);
-    if ((state & 32 /* SwipeEnd */) !== 0 && this.rightOptions) {
+    if ((state & 32 /* SlidingState.SwipeEnd */) !== 0 && this.rightOptions) {
       this.rightOptions.fireSwipeEvent();
     }
-    else if ((state & 64 /* SwipeStart */) !== 0 && this.leftOptions) {
+    else if ((state & 64 /* SlidingState.SwipeStart */) !== 0 && this.leftOptions) {
       this.leftOptions.fireSwipeEvent();
     }
   }
@@ -379,17 +371,17 @@ const ItemSliding = class {
     }
     if (openAmount > 0) {
       this.state = (openAmount >= (this.optsWidthRightSide + SWIPE_MARGIN))
-        ? 8 /* End */ | 32 /* SwipeEnd */
-        : 8 /* End */;
+        ? 8 /* SlidingState.End */ | 32 /* SlidingState.SwipeEnd */
+        : 8 /* SlidingState.End */;
     }
     else if (openAmount < 0) {
       this.state = (openAmount <= (-this.optsWidthLeftSide - SWIPE_MARGIN))
-        ? 16 /* Start */ | 64 /* SwipeStart */
-        : 16 /* Start */;
+        ? 16 /* SlidingState.Start */ | 64 /* SlidingState.SwipeStart */
+        : 16 /* SlidingState.Start */;
     }
     else {
       this.tmr = setTimeout(() => {
-        this.state = 2 /* Disabled */;
+        this.state = 2 /* SlidingState.Disabled */;
         this.tmr = undefined;
       }, 600);
       openSlidingItem = undefined;
@@ -417,11 +409,11 @@ const ItemSliding = class {
     const mode = getIonMode(this);
     return (h(Host, { class: {
         [mode]: true,
-        'item-sliding-active-slide': (this.state !== 2 /* Disabled */),
-        'item-sliding-active-options-end': (this.state & 8 /* End */) !== 0,
-        'item-sliding-active-options-start': (this.state & 16 /* Start */) !== 0,
-        'item-sliding-active-swipe-end': (this.state & 32 /* SwipeEnd */) !== 0,
-        'item-sliding-active-swipe-start': (this.state & 64 /* SwipeStart */) !== 0
+        'item-sliding-active-slide': (this.state !== 2 /* SlidingState.Disabled */),
+        'item-sliding-active-options-end': (this.state & 8 /* SlidingState.End */) !== 0,
+        'item-sliding-active-options-start': (this.state & 16 /* SlidingState.Start */) !== 0,
+        'item-sliding-active-swipe-end': (this.state & 32 /* SlidingState.SwipeEnd */) !== 0,
+        'item-sliding-active-swipe-start': (this.state & 64 /* SlidingState.SwipeStart */) !== 0
       } }));
   }
   get el() { return getElement(this); }

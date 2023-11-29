@@ -30,4 +30,4 @@ export interface HTMLIonOverlayElement extends HTMLStencilElement {
   lastFocus?: HTMLElement;
   dismiss(data?: any, role?: string): Promise<boolean>;
 }
-export declare type OverlaySelect = HTMLIonActionSheetElement | HTMLIonAlertElement | HTMLIonPopoverElement;
+export type OverlaySelect = HTMLIonActionSheetElement | HTMLIonAlertElement | HTMLIonPopoverElement;

@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Method, Prop, State, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { findItemLabel, getAriaLabel, renderHiddenInput } from '../../utils/helpers';
 import { actionSheetController, alertController, popoverController } from '../../utils/overlays';
@@ -15,41 +18,6 @@ export class Select {
   constructor() {
     this.inputId = `ion-sel-${selectIds++}`;
     this.didInit = false;
-    this.isExpanded = false;
-    /**
-     * If `true`, the user cannot interact with the select.
-     */
-    this.disabled = false;
-    /**
-     * The text to display on the cancel button.
-     */
-    this.cancelText = 'Cancel';
-    /**
-     * The text to display on the ok button.
-     */
-    this.okText = 'OK';
-    /**
-     * The name of the control, which is submitted with the form data.
-     */
-    this.name = this.inputId;
-    /**
-     * If `true`, the select can accept multiple values.
-     */
-    this.multiple = false;
-    /**
-     * The interface the select should use: `action-sheet`, `popover` or `alert`.
-     */
-    this.interface = 'alert';
-    /**
-     * Any additional options that the `alert`, `action-sheet` or `popover` interface
-     * can take. See the [ion-alert docs](../alert), the
-     * [ion-action-sheet docs](../action-sheet) and the
-     * [ion-popover docs](../popover) for the
-     * create options for each interface.
-     *
-     * Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
-     */
-    this.interfaceOptions = {};
     this.onClick = (ev) => {
       this.setFocus();
       this.open(ev);
@@ -60,6 +28,18 @@ export class Select {
     this.onBlur = () => {
       this.ionBlur.emit();
     };
+    this.isExpanded = false;
+    this.disabled = false;
+    this.cancelText = 'Cancel';
+    this.okText = 'OK';
+    this.placeholder = undefined;
+    this.name = this.inputId;
+    this.selectedText = undefined;
+    this.multiple = false;
+    this.interface = 'alert';
+    this.interfaceOptions = {};
+    this.compareWith = undefined;
+    this.value = undefined;
   }
   disabledChanged() {
     this.emitStyle();
@@ -324,360 +304,371 @@ export class Select {
         'in-item': hostContext('ion-item', el),
         'select-disabled': disabled,
         'select-expanded': isExpanded
-      } },
-      h("div", { "aria-hidden": "true", class: selectTextClasses, part: textPart }, selectText),
-      h("label", { id: labelId }, displayLabel),
-      h("button", { type: "button", disabled: disabled, id: inputId, "aria-labelledby": labelId, "aria-haspopup": "listbox", "aria-expanded": `${isExpanded}`, onFocus: this.onFocus, onBlur: this.onBlur, ref: (focusEl => this.focusEl = focusEl) })));
+      } }, h("div", { "aria-hidden": "true", class: selectTextClasses, part: textPart }, selectText), h("label", { id: labelId }, displayLabel), h("button", { type: "button", disabled: disabled, id: inputId, "aria-labelledby": labelId, "aria-haspopup": "listbox", "aria-expanded": `${isExpanded}`, onFocus: this.onFocus, onBlur: this.onBlur, ref: (focusEl => this.focusEl = focusEl) })));
   }
   static get is() { return "ion-select"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["select.ios.scss"],
-    "md": ["select.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["select.ios.css"],
-    "md": ["select.md.css"]
-  }; }
-  static get properties() { return {
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
+  static get originalStyleUrls() {
+    return {
+      "ios": ["select.ios.scss"],
+      "md": ["select.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["select.ios.css"],
+      "md": ["select.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the user cannot interact with the select."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the user cannot interact with the select."
+      "cancelText": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The text to display on the cancel button."
+        },
+        "attribute": "cancel-text",
+        "reflect": false,
+        "defaultValue": "'Cancel'"
       },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "cancelText": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+      "okText": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The text to display on the ok button."
+        },
+        "attribute": "ok-text",
+        "reflect": false,
+        "defaultValue": "'OK'"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The text to display on the cancel button."
+      "placeholder": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | null",
+          "resolved": "null | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The text to display when the select is empty."
+        },
+        "attribute": "placeholder",
+        "reflect": false
       },
-      "attribute": "cancel-text",
-      "reflect": false,
-      "defaultValue": "'Cancel'"
-    },
-    "okText": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+      "name": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The name of the control, which is submitted with the form data."
+        },
+        "attribute": "name",
+        "reflect": false,
+        "defaultValue": "this.inputId"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The text to display on the ok button."
+      "selectedText": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | null",
+          "resolved": "null | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The text to display instead of the selected option's value."
+        },
+        "attribute": "selected-text",
+        "reflect": false
       },
-      "attribute": "ok-text",
-      "reflect": false,
-      "defaultValue": "'OK'"
-    },
-    "placeholder": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | null",
-        "resolved": "null | string | undefined",
-        "references": {}
+      "multiple": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the select can accept multiple values."
+        },
+        "attribute": "multiple",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The text to display when the select is empty."
-      },
-      "attribute": "placeholder",
-      "reflect": false
-    },
-    "name": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The name of the control, which is submitted with the form data."
-      },
-      "attribute": "name",
-      "reflect": false,
-      "defaultValue": "this.inputId"
-    },
-    "selectedText": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | null",
-        "resolved": "null | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The text to display instead of the selected option's value."
-      },
-      "attribute": "selected-text",
-      "reflect": false
-    },
-    "multiple": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the select can accept multiple values."
-      },
-      "attribute": "multiple",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "interface": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "SelectInterface",
-        "resolved": "\"action-sheet\" | \"alert\" | \"popover\"",
-        "references": {
-          "SelectInterface": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The interface the select should use: `action-sheet`, `popover` or `alert`."
-      },
-      "attribute": "interface",
-      "reflect": false,
-      "defaultValue": "'alert'"
-    },
-    "interfaceOptions": {
-      "type": "any",
-      "mutable": false,
-      "complexType": {
-        "original": "any",
-        "resolved": "any",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](../alert), the\n[ion-action-sheet docs](../action-sheet) and the\n[ion-popover docs](../popover) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface."
-      },
-      "attribute": "interface-options",
-      "reflect": false,
-      "defaultValue": "{}"
-    },
-    "compareWith": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | SelectCompareFn | null",
-        "resolved": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
-        "references": {
-          "SelectCompareFn": {
-            "location": "import",
-            "path": "./select-interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "A property name or function used to compare object values"
-      },
-      "attribute": "compare-with",
-      "reflect": false
-    },
-    "value": {
-      "type": "any",
-      "mutable": true,
-      "complexType": {
-        "original": "any | null",
-        "resolved": "any",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "the value of the select."
-      },
-      "attribute": "value",
-      "reflect": false
-    }
-  }; }
-  static get states() { return {
-    "isExpanded": {}
-  }; }
-  static get events() { return [{
-      "method": "ionChange",
-      "name": "ionChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the value has changed."
-      },
-      "complexType": {
-        "original": "SelectChangeEventDetail",
-        "resolved": "SelectChangeEventDetail<any>",
-        "references": {
-          "SelectChangeEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      }
-    }, {
-      "method": "ionCancel",
-      "name": "ionCancel",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the selection is cancelled."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionFocus",
-      "name": "ionFocus",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the select has focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionBlur",
-      "name": "ionBlur",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the select loses focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionStyle",
-      "name": "ionStyle",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the styles change."
-      },
-      "complexType": {
-        "original": "StyleEventDetail",
-        "resolved": "StyleEventDetail",
-        "references": {
-          "StyleEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      }
-    }]; }
-  static get methods() { return {
-    "open": {
-      "complexType": {
-        "signature": "(event?: UIEvent | undefined) => Promise<any>",
-        "parameters": [{
-            "tags": [{
-                "text": "event The user interface event that called the open.",
-                "name": "param"
-              }],
-            "text": "The user interface event that called the open."
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          },
-          "UIEvent": {
-            "location": "global"
+      "interface": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "SelectInterface",
+          "resolved": "\"action-sheet\" | \"alert\" | \"popover\"",
+          "references": {
+            "SelectInterface": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         },
-        "return": "Promise<any>"
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The interface the select should use: `action-sheet`, `popover` or `alert`."
+        },
+        "attribute": "interface",
+        "reflect": false,
+        "defaultValue": "'alert'"
       },
-      "docs": {
-        "text": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
-        "tags": [{
-            "name": "param",
-            "text": "event The user interface event that called the open."
-          }]
+      "interfaceOptions": {
+        "type": "any",
+        "mutable": false,
+        "complexType": {
+          "original": "any",
+          "resolved": "any",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](../alert), the\n[ion-action-sheet docs](../action-sheet) and the\n[ion-popover docs](../popover) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface."
+        },
+        "attribute": "interface-options",
+        "reflect": false,
+        "defaultValue": "{}"
+      },
+      "compareWith": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | SelectCompareFn | null",
+          "resolved": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
+          "references": {
+            "SelectCompareFn": {
+              "location": "import",
+              "path": "./select-interface"
+            }
+          }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "A property name or function used to compare object values"
+        },
+        "attribute": "compare-with",
+        "reflect": false
+      },
+      "value": {
+        "type": "any",
+        "mutable": true,
+        "complexType": {
+          "original": "any | null",
+          "resolved": "any",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "the value of the select."
+        },
+        "attribute": "value",
+        "reflect": false
       }
-    }
-  }; }
+    };
+  }
+  static get states() {
+    return {
+      "isExpanded": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionChange",
+        "name": "ionChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the value has changed."
+        },
+        "complexType": {
+          "original": "SelectChangeEventDetail",
+          "resolved": "SelectChangeEventDetail<any>",
+          "references": {
+            "SelectChangeEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }, {
+        "method": "ionCancel",
+        "name": "ionCancel",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the selection is cancelled."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionFocus",
+        "name": "ionFocus",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the select has focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionBlur",
+        "name": "ionBlur",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the select loses focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionStyle",
+        "name": "ionStyle",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the styles change."
+        },
+        "complexType": {
+          "original": "StyleEventDetail",
+          "resolved": "StyleEventDetail",
+          "references": {
+            "StyleEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }];
+  }
+  static get methods() {
+    return {
+      "open": {
+        "complexType": {
+          "signature": "(event?: UIEvent) => Promise<any>",
+          "parameters": [{
+              "tags": [{
+                  "name": "param",
+                  "text": "event The user interface event that called the open."
+                }],
+              "text": "The user interface event that called the open."
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            },
+            "UIEvent": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<any>"
+        },
+        "docs": {
+          "text": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
+          "tags": [{
+              "name": "param",
+              "text": "event The user interface event that called the open."
+            }]
+        }
+      }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "disabled",
-      "methodName": "disabledChanged"
-    }, {
-      "propName": "placeholder",
-      "methodName": "disabledChanged"
-    }, {
-      "propName": "value",
-      "methodName": "valueChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "disabled",
+        "methodName": "disabledChanged"
+      }, {
+        "propName": "placeholder",
+        "methodName": "disabledChanged"
+      }, {
+        "propName": "value",
+        "methodName": "valueChanged"
+      }];
+  }
 }
 const isOptionSelected = (currentValue, compareValue, compareWith) => {
   if (currentValue === undefined) {

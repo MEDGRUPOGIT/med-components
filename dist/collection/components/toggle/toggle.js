@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Prop, State, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { getAriaLabel, renderHiddenInput } from '../../utils/helpers';
 import { hapticSelection } from '../../utils/native/haptic';
@@ -13,27 +16,6 @@ export class Toggle {
   constructor() {
     this.inputId = `ion-tg-${toggleIds++}`;
     this.lastDrag = 0;
-    this.activated = false;
-    /**
-     * The name of the control, which is submitted with the form data.
-     */
-    this.name = this.inputId;
-    /**
-     * If `true`, the toggle is selected.
-     */
-    this.checked = false;
-    /**
-     * If `true`, the user cannot interact with the toggle.
-     */
-    this.disabled = false;
-    /**
-     * The value of the toggle does not mean if it's checked or not, use the `checked`
-     * property for that.
-     *
-     * The value of a toggle is analogous to the value of a `<input type="checkbox">`,
-     * it's only used when the toggle participates in a native `<form>`.
-     */
-    this.value = 'on';
     this.onClick = (ev) => {
       ev.preventDefault();
       if (this.lastDrag + 300 < Date.now()) {
@@ -46,6 +28,12 @@ export class Toggle {
     this.onBlur = () => {
       this.ionBlur.emit();
     };
+    this.activated = false;
+    this.color = undefined;
+    this.name = this.inputId;
+    this.checked = false;
+    this.disabled = false;
+    this.value = 'on';
   }
   checkedChanged(isChecked) {
     this.ionChange.emit({
@@ -124,204 +112,211 @@ export class Toggle {
         'toggle-checked': checked,
         'toggle-disabled': disabled,
         'interactive': true
-      }) },
-      h("div", { class: "toggle-icon", part: "track" },
-        h("div", { class: "toggle-icon-wrapper" },
-          h("div", { class: "toggle-inner", part: "handle" }))),
-      h("label", { htmlFor: inputId }, labelText),
-      h("input", { type: "checkbox", role: "switch", "aria-checked": `${checked}`, disabled: disabled, id: inputId, onFocus: () => this.onFocus(), onBlur: () => this.onBlur(), ref: focusEl => this.focusEl = focusEl })));
+      }) }, h("div", { class: "toggle-icon", part: "track" }, h("div", { class: "toggle-icon-wrapper" }, h("div", { class: "toggle-inner", part: "handle" }))), h("label", { htmlFor: inputId }, labelText), h("input", { type: "checkbox", role: "switch", "aria-checked": `${checked}`, disabled: disabled, id: inputId, onFocus: () => this.onFocus(), onBlur: () => this.onBlur(), ref: focusEl => this.focusEl = focusEl })));
   }
   static get is() { return "ion-toggle"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["toggle.ios.scss"],
-    "md": ["toggle.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["toggle.ios.css"],
-    "md": ["toggle.md.css"]
-  }; }
-  static get properties() { return {
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../interface"
+  static get originalStyleUrls() {
+    return {
+      "ios": ["toggle.ios.scss"],
+      "md": ["toggle.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["toggle.ios.css"],
+      "md": ["toggle.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "color": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Color",
+          "resolved": "string | undefined",
+          "references": {
+            "Color": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        },
+        "attribute": "color",
+        "reflect": false
+      },
+      "name": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The name of the control, which is submitted with the form data."
+        },
+        "attribute": "name",
+        "reflect": false,
+        "defaultValue": "this.inputId"
+      },
+      "checked": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the toggle is selected."
+        },
+        "attribute": "checked",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the user cannot interact with the toggle."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "value": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | null",
+          "resolved": "null | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The value of the toggle does not mean if it's checked or not, use the `checked`\nproperty for that.\n\nThe value of a toggle is analogous to the value of a `<input type=\"checkbox\">`,\nit's only used when the toggle participates in a native `<form>`."
+        },
+        "attribute": "value",
+        "reflect": false,
+        "defaultValue": "'on'"
+      }
+    };
+  }
+  static get states() {
+    return {
+      "activated": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionChange",
+        "name": "ionChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the value property has changed."
+        },
+        "complexType": {
+          "original": "ToggleChangeEventDetail",
+          "resolved": "ToggleChangeEventDetail",
+          "references": {
+            "ToggleChangeEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
-      },
-      "attribute": "color",
-      "reflect": false
-    },
-    "name": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The name of the control, which is submitted with the form data."
-      },
-      "attribute": "name",
-      "reflect": false,
-      "defaultValue": "this.inputId"
-    },
-    "checked": {
-      "type": "boolean",
-      "mutable": true,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the toggle is selected."
-      },
-      "attribute": "checked",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the user cannot interact with the toggle."
-      },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "value": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | null",
-        "resolved": "null | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The value of the toggle does not mean if it's checked or not, use the `checked`\nproperty for that.\n\nThe value of a toggle is analogous to the value of a `<input type=\"checkbox\">`,\nit's only used when the toggle participates in a native `<form>`."
-      },
-      "attribute": "value",
-      "reflect": false,
-      "defaultValue": "'on'"
-    }
-  }; }
-  static get states() { return {
-    "activated": {}
-  }; }
-  static get events() { return [{
-      "method": "ionChange",
-      "name": "ionChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the value property has changed."
-      },
-      "complexType": {
-        "original": "ToggleChangeEventDetail",
-        "resolved": "ToggleChangeEventDetail",
-        "references": {
-          "ToggleChangeEventDetail": {
-            "location": "import",
-            "path": "../../interface"
+      }, {
+        "method": "ionFocus",
+        "name": "ionFocus",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the toggle has focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionBlur",
+        "name": "ionBlur",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the toggle loses focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionStyle",
+        "name": "ionStyle",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the styles change."
+        },
+        "complexType": {
+          "original": "StyleEventDetail",
+          "resolved": "StyleEventDetail",
+          "references": {
+            "StyleEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      }
-    }, {
-      "method": "ionFocus",
-      "name": "ionFocus",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the toggle has focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionBlur",
-      "name": "ionBlur",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the toggle loses focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionStyle",
-      "name": "ionStyle",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the styles change."
-      },
-      "complexType": {
-        "original": "StyleEventDetail",
-        "resolved": "StyleEventDetail",
-        "references": {
-          "StyleEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      }
-    }]; }
+      }];
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "checked",
-      "methodName": "checkedChanged"
-    }, {
-      "propName": "disabled",
-      "methodName": "disabledChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "checked",
+        "methodName": "checkedChanged"
+      }, {
+        "propName": "disabled",
+        "methodName": "disabledChanged"
+      }];
+  }
 }
 const shouldToggle = (doc, checked, deltaX, margin) => {
   const isRTL = doc.dir === 'rtl';

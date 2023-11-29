@@ -40,7 +40,7 @@ export interface RouteEntry {
 export interface RouteNode extends RouteEntry {
   children: RouteTree;
 }
-export declare type RouterDirection = 'forward' | 'back' | 'root';
-export declare type NavOutletElement = NavOutlet & HTMLStencilElement;
-export declare type RouteChain = RouteEntry[];
-export declare type RouteTree = RouteNode[];
+export type RouterDirection = 'forward' | 'back' | 'root';
+export type NavOutletElement = NavOutlet & HTMLStencilElement;
+export type RouteChain = RouteEntry[];
+export type RouteTree = RouteNode[];

@@ -1,15 +1,18 @@
-import { r as registerInstance, e as createEvent, c as writeTask, h, H as Host, i as getElement } from './index-70672e81.js';
-import { b as getIonMode, c as config } from './ionic-global-4bc7e399.js';
-import { a as attachComponent, d as detachComponent } from './framework-delegate-b8b7134c.js';
-import { B as BACKDROP, e as prepareOverlay, d as present, h as activeAnimations, f as dismiss, g as eventMethod } from './overlays-dc3151a0.js';
-import { g as getClassMap } from './theme-ff3fc52f.js';
-import { e as deepReady } from './index-571d3eba.js';
-import { c as createAnimation } from './animation-560b991d.js';
-import { g as getTimeGivenProgression } from './cubic-bezier-eea9a7a9.js';
-import { createGesture } from './index-f49d994d.js';
-import { j as clamp } from './helpers-462f8de3.js';
-import './hardware-back-button-4a6b37fb.js';
-import './gesture-controller-31cb6bb9.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, e as writeTask, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { b as getIonMode, c as config } from './ionic-global-e35a57a3.js';
+import { a as attachComponent, d as detachComponent } from './framework-delegate-f297f7e6.js';
+import { B as BACKDROP, e as prepareOverlay, d as present, h as activeAnimations, f as dismiss, g as eventMethod } from './overlays-52f7bca4.js';
+import { g as getClassMap } from './theme-a24ff1ad.js';
+import { e as deepReady } from './index-9b38c108.js';
+import { c as createAnimation } from './animation-41df7b1a.js';
+import { g as getTimeGivenProgression } from './cubic-bezier-154a53a5.js';
+import { createGesture } from './index-ad966da4.js';
+import { j as clamp } from './helpers-d6be6e4a.js';
+import './hardware-back-button-ace6a71b.js';
+import './gesture-controller-68c023a4.js';
 
 // Defaults for the card swipe animation
 const SwipeToCloseDefaults = {
@@ -321,26 +324,6 @@ const Modal = class {
     // Whether or not modal is being dismissed via gesture
     this.gestureAnimationDismissing = false;
     this.presented = false;
-    /**
-     * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
-     */
-    this.keyboardClose = true;
-    /**
-     * If `true`, the modal will be dismissed when the backdrop is clicked.
-     */
-    this.backdropDismiss = true;
-    /**
-     * If `true`, a backdrop will be displayed behind the modal.
-     */
-    this.showBackdrop = true;
-    /**
-     * If `true`, the modal will animate.
-     */
-    this.animated = true;
-    /**
-     * If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.
-     */
-    this.swipeToClose = false;
     this.onBackdropTap = () => {
       this.dismiss(undefined, BACKDROP);
     };
@@ -361,6 +344,19 @@ const Modal = class {
         el.dispatchEvent(ev);
       }
     };
+    this.overlayIndex = undefined;
+    this.delegate = undefined;
+    this.keyboardClose = true;
+    this.enterAnimation = undefined;
+    this.leaveAnimation = undefined;
+    this.component = undefined;
+    this.componentProps = undefined;
+    this.cssClass = undefined;
+    this.backdropDismiss = true;
+    this.showBackdrop = true;
+    this.animated = true;
+    this.swipeToClose = false;
+    this.presentingElement = undefined;
   }
   swipeToCloseChanged(enable) {
     if (this.gesture) {

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const KEYBOARD_DID_OPEN = 'ionKeyboardDidShow';
 export const KEYBOARD_DID_CLOSE = 'ionKeyboardDidHide';
 const KEYBOARD_THRESHOLD = 150;

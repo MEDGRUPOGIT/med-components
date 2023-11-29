@@ -1,107 +1,21 @@
-import { Component, h, Host } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 export class FiltroModal {
   render() {
-    return (h(Host, null,
-      h("ion-header", { class: "header" },
-        h("div", { class: "header__left" },
-          h("div", null,
-            h("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xxs" },
-              h("ion-icon", { class: "med-icon", name: "med-fechar" })))),
-        h("div", { class: "header__right" },
-          h("div", null,
-            h("ion-button", { slot: "right", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xs" },
-              h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-limparfiltro" }))))),
-      h("ion-content", { class: "modal-content" },
-        h("div", { class: "modal-filtros" },
-          h("div", { class: "modal-filtros__top" },
-            h("ion-label", { class: "modal-filtros__title" }, "Filtros"),
-            h("ion-label", { class: "modal-filtros__subtitle" }, "Exibi\u00E7\u00E3o das d\u00FAvidas"),
-            h("div", { class: "modal-filtros__button-container" },
-              h("ion-button", { class: "modal-filtros__button", "ds-color": "neutral-10", "ds-size": "md", mode: "ios" }, "TODAS"),
-              h("ion-button", { class: "modal-filtros__button", "ds-size": "md", fill: "outline", "ds-color": "neutral-10", mode: "ios" }, "MATERIAL"),
-              h("ion-button", { class: "modal-filtros__button", "ds-size": "md", fill: "outline", "ds-color": "neutral-10", mode: "ios" }, "QUEST\u00D5ES"))),
-          h("div", { class: "modal-filtros__middle" },
-            h("div", { class: "modal-filtros__duvida-container" },
-              h("ion-label", { class: "modal-filtros__ordenacao" }, "Ordena\u00E7\u00E3o das d\u00FAvidas:"),
-              h("tp-input-container", { "has-icon": "end" },
-                h("ion-select", { mode: "md", placeholder: "Concursos Premium / Mais recentes" }),
-                h("ion-icon", { class: "med-icon", slot: "end", name: "med-baixo" })),
-              h("div", { class: "modal-filtros__apostila-container" },
-                h("ion-button", { mode: "ios", fill: "clear", "ds-size": "xs", "no-padding": "true" }, "Selecione uma Apostila"),
-                h("ion-label", { class: "modal-filtros__apostila" }, "CAR 1 2019")),
-              h("div", { class: "modal-filtros__input-container" },
-                h("ion-label", { class: "modal-filtros__input-label", "ds-color": "neutral-8" }, "ID da d\u00FAvida"),
-                h("ion-input", { class: "modal-filtros__input", mode: "md", placeholder: "Digite aqui" }),
-                h("ion-label", { class: "modal-filtros__input-label", "ds-color": "neutral-8" }, "ID da quest\u00E3o"),
-                h("ion-input", { class: "modal-filtros__input", mode: "md", placeholder: "Digite aqui" }))),
-            h("div", { class: "modal-filtros__list" },
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-apostila" }),
-                h("ion-label", null, "Minhas atribui\u00E7\u00F5es pendentes"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-informacao" }),
-                h("ion-label", null, "Sem intera\u00E7\u00E3o da Equipe Acad\u00EAmica"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-estrela" }),
-                h("ion-label", null, "Favoritas / Seguindo"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-checkcirculo" }),
-                h("ion-label", null, "Com resposta da Equipe Acad\u00EAmica"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-equipe-homologada" }),
-                h("ion-label", null, "Com resposta homologada pela Equipe Acad\u00EAmica"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-contribuicao" }),
-                h("ion-label", null, "Com minhas respostas"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-anotacao" }),
-                h("ion-label", null, "Meus rascunhos"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-alerta" }),
-                h("ion-label", null, "Denunciadas e Privadas n\u00E3o Homologadas"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-enviar" }),
-                h("ion-label", null, "Encaminhadas"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-naorespondida" }),
-                h("ion-label", null, "Sem v\u00EDnculo"),
-                h("ion-toggle", { slot: "end", mode: "ios" })),
-              h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" },
-                h("ion-icon", { class: "med-icon", slot: "start", name: "med-retafinal" }),
-                h("ion-label", null, "Mais de 7 dias sem resposta"),
-                h("ion-toggle", { slot: "end", mode: "ios" }))),
-            h("ion-label", { class: "modal-filtros__carregando", "ds-color": "neutral-8" }, "Estamos carregando mais filtros, aguarde!"),
-            h("div", { class: "modal-filtros__filtrar-container" },
-              h("ion-label", { class: "modal-filtros__filtrar" }, "Filtrar por Concursos"),
-              h("div", { class: "modal-filtros__button-container modal-filtros__button-container--margin-bottom" },
-                h("ion-button", { class: "modal-filtros__button", "ds-color": "neutral-10", "ds-size": "xs", mode: "ios" }, "ESCOLHER"),
-                h("ion-button", { class: "modal-filtros__button", "ds-size": "xs", disabled: true, "ds-color": "neutral-10", mode: "ios" }, "TODOS")),
-              h("ion-label", { class: "modal-filtros__filtrar" }, "Filtrar por Simulados"),
-              h("div", { class: "modal-filtros__button-container modal-filtros__button-container--margin-bottom" },
-                h("ion-button", { class: "modal-filtros__button", "ds-color": "neutral-10", "ds-size": "xs", mode: "ios" }, "ESCOLHER"),
-                h("ion-button", { class: "modal-filtros__button", "ds-size": "xs", disabled: true, "ds-color": "neutral-10", mode: "ios" }, "TODOS")),
-              h("ion-label", { class: "modal-filtros__filtrar" }, "Filtrar por Apostilas"),
-              h("div", { class: "modal-filtros__button-container modal-filtros__button-container--margin-bottom" },
-                h("ion-button", { class: "modal-filtros__button", "ds-color": "neutral-10", "ds-size": "xs", mode: "ios" }, "ESCOLHER"),
-                h("ion-button", { class: "modal-filtros__button", "ds-size": "xs", disabled: true, "ds-color": "neutral-10", mode: "ios" }, "TODOS")))))),
-      h("ion-footer", { class: "modal-footer" },
-        h("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "APLICAR FILTRO"))));
+    return (h(Host, null, h("ion-header", { class: "header" }, h("div", { class: "header__left" }, h("div", null, h("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xxs" }, h("ion-icon", { class: "med-icon", name: "med-fechar" })))), h("div", { class: "header__right" }, h("div", null, h("ion-button", { slot: "right", mode: "ios", fill: "clear", "icon-only": true, "ds-size": "xs" }, h("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-limparfiltro" }))))), h("ion-content", { class: "modal-content" }, h("div", { class: "modal-filtros" }, h("div", { class: "modal-filtros__top" }, h("ion-label", { class: "modal-filtros__title" }, "Filtros"), h("ion-label", { class: "modal-filtros__subtitle" }, "Exibi\u00E7\u00E3o das d\u00FAvidas"), h("div", { class: "modal-filtros__button-container" }, h("ion-button", { class: "modal-filtros__button", "ds-color": "neutral-10", "ds-size": "md", mode: "ios" }, "TODAS"), h("ion-button", { class: "modal-filtros__button", "ds-size": "md", fill: "outline", "ds-color": "neutral-10", mode: "ios" }, "MATERIAL"), h("ion-button", { class: "modal-filtros__button", "ds-size": "md", fill: "outline", "ds-color": "neutral-10", mode: "ios" }, "QUEST\u00D5ES"))), h("div", { class: "modal-filtros__middle" }, h("div", { class: "modal-filtros__duvida-container" }, h("ion-label", { class: "modal-filtros__ordenacao" }, "Ordena\u00E7\u00E3o das d\u00FAvidas:"), h("tp-input-container", { "has-icon": "end" }, h("ion-select", { mode: "md", placeholder: "Concursos Premium / Mais recentes" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-baixo" })), h("div", { class: "modal-filtros__apostila-container" }, h("ion-button", { mode: "ios", fill: "clear", "ds-size": "xs", "no-padding": "true" }, "Selecione uma Apostila"), h("ion-label", { class: "modal-filtros__apostila" }, "CAR 1 2019")), h("div", { class: "modal-filtros__input-container" }, h("ion-label", { class: "modal-filtros__input-label", "ds-color": "neutral-8" }, "ID da d\u00FAvida"), h("ion-input", { class: "modal-filtros__input", mode: "md", placeholder: "Digite aqui" }), h("ion-label", { class: "modal-filtros__input-label", "ds-color": "neutral-8" }, "ID da quest\u00E3o"), h("ion-input", { class: "modal-filtros__input", mode: "md", placeholder: "Digite aqui" }))), h("div", { class: "modal-filtros__list" }, h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-apostila" }), h("ion-label", null, "Minhas atribui\u00E7\u00F5es pendentes"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-informacao" }), h("ion-label", null, "Sem intera\u00E7\u00E3o da Equipe Acad\u00EAmica"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-estrela" }), h("ion-label", null, "Favoritas / Seguindo"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-checkcirculo" }), h("ion-label", null, "Com resposta da Equipe Acad\u00EAmica"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-equipe-homologada" }), h("ion-label", null, "Com resposta homologada pela Equipe Acad\u00EAmica"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-contribuicao" }), h("ion-label", null, "Com minhas respostas"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-anotacao" }), h("ion-label", null, "Meus rascunhos"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-alerta" }), h("ion-label", null, "Denunciadas e Privadas n\u00E3o Homologadas"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-enviar" }), h("ion-label", null, "Encaminhadas"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-naorespondida" }), h("ion-label", null, "Sem v\u00EDnculo"), h("ion-toggle", { slot: "end", mode: "ios" })), h("ion-item", { class: "modal-filtros__item", mode: "ios", lines: "none" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-retafinal" }), h("ion-label", null, "Mais de 7 dias sem resposta"), h("ion-toggle", { slot: "end", mode: "ios" }))), h("ion-label", { class: "modal-filtros__carregando", "ds-color": "neutral-8" }, "Estamos carregando mais filtros, aguarde!"), h("div", { class: "modal-filtros__filtrar-container" }, h("ion-label", { class: "modal-filtros__filtrar" }, "Filtrar por Concursos"), h("div", { class: "modal-filtros__button-container modal-filtros__button-container--margin-bottom" }, h("ion-button", { class: "modal-filtros__button", "ds-color": "neutral-10", "ds-size": "xs", mode: "ios" }, "ESCOLHER"), h("ion-button", { class: "modal-filtros__button", "ds-size": "xs", disabled: true, "ds-color": "neutral-10", mode: "ios" }, "TODOS")), h("ion-label", { class: "modal-filtros__filtrar" }, "Filtrar por Simulados"), h("div", { class: "modal-filtros__button-container modal-filtros__button-container--margin-bottom" }, h("ion-button", { class: "modal-filtros__button", "ds-color": "neutral-10", "ds-size": "xs", mode: "ios" }, "ESCOLHER"), h("ion-button", { class: "modal-filtros__button", "ds-size": "xs", disabled: true, "ds-color": "neutral-10", mode: "ios" }, "TODOS")), h("ion-label", { class: "modal-filtros__filtrar" }, "Filtrar por Apostilas"), h("div", { class: "modal-filtros__button-container modal-filtros__button-container--margin-bottom" }, h("ion-button", { class: "modal-filtros__button", "ds-color": "neutral-10", "ds-size": "xs", mode: "ios" }, "ESCOLHER"), h("ion-button", { class: "modal-filtros__button", "ds-size": "xs", disabled: true, "ds-color": "neutral-10", mode: "ios" }, "TODOS")))))), h("ion-footer", { class: "modal-footer" }, h("ion-button", { class: "modal-footer__button", mode: "ios", "ds-size": "sm" }, "APLICAR FILTRO"))));
   }
   static get is() { return "filtro-modal"; }
   static get encapsulation() { return "scoped"; }
-  static get originalStyleUrls() { return {
-    "$": ["filtro-modal.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["filtro-modal.css"]
-  }; }
+  static get originalStyleUrls() {
+    return {
+      "$": ["filtro-modal.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["filtro-modal.css"]
+    };
+  }
 }

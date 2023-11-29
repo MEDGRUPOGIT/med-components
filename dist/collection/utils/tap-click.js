@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { now, pointerCoord } from './helpers';
 export const startTapClick = (config) => {
   let lastTouch = -MOUSE_WAIT * 10;

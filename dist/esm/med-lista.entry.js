@@ -1,5 +1,8 @@
-import { r as registerInstance, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './color-49be71bc.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { g as generateMedColor } from './color-2567dca3.js';
 
 const iosMedListaCss = ":host{--border-radius:8px;--border-color:transparent;--border:1px solid var(--border-color)}:host{border-radius:var(--border-radius)}::slotted(med-item:not(:last-child)){border-bottom:var(--border)}";
 

@@ -1,8 +1,11 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
+const index = require('./index-a17b061b.js');
 
 const medDropdownContainerCss = ".sc-med-dropdown-container-h{display:block;position:relative}.sc-med-dropdown-container-s>med-dropdown+ion-select{--border-radius:8px 8px 0 0}.sc-med-dropdown-container-s>med-dropdown{--top:40px}";
 

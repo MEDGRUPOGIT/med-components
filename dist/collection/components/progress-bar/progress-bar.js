@@ -1,4 +1,7 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { clamp } from '../../utils/helpers';
@@ -14,26 +17,12 @@ import { hostContext } from '../../utils/theme';
  */
 export class ProgressBar {
   constructor() {
-    /**
-     * The state of the progress bar, based on if the time the process takes is known or not.
-     * Default options are: `"determinate"` (no animation), `"indeterminate"` (animate from left to right).
-     */
+    this.dsColor = undefined;
     this.type = 'determinate';
-    /**
-     * If true, reverse the progress bar direction.
-     */
     this.reversed = false;
-    /**
-     * The value determines how much of the active bar should display when the
-     * `type` is `"determinate"`.
-     * The value should be between [0, 1].
-     */
     this.value = 0;
-    /**
-     * If the buffer and value are smaller than 1, the buffer circles will show.
-     * The buffer should be between [0, 1].
-     */
     this.buffer = 1;
+    this.color = undefined;
   }
   render() {
     const { dsColor, type, reversed, value, buffer } = this;
@@ -52,148 +41,149 @@ export class ProgressBar {
   }
   static get is() { return "ion-progress-bar"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["progress-bar.med.scss"],
-    "md": ["progress-bar.med.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["progress-bar.med.css"],
-    "md": ["progress-bar.med.css"]
-  }; }
-  static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../@templarios/types/color.type"
+  static get originalStyleUrls() {
+    return {
+      "ios": ["progress-bar.med.scss"],
+      "md": ["progress-bar.med.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["progress-bar.med.css"],
+      "md": ["progress-bar.med.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "dsColor": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "MedColor",
+          "resolved": "string | undefined",
+          "references": {
+            "MedColor": {
+              "location": "import",
+              "path": "../../@templarios/types/color.type"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Define a cor do componente."
+        },
+        "attribute": "ds-color",
+        "reflect": true
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Define a cor do componente."
+      "type": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'determinate' | 'indeterminate'",
+          "resolved": "\"determinate\" | \"indeterminate\"",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The state of the progress bar, based on if the time the process takes is known or not.\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right)."
+        },
+        "attribute": "type",
+        "reflect": false,
+        "defaultValue": "'determinate'"
       },
-      "attribute": "ds-color",
-      "reflect": true
-    },
-    "type": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'determinate' | 'indeterminate'",
-        "resolved": "\"determinate\" | \"indeterminate\"",
-        "references": {}
+      "reversed": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If true, reverse the progress bar direction."
+        },
+        "attribute": "reversed",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The state of the progress bar, based on if the time the process takes is known or not.\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right)."
+      "value": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The value determines how much of the active bar should display when the\n`type` is `\"determinate\"`.\nThe value should be between [0, 1]."
+        },
+        "attribute": "value",
+        "reflect": false,
+        "defaultValue": "0"
       },
-      "attribute": "type",
-      "reflect": false,
-      "defaultValue": "'determinate'"
-    },
-    "reversed": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
+      "buffer": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If the buffer and value are smaller than 1, the buffer circles will show.\nThe buffer should be between [0, 1]."
+        },
+        "attribute": "buffer",
+        "reflect": false,
+        "defaultValue": "1"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If true, reverse the progress bar direction."
-      },
-      "attribute": "reversed",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "value": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The value determines how much of the active bar should display when the\n`type` is `\"determinate\"`.\nThe value should be between [0, 1]."
-      },
-      "attribute": "value",
-      "reflect": false,
-      "defaultValue": "0"
-    },
-    "buffer": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If the buffer and value are smaller than 1, the buffer circles will show.\nThe buffer should be between [0, 1]."
-      },
-      "attribute": "buffer",
-      "reflect": false,
-      "defaultValue": "1"
-    },
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../interface"
+      "color": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Color",
+          "resolved": "string | undefined",
+          "references": {
+            "Color": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
-      },
-      "attribute": "color",
-      "reflect": false
-    }
-  }; }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        },
+        "attribute": "color",
+        "reflect": false
+      }
+    };
+  }
   static get elementRef() { return "el"; }
 }
 const renderIndeterminate = () => {
-  return (h("div", { part: "track", class: "progress-buffer-bar" },
-    h("div", { class: "indeterminate-bar-primary" },
-      h("span", { part: "progress", class: "progress-indeterminate" })),
-    h("div", { class: "indeterminate-bar-secondary" },
-      h("span", { part: "progress", class: "progress-indeterminate" }))));
+  return (h("div", { part: "track", class: "progress-buffer-bar" }, h("div", { class: "indeterminate-bar-primary" }, h("span", { part: "progress", class: "progress-indeterminate" })), h("div", { class: "indeterminate-bar-secondary" }, h("span", { part: "progress", class: "progress-indeterminate" }))));
 };
 const renderProgress = (value, buffer) => {
   const finalValue = value !== 0 ? (value * 100) : 1;
   const unit = value !== 0 ? '%' : 'px';
   const finalBuffer = clamp(0, buffer, 1);
   return [
-    h("div", { class: "progress-container" },
-      h("div", { part: "progress", class: `progress ${finalValue === 100 ? 'progress--correct' : ''}`, style: { width: `${finalValue}${unit}` } })),
+    h("div", { class: "progress-container" }, h("div", { part: "progress", class: `progress ${finalValue === 100 ? 'progress--correct' : ''}`, style: { width: `${finalValue}${unit}` } })),
     /**
      * Buffer circles with two container to move
      * the circles behind the buffer progress
@@ -201,9 +191,7 @@ const renderProgress = (value, buffer) => {
      * When finalBuffer === 1, we use display: none
      * instead of removing the element to avoid flickering.
      */
-    h("div", { class: { 'buffer-circles-container': true, 'ion-hide': finalBuffer === 1 }, style: { transform: `translateX(${finalBuffer * 100}%)` } },
-      h("div", { class: "buffer-circles-container", style: { transform: `translateX(-${finalBuffer * 100}%)` } },
-        h("div", { part: "stream", class: "buffer-circles" }))),
+    h("div", { class: { 'buffer-circles-container': true, 'ion-hide': finalBuffer === 1 }, style: { transform: `translateX(${finalBuffer * 100}%)` } }, h("div", { class: "buffer-circles-container", style: { transform: `translateX(-${finalBuffer * 100}%)` } }, h("div", { part: "stream", class: "buffer-circles" }))),
     h("div", { part: "track", class: "progress-buffer-bar", style: { transform: `translateX(${finalBuffer})` } }),
   ];
 };

@@ -1,10 +1,13 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const gestureController = require('./gesture-controller-29adda71.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const gestureController = require('./gesture-controller-3d1daf69.js');
 
 const backdropIosCss = ":host{left:0;right:0;top:0;bottom:0;display:block;position:absolute;-webkit-transform:translateZ(0);transform:translateZ(0);contain:strict;cursor:pointer;opacity:0.01;-ms-touch-action:none;touch-action:none;z-index:2}:host(.backdrop-hide){background:transparent}:host(.backdrop-no-tappable){cursor:auto}:host{background-color:var(--ion-backdrop-color, #000)}";
 
@@ -17,17 +20,8 @@ const Backdrop = class {
     this.blocker = gestureController.GESTURE_CONTROLLER.createBlocker({
       disableScroll: true
     });
-    /**
-     * If `true`, the backdrop will be visible.
-     */
     this.visible = true;
-    /**
-     * If `true`, the backdrop will can be clicked and will emit the `ionBackdropTap` event.
-     */
     this.tappable = true;
-    /**
-     * If `true`, the backdrop will stop propagation on tap.
-     */
     this.stopPropagation = true;
   }
   connectedCallback() {

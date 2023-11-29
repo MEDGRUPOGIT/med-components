@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Prop, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { clamp } from '../../utils/helpers';
 import { hapticSelectionChanged, hapticSelectionEnd, hapticSelectionStart } from '../../utils/native/haptic';
@@ -13,6 +16,7 @@ export class PickerColumnCmp {
     this.velocity = 0;
     this.y = 0;
     this.noAnimate = true;
+    this.col = undefined;
   }
   colChanged() {
     this.refresh();
@@ -306,71 +310,78 @@ export class PickerColumnCmp {
         'picker-opts-right': this.col.align === 'right'
       }, style: {
         'max-width': this.col.columnWidth
-      } },
-      col.prefix && (h("div", { class: "picker-prefix", style: { width: col.prefixWidth } }, col.prefix)),
-      h("div", { class: "picker-opts", style: { maxWidth: col.optionsWidth }, ref: el => this.optsEl = el }, col.options.map((o, index) => h(Button, { type: "button", class: { 'picker-opt': true, 'picker-opt-disabled': !!o.disabled }, "opt-index": index }, o.text))),
-      col.suffix && (h("div", { class: "picker-suffix", style: { width: col.suffixWidth } }, col.suffix))));
+      } }, col.prefix && (h("div", { class: "picker-prefix", style: { width: col.prefixWidth } }, col.prefix)), h("div", { class: "picker-opts", style: { maxWidth: col.optionsWidth }, ref: el => this.optsEl = el }, col.options.map((o, index) => h(Button, { type: "button", class: { 'picker-opt': true, 'picker-opt-disabled': !!o.disabled }, "opt-index": index }, o.text))), col.suffix && (h("div", { class: "picker-suffix", style: { width: col.suffixWidth } }, col.suffix))));
   }
   static get is() { return "ion-picker-column"; }
-  static get originalStyleUrls() { return {
-    "ios": ["picker-column.ios.scss"],
-    "md": ["picker-column.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["picker-column.ios.css"],
-    "md": ["picker-column.md.css"]
-  }; }
-  static get properties() { return {
-    "col": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "PickerColumn",
-        "resolved": "PickerColumn",
-        "references": {
-          "PickerColumn": {
-            "location": "import",
-            "path": "../../interface"
+  static get originalStyleUrls() {
+    return {
+      "ios": ["picker-column.ios.scss"],
+      "md": ["picker-column.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["picker-column.ios.css"],
+      "md": ["picker-column.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "col": {
+        "type": "unknown",
+        "mutable": false,
+        "complexType": {
+          "original": "PickerColumn",
+          "resolved": "PickerColumn",
+          "references": {
+            "PickerColumn": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
-        }
-      },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Picker column data"
-      }
-    }
-  }; }
-  static get events() { return [{
-      "method": "ionPickerColChange",
-      "name": "ionPickerColChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the selected value has changed"
-      },
-      "complexType": {
-        "original": "PickerColumn",
-        "resolved": "PickerColumn",
-        "references": {
-          "PickerColumn": {
-            "location": "import",
-            "path": "../../interface"
-          }
+        },
+        "required": true,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Picker column data"
         }
       }
-    }]; }
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionPickerColChange",
+        "name": "ionPickerColChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the selected value has changed"
+        },
+        "complexType": {
+          "original": "PickerColumn",
+          "resolved": "PickerColumn",
+          "references": {
+            "PickerColumn": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }];
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "col",
-      "methodName": "colChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "col",
+        "methodName": "colChanged"
+      }];
+  }
 }
 const PICKER_OPT_SELECTED = 'picker-opt-selected';
 const DECELERATION_FRICTION = 0.97;

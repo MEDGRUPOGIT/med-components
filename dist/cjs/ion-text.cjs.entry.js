@@ -1,16 +1,20 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const theme = require('./theme-30b7a575.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const theme = require('./theme-a4c4a7eb.js');
 
 const textCss = ":host(.ion-color){color:var(--ion-color-base)}";
 
 const Text = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    this.color = undefined;
   }
   render() {
     const mode = ionicGlobal.getIonMode(this);

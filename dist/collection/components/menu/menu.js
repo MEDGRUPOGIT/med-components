@@ -1,4 +1,7 @@
-import { Build, Component, Element, Event, Host, Listen, Method, Prop, State, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Build, Host, h } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { getTimeGivenProgression } from '../../utils/animation/cubic-bezier';
@@ -21,22 +24,12 @@ export class Menu {
     this._isOpen = false;
     this.isPaneVisible = false;
     this.isEndSide = false;
-    /**
-     * If `true`, the menu is disabled.
-     */
+    this.contentId = undefined;
+    this.menuId = undefined;
+    this.type = undefined;
     this.disabled = false;
-    /**
-     * Which side of the view the menu should be placed.
-     */
     this.side = 'start';
-    /**
-     * If `true`, swiping the menu is enabled.
-     */
     this.swipeGesture = true;
-    /**
-     * The edge threshold for dragging the menu open.
-     * If a drag/swipe happens over this value, the menu is not triggered.
-     */
     this.maxEdgeStart = 50;
   }
   typeChanged(type, oldType) {
@@ -416,379 +409,392 @@ AFTER:
         'menu-side-end': isEndSide,
         'menu-side-start': !isEndSide,
         'menu-pane-visible': isPaneVisible
-      } },
-      h("div", { class: "menu-inner", part: "container", ref: el => this.menuInnerEl = el },
-        h("slot", null)),
-      h("ion-backdrop", { ref: el => this.backdropEl = el, class: "menu-backdrop", tappable: false, stopPropagation: false, part: "backdrop" })));
+      } }, h("div", { class: "menu-inner", part: "container", ref: el => this.menuInnerEl = el }, h("slot", null)), h("ion-backdrop", { ref: el => this.backdropEl = el, class: "menu-backdrop", tappable: false, stopPropagation: false, part: "backdrop" })));
   }
   static get is() { return "ion-menu"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["menu.ios.scss"],
-    "md": ["menu.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["menu.ios.css"],
-    "md": ["menu.md.css"]
-  }; }
-  static get properties() { return {
-    "contentId": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+  static get originalStyleUrls() {
+    return {
+      "ios": ["menu.ios.scss"],
+      "md": ["menu.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["menu.ios.css"],
+      "md": ["menu.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "contentId": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The `id` of the main content. When using\na router this is typically `ion-router-outlet`.\nWhen not using a router, this is typically\nyour main view's `ion-content`. This is not the\nid of the `ion-content` inside of your `ion-menu`."
+        },
+        "attribute": "content-id",
+        "reflect": true
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The `id` of the main content. When using\na router this is typically `ion-router-outlet`.\nWhen not using a router, this is typically\nyour main view's `ion-content`. This is not the\nid of the `ion-content` inside of your `ion-menu`."
+      "menuId": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "An id for the menu."
+        },
+        "attribute": "menu-id",
+        "reflect": true
       },
-      "attribute": "content-id",
-      "reflect": true
-    },
-    "menuId": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+      "type": {
+        "type": "string",
+        "mutable": true,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The display type of the menu.\nAvailable options: `\"overlay\"`, `\"reveal\"`, `\"push\"`."
+        },
+        "attribute": "type",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "An id for the menu."
+      "disabled": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the menu is disabled."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "attribute": "menu-id",
-      "reflect": true
-    },
-    "type": {
-      "type": "string",
-      "mutable": true,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+      "side": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Side",
+          "resolved": "\"end\" | \"start\"",
+          "references": {
+            "Side": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Which side of the view the menu should be placed."
+        },
+        "attribute": "side",
+        "reflect": true,
+        "defaultValue": "'start'"
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The display type of the menu.\nAvailable options: `\"overlay\"`, `\"reveal\"`, `\"push\"`."
+      "swipeGesture": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, swiping the menu is enabled."
+        },
+        "attribute": "swipe-gesture",
+        "reflect": false,
+        "defaultValue": "true"
       },
-      "attribute": "type",
-      "reflect": false
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": true,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the menu is disabled."
-      },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "side": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Side",
-        "resolved": "\"end\" | \"start\"",
-        "references": {
-          "Side": {
-            "location": "import",
-            "path": "../../interface"
+      "maxEdgeStart": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The edge threshold for dragging the menu open.\nIf a drag/swipe happens over this value, the menu is not triggered."
+        },
+        "attribute": "max-edge-start",
+        "reflect": false,
+        "defaultValue": "50"
+      }
+    };
+  }
+  static get states() {
+    return {
+      "isPaneVisible": {},
+      "isEndSide": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionWillOpen",
+        "name": "ionWillOpen",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the menu is about to be opened."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionWillClose",
+        "name": "ionWillClose",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the menu is about to be closed."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionDidOpen",
+        "name": "ionDidOpen",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the menu is open."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionDidClose",
+        "name": "ionDidClose",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the menu is closed."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionMenuChange",
+        "name": "ionMenuChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the menu state is changed."
+        },
+        "complexType": {
+          "original": "MenuChangeEventDetail",
+          "resolved": "MenuChangeEventDetail",
+          "references": {
+            "MenuChangeEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
+      }];
+  }
+  static get methods() {
+    return {
+      "isOpen": {
+        "complexType": {
+          "signature": "() => Promise<boolean>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<boolean>"
+        },
+        "docs": {
+          "text": "Returns `true` is the menu is open.",
+          "tags": []
+        }
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Which side of the view the menu should be placed."
+      "isActive": {
+        "complexType": {
+          "signature": "() => Promise<boolean>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<boolean>"
+        },
+        "docs": {
+          "text": "Returns `true` is the menu is active.\n\nA menu is active when it can be opened or closed, meaning it's enabled\nand it's not part of a `ion-split-pane`.",
+          "tags": []
+        }
       },
-      "attribute": "side",
-      "reflect": true,
-      "defaultValue": "'start'"
-    },
-    "swipeGesture": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
+      "open": {
+        "complexType": {
+          "signature": "(animated?: boolean) => Promise<boolean>",
+          "parameters": [{
+              "tags": [],
+              "text": ""
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<boolean>"
+        },
+        "docs": {
+          "text": "Opens the menu. If the menu is already open or it can't be opened,\nit returns `false`.",
+          "tags": []
+        }
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, swiping the menu is enabled."
+      "close": {
+        "complexType": {
+          "signature": "(animated?: boolean) => Promise<boolean>",
+          "parameters": [{
+              "tags": [],
+              "text": ""
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<boolean>"
+        },
+        "docs": {
+          "text": "Closes the menu. If the menu is already closed or it can't be closed,\nit returns `false`.",
+          "tags": []
+        }
       },
-      "attribute": "swipe-gesture",
-      "reflect": false,
-      "defaultValue": "true"
-    },
-    "maxEdgeStart": {
-      "type": "number",
-      "mutable": false,
-      "complexType": {
-        "original": "number",
-        "resolved": "number",
-        "references": {}
+      "toggle": {
+        "complexType": {
+          "signature": "(animated?: boolean) => Promise<boolean>",
+          "parameters": [{
+              "tags": [],
+              "text": ""
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<boolean>"
+        },
+        "docs": {
+          "text": "Toggles the menu. If the menu is already open, it will try to close, otherwise it will try to open it.\nIf the operation can't be completed successfully, it returns `false`.",
+          "tags": []
+        }
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The edge threshold for dragging the menu open.\nIf a drag/swipe happens over this value, the menu is not triggered."
-      },
-      "attribute": "max-edge-start",
-      "reflect": false,
-      "defaultValue": "50"
-    }
-  }; }
-  static get states() { return {
-    "isPaneVisible": {},
-    "isEndSide": {}
-  }; }
-  static get events() { return [{
-      "method": "ionWillOpen",
-      "name": "ionWillOpen",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the menu is about to be opened."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionWillClose",
-      "name": "ionWillClose",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the menu is about to be closed."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionDidOpen",
-      "name": "ionDidOpen",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the menu is open."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionDidClose",
-      "name": "ionDidClose",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the menu is closed."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionMenuChange",
-      "name": "ionMenuChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the menu state is changed."
-      },
-      "complexType": {
-        "original": "MenuChangeEventDetail",
-        "resolved": "MenuChangeEventDetail",
-        "references": {
-          "MenuChangeEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
+      "setOpen": {
+        "complexType": {
+          "signature": "(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
+          "parameters": [{
+              "tags": [],
+              "text": ""
+            }, {
+              "tags": [],
+              "text": ""
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<boolean>"
+        },
+        "docs": {
+          "text": "Opens or closes the button.\nIf the operation can't be completed successfully, it returns `false`.",
+          "tags": []
         }
       }
-    }]; }
-  static get methods() { return {
-    "isOpen": {
-      "complexType": {
-        "signature": "() => Promise<boolean>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<boolean>"
-      },
-      "docs": {
-        "text": "Returns `true` is the menu is open.",
-        "tags": []
-      }
-    },
-    "isActive": {
-      "complexType": {
-        "signature": "() => Promise<boolean>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<boolean>"
-      },
-      "docs": {
-        "text": "Returns `true` is the menu is active.\n\nA menu is active when it can be opened or closed, meaning it's enabled\nand it's not part of a `ion-split-pane`.",
-        "tags": []
-      }
-    },
-    "open": {
-      "complexType": {
-        "signature": "(animated?: boolean) => Promise<boolean>",
-        "parameters": [{
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<boolean>"
-      },
-      "docs": {
-        "text": "Opens the menu. If the menu is already open or it can't be opened,\nit returns `false`.",
-        "tags": []
-      }
-    },
-    "close": {
-      "complexType": {
-        "signature": "(animated?: boolean) => Promise<boolean>",
-        "parameters": [{
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<boolean>"
-      },
-      "docs": {
-        "text": "Closes the menu. If the menu is already closed or it can't be closed,\nit returns `false`.",
-        "tags": []
-      }
-    },
-    "toggle": {
-      "complexType": {
-        "signature": "(animated?: boolean) => Promise<boolean>",
-        "parameters": [{
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<boolean>"
-      },
-      "docs": {
-        "text": "Toggles the menu. If the menu is already open, it will try to close, otherwise it will try to open it.\nIf the operation can't be completed successfully, it returns `false`.",
-        "tags": []
-      }
-    },
-    "setOpen": {
-      "complexType": {
-        "signature": "(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
-        "parameters": [{
-            "tags": [],
-            "text": ""
-          }, {
-            "tags": [],
-            "text": ""
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
-        },
-        "return": "Promise<boolean>"
-      },
-      "docs": {
-        "text": "Opens or closes the button.\nIf the operation can't be completed successfully, it returns `false`.",
-        "tags": []
-      }
-    }
-  }; }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "type",
-      "methodName": "typeChanged"
-    }, {
-      "propName": "disabled",
-      "methodName": "disabledChanged"
-    }, {
-      "propName": "side",
-      "methodName": "sideChanged"
-    }, {
-      "propName": "swipeGesture",
-      "methodName": "swipeGestureChanged"
-    }]; }
-  static get listeners() { return [{
-      "name": "ionSplitPaneVisible",
-      "method": "onSplitPaneChanged",
-      "target": "body",
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "click",
-      "method": "onBackdropClick",
-      "target": undefined,
-      "capture": true,
-      "passive": false
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "type",
+        "methodName": "typeChanged"
+      }, {
+        "propName": "disabled",
+        "methodName": "disabledChanged"
+      }, {
+        "propName": "side",
+        "methodName": "sideChanged"
+      }, {
+        "propName": "swipeGesture",
+        "methodName": "swipeGestureChanged"
+      }];
+  }
+  static get listeners() {
+    return [{
+        "name": "ionSplitPaneVisible",
+        "method": "onSplitPaneChanged",
+        "target": "body",
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "click",
+        "method": "onBackdropClick",
+        "target": undefined,
+        "capture": true,
+        "passive": false
+      }];
+  }
 }
 const computeDelta = (deltaX, isOpen, isEndSide) => {
   return Math.max(0, isOpen !== isEndSide ? -deltaX : deltaX);

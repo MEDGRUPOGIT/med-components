@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { attachComponent } from '../../utils/framework-delegate';
 import { assert } from '../../utils/helpers';
 export const VIEW_STATE_NEW = 1;

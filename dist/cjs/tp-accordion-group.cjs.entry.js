@@ -1,9 +1,12 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
 
 /**
  * Logs a warning to the console with an Ionic prefix
@@ -24,26 +27,11 @@ const TpAccordionGroup = class {
     index.registerInstance(this, hostRef);
     this.ionChange = index.createEvent(this, "ionChange", 7);
     this.ionValueChange = index.createEvent(this, "ionValueChange", 7);
-    /**
-     * If `true`, all accordions inside of the
-     * accordion group will animate when expanding
-     * or collapsing.
-     */
     this.animated = true;
-    /**
-     * If `true`, the accordion group cannot be interacted with.
-     */
+    this.multiple = undefined;
+    this.value = undefined;
     this.disabled = false;
-    /**
-     * If `true`, the accordion group cannot be interacted with,
-     * but does not alter the opacity.
-     */
     this.readonly = false;
-    /**
-     * Describes the expansion behavior for each accordion.
-     * Possible values are `"compact"` and `"inset"`.
-     * Defaults to `"compact"`.
-     */
     this.expand = "compact";
   }
   valueChanged() {

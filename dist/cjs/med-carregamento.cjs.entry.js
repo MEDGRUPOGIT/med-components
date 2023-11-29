@@ -1,17 +1,18 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
+const index = require('./index-a17b061b.js');
 
 const medCarregamentoCss = ".sc-med-carregamento-h{display:block}.loader.sc-med-carregamento{background:var(--background, #1a1a1a);height:100vh;min-height:100vh;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;-ms-flex-direction:column;flex-direction:column}.loader__circle.sc-med-carregamento{z-index:999;width:100px;height:100px}.loader__svg.sc-med-carregamento{position:absolute;-webkit-transform:scale(2) translate(30px, 30px);transform:scale(2) translate(30px, 30px);width:100px;height:100px}.rectangles.sc-med-carregamento{-webkit-animation-name:animate-stroke;animation-name:animate-stroke;-webkit-animation-duration:4s;animation-duration:4s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;stroke-dashoffset:1000;stroke-dasharray:1000}@-webkit-keyframes animate-stroke{to{stroke-dashoffset:0}}@keyframes animate-stroke{to{stroke-dashoffset:0}}.st0.sc-med-carregamento{fill:#2a778a}.circle.sc-med-carregamento{-webkit-animation-name:animate-stroke-2;animation-name:animate-stroke-2;-webkit-animation-duration:4s;animation-duration:4s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;stroke-dashoffset:1000;stroke-dasharray:1000}@-webkit-keyframes animate-stroke-2{to{stroke-dashoffset:0}}@keyframes animate-stroke-2{to{stroke-dashoffset:0}}";
 
 const MedCarregamento = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /**
-     * todo
-     */
+    this.message = undefined;
     this.color = '#808080';
   }
   render() {

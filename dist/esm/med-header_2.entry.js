@@ -1,5 +1,8 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './color-49be71bc.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { g as generateMedColor } from './color-2567dca3.js';
 
 const medHeaderCss = ":host{--background:hsl(var(--med-color-neutral-1))}:host{background:var(--background);display:block;padding-top:var(--ion-safe-area-top)}";
 
@@ -966,6 +969,8 @@ const medNavbarCss = ":host{--background:hsl(var(--med-color-neutral-1));--main-
 const MedNavbar = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    this.dsColor = undefined;
+    this.dsName = undefined;
   }
   componentDidLoad() {
     this.setSize();

@@ -1,4 +1,7 @@
-import { Component, Element, Event, h, Host } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 export class MedHeader {
   constructor() {
     this.hostHeight = 0;
@@ -22,40 +25,42 @@ export class MedHeader {
     this.hostResizeObserver.observe(this.el);
   }
   render() {
-    return (h(Host, { "from-stencil": true },
-      h("slot", { name: "navbar" }),
-      h("slot", { name: "toolbar" }),
-      h("slot", { name: "progress" }),
-      h("slot", { name: "auxiliar" })));
+    return (h(Host, { "from-stencil": true }, h("slot", { name: "navbar" }), h("slot", { name: "toolbar" }), h("slot", { name: "progress" }), h("slot", { name: "auxiliar" })));
   }
   static get is() { return "med-header"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "$": ["med-header.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["med-header.css"]
-  }; }
-  static get events() { return [{
-      "method": "medResize",
-      "name": "medResize",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "complexType": {
-        "original": "headerResizeEventDetail",
-        "resolved": "headerResizeEventDetail",
-        "references": {
-          "headerResizeEventDetail": {
-            "location": "import",
-            "path": "../../../../@templarios/interfaces/header.interface"
+  static get originalStyleUrls() {
+    return {
+      "$": ["med-header.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["med-header.css"]
+    };
+  }
+  static get events() {
+    return [{
+        "method": "medResize",
+        "name": "medResize",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "complexType": {
+          "original": "headerResizeEventDetail",
+          "resolved": "headerResizeEventDetail",
+          "references": {
+            "headerResizeEventDetail": {
+              "location": "import",
+              "path": "../../../../@templarios/interfaces/header.interface"
+            }
           }
         }
-      }
-    }]; }
+      }];
+  }
   static get elementRef() { return "el"; }
 }

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { addEventListener } from './listener';
 const MOUSE_WAIT = 2000;
 export const createPointerEvents = (el, pointerDown, pointerMove, pointerUp, options) => {

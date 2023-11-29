@@ -1,7 +1,10 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './color-49be71bc.js';
-import { c as createAnimation } from './animation-560b991d.js';
-import './helpers-462f8de3.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { g as generateMedColor } from './color-2567dca3.js';
+import { c as createAnimation } from './animation-41df7b1a.js';
+import './helpers-d6be6e4a.js';
 
 const medAccordionItemCss = ":host{--background-header:linear-gradient(to right, hsl(var(--med-color-brand-1)), hsl(var(--med-color-neutral-2)), hsl(var(--med-color-neutral-2)));--background-content:hsl(var(--med-color-neutral-2));--icon-color:hsl(var(--med-color-neutral-10));--border-radius:8px;--padding:16px;--icon-font-size:24px;--align-items:initial}:host(.med-accordion-item){display:block;border-radius:var(--border-radius)}:host(.med-accordion-item) .med-accordion-item__header-container{width:100%;cursor:pointer;z-index:1;display:-ms-flexbox;display:flex;-ms-flex-align:var(--align-items);align-items:var(--align-items)}:host(.med-accordion-item) .med-accordion-item__header{-webkit-box-sizing:border-box;box-sizing:border-box;padding:var(--padding);background:var(--background-header);border-radius:var(--border-radius);position:relative;width:100%;-webkit-transition:background 0.5s linear;transition:background 0.5s linear;background-size:200% 100%;background-position:100% 0}:host(.med-accordion-item) .med-accordion-item__heading{width:100%}:host(.med-accordion-item) .med-accordion-item__icon-container{display:-ms-flexbox;display:flex}:host(.med-accordion-item) .med-accordion-item__icon-container--left{padding-right:8px}:host(.med-accordion-item) .med-accordion-item__icon-container--right{padding-left:8px;margin-left:auto}:host(.med-accordion-item) .med-accordion-item__content{display:none;background:var(--background-content);border-bottom-left-radius:var(--border-radius);border-bottom-right-radius:var(--border-radius);z-index:0}:host(.med-accordion-item) .header-container__end{margin-left:auto}:host(.med-accordion-item) .header-container__middle{width:var(--middle-width)}:host(.med-accordion-item--no-border){--border-radius:0}:host(.med-accordion-item--keep-border) .med-accordion-item__header{border-bottom-left-radius:8px !important;border-bottom-right-radius:8px !important}::slotted(ion-progress-bar){position:absolute;left:0;bottom:0;border-bottom-left-radius:4px;border-bottom-right-radius:4px}:host(.med-accordion-item--open.med-accordion-item--background) .med-accordion-item__header{background-position:0 0}:host(.med-accordion-item--open) ::slotted(ion-progress-bar){border-bottom-left-radius:0;border-bottom-right-radius:0}:host(.med-color.med-accordion-item--background){--background-header:linear-gradient(to right, hsl(var(--med-color-1)), hsl(var(--med-color-neutral-2)), hsl(var(--med-color-neutral-2)))}";
 
@@ -11,30 +14,6 @@ const MedAccordionItem = class {
     this.toggle = createEvent(this, "toggle", 7);
     this.opened = createEvent(this, "opened", 7);
     this.medClick = createEvent(this, "medClick", 7);
-    /**
-     * todo
-     */
-    this.noBorder = false;
-    /**
-     * todo
-     */
-    this.background = false;
-    /**
-     * todo
-     */
-    this.canCollapse = true;
-    /**
-     * todo
-     */
-    this.isOpened = false;
-    /**
-     * todo
-     */
-    this.slotsToggle = [];
-    /**
-     * todo
-     */
-    this.isOpen = false;
     this.isTransitioning = false;
     this.onClick = (slot) => {
       if (!this.canCollapse) {
@@ -44,6 +23,13 @@ const MedAccordionItem = class {
         this.toggleOpen();
       }
     };
+    this.dsColor = undefined;
+    this.noBorder = false;
+    this.background = false;
+    this.canCollapse = true;
+    this.isOpened = false;
+    this.slotsToggle = [];
+    this.isOpen = false;
   }
   watchPropHandler(newValue) {
     this.toggleOpen();
@@ -101,19 +87,11 @@ const medAccordionListCss = ":host{--background:hsl(var(--med-color-neutral-1));
 const Accordion = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * todo
-     */
-    this.singleOpen = true;
-    /**
-     * todo
-     */
-    this.noBorder = false;
-    /**
-     * todo
-     */
-    this.noAnimation = false;
     this.currentlyOpen = null;
+    this.margin = undefined;
+    this.singleOpen = true;
+    this.noBorder = false;
+    this.noAnimation = false;
   }
   async handleToggle(ev) {
     ev.detail.shouldOpen ? await this.animateOpen(ev) : await this.animateClose(ev);

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export var MedTypeTag;
 (function (MedTypeTag) {
   MedTypeTag["H1"] = "h1";

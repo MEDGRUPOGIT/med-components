@@ -1,21 +1,20 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const type_enum = require('./type.enum-cd36ae15.js');
-require('./plusminus.enum-43139314.js');
-require('./rate-like.enum-0930ca84.js');
+const index = require('./index-a17b061b.js');
+const type_enum = require('./type.enum-e1d14e46.js');
+require('./plusminus.enum-a5f80cb9.js');
+require('./rate-like.enum-3b51a6f0.js');
 
 const medFontZoomCss = ".sc-med-font-zoom-h{display:block;opacity:0;-webkit-transition:opacity 0.1s;transition:opacity 0.1s}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}";
 
 const MedFontZoom = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /**
-     * todo
-     */
-    this.value = type_enum.MedFontSize.XS;
     this.min = 1;
     this.max = 5;
     this.step = 1;
@@ -57,6 +56,8 @@ const MedFontZoom = class {
         this.emitter.emit(this.value);
       }
     };
+    this.emitter = undefined;
+    this.value = type_enum.MedFontSize.XS;
   }
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7

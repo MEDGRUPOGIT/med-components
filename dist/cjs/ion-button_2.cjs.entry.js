@@ -1,11 +1,14 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const helpers = require('./helpers-ba3c117b.js');
-const theme = require('./theme-30b7a575.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const helpers = require('./helpers-4478bffd.js');
+const theme = require('./theme-a4c4a7eb.js');
 
 let CACHED_MAP;
 const getIconMap = () => {
@@ -104,27 +107,6 @@ const Button = class {
     this.inListHeader = false;
     this.inToolbar = false;
     this.inheritedAttributes = {};
-    /**
-     * The type of button.
-     */
-    this.buttonType = 'button';
-    /**
-     * If `true`, the user cannot interact with the button.
-     */
-    this.disabled = false;
-    /**
-     * When using a router, it specifies the transition direction when navigating to
-     * another page using `href`.
-     */
-    this.routerDirection = 'forward';
-    /**
-     * If `true`, activates a button with a heavier font weight.
-     */
-    this.strong = false;
-    /**
-     * The type of the button.
-     */
-    this.type = 'button';
     this.handleClick = (ev) => {
       if (this.type === 'button') {
         theme.openURL(this.href, ev, this.routerDirection, this.routerAnimation);
@@ -151,6 +133,21 @@ const Button = class {
     this.onBlur = () => {
       this.ionBlur.emit();
     };
+    this.color = undefined;
+    this.buttonType = 'button';
+    this.disabled = false;
+    this.expand = undefined;
+    this.fill = undefined;
+    this.routerDirection = 'forward';
+    this.routerAnimation = undefined;
+    this.download = undefined;
+    this.href = undefined;
+    this.rel = undefined;
+    this.shape = undefined;
+    this.size = undefined;
+    this.strong = false;
+    this.target = undefined;
+    this.type = 'button';
   }
   componentWillLoad() {
     this.inToolbar = !!this.el.closest('ion-buttons');
@@ -284,7 +281,7 @@ const getSvgContent = (url, sanitize) => {
   return req;
 };
 
-const iconCss = ":host{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}:host .ionicon{stroke:currentColor}.ionicon-fill-none{fill:none}.ionicon-stroke-width{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}.icon-inner,.ionicon,svg{display:block;height:100%;width:100%}:host(.flip-rtl) .icon-inner{-webkit-transform:scaleX(-1);transform:scaleX(-1)}:host(.icon-small){font-size:18px !important}:host(.icon-large){font-size:32px !important}:host(.ion-color){color:var(--ion-color-base) !important}:host(.ion-color-primary){--ion-color-base:var(--ion-color-primary, #3880ff)}:host(.ion-color-secondary){--ion-color-base:var(--ion-color-secondary, #0cd1e8)}:host(.ion-color-tertiary){--ion-color-base:var(--ion-color-tertiary, #f4a942)}:host(.ion-color-success){--ion-color-base:var(--ion-color-success, #10dc60)}:host(.ion-color-warning){--ion-color-base:var(--ion-color-warning, #ffce00)}:host(.ion-color-danger){--ion-color-base:var(--ion-color-danger, #f14141)}:host(.ion-color-light){--ion-color-base:var(--ion-color-light, #f4f5f8)}:host(.ion-color-medium){--ion-color-base:var(--ion-color-medium, #989aa2)}:host(.ion-color-dark){--ion-color-base:var(--ion-color-dark, #222428)}:host(.med-icon){--ionicon-stroke-width:2;font-size:24px;stroke:inherit}:host(.med-icon) path{stroke-width:var(--ionicon-stroke-width, 32px);fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:inherit}:host(.med-icon.med-color){color:hsl(var(--med-color-3)) !important;stroke:hsl(var(--med-color-3)) !important}:host(.med-icon.med-color-neutral){color:hsl(var(--med-color-neutral)) !important;stroke:hsl(var(--med-color-neutral)) !important}:host(.med-icon.med-color-feedback){color:hsl(var(--med-color-feedback)) !important;stroke:hsl(var(--med-color-feedback)) !important}:host(.med-icon.med-icon--xxs){font-size:12px}:host(.med-icon.med-icon--xs){font-size:16px}:host(.med-icon.med-icon--sm){font-size:24px}:host(.med-icon.med-icon--md){font-size:32px}:host(.med-icon.med-icon--lg){font-size:48px}:host(.med-icon.med-icon--stroke-1){--ionicon-stroke-width:1}";
+const iconCss = ":host{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}:host .ionicon{stroke:currentColor}.ionicon-fill-none{fill:none}.ionicon-stroke-width{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}.icon-inner,.ionicon,svg{display:block;height:100%;width:100%}:host(.flip-rtl) .icon-inner{-webkit-transform:scaleX(-1);transform:scaleX(-1)}:host(.icon-small){font-size:18px !important}:host(.icon-large){font-size:32px !important}:host(.ion-color){color:var(--ion-color-base) !important}:host(.ion-color-primary){--ion-color-base:var(--ion-color-primary, #3880ff)}:host(.ion-color-secondary){--ion-color-base:var(--ion-color-secondary, #0cd1e8)}:host(.ion-color-tertiary){--ion-color-base:var(--ion-color-tertiary, #f4a942)}:host(.ion-color-success){--ion-color-base:var(--ion-color-success, #10dc60)}:host(.ion-color-warning){--ion-color-base:var(--ion-color-warning, #ffce00)}:host(.ion-color-danger){--ion-color-base:var(--ion-color-danger, #f14141)}:host(.ion-color-light){--ion-color-base:var(--ion-color-light, #f4f5f8)}:host(.ion-color-medium){--ion-color-base:var(--ion-color-medium, #989aa2)}:host(.ion-color-dark){--ion-color-base:var(--ion-color-dark, #222428)}:host(.med-icon){--ionicon-stroke-width:2;--fill:none;font-size:24px;stroke:inherit}:host(.med-icon) path{stroke-width:var(--ionicon-stroke-width, 32px);fill:var(--fill);stroke-linecap:round;stroke-linejoin:round;stroke:inherit}:host(.med-icon.fill){--fill:hsl(var(--med-color-neutral-10))}:host(.med-icon.med-color.fill) path{--fill:hsl(var(--med-color-3))}:host(.med-icon.med-color-neutral.fill) path{--fill:hsl(var(--med-color-neutral))}:host(.med-icon.med-color-feedback.fill) path{--fill:hsl(var(--med-color-feedback))}:host(.med-icon.med-color){color:hsl(var(--med-color-3)) !important;stroke:hsl(var(--med-color-3)) !important}:host(.med-icon.med-color-neutral){color:hsl(var(--med-color-neutral)) !important;stroke:hsl(var(--med-color-neutral)) !important}:host(.med-icon.med-color-feedback){color:hsl(var(--med-color-feedback)) !important;stroke:hsl(var(--med-color-feedback)) !important}:host(.med-icon.med-icon--xxs){font-size:12px}:host(.med-icon.med-icon--xs){font-size:16px}:host(.med-icon.med-icon--sm){font-size:24px}:host(.med-icon.med-icon--md){font-size:32px}:host(.med-icon.med-icon--lg){font-size:48px}:host(.med-icon.med-icon--stroke-1){--ionicon-stroke-width:1}";
 
 const Icon = class {
   constructor(hostRef) {

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 /**
  * Logs a warning to the console with an Ionic prefix
  * to indicate the library that is warning the developer.

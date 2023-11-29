@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export var BreakPointPixelEnum;
 (function (BreakPointPixelEnum) {
   BreakPointPixelEnum[BreakPointPixelEnum["XXS"] = 340] = "XXS";

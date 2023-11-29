@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const transitionEndAsync = (el, expectedDuration = 0) => {
   return new Promise((resolve) => {
     transitionEnd(el, expectedDuration, resolve);

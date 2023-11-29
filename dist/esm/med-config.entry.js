@@ -1,14 +1,19 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { m as modalController } from './overlays-dc3151a0.js';
-import './ionic-global-4bc7e399.js';
-import './hardware-back-button-4a6b37fb.js';
-import './helpers-462f8de3.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
+import { m as modalController } from './overlays-52f7bca4.js';
+import './ionic-global-e35a57a3.js';
+import './hardware-back-button-ace6a71b.js';
+import './helpers-d6be6e4a.js';
 
 const medConfigCss = ".sc-med-config-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100%;background-color:var(--med-color-neutral-dark-prime)}.sc-med-config-h .config-header.sc-med-config{position:relative;width:100%;z-index:1;top:0}.sc-med-config-h .config-header__title.sc-med-config{color:var(--med-color-neutral-light-prime);font-size:16px;line-height:100%;font-weight:600}.sc-med-config-h .config-content.sc-med-config{--background:var(--med-color-neutral-dark-prime);height:100%;overflow-y:hidden}";
 
 const MedConfig = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    this.emitter = undefined;
+    this.opcoes = undefined;
   }
   dismiss() {
     modalController.dismiss();

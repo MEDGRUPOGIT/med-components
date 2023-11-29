@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { getMode, setMode } from '@stencil/core';
 import { isPlatform, setupPlatforms } from '../utils/platform';
 import { config, configFromSession, configFromURL, saveConfig } from './config';

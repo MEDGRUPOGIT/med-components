@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Method, Prop, State, Watch, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { addEventListener, clamp, findItemLabel, renderHiddenInput } from '../../utils/helpers';
 import { pickerController } from '../../utils/overlays';
@@ -17,35 +20,6 @@ export class Datetime {
     this.datetimeMin = {};
     this.datetimeMax = {};
     this.datetimeValue = {};
-    this.isExpanded = false;
-    /**
-     * The name of the control, which is submitted with the form data.
-     */
-    this.name = this.inputId;
-    /**
-     * If `true`, the user cannot interact with the datetime.
-     */
-    this.disabled = false;
-    /**
-     * If `true`, the datetime appears normal but is not interactive.
-     */
-    this.readonly = false;
-    /**
-     * The display format of the date and time as text that shows
-     * within the item. When the `pickerFormat` input is not used, then the
-     * `displayFormat` is used for both display the formatted text, and determining
-     * the datetime picker's columns. See the `pickerFormat` input description for
-     * more info. Defaults to `MMM D, YYYY`.
-     */
-    this.displayFormat = 'MMM D, YYYY';
-    /**
-     * The text to display on the picker's cancel button.
-     */
-    this.cancelText = 'Cancel';
-    /**
-     * The text to display on the picker's "Done" button.
-     */
-    this.doneText = 'Done';
     this.onClick = () => {
       this.setFocus();
       this.open();
@@ -56,6 +30,29 @@ export class Datetime {
     this.onBlur = () => {
       this.ionBlur.emit();
     };
+    this.isExpanded = false;
+    this.name = this.inputId;
+    this.disabled = false;
+    this.readonly = false;
+    this.min = undefined;
+    this.max = undefined;
+    this.displayFormat = 'MMM D, YYYY';
+    this.displayTimezone = undefined;
+    this.pickerFormat = undefined;
+    this.cancelText = 'Cancel';
+    this.doneText = 'Done';
+    this.yearValues = undefined;
+    this.monthValues = undefined;
+    this.dayValues = undefined;
+    this.hourValues = undefined;
+    this.minuteValues = undefined;
+    this.monthNames = undefined;
+    this.monthShortNames = undefined;
+    this.dayNames = undefined;
+    this.dayShortNames = undefined;
+    this.pickerOptions = undefined;
+    this.placeholder = undefined;
+    this.value = undefined;
   }
   disabledChanged() {
     this.emitStyle();
@@ -382,523 +379,535 @@ export class Datetime {
         'datetime-readonly': readonly,
         'datetime-placeholder': addPlaceholderClass,
         'in-item': hostContext('ion-item', el)
-      } },
-      h("div", { class: "datetime-text", part: datetimeTextPart }, datetimeText),
-      h("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: this.disabled, ref: btnEl => this.buttonEl = btnEl })));
+      } }, h("div", { class: "datetime-text", part: datetimeTextPart }, datetimeText), h("button", { type: "button", onFocus: this.onFocus, onBlur: this.onBlur, disabled: this.disabled, ref: btnEl => this.buttonEl = btnEl })));
   }
   static get is() { return "ion-datetime"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["datetime.ios.scss"],
-    "md": ["datetime.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["datetime.ios.css"],
-    "md": ["datetime.md.css"]
-  }; }
-  static get properties() { return {
-    "name": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+  static get originalStyleUrls() {
+    return {
+      "ios": ["datetime.ios.scss"],
+      "md": ["datetime.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["datetime.ios.css"],
+      "md": ["datetime.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "name": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The name of the control, which is submitted with the form data."
+        },
+        "attribute": "name",
+        "reflect": false,
+        "defaultValue": "this.inputId"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The name of the control, which is submitted with the form data."
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the user cannot interact with the datetime."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "attribute": "name",
-      "reflect": false,
-      "defaultValue": "this.inputId"
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
+      "readonly": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the datetime appears normal but is not interactive."
+        },
+        "attribute": "readonly",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the user cannot interact with the datetime."
+      "min": {
+        "type": "string",
+        "mutable": true,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The minimum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\nsuch as `1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the minimum could just be the year, such as `1994`.\nDefaults to the beginning of the year, 100 years ago from today."
+        },
+        "attribute": "min",
+        "reflect": false
       },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "readonly": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
+      "max": {
+        "type": "string",
+        "mutable": true,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The maximum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\n`1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the maximum could just be the year, such as `1994`.\nDefaults to the end of this year."
+        },
+        "attribute": "max",
+        "reflect": false
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the datetime appears normal but is not interactive."
+      "displayFormat": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The display format of the date and time as text that shows\nwithin the item. When the `pickerFormat` input is not used, then the\n`displayFormat` is used for both display the formatted text, and determining\nthe datetime picker's columns. See the `pickerFormat` input description for\nmore info. Defaults to `MMM D, YYYY`."
+        },
+        "attribute": "display-format",
+        "reflect": false,
+        "defaultValue": "'MMM D, YYYY'"
       },
-      "attribute": "readonly",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "min": {
-      "type": "string",
-      "mutable": true,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+      "displayTimezone": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The timezone to use for display purposes only. See\n[Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)\nfor a list of supported timezones. If no value is provided, the\ncomponent will default to displaying times in the user's local timezone."
+        },
+        "attribute": "display-timezone",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The minimum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\nsuch as `1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the minimum could just be the year, such as `1994`.\nDefaults to the beginning of the year, 100 years ago from today."
+      "pickerFormat": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The format of the date and time picker columns the user selects.\nA datetime input can have one or many datetime parts, each getting their\nown column which allow individual selection of that particular datetime part. For\nexample, year and month columns are two individually selectable columns which help\nchoose an exact date from the datetime picker. Each column follows the string\nparse format. Defaults to use `displayFormat`."
+        },
+        "attribute": "picker-format",
+        "reflect": false
       },
-      "attribute": "min",
-      "reflect": false
-    },
-    "max": {
-      "type": "string",
-      "mutable": true,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+      "cancelText": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The text to display on the picker's cancel button."
+        },
+        "attribute": "cancel-text",
+        "reflect": false,
+        "defaultValue": "'Cancel'"
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The maximum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\n`1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the maximum could just be the year, such as `1994`.\nDefaults to the end of this year."
+      "doneText": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The text to display on the picker's \"Done\" button."
+        },
+        "attribute": "done-text",
+        "reflect": false,
+        "defaultValue": "'Done'"
       },
-      "attribute": "max",
-      "reflect": false
-    },
-    "displayFormat": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+      "yearValues": {
+        "type": "any",
+        "mutable": false,
+        "complexType": {
+          "original": "number[] | number | string",
+          "resolved": "number | number[] | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2024,2020,2016,2012,2008\"`."
+        },
+        "attribute": "year-values",
+        "reflect": false
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The display format of the date and time as text that shows\nwithin the item. When the `pickerFormat` input is not used, then the\n`displayFormat` is used for both display the formatted text, and determining\nthe datetime picker's columns. See the `pickerFormat` input description for\nmore info. Defaults to `MMM D, YYYY`."
+      "monthValues": {
+        "type": "any",
+        "mutable": false,
+        "complexType": {
+          "original": "number[] | number | string",
+          "resolved": "number | number[] | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Values used to create the list of selectable months. By default\nthe month values range from `1` to `12`. However, to control exactly which months to\ndisplay, the `monthValues` input can take a number, an array of numbers, or a string of\ncomma separated numbers. For example, if only summer months should be shown, then this\ninput value would be `monthValues=\"6,7,8\"`. Note that month numbers do *not* have a\nzero-based index, meaning January's value is `1`, and December's is `12`."
+        },
+        "attribute": "month-values",
+        "reflect": false
       },
-      "attribute": "display-format",
-      "reflect": false,
-      "defaultValue": "'MMM D, YYYY'"
-    },
-    "displayTimezone": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+      "dayValues": {
+        "type": "any",
+        "mutable": false,
+        "complexType": {
+          "original": "number[] | number | string",
+          "resolved": "number | number[] | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Values used to create the list of selectable days. By default\nevery day is shown for the given month. However, to control exactly which days of\nthe month to display, the `dayValues` input can take a number, an array of numbers, or\na string of comma separated numbers. Note that even if the array days have an invalid\nnumber for the selected month, like `31` in February, it will correctly not show\ndays which are not valid for the selected month."
+        },
+        "attribute": "day-values",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The timezone to use for display purposes only. See\n[Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)\nfor a list of supported timezones. If no value is provided, the\ncomponent will default to displaying times in the user's local timezone."
+      "hourValues": {
+        "type": "any",
+        "mutable": false,
+        "complexType": {
+          "original": "number[] | number | string",
+          "resolved": "number | number[] | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Values used to create the list of selectable hours. By default\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\nto control exactly which hours to display, the `hourValues` input can take a number, an\narray of numbers, or a string of comma separated numbers."
+        },
+        "attribute": "hour-values",
+        "reflect": false
       },
-      "attribute": "display-timezone",
-      "reflect": false
-    },
-    "pickerFormat": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+      "minuteValues": {
+        "type": "any",
+        "mutable": false,
+        "complexType": {
+          "original": "number[] | number | string",
+          "resolved": "number | number[] | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Values used to create the list of selectable minutes. By default\nthe minutes range from `0` to `59`. However, to control exactly which minutes to display,\nthe `minuteValues` input can take a number, an array of numbers, or a string of comma\nseparated numbers. For example, if the minute selections should only be every 15 minutes,\nthen this input value would be `minuteValues=\"0,15,30,45\"`."
+        },
+        "attribute": "minute-values",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The format of the date and time picker columns the user selects.\nA datetime input can have one or many datetime parts, each getting their\nown column which allow individual selection of that particular datetime part. For\nexample, year and month columns are two individually selectable columns which help\nchoose an exact date from the datetime picker. Each column follows the string\nparse format. Defaults to use `displayFormat`."
+      "monthNames": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string[] | string",
+          "resolved": "string | string[] | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Full names for each month name. This can be used to provide\nlocale month names. Defaults to English."
+        },
+        "attribute": "month-names",
+        "reflect": false
       },
-      "attribute": "picker-format",
-      "reflect": false
-    },
-    "cancelText": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+      "monthShortNames": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string[] | string",
+          "resolved": "string | string[] | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Short abbreviated names for each month name. This can be used to provide\nlocale month names. Defaults to English."
+        },
+        "attribute": "month-short-names",
+        "reflect": false
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The text to display on the picker's cancel button."
+      "dayNames": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string[] | string",
+          "resolved": "string | string[] | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Full day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English."
+        },
+        "attribute": "day-names",
+        "reflect": false
       },
-      "attribute": "cancel-text",
-      "reflect": false,
-      "defaultValue": "'Cancel'"
-    },
-    "doneText": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+      "dayShortNames": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string[] | string",
+          "resolved": "string | string[] | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Short abbreviated day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English.\nDefaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']`"
+        },
+        "attribute": "day-short-names",
+        "reflect": false
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The text to display on the picker's \"Done\" button."
-      },
-      "attribute": "done-text",
-      "reflect": false,
-      "defaultValue": "'Done'"
-    },
-    "yearValues": {
-      "type": "any",
-      "mutable": false,
-      "complexType": {
-        "original": "number[] | number | string",
-        "resolved": "number | number[] | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2024,2020,2016,2012,2008\"`."
-      },
-      "attribute": "year-values",
-      "reflect": false
-    },
-    "monthValues": {
-      "type": "any",
-      "mutable": false,
-      "complexType": {
-        "original": "number[] | number | string",
-        "resolved": "number | number[] | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Values used to create the list of selectable months. By default\nthe month values range from `1` to `12`. However, to control exactly which months to\ndisplay, the `monthValues` input can take a number, an array of numbers, or a string of\ncomma separated numbers. For example, if only summer months should be shown, then this\ninput value would be `monthValues=\"6,7,8\"`. Note that month numbers do *not* have a\nzero-based index, meaning January's value is `1`, and December's is `12`."
-      },
-      "attribute": "month-values",
-      "reflect": false
-    },
-    "dayValues": {
-      "type": "any",
-      "mutable": false,
-      "complexType": {
-        "original": "number[] | number | string",
-        "resolved": "number | number[] | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Values used to create the list of selectable days. By default\nevery day is shown for the given month. However, to control exactly which days of\nthe month to display, the `dayValues` input can take a number, an array of numbers, or\na string of comma separated numbers. Note that even if the array days have an invalid\nnumber for the selected month, like `31` in February, it will correctly not show\ndays which are not valid for the selected month."
-      },
-      "attribute": "day-values",
-      "reflect": false
-    },
-    "hourValues": {
-      "type": "any",
-      "mutable": false,
-      "complexType": {
-        "original": "number[] | number | string",
-        "resolved": "number | number[] | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Values used to create the list of selectable hours. By default\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\nto control exactly which hours to display, the `hourValues` input can take a number, an\narray of numbers, or a string of comma separated numbers."
-      },
-      "attribute": "hour-values",
-      "reflect": false
-    },
-    "minuteValues": {
-      "type": "any",
-      "mutable": false,
-      "complexType": {
-        "original": "number[] | number | string",
-        "resolved": "number | number[] | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Values used to create the list of selectable minutes. By default\nthe minutes range from `0` to `59`. However, to control exactly which minutes to display,\nthe `minuteValues` input can take a number, an array of numbers, or a string of comma\nseparated numbers. For example, if the minute selections should only be every 15 minutes,\nthen this input value would be `minuteValues=\"0,15,30,45\"`."
-      },
-      "attribute": "minute-values",
-      "reflect": false
-    },
-    "monthNames": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string[] | string",
-        "resolved": "string | string[] | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Full names for each month name. This can be used to provide\nlocale month names. Defaults to English."
-      },
-      "attribute": "month-names",
-      "reflect": false
-    },
-    "monthShortNames": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string[] | string",
-        "resolved": "string | string[] | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Short abbreviated names for each month name. This can be used to provide\nlocale month names. Defaults to English."
-      },
-      "attribute": "month-short-names",
-      "reflect": false
-    },
-    "dayNames": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string[] | string",
-        "resolved": "string | string[] | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Full day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English."
-      },
-      "attribute": "day-names",
-      "reflect": false
-    },
-    "dayShortNames": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string[] | string",
-        "resolved": "string | string[] | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Short abbreviated day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English.\nDefaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']`"
-      },
-      "attribute": "day-short-names",
-      "reflect": false
-    },
-    "pickerOptions": {
-      "type": "unknown",
-      "mutable": false,
-      "complexType": {
-        "original": "DatetimeOptions",
-        "resolved": "undefined | { columns?: PickerColumn[] | undefined; buttons?: PickerButton[] | undefined; cssClass?: string | string[] | undefined; showBackdrop?: boolean | undefined; backdropDismiss?: boolean | undefined; animated?: boolean | undefined; mode?: Mode | undefined; keyboardClose?: boolean | undefined; id?: string | undefined; enterAnimation?: AnimationBuilder | undefined; leaveAnimation?: AnimationBuilder | undefined; }",
-        "references": {
-          "DatetimeOptions": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "Any additional options that the picker interface can accept.\nSee the [Picker API docs](../picker) for the picker options."
-      }
-    },
-    "placeholder": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string | null",
-        "resolved": "null | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The text to display when there's no date selected yet.\nUsing lowercase to match the input attribute"
-      },
-      "attribute": "placeholder",
-      "reflect": false
-    },
-    "value": {
-      "type": "string",
-      "mutable": true,
-      "complexType": {
-        "original": "string | null",
-        "resolved": "null | string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The value of the datetime as a valid ISO 8601 datetime string."
-      },
-      "attribute": "value",
-      "reflect": false
-    }
-  }; }
-  static get states() { return {
-    "isExpanded": {}
-  }; }
-  static get events() { return [{
-      "method": "ionCancel",
-      "name": "ionCancel",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the datetime selection was cancelled."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionChange",
-      "name": "ionChange",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the value (selected date) has changed."
-      },
-      "complexType": {
-        "original": "DatetimeChangeEventDetail",
-        "resolved": "DatetimeChangeEventDetail",
-        "references": {
-          "DatetimeChangeEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      }
-    }, {
-      "method": "ionFocus",
-      "name": "ionFocus",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the datetime has focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionBlur",
-      "name": "ionBlur",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the datetime loses focus."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }, {
-      "method": "ionStyle",
-      "name": "ionStyle",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [{
-            "text": undefined,
-            "name": "internal"
-          }],
-        "text": "Emitted when the styles change."
-      },
-      "complexType": {
-        "original": "StyleEventDetail",
-        "resolved": "StyleEventDetail",
-        "references": {
-          "StyleEventDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
-      }
-    }]; }
-  static get methods() { return {
-    "open": {
-      "complexType": {
-        "signature": "() => Promise<void>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
+      "pickerOptions": {
+        "type": "unknown",
+        "mutable": false,
+        "complexType": {
+          "original": "DatetimeOptions",
+          "resolved": "undefined | { columns?: PickerColumn[] | undefined; buttons?: PickerButton[] | undefined; cssClass?: string | string[] | undefined; showBackdrop?: boolean | undefined; backdropDismiss?: boolean | undefined; animated?: boolean | undefined; mode?: Mode | undefined; keyboardClose?: boolean | undefined; id?: string | undefined; enterAnimation?: AnimationBuilder | undefined; leaveAnimation?: AnimationBuilder | undefined; }",
+          "references": {
+            "DatetimeOptions": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         },
-        "return": "Promise<void>"
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "Any additional options that the picker interface can accept.\nSee the [Picker API docs](../picker) for the picker options."
+        }
       },
-      "docs": {
-        "text": "Opens the datetime overlay.",
-        "tags": []
+      "placeholder": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string | null",
+          "resolved": "null | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The text to display when there's no date selected yet.\nUsing lowercase to match the input attribute"
+        },
+        "attribute": "placeholder",
+        "reflect": false
+      },
+      "value": {
+        "type": "string",
+        "mutable": true,
+        "complexType": {
+          "original": "string | null",
+          "resolved": "null | string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The value of the datetime as a valid ISO 8601 datetime string."
+        },
+        "attribute": "value",
+        "reflect": false
       }
-    }
-  }; }
+    };
+  }
+  static get states() {
+    return {
+      "isExpanded": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionCancel",
+        "name": "ionCancel",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the datetime selection was cancelled."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionChange",
+        "name": "ionChange",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the value (selected date) has changed."
+        },
+        "complexType": {
+          "original": "DatetimeChangeEventDetail",
+          "resolved": "DatetimeChangeEventDetail",
+          "references": {
+            "DatetimeChangeEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }, {
+        "method": "ionFocus",
+        "name": "ionFocus",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the datetime has focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionBlur",
+        "name": "ionBlur",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the datetime loses focus."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }, {
+        "method": "ionStyle",
+        "name": "ionStyle",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [{
+              "name": "internal",
+              "text": undefined
+            }],
+          "text": "Emitted when the styles change."
+        },
+        "complexType": {
+          "original": "StyleEventDetail",
+          "resolved": "StyleEventDetail",
+          "references": {
+            "StyleEventDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }];
+  }
+  static get methods() {
+    return {
+      "open": {
+        "complexType": {
+          "signature": "() => Promise<void>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
+        },
+        "docs": {
+          "text": "Opens the datetime overlay.",
+          "tags": []
+        }
+      }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "disabled",
-      "methodName": "disabledChanged"
-    }, {
-      "propName": "value",
-      "methodName": "valueChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "disabled",
+        "methodName": "disabledChanged"
+      }, {
+        "propName": "value",
+        "methodName": "valueChanged"
+      }];
+  }
 }
 const divyColumns = (columns) => {
   const columnsWidth = [];

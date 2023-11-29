@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { createAnimation } from '../animation/animation';
 import { getIonPageElement } from '../transition';
 const DURATION = 540;

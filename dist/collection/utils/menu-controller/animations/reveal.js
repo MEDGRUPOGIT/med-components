@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { getIonMode } from '../../../global/ionic-global';
 import { createAnimation } from '../../animation/animation';
 import { baseAnimation } from './base';

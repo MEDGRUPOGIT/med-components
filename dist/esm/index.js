@@ -1,20 +1,23 @@
-export { c as createAnimation } from './animation-560b991d.js';
-export { iosTransitionAnimation } from './ios.transition-8568fb36.js';
-export { mdTransitionAnimation } from './md.transition-c7925e42.js';
-export { g as getTimeGivenProgression } from './cubic-bezier-eea9a7a9.js';
-export { createGesture } from './index-f49d994d.js';
-export { g as getPlatforms, i as initialize, a as isPlatform } from './ionic-global-4bc7e399.js';
-export { c as componentOnReady } from './helpers-462f8de3.js';
-export { I as IonicSafeString } from './index-9e3fe806.js';
-export { a as LIFECYCLE_DID_ENTER, c as LIFECYCLE_DID_LEAVE, L as LIFECYCLE_WILL_ENTER, b as LIFECYCLE_WILL_LEAVE, d as LIFECYCLE_WILL_UNLOAD } from './index-571d3eba.js';
-export { m as menuController } from './index-8d89875e.js';
-export { b as actionSheetController, a as alertController, l as loadingController, m as modalController, p as pickerController, c as popoverController, t as toastController } from './overlays-dc3151a0.js';
-export { b as BaseGap, B as BaseRadius, c as BaseSpacing, e as BreakPointNameEnum, d as BreakPointPixelEnum, M as MedColors, h as MedFontSize, j as MedSkin, l as MedType, k as MedTypeTag, T as TemplariosAvatarSize, a as TemplariosBadgeSize, f as TemplariosButtonSize, g as TemplariosChipSize, i as TemplariosIconSize } from './type.enum-b1689c26.js';
-export { P as PlusMinusStatus } from './plusminus.enum-87dfaf79.js';
-export { R as RateStatus } from './rate-like.enum-01831b55.js';
-import './gesture-controller-31cb6bb9.js';
-import './index-70672e81.js';
-import './hardware-back-button-4a6b37fb.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+export { c as createAnimation } from './animation-41df7b1a.js';
+export { iosTransitionAnimation } from './ios.transition-c5cd0ac0.js';
+export { mdTransitionAnimation } from './md.transition-40b03ba8.js';
+export { g as getTimeGivenProgression } from './cubic-bezier-154a53a5.js';
+export { createGesture } from './index-ad966da4.js';
+export { g as getPlatforms, i as initialize, a as isPlatform } from './ionic-global-e35a57a3.js';
+export { c as componentOnReady } from './helpers-d6be6e4a.js';
+export { I as IonicSafeString } from './index-c841c933.js';
+export { a as LIFECYCLE_DID_ENTER, c as LIFECYCLE_DID_LEAVE, L as LIFECYCLE_WILL_ENTER, b as LIFECYCLE_WILL_LEAVE, d as LIFECYCLE_WILL_UNLOAD } from './index-9b38c108.js';
+export { m as menuController } from './index-1b95867f.js';
+export { b as actionSheetController, a as alertController, l as loadingController, m as modalController, p as pickerController, c as popoverController, t as toastController } from './overlays-52f7bca4.js';
+export { b as BaseGap, B as BaseRadius, c as BaseSpacing, e as BreakPointNameEnum, d as BreakPointPixelEnum, M as MedColors, h as MedFontSize, j as MedSkin, l as MedType, k as MedTypeTag, T as TemplariosAvatarSize, a as TemplariosBadgeSize, f as TemplariosButtonSize, g as TemplariosChipSize, i as TemplariosIconSize } from './type.enum-846e5dcb.js';
+export { P as PlusMinusStatus } from './plusminus.enum-6ca17e16.js';
+export { R as RateStatus } from './rate-like.enum-04fa254a.js';
+import './gesture-controller-68c023a4.js';
+import './index-336c66d9.js';
+import './hardware-back-button-ace6a71b.js';
 
 const setupConfig = (config) => {
   const win = window;

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export function distanciaEuclidiana(pontoA, pontoB) {
   if (!pontoA || !pontoB)
     return NaN;

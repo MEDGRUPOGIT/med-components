@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 const spinners = {
   'bubbles': {
     dur: 1000,

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { config } from '../global/config';
 import { getIonMode } from '../global/ionic-global';
 import { OVERLAY_BACK_BUTTON_PRIORITY } from './hardware-back-button';

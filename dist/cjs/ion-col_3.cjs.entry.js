@@ -1,9 +1,12 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
 
 const SIZE_TO_MEDIA = {
   'xs': '(min-width: 0px)',
@@ -34,6 +37,30 @@ const BREAKPOINTS = ['', 'xs', 'sm', 'md', 'lg', 'xl'];
 const Col = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    this.offset = undefined;
+    this.offsetXs = undefined;
+    this.offsetSm = undefined;
+    this.offsetMd = undefined;
+    this.offsetLg = undefined;
+    this.offsetXl = undefined;
+    this.pull = undefined;
+    this.pullXs = undefined;
+    this.pullSm = undefined;
+    this.pullMd = undefined;
+    this.pullLg = undefined;
+    this.pullXl = undefined;
+    this.push = undefined;
+    this.pushXs = undefined;
+    this.pushSm = undefined;
+    this.pushMd = undefined;
+    this.pushLg = undefined;
+    this.pushXl = undefined;
+    this.size = undefined;
+    this.sizeXs = undefined;
+    this.sizeSm = undefined;
+    this.sizeMd = undefined;
+    this.sizeLg = undefined;
+    this.sizeXl = undefined;
   }
   onResize() {
     index.forceUpdate(this);
@@ -120,9 +147,6 @@ const medGridCss = ":host{padding-left:var(--ion-grid-padding-xs, var(--ion-grid
 const Grid = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /**
-     * If `true`, the grid will have a fixed width based on the screen size.
-     */
     this.fixed = false;
   }
   render() {

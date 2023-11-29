@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 /**
  * Does a simple sanitization of all elements
  * in an untrusted string

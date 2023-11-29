@@ -1,12 +1,15 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const color = require('./color-2d4645aa.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const helpers = require('./helpers-ba3c117b.js');
-const theme = require('./theme-30b7a575.js');
+const index = require('./index-a17b061b.js');
+const color = require('./color-c29da9e4.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const helpers = require('./helpers-4478bffd.js');
+const theme = require('./theme-a4c4a7eb.js');
 
 const iosMedItemCss = ":host{--padding:8px 16px;--background:transparent;--border-radius:0}:host{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:block;padding:var(--padding);position:relative;background-color:var(--background);outline:none;border-radius:var(--border-radius)}:host(.med-item--no-padding){--padding:8px 0}.item-inner{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.input-wrapper{-ms-flex:1;flex:1}.item-native{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:0;background:transparent;width:100%;border:0;text-align:left;outline:none}.item-native::-moz-focus-inner{border:0}.item-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0;z-index:-1}button,a{cursor:pointer;outline:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-drag:none}button:focus{outline:none}.item-highlight,.item-inner-highlight{left:0;right:0;bottom:0;position:absolute;z-index:1}:host(.med-item-multiple-inputs) ::slotted(ion-checkbox),:host(.med-item-multiple-inputs) ::slotted(ion-datetime),:host(.med-item-multiple-inputs) ::slotted(ion-radio),:host(.med-item-multiple-inputs) ::slotted(ion-select),:host(.med-item-multiple-inputs) ::slotted(ion-toggle){position:relative}:host(.med-item-disabled){opacity:0.5;pointer-events:none}::slotted([slot=start]){margin-right:16px}::slotted([slot=end]){margin-left:16px}::slotted(ion-icon){stroke:hsl(var(--med-color-neutral-10))}:host(.med-color){--background:hsl(var(--med-color-3))}:host(.med-color-neutral){--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback){--background:hsl(var(--med-color-feedback))}";
 
@@ -18,34 +21,20 @@ const MedItem = class {
     this.labelColorStyles = {};
     this.itemStyles = new Map();
     this.multipleInputs = false;
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
     this.contain = false;
-    /**
-     * todo
-     */
     this.noPadding = false;
-    /**
-     * If `true`, a button tag will be rendered and the item will be tappable.
-     */
     this.button = false;
-    /**
-     * The icon to use when `detail` is set to `true`.
-     */
+    this.detail = undefined;
     this.detailIcon = 'chevron-forward';
-    /**
-     * If `true`, the user cannot interact with the item.
-     */
     this.disabled = false;
-    /**
-     * When using a router, it specifies the transition direction when navigating to
-     * another page using `href`.
-     */
+    this.download = undefined;
+    this.href = undefined;
+    this.rel = undefined;
+    this.lines = undefined;
+    this.routerAnimation = undefined;
     this.routerDirection = 'forward';
-    /**
-     * The type of the button. Only used when an `onclick` or `button` property is present.
-     */
+    this.target = undefined;
     this.type = 'button';
   }
   labelColorChanged(ev) {

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import 'ionicons';
 export { createAnimation } from './utils/animation/animation';
 export { iosTransitionAnimation } from './utils/transition/ios.transition';

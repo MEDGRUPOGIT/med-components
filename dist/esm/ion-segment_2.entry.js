@@ -1,7 +1,10 @@
-import { r as registerInstance, e as createEvent, c as writeTask, h, H as Host, i as getElement, j as forceUpdate } from './index-70672e81.js';
-import { c as config, b as getIonMode } from './ionic-global-4bc7e399.js';
-import { p as pointerCoord, a as addEventListener, b as removeEventListener } from './helpers-462f8de3.js';
-import { c as createColorClasses, h as hostContext } from './theme-ff3fc52f.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, e as writeTask, i as h, H as Host, j as getElement, k as forceUpdate } from './index-336c66d9.js';
+import { c as config, b as getIonMode } from './ionic-global-e35a57a3.js';
+import { p as pointerCoord, a as addEventListener, b as removeEventListener } from './helpers-d6be6e4a.js';
+import { c as createColorClasses, h as hostContext } from './theme-a24ff1ad.js';
 
 const segmentIosCss = ":host{--ripple-color:currentColor;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:stretch;align-items:stretch;-ms-flex-pack:center;justify-content:center;width:100%;background:var(--background);font-family:var(--ion-font-family, inherit);text-align:center;contain:paint;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}:host(.segment-scrollable){-ms-flex-pack:start;justify-content:start;width:auto;overflow-x:auto}:host(.segment-scrollable::-webkit-scrollbar){display:none}:host{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.065);border-radius:8px;overflow:hidden;z-index:0}:host(.ion-color){background:rgba(var(--ion-color-base-rgb), 0.065)}:host(.in-toolbar){margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;width:auto}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-toolbar){margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}:host(.in-toolbar:not(.ion-color)){background:var(--ion-toolbar-segment-background, var(--background))}:host(.in-toolbar-color:not(.ion-color)){background:rgba(var(--ion-color-contrast-rgb), 0.11)}";
 
@@ -14,21 +17,6 @@ const Segment = class {
     this.ionSelect = createEvent(this, "ionSelect", 7);
     this.ionStyle = createEvent(this, "ionStyle", 7);
     this.didInit = false;
-    this.activated = false;
-    /**
-     * If `true`, the user cannot interact with the segment.
-     */
-    this.disabled = false;
-    /**
-     * If `true`, the segment buttons will overflow and the user can swipe to see them.
-     * In addition, this will disable the gesture to drag the indicator between the buttons
-     * in order to swipe to see hidden buttons.
-     */
-    this.scrollable = false;
-    /**
-     * If `true`, users will be able to swipe between segment buttons to activate them.
-     */
-    this.swipeGesture = true;
     this.onClick = (ev) => {
       const current = ev.target;
       const previous = this.checked;
@@ -50,6 +38,12 @@ const Segment = class {
       }
       this.checked = current;
     };
+    this.activated = false;
+    this.color = undefined;
+    this.disabled = false;
+    this.scrollable = false;
+    this.swipeGesture = true;
+    this.value = undefined;
   }
   colorChanged(value, oldValue) {
     /**
@@ -97,7 +91,7 @@ const Segment = class {
   }
   async componentDidLoad() {
     this.setCheckedClasses();
-    this.gesture = (await import('./index-f49d994d.js')).createGesture({
+    this.gesture = (await import('./index-ad966da4.js')).createGesture({
       el: this.el,
       gestureName: 'segment',
       gesturePriority: 100,
@@ -342,23 +336,6 @@ const SegmentButton = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.segmentEl = null;
-    this.checked = false;
-    /**
-     * If `true`, the user cannot interact with the segment button.
-     */
-    this.disabled = false;
-    /**
-     * Set the layout of the text and icon in the segment.
-     */
-    this.layout = 'icon-top';
-    /**
-     * The type of the button.
-     */
-    this.type = 'button';
-    /**
-     * The value of the segment button.
-     */
-    this.value = 'ion-sb-' + (ids++);
     this.updateStyle = () => {
       forceUpdate(this);
     };
@@ -367,6 +344,11 @@ const SegmentButton = class {
         this.checked = this.segmentEl.value === this.value;
       }
     };
+    this.checked = false;
+    this.disabled = false;
+    this.layout = 'icon-top';
+    this.type = 'button';
+    this.value = 'ion-sb-' + (ids++);
   }
   connectedCallback() {
     const segmentEl = this.segmentEl = this.el.closest('ion-segment');

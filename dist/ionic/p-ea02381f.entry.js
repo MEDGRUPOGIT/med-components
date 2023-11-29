@@ -1,0 +1,4 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import{r as e,i as t,H as o}from"./p-d73a117d.js";const n=class{constructor(t){e(this,t)}render(){return t(o,null,t("ion-header",{class:"tp-sheet-header"},t("ion-button",{mode:"ios","icon-only":!0,fill:"clear","ds-size":"xxs"},t("ion-icon",{slot:"icon-only",class:"med-icon",name:"med-fechar"}))),t("ion-content",{class:"tp-sheet-content"},t("med-type",null,"Sheet"),t("med-type",null,"Sheet"),t("med-type",null,"Sheet")),t("ion-footer",{class:"tp-sheet-footer"},t("ion-button",{mode:"ios",expand:"block"},"button")))}};n.style=".sc-sheet-content-test-h{display:block;height:100%}";export{n as sheet_content_test}

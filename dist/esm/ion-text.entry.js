@@ -1,12 +1,16 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { c as createColorClasses } from './theme-ff3fc52f.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { c as createColorClasses } from './theme-a24ff1ad.js';
 
 const textCss = ":host(.ion-color){color:var(--ion-color-base)}";
 
 const Text = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    this.color = undefined;
   }
   render() {
     const mode = getIonMode(this);

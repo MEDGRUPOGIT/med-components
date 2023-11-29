@@ -1535,13 +1535,22 @@
           "description": "Indicates whether the value of the control can be automatically completed by the browser.",
           "values": [
             {
+              "name": "name"
+            },
+            {
+              "name": "email"
+            },
+            {
+              "name": "tel"
+            },
+            {
+              "name": "url"
+            },
+            {
               "name": "on"
             },
             {
               "name": "off"
-            },
-            {
-              "name": "name"
             },
             {
               "name": "honorific-prefix"
@@ -1560,9 +1569,6 @@
             },
             {
               "name": "nickname"
-            },
-            {
-              "name": "email"
             },
             {
               "name": "username"
@@ -1670,9 +1676,6 @@
               "name": "sex"
             },
             {
-              "name": "tel"
-            },
-            {
               "name": "tel-country-code"
             },
             {
@@ -1689,9 +1692,6 @@
             },
             {
               "name": "impp"
-            },
-            {
-              "name": "url"
             },
             {
               "name": "photo"
@@ -3328,13 +3328,22 @@
           "description": "Set the input's autocomplete property.",
           "values": [
             {
+              "name": "name"
+            },
+            {
+              "name": "email"
+            },
+            {
+              "name": "tel"
+            },
+            {
+              "name": "url"
+            },
+            {
               "name": "on"
             },
             {
               "name": "off"
-            },
-            {
-              "name": "name"
             },
             {
               "name": "honorific-prefix"
@@ -3353,9 +3362,6 @@
             },
             {
               "name": "nickname"
-            },
-            {
-              "name": "email"
             },
             {
               "name": "username"
@@ -3463,9 +3469,6 @@
               "name": "sex"
             },
             {
-              "name": "tel"
-            },
-            {
               "name": "tel-country-code"
             },
             {
@@ -3482,9 +3485,6 @@
             },
             {
               "name": "impp"
-            },
-            {
-              "name": "url"
             },
             {
               "name": "photo"

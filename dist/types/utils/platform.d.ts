@@ -1,4 +1,4 @@
-export declare type Platforms = keyof typeof PLATFORMS_MAP;
+export type Platforms = keyof typeof PLATFORMS_MAP;
 interface IsPlatformSignature {
   (plt: Platforms): boolean;
   (win: Window, plt: Platforms): boolean;

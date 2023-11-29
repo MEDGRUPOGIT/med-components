@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 const HapticEngine = {
   getEngine() {
     const win = window;

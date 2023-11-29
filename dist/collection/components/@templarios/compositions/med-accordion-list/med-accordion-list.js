@@ -1,4 +1,7 @@
-import { Component, Element, h, Host, Listen, Prop } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 import { createAnimation } from '../../../../utils/animation/animation';
 /**
@@ -6,19 +9,11 @@ import { createAnimation } from '../../../../utils/animation/animation';
   */
 export class Accordion {
   constructor() {
-    /**
-     * todo
-     */
-    this.singleOpen = true;
-    /**
-     * todo
-     */
-    this.noBorder = false;
-    /**
-     * todo
-     */
-    this.noAnimation = false;
     this.currentlyOpen = null;
+    this.margin = undefined;
+    this.singleOpen = true;
+    this.noBorder = false;
+    this.noAnimation = false;
   }
   async handleToggle(ev) {
     ev.detail.shouldOpen ? await this.animateOpen(ev) : await this.animateClose(ev);
@@ -123,97 +118,103 @@ export class Accordion {
         'med-accordion-list': true,
         'med-accordion-list--no-border': noBorder,
         [`med-accordion-list--${margin}`]: margin !== undefined
-      }) },
-      h("slot", null),
-      h("div", { class: "med-accordion-list__blocker", ref: (el) => this.blocker = el })));
+      }) }, h("slot", null), h("div", { class: "med-accordion-list__blocker", ref: (el) => this.blocker = el })));
   }
   static get is() { return "med-accordion-list"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "$": ["med-accordion-list.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["med-accordion-list.css"]
-  }; }
-  static get properties() { return {
-    "margin": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'xs' | 'sm' | 'md' | 'lg'",
-        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
-        "references": {}
+  static get originalStyleUrls() {
+    return {
+      "$": ["med-accordion-list.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["med-accordion-list.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "margin": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'xs' | 'sm' | 'md' | 'lg'",
+          "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\" | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "margin",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "singleOpen": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "single-open",
+        "reflect": true,
+        "defaultValue": "true"
       },
-      "attribute": "margin",
-      "reflect": false
-    },
-    "singleOpen": {
-      "type": "boolean",
-      "mutable": true,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
+      "noBorder": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "no-border",
+        "reflect": true,
+        "defaultValue": "false"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "single-open",
-      "reflect": true,
-      "defaultValue": "true"
-    },
-    "noBorder": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "no-border",
-      "reflect": true,
-      "defaultValue": "false"
-    },
-    "noAnimation": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "no-animation",
-      "reflect": true,
-      "defaultValue": "false"
-    }
-  }; }
+      "noAnimation": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "no-animation",
+        "reflect": true,
+        "defaultValue": "false"
+      }
+    };
+  }
   static get elementRef() { return "hostElement"; }
-  static get listeners() { return [{
-      "name": "toggle",
-      "method": "handleToggle",
-      "target": undefined,
-      "capture": false,
-      "passive": false
-    }]; }
+  static get listeners() {
+    return [{
+        "name": "toggle",
+        "method": "handleToggle",
+        "target": undefined,
+        "capture": false,
+        "passive": false
+      }];
+  }
 }

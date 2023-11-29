@@ -1,19 +1,20 @@
-import { r as registerInstance, e as createEvent, i as getElement, h, H as Host } from './index-70672e81.js';
-import { c as componentOnReady, n as debounce } from './helpers-462f8de3.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { o as openURL, c as createColorClasses } from './theme-ff3fc52f.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, j as getElement, i as h, H as Host } from './index-336c66d9.js';
+import { c as componentOnReady, n as debounce } from './helpers-d6be6e4a.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { o as openURL, c as createColorClasses } from './theme-a24ff1ad.js';
 
 const Route = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.ionRouteDataChanged = createEvent(this, "ionRouteDataChanged", 7);
-    /**
-     * Relative path that needs to match in order for this route to apply.
-     *
-     * Accepts paths similar to expressjs so that you can define parameters
-     * in the url /foo/:bar where bar would be available in incoming props.
-     */
     this.url = '';
+    this.component = undefined;
+    this.componentProps = undefined;
+    this.beforeLeave = undefined;
+    this.beforeEnter = undefined;
   }
   onUpdate(newValue) {
     this.ionRouteDataChanged.emit(newValue);
@@ -49,6 +50,8 @@ const RouteRedirect = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.ionRouteRedirectChanged = createEvent(this, "ionRouteRedirectChanged", 7);
+    this.from = undefined;
+    this.to = undefined;
   }
   propDidChange() {
     this.ionRouteRedirectChanged.emit();
@@ -468,26 +471,7 @@ const Router = class {
     this.busy = false;
     this.state = 0;
     this.lastState = 0;
-    /**
-     * By default `ion-router` will match the routes at the root path ("/").
-     * That can be changed when
-     *
-     */
     this.root = '/';
-    /**
-     * The router can work in two "modes":
-     * - With hash: `/index.html#/path/to/page`
-     * - Without hash: `/path/to/page`
-     *
-     * Using one or another might depend in the requirements of your app and/or where it's deployed.
-     *
-     * Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might
-     * requires additional server-side configuration in order to properly work.
-     *
-     * On the otherside hash-navigation is much easier to deploy, it even works over the file protocol.
-     *
-     * By default, this property is `true`, change to `false` to allow hash-less URLs.
-     */
     this.useHash = true;
   }
   async componentWillLoad() {
@@ -738,14 +722,15 @@ const routerLinkCss = ":host{--background:transparent;--color:var(--ion-color-pr
 const RouterLink = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * When using a router, it specifies the transition direction when navigating to
-     * another page using `href`.
-     */
-    this.routerDirection = 'forward';
     this.onClick = (ev) => {
       openURL(this.href, ev, this.routerDirection, this.routerAnimation);
     };
+    this.color = undefined;
+    this.href = undefined;
+    this.rel = undefined;
+    this.routerDirection = 'forward';
+    this.routerAnimation = undefined;
+    this.target = undefined;
   }
   render() {
     const mode = getIonMode(this);

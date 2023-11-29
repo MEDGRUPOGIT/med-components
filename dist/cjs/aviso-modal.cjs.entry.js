@@ -1,8 +1,11 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
+const index = require('./index-a17b061b.js');
 
 const avisoModalCss = ".sc-aviso-modal-h{display:block;border-radius:0}.header.sc-aviso-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;background:hsl(var(--med-color-neutral-1));padding-top:calc(28px + var(--ion-safe-area-top));padding-right:40px;padding-bottom:28px;padding-left:40px;max-height:80px}@media (max-width: 575.98px){.header.sc-aviso-modal{padding-top:calc(24px + var(--ion-safe-area-top));padding-right:24px;padding-bottom:24px;padding-left:24px;max-height:72px}}.header__left.sc-aviso-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.modal-content.sc-aviso-modal{height:calc(100% - 80px)}@media (max-width: 575.98px){.modal-content.sc-aviso-modal{height:calc(100% - 72px)}}.modal-aviso.sc-aviso-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;padding:40px 64px}@media (max-width: 575.98px){.modal-aviso.sc-aviso-modal{height:100%;padding:24px}}.modal-aviso__subheading.sc-aviso-modal{display:block;font-weight:600;font-size:16px;line-height:24px;text-align:center}.modal-aviso__title.sc-aviso-modal{display:block;font-weight:600;font-size:32px;line-height:40px;margin-bottom:48px;text-align:center}.modal-aviso__text.sc-aviso-modal{display:block;font-weight:600;font-size:20px;line-height:20px;text-align:center}.modal-aviso__text.sc-aviso-modal:not(:last-child){margin-bottom:8px}.modal-aviso__observacao.sc-aviso-modal{display:block;font-weight:400;font-size:14px;line-height:20px;margin-top:48px;text-align:center}.modal-aviso__button-container.sc-aviso-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;margin-top:40px}@media (max-width: 575.98px){.modal-aviso__button-container.sc-aviso-modal{margin-top:auto}}@media (max-width: 575.98px){.modal-aviso__button.sc-aviso-modal{-ms-flex:1;flex:1}}";
 

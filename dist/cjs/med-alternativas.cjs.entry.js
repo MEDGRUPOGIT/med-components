@@ -1,11 +1,14 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const type_enum = require('./type.enum-cd36ae15.js');
-require('./plusminus.enum-43139314.js');
-require('./rate-like.enum-0930ca84.js');
+const index = require('./index-a17b061b.js');
+const type_enum = require('./type.enum-e1d14e46.js');
+require('./plusminus.enum-a5f80cb9.js');
+require('./rate-like.enum-3b51a6f0.js');
 
 const medAlternativasCss = ":host{--font-size:16px;display:block}";
 
@@ -13,33 +16,17 @@ const MedAlternativas = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     this.medGalleryRequest = index.createEvent(this, "medGalleryRequest", 7);
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
     this.alternativas = [];
-    /**
-     * todo
-     */
+    this.dsSkinConfig = undefined;
     this.keyAlternativa = 'Alternativa';
-    /**
-     * todo
-     */
     this.keyEnunciado = 'Enunciado';
-    /**
-     * todo
-     */
     this.keyImagem = 'Imagem';
-    /**
-     * todo
-     */
     this.keyPorcentagem = 'Porcentagem';
-    /**
-     * todo
-     */
     this.keyRiscada = 'Riscada';
-    /**
-     * todo
-     */
+    this.respostaCorreta = undefined;
+    this.mostraResposta = undefined;
+    this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
   }
   render() {

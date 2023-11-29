@@ -1,10 +1,16 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedRating {
   constructor() {
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
+    this.dsName = undefined;
+    this.nome = undefined;
+    this.data = undefined;
+    this.concurso = undefined;
+    this.texto = undefined;
     this.cabe = false;
   }
   render() {
@@ -14,152 +20,147 @@ export class MedRating {
         'med-rating--cabe': cabe,
         'med-rating--nao-cabe': !cabe,
         [`med-rating--${dsName}`]: dsName !== undefined,
-      }) },
-      h("div", { class: "med-rating__left" },
-        h("ion-icon", { name: cabe ? "med-positivo" : "med-negativo", class: "med-icon med-rating__icon" })),
-      h("div", { class: "med-rating__right" },
-        h("med-type", { class: "med-rating__name" }, nome),
-        " ",
-        h("med-type", { class: "med-rating__date" }, data),
-        h("med-type", { class: "med-rating__concurso" }, concurso),
-        h("med-type", { class: "med-rating__text" }, texto),
-        (dsName === 'medgrupo') && h("ion-icon", { name: "med-logo", class: "med-icon med-rating__icon-medgrupo" }),
-        (dsName === 'banca' && cabe) && h("med-type", { class: "med-rating__banca" }, "RECURSO CONCEDIDO"),
-        (dsName === 'banca' && !cabe) && h("med-type", { class: "med-rating__banca" }, "RECURSO N\u00C3O CONCEDIDO"))));
+      }) }, h("div", { class: "med-rating__left" }, h("ion-icon", { name: cabe ? "med-positivo" : "med-negativo", class: "med-icon med-rating__icon" })), h("div", { class: "med-rating__right" }, h("med-type", { class: "med-rating__name" }, nome), " ", h("med-type", { class: "med-rating__date" }, data), h("med-type", { class: "med-rating__concurso" }, concurso), h("med-type", { class: "med-rating__text" }, texto), (dsName === 'medgrupo') && h("ion-icon", { name: "med-logo", class: "med-icon med-rating__icon-medgrupo" }), (dsName === 'banca' && cabe) && h("med-type", { class: "med-rating__banca" }, "RECURSO CONCEDIDO"), (dsName === 'banca' && !cabe) && h("med-type", { class: "med-rating__banca" }, "RECURSO N\u00C3O CONCEDIDO"))));
   }
   static get is() { return "med-rating"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "$": ["med-rating.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["med-rating.css"]
-  }; }
-  static get properties() { return {
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../../../@templarios/types/color.type"
+  static get originalStyleUrls() {
+    return {
+      "$": ["med-rating.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["med-rating.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "dsColor": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "MedColor",
+          "resolved": "string | undefined",
+          "references": {
+            "MedColor": {
+              "location": "import",
+              "path": "../../../../@templarios/types/color.type"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "ds-color",
+        "reflect": true
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "dsName": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'medgrupo' | 'banca'",
+          "resolved": "\"banca\" | \"medgrupo\" | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "ds-name",
+        "reflect": false
       },
-      "attribute": "ds-color",
-      "reflect": true
-    },
-    "dsName": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'medgrupo' | 'banca'",
-        "resolved": "\"banca\" | \"medgrupo\" | undefined",
-        "references": {}
+      "nome": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "nome",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "data": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "data",
+        "reflect": false
       },
-      "attribute": "ds-name",
-      "reflect": false
-    },
-    "nome": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
+      "concurso": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "concurso",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
+      "texto": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "texto",
+        "reflect": false
       },
-      "attribute": "nome",
-      "reflect": false
-    },
-    "data": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "data",
-      "reflect": false
-    },
-    "concurso": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "concurso",
-      "reflect": false
-    },
-    "texto": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string | undefined",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "texto",
-      "reflect": false
-    },
-    "cabe": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "cabe",
-      "reflect": false,
-      "defaultValue": "false"
-    }
-  }; }
+      "cabe": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "cabe",
+        "reflect": false,
+        "defaultValue": "false"
+      }
+    };
+  }
 }

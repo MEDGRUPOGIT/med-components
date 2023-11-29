@@ -1,15 +1,17 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { g as generateMedColor } from './color-49be71bc.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
+import { g as generateMedColor } from './color-2567dca3.js';
 
 const medChartRadialContentCss = ":host{--color:hsl(var(--med-color-neutral-10));--font-size-label:10px;--font-size-number:24px}:host(.med-chart-radial-content){text-align:center}:host(.med-chart-radial-content) .med-chart-radial-content__label{font-size:var(--font-size-label);color:var(--color);font-weight:700;display:-ms-flexbox;display:flex;padding-bottom:2px;-ms-flex-pack:center;justify-content:center;line-height:100%}:host(.med-chart-radial-content) .med-chart-radial-content__number{font-weight:700;font-size:var(--font-size-number);color:var(--color);line-height:100%}:host(.med-chart-radial-content) .med-chart-radial-content__number--small{font-size:16px}:host(.med-color){--color:hsl(var(--med-color-3))}:host(.med-color-neutral){color:hsl(var(--med-color-neutral))}:host(.med-color-feedback){color:hsl(var(--med-color-feedback))}:host(.med-chart-radial-content--lg){--font-size-label:12px;--font-size-number:32px}";
 
 const MedChartRadialContent = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * todo
-     */
     this.total = 0;
+    this.dsColor = undefined;
+    this.dsSize = undefined;
   }
   componentDidRender() {
     this.fontResize();

@@ -1,8 +1,11 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
+const index = require('./index-a17b061b.js');
 
 const simuladoModalCss = ".sc-simulado-modal-h{display:block;border-radius:0}.header.sc-simulado-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;background:hsl(var(--med-color-neutral-1));padding-top:calc(28px + var(--ion-safe-area-top));padding-right:40px;padding-bottom:28px;padding-left:40px;max-height:80px}@media (max-width: 575.98px){.header.sc-simulado-modal{padding-top:calc(24px + var(--ion-safe-area-top));padding-right:24px;padding-bottom:24px;padding-left:24px;max-height:72px}}.header__left.sc-simulado-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.modal-content.sc-simulado-modal{height:calc(100% - 176px)}@media (max-width: 575.98px){.modal-content.sc-simulado-modal{height:calc(100% - 168px)}}.modal-simulados.sc-simulado-modal{padding:40px 64px}@media (max-width: 575.98px){.modal-simulados.sc-simulado-modal{padding:24px}}.modal-simulados__title.sc-simulado-modal{margin-bottom:40px;display:block;font-weight:600;font-size:24px;line-height:32px}@media (max-width: 575.98px){.modal-simulados__title.sc-simulado-modal{margin-bottom:24px}}.modal-simulados__opcoes.sc-simulado-modal{--border-radius:8px;cursor:pointer}.modal-simulados__opcoes.sc-simulado-modal:not(:last-child){margin-bottom:8px}.modal-footer.sc-simulado-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;padding:24px}";
 

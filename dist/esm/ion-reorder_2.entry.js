@@ -1,6 +1,9 @@
-import { r as registerInstance, h, H as Host, i as getElement, e as createEvent } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { a as hapticSelectionStart, b as hapticSelectionChanged, h as hapticSelectionEnd } from './haptic-27b3f981.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host, j as getElement, f as createEvent } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { a as hapticSelectionStart, b as hapticSelectionChanged, h as hapticSelectionEnd } from './haptic-9a9aa7ec.js';
 
 const reorderIosCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block;font-size:22px}.reorder-icon{font-size:34px;opacity:0.4}";
 
@@ -44,10 +47,7 @@ const ReorderGroup = class {
     this.scrollElInitial = 0;
     this.containerTop = 0;
     this.containerBottom = 0;
-    this.state = 0 /* Idle */;
-    /**
-     * If `true`, the reorder will be hidden.
-     */
+    this.state = 0 /* ReorderGroupState.Idle */;
     this.disabled = true;
   }
   disabledChanged() {
@@ -60,7 +60,7 @@ const ReorderGroup = class {
     if (contentEl) {
       this.scrollEl = await contentEl.getScrollElement();
     }
-    this.gesture = (await import('./index-f49d994d.js')).createGesture({
+    this.gesture = (await import('./index-ad966da4.js')).createGesture({
       el: this.el,
       gestureName: 'reorder',
       gesturePriority: 110,
@@ -98,7 +98,7 @@ const ReorderGroup = class {
     return Promise.resolve(this.completeSync(listOrReorder));
   }
   canStart(ev) {
-    if (this.selectedItemEl || this.state !== 0 /* Idle */) {
+    if (this.selectedItemEl || this.state !== 0 /* ReorderGroupState.Idle */) {
       return false;
     }
     const target = ev.event.target;
@@ -146,7 +146,7 @@ const ReorderGroup = class {
     }
     this.lastToIndex = indexForItem(item);
     this.selectedItemHeight = item.offsetHeight;
-    this.state = 1 /* Active */;
+    this.state = 1 /* ReorderGroupState.Active */;
     item.classList.add(ITEM_REORDER_SELECTED);
     hapticSelectionStart();
   }
@@ -175,9 +175,9 @@ const ReorderGroup = class {
   }
   onEnd() {
     const selectedItemEl = this.selectedItemEl;
-    this.state = 2 /* Complete */;
+    this.state = 2 /* ReorderGroupState.Complete */;
     if (!selectedItemEl) {
-      this.state = 0 /* Idle */;
+      this.state = 0 /* ReorderGroupState.Idle */;
       return;
     }
     const toIndex = this.lastToIndex;
@@ -196,7 +196,7 @@ const ReorderGroup = class {
   }
   completeSync(listOrReorder) {
     const selectedItemEl = this.selectedItemEl;
-    if (selectedItemEl && this.state === 2 /* Complete */) {
+    if (selectedItemEl && this.state === 2 /* ReorderGroupState.Complete */) {
       const children = this.el.children;
       const len = children.length;
       const toIndex = this.lastToIndex;
@@ -216,7 +216,7 @@ const ReorderGroup = class {
       selectedItemEl.style.transition = '';
       selectedItemEl.classList.remove(ITEM_REORDER_SELECTED);
       this.selectedItemEl = undefined;
-      this.state = 0 /* Idle */;
+      this.state = 0 /* ReorderGroupState.Idle */;
     }
     return listOrReorder;
   }
@@ -270,7 +270,7 @@ const ReorderGroup = class {
     return (h(Host, { class: {
         [mode]: true,
         'reorder-enabled': !this.disabled,
-        'reorder-list-active': this.state !== 0 /* Idle */,
+        'reorder-list-active': this.state !== 0 /* ReorderGroupState.Idle */,
       } }));
   }
   get el() { return getElement(this); }

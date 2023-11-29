@@ -1,10 +1,13 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const theme = require('./theme-30b7a575.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const theme = require('./theme-a4c4a7eb.js');
 
 const avatarIosCss = ":host{border-radius:var(--border-radius);display:block}::slotted(ion-img),::slotted(img){border-radius:var(--border-radius);width:100%;height:100%;-o-object-fit:cover;object-fit:cover;overflow:hidden}:host{--border-radius:50%;width:48px;height:48px}";
 
@@ -30,6 +33,7 @@ const badgeMdCss = ":host{--background:var(--ion-color-primary, #3880ff);--color
 const Badge = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    this.color = undefined;
   }
   render() {
     const mode = ionicGlobal.getIonMode(this);

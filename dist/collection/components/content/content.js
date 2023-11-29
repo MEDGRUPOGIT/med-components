@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Listen, Method, Prop, forceUpdate, h, readTask } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, forceUpdate, h, readTask } from '@stencil/core';
 import { config } from '../../global/config';
 import { getIonMode } from '../../global/ionic-global';
 import { isPlatform } from '../../utils/platform';
@@ -38,24 +41,11 @@ export class Content {
       data: undefined,
       isScrolling: true,
     };
-    /**
-     * If `true`, the content will scroll behind the headers
-     * and footers. This effect can easily be seen by setting the toolbar
-     * to transparent.
-     */
+    this.color = undefined;
     this.fullscreen = false;
-    /**
-     * If you want to enable the content scrolling in the X axis, set this property to `true`.
-     */
+    this.forceOverscroll = undefined;
     this.scrollX = false;
-    /**
-     * If you want to disable the content scrolling in the Y axis, set this property to `false`.
-     */
     this.scrollY = true;
-    /**
-     * Because of performance reasons, ionScroll events are disabled by default, in order to enable them
-     * and start listening from (ionScroll), set this property to `true`.
-     */
     this.scrollEvents = false;
   }
   disconnectedCallback() {
@@ -242,373 +232,378 @@ export class Content {
       }), style: {
         '--offset-top': `${this.cTop}px`,
         '--offset-bottom': `${this.cBottom}px`,
-      } },
-      h("div", { id: "background-content", part: "background" }),
-      h("main", { class: {
-          'inner-scroll': true,
-          'scroll-x': scrollX,
-          'scroll-y': scrollY,
-          'overscroll': (scrollX || scrollY) && forceOverscroll
-        }, ref: el => this.scrollEl = el, onScroll: (this.scrollEvents) ? ev => this.onScroll(ev) : undefined, part: "scroll" },
-        h("slot", null)),
-      transitionShadow ? (h("div", { class: "transition-effect" },
-        h("div", { class: "transition-cover" }),
-        h("div", { class: "transition-shadow" }))) : null,
-      h("slot", { name: "fixed" })));
+      } }, h("div", { id: "background-content", part: "background" }), h("main", { class: {
+        'inner-scroll': true,
+        'scroll-x': scrollX,
+        'scroll-y': scrollY,
+        'overscroll': (scrollX || scrollY) && forceOverscroll
+      }, ref: el => this.scrollEl = el, onScroll: (this.scrollEvents) ? ev => this.onScroll(ev) : undefined, part: "scroll" }, h("slot", null)), transitionShadow ? (h("div", { class: "transition-effect" }, h("div", { class: "transition-cover" }), h("div", { class: "transition-shadow" }))) : null, h("slot", { name: "fixed" })));
   }
   static get is() { return "ion-content"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "$": ["content.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["content.css"]
-  }; }
-  static get properties() { return {
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../interface"
+  static get originalStyleUrls() {
+    return {
+      "$": ["content.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["content.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "color": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Color",
+          "resolved": "string | undefined",
+          "references": {
+            "Color": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        },
+        "attribute": "color",
+        "reflect": false
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+      "fullscreen": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the content will scroll behind the headers\nand footers. This effect can easily be seen by setting the toolbar\nto transparent."
+        },
+        "attribute": "fullscreen",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "attribute": "color",
-      "reflect": false
-    },
-    "fullscreen": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
+      "forceOverscroll": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, the does not disable the system bounce on iOS. That is an OS level setting."
+        },
+        "attribute": "force-overscroll",
+        "reflect": false
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the content will scroll behind the headers\nand footers. This effect can easily be seen by setting the toolbar\nto transparent."
+      "scrollX": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If you want to enable the content scrolling in the X axis, set this property to `true`."
+        },
+        "attribute": "scroll-x",
+        "reflect": false,
+        "defaultValue": "false"
       },
-      "attribute": "fullscreen",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "forceOverscroll": {
-      "type": "boolean",
-      "mutable": true,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean | undefined",
-        "references": {}
+      "scrollY": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If you want to disable the content scrolling in the Y axis, set this property to `false`."
+        },
+        "attribute": "scroll-y",
+        "reflect": false,
+        "defaultValue": "true"
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, the does not disable the system bounce on iOS. That is an OS level setting."
-      },
-      "attribute": "force-overscroll",
-      "reflect": false
-    },
-    "scrollX": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If you want to enable the content scrolling in the X axis, set this property to `true`."
-      },
-      "attribute": "scroll-x",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "scrollY": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If you want to disable the content scrolling in the Y axis, set this property to `false`."
-      },
-      "attribute": "scroll-y",
-      "reflect": false,
-      "defaultValue": "true"
-    },
-    "scrollEvents": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\nand start listening from (ionScroll), set this property to `true`."
-      },
-      "attribute": "scroll-events",
-      "reflect": false,
-      "defaultValue": "false"
-    }
-  }; }
-  static get events() { return [{
-      "method": "ionScrollStart",
-      "name": "ionScrollStart",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the scroll has started."
-      },
-      "complexType": {
-        "original": "ScrollBaseDetail",
-        "resolved": "ScrollBaseDetail",
-        "references": {
-          "ScrollBaseDetail": {
-            "location": "import",
-            "path": "../../interface"
-          }
-        }
+      "scrollEvents": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\nand start listening from (ionScroll), set this property to `true`."
+        },
+        "attribute": "scroll-events",
+        "reflect": false,
+        "defaultValue": "false"
       }
-    }, {
-      "method": "ionScroll",
-      "name": "ionScroll",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted while scrolling. This event is disabled by default.\nLook at the property: `scrollEvents`"
-      },
-      "complexType": {
-        "original": "ScrollDetail",
-        "resolved": "ScrollDetail",
-        "references": {
-          "ScrollDetail": {
-            "location": "import",
-            "path": "../../interface"
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionScrollStart",
+        "name": "ionScrollStart",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the scroll has started."
+        },
+        "complexType": {
+          "original": "ScrollBaseDetail",
+          "resolved": "ScrollBaseDetail",
+          "references": {
+            "ScrollBaseDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      }
-    }, {
-      "method": "ionScrollEnd",
-      "name": "ionScrollEnd",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the scroll has ended."
-      },
-      "complexType": {
-        "original": "ScrollBaseDetail",
-        "resolved": "ScrollBaseDetail",
-        "references": {
-          "ScrollBaseDetail": {
-            "location": "import",
-            "path": "../../interface"
+      }, {
+        "method": "ionScroll",
+        "name": "ionScroll",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted while scrolling. This event is disabled by default.\nLook at the property: `scrollEvents`"
+        },
+        "complexType": {
+          "original": "ScrollDetail",
+          "resolved": "ScrollDetail",
+          "references": {
+            "ScrollDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
         }
-      }
-    }]; }
-  static get methods() { return {
-    "getScrollElement": {
-      "complexType": {
-        "signature": "() => Promise<HTMLElement>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
+      }, {
+        "method": "ionScrollEnd",
+        "name": "ionScrollEnd",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the scroll has ended."
+        },
+        "complexType": {
+          "original": "ScrollBaseDetail",
+          "resolved": "ScrollBaseDetail",
+          "references": {
+            "ScrollBaseDetail": {
+              "location": "import",
+              "path": "../../interface"
+            }
+          }
+        }
+      }];
+  }
+  static get methods() {
+    return {
+      "getScrollElement": {
+        "complexType": {
+          "signature": "() => Promise<HTMLElement>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            },
+            "HTMLElement": {
+              "location": "global"
+            }
           },
-          "HTMLElement": {
-            "location": "global"
-          }
+          "return": "Promise<HTMLElement>"
         },
-        "return": "Promise<HTMLElement>"
+        "docs": {
+          "text": "Get the element where the actual scrolling takes place.\nThis element can be used to subscribe to `scroll` events or manually modify\n`scrollTop`. However, it's recommended to use the API provided by `ion-content`:\n\ni.e. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events\nand `scrollToPoint()` to scroll the content into a certain point.",
+          "tags": []
+        }
       },
-      "docs": {
-        "text": "Get the element where the actual scrolling takes place.\nThis element can be used to subscribe to `scroll` events or manually modify\n`scrollTop`. However, it's recommended to use the API provided by `ion-content`:\n\ni.e. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events\nand `scrollToPoint()` to scroll the content into a certain point.",
-        "tags": []
-      }
-    },
-    "scrollToTop": {
-      "complexType": {
-        "signature": "(duration?: number) => Promise<void>",
-        "parameters": [{
-            "tags": [{
-                "text": "duration The amount of time to take scrolling to the top. Defaults to `0`.",
-                "name": "param"
-              }],
-            "text": "The amount of time to take scrolling to the top. Defaults to `0`."
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
+      "scrollToTop": {
+        "complexType": {
+          "signature": "(duration?: number) => Promise<void>",
+          "parameters": [{
+              "tags": [{
+                  "name": "param",
+                  "text": "duration The amount of time to take scrolling to the top. Defaults to `0`."
+                }],
+              "text": "The amount of time to take scrolling to the top. Defaults to `0`."
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
         },
-        "return": "Promise<void>"
+        "docs": {
+          "text": "Scroll to the top of the component.",
+          "tags": [{
+              "name": "param",
+              "text": "duration The amount of time to take scrolling to the top. Defaults to `0`."
+            }]
+        }
       },
-      "docs": {
-        "text": "Scroll to the top of the component.",
-        "tags": [{
-            "name": "param",
-            "text": "duration The amount of time to take scrolling to the top. Defaults to `0`."
-          }]
-      }
-    },
-    "scrollToBottom": {
-      "complexType": {
-        "signature": "(duration?: number) => Promise<void>",
-        "parameters": [{
-            "tags": [{
-                "text": "duration The amount of time to take scrolling to the bottom. Defaults to `0`.",
-                "name": "param"
-              }],
-            "text": "The amount of time to take scrolling to the bottom. Defaults to `0`."
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
+      "scrollToBottom": {
+        "complexType": {
+          "signature": "(duration?: number) => Promise<void>",
+          "parameters": [{
+              "tags": [{
+                  "name": "param",
+                  "text": "duration The amount of time to take scrolling to the bottom. Defaults to `0`."
+                }],
+              "text": "The amount of time to take scrolling to the bottom. Defaults to `0`."
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
         },
-        "return": "Promise<void>"
+        "docs": {
+          "text": "Scroll to the bottom of the component.",
+          "tags": [{
+              "name": "param",
+              "text": "duration The amount of time to take scrolling to the bottom. Defaults to `0`."
+            }]
+        }
       },
-      "docs": {
-        "text": "Scroll to the bottom of the component.",
-        "tags": [{
-            "name": "param",
-            "text": "duration The amount of time to take scrolling to the bottom. Defaults to `0`."
-          }]
-      }
-    },
-    "scrollByPoint": {
-      "complexType": {
-        "signature": "(x: number, y: number, duration: number) => Promise<void>",
-        "parameters": [{
-            "tags": [{
-                "text": "x The amount to scroll by on the horizontal axis.",
-                "name": "param"
-              }],
-            "text": "The amount to scroll by on the horizontal axis."
-          }, {
-            "tags": [{
-                "text": "y The amount to scroll by on the vertical axis.",
-                "name": "param"
-              }],
-            "text": "The amount to scroll by on the vertical axis."
-          }, {
-            "tags": [{
-                "text": "duration The amount of time to take scrolling by that amount.",
-                "name": "param"
-              }],
-            "text": "The amount of time to take scrolling by that amount."
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
+      "scrollByPoint": {
+        "complexType": {
+          "signature": "(x: number, y: number, duration: number) => Promise<void>",
+          "parameters": [{
+              "tags": [{
+                  "name": "param",
+                  "text": "x The amount to scroll by on the horizontal axis."
+                }],
+              "text": "The amount to scroll by on the horizontal axis."
+            }, {
+              "tags": [{
+                  "name": "param",
+                  "text": "y The amount to scroll by on the vertical axis."
+                }],
+              "text": "The amount to scroll by on the vertical axis."
+            }, {
+              "tags": [{
+                  "name": "param",
+                  "text": "duration The amount of time to take scrolling by that amount."
+                }],
+              "text": "The amount of time to take scrolling by that amount."
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
         },
-        "return": "Promise<void>"
+        "docs": {
+          "text": "Scroll by a specified X/Y distance in the component.",
+          "tags": [{
+              "name": "param",
+              "text": "x The amount to scroll by on the horizontal axis."
+            }, {
+              "name": "param",
+              "text": "y The amount to scroll by on the vertical axis."
+            }, {
+              "name": "param",
+              "text": "duration The amount of time to take scrolling by that amount."
+            }]
+        }
       },
-      "docs": {
-        "text": "Scroll by a specified X/Y distance in the component.",
-        "tags": [{
-            "name": "param",
-            "text": "x The amount to scroll by on the horizontal axis."
-          }, {
-            "name": "param",
-            "text": "y The amount to scroll by on the vertical axis."
-          }, {
-            "name": "param",
-            "text": "duration The amount of time to take scrolling by that amount."
-          }]
-      }
-    },
-    "scrollToPoint": {
-      "complexType": {
-        "signature": "(x: number | undefined | null, y: number | undefined | null, duration?: number) => Promise<void>",
-        "parameters": [{
-            "tags": [{
-                "text": "x The point to scroll to on the horizontal axis.",
-                "name": "param"
-              }],
-            "text": "The point to scroll to on the horizontal axis."
-          }, {
-            "tags": [{
-                "text": "y The point to scroll to on the vertical axis.",
-                "name": "param"
-              }],
-            "text": "The point to scroll to on the vertical axis."
-          }, {
-            "tags": [{
-                "text": "duration The amount of time to take scrolling to that point. Defaults to `0`.",
-                "name": "param"
-              }],
-            "text": "The amount of time to take scrolling to that point. Defaults to `0`."
-          }],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
+      "scrollToPoint": {
+        "complexType": {
+          "signature": "(x: number | undefined | null, y: number | undefined | null, duration?: number) => Promise<void>",
+          "parameters": [{
+              "tags": [{
+                  "name": "param",
+                  "text": "x The point to scroll to on the horizontal axis."
+                }],
+              "text": "The point to scroll to on the horizontal axis."
+            }, {
+              "tags": [{
+                  "name": "param",
+                  "text": "y The point to scroll to on the vertical axis."
+                }],
+              "text": "The point to scroll to on the vertical axis."
+            }, {
+              "tags": [{
+                  "name": "param",
+                  "text": "duration The amount of time to take scrolling to that point. Defaults to `0`."
+                }],
+              "text": "The amount of time to take scrolling to that point. Defaults to `0`."
+            }],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
         },
-        "return": "Promise<void>"
-      },
-      "docs": {
-        "text": "Scroll to a specified X/Y location in the component.",
-        "tags": [{
-            "name": "param",
-            "text": "x The point to scroll to on the horizontal axis."
-          }, {
-            "name": "param",
-            "text": "y The point to scroll to on the vertical axis."
-          }, {
-            "name": "param",
-            "text": "duration The amount of time to take scrolling to that point. Defaults to `0`."
-          }]
+        "docs": {
+          "text": "Scroll to a specified X/Y location in the component.",
+          "tags": [{
+              "name": "param",
+              "text": "x The point to scroll to on the horizontal axis."
+            }, {
+              "name": "param",
+              "text": "y The point to scroll to on the vertical axis."
+            }, {
+              "name": "param",
+              "text": "duration The amount of time to take scrolling to that point. Defaults to `0`."
+            }]
+        }
       }
-    }
-  }; }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get listeners() { return [{
-      "name": "appload",
-      "method": "onAppLoad",
-      "target": "window",
-      "capture": false,
-      "passive": false
-    }, {
-      "name": "click",
-      "method": "onClick",
-      "target": undefined,
-      "capture": true,
-      "passive": false
-    }]; }
+  static get listeners() {
+    return [{
+        "name": "appload",
+        "method": "onAppLoad",
+        "target": "window",
+        "capture": false,
+        "passive": false
+      }, {
+        "name": "click",
+        "method": "onClick",
+        "target": undefined,
+        "capture": true,
+        "passive": false
+      }];
+  }
 }
 const getParentElement = (el) => {
   if (el.parentElement) {

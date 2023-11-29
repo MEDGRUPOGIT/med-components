@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 // templarios
 import { BreakPointNameEnum, BreakPointPixelEnum } from '../enums/breakpoint.enum';
 export class BreakpointUtils {

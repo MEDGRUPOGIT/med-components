@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { writeTask } from '@stencil/core';
 import { createAnimation } from '../../utils/animation/animation';
 import { componentOnReady } from '../../utils/helpers';

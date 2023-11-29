@@ -1,15 +1,18 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const overlays = require('./overlays-9895f6f3.js');
-const index$1 = require('./index-e1bb33c3.js');
-const theme = require('./theme-30b7a575.js');
-const animation = require('./animation-550bbf23.js');
-require('./hardware-back-button-148ce546.js');
-require('./helpers-ba3c117b.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const overlays = require('./overlays-12a6887f.js');
+const index$1 = require('./index-365d7fb3.js');
+const theme = require('./theme-a4c4a7eb.js');
+const animation = require('./animation-96c88a0a.js');
+require('./hardware-back-button-a7dedc7d.js');
+require('./helpers-4478bffd.js');
 
 /**
  * iOS Loading Enter Animation
@@ -123,35 +126,21 @@ const Loading = class {
     this.willDismiss = index.createEvent(this, "ionLoadingWillDismiss", 7);
     this.didDismiss = index.createEvent(this, "ionLoadingDidDismiss", 7);
     this.presented = false;
-    /**
-     * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
-     */
-    this.keyboardClose = true;
-    /**
-     * Number of milliseconds to wait before dismissing the loading indicator.
-     */
-    this.duration = 0;
-    /**
-     * If `true`, the loading indicator will be dismissed when the backdrop is clicked.
-     */
-    this.backdropDismiss = false;
-    /**
-     * If `true`, a backdrop will be displayed behind the loading indicator.
-     */
-    this.showBackdrop = true;
-    /**
-     * If `true`, the loading indicator will be translucent.
-     * Only applies when the mode is `"ios"` and the device supports
-     * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
-     */
-    this.translucent = false;
-    /**
-     * If `true`, the loading indicator will animate.
-     */
-    this.animated = true;
     this.onBackdropTap = () => {
       this.dismiss(undefined, overlays.BACKDROP);
     };
+    this.overlayIndex = undefined;
+    this.keyboardClose = true;
+    this.enterAnimation = undefined;
+    this.leaveAnimation = undefined;
+    this.message = undefined;
+    this.cssClass = undefined;
+    this.duration = 0;
+    this.backdropDismiss = false;
+    this.showBackdrop = true;
+    this.spinner = undefined;
+    this.translucent = false;
+    this.animated = true;
   }
   connectedCallback() {
     overlays.prepareOverlay(this.el);

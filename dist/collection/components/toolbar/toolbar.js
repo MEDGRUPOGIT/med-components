@@ -1,4 +1,7 @@
-import { Component, Element, Host, Listen, Prop, forceUpdate, h } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, forceUpdate, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 import { createColorClasses, hostContext } from '../../utils/theme';
 /**
@@ -13,6 +16,7 @@ import { createColorClasses, hostContext } from '../../utils/theme';
 export class Toolbar {
   constructor() {
     this.childrenStyles = new Map();
+    this.color = undefined;
   }
   componentWillLoad() {
     const buttons = Array.from(this.el.querySelectorAll('ion-buttons'));
@@ -61,56 +65,56 @@ export class Toolbar {
     return (h(Host, { class: Object.assign(Object.assign({}, childStyles), createColorClasses(this.color, {
         [mode]: true,
         'in-toolbar': hostContext('ion-toolbar', this.el),
-      })) },
-      h("div", { class: "toolbar-background" }),
-      h("div", { class: "toolbar-container" },
-        h("slot", { name: "start" }),
-        h("slot", { name: "secondary" }),
-        h("div", { class: "toolbar-content" },
-          h("slot", null)),
-        h("slot", { name: "primary" }),
-        h("slot", { name: "end" }))));
+      })) }, h("div", { class: "toolbar-background" }), h("div", { class: "toolbar-container" }, h("slot", { name: "start" }), h("slot", { name: "secondary" }), h("div", { class: "toolbar-content" }, h("slot", null)), h("slot", { name: "primary" }), h("slot", { name: "end" }))));
   }
   static get is() { return "ion-toolbar"; }
   static get encapsulation() { return "shadow"; }
-  static get originalStyleUrls() { return {
-    "ios": ["toolbar.ios.scss"],
-    "md": ["toolbar.md.scss"]
-  }; }
-  static get styleUrls() { return {
-    "ios": ["toolbar.ios.css"],
-    "md": ["toolbar.md.css"]
-  }; }
-  static get properties() { return {
-    "color": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "Color",
-        "resolved": "string | undefined",
-        "references": {
-          "Color": {
-            "location": "import",
-            "path": "../../interface"
+  static get originalStyleUrls() {
+    return {
+      "ios": ["toolbar.ios.scss"],
+      "md": ["toolbar.md.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "ios": ["toolbar.ios.css"],
+      "md": ["toolbar.md.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "color": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Color",
+          "resolved": "string | undefined",
+          "references": {
+            "Color": {
+              "location": "import",
+              "path": "../../interface"
+            }
           }
-        }
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
-      },
-      "attribute": "color",
-      "reflect": false
-    }
-  }; }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        },
+        "attribute": "color",
+        "reflect": false
+      }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get listeners() { return [{
-      "name": "ionStyle",
-      "method": "childrenStyle",
-      "target": undefined,
-      "capture": false,
-      "passive": false
-    }]; }
+  static get listeners() {
+    return [{
+        "name": "ionStyle",
+        "method": "childrenStyle",
+        "target": undefined,
+        "capture": false,
+        "passive": false
+      }];
+  }
 }

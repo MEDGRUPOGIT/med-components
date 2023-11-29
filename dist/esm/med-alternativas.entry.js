@@ -1,7 +1,10 @@
-import { r as registerInstance, e as createEvent, h, H as Host } from './index-70672e81.js';
-import { j as MedSkin } from './type.enum-b1689c26.js';
-import './plusminus.enum-87dfaf79.js';
-import './rate-like.enum-01831b55.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, H as Host } from './index-336c66d9.js';
+import { j as MedSkin } from './type.enum-846e5dcb.js';
+import './plusminus.enum-6ca17e16.js';
+import './rate-like.enum-04fa254a.js';
 
 const medAlternativasCss = ":host{--font-size:16px;display:block}";
 
@@ -9,33 +12,17 @@ const MedAlternativas = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.medGalleryRequest = createEvent(this, "medGalleryRequest", 7);
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
     this.alternativas = [];
-    /**
-     * todo
-     */
+    this.dsSkinConfig = undefined;
     this.keyAlternativa = 'Alternativa';
-    /**
-     * todo
-     */
     this.keyEnunciado = 'Enunciado';
-    /**
-     * todo
-     */
     this.keyImagem = 'Imagem';
-    /**
-     * todo
-     */
     this.keyPorcentagem = 'Porcentagem';
-    /**
-     * todo
-     */
     this.keyRiscada = 'Riscada';
-    /**
-     * todo
-     */
+    this.respostaCorreta = undefined;
+    this.mostraResposta = undefined;
+    this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
   }
   render() {

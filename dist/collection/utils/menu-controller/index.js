@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { MENU_BACK_BUTTON_PRIORITY } from '../hardware-back-button';
 import { componentOnReady } from '../helpers';
 import { menuOverlayAnimation } from './animations/overlay';

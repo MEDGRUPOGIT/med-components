@@ -1,14 +1,12 @@
-import { Component, h, Host, Event, Listen, Prop } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { h, Host } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
 export class MedNav {
   constructor() {
-    /**
-    * todo
-    */
     this.titulo = 'MEDSoft';
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
     this.active = false;
   }
   async watchClick() {
@@ -23,106 +21,107 @@ export class MedNav {
     return (h(Host, { class: generateMedColor(dsColor, {
         'med-nav': true,
         'med-nav--active': active
-      }) },
-      h("nav", { class: "med-nav__container" },
-        h("div", { class: "med-nav__logo" },
-          h("div", { class: "med-nav__icon-wrapper" },
-            h("ion-icon", { class: "med-nav__icon med-icon med-icon--sm", name: "med-logo" })),
-          h("med-type", { token: "h24", "ds-color": "neutral-10" }, this.titulo)),
-        h("slot", null),
-        h("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() },
-          h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" }))),
-      h("med-nav-simple", { "ds-color": dsColor })));
+      }) }, h("nav", { class: "med-nav__container" }, h("div", { class: "med-nav__logo" }, h("div", { class: "med-nav__icon-wrapper" }, h("ion-icon", { class: "med-nav__icon med-icon med-icon--sm", name: "med-logo" })), h("med-type", { token: "h24", "ds-color": "neutral-10" }, this.titulo)), h("slot", null), h("ion-button", { mode: "ios", "icon-only": true, "ds-color": dsColor, class: "med-nav__toggle", fill: "clear", onClick: () => this.clickHandle() }, h("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-esquerda" }))), h("med-nav-simple", { "ds-color": dsColor })));
   }
   static get is() { return "med-nav"; }
   static get encapsulation() { return "scoped"; }
-  static get originalStyleUrls() { return {
-    "$": ["med-nav.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["med-nav.css"]
-  }; }
-  static get properties() { return {
-    "titulo": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+  static get originalStyleUrls() {
+    return {
+      "$": ["med-nav.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["med-nav.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "titulo": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "titulo",
+        "reflect": true,
+        "defaultValue": "'MEDSoft'"
       },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "titulo",
-      "reflect": true,
-      "defaultValue": "'MEDSoft'"
-    },
-    "dsColor": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "MedColor",
-        "resolved": "string | undefined",
-        "references": {
-          "MedColor": {
-            "location": "import",
-            "path": "../../../../@templarios/types/color.type"
+      "dsColor": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "MedColor",
+          "resolved": "string | undefined",
+          "references": {
+            "MedColor": {
+              "location": "import",
+              "path": "../../../../@templarios/types/color.type"
+            }
           }
-        }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "ds-color",
+        "reflect": true
       },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "ds-color",
-      "reflect": true
-    },
-    "active": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "attribute": "active",
-      "reflect": true,
-      "defaultValue": "false"
-    }
-  }; }
-  static get events() { return [{
-      "method": "clicked",
-      "name": "clicked",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "todo"
-      },
-      "complexType": {
-        "original": "any",
-        "resolved": "any",
-        "references": {}
+      "active": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "active",
+        "reflect": true,
+        "defaultValue": "false"
       }
-    }]; }
-  static get listeners() { return [{
-      "name": "close",
-      "method": "watchClick",
-      "target": undefined,
-      "capture": false,
-      "passive": false
-    }]; }
+    };
+  }
+  static get events() {
+    return [{
+        "method": "clicked",
+        "name": "clicked",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "complexType": {
+          "original": "any",
+          "resolved": "any",
+          "references": {}
+        }
+      }];
+  }
+  static get listeners() {
+    return [{
+        "name": "close",
+        "method": "watchClick",
+        "target": undefined,
+        "capture": false,
+        "passive": false
+      }];
+  }
 }

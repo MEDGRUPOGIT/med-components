@@ -1,3 +1,3 @@
-export declare type CssClassMap = {
+export type CssClassMap = {
   [className: string]: boolean;
 };

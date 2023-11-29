@@ -1,5 +1,8 @@
-import { r as registerInstance, e as createEvent, h, H as Host, i as getElement } from './index-70672e81.js';
-import { g as generateMedColor } from './color-49be71bc.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { g as generateMedColor } from './color-2567dca3.js';
 
 function distanciaEuclidiana(pontoA, pontoB) {
   if (!pontoA || !pontoB)
@@ -110,37 +113,22 @@ const MedAlternativasA = class {
     this.medChange = createEvent(this, "medChange", 7);
     this.medRiscada = createEvent(this, "medRiscada", 7);
     this.medGalleryRequest = createEvent(this, "medGalleryRequest", 7);
-    /**
-     * todo
-     */
+    this.baseClass = new MedAlternativasBase(this);
+    this.dsSkin = undefined;
+    this.dsSkinConfig = undefined;
+    this.dsColor = undefined;
     this.alternativas = [];
-    /**
-     * todo
-     */
     this.keyAlternativa = 'Alternativa';
-    /**
-     * todo
-     */
     this.keyEnunciado = 'Enunciado';
-    /**
-     * todo
-     */
     this.keyImagem = 'Imagem';
-    /**
-     * todo
-     */
     this.keyPorcentagem = 'Porcentagem';
-    /**
-     * todo
-     */
     this.keyRiscada = 'Riscada';
-    /**
-     * todo
-     */
+    this.respostaCorreta = undefined;
+    this.mostraResposta = undefined;
+    this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
-    this.baseClass = new MedAlternativasBase(this);
   }
   handleClick(event) {
     this.baseClass.handleClick(event);
@@ -193,37 +181,22 @@ const MedAlternativasB = class {
     this.medChange = createEvent(this, "medChange", 7);
     this.medRiscada = createEvent(this, "medRiscada", 7);
     this.medGalleryRequest = createEvent(this, "medGalleryRequest", 7);
-    /**
-     * todo
-     */
+    this.baseClass = new MedAlternativasBase(this);
+    this.dsColor = undefined;
+    this.dsSkin = undefined;
+    this.dsSkinConfig = undefined;
     this.alternativas = [];
-    /**
-     * todo
-     */
     this.keyAlternativa = 'Alternativa';
-    /**
-     * todo
-     */
     this.keyEnunciado = 'Enunciado';
-    /**
-     * todo
-     */
     this.keyImagem = 'Imagem';
-    /**
-     * todo
-     */
     this.keyPorcentagem = 'Porcentagem';
-    /**
-     * todo
-     */
     this.keyRiscada = 'Riscada';
-    /**
-     * todo
-     */
+    this.respostaCorreta = undefined;
+    this.mostraResposta = undefined;
+    this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
-    this.baseClass = new MedAlternativasBase(this);
   }
   handleClick(event) {
     this.baseClass.handleClick(event);

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const getPlatforms = (win) => setupPlatforms(win);
 export const isPlatform = (winOrPlatform, platform) => {
   if (typeof winOrPlatform === 'string') {

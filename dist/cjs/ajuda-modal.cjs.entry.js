@@ -1,8 +1,11 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
+const index = require('./index-a17b061b.js');
 
 const ajudaModalCss = ".sc-ajuda-modal-h{display:block;border-radius:0}.header.sc-ajuda-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;background:hsl(var(--med-color-neutral-1));padding-top:calc(28px + var(--ion-safe-area-top));padding-right:40px;padding-bottom:28px;padding-left:40px;max-height:80px}@media (max-width: 575.98px){.header.sc-ajuda-modal{padding-top:calc(24px + var(--ion-safe-area-top));padding-right:24px;padding-bottom:24px;padding-left:24px;max-height:72px}}.header__left.sc-ajuda-modal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.modal-content.sc-ajuda-modal{height:calc(100% - 80px)}@media (max-width: 575.98px){.modal-content.sc-ajuda-modal{height:calc(100% - 72px)}}.modal-ajuda.sc-ajuda-modal{height:100%;padding:40px 64px}@media (max-width: 575.98px){.modal-ajuda.sc-ajuda-modal{padding:24px}}.modal-ajuda__title.sc-ajuda-modal{margin-bottom:40px;display:block;font-weight:600;font-size:24px;line-height:32px}@media (max-width: 575.98px){.modal-ajuda__title.sc-ajuda-modal{margin-bottom:24px}}.modal-ajuda__slides.sc-ajuda-modal{height:calc(100% - 72px)}@media (max-width: 575.98px){.modal-ajuda__slides.sc-ajuda-modal{height:calc(100% - 56px)}}@media only screen and (max-height: 500px){.modal-ajuda__slides.sc-ajuda-modal{height:auto;overflow:auto}}.modal-ajuda__slide.sc-ajuda-modal{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.modal-ajuda__icon.sc-ajuda-modal{min-width:100px;min-height:100px;stroke:hsl(var(--med-color-neutral-10));fill:transparent;margin-bottom:24px}.modal-ajuda__subtitle.sc-ajuda-modal{font-weight:600;font-size:24px;line-height:32px;margin-bottom:16px}.modal-ajuda__text.sc-ajuda-modal{font-weight:400;font-size:14px;line-height:20px}";
 

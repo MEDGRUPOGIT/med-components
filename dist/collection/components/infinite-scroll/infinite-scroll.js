@@ -1,4 +1,7 @@
-import { Component, Element, Event, Host, Method, Prop, State, Watch, h, readTask, writeTask } from '@stencil/core';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { Host, h, readTask, writeTask } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 export class InfiniteScroll {
   constructor() {
@@ -6,32 +9,6 @@ export class InfiniteScroll {
     this.thrPc = 0;
     this.didFire = false;
     this.isBusy = false;
-    this.isLoading = false;
-    /**
-     * The threshold distance from the bottom
-     * of the content to call the `infinite` output event when scrolled.
-     * The threshold value can be either a percent, or
-     * in pixels. For example, use the value of `10%` for the `infinite`
-     * output event to get called when the user has scrolled 10%
-     * from the bottom of the page. Use the value `100px` when the
-     * scroll is within 100 pixels from the bottom of the page.
-     */
-    this.threshold = '15%';
-    /**
-     * If `true`, the infinite scroll will be hidden and scroll event listeners
-     * will be removed.
-     *
-     * Set this to true to disable the infinite scroll from actively
-     * trying to receive new data while scrolling. This is useful
-     * when it is known that there is no more data that can be added, and
-     * the infinite scroll is no longer needed.
-     */
-    this.disabled = false;
-    /**
-     * The position of the infinite scroll element.
-     * The value can be either `top` or `bottom`.
-     */
-    this.position = 'bottom';
     this.onScroll = () => {
       const scrollEl = this.scrollEl;
       if (!scrollEl || !this.canStart()) {
@@ -62,6 +39,10 @@ export class InfiniteScroll {
       }
       return 4;
     };
+    this.isLoading = false;
+    this.threshold = '15%';
+    this.disabled = false;
+    this.position = 'bottom';
   }
   thresholdChanged() {
     const val = this.threshold;
@@ -187,111 +168,125 @@ export class InfiniteScroll {
       } }));
   }
   static get is() { return "ion-infinite-scroll"; }
-  static get originalStyleUrls() { return {
-    "$": ["infinite-scroll.scss"]
-  }; }
-  static get styleUrls() { return {
-    "$": ["infinite-scroll.css"]
-  }; }
-  static get properties() { return {
-    "threshold": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The threshold distance from the bottom\nof the content to call the `infinite` output event when scrolled.\nThe threshold value can be either a percent, or\nin pixels. For example, use the value of `10%` for the `infinite`\noutput event to get called when the user has scrolled 10%\nfrom the bottom of the page. Use the value `100px` when the\nscroll is within 100 pixels from the bottom of the page."
-      },
-      "attribute": "threshold",
-      "reflect": false,
-      "defaultValue": "'15%'"
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "If `true`, the infinite scroll will be hidden and scroll event listeners\nwill be removed.\n\nSet this to true to disable the infinite scroll from actively\ntrying to receive new data while scrolling. This is useful\nwhen it is known that there is no more data that can be added, and\nthe infinite scroll is no longer needed."
-      },
-      "attribute": "disabled",
-      "reflect": false,
-      "defaultValue": "false"
-    },
-    "position": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "'top' | 'bottom'",
-        "resolved": "\"bottom\" | \"top\"",
-        "references": {}
-      },
-      "required": false,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": "The position of the infinite scroll element.\nThe value can be either `top` or `bottom`."
-      },
-      "attribute": "position",
-      "reflect": false,
-      "defaultValue": "'bottom'"
-    }
-  }; }
-  static get states() { return {
-    "isLoading": {}
-  }; }
-  static get events() { return [{
-      "method": "ionInfinite",
-      "name": "ionInfinite",
-      "bubbles": true,
-      "cancelable": true,
-      "composed": true,
-      "docs": {
-        "tags": [],
-        "text": "Emitted when the scroll reaches\nthe threshold distance. From within your infinite handler,\nyou must call the infinite scroll's `complete()` method when\nyour async operation has completed."
-      },
-      "complexType": {
-        "original": "void",
-        "resolved": "void",
-        "references": {}
-      }
-    }]; }
-  static get methods() { return {
-    "complete": {
-      "complexType": {
-        "signature": "() => Promise<void>",
-        "parameters": [],
-        "references": {
-          "Promise": {
-            "location": "global"
-          }
+  static get originalStyleUrls() {
+    return {
+      "$": ["infinite-scroll.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["infinite-scroll.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "threshold": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
         },
-        "return": "Promise<void>"
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The threshold distance from the bottom\nof the content to call the `infinite` output event when scrolled.\nThe threshold value can be either a percent, or\nin pixels. For example, use the value of `10%` for the `infinite`\noutput event to get called when the user has scrolled 10%\nfrom the bottom of the page. Use the value `100px` when the\nscroll is within 100 pixels from the bottom of the page."
+        },
+        "attribute": "threshold",
+        "reflect": false,
+        "defaultValue": "'15%'"
       },
-      "docs": {
-        "text": "Call `complete()` within the `ionInfinite` output event handler when\nyour async operation has completed. For example, the `loading`\nstate is while the app is performing an asynchronous operation,\nsuch as receiving more data from an AJAX request to add more items\nto a data list. Once the data has been received and UI updated, you\nthen call this method to signify that the loading has completed.\nThis method will change the infinite scroll's state from `loading`\nto `enabled`.",
-        "tags": []
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "If `true`, the infinite scroll will be hidden and scroll event listeners\nwill be removed.\n\nSet this to true to disable the infinite scroll from actively\ntrying to receive new data while scrolling. This is useful\nwhen it is known that there is no more data that can be added, and\nthe infinite scroll is no longer needed."
+        },
+        "attribute": "disabled",
+        "reflect": false,
+        "defaultValue": "false"
+      },
+      "position": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "'top' | 'bottom'",
+          "resolved": "\"bottom\" | \"top\"",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "The position of the infinite scroll element.\nThe value can be either `top` or `bottom`."
+        },
+        "attribute": "position",
+        "reflect": false,
+        "defaultValue": "'bottom'"
       }
-    }
-  }; }
+    };
+  }
+  static get states() {
+    return {
+      "isLoading": {}
+    };
+  }
+  static get events() {
+    return [{
+        "method": "ionInfinite",
+        "name": "ionInfinite",
+        "bubbles": true,
+        "cancelable": true,
+        "composed": true,
+        "docs": {
+          "tags": [],
+          "text": "Emitted when the scroll reaches\nthe threshold distance. From within your infinite handler,\nyou must call the infinite scroll's `complete()` method when\nyour async operation has completed."
+        },
+        "complexType": {
+          "original": "void",
+          "resolved": "void",
+          "references": {}
+        }
+      }];
+  }
+  static get methods() {
+    return {
+      "complete": {
+        "complexType": {
+          "signature": "() => Promise<void>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global"
+            }
+          },
+          "return": "Promise<void>"
+        },
+        "docs": {
+          "text": "Call `complete()` within the `ionInfinite` output event handler when\nyour async operation has completed. For example, the `loading`\nstate is while the app is performing an asynchronous operation,\nsuch as receiving more data from an AJAX request to add more items\nto a data list. Once the data has been received and UI updated, you\nthen call this method to signify that the loading has completed.\nThis method will change the infinite scroll's state from `loading`\nto `enabled`.",
+          "tags": []
+        }
+      }
+    };
+  }
   static get elementRef() { return "el"; }
-  static get watchers() { return [{
-      "propName": "threshold",
-      "methodName": "thresholdChanged"
-    }, {
-      "propName": "disabled",
-      "methodName": "disabledChanged"
-    }]; }
+  static get watchers() {
+    return [{
+        "propName": "threshold",
+        "methodName": "thresholdChanged"
+      }, {
+        "propName": "disabled",
+        "methodName": "disabledChanged"
+      }];
+  }
 }

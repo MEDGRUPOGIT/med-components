@@ -1,9 +1,12 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const color = require('./color-2d4645aa.js');
+const index = require('./index-a17b061b.js');
+const color = require('./color-c29da9e4.js');
 
 const medNavItemCss = ":host{--stroke:hsl(var(--med-color-neutral-7));--margin-left-text:16px}:host{display:block}.med-nav-item__button{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:8px;background:var(--background);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer;border-radius:8px;-webkit-transition:background-color 300ms ease-out;transition:background-color 300ms ease-out;border:0;width:100%}.med-nav-item__button::-moz-focus-inner{border:0}.med-nav-item__icon{min-width:24px;stroke:var(--stroke);-webkit-transition:stroke 300ms ease-out;transition:stroke 300ms ease-out}.med-nav-item__text{--color:hsl(var(--med-color-neutral-7));margin-left:var(--margin-left-text)}:host(.button-disabled){opacity:0.5;pointer-events:none}:host(.med-nav-item--active){--background:hsl(var(--med-color-brand-1));--stroke:hsl(var(--med-color-neutral-10))}:host(.med-nav-item--active) .med-nav-item__text{--color:hsl(var(--med-color-neutral-10))}@media (any-hover: hover){:host(:hover){--background:hsl(var(--med-color-neutral-2));--stroke:hsl(var(--med-color-neutral-10))}:host(:hover) .med-nav-item__text{--color:hsl(var(--med-color-neutral-10))}}:host(.med-color.med-nav-item--active){--background:hsl(var(--med-color-2))}:host(.med-color-neutral.med-nav-item--active){--background:hsl(var(--med-color-neutral))}:host(.med-color-feedback.med-nav-item--active){--background:hsl(var(--med-color-feedback))}";
 
@@ -13,28 +16,20 @@ const MedNavItem = class {
     this.medFocus = index.createEvent(this, "medFocus", 7);
     this.medBlur = index.createEvent(this, "medBlur", 7);
     this.medClick = index.createEvent(this, "medClick", 7);
-    /**
-     * todo
-     */
-    this.active = false;
-    /**
-     * todo
-     */
-    this.disabled = false;
-    /**
-     * todo
-     */
-    this.routerDirection = 'forward';
-    /**
-     * todo
-     */
-    this.iconOnly = false;
     this.onFocus = () => {
       this.medBlur.emit();
     };
     this.onBlur = () => {
       this.medClick.emit();
     };
+    this.dsColor = undefined;
+    this.active = false;
+    this.text = undefined;
+    this.icon = undefined;
+    this.disabled = false;
+    this.routerDirection = 'forward';
+    this.routerAnimation = undefined;
+    this.iconOnly = false;
   }
   componentDidLoad() {
     if (this.hostElement.classList.contains('button')) {

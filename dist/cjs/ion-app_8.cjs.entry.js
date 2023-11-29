@@ -1,14 +1,17 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const theme = require('./theme-30b7a575.js');
-const helpers = require('./helpers-ba3c117b.js');
-const cubicBezier = require('./cubic-bezier-0b2ccc35.js');
-const frameworkDelegate = require('./framework-delegate-bebbd221.js');
-const index$1 = require('./index-a7d54975.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const theme = require('./theme-a4c4a7eb.js');
+const helpers = require('./helpers-4478bffd.js');
+const cubicBezier = require('./cubic-bezier-1060abff.js');
+const frameworkDelegate = require('./framework-delegate-8b8d88ef.js');
+const index$1 = require('./index-d49aaaa3.js');
 
 const appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html.plt-mobile ion-app [contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
 
@@ -21,15 +24,15 @@ const App = class {
       rIC(async () => {
         const isHybrid = ionicGlobal.isPlatform(window, 'hybrid');
         if (!ionicGlobal.config.getBoolean('_testing')) {
-          Promise.resolve().then(function () { return require('./tap-click-98443f9a.js'); }).then(module => module.startTapClick(ionicGlobal.config));
+          Promise.resolve().then(function () { return require('./tap-click-fc536ae5.js'); }).then(module => module.startTapClick(ionicGlobal.config));
         }
         if (ionicGlobal.config.getBoolean('statusTap', isHybrid)) {
-          Promise.resolve().then(function () { return require('./status-tap-e5a77676.js'); }).then(module => module.startStatusTap());
+          Promise.resolve().then(function () { return require('./status-tap-b1f8be21.js'); }).then(module => module.startStatusTap());
         }
         if (ionicGlobal.config.getBoolean('inputShims', needInputShims())) {
-          Promise.resolve().then(function () { return require('./input-shims-af16e7ee.js'); }).then(module => module.startInputShims(ionicGlobal.config));
+          Promise.resolve().then(function () { return require('./input-shims-14ccc849.js'); }).then(module => module.startInputShims(ionicGlobal.config));
         }
-        const hardwareBackButtonModule = await Promise.resolve().then(function () { return require('./hardware-back-button-148ce546.js'); });
+        const hardwareBackButtonModule = await Promise.resolve().then(function () { return require('./hardware-back-button-a7dedc7d.js'); });
         if (ionicGlobal.config.getBoolean('hardwareBackButton', isHybrid)) {
           hardwareBackButtonModule.startHardwareBackButton();
         }
@@ -37,9 +40,9 @@ const App = class {
           hardwareBackButtonModule.blockHardwareBackButton();
         }
         if (typeof window !== 'undefined') {
-          Promise.resolve().then(function () { return require('./keyboard-4704570e.js'); }).then(module => module.startKeyboardAssist(window));
+          Promise.resolve().then(function () { return require('./keyboard-e8851384.js'); }).then(module => module.startKeyboardAssist(window));
         }
-        Promise.resolve().then(function () { return require('./focus-visible-9efe58aa.js'); }).then(module => module.startFocusVisible());
+        Promise.resolve().then(function () { return require('./focus-visible-3e407af2.js'); }).then(module => module.startFocusVisible());
       });
     }
   }
@@ -73,18 +76,6 @@ const buttonsMdCss = ".sc-ion-buttons-md-h{display:-ms-flexbox;display:flex;-ms-
 const Buttons = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /**
-     * If true, buttons will disappear when its
-     * parent toolbar has fully collapsed if the toolbar
-     * is not the first toolbar. If the toolbar is the
-     * first toolbar, the buttons will be hidden and will
-     * only be shown once all toolbars have fully collapsed.
-     *
-     * Only applies in `ios` mode with `collapse` set to
-     * `true` on `ion-header`.
-     *
-     * Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)
-     */
     this.collapse = false;
   }
   render() {
@@ -134,24 +125,11 @@ const Content = class {
       data: undefined,
       isScrolling: true,
     };
-    /**
-     * If `true`, the content will scroll behind the headers
-     * and footers. This effect can easily be seen by setting the toolbar
-     * to transparent.
-     */
+    this.color = undefined;
     this.fullscreen = false;
-    /**
-     * If you want to enable the content scrolling in the X axis, set this property to `true`.
-     */
+    this.forceOverscroll = undefined;
     this.scrollX = false;
-    /**
-     * If you want to disable the content scrolling in the Y axis, set this property to `false`.
-     */
     this.scrollY = true;
-    /**
-     * Because of performance reasons, ionScroll events are disabled by default, in order to enable them
-     * and start listening from (ionScroll), set this property to `true`.
-     */
     this.scrollEvents = false;
   }
   disconnectedCallback() {
@@ -405,14 +383,6 @@ const footerMdCss = "ion-footer{display:block;position:relative;-ms-flex-order:1
 const Footer = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /**
-     * If `true`, the footer will be translucent.
-     * Only applies when the mode is `"ios"` and the device supports
-     * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
-     *
-     * Note: In order to scroll content behind the footer, the `fullscreen`
-     * attribute needs to be set on the content.
-     */
     this.translucent = false;
   }
   render() {
@@ -575,14 +545,7 @@ const Header = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     this.collapsibleHeaderInitialized = false;
-    /**
-     * If `true`, the header will be translucent.
-     * Only applies when the mode is `"ios"` and the device supports
-     * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
-     *
-     * Note: In order to scroll content behind the header, the `fullscreen`
-     * attribute needs to be set on the content.
-     */
+    this.collapse = undefined;
     this.translucent = false;
   }
   async componentDidLoad() {
@@ -703,14 +666,11 @@ const RouterOutlet = class {
     this.ionNavWillChange = index.createEvent(this, "ionNavWillChange", 3);
     this.ionNavDidChange = index.createEvent(this, "ionNavDidChange", 3);
     this.animationEnabled = true;
-    /**
-     * The mode determines which platform styles to use.
-     */
     this.mode = ionicGlobal.getIonMode(this);
-    /**
-     * If `true`, the router-outlet should animate the transition of components.
-     */
+    this.delegate = undefined;
     this.animated = true;
+    this.animation = undefined;
+    this.swipeHandler = undefined;
   }
   swipeHandlerChanged() {
     if (this.gesture) {
@@ -718,7 +678,7 @@ const RouterOutlet = class {
     }
   }
   async connectedCallback() {
-    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-726665a3.js'); })).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
+    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-4a41436e.js'); })).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
       if (this.ani) {
         this.animationEnabled = false;
         this.ani.onFinish(() => {
@@ -851,6 +811,8 @@ const ToolbarTitle = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     this.ionStyle = index.createEvent(this, "ionStyle", 7);
+    this.color = undefined;
+    this.size = undefined;
   }
   sizeChanged() {
     this.emitStyle();
@@ -893,6 +855,7 @@ const Toolbar = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
     this.childrenStyles = new Map();
+    this.color = undefined;
   }
   componentWillLoad() {
     const buttons = Array.from(this.el.querySelectorAll('ion-buttons'));

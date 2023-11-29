@@ -1,23 +1,15 @@
-import { r as registerInstance, h, H as Host, i as getElement, e as createEvent } from './index-70672e81.js';
-import { b as getIonMode } from './ionic-global-4bc7e399.js';
-import { h as hostContext, o as openURL, c as createColorClasses } from './theme-ff3fc52f.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host, j as getElement, f as createEvent } from './index-336c66d9.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { h as hostContext, o as openURL, c as createColorClasses } from './theme-a24ff1ad.js';
 
 const fabCss = ":host{position:absolute;z-index:999}:host(.fab-horizontal-center){left:50%;margin-left:-28px}:host-context([dir=rtl]):host(.fab-horizontal-center),:host-context([dir=rtl]).fab-horizontal-center{left:unset;right:unset;right:50%}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.fab-horizontal-center){margin-left:unset;-webkit-margin-start:-28px;margin-inline-start:-28px}}:host(.fab-horizontal-start){left:calc(10px + var(--ion-safe-area-left, 0px))}:host-context([dir=rtl]):host(.fab-horizontal-start),:host-context([dir=rtl]).fab-horizontal-start{left:unset;right:unset;right:calc(10px + var(--ion-safe-area-left, 0px))}:host(.fab-horizontal-end){right:calc(10px + var(--ion-safe-area-right, 0px))}:host-context([dir=rtl]):host(.fab-horizontal-end),:host-context([dir=rtl]).fab-horizontal-end{left:unset;right:unset;left:calc(10px + var(--ion-safe-area-right, 0px))}:host(.fab-vertical-top){top:10px}:host(.fab-vertical-top.fab-edge){top:-28px}:host(.fab-vertical-bottom){bottom:10px}:host(.fab-vertical-bottom.fab-edge){bottom:-28px}:host(.fab-vertical-center){margin-top:-28px;top:50%}";
 
 const Fab = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * If `true`, the fab will display on the edge of the header if
-     * `vertical` is `"top"`, and on the edge of the footer if
-     * it is `"bottom"`. Should be used with a `fixed` slot.
-     */
-    this.edge = false;
-    /**
-     * If `true`, both the `ion-fab-button` and all `ion-fab-list` inside `ion-fab` will become active.
-     * That means `ion-fab-button` will become a `close` icon and `ion-fab-list` will become visible.
-     */
-    this.activated = false;
     this.onClick = () => {
       const hasList = !!this.el.querySelector('ion-fab-list');
       const getButton = this.getFab();
@@ -26,6 +18,10 @@ const Fab = class {
         this.activated = !this.activated;
       }
     };
+    this.horizontal = undefined;
+    this.vertical = undefined;
+    this.edge = false;
+    this.activated = false;
   }
   activatedChanged() {
     const activated = this.activated;
@@ -77,45 +73,26 @@ const FabButton = class {
     registerInstance(this, hostRef);
     this.ionFocus = createEvent(this, "ionFocus", 7);
     this.ionBlur = createEvent(this, "ionBlur", 7);
-    /**
-     * If `true`, the fab button will be show a close icon.
-     */
-    this.activated = false;
-    /**
-     * If `true`, the user cannot interact with the fab button.
-     */
-    this.disabled = false;
-    /**
-     * When using a router, it specifies the transition direction when navigating to
-     * another page using `href`.
-     */
-    this.routerDirection = 'forward';
-    /**
-     * If `true`, the fab button will show when in a fab-list.
-     */
-    this.show = false;
-    /**
-     * If `true`, the fab button will be translucent.
-     * Only applies when the mode is `"ios"` and the device supports
-     * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
-     */
-    this.translucent = false;
-    /**
-     * The type of the button.
-     */
-    this.type = 'button';
-    /**
-     * The icon name to use for the close icon. This will appear when the fab button
-     * is pressed. Only applies if it is the main button inside of a fab containing a
-     * fab list.
-     */
-    this.closeIcon = 'close';
     this.onFocus = () => {
       this.ionFocus.emit();
     };
     this.onBlur = () => {
       this.ionBlur.emit();
     };
+    this.color = undefined;
+    this.activated = false;
+    this.disabled = false;
+    this.download = undefined;
+    this.href = undefined;
+    this.rel = undefined;
+    this.routerDirection = 'forward';
+    this.routerAnimation = undefined;
+    this.target = undefined;
+    this.show = false;
+    this.translucent = false;
+    this.type = 'button';
+    this.size = undefined;
+    this.closeIcon = 'close';
   }
   render() {
     const { el, disabled, color, href, activated, show, translucent, size } = this;
@@ -155,13 +132,7 @@ const fabListCss = ":host{margin-left:0;margin-right:0;margin-top:66px;margin-bo
 const FabList = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * If `true`, the fab list will show all fab buttons in the list.
-     */
     this.activated = false;
-    /**
-     * The side the fab list will show on relative to the main fab button.
-     */
     this.side = 'bottom';
   }
   activatedChanged(activated) {

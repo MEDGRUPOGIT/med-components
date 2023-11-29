@@ -1,11 +1,16 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { g as generateMedColor } from './color-49be71bc.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
+import { g as generateMedColor } from './color-2567dca3.js';
 
 const medAddCardCss = ".sc-med-add-card-h{cursor:pointer;display:block}.med-add-card__container.sc-med-add-card{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.med-add-card__icon.sc-med-add-card{stroke:hsl(var(--med-color-neutral-10));margin-right:16px}";
 
 const MedAddCard = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    this.titulo = undefined;
+    this.iconName = undefined;
   }
   render() {
     const { titulo, iconName } = this;

@@ -1,6 +1,9 @@
-import { r as registerInstance, h, H as Host, i as getElement, e as createEvent } from './index-70672e81.js';
-import { a as attachComponent } from './framework-delegate-b8b7134c.js';
-import './helpers-462f8de3.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host, j as getElement, f as createEvent } from './index-336c66d9.js';
+import { a as attachComponent } from './framework-delegate-f297f7e6.js';
+import './helpers-d6be6e4a.js';
 
 const tabCss = ":host(.tab-hidden){display:none !important}";
 
@@ -8,8 +11,10 @@ const Tab = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.loaded = false;
-    /** @internal */
     this.active = false;
+    this.delegate = undefined;
+    this.tab = undefined;
+    this.component = undefined;
   }
   async componentWillLoad() {
     if (this.active) {
@@ -61,8 +66,6 @@ const Tabs = class {
     this.ionTabsWillChange = createEvent(this, "ionTabsWillChange", 3);
     this.ionTabsDidChange = createEvent(this, "ionTabsDidChange", 3);
     this.transitioning = false;
-    /** @internal */
-    this.useRouter = false;
     this.onTabClicked = (ev) => {
       const { href, tab } = ev.detail;
       if (this.useRouter && href !== undefined) {
@@ -75,6 +78,8 @@ const Tabs = class {
         this.select(tab);
       }
     };
+    this.selectedTab = undefined;
+    this.useRouter = false;
   }
   async componentWillLoad() {
     if (!this.useRouter) {

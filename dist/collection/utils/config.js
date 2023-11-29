@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const setupConfig = (config) => {
   const win = window;
   const Ionic = win.Ionic;

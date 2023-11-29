@@ -1,19 +1,22 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const buttonActive = require('./button-active-0bc74ee7.js');
-const overlays = require('./overlays-9895f6f3.js');
-const index$1 = require('./index-e1bb33c3.js');
-const theme = require('./theme-30b7a575.js');
-const animation = require('./animation-550bbf23.js');
-require('./haptic-9f199ada.js');
-require('./index-98d43f07.js');
-require('./gesture-controller-29adda71.js');
-require('./hardware-back-button-148ce546.js');
-require('./helpers-ba3c117b.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const buttonActive = require('./button-active-21f31d82.js');
+const overlays = require('./overlays-12a6887f.js');
+const index$1 = require('./index-365d7fb3.js');
+const theme = require('./theme-a4c4a7eb.js');
+const animation = require('./animation-96c88a0a.js');
+require('./haptic-c4a1d647.js');
+require('./index-212d93af.js');
+require('./gesture-controller-3d1daf69.js');
+require('./hardware-back-button-a7dedc7d.js');
+require('./helpers-4478bffd.js');
 
 /**
  * iOS Alert Enter Animation
@@ -126,32 +129,6 @@ const Alert = class {
     this.processedInputs = [];
     this.processedButtons = [];
     this.presented = false;
-    /**
-     * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
-     */
-    this.keyboardClose = true;
-    /**
-     * Array of buttons to be added to the alert.
-     */
-    this.buttons = [];
-    /**
-     * Array of input to show in the alert.
-     */
-    this.inputs = [];
-    /**
-     * If `true`, the alert will be dismissed when the backdrop is clicked.
-     */
-    this.backdropDismiss = true;
-    /**
-     * If `true`, the alert will be translucent.
-     * Only applies when the mode is `"ios"` and the device supports
-     * [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
-     */
-    this.translucent = false;
-    /**
-     * If `true`, the alert will animate.
-     */
-    this.animated = true;
     this.onBackdropTap = () => {
       this.dismiss(undefined, overlays.BACKDROP);
     };
@@ -162,6 +139,19 @@ const Alert = class {
         this.callButtonHandler(cancelButton);
       }
     };
+    this.overlayIndex = undefined;
+    this.keyboardClose = true;
+    this.enterAnimation = undefined;
+    this.leaveAnimation = undefined;
+    this.cssClass = undefined;
+    this.header = undefined;
+    this.subHeader = undefined;
+    this.message = undefined;
+    this.buttons = [];
+    this.inputs = [];
+    this.backdropDismiss = true;
+    this.translucent = false;
+    this.animated = true;
   }
   onKeydown(ev) {
     const inputTypes = new Set(this.processedInputs.map(i => i.type));

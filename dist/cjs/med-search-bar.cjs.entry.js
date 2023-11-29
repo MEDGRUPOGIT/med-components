@@ -1,15 +1,19 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const color = require('./color-2d4645aa.js');
+const index = require('./index-a17b061b.js');
+const color = require('./color-c29da9e4.js');
 
 const medSearchBarCss = ".med-search-bar.sc-med-search-bar-h{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:20px 24px;width:100%;height:72px;overflow:hidden;position:relative}.med-search-bar.sc-med-search-bar-h .title-container__title.sc-med-search-bar{color:hsl(var(--med-color-neutral-10)) !important;font-size:24px;line-height:24px;margin:0}.med-search-bar.sc-med-search-bar-h>*.sc-med-search-bar{position:absolute;left:0;right:0;top:0;height:72px;-webkit-transition:0.5s;transition:0.5s;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;padding:0 24px}.med-search-bar.active.sc-med-search-bar-h .busca.sc-med-search-bar{opacity:1;z-index:2;-webkit-transform:translateX(0);transform:translateX(0)}.med-search-bar.active.sc-med-search-bar-h .title-container__title.sc-med-search-bar{-webkit-transform:translateX(-50vw);transform:translateX(-50vw)}.med-search-bar.active.sc-med-search-bar-h .title-container__button.sc-med-search-bar{-webkit-transform:scale(0);transform:scale(0)}.busca.sc-med-search-bar{-webkit-transform:translateX(-24px);transform:translateX(-24px);opacity:0;padding:0}.busca__button.sc-med-search-bar{margin-right:24px;display:-ms-flexbox;display:flex}.title-container.sc-med-search-bar{opacity:1;-ms-flex-pack:justify;justify-content:space-between}.title-container.sc-med-search-bar>*.sc-med-search-bar{-webkit-transition:0.3s;transition:0.3s}.title-container__button.sc-med-search-bar{-webkit-transition-delay:0.3s;transition-delay:0.3s}button.sc-med-search-bar{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;outline:none;background:hsl(var(--med-color-neutral-1));position:relative}button.sc-med-search-bar{pointer-events:all;cursor:pointer}button.sc-med-search-bar::before{content:\"\";position:absolute;width:16px;height:16px;border-radius:8px;left:calc(50% - 8px);top:calc(50% - 8px);background-color:hsl(var(--med-color-brand-4));opacity:0}button.click.sc-med-search-bar::before{-webkit-animation:zoom 0.3s;animation:zoom 0.3s}button.sc-med-search-bar .med-icon.sc-med-search-bar{pointer-events:none}.med-icon.sc-med-search-bar{stroke:hsl(var(--med-color-neutral-10))}@-webkit-keyframes zoom{from{-webkit-transform:scale(1);transform:scale(1);opacity:1}to{-webkit-transform:scale(8);transform:scale(8);opacity:0}}@keyframes zoom{from{-webkit-transform:scale(1);transform:scale(1);opacity:1}to{-webkit-transform:scale(8);transform:scale(8);opacity:0}}";
 
 const MedSearchBar = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    this.dsColor = undefined;
   }
   toggleClass(e) {
     var _a;

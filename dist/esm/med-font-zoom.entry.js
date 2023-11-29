@@ -1,17 +1,16 @@
-import { r as registerInstance, h, H as Host } from './index-70672e81.js';
-import { h as MedFontSize } from './type.enum-b1689c26.js';
-import './plusminus.enum-87dfaf79.js';
-import './rate-like.enum-01831b55.js';
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
+import { h as MedFontSize } from './type.enum-846e5dcb.js';
+import './plusminus.enum-6ca17e16.js';
+import './rate-like.enum-04fa254a.js';
 
 const medFontZoomCss = ".sc-med-font-zoom-h{display:block;opacity:0;-webkit-transition:opacity 0.1s;transition:opacity 0.1s}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}";
 
 const MedFontZoom = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    /**
-     * todo
-     */
-    this.value = MedFontSize.XS;
     this.min = 1;
     this.max = 5;
     this.step = 1;
@@ -53,6 +52,8 @@ const MedFontZoom = class {
         this.emitter.emit(this.value);
       }
     };
+    this.emitter = undefined;
+    this.value = MedFontSize.XS;
   }
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7

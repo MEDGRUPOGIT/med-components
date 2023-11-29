@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export var MedColors;
 (function (MedColors) {
   MedColors["NEUTRAL_1"] = "neutral-1";

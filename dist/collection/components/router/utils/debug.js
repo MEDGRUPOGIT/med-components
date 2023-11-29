@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { generatePath } from './path';
 export const printRoutes = (routes) => {
   console.group(`[ion-core] ROUTES[${routes.length}]`);

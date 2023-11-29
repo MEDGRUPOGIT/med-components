@@ -21,7 +21,7 @@ export declare const parseDate: (val: string | undefined | null) => DatetimeData
  */
 export declare const getDateTime: (dateString?: any, timeZone?: any) => Date;
 export declare const getTimezoneOffset: (localDate: Date, timeZone: string) => number;
-export declare const updateDate: (existingData: DatetimeData, newData: any, displayTimezone?: string | undefined) => boolean;
+export declare const updateDate: (existingData: DatetimeData, newData: any, displayTimezone?: string) => boolean;
 export declare const parseTemplate: (template: string) => string[];
 export declare const getValueFromFormat: (date: DatetimeData, format: string) => any;
 export declare const convertFormatToKey: (format: string) => string | undefined;

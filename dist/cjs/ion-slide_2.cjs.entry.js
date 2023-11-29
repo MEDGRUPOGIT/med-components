@@ -1,10 +1,13 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const ionicGlobal = require('./ionic-global-50e8bb29.js');
-const helpers = require('./helpers-ba3c117b.js');
+const index = require('./index-a17b061b.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const helpers = require('./helpers-4478bffd.js');
 
 const slideCss = "ion-slide{display:block;width:100%;height:100%}.slide-zoom{display:block;width:100%;text-align:center}.swiper-slide{display:-ms-flexbox;display:flex;position:relative;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;font-size:18px;text-align:center;-webkit-box-sizing:border-box;box-sizing:border-box}.swiper-slide img{width:auto;max-width:100%;height:auto;max-height:100%}";
 
@@ -49,18 +52,8 @@ const Slides = class {
     this.swiperReady = false;
     this.swiper = new Promise(resolve => { this.readySwiper = resolve; });
     this.didInit = false;
-    /**
-     * Options to pass to the swiper instance.
-     * See http://idangero.us/swiper/api/ for valid options
-     */
-    this.options = {}; // SwiperOptions;  // TODO
-    /**
-     * If `true`, show the pagination.
-     */
+    this.options = {};
     this.pager = false;
-    /**
-     * If `true`, show the scrollbar.
-     */
     this.scrollbar = false;
   }
   async optionsChanged() {
@@ -257,7 +250,7 @@ const Slides = class {
     const finalOptions = this.normalizeOptions();
     // init swiper core
     // @ts-ignore
-    const { Swiper } = await Promise.resolve().then(function () { return require('./swiper.bundle-a219fe44.js'); });
+    const { Swiper } = await Promise.resolve().then(function () { return require('./swiper.bundle-373b3f6f.js'); });
     await waitForSlides(this.el);
     const swiper = new Swiper(this.el, finalOptions);
     this.swiperReady = true;

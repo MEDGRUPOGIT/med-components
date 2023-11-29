@@ -1,18 +1,19 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-bc2e4509.js');
-const color = require('./color-2d4645aa.js');
+const index = require('./index-a17b061b.js');
+const color = require('./color-c29da9e4.js');
 
 const medTabButtonCss = ":host{--border-color:hsl(var(--med-color-neutral-10));--color:hsl(var(--med-color-neutral-5));--color-active:hsl(var(--med-color-neutral-10));--padding-top:16px;--padding-bottom:14px}:host(.med-tab-button){cursor:pointer;position:relative;height:100%;-ms-flex:0 0 20%;flex:0 0 20%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;text-transform:uppercase;color:var(--color);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-weight:400}@media (any-hover: hover){:host(.med-tab-button:hover){color:var(--color-active)}}:host(.med-tab-button--active){border-bottom:2px solid var(--border-color);color:var(--color-active)}:host(.med-color.med-tab-button){--border-color:hsl(var(--med-color-3))}:host(.med-color-neutral.med-tab-button){--border-color:hsl(var(--med-color-neutral))}:host(.med-color-feedback.med-tab-button){--border-color:hsl(var(--med-color-feedback))}";
 
 const MedTabButton = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
-    /**
-     * todo
-     */
+    this.dsColor = undefined;
     this.active = false;
   }
   render() {

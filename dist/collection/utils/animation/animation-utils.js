@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 let animationPrefix;
 /**
  * Web Animations requires hyphenated CSS properties
