@@ -2,8 +2,8 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
-import { b as getIonMode } from './ionic-global-e35a57a3.js';
-import { c as createColorClasses } from './theme-a24ff1ad.js';
+import { b as getIonMode } from './ionic-global-790ea271.js';
+import { c as createColorClasses } from './theme-d8e919ca.js';
 
 const avatarIosCss = ":host{border-radius:var(--border-radius);display:block}::slotted(ion-img),::slotted(img){border-radius:var(--border-radius);width:100%;height:100%;-o-object-fit:cover;object-fit:cover;overflow:hidden}:host{--border-radius:50%;width:48px;height:48px}";
 

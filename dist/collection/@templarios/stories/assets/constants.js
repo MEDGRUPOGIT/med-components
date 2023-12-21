@@ -74,6 +74,7 @@ export const MedIcons = [
   'med-arrow-left-circle',
   'med-arrow-right-circle',
   'med-arrow-up',
+  'med-activity',
 
   'med-audio',
   'med-avaliar',
@@ -99,6 +100,7 @@ export const MedIcons = [
   'med-chevronx2-left',
   'med-chevronx2-right',
   'med-cima',
+  'med-clock-slow',
   'med-close',
 
   'med-comentario-questao',
@@ -233,6 +235,7 @@ export const MedIcons = [
 
   'med-questao',
   'med-questaoerrada',
+  'med-raio',
   'med-recursos',
   'med-regular',
   'med-reload',

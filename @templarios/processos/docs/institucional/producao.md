@@ -137,6 +137,8 @@ hide_title: true
 
 > **<a target="\_blank" href={require('../../static/videos/docs/institucional/institucional-video-25.mp4').default}> Criação de custom fields </a>**
 
+> **<a target="\_blank" href={require('../../static/videos/docs/institucional/institucional-video-25-1.mp4').default}> Categoria do vídeo </a>**
+
 > **<a target="\_blank" href={require('../../static/videos/docs/institucional/institucional-video-26.mp4').default}> Adicionar um vídeo </a>**
 
 > **<a target="\_blank" href={require('../../static/videos/docs/institucional/institucional-video-27.mp4').default}> medmedia-playlist </a>**

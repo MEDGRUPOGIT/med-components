@@ -41,6 +41,7 @@ export class TpInputContainer {
       return;
     const popoverElement = document.querySelector('.select-popover');
     popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--width', `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
+    this.setPopoverPosition();
   }
   setPopoverCharacteristics() {
     if (!this.host.contains(this.clickTarget))
@@ -59,16 +60,7 @@ export class TpInputContainer {
     if (popoverElement.classList.contains('popover-bottom')) {
       this.inverted = true;
     }
-    const { top, bottom, left } = this.host.getBoundingClientRect();
-    if (this.inverted) {
-      popoverElement.classList.add('tp-popover--inverted');
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left}px`);
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top}px`);
-    }
-    else {
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left + 1}px`);
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--top', `${bottom}px`);
-    }
+    this.setPopoverPosition();
   }
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7
@@ -88,6 +80,19 @@ export class TpInputContainer {
       if (!ionSelect.hasAttribute('interface')) {
         ionSelect.interfaceOptions = { cssClass: 'tp-hide' };
       }
+    }
+  }
+  setPopoverPosition() {
+    const popoverElement = document.querySelector('.select-popover');
+    const { top, bottom, left } = this.host.getBoundingClientRect();
+    if (this.inverted) {
+      popoverElement.classList.add('tp-popover--inverted');
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top}px`);
+    }
+    else {
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left + 1}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--top', `${bottom}px`);
     }
   }
   render() {

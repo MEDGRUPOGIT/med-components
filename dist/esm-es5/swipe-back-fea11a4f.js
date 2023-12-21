@@ -1,4 +1,0 @@
-/*!
- * (C) Ionic http://ionicframework.com - MIT License
- */
-import{j as clamp}from"./helpers-d6be6e4a.js";import{createGesture}from"./index-ad966da4.js";import"./gesture-controller-68c023a4.js";var createSwipeBackGesture=function(r,e,a,t,n){var o=r.ownerDocument.defaultView;var i=function(r){return r.startX<=50&&e()};var v=function(r){var e=r.deltaX;var a=e/o.innerWidth;t(a)};var c=function(r){var e=r.deltaX;var a=o.innerWidth;var t=e/a;var i=r.velocityX;var v=a/2;var c=i>=0&&(i>.2||r.deltaX>v);var s=c?1-t:t;var u=s*a;var d=0;if(u>5){var l=u/Math.abs(i);d=Math.min(l,540)}n(c,t<=0?.01:clamp(0,t,.9999),d)};return createGesture({el:r,gestureName:"goback-swipe",gesturePriority:40,threshold:10,canStart:i,onStart:a,onMove:v,onEnd:c})};export{createSwipeBackGesture};

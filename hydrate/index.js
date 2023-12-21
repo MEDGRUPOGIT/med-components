@@ -15597,23 +15597,27 @@ class MedCartaoRespostaItem {
   }; }
 }
 
-const medCartaoRespostaListaCss = "/*!@:host*/.sc-med-cartao-resposta-lista-h{position:relative;padding:0px;width:100%;max-width:1200px;margin:0px auto}/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{display:grid;-ms-flex-pack:center;justify-content:center;grid-template-columns:repeat(auto-fit, 10vw)}@media (max-width: 1199.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 10vw)}}@media (max-width: 991.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 13vw)}}@media (max-width: 767.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 14vw)}}@media (max-width: 575.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 17vw)}}@media (max-width: 379.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 19vw)}}";
+const medCartaoRespostaListaCss = "/*!@:host*/.sc-med-cartao-resposta-lista-h{position:relative;padding:0px;width:100%;max-width:1200px;margin:0px auto}/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{display:grid;-ms-flex-pack:center;justify-content:center;grid-template-columns:repeat(auto-fit, 10vw)}@media (max-width: 1199.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 10vw)}}@media (max-width: 991.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 13vw)}}@media (max-width: 767.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 14vw)}}@media (max-width: 575.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 17vw)}}@media (max-width: 379.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 19vw)}}/*!@:host .wrapper--flex*/.sc-med-cartao-resposta-lista-h .wrapper--flex.sc-med-cartao-resposta-lista{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}";
 
 class MedCartaoRespostaLista {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    this.isFlex = false;
   }
   render() {
-    return (hAsync(Host, { "from-stencil": true }, hAsync("div", { class: "wrapper" }, hAsync("slot", null))));
+    const { isFlex } = this;
+    return (hAsync(Host, { "from-stencil": true }, hAsync("div", { class: `wrapper ${isFlex ? 'wrapper--flex' : ''}` }, hAsync("slot", null))));
   }
   static get style() { return medCartaoRespostaListaCss; }
   static get cmpMeta() { return {
     "$flags$": 9,
     "$tagName$": "med-cartao-resposta-lista",
-    "$members$": undefined,
+    "$members$": {
+      "isFlex": [516, "is-flex"]
+    },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": []
+    "$attrsToReflect$": [["isFlex", "is-flex"]]
   }; }
 }
 
@@ -18066,21 +18070,62 @@ class MedPlusminus {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.medChange = createEvent(this, "medChange", 7);
+    this.medChangeAlt = createEvent(this, "medChangeAlt", 7);
     this.onClick = (status) => {
-      this.medChange.emit(status);
+      if (this.min === undefined ||
+        this.max === undefined ||
+        this.value === undefined ||
+        !this.automaticDisabled) {
+        return this.medChange.emit(status);
+      }
+      if (status === PlusMinusStatus.MINUS && this.value === this.min)
+        return;
+      if (status === PlusMinusStatus.PLUS && this.value === this.max)
+        return;
+      const increment = status === PlusMinusStatus.MINUS ? -1 : 1;
+      this.medChangeAlt.emit(this.value + increment);
     };
     this.dsColor = undefined;
     this.dsSize = undefined;
     this.disabled = undefined;
+    this.automaticDisabled = false;
+    this.useSlot = true;
+    this.value = undefined;
+    this.min = undefined;
+    this.max = undefined;
+  }
+  disabledHandler(newValue, _) {
+    if (this.min === undefined ||
+      this.max === undefined ||
+      this.value === undefined ||
+      !this.automaticDisabled)
+      return;
+    if (newValue === this.min && newValue === this.max) {
+      return (this.disabled = 'both');
+    }
+    if (newValue === this.min) {
+      return (this.disabled = 'minus');
+    }
+    if (newValue === this.max) {
+      return (this.disabled = 'plus');
+    }
+    this.disabled = undefined;
+  }
+  componentDidLoad() {
+    var _a;
+    this.disabledHandler((_a = this.value) !== null && _a !== void 0 ? _a : 0, 0);
   }
   render() {
-    const { dsSize, dsColor, disabled } = this;
+    const { dsSize, dsColor, disabled, useSlot, value } = this;
     return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-plusminus': true,
         [`med-plusminus--disabled-${disabled}`]: disabled !== undefined,
-        [`med-plusminus--${dsSize}`]: dsSize !== undefined,
-      }) }, hAsync("ion-icon", { class: "med-icon med-plusminus__icon-minus", name: "med-menos-circulo", onClick: () => this.onClick(PlusMinusStatus.MINUS) }), hAsync("slot", null), hAsync("ion-icon", { class: "med-icon med-plusminus__icon-plus", name: "med-mais-circulo", onClick: () => this.onClick(PlusMinusStatus.PLUS) })));
+        [`med-plusminus--${dsSize}`]: dsSize !== undefined
+      }) }, hAsync("ion-icon", { class: 'med-icon med-plusminus__icon-minus', name: 'med-menos-circulo', onClick: () => this.onClick(PlusMinusStatus.MINUS) }), useSlot ? hAsync("slot", null) : value !== null && value !== void 0 ? value : 0, hAsync("ion-icon", { class: 'med-icon med-plusminus__icon-plus', name: 'med-mais-circulo', onClick: () => this.onClick(PlusMinusStatus.PLUS) })));
   }
+  static get watchers() { return {
+    "value": ["disabledHandler"]
+  }; }
   static get style() { return medPlusminusCss; }
   static get cmpMeta() { return {
     "$flags$": 6,
@@ -18088,11 +18133,16 @@ class MedPlusminus {
     "$members$": {
       "dsColor": [513, "ds-color"],
       "dsSize": [513, "ds-size"],
-      "disabled": [513]
+      "disabled": [513],
+      "automaticDisabled": [516, "automatic-disabled"],
+      "useSlot": [516, "use-slot"],
+      "value": [514],
+      "min": [514],
+      "max": [514]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["dsColor", "ds-color"], ["dsSize", "ds-size"], ["disabled", "disabled"]]
+    "$attrsToReflect$": [["dsColor", "ds-color"], ["dsSize", "ds-size"], ["disabled", "disabled"], ["automaticDisabled", "automatic-disabled"], ["useSlot", "use-slot"], ["value", "value"], ["min", "min"], ["max", "max"]]
   }; }
 }
 
@@ -29397,6 +29447,7 @@ class TpInputContainer {
       return;
     const popoverElement = document.querySelector('.select-popover');
     popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--width', `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
+    this.setPopoverPosition();
   }
   setPopoverCharacteristics() {
     if (!this.host.contains(this.clickTarget))
@@ -29415,16 +29466,7 @@ class TpInputContainer {
     if (popoverElement.classList.contains('popover-bottom')) {
       this.inverted = true;
     }
-    const { top, bottom, left } = this.host.getBoundingClientRect();
-    if (this.inverted) {
-      popoverElement.classList.add('tp-popover--inverted');
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left}px`);
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top}px`);
-    }
-    else {
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left + 1}px`);
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--top', `${bottom}px`);
-    }
+    this.setPopoverPosition();
   }
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7
@@ -29444,6 +29486,19 @@ class TpInputContainer {
       if (!ionSelect.hasAttribute('interface')) {
         ionSelect.interfaceOptions = { cssClass: 'tp-hide' };
       }
+    }
+  }
+  setPopoverPosition() {
+    const popoverElement = document.querySelector('.select-popover');
+    const { top, bottom, left } = this.host.getBoundingClientRect();
+    if (this.inverted) {
+      popoverElement.classList.add('tp-popover--inverted');
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top}px`);
+    }
+    else {
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left + 1}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--top', `${bottom}px`);
     }
   }
   render() {

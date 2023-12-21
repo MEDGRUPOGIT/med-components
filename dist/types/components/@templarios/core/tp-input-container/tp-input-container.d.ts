@@ -62,5 +62,6 @@ export declare class TpInputContainer {
   fixPopover(): void;
   unsetClikedState(): void;
   componentDidLoad(): void;
+  setPopoverPosition(): void;
   render(): any;
 }

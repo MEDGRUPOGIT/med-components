@@ -6,7 +6,7 @@ export default {
   decorators: [withDesign],
 };
 
-const Template = () => {
+const Template = ({isFlex}) => {
   const generateCartaoResposta = () => {
     let cartaoResposta = [];
 
@@ -46,7 +46,7 @@ const Template = () => {
       <ion-content>
 
         <!-- component markdown -->
-        <med-cartao-resposta-lista> ${itemTemplates} </med-cartao-resposta-lista>
+        <med-cartao-resposta-lista ?is-flex=${isFlex}> ${itemTemplates} </med-cartao-resposta-lista>
         <!-- component markdown -->
 
       </ion-content>
@@ -61,3 +61,14 @@ Lista.parameters = {
     url: '',
   },
 }
+Lista.argTypes = {
+  isFlex: {
+    control: { type: 'boolean' },
+    description: 'Define a estilização do componente',
+    defaultValue: false,
+    table: {
+      type:  { summary: 'boolean' },
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+};

@@ -51,6 +51,13 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Questionario Especialidade Clinica',
+      items: [
+        'questionario-especialidade-clinica/questionario-especialidade-clinica',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Medsoft',
       items: [
         'medsoft/medsoft',

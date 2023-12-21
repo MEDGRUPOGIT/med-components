@@ -6286,6 +6286,14 @@ ion-item ion-button[slot=end] {
   margin: 0 0 0 8px;
 }
 
+ion-item div {
+  width: 100%;
+  padding: 0 8px;
+}
+ion-item ion-select {
+  max-width: 100%;
+}
+
 ion-item[gap=s00] ion-checkbox[slot=start],
 ion-item[gap=s00] ion-radio[slot=start],
 ion-item[gap=s00] ion-toggle[slot=start],
@@ -8189,151 +8197,272 @@ ion-popover[ds-color=fb-success] .select-interface-option:not(:last-child) {
 ion-progress-bar {
   --progress-background: hsl(var(--med-color-brand-4));
   --background: hsl(var(--med-color-brand-1));
+  --progress-correct-background: hsl(var(--med-color-brand-4));
+}
+
+ion-progress-bar[value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=brand] {
   --progress-background: hsl(var(--med-color-brand-4));
   --background: hsl(var(--med-color-brand-1));
+  --progress-correct-background: hsl(var(--med-color-brand-4));
+}
+ion-progress-bar[ds-color=brand][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=aula] {
   --progress-background: hsl(var(--med-color-aula-4));
   --background: hsl(var(--med-color-aula-1));
+  --progress-correct-background: hsl(var(--med-color-aula-4));
+}
+ion-progress-bar[ds-color=aula][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=material] {
   --progress-background: hsl(var(--med-color-material-4));
   --background: hsl(var(--med-color-material-1));
+  --progress-correct-background: hsl(var(--med-color-material-4));
+}
+ion-progress-bar[ds-color=material][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=questoes] {
   --progress-background: hsl(var(--med-color-questoes-4));
   --background: hsl(var(--med-color-questoes-1));
+  --progress-correct-background: hsl(var(--med-color-questoes-4));
+}
+ion-progress-bar[ds-color=questoes][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=revalida] {
   --progress-background: hsl(var(--med-color-revalida-4));
   --background: hsl(var(--med-color-revalida-1));
+  --progress-correct-background: hsl(var(--med-color-revalida-4));
+}
+ion-progress-bar[ds-color=revalida][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=provas] {
   --progress-background: hsl(var(--med-color-provas-4));
   --background: hsl(var(--med-color-provas-1));
+  --progress-correct-background: hsl(var(--med-color-provas-4));
+}
+ion-progress-bar[ds-color=provas][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-1] {
   --progress-background: hsl(var(--med-color-neutral-1));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-1));
+}
+ion-progress-bar[ds-color=neutral-1][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-2] {
   --progress-background: hsl(var(--med-color-neutral-2));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-2));
+}
+ion-progress-bar[ds-color=neutral-2][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-3] {
   --progress-background: hsl(var(--med-color-neutral-3));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-3));
+}
+ion-progress-bar[ds-color=neutral-3][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-4] {
   --progress-background: hsl(var(--med-color-neutral-4));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-4));
+}
+ion-progress-bar[ds-color=neutral-4][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-5] {
   --progress-background: hsl(var(--med-color-neutral-5));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-5));
+}
+ion-progress-bar[ds-color=neutral-5][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-6] {
   --progress-background: hsl(var(--med-color-neutral-6));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-neutral-6));
+}
+ion-progress-bar[ds-color=neutral-6][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-7] {
   --progress-background: hsl(var(--med-color-neutral-7));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-neutral-7));
+}
+ion-progress-bar[ds-color=neutral-7][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-8] {
   --progress-background: hsl(var(--med-color-neutral-8));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-neutral-8));
+}
+ion-progress-bar[ds-color=neutral-8][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-9] {
   --progress-background: hsl(var(--med-color-neutral-9));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-neutral-9));
+}
+ion-progress-bar[ds-color=neutral-9][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-10] {
   --progress-background: hsl(var(--med-color-neutral-10));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-neutral-10));
+}
+ion-progress-bar[ds-color=neutral-10][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-15] {
   --progress-background: hsl(var(--med-color-neutral-15));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-15));
+}
+ion-progress-bar[ds-color=neutral-15][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-25] {
   --progress-background: hsl(var(--med-color-neutral-25));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-25));
+}
+ion-progress-bar[ds-color=neutral-25][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-35] {
   --progress-background: hsl(var(--med-color-neutral-35));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-35));
+}
+ion-progress-bar[ds-color=neutral-35][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-45] {
   --progress-background: hsl(var(--med-color-neutral-45));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-45));
+}
+ion-progress-bar[ds-color=neutral-45][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-55] {
   --progress-background: hsl(var(--med-color-neutral-55));
   --background: hsl(var(--med-color-neutral-10));
+  --progress-correct-background: hsl(var(--med-color-neutral-55));
+}
+ion-progress-bar[ds-color=neutral-55][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-65] {
   --progress-background: hsl(var(--med-color-neutral-65));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-neutral-65));
+}
+ion-progress-bar[ds-color=neutral-65][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-75] {
   --progress-background: hsl(var(--med-color-neutral-75));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-neutral-75));
+}
+ion-progress-bar[ds-color=neutral-75][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-85] {
   --progress-background: hsl(var(--med-color-neutral-85));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-neutral-85));
+}
+ion-progress-bar[ds-color=neutral-85][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=neutral-95] {
   --progress-background: hsl(var(--med-color-neutral-95));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-neutral-95));
+}
+ion-progress-bar[ds-color=neutral-95][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=fb-attention] {
   --progress-background: hsl(var(--med-color-fb-attention));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-fb-attention));
+}
+ion-progress-bar[ds-color=fb-attention][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=fb-caution] {
   --progress-background: hsl(var(--med-color-fb-caution));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-fb-caution));
+}
+ion-progress-bar[ds-color=fb-caution][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=fb-warning] {
   --progress-background: hsl(var(--med-color-fb-warning));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-fb-warning));
+}
+ion-progress-bar[ds-color=fb-warning][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-progress-bar[ds-color=fb-success] {
   --progress-background: hsl(var(--med-color-fb-success));
   --background: hsl(var(--med-color-neutral-1));
+  --progress-correct-background: hsl(var(--med-color-fb-success));
+}
+ion-progress-bar[ds-color=fb-success][value="0"] {
+  --background: hsl(var(--med-color-neutral-8));
 }
 
 ion-radio {

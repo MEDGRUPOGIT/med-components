@@ -3180,6 +3180,10 @@ export namespace Components {
         "impressa": boolean;
     }
     interface MedCartaoRespostaLista {
+        /**
+          * Define a estilização do componente
+         */
+        "isFlex": boolean;
     }
     interface MedChartBar {
         /**
@@ -3789,6 +3793,10 @@ export namespace Components {
     }
     interface MedPlusminus {
         /**
+          * true se deve desabilitar os controles automaticamente
+         */
+        "automaticDisabled": boolean;
+        /**
           * todo
          */
         "disabled"?: 'minus' | 'plus' | 'both';
@@ -3800,6 +3808,22 @@ export namespace Components {
           * todo
          */
         "dsSize"?: 'xl';
+        /**
+          * O valor máximo
+         */
+        "max"?: number;
+        /**
+          * O valor mínimo
+         */
+        "min"?: number;
+        /**
+          * Deverá ser true se o valor atual vai ser passado por slot, false se vai ser passado por prop
+         */
+        "useSlot": boolean;
+        /**
+          * O valor atual (apenas se useSlot é false)
+         */
+        "value"?: number;
     }
     interface MedQuestion {
         /**
@@ -8872,6 +8896,10 @@ declare namespace LocalJSX {
         "impressa"?: boolean;
     }
     interface MedCartaoRespostaLista {
+        /**
+          * Define a estilização do componente
+         */
+        "isFlex"?: boolean;
     }
     interface MedChartBar {
         /**
@@ -9525,6 +9553,10 @@ declare namespace LocalJSX {
     }
     interface MedPlusminus {
         /**
+          * true se deve desabilitar os controles automaticamente
+         */
+        "automaticDisabled"?: boolean;
+        /**
           * todo
          */
         "disabled"?: 'minus' | 'plus' | 'both';
@@ -9537,9 +9569,29 @@ declare namespace LocalJSX {
          */
         "dsSize"?: 'xl';
         /**
+          * O valor máximo
+         */
+        "max"?: number;
+        /**
+          * O valor mínimo
+         */
+        "min"?: number;
+        /**
           * todo
          */
         "onMedChange"?: (event: MedPlusminusCustomEvent<PlusMinusStatus>) => void;
+        /**
+          * todo
+         */
+        "onMedChangeAlt"?: (event: MedPlusminusCustomEvent<number>) => void;
+        /**
+          * Deverá ser true se o valor atual vai ser passado por slot, false se vai ser passado por prop
+         */
+        "useSlot"?: boolean;
+        /**
+          * O valor atual (apenas se useSlot é false)
+         */
+        "value"?: number;
     }
     interface MedQuestion {
         /**
