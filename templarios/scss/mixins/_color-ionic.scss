@@ -1,19 +1,39 @@
-@mixin generate-component-color($component, $color, $i) {
+@mixin generate-component-color($component, $color, $i, $class: null) {
   @if ($i == 3) {
+    @if($class == true) {
+      #{$component}.tp-color-#{$color} {
+        @content;
+      }
+    } @else {
+      #{$component}[ds-color='#{$color}'] {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin generate-component-neutral($component, $color, $i, $class: null) {
+  @if($class == true) {
+    #{$component}.tp-color-#{$color} {
+      @content;
+    }
+  } @else {
     #{$component}[ds-color='#{$color}'] {
       @content;
     }
   }
 }
 
-@mixin generate-component-neutral($component, $color, $i) {
-  #{$component}[ds-color='#{$color}'] {
-    @content;
+@mixin generate-component-feedback($component, $color, $i, $class: null) {
+  @if($class == true) {
+    #{$component}.tp-color-#{$color} {
+      @content;
+    }
+  } @else {
+    #{$component}[ds-color='#{$color}'] {
+      @content;
+    }
   }
 }
 
-@mixin generate-component-feedback($component, $color, $i) {
-  #{$component}[ds-color='#{$color}'] {
-    @content;
-  }
-}
+

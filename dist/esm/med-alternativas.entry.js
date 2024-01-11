@@ -1,17 +1,16 @@
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
-import { r as registerInstance, f as createEvent, i as h, H as Host } from './index-336c66d9.js';
-import { j as MedSkin } from './type.enum-ba70b4d0.js';
-import './plusminus.enum-dd6be4e3.js';
-import './rate-like.enum-25c2a0be.js';
+import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
+import { j as MedSkin } from './type.enum-846e5dcb.js';
+import './plusminus.enum-6ca17e16.js';
+import './rate-like.enum-04fa254a.js';
 
 const medAlternativasCss = ":host{--font-size:16px;display:block}";
 
 const MedAlternativas = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    this.medGalleryRequest = createEvent(this, "medGalleryRequest", 7);
     this.dsColor = undefined;
     this.alternativas = [];
     this.dsSkinConfig = undefined;
@@ -27,7 +26,7 @@ const MedAlternativas = class {
   }
   render() {
     const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar } = this;
-    return (h(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (h("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedGalleryRequest: (ev) => this.medGalleryRequest.emit(ev.detail) })), dsSkinConfig.alternativas === MedSkin.B && (h("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedGalleryRequest: (ev) => this.medGalleryRequest.emit(ev.detail) }))));
+    return (h(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (h("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar })), dsSkinConfig.alternativas === MedSkin.B && (h("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar }))));
   }
 };
 MedAlternativas.style = medAlternativasCss;

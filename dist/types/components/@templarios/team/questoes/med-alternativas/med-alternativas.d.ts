@@ -1,4 +1,3 @@
-import { EventEmitter } from '../../../../../stencil-public-runtime';
 import { MedColor } from '../../../../../@templarios/types/color.type';
 import { MedAlternativaInterface, MedAlternativasInterface } from '../../../../../@templarios/interfaces/alternativas.interface';
 export declare class MedAlternativas implements MedAlternativasInterface {
@@ -50,9 +49,5 @@ export declare class MedAlternativas implements MedAlternativasInterface {
    * todo
    */
   permiteRiscar: boolean;
-  /**
-   * todo
-   */
-  medGalleryRequest: EventEmitter<MedAlternativaInterface>;
   render(): any;
 }

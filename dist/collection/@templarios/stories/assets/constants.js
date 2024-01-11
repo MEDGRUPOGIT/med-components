@@ -193,6 +193,7 @@ export const MedIcons = [
   'med-memoriadeaula',
   'med-menos-circulo',
   'med-menos',
+  'med-menu2',
   'med-metricas',
   'med-minus',
 
@@ -237,6 +238,7 @@ export const MedIcons = [
   'med-questaoerrada',
   'med-raio',
   'med-recursos',
+  'med-radio',
   'med-regular',
   'med-reload',
   'med-repeat',

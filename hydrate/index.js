@@ -14837,7 +14837,6 @@ const medAlternativasCss = "/*!@:host*/.sc-med-alternativas-h{--font-size:16px;d
 class MedAlternativas {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    this.medGalleryRequest = createEvent(this, "medGalleryRequest", 7);
     this.dsColor = undefined;
     this.alternativas = [];
     this.dsSkinConfig = undefined;
@@ -14853,7 +14852,7 @@ class MedAlternativas {
   }
   render() {
     const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar } = this;
-    return (hAsync(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (hAsync("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedGalleryRequest: (ev) => this.medGalleryRequest.emit(ev.detail) })), dsSkinConfig.alternativas === MedSkin.B && (hAsync("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, onMedGalleryRequest: (ev) => this.medGalleryRequest.emit(ev.detail) }))));
+    return (hAsync(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (hAsync("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar })), dsSkinConfig.alternativas === MedSkin.B && (hAsync("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar }))));
   }
   static get style() { return medAlternativasCss; }
   static get cmpMeta() { return {
@@ -26764,6 +26763,26 @@ class SheetContentTest {
   }; }
 }
 
+const sheetIaCss = ".sc-sheet-ia-h{display:block;height:100%;background:hsl(var(--med-color-neutral-2))}.lateral-ia__item.sc-sheet-ia{--background:hsl(var(--med-color-neutral-3))}.lateral-ia__item.sc-sheet-ia:hover{--background:hsl(var(--med-color-neutral-4))}";
+
+class SheetIa {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("ion-header", { class: "tp-sheet-header" }, hAsync("ion-button", { mode: "ios", "icon-only": true, class: "tp-dialog__button", fill: "clear", "ds-size": "xxs" }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))), hAsync("div", { class: "tp-sheet-content lateral-ia__itens" }, hAsync("med-nav-item", { class: "lateral-ia__item", icon: "med-busca", text: "Novo chat" }), hAsync("med-nav-item", { class: "lateral-ia__item", icon: "med-naorespondida", text: "Chat - 09/01/2024 - 17:06:55" }), hAsync("med-nav-item", { class: "lateral-ia__item", icon: "med-naorespondida", text: "Chat - 09/01/2024 - 17:06:55" }), hAsync("med-nav-item", { class: "lateral-ia__item", icon: "med-naorespondida", text: "Chat - 09/01/2024 - 17:06:55" }))));
+  }
+  static get style() { return sheetIaCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "sheet-ia",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
+
 const sheetTestCss = ".sc-sheet-test-h{display:block;height:100%}";
 
 class SheetTest {
@@ -27276,6 +27295,26 @@ class Slides {
 const waitForSlides = (el) => {
   return Promise.all(Array.from(el.querySelectorAll('ion-slide')).map(s => new Promise(resolve => componentOnReady(s, resolve))));
 };
+
+const snackbarTestCss = ".sc-snackbar-test-h{display:block;border-radius:0}";
+
+class SnackbarTest {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  render() {
+    return (hAsync(Host, null, hAsync("div", { class: "tp-snackbar__container" }, hAsync("ion-avatar", { "ds-size": "xxs" }), hAsync("med-type", { class: "tp-snackbar__text", token: "p16b" }, "1.341 alunos fizeram o simulado"), hAsync("ion-button", { class: "tp-snackbar__button", mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xxs" }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" })))));
+  }
+  static get style() { return snackbarTestCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "snackbar-test",
+    "$members$": undefined,
+    "$listeners$": undefined,
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": []
+  }; }
+}
 
 const spinnerCss = "/*!@:host*/.sc-ion-spinner-h{display:inline-block;position:relative;width:28px;height:28px;color:var(--color);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}/*!@:host(.ion-color)*/.ion-color.sc-ion-spinner-h{color:var(--ion-color-base)}/*!@svg*/svg.sc-ion-spinner{left:0;top:0;-webkit-transform-origin:center;transform-origin:center;position:absolute;width:100%;height:100%;-webkit-transform:translateZ(0);transform:translateZ(0)}/*!@[dir=rtl] svg, :host-context([dir=rtl]) svg*/[dir=rtl].sc-ion-spinner svg.sc-ion-spinner,[dir=rtl].sc-ion-spinner-h svg.sc-ion-spinner,[dir=rtl] .sc-ion-spinner-h svg.sc-ion-spinner{left:unset;right:unset;right:0}/*!@[dir=rtl] svg, :host-context([dir=rtl]) svg*/[dir=rtl].sc-ion-spinner svg.sc-ion-spinner,[dir=rtl].sc-ion-spinner-h svg.sc-ion-spinner,[dir=rtl] .sc-ion-spinner-h svg.sc-ion-spinner{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}/*!@:host(.spinner-lines) line,\n:host(.spinner-lines-small) line*/.spinner-lines.sc-ion-spinner-h line.sc-ion-spinner,.spinner-lines-small.sc-ion-spinner-h line.sc-ion-spinner{stroke-width:4px;stroke-linecap:round;stroke:currentColor}/*!@:host(.spinner-lines) svg,\n:host(.spinner-lines-small) svg*/.spinner-lines.sc-ion-spinner-h svg.sc-ion-spinner,.spinner-lines-small.sc-ion-spinner-h svg.sc-ion-spinner{-webkit-animation:spinner-fade-out 1s linear infinite;animation:spinner-fade-out 1s linear infinite}/*!@:host(.spinner-bubbles) svg*/.spinner-bubbles.sc-ion-spinner-h svg.sc-ion-spinner{-webkit-animation:spinner-scale-out 1s linear infinite;animation:spinner-scale-out 1s linear infinite;fill:currentColor}/*!@:host(.spinner-circles) svg*/.spinner-circles.sc-ion-spinner-h svg.sc-ion-spinner{-webkit-animation:spinner-fade-out 1s linear infinite;animation:spinner-fade-out 1s linear infinite;fill:currentColor}/*!@:host(.spinner-crescent) circle*/.spinner-crescent.sc-ion-spinner-h circle.sc-ion-spinner{fill:transparent;stroke-width:4px;stroke-dasharray:128px;stroke-dashoffset:82px;stroke:currentColor}/*!@:host(.spinner-crescent) svg*/.spinner-crescent.sc-ion-spinner-h svg.sc-ion-spinner{-webkit-animation:spinner-rotate 1s linear infinite;animation:spinner-rotate 1s linear infinite}/*!@:host(.spinner-dots) circle*/.spinner-dots.sc-ion-spinner-h circle.sc-ion-spinner{stroke-width:0;fill:currentColor}/*!@:host(.spinner-dots) svg*/.spinner-dots.sc-ion-spinner-h svg.sc-ion-spinner{-webkit-animation:spinner-dots 1s linear infinite;animation:spinner-dots 1s linear infinite}/*!@:host(.spinner-circular)*/.spinner-circular.sc-ion-spinner-h{-webkit-animation:spinner-circular linear infinite;animation:spinner-circular linear infinite}/*!@:host(.spinner-circular) circle*/.spinner-circular.sc-ion-spinner-h circle.sc-ion-spinner{-webkit-animation:spinner-circular-inner ease-in-out infinite;animation:spinner-circular-inner ease-in-out infinite;stroke:currentColor;stroke-dasharray:80px, 200px;stroke-dashoffset:0px;stroke-width:5.6;fill:none}/*!@:host(.spinner-paused),\n:host(.spinner-paused) svg,\n:host(.spinner-paused) circle*/.spinner-paused.sc-ion-spinner-h,.spinner-paused.sc-ion-spinner-h svg.sc-ion-spinner,.spinner-paused.sc-ion-spinner-h circle.sc-ion-spinner{-webkit-animation-play-state:paused;animation-play-state:paused}@-webkit-keyframes spinner-fade-out{0%{opacity:1}100%{opacity:0}}@keyframes spinner-fade-out{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes spinner-scale-out{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1)}100%{-webkit-transform:scale(0, 0);transform:scale(0, 0)}}@keyframes spinner-scale-out{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1)}100%{-webkit-transform:scale(0, 0);transform:scale(0, 0)}}@-webkit-keyframes spinner-rotate{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spinner-rotate{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes spinner-dots{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}50%{-webkit-transform:scale(0.4, 0.4);transform:scale(0.4, 0.4);opacity:0.3}100%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}}@keyframes spinner-dots{0%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}50%{-webkit-transform:scale(0.4, 0.4);transform:scale(0.4, 0.4);opacity:0.3}100%{-webkit-transform:scale(1, 1);transform:scale(1, 1);opacity:0.9}}@-webkit-keyframes spinner-circular{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spinner-circular{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes spinner-circular-inner{0%{stroke-dasharray:1px, 200px;stroke-dashoffset:0px}50%{stroke-dasharray:100px, 200px;stroke-dashoffset:-15px}100%{stroke-dasharray:100px, 200px;stroke-dashoffset:-125px}}@keyframes spinner-circular-inner{0%{stroke-dasharray:1px, 200px;stroke-dashoffset:0px}50%{stroke-dasharray:100px, 200px;stroke-dashoffset:-15px}100%{stroke-dasharray:100px, 200px;stroke-dashoffset:-125px}}";
 
@@ -30314,11 +30353,13 @@ registerComponents([
   SelectPopover,
   SelectTest,
   SheetContentTest,
+  SheetIa,
   SheetTest,
   SimuladoModal,
   SkeletonText,
   Slide,
   Slides,
+  SnackbarTest,
   Spinner,
   SplitPane,
   Tab,
