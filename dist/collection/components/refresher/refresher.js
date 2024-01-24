@@ -560,7 +560,7 @@ export class Refresher {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "The minimum distance the user must pull down until the\nrefresher will go into the `refreshing` state.\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher."
+          "text": "The minimum distance the user must pull down until the\r\nrefresher will go into the `refreshing` state.\r\nDoes not apply when the refresher content uses a spinner,\r\nenabling the native refresher."
         },
         "attribute": "pull-min",
         "reflect": false,
@@ -578,7 +578,7 @@ export class Refresher {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "The maximum distance of the pull until the refresher\nwill automatically go into the `refreshing` state.\nDefaults to the result of `pullMin + 60`.\nDoes not apply when  the refresher content uses a spinner,\nenabling the native refresher."
+          "text": "The maximum distance of the pull until the refresher\r\nwill automatically go into the `refreshing` state.\r\nDefaults to the result of `pullMin + 60`.\r\nDoes not apply when  the refresher content uses a spinner,\r\nenabling the native refresher."
         },
         "attribute": "pull-max",
         "reflect": false,
@@ -596,7 +596,7 @@ export class Refresher {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Time it takes to close the refresher.\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher."
+          "text": "Time it takes to close the refresher.\r\nDoes not apply when the refresher content uses a spinner,\r\nenabling the native refresher."
         },
         "attribute": "close-duration",
         "reflect": false,
@@ -614,7 +614,7 @@ export class Refresher {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Time it takes the refresher to to snap back to the `refreshing` state.\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher."
+          "text": "Time it takes the refresher to to snap back to the `refreshing` state.\r\nDoes not apply when the refresher content uses a spinner,\r\nenabling the native refresher."
         },
         "attribute": "snapback-duration",
         "reflect": false,
@@ -632,7 +632,7 @@ export class Refresher {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "How much to multiply the pull speed by. To slow the pull animation down,\npass a number less than `1`. To speed up the pull, pass a number greater\nthan `1`. The default value is `1` which is equal to the speed of the cursor.\nIf a negative value is passed in, the factor will be `1` instead.\n\nFor example: If the value passed is `1.2` and the content is dragged by\n`10` pixels, instead of `10` pixels the content will be pulled by `12` pixels\n(an increase of 20 percent). If the value passed is `0.8`, the dragged amount\nwill be `8` pixels, less than the amount the cursor has moved.\n\nDoes not apply when the refresher content uses a spinner,\nenabling the native refresher."
+          "text": "How much to multiply the pull speed by. To slow the pull animation down,\r\npass a number less than `1`. To speed up the pull, pass a number greater\r\nthan `1`. The default value is `1` which is equal to the speed of the cursor.\r\nIf a negative value is passed in, the factor will be `1` instead.\r\n\r\nFor example: If the value passed is `1.2` and the content is dragged by\r\n`10` pixels, instead of `10` pixels the content will be pulled by `12` pixels\r\n(an increase of 20 percent). If the value passed is `0.8`, the dragged amount\r\nwill be `8` pixels, less than the amount the cursor has moved.\r\n\r\nDoes not apply when the refresher content uses a spinner,\r\nenabling the native refresher."
         },
         "attribute": "pull-factor",
         "reflect": false,
@@ -673,7 +673,7 @@ export class Refresher {
         "composed": true,
         "docs": {
           "tags": [],
-          "text": "Emitted when the user lets go of the content and has pulled down\nfurther than the `pullMin` or pulls the content down and exceeds the pullMax.\nUpdates the refresher state to `refreshing`. The `complete()` method should be\ncalled when the async operation has completed."
+          "text": "Emitted when the user lets go of the content and has pulled down\r\nfurther than the `pullMin` or pulls the content down and exceeds the pullMax.\r\nUpdates the refresher state to `refreshing`. The `complete()` method should be\r\ncalled when the async operation has completed."
         },
         "complexType": {
           "original": "RefresherEventDetail",
@@ -731,7 +731,7 @@ export class Refresher {
           "return": "Promise<void>"
         },
         "docs": {
-          "text": "Call `complete()` when your async operation has completed.\nFor example, the `refreshing` state is while the app is performing\nan asynchronous operation, such as receiving more data from an\nAJAX request. Once the data has been received, you then call this\nmethod to signify that the refreshing has completed and to close\nthe refresher. This method also changes the refresher's state from\n`refreshing` to `completing`.",
+          "text": "Call `complete()` when your async operation has completed.\r\nFor example, the `refreshing` state is while the app is performing\r\nan asynchronous operation, such as receiving more data from an\r\nAJAX request. Once the data has been received, you then call this\r\nmethod to signify that the refreshing has completed and to close\r\nthe refresher. This method also changes the refresher's state from\r\n`refreshing` to `completing`.",
           "tags": []
         }
       },
@@ -763,7 +763,7 @@ export class Refresher {
           "return": "Promise<number>"
         },
         "docs": {
-          "text": "A number representing how far down the user has pulled.\nThe number `0` represents the user hasn't pulled down at all. The\nnumber `1`, and anything greater than `1`, represents that the user\nhas pulled far enough down that when they let go then the refresh will\nhappen. If they let go and the number is less than `1`, then the\nrefresh will not happen, and the content will return to it's original\nposition.",
+          "text": "A number representing how far down the user has pulled.\r\nThe number `0` represents the user hasn't pulled down at all. The\r\nnumber `1`, and anything greater than `1`, represents that the user\r\nhas pulled far enough down that when they let go then the refresh will\r\nhappen. If they let go and the number is less than `1`, then the\r\nrefresh will not happen, and the content will return to it's original\r\nposition.",
           "tags": []
         }
       }

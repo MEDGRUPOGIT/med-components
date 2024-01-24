@@ -2906,6 +2906,10 @@ export namespace Components {
         /**
           * todo
          */
+        "permiteDesmarcar": boolean;
+        /**
+          * todo
+         */
         "permiteRiscar": boolean;
         /**
           * todo
@@ -2960,6 +2964,10 @@ export namespace Components {
         /**
           * todo
          */
+        "permiteDesmarcar": boolean;
+        /**
+          * todo
+         */
         "permiteRiscar": boolean;
         /**
           * todo
@@ -3011,6 +3019,10 @@ export namespace Components {
           * todo
          */
         "mostraResposta": boolean;
+        /**
+          * todo
+         */
+        "permiteDesmarcar": boolean;
         /**
           * todo
          */
@@ -8593,6 +8605,10 @@ declare namespace LocalJSX {
         /**
           * todo
          */
+        "permiteDesmarcar"?: boolean;
+        /**
+          * todo
+         */
         "permiteRiscar"?: boolean;
         /**
           * todo
@@ -8659,6 +8675,10 @@ declare namespace LocalJSX {
         /**
           * todo
          */
+        "permiteDesmarcar"?: boolean;
+        /**
+          * todo
+         */
         "permiteRiscar"?: boolean;
         /**
           * todo
@@ -8722,6 +8742,10 @@ declare namespace LocalJSX {
           * todo
          */
         "onMedRiscada"?: (event: MedAlternativasBCustomEvent<MedAlternativaInterface>) => void;
+        /**
+          * todo
+         */
+        "permiteDesmarcar"?: boolean;
         /**
           * todo
          */

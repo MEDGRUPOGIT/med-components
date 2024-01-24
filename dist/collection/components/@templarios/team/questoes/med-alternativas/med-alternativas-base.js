@@ -54,13 +54,18 @@ export class MedAlternativasBase {
     this.parent.permiteAlterar = true;
   }
   alterarAlternativa(item) {
-    var _a;
+    var _a, _b;
     const alternativa = item;
     if (alternativa.Riscada && this.parent.permiteRiscar) {
       return;
     }
+    console.log('permiteDesmarcar..........', this.parent.permiteDesmarcar);
+    if (this.parent.alternativaSelecionada === alternativa.Alternativa && this.parent.permiteDesmarcar) {
+      this.parent.alternativaSelecionada = '';
+      return (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(Object.assign(Object.assign({}, alternativa), { Alternativa: '' }));
+    }
     this.parent.alternativaSelecionada = alternativa.Alternativa;
-    (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
+    (_b = this.parent.medChange) === null || _b === void 0 ? void 0 : _b.emit(alternativa);
   }
   riscar(event, alternativa) {
     var _a;

@@ -81,7 +81,8 @@ SkinA.argTypes = {
       alternativaSelecionada: null,
       respostaCorreta: 'C',
       mostraResposta: true,
-      permiteRiscar: true
+      permiteRiscar: true,
+      permiteDesmarcar: false,
     },
     table: {
       type:  { summary: 'MedAlternativasInterface' },

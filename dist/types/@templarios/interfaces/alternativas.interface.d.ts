@@ -22,6 +22,7 @@ export interface MedAlternativasInterface {
   };
 }
 export interface MedAlternativasInternoInterface extends MedAlternativasInterface {
+  permiteDesmarcar: boolean;
   permiteAlterar: boolean;
   riscarAtivoIndice: number;
   medChange?: EventEmitter<MedAlternativaInterface>;

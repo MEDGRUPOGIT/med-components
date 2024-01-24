@@ -14849,10 +14849,11 @@ class MedAlternativas {
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
+    this.permiteDesmarcar = false;
   }
   render() {
-    const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar } = this;
-    return (hAsync(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (hAsync("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar })), dsSkinConfig.alternativas === MedSkin.B && (hAsync("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar }))));
+    const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar, permiteDesmarcar } = this;
+    return (hAsync(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (hAsync("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar })), dsSkinConfig.alternativas === MedSkin.B && (hAsync("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar }))));
   }
   static get style() { return medAlternativasCss; }
   static get cmpMeta() { return {
@@ -14870,7 +14871,8 @@ class MedAlternativas {
       "respostaCorreta": [1537, "resposta-correta"],
       "mostraResposta": [1540, "mostra-resposta"],
       "alternativaSelecionada": [1537, "alternativa-selecionada"],
-      "permiteRiscar": [1028, "permite-riscar"]
+      "permiteRiscar": [1028, "permite-riscar"],
+      "permiteDesmarcar": [1028, "permite-desmarcar"]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
@@ -14955,13 +14957,18 @@ class MedAlternativasBase {
     this.parent.permiteAlterar = true;
   }
   alterarAlternativa(item) {
-    var _a;
+    var _a, _b;
     const alternativa = item;
     if (alternativa.Riscada && this.parent.permiteRiscar) {
       return;
     }
+    console.log('permiteDesmarcar..........', this.parent.permiteDesmarcar);
+    if (this.parent.alternativaSelecionada === alternativa.Alternativa && this.parent.permiteDesmarcar) {
+      this.parent.alternativaSelecionada = '';
+      return (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(Object.assign(Object.assign({}, alternativa), { Alternativa: '' }));
+    }
     this.parent.alternativaSelecionada = alternativa.Alternativa;
-    (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
+    (_b = this.parent.medChange) === null || _b === void 0 ? void 0 : _b.emit(alternativa);
   }
   riscar(event, alternativa) {
     var _a;
@@ -15001,6 +15008,7 @@ class MedAlternativasA {
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
+    this.permiteDesmarcar = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
   }
@@ -15062,6 +15070,7 @@ class MedAlternativasA {
       "mostraResposta": [1540, "mostra-resposta"],
       "alternativaSelecionada": [1537, "alternativa-selecionada"],
       "permiteRiscar": [1028, "permite-riscar"],
+      "permiteDesmarcar": [1028, "permite-desmarcar"],
       "permiteAlterar": [32],
       "riscarAtivoIndice": [32]
     },
@@ -15093,6 +15102,7 @@ class MedAlternativasB {
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
+    this.permiteDesmarcar = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
   }
@@ -15143,6 +15153,7 @@ class MedAlternativasB {
       "mostraResposta": [1540, "mostra-resposta"],
       "alternativaSelecionada": [1537, "alternativa-selecionada"],
       "permiteRiscar": [1028, "permite-riscar"],
+      "permiteDesmarcar": [1028, "permite-desmarcar"],
       "permiteAlterar": [32],
       "riscarAtivoIndice": [32]
     },

@@ -1694,4 +1694,43 @@ ion-content {
   display: block;
 }
 
+.ranking {
+  --background: hsl(var(--med-color-neutral-1)) !important;
+}
+.ranking__content {
+  padding: 32px 40px 64px;
+  max-width: 1096px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 575.98px) {
+  .ranking__content {
+    padding: 24px 24px 40px;
+  }
+}
+.ranking__list {
+  --ion-item-background: transparent;
+}
+.ranking__item:not(:last-child) {
+  margin-bottom: 8px;
+}
+.ranking__item--highlight {
+  --background: hsl(var(--med-color-brand-2)) !important;
+}
+.ranking__avatar-label {
+  --tp-label-font-size: 24px;
+  --tp-label-line-height: 24px;
+  --tp-label-font-weight: 600;
+}
+.ranking__name {
+  --tp-label-font-size: 16px;
+  --tp-label-line-height: 16px;
+}
+.ranking__position {
+  --tp-label-font-size: 18px;
+  --tp-label-line-height: 18px;
+  --tp-label-font-weight: 600;
+  text-align: end;
+}
+
 /*# sourceMappingURL=migracao-temporario.css.map */
