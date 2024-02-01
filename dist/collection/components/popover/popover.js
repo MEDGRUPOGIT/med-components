@@ -1,552 +1,1258 @@
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
-import { Host, h } from '@stencil/core';
-import { getIonMode } from '../../global/ionic-global';
-import { attachComponent, detachComponent } from '../../utils/framework-delegate';
-import { BACKDROP, dismiss, eventMethod, prepareOverlay, present } from '../../utils/overlays';
-import { getClassMap } from '../../utils/theme';
-import { deepReady } from '../../utils/transition';
-import { iosEnterAnimation } from './animations/ios.enter';
-import { iosLeaveAnimation } from './animations/ios.leave';
-import { mdEnterAnimation } from './animations/md.enter';
-import { mdLeaveAnimation } from './animations/md.leave';
+import { Host, h } from "@stencil/core";
+import { CoreDelegate, attachComponent, detachComponent } from "../../utils/framework-delegate";
+import { addEventListener, raf, hasLazyBuild } from "../../utils/helpers";
+import { createLockController } from "../../utils/lock-controller";
+import { printIonWarning } from "../../utils/logging";
+import { BACKDROP, dismiss, eventMethod, focusFirstDescendant, prepareOverlay, present, setOverlayId, } from "../../utils/overlays";
+import { isPlatform } from "../../utils/platform";
+import { getClassMap } from "../../utils/theme";
+import { deepReady, waitForMount } from "../../utils/transition";
+import { getIonMode } from "../../global/ionic-global";
+import { iosEnterAnimation } from "./animations/ios.enter";
+import { iosLeaveAnimation } from "./animations/ios.leave";
+import { mdEnterAnimation } from "./animations/md.enter";
+import { mdLeaveAnimation } from "./animations/md.leave";
+import { configureDismissInteraction, configureKeyboardInteraction, configureTriggerInteraction } from "./utils";
+// TODO(FW-2832): types
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
+ *
+ * @slot - Content is placed inside of the `.popover-content` element.
+ *
+ * @part backdrop - The `ion-backdrop` element.
+ * @part arrow - The arrow that points to the reference element. Only applies on `ios` mode.
+ * @part content - The wrapper element for the default slot.
  */
 export class Popover {
-  constructor() {
-    this.presented = false;
-    this.onDismiss = (ev) => {
-      ev.stopPropagation();
-      ev.preventDefault();
-      this.dismiss();
-    };
-    this.onBackdropTap = () => {
-      this.dismiss(undefined, BACKDROP);
-    };
-    this.onLifecycle = (modalEvent) => {
-      const el = this.usersElement;
-      const name = LIFECYCLE_MAP[modalEvent.type];
-      if (el && name) {
-        const event = new CustomEvent(name, {
-          bubbles: false,
-          cancelable: false,
-          detail: modalEvent.detail
+    constructor() {
+        this.parentPopover = null;
+        this.coreDelegate = CoreDelegate();
+        this.lockController = createLockController();
+        this.inline = false;
+        this.focusDescendantOnPresent = false;
+        this.onBackdropTap = () => {
+            this.dismiss(undefined, BACKDROP);
+        };
+        this.onLifecycle = (modalEvent) => {
+            const el = this.usersElement;
+            const name = LIFECYCLE_MAP[modalEvent.type];
+            if (el && name) {
+                const event = new CustomEvent(name, {
+                    bubbles: false,
+                    cancelable: false,
+                    detail: modalEvent.detail,
+                });
+                el.dispatchEvent(event);
+            }
+        };
+        this.configureTriggerInteraction = () => {
+            const { trigger, triggerAction, el, destroyTriggerInteraction } = this;
+            if (destroyTriggerInteraction) {
+                destroyTriggerInteraction();
+            }
+            if (trigger === undefined) {
+                return;
+            }
+            const triggerEl = (this.triggerEl = trigger !== undefined ? document.getElementById(trigger) : null);
+            if (!triggerEl) {
+                printIonWarning(`A trigger element with the ID "${trigger}" was not found in the DOM. The trigger element must be in the DOM when the "trigger" property is set on ion-popover.`, this.el);
+                return;
+            }
+            this.destroyTriggerInteraction = configureTriggerInteraction(triggerEl, triggerAction, el);
+        };
+        this.configureKeyboardInteraction = () => {
+            const { destroyKeyboardInteraction, el } = this;
+            if (destroyKeyboardInteraction) {
+                destroyKeyboardInteraction();
+            }
+            this.destroyKeyboardInteraction = configureKeyboardInteraction(el);
+        };
+        this.configureDismissInteraction = () => {
+            const { destroyDismissInteraction, parentPopover, triggerAction, triggerEl, el } = this;
+            if (!parentPopover || !triggerEl) {
+                return;
+            }
+            if (destroyDismissInteraction) {
+                destroyDismissInteraction();
+            }
+            this.destroyDismissInteraction = configureDismissInteraction(triggerEl, triggerAction, el, parentPopover);
+        };
+        this.presented = false;
+        this.hasController = false;
+        this.delegate = undefined;
+        this.overlayIndex = undefined;
+        this.enterAnimation = undefined;
+        this.leaveAnimation = undefined;
+        this.component = undefined;
+        this.componentProps = undefined;
+        this.keyboardClose = true;
+        this.cssClass = undefined;
+        this.backdropDismiss = true;
+        this.event = undefined;
+        this.showBackdrop = true;
+        this.translucent = false;
+        this.animated = true;
+        this.htmlAttributes = undefined;
+        this.triggerAction = 'click';
+        this.trigger = undefined;
+        this.size = 'auto';
+        this.dismissOnSelect = false;
+        this.reference = 'trigger';
+        this.side = 'bottom';
+        this.alignment = undefined;
+        this.arrow = true;
+        this.isOpen = false;
+        this.keyboardEvents = false;
+        this.keepContentsMounted = false;
+    }
+    onTriggerChange() {
+        this.configureTriggerInteraction();
+    }
+    onIsOpenChange(newValue, oldValue) {
+        if (newValue === true && oldValue === false) {
+            this.present();
+        }
+        else if (newValue === false && oldValue === true) {
+            this.dismiss();
+        }
+    }
+    connectedCallback() {
+        const { configureTriggerInteraction, el } = this;
+        prepareOverlay(el);
+        configureTriggerInteraction();
+    }
+    disconnectedCallback() {
+        const { destroyTriggerInteraction } = this;
+        if (destroyTriggerInteraction) {
+            destroyTriggerInteraction();
+        }
+    }
+    componentWillLoad() {
+        const { el } = this;
+        const popoverId = setOverlayId(el);
+        this.parentPopover = el.closest(`ion-popover:not(#${popoverId})`);
+        if (this.alignment === undefined) {
+            this.alignment = getIonMode(this) === 'ios' ? 'center' : 'start';
+        }
+    }
+    componentDidLoad() {
+        const { parentPopover, isOpen } = this;
+        /**
+         * If popover was rendered with isOpen="true"
+         * then we should open popover immediately.
+         */
+        if (isOpen === true) {
+            raf(() => this.present());
+        }
+        if (parentPopover) {
+            addEventListener(parentPopover, 'ionPopoverWillDismiss', () => {
+                this.dismiss(undefined, undefined, false);
+            });
+        }
+        /**
+         * When binding values in frameworks such as Angular
+         * it is possible for the value to be set after the Web Component
+         * initializes but before the value watcher is set up in Stencil.
+         * As a result, the watcher callback may not be fired.
+         * We work around this by manually calling the watcher
+         * callback when the component has loaded and the watcher
+         * is configured.
+         */
+        this.configureTriggerInteraction();
+    }
+    /**
+     * When opening a popover from a trigger, we should not be
+     * modifying the `event` prop from inside the component.
+     * Additionally, when pressing the "Right" arrow key, we need
+     * to shift focus to the first descendant in the newly presented
+     * popover.
+     *
+     * @internal
+     */
+    async presentFromTrigger(event, focusDescendant = false) {
+        this.focusDescendantOnPresent = focusDescendant;
+        await this.present(event);
+        this.focusDescendantOnPresent = false;
+    }
+    /**
+     * Determines whether or not an overlay
+     * is being used inline or via a controller/JS
+     * and returns the correct delegate.
+     * By default, subsequent calls to getDelegate
+     * will use a cached version of the delegate.
+     * This is useful for calling dismiss after
+     * present so that the correct delegate is given.
+     */
+    getDelegate(force = false) {
+        if (this.workingDelegate && !force) {
+            return {
+                delegate: this.workingDelegate,
+                inline: this.inline,
+            };
+        }
+        /**
+         * If using overlay inline
+         * we potentially need to use the coreDelegate
+         * so that this works in vanilla JS apps.
+         * If a developer has presented this component
+         * via a controller, then we can assume
+         * the component is already in the
+         * correct place.
+         */
+        const parentEl = this.el.parentNode;
+        const inline = (this.inline = parentEl !== null && !this.hasController);
+        const delegate = (this.workingDelegate = inline ? this.delegate || this.coreDelegate : this.delegate);
+        return { inline, delegate };
+    }
+    /**
+     * Present the popover overlay after it has been created.
+     * Developers can pass a mouse, touch, or pointer event
+     * to position the popover relative to where that event
+     * was dispatched.
+     */
+    async present(event) {
+        const unlock = await this.lockController.lock();
+        if (this.presented) {
+            unlock();
+            return;
+        }
+        const { el } = this;
+        const { inline, delegate } = this.getDelegate(true);
+        /**
+         * Emit ionMount so JS Frameworks have an opportunity
+         * to add the child component to the DOM. The child
+         * component will be assigned to this.usersElement below.
+         */
+        this.ionMount.emit();
+        this.usersElement = await attachComponent(delegate, el, this.component, ['popover-viewport'], this.componentProps, inline);
+        if (!this.keyboardEvents) {
+            this.configureKeyboardInteraction();
+        }
+        this.configureDismissInteraction();
+        /**
+         * When using the lazy loaded build of Stencil, we need to wait
+         * for every Stencil component instance to be ready before presenting
+         * otherwise there can be a flash of unstyled content. With the
+         * custom elements bundle we need to wait for the JS framework
+         * mount the inner contents of the overlay otherwise WebKit may
+         * get the transition incorrect.
+         */
+        if (hasLazyBuild(el)) {
+            await deepReady(this.usersElement);
+            /**
+             * If keepContentsMounted="true" then the
+             * JS Framework has already mounted the inner
+             * contents so there is no need to wait.
+             * Otherwise, we need to wait for the JS
+             * Framework to mount the inner contents
+             * of this component.
+             */
+        }
+        else if (!this.keepContentsMounted) {
+            await waitForMount();
+        }
+        await present(this, 'popoverEnter', iosEnterAnimation, mdEnterAnimation, {
+            event: event || this.event,
+            size: this.size,
+            trigger: this.triggerEl,
+            reference: this.reference,
+            side: this.side,
+            align: this.alignment,
         });
-        el.dispatchEvent(event);
-      }
-    };
-    this.delegate = undefined;
-    this.overlayIndex = undefined;
-    this.enterAnimation = undefined;
-    this.leaveAnimation = undefined;
-    this.component = undefined;
-    this.componentProps = undefined;
-    this.keyboardClose = true;
-    this.cssClass = undefined;
-    this.backdropDismiss = true;
-    this.event = undefined;
-    this.showBackdrop = true;
-    this.translucent = false;
-    this.animated = true;
-  }
-  connectedCallback() {
-    prepareOverlay(this.el);
-  }
-  /**
-   * Present the popover overlay after it has been created.
-   */
-  async present() {
-    if (this.presented) {
-      return;
+        /**
+         * If popover is nested and was
+         * presented using the "Right" arrow key,
+         * we need to move focus to the first
+         * descendant inside of the popover.
+         */
+        if (this.focusDescendantOnPresent) {
+            focusFirstDescendant(this.el, this.el);
+        }
+        unlock();
     }
-    const container = this.el.querySelector('.popover-content');
-    if (!container) {
-      throw new Error('container is undefined');
+    /**
+     * Dismiss the popover overlay after it has been presented.
+     *
+     * @param data Any data to emit in the dismiss events.
+     * @param role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'.
+     * @param dismissParentPopover If `true`, dismissing this popover will also dismiss
+     * a parent popover if this popover is nested. Defaults to `true`.
+     */
+    async dismiss(data, role, dismissParentPopover = true) {
+        const unlock = await this.lockController.lock();
+        const { destroyKeyboardInteraction, destroyDismissInteraction } = this;
+        if (dismissParentPopover && this.parentPopover) {
+            this.parentPopover.dismiss(data, role, dismissParentPopover);
+        }
+        const shouldDismiss = await dismiss(this, data, role, 'popoverLeave', iosLeaveAnimation, mdLeaveAnimation, this.event);
+        if (shouldDismiss) {
+            if (destroyKeyboardInteraction) {
+                destroyKeyboardInteraction();
+                this.destroyKeyboardInteraction = undefined;
+            }
+            if (destroyDismissInteraction) {
+                destroyDismissInteraction();
+                this.destroyDismissInteraction = undefined;
+            }
+            /**
+             * If using popover inline
+             * we potentially need to use the coreDelegate
+             * so that this works in vanilla JS apps
+             */
+            const { delegate } = this.getDelegate();
+            await detachComponent(delegate, this.usersElement);
+        }
+        unlock();
+        return shouldDismiss;
     }
-    const data = Object.assign(Object.assign({}, this.componentProps), { popover: this.el });
-    this.usersElement = await attachComponent(this.delegate, container, this.component, ['popover-viewport', this.el['s-sc']], data);
-    await deepReady(this.usersElement);
-    return present(this, 'popoverEnter', iosEnterAnimation, mdEnterAnimation, this.event);
-  }
-  /**
-   * Dismiss the popover overlay after it has been presented.
-   *
-   * @param data Any data to emit in the dismiss events.
-   * @param role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'.
-   */
-  async dismiss(data, role) {
-    const shouldDismiss = await dismiss(this, data, role, 'popoverLeave', iosLeaveAnimation, mdLeaveAnimation, this.event);
-    if (shouldDismiss) {
-      await detachComponent(this.delegate, this.usersElement);
+    /**
+     * @internal
+     */
+    async getParentPopover() {
+        return this.parentPopover;
     }
-    return shouldDismiss;
-  }
-  /**
-   * Returns a promise that resolves when the popover did dismiss.
-   */
-  onDidDismiss() {
-    return eventMethod(this.el, 'ionPopoverDidDismiss');
-  }
-  /**
-   * Returns a promise that resolves when the popover will dismiss.
-   */
-  onWillDismiss() {
-    return eventMethod(this.el, 'ionPopoverWillDismiss');
-  }
-  render() {
-    const mode = getIonMode(this);
-    const { onLifecycle } = this;
-    return (h(Host, { "aria-modal": "true", "no-router": true, tabindex: "-1", style: {
-        zIndex: `${20000 + this.overlayIndex}`,
-      }, class: Object.assign(Object.assign({}, getClassMap(this.cssClass)), { [mode]: true, 'popover-translucent': this.translucent }), onIonPopoverDidPresent: onLifecycle, onIonPopoverWillPresent: onLifecycle, onIonPopoverWillDismiss: onLifecycle, onIonPopoverDidDismiss: onLifecycle, onIonDismiss: this.onDismiss, onIonBackdropTap: this.onBackdropTap }, h("ion-backdrop", { tappable: this.backdropDismiss, visible: this.showBackdrop }), h("div", { tabindex: "0" }), h("div", { class: "popover-wrapper ion-overlay-wrapper" }, h("div", { class: "popover-arrow" }), h("div", { class: "popover-content" })), h("div", { tabindex: "0" })));
-  }
-  static get is() { return "ion-popover"; }
-  static get encapsulation() { return "scoped"; }
-  static get originalStyleUrls() {
-    return {
-      "ios": ["popover.ios.scss"],
-      "md": ["popover.md.scss"]
-    };
-  }
-  static get styleUrls() {
-    return {
-      "ios": ["popover.ios.css"],
-      "md": ["popover.md.css"]
-    };
-  }
-  static get properties() {
-    return {
-      "delegate": {
-        "type": "unknown",
-        "mutable": false,
-        "complexType": {
-          "original": "FrameworkDelegate",
-          "resolved": "FrameworkDelegate | undefined",
-          "references": {
-            "FrameworkDelegate": {
-              "location": "import",
-              "path": "../../interface"
+    /**
+     * Returns a promise that resolves when the popover did dismiss.
+     */
+    onDidDismiss() {
+        return eventMethod(this.el, 'ionPopoverDidDismiss');
+    }
+    /**
+     * Returns a promise that resolves when the popover will dismiss.
+     */
+    onWillDismiss() {
+        return eventMethod(this.el, 'ionPopoverWillDismiss');
+    }
+    render() {
+        const mode = getIonMode(this);
+        const { onLifecycle, parentPopover, dismissOnSelect, side, arrow, htmlAttributes } = this;
+        const desktop = isPlatform('desktop');
+        const enableArrow = arrow && !parentPopover;
+        return (h(Host, Object.assign({ "aria-modal": "true", "no-router": true, tabindex: "-1" }, htmlAttributes, { style: {
+                zIndex: `${20000 + this.overlayIndex}`,
+            }, class: Object.assign(Object.assign({}, getClassMap(this.cssClass)), { [mode]: true, 'popover-translucent': this.translucent, 'overlay-hidden': true, 'popover-desktop': desktop, [`popover-side-${side}`]: true, 'popover-nested': !!parentPopover }), onIonPopoverDidPresent: onLifecycle, onIonPopoverWillPresent: onLifecycle, onIonPopoverWillDismiss: onLifecycle, onIonPopoverDidDismiss: onLifecycle, onIonBackdropTap: this.onBackdropTap }), !parentPopover && h("ion-backdrop", { tappable: this.backdropDismiss, visible: this.showBackdrop, part: "backdrop" }), h("div", { class: "popover-wrapper ion-overlay-wrapper", onClick: dismissOnSelect ? () => this.dismiss() : undefined }, enableArrow && h("div", { class: "popover-arrow", part: "arrow" }), h("div", { class: "popover-content", part: "content" }, h("slot", null)))));
+    }
+    static get is() { return "ion-popover"; }
+    static get encapsulation() { return "shadow"; }
+    static get originalStyleUrls() {
+        return {
+            "ios": ["popover.ios.scss"],
+            "md": ["popover.md.scss"]
+        };
+    }
+    static get styleUrls() {
+        return {
+            "ios": ["popover.ios.css"],
+            "md": ["popover.md.css"]
+        };
+    }
+    static get properties() {
+        return {
+            "hasController": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [{
+                            "name": "internal",
+                            "text": undefined
+                        }],
+                    "text": ""
+                },
+                "attribute": "has-controller",
+                "reflect": false,
+                "defaultValue": "false"
+            },
+            "delegate": {
+                "type": "unknown",
+                "mutable": false,
+                "complexType": {
+                    "original": "FrameworkDelegate",
+                    "resolved": "FrameworkDelegate | undefined",
+                    "references": {
+                        "FrameworkDelegate": {
+                            "location": "import",
+                            "path": "../../interface",
+                            "id": "src/interface.d.ts::FrameworkDelegate"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": true,
+                "docs": {
+                    "tags": [{
+                            "name": "internal",
+                            "text": undefined
+                        }],
+                    "text": ""
+                }
+            },
+            "overlayIndex": {
+                "type": "number",
+                "mutable": false,
+                "complexType": {
+                    "original": "number",
+                    "resolved": "number",
+                    "references": {}
+                },
+                "required": true,
+                "optional": false,
+                "docs": {
+                    "tags": [{
+                            "name": "internal",
+                            "text": undefined
+                        }],
+                    "text": ""
+                },
+                "attribute": "overlay-index",
+                "reflect": false
+            },
+            "enterAnimation": {
+                "type": "unknown",
+                "mutable": false,
+                "complexType": {
+                    "original": "AnimationBuilder",
+                    "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+                    "references": {
+                        "AnimationBuilder": {
+                            "location": "import",
+                            "path": "../../interface",
+                            "id": "src/interface.d.ts::AnimationBuilder"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Animation to use when the popover is presented."
+                }
+            },
+            "leaveAnimation": {
+                "type": "unknown",
+                "mutable": false,
+                "complexType": {
+                    "original": "AnimationBuilder",
+                    "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+                    "references": {
+                        "AnimationBuilder": {
+                            "location": "import",
+                            "path": "../../interface",
+                            "id": "src/interface.d.ts::AnimationBuilder"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Animation to use when the popover is dismissed."
+                }
+            },
+            "component": {
+                "type": "string",
+                "mutable": false,
+                "complexType": {
+                    "original": "ComponentRef",
+                    "resolved": "Function | HTMLElement | null | string | undefined",
+                    "references": {
+                        "ComponentRef": {
+                            "location": "import",
+                            "path": "../../interface",
+                            "id": "src/interface.d.ts::ComponentRef"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": true,
+                "docs": {
+                    "tags": [],
+                    "text": "The component to display inside of the popover.\r\nYou only need to use this if you are not using\r\na JavaScript framework. Otherwise, you can just\r\nslot your component inside of `ion-popover`."
+                },
+                "attribute": "component",
+                "reflect": false
+            },
+            "componentProps": {
+                "type": "unknown",
+                "mutable": false,
+                "complexType": {
+                    "original": "ComponentProps",
+                    "resolved": "undefined | { [key: string]: any; }",
+                    "references": {
+                        "ComponentProps": {
+                            "location": "import",
+                            "path": "../../interface",
+                            "id": "src/interface.d.ts::ComponentProps"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": true,
+                "docs": {
+                    "tags": [],
+                    "text": "The data to pass to the popover component.\r\nYou only need to use this if you are not using\r\na JavaScript framework. Otherwise, you can just\r\nset the props directly on your component."
+                }
+            },
+            "keyboardClose": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "If `true`, the keyboard will be automatically dismissed when the overlay is presented."
+                },
+                "attribute": "keyboard-close",
+                "reflect": false,
+                "defaultValue": "true"
+            },
+            "cssClass": {
+                "type": "string",
+                "mutable": false,
+                "complexType": {
+                    "original": "string | string[]",
+                    "resolved": "string | string[] | undefined",
+                    "references": {}
+                },
+                "required": false,
+                "optional": true,
+                "docs": {
+                    "tags": [{
+                            "name": "internal",
+                            "text": undefined
+                        }],
+                    "text": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
+                },
+                "attribute": "css-class",
+                "reflect": false
+            },
+            "backdropDismiss": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "If `true`, the popover will be dismissed when the backdrop is clicked."
+                },
+                "attribute": "backdrop-dismiss",
+                "reflect": false,
+                "defaultValue": "true"
+            },
+            "event": {
+                "type": "any",
+                "mutable": false,
+                "complexType": {
+                    "original": "any",
+                    "resolved": "any",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "The event to pass to the popover animation."
+                },
+                "attribute": "event",
+                "reflect": false
+            },
+            "showBackdrop": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "If `true`, a backdrop will be displayed behind the popover.\r\nThis property controls whether or not the backdrop\r\ndarkens the screen when the popover is presented.\r\nIt does not control whether or not the backdrop\r\nis active or present in the DOM."
+                },
+                "attribute": "show-backdrop",
+                "reflect": false,
+                "defaultValue": "true"
+            },
+            "translucent": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "If `true`, the popover will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+                },
+                "attribute": "translucent",
+                "reflect": false,
+                "defaultValue": "false"
+            },
+            "animated": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "If `true`, the popover will animate."
+                },
+                "attribute": "animated",
+                "reflect": false,
+                "defaultValue": "true"
+            },
+            "htmlAttributes": {
+                "type": "unknown",
+                "mutable": false,
+                "complexType": {
+                    "original": "{ [key: string]: any }",
+                    "resolved": "undefined | { [key: string]: any; }",
+                    "references": {}
+                },
+                "required": false,
+                "optional": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Additional attributes to pass to the popover."
+                }
+            },
+            "triggerAction": {
+                "type": "string",
+                "mutable": false,
+                "complexType": {
+                    "original": "TriggerAction",
+                    "resolved": "\"click\" | \"context-menu\" | \"hover\"",
+                    "references": {
+                        "TriggerAction": {
+                            "location": "import",
+                            "path": "./popover-interface",
+                            "id": "src/components/popover/popover-interface.ts::TriggerAction"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "Describes what kind of interaction with the trigger that\r\nshould cause the popover to open. Does not apply when the `trigger`\r\nproperty is `undefined`.\r\nIf `\"click\"`, the popover will be presented when the trigger is left clicked.\r\nIf `\"hover\"`, the popover will be presented when a pointer hovers over the trigger.\r\nIf `\"context-menu\"`, the popover will be presented when the trigger is right\r\nclicked on desktop and long pressed on mobile. This will also prevent your\r\ndevice's normal context menu from appearing."
+                },
+                "attribute": "trigger-action",
+                "reflect": false,
+                "defaultValue": "'click'"
+            },
+            "trigger": {
+                "type": "string",
+                "mutable": false,
+                "complexType": {
+                    "original": "string | undefined",
+                    "resolved": "string | undefined",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "An ID corresponding to the trigger element that\r\ncauses the popover to open. Use the `trigger-action`\r\nproperty to customize the interaction that results in\r\nthe popover opening."
+                },
+                "attribute": "trigger",
+                "reflect": false
+            },
+            "size": {
+                "type": "string",
+                "mutable": false,
+                "complexType": {
+                    "original": "PopoverSize",
+                    "resolved": "\"auto\" | \"cover\"",
+                    "references": {
+                        "PopoverSize": {
+                            "location": "import",
+                            "path": "./popover-interface",
+                            "id": "src/components/popover/popover-interface.ts::PopoverSize"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "Describes how to calculate the popover width.\r\nIf `\"cover\"`, the popover width will match the width of the trigger.\r\nIf `\"auto\"`, the popover width will be set to a static default value."
+                },
+                "attribute": "size",
+                "reflect": false,
+                "defaultValue": "'auto'"
+            },
+            "dismissOnSelect": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "If `true`, the popover will be automatically\r\ndismissed when the content has been clicked."
+                },
+                "attribute": "dismiss-on-select",
+                "reflect": false,
+                "defaultValue": "false"
+            },
+            "reference": {
+                "type": "string",
+                "mutable": false,
+                "complexType": {
+                    "original": "PositionReference",
+                    "resolved": "\"event\" | \"trigger\"",
+                    "references": {
+                        "PositionReference": {
+                            "location": "import",
+                            "path": "./popover-interface",
+                            "id": "src/components/popover/popover-interface.ts::PositionReference"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "Describes what to position the popover relative to.\r\nIf `\"trigger\"`, the popover will be positioned relative\r\nto the trigger button. If passing in an event, this is\r\ndetermined via event.target.\r\nIf `\"event\"`, the popover will be positioned relative\r\nto the x/y coordinates of the trigger action. If passing\r\nin an event, this is determined via event.clientX and event.clientY."
+                },
+                "attribute": "reference",
+                "reflect": false,
+                "defaultValue": "'trigger'"
+            },
+            "side": {
+                "type": "string",
+                "mutable": false,
+                "complexType": {
+                    "original": "PositionSide",
+                    "resolved": "\"bottom\" | \"end\" | \"left\" | \"right\" | \"start\" | \"top\"",
+                    "references": {
+                        "PositionSide": {
+                            "location": "import",
+                            "path": "./popover-interface",
+                            "id": "src/components/popover/popover-interface.ts::PositionSide"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "Describes which side of the `reference` point to position\r\nthe popover on. The `\"start\"` and `\"end\"` values are RTL-aware,\r\nand the `\"left\"` and `\"right\"` values are not."
+                },
+                "attribute": "side",
+                "reflect": false,
+                "defaultValue": "'bottom'"
+            },
+            "alignment": {
+                "type": "string",
+                "mutable": true,
+                "complexType": {
+                    "original": "PositionAlign",
+                    "resolved": "\"center\" | \"end\" | \"start\" | undefined",
+                    "references": {
+                        "PositionAlign": {
+                            "location": "import",
+                            "path": "./popover-interface",
+                            "id": "src/components/popover/popover-interface.ts::PositionAlign"
+                        }
+                    }
+                },
+                "required": false,
+                "optional": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Describes how to align the popover content with the `reference` point.\r\nDefaults to `\"center\"` for `ios` mode, and `\"start\"` for `md` mode."
+                },
+                "attribute": "alignment",
+                "reflect": false
+            },
+            "arrow": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "If `true`, the popover will display an arrow that points at the\r\n`reference` when running in `ios` mode. Does not apply in `md` mode."
+                },
+                "attribute": "arrow",
+                "reflect": false,
+                "defaultValue": "true"
+            },
+            "isOpen": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "If `true`, the popover will open. If `false`, the popover will close.\r\nUse this if you need finer grained control over presentation, otherwise\r\njust use the popoverController or the `trigger` property.\r\nNote: `isOpen` will not automatically be set back to `false` when\r\nthe popover dismisses. You will need to do that in your code."
+                },
+                "attribute": "is-open",
+                "reflect": false,
+                "defaultValue": "false"
+            },
+            "keyboardEvents": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [{
+                            "name": "internal",
+                            "text": "If `true` the popover will not register its own keyboard event handlers.\r\nThis allows the contents of the popover to handle their own keyboard interactions.\r\n\r\nIf `false`, the popover will register its own keyboard event handlers for\r\nnavigating `ion-list` items within a popover (up/down/home/end/etc.).\r\nThis will also cancel browser keyboard event bindings to prevent scroll\r\nbehavior in a popover using a list of items."
+                        }],
+                    "text": ""
+                },
+                "attribute": "keyboard-events",
+                "reflect": false,
+                "defaultValue": "false"
+            },
+            "keepContentsMounted": {
+                "type": "boolean",
+                "mutable": false,
+                "complexType": {
+                    "original": "boolean",
+                    "resolved": "boolean",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "If `true`, the component passed into `ion-popover` will\r\nautomatically be mounted when the popover is created. The\r\ncomponent will remain mounted even when the popover is dismissed.\r\nHowever, the component will be destroyed when the popover is\r\ndestroyed. This property is not reactive and should only be\r\nused when initially creating a popover.\r\n\r\nNote: This feature only applies to inline popovers in JavaScript\r\nframeworks such as Angular, React, and Vue."
+                },
+                "attribute": "keep-contents-mounted",
+                "reflect": false,
+                "defaultValue": "false"
             }
-          }
-        },
-        "required": false,
-        "optional": true,
-        "docs": {
-          "tags": [{
-              "name": "internal",
-              "text": undefined
-            }],
-          "text": ""
-        }
-      },
-      "overlayIndex": {
-        "type": "number",
-        "mutable": false,
-        "complexType": {
-          "original": "number",
-          "resolved": "number",
-          "references": {}
-        },
-        "required": true,
-        "optional": false,
-        "docs": {
-          "tags": [{
-              "name": "internal",
-              "text": undefined
-            }],
-          "text": ""
-        },
-        "attribute": "overlay-index",
-        "reflect": false
-      },
-      "enterAnimation": {
-        "type": "unknown",
-        "mutable": false,
-        "complexType": {
-          "original": "AnimationBuilder",
-          "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
-          "references": {
-            "AnimationBuilder": {
-              "location": "import",
-              "path": "../../interface"
-            }
-          }
-        },
-        "required": false,
-        "optional": true,
-        "docs": {
-          "tags": [],
-          "text": "Animation to use when the popover is presented."
-        }
-      },
-      "leaveAnimation": {
-        "type": "unknown",
-        "mutable": false,
-        "complexType": {
-          "original": "AnimationBuilder",
-          "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
-          "references": {
-            "AnimationBuilder": {
-              "location": "import",
-              "path": "../../interface"
-            }
-          }
-        },
-        "required": false,
-        "optional": true,
-        "docs": {
-          "tags": [],
-          "text": "Animation to use when the popover is dismissed."
-        }
-      },
-      "component": {
-        "type": "string",
-        "mutable": false,
-        "complexType": {
-          "original": "ComponentRef",
-          "resolved": "Function | HTMLElement | null | string",
-          "references": {
-            "ComponentRef": {
-              "location": "import",
-              "path": "../../interface"
-            }
-          }
-        },
-        "required": true,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "The component to display inside of the popover."
-        },
-        "attribute": "component",
-        "reflect": false
-      },
-      "componentProps": {
-        "type": "unknown",
-        "mutable": false,
-        "complexType": {
-          "original": "ComponentProps",
-          "resolved": "undefined | { [key: string]: any; }",
-          "references": {
-            "ComponentProps": {
-              "location": "import",
-              "path": "../../interface"
-            }
-          }
-        },
-        "required": false,
-        "optional": true,
-        "docs": {
-          "tags": [],
-          "text": "The data to pass to the popover component."
-        }
-      },
-      "keyboardClose": {
-        "type": "boolean",
-        "mutable": false,
-        "complexType": {
-          "original": "boolean",
-          "resolved": "boolean",
-          "references": {}
-        },
-        "required": false,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "If `true`, the keyboard will be automatically dismissed when the overlay is presented."
-        },
-        "attribute": "keyboard-close",
-        "reflect": false,
-        "defaultValue": "true"
-      },
-      "cssClass": {
-        "type": "string",
-        "mutable": false,
-        "complexType": {
-          "original": "string | string[]",
-          "resolved": "string | string[] | undefined",
-          "references": {}
-        },
-        "required": false,
-        "optional": true,
-        "docs": {
-          "tags": [],
-          "text": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
-        },
-        "attribute": "css-class",
-        "reflect": false
-      },
-      "backdropDismiss": {
-        "type": "boolean",
-        "mutable": false,
-        "complexType": {
-          "original": "boolean",
-          "resolved": "boolean",
-          "references": {}
-        },
-        "required": false,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "If `true`, the popover will be dismissed when the backdrop is clicked."
-        },
-        "attribute": "backdrop-dismiss",
-        "reflect": false,
-        "defaultValue": "true"
-      },
-      "event": {
-        "type": "any",
-        "mutable": false,
-        "complexType": {
-          "original": "any",
-          "resolved": "any",
-          "references": {}
-        },
-        "required": false,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "The event to pass to the popover animation."
-        },
-        "attribute": "event",
-        "reflect": false
-      },
-      "showBackdrop": {
-        "type": "boolean",
-        "mutable": false,
-        "complexType": {
-          "original": "boolean",
-          "resolved": "boolean",
-          "references": {}
-        },
-        "required": false,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "If `true`, a backdrop will be displayed behind the popover."
-        },
-        "attribute": "show-backdrop",
-        "reflect": false,
-        "defaultValue": "true"
-      },
-      "translucent": {
-        "type": "boolean",
-        "mutable": false,
-        "complexType": {
-          "original": "boolean",
-          "resolved": "boolean",
-          "references": {}
-        },
-        "required": false,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "If `true`, the popover will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
-        },
-        "attribute": "translucent",
-        "reflect": false,
-        "defaultValue": "false"
-      },
-      "animated": {
-        "type": "boolean",
-        "mutable": false,
-        "complexType": {
-          "original": "boolean",
-          "resolved": "boolean",
-          "references": {}
-        },
-        "required": false,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "If `true`, the popover will animate."
-        },
-        "attribute": "animated",
-        "reflect": false,
-        "defaultValue": "true"
-      }
-    };
-  }
-  static get events() {
-    return [{
-        "method": "didPresent",
-        "name": "ionPopoverDidPresent",
-        "bubbles": true,
-        "cancelable": true,
-        "composed": true,
-        "docs": {
-          "tags": [],
-          "text": "Emitted after the popover has presented."
-        },
-        "complexType": {
-          "original": "void",
-          "resolved": "void",
-          "references": {}
-        }
-      }, {
-        "method": "willPresent",
-        "name": "ionPopoverWillPresent",
-        "bubbles": true,
-        "cancelable": true,
-        "composed": true,
-        "docs": {
-          "tags": [],
-          "text": "Emitted before the popover has presented."
-        },
-        "complexType": {
-          "original": "void",
-          "resolved": "void",
-          "references": {}
-        }
-      }, {
-        "method": "willDismiss",
-        "name": "ionPopoverWillDismiss",
-        "bubbles": true,
-        "cancelable": true,
-        "composed": true,
-        "docs": {
-          "tags": [],
-          "text": "Emitted before the popover has dismissed."
-        },
-        "complexType": {
-          "original": "OverlayEventDetail",
-          "resolved": "OverlayEventDetail<any>",
-          "references": {
-            "OverlayEventDetail": {
-              "location": "import",
-              "path": "../../interface"
-            }
-          }
-        }
-      }, {
-        "method": "didDismiss",
-        "name": "ionPopoverDidDismiss",
-        "bubbles": true,
-        "cancelable": true,
-        "composed": true,
-        "docs": {
-          "tags": [],
-          "text": "Emitted after the popover has dismissed."
-        },
-        "complexType": {
-          "original": "OverlayEventDetail",
-          "resolved": "OverlayEventDetail<any>",
-          "references": {
-            "OverlayEventDetail": {
-              "location": "import",
-              "path": "../../interface"
-            }
-          }
-        }
-      }];
-  }
-  static get methods() {
-    return {
-      "present": {
-        "complexType": {
-          "signature": "() => Promise<void>",
-          "parameters": [],
-          "references": {
-            "Promise": {
-              "location": "global"
-            }
-          },
-          "return": "Promise<void>"
-        },
-        "docs": {
-          "text": "Present the popover overlay after it has been created.",
-          "tags": []
-        }
-      },
-      "dismiss": {
-        "complexType": {
-          "signature": "(data?: any, role?: string) => Promise<boolean>",
-          "parameters": [{
-              "tags": [{
-                  "name": "param",
-                  "text": "data Any data to emit in the dismiss events."
-                }],
-              "text": "Any data to emit in the dismiss events."
+        };
+    }
+    static get states() {
+        return {
+            "presented": {}
+        };
+    }
+    static get events() {
+        return [{
+                "method": "didPresent",
+                "name": "ionPopoverDidPresent",
+                "bubbles": true,
+                "cancelable": true,
+                "composed": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Emitted after the popover has presented."
+                },
+                "complexType": {
+                    "original": "void",
+                    "resolved": "void",
+                    "references": {}
+                }
             }, {
-              "tags": [{
-                  "name": "param",
-                  "text": "role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
-                }],
-              "text": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
-            }],
-          "references": {
-            "Promise": {
-              "location": "global"
-            }
-          },
-          "return": "Promise<boolean>"
-        },
-        "docs": {
-          "text": "Dismiss the popover overlay after it has been presented.",
-          "tags": [{
-              "name": "param",
-              "text": "data Any data to emit in the dismiss events."
+                "method": "willPresent",
+                "name": "ionPopoverWillPresent",
+                "bubbles": true,
+                "cancelable": true,
+                "composed": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Emitted before the popover has presented."
+                },
+                "complexType": {
+                    "original": "void",
+                    "resolved": "void",
+                    "references": {}
+                }
             }, {
-              "name": "param",
-              "text": "role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
-            }]
-        }
-      },
-      "onDidDismiss": {
-        "complexType": {
-          "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
-          "parameters": [],
-          "references": {
-            "Promise": {
-              "location": "global"
+                "method": "willDismiss",
+                "name": "ionPopoverWillDismiss",
+                "bubbles": true,
+                "cancelable": true,
+                "composed": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Emitted before the popover has dismissed."
+                },
+                "complexType": {
+                    "original": "OverlayEventDetail",
+                    "resolved": "OverlayEventDetail<any>",
+                    "references": {
+                        "OverlayEventDetail": {
+                            "location": "import",
+                            "path": "../../utils/overlays-interface",
+                            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+                        }
+                    }
+                }
+            }, {
+                "method": "didDismiss",
+                "name": "ionPopoverDidDismiss",
+                "bubbles": true,
+                "cancelable": true,
+                "composed": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Emitted after the popover has dismissed."
+                },
+                "complexType": {
+                    "original": "OverlayEventDetail",
+                    "resolved": "OverlayEventDetail<any>",
+                    "references": {
+                        "OverlayEventDetail": {
+                            "location": "import",
+                            "path": "../../utils/overlays-interface",
+                            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+                        }
+                    }
+                }
+            }, {
+                "method": "didPresentShorthand",
+                "name": "didPresent",
+                "bubbles": true,
+                "cancelable": true,
+                "composed": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Emitted after the popover has presented.\r\nShorthand for ionPopoverWillDismiss."
+                },
+                "complexType": {
+                    "original": "void",
+                    "resolved": "void",
+                    "references": {}
+                }
+            }, {
+                "method": "willPresentShorthand",
+                "name": "willPresent",
+                "bubbles": true,
+                "cancelable": true,
+                "composed": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Emitted before the popover has presented.\r\nShorthand for ionPopoverWillPresent."
+                },
+                "complexType": {
+                    "original": "void",
+                    "resolved": "void",
+                    "references": {}
+                }
+            }, {
+                "method": "willDismissShorthand",
+                "name": "willDismiss",
+                "bubbles": true,
+                "cancelable": true,
+                "composed": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Emitted before the popover has dismissed.\r\nShorthand for ionPopoverWillDismiss."
+                },
+                "complexType": {
+                    "original": "OverlayEventDetail",
+                    "resolved": "OverlayEventDetail<any>",
+                    "references": {
+                        "OverlayEventDetail": {
+                            "location": "import",
+                            "path": "../../utils/overlays-interface",
+                            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+                        }
+                    }
+                }
+            }, {
+                "method": "didDismissShorthand",
+                "name": "didDismiss",
+                "bubbles": true,
+                "cancelable": true,
+                "composed": true,
+                "docs": {
+                    "tags": [],
+                    "text": "Emitted after the popover has dismissed.\r\nShorthand for ionPopoverDidDismiss."
+                },
+                "complexType": {
+                    "original": "OverlayEventDetail",
+                    "resolved": "OverlayEventDetail<any>",
+                    "references": {
+                        "OverlayEventDetail": {
+                            "location": "import",
+                            "path": "../../utils/overlays-interface",
+                            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+                        }
+                    }
+                }
+            }, {
+                "method": "ionMount",
+                "name": "ionMount",
+                "bubbles": true,
+                "cancelable": true,
+                "composed": true,
+                "docs": {
+                    "tags": [{
+                            "name": "internal",
+                            "text": undefined
+                        }],
+                    "text": "Emitted before the popover has presented, but after the component\r\nhas been mounted in the DOM.\r\nThis event exists for ion-popover to resolve an issue with the\r\npopover and the lazy build, that the transition is unable to get\r\nthe correct dimensions of the popover with auto sizing.\r\nThis is not required for other overlays, since the existing\r\noverlay transitions are not effected by auto sizing content."
+                },
+                "complexType": {
+                    "original": "void",
+                    "resolved": "void",
+                    "references": {}
+                }
+            }];
+    }
+    static get methods() {
+        return {
+            "presentFromTrigger": {
+                "complexType": {
+                    "signature": "(event?: any, focusDescendant?: boolean) => Promise<void>",
+                    "parameters": [{
+                            "name": "event",
+                            "type": "any",
+                            "docs": ""
+                        }, {
+                            "name": "focusDescendant",
+                            "type": "boolean",
+                            "docs": ""
+                        }],
+                    "references": {
+                        "Promise": {
+                            "location": "global",
+                            "id": "global::Promise"
+                        }
+                    },
+                    "return": "Promise<void>"
+                },
+                "docs": {
+                    "text": "When opening a popover from a trigger, we should not be\r\nmodifying the `event` prop from inside the component.\r\nAdditionally, when pressing the \"Right\" arrow key, we need\r\nto shift focus to the first descendant in the newly presented\r\npopover.",
+                    "tags": [{
+                            "name": "internal",
+                            "text": undefined
+                        }]
+                }
             },
-            "OverlayEventDetail": {
-              "location": "import",
-              "path": "../../interface"
+            "present": {
+                "complexType": {
+                    "signature": "(event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent) => Promise<void>",
+                    "parameters": [{
+                            "name": "event",
+                            "type": "CustomEvent<any> | MouseEvent | PointerEvent | TouchEvent | undefined",
+                            "docs": ""
+                        }],
+                    "references": {
+                        "Promise": {
+                            "location": "global",
+                            "id": "global::Promise"
+                        },
+                        "MouseEvent": {
+                            "location": "global",
+                            "id": "global::MouseEvent"
+                        },
+                        "TouchEvent": {
+                            "location": "global",
+                            "id": "global::TouchEvent"
+                        },
+                        "PointerEvent": {
+                            "location": "global",
+                            "id": "global::PointerEvent"
+                        },
+                        "CustomEvent": {
+                            "location": "global",
+                            "id": "global::CustomEvent"
+                        },
+                        "PopoverPresentOptions": {
+                            "location": "global",
+                            "id": "global::PopoverPresentOptions"
+                        }
+                    },
+                    "return": "Promise<void>"
+                },
+                "docs": {
+                    "text": "Present the popover overlay after it has been created.\r\nDevelopers can pass a mouse, touch, or pointer event\r\nto position the popover relative to where that event\r\nwas dispatched.",
+                    "tags": []
+                }
             },
-            "T": {
-              "location": "global"
+            "dismiss": {
+                "complexType": {
+                    "signature": "(data?: any, role?: string, dismissParentPopover?: boolean) => Promise<boolean>",
+                    "parameters": [{
+                            "name": "data",
+                            "type": "any",
+                            "docs": "Any data to emit in the dismiss events."
+                        }, {
+                            "name": "role",
+                            "type": "string | undefined",
+                            "docs": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+                        }, {
+                            "name": "dismissParentPopover",
+                            "type": "boolean",
+                            "docs": "If `true`, dismissing this popover will also dismiss\r\na parent popover if this popover is nested. Defaults to `true`."
+                        }],
+                    "references": {
+                        "Promise": {
+                            "location": "global",
+                            "id": "global::Promise"
+                        },
+                        "PopoverDismissOptions": {
+                            "location": "global",
+                            "id": "global::PopoverDismissOptions"
+                        }
+                    },
+                    "return": "Promise<boolean>"
+                },
+                "docs": {
+                    "text": "Dismiss the popover overlay after it has been presented.",
+                    "tags": [{
+                            "name": "param",
+                            "text": "data Any data to emit in the dismiss events."
+                        }, {
+                            "name": "param",
+                            "text": "role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+                        }, {
+                            "name": "param",
+                            "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\r\na parent popover if this popover is nested. Defaults to `true`."
+                        }]
+                }
+            },
+            "getParentPopover": {
+                "complexType": {
+                    "signature": "() => Promise<HTMLIonPopoverElement | null>",
+                    "parameters": [],
+                    "references": {
+                        "Promise": {
+                            "location": "global",
+                            "id": "global::Promise"
+                        },
+                        "HTMLIonPopoverElement": {
+                            "location": "global",
+                            "id": "global::HTMLIonPopoverElement"
+                        }
+                    },
+                    "return": "Promise<HTMLIonPopoverElement | null>"
+                },
+                "docs": {
+                    "text": "",
+                    "tags": [{
+                            "name": "internal",
+                            "text": undefined
+                        }]
+                }
+            },
+            "onDidDismiss": {
+                "complexType": {
+                    "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+                    "parameters": [],
+                    "references": {
+                        "Promise": {
+                            "location": "global",
+                            "id": "global::Promise"
+                        },
+                        "OverlayEventDetail": {
+                            "location": "import",
+                            "path": "../../utils/overlays-interface",
+                            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+                        },
+                        "T": {
+                            "location": "global",
+                            "id": "global::T"
+                        }
+                    },
+                    "return": "Promise<OverlayEventDetail<T>>"
+                },
+                "docs": {
+                    "text": "Returns a promise that resolves when the popover did dismiss.",
+                    "tags": []
+                }
+            },
+            "onWillDismiss": {
+                "complexType": {
+                    "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+                    "parameters": [],
+                    "references": {
+                        "Promise": {
+                            "location": "global",
+                            "id": "global::Promise"
+                        },
+                        "OverlayEventDetail": {
+                            "location": "import",
+                            "path": "../../utils/overlays-interface",
+                            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+                        },
+                        "T": {
+                            "location": "global",
+                            "id": "global::T"
+                        }
+                    },
+                    "return": "Promise<OverlayEventDetail<T>>"
+                },
+                "docs": {
+                    "text": "Returns a promise that resolves when the popover will dismiss.",
+                    "tags": []
+                }
             }
-          },
-          "return": "Promise<OverlayEventDetail<T>>"
-        },
-        "docs": {
-          "text": "Returns a promise that resolves when the popover did dismiss.",
-          "tags": []
-        }
-      },
-      "onWillDismiss": {
-        "complexType": {
-          "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
-          "parameters": [],
-          "references": {
-            "Promise": {
-              "location": "global"
-            },
-            "OverlayEventDetail": {
-              "location": "import",
-              "path": "../../interface"
-            },
-            "T": {
-              "location": "global"
-            }
-          },
-          "return": "Promise<OverlayEventDetail<T>>"
-        },
-        "docs": {
-          "text": "Returns a promise that resolves when the popover will dismiss.",
-          "tags": []
-        }
-      }
-    };
-  }
-  static get elementRef() { return "el"; }
+        };
+    }
+    static get elementRef() { return "el"; }
+    static get watchers() {
+        return [{
+                "propName": "trigger",
+                "methodName": "onTriggerChange"
+            }, {
+                "propName": "triggerAction",
+                "methodName": "onTriggerChange"
+            }, {
+                "propName": "isOpen",
+                "methodName": "onIsOpenChange"
+            }];
+    }
 }
 const LIFECYCLE_MAP = {
-  'ionPopoverDidPresent': 'ionViewDidEnter',
-  'ionPopoverWillPresent': 'ionViewWillEnter',
-  'ionPopoverWillDismiss': 'ionViewWillLeave',
-  'ionPopoverDidDismiss': 'ionViewDidLeave',
+    ionPopoverDidPresent: 'ionViewDidEnter',
+    ionPopoverWillPresent: 'ionViewWillEnter',
+    ionPopoverWillDismiss: 'ionViewWillLeave',
+    ionPopoverDidDismiss: 'ionViewDidLeave',
 };

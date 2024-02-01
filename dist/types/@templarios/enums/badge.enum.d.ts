@@ -1,4 +1,4 @@
 export declare enum TemplariosBadgeSize {
-  SM = "sm",
-  MD = "md"
+    SM = "sm",
+    MD = "md"
 }

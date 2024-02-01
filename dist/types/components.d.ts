@@ -5,44 +5,161 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "./stencil-public-runtime";
-import { ActionSheetButton, AlertButton, AlertInput, AnimationBuilder, AutocompleteTypes, CheckboxChangeEventDetail, Color, ComponentProps, ComponentRef, DatetimeChangeEventDetail, DatetimeOptions, DomRenderFn, FooterHeightFn, FrameworkDelegate, HeaderFn, HeaderHeightFn, InputChangeEventDetail, ItemHeightFn, ItemRenderFn, ItemReorderEventDetail, MenuChangeEventDetail, NavComponent, NavComponentWithProps, NavOptions, OverlayEventDetail, PickerButton, PickerColumn, RadioGroupChangeEventDetail, RangeChangeEventDetail, RangeValue, RefresherEventDetail, RouteID, RouterDirection, RouterEventDetail, RouterOutletOptions, RouteWrite, ScrollBaseDetail, ScrollDetail, SearchbarChangeEventDetail, SegmentButtonLayout, SegmentChangeEventDetail, SelectChangeEventDetail, SelectInterface, SelectPopoverOption, Side, SpinnerTypes, StyleEventDetail, SwipeGestureHandler, TabBarChangedEventDetail, TabButtonClickEventDetail, TabButtonLayout, TextareaChangeEventDetail, TextFieldTypes, ToastButton, ToggleChangeEventDetail, TransitionDoneFn, TransitionInstruction, ViewController } from "./interface";
+import { AccordionGroupChangeEventDetail } from "./components/accordion-group/accordion-group-interface";
+import { AnimationBuilder, AutocompleteTypes, Color, ComponentProps, ComponentRef, FrameworkDelegate, RouterDirection as RouterDirection1, StyleEventDetail, TextFieldTypes } from "./interface";
+import { ActionSheetButton } from "./components/action-sheet/action-sheet-interface";
+import { OverlayEventDetail } from "./utils/overlays-interface";
 import { IonicSafeString } from "./utils/sanitization";
-import { MedColor } from "@templarios/types/color.type";
+import { AlertButton, AlertInput } from "./components/alert/alert-interface";
+import { RouteID, RouterDirection, RouterEventDetail, RouteWrite } from "./components/router/utils/interface";
+import { BreadcrumbCollapsedClickEventDetail } from "./components/breadcrumb/breadcrumb-interface";
+import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox-interface";
+import { ScrollBaseDetail, ScrollDetail } from "./components/content/content-interface";
+import { DatetimeChangeEventDetail, DatetimeHighlight, DatetimeHighlightCallback, DatetimeHourCycle, DatetimePresentation, TitleSelectedDatesFormatter } from "./components/datetime/datetime-interface";
+import { SpinnerTypes } from "./components/spinner/spinner-configs";
+import { InputChangeEventDetail, InputInputEventDetail } from "./components/input/input-interface";
+import { CounterFormatter } from "./components/item/item-interface";
+import { MenuChangeEventDetail, Side } from "./components/menu/menu-interface";
+import { ModalBreakpointChangeEventDetail, ModalHandleBehavior } from "./components/modal/modal-interface";
+import { NavComponent, NavComponentWithProps, NavOptions, RouterOutletOptions, SwipeGestureHandler, TransitionDoneFn, TransitionInstruction } from "./components/nav/nav-interface";
+import { ViewController } from "./components/nav/view-controller";
+import { PickerButton, PickerColumn } from "./components/picker/picker-interface";
+import { PickerColumnItem } from "./components/picker-column-internal/picker-column-internal-interfaces";
+import { PickerInternalChangeEventDetail } from "./components/picker-internal/picker-internal-interfaces";
+import { PopoverSize, PositionAlign, PositionReference, PositionSide, TriggerAction } from "./components/popover/popover-interface";
+import { RadioGroupChangeEventDetail, RadioGroupCompareFn } from "./components/radio-group/radio-group-interface";
+import { PinFormatter, RangeChangeEventDetail, RangeKnobMoveEndEventDetail, RangeKnobMoveStartEventDetail, RangeValue } from "./components/range/range-interface";
+import { RefresherEventDetail } from "./components/refresher/refresher-interface";
+import { ItemReorderEventDetail } from "./components/reorder-group/reorder-group-interface";
 import { NavigationHookCallback } from "./components/route/route-interface";
-import { SelectCompareFn } from "./components/select/select-interface";
+import { SearchbarChangeEventDetail, SearchbarInputEventDetail } from "./components/searchbar/searchbar-interface";
+import { SegmentChangeEventDetail, SegmentValue } from "./components/segment/segment-interface";
+import { SegmentButtonLayout } from "./components/segment-button/segment-button-interface";
+import { SelectChangeEventDetail, SelectCompareFn, SelectInterface } from "./components/select/select-interface";
+import { SelectPopoverOption } from "./components/select-popover/select-popover-interface";
+import { TabBarChangedEventDetail, TabButtonClickEventDetail, TabButtonLayout } from "./components/tab-bar/tab-bar-interface";
+import { TextareaChangeEventDetail, TextareaInputEventDetail } from "./components/textarea/textarea-interface";
+import { ToastButton, ToastDismissOptions, ToastLayout, ToastPosition, ToastPresentOptions, ToastSwipeGestureDirection } from "./components/toast/toast-interface";
+import { ToggleChangeEventDetail } from "./components/toggle/toggle-interface";
+import { MedColor } from "@templarios/types/color.type";
 import { MedAlternativaInterface } from "@templarios/interfaces/alternativas.interface";
 import { MedChartRadiaItem } from "@templarios/interfaces/chart-radial.interface";
-import { MedConfigInterface } from "./components/@templarios/legacy/med-config/med-config-interface";
 import { MedFontSize } from "@templarios/templarios";
 import { headerResizeEventDetail } from "@templarios/interfaces/header.interface";
 import { MedImageZoomItemInterface } from "@templarios/interfaces/image-zoom.interface";
 import { PlusMinusStatus } from "@templarios/enums/plusminus.enum";
 import { RateStatus } from "@templarios/enums/rate-like.enum";
-import { MedSemanaInterface } from "@templarios/interfaces/semana.interface";
-import { MedTema } from "@templarios/interfaces/themes.interface";
 import { MedTypeTag, MedTypeToken } from "@templarios/types/type.type";
-import { TpAccordionGroupChangeEventDetail } from "./components/@templarios/core/tp-accordion-group/tp-accordion-group-interface";
+import { TpAccordionGroupChangeEventDetail } from "./components/@templarios/tp-accordion-group/tp-accordion-group-interface";
 import { TpChartBarItem } from "@templarios/interfaces/chart-bar.interface";
+export { AccordionGroupChangeEventDetail } from "./components/accordion-group/accordion-group-interface";
+export { AnimationBuilder, AutocompleteTypes, Color, ComponentProps, ComponentRef, FrameworkDelegate, RouterDirection as RouterDirection1, StyleEventDetail, TextFieldTypes } from "./interface";
+export { ActionSheetButton } from "./components/action-sheet/action-sheet-interface";
+export { OverlayEventDetail } from "./utils/overlays-interface";
+export { IonicSafeString } from "./utils/sanitization";
+export { AlertButton, AlertInput } from "./components/alert/alert-interface";
+export { RouteID, RouterDirection, RouterEventDetail, RouteWrite } from "./components/router/utils/interface";
+export { BreadcrumbCollapsedClickEventDetail } from "./components/breadcrumb/breadcrumb-interface";
+export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox-interface";
+export { ScrollBaseDetail, ScrollDetail } from "./components/content/content-interface";
+export { DatetimeChangeEventDetail, DatetimeHighlight, DatetimeHighlightCallback, DatetimeHourCycle, DatetimePresentation, TitleSelectedDatesFormatter } from "./components/datetime/datetime-interface";
+export { SpinnerTypes } from "./components/spinner/spinner-configs";
+export { InputChangeEventDetail, InputInputEventDetail } from "./components/input/input-interface";
+export { CounterFormatter } from "./components/item/item-interface";
+export { MenuChangeEventDetail, Side } from "./components/menu/menu-interface";
+export { ModalBreakpointChangeEventDetail, ModalHandleBehavior } from "./components/modal/modal-interface";
+export { NavComponent, NavComponentWithProps, NavOptions, RouterOutletOptions, SwipeGestureHandler, TransitionDoneFn, TransitionInstruction } from "./components/nav/nav-interface";
+export { ViewController } from "./components/nav/view-controller";
+export { PickerButton, PickerColumn } from "./components/picker/picker-interface";
+export { PickerColumnItem } from "./components/picker-column-internal/picker-column-internal-interfaces";
+export { PickerInternalChangeEventDetail } from "./components/picker-internal/picker-internal-interfaces";
+export { PopoverSize, PositionAlign, PositionReference, PositionSide, TriggerAction } from "./components/popover/popover-interface";
+export { RadioGroupChangeEventDetail, RadioGroupCompareFn } from "./components/radio-group/radio-group-interface";
+export { PinFormatter, RangeChangeEventDetail, RangeKnobMoveEndEventDetail, RangeKnobMoveStartEventDetail, RangeValue } from "./components/range/range-interface";
+export { RefresherEventDetail } from "./components/refresher/refresher-interface";
+export { ItemReorderEventDetail } from "./components/reorder-group/reorder-group-interface";
+export { NavigationHookCallback } from "./components/route/route-interface";
+export { SearchbarChangeEventDetail, SearchbarInputEventDetail } from "./components/searchbar/searchbar-interface";
+export { SegmentChangeEventDetail, SegmentValue } from "./components/segment/segment-interface";
+export { SegmentButtonLayout } from "./components/segment-button/segment-button-interface";
+export { SelectChangeEventDetail, SelectCompareFn, SelectInterface } from "./components/select/select-interface";
+export { SelectPopoverOption } from "./components/select-popover/select-popover-interface";
+export { TabBarChangedEventDetail, TabButtonClickEventDetail, TabButtonLayout } from "./components/tab-bar/tab-bar-interface";
+export { TextareaChangeEventDetail, TextareaInputEventDetail } from "./components/textarea/textarea-interface";
+export { ToastButton, ToastDismissOptions, ToastLayout, ToastPosition, ToastPresentOptions, ToastSwipeGestureDirection } from "./components/toast/toast-interface";
+export { ToggleChangeEventDetail } from "./components/toggle/toggle-interface";
+export { MedColor } from "@templarios/types/color.type";
+export { MedAlternativaInterface } from "@templarios/interfaces/alternativas.interface";
+export { MedChartRadiaItem } from "@templarios/interfaces/chart-radial.interface";
+export { MedFontSize } from "@templarios/templarios";
+export { headerResizeEventDetail } from "@templarios/interfaces/header.interface";
+export { MedImageZoomItemInterface } from "@templarios/interfaces/image-zoom.interface";
+export { PlusMinusStatus } from "@templarios/enums/plusminus.enum";
+export { RateStatus } from "@templarios/enums/rate-like.enum";
+export { MedTypeTag, MedTypeToken } from "@templarios/types/type.type";
+export { TpAccordionGroupChangeEventDetail } from "./components/@templarios/tp-accordion-group/tp-accordion-group-interface";
+export { TpChartBarItem } from "@templarios/interfaces/chart-bar.interface";
 export namespace Components {
-    interface AjudaModal {
+    interface IonAccordion {
+        /**
+          * If `true`, the accordion cannot be interacted with.
+         */
+        "disabled": boolean;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * If `true`, the accordion cannot be interacted with, but does not alter the opacity.
+         */
+        "readonly": boolean;
+        /**
+          * The toggle icon to use. This icon will be rotated when the accordion is expanded or collapsed.
+         */
+        "toggleIcon": string;
+        /**
+          * The slot inside of `ion-item` to place the toggle icon. Defaults to `"end"`.
+         */
+        "toggleIconSlot": 'start' | 'end';
+        /**
+          * The value of the accordion. Defaults to an autogenerated value.
+         */
+        "value": string;
     }
-    interface ApostilaModal {
-    }
-    interface AvisoModal {
-    }
-    interface ConcursoModal {
-    }
-    interface DenunciarModal {
-    }
-    interface DialogTest {
-    }
-    interface EspecialidadeModal {
-    }
-    interface ExcluirModal {
-    }
-    interface FiltroModal {
-    }
-    interface InformativoModal {
+    interface IonAccordionGroup {
+        /**
+          * If `true`, all accordions inside of the accordion group will animate when expanding or collapsing.
+         */
+        "animated": boolean;
+        /**
+          * If `true`, the accordion group cannot be interacted with.
+         */
+        "disabled": boolean;
+        /**
+          * Describes the expansion behavior for each accordion. Possible values are `"compact"` and `"inset"`. Defaults to `"compact"`.
+         */
+        "expand": 'compact' | 'inset';
+        "getAccordions": () => Promise<HTMLIonAccordionElement[]>;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * If `true`, the accordion group can have multiple accordion components expanded at the same time.
+         */
+        "multiple"?: boolean;
+        /**
+          * If `true`, the accordion group cannot be interacted with, but does not alter the opacity.
+         */
+        "readonly": boolean;
+        /**
+          * This method is used to ensure that the value of ion-accordion-group is being set in a valid way. This method should only be called in response to a user generated action.
+         */
+        "requestAccordionToggle": (accordionValue: string | undefined, accordionExpand: boolean) => Promise<void>;
+        /**
+          * The value of the accordion group. This controls which accordions are expanded. This should be an array of strings only when `multiple="true"`
+         */
+        "value"?: string | string[] | null;
     }
     interface IonActionSheet {
         /**
@@ -61,6 +178,7 @@ export namespace Components {
           * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
          */
         "cssClass"?: string | string[];
+        "delegate"?: FrameworkDelegate;
         /**
           * Dismiss the action sheet overlay after it has been presented.
           * @param data Any data to emit in the dismiss events.
@@ -71,10 +189,19 @@ export namespace Components {
           * Animation to use when the action sheet is presented.
          */
         "enterAnimation"?: AnimationBuilder;
+        "hasController": boolean;
         /**
           * Title for the action sheet.
          */
         "header"?: string;
+        /**
+          * Additional attributes to pass to the action sheet.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * If `true`, the action sheet will open. If `false`, the action sheet will close. Use this if you need finer grained control over presentation, otherwise just use the actionSheetController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the action sheet dismisses. You will need to do that in your code.
+         */
+        "isOpen": boolean;
         /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
@@ -108,6 +235,10 @@ export namespace Components {
           * If `true`, the action sheet will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent": boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the action sheet to open when clicked.
+         */
+        "trigger": string | undefined;
     }
     interface IonAlert {
         /**
@@ -126,6 +257,7 @@ export namespace Components {
           * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
          */
         "cssClass"?: string | string[];
+        "delegate"?: FrameworkDelegate;
         /**
           * Dismiss the alert overlay after it has been presented.
           * @param data Any data to emit in the dismiss events.
@@ -136,14 +268,23 @@ export namespace Components {
           * Animation to use when the alert is presented.
          */
         "enterAnimation"?: AnimationBuilder;
+        "hasController": boolean;
         /**
           * The main title in the heading of the alert.
          */
         "header"?: string;
         /**
+          * Additional attributes to pass to the alert.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
           * Array of input to show in the alert.
          */
         "inputs": AlertInput[];
+        /**
+          * If `true`, the alert will open. If `false`, the alert will close. Use this if you need finer grained control over presentation, otherwise just use the alertController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the alert dismisses. You will need to do that in your code.
+         */
+        "isOpen": boolean;
         /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
@@ -153,7 +294,7 @@ export namespace Components {
          */
         "leaveAnimation"?: AnimationBuilder;
         /**
-          * The main message to be displayed in the alert. `message` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
+          * The main message to be displayed in the alert. `message` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)  This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "message"?: string | IonicSafeString;
         /**
@@ -181,8 +322,13 @@ export namespace Components {
           * If `true`, the alert will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent": boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the alert to open when clicked.
+         */
+        "trigger": string | undefined;
     }
     interface IonApp {
+        "setFocus": (elements: HTMLElement[]) => Promise<void>;
     }
     interface IonAvatar {
     }
@@ -200,7 +346,7 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * The icon name to use for the back button.
+          * The built-in named SVG icon name or the exact `src` of an SVG file to use for the back button.
          */
         "icon"?: string | null;
         /**
@@ -244,6 +390,77 @@ export namespace Components {
          */
         "mode"?: "ios" | "md";
     }
+    interface IonBreadcrumb {
+        /**
+          * If `true`, the breadcrumb will take on a different look to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
+         */
+        "active": boolean;
+        "collapsed": boolean;
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
+          * If `true`, the user cannot interact with the breadcrumb.
+         */
+        "disabled": boolean;
+        /**
+          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+         */
+        "download": string | undefined;
+        /**
+          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+         */
+        "href": string | undefined;
+        "last": boolean;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+         */
+        "rel": string | undefined;
+        /**
+          * When using a router, it specifies the transition animation when navigating to another page using `href`.
+         */
+        "routerAnimation": AnimationBuilder | undefined;
+        /**
+          * When using a router, it specifies the transition direction when navigating to another page using `href`.
+         */
+        "routerDirection": RouterDirection;
+        /**
+          * If true, show a separator between this breadcrumb and the next. Defaults to `true` for all breadcrumbs except the last.
+         */
+        "separator"?: boolean | undefined;
+        "showCollapsedIndicator": boolean;
+        /**
+          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+         */
+        "target": string | undefined;
+    }
+    interface IonBreadcrumbs {
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
+          * The number of breadcrumbs to show after the collapsed indicator. If `itemsBeforeCollapse` + `itemsAfterCollapse` is greater than `maxItems`, the breadcrumbs will not be collapsed.
+         */
+        "itemsAfterCollapse": number;
+        /**
+          * The number of breadcrumbs to show before the collapsed indicator. If `itemsBeforeCollapse` + `itemsAfterCollapse` is greater than `maxItems`, the breadcrumbs will not be collapsed.
+         */
+        "itemsBeforeCollapse": number;
+        /**
+          * The maximum number of breadcrumbs to show before collapsing.
+         */
+        "maxItems"?: number;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+    }
     interface IonButton {
         /**
           * The type of button.
@@ -262,13 +479,17 @@ export namespace Components {
          */
         "download": string | undefined;
         /**
-          * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
+          * Set to `"block"` for a full-width button or to `"full"` for a full-width button with square corners and no left or right borders.
          */
         "expand"?: 'full' | 'block';
         /**
-          * Set to `"clear"` for a transparent button, to `"outline"` for a transparent button with a border, or to `"solid"`. The default style is `"solid"` except inside of a toolbar, where the default is `"clear"`.
+          * Set to `"clear"` for a transparent button that resembles a flat button, to `"outline"` for a transparent button with a border, or to `"solid"` for a button with a filled background. The default fill is `"solid"` except inside of a toolbar, where the default is `"clear"`.
          */
         "fill"?: 'clear' | 'outline' | 'solid' | 'default';
+        /**
+          * The HTML form element or form element id. Used to submit a form when the button is not a child of the form.
+         */
+        "form"?: string | HTMLFormElement;
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
@@ -290,11 +511,11 @@ export namespace Components {
          */
         "routerDirection": RouterDirection;
         /**
-          * The button shape.
+          * Set to `"round"` for a button with more rounded corners.
          */
         "shape"?: 'round';
         /**
-          * The button size.
+          * Set to `"small"` for a button with less height and padding, to `"default"` for a button with the default height and padding, or to `"large"` for a button with more height and padding. By default the size is unset, unless the button is inside of an item, where the size is `"small"` by default. Set the size to `"default"` inside of an item to make it a standard size button.
          */
         "size"?: 'small' | 'default' | 'large';
         /**
@@ -404,6 +625,10 @@ export namespace Components {
     }
     interface IonCheckbox {
         /**
+          * How to control the alignment of the checkbox and label on the cross axis. `"start"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL. `"center"`: The label and control will appear at the center of the cross axis in both LTR and RTL.
+         */
+        "alignment": 'start' | 'center';
+        /**
           * If `true`, the checkbox is selected.
          */
         "checked": boolean;
@@ -420,6 +645,18 @@ export namespace Components {
          */
         "indeterminate": boolean;
         /**
+          * How to pack the label and checkbox within a line. `"start"`: The label and checkbox will appear on the left in LTR and on the right in RTL. `"end"`: The label and checkbox will appear on the right in LTR and on the left in RTL. `"space-between"`: The label and checkbox will appear on opposite ends of the line with space between the two elements.
+         */
+        "justify": 'start' | 'end' | 'space-between';
+        /**
+          * Where to place the label relative to the checkbox. `"start"`: The label will appear to the left of the checkbox in LTR and to the right in RTL. `"end"`: The label will appear to the right of the checkbox in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the checkbox regardless of the direction. The alignment of the label can be controlled with the `alignment` property.
+         */
+        "labelPlacement": 'start' | 'end' | 'fixed' | 'stacked';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt checkboxes in to the modern form markup when they are using either the `aria-label` attribute or have text in the default slot. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior.  Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
+        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -430,7 +667,7 @@ export namespace Components {
         /**
           * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
          */
-        "value": string;
+        "value": any | null;
     }
     interface IonChip {
         /**
@@ -554,13 +791,17 @@ export namespace Components {
          */
         "color"?: Color;
         /**
-          * If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce. If the content exceeds the bounds of ionContent, nothing will change. Note, the does not disable the system bounce on iOS. That is an OS level setting.
+          * If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce. If the content exceeds the bounds of ionContent, nothing will change. Note, this does not disable the system bounce on iOS. That is an OS level setting.
          */
         "forceOverscroll"?: boolean;
         /**
           * If `true`, the content will scroll behind the headers and footers. This effect can easily be seen by setting the toolbar to transparent.
          */
         "fullscreen": boolean;
+        /**
+          * Returns the background content element.
+         */
+        "getBackgroundElement": () => Promise<HTMLElement>;
         /**
           * Get the element where the actual scrolling takes place. This element can be used to subscribe to `scroll` events or manually modify `scrollTop`. However, it's recommended to use the API provided by `ion-content`:  i.e. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events and `scrollToPoint()` to scroll the content into a certain point.
          */
@@ -604,17 +845,25 @@ export namespace Components {
     }
     interface IonDatetime {
         /**
+          * Emits the ionCancel event and optionally closes the popover or modal that the datetime was presented in.
+         */
+        "cancel": (closeOverlay?: boolean) => Promise<void>;
+        /**
           * The text to display on the picker's cancel button.
          */
         "cancelText": string;
         /**
-          * Full day of the week names. This can be used to provide locale names for each day in the week. Defaults to English.
+          * The text to display on the picker's "Clear" button.
          */
-        "dayNames"?: string[] | string;
+        "clearText": string;
         /**
-          * Short abbreviated day of the week names. This can be used to provide locale names for each day in the week. Defaults to English. Defaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']`
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
-        "dayShortNames"?: string[] | string;
+        "color"?: Color;
+        /**
+          * Confirms the selected datetime value, updates the `value` property, and optionally closes the popover or modal that the datetime was presented in.
+         */
+        "confirm": (closeOverlay?: boolean) => Promise<void>;
         /**
           * Values used to create the list of selectable days. By default every day is shown for the given month. However, to control exactly which days of the month to display, the `dayValues` input can take a number, an array of numbers, or a string of comma separated numbers. Note that even if the array days have an invalid number for the selected month, like `31` in February, it will correctly not show days which are not valid for the selected month.
          */
@@ -624,21 +873,33 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * The display format of the date and time as text that shows within the item. When the `pickerFormat` input is not used, then the `displayFormat` is used for both display the formatted text, and determining the datetime picker's columns. See the `pickerFormat` input description for more info. Defaults to `MMM D, YYYY`.
-         */
-        "displayFormat": string;
-        /**
-          * The timezone to use for display purposes only. See [Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) for a list of supported timezones. If no value is provided, the component will default to displaying times in the user's local timezone.
-         */
-        "displayTimezone"?: string;
-        /**
           * The text to display on the picker's "Done" button.
          */
         "doneText": string;
         /**
+          * The first day of the week to use for `ion-datetime`. The default value is `0` and represents Sunday.
+         */
+        "firstDayOfWeek": number;
+        /**
+          * Used to apply custom text and background colors to specific dates.  Can be either an array of objects containing ISO strings and colors, or a callback that receives an ISO string and returns the colors.  Only applies to the `date`, `date-time`, and `time-date` presentations, with `preferWheel="false"`.
+         */
+        "highlightedDates"?: DatetimeHighlight[] | DatetimeHighlightCallback;
+        /**
+          * The hour cycle of the `ion-datetime`. If no value is set, this is specified by the current locale.
+         */
+        "hourCycle"?: DatetimeHourCycle;
+        /**
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
+        /**
+          * Returns if an individual date (calendar day) is enabled or disabled.  If `true`, the day will be enabled/interactive. If `false`, the day will be disabled/non-interactive.  The function accepts an ISO 8601 date string of a given day. By default, all days are enabled. Developers can use this function to write custom logic to disable certain days.  The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
+         */
+        "isDateEnabled"?: (dateIsoString: string) => boolean;
+        /**
+          * The locale to use for `ion-datetime`. This impacts month and day name formatting. The `"default"` value refers to the default locale set by your device.
+         */
+        "locale": string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
          */
@@ -656,49 +917,83 @@ export namespace Components {
          */
         "mode"?: "ios" | "md";
         /**
-          * Full names for each month name. This can be used to provide locale month names. Defaults to English.
-         */
-        "monthNames"?: string[] | string;
-        /**
-          * Short abbreviated names for each month name. This can be used to provide locale month names. Defaults to English.
-         */
-        "monthShortNames"?: string[] | string;
-        /**
           * Values used to create the list of selectable months. By default the month values range from `1` to `12`. However, to control exactly which months to display, the `monthValues` input can take a number, an array of numbers, or a string of comma separated numbers. For example, if only summer months should be shown, then this input value would be `monthValues="6,7,8"`. Note that month numbers do *not* have a zero-based index, meaning January's value is `1`, and December's is `12`.
          */
         "monthValues"?: number[] | number | string;
+        /**
+          * If `true`, multiple dates can be selected at once. Only applies to `presentation="date"` and `preferWheel="false"`.
+         */
+        "multiple": boolean;
         /**
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
         /**
-          * Opens the datetime overlay.
+          * If `true`, a wheel picker will be rendered instead of a calendar grid where possible. If `false`, a calendar grid will be rendered instead of a wheel picker where possible.  A wheel picker can be rendered instead of a grid when `presentation` is one of the following values: `"date"`, `"date-time"`, or `"time-date"`.  A wheel picker will always be rendered regardless of the `preferWheel` value when `presentation` is one of the following values: `"time"`, `"month"`, `"month-year"`, or `"year"`.
          */
-        "open": () => Promise<void>;
+        "preferWheel": boolean;
         /**
-          * The format of the date and time picker columns the user selects. A datetime input can have one or many datetime parts, each getting their own column which allow individual selection of that particular datetime part. For example, year and month columns are two individually selectable columns which help choose an exact date from the datetime picker. Each column follows the string parse format. Defaults to use `displayFormat`.
+          * Which values you want to select. `"date"` will show a calendar picker to select the month, day, and year. `"time"` will show a time picker to select the hour, minute, and (optionally) AM/PM. `"date-time"` will show the date picker first and time picker second. `"time-date"` will show the time picker first and date picker second.
          */
-        "pickerFormat"?: string;
+        "presentation": DatetimePresentation;
         /**
-          * Any additional options that the picker interface can accept. See the [Picker API docs](../picker) for the picker options.
-         */
-        "pickerOptions"?: DatetimeOptions;
-        /**
-          * The text to display when there's no date selected yet. Using lowercase to match the input attribute
-         */
-        "placeholder"?: string | null;
-        /**
-          * If `true`, the datetime appears normal but is not interactive.
+          * If `true`, the datetime appears normal but the selected date cannot be changed.
          */
         "readonly": boolean;
         /**
-          * The value of the datetime as a valid ISO 8601 datetime string.
+          * Resets the internal state of the datetime but does not update the value. Passing a valid ISO-8601 string will reset the state of the component to the provided date. If no value is provided, the internal state will be reset to the clamped value of the min, max and today.
          */
-        "value"?: string | null;
+        "reset": (startDate?: string) => Promise<void>;
         /**
-          * Values used to create the list of selectable years. By default the year values range between the `min` and `max` datetime inputs. However, to control exactly which years to display, the `yearValues` input can take a number, an array of numbers, or string of comma separated numbers. For example, to show upcoming and recent leap years, then this input's value would be `yearValues="2024,2020,2016,2012,2008"`.
+          * If `true`, a "Clear" button will be rendered alongside the default "Cancel" and "OK" buttons at the bottom of the `ion-datetime` component. Developers can also use the `button` slot if they want to customize these buttons. If custom buttons are set in the `button` slot then the default buttons will not be rendered.
+         */
+        "showClearButton": boolean;
+        /**
+          * If `true`, the default "Cancel" and "OK" buttons will be rendered at the bottom of the `ion-datetime` component. Developers can also use the `button` slot if they want to customize these buttons. If custom buttons are set in the `button` slot then the default buttons will not be rendered.
+         */
+        "showDefaultButtons": boolean;
+        /**
+          * If `true`, the default "Time" label will be rendered for the time selector of the `ion-datetime` component. Developers can also use the `time-label` slot if they want to customize this label. If a custom label is set in the `time-label` slot then the default label will not be rendered.
+         */
+        "showDefaultTimeLabel": boolean;
+        /**
+          * If `true`, a header will be shown above the calendar picker. This will include both the slotted title, and the selected date.
+         */
+        "showDefaultTitle": boolean;
+        /**
+          * If `cover`, the `ion-datetime` will expand to cover the full width of its container. If `fixed`, the `ion-datetime` will have a fixed width.
+         */
+        "size": 'cover' | 'fixed';
+        /**
+          * A callback used to format the header text that shows how many dates are selected. Only used if there are 0 or more than 1 selected (i.e. unused for exactly 1). By default, the header text is set to "numberOfDates days".  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
+         */
+        "titleSelectedDatesFormatter"?: TitleSelectedDatesFormatter;
+        /**
+          * The value of the datetime as a valid ISO 8601 datetime string. This should be an array of strings only when `multiple="true"`.
+         */
+        "value"?: string | string[] | null;
+        /**
+          * Values used to create the list of selectable years. By default the year values range between the `min` and `max` datetime inputs. However, to control exactly which years to display, the `yearValues` input can take a number, an array of numbers, or string of comma separated numbers. For example, to show upcoming and recent leap years, then this input's value would be `yearValues="2008,2012,2016,2020,2024"`.
          */
         "yearValues"?: number[] | number | string;
+    }
+    interface IonDatetimeButton {
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
+          * The ID of the `ion-datetime` instance associated with the datetime button.
+         */
+        "datetime"?: string;
+        /**
+          * If `true`, the user cannot interact with the button.
+         */
+        "disabled": boolean;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
     }
     interface IonFab {
         /**
@@ -717,6 +1012,10 @@ export namespace Components {
           * Where to align the fab horizontally in the viewport.
          */
         "horizontal"?: 'start' | 'end' | 'center';
+        /**
+          * Opens/Closes the FAB list container.
+         */
+        "toggle": () => Promise<void>;
         /**
           * Where to align the fab vertically in the viewport.
          */
@@ -796,6 +1095,10 @@ export namespace Components {
     }
     interface IonFooter {
         /**
+          * Describes the scroll effect that will be applied to the footer. Only applies in iOS mode.
+         */
+        "collapse"?: 'fade';
+        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -812,9 +1115,9 @@ export namespace Components {
     }
     interface IonHeader {
         /**
-          * Describes the scroll effect that will be applied to the header `condense` only applies in iOS mode.  Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)
+          * Describes the scroll effect that will be applied to the header. Only applies in iOS mode.  Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)
          */
-        "collapse"?: 'condense';
+        "collapse"?: 'condense' | 'fade';
         /**
           * The mode determines which platform styles to use.
          */
@@ -858,13 +1161,14 @@ export namespace Components {
          */
         "loadingSpinner"?: SpinnerTypes | null;
         /**
-          * Optional text to display while loading. `loadingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
+          * Optional text to display while loading. `loadingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)  This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "loadingText"?: string | IonicSafeString;
     }
     interface IonInput {
         /**
-          * If the value of the type attribute is `"file"`, then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.
+          * This attribute is ignored.
+          * @deprecated
          */
         "accept"?: string;
         /**
@@ -880,7 +1184,7 @@ export namespace Components {
          */
         "autocorrect": 'on' | 'off';
         /**
-          * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+          * Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.  This may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.
          */
         "autofocus": boolean;
         /**
@@ -896,9 +1200,17 @@ export namespace Components {
          */
         "color"?: Color;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * If `true`, a character counter will display the ratio of characters used and the total character limit. Developers must also set the `maxlength` property for the counter to be calculated correctly.
          */
-        "debounce": number;
+        "counter": boolean;
+        /**
+          * A callback used to format the counter text. By default the counter text is set to "itemLength / maxLength".  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
+         */
+        "counterFormatter"?: (inputLength: number, maxLength: number) => string;
+        /**
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.
+         */
+        "debounce"?: number;
         /**
           * If `true`, the user cannot interact with the input.
          */
@@ -908,21 +1220,41 @@ export namespace Components {
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
         /**
-          * This is required for a WebKit bug which requires us to blur and focus an input to properly focus the input in an item with delegatesFocus. It will no longer be needed with iOS 14.
+          * Text that is placed under the input and displayed when an error is detected.
          */
-        "fireFocusEvents": boolean;
+        "errorText"?: string;
+        /**
+          * The fill for the item. If `"solid"` the item will have a background. If `"outline"` the item will be transparent with a border. Only available in `md` mode.
+         */
+        "fill"?: 'outline' | 'solid';
         /**
           * Returns the native `<input>` element used under the hood.
          */
         "getInputElement": () => Promise<HTMLInputElement>;
         /**
+          * Text that is placed under the input and displayed when no error is detected.
+         */
+        "helperText"?: string;
+        /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
         "inputmode"?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
         /**
+          * The visible label associated with the input.  Use this if you need to render a plaintext label.  The `label` property will take priority over the `label` slot if both are used.
+         */
+        "label"?: string;
+        /**
+          * Where to place the label relative to the input. `"start"`: The label will appear to the left of the input in LTR and to the right in RTL. `"end"`: The label will appear to the right of the input in LTR and to the left in RTL. `"floating"`: The label will appear smaller and above the input when the input is focused or it has a value. Otherwise it will appear on top of the input. `"stacked"`: The label will appear smaller and above the input regardless even when the input is blurred or has no value. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("...").
+         */
+        "labelPlacement": 'start' | 'end' | 'floating' | 'stacked' | 'fixed';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the `label` property. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
+        /**
           * The maximum value, which must not be less than its minimum (min attribute) value.
          */
-        "max"?: string;
+        "max"?: string | number;
         /**
           * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.
          */
@@ -930,7 +1262,7 @@ export namespace Components {
         /**
           * The minimum value, which must not be greater than its maximum (max attribute) value.
          */
-        "min"?: string;
+        "min"?: string | number;
         /**
           * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.
          */
@@ -940,7 +1272,7 @@ export namespace Components {
          */
         "mode"?: "ios" | "md";
         /**
-          * If `true`, the user can enter more than one value. This attribute applies when the type attribute is set to `"email"` or `"file"`, otherwise it is ignored.
+          * If `true`, the user can enter more than one value. This attribute applies when the type attribute is set to `"email"`, otherwise it is ignored.
          */
         "multiple"?: boolean;
         /**
@@ -952,9 +1284,9 @@ export namespace Components {
          */
         "pattern"?: string;
         /**
-          * Instructional text that shows before the input has a value.
+          * Instructional text that shows before the input has a value. This property applies only when the `type` property is set to `"email"`, `"number"`, `"password"`, `"search"`, `"tel"`, `"text"`, or `"url"`, otherwise it is ignored.
          */
-        "placeholder"?: string | null;
+        "placeholder"?: string;
         /**
           * If `true`, the user cannot modify the value.
          */
@@ -964,16 +1296,13 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Sets blur on the native `input` in `ion-input`. Use this method instead of the global `input.blur()`.
-         */
-        "setBlur": () => Promise<void>;
-        /**
-          * Sets focus on the native `input` in `ion-input`. Use this method instead of the global `input.focus()`.
+          * Sets focus on the native `input` in `ion-input`. Use this method instead of the global `input.focus()`.  Developers who wish to focus an input when a page enters should call `setFocus()` in the `ionViewDidEnter()` lifecycle method.  Developers who wish to focus an input when an overlay is presented should call `setFocus` after `didPresent` has resolved.  See [managing focus](/docs/developing/managing-focus) for more information.
          */
         "setFocus": () => Promise<void>;
         /**
-          * The initial size of the control. This value is in pixels unless the value of the type attribute is `"text"` or `"password"`, in which case it is an integer number of characters. This attribute applies only when the `type` attribute is set to `"text"`, `"search"`, `"tel"`, `"url"`, `"email"`, or `"password"`, otherwise it is ignored.
+          * The shape of the input. If "round" it will have an increased border radius.
          */
+        "shape"?: 'round';
         "size"?: number;
         /**
           * If `true`, the element will have its spelling and grammar checked.
@@ -1002,6 +1331,16 @@ export namespace Components {
          */
         "color"?: Color;
         /**
+          * If `true`, a character counter will display the ratio of characters used and the total character limit. Only applies when the `maxlength` property is set on the inner `ion-input` or `ion-textarea`.
+          * @deprecated Use the `counter` property on `ion-input` or `ion-textarea` instead.
+         */
+        "counter": boolean;
+        /**
+          * A callback used to format the counter text. By default the counter text is set to "itemLength / maxLength".
+          * @deprecated Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead.
+         */
+        "counterFormatter"?: CounterFormatter;
+        /**
           * If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode` is `ios` and an `href` or `button` property is present.
          */
         "detail"?: boolean;
@@ -1017,6 +1356,11 @@ export namespace Components {
           * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
          */
         "download": string | undefined;
+        /**
+          * The fill for the item. If `"solid"` the item will have a background. If `"outline"` the item will be transparent with a border. Only available in `md` mode.
+          * @deprecated Use the `fill` property on `ion-input` or `ion-textarea` instead.
+         */
+        "fill"?: 'outline' | 'solid';
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
@@ -1041,6 +1385,10 @@ export namespace Components {
           * When using a router, it specifies the transition direction when navigating to another page using `href`.
          */
         "routerDirection": RouterDirection;
+        /**
+          * The shape of the item. If "round" it will have increased border radius.
+         */
+        "shape"?: 'round';
         /**
           * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
          */
@@ -1113,11 +1461,11 @@ export namespace Components {
     }
     interface IonItemSliding {
         /**
-          * Close the sliding item. Items can also be closed from the [List](../list).
+          * Close the sliding item. Items can also be closed from the [List](./list).
          */
         "close": () => Promise<void>;
         /**
-          * Close all of the sliding items in the list. Items can also be closed from the [List](../list).
+          * Close all of the sliding items in the list. Items can also be closed from the [List](./list).
          */
         "closeOpened": () => Promise<boolean>;
         /**
@@ -1197,6 +1545,7 @@ export namespace Components {
           * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
          */
         "cssClass"?: string | string[];
+        "delegate"?: FrameworkDelegate;
         /**
           * Dismiss the loading overlay after it has been presented.
           * @param data Any data to emit in the dismiss events.
@@ -1211,6 +1560,15 @@ export namespace Components {
           * Animation to use when the loading indicator is presented.
          */
         "enterAnimation"?: AnimationBuilder;
+        "hasController": boolean;
+        /**
+          * Additional attributes to pass to the loader.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * If `true`, the loading indicator will open. If `false`, the loading indicator will close. Use this if you need finer grained control over presentation, otherwise just use the loadingController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the loading indicator dismisses. You will need to do that in your code.
+         */
+        "isOpen": boolean;
         /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
@@ -1220,7 +1578,7 @@ export namespace Components {
          */
         "leaveAnimation"?: AnimationBuilder;
         /**
-          * Optional text content to display in the loading indicator.
+          * Optional text content to display in the loading indicator.  This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "message"?: string | IonicSafeString;
         /**
@@ -1252,6 +1610,10 @@ export namespace Components {
           * If `true`, the loading indicator will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent": boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the loading indicator to open when clicked.
+         */
+        "trigger": string | undefined;
     }
     interface IonMenu {
         /**
@@ -1349,13 +1711,25 @@ export namespace Components {
          */
         "animated": boolean;
         /**
+          * A decimal value between 0 and 1 that indicates the point after which the backdrop will begin to fade in when using a sheet modal. Prior to this point, the backdrop will be hidden and the content underneath the sheet can be interacted with. This value is exclusive meaning the backdrop will become active after the value specified.
+         */
+        "backdropBreakpoint": number;
+        /**
           * If `true`, the modal will be dismissed when the backdrop is clicked.
          */
         "backdropDismiss": boolean;
         /**
+          * The breakpoints to use when creating a sheet modal. Each value in the array must be a decimal between 0 and 1 where 0 indicates the modal is fully closed and 1 indicates the modal is fully open. Values are relative to the height of the modal, not the height of the screen. One of the values in this array must be the value of the `initialBreakpoint` property. For example: [0, .25, .5, 1]
+         */
+        "breakpoints"?: number[];
+        /**
+          * Determines whether or not a modal can dismiss when calling the `dismiss` method.  If the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss. If the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
+         */
+        "canDismiss": boolean | ((data?: any, role?: string) => Promise<boolean>);
+        /**
           * The component to display inside of the modal.
          */
-        "component": ComponentRef;
+        "component"?: ComponentRef;
         /**
           * The data to pass to the modal component.
          */
@@ -1375,6 +1749,35 @@ export namespace Components {
           * Animation to use when the modal is presented.
          */
         "enterAnimation"?: AnimationBuilder;
+        /**
+          * Returns the current breakpoint of a sheet style modal
+         */
+        "getCurrentBreakpoint": () => Promise<number | undefined>;
+        /**
+          * The horizontal line that displays at the top of a sheet modal. It is `true` by default when setting the `breakpoints` and `initialBreakpoint` properties.
+         */
+        "handle"?: boolean;
+        /**
+          * The interaction behavior for the sheet modal when the handle is pressed.  Defaults to `"none"`, which  means the modal will not change size or position when the handle is pressed. Set to `"cycle"` to let the modal cycle between available breakpoints when pressed.  Handle behavior is unavailable when the `handle` property is set to `false` or when the `breakpoints` property is not set (using a fullscreen or card modal).
+         */
+        "handleBehavior"?: ModalHandleBehavior;
+        "hasController": boolean;
+        /**
+          * Additional attributes to pass to the modal.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * A decimal value between 0 and 1 that indicates the initial point the modal will open at when creating a sheet modal. This value must also be listed in the `breakpoints` array.
+         */
+        "initialBreakpoint"?: number;
+        /**
+          * If `true`, the modal will open. If `false`, the modal will close. Use this if you need finer grained control over presentation, otherwise just use the modalController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the modal dismisses. You will need to do that in your code.
+         */
+        "isOpen": boolean;
+        /**
+          * If `true`, the component passed into `ion-modal` will automatically be mounted when the modal is created. The component will remain mounted even when the modal is dismissed. However, the component will be destroyed when the modal is destroyed. This property is not reactive and should only be used when initially creating a modal.  Note: This feature only applies to inline modals in JavaScript frameworks such as Angular, React, and Vue.
+         */
+        "keepContentsMounted": boolean;
         /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
@@ -1405,13 +1808,17 @@ export namespace Components {
          */
         "presentingElement"?: HTMLElement;
         /**
-          * If `true`, a backdrop will be displayed behind the modal.
+          * Move a sheet style modal to a specific breakpoint. The breakpoint value must be a value defined in your `breakpoints` array.
+         */
+        "setCurrentBreakpoint": (breakpoint: number) => Promise<void>;
+        /**
+          * If `true`, a backdrop will be displayed behind the modal. This property controls whether or not the backdrop darkens the screen when the modal is presented. It does not control whether or not the backdrop is active or present in the DOM.
          */
         "showBackdrop": boolean;
         /**
-          * If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.
+          * An ID corresponding to the trigger element that causes the modal to open when clicked.
          */
-        "swipeToClose": boolean;
+        "trigger": string | undefined;
     }
     interface IonNav {
         /**
@@ -1419,7 +1826,7 @@ export namespace Components {
          */
         "animated": boolean;
         /**
-          * By default `ion-nav` animates transition between pages based in the mode (ios or material design). However, this property allows to create custom transition using `AnimateBuilder` functions.
+          * By default `ion-nav` animates transition between pages based in the mode (ios or material design). However, this property allows to create custom transition using `AnimationBuilder` functions.
          */
         "animation"?: AnimationBuilder;
         /**
@@ -1442,6 +1849,9 @@ export namespace Components {
           * @param view The view to get.
          */
         "getPrevious": (view?: ViewController) => Promise<ViewController | undefined>;
+        /**
+          * Called by <ion-router> to retrieve the current component.
+         */
         "getRouteId": () => Promise<RouteID | undefined>;
         /**
           * Inserts a component into the navigation stack at the specified index. This is useful to add a component at any point in the navigation stack.
@@ -1518,6 +1928,14 @@ export namespace Components {
           * @param done The transition complete function.
          */
         "setRoot": <T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>;
+        /**
+          * Called by the router to update the view.
+          * @param id The component tag.
+          * @param params The component params.
+          * @param direction A direction hint.
+          * @param animation an AnimationBuilder.
+          * @return the status.
+         */
         "setRouteId": (id: string, params: ComponentProps | undefined, direction: RouterDirection, animation?: AnimationBuilder) => Promise<RouteWrite>;
         /**
           * If the nav component should allow for swipe-to-go-back.
@@ -1573,6 +1991,7 @@ export namespace Components {
           * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
          */
         "cssClass"?: string | string[];
+        "delegate"?: FrameworkDelegate;
         /**
           * Dismiss the picker overlay after it has been presented.
           * @param data Any data to emit in the dismiss events.
@@ -1592,6 +2011,15 @@ export namespace Components {
           * @param name The name of the column.
          */
         "getColumn": (name: string) => Promise<PickerColumn | undefined>;
+        "hasController": boolean;
+        /**
+          * Additional attributes to pass to the picker.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * If `true`, the picker will open. If `false`, the picker will close. Use this if you need finer grained control over presentation, otherwise just use the pickerController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the picker dismisses. You will need to do that in your code.
+         */
+        "isOpen": boolean;
         /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
@@ -1621,6 +2049,10 @@ export namespace Components {
           * If `true`, a backdrop will be displayed behind the picker.
          */
         "showBackdrop": boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the picker to open when clicked.
+         */
+        "trigger": string | undefined;
     }
     interface IonPickerColumn {
         /**
@@ -1628,21 +2060,67 @@ export namespace Components {
          */
         "col": PickerColumn;
     }
+    interface IonPickerColumnInternal {
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
+          * If `true`, the user cannot interact with the picker.
+         */
+        "disabled": boolean;
+        /**
+          * A list of options to be displayed in the picker
+         */
+        "items": PickerColumnItem[];
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * If `true`, tapping the picker will reveal a number input keyboard that lets the user type in values for each picker column. This is useful when working with time pickers.
+         */
+        "numericInput": boolean;
+        "scrollActiveItemIntoView": () => Promise<void>;
+        /**
+          * Sets the value prop and fires the ionChange event. This is used when we need to fire ionChange from user-generated events that cannot be caught with normal input/change event listeners.
+         */
+        "setValue": (value?: string | number) => Promise<void>;
+        /**
+          * The selected option in the picker.
+         */
+        "value"?: string | number;
+    }
+    interface IonPickerInternal {
+        "exitInputMode": () => Promise<void>;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+    }
     interface IonPopover {
+        /**
+          * Describes how to align the popover content with the `reference` point. Defaults to `"center"` for `ios` mode, and `"start"` for `md` mode.
+         */
+        "alignment"?: PositionAlign;
         /**
           * If `true`, the popover will animate.
          */
         "animated": boolean;
         /**
+          * If `true`, the popover will display an arrow that points at the `reference` when running in `ios` mode. Does not apply in `md` mode.
+         */
+        "arrow": boolean;
+        /**
           * If `true`, the popover will be dismissed when the backdrop is clicked.
          */
         "backdropDismiss": boolean;
         /**
-          * The component to display inside of the popover.
+          * The component to display inside of the popover. You only need to use this if you are not using a JavaScript framework. Otherwise, you can just slot your component inside of `ion-popover`.
          */
-        "component": ComponentRef;
+        "component"?: ComponentRef;
         /**
-          * The data to pass to the popover component.
+          * The data to pass to the popover component. You only need to use this if you are not using a JavaScript framework. Otherwise, you can just set the props directly on your component.
          */
         "componentProps"?: ComponentProps;
         /**
@@ -1654,8 +2132,13 @@ export namespace Components {
           * Dismiss the popover overlay after it has been presented.
           * @param data Any data to emit in the dismiss events.
           * @param role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'.
+          * @param dismissParentPopover If `true`, dismissing this popover will also dismiss a parent popover if this popover is nested. Defaults to `true`.
          */
-        "dismiss": (data?: any, role?: string) => Promise<boolean>;
+        "dismiss": (data?: any, role?: string, dismissParentPopover?: boolean) => Promise<boolean>;
+        /**
+          * If `true`, the popover will be automatically dismissed when the content has been clicked.
+         */
+        "dismissOnSelect": boolean;
         /**
           * Animation to use when the popover is presented.
          */
@@ -1664,10 +2147,25 @@ export namespace Components {
           * The event to pass to the popover animation.
          */
         "event": any;
+        "getParentPopover": () => Promise<HTMLIonPopoverElement | null>;
+        "hasController": boolean;
+        /**
+          * Additional attributes to pass to the popover.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * If `true`, the popover will open. If `false`, the popover will close. Use this if you need finer grained control over presentation, otherwise just use the popoverController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the popover dismisses. You will need to do that in your code.
+         */
+        "isOpen": boolean;
+        /**
+          * If `true`, the component passed into `ion-popover` will automatically be mounted when the popover is created. The component will remain mounted even when the popover is dismissed. However, the component will be destroyed when the popover is destroyed. This property is not reactive and should only be used when initially creating a popover.  Note: This feature only applies to inline popovers in JavaScript frameworks such as Angular, React, and Vue.
+         */
+        "keepContentsMounted": boolean;
         /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
         "keyboardClose": boolean;
+        "keyboardEvents": boolean;
         /**
           * Animation to use when the popover is dismissed.
          */
@@ -1686,17 +2184,41 @@ export namespace Components {
         "onWillDismiss": <T = any>() => Promise<OverlayEventDetail<T>>;
         "overlayIndex": number;
         /**
-          * Present the popover overlay after it has been created.
+          * Present the popover overlay after it has been created. Developers can pass a mouse, touch, or pointer event to position the popover relative to where that event was dispatched.
          */
-        "present": () => Promise<void>;
+        "present": (event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent) => Promise<void>;
         /**
-          * If `true`, a backdrop will be displayed behind the popover.
+          * When opening a popover from a trigger, we should not be modifying the `event` prop from inside the component. Additionally, when pressing the "Right" arrow key, we need to shift focus to the first descendant in the newly presented popover.
+         */
+        "presentFromTrigger": (event?: any, focusDescendant?: boolean) => Promise<void>;
+        /**
+          * Describes what to position the popover relative to. If `"trigger"`, the popover will be positioned relative to the trigger button. If passing in an event, this is determined via event.target. If `"event"`, the popover will be positioned relative to the x/y coordinates of the trigger action. If passing in an event, this is determined via event.clientX and event.clientY.
+         */
+        "reference": PositionReference;
+        /**
+          * If `true`, a backdrop will be displayed behind the popover. This property controls whether or not the backdrop darkens the screen when the popover is presented. It does not control whether or not the backdrop is active or present in the DOM.
          */
         "showBackdrop": boolean;
+        /**
+          * Describes which side of the `reference` point to position the popover on. The `"start"` and `"end"` values are RTL-aware, and the `"left"` and `"right"` values are not.
+         */
+        "side": PositionSide;
+        /**
+          * Describes how to calculate the popover width. If `"cover"`, the popover width will match the width of the trigger. If `"auto"`, the popover width will be set to a static default value.
+         */
+        "size": PopoverSize;
         /**
           * If `true`, the popover will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent": boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the popover to open. Use the `trigger-action` property to customize the interaction that results in the popover opening.
+         */
+        "trigger": string | undefined;
+        /**
+          * Describes what kind of interaction with the trigger that should cause the popover to open. Does not apply when the `trigger` property is `undefined`. If `"click"`, the popover will be presented when the trigger is left clicked. If `"hover"`, the popover will be presented when a pointer hovers over the trigger. If `"context-menu"`, the popover will be presented when the trigger is right clicked on desktop and long pressed on mobile. This will also prevent your device's normal context menu from appearing.
+         */
+        "triggerAction": TriggerAction;
     }
     interface IonProgressBar {
         /**
@@ -1707,10 +2229,6 @@ export namespace Components {
           * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
         "color"?: Color;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * The mode determines which platform styles to use.
          */
@@ -1730,6 +2248,10 @@ export namespace Components {
     }
     interface IonRadio {
         /**
+          * How to control the alignment of the radio and label on the cross axis. `"start"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL. `"center"`: The label and control will appear at the center of the cross axis in both LTR and RTL.
+         */
+        "alignment": 'start' | 'center';
+        /**
           * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
         "color"?: Color;
@@ -1737,6 +2259,18 @@ export namespace Components {
           * If `true`, the user cannot interact with the radio.
          */
         "disabled": boolean;
+        /**
+          * How to pack the label and radio within a line. `"start"`: The label and radio will appear on the left in LTR and on the right in RTL. `"end"`: The label and radio will appear on the right in LTR and on the left in RTL. `"space-between"`: The label and radio will appear on opposite ends of the line with space between the two elements.
+         */
+        "justify": 'start' | 'end' | 'space-between';
+        /**
+          * Where to place the label relative to the radio. `"start"`: The label will appear to the left of the radio in LTR and to the right in RTL. `"end"`: The label will appear to the right of the radio in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the radio regardless of the direction. The alignment of the label can be controlled with the `alignment` property.
+         */
+        "labelPlacement": 'start' | 'end' | 'fixed' | 'stacked';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the default slot that contains the label text. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
         /**
           * The mode determines which platform styles to use.
          */
@@ -1746,7 +2280,7 @@ export namespace Components {
          */
         "name": string;
         "setButtonTabindex": (value: number) => Promise<void>;
-        "setFocus": (ev: any) => Promise<void>;
+        "setFocus": (ev: globalThis.Event) => Promise<void>;
         /**
           * the value of the radio.
          */
@@ -1758,6 +2292,10 @@ export namespace Components {
          */
         "allowEmptySelection": boolean;
         /**
+          * This property allows developers to specify a custom function or property name for comparing objects when determining the selected option in the ion-radio-group. When not specified, the default behavior will use strict equality (===) for comparison.
+         */
+        "compareWith"?: string | RadioGroupCompareFn | null;
+        /**
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
@@ -1768,13 +2306,17 @@ export namespace Components {
     }
     interface IonRange {
         /**
+          * The start position of the range active bar. This feature is only available with a single knob (dualKnobs="false"). Valid values are greater than or equal to the min value and less than or equal to the max value.
+         */
+        "activeBarStart"?: number;
+        /**
           * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
         "color"?: Color;
         /**
-          * How long, in milliseconds, to wait to trigger the `ionChange` event after each change in the range value. This also impacts form bindings such as `ngModel` or `v-model`.
+          * How long, in milliseconds, to wait to trigger the `ionInput` event after each change in the range value.
          */
-        "debounce": number;
+        "debounce"?: number;
         /**
           * If `true`, the user cannot interact with the range.
          */
@@ -1783,6 +2325,18 @@ export namespace Components {
           * Show two knobs.
          */
         "dualKnobs": boolean;
+        /**
+          * The text to display as the control's label. Use this over the `label` slot if you only need plain text. The `label` property will take priority over the `label` slot if both are used.
+         */
+        "label"?: string;
+        /**
+          * Where to place the label relative to the range. `"start"`: The label will appear to the left of the range in LTR and to the right in RTL. `"end"`: The label will appear to the right of the range in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the range regardless of the direction.
+         */
+        "labelPlacement": 'start' | 'end' | 'fixed' | 'stacked';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the `label` property. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
         /**
           * Maximum integer value of the range.
          */
@@ -1803,6 +2357,10 @@ export namespace Components {
           * If `true`, a pin with integer value is shown when the knob is pressed.
          */
         "pin": boolean;
+        /**
+          * A callback used to format the pin text. By default the pin text is set to `Math.round(value)`.  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
+         */
+        "pinFormatter": PinFormatter;
         /**
           * If `true`, the knob snaps to tick marks evenly spaced based on the step property value.
          */
@@ -1842,6 +2400,10 @@ export namespace Components {
          */
         "getProgress": () => Promise<number>;
         /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
           * How much to multiply the pull speed by. To slow the pull animation down, pass a number less than `1`. To speed up the pull, pass a number greater than `1`. The default value is `1` which is equal to the speed of the cursor. If a negative value is passed in, the factor will be `1` instead.  For example: If the value passed is `1.2` and the content is dragged by `10` pixels, instead of `10` pixels the content will be pulled by `12` pixels (an increase of 20 percent). If the value passed is `0.8`, the dragged amount will be `8` pixels, less than the amount the cursor has moved.  Does not apply when the refresher content uses a spinner, enabling the native refresher.
          */
         "pullFactor": number;
@@ -1854,7 +2416,7 @@ export namespace Components {
          */
         "pullMin": number;
         /**
-          * Time it takes the refresher to to snap back to the `refreshing` state. Does not apply when the refresher content uses a spinner, enabling the native refresher.
+          * Time it takes the refresher to snap back to the `refreshing` state. Does not apply when the refresher content uses a spinner, enabling the native refresher.
          */
         "snapbackDuration": string;
     }
@@ -1864,7 +2426,7 @@ export namespace Components {
          */
         "pullingIcon"?: SpinnerTypes | string | null;
         /**
-          * The text you want to display when you begin to pull down. `pullingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
+          * The text you want to display when you begin to pull down. `pullingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)  Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "pullingText"?: string | IonicSafeString;
         /**
@@ -1872,7 +2434,7 @@ export namespace Components {
          */
         "refreshingSpinner"?: SpinnerTypes | null;
         /**
-          * The text you want to display when performing a refresh. `refreshingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
+          * The text you want to display when performing a refresh. `refreshingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)  Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "refreshingText"?: string | IonicSafeString;
     }
@@ -1917,7 +2479,7 @@ export namespace Components {
         /**
           * A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed to the defined component when rendered.
          */
-        "componentProps"?: {[key: string]: any};
+        "componentProps"?: { [key: string]: any };
         /**
           * Relative path that needs to match in order for this route to apply.  Accepts paths similar to expressjs so that you can define parameters in the url /foo/:bar where bar would be available in incoming props.
          */
@@ -1942,17 +2504,17 @@ export namespace Components {
         "navChanged": (direction: RouterDirection) => Promise<boolean>;
         "printDebug": () => Promise<void>;
         /**
-          * Navigate to the specified URL.
-          * @param url The url to navigate to.
+          * Navigate to the specified path.
+          * @param path The path to navigate to.
           * @param direction The direction of the animation. Defaults to `"forward"`.
          */
-        "push": (url: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>;
+        "push": (path: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>;
         /**
-          * By default `ion-router` will match the routes at the root path ("/"). That can be changed when
+          * The root path to use when matching URLs. By default, this is set to "/", but you can specify an alternate prefix for all URL paths.
          */
         "root": string;
         /**
-          * The router can work in two "modes": - With hash: `/index.html#/path/to/page` - Without hash: `/path/to/page`  Using one or another might depend in the requirements of your app and/or where it's deployed.  Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might requires additional server-side configuration in order to properly work.  On the otherside hash-navigation is much easier to deploy, it even works over the file protocol.  By default, this property is `true`, change to `false` to allow hash-less URLs.
+          * The router can work in two "modes": - With hash: `/index.html#/path/to/page` - Without hash: `/path/to/page`  Using one or another might depend in the requirements of your app and/or where it's deployed.  Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might requires additional server-side configuration in order to properly work.  On the other side hash-navigation is much easier to deploy, it even works over the file protocol.  By default, this property is `true`, change to `false` to allow hash-less URLs.
          */
         "useHash": boolean;
     }
@@ -1988,7 +2550,7 @@ export namespace Components {
          */
         "animated": boolean;
         /**
-          * By default `ion-nav` animates transition between pages based in the mode (ios or material design). However, this property allows to create custom transition using `AnimateBuilder` functions.
+          * This property allows to create custom transition using AnimationBuilder functions.
          */
         "animation"?: AnimationBuilder;
         "commit": (enteringEl: HTMLElement, leavingEl: HTMLElement | undefined, opts?: RouterOutletOptions) => Promise<boolean>;
@@ -2017,7 +2579,7 @@ export namespace Components {
          */
         "autocorrect": 'on' | 'off';
         /**
-          * Set the cancel button icon. Only applies to `md` mode. Defaults to `"arrow-back-sharp"`.
+          * Set the cancel button icon. Only applies to `md` mode. Defaults to `arrow-back-sharp`.
          */
         "cancelButtonIcon": string;
         /**
@@ -2025,7 +2587,7 @@ export namespace Components {
          */
         "cancelButtonText": string;
         /**
-          * Set the clear icon. Defaults to `"close-circle"` for `ios` and `"close-sharp"` for `md`.
+          * Set the clear icon. Defaults to `close-circle` for `ios` and `close-sharp` for `md`.
          */
         "clearIcon"?: string;
         /**
@@ -2033,9 +2595,9 @@ export namespace Components {
          */
         "color"?: Color;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.
          */
-        "debounce": number;
+        "debounce"?: number;
         /**
           * If `true`, the user cannot interact with the input.
          */
@@ -2057,15 +2619,19 @@ export namespace Components {
          */
         "mode"?: "ios" | "md";
         /**
+          * If used in a form, set the name of the control, which is submitted with the form data.
+         */
+        "name": string;
+        /**
           * Set the input's placeholder. `placeholder` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
          */
         "placeholder": string;
         /**
-          * The icon to use as the search icon. Defaults to `"search-outline"` in `ios` mode and `"search-sharp"` in `md` mode.
+          * The icon to use as the search icon. Defaults to `search-outline` in `ios` mode and `search-sharp` in `md` mode.
          */
         "searchIcon"?: string;
         /**
-          * Sets focus on the specified `ion-searchbar`. Use this method instead of the global `input.focus()`.
+          * Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global `input.focus()`.  Developers who wish to focus an input when a page enters should call `setFocus()` in the `ionViewDidEnter()` lifecycle method.  Developers who wish to focus an input when an overlay is presented should call `setFocus` after `didPresent` has resolved.  See [managing focus](/docs/developing/managing-focus) for more information.
          */
         "setFocus": () => Promise<void>;
         /**
@@ -2107,13 +2673,17 @@ export namespace Components {
          */
         "scrollable": boolean;
         /**
+          * If `true`, navigating to an `ion-segment-button` with the keyboard will focus and select the element. If `false`, keyboard navigation will only focus the `ion-segment-button` element.
+         */
+        "selectOnFocus": boolean;
+        /**
           * If `true`, users will be able to swipe between segment buttons to activate them.
          */
         "swipeGesture": boolean;
         /**
           * the value of the segment.
          */
-        "value"?: string | null;
+        "value"?: SegmentValue;
     }
     interface IonSegmentButton {
         /**
@@ -2128,6 +2698,7 @@ export namespace Components {
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
+        "setFocus": () => Promise<void>;
         /**
           * The type of the button.
          */
@@ -2135,7 +2706,7 @@ export namespace Components {
         /**
           * The value of the segment button.
          */
-        "value": string;
+        "value": SegmentValue;
     }
     interface IonSelect {
         /**
@@ -2143,7 +2714,11 @@ export namespace Components {
          */
         "cancelText": string;
         /**
-          * A property name or function used to compare object values
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).  This property is only available when using the modern select syntax.
+         */
+        "color"?: Color;
+        /**
+          * This property allows developers to specify a custom function or property name for comparing objects when determining the selected option in the ion-select. When not specified, the default behavior will use strict equality (===) for comparison.
          */
         "compareWith"?: string | SelectCompareFn | null;
         /**
@@ -2151,13 +2726,37 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * The toggle icon to show when the select is open. If defined, the icon rotation behavior in `md` mode will be disabled. If undefined, `toggleIcon` will be used for when the select is both open and closed.
+         */
+        "expandedIcon"?: string;
+        /**
+          * The fill for the item. If `"solid"` the item will have a background. If `"outline"` the item will be transparent with a border. Only available in `md` mode.
+         */
+        "fill"?: 'outline' | 'solid';
+        /**
           * The interface the select should use: `action-sheet`, `popover` or `alert`.
          */
         "interface": SelectInterface;
         /**
-          * Any additional options that the `alert`, `action-sheet` or `popover` interface can take. See the [ion-alert docs](../alert), the [ion-action-sheet docs](../action-sheet) and the [ion-popover docs](../popover) for the create options for each interface.  Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
+          * Any additional options that the `alert`, `action-sheet` or `popover` interface can take. See the [ion-alert docs](./alert), the [ion-action-sheet docs](./action-sheet) and the [ion-popover docs](./popover) for the create options for each interface.  Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
          */
         "interfaceOptions": any;
+        /**
+          * How to pack the label and select within a line. `justify` does not apply when the label and select are on different lines when `labelPlacement` is set to `"floating"` or `"stacked"`. `"start"`: The label and select will appear on the left in LTR and on the right in RTL. `"end"`: The label and select will appear on the right in LTR and on the left in RTL. `"space-between"`: The label and select will appear on opposite ends of the line with space between the two elements.
+         */
+        "justify": 'start' | 'end' | 'space-between';
+        /**
+          * The visible label associated with the select.  Use this if you need to render a plaintext label.  The `label` property will take priority over the `label` slot if both are used.
+         */
+        "label"?: string;
+        /**
+          * Where to place the label relative to the select. `"start"`: The label will appear to the left of the select in LTR and to the right in RTL. `"end"`: The label will appear to the right of the select in LTR and to the left in RTL. `"floating"`: The label will appear smaller and above the select when the select is focused or it has a value. Otherwise it will appear on top of the select. `"stacked"`: The label will appear smaller and above the select regardless even when the select is blurred or has no value. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). When using `"floating"` or `"stacked"` we recommend initializing the select with either a `value` or a `placeholder`.
+         */
+        "labelPlacement"?: 'start' | 'end' | 'floating' | 'stacked' | 'fixed';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the `label` property. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
         /**
           * The mode determines which platform styles to use.
          */
@@ -2182,13 +2781,21 @@ export namespace Components {
         /**
           * The text to display when the select is empty.
          */
-        "placeholder"?: string | null;
+        "placeholder"?: string;
         /**
           * The text to display instead of the selected option's value.
          */
         "selectedText"?: string | null;
         /**
-          * the value of the select.
+          * The shape of the select. If "round" it will have an increased border radius.
+         */
+        "shape"?: 'round';
+        /**
+          * The toggle icon to use. Defaults to `chevronExpand` for `ios` mode, or `caretDownSharp` for `md` mode.
+         */
+        "toggleIcon"?: string;
+        /**
+          * The value of the select.
          */
         "value"?: any | null;
     }
@@ -2204,19 +2811,23 @@ export namespace Components {
     }
     interface IonSelectPopover {
         /**
-          * Header text for the popover
+          * The header text of the popover
          */
         "header"?: string;
         /**
-          * Text for popover body
+          * The text content of the popover body
          */
         "message"?: string;
         /**
-          * Array of options for the popover
+          * If true, the select accepts multiple values
+         */
+        "multiple"?: boolean;
+        /**
+          * An array of options for the popover
          */
         "options": SelectPopoverOption[];
         /**
-          * Subheader text for the popover
+          * The subheader text of the popover
          */
         "subHeader"?: string;
     }
@@ -2225,101 +2836,6 @@ export namespace Components {
           * If `true`, the skeleton text will animate.
          */
         "animated": boolean;
-    }
-    interface IonSlide {
-    }
-    interface IonSlides {
-        /**
-          * Get the index of the active slide.
-         */
-        "getActiveIndex": () => Promise<number>;
-        /**
-          * Get the index of the previous slide.
-         */
-        "getPreviousIndex": () => Promise<number>;
-        /**
-          * Get the Swiper instance. Use this to access the full Swiper API. See https://idangero.us/swiper/api/ for all API options.
-         */
-        "getSwiper": () => Promise<any>;
-        /**
-          * Get whether or not the current slide is the first slide.
-         */
-        "isBeginning": () => Promise<boolean>;
-        /**
-          * Get whether or not the current slide is the last slide.
-         */
-        "isEnd": () => Promise<boolean>;
-        /**
-          * Get the total number of slides.
-         */
-        "length": () => Promise<number>;
-        /**
-          * Lock or unlock the ability to slide to the next slide.
-          * @param lock If `true`, disable swiping to the next slide.
-         */
-        "lockSwipeToNext": (lock: boolean) => Promise<void>;
-        /**
-          * Lock or unlock the ability to slide to the previous slide.
-          * @param lock If `true`, disable swiping to the previous slide.
-         */
-        "lockSwipeToPrev": (lock: boolean) => Promise<void>;
-        /**
-          * Lock or unlock the ability to slide to the next or previous slide.
-          * @param lock If `true`, disable swiping to the next and previous slide.
-         */
-        "lockSwipes": (lock: boolean) => Promise<void>;
-        /**
-          * The mode determines which platform styles to use.
-         */
-        "mode"?: "ios" | "md";
-        /**
-          * Options to pass to the swiper instance. See http://idangero.us/swiper/api/ for valid options
-         */
-        "options": any;
-        /**
-          * If `true`, show the pagination.
-         */
-        "pager": boolean;
-        /**
-          * If `true`, show the scrollbar.
-         */
-        "scrollbar": boolean;
-        /**
-          * Transition to the next slide.
-          * @param speed The transition duration (in ms).
-          * @param runCallbacks If true, the transition will produce [Transition/SlideChange][Start/End] transition events.
-         */
-        "slideNext": (speed?: number, runCallbacks?: boolean) => Promise<void>;
-        /**
-          * Transition to the previous slide.
-          * @param speed The transition duration (in ms).
-          * @param runCallbacks If true, the transition will produce the [Transition/SlideChange][Start/End] transition events.
-         */
-        "slidePrev": (speed?: number, runCallbacks?: boolean) => Promise<void>;
-        /**
-          * Transition to the specified slide.
-          * @param index The index of the slide to transition to.
-          * @param speed The transition duration (in ms).
-          * @param runCallbacks If true, the transition will produce [Transition/SlideChange][Start/End] transition events.
-         */
-        "slideTo": (index: number, speed?: number, runCallbacks?: boolean) => Promise<void>;
-        /**
-          * Start auto play.
-         */
-        "startAutoplay": () => Promise<void>;
-        /**
-          * Stop auto play.
-         */
-        "stopAutoplay": () => Promise<void>;
-        /**
-          * Update the underlying slider implementation. Call this if you've added or removed child slides.
-         */
-        "update": () => Promise<void>;
-        /**
-          * Force swiper to update its height (when autoHeight is enabled) for the duration equal to 'speed' parameter.
-          * @param speed The transition duration (in ms).
-         */
-        "updateAutoHeight": (speed?: number) => Promise<void>;
     }
     interface IonSpinner {
         /**
@@ -2401,7 +2917,7 @@ export namespace Components {
          */
         "href": string | undefined;
         /**
-          * Set the layout of the text and icon in the tab bar. It defaults to `'icon-top'`.
+          * Set the layout of the text and icon in the tab bar. It defaults to `"icon-top"`.
          */
         "layout"?: TabButtonLayout;
         /**
@@ -2428,16 +2944,16 @@ export namespace Components {
     interface IonTabs {
         "getRouteId": () => Promise<RouteID | undefined>;
         /**
-          * Get the currently selected tab.
+          * Get the currently selected tab. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.
          */
         "getSelected": () => Promise<string | undefined>;
         /**
-          * Get a specific tab by the value of its `tab` property or an element reference.
+          * Get a specific tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.
           * @param tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property.
          */
         "getTab": (tab: string | HTMLIonTabElement) => Promise<HTMLIonTabElement | undefined>;
         /**
-          * Select a tab by the value of its `tab` property or an element reference.
+          * Select a tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.
           * @param tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property.
          */
         "select": (tab: string | HTMLIonTabElement) => Promise<boolean>;
@@ -2456,19 +2972,19 @@ export namespace Components {
     }
     interface IonTextarea {
         /**
-          * If `true`, the element height will increase based on the value.
+          * If `true`, the textarea container will grow and shrink based on the contents of the textarea.
          */
         "autoGrow": boolean;
         /**
-          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
+          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`.
          */
         "autocapitalize": string;
         /**
-          * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+          * Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.  This may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.
          */
         "autofocus": boolean;
         /**
-          * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
+          * If `true`, the value will be cleared after focus upon edit.
          */
         "clearOnEdit": boolean;
         /**
@@ -2480,9 +2996,17 @@ export namespace Components {
          */
         "cols"?: number;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * If `true`, a character counter will display the ratio of characters used and the total character limit. Developers must also set the `maxlength` property for the counter to be calculated correctly.
          */
-        "debounce": number;
+        "counter": boolean;
+        /**
+          * A callback used to format the counter text. By default the counter text is set to "itemLength / maxLength".  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
+         */
+        "counterFormatter"?: (inputLength: number, maxLength: number) => string;
+        /**
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.
+         */
+        "debounce"?: number;
         /**
           * If `true`, the user cannot interact with the textarea.
          */
@@ -2492,23 +3016,43 @@ export namespace Components {
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
         /**
-          * This is required for a WebKit bug which requires us to blur and focus an input to properly focus the input in an item with delegatesFocus. It will no longer be needed with iOS 14.
+          * Text that is placed under the textarea and displayed when an error is detected.
          */
-        "fireFocusEvents": boolean;
+        "errorText"?: string;
+        /**
+          * The fill for the item. If `"solid"` the item will have a background. If `"outline"` the item will be transparent with a border. Only available in `md` mode.
+         */
+        "fill"?: 'outline' | 'solid';
         /**
           * Returns the native `<textarea>` element used under the hood.
          */
         "getInputElement": () => Promise<HTMLTextAreaElement>;
         /**
+          * Text that is placed under the textarea and displayed when no error is detected.
+         */
+        "helperText"?: string;
+        /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
         "inputmode"?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
         /**
-          * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.
+          * The visible label associated with the textarea.  Use this if you need to render a plaintext label.  The `label` property will take priority over the `label` slot if both are used.
+         */
+        "label"?: string;
+        /**
+          * Where to place the label relative to the textarea. `"start"`: The label will appear to the left of the textarea in LTR and to the right in RTL. `"end"`: The label will appear to the right of the textarea in LTR and to the left in RTL. `"floating"`: The label will appear smaller and above the textarea when the textarea is focused or it has a value. Otherwise it will appear on top of the textarea. `"stacked"`: The label will appear smaller and above the textarea regardless even when the textarea is blurred or has no value. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("...").
+         */
+        "labelPlacement": 'start' | 'end' | 'floating' | 'stacked' | 'fixed';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the default slot that contains the label text. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
+        /**
+          * This attribute specifies the maximum number of characters that the user can enter.
          */
         "maxlength"?: number;
         /**
-          * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.
+          * This attribute specifies the minimum number of characters that the user can enter.
          */
         "minlength"?: number;
         /**
@@ -2522,7 +3066,7 @@ export namespace Components {
         /**
           * Instructional text that shows before the input has a value.
          */
-        "placeholder"?: string | null;
+        "placeholder"?: string;
         /**
           * If `true`, the user cannot modify the value.
          */
@@ -2536,13 +3080,13 @@ export namespace Components {
          */
         "rows"?: number;
         /**
-          * Sets blur on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.blur()`.
-         */
-        "setBlur": () => Promise<void>;
-        /**
-          * Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.focus()`.
+          * Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.focus()`.  See [managing focus](/docs/developing/managing-focus) for more information.
          */
         "setFocus": () => Promise<void>;
+        /**
+          * The shape of the textarea. If "round" it will have an increased border radius.
+         */
+        "shape"?: 'round';
         /**
           * If `true`, the element will have its spelling and grammar checked.
          */
@@ -2585,6 +3129,7 @@ export namespace Components {
           * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
          */
         "cssClass"?: string | string[];
+        "delegate"?: FrameworkDelegate;
         /**
           * Dismiss the toast overlay after it has been presented.
           * @param data Any data to emit in the dismiss events.
@@ -2599,20 +3144,37 @@ export namespace Components {
           * Animation to use when the toast is presented.
          */
         "enterAnimation"?: AnimationBuilder;
+        "hasController": boolean;
         /**
           * Header to be shown in the toast.
          */
         "header"?: string;
         /**
+          * Additional attributes to pass to the toast.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * The name of the icon to display, or the path to a valid SVG file. See `ion-icon`. https://ionic.io/ionicons
+         */
+        "icon"?: string;
+        /**
+          * If `true`, the toast will open. If `false`, the toast will close. Use this if you need finer grained control over presentation, otherwise just use the toastController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the toast dismisses. You will need to do that in your code.
+         */
+        "isOpen": boolean;
+        /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
         "keyboardClose": boolean;
+        /**
+          * Defines how the message and buttons are laid out in the toast. 'baseline': The message and the buttons will appear on the same line. Message text may wrap within the message container. 'stacked': The buttons containers and message will stack on top of each other. Use this if you have long text in your buttons.
+         */
+        "layout": ToastLayout;
         /**
           * Animation to use when the toast is dismissed.
          */
         "leaveAnimation"?: AnimationBuilder;
         /**
-          * Message to be shown in the toast.
+          * Message to be shown in the toast. This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "message"?: string | IonicSafeString;
         /**
@@ -2629,19 +3191,35 @@ export namespace Components {
         "onWillDismiss": <T = any>() => Promise<OverlayEventDetail<T>>;
         "overlayIndex": number;
         /**
-          * The position of the toast on the screen.
+          * The starting position of the toast on the screen. Can be tweaked further using the `positionAnchor` property.
          */
-        "position": 'top' | 'bottom' | 'middle';
+        "position": ToastPosition;
+        /**
+          * The element to anchor the toast's position to. Can be set as a direct reference or the ID of the element. With `position="bottom"`, the toast will sit above the chosen element. With `position="top"`, the toast will sit below the chosen element. With `position="middle"`, the value of `positionAnchor` is ignored.
+         */
+        "positionAnchor"?: HTMLElement | string;
         /**
           * Present the toast overlay after it has been created.
          */
         "present": () => Promise<void>;
         /**
+          * If set to 'vertical', the Toast can be dismissed with a swipe gesture. The swipe direction is determined by the value of the `position` property: `top`: The Toast can be swiped up to dismiss. `bottom`: The Toast can be swiped down to dismiss. `middle`: The Toast can be swiped up or down to dismiss.
+         */
+        "swipeGesture"?: ToastSwipeGestureDirection;
+        /**
           * If `true`, the toast will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent": boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the toast to open when clicked.
+         */
+        "trigger": string | undefined;
     }
     interface IonToggle {
+        /**
+          * How to control the alignment of the toggle and label on the cross axis. ``"start"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL. `"center"`: The label and control will appear at the center of the cross axis in both LTR and RTL.
+         */
+        "alignment": 'start' | 'center';
         /**
           * If `true`, the toggle is selected.
          */
@@ -2654,6 +3232,22 @@ export namespace Components {
           * If `true`, the user cannot interact with the toggle.
          */
         "disabled": boolean;
+        /**
+          * Enables the on/off accessibility switch labels within the toggle.
+         */
+        "enableOnOffLabels": boolean | undefined;
+        /**
+          * How to pack the label and toggle within a line. `"start"`: The label and toggle will appear on the left in LTR and on the right in RTL. `"end"`: The label and toggle will appear on the right in LTR and on the left in RTL. `"space-between"`: The label and toggle will appear on opposite ends of the line with space between the two elements.
+         */
+        "justify": 'start' | 'end' | 'space-between';
+        /**
+          * Where to place the label relative to the input. `"start"`: The label will appear to the left of the toggle in LTR and to the right in RTL. `"end"`: The label will appear to the right of the toggle in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the toggle regardless of the direction. The alignment of the label can be controlled with the `alignment` property.
+         */
+        "labelPlacement": 'start' | 'end' | 'fixed' | 'stacked';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the default slot that contains the label text. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
         /**
           * The mode determines which platform styles to use.
          */
@@ -2677,359 +3271,82 @@ export namespace Components {
          */
         "mode"?: "ios" | "md";
     }
-    interface IonVirtualScroll {
-        /**
-          * The approximate width of each footer template's cell. This dimension is used to help determine how many cells should be created when initialized, and to help calculate the height of the scrollable area. This height value can only use `px` units. Note that the actual rendered size of each cell comes from the app's CSS, whereas this approximation is used to help calculate initial dimensions before the item has been rendered.
-         */
-        "approxFooterHeight": number;
-        /**
-          * The approximate height of each header template's cell. This dimension is used to help determine how many cells should be created when initialized, and to help calculate the height of the scrollable area. This height value can only use `px` units. Note that the actual rendered size of each cell comes from the app's CSS, whereas this approximation is used to help calculate initial dimensions before the item has been rendered.
-         */
-        "approxHeaderHeight": number;
-        /**
-          * It is important to provide this if virtual item height will be significantly larger than the default The approximate height of each virtual item template's cell. This dimension is used to help determine how many cells should be created when initialized, and to help calculate the height of the scrollable area. This height value can only use `px` units. Note that the actual rendered size of each cell comes from the app's CSS, whereas this approximation is used to help calculate initial dimensions before the item has been rendered.
-         */
-        "approxItemHeight": number;
-        /**
-          * This method marks the tail the items array as dirty, so they can be re-rendered.  It's equivalent to calling:  ```js virtualScroll.checkRange(lastItemLen); ```
-         */
-        "checkEnd": () => Promise<void>;
-        /**
-          * This method marks a subset of items as dirty, so they can be re-rendered. Items should be marked as dirty any time the content or their style changes.  The subset of items to be updated can are specifing by an offset and a length.
-         */
-        "checkRange": (offset: number, len?: number) => Promise<void>;
-        "domRender"?: DomRenderFn;
-        /**
-          * Section footers and the data used within its given template can be dynamically created by passing a function to `footerFn`. The logic within the footer function can decide if the footer template should be used, and what data to give to the footer template. The function must return `null` if a footer cell shouldn't be created.
-         */
-        "footerFn"?: HeaderFn;
-        /**
-          * An optional function that maps each item footer within their height.
-         */
-        "footerHeight"?: FooterHeightFn;
-        /**
-          * Section headers and the data used within its given template can be dynamically created by passing a function to `headerFn`. For example, a large list of contacts usually has dividers between each letter in the alphabet. App's can provide their own custom `headerFn` which is called with each record within the dataset. The logic within the header function can decide if the header template should be used, and what data to give to the header template. The function must return `null` if a header cell shouldn't be created.
-         */
-        "headerFn"?: HeaderFn;
-        /**
-          * An optional function that maps each item header within their height.
-         */
-        "headerHeight"?: HeaderHeightFn;
-        /**
-          * An optional function that maps each item within their height. When this function is provides, heavy optimizations and fast path can be taked by `ion-virtual-scroll` leading to massive performance improvements.  This function allows to skip all DOM reads, which can be Doing so leads to massive performance
-         */
-        "itemHeight"?: ItemHeightFn;
-        /**
-          * The data that builds the templates within the virtual scroll. It's important to note that when this data has changed, then the entire virtual scroll is reset, which is an expensive operation and should be avoided if possible.
-         */
-        "items"?: any[];
-        /**
-          * NOTE: only Vanilla JS API.
-         */
-        "nodeRender"?: ItemRenderFn;
-        /**
-          * Returns the position of the virtual item at the given index.
-         */
-        "positionForItem": (index: number) => Promise<number>;
-        /**
-          * NOTE: only JSX API for stencil.  Provide a render function for the footer to be rendered. Returns a JSX virtual-dom.
-         */
-        "renderFooter"?: (item: any, index: number) => any;
-        /**
-          * NOTE: only JSX API for stencil.  Provide a render function for the header to be rendered. Returns a JSX virtual-dom.
-         */
-        "renderHeader"?: (item: any, index: number) => any;
-        /**
-          * NOTE: only JSX API for stencil.  Provide a render function for the items to be rendered. Returns a JSX virtual-dom.
-         */
-        "renderItem"?: (item: any, index: number) => any;
-    }
-    interface LocalModal {
-    }
     interface MedAccordionItem {
-        /**
-          * todo
-         */
         "background": boolean;
-        /**
-          * todo
-         */
         "canCollapse": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "isOpened": boolean;
-        /**
-          * todo
-         */
         "noBorder": boolean;
-        /**
-          * todo
-         */
         "slotsToggle": 'start' | 'middle' | 'end'[];
     }
     interface MedAccordionList {
-        /**
-          * todo
-         */
         "margin"?: 'xs' | 'sm' | 'md' | 'lg';
-        /**
-          * todo
-         */
         "noAnimation": boolean;
-        /**
-          * todo
-         */
         "noBorder": boolean;
-        /**
-          * todo
-         */
         "singleOpen": boolean;
     }
     interface MedAddCard {
-        /**
-          * todo
-         */
         "iconName"?: string;
-        /**
-          * todo
-         */
         "titulo"?: string;
     }
     interface MedAgrupador {
-        /**
-          * todo
-         */
         "collapsed": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "labelAlternativo": string;
-        /**
-          * todo
-         */
         "labelDefault": string;
-        /**
-          * todo
-         */
         "toggle": (event?: Event) => Promise<void>;
     }
-    interface MedAlert {
-        /**
-          * todo
-         */
-        "cancelText"?: string;
-        /**
-          * todo
-         */
-        "confirmText"?: string;
-        /**
-          * todo
-         */
-        "disableSanitize": boolean;
-        /**
-          * todo
-         */
-        "heading"?: string;
-        /**
-          * todo
-         */
-        "message"?: string;
-    }
     interface MedAlertFixed {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: 'offline' | 'atualizar';
-        /**
-          * todo
-         */
         "labelAtualizar": string;
-        /**
-          * todo
-         */
         "labelOffline": string;
     }
     interface MedAlternativas {
-        /**
-          * todo
-         */
         "alternativaSelecionada": string;
-        /**
-          * todo
-         */
         "alternativas": MedAlternativaInterface | any;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSkinConfig": any;
-        /**
-          * todo
-         */
         "keyAlternativa": string;
-        /**
-          * todo
-         */
         "keyEnunciado": string;
-        /**
-          * todo
-         */
         "keyImagem": string;
-        /**
-          * todo
-         */
         "keyPorcentagem": string;
-        /**
-          * todo
-         */
         "keyRiscada": string;
-        /**
-          * todo
-         */
         "mostraResposta": boolean;
-        /**
-          * todo
-         */
         "permiteDesmarcar": boolean;
-        /**
-          * todo
-         */
         "permiteRiscar": boolean;
-        /**
-          * todo
-         */
         "respostaCorreta": string;
     }
     interface MedAlternativasA {
-        /**
-          * todo
-         */
         "alternativaSelecionada": string;
-        /**
-          * todo
-         */
         "alternativas": MedAlternativaInterface | any;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSkin"?: any;
-        /**
-          * todo
-         */
         "dsSkinConfig"?: any;
-        /**
-          * todo
-         */
         "keyAlternativa": string;
-        /**
-          * todo
-         */
         "keyEnunciado": string;
-        /**
-          * todo
-         */
         "keyImagem": string;
-        /**
-          * todo
-         */
         "keyPorcentagem": string;
-        /**
-          * todo
-         */
         "keyRiscada": string;
-        /**
-          * todo
-         */
         "mostraResposta": boolean;
-        /**
-          * todo
-         */
         "permiteDesmarcar": boolean;
-        /**
-          * todo
-         */
         "permiteRiscar": boolean;
-        /**
-          * todo
-         */
         "respostaCorreta": string;
     }
     interface MedAlternativasB {
-        /**
-          * todo
-         */
         "alternativaSelecionada": string;
-        /**
-          * todo
-         */
         "alternativas": MedAlternativaInterface | any;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSkin"?: any;
-        /**
-          * todo
-         */
         "dsSkinConfig"?: any;
-        /**
-          * todo
-         */
         "keyAlternativa": string;
-        /**
-          * todo
-         */
         "keyEnunciado": string;
-        /**
-          * todo
-         */
         "keyImagem": string;
-        /**
-          * todo
-         */
         "keyPorcentagem": string;
-        /**
-          * todo
-         */
         "keyRiscada": string;
-        /**
-          * todo
-         */
         "mostraResposta": boolean;
-        /**
-          * todo
-         */
         "permiteDesmarcar": boolean;
-        /**
-          * todo
-         */
         "permiteRiscar": boolean;
-        /**
-          * todo
-         */
         "respostaCorreta": string;
     }
     interface MedAutocomplete {
@@ -3043,152 +3360,34 @@ export namespace Components {
         "dropdown": boolean;
         "toggleDropdown": () => Promise<void>;
     }
-    interface MedAvatar {
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | 'xxl';
-        /**
-          * todo
-         */
-        "image"?: string;
-        /**
-          * todo
-         */
-        "letter"?: string;
-    }
-    interface MedBanner {
-        /**
-          * todo
-         */
-        "btnLeft": string;
-        /**
-          * todo
-         */
-        "btnRight": string;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "icon": string;
-        /**
-          * todo
-         */
-        "image": string;
-        /**
-          * todo
-         */
-        "texto"?: string;
-        /**
-          * todo
-         */
-        "titulo"?: string;
-    }
     interface MedBase {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "gap"?: 's00' | 's02' | 's04' | 's08' | string;
-        /**
-          * todo
-         */
         "radius"?: 's00' | 's02' | 's04' | 's08' | string;
-        /**
-          * todo
-         */
         "spacingH"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
-        /**
-          * todo
-         */
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
-        /**
-          * todo
-         */
         "ano"?: string;
-        /**
-          * todo
-         */
         "choice": string;
-        /**
-          * todo
-         */
         "container"?: string;
-        /**
-          * todo
-         */
         "disable": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "mes"?: string;
     }
     interface MedCalendarDay {
-        /**
-          * todo
-         */
         "active": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "fill"?: 'outline';
     }
     interface MedCaption {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     }
-    interface MedCarregamento {
-        /**
-          * todo
-         */
-        "color": string;
-        /**
-          * todo
-         */
-        "message": string;
-    }
     interface MedCartaoRespostaItem {
-        /**
-          * todo
-         */
         "anulada": boolean;
-        /**
-          * todo
-         */
         "ativa": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "impressa": boolean;
     }
     interface MedCartaoRespostaLista {
@@ -3198,245 +3397,66 @@ export namespace Components {
         "isFlex": boolean;
     }
     interface MedChartBar {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "height": number;
         "noLabel": boolean;
-        /**
-          * todo
-         */
         "value": number;
-        /**
-          * todo
-         */
         "width": number;
     }
     interface MedChartBarHorizontal {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'md';
-        /**
-          * todo
-         */
         "hideValue": boolean;
-        /**
-          * todo
-         */
         "label": boolean;
-        /**
-          * todo
-         */
         "labelContent": string | undefined;
-        /**
-          * todo
-         */
         "value": number;
     }
     interface MedChartCategoria {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "meta"?: string;
-        /**
-          * todo
-         */
         "realizado"?: string;
-        /**
-          * todo
-         */
         "titulo"?: string;
-        /**
-          * todo
-         */
         "value": number;
     }
     interface MedChartRadial {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: 'secondary';
-        /**
-          * todo
-         */
         "dsSize"?: 'xs' | 'sm' | 'md' | 'lg';
-        /**
-          * todo
-         */
         "subtitulo"?: string;
-        /**
-          * todo
-         */
         "titulo"?: string;
-        /**
-          * todo
-         */
         "valores": MedChartRadiaItem[];
     }
     interface MedChartRadialContent {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'lg';
-        /**
-          * todo
-         */
         "total": number;
     }
     interface MedChartRadialLabel {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'lg';
-        /**
-          * todo
-         */
         "valores": MedChartRadiaItem[];
     }
     interface MedCheckCard {
-        /**
-          * todo
-         */
         "alert": boolean;
-        /**
-          * todo
-         */
         "categoria"?: string;
-        /**
-          * todo
-         */
         "dataFinal"?: string;
-        /**
-          * todo
-         */
         "dataInicial"?: string;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "finalizada"?: string;
-        /**
-          * todo
-         */
         "horaFinal"?: string;
-        /**
-          * todo
-         */
         "horaInicial"?: string;
-        /**
-          * todo
-         */
         "iconName"?: string;
-        /**
-          * todo
-         */
         "titulo"?: string;
     }
-    interface MedChip {
-        /**
-          * todo
-         */
-        "active": boolean;
-        /**
-          * todo
-         */
-        "disabled": boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsName"?: 'secondary';
-        /**
-          * todo
-         */
-        "dsSize"?: 'md';
-        /**
-          * todo
-         */
-        "iconLeft": string;
-        /**
-          * todo
-         */
-        "iconRight": string;
-        /**
-          * todo
-         */
-        "label": string;
-    }
-    interface MedConfig {
-        /**
-          * todo
-         */
-        "emitter": {
-    scheme: ( value: string ) => void;
-    theme: ( value: string ) => void;
-  };
-        /**
-          * todo
-         */
-        "opcoes": MedConfigInterface;
-    }
     interface MedContextMenu {
-        /**
-          * todo
-         */
         "collapsed": boolean;
-        /**
-          * todo
-         */
         "toggle": (event?: Event) => Promise<void>;
     }
     interface MedDownloadButton {
-        /**
-          * todo
-         */
         "disabled": boolean;
-        /**
-          * todo
-         */
         "downloaded": boolean;
-        /**
-          * todo
-         */
         "downloading": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'lg';
         /**
           * remover
@@ -3446,31 +3466,14 @@ export namespace Components {
           * remover
          */
         "index"?: number;
-        /**
-          * todo
-         */
         "value": number;
     }
     interface MedDropdown {
-        /**
-          * todo
-         */
         "dsName"?: 'secondary';
     }
-    interface MedDropdownContainer {
-    }
     interface MedEnunciado {
-        /**
-          * todo
-         */
         "content"?: string;
-        /**
-          * todo
-         */
         "dsName"?: 'skin';
-        /**
-          * todo
-         */
         "imagens": string[] | string;
     }
     interface MedEnunciadoDiscursiva {
@@ -3480,41 +3483,18 @@ export namespace Components {
         "imagens": string[] | string;
     }
     interface MedFontZoom {
-        /**
-          * todo
-         */
         "emitter": { emit: (value: MedFontSize) => void };
-        /**
-          * todo
-         */
         "value": MedFontSize;
     }
     interface MedHeader {
     }
     interface MedImageZoom {
-        /**
-          * todo
-         */
         "imagens": | MedImageZoomItemInterface[]
     | any;
-        /**
-          * todo
-         */
         "initialSlide"?: number | undefined;
-        /**
-          * todo
-         */
         "marcaAguaInferior"?: string;
-        /**
-          * todo
-         */
         "marcaAguaSuperior"?: string;
-        /**
-          * todo
-         */
         "titulo"?: string;
-    }
-    interface MedInput {
     }
     interface MedItem {
         /**
@@ -3572,7 +3552,7 @@ export namespace Components {
         /**
           * When using a router, it specifies the transition direction when navigating to another page using `href`.
          */
-        "routerDirection": RouterDirection;
+        "routerDirection": RouterDirection1;
         /**
           * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
          */
@@ -3583,242 +3563,46 @@ export namespace Components {
         "type": 'submit' | 'reset' | 'button';
     }
     interface MedList {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "margin"?: 'xs' | 'sm' | 'md' | 'lg';
     }
     interface MedListItem {
-        /**
-          * todo
-         */
         "border": boolean;
-        /**
-          * todo
-         */
         "disabled": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'xs' | 'sm' | 'md';
-        /**
-          * todo
-         */
         "label"?: string;
-        /**
-          * todo
-         */
         "selected": boolean;
-        /**
-          * todo
-         */
         "titulo"?: string;
     }
     interface MedListItemAccordion {
-        /**
-          * todo
-         */
         "border": boolean;
-        /**
-          * todo
-         */
         "collapsed": boolean;
-        /**
-          * todo
-         */
         "disabled": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'xs' | 'sm' | 'md';
-        /**
-          * todo
-         */
         "label"?: string;
-        /**
-          * todo
-         */
         "margin"?: 'xs' | 'sm' | 'md' | 'lg';
-        /**
-          * todo
-         */
         "selected": boolean;
-        /**
-          * todo
-         */
         "titulo"?: string;
-        /**
-          * todo
-         */
         "toggle": (event?: Event) => Promise<void>;
     }
-    interface MedLista {
-        /**
-          * todo
-         */
-        "closeSlidingItems": () => Promise<boolean>;
-        /**
-          * The mode determines which platform styles to use.
-         */
-        "mode"?: "ios" | "md";
-    }
-    interface MedNav {
-        /**
-          * todo
-         */
-        "active": boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "titulo": string;
-    }
-    interface MedNavAccordion {
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        "titulo"?: MedColor;
-    }
-    interface MedNavItem {
-        /**
-          * todo
-         */
-        "active": boolean;
-        /**
-          * todo
-         */
-        "disabled": boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "icon"?: string;
-        /**
-          * todo
-         */
-        "iconOnly": boolean;
-        /**
-          * todo
-         */
-        "routerAnimation": AnimationBuilder | undefined;
-        /**
-          * todo
-         */
-        "routerDirection": RouterDirection;
-        /**
-          * todo
-         */
-        "text"?: string;
-    }
-    interface MedNavSimple {
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-    }
     interface MedNavbar {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: 'secondary' | 'transparent';
     }
     interface MedOffline {
     }
     interface MedOption {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-    }
-    interface MedPiechart {
-        /**
-          * todo
-         */
-        "disabled": boolean;
-        /**
-          * todo
-         */
-        "download": boolean;
-        /**
-          * todo
-         */
-        "downloadProgress": number;
-        /**
-          * todo
-         */
-        "downloaded": boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsSize"?: 'sm';
-        /**
-          * todo
-         */
-        "hideDownload": boolean;
-        /**
-          * todo
-         */
-        "identification"?: string | number | undefined;
-        /**
-          * todo
-         */
-        "index"?: number;
-        /**
-          * todo
-         */
-        "label"?: string;
-        /**
-          * todo
-         */
-        "toggle": (event?: Event) => Promise<void>;
-        /**
-          * todo
-         */
-        "value": number;
     }
     interface MedPlusminus {
         /**
           * true se deve desabilitar os controles automaticamente
          */
         "automaticDisabled": boolean;
-        /**
-          * todo
-         */
         "disabled"?: 'minus' | 'plus' | 'both';
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'xl';
         /**
           * O valor máximo
@@ -3837,281 +3621,50 @@ export namespace Components {
          */
         "value"?: number;
     }
-    interface MedQuestion {
-        /**
-          * todo
-         */
-        "collapsed": boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "texto"?: string;
-    }
-    interface MedRateAula {
-        /**
-          * todo
-         */
-        "collapsed": boolean;
-        /**
-          * todo
-         */
-        "toggle": (event?: Event) => Promise<void>;
-    }
     interface MedRateBar {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
     }
     interface MedRateLike {
-        /**
-          * todo
-         */
         "status"?: RateStatus;
     }
-    interface MedRating {
-        /**
-          * todo
-         */
-        "cabe": boolean;
-        /**
-          * todo
-         */
-        "concurso"?: string;
-        /**
-          * todo
-         */
-        "data"?: string;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsName"?: 'medgrupo' | 'banca';
-        /**
-          * todo
-         */
-        "nome"?: string;
-        /**
-          * todo
-         */
-        "texto"?: string;
-    }
-    interface MedSearchBar {
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-    }
-    interface MedSegment {
-    }
-    interface MedSemana {
-        /**
-          * todo
-         */
-        "active": boolean;
-        /**
-          * todo
-         */
-        "content": MedSemanaInterface;
-        /**
-          * todo
-         */
-        "disabled": boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsSize"?: 'sm';
-        /**
-          * todo
-         */
-        "hideDownload": boolean;
-        /**
-          * todo
-         */
-        "skin"?: 'lista';
-    }
-    interface MedSemanas {
-        /**
-          * todo
-         */
-        "skin"?: 'lista';
-    }
-    interface MedTabButton {
-        /**
-          * todo
-         */
-        "active": boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-    }
-    interface MedThemes {
-        /**
-          * todo
-         */
-        "ativo"?: 'theme-gold' | 'theme-recursos' | string;
-        /**
-          * todo
-         */
-        "temas"?: MedTema[];
-    }
     interface MedTiles {
-        /**
-          * todo
-         */
         "badge"?: string;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "label"?: string;
-        /**
-          * todo
-         */
         "selected": boolean;
-        /**
-          * todo
-         */
         "solid": boolean;
-        /**
-          * todo
-         */
         "titulo"?: string;
     }
     interface MedToggle {
-        /**
-          * todo
-         */
         "collapsed": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "iconClick": boolean;
     }
     interface MedToolbar {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
     }
     interface MedTooltip {
-        /**
-          * todo
-         */
         "btnLeft"?: string;
-        /**
-          * todo
-         */
         "btnRight"?: string;
-        /**
-          * todo
-         */
         "collapsed": boolean;
-        /**
-          * todo
-         */
         "content"?: string;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
         "enableHover"?: boolean;
-        /**
-          * todo
-         */
         "placement"?: 'top' | 'bottom' | 'left' | 'right';
-        /**
-          * todo
-         */
         "position"?: 'start' | 'center' | 'end';
-        /**
-          * todo
-         */
         "titulo"?: string;
-        /**
-          * todo
-         */
         "toggle": (event?: any) => Promise<void>;
         "toggleOnHover": (event?: any) => Promise<void>;
     }
     interface MedType {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "tag"?: MedTypeTag;
-        /**
-          * todo
-         */
         "token"?: MedTypeToken;
     }
     interface MedVideoThumbnail {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "url"?: string;
-        /**
-          * todo
-         */
         "value": number;
-    }
-    interface MedVote {
-        /**
-          * todo
-         */
-        "like": number;
-        /**
-          * todo
-         */
-        "titulo"?: string | undefined;
-        /**
-          * todo
-         */
-        "unlike": number;
-    }
-    interface MedreaderProModal {
-    }
-    interface RealizacoesModal {
-    }
-    interface SelectTest {
-    }
-    interface SheetContentTest {
-    }
-    interface SheetIa {
-    }
-    interface SheetTest {
-    }
-    interface SimuladoModal {
-    }
-    interface SnackbarTest {
-    }
-    interface TextAreaModal {
     }
     interface TpAccordion {
         /**
@@ -4152,7 +3705,7 @@ export namespace Components {
           * Describes the expansion behavior for each accordion. Possible values are `"compact"` and `"inset"`. Defaults to `"compact"`.
          */
         "expand": "compact" | "inset";
-        "getAccordions": () => Promise<HTMLTpAccordionElement[]>;
+        "getAccordions": () => Promise<any>;
         /**
           * The mode determines which platform styles to use.
          */
@@ -4175,71 +3728,23 @@ export namespace Components {
         "value"?: string | string[] | null;
     }
     interface TpChartBar {
-        /**
-          * todo
-         */
         "bar": TpChartBarItem;
-        /**
-          * todo
-         */
         "deactivated": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: "secondary";
-        /**
-          * todo
-         */
         "hasMarker": boolean;
-        /**
-          * todo
-         */
         "height": number;
-        /**
-          * todo
-         */
         "label"?: string;
-        /**
-          * todo
-         */
         "labelSize": number;
-        /**
-          * todo
-         */
         "marker": TpChartBarItem;
     }
     interface TpInputContainer {
-        /**
-          * todo
-         */
         "disabled": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: 'secondary';
-        /**
-          * todo
-         */
         "feedback": boolean;
-        /**
-          * todo
-         */
         "hasButton"?: 'start' | 'end' | 'both';
-        /**
-          * todo
-         */
         "hasIcon"?: 'start' | 'end' | 'both';
-        /**
-          * todo
-         */
         "inverted": boolean;
     }
     interface TpLoader {
@@ -4247,10 +3752,10 @@ export namespace Components {
         "dsName"?: "secondary";
         "fixed": boolean;
     }
-    interface TutorialModal {
-    }
-    interface UnidadesModal {
-    }
+}
+export interface IonAccordionGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIonAccordionGroupElement;
 }
 export interface IonActionSheetCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -4263,6 +3768,14 @@ export interface IonAlertCustomEvent<T> extends CustomEvent<T> {
 export interface IonBackdropCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIonBackdropElement;
+}
+export interface IonBreadcrumbCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIonBreadcrumbElement;
+}
+export interface IonBreadcrumbsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIonBreadcrumbsElement;
 }
 export interface IonButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -4332,6 +3845,14 @@ export interface IonPickerColumnCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIonPickerColumnElement;
 }
+export interface IonPickerColumnInternalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIonPickerColumnInternalElement;
+}
+export interface IonPickerInternalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIonPickerInternalElement;
+}
 export interface IonPopoverCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIonPopoverElement;
@@ -4384,9 +3905,9 @@ export interface IonSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLIonSelectElement;
 }
-export interface IonSlidesCustomEvent<T> extends CustomEvent<T> {
+export interface IonSkeletonTextCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLIonSlidesElement;
+    target: HTMLIonSkeletonTextElement;
 }
 export interface IonSplitPaneCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -4432,10 +3953,6 @@ export interface MedAlternativasBCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMedAlternativasBElement;
 }
-export interface MedBannerCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMedBannerElement;
-}
 export interface MedCalendarCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMedCalendarElement;
@@ -4443,10 +3960,6 @@ export interface MedCalendarCustomEvent<T> extends CustomEvent<T> {
 export interface MedCheckCardCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMedCheckCardElement;
-}
-export interface MedChipCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMedChipElement;
 }
 export interface MedDownloadButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -4464,18 +3977,6 @@ export interface MedHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMedHeaderElement;
 }
-export interface MedNavCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMedNavElement;
-}
-export interface MedNavItemCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMedNavItemElement;
-}
-export interface MedNavSimpleCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMedNavSimpleElement;
-}
 export interface MedOfflineCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMedOfflineElement;
@@ -4488,10 +3989,6 @@ export interface MedRateLikeCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMedRateLikeElement;
 }
-export interface MedThemesCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMedThemesElement;
-}
 export interface MedTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMedTooltipElement;
@@ -4501,73 +3998,73 @@ export interface TpAccordionGroupCustomEvent<T> extends CustomEvent<T> {
     target: HTMLTpAccordionGroupElement;
 }
 declare global {
-    interface HTMLAjudaModalElement extends Components.AjudaModal, HTMLStencilElement {
+    interface HTMLIonAccordionElement extends Components.IonAccordion, HTMLStencilElement {
     }
-    var HTMLAjudaModalElement: {
-        prototype: HTMLAjudaModalElement;
-        new (): HTMLAjudaModalElement;
+    var HTMLIonAccordionElement: {
+        prototype: HTMLIonAccordionElement;
+        new (): HTMLIonAccordionElement;
     };
-    interface HTMLApostilaModalElement extends Components.ApostilaModal, HTMLStencilElement {
+    interface HTMLIonAccordionGroupElementEventMap {
+        "ionChange": AccordionGroupChangeEventDetail;
+        "ionValueChange": AccordionGroupChangeEventDetail;
     }
-    var HTMLApostilaModalElement: {
-        prototype: HTMLApostilaModalElement;
-        new (): HTMLApostilaModalElement;
-    };
-    interface HTMLAvisoModalElement extends Components.AvisoModal, HTMLStencilElement {
+    interface HTMLIonAccordionGroupElement extends Components.IonAccordionGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonAccordionGroupElementEventMap>(type: K, listener: (this: HTMLIonAccordionGroupElement, ev: IonAccordionGroupCustomEvent<HTMLIonAccordionGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonAccordionGroupElementEventMap>(type: K, listener: (this: HTMLIonAccordionGroupElement, ev: IonAccordionGroupCustomEvent<HTMLIonAccordionGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
-    var HTMLAvisoModalElement: {
-        prototype: HTMLAvisoModalElement;
-        new (): HTMLAvisoModalElement;
+    var HTMLIonAccordionGroupElement: {
+        prototype: HTMLIonAccordionGroupElement;
+        new (): HTMLIonAccordionGroupElement;
     };
-    interface HTMLConcursoModalElement extends Components.ConcursoModal, HTMLStencilElement {
+    interface HTMLIonActionSheetElementEventMap {
+        "ionActionSheetDidPresent": void;
+        "ionActionSheetWillPresent": void;
+        "ionActionSheetWillDismiss": OverlayEventDetail;
+        "ionActionSheetDidDismiss": OverlayEventDetail;
+        "didPresent": void;
+        "willPresent": void;
+        "willDismiss": OverlayEventDetail;
+        "didDismiss": OverlayEventDetail;
     }
-    var HTMLConcursoModalElement: {
-        prototype: HTMLConcursoModalElement;
-        new (): HTMLConcursoModalElement;
-    };
-    interface HTMLDenunciarModalElement extends Components.DenunciarModal, HTMLStencilElement {
-    }
-    var HTMLDenunciarModalElement: {
-        prototype: HTMLDenunciarModalElement;
-        new (): HTMLDenunciarModalElement;
-    };
-    interface HTMLDialogTestElement extends Components.DialogTest, HTMLStencilElement {
-    }
-    var HTMLDialogTestElement: {
-        prototype: HTMLDialogTestElement;
-        new (): HTMLDialogTestElement;
-    };
-    interface HTMLEspecialidadeModalElement extends Components.EspecialidadeModal, HTMLStencilElement {
-    }
-    var HTMLEspecialidadeModalElement: {
-        prototype: HTMLEspecialidadeModalElement;
-        new (): HTMLEspecialidadeModalElement;
-    };
-    interface HTMLExcluirModalElement extends Components.ExcluirModal, HTMLStencilElement {
-    }
-    var HTMLExcluirModalElement: {
-        prototype: HTMLExcluirModalElement;
-        new (): HTMLExcluirModalElement;
-    };
-    interface HTMLFiltroModalElement extends Components.FiltroModal, HTMLStencilElement {
-    }
-    var HTMLFiltroModalElement: {
-        prototype: HTMLFiltroModalElement;
-        new (): HTMLFiltroModalElement;
-    };
-    interface HTMLInformativoModalElement extends Components.InformativoModal, HTMLStencilElement {
-    }
-    var HTMLInformativoModalElement: {
-        prototype: HTMLInformativoModalElement;
-        new (): HTMLInformativoModalElement;
-    };
     interface HTMLIonActionSheetElement extends Components.IonActionSheet, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonActionSheetElementEventMap>(type: K, listener: (this: HTMLIonActionSheetElement, ev: IonActionSheetCustomEvent<HTMLIonActionSheetElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonActionSheetElementEventMap>(type: K, listener: (this: HTMLIonActionSheetElement, ev: IonActionSheetCustomEvent<HTMLIonActionSheetElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonActionSheetElement: {
         prototype: HTMLIonActionSheetElement;
         new (): HTMLIonActionSheetElement;
     };
+    interface HTMLIonAlertElementEventMap {
+        "ionAlertDidPresent": void;
+        "ionAlertWillPresent": void;
+        "ionAlertWillDismiss": OverlayEventDetail;
+        "ionAlertDidDismiss": OverlayEventDetail;
+        "didPresent": void;
+        "willPresent": void;
+        "willDismiss": OverlayEventDetail;
+        "didDismiss": OverlayEventDetail;
+    }
     interface HTMLIonAlertElement extends Components.IonAlert, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonAlertElementEventMap>(type: K, listener: (this: HTMLIonAlertElement, ev: IonAlertCustomEvent<HTMLIonAlertElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonAlertElementEventMap>(type: K, listener: (this: HTMLIonAlertElement, ev: IonAlertCustomEvent<HTMLIonAlertElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonAlertElement: {
         prototype: HTMLIonAlertElement;
@@ -4591,7 +4088,18 @@ declare global {
         prototype: HTMLIonBackButtonElement;
         new (): HTMLIonBackButtonElement;
     };
+    interface HTMLIonBackdropElementEventMap {
+        "ionBackdropTap": void;
+    }
     interface HTMLIonBackdropElement extends Components.IonBackdrop, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonBackdropElementEventMap>(type: K, listener: (this: HTMLIonBackdropElement, ev: IonBackdropCustomEvent<HTMLIonBackdropElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonBackdropElementEventMap>(type: K, listener: (this: HTMLIonBackdropElement, ev: IonBackdropCustomEvent<HTMLIonBackdropElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonBackdropElement: {
         prototype: HTMLIonBackdropElement;
@@ -4603,7 +4111,55 @@ declare global {
         prototype: HTMLIonBadgeElement;
         new (): HTMLIonBadgeElement;
     };
+    interface HTMLIonBreadcrumbElementEventMap {
+        "ionFocus": void;
+        "ionBlur": void;
+        "collapsedClick": BreadcrumbCollapsedClickEventDetail;
+    }
+    interface HTMLIonBreadcrumbElement extends Components.IonBreadcrumb, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonBreadcrumbElementEventMap>(type: K, listener: (this: HTMLIonBreadcrumbElement, ev: IonBreadcrumbCustomEvent<HTMLIonBreadcrumbElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonBreadcrumbElementEventMap>(type: K, listener: (this: HTMLIonBreadcrumbElement, ev: IonBreadcrumbCustomEvent<HTMLIonBreadcrumbElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIonBreadcrumbElement: {
+        prototype: HTMLIonBreadcrumbElement;
+        new (): HTMLIonBreadcrumbElement;
+    };
+    interface HTMLIonBreadcrumbsElementEventMap {
+        "ionCollapsedClick": BreadcrumbCollapsedClickEventDetail;
+    }
+    interface HTMLIonBreadcrumbsElement extends Components.IonBreadcrumbs, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonBreadcrumbsElementEventMap>(type: K, listener: (this: HTMLIonBreadcrumbsElement, ev: IonBreadcrumbsCustomEvent<HTMLIonBreadcrumbsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonBreadcrumbsElementEventMap>(type: K, listener: (this: HTMLIonBreadcrumbsElement, ev: IonBreadcrumbsCustomEvent<HTMLIonBreadcrumbsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIonBreadcrumbsElement: {
+        prototype: HTMLIonBreadcrumbsElement;
+        new (): HTMLIonBreadcrumbsElement;
+    };
+    interface HTMLIonButtonElementEventMap {
+        "ionFocus": void;
+        "ionBlur": void;
+    }
     interface HTMLIonButtonElement extends Components.IonButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonButtonElementEventMap>(type: K, listener: (this: HTMLIonButtonElement, ev: IonButtonCustomEvent<HTMLIonButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonButtonElementEventMap>(type: K, listener: (this: HTMLIonButtonElement, ev: IonButtonCustomEvent<HTMLIonButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonButtonElement: {
         prototype: HTMLIonButtonElement;
@@ -4645,7 +4201,21 @@ declare global {
         prototype: HTMLIonCardTitleElement;
         new (): HTMLIonCardTitleElement;
     };
+    interface HTMLIonCheckboxElementEventMap {
+        "ionChange": CheckboxChangeEventDetail;
+        "ionFocus": void;
+        "ionBlur": void;
+        "ionStyle": StyleEventDetail;
+    }
     interface HTMLIonCheckboxElement extends Components.IonCheckbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonCheckboxElementEventMap>(type: K, listener: (this: HTMLIonCheckboxElement, ev: IonCheckboxCustomEvent<HTMLIonCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonCheckboxElementEventMap>(type: K, listener: (this: HTMLIonCheckboxElement, ev: IonCheckboxCustomEvent<HTMLIonCheckboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonCheckboxElement: {
         prototype: HTMLIonCheckboxElement;
@@ -4663,17 +4233,53 @@ declare global {
         prototype: HTMLIonColElement;
         new (): HTMLIonColElement;
     };
+    interface HTMLIonContentElementEventMap {
+        "ionScrollStart": ScrollBaseDetail;
+        "ionScroll": ScrollDetail;
+        "ionScrollEnd": ScrollBaseDetail;
+    }
     interface HTMLIonContentElement extends Components.IonContent, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonContentElementEventMap>(type: K, listener: (this: HTMLIonContentElement, ev: IonContentCustomEvent<HTMLIonContentElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonContentElementEventMap>(type: K, listener: (this: HTMLIonContentElement, ev: IonContentCustomEvent<HTMLIonContentElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonContentElement: {
         prototype: HTMLIonContentElement;
         new (): HTMLIonContentElement;
     };
+    interface HTMLIonDatetimeElementEventMap {
+        "ionCancel": void;
+        "ionChange": DatetimeChangeEventDetail;
+        "ionValueChange": DatetimeChangeEventDetail;
+        "ionFocus": void;
+        "ionBlur": void;
+        "ionStyle": StyleEventDetail;
+        "ionRender": void;
+    }
     interface HTMLIonDatetimeElement extends Components.IonDatetime, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonDatetimeElementEventMap>(type: K, listener: (this: HTMLIonDatetimeElement, ev: IonDatetimeCustomEvent<HTMLIonDatetimeElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonDatetimeElementEventMap>(type: K, listener: (this: HTMLIonDatetimeElement, ev: IonDatetimeCustomEvent<HTMLIonDatetimeElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonDatetimeElement: {
         prototype: HTMLIonDatetimeElement;
         new (): HTMLIonDatetimeElement;
+    };
+    interface HTMLIonDatetimeButtonElement extends Components.IonDatetimeButton, HTMLStencilElement {
+    }
+    var HTMLIonDatetimeButtonElement: {
+        prototype: HTMLIonDatetimeButtonElement;
+        new (): HTMLIonDatetimeButtonElement;
     };
     interface HTMLIonFabElement extends Components.IonFab, HTMLStencilElement {
     }
@@ -4681,7 +4287,19 @@ declare global {
         prototype: HTMLIonFabElement;
         new (): HTMLIonFabElement;
     };
+    interface HTMLIonFabButtonElementEventMap {
+        "ionFocus": void;
+        "ionBlur": void;
+    }
     interface HTMLIonFabButtonElement extends Components.IonFabButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonFabButtonElementEventMap>(type: K, listener: (this: HTMLIonFabButtonElement, ev: IonFabButtonCustomEvent<HTMLIonFabButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonFabButtonElementEventMap>(type: K, listener: (this: HTMLIonFabButtonElement, ev: IonFabButtonCustomEvent<HTMLIonFabButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonFabButtonElement: {
         prototype: HTMLIonFabButtonElement;
@@ -4711,13 +4329,37 @@ declare global {
         prototype: HTMLIonHeaderElement;
         new (): HTMLIonHeaderElement;
     };
+    interface HTMLIonImgElementEventMap {
+        "ionImgWillLoad": void;
+        "ionImgDidLoad": void;
+        "ionError": void;
+    }
     interface HTMLIonImgElement extends Components.IonImg, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonImgElementEventMap>(type: K, listener: (this: HTMLIonImgElement, ev: IonImgCustomEvent<HTMLIonImgElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonImgElementEventMap>(type: K, listener: (this: HTMLIonImgElement, ev: IonImgCustomEvent<HTMLIonImgElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonImgElement: {
         prototype: HTMLIonImgElement;
         new (): HTMLIonImgElement;
     };
+    interface HTMLIonInfiniteScrollElementEventMap {
+        "ionInfinite": void;
+    }
     interface HTMLIonInfiniteScrollElement extends Components.IonInfiniteScroll, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonInfiniteScrollElementEventMap>(type: K, listener: (this: HTMLIonInfiniteScrollElement, ev: IonInfiniteScrollCustomEvent<HTMLIonInfiniteScrollElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonInfiniteScrollElementEventMap>(type: K, listener: (this: HTMLIonInfiniteScrollElement, ev: IonInfiniteScrollCustomEvent<HTMLIonInfiniteScrollElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonInfiniteScrollElement: {
         prototype: HTMLIonInfiniteScrollElement;
@@ -4729,7 +4371,22 @@ declare global {
         prototype: HTMLIonInfiniteScrollContentElement;
         new (): HTMLIonInfiniteScrollContentElement;
     };
+    interface HTMLIonInputElementEventMap {
+        "ionInput": InputInputEventDetail;
+        "ionChange": InputChangeEventDetail;
+        "ionBlur": FocusEvent;
+        "ionFocus": FocusEvent;
+        "ionStyle": StyleEventDetail;
+    }
     interface HTMLIonInputElement extends Components.IonInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonInputElementEventMap>(type: K, listener: (this: HTMLIonInputElement, ev: IonInputCustomEvent<HTMLIonInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonInputElementEventMap>(type: K, listener: (this: HTMLIonInputElement, ev: IonInputCustomEvent<HTMLIonInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonInputElement: {
         prototype: HTMLIonInputElement;
@@ -4759,19 +4416,53 @@ declare global {
         prototype: HTMLIonItemOptionElement;
         new (): HTMLIonItemOptionElement;
     };
+    interface HTMLIonItemOptionsElementEventMap {
+        "ionSwipe": any;
+    }
     interface HTMLIonItemOptionsElement extends Components.IonItemOptions, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonItemOptionsElementEventMap>(type: K, listener: (this: HTMLIonItemOptionsElement, ev: IonItemOptionsCustomEvent<HTMLIonItemOptionsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonItemOptionsElementEventMap>(type: K, listener: (this: HTMLIonItemOptionsElement, ev: IonItemOptionsCustomEvent<HTMLIonItemOptionsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonItemOptionsElement: {
         prototype: HTMLIonItemOptionsElement;
         new (): HTMLIonItemOptionsElement;
     };
+    interface HTMLIonItemSlidingElementEventMap {
+        "ionDrag": any;
+    }
     interface HTMLIonItemSlidingElement extends Components.IonItemSliding, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonItemSlidingElementEventMap>(type: K, listener: (this: HTMLIonItemSlidingElement, ev: IonItemSlidingCustomEvent<HTMLIonItemSlidingElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonItemSlidingElementEventMap>(type: K, listener: (this: HTMLIonItemSlidingElement, ev: IonItemSlidingCustomEvent<HTMLIonItemSlidingElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonItemSlidingElement: {
         prototype: HTMLIonItemSlidingElement;
         new (): HTMLIonItemSlidingElement;
     };
+    interface HTMLIonLabelElementEventMap {
+        "ionColor": StyleEventDetail;
+        "ionStyle": StyleEventDetail;
+    }
     interface HTMLIonLabelElement extends Components.IonLabel, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonLabelElementEventMap>(type: K, listener: (this: HTMLIonLabelElement, ev: IonLabelCustomEvent<HTMLIonLabelElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonLabelElementEventMap>(type: K, listener: (this: HTMLIonLabelElement, ev: IonLabelCustomEvent<HTMLIonLabelElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonLabelElement: {
         prototype: HTMLIonLabelElement;
@@ -4789,13 +4480,46 @@ declare global {
         prototype: HTMLIonListHeaderElement;
         new (): HTMLIonListHeaderElement;
     };
+    interface HTMLIonLoadingElementEventMap {
+        "ionLoadingDidPresent": void;
+        "ionLoadingWillPresent": void;
+        "ionLoadingWillDismiss": OverlayEventDetail;
+        "ionLoadingDidDismiss": OverlayEventDetail;
+        "didPresent": void;
+        "willPresent": void;
+        "willDismiss": OverlayEventDetail;
+        "didDismiss": OverlayEventDetail;
+    }
     interface HTMLIonLoadingElement extends Components.IonLoading, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonLoadingElementEventMap>(type: K, listener: (this: HTMLIonLoadingElement, ev: IonLoadingCustomEvent<HTMLIonLoadingElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonLoadingElementEventMap>(type: K, listener: (this: HTMLIonLoadingElement, ev: IonLoadingCustomEvent<HTMLIonLoadingElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonLoadingElement: {
         prototype: HTMLIonLoadingElement;
         new (): HTMLIonLoadingElement;
     };
+    interface HTMLIonMenuElementEventMap {
+        "ionWillOpen": void;
+        "ionWillClose": void;
+        "ionDidOpen": void;
+        "ionDidClose": void;
+        "ionMenuChange": MenuChangeEventDetail;
+    }
     interface HTMLIonMenuElement extends Components.IonMenu, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonMenuElementEventMap>(type: K, listener: (this: HTMLIonMenuElement, ev: IonMenuCustomEvent<HTMLIonMenuElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonMenuElementEventMap>(type: K, listener: (this: HTMLIonMenuElement, ev: IonMenuCustomEvent<HTMLIonMenuElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonMenuElement: {
         prototype: HTMLIonMenuElement;
@@ -4813,13 +4537,46 @@ declare global {
         prototype: HTMLIonMenuToggleElement;
         new (): HTMLIonMenuToggleElement;
     };
+    interface HTMLIonModalElementEventMap {
+        "ionModalDidPresent": void;
+        "ionModalWillPresent": void;
+        "ionModalWillDismiss": OverlayEventDetail;
+        "ionModalDidDismiss": OverlayEventDetail;
+        "ionBreakpointDidChange": ModalBreakpointChangeEventDetail;
+        "didPresent": void;
+        "willPresent": void;
+        "willDismiss": OverlayEventDetail;
+        "didDismiss": OverlayEventDetail;
+        "ionMount": void;
+    }
     interface HTMLIonModalElement extends Components.IonModal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonModalElementEventMap>(type: K, listener: (this: HTMLIonModalElement, ev: IonModalCustomEvent<HTMLIonModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonModalElementEventMap>(type: K, listener: (this: HTMLIonModalElement, ev: IonModalCustomEvent<HTMLIonModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonModalElement: {
         prototype: HTMLIonModalElement;
         new (): HTMLIonModalElement;
     };
+    interface HTMLIonNavElementEventMap {
+        "ionNavWillLoad": void;
+        "ionNavWillChange": void;
+        "ionNavDidChange": void;
+    }
     interface HTMLIonNavElement extends Components.IonNav, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonNavElementEventMap>(type: K, listener: (this: HTMLIonNavElement, ev: IonNavCustomEvent<HTMLIonNavElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonNavElementEventMap>(type: K, listener: (this: HTMLIonNavElement, ev: IonNavCustomEvent<HTMLIonNavElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonNavElement: {
         prototype: HTMLIonNavElement;
@@ -4837,19 +4594,101 @@ declare global {
         prototype: HTMLIonNoteElement;
         new (): HTMLIonNoteElement;
     };
+    interface HTMLIonPickerElementEventMap {
+        "ionPickerDidPresent": void;
+        "ionPickerWillPresent": void;
+        "ionPickerWillDismiss": OverlayEventDetail;
+        "ionPickerDidDismiss": OverlayEventDetail;
+        "didPresent": void;
+        "willPresent": void;
+        "willDismiss": OverlayEventDetail;
+        "didDismiss": OverlayEventDetail;
+    }
     interface HTMLIonPickerElement extends Components.IonPicker, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonPickerElementEventMap>(type: K, listener: (this: HTMLIonPickerElement, ev: IonPickerCustomEvent<HTMLIonPickerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonPickerElementEventMap>(type: K, listener: (this: HTMLIonPickerElement, ev: IonPickerCustomEvent<HTMLIonPickerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonPickerElement: {
         prototype: HTMLIonPickerElement;
         new (): HTMLIonPickerElement;
     };
+    interface HTMLIonPickerColumnElementEventMap {
+        "ionPickerColChange": PickerColumn;
+    }
     interface HTMLIonPickerColumnElement extends Components.IonPickerColumn, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonPickerColumnElementEventMap>(type: K, listener: (this: HTMLIonPickerColumnElement, ev: IonPickerColumnCustomEvent<HTMLIonPickerColumnElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonPickerColumnElementEventMap>(type: K, listener: (this: HTMLIonPickerColumnElement, ev: IonPickerColumnCustomEvent<HTMLIonPickerColumnElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonPickerColumnElement: {
         prototype: HTMLIonPickerColumnElement;
         new (): HTMLIonPickerColumnElement;
     };
+    interface HTMLIonPickerColumnInternalElementEventMap {
+        "ionChange": PickerColumnItem;
+    }
+    interface HTMLIonPickerColumnInternalElement extends Components.IonPickerColumnInternal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonPickerColumnInternalElementEventMap>(type: K, listener: (this: HTMLIonPickerColumnInternalElement, ev: IonPickerColumnInternalCustomEvent<HTMLIonPickerColumnInternalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonPickerColumnInternalElementEventMap>(type: K, listener: (this: HTMLIonPickerColumnInternalElement, ev: IonPickerColumnInternalCustomEvent<HTMLIonPickerColumnInternalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIonPickerColumnInternalElement: {
+        prototype: HTMLIonPickerColumnInternalElement;
+        new (): HTMLIonPickerColumnInternalElement;
+    };
+    interface HTMLIonPickerInternalElementEventMap {
+        "ionInputModeChange": PickerInternalChangeEventDetail;
+    }
+    interface HTMLIonPickerInternalElement extends Components.IonPickerInternal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonPickerInternalElementEventMap>(type: K, listener: (this: HTMLIonPickerInternalElement, ev: IonPickerInternalCustomEvent<HTMLIonPickerInternalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonPickerInternalElementEventMap>(type: K, listener: (this: HTMLIonPickerInternalElement, ev: IonPickerInternalCustomEvent<HTMLIonPickerInternalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLIonPickerInternalElement: {
+        prototype: HTMLIonPickerInternalElement;
+        new (): HTMLIonPickerInternalElement;
+    };
+    interface HTMLIonPopoverElementEventMap {
+        "ionPopoverDidPresent": void;
+        "ionPopoverWillPresent": void;
+        "ionPopoverWillDismiss": OverlayEventDetail;
+        "ionPopoverDidDismiss": OverlayEventDetail;
+        "didPresent": void;
+        "willPresent": void;
+        "willDismiss": OverlayEventDetail;
+        "didDismiss": OverlayEventDetail;
+        "ionMount": void;
+    }
     interface HTMLIonPopoverElement extends Components.IonPopover, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonPopoverElementEventMap>(type: K, listener: (this: HTMLIonPopoverElement, ev: IonPopoverCustomEvent<HTMLIonPopoverElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonPopoverElementEventMap>(type: K, listener: (this: HTMLIonPopoverElement, ev: IonPopoverCustomEvent<HTMLIonPopoverElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonPopoverElement: {
         prototype: HTMLIonPopoverElement;
@@ -4861,25 +4700,80 @@ declare global {
         prototype: HTMLIonProgressBarElement;
         new (): HTMLIonProgressBarElement;
     };
+    interface HTMLIonRadioElementEventMap {
+        "ionStyle": StyleEventDetail;
+        "ionFocus": void;
+        "ionBlur": void;
+    }
     interface HTMLIonRadioElement extends Components.IonRadio, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonRadioElementEventMap>(type: K, listener: (this: HTMLIonRadioElement, ev: IonRadioCustomEvent<HTMLIonRadioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonRadioElementEventMap>(type: K, listener: (this: HTMLIonRadioElement, ev: IonRadioCustomEvent<HTMLIonRadioElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonRadioElement: {
         prototype: HTMLIonRadioElement;
         new (): HTMLIonRadioElement;
     };
+    interface HTMLIonRadioGroupElementEventMap {
+        "ionChange": RadioGroupChangeEventDetail;
+        "ionValueChange": RadioGroupChangeEventDetail;
+    }
     interface HTMLIonRadioGroupElement extends Components.IonRadioGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonRadioGroupElementEventMap>(type: K, listener: (this: HTMLIonRadioGroupElement, ev: IonRadioGroupCustomEvent<HTMLIonRadioGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonRadioGroupElementEventMap>(type: K, listener: (this: HTMLIonRadioGroupElement, ev: IonRadioGroupCustomEvent<HTMLIonRadioGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonRadioGroupElement: {
         prototype: HTMLIonRadioGroupElement;
         new (): HTMLIonRadioGroupElement;
     };
+    interface HTMLIonRangeElementEventMap {
+        "ionChange": RangeChangeEventDetail;
+        "ionInput": RangeChangeEventDetail;
+        "ionStyle": StyleEventDetail;
+        "ionFocus": void;
+        "ionBlur": void;
+        "ionKnobMoveStart": RangeKnobMoveStartEventDetail;
+        "ionKnobMoveEnd": RangeKnobMoveEndEventDetail;
+    }
     interface HTMLIonRangeElement extends Components.IonRange, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonRangeElementEventMap>(type: K, listener: (this: HTMLIonRangeElement, ev: IonRangeCustomEvent<HTMLIonRangeElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonRangeElementEventMap>(type: K, listener: (this: HTMLIonRangeElement, ev: IonRangeCustomEvent<HTMLIonRangeElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonRangeElement: {
         prototype: HTMLIonRangeElement;
         new (): HTMLIonRangeElement;
     };
+    interface HTMLIonRefresherElementEventMap {
+        "ionRefresh": RefresherEventDetail;
+        "ionPull": void;
+        "ionStart": void;
+    }
     interface HTMLIonRefresherElement extends Components.IonRefresher, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonRefresherElementEventMap>(type: K, listener: (this: HTMLIonRefresherElement, ev: IonRefresherCustomEvent<HTMLIonRefresherElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonRefresherElementEventMap>(type: K, listener: (this: HTMLIonRefresherElement, ev: IonRefresherCustomEvent<HTMLIonRefresherElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonRefresherElement: {
         prototype: HTMLIonRefresherElement;
@@ -4897,7 +4791,18 @@ declare global {
         prototype: HTMLIonReorderElement;
         new (): HTMLIonReorderElement;
     };
+    interface HTMLIonReorderGroupElementEventMap {
+        "ionItemReorder": ItemReorderEventDetail;
+    }
     interface HTMLIonReorderGroupElement extends Components.IonReorderGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonReorderGroupElementEventMap>(type: K, listener: (this: HTMLIonReorderGroupElement, ev: IonReorderGroupCustomEvent<HTMLIonReorderGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonReorderGroupElementEventMap>(type: K, listener: (this: HTMLIonReorderGroupElement, ev: IonReorderGroupCustomEvent<HTMLIonReorderGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonReorderGroupElement: {
         prototype: HTMLIonReorderGroupElement;
@@ -4909,19 +4814,53 @@ declare global {
         prototype: HTMLIonRippleEffectElement;
         new (): HTMLIonRippleEffectElement;
     };
+    interface HTMLIonRouteElementEventMap {
+        "ionRouteDataChanged": any;
+    }
     interface HTMLIonRouteElement extends Components.IonRoute, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonRouteElementEventMap>(type: K, listener: (this: HTMLIonRouteElement, ev: IonRouteCustomEvent<HTMLIonRouteElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonRouteElementEventMap>(type: K, listener: (this: HTMLIonRouteElement, ev: IonRouteCustomEvent<HTMLIonRouteElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonRouteElement: {
         prototype: HTMLIonRouteElement;
         new (): HTMLIonRouteElement;
     };
+    interface HTMLIonRouteRedirectElementEventMap {
+        "ionRouteRedirectChanged": any;
+    }
     interface HTMLIonRouteRedirectElement extends Components.IonRouteRedirect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonRouteRedirectElementEventMap>(type: K, listener: (this: HTMLIonRouteRedirectElement, ev: IonRouteRedirectCustomEvent<HTMLIonRouteRedirectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonRouteRedirectElementEventMap>(type: K, listener: (this: HTMLIonRouteRedirectElement, ev: IonRouteRedirectCustomEvent<HTMLIonRouteRedirectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonRouteRedirectElement: {
         prototype: HTMLIonRouteRedirectElement;
         new (): HTMLIonRouteRedirectElement;
     };
+    interface HTMLIonRouterElementEventMap {
+        "ionRouteWillChange": RouterEventDetail;
+        "ionRouteDidChange": RouterEventDetail;
+    }
     interface HTMLIonRouterElement extends Components.IonRouter, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonRouterElementEventMap>(type: K, listener: (this: HTMLIonRouterElement, ev: IonRouterCustomEvent<HTMLIonRouterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonRouterElementEventMap>(type: K, listener: (this: HTMLIonRouterElement, ev: IonRouterCustomEvent<HTMLIonRouterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonRouterElement: {
         prototype: HTMLIonRouterElement;
@@ -4933,7 +4872,20 @@ declare global {
         prototype: HTMLIonRouterLinkElement;
         new (): HTMLIonRouterLinkElement;
     };
+    interface HTMLIonRouterOutletElementEventMap {
+        "ionNavWillLoad": void;
+        "ionNavWillChange": void;
+        "ionNavDidChange": void;
+    }
     interface HTMLIonRouterOutletElement extends Components.IonRouterOutlet, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonRouterOutletElementEventMap>(type: K, listener: (this: HTMLIonRouterOutletElement, ev: IonRouterOutletCustomEvent<HTMLIonRouterOutletElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonRouterOutletElementEventMap>(type: K, listener: (this: HTMLIonRouterOutletElement, ev: IonRouterOutletCustomEvent<HTMLIonRouterOutletElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonRouterOutletElement: {
         prototype: HTMLIonRouterOutletElement;
@@ -4945,13 +4897,43 @@ declare global {
         prototype: HTMLIonRowElement;
         new (): HTMLIonRowElement;
     };
+    interface HTMLIonSearchbarElementEventMap {
+        "ionInput": SearchbarInputEventDetail;
+        "ionChange": SearchbarChangeEventDetail;
+        "ionCancel": void;
+        "ionClear": void;
+        "ionBlur": void;
+        "ionFocus": void;
+        "ionStyle": StyleEventDetail;
+    }
     interface HTMLIonSearchbarElement extends Components.IonSearchbar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonSearchbarElementEventMap>(type: K, listener: (this: HTMLIonSearchbarElement, ev: IonSearchbarCustomEvent<HTMLIonSearchbarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonSearchbarElementEventMap>(type: K, listener: (this: HTMLIonSearchbarElement, ev: IonSearchbarCustomEvent<HTMLIonSearchbarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonSearchbarElement: {
         prototype: HTMLIonSearchbarElement;
         new (): HTMLIonSearchbarElement;
     };
+    interface HTMLIonSegmentElementEventMap {
+        "ionChange": SegmentChangeEventDetail;
+        "ionSelect": SegmentChangeEventDetail;
+        "ionStyle": StyleEventDetail;
+    }
     interface HTMLIonSegmentElement extends Components.IonSegment, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonSegmentElementEventMap>(type: K, listener: (this: HTMLIonSegmentElement, ev: IonSegmentCustomEvent<HTMLIonSegmentElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonSegmentElementEventMap>(type: K, listener: (this: HTMLIonSegmentElement, ev: IonSegmentCustomEvent<HTMLIonSegmentElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonSegmentElement: {
         prototype: HTMLIonSegmentElement;
@@ -4963,7 +4945,23 @@ declare global {
         prototype: HTMLIonSegmentButtonElement;
         new (): HTMLIonSegmentButtonElement;
     };
+    interface HTMLIonSelectElementEventMap {
+        "ionChange": SelectChangeEventDetail;
+        "ionCancel": void;
+        "ionDismiss": void;
+        "ionFocus": void;
+        "ionBlur": void;
+        "ionStyle": StyleEventDetail;
+    }
     interface HTMLIonSelectElement extends Components.IonSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonSelectElementEventMap>(type: K, listener: (this: HTMLIonSelectElement, ev: IonSelectCustomEvent<HTMLIonSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonSelectElementEventMap>(type: K, listener: (this: HTMLIonSelectElement, ev: IonSelectCustomEvent<HTMLIonSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonSelectElement: {
         prototype: HTMLIonSelectElement;
@@ -4981,23 +4979,22 @@ declare global {
         prototype: HTMLIonSelectPopoverElement;
         new (): HTMLIonSelectPopoverElement;
     };
+    interface HTMLIonSkeletonTextElementEventMap {
+        "ionStyle": StyleEventDetail;
+    }
     interface HTMLIonSkeletonTextElement extends Components.IonSkeletonText, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonSkeletonTextElementEventMap>(type: K, listener: (this: HTMLIonSkeletonTextElement, ev: IonSkeletonTextCustomEvent<HTMLIonSkeletonTextElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonSkeletonTextElementEventMap>(type: K, listener: (this: HTMLIonSkeletonTextElement, ev: IonSkeletonTextCustomEvent<HTMLIonSkeletonTextElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonSkeletonTextElement: {
         prototype: HTMLIonSkeletonTextElement;
         new (): HTMLIonSkeletonTextElement;
-    };
-    interface HTMLIonSlideElement extends Components.IonSlide, HTMLStencilElement {
-    }
-    var HTMLIonSlideElement: {
-        prototype: HTMLIonSlideElement;
-        new (): HTMLIonSlideElement;
-    };
-    interface HTMLIonSlidesElement extends Components.IonSlides, HTMLStencilElement {
-    }
-    var HTMLIonSlidesElement: {
-        prototype: HTMLIonSlidesElement;
-        new (): HTMLIonSlidesElement;
     };
     interface HTMLIonSpinnerElement extends Components.IonSpinner, HTMLStencilElement {
     }
@@ -5005,7 +5002,18 @@ declare global {
         prototype: HTMLIonSpinnerElement;
         new (): HTMLIonSpinnerElement;
     };
+    interface HTMLIonSplitPaneElementEventMap {
+        "ionSplitPaneVisible": { visible: boolean };
+    }
     interface HTMLIonSplitPaneElement extends Components.IonSplitPane, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonSplitPaneElementEventMap>(type: K, listener: (this: HTMLIonSplitPaneElement, ev: IonSplitPaneCustomEvent<HTMLIonSplitPaneElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonSplitPaneElementEventMap>(type: K, listener: (this: HTMLIonSplitPaneElement, ev: IonSplitPaneCustomEvent<HTMLIonSplitPaneElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonSplitPaneElement: {
         prototype: HTMLIonSplitPaneElement;
@@ -5017,19 +5025,55 @@ declare global {
         prototype: HTMLIonTabElement;
         new (): HTMLIonTabElement;
     };
+    interface HTMLIonTabBarElementEventMap {
+        "ionTabBarChanged": TabBarChangedEventDetail;
+        "ionTabBarLoaded": void;
+    }
     interface HTMLIonTabBarElement extends Components.IonTabBar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonTabBarElementEventMap>(type: K, listener: (this: HTMLIonTabBarElement, ev: IonTabBarCustomEvent<HTMLIonTabBarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonTabBarElementEventMap>(type: K, listener: (this: HTMLIonTabBarElement, ev: IonTabBarCustomEvent<HTMLIonTabBarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonTabBarElement: {
         prototype: HTMLIonTabBarElement;
         new (): HTMLIonTabBarElement;
     };
+    interface HTMLIonTabButtonElementEventMap {
+        "ionTabButtonClick": TabButtonClickEventDetail;
+    }
     interface HTMLIonTabButtonElement extends Components.IonTabButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonTabButtonElementEventMap>(type: K, listener: (this: HTMLIonTabButtonElement, ev: IonTabButtonCustomEvent<HTMLIonTabButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonTabButtonElementEventMap>(type: K, listener: (this: HTMLIonTabButtonElement, ev: IonTabButtonCustomEvent<HTMLIonTabButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonTabButtonElement: {
         prototype: HTMLIonTabButtonElement;
         new (): HTMLIonTabButtonElement;
     };
+    interface HTMLIonTabsElementEventMap {
+        "ionNavWillLoad": void;
+        "ionTabsWillChange": { tab: string };
+        "ionTabsDidChange": { tab: string };
+    }
     interface HTMLIonTabsElement extends Components.IonTabs, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonTabsElementEventMap>(type: K, listener: (this: HTMLIonTabsElement, ev: IonTabsCustomEvent<HTMLIonTabsElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonTabsElementEventMap>(type: K, listener: (this: HTMLIonTabsElement, ev: IonTabsCustomEvent<HTMLIonTabsElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonTabsElement: {
         prototype: HTMLIonTabsElement;
@@ -5041,7 +5085,22 @@ declare global {
         prototype: HTMLIonTextElement;
         new (): HTMLIonTextElement;
     };
+    interface HTMLIonTextareaElementEventMap {
+        "ionChange": TextareaChangeEventDetail;
+        "ionInput": TextareaInputEventDetail;
+        "ionStyle": StyleEventDetail;
+        "ionBlur": FocusEvent;
+        "ionFocus": FocusEvent;
+    }
     interface HTMLIonTextareaElement extends Components.IonTextarea, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonTextareaElementEventMap>(type: K, listener: (this: HTMLIonTextareaElement, ev: IonTextareaCustomEvent<HTMLIonTextareaElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonTextareaElementEventMap>(type: K, listener: (this: HTMLIonTextareaElement, ev: IonTextareaCustomEvent<HTMLIonTextareaElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonTextareaElement: {
         prototype: HTMLIonTextareaElement;
@@ -5053,19 +5112,62 @@ declare global {
         prototype: HTMLIonThumbnailElement;
         new (): HTMLIonThumbnailElement;
     };
+    interface HTMLIonTitleElementEventMap {
+        "ionStyle": StyleEventDetail;
+    }
     interface HTMLIonTitleElement extends Components.IonTitle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonTitleElementEventMap>(type: K, listener: (this: HTMLIonTitleElement, ev: IonTitleCustomEvent<HTMLIonTitleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonTitleElementEventMap>(type: K, listener: (this: HTMLIonTitleElement, ev: IonTitleCustomEvent<HTMLIonTitleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonTitleElement: {
         prototype: HTMLIonTitleElement;
         new (): HTMLIonTitleElement;
     };
+    interface HTMLIonToastElementEventMap {
+        "ionToastDidPresent": void;
+        "ionToastWillPresent": void;
+        "ionToastWillDismiss": OverlayEventDetail;
+        "ionToastDidDismiss": OverlayEventDetail;
+        "didPresent": void;
+        "willPresent": void;
+        "willDismiss": OverlayEventDetail;
+        "didDismiss": OverlayEventDetail;
+    }
     interface HTMLIonToastElement extends Components.IonToast, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonToastElementEventMap>(type: K, listener: (this: HTMLIonToastElement, ev: IonToastCustomEvent<HTMLIonToastElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonToastElementEventMap>(type: K, listener: (this: HTMLIonToastElement, ev: IonToastCustomEvent<HTMLIonToastElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonToastElement: {
         prototype: HTMLIonToastElement;
         new (): HTMLIonToastElement;
     };
+    interface HTMLIonToggleElementEventMap {
+        "ionChange": ToggleChangeEventDetail;
+        "ionFocus": void;
+        "ionBlur": void;
+        "ionStyle": StyleEventDetail;
+    }
     interface HTMLIonToggleElement extends Components.IonToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLIonToggleElementEventMap>(type: K, listener: (this: HTMLIonToggleElement, ev: IonToggleCustomEvent<HTMLIonToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLIonToggleElementEventMap>(type: K, listener: (this: HTMLIonToggleElement, ev: IonToggleCustomEvent<HTMLIonToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLIonToggleElement: {
         prototype: HTMLIonToggleElement;
@@ -5077,19 +5179,20 @@ declare global {
         prototype: HTMLIonToolbarElement;
         new (): HTMLIonToolbarElement;
     };
-    interface HTMLIonVirtualScrollElement extends Components.IonVirtualScroll, HTMLStencilElement {
+    interface HTMLMedAccordionItemElementEventMap {
+        "toggle": any;
+        "opened": any;
+        "medClick": any;
     }
-    var HTMLIonVirtualScrollElement: {
-        prototype: HTMLIonVirtualScrollElement;
-        new (): HTMLIonVirtualScrollElement;
-    };
-    interface HTMLLocalModalElement extends Components.LocalModal, HTMLStencilElement {
-    }
-    var HTMLLocalModalElement: {
-        prototype: HTMLLocalModalElement;
-        new (): HTMLLocalModalElement;
-    };
     interface HTMLMedAccordionItemElement extends Components.MedAccordionItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedAccordionItemElementEventMap>(type: K, listener: (this: HTMLMedAccordionItemElement, ev: MedAccordionItemCustomEvent<HTMLMedAccordionItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedAccordionItemElementEventMap>(type: K, listener: (this: HTMLMedAccordionItemElement, ev: MedAccordionItemCustomEvent<HTMLMedAccordionItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedAccordionItemElement: {
         prototype: HTMLMedAccordionItemElement;
@@ -5113,12 +5216,6 @@ declare global {
         prototype: HTMLMedAgrupadorElement;
         new (): HTMLMedAgrupadorElement;
     };
-    interface HTMLMedAlertElement extends Components.MedAlert, HTMLStencilElement {
-    }
-    var HTMLMedAlertElement: {
-        prototype: HTMLMedAlertElement;
-        new (): HTMLMedAlertElement;
-    };
     interface HTMLMedAlertFixedElement extends Components.MedAlertFixed, HTMLStencilElement {
     }
     var HTMLMedAlertFixedElement: {
@@ -5131,13 +5228,39 @@ declare global {
         prototype: HTMLMedAlternativasElement;
         new (): HTMLMedAlternativasElement;
     };
+    interface HTMLMedAlternativasAElementEventMap {
+        "medChange": MedAlternativaInterface;
+        "medRiscada": MedAlternativaInterface;
+        "medGalleryRequest": MedAlternativaInterface;
+    }
     interface HTMLMedAlternativasAElement extends Components.MedAlternativasA, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedAlternativasAElementEventMap>(type: K, listener: (this: HTMLMedAlternativasAElement, ev: MedAlternativasACustomEvent<HTMLMedAlternativasAElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedAlternativasAElementEventMap>(type: K, listener: (this: HTMLMedAlternativasAElement, ev: MedAlternativasACustomEvent<HTMLMedAlternativasAElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedAlternativasAElement: {
         prototype: HTMLMedAlternativasAElement;
         new (): HTMLMedAlternativasAElement;
     };
+    interface HTMLMedAlternativasBElementEventMap {
+        "medChange": MedAlternativaInterface;
+        "medRiscada": MedAlternativaInterface;
+        "medGalleryRequest": MedAlternativaInterface;
+    }
     interface HTMLMedAlternativasBElement extends Components.MedAlternativasB, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedAlternativasBElementEventMap>(type: K, listener: (this: HTMLMedAlternativasBElement, ev: MedAlternativasBCustomEvent<HTMLMedAlternativasBElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedAlternativasBElementEventMap>(type: K, listener: (this: HTMLMedAlternativasBElement, ev: MedAlternativasBCustomEvent<HTMLMedAlternativasBElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedAlternativasBElement: {
         prototype: HTMLMedAlternativasBElement;
@@ -5149,25 +5272,25 @@ declare global {
         prototype: HTMLMedAutocompleteElement;
         new (): HTMLMedAutocompleteElement;
     };
-    interface HTMLMedAvatarElement extends Components.MedAvatar, HTMLStencilElement {
-    }
-    var HTMLMedAvatarElement: {
-        prototype: HTMLMedAvatarElement;
-        new (): HTMLMedAvatarElement;
-    };
-    interface HTMLMedBannerElement extends Components.MedBanner, HTMLStencilElement {
-    }
-    var HTMLMedBannerElement: {
-        prototype: HTMLMedBannerElement;
-        new (): HTMLMedBannerElement;
-    };
     interface HTMLMedBaseElement extends Components.MedBase, HTMLStencilElement {
     }
     var HTMLMedBaseElement: {
         prototype: HTMLMedBaseElement;
         new (): HTMLMedBaseElement;
     };
+    interface HTMLMedCalendarElementEventMap {
+        "medClick": any;
+        "medSwipe": any;
+    }
     interface HTMLMedCalendarElement extends Components.MedCalendar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedCalendarElementEventMap>(type: K, listener: (this: HTMLMedCalendarElement, ev: MedCalendarCustomEvent<HTMLMedCalendarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedCalendarElementEventMap>(type: K, listener: (this: HTMLMedCalendarElement, ev: MedCalendarCustomEvent<HTMLMedCalendarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedCalendarElement: {
         prototype: HTMLMedCalendarElement;
@@ -5184,12 +5307,6 @@ declare global {
     var HTMLMedCaptionElement: {
         prototype: HTMLMedCaptionElement;
         new (): HTMLMedCaptionElement;
-    };
-    interface HTMLMedCarregamentoElement extends Components.MedCarregamento, HTMLStencilElement {
-    }
-    var HTMLMedCarregamentoElement: {
-        prototype: HTMLMedCarregamentoElement;
-        new (): HTMLMedCarregamentoElement;
     };
     interface HTMLMedCartaoRespostaItemElement extends Components.MedCartaoRespostaItem, HTMLStencilElement {
     }
@@ -5239,23 +5356,23 @@ declare global {
         prototype: HTMLMedChartRadialLabelElement;
         new (): HTMLMedChartRadialLabelElement;
     };
+    interface HTMLMedCheckCardElementEventMap {
+        "medClick": any;
+        "medTooltipClose": any;
+    }
     interface HTMLMedCheckCardElement extends Components.MedCheckCard, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedCheckCardElementEventMap>(type: K, listener: (this: HTMLMedCheckCardElement, ev: MedCheckCardCustomEvent<HTMLMedCheckCardElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedCheckCardElementEventMap>(type: K, listener: (this: HTMLMedCheckCardElement, ev: MedCheckCardCustomEvent<HTMLMedCheckCardElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedCheckCardElement: {
         prototype: HTMLMedCheckCardElement;
         new (): HTMLMedCheckCardElement;
-    };
-    interface HTMLMedChipElement extends Components.MedChip, HTMLStencilElement {
-    }
-    var HTMLMedChipElement: {
-        prototype: HTMLMedChipElement;
-        new (): HTMLMedChipElement;
-    };
-    interface HTMLMedConfigElement extends Components.MedConfig, HTMLStencilElement {
-    }
-    var HTMLMedConfigElement: {
-        prototype: HTMLMedConfigElement;
-        new (): HTMLMedConfigElement;
     };
     interface HTMLMedContextMenuElement extends Components.MedContextMenu, HTMLStencilElement {
     }
@@ -5263,7 +5380,18 @@ declare global {
         prototype: HTMLMedContextMenuElement;
         new (): HTMLMedContextMenuElement;
     };
+    interface HTMLMedDownloadButtonElementEventMap {
+        "medDownloadRequested": any;
+    }
     interface HTMLMedDownloadButtonElement extends Components.MedDownloadButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedDownloadButtonElementEventMap>(type: K, listener: (this: HTMLMedDownloadButtonElement, ev: MedDownloadButtonCustomEvent<HTMLMedDownloadButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedDownloadButtonElementEventMap>(type: K, listener: (this: HTMLMedDownloadButtonElement, ev: MedDownloadButtonCustomEvent<HTMLMedDownloadButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedDownloadButtonElement: {
         prototype: HTMLMedDownloadButtonElement;
@@ -5275,19 +5403,35 @@ declare global {
         prototype: HTMLMedDropdownElement;
         new (): HTMLMedDropdownElement;
     };
-    interface HTMLMedDropdownContainerElement extends Components.MedDropdownContainer, HTMLStencilElement {
+    interface HTMLMedEnunciadoElementEventMap {
+        "medGalleryRequest": string;
     }
-    var HTMLMedDropdownContainerElement: {
-        prototype: HTMLMedDropdownContainerElement;
-        new (): HTMLMedDropdownContainerElement;
-    };
     interface HTMLMedEnunciadoElement extends Components.MedEnunciado, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedEnunciadoElementEventMap>(type: K, listener: (this: HTMLMedEnunciadoElement, ev: MedEnunciadoCustomEvent<HTMLMedEnunciadoElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedEnunciadoElementEventMap>(type: K, listener: (this: HTMLMedEnunciadoElement, ev: MedEnunciadoCustomEvent<HTMLMedEnunciadoElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedEnunciadoElement: {
         prototype: HTMLMedEnunciadoElement;
         new (): HTMLMedEnunciadoElement;
     };
+    interface HTMLMedEnunciadoDiscursivaElementEventMap {
+        "medGalleryRequest": string;
+    }
     interface HTMLMedEnunciadoDiscursivaElement extends Components.MedEnunciadoDiscursiva, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedEnunciadoDiscursivaElementEventMap>(type: K, listener: (this: HTMLMedEnunciadoDiscursivaElement, ev: MedEnunciadoDiscursivaCustomEvent<HTMLMedEnunciadoDiscursivaElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedEnunciadoDiscursivaElementEventMap>(type: K, listener: (this: HTMLMedEnunciadoDiscursivaElement, ev: MedEnunciadoDiscursivaCustomEvent<HTMLMedEnunciadoDiscursivaElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedEnunciadoDiscursivaElement: {
         prototype: HTMLMedEnunciadoDiscursivaElement;
@@ -5299,7 +5443,18 @@ declare global {
         prototype: HTMLMedFontZoomElement;
         new (): HTMLMedFontZoomElement;
     };
+    interface HTMLMedHeaderElementEventMap {
+        "medResize": headerResizeEventDetail;
+    }
     interface HTMLMedHeaderElement extends Components.MedHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedHeaderElementEventMap>(type: K, listener: (this: HTMLMedHeaderElement, ev: MedHeaderCustomEvent<HTMLMedHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedHeaderElementEventMap>(type: K, listener: (this: HTMLMedHeaderElement, ev: MedHeaderCustomEvent<HTMLMedHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedHeaderElement: {
         prototype: HTMLMedHeaderElement;
@@ -5310,12 +5465,6 @@ declare global {
     var HTMLMedImageZoomElement: {
         prototype: HTMLMedImageZoomElement;
         new (): HTMLMedImageZoomElement;
-    };
-    interface HTMLMedInputElement extends Components.MedInput, HTMLStencilElement {
-    }
-    var HTMLMedInputElement: {
-        prototype: HTMLMedInputElement;
-        new (): HTMLMedInputElement;
     };
     interface HTMLMedItemElement extends Components.MedItem, HTMLStencilElement {
     }
@@ -5341,43 +5490,24 @@ declare global {
         prototype: HTMLMedListItemAccordionElement;
         new (): HTMLMedListItemAccordionElement;
     };
-    interface HTMLMedListaElement extends Components.MedLista, HTMLStencilElement {
-    }
-    var HTMLMedListaElement: {
-        prototype: HTMLMedListaElement;
-        new (): HTMLMedListaElement;
-    };
-    interface HTMLMedNavElement extends Components.MedNav, HTMLStencilElement {
-    }
-    var HTMLMedNavElement: {
-        prototype: HTMLMedNavElement;
-        new (): HTMLMedNavElement;
-    };
-    interface HTMLMedNavAccordionElement extends Components.MedNavAccordion, HTMLStencilElement {
-    }
-    var HTMLMedNavAccordionElement: {
-        prototype: HTMLMedNavAccordionElement;
-        new (): HTMLMedNavAccordionElement;
-    };
-    interface HTMLMedNavItemElement extends Components.MedNavItem, HTMLStencilElement {
-    }
-    var HTMLMedNavItemElement: {
-        prototype: HTMLMedNavItemElement;
-        new (): HTMLMedNavItemElement;
-    };
-    interface HTMLMedNavSimpleElement extends Components.MedNavSimple, HTMLStencilElement {
-    }
-    var HTMLMedNavSimpleElement: {
-        prototype: HTMLMedNavSimpleElement;
-        new (): HTMLMedNavSimpleElement;
-    };
     interface HTMLMedNavbarElement extends Components.MedNavbar, HTMLStencilElement {
     }
     var HTMLMedNavbarElement: {
         prototype: HTMLMedNavbarElement;
         new (): HTMLMedNavbarElement;
     };
+    interface HTMLMedOfflineElementEventMap {
+        "medClick": void;
+    }
     interface HTMLMedOfflineElement extends Components.MedOffline, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedOfflineElementEventMap>(type: K, listener: (this: HTMLMedOfflineElement, ev: MedOfflineCustomEvent<HTMLMedOfflineElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedOfflineElementEventMap>(type: K, listener: (this: HTMLMedOfflineElement, ev: MedOfflineCustomEvent<HTMLMedOfflineElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedOfflineElement: {
         prototype: HTMLMedOfflineElement;
@@ -5389,29 +5519,23 @@ declare global {
         prototype: HTMLMedOptionElement;
         new (): HTMLMedOptionElement;
     };
-    interface HTMLMedPiechartElement extends Components.MedPiechart, HTMLStencilElement {
+    interface HTMLMedPlusminusElementEventMap {
+        "medChange": PlusMinusStatus;
+        "medChangeAlt": number;
     }
-    var HTMLMedPiechartElement: {
-        prototype: HTMLMedPiechartElement;
-        new (): HTMLMedPiechartElement;
-    };
     interface HTMLMedPlusminusElement extends Components.MedPlusminus, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedPlusminusElementEventMap>(type: K, listener: (this: HTMLMedPlusminusElement, ev: MedPlusminusCustomEvent<HTMLMedPlusminusElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedPlusminusElementEventMap>(type: K, listener: (this: HTMLMedPlusminusElement, ev: MedPlusminusCustomEvent<HTMLMedPlusminusElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedPlusminusElement: {
         prototype: HTMLMedPlusminusElement;
         new (): HTMLMedPlusminusElement;
-    };
-    interface HTMLMedQuestionElement extends Components.MedQuestion, HTMLStencilElement {
-    }
-    var HTMLMedQuestionElement: {
-        prototype: HTMLMedQuestionElement;
-        new (): HTMLMedQuestionElement;
-    };
-    interface HTMLMedRateAulaElement extends Components.MedRateAula, HTMLStencilElement {
-    }
-    var HTMLMedRateAulaElement: {
-        prototype: HTMLMedRateAulaElement;
-        new (): HTMLMedRateAulaElement;
     };
     interface HTMLMedRateBarElement extends Components.MedRateBar, HTMLStencilElement {
     }
@@ -5419,53 +5543,22 @@ declare global {
         prototype: HTMLMedRateBarElement;
         new (): HTMLMedRateBarElement;
     };
+    interface HTMLMedRateLikeElementEventMap {
+        "medChange": RateStatus;
+    }
     interface HTMLMedRateLikeElement extends Components.MedRateLike, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedRateLikeElementEventMap>(type: K, listener: (this: HTMLMedRateLikeElement, ev: MedRateLikeCustomEvent<HTMLMedRateLikeElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedRateLikeElementEventMap>(type: K, listener: (this: HTMLMedRateLikeElement, ev: MedRateLikeCustomEvent<HTMLMedRateLikeElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedRateLikeElement: {
         prototype: HTMLMedRateLikeElement;
         new (): HTMLMedRateLikeElement;
-    };
-    interface HTMLMedRatingElement extends Components.MedRating, HTMLStencilElement {
-    }
-    var HTMLMedRatingElement: {
-        prototype: HTMLMedRatingElement;
-        new (): HTMLMedRatingElement;
-    };
-    interface HTMLMedSearchBarElement extends Components.MedSearchBar, HTMLStencilElement {
-    }
-    var HTMLMedSearchBarElement: {
-        prototype: HTMLMedSearchBarElement;
-        new (): HTMLMedSearchBarElement;
-    };
-    interface HTMLMedSegmentElement extends Components.MedSegment, HTMLStencilElement {
-    }
-    var HTMLMedSegmentElement: {
-        prototype: HTMLMedSegmentElement;
-        new (): HTMLMedSegmentElement;
-    };
-    interface HTMLMedSemanaElement extends Components.MedSemana, HTMLStencilElement {
-    }
-    var HTMLMedSemanaElement: {
-        prototype: HTMLMedSemanaElement;
-        new (): HTMLMedSemanaElement;
-    };
-    interface HTMLMedSemanasElement extends Components.MedSemanas, HTMLStencilElement {
-    }
-    var HTMLMedSemanasElement: {
-        prototype: HTMLMedSemanasElement;
-        new (): HTMLMedSemanasElement;
-    };
-    interface HTMLMedTabButtonElement extends Components.MedTabButton, HTMLStencilElement {
-    }
-    var HTMLMedTabButtonElement: {
-        prototype: HTMLMedTabButtonElement;
-        new (): HTMLMedTabButtonElement;
-    };
-    interface HTMLMedThemesElement extends Components.MedThemes, HTMLStencilElement {
-    }
-    var HTMLMedThemesElement: {
-        prototype: HTMLMedThemesElement;
-        new (): HTMLMedThemesElement;
     };
     interface HTMLMedTilesElement extends Components.MedTiles, HTMLStencilElement {
     }
@@ -5485,7 +5578,19 @@ declare global {
         prototype: HTMLMedToolbarElement;
         new (): HTMLMedToolbarElement;
     };
+    interface HTMLMedTooltipElementEventMap {
+        "btnLeftClick": void;
+        "btnRightClick": void;
+    }
     interface HTMLMedTooltipElement extends Components.MedTooltip, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLMedTooltipElementEventMap>(type: K, listener: (this: HTMLMedTooltipElement, ev: MedTooltipCustomEvent<HTMLMedTooltipElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLMedTooltipElementEventMap>(type: K, listener: (this: HTMLMedTooltipElement, ev: MedTooltipCustomEvent<HTMLMedTooltipElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLMedTooltipElement: {
         prototype: HTMLMedTooltipElement;
@@ -5503,73 +5608,25 @@ declare global {
         prototype: HTMLMedVideoThumbnailElement;
         new (): HTMLMedVideoThumbnailElement;
     };
-    interface HTMLMedVoteElement extends Components.MedVote, HTMLStencilElement {
-    }
-    var HTMLMedVoteElement: {
-        prototype: HTMLMedVoteElement;
-        new (): HTMLMedVoteElement;
-    };
-    interface HTMLMedreaderProModalElement extends Components.MedreaderProModal, HTMLStencilElement {
-    }
-    var HTMLMedreaderProModalElement: {
-        prototype: HTMLMedreaderProModalElement;
-        new (): HTMLMedreaderProModalElement;
-    };
-    interface HTMLRealizacoesModalElement extends Components.RealizacoesModal, HTMLStencilElement {
-    }
-    var HTMLRealizacoesModalElement: {
-        prototype: HTMLRealizacoesModalElement;
-        new (): HTMLRealizacoesModalElement;
-    };
-    interface HTMLSelectTestElement extends Components.SelectTest, HTMLStencilElement {
-    }
-    var HTMLSelectTestElement: {
-        prototype: HTMLSelectTestElement;
-        new (): HTMLSelectTestElement;
-    };
-    interface HTMLSheetContentTestElement extends Components.SheetContentTest, HTMLStencilElement {
-    }
-    var HTMLSheetContentTestElement: {
-        prototype: HTMLSheetContentTestElement;
-        new (): HTMLSheetContentTestElement;
-    };
-    interface HTMLSheetIaElement extends Components.SheetIa, HTMLStencilElement {
-    }
-    var HTMLSheetIaElement: {
-        prototype: HTMLSheetIaElement;
-        new (): HTMLSheetIaElement;
-    };
-    interface HTMLSheetTestElement extends Components.SheetTest, HTMLStencilElement {
-    }
-    var HTMLSheetTestElement: {
-        prototype: HTMLSheetTestElement;
-        new (): HTMLSheetTestElement;
-    };
-    interface HTMLSimuladoModalElement extends Components.SimuladoModal, HTMLStencilElement {
-    }
-    var HTMLSimuladoModalElement: {
-        prototype: HTMLSimuladoModalElement;
-        new (): HTMLSimuladoModalElement;
-    };
-    interface HTMLSnackbarTestElement extends Components.SnackbarTest, HTMLStencilElement {
-    }
-    var HTMLSnackbarTestElement: {
-        prototype: HTMLSnackbarTestElement;
-        new (): HTMLSnackbarTestElement;
-    };
-    interface HTMLTextAreaModalElement extends Components.TextAreaModal, HTMLStencilElement {
-    }
-    var HTMLTextAreaModalElement: {
-        prototype: HTMLTextAreaModalElement;
-        new (): HTMLTextAreaModalElement;
-    };
     interface HTMLTpAccordionElement extends Components.TpAccordion, HTMLStencilElement {
     }
     var HTMLTpAccordionElement: {
         prototype: HTMLTpAccordionElement;
         new (): HTMLTpAccordionElement;
     };
+    interface HTMLTpAccordionGroupElementEventMap {
+        "ionChange": TpAccordionGroupChangeEventDetail;
+        "ionValueChange": TpAccordionGroupChangeEventDetail;
+    }
     interface HTMLTpAccordionGroupElement extends Components.TpAccordionGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLTpAccordionGroupElementEventMap>(type: K, listener: (this: HTMLTpAccordionGroupElement, ev: TpAccordionGroupCustomEvent<HTMLTpAccordionGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLTpAccordionGroupElementEventMap>(type: K, listener: (this: HTMLTpAccordionGroupElement, ev: TpAccordionGroupCustomEvent<HTMLTpAccordionGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLTpAccordionGroupElement: {
         prototype: HTMLTpAccordionGroupElement;
@@ -5593,29 +5650,9 @@ declare global {
         prototype: HTMLTpLoaderElement;
         new (): HTMLTpLoaderElement;
     };
-    interface HTMLTutorialModalElement extends Components.TutorialModal, HTMLStencilElement {
-    }
-    var HTMLTutorialModalElement: {
-        prototype: HTMLTutorialModalElement;
-        new (): HTMLTutorialModalElement;
-    };
-    interface HTMLUnidadesModalElement extends Components.UnidadesModal, HTMLStencilElement {
-    }
-    var HTMLUnidadesModalElement: {
-        prototype: HTMLUnidadesModalElement;
-        new (): HTMLUnidadesModalElement;
-    };
     interface HTMLElementTagNameMap {
-        "ajuda-modal": HTMLAjudaModalElement;
-        "apostila-modal": HTMLApostilaModalElement;
-        "aviso-modal": HTMLAvisoModalElement;
-        "concurso-modal": HTMLConcursoModalElement;
-        "denunciar-modal": HTMLDenunciarModalElement;
-        "dialog-test": HTMLDialogTestElement;
-        "especialidade-modal": HTMLEspecialidadeModalElement;
-        "excluir-modal": HTMLExcluirModalElement;
-        "filtro-modal": HTMLFiltroModalElement;
-        "informativo-modal": HTMLInformativoModalElement;
+        "ion-accordion": HTMLIonAccordionElement;
+        "ion-accordion-group": HTMLIonAccordionGroupElement;
         "ion-action-sheet": HTMLIonActionSheetElement;
         "ion-alert": HTMLIonAlertElement;
         "ion-app": HTMLIonAppElement;
@@ -5623,6 +5660,8 @@ declare global {
         "ion-back-button": HTMLIonBackButtonElement;
         "ion-backdrop": HTMLIonBackdropElement;
         "ion-badge": HTMLIonBadgeElement;
+        "ion-breadcrumb": HTMLIonBreadcrumbElement;
+        "ion-breadcrumbs": HTMLIonBreadcrumbsElement;
         "ion-button": HTMLIonButtonElement;
         "ion-buttons": HTMLIonButtonsElement;
         "ion-card": HTMLIonCardElement;
@@ -5635,6 +5674,7 @@ declare global {
         "ion-col": HTMLIonColElement;
         "ion-content": HTMLIonContentElement;
         "ion-datetime": HTMLIonDatetimeElement;
+        "ion-datetime-button": HTMLIonDatetimeButtonElement;
         "ion-fab": HTMLIonFabElement;
         "ion-fab-button": HTMLIonFabButtonElement;
         "ion-fab-list": HTMLIonFabListElement;
@@ -5664,6 +5704,8 @@ declare global {
         "ion-note": HTMLIonNoteElement;
         "ion-picker": HTMLIonPickerElement;
         "ion-picker-column": HTMLIonPickerColumnElement;
+        "ion-picker-column-internal": HTMLIonPickerColumnInternalElement;
+        "ion-picker-internal": HTMLIonPickerInternalElement;
         "ion-popover": HTMLIonPopoverElement;
         "ion-progress-bar": HTMLIonProgressBarElement;
         "ion-radio": HTMLIonRadioElement;
@@ -5687,8 +5729,6 @@ declare global {
         "ion-select-option": HTMLIonSelectOptionElement;
         "ion-select-popover": HTMLIonSelectPopoverElement;
         "ion-skeleton-text": HTMLIonSkeletonTextElement;
-        "ion-slide": HTMLIonSlideElement;
-        "ion-slides": HTMLIonSlidesElement;
         "ion-spinner": HTMLIonSpinnerElement;
         "ion-split-pane": HTMLIonSplitPaneElement;
         "ion-tab": HTMLIonTabElement;
@@ -5702,25 +5742,19 @@ declare global {
         "ion-toast": HTMLIonToastElement;
         "ion-toggle": HTMLIonToggleElement;
         "ion-toolbar": HTMLIonToolbarElement;
-        "ion-virtual-scroll": HTMLIonVirtualScrollElement;
-        "local-modal": HTMLLocalModalElement;
         "med-accordion-item": HTMLMedAccordionItemElement;
         "med-accordion-list": HTMLMedAccordionListElement;
         "med-add-card": HTMLMedAddCardElement;
         "med-agrupador": HTMLMedAgrupadorElement;
-        "med-alert": HTMLMedAlertElement;
         "med-alert-fixed": HTMLMedAlertFixedElement;
         "med-alternativas": HTMLMedAlternativasElement;
         "med-alternativas-a": HTMLMedAlternativasAElement;
         "med-alternativas-b": HTMLMedAlternativasBElement;
         "med-autocomplete": HTMLMedAutocompleteElement;
-        "med-avatar": HTMLMedAvatarElement;
-        "med-banner": HTMLMedBannerElement;
         "med-base": HTMLMedBaseElement;
         "med-calendar": HTMLMedCalendarElement;
         "med-calendar-day": HTMLMedCalendarDayElement;
         "med-caption": HTMLMedCaptionElement;
-        "med-carregamento": HTMLMedCarregamentoElement;
         "med-cartao-resposta-item": HTMLMedCartaoRespostaItemElement;
         "med-cartao-resposta-lista": HTMLMedCartaoRespostaListaElement;
         "med-chart-bar": HTMLMedChartBarElement;
@@ -5730,88 +5764,97 @@ declare global {
         "med-chart-radial-content": HTMLMedChartRadialContentElement;
         "med-chart-radial-label": HTMLMedChartRadialLabelElement;
         "med-check-card": HTMLMedCheckCardElement;
-        "med-chip": HTMLMedChipElement;
-        "med-config": HTMLMedConfigElement;
         "med-context-menu": HTMLMedContextMenuElement;
         "med-download-button": HTMLMedDownloadButtonElement;
         "med-dropdown": HTMLMedDropdownElement;
-        "med-dropdown-container": HTMLMedDropdownContainerElement;
         "med-enunciado": HTMLMedEnunciadoElement;
         "med-enunciado-discursiva": HTMLMedEnunciadoDiscursivaElement;
         "med-font-zoom": HTMLMedFontZoomElement;
         "med-header": HTMLMedHeaderElement;
         "med-image-zoom": HTMLMedImageZoomElement;
-        "med-input": HTMLMedInputElement;
         "med-item": HTMLMedItemElement;
         "med-list": HTMLMedListElement;
         "med-list-item": HTMLMedListItemElement;
         "med-list-item-accordion": HTMLMedListItemAccordionElement;
-        "med-lista": HTMLMedListaElement;
-        "med-nav": HTMLMedNavElement;
-        "med-nav-accordion": HTMLMedNavAccordionElement;
-        "med-nav-item": HTMLMedNavItemElement;
-        "med-nav-simple": HTMLMedNavSimpleElement;
         "med-navbar": HTMLMedNavbarElement;
         "med-offline": HTMLMedOfflineElement;
         "med-option": HTMLMedOptionElement;
-        "med-piechart": HTMLMedPiechartElement;
         "med-plusminus": HTMLMedPlusminusElement;
-        "med-question": HTMLMedQuestionElement;
-        "med-rate-aula": HTMLMedRateAulaElement;
         "med-rate-bar": HTMLMedRateBarElement;
         "med-rate-like": HTMLMedRateLikeElement;
-        "med-rating": HTMLMedRatingElement;
-        "med-search-bar": HTMLMedSearchBarElement;
-        "med-segment": HTMLMedSegmentElement;
-        "med-semana": HTMLMedSemanaElement;
-        "med-semanas": HTMLMedSemanasElement;
-        "med-tab-button": HTMLMedTabButtonElement;
-        "med-themes": HTMLMedThemesElement;
         "med-tiles": HTMLMedTilesElement;
         "med-toggle": HTMLMedToggleElement;
         "med-toolbar": HTMLMedToolbarElement;
         "med-tooltip": HTMLMedTooltipElement;
         "med-type": HTMLMedTypeElement;
         "med-video-thumbnail": HTMLMedVideoThumbnailElement;
-        "med-vote": HTMLMedVoteElement;
-        "medreader-pro-modal": HTMLMedreaderProModalElement;
-        "realizacoes-modal": HTMLRealizacoesModalElement;
-        "select-test": HTMLSelectTestElement;
-        "sheet-content-test": HTMLSheetContentTestElement;
-        "sheet-ia": HTMLSheetIaElement;
-        "sheet-test": HTMLSheetTestElement;
-        "simulado-modal": HTMLSimuladoModalElement;
-        "snackbar-test": HTMLSnackbarTestElement;
-        "text-area-modal": HTMLTextAreaModalElement;
         "tp-accordion": HTMLTpAccordionElement;
         "tp-accordion-group": HTMLTpAccordionGroupElement;
         "tp-chart-bar": HTMLTpChartBarElement;
         "tp-input-container": HTMLTpInputContainerElement;
         "tp-loader": HTMLTpLoaderElement;
-        "tutorial-modal": HTMLTutorialModalElement;
-        "unidades-modal": HTMLUnidadesModalElement;
     }
 }
 declare namespace LocalJSX {
-    interface AjudaModal {
+    interface IonAccordion {
+        /**
+          * If `true`, the accordion cannot be interacted with.
+         */
+        "disabled"?: boolean;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * If `true`, the accordion cannot be interacted with, but does not alter the opacity.
+         */
+        "readonly"?: boolean;
+        /**
+          * The toggle icon to use. This icon will be rotated when the accordion is expanded or collapsed.
+         */
+        "toggleIcon"?: string;
+        /**
+          * The slot inside of `ion-item` to place the toggle icon. Defaults to `"end"`.
+         */
+        "toggleIconSlot"?: 'start' | 'end';
+        /**
+          * The value of the accordion. Defaults to an autogenerated value.
+         */
+        "value"?: string;
     }
-    interface ApostilaModal {
-    }
-    interface AvisoModal {
-    }
-    interface ConcursoModal {
-    }
-    interface DenunciarModal {
-    }
-    interface DialogTest {
-    }
-    interface EspecialidadeModal {
-    }
-    interface ExcluirModal {
-    }
-    interface FiltroModal {
-    }
-    interface InformativoModal {
+    interface IonAccordionGroup {
+        /**
+          * If `true`, all accordions inside of the accordion group will animate when expanding or collapsing.
+         */
+        "animated"?: boolean;
+        /**
+          * If `true`, the accordion group cannot be interacted with.
+         */
+        "disabled"?: boolean;
+        /**
+          * Describes the expansion behavior for each accordion. Possible values are `"compact"` and `"inset"`. Defaults to `"compact"`.
+         */
+        "expand"?: 'compact' | 'inset';
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * If `true`, the accordion group can have multiple accordion components expanded at the same time.
+         */
+        "multiple"?: boolean;
+        /**
+          * Emitted when the value property has changed as a result of a user action such as a click. This event will not emit when programmatically setting the value property.
+         */
+        "onIonChange"?: (event: IonAccordionGroupCustomEvent<AccordionGroupChangeEventDetail>) => void;
+        /**
+          * If `true`, the accordion group cannot be interacted with, but does not alter the opacity.
+         */
+        "readonly"?: boolean;
+        /**
+          * The value of the accordion group. This controls which accordions are expanded. This should be an array of strings only when `multiple="true"`
+         */
+        "value"?: string | string[] | null;
     }
     interface IonActionSheet {
         /**
@@ -5839,6 +5882,14 @@ declare namespace LocalJSX {
          */
         "header"?: string;
         /**
+          * Additional attributes to pass to the action sheet.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * If `true`, the action sheet will open. If `false`, the action sheet will close. Use this if you need finer grained control over presentation, otherwise just use the actionSheetController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the action sheet dismisses. You will need to do that in your code.
+         */
+        "isOpen"?: boolean;
+        /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
         "keyboardClose"?: boolean;
@@ -5851,21 +5902,37 @@ declare namespace LocalJSX {
          */
         "mode"?: "ios" | "md";
         /**
-          * Emitted after the alert has dismissed.
+          * Emitted after the action sheet has dismissed. Shorthand for ionActionSheetDidDismiss.
+         */
+        "onDidDismiss"?: (event: IonActionSheetCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted after the action sheet has presented. Shorthand for ionActionSheetWillDismiss.
+         */
+        "onDidPresent"?: (event: IonActionSheetCustomEvent<void>) => void;
+        /**
+          * Emitted after the action sheet has dismissed.
          */
         "onIonActionSheetDidDismiss"?: (event: IonActionSheetCustomEvent<OverlayEventDetail>) => void;
         /**
-          * Emitted after the alert has presented.
+          * Emitted after the action sheet has presented.
          */
         "onIonActionSheetDidPresent"?: (event: IonActionSheetCustomEvent<void>) => void;
         /**
-          * Emitted before the alert has dismissed.
+          * Emitted before the action sheet has dismissed.
          */
         "onIonActionSheetWillDismiss"?: (event: IonActionSheetCustomEvent<OverlayEventDetail>) => void;
         /**
-          * Emitted before the alert has presented.
+          * Emitted before the action sheet has presented.
          */
         "onIonActionSheetWillPresent"?: (event: IonActionSheetCustomEvent<void>) => void;
+        /**
+          * Emitted before the action sheet has dismissed. Shorthand for ionActionSheetWillDismiss.
+         */
+        "onWillDismiss"?: (event: IonActionSheetCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted before the action sheet has presented. Shorthand for ionActionSheetWillPresent.
+         */
+        "onWillPresent"?: (event: IonActionSheetCustomEvent<void>) => void;
         /**
           * Subtitle for the action sheet.
          */
@@ -5874,6 +5941,10 @@ declare namespace LocalJSX {
           * If `true`, the action sheet will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent"?: boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the action sheet to open when clicked.
+         */
+        "trigger"?: string | undefined;
     }
     interface IonAlert {
         /**
@@ -5901,9 +5972,17 @@ declare namespace LocalJSX {
          */
         "header"?: string;
         /**
+          * Additional attributes to pass to the alert.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
           * Array of input to show in the alert.
          */
         "inputs"?: AlertInput[];
+        /**
+          * If `true`, the alert will open. If `false`, the alert will close. Use this if you need finer grained control over presentation, otherwise just use the alertController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the alert dismisses. You will need to do that in your code.
+         */
+        "isOpen"?: boolean;
         /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
@@ -5913,13 +5992,21 @@ declare namespace LocalJSX {
          */
         "leaveAnimation"?: AnimationBuilder;
         /**
-          * The main message to be displayed in the alert. `message` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
+          * The main message to be displayed in the alert. `message` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)  This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "message"?: string | IonicSafeString;
         /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
+        /**
+          * Emitted after the alert has dismissed. Shorthand for ionAlertDidDismiss.
+         */
+        "onDidDismiss"?: (event: IonAlertCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted after the alert has presented. Shorthand for ionAlertWillDismiss.
+         */
+        "onDidPresent"?: (event: IonAlertCustomEvent<void>) => void;
         /**
           * Emitted after the alert has dismissed.
          */
@@ -5937,6 +6024,14 @@ declare namespace LocalJSX {
          */
         "onIonAlertWillPresent"?: (event: IonAlertCustomEvent<void>) => void;
         /**
+          * Emitted before the alert has dismissed. Shorthand for ionAlertWillDismiss.
+         */
+        "onWillDismiss"?: (event: IonAlertCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted before the alert has presented. Shorthand for ionAlertWillPresent.
+         */
+        "onWillPresent"?: (event: IonAlertCustomEvent<void>) => void;
+        /**
           * The subtitle in the heading of the alert. Displayed under the title.
          */
         "subHeader"?: string;
@@ -5944,6 +6039,10 @@ declare namespace LocalJSX {
           * If `true`, the alert will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent"?: boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the alert to open when clicked.
+         */
+        "trigger"?: string | undefined;
     }
     interface IonApp {
     }
@@ -5963,7 +6062,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * The icon name to use for the back button.
+          * The built-in named SVG icon name or the exact `src` of an SVG file to use for the back button.
          */
         "icon"?: string | null;
         /**
@@ -6011,6 +6110,86 @@ declare namespace LocalJSX {
          */
         "mode"?: "ios" | "md";
     }
+    interface IonBreadcrumb {
+        /**
+          * If `true`, the breadcrumb will take on a different look to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
+         */
+        "active"?: boolean;
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
+          * If `true`, the user cannot interact with the breadcrumb.
+         */
+        "disabled"?: boolean;
+        /**
+          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+         */
+        "download"?: string | undefined;
+        /**
+          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+         */
+        "href"?: string | undefined;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * Emitted when the breadcrumb loses focus.
+         */
+        "onIonBlur"?: (event: IonBreadcrumbCustomEvent<void>) => void;
+        /**
+          * Emitted when the breadcrumb has focus.
+         */
+        "onIonFocus"?: (event: IonBreadcrumbCustomEvent<void>) => void;
+        /**
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+         */
+        "rel"?: string | undefined;
+        /**
+          * When using a router, it specifies the transition animation when navigating to another page using `href`.
+         */
+        "routerAnimation"?: AnimationBuilder | undefined;
+        /**
+          * When using a router, it specifies the transition direction when navigating to another page using `href`.
+         */
+        "routerDirection"?: RouterDirection;
+        /**
+          * If true, show a separator between this breadcrumb and the next. Defaults to `true` for all breadcrumbs except the last.
+         */
+        "separator"?: boolean | undefined;
+        /**
+          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+         */
+        "target"?: string | undefined;
+    }
+    interface IonBreadcrumbs {
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
+          * The number of breadcrumbs to show after the collapsed indicator. If `itemsBeforeCollapse` + `itemsAfterCollapse` is greater than `maxItems`, the breadcrumbs will not be collapsed.
+         */
+        "itemsAfterCollapse"?: number;
+        /**
+          * The number of breadcrumbs to show before the collapsed indicator. If `itemsBeforeCollapse` + `itemsAfterCollapse` is greater than `maxItems`, the breadcrumbs will not be collapsed.
+         */
+        "itemsBeforeCollapse"?: number;
+        /**
+          * The maximum number of breadcrumbs to show before collapsing.
+         */
+        "maxItems"?: number;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * Emitted when the collapsed indicator is clicked on.
+         */
+        "onIonCollapsedClick"?: (event: IonBreadcrumbsCustomEvent<BreadcrumbCollapsedClickEventDetail>) => void;
+    }
     interface IonButton {
         /**
           * The type of button.
@@ -6029,13 +6208,17 @@ declare namespace LocalJSX {
          */
         "download"?: string | undefined;
         /**
-          * Set to `"block"` for a full-width button or to `"full"` for a full-width button without left and right borders.
+          * Set to `"block"` for a full-width button or to `"full"` for a full-width button with square corners and no left or right borders.
          */
         "expand"?: 'full' | 'block';
         /**
-          * Set to `"clear"` for a transparent button, to `"outline"` for a transparent button with a border, or to `"solid"`. The default style is `"solid"` except inside of a toolbar, where the default is `"clear"`.
+          * Set to `"clear"` for a transparent button that resembles a flat button, to `"outline"` for a transparent button with a border, or to `"solid"` for a button with a filled background. The default fill is `"solid"` except inside of a toolbar, where the default is `"clear"`.
          */
         "fill"?: 'clear' | 'outline' | 'solid' | 'default';
+        /**
+          * The HTML form element or form element id. Used to submit a form when the button is not a child of the form.
+         */
+        "form"?: string | HTMLFormElement;
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
@@ -6065,11 +6248,11 @@ declare namespace LocalJSX {
          */
         "routerDirection"?: RouterDirection;
         /**
-          * The button shape.
+          * Set to `"round"` for a button with more rounded corners.
          */
         "shape"?: 'round';
         /**
-          * The button size.
+          * Set to `"small"` for a button with less height and padding, to `"default"` for a button with the default height and padding, or to `"large"` for a button with more height and padding. By default the size is unset, unless the button is inside of an item, where the size is `"small"` by default. Set the size to `"default"` inside of an item to make it a standard size button.
          */
         "size"?: 'small' | 'default' | 'large';
         /**
@@ -6179,6 +6362,10 @@ declare namespace LocalJSX {
     }
     interface IonCheckbox {
         /**
+          * How to control the alignment of the checkbox and label on the cross axis. `"start"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL. `"center"`: The label and control will appear at the center of the cross axis in both LTR and RTL.
+         */
+        "alignment"?: 'start' | 'center';
+        /**
           * If `true`, the checkbox is selected.
          */
         "checked"?: boolean;
@@ -6195,6 +6382,18 @@ declare namespace LocalJSX {
          */
         "indeterminate"?: boolean;
         /**
+          * How to pack the label and checkbox within a line. `"start"`: The label and checkbox will appear on the left in LTR and on the right in RTL. `"end"`: The label and checkbox will appear on the right in LTR and on the left in RTL. `"space-between"`: The label and checkbox will appear on opposite ends of the line with space between the two elements.
+         */
+        "justify"?: 'start' | 'end' | 'space-between';
+        /**
+          * Where to place the label relative to the checkbox. `"start"`: The label will appear to the left of the checkbox in LTR and to the right in RTL. `"end"`: The label will appear to the right of the checkbox in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the checkbox regardless of the direction. The alignment of the label can be controlled with the `alignment` property.
+         */
+        "labelPlacement"?: 'start' | 'end' | 'fixed' | 'stacked';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt checkboxes in to the modern form markup when they are using either the `aria-label` attribute or have text in the default slot. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior.  Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
+        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -6207,7 +6406,7 @@ declare namespace LocalJSX {
          */
         "onIonBlur"?: (event: IonCheckboxCustomEvent<void>) => void;
         /**
-          * Emitted when the checked property has changed.
+          * Emitted when the checked property has changed as a result of a user action such as a click. This event will not emit when programmatically setting the checked property.
          */
         "onIonChange"?: (event: IonCheckboxCustomEvent<CheckboxChangeEventDetail>) => void;
         /**
@@ -6217,7 +6416,7 @@ declare namespace LocalJSX {
         /**
           * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
          */
-        "value"?: string;
+        "value"?: any | null;
     }
     interface IonChip {
         /**
@@ -6341,7 +6540,7 @@ declare namespace LocalJSX {
          */
         "color"?: Color;
         /**
-          * If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce. If the content exceeds the bounds of ionContent, nothing will change. Note, the does not disable the system bounce on iOS. That is an OS level setting.
+          * If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce. If the content exceeds the bounds of ionContent, nothing will change. Note, this does not disable the system bounce on iOS. That is an OS level setting.
          */
         "forceOverscroll"?: boolean;
         /**
@@ -6349,15 +6548,15 @@ declare namespace LocalJSX {
          */
         "fullscreen"?: boolean;
         /**
-          * Emitted while scrolling. This event is disabled by default. Look at the property: `scrollEvents`
+          * Emitted while scrolling. This event is disabled by default. Set `scrollEvents` to `true` to enable.
          */
         "onIonScroll"?: (event: IonContentCustomEvent<ScrollDetail>) => void;
         /**
-          * Emitted when the scroll has ended.
+          * Emitted when the scroll has ended. This event is disabled by default. Set `scrollEvents` to `true` to enable.
          */
         "onIonScrollEnd"?: (event: IonContentCustomEvent<ScrollBaseDetail>) => void;
         /**
-          * Emitted when the scroll has started.
+          * Emitted when the scroll has started. This event is disabled by default. Set `scrollEvents` to `true` to enable.
          */
         "onIonScrollStart"?: (event: IonContentCustomEvent<ScrollBaseDetail>) => void;
         /**
@@ -6379,13 +6578,13 @@ declare namespace LocalJSX {
          */
         "cancelText"?: string;
         /**
-          * Full day of the week names. This can be used to provide locale names for each day in the week. Defaults to English.
+          * The text to display on the picker's "Clear" button.
          */
-        "dayNames"?: string[] | string;
+        "clearText"?: string;
         /**
-          * Short abbreviated day of the week names. This can be used to provide locale names for each day in the week. Defaults to English. Defaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']`
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
-        "dayShortNames"?: string[] | string;
+        "color"?: Color;
         /**
           * Values used to create the list of selectable days. By default every day is shown for the given month. However, to control exactly which days of the month to display, the `dayValues` input can take a number, an array of numbers, or a string of comma separated numbers. Note that even if the array days have an invalid number for the selected month, like `31` in February, it will correctly not show days which are not valid for the selected month.
          */
@@ -6395,21 +6594,33 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * The display format of the date and time as text that shows within the item. When the `pickerFormat` input is not used, then the `displayFormat` is used for both display the formatted text, and determining the datetime picker's columns. See the `pickerFormat` input description for more info. Defaults to `MMM D, YYYY`.
-         */
-        "displayFormat"?: string;
-        /**
-          * The timezone to use for display purposes only. See [Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) for a list of supported timezones. If no value is provided, the component will default to displaying times in the user's local timezone.
-         */
-        "displayTimezone"?: string;
-        /**
           * The text to display on the picker's "Done" button.
          */
         "doneText"?: string;
         /**
+          * The first day of the week to use for `ion-datetime`. The default value is `0` and represents Sunday.
+         */
+        "firstDayOfWeek"?: number;
+        /**
+          * Used to apply custom text and background colors to specific dates.  Can be either an array of objects containing ISO strings and colors, or a callback that receives an ISO string and returns the colors.  Only applies to the `date`, `date-time`, and `time-date` presentations, with `preferWheel="false"`.
+         */
+        "highlightedDates"?: DatetimeHighlight[] | DatetimeHighlightCallback;
+        /**
+          * The hour cycle of the `ion-datetime`. If no value is set, this is specified by the current locale.
+         */
+        "hourCycle"?: DatetimeHourCycle;
+        /**
           * Values used to create the list of selectable hours. By default the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However, to control exactly which hours to display, the `hourValues` input can take a number, an array of numbers, or a string of comma separated numbers.
          */
         "hourValues"?: number[] | number | string;
+        /**
+          * Returns if an individual date (calendar day) is enabled or disabled.  If `true`, the day will be enabled/interactive. If `false`, the day will be disabled/non-interactive.  The function accepts an ISO 8601 date string of a given day. By default, all days are enabled. Developers can use this function to write custom logic to disable certain days.  The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
+         */
+        "isDateEnabled"?: (dateIsoString: string) => boolean;
+        /**
+          * The locale to use for `ion-datetime`. This impacts month and day name formatting. The `"default"` value refers to the default locale set by your device.
+         */
+        "locale"?: string;
         /**
           * The maximum datetime allowed. Value must be a date string following the [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime), `1996-12-19`. The format does not have to be specific to an exact datetime. For example, the maximum could just be the year, such as `1994`. Defaults to the end of this year.
          */
@@ -6427,17 +6638,13 @@ declare namespace LocalJSX {
          */
         "mode"?: "ios" | "md";
         /**
-          * Full names for each month name. This can be used to provide locale month names. Defaults to English.
-         */
-        "monthNames"?: string[] | string;
-        /**
-          * Short abbreviated names for each month name. This can be used to provide locale month names. Defaults to English.
-         */
-        "monthShortNames"?: string[] | string;
-        /**
           * Values used to create the list of selectable months. By default the month values range from `1` to `12`. However, to control exactly which months to display, the `monthValues` input can take a number, an array of numbers, or a string of comma separated numbers. For example, if only summer months should be shown, then this input value would be `monthValues="6,7,8"`. Note that month numbers do *not* have a zero-based index, meaning January's value is `1`, and December's is `12`.
          */
         "monthValues"?: number[] | number | string;
+        /**
+          * If `true`, multiple dates can be selected at once. Only applies to `presentation="date"` and `preferWheel="false"`.
+         */
+        "multiple"?: boolean;
         /**
           * The name of the control, which is submitted with the form data.
          */
@@ -6459,29 +6666,67 @@ declare namespace LocalJSX {
          */
         "onIonFocus"?: (event: IonDatetimeCustomEvent<void>) => void;
         /**
-          * The format of the date and time picker columns the user selects. A datetime input can have one or many datetime parts, each getting their own column which allow individual selection of that particular datetime part. For example, year and month columns are two individually selectable columns which help choose an exact date from the datetime picker. Each column follows the string parse format. Defaults to use `displayFormat`.
+          * If `true`, a wheel picker will be rendered instead of a calendar grid where possible. If `false`, a calendar grid will be rendered instead of a wheel picker where possible.  A wheel picker can be rendered instead of a grid when `presentation` is one of the following values: `"date"`, `"date-time"`, or `"time-date"`.  A wheel picker will always be rendered regardless of the `preferWheel` value when `presentation` is one of the following values: `"time"`, `"month"`, `"month-year"`, or `"year"`.
          */
-        "pickerFormat"?: string;
+        "preferWheel"?: boolean;
         /**
-          * Any additional options that the picker interface can accept. See the [Picker API docs](../picker) for the picker options.
+          * Which values you want to select. `"date"` will show a calendar picker to select the month, day, and year. `"time"` will show a time picker to select the hour, minute, and (optionally) AM/PM. `"date-time"` will show the date picker first and time picker second. `"time-date"` will show the time picker first and date picker second.
          */
-        "pickerOptions"?: DatetimeOptions;
+        "presentation"?: DatetimePresentation;
         /**
-          * The text to display when there's no date selected yet. Using lowercase to match the input attribute
-         */
-        "placeholder"?: string | null;
-        /**
-          * If `true`, the datetime appears normal but is not interactive.
+          * If `true`, the datetime appears normal but the selected date cannot be changed.
          */
         "readonly"?: boolean;
         /**
-          * The value of the datetime as a valid ISO 8601 datetime string.
+          * If `true`, a "Clear" button will be rendered alongside the default "Cancel" and "OK" buttons at the bottom of the `ion-datetime` component. Developers can also use the `button` slot if they want to customize these buttons. If custom buttons are set in the `button` slot then the default buttons will not be rendered.
          */
-        "value"?: string | null;
+        "showClearButton"?: boolean;
         /**
-          * Values used to create the list of selectable years. By default the year values range between the `min` and `max` datetime inputs. However, to control exactly which years to display, the `yearValues` input can take a number, an array of numbers, or string of comma separated numbers. For example, to show upcoming and recent leap years, then this input's value would be `yearValues="2024,2020,2016,2012,2008"`.
+          * If `true`, the default "Cancel" and "OK" buttons will be rendered at the bottom of the `ion-datetime` component. Developers can also use the `button` slot if they want to customize these buttons. If custom buttons are set in the `button` slot then the default buttons will not be rendered.
+         */
+        "showDefaultButtons"?: boolean;
+        /**
+          * If `true`, the default "Time" label will be rendered for the time selector of the `ion-datetime` component. Developers can also use the `time-label` slot if they want to customize this label. If a custom label is set in the `time-label` slot then the default label will not be rendered.
+         */
+        "showDefaultTimeLabel"?: boolean;
+        /**
+          * If `true`, a header will be shown above the calendar picker. This will include both the slotted title, and the selected date.
+         */
+        "showDefaultTitle"?: boolean;
+        /**
+          * If `cover`, the `ion-datetime` will expand to cover the full width of its container. If `fixed`, the `ion-datetime` will have a fixed width.
+         */
+        "size"?: 'cover' | 'fixed';
+        /**
+          * A callback used to format the header text that shows how many dates are selected. Only used if there are 0 or more than 1 selected (i.e. unused for exactly 1). By default, the header text is set to "numberOfDates days".  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
+         */
+        "titleSelectedDatesFormatter"?: TitleSelectedDatesFormatter;
+        /**
+          * The value of the datetime as a valid ISO 8601 datetime string. This should be an array of strings only when `multiple="true"`.
+         */
+        "value"?: string | string[] | null;
+        /**
+          * Values used to create the list of selectable years. By default the year values range between the `min` and `max` datetime inputs. However, to control exactly which years to display, the `yearValues` input can take a number, an array of numbers, or string of comma separated numbers. For example, to show upcoming and recent leap years, then this input's value would be `yearValues="2008,2012,2016,2020,2024"`.
          */
         "yearValues"?: number[] | number | string;
+    }
+    interface IonDatetimeButton {
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
+          * The ID of the `ion-datetime` instance associated with the datetime button.
+         */
+        "datetime"?: string;
+        /**
+          * If `true`, the user cannot interact with the button.
+         */
+        "disabled"?: boolean;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
     }
     interface IonFab {
         /**
@@ -6583,6 +6828,10 @@ declare namespace LocalJSX {
     }
     interface IonFooter {
         /**
+          * Describes the scroll effect that will be applied to the footer. Only applies in iOS mode.
+         */
+        "collapse"?: 'fade';
+        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -6599,9 +6848,9 @@ declare namespace LocalJSX {
     }
     interface IonHeader {
         /**
-          * Describes the scroll effect that will be applied to the header `condense` only applies in iOS mode.  Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)
+          * Describes the scroll effect that will be applied to the header. Only applies in iOS mode.  Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)
          */
-        "collapse"?: 'condense';
+        "collapse"?: 'condense' | 'fade';
         /**
           * The mode determines which platform styles to use.
          */
@@ -6657,13 +6906,14 @@ declare namespace LocalJSX {
          */
         "loadingSpinner"?: SpinnerTypes | null;
         /**
-          * Optional text to display while loading. `loadingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
+          * Optional text to display while loading. `loadingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)  This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "loadingText"?: string | IonicSafeString;
     }
     interface IonInput {
         /**
-          * If the value of the type attribute is `"file"`, then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.
+          * This attribute is ignored.
+          * @deprecated
          */
         "accept"?: string;
         /**
@@ -6679,7 +6929,7 @@ declare namespace LocalJSX {
          */
         "autocorrect"?: 'on' | 'off';
         /**
-          * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+          * Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.  This may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.
          */
         "autofocus"?: boolean;
         /**
@@ -6695,7 +6945,15 @@ declare namespace LocalJSX {
          */
         "color"?: Color;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * If `true`, a character counter will display the ratio of characters used and the total character limit. Developers must also set the `maxlength` property for the counter to be calculated correctly.
+         */
+        "counter"?: boolean;
+        /**
+          * A callback used to format the counter text. By default the counter text is set to "itemLength / maxLength".  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
+         */
+        "counterFormatter"?: (inputLength: number, maxLength: number) => string;
+        /**
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.
          */
         "debounce"?: number;
         /**
@@ -6707,13 +6965,37 @@ declare namespace LocalJSX {
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
         /**
+          * Text that is placed under the input and displayed when an error is detected.
+         */
+        "errorText"?: string;
+        /**
+          * The fill for the item. If `"solid"` the item will have a background. If `"outline"` the item will be transparent with a border. Only available in `md` mode.
+         */
+        "fill"?: 'outline' | 'solid';
+        /**
+          * Text that is placed under the input and displayed when no error is detected.
+         */
+        "helperText"?: string;
+        /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
         "inputmode"?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
         /**
+          * The visible label associated with the input.  Use this if you need to render a plaintext label.  The `label` property will take priority over the `label` slot if both are used.
+         */
+        "label"?: string;
+        /**
+          * Where to place the label relative to the input. `"start"`: The label will appear to the left of the input in LTR and to the right in RTL. `"end"`: The label will appear to the right of the input in LTR and to the left in RTL. `"floating"`: The label will appear smaller and above the input when the input is focused or it has a value. Otherwise it will appear on top of the input. `"stacked"`: The label will appear smaller and above the input regardless even when the input is blurred or has no value. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("...").
+         */
+        "labelPlacement"?: 'start' | 'end' | 'floating' | 'stacked' | 'fixed';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the `label` property. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
+        /**
           * The maximum value, which must not be less than its minimum (min attribute) value.
          */
-        "max"?: string;
+        "max"?: string | number;
         /**
           * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.
          */
@@ -6721,7 +7003,7 @@ declare namespace LocalJSX {
         /**
           * The minimum value, which must not be greater than its maximum (max attribute) value.
          */
-        "min"?: string;
+        "min"?: string | number;
         /**
           * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.
          */
@@ -6731,7 +7013,7 @@ declare namespace LocalJSX {
          */
         "mode"?: "ios" | "md";
         /**
-          * If `true`, the user can enter more than one value. This attribute applies when the type attribute is set to `"email"` or `"file"`, otherwise it is ignored.
+          * If `true`, the user can enter more than one value. This attribute applies when the type attribute is set to `"email"`, otherwise it is ignored.
          */
         "multiple"?: boolean;
         /**
@@ -6743,7 +7025,7 @@ declare namespace LocalJSX {
          */
         "onIonBlur"?: (event: IonInputCustomEvent<FocusEvent>) => void;
         /**
-          * Emitted when the value has changed.
+          * The `ionChange` event is fired when the user modifies the input's value. Unlike the `ionInput` event, the `ionChange` event is only fired when changes are committed, not as the user types.  Depending on the way the users interacts with the element, the `ionChange` event fires at a different moment: - When the user commits the change explicitly (e.g. by selecting a date from a date picker for `<ion-input type="date">`, pressing the "Enter" key, etc.). - When the element loses focus after its value has changed: for elements where the user's interaction is typing.
          */
         "onIonChange"?: (event: IonInputCustomEvent<InputChangeEventDetail>) => void;
         /**
@@ -6751,17 +7033,17 @@ declare namespace LocalJSX {
          */
         "onIonFocus"?: (event: IonInputCustomEvent<FocusEvent>) => void;
         /**
-          * Emitted when a keyboard input occurred.
+          * The `ionInput` event is fired each time the user modifies the input's value. Unlike the `ionChange` event, the `ionInput` event is fired for each alteration to the input's value. This typically happens for each keystroke as the user types.  For elements that accept text input (`type=text`, `type=tel`, etc.), the interface is [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others, the interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If the input is cleared on edit, the type is `null`.
          */
-        "onIonInput"?: (event: IonInputCustomEvent<KeyboardEvent>) => void;
+        "onIonInput"?: (event: IonInputCustomEvent<InputInputEventDetail>) => void;
         /**
           * A regular expression that the value is checked against. The pattern must match the entire value, not just some subset. Use the title attribute to describe the pattern to help the user. This attribute applies when the value of the type attribute is `"text"`, `"search"`, `"tel"`, `"url"`, `"email"`, `"date"`, or `"password"`, otherwise it is ignored. When the type attribute is `"date"`, `pattern` will only be used in browsers that do not support the `"date"` input type natively. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date for more information.
          */
         "pattern"?: string;
         /**
-          * Instructional text that shows before the input has a value.
+          * Instructional text that shows before the input has a value. This property applies only when the `type` property is set to `"email"`, `"number"`, `"password"`, `"search"`, `"tel"`, `"text"`, or `"url"`, otherwise it is ignored.
          */
-        "placeholder"?: string | null;
+        "placeholder"?: string;
         /**
           * If `true`, the user cannot modify the value.
          */
@@ -6771,8 +7053,9 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * The initial size of the control. This value is in pixels unless the value of the type attribute is `"text"` or `"password"`, in which case it is an integer number of characters. This attribute applies only when the `type` attribute is set to `"text"`, `"search"`, `"tel"`, `"url"`, `"email"`, or `"password"`, otherwise it is ignored.
+          * The shape of the input. If "round" it will have an increased border radius.
          */
+        "shape"?: 'round';
         "size"?: number;
         /**
           * If `true`, the element will have its spelling and grammar checked.
@@ -6801,6 +7084,16 @@ declare namespace LocalJSX {
          */
         "color"?: Color;
         /**
+          * If `true`, a character counter will display the ratio of characters used and the total character limit. Only applies when the `maxlength` property is set on the inner `ion-input` or `ion-textarea`.
+          * @deprecated Use the `counter` property on `ion-input` or `ion-textarea` instead.
+         */
+        "counter"?: boolean;
+        /**
+          * A callback used to format the counter text. By default the counter text is set to "itemLength / maxLength".
+          * @deprecated Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead.
+         */
+        "counterFormatter"?: CounterFormatter;
+        /**
           * If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode` is `ios` and an `href` or `button` property is present.
          */
         "detail"?: boolean;
@@ -6816,6 +7109,11 @@ declare namespace LocalJSX {
           * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
          */
         "download"?: string | undefined;
+        /**
+          * The fill for the item. If `"solid"` the item will have a background. If `"outline"` the item will be transparent with a border. Only available in `md` mode.
+          * @deprecated Use the `fill` property on `ion-input` or `ion-textarea` instead.
+         */
+        "fill"?: 'outline' | 'solid';
         /**
           * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
          */
@@ -6840,6 +7138,10 @@ declare namespace LocalJSX {
           * When using a router, it specifies the transition direction when navigating to another page using `href`.
          */
         "routerDirection"?: RouterDirection;
+        /**
+          * The shape of the item. If "round" it will have increased border radius.
+         */
+        "shape"?: 'round';
         /**
           * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
          */
@@ -6987,6 +7289,14 @@ declare namespace LocalJSX {
          */
         "enterAnimation"?: AnimationBuilder;
         /**
+          * Additional attributes to pass to the loader.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * If `true`, the loading indicator will open. If `false`, the loading indicator will close. Use this if you need finer grained control over presentation, otherwise just use the loadingController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the loading indicator dismisses. You will need to do that in your code.
+         */
+        "isOpen"?: boolean;
+        /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
         "keyboardClose"?: boolean;
@@ -6995,13 +7305,21 @@ declare namespace LocalJSX {
          */
         "leaveAnimation"?: AnimationBuilder;
         /**
-          * Optional text content to display in the loading indicator.
+          * Optional text content to display in the loading indicator.  This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "message"?: string | IonicSafeString;
         /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
+        /**
+          * Emitted after the loading indicator has dismissed. Shorthand for ionLoadingDidDismiss.
+         */
+        "onDidDismiss"?: (event: IonLoadingCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted after the loading indicator has presented. Shorthand for ionLoadingWillDismiss.
+         */
+        "onDidPresent"?: (event: IonLoadingCustomEvent<void>) => void;
         /**
           * Emitted after the loading has dismissed.
          */
@@ -7019,6 +7337,14 @@ declare namespace LocalJSX {
          */
         "onIonLoadingWillPresent"?: (event: IonLoadingCustomEvent<void>) => void;
         /**
+          * Emitted before the loading indicator has dismissed. Shorthand for ionLoadingWillDismiss.
+         */
+        "onWillDismiss"?: (event: IonLoadingCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted before the loading indicator has presented. Shorthand for ionLoadingWillPresent.
+         */
+        "onWillPresent"?: (event: IonLoadingCustomEvent<void>) => void;
+        /**
           * If `true`, a backdrop will be displayed behind the loading indicator.
          */
         "showBackdrop"?: boolean;
@@ -7030,6 +7356,10 @@ declare namespace LocalJSX {
           * If `true`, the loading indicator will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent"?: boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the loading indicator to open when clicked.
+         */
+        "trigger"?: string | undefined;
     }
     interface IonMenu {
         /**
@@ -7119,25 +7449,49 @@ declare namespace LocalJSX {
          */
         "animated"?: boolean;
         /**
+          * A decimal value between 0 and 1 that indicates the point after which the backdrop will begin to fade in when using a sheet modal. Prior to this point, the backdrop will be hidden and the content underneath the sheet can be interacted with. This value is exclusive meaning the backdrop will become active after the value specified.
+         */
+        "backdropBreakpoint"?: number;
+        /**
           * If `true`, the modal will be dismissed when the backdrop is clicked.
          */
         "backdropDismiss"?: boolean;
         /**
-          * The component to display inside of the modal.
+          * The breakpoints to use when creating a sheet modal. Each value in the array must be a decimal between 0 and 1 where 0 indicates the modal is fully closed and 1 indicates the modal is fully open. Values are relative to the height of the modal, not the height of the screen. One of the values in this array must be the value of the `initialBreakpoint` property. For example: [0, .25, .5, 1]
          */
-        "component": ComponentRef;
+        "breakpoints"?: number[];
         /**
-          * The data to pass to the modal component.
+          * Determines whether or not a modal can dismiss when calling the `dismiss` method.  If the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss. If the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
          */
-        "componentProps"?: ComponentProps;
-        /**
-          * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
-         */
-        "cssClass"?: string | string[];
+        "canDismiss"?: boolean | ((data?: any, role?: string) => Promise<boolean>);
         /**
           * Animation to use when the modal is presented.
          */
         "enterAnimation"?: AnimationBuilder;
+        /**
+          * The horizontal line that displays at the top of a sheet modal. It is `true` by default when setting the `breakpoints` and `initialBreakpoint` properties.
+         */
+        "handle"?: boolean;
+        /**
+          * The interaction behavior for the sheet modal when the handle is pressed.  Defaults to `"none"`, which  means the modal will not change size or position when the handle is pressed. Set to `"cycle"` to let the modal cycle between available breakpoints when pressed.  Handle behavior is unavailable when the `handle` property is set to `false` or when the `breakpoints` property is not set (using a fullscreen or card modal).
+         */
+        "handleBehavior"?: ModalHandleBehavior;
+        /**
+          * Additional attributes to pass to the modal.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * A decimal value between 0 and 1 that indicates the initial point the modal will open at when creating a sheet modal. This value must also be listed in the `breakpoints` array.
+         */
+        "initialBreakpoint"?: number;
+        /**
+          * If `true`, the modal will open. If `false`, the modal will close. Use this if you need finer grained control over presentation, otherwise just use the modalController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the modal dismisses. You will need to do that in your code.
+         */
+        "isOpen"?: boolean;
+        /**
+          * If `true`, the component passed into `ion-modal` will automatically be mounted when the modal is created. The component will remain mounted even when the modal is dismissed. However, the component will be destroyed when the modal is destroyed. This property is not reactive and should only be used when initially creating a modal.  Note: This feature only applies to inline modals in JavaScript frameworks such as Angular, React, and Vue.
+         */
+        "keepContentsMounted"?: boolean;
         /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
@@ -7150,6 +7504,18 @@ declare namespace LocalJSX {
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
+        /**
+          * Emitted after the modal has dismissed. Shorthand for ionModalDidDismiss.
+         */
+        "onDidDismiss"?: (event: IonModalCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted after the modal has presented. Shorthand for ionModalDidPresent.
+         */
+        "onDidPresent"?: (event: IonModalCustomEvent<void>) => void;
+        /**
+          * Emitted after the modal breakpoint has changed.
+         */
+        "onIonBreakpointDidChange"?: (event: IonModalCustomEvent<ModalBreakpointChangeEventDetail>) => void;
         /**
           * Emitted after the modal has dismissed.
          */
@@ -7167,17 +7533,25 @@ declare namespace LocalJSX {
          */
         "onIonModalWillPresent"?: (event: IonModalCustomEvent<void>) => void;
         /**
+          * Emitted before the modal has dismissed. Shorthand for ionModalWillDismiss.
+         */
+        "onWillDismiss"?: (event: IonModalCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted before the modal has presented. Shorthand for ionModalWillPresent.
+         */
+        "onWillPresent"?: (event: IonModalCustomEvent<void>) => void;
+        /**
           * The element that presented the modal. This is used for card presentation effects and for stacking multiple modals on top of each other. Only applies in iOS mode.
          */
         "presentingElement"?: HTMLElement;
         /**
-          * If `true`, a backdrop will be displayed behind the modal.
+          * If `true`, a backdrop will be displayed behind the modal. This property controls whether or not the backdrop darkens the screen when the modal is presented. It does not control whether or not the backdrop is active or present in the DOM.
          */
         "showBackdrop"?: boolean;
         /**
-          * If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.
+          * An ID corresponding to the trigger element that causes the modal to open when clicked.
          */
-        "swipeToClose"?: boolean;
+        "trigger"?: string | undefined;
     }
     interface IonNav {
         /**
@@ -7185,7 +7559,7 @@ declare namespace LocalJSX {
          */
         "animated"?: boolean;
         /**
-          * By default `ion-nav` animates transition between pages based in the mode (ios or material design). However, this property allows to create custom transition using `AnimateBuilder` functions.
+          * By default `ion-nav` animates transition between pages based in the mode (ios or material design). However, this property allows to create custom transition using `AnimationBuilder` functions.
          */
         "animation"?: AnimationBuilder;
         /**
@@ -7267,6 +7641,14 @@ declare namespace LocalJSX {
          */
         "enterAnimation"?: AnimationBuilder;
         /**
+          * Additional attributes to pass to the picker.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * If `true`, the picker will open. If `false`, the picker will close. Use this if you need finer grained control over presentation, otherwise just use the pickerController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the picker dismisses. You will need to do that in your code.
+         */
+        "isOpen"?: boolean;
+        /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
         "keyboardClose"?: boolean;
@@ -7278,6 +7660,14 @@ declare namespace LocalJSX {
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
+        /**
+          * Emitted after the picker has dismissed. Shorthand for ionPickerDidDismiss.
+         */
+        "onDidDismiss"?: (event: IonPickerCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted after the picker has presented. Shorthand for ionPickerWillDismiss.
+         */
+        "onDidPresent"?: (event: IonPickerCustomEvent<void>) => void;
         /**
           * Emitted after the picker has dismissed.
          */
@@ -7295,9 +7685,21 @@ declare namespace LocalJSX {
          */
         "onIonPickerWillPresent"?: (event: IonPickerCustomEvent<void>) => void;
         /**
+          * Emitted before the picker has dismissed. Shorthand for ionPickerWillDismiss.
+         */
+        "onWillDismiss"?: (event: IonPickerCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted before the picker has presented. Shorthand for ionPickerWillPresent.
+         */
+        "onWillPresent"?: (event: IonPickerCustomEvent<void>) => void;
+        /**
           * If `true`, a backdrop will be displayed behind the picker.
          */
         "showBackdrop"?: boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the picker to open when clicked.
+         */
+        "trigger"?: string | undefined;
     }
     interface IonPickerColumn {
         /**
@@ -7305,27 +7707,68 @@ declare namespace LocalJSX {
          */
         "col": PickerColumn;
     }
+    interface IonPickerColumnInternal {
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
+          * If `true`, the user cannot interact with the picker.
+         */
+        "disabled"?: boolean;
+        /**
+          * A list of options to be displayed in the picker
+         */
+        "items"?: PickerColumnItem[];
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * Emitted when the value has changed.
+         */
+        "onIonChange"?: (event: IonPickerColumnInternalCustomEvent<PickerColumnItem>) => void;
+        /**
+          * The selected option in the picker.
+         */
+        "value"?: string | number;
+    }
+    interface IonPickerInternal {
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        "onIonInputModeChange"?: (event: IonPickerInternalCustomEvent<PickerInternalChangeEventDetail>) => void;
+    }
     interface IonPopover {
+        /**
+          * Describes how to align the popover content with the `reference` point. Defaults to `"center"` for `ios` mode, and `"start"` for `md` mode.
+         */
+        "alignment"?: PositionAlign;
         /**
           * If `true`, the popover will animate.
          */
         "animated"?: boolean;
         /**
+          * If `true`, the popover will display an arrow that points at the `reference` when running in `ios` mode. Does not apply in `md` mode.
+         */
+        "arrow"?: boolean;
+        /**
           * If `true`, the popover will be dismissed when the backdrop is clicked.
          */
         "backdropDismiss"?: boolean;
         /**
-          * The component to display inside of the popover.
+          * The component to display inside of the popover. You only need to use this if you are not using a JavaScript framework. Otherwise, you can just slot your component inside of `ion-popover`.
          */
-        "component": ComponentRef;
+        "component"?: ComponentRef;
         /**
-          * The data to pass to the popover component.
+          * The data to pass to the popover component. You only need to use this if you are not using a JavaScript framework. Otherwise, you can just set the props directly on your component.
          */
         "componentProps"?: ComponentProps;
         /**
-          * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
+          * If `true`, the popover will be automatically dismissed when the content has been clicked.
          */
-        "cssClass"?: string | string[];
+        "dismissOnSelect"?: boolean;
         /**
           * Animation to use when the popover is presented.
          */
@@ -7334,6 +7777,18 @@ declare namespace LocalJSX {
           * The event to pass to the popover animation.
          */
         "event"?: any;
+        /**
+          * Additional attributes to pass to the popover.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * If `true`, the popover will open. If `false`, the popover will close. Use this if you need finer grained control over presentation, otherwise just use the popoverController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the popover dismisses. You will need to do that in your code.
+         */
+        "isOpen"?: boolean;
+        /**
+          * If `true`, the component passed into `ion-popover` will automatically be mounted when the popover is created. The component will remain mounted even when the popover is dismissed. However, the component will be destroyed when the popover is destroyed. This property is not reactive and should only be used when initially creating a popover.  Note: This feature only applies to inline popovers in JavaScript frameworks such as Angular, React, and Vue.
+         */
+        "keepContentsMounted"?: boolean;
         /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
@@ -7346,6 +7801,14 @@ declare namespace LocalJSX {
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
+        /**
+          * Emitted after the popover has dismissed. Shorthand for ionPopoverDidDismiss.
+         */
+        "onDidDismiss"?: (event: IonPopoverCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted after the popover has presented. Shorthand for ionPopoverWillDismiss.
+         */
+        "onDidPresent"?: (event: IonPopoverCustomEvent<void>) => void;
         /**
           * Emitted after the popover has dismissed.
          */
@@ -7363,13 +7826,41 @@ declare namespace LocalJSX {
          */
         "onIonPopoverWillPresent"?: (event: IonPopoverCustomEvent<void>) => void;
         /**
-          * If `true`, a backdrop will be displayed behind the popover.
+          * Emitted before the popover has dismissed. Shorthand for ionPopoverWillDismiss.
+         */
+        "onWillDismiss"?: (event: IonPopoverCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted before the popover has presented. Shorthand for ionPopoverWillPresent.
+         */
+        "onWillPresent"?: (event: IonPopoverCustomEvent<void>) => void;
+        /**
+          * Describes what to position the popover relative to. If `"trigger"`, the popover will be positioned relative to the trigger button. If passing in an event, this is determined via event.target. If `"event"`, the popover will be positioned relative to the x/y coordinates of the trigger action. If passing in an event, this is determined via event.clientX and event.clientY.
+         */
+        "reference"?: PositionReference;
+        /**
+          * If `true`, a backdrop will be displayed behind the popover. This property controls whether or not the backdrop darkens the screen when the popover is presented. It does not control whether or not the backdrop is active or present in the DOM.
          */
         "showBackdrop"?: boolean;
+        /**
+          * Describes which side of the `reference` point to position the popover on. The `"start"` and `"end"` values are RTL-aware, and the `"left"` and `"right"` values are not.
+         */
+        "side"?: PositionSide;
+        /**
+          * Describes how to calculate the popover width. If `"cover"`, the popover width will match the width of the trigger. If `"auto"`, the popover width will be set to a static default value.
+         */
+        "size"?: PopoverSize;
         /**
           * If `true`, the popover will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent"?: boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the popover to open. Use the `trigger-action` property to customize the interaction that results in the popover opening.
+         */
+        "trigger"?: string | undefined;
+        /**
+          * Describes what kind of interaction with the trigger that should cause the popover to open. Does not apply when the `trigger` property is `undefined`. If `"click"`, the popover will be presented when the trigger is left clicked. If `"hover"`, the popover will be presented when a pointer hovers over the trigger. If `"context-menu"`, the popover will be presented when the trigger is right clicked on desktop and long pressed on mobile. This will also prevent your device's normal context menu from appearing.
+         */
+        "triggerAction"?: TriggerAction;
     }
     interface IonProgressBar {
         /**
@@ -7380,10 +7871,6 @@ declare namespace LocalJSX {
           * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
         "color"?: Color;
-        /**
-          * Define a cor do componente.
-         */
-        "dsColor"?: MedColor;
         /**
           * The mode determines which platform styles to use.
          */
@@ -7403,6 +7890,10 @@ declare namespace LocalJSX {
     }
     interface IonRadio {
         /**
+          * How to control the alignment of the radio and label on the cross axis. `"start"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL. `"center"`: The label and control will appear at the center of the cross axis in both LTR and RTL.
+         */
+        "alignment"?: 'start' | 'center';
+        /**
           * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
         "color"?: Color;
@@ -7410,6 +7901,18 @@ declare namespace LocalJSX {
           * If `true`, the user cannot interact with the radio.
          */
         "disabled"?: boolean;
+        /**
+          * How to pack the label and radio within a line. `"start"`: The label and radio will appear on the left in LTR and on the right in RTL. `"end"`: The label and radio will appear on the right in LTR and on the left in RTL. `"space-between"`: The label and radio will appear on opposite ends of the line with space between the two elements.
+         */
+        "justify"?: 'start' | 'end' | 'space-between';
+        /**
+          * Where to place the label relative to the radio. `"start"`: The label will appear to the left of the radio in LTR and to the right in RTL. `"end"`: The label will appear to the right of the radio in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the radio regardless of the direction. The alignment of the label can be controlled with the `alignment` property.
+         */
+        "labelPlacement"?: 'start' | 'end' | 'fixed' | 'stacked';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the default slot that contains the label text. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
         /**
           * The mode determines which platform styles to use.
          */
@@ -7437,6 +7940,10 @@ declare namespace LocalJSX {
          */
         "allowEmptySelection"?: boolean;
         /**
+          * This property allows developers to specify a custom function or property name for comparing objects when determining the selected option in the ion-radio-group. When not specified, the default behavior will use strict equality (===) for comparison.
+         */
+        "compareWith"?: string | RadioGroupCompareFn | null;
+        /**
           * The name of the control, which is submitted with the form data.
          */
         "name"?: string;
@@ -7451,11 +7958,15 @@ declare namespace LocalJSX {
     }
     interface IonRange {
         /**
+          * The start position of the range active bar. This feature is only available with a single knob (dualKnobs="false"). Valid values are greater than or equal to the min value and less than or equal to the max value.
+         */
+        "activeBarStart"?: number;
+        /**
           * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
         "color"?: Color;
         /**
-          * How long, in milliseconds, to wait to trigger the `ionChange` event after each change in the range value. This also impacts form bindings such as `ngModel` or `v-model`.
+          * How long, in milliseconds, to wait to trigger the `ionInput` event after each change in the range value.
          */
         "debounce"?: number;
         /**
@@ -7466,6 +7977,18 @@ declare namespace LocalJSX {
           * Show two knobs.
          */
         "dualKnobs"?: boolean;
+        /**
+          * The text to display as the control's label. Use this over the `label` slot if you only need plain text. The `label` property will take priority over the `label` slot if both are used.
+         */
+        "label"?: string;
+        /**
+          * Where to place the label relative to the range. `"start"`: The label will appear to the left of the range in LTR and to the right in RTL. `"end"`: The label will appear to the right of the range in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the range regardless of the direction.
+         */
+        "labelPlacement"?: 'start' | 'end' | 'fixed' | 'stacked';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the `label` property. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
         /**
           * Maximum integer value of the range.
          */
@@ -7487,7 +8010,7 @@ declare namespace LocalJSX {
          */
         "onIonBlur"?: (event: IonRangeCustomEvent<void>) => void;
         /**
-          * Emitted when the value property has changed.
+          * The `ionChange` event is fired for `<ion-range>` elements when the user modifies the element's value: - When the user releases the knob after dragging; - When the user moves the knob with keyboard arrows  `ionChange` is not fired when the value is changed programmatically.
          */
         "onIonChange"?: (event: IonRangeCustomEvent<RangeChangeEventDetail>) => void;
         /**
@@ -7495,9 +8018,25 @@ declare namespace LocalJSX {
          */
         "onIonFocus"?: (event: IonRangeCustomEvent<void>) => void;
         /**
+          * The `ionInput` event is fired for `<ion-range>` elements when the value is modified. Unlike `ionChange`, `ionInput` is fired continuously while the user is dragging the knob.
+         */
+        "onIonInput"?: (event: IonRangeCustomEvent<RangeChangeEventDetail>) => void;
+        /**
+          * Emitted when the user finishes moving the range knob, whether through mouse drag, touch gesture, or keyboard interaction.
+         */
+        "onIonKnobMoveEnd"?: (event: IonRangeCustomEvent<RangeKnobMoveEndEventDetail>) => void;
+        /**
+          * Emitted when the user starts moving the range knob, whether through mouse drag, touch gesture, or keyboard interaction.
+         */
+        "onIonKnobMoveStart"?: (event: IonRangeCustomEvent<RangeKnobMoveStartEventDetail>) => void;
+        /**
           * If `true`, a pin with integer value is shown when the knob is pressed.
          */
         "pin"?: boolean;
+        /**
+          * A callback used to format the pin text. By default the pin text is set to `Math.round(value)`.  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
+         */
+        "pinFormatter"?: PinFormatter;
         /**
           * If `true`, the knob snaps to tick marks evenly spaced based on the step property value.
          */
@@ -7525,6 +8064,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
           * Emitted while the user is pulling down the content and exposing the refresher.
          */
         "onIonPull"?: (event: IonRefresherCustomEvent<void>) => void;
@@ -7549,7 +8092,7 @@ declare namespace LocalJSX {
          */
         "pullMin"?: number;
         /**
-          * Time it takes the refresher to to snap back to the `refreshing` state. Does not apply when the refresher content uses a spinner, enabling the native refresher.
+          * Time it takes the refresher to snap back to the `refreshing` state. Does not apply when the refresher content uses a spinner, enabling the native refresher.
          */
         "snapbackDuration"?: string;
     }
@@ -7559,7 +8102,7 @@ declare namespace LocalJSX {
          */
         "pullingIcon"?: SpinnerTypes | string | null;
         /**
-          * The text you want to display when you begin to pull down. `pullingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
+          * The text you want to display when you begin to pull down. `pullingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)  Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "pullingText"?: string | IonicSafeString;
         /**
@@ -7567,7 +8110,7 @@ declare namespace LocalJSX {
          */
         "refreshingSpinner"?: SpinnerTypes | null;
         /**
-          * The text you want to display when performing a refresh. `refreshingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
+          * The text you want to display when performing a refresh. `refreshingText` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)  Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "refreshingText"?: string | IonicSafeString;
     }
@@ -7605,7 +8148,7 @@ declare namespace LocalJSX {
         /**
           * A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed to the defined component when rendered.
          */
-        "componentProps"?: {[key: string]: any};
+        "componentProps"?: { [key: string]: any };
         /**
           * Used internally by `ion-router` to know when this route did change.
          */
@@ -7639,11 +8182,11 @@ declare namespace LocalJSX {
          */
         "onIonRouteWillChange"?: (event: IonRouterCustomEvent<RouterEventDetail>) => void;
         /**
-          * By default `ion-router` will match the routes at the root path ("/"). That can be changed when
+          * The root path to use when matching URLs. By default, this is set to "/", but you can specify an alternate prefix for all URL paths.
          */
         "root"?: string;
         /**
-          * The router can work in two "modes": - With hash: `/index.html#/path/to/page` - Without hash: `/path/to/page`  Using one or another might depend in the requirements of your app and/or where it's deployed.  Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might requires additional server-side configuration in order to properly work.  On the otherside hash-navigation is much easier to deploy, it even works over the file protocol.  By default, this property is `true`, change to `false` to allow hash-less URLs.
+          * The router can work in two "modes": - With hash: `/index.html#/path/to/page` - Without hash: `/path/to/page`  Using one or another might depend in the requirements of your app and/or where it's deployed.  Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might requires additional server-side configuration in order to properly work.  On the other side hash-navigation is much easier to deploy, it even works over the file protocol.  By default, this property is `true`, change to `false` to allow hash-less URLs.
          */
         "useHash"?: boolean;
     }
@@ -7679,7 +8222,7 @@ declare namespace LocalJSX {
          */
         "animated"?: boolean;
         /**
-          * By default `ion-nav` animates transition between pages based in the mode (ios or material design). However, this property allows to create custom transition using `AnimateBuilder` functions.
+          * This property allows to create custom transition using AnimationBuilder functions.
          */
         "animation"?: AnimationBuilder;
         /**
@@ -7703,7 +8246,7 @@ declare namespace LocalJSX {
          */
         "autocorrect"?: 'on' | 'off';
         /**
-          * Set the cancel button icon. Only applies to `md` mode. Defaults to `"arrow-back-sharp"`.
+          * Set the cancel button icon. Only applies to `md` mode. Defaults to `arrow-back-sharp`.
          */
         "cancelButtonIcon"?: string;
         /**
@@ -7711,7 +8254,7 @@ declare namespace LocalJSX {
          */
         "cancelButtonText"?: string;
         /**
-          * Set the clear icon. Defaults to `"close-circle"` for `ios` and `"close-sharp"` for `md`.
+          * Set the clear icon. Defaults to `close-circle` for `ios` and `close-sharp` for `md`.
          */
         "clearIcon"?: string;
         /**
@@ -7719,7 +8262,7 @@ declare namespace LocalJSX {
          */
         "color"?: Color;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.
          */
         "debounce"?: number;
         /**
@@ -7739,6 +8282,10 @@ declare namespace LocalJSX {
          */
         "mode"?: "ios" | "md";
         /**
+          * If used in a form, set the name of the control, which is submitted with the form data.
+         */
+        "name"?: string;
+        /**
           * Emitted when the input loses focus.
          */
         "onIonBlur"?: (event: IonSearchbarCustomEvent<void>) => void;
@@ -7747,7 +8294,7 @@ declare namespace LocalJSX {
          */
         "onIonCancel"?: (event: IonSearchbarCustomEvent<void>) => void;
         /**
-          * Emitted when the value has changed.
+          * The `ionChange` event is fired for `<ion-searchbar>` elements when the user modifies the element's value. Unlike the `ionInput` event, the `ionChange` event is not necessarily fired for each alteration to an element's value.  The `ionChange` event is fired when the value has been committed by the user. This can happen when the element loses focus or when the "Enter" key is pressed. `ionChange` can also fire when clicking the clear or cancel buttons.
          */
         "onIonChange"?: (event: IonSearchbarCustomEvent<SearchbarChangeEventDetail>) => void;
         /**
@@ -7759,15 +8306,15 @@ declare namespace LocalJSX {
          */
         "onIonFocus"?: (event: IonSearchbarCustomEvent<void>) => void;
         /**
-          * Emitted when a keyboard input occurred.
+          * Emitted when the `value` of the `ion-searchbar` element has changed.
          */
-        "onIonInput"?: (event: IonSearchbarCustomEvent<KeyboardEvent>) => void;
+        "onIonInput"?: (event: IonSearchbarCustomEvent<SearchbarInputEventDetail>) => void;
         /**
           * Set the input's placeholder. `placeholder` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`  For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)
          */
         "placeholder"?: string;
         /**
-          * The icon to use as the search icon. Defaults to `"search-outline"` in `ios` mode and `"search-sharp"` in `md` mode.
+          * The icon to use as the search icon. Defaults to `search-outline` in `ios` mode and `search-sharp` in `md` mode.
          */
         "searchIcon"?: string;
         /**
@@ -7813,13 +8360,17 @@ declare namespace LocalJSX {
          */
         "scrollable"?: boolean;
         /**
+          * If `true`, navigating to an `ion-segment-button` with the keyboard will focus and select the element. If `false`, keyboard navigation will only focus the `ion-segment-button` element.
+         */
+        "selectOnFocus"?: boolean;
+        /**
           * If `true`, users will be able to swipe between segment buttons to activate them.
          */
         "swipeGesture"?: boolean;
         /**
           * the value of the segment.
          */
-        "value"?: string | null;
+        "value"?: SegmentValue;
     }
     interface IonSegmentButton {
         /**
@@ -7841,7 +8392,7 @@ declare namespace LocalJSX {
         /**
           * The value of the segment button.
          */
-        "value"?: string;
+        "value"?: SegmentValue;
     }
     interface IonSelect {
         /**
@@ -7849,7 +8400,11 @@ declare namespace LocalJSX {
          */
         "cancelText"?: string;
         /**
-          * A property name or function used to compare object values
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).  This property is only available when using the modern select syntax.
+         */
+        "color"?: Color;
+        /**
+          * This property allows developers to specify a custom function or property name for comparing objects when determining the selected option in the ion-select. When not specified, the default behavior will use strict equality (===) for comparison.
          */
         "compareWith"?: string | SelectCompareFn | null;
         /**
@@ -7857,13 +8412,37 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * The toggle icon to show when the select is open. If defined, the icon rotation behavior in `md` mode will be disabled. If undefined, `toggleIcon` will be used for when the select is both open and closed.
+         */
+        "expandedIcon"?: string;
+        /**
+          * The fill for the item. If `"solid"` the item will have a background. If `"outline"` the item will be transparent with a border. Only available in `md` mode.
+         */
+        "fill"?: 'outline' | 'solid';
+        /**
           * The interface the select should use: `action-sheet`, `popover` or `alert`.
          */
         "interface"?: SelectInterface;
         /**
-          * Any additional options that the `alert`, `action-sheet` or `popover` interface can take. See the [ion-alert docs](../alert), the [ion-action-sheet docs](../action-sheet) and the [ion-popover docs](../popover) for the create options for each interface.  Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
+          * Any additional options that the `alert`, `action-sheet` or `popover` interface can take. See the [ion-alert docs](./alert), the [ion-action-sheet docs](./action-sheet) and the [ion-popover docs](./popover) for the create options for each interface.  Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
          */
         "interfaceOptions"?: any;
+        /**
+          * How to pack the label and select within a line. `justify` does not apply when the label and select are on different lines when `labelPlacement` is set to `"floating"` or `"stacked"`. `"start"`: The label and select will appear on the left in LTR and on the right in RTL. `"end"`: The label and select will appear on the right in LTR and on the left in RTL. `"space-between"`: The label and select will appear on opposite ends of the line with space between the two elements.
+         */
+        "justify"?: 'start' | 'end' | 'space-between';
+        /**
+          * The visible label associated with the select.  Use this if you need to render a plaintext label.  The `label` property will take priority over the `label` slot if both are used.
+         */
+        "label"?: string;
+        /**
+          * Where to place the label relative to the select. `"start"`: The label will appear to the left of the select in LTR and to the right in RTL. `"end"`: The label will appear to the right of the select in LTR and to the left in RTL. `"floating"`: The label will appear smaller and above the select when the select is focused or it has a value. Otherwise it will appear on top of the select. `"stacked"`: The label will appear smaller and above the select regardless even when the select is blurred or has no value. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). When using `"floating"` or `"stacked"` we recommend initializing the select with either a `value` or a `placeholder`.
+         */
+        "labelPlacement"?: 'start' | 'end' | 'floating' | 'stacked' | 'fixed';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the `label` property. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
         /**
           * The mode determines which platform styles to use.
          */
@@ -7893,19 +8472,31 @@ declare namespace LocalJSX {
          */
         "onIonChange"?: (event: IonSelectCustomEvent<SelectChangeEventDetail>) => void;
         /**
+          * Emitted when the overlay is dismissed.
+         */
+        "onIonDismiss"?: (event: IonSelectCustomEvent<void>) => void;
+        /**
           * Emitted when the select has focus.
          */
         "onIonFocus"?: (event: IonSelectCustomEvent<void>) => void;
         /**
           * The text to display when the select is empty.
          */
-        "placeholder"?: string | null;
+        "placeholder"?: string;
         /**
           * The text to display instead of the selected option's value.
          */
         "selectedText"?: string | null;
         /**
-          * the value of the select.
+          * The shape of the select. If "round" it will have an increased border radius.
+         */
+        "shape"?: 'round';
+        /**
+          * The toggle icon to use. Defaults to `chevronExpand` for `ios` mode, or `caretDownSharp` for `md` mode.
+         */
+        "toggleIcon"?: string;
+        /**
+          * The value of the select.
          */
         "value"?: any | null;
     }
@@ -7921,19 +8512,23 @@ declare namespace LocalJSX {
     }
     interface IonSelectPopover {
         /**
-          * Header text for the popover
+          * The header text of the popover
          */
         "header"?: string;
         /**
-          * Text for popover body
+          * The text content of the popover body
          */
         "message"?: string;
         /**
-          * Array of options for the popover
+          * If true, the select accepts multiple values
+         */
+        "multiple"?: boolean;
+        /**
+          * An array of options for the popover
          */
         "options"?: SelectPopoverOption[];
         /**
-          * Subheader text for the popover
+          * The subheader text of the popover
          */
         "subHeader"?: string;
     }
@@ -7942,90 +8537,6 @@ declare namespace LocalJSX {
           * If `true`, the skeleton text will animate.
          */
         "animated"?: boolean;
-    }
-    interface IonSlide {
-    }
-    interface IonSlides {
-        /**
-          * The mode determines which platform styles to use.
-         */
-        "mode"?: "ios" | "md";
-        /**
-          * Emitted after the active slide has changed.
-         */
-        "onIonSlideDidChange"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the user double taps on the slide's container.
-         */
-        "onIonSlideDoubleTap"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the slider is actively being moved.
-         */
-        "onIonSlideDrag"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the next slide has ended.
-         */
-        "onIonSlideNextEnd"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the next slide has started.
-         */
-        "onIonSlideNextStart"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the previous slide has ended.
-         */
-        "onIonSlidePrevEnd"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the previous slide has started.
-         */
-        "onIonSlidePrevStart"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the slider is at the last slide.
-         */
-        "onIonSlideReachEnd"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the slider is at its initial position.
-         */
-        "onIonSlideReachStart"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the user taps/clicks on the slide's container.
-         */
-        "onIonSlideTap"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the user releases the touch.
-         */
-        "onIonSlideTouchEnd"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the user first touches the slider.
-         */
-        "onIonSlideTouchStart"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the slide transition has ended.
-         */
-        "onIonSlideTransitionEnd"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted when the slide transition has started.
-         */
-        "onIonSlideTransitionStart"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted before the active slide has changed.
-         */
-        "onIonSlideWillChange"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Emitted after Swiper initialization
-         */
-        "onIonSlidesDidLoad"?: (event: IonSlidesCustomEvent<void>) => void;
-        /**
-          * Options to pass to the swiper instance. See http://idangero.us/swiper/api/ for valid options
-         */
-        "options"?: any;
-        /**
-          * If `true`, show the pagination.
-         */
-        "pager"?: boolean;
-        /**
-          * If `true`, show the scrollbar.
-         */
-        "scrollbar"?: boolean;
     }
     interface IonSpinner {
         /**
@@ -8057,7 +8568,7 @@ declare namespace LocalJSX {
         /**
           * Expression to be called when the split-pane visibility has changed
          */
-        "onIonSplitPaneVisible"?: (event: IonSplitPaneCustomEvent<{visible: boolean}>) => void;
+        "onIonSplitPaneVisible"?: (event: IonSplitPaneCustomEvent<{ visible: boolean }>) => void;
         /**
           * When the split-pane should be shown. Can be a CSS media query expression, or a shortcut expression. Can also be a boolean expression.
          */
@@ -8105,7 +8616,7 @@ declare namespace LocalJSX {
          */
         "href"?: string | undefined;
         /**
-          * Set the layout of the text and icon in the tab bar. It defaults to `'icon-top'`.
+          * Set the layout of the text and icon in the tab bar. It defaults to `"icon-top"`.
          */
         "layout"?: TabButtonLayout;
         /**
@@ -8133,11 +8644,11 @@ declare namespace LocalJSX {
         /**
           * Emitted when the navigation has finished transitioning to a new component.
          */
-        "onIonTabsDidChange"?: (event: IonTabsCustomEvent<{tab: string}>) => void;
+        "onIonTabsDidChange"?: (event: IonTabsCustomEvent<{ tab: string }>) => void;
         /**
           * Emitted when the navigation is about to transition to a new component.
          */
-        "onIonTabsWillChange"?: (event: IonTabsCustomEvent<{tab: string}>) => void;
+        "onIonTabsWillChange"?: (event: IonTabsCustomEvent<{ tab: string }>) => void;
     }
     interface IonText {
         /**
@@ -8151,19 +8662,19 @@ declare namespace LocalJSX {
     }
     interface IonTextarea {
         /**
-          * If `true`, the element height will increase based on the value.
+          * If `true`, the textarea container will grow and shrink based on the contents of the textarea.
          */
         "autoGrow"?: boolean;
         /**
-          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
+          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`.
          */
         "autocapitalize"?: string;
         /**
-          * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+          * Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.  This may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information.
          */
         "autofocus"?: boolean;
         /**
-          * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
+          * If `true`, the value will be cleared after focus upon edit.
          */
         "clearOnEdit"?: boolean;
         /**
@@ -8175,7 +8686,15 @@ declare namespace LocalJSX {
          */
         "cols"?: number;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * If `true`, a character counter will display the ratio of characters used and the total character limit. Developers must also set the `maxlength` property for the counter to be calculated correctly.
+         */
+        "counter"?: boolean;
+        /**
+          * A callback used to format the counter text. By default the counter text is set to "itemLength / maxLength".  See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback.
+         */
+        "counterFormatter"?: (inputLength: number, maxLength: number) => string;
+        /**
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.
          */
         "debounce"?: number;
         /**
@@ -8187,15 +8706,39 @@ declare namespace LocalJSX {
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
         /**
+          * Text that is placed under the textarea and displayed when an error is detected.
+         */
+        "errorText"?: string;
+        /**
+          * The fill for the item. If `"solid"` the item will have a background. If `"outline"` the item will be transparent with a border. Only available in `md` mode.
+         */
+        "fill"?: 'outline' | 'solid';
+        /**
+          * Text that is placed under the textarea and displayed when no error is detected.
+         */
+        "helperText"?: string;
+        /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
         "inputmode"?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
         /**
-          * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.
+          * The visible label associated with the textarea.  Use this if you need to render a plaintext label.  The `label` property will take priority over the `label` slot if both are used.
+         */
+        "label"?: string;
+        /**
+          * Where to place the label relative to the textarea. `"start"`: The label will appear to the left of the textarea in LTR and to the right in RTL. `"end"`: The label will appear to the right of the textarea in LTR and to the left in RTL. `"floating"`: The label will appear smaller and above the textarea when the textarea is focused or it has a value. Otherwise it will appear on top of the textarea. `"stacked"`: The label will appear smaller and above the textarea regardless even when the textarea is blurred or has no value. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("...").
+         */
+        "labelPlacement"?: 'start' | 'end' | 'floating' | 'stacked' | 'fixed';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the default slot that contains the label text. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
+        /**
+          * This attribute specifies the maximum number of characters that the user can enter.
          */
         "maxlength"?: number;
         /**
-          * If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.
+          * This attribute specifies the minimum number of characters that the user can enter.
          */
         "minlength"?: number;
         /**
@@ -8211,7 +8754,7 @@ declare namespace LocalJSX {
          */
         "onIonBlur"?: (event: IonTextareaCustomEvent<FocusEvent>) => void;
         /**
-          * Emitted when the input value has changed.
+          * The `ionChange` event is fired when the user modifies the textarea's value. Unlike the `ionInput` event, the `ionChange` event is fired when the element loses focus after its value has been modified.
          */
         "onIonChange"?: (event: IonTextareaCustomEvent<TextareaChangeEventDetail>) => void;
         /**
@@ -8219,13 +8762,13 @@ declare namespace LocalJSX {
          */
         "onIonFocus"?: (event: IonTextareaCustomEvent<FocusEvent>) => void;
         /**
-          * Emitted when a keyboard input occurred.
+          * The `ionInput` event is fired each time the user modifies the textarea's value. Unlike the `ionChange` event, the `ionInput` event is fired for each alteration to the textarea's value. This typically happens for each keystroke as the user types.  When `clearOnEdit` is enabled, the `ionInput` event will be fired when the user clears the textarea by performing a keydown event.
          */
-        "onIonInput"?: (event: IonTextareaCustomEvent<KeyboardEvent>) => void;
+        "onIonInput"?: (event: IonTextareaCustomEvent<TextareaInputEventDetail>) => void;
         /**
           * Instructional text that shows before the input has a value.
          */
-        "placeholder"?: string | null;
+        "placeholder"?: string;
         /**
           * If `true`, the user cannot modify the value.
          */
@@ -8238,6 +8781,10 @@ declare namespace LocalJSX {
           * The number of visible text lines for the control.
          */
         "rows"?: number;
+        /**
+          * The shape of the textarea. If "round" it will have an increased border radius.
+         */
+        "shape"?: 'round';
         /**
           * If `true`, the element will have its spelling and grammar checked.
          */
@@ -8293,21 +8840,45 @@ declare namespace LocalJSX {
          */
         "header"?: string;
         /**
+          * Additional attributes to pass to the toast.
+         */
+        "htmlAttributes"?: { [key: string]: any };
+        /**
+          * The name of the icon to display, or the path to a valid SVG file. See `ion-icon`. https://ionic.io/ionicons
+         */
+        "icon"?: string;
+        /**
+          * If `true`, the toast will open. If `false`, the toast will close. Use this if you need finer grained control over presentation, otherwise just use the toastController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the toast dismisses. You will need to do that in your code.
+         */
+        "isOpen"?: boolean;
+        /**
           * If `true`, the keyboard will be automatically dismissed when the overlay is presented.
          */
         "keyboardClose"?: boolean;
+        /**
+          * Defines how the message and buttons are laid out in the toast. 'baseline': The message and the buttons will appear on the same line. Message text may wrap within the message container. 'stacked': The buttons containers and message will stack on top of each other. Use this if you have long text in your buttons.
+         */
+        "layout"?: ToastLayout;
         /**
           * Animation to use when the toast is dismissed.
          */
         "leaveAnimation"?: AnimationBuilder;
         /**
-          * Message to be shown in the toast.
+          * Message to be shown in the toast. This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used.
          */
         "message"?: string | IonicSafeString;
         /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
+        /**
+          * Emitted after the toast has dismissed. Shorthand for ionToastDidDismiss.
+         */
+        "onDidDismiss"?: (event: IonToastCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted after the toast has presented. Shorthand for ionToastWillDismiss.
+         */
+        "onDidPresent"?: (event: IonToastCustomEvent<void>) => void;
         /**
           * Emitted after the toast has dismissed.
          */
@@ -8325,15 +8896,39 @@ declare namespace LocalJSX {
          */
         "onIonToastWillPresent"?: (event: IonToastCustomEvent<void>) => void;
         /**
-          * The position of the toast on the screen.
+          * Emitted before the toast has dismissed. Shorthand for ionToastWillDismiss.
          */
-        "position"?: 'top' | 'bottom' | 'middle';
+        "onWillDismiss"?: (event: IonToastCustomEvent<OverlayEventDetail>) => void;
+        /**
+          * Emitted before the toast has presented. Shorthand for ionToastWillPresent.
+         */
+        "onWillPresent"?: (event: IonToastCustomEvent<void>) => void;
+        /**
+          * The starting position of the toast on the screen. Can be tweaked further using the `positionAnchor` property.
+         */
+        "position"?: ToastPosition;
+        /**
+          * The element to anchor the toast's position to. Can be set as a direct reference or the ID of the element. With `position="bottom"`, the toast will sit above the chosen element. With `position="top"`, the toast will sit below the chosen element. With `position="middle"`, the value of `positionAnchor` is ignored.
+         */
+        "positionAnchor"?: HTMLElement | string;
+        /**
+          * If set to 'vertical', the Toast can be dismissed with a swipe gesture. The swipe direction is determined by the value of the `position` property: `top`: The Toast can be swiped up to dismiss. `bottom`: The Toast can be swiped down to dismiss. `middle`: The Toast can be swiped up or down to dismiss.
+         */
+        "swipeGesture"?: ToastSwipeGestureDirection;
         /**
           * If `true`, the toast will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
          */
         "translucent"?: boolean;
+        /**
+          * An ID corresponding to the trigger element that causes the toast to open when clicked.
+         */
+        "trigger"?: string | undefined;
     }
     interface IonToggle {
+        /**
+          * How to control the alignment of the toggle and label on the cross axis. ``"start"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL. `"center"`: The label and control will appear at the center of the cross axis in both LTR and RTL.
+         */
+        "alignment"?: 'start' | 'center';
         /**
           * If `true`, the toggle is selected.
          */
@@ -8347,6 +8942,22 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Enables the on/off accessibility switch labels within the toggle.
+         */
+        "enableOnOffLabels"?: boolean | undefined;
+        /**
+          * How to pack the label and toggle within a line. `"start"`: The label and toggle will appear on the left in LTR and on the right in RTL. `"end"`: The label and toggle will appear on the right in LTR and on the left in RTL. `"space-between"`: The label and toggle will appear on opposite ends of the line with space between the two elements.
+         */
+        "justify"?: 'start' | 'end' | 'space-between';
+        /**
+          * Where to place the label relative to the input. `"start"`: The label will appear to the left of the toggle in LTR and to the right in RTL. `"end"`: The label will appear to the right of the toggle in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the toggle regardless of the direction. The alignment of the label can be controlled with the `alignment` property.
+         */
+        "labelPlacement"?: 'start' | 'end' | 'fixed' | 'stacked';
+        /**
+          * Set the `legacy` property to `true` to forcibly use the legacy form control markup. Ionic will only opt components in to the modern form markup when they are using either the `aria-label` attribute or the default slot that contains the label text. As a result, the `legacy` property should only be used as an escape hatch when you want to avoid this automatic opt-in behavior. Note that this property will be removed in an upcoming major release of Ionic, and all form components will be opted-in to using the modern form markup.
+         */
+        "legacy"?: boolean;
+        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -8359,7 +8970,7 @@ declare namespace LocalJSX {
          */
         "onIonBlur"?: (event: IonToggleCustomEvent<void>) => void;
         /**
-          * Emitted when the value property has changed.
+          * Emitted when the user switches the toggle on or off. Does not emit when programmatically changing the value of the `checked` property.
          */
         "onIonChange"?: (event: IonToggleCustomEvent<ToggleChangeEventDetail>) => void;
         /**
@@ -8381,378 +8992,90 @@ declare namespace LocalJSX {
          */
         "mode"?: "ios" | "md";
     }
-    interface IonVirtualScroll {
-        /**
-          * The approximate width of each footer template's cell. This dimension is used to help determine how many cells should be created when initialized, and to help calculate the height of the scrollable area. This height value can only use `px` units. Note that the actual rendered size of each cell comes from the app's CSS, whereas this approximation is used to help calculate initial dimensions before the item has been rendered.
-         */
-        "approxFooterHeight"?: number;
-        /**
-          * The approximate height of each header template's cell. This dimension is used to help determine how many cells should be created when initialized, and to help calculate the height of the scrollable area. This height value can only use `px` units. Note that the actual rendered size of each cell comes from the app's CSS, whereas this approximation is used to help calculate initial dimensions before the item has been rendered.
-         */
-        "approxHeaderHeight"?: number;
-        /**
-          * It is important to provide this if virtual item height will be significantly larger than the default The approximate height of each virtual item template's cell. This dimension is used to help determine how many cells should be created when initialized, and to help calculate the height of the scrollable area. This height value can only use `px` units. Note that the actual rendered size of each cell comes from the app's CSS, whereas this approximation is used to help calculate initial dimensions before the item has been rendered.
-         */
-        "approxItemHeight"?: number;
-        /**
-          * Section footers and the data used within its given template can be dynamically created by passing a function to `footerFn`. The logic within the footer function can decide if the footer template should be used, and what data to give to the footer template. The function must return `null` if a footer cell shouldn't be created.
-         */
-        "footerFn"?: HeaderFn;
-        /**
-          * An optional function that maps each item footer within their height.
-         */
-        "footerHeight"?: FooterHeightFn;
-        /**
-          * Section headers and the data used within its given template can be dynamically created by passing a function to `headerFn`. For example, a large list of contacts usually has dividers between each letter in the alphabet. App's can provide their own custom `headerFn` which is called with each record within the dataset. The logic within the header function can decide if the header template should be used, and what data to give to the header template. The function must return `null` if a header cell shouldn't be created.
-         */
-        "headerFn"?: HeaderFn;
-        /**
-          * An optional function that maps each item header within their height.
-         */
-        "headerHeight"?: HeaderHeightFn;
-        /**
-          * An optional function that maps each item within their height. When this function is provides, heavy optimizations and fast path can be taked by `ion-virtual-scroll` leading to massive performance improvements.  This function allows to skip all DOM reads, which can be Doing so leads to massive performance
-         */
-        "itemHeight"?: ItemHeightFn;
-        /**
-          * The data that builds the templates within the virtual scroll. It's important to note that when this data has changed, then the entire virtual scroll is reset, which is an expensive operation and should be avoided if possible.
-         */
-        "items"?: any[];
-        /**
-          * NOTE: only Vanilla JS API.
-         */
-        "nodeRender"?: ItemRenderFn;
-        /**
-          * NOTE: only JSX API for stencil.  Provide a render function for the footer to be rendered. Returns a JSX virtual-dom.
-         */
-        "renderFooter"?: (item: any, index: number) => any;
-        /**
-          * NOTE: only JSX API for stencil.  Provide a render function for the header to be rendered. Returns a JSX virtual-dom.
-         */
-        "renderHeader"?: (item: any, index: number) => any;
-        /**
-          * NOTE: only JSX API for stencil.  Provide a render function for the items to be rendered. Returns a JSX virtual-dom.
-         */
-        "renderItem"?: (item: any, index: number) => any;
-    }
-    interface LocalModal {
-    }
     interface MedAccordionItem {
-        /**
-          * todo
-         */
         "background"?: boolean;
-        /**
-          * todo
-         */
         "canCollapse"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "isOpened"?: boolean;
-        /**
-          * todo
-         */
         "noBorder"?: boolean;
-        /**
-          * todo
-         */
         "onMedClick"?: (event: MedAccordionItemCustomEvent<any>) => void;
-        /**
-          * todo
-         */
         "onOpened"?: (event: MedAccordionItemCustomEvent<any>) => void;
-        /**
-          * todo
-         */
         "onToggle"?: (event: MedAccordionItemCustomEvent<any>) => void;
-        /**
-          * todo
-         */
         "slotsToggle"?: 'start' | 'middle' | 'end'[];
     }
     interface MedAccordionList {
-        /**
-          * todo
-         */
         "margin"?: 'xs' | 'sm' | 'md' | 'lg';
-        /**
-          * todo
-         */
         "noAnimation"?: boolean;
-        /**
-          * todo
-         */
         "noBorder"?: boolean;
-        /**
-          * todo
-         */
         "singleOpen"?: boolean;
     }
     interface MedAddCard {
-        /**
-          * todo
-         */
         "iconName"?: string;
-        /**
-          * todo
-         */
         "titulo"?: string;
     }
     interface MedAgrupador {
-        /**
-          * todo
-         */
         "collapsed"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "labelAlternativo"?: string;
-        /**
-          * todo
-         */
         "labelDefault"?: string;
     }
-    interface MedAlert {
-        /**
-          * todo
-         */
-        "cancelText"?: string;
-        /**
-          * todo
-         */
-        "confirmText"?: string;
-        /**
-          * todo
-         */
-        "disableSanitize"?: boolean;
-        /**
-          * todo
-         */
-        "heading"?: string;
-        /**
-          * todo
-         */
-        "message"?: string;
-    }
     interface MedAlertFixed {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: 'offline' | 'atualizar';
-        /**
-          * todo
-         */
         "labelAtualizar"?: string;
-        /**
-          * todo
-         */
         "labelOffline"?: string;
     }
     interface MedAlternativas {
-        /**
-          * todo
-         */
         "alternativaSelecionada": string;
-        /**
-          * todo
-         */
         "alternativas"?: MedAlternativaInterface | any;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSkinConfig": any;
-        /**
-          * todo
-         */
         "keyAlternativa"?: string;
-        /**
-          * todo
-         */
         "keyEnunciado"?: string;
-        /**
-          * todo
-         */
         "keyImagem"?: string;
-        /**
-          * todo
-         */
         "keyPorcentagem"?: string;
-        /**
-          * todo
-         */
         "keyRiscada"?: string;
-        /**
-          * todo
-         */
         "mostraResposta": boolean;
-        /**
-          * todo
-         */
         "permiteDesmarcar"?: boolean;
-        /**
-          * todo
-         */
         "permiteRiscar"?: boolean;
-        /**
-          * todo
-         */
         "respostaCorreta": string;
     }
     interface MedAlternativasA {
-        /**
-          * todo
-         */
         "alternativaSelecionada": string;
-        /**
-          * todo
-         */
         "alternativas"?: MedAlternativaInterface | any;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSkin"?: any;
-        /**
-          * todo
-         */
         "dsSkinConfig"?: any;
-        /**
-          * todo
-         */
         "keyAlternativa"?: string;
-        /**
-          * todo
-         */
         "keyEnunciado"?: string;
-        /**
-          * todo
-         */
         "keyImagem"?: string;
-        /**
-          * todo
-         */
         "keyPorcentagem"?: string;
-        /**
-          * todo
-         */
         "keyRiscada"?: string;
-        /**
-          * todo
-         */
         "mostraResposta": boolean;
-        /**
-          * todo
-         */
         "onMedChange"?: (event: MedAlternativasACustomEvent<MedAlternativaInterface>) => void;
-        /**
-          * todo
-         */
         "onMedGalleryRequest"?: (event: MedAlternativasACustomEvent<MedAlternativaInterface>) => void;
-        /**
-          * todo
-         */
         "onMedRiscada"?: (event: MedAlternativasACustomEvent<MedAlternativaInterface>) => void;
-        /**
-          * todo
-         */
         "permiteDesmarcar"?: boolean;
-        /**
-          * todo
-         */
         "permiteRiscar"?: boolean;
-        /**
-          * todo
-         */
         "respostaCorreta": string;
     }
     interface MedAlternativasB {
-        /**
-          * todo
-         */
         "alternativaSelecionada": string;
-        /**
-          * todo
-         */
         "alternativas"?: MedAlternativaInterface | any;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSkin"?: any;
-        /**
-          * todo
-         */
         "dsSkinConfig"?: any;
-        /**
-          * todo
-         */
         "keyAlternativa"?: string;
-        /**
-          * todo
-         */
         "keyEnunciado"?: string;
-        /**
-          * todo
-         */
         "keyImagem"?: string;
-        /**
-          * todo
-         */
         "keyPorcentagem"?: string;
-        /**
-          * todo
-         */
         "keyRiscada"?: string;
-        /**
-          * todo
-         */
         "mostraResposta": boolean;
-        /**
-          * todo
-         */
         "onMedChange"?: (event: MedAlternativasBCustomEvent<MedAlternativaInterface>) => void;
-        /**
-          * todo
-         */
         "onMedGalleryRequest"?: (event: MedAlternativasBCustomEvent<MedAlternativaInterface>) => void;
-        /**
-          * todo
-         */
         "onMedRiscada"?: (event: MedAlternativasBCustomEvent<MedAlternativaInterface>) => void;
-        /**
-          * todo
-         */
         "permiteDesmarcar"?: boolean;
-        /**
-          * todo
-         */
         "permiteRiscar"?: boolean;
-        /**
-          * todo
-         */
         "respostaCorreta": string;
     }
     interface MedAutocomplete {
@@ -8765,168 +9088,36 @@ declare namespace LocalJSX {
          */
         "dropdown": boolean;
     }
-    interface MedAvatar {
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsSize"?: 'xxs' | 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | 'xxl';
-        /**
-          * todo
-         */
-        "image"?: string;
-        /**
-          * todo
-         */
-        "letter"?: string;
-    }
-    interface MedBanner {
-        /**
-          * todo
-         */
-        "btnLeft": string;
-        /**
-          * todo
-         */
-        "btnRight": string;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "icon": string;
-        /**
-          * todo
-         */
-        "image": string;
-        /**
-          * todo
-         */
-        "onBtnLeftClick"?: (event: MedBannerCustomEvent<void>) => void;
-        /**
-          * todo
-         */
-        "onBtnRightClick"?: (event: MedBannerCustomEvent<void>) => void;
-        /**
-          * todo
-         */
-        "texto"?: string;
-        /**
-          * todo
-         */
-        "titulo"?: string;
-    }
     interface MedBase {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "gap"?: 's00' | 's02' | 's04' | 's08' | string;
-        /**
-          * todo
-         */
         "radius"?: 's00' | 's02' | 's04' | 's08' | string;
-        /**
-          * todo
-         */
         "spacingH"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
-        /**
-          * todo
-         */
         "spacingV"?: 's00' | 's02' | 's04' | 's08' | 's12' | 's16' | 's24' | string;
     }
     interface MedCalendar {
-        /**
-          * todo
-         */
         "ano"?: string;
-        /**
-          * todo
-         */
         "choice"?: string;
-        /**
-          * todo
-         */
         "container"?: string;
-        /**
-          * todo
-         */
         "disable"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "mes"?: string;
-        /**
-          * todo
-         */
         "onMedClick"?: (event: MedCalendarCustomEvent<any>) => void;
-        /**
-          * todo
-         */
         "onMedSwipe"?: (event: MedCalendarCustomEvent<any>) => void;
     }
     interface MedCalendarDay {
-        /**
-          * todo
-         */
         "active"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "fill"?: 'outline';
     }
     interface MedCaption {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     }
-    interface MedCarregamento {
-        /**
-          * todo
-         */
-        "color"?: string;
-        /**
-          * todo
-         */
-        "message": string;
-    }
     interface MedCartaoRespostaItem {
-        /**
-          * todo
-         */
         "anulada"?: boolean;
-        /**
-          * todo
-         */
         "ativa"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "impressa"?: boolean;
     }
     interface MedCartaoRespostaLista {
@@ -8936,261 +9127,67 @@ declare namespace LocalJSX {
         "isFlex"?: boolean;
     }
     interface MedChartBar {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "height"?: number;
         "noLabel"?: boolean;
-        /**
-          * todo
-         */
         "value"?: number;
-        /**
-          * todo
-         */
         "width"?: number;
     }
     interface MedChartBarHorizontal {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'md';
-        /**
-          * todo
-         */
         "hideValue"?: boolean;
-        /**
-          * todo
-         */
         "label"?: boolean;
-        /**
-          * todo
-         */
         "labelContent"?: string | undefined;
-        /**
-          * todo
-         */
         "value"?: number;
     }
     interface MedChartCategoria {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "meta"?: string;
-        /**
-          * todo
-         */
         "realizado"?: string;
-        /**
-          * todo
-         */
         "titulo"?: string;
-        /**
-          * todo
-         */
         "value"?: number;
     }
     interface MedChartRadial {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: 'secondary';
-        /**
-          * todo
-         */
         "dsSize"?: 'xs' | 'sm' | 'md' | 'lg';
-        /**
-          * todo
-         */
         "subtitulo"?: string;
-        /**
-          * todo
-         */
         "titulo"?: string;
-        /**
-          * todo
-         */
         "valores"?: MedChartRadiaItem[];
     }
     interface MedChartRadialContent {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'lg';
-        /**
-          * todo
-         */
         "total"?: number;
     }
     interface MedChartRadialLabel {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'lg';
-        /**
-          * todo
-         */
         "valores"?: MedChartRadiaItem[];
     }
     interface MedCheckCard {
-        /**
-          * todo
-         */
         "alert"?: boolean;
-        /**
-          * todo
-         */
         "categoria"?: string;
-        /**
-          * todo
-         */
         "dataFinal"?: string;
-        /**
-          * todo
-         */
         "dataInicial"?: string;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "finalizada"?: string;
-        /**
-          * todo
-         */
         "horaFinal"?: string;
-        /**
-          * todo
-         */
         "horaInicial"?: string;
-        /**
-          * todo
-         */
         "iconName"?: string;
-        /**
-          * todo
-         */
         "onMedClick"?: (event: MedCheckCardCustomEvent<any>) => void;
-        /**
-          * todo
-         */
         "onMedTooltipClose"?: (event: MedCheckCardCustomEvent<any>) => void;
-        /**
-          * todo
-         */
         "titulo"?: string;
     }
-    interface MedChip {
-        /**
-          * todo
-         */
-        "active"?: boolean;
-        /**
-          * todo
-         */
-        "disabled"?: boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsName"?: 'secondary';
-        /**
-          * todo
-         */
-        "dsSize"?: 'md';
-        /**
-          * todo
-         */
-        "iconLeft": string;
-        /**
-          * todo
-         */
-        "iconRight": string;
-        /**
-          * todo
-         */
-        "label": string;
-        /**
-          * todo
-         */
-        "onMedBlur"?: (event: MedChipCustomEvent<void>) => void;
-        /**
-          * todo
-         */
-        "onMedClick"?: (event: MedChipCustomEvent<void>) => void;
-        /**
-          * todo
-         */
-        "onMedFocus"?: (event: MedChipCustomEvent<void>) => void;
-    }
-    interface MedConfig {
-        /**
-          * todo
-         */
-        "emitter": {
-    scheme: ( value: string ) => void;
-    theme: ( value: string ) => void;
-  };
-        /**
-          * todo
-         */
-        "opcoes": MedConfigInterface;
-    }
     interface MedContextMenu {
-        /**
-          * todo
-         */
         "collapsed"?: boolean;
     }
     interface MedDownloadButton {
-        /**
-          * todo
-         */
         "disabled"?: boolean;
-        /**
-          * todo
-         */
         "downloaded"?: boolean;
-        /**
-          * todo
-         */
         "downloading"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'lg';
         /**
           * remover
@@ -9200,39 +9197,16 @@ declare namespace LocalJSX {
           * remover
          */
         "index"?: number;
-        /**
-          * todo
-         */
         "onMedDownloadRequested"?: (event: MedDownloadButtonCustomEvent<any>) => void;
-        /**
-          * todo
-         */
         "value"?: number;
     }
     interface MedDropdown {
-        /**
-          * todo
-         */
         "dsName"?: 'secondary';
     }
-    interface MedDropdownContainer {
-    }
     interface MedEnunciado {
-        /**
-          * todo
-         */
         "content"?: string;
-        /**
-          * todo
-         */
         "dsName"?: 'skin';
-        /**
-          * todo
-         */
         "imagens": string[] | string;
-        /**
-          * todo
-         */
         "onMedGalleryRequest"?: (event: MedEnunciadoCustomEvent<string>) => void;
     }
     interface MedEnunciadoDiscursiva {
@@ -9246,13 +9220,7 @@ declare namespace LocalJSX {
         "onMedGalleryRequest"?: (event: MedEnunciadoDiscursivaCustomEvent<string>) => void;
     }
     interface MedFontZoom {
-        /**
-          * todo
-         */
         "emitter": { emit: (value: MedFontSize) => void };
-        /**
-          * todo
-         */
         "value"?: MedFontSize;
     }
     interface MedHeader {
@@ -9262,29 +9230,12 @@ declare namespace LocalJSX {
         "onMedResize"?: (event: MedHeaderCustomEvent<headerResizeEventDetail>) => void;
     }
     interface MedImageZoom {
-        /**
-          * todo
-         */
         "imagens"?: | MedImageZoomItemInterface[]
     | any;
-        /**
-          * todo
-         */
         "initialSlide"?: number | undefined;
-        /**
-          * todo
-         */
         "marcaAguaInferior"?: string;
-        /**
-          * todo
-         */
         "marcaAguaSuperior"?: string;
-        /**
-          * todo
-         */
         "titulo"?: string;
-    }
-    interface MedInput {
     }
     interface MedItem {
         /**
@@ -9342,7 +9293,7 @@ declare namespace LocalJSX {
         /**
           * When using a router, it specifies the transition direction when navigating to another page using `href`.
          */
-        "routerDirection"?: RouterDirection;
+        "routerDirection"?: RouterDirection1;
         /**
           * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
          */
@@ -9353,254 +9304,46 @@ declare namespace LocalJSX {
         "type"?: 'submit' | 'reset' | 'button';
     }
     interface MedList {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "margin"?: 'xs' | 'sm' | 'md' | 'lg';
     }
     interface MedListItem {
-        /**
-          * todo
-         */
         "border"?: boolean;
-        /**
-          * todo
-         */
         "disabled"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'xs' | 'sm' | 'md';
-        /**
-          * todo
-         */
         "label"?: string;
-        /**
-          * todo
-         */
         "selected"?: boolean;
-        /**
-          * todo
-         */
         "titulo"?: string;
     }
     interface MedListItemAccordion {
-        /**
-          * todo
-         */
         "border"?: boolean;
-        /**
-          * todo
-         */
         "collapsed"?: boolean;
-        /**
-          * todo
-         */
         "disabled"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'xs' | 'sm' | 'md';
-        /**
-          * todo
-         */
         "label"?: string;
-        /**
-          * todo
-         */
         "margin"?: 'xs' | 'sm' | 'md' | 'lg';
-        /**
-          * todo
-         */
         "selected"?: boolean;
-        /**
-          * todo
-         */
         "titulo"?: string;
-    }
-    interface MedLista {
-        /**
-          * The mode determines which platform styles to use.
-         */
-        "mode"?: "ios" | "md";
-    }
-    interface MedNav {
-        /**
-          * todo
-         */
-        "active"?: boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "onClicked"?: (event: MedNavCustomEvent<any>) => void;
-        /**
-          * todo
-         */
-        "titulo"?: string;
-    }
-    interface MedNavAccordion {
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        "titulo"?: MedColor;
-    }
-    interface MedNavItem {
-        /**
-          * todo
-         */
-        "active"?: boolean;
-        /**
-          * todo
-         */
-        "disabled"?: boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "icon"?: string;
-        /**
-          * todo
-         */
-        "iconOnly"?: boolean;
-        /**
-          * todo
-         */
-        "onMedBlur"?: (event: MedNavItemCustomEvent<void>) => void;
-        /**
-          * todo
-         */
-        "onMedClick"?: (event: MedNavItemCustomEvent<void>) => void;
-        /**
-          * todo
-         */
-        "onMedFocus"?: (event: MedNavItemCustomEvent<void>) => void;
-        /**
-          * todo
-         */
-        "routerAnimation"?: AnimationBuilder | undefined;
-        /**
-          * todo
-         */
-        "routerDirection"?: RouterDirection;
-        /**
-          * todo
-         */
-        "text"?: string;
-    }
-    interface MedNavSimple {
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "onClose"?: (event: MedNavSimpleCustomEvent<any>) => void;
     }
     interface MedNavbar {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: 'secondary' | 'transparent';
     }
     interface MedOffline {
-        /**
-          * todo
-         */
         "onMedClick"?: (event: MedOfflineCustomEvent<void>) => void;
     }
     interface MedOption {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-    }
-    interface MedPiechart {
-        /**
-          * todo
-         */
-        "disabled"?: boolean;
-        /**
-          * todo
-         */
-        "download"?: boolean;
-        /**
-          * todo
-         */
-        "downloadProgress"?: number;
-        /**
-          * todo
-         */
-        "downloaded"?: boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsSize"?: 'sm';
-        /**
-          * todo
-         */
-        "hideDownload"?: boolean;
-        /**
-          * todo
-         */
-        "identification"?: string | number | undefined;
-        /**
-          * todo
-         */
-        "index"?: number;
-        /**
-          * todo
-         */
-        "label"?: string;
-        /**
-          * todo
-         */
-        "value"?: number;
     }
     interface MedPlusminus {
         /**
           * true se deve desabilitar os controles automaticamente
          */
         "automaticDisabled"?: boolean;
-        /**
-          * todo
-         */
         "disabled"?: 'minus' | 'plus' | 'both';
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsSize"?: 'xl';
         /**
           * O valor máximo
@@ -9610,13 +9353,7 @@ declare namespace LocalJSX {
           * O valor mínimo
          */
         "min"?: number;
-        /**
-          * todo
-         */
         "onMedChange"?: (event: MedPlusminusCustomEvent<PlusMinusStatus>) => void;
-        /**
-          * todo
-         */
         "onMedChangeAlt"?: (event: MedPlusminusCustomEvent<number>) => void;
         /**
           * Deverá ser true se o valor atual vai ser passado por slot, false se vai ser passado por prop
@@ -9627,288 +9364,51 @@ declare namespace LocalJSX {
          */
         "value"?: number;
     }
-    interface MedQuestion {
-        /**
-          * todo
-         */
-        "collapsed"?: boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "texto"?: string;
-    }
-    interface MedRateAula {
-        /**
-          * todo
-         */
-        "collapsed"?: boolean;
-    }
     interface MedRateBar {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
     }
     interface MedRateLike {
-        /**
-          * todo
-         */
         "onMedChange"?: (event: MedRateLikeCustomEvent<RateStatus>) => void;
-        /**
-          * todo
-         */
         "status"?: RateStatus;
     }
-    interface MedRating {
-        /**
-          * todo
-         */
-        "cabe"?: boolean;
-        /**
-          * todo
-         */
-        "concurso"?: string;
-        /**
-          * todo
-         */
-        "data"?: string;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsName"?: 'medgrupo' | 'banca';
-        /**
-          * todo
-         */
-        "nome"?: string;
-        /**
-          * todo
-         */
-        "texto"?: string;
-    }
-    interface MedSearchBar {
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-    }
-    interface MedSegment {
-    }
-    interface MedSemana {
-        /**
-          * todo
-         */
-        "active"?: boolean;
-        /**
-          * todo
-         */
-        "content": MedSemanaInterface;
-        /**
-          * todo
-         */
-        "disabled"?: boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-        /**
-          * todo
-         */
-        "dsSize"?: 'sm';
-        /**
-          * todo
-         */
-        "hideDownload"?: boolean;
-        /**
-          * todo
-         */
-        "skin"?: 'lista';
-    }
-    interface MedSemanas {
-        /**
-          * todo
-         */
-        "skin"?: 'lista';
-    }
-    interface MedTabButton {
-        /**
-          * todo
-         */
-        "active"?: boolean;
-        /**
-          * todo
-         */
-        "dsColor"?: MedColor;
-    }
-    interface MedThemes {
-        /**
-          * todo
-         */
-        "ativo"?: 'theme-gold' | 'theme-recursos' | string;
-        /**
-          * todo
-         */
-        "onMedChange"?: (event: MedThemesCustomEvent<string>) => void;
-        /**
-          * todo
-         */
-        "temas"?: MedTema[];
-    }
     interface MedTiles {
-        /**
-          * todo
-         */
         "badge"?: string;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "label"?: string;
-        /**
-          * todo
-         */
         "selected"?: boolean;
-        /**
-          * todo
-         */
         "solid"?: boolean;
-        /**
-          * todo
-         */
         "titulo"?: string;
     }
     interface MedToggle {
-        /**
-          * todo
-         */
         "collapsed"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "iconClick"?: boolean;
     }
     interface MedToolbar {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
     }
     interface MedTooltip {
-        /**
-          * todo
-         */
         "btnLeft"?: string;
-        /**
-          * todo
-         */
         "btnRight"?: string;
-        /**
-          * todo
-         */
         "collapsed"?: boolean;
-        /**
-          * todo
-         */
         "content"?: string;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
         "enableHover"?: boolean;
-        /**
-          * todo
-         */
         "onBtnLeftClick"?: (event: MedTooltipCustomEvent<void>) => void;
-        /**
-          * todo
-         */
         "onBtnRightClick"?: (event: MedTooltipCustomEvent<void>) => void;
-        /**
-          * todo
-         */
         "placement"?: 'top' | 'bottom' | 'left' | 'right';
-        /**
-          * todo
-         */
         "position"?: 'start' | 'center' | 'end';
-        /**
-          * todo
-         */
         "titulo"?: string;
     }
     interface MedType {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "tag"?: MedTypeTag;
-        /**
-          * todo
-         */
         "token"?: MedTypeToken;
     }
     interface MedVideoThumbnail {
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "url"?: string;
-        /**
-          * todo
-         */
         "value"?: number;
-    }
-    interface MedVote {
-        /**
-          * todo
-         */
-        "like"?: number;
-        /**
-          * todo
-         */
-        "titulo"?: string | undefined;
-        /**
-          * todo
-         */
-        "unlike"?: number;
-    }
-    interface MedreaderProModal {
-    }
-    interface RealizacoesModal {
-    }
-    interface SelectTest {
-    }
-    interface SheetContentTest {
-    }
-    interface SheetIa {
-    }
-    interface SheetTest {
-    }
-    interface SimuladoModal {
-    }
-    interface SnackbarTest {
-    }
-    interface TextAreaModal {
     }
     interface TpAccordion {
         /**
@@ -9971,71 +9471,23 @@ declare namespace LocalJSX {
         "value"?: string | string[] | null;
     }
     interface TpChartBar {
-        /**
-          * todo
-         */
         "bar"?: TpChartBarItem;
-        /**
-          * todo
-         */
         "deactivated"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: "secondary";
-        /**
-          * todo
-         */
         "hasMarker"?: boolean;
-        /**
-          * todo
-         */
         "height"?: number;
-        /**
-          * todo
-         */
         "label"?: string;
-        /**
-          * todo
-         */
         "labelSize"?: number;
-        /**
-          * todo
-         */
         "marker"?: TpChartBarItem;
     }
     interface TpInputContainer {
-        /**
-          * todo
-         */
         "disabled"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
-        /**
-          * todo
-         */
         "dsName"?: 'secondary';
-        /**
-          * todo
-         */
         "feedback"?: boolean;
-        /**
-          * todo
-         */
         "hasButton"?: 'start' | 'end' | 'both';
-        /**
-          * todo
-         */
         "hasIcon"?: 'start' | 'end' | 'both';
-        /**
-          * todo
-         */
         "inverted"?: boolean;
     }
     interface TpLoader {
@@ -10043,21 +9495,9 @@ declare namespace LocalJSX {
         "dsName"?: "secondary";
         "fixed"?: boolean;
     }
-    interface TutorialModal {
-    }
-    interface UnidadesModal {
-    }
     interface IntrinsicElements {
-        "ajuda-modal": AjudaModal;
-        "apostila-modal": ApostilaModal;
-        "aviso-modal": AvisoModal;
-        "concurso-modal": ConcursoModal;
-        "denunciar-modal": DenunciarModal;
-        "dialog-test": DialogTest;
-        "especialidade-modal": EspecialidadeModal;
-        "excluir-modal": ExcluirModal;
-        "filtro-modal": FiltroModal;
-        "informativo-modal": InformativoModal;
+        "ion-accordion": IonAccordion;
+        "ion-accordion-group": IonAccordionGroup;
         "ion-action-sheet": IonActionSheet;
         "ion-alert": IonAlert;
         "ion-app": IonApp;
@@ -10065,6 +9505,8 @@ declare namespace LocalJSX {
         "ion-back-button": IonBackButton;
         "ion-backdrop": IonBackdrop;
         "ion-badge": IonBadge;
+        "ion-breadcrumb": IonBreadcrumb;
+        "ion-breadcrumbs": IonBreadcrumbs;
         "ion-button": IonButton;
         "ion-buttons": IonButtons;
         "ion-card": IonCard;
@@ -10077,6 +9519,7 @@ declare namespace LocalJSX {
         "ion-col": IonCol;
         "ion-content": IonContent;
         "ion-datetime": IonDatetime;
+        "ion-datetime-button": IonDatetimeButton;
         "ion-fab": IonFab;
         "ion-fab-button": IonFabButton;
         "ion-fab-list": IonFabList;
@@ -10106,6 +9549,8 @@ declare namespace LocalJSX {
         "ion-note": IonNote;
         "ion-picker": IonPicker;
         "ion-picker-column": IonPickerColumn;
+        "ion-picker-column-internal": IonPickerColumnInternal;
+        "ion-picker-internal": IonPickerInternal;
         "ion-popover": IonPopover;
         "ion-progress-bar": IonProgressBar;
         "ion-radio": IonRadio;
@@ -10129,8 +9574,6 @@ declare namespace LocalJSX {
         "ion-select-option": IonSelectOption;
         "ion-select-popover": IonSelectPopover;
         "ion-skeleton-text": IonSkeletonText;
-        "ion-slide": IonSlide;
-        "ion-slides": IonSlides;
         "ion-spinner": IonSpinner;
         "ion-split-pane": IonSplitPane;
         "ion-tab": IonTab;
@@ -10144,25 +9587,19 @@ declare namespace LocalJSX {
         "ion-toast": IonToast;
         "ion-toggle": IonToggle;
         "ion-toolbar": IonToolbar;
-        "ion-virtual-scroll": IonVirtualScroll;
-        "local-modal": LocalModal;
         "med-accordion-item": MedAccordionItem;
         "med-accordion-list": MedAccordionList;
         "med-add-card": MedAddCard;
         "med-agrupador": MedAgrupador;
-        "med-alert": MedAlert;
         "med-alert-fixed": MedAlertFixed;
         "med-alternativas": MedAlternativas;
         "med-alternativas-a": MedAlternativasA;
         "med-alternativas-b": MedAlternativasB;
         "med-autocomplete": MedAutocomplete;
-        "med-avatar": MedAvatar;
-        "med-banner": MedBanner;
         "med-base": MedBase;
         "med-calendar": MedCalendar;
         "med-calendar-day": MedCalendarDay;
         "med-caption": MedCaption;
-        "med-carregamento": MedCarregamento;
         "med-cartao-resposta-item": MedCartaoRespostaItem;
         "med-cartao-resposta-lista": MedCartaoRespostaLista;
         "med-chart-bar": MedChartBar;
@@ -10172,82 +9609,43 @@ declare namespace LocalJSX {
         "med-chart-radial-content": MedChartRadialContent;
         "med-chart-radial-label": MedChartRadialLabel;
         "med-check-card": MedCheckCard;
-        "med-chip": MedChip;
-        "med-config": MedConfig;
         "med-context-menu": MedContextMenu;
         "med-download-button": MedDownloadButton;
         "med-dropdown": MedDropdown;
-        "med-dropdown-container": MedDropdownContainer;
         "med-enunciado": MedEnunciado;
         "med-enunciado-discursiva": MedEnunciadoDiscursiva;
         "med-font-zoom": MedFontZoom;
         "med-header": MedHeader;
         "med-image-zoom": MedImageZoom;
-        "med-input": MedInput;
         "med-item": MedItem;
         "med-list": MedList;
         "med-list-item": MedListItem;
         "med-list-item-accordion": MedListItemAccordion;
-        "med-lista": MedLista;
-        "med-nav": MedNav;
-        "med-nav-accordion": MedNavAccordion;
-        "med-nav-item": MedNavItem;
-        "med-nav-simple": MedNavSimple;
         "med-navbar": MedNavbar;
         "med-offline": MedOffline;
         "med-option": MedOption;
-        "med-piechart": MedPiechart;
         "med-plusminus": MedPlusminus;
-        "med-question": MedQuestion;
-        "med-rate-aula": MedRateAula;
         "med-rate-bar": MedRateBar;
         "med-rate-like": MedRateLike;
-        "med-rating": MedRating;
-        "med-search-bar": MedSearchBar;
-        "med-segment": MedSegment;
-        "med-semana": MedSemana;
-        "med-semanas": MedSemanas;
-        "med-tab-button": MedTabButton;
-        "med-themes": MedThemes;
         "med-tiles": MedTiles;
         "med-toggle": MedToggle;
         "med-toolbar": MedToolbar;
         "med-tooltip": MedTooltip;
         "med-type": MedType;
         "med-video-thumbnail": MedVideoThumbnail;
-        "med-vote": MedVote;
-        "medreader-pro-modal": MedreaderProModal;
-        "realizacoes-modal": RealizacoesModal;
-        "select-test": SelectTest;
-        "sheet-content-test": SheetContentTest;
-        "sheet-ia": SheetIa;
-        "sheet-test": SheetTest;
-        "simulado-modal": SimuladoModal;
-        "snackbar-test": SnackbarTest;
-        "text-area-modal": TextAreaModal;
         "tp-accordion": TpAccordion;
         "tp-accordion-group": TpAccordionGroup;
         "tp-chart-bar": TpChartBar;
         "tp-input-container": TpInputContainer;
         "tp-loader": TpLoader;
-        "tutorial-modal": TutorialModal;
-        "unidades-modal": UnidadesModal;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "ajuda-modal": LocalJSX.AjudaModal & JSXBase.HTMLAttributes<HTMLAjudaModalElement>;
-            "apostila-modal": LocalJSX.ApostilaModal & JSXBase.HTMLAttributes<HTMLApostilaModalElement>;
-            "aviso-modal": LocalJSX.AvisoModal & JSXBase.HTMLAttributes<HTMLAvisoModalElement>;
-            "concurso-modal": LocalJSX.ConcursoModal & JSXBase.HTMLAttributes<HTMLConcursoModalElement>;
-            "denunciar-modal": LocalJSX.DenunciarModal & JSXBase.HTMLAttributes<HTMLDenunciarModalElement>;
-            "dialog-test": LocalJSX.DialogTest & JSXBase.HTMLAttributes<HTMLDialogTestElement>;
-            "especialidade-modal": LocalJSX.EspecialidadeModal & JSXBase.HTMLAttributes<HTMLEspecialidadeModalElement>;
-            "excluir-modal": LocalJSX.ExcluirModal & JSXBase.HTMLAttributes<HTMLExcluirModalElement>;
-            "filtro-modal": LocalJSX.FiltroModal & JSXBase.HTMLAttributes<HTMLFiltroModalElement>;
-            "informativo-modal": LocalJSX.InformativoModal & JSXBase.HTMLAttributes<HTMLInformativoModalElement>;
+            "ion-accordion": LocalJSX.IonAccordion & JSXBase.HTMLAttributes<HTMLIonAccordionElement>;
+            "ion-accordion-group": LocalJSX.IonAccordionGroup & JSXBase.HTMLAttributes<HTMLIonAccordionGroupElement>;
             "ion-action-sheet": LocalJSX.IonActionSheet & JSXBase.HTMLAttributes<HTMLIonActionSheetElement>;
             "ion-alert": LocalJSX.IonAlert & JSXBase.HTMLAttributes<HTMLIonAlertElement>;
             "ion-app": LocalJSX.IonApp & JSXBase.HTMLAttributes<HTMLIonAppElement>;
@@ -10255,6 +9653,8 @@ declare module "@stencil/core" {
             "ion-back-button": LocalJSX.IonBackButton & JSXBase.HTMLAttributes<HTMLIonBackButtonElement>;
             "ion-backdrop": LocalJSX.IonBackdrop & JSXBase.HTMLAttributes<HTMLIonBackdropElement>;
             "ion-badge": LocalJSX.IonBadge & JSXBase.HTMLAttributes<HTMLIonBadgeElement>;
+            "ion-breadcrumb": LocalJSX.IonBreadcrumb & JSXBase.HTMLAttributes<HTMLIonBreadcrumbElement>;
+            "ion-breadcrumbs": LocalJSX.IonBreadcrumbs & JSXBase.HTMLAttributes<HTMLIonBreadcrumbsElement>;
             "ion-button": LocalJSX.IonButton & JSXBase.HTMLAttributes<HTMLIonButtonElement>;
             "ion-buttons": LocalJSX.IonButtons & JSXBase.HTMLAttributes<HTMLIonButtonsElement>;
             "ion-card": LocalJSX.IonCard & JSXBase.HTMLAttributes<HTMLIonCardElement>;
@@ -10267,6 +9667,7 @@ declare module "@stencil/core" {
             "ion-col": LocalJSX.IonCol & JSXBase.HTMLAttributes<HTMLIonColElement>;
             "ion-content": LocalJSX.IonContent & JSXBase.HTMLAttributes<HTMLIonContentElement>;
             "ion-datetime": LocalJSX.IonDatetime & JSXBase.HTMLAttributes<HTMLIonDatetimeElement>;
+            "ion-datetime-button": LocalJSX.IonDatetimeButton & JSXBase.HTMLAttributes<HTMLIonDatetimeButtonElement>;
             "ion-fab": LocalJSX.IonFab & JSXBase.HTMLAttributes<HTMLIonFabElement>;
             "ion-fab-button": LocalJSX.IonFabButton & JSXBase.HTMLAttributes<HTMLIonFabButtonElement>;
             "ion-fab-list": LocalJSX.IonFabList & JSXBase.HTMLAttributes<HTMLIonFabListElement>;
@@ -10296,6 +9697,8 @@ declare module "@stencil/core" {
             "ion-note": LocalJSX.IonNote & JSXBase.HTMLAttributes<HTMLIonNoteElement>;
             "ion-picker": LocalJSX.IonPicker & JSXBase.HTMLAttributes<HTMLIonPickerElement>;
             "ion-picker-column": LocalJSX.IonPickerColumn & JSXBase.HTMLAttributes<HTMLIonPickerColumnElement>;
+            "ion-picker-column-internal": LocalJSX.IonPickerColumnInternal & JSXBase.HTMLAttributes<HTMLIonPickerColumnInternalElement>;
+            "ion-picker-internal": LocalJSX.IonPickerInternal & JSXBase.HTMLAttributes<HTMLIonPickerInternalElement>;
             "ion-popover": LocalJSX.IonPopover & JSXBase.HTMLAttributes<HTMLIonPopoverElement>;
             "ion-progress-bar": LocalJSX.IonProgressBar & JSXBase.HTMLAttributes<HTMLIonProgressBarElement>;
             "ion-radio": LocalJSX.IonRadio & JSXBase.HTMLAttributes<HTMLIonRadioElement>;
@@ -10319,8 +9722,6 @@ declare module "@stencil/core" {
             "ion-select-option": LocalJSX.IonSelectOption & JSXBase.HTMLAttributes<HTMLIonSelectOptionElement>;
             "ion-select-popover": LocalJSX.IonSelectPopover & JSXBase.HTMLAttributes<HTMLIonSelectPopoverElement>;
             "ion-skeleton-text": LocalJSX.IonSkeletonText & JSXBase.HTMLAttributes<HTMLIonSkeletonTextElement>;
-            "ion-slide": LocalJSX.IonSlide & JSXBase.HTMLAttributes<HTMLIonSlideElement>;
-            "ion-slides": LocalJSX.IonSlides & JSXBase.HTMLAttributes<HTMLIonSlidesElement>;
             "ion-spinner": LocalJSX.IonSpinner & JSXBase.HTMLAttributes<HTMLIonSpinnerElement>;
             "ion-split-pane": LocalJSX.IonSplitPane & JSXBase.HTMLAttributes<HTMLIonSplitPaneElement>;
             "ion-tab": LocalJSX.IonTab & JSXBase.HTMLAttributes<HTMLIonTabElement>;
@@ -10334,25 +9735,19 @@ declare module "@stencil/core" {
             "ion-toast": LocalJSX.IonToast & JSXBase.HTMLAttributes<HTMLIonToastElement>;
             "ion-toggle": LocalJSX.IonToggle & JSXBase.HTMLAttributes<HTMLIonToggleElement>;
             "ion-toolbar": LocalJSX.IonToolbar & JSXBase.HTMLAttributes<HTMLIonToolbarElement>;
-            "ion-virtual-scroll": LocalJSX.IonVirtualScroll & JSXBase.HTMLAttributes<HTMLIonVirtualScrollElement>;
-            "local-modal": LocalJSX.LocalModal & JSXBase.HTMLAttributes<HTMLLocalModalElement>;
             "med-accordion-item": LocalJSX.MedAccordionItem & JSXBase.HTMLAttributes<HTMLMedAccordionItemElement>;
             "med-accordion-list": LocalJSX.MedAccordionList & JSXBase.HTMLAttributes<HTMLMedAccordionListElement>;
             "med-add-card": LocalJSX.MedAddCard & JSXBase.HTMLAttributes<HTMLMedAddCardElement>;
             "med-agrupador": LocalJSX.MedAgrupador & JSXBase.HTMLAttributes<HTMLMedAgrupadorElement>;
-            "med-alert": LocalJSX.MedAlert & JSXBase.HTMLAttributes<HTMLMedAlertElement>;
             "med-alert-fixed": LocalJSX.MedAlertFixed & JSXBase.HTMLAttributes<HTMLMedAlertFixedElement>;
             "med-alternativas": LocalJSX.MedAlternativas & JSXBase.HTMLAttributes<HTMLMedAlternativasElement>;
             "med-alternativas-a": LocalJSX.MedAlternativasA & JSXBase.HTMLAttributes<HTMLMedAlternativasAElement>;
             "med-alternativas-b": LocalJSX.MedAlternativasB & JSXBase.HTMLAttributes<HTMLMedAlternativasBElement>;
             "med-autocomplete": LocalJSX.MedAutocomplete & JSXBase.HTMLAttributes<HTMLMedAutocompleteElement>;
-            "med-avatar": LocalJSX.MedAvatar & JSXBase.HTMLAttributes<HTMLMedAvatarElement>;
-            "med-banner": LocalJSX.MedBanner & JSXBase.HTMLAttributes<HTMLMedBannerElement>;
             "med-base": LocalJSX.MedBase & JSXBase.HTMLAttributes<HTMLMedBaseElement>;
             "med-calendar": LocalJSX.MedCalendar & JSXBase.HTMLAttributes<HTMLMedCalendarElement>;
             "med-calendar-day": LocalJSX.MedCalendarDay & JSXBase.HTMLAttributes<HTMLMedCalendarDayElement>;
             "med-caption": LocalJSX.MedCaption & JSXBase.HTMLAttributes<HTMLMedCaptionElement>;
-            "med-carregamento": LocalJSX.MedCarregamento & JSXBase.HTMLAttributes<HTMLMedCarregamentoElement>;
             "med-cartao-resposta-item": LocalJSX.MedCartaoRespostaItem & JSXBase.HTMLAttributes<HTMLMedCartaoRespostaItemElement>;
             "med-cartao-resposta-lista": LocalJSX.MedCartaoRespostaLista & JSXBase.HTMLAttributes<HTMLMedCartaoRespostaListaElement>;
             "med-chart-bar": LocalJSX.MedChartBar & JSXBase.HTMLAttributes<HTMLMedChartBarElement>;
@@ -10362,66 +9757,35 @@ declare module "@stencil/core" {
             "med-chart-radial-content": LocalJSX.MedChartRadialContent & JSXBase.HTMLAttributes<HTMLMedChartRadialContentElement>;
             "med-chart-radial-label": LocalJSX.MedChartRadialLabel & JSXBase.HTMLAttributes<HTMLMedChartRadialLabelElement>;
             "med-check-card": LocalJSX.MedCheckCard & JSXBase.HTMLAttributes<HTMLMedCheckCardElement>;
-            "med-chip": LocalJSX.MedChip & JSXBase.HTMLAttributes<HTMLMedChipElement>;
-            "med-config": LocalJSX.MedConfig & JSXBase.HTMLAttributes<HTMLMedConfigElement>;
             "med-context-menu": LocalJSX.MedContextMenu & JSXBase.HTMLAttributes<HTMLMedContextMenuElement>;
             "med-download-button": LocalJSX.MedDownloadButton & JSXBase.HTMLAttributes<HTMLMedDownloadButtonElement>;
             "med-dropdown": LocalJSX.MedDropdown & JSXBase.HTMLAttributes<HTMLMedDropdownElement>;
-            "med-dropdown-container": LocalJSX.MedDropdownContainer & JSXBase.HTMLAttributes<HTMLMedDropdownContainerElement>;
             "med-enunciado": LocalJSX.MedEnunciado & JSXBase.HTMLAttributes<HTMLMedEnunciadoElement>;
             "med-enunciado-discursiva": LocalJSX.MedEnunciadoDiscursiva & JSXBase.HTMLAttributes<HTMLMedEnunciadoDiscursivaElement>;
             "med-font-zoom": LocalJSX.MedFontZoom & JSXBase.HTMLAttributes<HTMLMedFontZoomElement>;
             "med-header": LocalJSX.MedHeader & JSXBase.HTMLAttributes<HTMLMedHeaderElement>;
             "med-image-zoom": LocalJSX.MedImageZoom & JSXBase.HTMLAttributes<HTMLMedImageZoomElement>;
-            "med-input": LocalJSX.MedInput & JSXBase.HTMLAttributes<HTMLMedInputElement>;
             "med-item": LocalJSX.MedItem & JSXBase.HTMLAttributes<HTMLMedItemElement>;
             "med-list": LocalJSX.MedList & JSXBase.HTMLAttributes<HTMLMedListElement>;
             "med-list-item": LocalJSX.MedListItem & JSXBase.HTMLAttributes<HTMLMedListItemElement>;
             "med-list-item-accordion": LocalJSX.MedListItemAccordion & JSXBase.HTMLAttributes<HTMLMedListItemAccordionElement>;
-            "med-lista": LocalJSX.MedLista & JSXBase.HTMLAttributes<HTMLMedListaElement>;
-            "med-nav": LocalJSX.MedNav & JSXBase.HTMLAttributes<HTMLMedNavElement>;
-            "med-nav-accordion": LocalJSX.MedNavAccordion & JSXBase.HTMLAttributes<HTMLMedNavAccordionElement>;
-            "med-nav-item": LocalJSX.MedNavItem & JSXBase.HTMLAttributes<HTMLMedNavItemElement>;
-            "med-nav-simple": LocalJSX.MedNavSimple & JSXBase.HTMLAttributes<HTMLMedNavSimpleElement>;
             "med-navbar": LocalJSX.MedNavbar & JSXBase.HTMLAttributes<HTMLMedNavbarElement>;
             "med-offline": LocalJSX.MedOffline & JSXBase.HTMLAttributes<HTMLMedOfflineElement>;
             "med-option": LocalJSX.MedOption & JSXBase.HTMLAttributes<HTMLMedOptionElement>;
-            "med-piechart": LocalJSX.MedPiechart & JSXBase.HTMLAttributes<HTMLMedPiechartElement>;
             "med-plusminus": LocalJSX.MedPlusminus & JSXBase.HTMLAttributes<HTMLMedPlusminusElement>;
-            "med-question": LocalJSX.MedQuestion & JSXBase.HTMLAttributes<HTMLMedQuestionElement>;
-            "med-rate-aula": LocalJSX.MedRateAula & JSXBase.HTMLAttributes<HTMLMedRateAulaElement>;
             "med-rate-bar": LocalJSX.MedRateBar & JSXBase.HTMLAttributes<HTMLMedRateBarElement>;
             "med-rate-like": LocalJSX.MedRateLike & JSXBase.HTMLAttributes<HTMLMedRateLikeElement>;
-            "med-rating": LocalJSX.MedRating & JSXBase.HTMLAttributes<HTMLMedRatingElement>;
-            "med-search-bar": LocalJSX.MedSearchBar & JSXBase.HTMLAttributes<HTMLMedSearchBarElement>;
-            "med-segment": LocalJSX.MedSegment & JSXBase.HTMLAttributes<HTMLMedSegmentElement>;
-            "med-semana": LocalJSX.MedSemana & JSXBase.HTMLAttributes<HTMLMedSemanaElement>;
-            "med-semanas": LocalJSX.MedSemanas & JSXBase.HTMLAttributes<HTMLMedSemanasElement>;
-            "med-tab-button": LocalJSX.MedTabButton & JSXBase.HTMLAttributes<HTMLMedTabButtonElement>;
-            "med-themes": LocalJSX.MedThemes & JSXBase.HTMLAttributes<HTMLMedThemesElement>;
             "med-tiles": LocalJSX.MedTiles & JSXBase.HTMLAttributes<HTMLMedTilesElement>;
             "med-toggle": LocalJSX.MedToggle & JSXBase.HTMLAttributes<HTMLMedToggleElement>;
             "med-toolbar": LocalJSX.MedToolbar & JSXBase.HTMLAttributes<HTMLMedToolbarElement>;
             "med-tooltip": LocalJSX.MedTooltip & JSXBase.HTMLAttributes<HTMLMedTooltipElement>;
             "med-type": LocalJSX.MedType & JSXBase.HTMLAttributes<HTMLMedTypeElement>;
             "med-video-thumbnail": LocalJSX.MedVideoThumbnail & JSXBase.HTMLAttributes<HTMLMedVideoThumbnailElement>;
-            "med-vote": LocalJSX.MedVote & JSXBase.HTMLAttributes<HTMLMedVoteElement>;
-            "medreader-pro-modal": LocalJSX.MedreaderProModal & JSXBase.HTMLAttributes<HTMLMedreaderProModalElement>;
-            "realizacoes-modal": LocalJSX.RealizacoesModal & JSXBase.HTMLAttributes<HTMLRealizacoesModalElement>;
-            "select-test": LocalJSX.SelectTest & JSXBase.HTMLAttributes<HTMLSelectTestElement>;
-            "sheet-content-test": LocalJSX.SheetContentTest & JSXBase.HTMLAttributes<HTMLSheetContentTestElement>;
-            "sheet-ia": LocalJSX.SheetIa & JSXBase.HTMLAttributes<HTMLSheetIaElement>;
-            "sheet-test": LocalJSX.SheetTest & JSXBase.HTMLAttributes<HTMLSheetTestElement>;
-            "simulado-modal": LocalJSX.SimuladoModal & JSXBase.HTMLAttributes<HTMLSimuladoModalElement>;
-            "snackbar-test": LocalJSX.SnackbarTest & JSXBase.HTMLAttributes<HTMLSnackbarTestElement>;
-            "text-area-modal": LocalJSX.TextAreaModal & JSXBase.HTMLAttributes<HTMLTextAreaModalElement>;
             "tp-accordion": LocalJSX.TpAccordion & JSXBase.HTMLAttributes<HTMLTpAccordionElement>;
             "tp-accordion-group": LocalJSX.TpAccordionGroup & JSXBase.HTMLAttributes<HTMLTpAccordionGroupElement>;
             "tp-chart-bar": LocalJSX.TpChartBar & JSXBase.HTMLAttributes<HTMLTpChartBarElement>;
             "tp-input-container": LocalJSX.TpInputContainer & JSXBase.HTMLAttributes<HTMLTpInputContainerElement>;
             "tp-loader": LocalJSX.TpLoader & JSXBase.HTMLAttributes<HTMLTpLoaderElement>;
-            "tutorial-modal": LocalJSX.TutorialModal & JSXBase.HTMLAttributes<HTMLTutorialModalElement>;
-            "unidades-modal": LocalJSX.UnidadesModal & JSXBase.HTMLAttributes<HTMLUnidadesModalElement>;
         }
     }
 }

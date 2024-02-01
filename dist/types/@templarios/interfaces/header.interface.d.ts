@@ -1,3 +1,3 @@
 export interface headerResizeEventDetail {
-  height: number;
+    height: number;
 }

@@ -1,4 +1,4 @@
 export interface TpChartBarItem {
-  color: string;
-  value: number;
+    color: string;
+    value: number;
 }

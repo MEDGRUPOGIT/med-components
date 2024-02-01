@@ -1,4 +1,0 @@
-/*!
- * (C) Ionic http://ionicframework.com - MIT License
- */
-import{r as i,i as o,H as s}from"./p-d73a117d.js";const e=class{constructor(o){i(this,o)}render(){return o(s,null,o("ion-header",{class:"tp-dialog-header"},o("ion-button",{mode:"ios","icon-only":!0,fill:"clear","ds-size":"xxs"},o("ion-icon",{slot:"icon-only",class:"med-icon",name:"med-fechar"}))),o("div",{class:"tp-dialog-container"},o("med-type",{class:"tp-dialog-heading",token:"h20x"},"Lorem ipsum dolor sit."),o("med-type",{"ds-color":"neutral-8",token:"p14x"},"Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore corrupti cumque adipisci, voluptatibus facilis odio tenetur. In deleniti aliquam, unde facilis reiciendis suscipit laudantium numquam!"),o("div",{class:"tp-dialog-footer"},o("ion-button",{mode:"ios",fill:"outline","ds-size":"sm"},"Fechar"),o("ion-button",{mode:"ios","ds-size":"sm"},"Salvar"))))}};e.style=".sc-dialog-test-h{display:block;border-radius:0}";export{e as dialog_test}

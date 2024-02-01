@@ -1,3 +1,3 @@
 export type CssClassMap = {
-  [className: string]: boolean;
+    [className: string]: boolean;
 };

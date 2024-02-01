@@ -1,4 +1,4 @@
 export declare enum RateStatus {
-  LIKE = "like",
-  DISLIKE = "dislike"
+    LIKE = "like",
+    DISLIKE = "dislike"
 }

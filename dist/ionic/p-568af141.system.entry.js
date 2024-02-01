@@ -1,4 +1,0 @@
-/*!
- * (C) Ionic http://ionicframework.com - MIT License
- */
-System.register(["./p-9eb92442.system.js"],(function(t){"use strict";var s,n,e;return{setters:[function(t){s=t.r;n=t.i;e=t.H}],execute:function(){var r=".sc-snackbar-test-h{display:block;border-radius:0}";var a=t("snackbar_test",function(){function t(t){s(this,t)}t.prototype.render=function(){return n(e,null,n("div",{class:"tp-snackbar__container"},n("ion-avatar",{"ds-size":"xxs"}),n("med-type",{class:"tp-snackbar__text",token:"p16b"},"1.341 alunos fizeram o simulado"),n("ion-button",{class:"tp-snackbar__button",mode:"ios","icon-only":true,fill:"clear","ds-size":"xxs"},n("ion-icon",{slot:"icon-only",class:"med-icon",name:"med-fechar"}))))};return t}());a.style=r}}}));

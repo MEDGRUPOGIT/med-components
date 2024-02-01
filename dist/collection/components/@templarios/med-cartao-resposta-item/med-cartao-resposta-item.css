@@ -1,0 +1,186 @@
+/**
+ * Convert a font size to a dynamic font size.
+ * Fonts that participate in Dynamic Type should use
+ * dynamic font sizes.
+ * @param size - The initial font size including the unit (i.e. px or pt)
+ * @param unit (optional) - The unit to convert to. Use this if you want to
+ * convert to a unit other than $baselineUnit.
+ */
+/**
+ * Convert a font size to a dynamic font size but impose
+ * a maximum font size.
+ * @param size - The initial font size including the unit (i.e. px or pt)
+ * @param maxScale - The maximum scale of the font (i.e. 2.5 for a maximum 250% scale).
+ * @param unit (optional) - The unit to convert the initial font size to. Use this if you want to
+ * convert to a unit other than $baselineUnit.
+ */
+/**
+ * Convert a font size to a dynamic font size but impose
+ * a minimum font size.
+ * @param size - The initial font size including the unit (i.e. px or pt)
+ * @param minScale - The minimum scale of the font (i.e. 0.8 for a minimum 80% scale).
+ * @param unit (optional) - The unit to convert the initial font size to. Use this if you want to
+ * convert to a unit other than $baselineUnit.
+ */
+/**
+ * Convert a font size to a dynamic font size but impose
+ * maximum and minimum font sizes.
+ * @param size - The initial font size including the unit (i.e. px or pt)
+ * @param minScale - The minimum scale of the font (i.e. 0.8 for a minimum 80% scale).
+ * @param maxScale - The maximum scale of the font (i.e. 2.5 for a maximum 250% scale).
+ * @param unit (optional) - The unit to convert the initial font size to. Use this if you want to
+ * convert to a unit other than $baselineUnit.
+ */
+/**
+ * A heuristic that applies CSS to tablet
+ * viewports.
+ *
+ * Usage:
+ * @include tablet-viewport() {
+ *   :host {
+ *     background-color: green;
+ *   }
+ * }
+ */
+/**
+ * A heuristic that applies CSS to mobile
+ * viewports (i.e. phones, not tablets).
+ *
+ * Usage:
+ * @include mobile-viewport() {
+ *   :host {
+ *     background-color: blue;
+ *   }
+ * }
+ */
+:host {
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: hsl(var(--med-color-neutral-3));
+  --color: hsl(var(--med-color-neutral-6));
+  --spacing: 4px;
+  --background: transparent;
+  --font-size: 20px;
+  --font-weight: 400;
+  --line-height: 100%;
+  --icon-opacity: 0.5;
+  border-width: var(--border-width);
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+  background: var(--background);
+  padding: 0;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  width: 10vw;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1199.98px) {
+  :host {
+    width: 10vw;
+    height: 10vw;
+  }
+}
+@media (max-width: 991.98px) {
+  :host {
+    width: 13vw;
+    height: 13vw;
+  }
+}
+@media (max-width: 767.98px) {
+  :host {
+    width: 14vw;
+    height: 14vw;
+  }
+}
+@media (max-width: 575.98px) {
+  :host {
+    width: 17vw;
+    height: 17vw;
+  }
+}
+@media (max-width: 379.98px) {
+  :host {
+    width: 19vw;
+    height: 19vw;
+  }
+}
+:host .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+:host .item-button {
+  color: var(--color);
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+slot[name] {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  display: flex;
+  opacity: var(--icon-opacity);
+}
+
+:host slot[name=icon-left-top] {
+  top: 0;
+  left: 0;
+}
+
+:host slot[name=icon-right-top] {
+  top: 0;
+  right: 0;
+}
+
+:host slot[name=icon-left-bottom] {
+  bottom: 0;
+  left: 0;
+}
+
+:host slot[name=icon-right-bottom] {
+  bottom: 0;
+  right: 0;
+}
+
+@media (any-hover: hover) {
+  :host(:hover) {
+    --background: hsl(var(--med-color-neutral-10), 0.16);
+    --border-color: hsl(var(--med-color-neutral-10));
+  }
+}
+:host(.med-cartao-resposta-item--anulada) .item-button {
+  text-decoration: line-through;
+}
+
+:host(.med-cartao-resposta-item--ativa) {
+  --background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(50, 210, 243, 0.3) 100%);
+  --font-weight: 700;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #32d2f3;
+}
+
+:host(.med-cartao-resposta-item--impressa) {
+  --background: repeating-linear-gradient(-45deg, #222, #222 2px, #333 2px, #333 4px) !important;
+}
+
+:host(.med-color) {
+  --color: hsl(var(--med-color-3));
+}
+
+:host(.med-color-neutral) {
+  --color: hsl(var(--med-color-neutral));
+}
+
+:host(.med-color-feedback) {
+  --color: hsl(var(--med-color-feedback));
+}

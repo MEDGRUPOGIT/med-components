@@ -1,4 +1,0 @@
-/*!
- * (C) Ionic http://ionicframework.com - MIT License
- */
-const o="ion-focused",t=["Tab","ArrowDown","Space","Escape"," ","Shift","Enter","ArrowLeft","ArrowRight","ArrowUp"],c=()=>{let c=[],e=!0;const n=document,r=t=>{c.forEach((t=>t.classList.remove(o))),t.forEach((t=>t.classList.add(o))),c=t},s=()=>{e=!1,r([])};n.addEventListener("keydown",(o=>{e=t.includes(o.key),e||r([])})),n.addEventListener("focusin",(o=>{if(e&&o.composedPath){const t=o.composedPath().filter((o=>!!o.classList&&o.classList.contains("ion-focusable")));r(t)}})),n.addEventListener("focusout",(()=>{n.activeElement===n.body&&r([])})),n.addEventListener("touchstart",s),n.addEventListener("mousedown",s)};export{c as startFocusVisible}

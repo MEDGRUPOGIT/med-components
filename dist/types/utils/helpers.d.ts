@@ -1,5 +1,5 @@
-import { EventEmitter } from "../stencil-public-runtime";
-import { Side } from "../interface";
+import type { EventEmitter } from '../stencil-public-runtime';
+import type { Side } from '../components/menu/menu-interface';
 export declare const transitionEndAsync: (el: HTMLElement | null, expectedDuration?: number) => Promise<unknown>;
 /**
  * Waits for a component to be ready for
@@ -15,6 +15,15 @@ export declare const transitionEndAsync: (el: HTMLElement | null, expectedDurati
  */
 export declare const componentOnReady: (el: any, callback: any) => void;
 /**
+ * This functions checks if a Stencil component is using
+ * the lazy loaded build of Stencil. Returns `true` if
+ * the component is lazy loaded. Returns `false` otherwise.
+ */
+export declare const hasLazyBuild: (stencilEl: HTMLElement) => boolean;
+export type Attributes = {
+    [key: string]: any;
+};
+/**
  * Elements inside of web components sometimes need to inherit global attributes
  * set on the host. For example, the inner input in `ion-input` should inherit
  * the `title` attribute that developers set directly on `ion-input`. This
@@ -24,9 +33,15 @@ export declare const componentOnReady: (el: any, callback: any) => void;
  * This does not need to be reactive as changing attributes on the host element
  * does not trigger a re-render.
  */
-export declare const inheritAttributes: (el: HTMLElement, attributes?: string[]) => {
-  [k: string]: any;
-};
+export declare const inheritAttributes: (el: HTMLElement, attributes?: string[]) => Attributes;
+/**
+ * Returns an array of aria attributes that should be copied from
+ * the shadow host element to a target within the light DOM.
+ * @param el The element that the attributes should be copied from.
+ * @param ignoreList The list of aria-attributes to ignore reflecting and removing from the host.
+ * Use this in instances where we manually specify aria attributes on the `<Host>` element.
+ */
+export declare const inheritAriaAttributes: (el: HTMLElement, ignoreList?: string[]) => Attributes;
 export declare const addEventListener: (el: any, eventName: string, callback: any, opts?: any) => any;
 export declare const removeEventListener: (el: any, eventName: string, callback: any, opts?: any) => any;
 /**
@@ -43,9 +58,10 @@ export declare const getElementRoot: (el: HTMLElement, fallback?: HTMLElement) =
  * Patched version of requestAnimationFrame that avoids ngzone
  * Use only when you know ngzone should not run
  */
-export declare const raf: (h: any) => any;
+export declare const raf: (h: FrameRequestCallback) => number;
 export declare const hasShadowDom: (el: HTMLElement) => boolean;
 export declare const findItemLabel: (componentEl: HTMLElement) => HTMLIonLabelElement | null;
+export declare const focusElement: (el: HTMLElement) => void;
 /**
  * This method is used for Ionic's input components that use Shadow DOM. In
  * order to properly label the inputs to work with screen readers, we need
@@ -60,9 +76,9 @@ export declare const findItemLabel: (componentEl: HTMLElement) => HTMLIonLabelEl
  * @param inputId The unique identifier for the input
  */
 export declare const getAriaLabel: (componentEl: HTMLElement, inputId: string) => {
-  label: Element | null;
-  labelId: string;
-  labelText: string | null | undefined;
+    label: Element | null;
+    labelId: string;
+    labelText: string | null | undefined;
 };
 /**
  * This method is used to add a hidden input to a host element that contains
@@ -81,8 +97,8 @@ export declare const clamp: (min: number, n: number, max: number) => number;
 export declare const assert: (actual: any, reason: string) => void;
 export declare const now: (ev: UIEvent) => number;
 export declare const pointerCoord: (ev: any) => {
-  x: number;
-  y: number;
+    x: number;
+    y: number;
 };
 /**
  * @hidden
@@ -95,3 +111,15 @@ export declare const isEndSide: (side: Side) => boolean;
 export declare const deferEvent: (event: EventEmitter) => EventEmitter;
 export declare const debounceEvent: (event: EventEmitter, wait: number) => EventEmitter;
 export declare const debounce: (func: (...args: any[]) => void, wait?: number) => (...args: any[]) => any;
+/**
+ * Check whether the two string maps are shallow equal.
+ *
+ * undefined is treated as an empty map.
+ *
+ * @returns whether the keys are the same and the values are shallow equal.
+ */
+export declare const shallowEqualStringMap: (map1: {
+    [k: string]: any;
+} | undefined, map2: {
+    [k: string]: any;
+} | undefined) => boolean;

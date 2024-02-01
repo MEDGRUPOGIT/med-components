@@ -5,39 +5,39 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index$1 = require('./index-a17b061b.js');
-const color = require('./color-7939264c.js');
+const index$1 = require('./index-71f41461.js');
+const color = require('./color-2d957fd3.js');
 
 const medHeaderCss = ":host{--background:hsl(var(--med-color-neutral-1))}:host{background:var(--background);display:block;padding-top:var(--ion-safe-area-top)}";
 
 const MedHeader = class {
-  constructor(hostRef) {
-    index$1.registerInstance(this, hostRef);
-    this.medResize = index$1.createEvent(this, "medResize", 7);
-    this.hostHeight = 0;
-  }
-  componentDidLoad() {
-    this.setSize();
-  }
-  disconnectedCallback() {
-    if (this.hostResizeObserver) {
-      this.hostResizeObserver.disconnect();
+    constructor(hostRef) {
+        index$1.registerInstance(this, hostRef);
+        this.medResize = index$1.createEvent(this, "medResize", 7);
+        this.hostHeight = 0;
     }
-  }
-  setSize() {
-    this.hostResizeObserver = new ResizeObserver(() => {
-      let newHostHeight = Number(this.el.getBoundingClientRect().height);
-      if (newHostHeight !== this.hostHeight) {
-        this.medResize.emit({ height: newHostHeight });
-        this.hostHeight = newHostHeight;
-      }
-    });
-    this.hostResizeObserver.observe(this.el);
-  }
-  render() {
-    return (index$1.h(index$1.Host, { "from-stencil": true }, index$1.h("slot", { name: "navbar" }), index$1.h("slot", { name: "toolbar" }), index$1.h("slot", { name: "progress" }), index$1.h("slot", { name: "auxiliar" })));
-  }
-  get el() { return index$1.getElement(this); }
+    componentDidLoad() {
+        this.setSize();
+    }
+    disconnectedCallback() {
+        if (this.hostResizeObserver) {
+            this.hostResizeObserver.disconnect();
+        }
+    }
+    setSize() {
+        this.hostResizeObserver = new ResizeObserver(() => {
+            let newHostHeight = Number(this.el.getBoundingClientRect().height);
+            if (newHostHeight !== this.hostHeight) {
+                this.medResize.emit({ height: newHostHeight });
+                this.hostHeight = newHostHeight;
+            }
+        });
+        this.hostResizeObserver.observe(this.el);
+    }
+    render() {
+        return (index$1.h(index$1.Host, { "from-stencil": true }, index$1.h("slot", { name: "navbar" }), index$1.h("slot", { name: "toolbar" }), index$1.h("slot", { name: "progress" }), index$1.h("slot", { name: "auxiliar" })));
+    }
+    get el() { return index$1.getElement(this); }
 };
 MedHeader.style = medHeaderCss;
 
@@ -971,67 +971,67 @@ var index = (function () {
 const medNavbarCss = ":host{--background:hsl(var(--med-color-neutral-1));--main-color:hsl(var(--med-color-neutral-10));--subtitle-color:hsl(var(--med-color-brand-4));--height:48px}:host(.med-navbar){display:block}:host(.med-navbar) .med-navbar__header{background:var(--background)}:host(.med-navbar) .med-navbar__container{padding-left:16px;padding-right:16px;padding-bottom:0;position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-sizing:border-box;box-sizing:border-box;min-height:var(--height)}:host(.med-navbar) .med-navbar__left,:host(.med-navbar) .med-navbar__right{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}:host(.med-navbar) .med-navbar__left{-ms-flex-pack:start;justify-content:flex-start}:host(.med-navbar) .med-navbar__right{-ms-flex-pack:end;justify-content:flex-end}:host(.med-navbar) .med-navbar__center{padding-left:var(--padding-left);padding-right:var(--padding-right);padding-top:var(--spacing-stack-xxxs);padding-bottom:var(--spacing-stack-xxxs);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;-ms-flex-direction:column;flex-direction:column;text-align:center;width:100%}:host(.med-navbar) ::slotted(*){margin:0 !important;padding:0 !important}:host(.med-navbar) ::slotted([slot=left]){color:var(--main-color);margin-right:16px !important;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:start;justify-content:flex-start}:host(.med-navbar) ::slotted([slot=title]){--color:var(--main-color);--font-size:16px;--font-weight:600;--line-height:16px;color:var(--main-color);font-size:16px;font-weight:600;line-height:16px;display:block}:host(.med-navbar) ::slotted([slot=subtitle]){--color:var(--subtitle-color);--font-size:12px;--font-weight:400;--line-height:16px;color:var(--subtitle-color);font-size:12px;font-weight:400;line-height:16px;display:block}:host(.med-navbar) ::slotted([slot=right]){color:var(--main-color);margin-left:16px !important;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:end;justify-content:flex-end}:host(.med-color) ::slotted([slot=subtitle]){--subtitle-color:hsl(var(--med-color-4))}:host(.med-color-neutral) ::slotted([slot=subtitle]){--subtitle-color:hsl(var(--med-color-neutral))}:host(.med-color-feedback) ::slotted([slot=subtitle]){--subtitle-color:hsl(var(--med-color-feedback))}:host(.med-navbar--transparent){--background:transparent}";
 
 const MedNavbar = class {
-  constructor(hostRef) {
-    index$1.registerInstance(this, hostRef);
-    this.dsColor = undefined;
-    this.dsName = undefined;
-  }
-  componentDidLoad() {
-    this.setSize();
-  }
-  disconnectedCallback() {
-    if (this.sidesResizeObserver) {
-      this.sidesResizeObserver.disconnect();
+    constructor(hostRef) {
+        index$1.registerInstance(this, hostRef);
+        this.dsColor = undefined;
+        this.dsName = undefined;
     }
-  }
-  setSize() {
-    this.sidesResizeObserver = new index((entries) => {
-      for (let entry of entries) {
-        const rightWidth = Number(this.rightEl.getBoundingClientRect().width);
-        const leftWidth = Number(this.leftEl.getBoundingClientRect().width);
-        const leftDiff = entry.contentRect.width - rightWidth;
-        const rightDiff = entry.contentRect.width - leftWidth;
-        let marginLeft = 0;
-        let marginRight = 0;
-        if (rightWidth !== leftWidth) {
-          if (entry.target.id === 'left') {
-            if (leftDiff > 0) {
-              marginRight = leftDiff;
-            }
-            else {
-              marginLeft = rightDiff - leftDiff;
-              if (marginLeft < 0) {
-                marginLeft *= -1;
-              }
-            }
-          }
-          else if (entry.target.id === 'right') {
-            if (rightDiff > 0) {
-              marginLeft = rightDiff;
-            }
-            else {
-              marginRight = rightDiff - leftDiff;
-              if (marginRight < 0) {
-                marginRight *= -1;
-              }
-            }
-          }
+    componentDidLoad() {
+        this.setSize();
+    }
+    disconnectedCallback() {
+        if (this.sidesResizeObserver) {
+            this.sidesResizeObserver.disconnect();
         }
-        this.centerEl.style.setProperty('--padding-left', `${marginLeft}px`);
-        this.centerEl.style.setProperty('--padding-right', `${marginRight}px`);
-      }
-    });
-    this.sidesResizeObserver.observe(this.leftEl);
-    this.sidesResizeObserver.observe(this.rightEl);
-  }
-  render() {
-    const { dsColor, dsName } = this;
-    return (index$1.h(index$1.Host, { "from-stencil": true, class: color.generateMedColor(dsColor, {
-        'med-navbar': true,
-        [`med-navbar--${dsName}`]: dsName !== undefined,
-      }) }, index$1.h("header", { class: "med-navbar__header" }, index$1.h("slot", { name: "top" }), index$1.h("div", { class: "med-navbar__container" }, index$1.h("div", { id: "left", class: "med-navbar__left", ref: (el) => this.leftEl = el }, index$1.h("slot", { name: "left" })), index$1.h("div", { class: "med-navbar__center", ref: (el) => this.centerEl = el }, index$1.h("slot", { name: "title" }), index$1.h("slot", { name: "subtitle" })), index$1.h("div", { id: "right", class: "med-navbar__right", ref: (el) => this.rightEl = el }, index$1.h("slot", { name: "right" }))))));
-  }
-  get el() { return index$1.getElement(this); }
+    }
+    setSize() {
+        this.sidesResizeObserver = new index((entries) => {
+            for (let entry of entries) {
+                const rightWidth = Number(this.rightEl.getBoundingClientRect().width);
+                const leftWidth = Number(this.leftEl.getBoundingClientRect().width);
+                const leftDiff = entry.contentRect.width - rightWidth;
+                const rightDiff = entry.contentRect.width - leftWidth;
+                let marginLeft = 0;
+                let marginRight = 0;
+                if (rightWidth !== leftWidth) {
+                    if (entry.target.id === 'left') {
+                        if (leftDiff > 0) {
+                            marginRight = leftDiff;
+                        }
+                        else {
+                            marginLeft = rightDiff - leftDiff;
+                            if (marginLeft < 0) {
+                                marginLeft *= -1;
+                            }
+                        }
+                    }
+                    else if (entry.target.id === 'right') {
+                        if (rightDiff > 0) {
+                            marginLeft = rightDiff;
+                        }
+                        else {
+                            marginRight = rightDiff - leftDiff;
+                            if (marginRight < 0) {
+                                marginRight *= -1;
+                            }
+                        }
+                    }
+                }
+                this.centerEl.style.setProperty('--padding-left', `${marginLeft}px`);
+                this.centerEl.style.setProperty('--padding-right', `${marginRight}px`);
+            }
+        });
+        this.sidesResizeObserver.observe(this.leftEl);
+        this.sidesResizeObserver.observe(this.rightEl);
+    }
+    render() {
+        const { dsColor, dsName } = this;
+        return (index$1.h(index$1.Host, { "from-stencil": true, class: color.generateMedColor(dsColor, {
+                'med-navbar': true,
+                [`med-navbar--${dsName}`]: dsName !== undefined,
+            }) }, index$1.h("header", { class: "med-navbar__header" }, index$1.h("slot", { name: "top" }), index$1.h("div", { class: "med-navbar__container" }, index$1.h("div", { id: "left", class: "med-navbar__left", ref: (el) => this.leftEl = el }, index$1.h("slot", { name: "left" })), index$1.h("div", { class: "med-navbar__center", ref: (el) => this.centerEl = el }, index$1.h("slot", { name: "title" }), index$1.h("slot", { name: "subtitle" })), index$1.h("div", { id: "right", class: "med-navbar__right", ref: (el) => this.rightEl = el }, index$1.h("slot", { name: "right" }))))));
+    }
+    get el() { return index$1.getElement(this); }
 };
 MedNavbar.style = medNavbarCss;
 

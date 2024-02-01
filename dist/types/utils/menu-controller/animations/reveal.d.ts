@@ -1,4 +1,5 @@
-import { Animation, MenuI } from '../../../interface';
+import type { MenuI } from '../../../components/menu/menu-interface';
+import type { Animation } from '../../animation/animation-interface';
 /**
  * Menu Reveal Type
  * The content slides over to reveal the menu underneath.

@@ -1,0 +1,30 @@
+import { EventEmitter } from '../../../stencil-public-runtime';
+import { MedColor } from '../../../@templarios/types/color.type';
+import { MedAlternativasBase } from '../med-alternativas/med-alternativas-base';
+import { MedAlternativaInterface, MedAlternativasInternoInterface } from '../../../@templarios/interfaces/alternativas.interface';
+export declare class MedAlternativasA implements MedAlternativasInternoInterface {
+    hostElement: HTMLElement;
+    dsSkin?: any;
+    dsSkinConfig?: any;
+    dsColor?: MedColor;
+    alternativas: MedAlternativaInterface | any;
+    keyAlternativa: string;
+    keyEnunciado: string;
+    keyImagem: string;
+    keyPorcentagem: string;
+    keyRiscada: string;
+    respostaCorreta: string;
+    mostraResposta: boolean;
+    alternativaSelecionada: string;
+    permiteRiscar: boolean;
+    permiteDesmarcar: boolean;
+    medChange: EventEmitter<MedAlternativaInterface>;
+    medRiscada: EventEmitter<MedAlternativaInterface>;
+    medGalleryRequest: EventEmitter<MedAlternativaInterface>;
+    permiteAlterar: boolean;
+    riscarAtivoIndice: number;
+    baseClass: MedAlternativasBase;
+    handleClick(event: any): void;
+    onAlternativasChanged(newValue: MedAlternativaInterface | any, oldValue: MedAlternativaInterface | any): void;
+    render(): any;
+}

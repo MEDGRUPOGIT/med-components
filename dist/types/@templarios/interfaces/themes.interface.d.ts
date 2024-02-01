@@ -1,5 +1,5 @@
 export interface MedTema {
-  value?: string;
-  label?: string;
-  cssClass?: string;
+    value?: string;
+    label?: string;
+    cssClass?: string;
 }

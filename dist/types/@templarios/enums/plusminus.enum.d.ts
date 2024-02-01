@@ -1,4 +1,4 @@
 export declare enum PlusMinusStatus {
-  MINUS = "minus",
-  PLUS = "plus"
+    MINUS = "minus",
+    PLUS = "plus"
 }

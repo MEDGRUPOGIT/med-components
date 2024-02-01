@@ -74,6 +74,7 @@ ion-content {
   .container--resumo-simulado {
     height: calc(100vh - 128px);
   }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
     padding: 24px;

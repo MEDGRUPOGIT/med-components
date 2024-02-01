@@ -5,23 +5,23 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-31ae4345.js');
-const theme = require('./theme-cef66eda.js');
+const index = require('./index-71f41461.js');
+const theme = require('./theme-d1c573d2.js');
+const ionicGlobal = require('./ionic-global-c70c3fb5.js');
 
 const textCss = ":host(.ion-color){color:var(--ion-color-base)}";
 
 const Text = class {
-  constructor(hostRef) {
-    index.registerInstance(this, hostRef);
-    this.color = undefined;
-  }
-  render() {
-    const mode = ionicGlobal.getIonMode(this);
-    return (index.h(index.Host, { class: theme.createColorClasses(this.color, {
-        [mode]: true,
-      }) }, index.h("slot", null)));
-  }
+    constructor(hostRef) {
+        index.registerInstance(this, hostRef);
+        this.color = undefined;
+    }
+    render() {
+        const mode = ionicGlobal.getIonMode(this);
+        return (index.h(index.Host, { class: theme.createColorClasses(this.color, {
+                [mode]: true,
+            }) }, index.h("slot", null)));
+    }
 };
 Text.style = textCss;
 
