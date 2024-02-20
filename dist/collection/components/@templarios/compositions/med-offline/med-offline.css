@@ -1,5 +1,6 @@
 :host {
   --z-index: 1000;
+  --padding-y: 0 24px;
   display: block;
   width: 100vw;
   height: 100vh;
@@ -7,7 +8,7 @@
   z-index: var(--z-index);
 }
 :host .wrapper {
-  background: hsl(var(--med-color-neutral-1), 0.8);
+  background: hsl(var(--med-color-neutral-1));
   position: fixed;
   width: 100%;
   height: 100%;
@@ -16,34 +17,44 @@
 :host .wrapper__content {
   pointer-events: none;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 48px - 72px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: var(--padding-y);
 }
-:host .icon {
+:host .wrapper__icon {
   width: 48px;
   height: 48px;
   margin-bottom: 24px;
-}
-:host .icon-path {
-  stroke: hsl(var(--med-color-neutral-10));
+  stroke: hsl(var(--med-color-neutral-3));
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
 }
 :host .title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  color: hsl(var(--med-color-neutral-10));
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: var(--padding-y);
+}
+:host .subtitle {
   font-size: 16px;
   font-weight: 700;
   line-height: 100%;
   color: hsl(var(--med-color-neutral-10));
   margin-bottom: 8px;
+  text-align: center;
 }
 :host .text {
   font-size: 16px;
   font-weight: 400;
   line-height: 100%;
   color: hsl(var(--med-color-neutral-10));
+  text-align: center;
 }

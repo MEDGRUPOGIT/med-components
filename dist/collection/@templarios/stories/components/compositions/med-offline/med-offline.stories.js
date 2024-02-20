@@ -12,7 +12,7 @@ const Template = ({}) => {
       <div class="storybook-only__container">
 
         <!-- component -->
-          <med-offline ></med-offline>
+          <med-offline></med-offline>
         <!-- component -->
 
       <ion-content>

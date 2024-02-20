@@ -14962,7 +14962,6 @@ class MedAlternativasBase {
     if (alternativa.Riscada && this.parent.permiteRiscar) {
       return;
     }
-    console.log('permiteDesmarcar..........', this.parent.permiteDesmarcar);
     if (this.parent.alternativaSelecionada === alternativa.Alternativa && this.parent.permiteDesmarcar) {
       this.parent.alternativaSelecionada = '';
       return (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(Object.assign(Object.assign({}, alternativa), { Alternativa: '' }));
@@ -17959,27 +17958,35 @@ class MedNavbar {
   }; }
 }
 
-const medOfflineCss = ".sc-med-offline-h{--z-index:1000;display:block;width:100vw;height:100vh;position:fixed;z-index:var(--z-index)}.sc-med-offline-h .wrapper.sc-med-offline{background:hsl(var(--med-color-neutral-1), 0.8);position:fixed;width:100%;height:100%;top:0px}.sc-med-offline-h .wrapper__content.sc-med-offline{pointer-events:none;width:100%;height:calc(100% - 50px);display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-ms-flex-direction:column;flex-direction:column}.sc-med-offline-h .icon.sc-med-offline{width:48px;height:48px;margin-bottom:24px}.sc-med-offline-h .icon-path.sc-med-offline{stroke:hsl(var(--med-color-neutral-10));stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}.sc-med-offline-h .title.sc-med-offline{font-size:16px;font-weight:700;line-height:100%;color:hsl(var(--med-color-neutral-10));margin-bottom:8px}.sc-med-offline-h .text.sc-med-offline{font-size:16px;font-weight:400;line-height:100%;color:hsl(var(--med-color-neutral-10))}";
+const medOfflineCss = ".sc-med-offline-h{--z-index:1000;--padding-y:0 24px;display:block;width:100vw;height:100vh;position:fixed;z-index:var(--z-index)}.sc-med-offline-h .wrapper.sc-med-offline{background:hsl(var(--med-color-neutral-1));position:fixed;width:100%;height:100%;top:0px}.sc-med-offline-h .wrapper__content.sc-med-offline{pointer-events:none;width:100%;height:calc(100% - 48px - 72px);display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-ms-flex-direction:column;flex-direction:column;padding:var(--padding-y)}.sc-med-offline-h .wrapper__icon.sc-med-offline{width:48px;height:48px;margin-bottom:24px;stroke:hsl(var(--med-color-neutral-3));stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}.sc-med-offline-h .title.sc-med-offline{font-size:24px;font-weight:700;line-height:100%;color:hsl(var(--med-color-neutral-10));margin-top:24px;margin-bottom:24px;padding:var(--padding-y)}.sc-med-offline-h .subtitle.sc-med-offline{font-size:16px;font-weight:700;line-height:100%;color:hsl(var(--med-color-neutral-10));margin-bottom:8px;text-align:center}.sc-med-offline-h .text.sc-med-offline{font-size:16px;font-weight:400;line-height:100%;color:hsl(var(--med-color-neutral-10));text-align:center}";
 
 class MedOffline {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.medClick = createEvent(this, "medClick", 7);
+    this.titulo = 'Página Indisponível';
+    this.subtitulo = 'Você está offline';
+    this.texto = 'Conecte-se à internet para visualizar esse conteúdo';
   }
   onClick() {
     this.medClick.emit();
   }
   render() {
-    return (hAsync(Host, { "from-stencil": true }, hAsync("div", { class: "wrapper" }, hAsync("med-header", null, hAsync("med-navbar", { "ds-name": "transparent", slot: "navbar" }, hAsync("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xs", slot: "left", onClick: () => this.onClick() }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-esquerda" })))), hAsync("div", { class: "wrapper__content" }, hAsync("ion-icon", { class: "med-icon med-icon--lg icon-path", name: "med-offline2" }), hAsync("p", { class: "title" }, "Voc\u00EA est\u00E1 offline"), hAsync("p", { class: "text" }, "Conecte-se \u00E0 internet para visualizar esse conte\u00FAdo")))));
+    const { titulo, subtitulo, texto } = this;
+    return (hAsync(Host, { "from-stencil": true }, hAsync("div", { class: "wrapper" }, hAsync("med-header", null, hAsync("med-navbar", { "ds-name": "transparent", slot: "navbar" }, hAsync("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xs", slot: "left", onClick: () => this.onClick() }, hAsync("ion-icon", { class: "med-icon", slot: "icon-only", name: "med-esquerda" })))), hAsync("h1", { class: "title" }, titulo), hAsync("div", { class: "wrapper__content" }, hAsync("ion-icon", { class: "med-icon med-icon--lg wrapper__icon", name: "med-offline2" }), hAsync("p", { class: "subtitle" }, subtitulo), hAsync("p", { class: "text" }, texto)))));
   }
   static get style() { return medOfflineCss; }
   static get cmpMeta() { return {
     "$flags$": 2,
     "$tagName$": "med-offline",
-    "$members$": undefined,
+    "$members$": {
+      "titulo": [513],
+      "subtitulo": [513],
+      "texto": [513]
+    },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": []
+    "$attrsToReflect$": [["titulo", "titulo"], ["subtitulo", "subtitulo"], ["texto", "texto"]]
   }; }
 }
 

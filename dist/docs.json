@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-01-24T21:51:24",
+  "timestamp": "2024-02-20T16:22:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -25555,7 +25555,59 @@
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "subtitulo",
+          "type": "string",
+          "mutable": false,
+          "attr": "subtitulo",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "'Você está offline'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "texto",
+          "type": "string",
+          "mutable": false,
+          "attr": "texto",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "'Conecte-se à internet para visualizar esse conteúdo'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "titulo",
+          "type": "string",
+          "mutable": false,
+          "attr": "titulo",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "'Página Indisponível'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [
         {

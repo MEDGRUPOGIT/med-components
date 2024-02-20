@@ -7623,6 +7623,13 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
   left: initial !important;
   contain: initial !important;
 }
+.tp-snackbar--transparent {
+  --tp-snackbar-background: transparent;
+  --box-shadow: none !important;
+}
+.tp-snackbar--limited-width {
+  --max-width: 520px;
+}
 @media (max-width: 575.98px) {
   .tp-snackbar {
     --width: 100% !important;

@@ -3746,6 +3746,18 @@ export namespace Components {
         "dsName"?: 'secondary' | 'transparent';
     }
     interface MedOffline {
+        /**
+          * todo
+         */
+        "subtitulo": string;
+        /**
+          * todo
+         */
+        "texto": string;
+        /**
+          * todo
+         */
+        "titulo": string;
     }
     interface MedOption {
         /**
@@ -9532,6 +9544,18 @@ declare namespace LocalJSX {
           * todo
          */
         "onMedClick"?: (event: MedOfflineCustomEvent<void>) => void;
+        /**
+          * todo
+         */
+        "subtitulo"?: string;
+        /**
+          * todo
+         */
+        "texto"?: string;
+        /**
+          * todo
+         */
+        "titulo"?: string;
     }
     interface MedOption {
         /**

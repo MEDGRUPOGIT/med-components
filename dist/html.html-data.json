@@ -6487,7 +6487,20 @@
         "kind": "markdown",
         "value": ""
       },
-      "attributes": [],
+      "attributes": [
+        {
+          "name": "subtitulo",
+          "description": "todo"
+        },
+        {
+          "name": "texto",
+          "description": "todo"
+        },
+        {
+          "name": "titulo",
+          "description": "todo"
+        }
+      ],
       "references": [
         {
           "name": "Source code",

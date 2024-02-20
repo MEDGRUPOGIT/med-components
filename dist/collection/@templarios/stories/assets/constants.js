@@ -68,6 +68,7 @@ export const MedIcons = [
   'med-alerta2',
   'med-anotacao',
   'med-anotar',
+  'med-aperto-de-mao',
   'med-apostila',
 
   'med-arrow-down',
