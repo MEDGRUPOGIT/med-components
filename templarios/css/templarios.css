@@ -7624,7 +7624,8 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
   contain: initial !important;
 }
 .tp-snackbar--transparent {
-  --tp-snackbar-background: transparent;
+  --tp-snackbar-background: transparent !important;
+  --background: transparent !important;
   --box-shadow: none !important;
 }
 .tp-snackbar--limited-width {

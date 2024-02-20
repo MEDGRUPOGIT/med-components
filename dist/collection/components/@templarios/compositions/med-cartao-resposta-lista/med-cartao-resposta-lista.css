@@ -7,7 +7,6 @@
 }
 :host .wrapper {
   display: grid;
-  justify-content: center;
   grid-template-columns: repeat(auto-fit, 10vw);
 }
 @media (max-width: 1199.98px) {

@@ -44,7 +44,7 @@ export class Route {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Relative path that needs to match in order for this route to apply.\r\n\r\nAccepts paths similar to expressjs so that you can define parameters\r\nin the url /foo/:bar where bar would be available in incoming props."
+          "text": "Relative path that needs to match in order for this route to apply.\n\nAccepts paths similar to expressjs so that you can define parameters\nin the url /foo/:bar where bar would be available in incoming props."
         },
         "attribute": "url",
         "reflect": false,
@@ -62,7 +62,7 @@ export class Route {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Name of the component to load/select in the navigation outlet (`ion-tabs`, `ion-nav`)\r\nwhen the route matches.\r\n\r\nThe value of this property is not always the tagname of the component to load,\r\nin `ion-tabs` it actually refers to the name of the `ion-tab` to select."
+          "text": "Name of the component to load/select in the navigation outlet (`ion-tabs`, `ion-nav`)\nwhen the route matches.\n\nThe value of this property is not always the tagname of the component to load,\nin `ion-tabs` it actually refers to the name of the `ion-tab` to select."
         },
         "attribute": "component",
         "reflect": false
@@ -79,7 +79,7 @@ export class Route {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed\r\nto the defined component when rendered."
+          "text": "A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed\nto the defined component when rendered."
         }
       },
       "beforeLeave": {
@@ -99,7 +99,7 @@ export class Route {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "A navigation hook that is fired when the route tries to leave.\r\nReturning `true` allows the navigation to proceed, while returning\r\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\r\nobject causes the router to redirect to the path specified."
+          "text": "A navigation hook that is fired when the route tries to leave.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified."
         }
       },
       "beforeEnter": {
@@ -119,7 +119,7 @@ export class Route {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "A navigation hook that is fired when the route tries to enter.\r\nReturning `true` allows the navigation to proceed, while returning\r\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\r\nobject causes the router to redirect to the path specified."
+          "text": "A navigation hook that is fired when the route tries to enter.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified."
         }
       }
     };

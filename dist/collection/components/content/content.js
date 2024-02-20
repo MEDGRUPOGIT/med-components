@@ -270,7 +270,7 @@ export class Content {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         "attribute": "color",
         "reflect": false
@@ -287,7 +287,7 @@ export class Content {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "If `true`, the content will scroll behind the headers\r\nand footers. This effect can easily be seen by setting the toolbar\r\nto transparent."
+          "text": "If `true`, the content will scroll behind the headers\nand footers. This effect can easily be seen by setting the toolbar\nto transparent."
         },
         "attribute": "fullscreen",
         "reflect": false,
@@ -305,7 +305,7 @@ export class Content {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\r\nIf the content exceeds the bounds of ionContent, nothing will change.\r\nNote, the does not disable the system bounce on iOS. That is an OS level setting."
+          "text": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, the does not disable the system bounce on iOS. That is an OS level setting."
         },
         "attribute": "force-overscroll",
         "reflect": false
@@ -358,7 +358,7 @@ export class Content {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\r\nand start listening from (ionScroll), set this property to `true`."
+          "text": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\nand start listening from (ionScroll), set this property to `true`."
         },
         "attribute": "scroll-events",
         "reflect": false,
@@ -395,7 +395,7 @@ export class Content {
         "composed": true,
         "docs": {
           "tags": [],
-          "text": "Emitted while scrolling. This event is disabled by default.\r\nLook at the property: `scrollEvents`"
+          "text": "Emitted while scrolling. This event is disabled by default.\nLook at the property: `scrollEvents`"
         },
         "complexType": {
           "original": "ScrollDetail",
@@ -446,7 +446,7 @@ export class Content {
           "return": "Promise<HTMLElement>"
         },
         "docs": {
-          "text": "Get the element where the actual scrolling takes place.\r\nThis element can be used to subscribe to `scroll` events or manually modify\r\n`scrollTop`. However, it's recommended to use the API provided by `ion-content`:\r\n\r\ni.e. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events\r\nand `scrollToPoint()` to scroll the content into a certain point.",
+          "text": "Get the element where the actual scrolling takes place.\nThis element can be used to subscribe to `scroll` events or manually modify\n`scrollTop`. However, it's recommended to use the API provided by `ion-content`:\n\ni.e. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events\nand `scrollToPoint()` to scroll the content into a certain point.",
           "tags": []
         }
       },

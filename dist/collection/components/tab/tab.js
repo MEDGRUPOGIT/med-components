@@ -123,7 +123,7 @@ export class Tab {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "A tab id must be provided for each `ion-tab`. It's used internally to reference\r\nthe selected tab or by the router to switch between them."
+          "text": "A tab id must be provided for each `ion-tab`. It's used internally to reference\nthe selected tab or by the router to switch between them."
         },
         "attribute": "tab",
         "reflect": false
