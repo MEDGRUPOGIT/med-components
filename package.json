@@ -28,7 +28,8 @@
     "css/",
     "dist/",
     "hydrate/",
-    "loader/"
+    "loader/",
+    "templarios"
   ],
   "dependencies": {
     "@stencil/core": "^4.10.0",

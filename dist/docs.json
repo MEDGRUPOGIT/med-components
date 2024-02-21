@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-02-01T11:35:45",
+  "timestamp": "2024-02-21T17:31:03",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.10.0",
@@ -37759,7 +37759,7 @@
       "path": "src/components/item/item-interface.ts"
     },
     "src/interface.d.ts::FrameworkDelegate": {
-      "declaration": "export interface FrameworkDelegate {\r\n  attachViewToDom(container: any, component: any, propsOrDataObj?: any, cssClasses?: string[]): Promise<HTMLElement>;\r\n  removeViewFromDom(container: any, component: any): Promise<void>;\r\n}",
+      "declaration": "export interface FrameworkDelegate {\n  attachViewToDom(container: any, component: any, propsOrDataObj?: any, cssClasses?: string[]): Promise<HTMLElement>;\n  removeViewFromDom(container: any, component: any): Promise<void>;\n}",
       "docstring": "",
       "path": "src/interface.d.ts"
     },
@@ -37799,7 +37799,7 @@
       "path": "src/components/checkbox/checkbox-interface.ts"
     },
     "src/interface.d.ts::StyleEventDetail": {
-      "declaration": "export interface StyleEventDetail {\r\n  [styleName: string]: boolean;\r\n}",
+      "declaration": "export interface StyleEventDetail {\n  [styleName: string]: boolean;\n}",
       "docstring": "",
       "path": "src/interface.d.ts"
     },
@@ -37859,12 +37859,12 @@
       "path": "src/components/spinner/spinner-configs.ts"
     },
     "src/interface.d.ts::AutocompleteTypes": {
-      "declaration": "export type AutocompleteTypes =\r\n  | 'on'\r\n  | 'off'\r\n  | 'name'\r\n  | 'honorific-prefix'\r\n  | 'given-name'\r\n  | 'additional-name'\r\n  | 'family-name'\r\n  | 'honorific-suffix'\r\n  | 'nickname'\r\n  | 'email'\r\n  | 'username'\r\n  | 'new-password'\r\n  | 'current-password'\r\n  | 'one-time-code'\r\n  | 'organization-title'\r\n  | 'organization'\r\n  | 'street-address'\r\n  | 'address-line1'\r\n  | 'address-line2'\r\n  | 'address-line3'\r\n  | 'address-level4'\r\n  | 'address-level3'\r\n  | 'address-level2'\r\n  | 'address-level1'\r\n  | 'country'\r\n  | 'country-name'\r\n  | 'postal-code'\r\n  | 'cc-name'\r\n  | 'cc-given-name'\r\n  | 'cc-additional-name'\r\n  | 'cc-family-name'\r\n  | 'cc-family-name'\r\n  | 'cc-number'\r\n  | 'cc-exp'\r\n  | 'cc-exp-month'\r\n  | 'cc-exp-year'\r\n  | 'cc-csc'\r\n  | 'cc-type'\r\n  | 'transaction-currency'\r\n  | 'transaction-amount'\r\n  | 'language'\r\n  | 'bday'\r\n  | 'bday-day'\r\n  | 'bday-month'\r\n  | 'bday-year'\r\n  | 'sex'\r\n  | 'tel'\r\n  | 'tel-country-code'\r\n  | 'tel-national'\r\n  | 'tel-area-code'\r\n  | 'tel-local'\r\n  | 'tel-extension'\r\n  | 'impp'\r\n  | 'url'\r\n  | 'photo';",
+      "declaration": "export type AutocompleteTypes =\n  | 'on'\n  | 'off'\n  | 'name'\n  | 'honorific-prefix'\n  | 'given-name'\n  | 'additional-name'\n  | 'family-name'\n  | 'honorific-suffix'\n  | 'nickname'\n  | 'email'\n  | 'username'\n  | 'new-password'\n  | 'current-password'\n  | 'one-time-code'\n  | 'organization-title'\n  | 'organization'\n  | 'street-address'\n  | 'address-line1'\n  | 'address-line2'\n  | 'address-line3'\n  | 'address-level4'\n  | 'address-level3'\n  | 'address-level2'\n  | 'address-level1'\n  | 'country'\n  | 'country-name'\n  | 'postal-code'\n  | 'cc-name'\n  | 'cc-given-name'\n  | 'cc-additional-name'\n  | 'cc-family-name'\n  | 'cc-family-name'\n  | 'cc-number'\n  | 'cc-exp'\n  | 'cc-exp-month'\n  | 'cc-exp-year'\n  | 'cc-csc'\n  | 'cc-type'\n  | 'transaction-currency'\n  | 'transaction-amount'\n  | 'language'\n  | 'bday'\n  | 'bday-day'\n  | 'bday-month'\n  | 'bday-year'\n  | 'sex'\n  | 'tel'\n  | 'tel-country-code'\n  | 'tel-national'\n  | 'tel-area-code'\n  | 'tel-local'\n  | 'tel-extension'\n  | 'impp'\n  | 'url'\n  | 'photo';",
       "docstring": "",
       "path": "src/interface.d.ts"
     },
     "src/interface.d.ts::TextFieldTypes": {
-      "declaration": "export type TextFieldTypes =\r\n  | 'date'\r\n  | 'email'\r\n  | 'number'\r\n  | 'password'\r\n  | 'search'\r\n  | 'tel'\r\n  | 'text'\r\n  | 'url'\r\n  | 'time'\r\n  | 'week'\r\n  | 'month'\r\n  | 'datetime-local';",
+      "declaration": "export type TextFieldTypes =\n  | 'date'\n  | 'email'\n  | 'number'\n  | 'password'\n  | 'search'\n  | 'tel'\n  | 'text'\n  | 'url'\n  | 'time'\n  | 'week'\n  | 'month'\n  | 'datetime-local';",
       "docstring": "",
       "path": "src/interface.d.ts"
     },

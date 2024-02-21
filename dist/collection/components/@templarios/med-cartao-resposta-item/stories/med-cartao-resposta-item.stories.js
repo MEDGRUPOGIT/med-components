@@ -1,65 +1,74 @@
 import { html } from 'lit-html';
+
 import { MedColors } from '../../../../@templarios/templarios';
 
-export default {
+const meta = {
   title: 'Components/Cartão Resposta',
+  argTypes: {
+    dsColor: {
+      options: Object.values(MedColors),
+      control: { type: 'select' },
+      description: 'Define a cor do componente.',
+      table: {
+        type: { summary: Object.values(MedColors).join(' |') },
+        defaultValue: { summary: 'undefined' },
+      },
+    },
+    anulada: {
+      control: { type: 'boolean' },
+      description: 'Define o estado do componente para anulado.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'undefined' },
+      },
+    },
+    impressa: {
+      control: { type: 'boolean' },
+      description: 'Define o estado do componente para impresso.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'undefined' },
+      },
+    },
+    ativa: {
+      control: { type: 'boolean' },
+      description: 'Define o estado do componente para ativo.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'undefined' },
+      },
+    },
+    slot: {
+      control: { type: 'text' },
+    },
+  },
+  args: {
+    anulada: false,
+    impressa: false,
+    ativa: false,
+    slot: '01',
+  },
 };
 
-const Template = ({dsColor, ativa, impressa, anulada, slot}) => {
-  return html`
-    <ion-app>
-      <ion-content>
-        <!-- component -->
-          <med-cartao-resposta-item .dsColor=${dsColor} ?ativa=${ativa} ?impressa=${impressa} ?anulada=${anulada}>
-            ${slot}
-          </med-cartao-resposta-item>
-        </med-cartao-resposta-lista>
-        <!-- component -->
-      </ion-content>
-    </ion-app>
-  `
-}
+export default meta;
 
-export const AnswerCard = Template.bind({});
-AnswerCard.argTypes = {
-  dsColor: {
-    options: Object.values(MedColors),
-    control: { type: 'select'},
-    description: "Define a cor do componente.",
-    table: {
-      type:  { summary: Object.values(MedColors).join(' |') },
-      defaultValue: { summary: 'undefined' },
-    },
-  },
-  anulada: {
-    control: { type: 'boolean' },
-    description: 'Define o estado do componente para anulado.',
-    defaultValue: false,
-    table: {
-      type:  { summary: 'boolean' },
-      defaultValue: { summary: 'undefined' },
-    },
-  },
-  impressa: {
-    control: { type: 'boolean' },
-    description: 'Define o estado do componente para impresso.',
-    defaultValue: false,
-    table: {
-      type:  { summary: 'boolean' },
-      defaultValue: { summary: 'undefined' },
-    },
-  },
-  ativa: {
-    control: { type: 'boolean' },
-    description: 'Define o estado do componente para ativo.',
-    defaultValue: false,
-    table: {
-      type:  { summary: 'boolean' },
-      defaultValue: { summary: 'undefined' },
-    },
-  },
-  slot: {
-    control: { type: 'text' },
-    defaultValue: '01',
+export const Default = {
+  render: ({ ...args }) => {
+    return html`
+      <ion-app>
+        <ion-content>
+          <!-- component markdown -->
+          <med-cartao-resposta-item
+            ds-color="${args.dsColor}"
+            ?ativa="${args.ativa}"
+            ?impressa="${args.impressa}"
+            ?anulada="${args.anulada}"
+          >
+            ${args.slot}
+          </med-cartao-resposta-item>
+          <!-- component markdown -->
+        </ion-content>
+      </ion-app>
+    `;
   },
 };
