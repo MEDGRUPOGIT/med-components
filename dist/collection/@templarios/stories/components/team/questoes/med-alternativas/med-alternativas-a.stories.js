@@ -15,7 +15,7 @@ const Template = ({ alternativas }) => {
     for (const key in alternativas) {
       alternativasEl[key] = alternativas[key];
     }
-  }, 3000);
+  }, 0);
 
   return html`
     <ion-app>

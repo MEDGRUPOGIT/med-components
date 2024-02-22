@@ -7623,6 +7623,12 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
   left: initial !important;
   contain: initial !important;
 }
+@media (max-width: 575.98px) {
+  .tp-snackbar {
+    min-width: 100% !important;
+    --min-width: 100% !important;
+  }
+}
 .tp-snackbar--transparent {
   --tp-snackbar-background: transparent !important;
   --background: transparent !important;
@@ -7640,9 +7646,6 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
 .tp-snackbar ion-backdrop {
   height: 0;
   width: 0;
-}
-.tp-snackbar .modal-wrapper {
-  padding: 16px;
 }
 .tp-snackbar .ion-page {
   left: unset;

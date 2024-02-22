@@ -18,7 +18,7 @@ const TemplateDefault = ({ alternativas, dsColor}) => {
     for (const key in alternativas) {
       alternativasEl[key] = alternativas[key];
     }
-  }, 5000);
+  }, 0);
 
   return html`
     <ion-app>

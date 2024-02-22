@@ -1,4 +1,4 @@
-import { MedAlternativaInterface, MedAlternativasInternoInterface } from "../../../../../@templarios/interfaces/alternativas.interface";
+import { MedAlternativaInterface, MedAlternativasInternoInterface } from '../../../../../@templarios/interfaces/alternativas.interface';
 export declare class MedAlternativasBase {
   parent: MedAlternativasInternoInterface;
   private dataStart;
