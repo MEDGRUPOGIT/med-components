@@ -287,6 +287,7 @@ export const MedIcons = [
   'med-visivel',
 
   'med-zap',
+  'med-prancheta'
 ];
 
 export const MedLabels = [
