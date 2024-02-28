@@ -2,7 +2,8 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host, j as getElement, f as createEvent, h as readTask, k as forceUpdate, e as writeTask } from './index-336c66d9.js';
-import { b as getIonMode, c as config, a as isPlatform } from './ionic-global-e35a57a3.js';
+import { g as getIonMode, c as config } from './ionic-global-dca35eba.js';
+import { i as isPlatform } from './platform-1ec8424a.js';
 import { c as createColorClasses, h as hostContext } from './theme-a24ff1ad.js';
 import { j as clamp } from './helpers-d6be6e4a.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-154a53a5.js';

@@ -6,8 +6,9 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-8b32527f.js');
+const ionicGlobal = require('./ionic-global-429ed327.js');
 const haptic = require('./haptic-c4a1d647.js');
+require('./platform-83f5a7f6.js');
 
 const reorderIosCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block;font-size:22px}.reorder-icon{font-size:34px;opacity:0.4}";
 

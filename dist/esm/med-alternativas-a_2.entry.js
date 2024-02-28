@@ -3,6 +3,7 @@
  */
 import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
 import { g as generateMedColor } from './color-2567dca3.js';
+import { i as isPlatform } from './platform-1ec8424a.js';
 
 function distanciaEuclidiana(pontoA, pontoB) {
   if (!pontoA || !pontoB)
@@ -52,6 +53,8 @@ class MedAlternativasBase {
   }
   onTouchStart(event, indice) {
     var _a;
+    if (isPlatform('mobile') && event.type !== 'touchstart')
+      return;
     if ((_a = event.target
       .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
@@ -69,6 +72,8 @@ class MedAlternativasBase {
   }
   onTouchEnd(event, alternativa) {
     var _a;
+    if (isPlatform('mobile') && event.type !== 'touchend')
+      return;
     if ((_a = event.target
       .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;

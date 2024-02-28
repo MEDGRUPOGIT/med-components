@@ -6,8 +6,9 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-8b32527f.js');
+const ionicGlobal = require('./ionic-global-429ed327.js');
 const index$1 = require('./index-365d7fb3.js');
+require('./platform-83f5a7f6.js');
 
 const infiniteScrollCss = "ion-infinite-scroll{display:none;width:100%}.infinite-scroll-enabled{display:block}";
 

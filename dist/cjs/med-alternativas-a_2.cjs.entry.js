@@ -7,6 +7,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
 const color = require('./color-c29da9e4.js');
+const platform = require('./platform-83f5a7f6.js');
 
 function distanciaEuclidiana(pontoA, pontoB) {
   if (!pontoA || !pontoB)
@@ -56,6 +57,8 @@ class MedAlternativasBase {
   }
   onTouchStart(event, indice) {
     var _a;
+    if (platform.isPlatform('mobile') && event.type !== 'touchstart')
+      return;
     if ((_a = event.target
       .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
@@ -73,6 +76,8 @@ class MedAlternativasBase {
   }
   onTouchEnd(event, alternativa) {
     var _a;
+    if (platform.isPlatform('mobile') && event.type !== 'touchend')
+      return;
     if ((_a = event.target
       .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;

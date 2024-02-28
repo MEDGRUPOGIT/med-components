@@ -6,8 +6,9 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const overlays = require('./overlays-12a6887f.js');
-require('./ionic-global-8b32527f.js');
+const overlays = require('./overlays-e8c4f097.js');
+require('./ionic-global-429ed327.js');
+require('./platform-83f5a7f6.js');
 require('./hardware-back-button-a7dedc7d.js');
 require('./helpers-4478bffd.js');
 

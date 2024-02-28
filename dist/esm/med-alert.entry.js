@@ -2,9 +2,10 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
-import { m as modalController } from './overlays-52f7bca4.js';
+import { m as modalController } from './overlays-ec4e85a4.js';
 import { s as sanitizeDOMString } from './index-c841c933.js';
-import './ionic-global-e35a57a3.js';
+import './ionic-global-dca35eba.js';
+import './platform-1ec8424a.js';
 import './hardware-back-button-ace6a71b.js';
 import './helpers-d6be6e4a.js';
 

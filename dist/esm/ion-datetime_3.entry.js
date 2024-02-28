@@ -2,12 +2,13 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { g as getIonMode } from './ionic-global-dca35eba.js';
 import { a as addEventListener, j as clamp, h as findItemLabel, e as renderHiddenInput } from './helpers-d6be6e4a.js';
-import { p as pickerController, B as BACKDROP, i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-52f7bca4.js';
+import { p as pickerController, B as BACKDROP, i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-ec4e85a4.js';
 import { h as hostContext, g as getClassMap } from './theme-a24ff1ad.js';
 import { c as createAnimation } from './animation-41df7b1a.js';
 import { b as hapticSelectionChanged, h as hapticSelectionEnd, a as hapticSelectionStart } from './haptic-9a9aa7ec.js';
+import './platform-1ec8424a.js';
 import './hardware-back-button-ace6a71b.js';
 
 /**

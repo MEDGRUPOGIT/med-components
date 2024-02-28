@@ -6,10 +6,11 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-8b32527f.js');
+const ionicGlobal = require('./ionic-global-429ed327.js');
 const helpers = require('./helpers-4478bffd.js');
-const overlays = require('./overlays-12a6887f.js');
+const overlays = require('./overlays-e8c4f097.js');
 const theme = require('./theme-a4c4a7eb.js');
+require('./platform-83f5a7f6.js');
 require('./hardware-back-button-a7dedc7d.js');
 
 const watchForOptions = (containerEl, tagName, onChange) => {

@@ -2,10 +2,11 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { b as getIonMode } from './ionic-global-e35a57a3.js';
+import { g as getIonMode } from './ionic-global-dca35eba.js';
 import { h as findItemLabel, d as getAriaLabel, e as renderHiddenInput } from './helpers-d6be6e4a.js';
-import { c as popoverController, b as actionSheetController, a as alertController, s as safeCall } from './overlays-52f7bca4.js';
+import { c as popoverController, b as actionSheetController, a as alertController, s as safeCall } from './overlays-ec4e85a4.js';
 import { h as hostContext, g as getClassMap } from './theme-a24ff1ad.js';
+import './platform-1ec8424a.js';
 import './hardware-back-button-ace6a71b.js';
 
 const watchForOptions = (containerEl, tagName, onChange) => {

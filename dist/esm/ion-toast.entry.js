@@ -2,11 +2,12 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { b as getIonMode } from './ionic-global-e35a57a3.js';
-import { i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-52f7bca4.js';
+import { g as getIonMode } from './ionic-global-dca35eba.js';
+import { i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-ec4e85a4.js';
 import { s as sanitizeDOMString } from './index-c841c933.js';
 import { g as getClassMap, c as createColorClasses } from './theme-a24ff1ad.js';
 import { c as createAnimation } from './animation-41df7b1a.js';
+import './platform-1ec8424a.js';
 import './hardware-back-button-ace6a71b.js';
 import './helpers-d6be6e4a.js';
 

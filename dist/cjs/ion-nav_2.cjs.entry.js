@@ -6,11 +6,12 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-8b32527f.js');
+const ionicGlobal = require('./ionic-global-429ed327.js');
 const cubicBezier = require('./cubic-bezier-1060abff.js');
 const helpers = require('./helpers-4478bffd.js');
 const index$1 = require('./index-d49aaaa3.js');
 const frameworkDelegate = require('./framework-delegate-8b8d88ef.js');
+require('./platform-83f5a7f6.js');
 
 const VIEW_STATE_NEW = 1;
 const VIEW_STATE_ATTACHED = 2;

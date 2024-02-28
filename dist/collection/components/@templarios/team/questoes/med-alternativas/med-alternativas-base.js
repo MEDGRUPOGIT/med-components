@@ -2,6 +2,7 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { distanciaEuclidiana, getPositionFromEvent } from '../../../../../@templarios/utilities/position';
+import { isPlatform } from '../../../../../utils/platform';
 export class MedAlternativasBase {
   constructor(parent) {
     this.parent = parent;
@@ -25,6 +26,8 @@ export class MedAlternativasBase {
   }
   onTouchStart(event, indice) {
     var _a;
+    if (isPlatform('mobile') && event.type !== 'touchstart')
+      return;
     if ((_a = event.target
       .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
@@ -42,6 +45,8 @@ export class MedAlternativasBase {
   }
   onTouchEnd(event, alternativa) {
     var _a;
+    if (isPlatform('mobile') && event.type !== 'touchend')
+      return;
     if ((_a = event.target
       .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
