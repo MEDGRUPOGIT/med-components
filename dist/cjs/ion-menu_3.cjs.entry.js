@@ -6,15 +6,15 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-429ed327.js');
-const cubicBezier = require('./cubic-bezier-1060abff.js');
-const gestureController = require('./gesture-controller-3d1daf69.js');
-const helpers = require('./helpers-4478bffd.js');
-const index$1 = require('./index-05a57b4b.js');
-const theme = require('./theme-a4c4a7eb.js');
-require('./platform-83f5a7f6.js');
-require('./hardware-back-button-a7dedc7d.js');
-require('./animation-96c88a0a.js');
+const ionicGlobal = require('./ionic-global-b146ab44.js');
+const cubicBezier = require('./cubic-bezier-b395a59d.js');
+const gestureController = require('./gesture-controller-935821e0.js');
+const helpers = require('./helpers-a2cc981d.js');
+const index$1 = require('./index-6c13720c.js');
+const theme = require('./theme-cef66eda.js');
+require('./platform-df0a78a3.js');
+require('./hardware-back-button-bef7bb33.js');
+require('./animation-a79926bc.js');
 
 const menuIosCss = ":host{--width:304px;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--background:var(--ion-background-color, #fff);left:0;right:0;top:0;bottom:0;display:none;position:absolute;contain:strict}:host(.show-menu){display:block}.menu-inner{left:0;right:auto;top:0;bottom:0;-webkit-transform:translate3d(-9999px,  0,  0);transform:translate3d(-9999px,  0,  0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:justify;justify-content:space-between;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:strict}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{left:unset;right:unset;left:auto;right:0}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{-webkit-transform:translate3d(calc(-1 * -9999px),  0,  0);transform:translate3d(calc(-1 * -9999px),  0,  0)}:host(.menu-side-start) .menu-inner{--ion-safe-area-right:0px;right:auto;left:0}:host(.menu-side-end) .menu-inner{--ion-safe-area-left:0px;right:0;left:auto;}ion-backdrop{display:none;opacity:0.01;z-index:-1}@media (max-width: 340px){.menu-inner{--width:264px}}:host(.menu-type-reveal){z-index:0}:host(.menu-type-reveal.show-menu) .menu-inner{-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0)}:host(.menu-type-overlay){z-index:1000}:host(.menu-type-overlay) .show-backdrop{display:block;cursor:pointer}:host(.menu-pane-visible){width:var(--width);min-width:var(--min-width);max-width:var(--max-width)}:host(.menu-pane-visible) .menu-inner{left:0;right:0;width:auto;-webkit-transform:none !important;transform:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}:host(.menu-pane-visible) ion-backdrop{display:hidden !important;}:host(.menu-type-push){z-index:1000}:host(.menu-type-push) .show-backdrop{display:block}";
 
@@ -106,7 +106,7 @@ AFTER:
     this.sideChanged();
     // register this menu with the app's menu controller
     index$1.menuController._register(this);
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-212d93af.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-ff2c537e.js'); })).createGesture({
       el: document,
       gestureName: 'menu-swipe',
       gesturePriority: 30,

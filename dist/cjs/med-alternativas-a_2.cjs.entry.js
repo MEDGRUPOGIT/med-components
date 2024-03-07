@@ -6,8 +6,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const color = require('./color-c29da9e4.js');
-const platform = require('./platform-83f5a7f6.js');
+const color = require('./color-7939264c.js');
+const platform = require('./platform-df0a78a3.js');
 
 function distanciaEuclidiana(pontoA, pontoB) {
   if (!pontoA || !pontoB)
