@@ -3,7 +3,7 @@ import type { TpAccordionGroupChangeEventDetail } from './tp-accordion-group-int
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
-export declare class TpAccordionGroup implements ComponentInterface {
+export declare class MedAccordionGroup implements ComponentInterface {
     el: any;
     /**
      * If `true`, all accordions inside of the

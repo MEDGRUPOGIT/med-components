@@ -1,6 +1,6 @@
 import { MedColor } from '../../../@templarios/types/color.type';
 import { TpChartBarItem } from '../../../@templarios/interfaces/chart-bar.interface';
-export declare class TpChartBar {
+export declare class MedChartBarTwo {
     host: HTMLElement;
     dsColor?: MedColor;
     dsName?: 'secondary';

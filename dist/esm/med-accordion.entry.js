@@ -10,7 +10,7 @@ const tpAccordionIosCss = ":host{display:block;position:relative;width:100%;back
 
 const tpAccordionMdCss = ":host{display:block;position:relative;width:100%;background-color:var(--ion-background-color, #ffffff);overflow:hidden;z-index:0}:host(.accordion-expanding) ::slotted(ion-item[slot=header]),:host(.accordion-expanded) ::slotted(ion-item[slot=header]){--border-width:0px}:host(.accordion-animated){-webkit-transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}:host(.accordion-animated) #content{-webkit-transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}#content{overflow:hidden;will-change:max-height}:host(.accordion-collapsing) #content{max-height:0 !important}:host(.accordion-collapsed) #content{display:none}:host(.accordion-expanding) #content{max-height:0}:host(.accordion-expanding) #content-wrapper{overflow:auto}:host(.accordion-disabled) #header,:host(.accordion-readonly) #header,:host(.accordion-disabled) #content,:host(.accordion-readonly) #content{pointer-events:none}:host(.accordion-disabled) #header,:host(.accordion-disabled) #content{opacity:0.4}@media (prefers-reduced-motion: reduce){:host,#content{-webkit-transition:none !important;transition:none !important}}";
 
-const TpAccordion = class {
+const MedAccordion = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.updateListener = () => this.updateState(false);
@@ -313,9 +313,9 @@ const TpAccordion = class {
     }; }
 };
 let accordionIds = 0;
-TpAccordion.style = {
+MedAccordion.style = {
     ios: tpAccordionIosCss,
     md: tpAccordionMdCss
 };
 
-export { TpAccordion as med_accordion };
+export { MedAccordion as med_accordion };

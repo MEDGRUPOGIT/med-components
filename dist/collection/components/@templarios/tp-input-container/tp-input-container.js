@@ -3,7 +3,7 @@
  */
 import { h, Host } from "@stencil/core";
 import { generateMedColor } from "../../../@templarios/utilities/color";
-export class TpInputContainer {
+export class MedInputContainer {
     constructor() {
         /**
          * Acrescimo ao hostWidth necessário para contabilizar as bordas

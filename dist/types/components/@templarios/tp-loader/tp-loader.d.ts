@@ -1,5 +1,5 @@
 import { MedColor } from '../../../@templarios/types/color.type';
-export declare class TpLoader {
+export declare class MedLoader {
     dsColor?: MedColor;
     fixed: boolean;
     dsName?: 'secondary';

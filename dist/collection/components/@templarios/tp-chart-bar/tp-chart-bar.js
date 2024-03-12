@@ -3,7 +3,7 @@
  */
 import { h, Host } from "@stencil/core";
 import { generateMedColor } from "../../../@templarios/utilities/color";
-export class TpChartBar {
+export class MedChartBarTwo {
     constructor() {
         this.dsColor = undefined;
         this.dsName = undefined;

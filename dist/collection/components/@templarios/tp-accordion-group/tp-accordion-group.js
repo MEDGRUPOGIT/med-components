@@ -7,7 +7,7 @@ import { printIonWarning } from "../../../utils/logging";
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
-export class TpAccordionGroup {
+export class MedAccordionGroup {
     constructor() {
         this.animated = true;
         this.multiple = undefined;

@@ -18,7 +18,7 @@ declare const enum AccordionState {
  * @part expanded - The expanded element. Can be used in combination
  * with the `header` and `content` parts (i.e. `::part(header expanded)`).
  */
-export declare class TpAccordion implements ComponentInterface {
+export declare class MedAccordion implements ComponentInterface {
     private accordionGroupEl?;
     private updateListener;
     private contentEl;

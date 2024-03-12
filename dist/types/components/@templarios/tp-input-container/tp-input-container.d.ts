@@ -1,5 +1,5 @@
 import { MedColor } from '../../../@templarios/types/color.type';
-export declare class TpInputContainer {
+export declare class MedInputContainer {
     /**
      * Quando usado em conjunto com Select, representa a largura
      * do Select definida dinamicamente

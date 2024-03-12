@@ -19,7 +19,7 @@ import { addEventListener, getElementRoot, raf, removeEventListener, transitionE
  * @part expanded - The expanded element. Can be used in combination
  * with the `header` and `content` parts (i.e. `::part(header expanded)`).
  */
-export class TpAccordion {
+export class MedAccordion {
     constructor() {
         this.updateListener = () => this.updateState(false);
         this.setItemDefaults = () => {

@@ -3,7 +3,7 @@
  */
 import { h, Host } from "@stencil/core";
 import { generateMedColor } from "../../../@templarios/utilities/color";
-export class TpLoader {
+export class MedLoader {
     constructor() {
         this.dsColor = undefined;
         this.fixed = false;
