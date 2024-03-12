@@ -30,8 +30,7 @@ export class TpInputContainer {
         const ionSelect = this.host.querySelector('ion-select');
         const shouldOpenOverlay = this.host.contains(target) &&
             ionSelect.hasAttribute('interface') &&
-            (target.nodeName === 'ION-ICON' ||
-                target.nodeName === 'TP-INPUT-CONTAINER');
+            (target.nodeName === 'ION-ICON' || target.nodeName === 'TP-INPUT-CONTAINER');
         if (shouldOpenOverlay) {
             ionSelect.open(e);
         }
@@ -96,7 +95,7 @@ export class TpInputContainer {
         }
     }
     render() {
-        const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon } = this;
+        const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon, } = this;
         return (h(Host, { class: generateMedColor(dsColor, {
                 'tp-input-container': true,
                 'tp-input-container--with-select': pointerOnSelect,
@@ -106,10 +105,10 @@ export class TpInputContainer {
                 'tp-input-container--feedback': feedback,
                 [`tp-input-container--${dsName}`]: dsName !== undefined,
                 [`tp-input-container--has-button-${hasButton}`]: hasButton !== undefined,
-                [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined
-            }) }, h("slot", { name: 'start' }), h("slot", null), h("slot", { name: 'end' })));
+                [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined,
+            }) }, h("slot", { name: "start" }), h("slot", null), h("slot", { name: "end" })));
     }
-    static get is() { return "tp-input-container"; }
+    static get is() { return "med-input-container"; }
     static get encapsulation() { return "scoped"; }
     static get originalStyleUrls() {
         return {

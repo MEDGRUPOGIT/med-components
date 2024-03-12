@@ -1,13 +1,9 @@
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-const index = require('./index-71f41461.js');
-const ionicGlobal = require('./ionic-global-c70c3fb5.js');
-const index$1 = require('./index-5915f9b3.js');
+import { r as registerInstance, d as createEvent, h, H as Host, f as getElement } from './index-27668d5b.js';
+import { b as getIonMode } from './ionic-global-8fa0f940.js';
+import { p as printIonWarning } from './index-9b0d46f4.js';
 
 const tpAccordionGroupIosCss = ":host{display:block}:host(.accordion-group-expand-inset){-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:16px;margin-bottom:16px}:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanding),:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanded){border-bottom:none}";
 
@@ -15,15 +11,15 @@ const tpAccordionGroupMdCss = ":host{display:block}:host(.accordion-group-expand
 
 const TpAccordionGroup = class {
     constructor(hostRef) {
-        index.registerInstance(this, hostRef);
-        this.ionChange = index.createEvent(this, "ionChange", 7);
-        this.ionValueChange = index.createEvent(this, "ionValueChange", 7);
+        registerInstance(this, hostRef);
+        this.ionChange = createEvent(this, "ionChange", 7);
+        this.ionValueChange = createEvent(this, "ionValueChange", 7);
         this.animated = true;
         this.multiple = undefined;
         this.value = undefined;
         this.disabled = false;
         this.readonly = false;
-        this.expand = "compact";
+        this.expand = 'compact';
     }
     valueChanged() {
         const { value, multiple } = this;
@@ -36,9 +32,9 @@ const TpAccordionGroup = class {
              * Default toString() behavior: a,b
              * Custom behavior: ['a', 'b']
              */
-            index$1.printIonWarning(`ion-accordion-group was passed an array of values, but multiple="false". This is incorrect usage and may result in unexpected behaviors. To dismiss this warning, pass a string to the "value" property when multiple="false".
+            printIonWarning(`ion-accordion-group was passed an array of values, but multiple="false". This is incorrect usage and may result in unexpected behaviors. To dismiss this warning, pass a string to the "value" property when multiple="false".
 
-  Value Passed: [${value.map((v) => `'${v}'`).join(", ")}]
+  Value Passed: [${value.map((v) => `'${v}'`).join(', ')}]
 `, this.el);
         }
         /**
@@ -76,13 +72,11 @@ const TpAccordionGroup = class {
         if (!activeAccordionHeader) {
             return;
         }
-        const accordionEl = activeElement.tagName === "ION-ACCORDION"
-            ? activeElement
-            : activeElement.closest("ion-accordion");
+        const accordionEl = activeElement.tagName === 'ION-ACCORDION' ? activeElement : activeElement.closest('ion-accordion');
         if (!accordionEl) {
             return;
         }
-        const closestGroup = accordionEl.closest("ion-accordion-group");
+        const closestGroup = accordionEl.closest('ion-accordion-group');
         if (closestGroup !== this.el) {
             return;
         }
@@ -93,16 +87,16 @@ const TpAccordionGroup = class {
             return;
         }
         let accordion;
-        if (ev.key === "ArrowDown") {
+        if (ev.key === 'ArrowDown') {
             accordion = this.findNextAccordion(accordions, startingIndex);
         }
-        else if (ev.key === "ArrowUp") {
+        else if (ev.key === 'ArrowUp') {
             accordion = this.findPreviousAccordion(accordions, startingIndex);
         }
-        else if (ev.key === "Home") {
+        else if (ev.key === 'Home') {
             accordion = accordions[0];
         }
-        else if (ev.key === "End") {
+        else if (ev.key === 'End') {
             accordion = accordions[accordions.length - 1];
         }
         if (accordion !== undefined && accordion !== activeElement) {
@@ -150,9 +144,7 @@ const TpAccordionGroup = class {
              */
             if (multiple) {
                 const groupValue = value !== null && value !== void 0 ? value : [];
-                const processedValue = Array.isArray(groupValue)
-                    ? groupValue
-                    : [groupValue];
+                const processedValue = Array.isArray(groupValue) ? groupValue : [groupValue];
                 const valueExists = processedValue.find((v) => v === accordionValue);
                 if (valueExists === undefined && accordionValue !== undefined) {
                     this.setValue([...processedValue, accordionValue]);
@@ -169,9 +161,7 @@ const TpAccordionGroup = class {
              */
             if (multiple) {
                 const groupValue = value !== null && value !== void 0 ? value : [];
-                const processedValue = Array.isArray(groupValue)
-                    ? groupValue
-                    : [groupValue];
+                const processedValue = Array.isArray(groupValue) ? groupValue : [groupValue];
                 this.setValue(processedValue.filter((v) => v !== accordionValue));
             }
             else {
@@ -197,19 +187,19 @@ const TpAccordionGroup = class {
      * @internal
      */
     async getAccordions() {
-        return Array.from(this.el.querySelectorAll(":scope > ion-accordion"));
+        return Array.from(this.el.querySelectorAll(':scope > ion-accordion'));
     }
     render() {
         const { disabled, readonly, expand } = this;
-        const mode = ionicGlobal.getIonMode(this);
-        return (index.h(index.Host, { class: {
+        const mode = getIonMode(this);
+        return (h(Host, { class: {
                 [mode]: true,
-                "accordion-group-disabled": disabled,
-                "accordion-group-readonly": readonly,
+                'accordion-group-disabled': disabled,
+                'accordion-group-readonly': readonly,
                 [`accordion-group-expand-${expand}`]: true,
-            }, role: "presentation" }, index.h("slot", null)));
+            }, role: "presentation" }, h("slot", null)));
     }
-    get el() { return index.getElement(this); }
+    get el() { return getElement(this); }
     static get watchers() { return {
         "value": ["valueChanged"],
         "disabled": ["disabledChanged"],
@@ -221,4 +211,4 @@ TpAccordionGroup.style = {
     md: tpAccordionGroupMdCss
 };
 
-exports.tp_accordion_group = TpAccordionGroup;
+export { TpAccordionGroup as med_accordion_group };

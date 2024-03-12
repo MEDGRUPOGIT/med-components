@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-02-21T17:31:03",
+  "timestamp": "2024-03-12T17:50:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.10.0",
@@ -13068,7 +13068,7 @@
       "dependents": [
         "ion-datetime",
         "ion-select-popover",
-        "tp-chart-bar"
+        "med-chart-bar-2"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -13078,7 +13078,7 @@
         "ion-select-popover": [
           "ion-label"
         ],
-        "tp-chart-bar": [
+        "med-chart-bar-2": [
           "ion-label"
         ]
       }
@@ -29339,6 +29339,433 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/@templarios/tp-accordion/tp-accordion.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-accordion",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        },
+        {
+          "name": "slot",
+          "text": "header - Content is placed at the top and is used to\nexpand or collapse the accordion item."
+        },
+        {
+          "name": "slot",
+          "text": "content - Content is placed below the header and is\nshown or hidden based on expanded state."
+        },
+        {
+          "name": "part",
+          "text": "header - The wrapper element for the header slot."
+        },
+        {
+          "name": "part",
+          "text": "content - The wrapper element for the content slot."
+        },
+        {
+          "name": "part",
+          "text": "expanded - The expanded element. Can be used in combination\nwith the `header` and `content` parts (i.e. `::part(header expanded)`)."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If `true`, the accordion cannot be interacted with.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "The mode determines which platform styles to use.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "If `true`, the accordion cannot be interacted with,\nbut does not alter the opacity.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "toggleIcon",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "toggle-icon",
+          "reflectToAttr": false,
+          "docs": "The toggle icon to use. This icon will be\nrotated when the accordion is expanded\nor collapsed.",
+          "docsTags": [],
+          "default": "chevronDown",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "toggleIconSlot",
+          "type": "\"end\" | \"start\"",
+          "complexType": {
+            "original": "'start' | 'end'",
+            "resolved": "\"end\" | \"start\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "toggle-icon-slot",
+          "reflectToAttr": false,
+          "docs": "The slot inside of `ion-item` to\nplace the toggle icon. Defaults to `\"end\"`.",
+          "docsTags": [],
+          "default": "'end'",
+          "values": [
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The value of the accordion. Defaults to an autogenerated\nvalue.",
+          "docsTags": [],
+          "default": "`ion-accordion-${accordionIds++}`",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "content",
+          "docs": "Content is placed below the header and is\nshown or hidden based on expanded state."
+        },
+        {
+          "name": "header",
+          "docs": "Content is placed at the top and is used to\nexpand or collapse the accordion item."
+        }
+      ],
+      "parts": [
+        {
+          "name": "content",
+          "docs": "The wrapper element for the content slot."
+        },
+        {
+          "name": "expanded",
+          "docs": "The expanded element. Can be used in combination\nwith the `header` and `content` parts (i.e. `::part(header expanded)`)."
+        },
+        {
+          "name": "header",
+          "docs": "The wrapper element for the header slot."
+        }
+      ],
+      "dependents": [],
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "med-accordion": [
+          "ion-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/@templarios/tp-accordion-group/tp-accordion-group.tsx",
+      "encapsulation": "shadow",
+      "tag": "med-accordion-group",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "animated",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "animated",
+          "reflectToAttr": false,
+          "docs": "If `true`, all accordions inside of the\naccordion group will animate when expanding\nor collapsing.",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If `true`, the accordion group cannot be interacted with.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "expand",
+          "type": "\"compact\" | \"inset\"",
+          "complexType": {
+            "original": "'compact' | 'inset'",
+            "resolved": "\"compact\" | \"inset\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "expand",
+          "reflectToAttr": false,
+          "docs": "Describes the expansion behavior for each accordion.\nPossible values are `\"compact\"` and `\"inset\"`.\nDefaults to `\"compact\"`.",
+          "docsTags": [],
+          "default": "'compact'",
+          "values": [
+            {
+              "value": "compact",
+              "type": "string"
+            },
+            {
+              "value": "inset",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "The mode determines which platform styles to use.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean | undefined",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "If `true`, the accordion group can have multiple\naccordion components expanded at the same time.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "If `true`, the accordion group cannot be interacted with,\nbut does not alter the opacity.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "null | string | string[] | undefined",
+          "complexType": {
+            "original": "string | string[] | null",
+            "resolved": "null | string | string[] | undefined",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The value of the accordion group. This controls which\naccordions are expanded.\nThis should be an array of strings only when `multiple=\"true\"`",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string[]"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "ionChange",
+          "detail": "TpAccordionGroupChangeEventDetail<any>",
+          "bubbles": true,
+          "complexType": {
+            "original": "TpAccordionGroupChangeEventDetail",
+            "resolved": "TpAccordionGroupChangeEventDetail<any>",
+            "references": {
+              "TpAccordionGroupChangeEventDetail": {
+                "location": "import",
+                "path": "./tp-accordion-group-interface",
+                "id": "src/components/@templarios/tp-accordion-group/tp-accordion-group-interface.ts::TpAccordionGroupChangeEventDetail"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the value property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically setting\nthe value property.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "keydown",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "src/components/@templarios/med-accordion-item/med-accordion-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-accordion-item",
@@ -31236,7 +31663,7 @@
           "mutable": false,
           "attr": "debounce-time",
           "reflectToAttr": true,
-          "docs": "Se a pesquisa por items possuir debounce time até o item ser inserido\n no dom, deve ser indicado por essa propriedade (defaults to 0)",
+          "docs": "Se a pesquisa por items possuir debounce time até o item ser inserido\r\n no dom, deve ser indicado por essa propriedade (defaults to 0)",
           "docsTags": [],
           "default": "0",
           "values": [
@@ -32169,6 +32596,252 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/@templarios/tp-chart-bar/tp-chart-bar.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-chart-bar-2",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "bar",
+          "type": "TpChartBarItem",
+          "complexType": {
+            "original": "TpChartBarItem",
+            "resolved": "TpChartBarItem",
+            "references": {
+              "TpChartBarItem": {
+                "location": "import",
+                "path": "../../../@templarios/interfaces/chart-bar.interface",
+                "id": "src/@templarios/interfaces/chart-bar.interface.ts::TpChartBarItem"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{\n    color: 'med-color-brand-4',\n    value: 0,\n  }",
+          "values": [
+            {
+              "type": "TpChartBarItem"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "deactivated",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "deactivated",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "complexType": {
+            "original": "MedColor",
+            "resolved": "string | undefined",
+            "references": {
+              "MedColor": {
+                "location": "import",
+                "path": "../../../@templarios/types/color.type",
+                "id": "src/@templarios/types/color.type.ts::MedColor"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "complexType": {
+            "original": "'secondary'",
+            "resolved": "\"secondary\" | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasMarker",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "has-marker",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "height",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "200",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string | undefined",
+          "complexType": {
+            "original": "string",
+            "resolved": "string | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "labelSize",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label-size",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "10",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "marker",
+          "type": "TpChartBarItem",
+          "complexType": {
+            "original": "TpChartBarItem",
+            "resolved": "TpChartBarItem",
+            "references": {
+              "TpChartBarItem": {
+                "location": "import",
+                "path": "../../../@templarios/interfaces/chart-bar.interface",
+                "id": "src/@templarios/interfaces/chart-bar.interface.ts::TpChartBarItem"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "{\n    color: 'med-color-fb-caution',\n    value: 0,\n  }",
+          "values": [
+            {
+              "type": "TpChartBarItem"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-label"
+      ],
+      "dependencyGraph": {
+        "med-chart-bar-2": [
+          "ion-label"
+        ]
+      }
     },
     {
       "filePath": "src/components/@templarios/med-chart-bar-horizontal/med-chart-bar-horizontal.tsx",
@@ -33900,7 +34573,7 @@
           "name": "imagens",
           "type": "any",
           "complexType": {
-            "original": "| MedImageZoomItemInterface[]\n    | any",
+            "original": "| MedImageZoomItemInterface[]\r\n    | any",
             "resolved": "any",
             "references": {
               "MedImageZoomItemInterface": {
@@ -34050,6 +34723,248 @@
       }
     },
     {
+      "filePath": "src/components/@templarios/tp-input-container/tp-input-container.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-input-container",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "complexType": {
+            "original": "MedColor",
+            "resolved": "string | undefined",
+            "references": {
+              "MedColor": {
+                "location": "import",
+                "path": "../../../@templarios/types/color.type",
+                "id": "src/@templarios/types/color.type.ts::MedColor"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "complexType": {
+            "original": "'secondary'",
+            "resolved": "\"secondary\" | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "feedback",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "feedback",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasButton",
+          "type": "\"both\" | \"end\" | \"start\" | undefined",
+          "complexType": {
+            "original": "'start' | 'end' | 'both'",
+            "resolved": "\"both\" | \"end\" | \"start\" | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "has-button",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasIcon",
+          "type": "\"both\" | \"end\" | \"start\" | undefined",
+          "complexType": {
+            "original": "'start' | 'end' | 'both'",
+            "resolved": "\"both\" | \"end\" | \"start\" | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "has-icon",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inverted",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "inverted",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "click",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "click",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        },
+        {
+          "event": "ionPopoverWillPresent",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ionPopoverDidPresent",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "ionPopoverWillDismiss",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "src/components/@templarios/med-item/med-item.tsx",
       "encapsulation": "shadow",
       "tag": "med-item",
@@ -34138,7 +35053,7 @@
           "mutable": false,
           "attr": "detail",
           "reflectToAttr": false,
-          "docs": "If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`\nis `ios` and an `href` or `button` property is present.",
+          "docs": "If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`\r\nis `ios` and an `href` or `button` property is present.",
           "docsTags": [],
           "values": [
             {
@@ -34206,7 +35121,7 @@
           "mutable": false,
           "attr": "download",
           "reflectToAttr": false,
-          "docs": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want).",
+          "docs": "This attribute instructs browsers to download a URL instead of navigating to\r\nit, so the user will be prompted to save it as a local file. If the attribute\r\nhas a value, it is used as the pre-filled file name in the Save prompt\r\n(the user can still change the file name if they want).",
           "docsTags": [],
           "values": [
             {
@@ -34236,7 +35151,7 @@
           "mutable": false,
           "attr": "ds-color",
           "reflectToAttr": false,
-          "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+          "docs": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics).",
           "docsTags": [],
           "values": [
             {
@@ -34260,7 +35175,7 @@
           "mutable": false,
           "attr": "href",
           "reflectToAttr": false,
-          "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+          "docs": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered.",
           "docsTags": [],
           "values": [
             {
@@ -34360,7 +35275,7 @@
           "mutable": false,
           "attr": "rel",
           "reflectToAttr": false,
-          "docs": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
+          "docs": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
           "docsTags": [],
           "values": [
             {
@@ -34389,7 +35304,7 @@
           },
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
+          "docs": "When using a router, it specifies the transition animation when navigating to\r\nanother page using `href`.",
           "docsTags": [],
           "values": [
             {
@@ -34419,7 +35334,7 @@
           "mutable": false,
           "attr": "router-direction",
           "reflectToAttr": false,
-          "docs": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+          "docs": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`.",
           "docsTags": [],
           "default": "'forward'",
           "values": [
@@ -34450,7 +35365,7 @@
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docs": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
           "docsTags": [],
           "values": [
             {
@@ -35124,6 +36039,102 @@
           "ion-ripple-effect"
         ]
       }
+    },
+    {
+      "filePath": "src/components/@templarios/tp-loader/tp-loader.tsx",
+      "encapsulation": "scoped",
+      "tag": "med-loader",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "complexType": {
+            "original": "MedColor",
+            "resolved": "string | undefined",
+            "references": {
+              "MedColor": {
+                "location": "import",
+                "path": "../../../@templarios/types/color.type",
+                "id": "src/@templarios/types/color.type.ts::MedColor"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "dsName",
+          "type": "\"secondary\" | undefined",
+          "complexType": {
+            "original": "'secondary'",
+            "resolved": "\"secondary\" | undefined",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "ds-name",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "fixed",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "fixed",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "src/components/@templarios/med-navbar/med-navbar.tsx",
@@ -36654,1017 +37665,6 @@
           "ion-progress-bar"
         ]
       }
-    },
-    {
-      "filePath": "src/components/@templarios/tp-accordion/tp-accordion.tsx",
-      "encapsulation": "shadow",
-      "tag": "tp-accordion",
-      "docs": "",
-      "docsTags": [
-        {
-          "name": "virtualProp",
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
-        },
-        {
-          "name": "slot",
-          "text": "header - Content is placed at the top and is used to\nexpand or collapse the accordion item."
-        },
-        {
-          "name": "slot",
-          "text": "content - Content is placed below the header and is\nshown or hidden based on expanded state."
-        },
-        {
-          "name": "part",
-          "text": "header - The wrapper element for the header slot."
-        },
-        {
-          "name": "part",
-          "text": "content - The wrapper element for the content slot."
-        },
-        {
-          "name": "part",
-          "text": "expanded - The expanded element. Can be used in combination\nwith the `header` and `content` parts (i.e. `::part(header expanded)`)."
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "disabled",
-          "reflectToAttr": false,
-          "docs": "If `true`, the accordion cannot be interacted with.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "mode",
-          "type": "\"ios\" | \"md\"",
-          "mutable": false,
-          "attr": "mode",
-          "reflectToAttr": false,
-          "docs": "The mode determines which platform styles to use.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "ios",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "readonly",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "readonly",
-          "reflectToAttr": false,
-          "docs": "If `true`, the accordion cannot be interacted with,\nbut does not alter the opacity.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "toggleIcon",
-          "type": "string",
-          "complexType": {
-            "original": "string",
-            "resolved": "string",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "toggle-icon",
-          "reflectToAttr": false,
-          "docs": "The toggle icon to use. This icon will be\nrotated when the accordion is expanded\nor collapsed.",
-          "docsTags": [],
-          "default": "chevronDown",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "toggleIconSlot",
-          "type": "\"end\" | \"start\"",
-          "complexType": {
-            "original": "\"start\" | \"end\"",
-            "resolved": "\"end\" | \"start\"",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "toggle-icon-slot",
-          "reflectToAttr": false,
-          "docs": "The slot inside of `ion-item` to\nplace the toggle icon. Defaults to `\"end\"`.",
-          "docsTags": [],
-          "default": "\"end\"",
-          "values": [
-            {
-              "value": "end",
-              "type": "string"
-            },
-            {
-              "value": "start",
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "value",
-          "type": "string",
-          "complexType": {
-            "original": "string",
-            "resolved": "string",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "value",
-          "reflectToAttr": false,
-          "docs": "The value of the accordion. Defaults to an autogenerated\nvalue.",
-          "docsTags": [],
-          "default": "`ion-accordion-${accordionIds++}`",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [
-        {
-          "name": "content",
-          "docs": "Content is placed below the header and is\nshown or hidden based on expanded state."
-        },
-        {
-          "name": "header",
-          "docs": "Content is placed at the top and is used to\nexpand or collapse the accordion item."
-        }
-      ],
-      "parts": [
-        {
-          "name": "content",
-          "docs": "The wrapper element for the content slot."
-        },
-        {
-          "name": "expanded",
-          "docs": "The expanded element. Can be used in combination\nwith the `header` and `content` parts (i.e. `::part(header expanded)`)."
-        },
-        {
-          "name": "header",
-          "docs": "The wrapper element for the header slot."
-        }
-      ],
-      "dependents": [],
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyGraph": {
-        "tp-accordion": [
-          "ion-icon"
-        ]
-      }
-    },
-    {
-      "filePath": "src/components/@templarios/tp-accordion-group/tp-accordion-group.tsx",
-      "encapsulation": "shadow",
-      "tag": "tp-accordion-group",
-      "docs": "",
-      "docsTags": [
-        {
-          "name": "virtualProp",
-          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "animated",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "animated",
-          "reflectToAttr": false,
-          "docs": "If `true`, all accordions inside of the\naccordion group will animate when expanding\nor collapsing.",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "disabled",
-          "reflectToAttr": false,
-          "docs": "If `true`, the accordion group cannot be interacted with.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "expand",
-          "type": "\"compact\" | \"inset\"",
-          "complexType": {
-            "original": "\"compact\" | \"inset\"",
-            "resolved": "\"compact\" | \"inset\"",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "expand",
-          "reflectToAttr": false,
-          "docs": "Describes the expansion behavior for each accordion.\nPossible values are `\"compact\"` and `\"inset\"`.\nDefaults to `\"compact\"`.",
-          "docsTags": [],
-          "default": "\"compact\"",
-          "values": [
-            {
-              "value": "compact",
-              "type": "string"
-            },
-            {
-              "value": "inset",
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "mode",
-          "type": "\"ios\" | \"md\"",
-          "mutable": false,
-          "attr": "mode",
-          "reflectToAttr": false,
-          "docs": "The mode determines which platform styles to use.",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "ios",
-              "type": "string"
-            },
-            {
-              "value": "md",
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "multiple",
-          "type": "boolean | undefined",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "multiple",
-          "reflectToAttr": false,
-          "docs": "If `true`, the accordion group can have multiple\naccordion components expanded at the same time.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "readonly",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "readonly",
-          "reflectToAttr": false,
-          "docs": "If `true`, the accordion group cannot be interacted with,\nbut does not alter the opacity.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "value",
-          "type": "null | string | string[] | undefined",
-          "complexType": {
-            "original": "string | string[] | null",
-            "resolved": "null | string | string[] | undefined",
-            "references": {}
-          },
-          "mutable": true,
-          "attr": "value",
-          "reflectToAttr": false,
-          "docs": "The value of the accordion group. This controls which\naccordions are expanded.\nThis should be an array of strings only when `multiple=\"true\"`",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "null"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "string[]"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [
-        {
-          "event": "ionChange",
-          "detail": "TpAccordionGroupChangeEventDetail<any>",
-          "bubbles": true,
-          "complexType": {
-            "original": "TpAccordionGroupChangeEventDetail",
-            "resolved": "TpAccordionGroupChangeEventDetail<any>",
-            "references": {
-              "TpAccordionGroupChangeEventDetail": {
-                "location": "import",
-                "path": "./tp-accordion-group-interface",
-                "id": "src/components/@templarios/tp-accordion-group/tp-accordion-group-interface.ts::TpAccordionGroupChangeEventDetail"
-              }
-            }
-          },
-          "cancelable": true,
-          "composed": true,
-          "docs": "Emitted when the value property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically setting\nthe value property.",
-          "docsTags": []
-        }
-      ],
-      "listeners": [
-        {
-          "event": "keydown",
-          "capture": false,
-          "passive": false
-        }
-      ],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "src/components/@templarios/tp-chart-bar/tp-chart-bar.tsx",
-      "encapsulation": "scoped",
-      "tag": "tp-chart-bar",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "bar",
-          "type": "TpChartBarItem",
-          "complexType": {
-            "original": "TpChartBarItem",
-            "resolved": "TpChartBarItem",
-            "references": {
-              "TpChartBarItem": {
-                "location": "import",
-                "path": "../../../@templarios/interfaces/chart-bar.interface",
-                "id": "src/@templarios/interfaces/chart-bar.interface.ts::TpChartBarItem"
-              }
-            }
-          },
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "{\n    color: \"med-color-brand-4\",\n    value: 0,\n  }",
-          "values": [
-            {
-              "type": "TpChartBarItem"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "deactivated",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "deactivated",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "complexType": {
-            "original": "MedColor",
-            "resolved": "string | undefined",
-            "references": {
-              "MedColor": {
-                "location": "import",
-                "path": "../../../@templarios/types/color.type",
-                "id": "src/@templarios/types/color.type.ts::MedColor"
-              }
-            }
-          },
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"secondary\" | undefined",
-          "complexType": {
-            "original": "\"secondary\"",
-            "resolved": "\"secondary\" | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hasMarker",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "has-marker",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "height",
-          "type": "number",
-          "complexType": {
-            "original": "number",
-            "resolved": "number",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "height",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "default": "200",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "label",
-          "type": "string | undefined",
-          "complexType": {
-            "original": "string",
-            "resolved": "string | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "label",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "labelSize",
-          "type": "number",
-          "complexType": {
-            "original": "number",
-            "resolved": "number",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "label-size",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "default": "10",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "marker",
-          "type": "TpChartBarItem",
-          "complexType": {
-            "original": "TpChartBarItem",
-            "resolved": "TpChartBarItem",
-            "references": {
-              "TpChartBarItem": {
-                "location": "import",
-                "path": "../../../@templarios/interfaces/chart-bar.interface",
-                "id": "src/@templarios/interfaces/chart-bar.interface.ts::TpChartBarItem"
-              }
-            }
-          },
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "{\n    color: \"med-color-fb-caution\",\n    value: 0,\n  }",
-          "values": [
-            {
-              "type": "TpChartBarItem"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "ion-label"
-      ],
-      "dependencyGraph": {
-        "tp-chart-bar": [
-          "ion-label"
-        ]
-      }
-    },
-    {
-      "filePath": "src/components/@templarios/tp-input-container/tp-input-container.tsx",
-      "encapsulation": "scoped",
-      "tag": "tp-input-container",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "disabled",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "complexType": {
-            "original": "MedColor",
-            "resolved": "string | undefined",
-            "references": {
-              "MedColor": {
-                "location": "import",
-                "path": "../../../@templarios/types/color.type",
-                "id": "src/@templarios/types/color.type.ts::MedColor"
-              }
-            }
-          },
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"secondary\" | undefined",
-          "complexType": {
-            "original": "'secondary'",
-            "resolved": "\"secondary\" | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "feedback",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "feedback",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "hasButton",
-          "type": "\"both\" | \"end\" | \"start\" | undefined",
-          "complexType": {
-            "original": "'start' | 'end' | 'both'",
-            "resolved": "\"both\" | \"end\" | \"start\" | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "has-button",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "both",
-              "type": "string"
-            },
-            {
-              "value": "end",
-              "type": "string"
-            },
-            {
-              "value": "start",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hasIcon",
-          "type": "\"both\" | \"end\" | \"start\" | undefined",
-          "complexType": {
-            "original": "'start' | 'end' | 'both'",
-            "resolved": "\"both\" | \"end\" | \"start\" | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "has-icon",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "both",
-              "type": "string"
-            },
-            {
-              "value": "end",
-              "type": "string"
-            },
-            {
-              "value": "start",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "inverted",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "inverted",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [
-        {
-          "event": "click",
-          "target": "body",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "click",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "resize",
-          "target": "window",
-          "capture": false,
-          "passive": true
-        },
-        {
-          "event": "ionPopoverWillPresent",
-          "target": "body",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "ionPopoverDidPresent",
-          "target": "body",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "ionPopoverWillDismiss",
-          "target": "body",
-          "capture": false,
-          "passive": false
-        }
-      ],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "src/components/@templarios/tp-loader/tp-loader.tsx",
-      "encapsulation": "scoped",
-      "tag": "tp-loader",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "dsColor",
-          "type": "string | undefined",
-          "complexType": {
-            "original": "MedColor",
-            "resolved": "string | undefined",
-            "references": {
-              "MedColor": {
-                "location": "import",
-                "path": "../../../@templarios/types/color.type",
-                "id": "src/@templarios/types/color.type.ts::MedColor"
-              }
-            }
-          },
-          "mutable": false,
-          "attr": "ds-color",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "dsName",
-          "type": "\"secondary\" | undefined",
-          "complexType": {
-            "original": "\"secondary\"",
-            "resolved": "\"secondary\" | undefined",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "ds-name",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "value": "secondary",
-              "type": "string"
-            },
-            {
-              "type": "undefined"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "fixed",
-          "type": "boolean",
-          "complexType": {
-            "original": "boolean",
-            "resolved": "boolean",
-            "references": {}
-          },
-          "mutable": false,
-          "attr": "fixed",
-          "reflectToAttr": true,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
     }
   ],
   "typeLibrary": {
@@ -37729,7 +37729,7 @@
       "path": "src/@templarios/types/type.type.ts"
     },
     "src/components/@templarios/tp-accordion-group/tp-accordion-group-interface.ts::TpAccordionGroupChangeEventDetail": {
-      "declaration": "export interface TpAccordionGroupChangeEventDetail<T = any> {\n  value: T;\n}",
+      "declaration": "export interface TpAccordionGroupChangeEventDetail<T = any> {\r\n  value: T;\r\n}",
       "docstring": "",
       "path": "src/components/@templarios/tp-accordion-group/tp-accordion-group-interface.ts"
     },
@@ -37759,7 +37759,7 @@
       "path": "src/components/item/item-interface.ts"
     },
     "src/interface.d.ts::FrameworkDelegate": {
-      "declaration": "export interface FrameworkDelegate {\n  attachViewToDom(container: any, component: any, propsOrDataObj?: any, cssClasses?: string[]): Promise<HTMLElement>;\n  removeViewFromDom(container: any, component: any): Promise<void>;\n}",
+      "declaration": "export interface FrameworkDelegate {\r\n  attachViewToDom(container: any, component: any, propsOrDataObj?: any, cssClasses?: string[]): Promise<HTMLElement>;\r\n  removeViewFromDom(container: any, component: any): Promise<void>;\r\n}",
       "docstring": "",
       "path": "src/interface.d.ts"
     },
@@ -37799,7 +37799,7 @@
       "path": "src/components/checkbox/checkbox-interface.ts"
     },
     "src/interface.d.ts::StyleEventDetail": {
-      "declaration": "export interface StyleEventDetail {\n  [styleName: string]: boolean;\n}",
+      "declaration": "export interface StyleEventDetail {\r\n  [styleName: string]: boolean;\r\n}",
       "docstring": "",
       "path": "src/interface.d.ts"
     },
@@ -37859,12 +37859,12 @@
       "path": "src/components/spinner/spinner-configs.ts"
     },
     "src/interface.d.ts::AutocompleteTypes": {
-      "declaration": "export type AutocompleteTypes =\n  | 'on'\n  | 'off'\n  | 'name'\n  | 'honorific-prefix'\n  | 'given-name'\n  | 'additional-name'\n  | 'family-name'\n  | 'honorific-suffix'\n  | 'nickname'\n  | 'email'\n  | 'username'\n  | 'new-password'\n  | 'current-password'\n  | 'one-time-code'\n  | 'organization-title'\n  | 'organization'\n  | 'street-address'\n  | 'address-line1'\n  | 'address-line2'\n  | 'address-line3'\n  | 'address-level4'\n  | 'address-level3'\n  | 'address-level2'\n  | 'address-level1'\n  | 'country'\n  | 'country-name'\n  | 'postal-code'\n  | 'cc-name'\n  | 'cc-given-name'\n  | 'cc-additional-name'\n  | 'cc-family-name'\n  | 'cc-family-name'\n  | 'cc-number'\n  | 'cc-exp'\n  | 'cc-exp-month'\n  | 'cc-exp-year'\n  | 'cc-csc'\n  | 'cc-type'\n  | 'transaction-currency'\n  | 'transaction-amount'\n  | 'language'\n  | 'bday'\n  | 'bday-day'\n  | 'bday-month'\n  | 'bday-year'\n  | 'sex'\n  | 'tel'\n  | 'tel-country-code'\n  | 'tel-national'\n  | 'tel-area-code'\n  | 'tel-local'\n  | 'tel-extension'\n  | 'impp'\n  | 'url'\n  | 'photo';",
+      "declaration": "export type AutocompleteTypes =\r\n  | 'on'\r\n  | 'off'\r\n  | 'name'\r\n  | 'honorific-prefix'\r\n  | 'given-name'\r\n  | 'additional-name'\r\n  | 'family-name'\r\n  | 'honorific-suffix'\r\n  | 'nickname'\r\n  | 'email'\r\n  | 'username'\r\n  | 'new-password'\r\n  | 'current-password'\r\n  | 'one-time-code'\r\n  | 'organization-title'\r\n  | 'organization'\r\n  | 'street-address'\r\n  | 'address-line1'\r\n  | 'address-line2'\r\n  | 'address-line3'\r\n  | 'address-level4'\r\n  | 'address-level3'\r\n  | 'address-level2'\r\n  | 'address-level1'\r\n  | 'country'\r\n  | 'country-name'\r\n  | 'postal-code'\r\n  | 'cc-name'\r\n  | 'cc-given-name'\r\n  | 'cc-additional-name'\r\n  | 'cc-family-name'\r\n  | 'cc-family-name'\r\n  | 'cc-number'\r\n  | 'cc-exp'\r\n  | 'cc-exp-month'\r\n  | 'cc-exp-year'\r\n  | 'cc-csc'\r\n  | 'cc-type'\r\n  | 'transaction-currency'\r\n  | 'transaction-amount'\r\n  | 'language'\r\n  | 'bday'\r\n  | 'bday-day'\r\n  | 'bday-month'\r\n  | 'bday-year'\r\n  | 'sex'\r\n  | 'tel'\r\n  | 'tel-country-code'\r\n  | 'tel-national'\r\n  | 'tel-area-code'\r\n  | 'tel-local'\r\n  | 'tel-extension'\r\n  | 'impp'\r\n  | 'url'\r\n  | 'photo';",
       "docstring": "",
       "path": "src/interface.d.ts"
     },
     "src/interface.d.ts::TextFieldTypes": {
-      "declaration": "export type TextFieldTypes =\n  | 'date'\n  | 'email'\n  | 'number'\n  | 'password'\n  | 'search'\n  | 'tel'\n  | 'text'\n  | 'url'\n  | 'time'\n  | 'week'\n  | 'month'\n  | 'datetime-local';",
+      "declaration": "export type TextFieldTypes =\r\n  | 'date'\r\n  | 'email'\r\n  | 'number'\r\n  | 'password'\r\n  | 'search'\r\n  | 'tel'\r\n  | 'text'\r\n  | 'url'\r\n  | 'time'\r\n  | 'week'\r\n  | 'month'\r\n  | 'datetime-local';",
       "docstring": "",
       "path": "src/interface.d.ts"
     },

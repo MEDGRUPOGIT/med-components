@@ -5,7 +5,7 @@ import { Host, h } from "@stencil/core";
 import { chevronDown } from "ionicons/icons";
 import { config } from "../../../global/config";
 import { getIonMode } from "../../../global/ionic-global";
-import { addEventListener, getElementRoot, raf, removeEventListener, transitionEndAsync, } from "../../../utils/helpers";
+import { addEventListener, getElementRoot, raf, removeEventListener, transitionEndAsync } from "../../../utils/helpers";
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  *
@@ -42,7 +42,7 @@ export class TpAccordion {
              * not explicitly overridden them
              */
             if (ionItem.lines === undefined) {
-                ionItem.lines = "full";
+                ionItem.lines = 'full';
             }
         };
         this.getSlottedHeaderIonItem = () => {
@@ -54,14 +54,14 @@ export class TpAccordion {
              * Get the first ion-item
              * slotted in the header slot
              */
-            const slot = headerEl.querySelector("slot");
+            const slot = headerEl.querySelector('slot');
             if (!slot) {
                 return;
             }
             // This is not defined in unit tests
             if (slot.assignedElements === undefined)
                 return;
-            return slot.assignedElements().find((el) => el.tagName === "ION-ITEM");
+            return slot.assignedElements().find((el) => el.tagName === 'ION-ITEM');
         };
         this.setAria = (expanded = false) => {
             const ionItem = this.getSlottedHeaderIonItem();
@@ -73,11 +73,11 @@ export class TpAccordion {
              * ion-item because that is what will be focused
              */
             const root = getElementRoot(ionItem);
-            const button = root.querySelector("button");
+            const button = root.querySelector('button');
             if (!button) {
                 return;
             }
-            button.setAttribute("aria-expanded", `${expanded}`);
+            button.setAttribute('aria-expanded', `${expanded}`);
         };
         this.slotToggleIcon = () => {
             const ionItem = this.getSlottedHeaderIonItem();
@@ -89,23 +89,21 @@ export class TpAccordion {
              * Check if there already is a toggle icon.
              * If so, do not add another one.
              */
-            const existingToggleIcon = ionItem.querySelector(".ion-accordion-toggle-icon");
+            const existingToggleIcon = ionItem.querySelector('.ion-accordion-toggle-icon');
             if (existingToggleIcon) {
                 return;
             }
-            const iconEl = document.createElement("ion-icon");
+            const iconEl = document.createElement('ion-icon');
             iconEl.slot = toggleIconSlot;
             iconEl.lazy = false;
-            iconEl.classList.add("ion-accordion-toggle-icon");
+            iconEl.classList.add('ion-accordion-toggle-icon');
             iconEl.icon = toggleIcon;
-            iconEl.setAttribute("aria-hidden", "true");
+            iconEl.setAttribute('aria-hidden', 'true');
             //ionItem.appendChild(iconEl);
         };
         this.expandAccordion = (initialUpdate = false) => {
             const { contentEl, contentElWrapper } = this;
-            if (initialUpdate ||
-                contentEl === undefined ||
-                contentElWrapper === undefined) {
+            if (initialUpdate || contentEl === undefined || contentElWrapper === undefined) {
                 this.state = 4 /* AccordionState.Expanded */;
                 return;
             }
@@ -121,10 +119,10 @@ export class TpAccordion {
                     this.currentRaf = raf(async () => {
                         const contentHeight = contentElWrapper.offsetHeight;
                         const waitForTransition = transitionEndAsync(contentEl, 2000);
-                        contentEl.style.setProperty("max-height", `${contentHeight}px`);
+                        contentEl.style.setProperty('max-height', `${contentHeight}px`);
                         await waitForTransition;
                         this.state = 4 /* AccordionState.Expanded */;
-                        contentEl.style.removeProperty("max-height");
+                        contentEl.style.removeProperty('max-height');
                     });
                 });
             }
@@ -147,13 +145,13 @@ export class TpAccordion {
             if (this.shouldAnimate()) {
                 this.currentRaf = raf(async () => {
                     const contentHeight = contentEl.offsetHeight;
-                    contentEl.style.setProperty("max-height", `${contentHeight}px`);
+                    contentEl.style.setProperty('max-height', `${contentHeight}px`);
                     raf(async () => {
                         const waitForTransition = transitionEndAsync(contentEl, 2000);
                         this.state = 2 /* AccordionState.Collapsing */;
                         await waitForTransition;
                         this.state = 1 /* AccordionState.Collapsed */;
-                        contentEl.style.removeProperty("max-height");
+                        contentEl.style.removeProperty('max-height');
                     });
                 });
             }
@@ -169,14 +167,14 @@ export class TpAccordion {
          * of what is set in the config.
          */
         this.shouldAnimate = () => {
-            if (typeof window === "undefined") {
+            if (typeof window === 'undefined') {
                 return false;
             }
-            const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (prefersReducedMotion) {
                 return false;
             }
-            const animated = config.get("animated", true);
+            const animated = config.get('animated', true);
             if (!animated) {
                 return false;
             }
@@ -192,9 +190,7 @@ export class TpAccordion {
                 return;
             }
             const value = accordionGroup.value;
-            const shouldExpand = Array.isArray(value)
-                ? value.includes(accordionValue)
-                : value === accordionValue;
+            const shouldExpand = Array.isArray(value) ? value.includes(accordionValue) : value === accordionValue;
             if (shouldExpand) {
                 this.expandAccordion(initialUpdate);
                 this.isNext = this.isPrevious = false;
@@ -211,16 +207,12 @@ export class TpAccordion {
                 const nextAccordion = this.getNextSibling();
                 const nextAccordionValue = nextAccordion === null || nextAccordion === void 0 ? void 0 : nextAccordion.value;
                 if (nextAccordionValue !== undefined) {
-                    this.isPrevious = Array.isArray(value)
-                        ? value.includes(nextAccordionValue)
-                        : value === nextAccordionValue;
+                    this.isPrevious = Array.isArray(value) ? value.includes(nextAccordionValue) : value === nextAccordionValue;
                 }
                 const previousAccordion = this.getPreviousSibling();
                 const previousAccordionValue = previousAccordion === null || previousAccordion === void 0 ? void 0 : previousAccordion.value;
                 if (previousAccordionValue !== undefined) {
-                    this.isNext = Array.isArray(value)
-                        ? value.includes(previousAccordionValue)
-                        : value === previousAccordionValue;
+                    this.isNext = Array.isArray(value) ? value.includes(previousAccordionValue) : value === previousAccordionValue;
                 }
             }
         };
@@ -229,7 +221,7 @@ export class TpAccordion {
                 return;
             }
             const nextSibling = this.el.nextElementSibling;
-            if ((nextSibling === null || nextSibling === void 0 ? void 0 : nextSibling.tagName) !== "ION-ACCORDION") {
+            if ((nextSibling === null || nextSibling === void 0 ? void 0 : nextSibling.tagName) !== 'ION-ACCORDION') {
                 return;
             }
             return nextSibling;
@@ -239,7 +231,7 @@ export class TpAccordion {
                 return;
             }
             const previousSibling = this.el.previousElementSibling;
-            if ((previousSibling === null || previousSibling === void 0 ? void 0 : previousSibling.tagName) !== "ION-ACCORDION") {
+            if ((previousSibling === null || previousSibling === void 0 ? void 0 : previousSibling.tagName) !== 'ION-ACCORDION') {
                 return;
             }
             return previousSibling;
@@ -251,24 +243,23 @@ export class TpAccordion {
         this.disabled = false;
         this.readonly = false;
         this.toggleIcon = chevronDown;
-        this.toggleIconSlot = "end";
+        this.toggleIconSlot = 'end';
     }
     valueChanged() {
         this.updateState();
     }
     connectedCallback() {
         var _a;
-        const accordionGroupEl = (this.accordionGroupEl =
-            (_a = this.el) === null || _a === void 0 ? void 0 : _a.closest("tp-accordion-group"));
+        const accordionGroupEl = (this.accordionGroupEl = (_a = this.el) === null || _a === void 0 ? void 0 : _a.closest('tp-accordion-group'));
         if (accordionGroupEl) {
             this.updateState(true);
-            addEventListener(accordionGroupEl, "ionValueChange", this.updateListener);
+            addEventListener(accordionGroupEl, 'ionValueChange', this.updateListener);
         }
     }
     disconnectedCallback() {
         const accordionGroupEl = this.accordionGroupEl;
         if (accordionGroupEl) {
-            removeEventListener(accordionGroupEl, "ionValueChange", this.updateListener);
+            removeEventListener(accordionGroupEl, 'ionValueChange', this.updateListener);
         }
     }
     componentDidLoad() {
@@ -284,8 +275,7 @@ export class TpAccordion {
              * Set aria label on button inside of ion-item
              * once the inner content has been rendered.
              */
-            const expanded = this.state === 4 /* AccordionState.Expanded */ ||
-                this.state === 8 /* AccordionState.Expanding */;
+            const expanded = this.state === 4 /* AccordionState.Expanded */ || this.state === 8 /* AccordionState.Expanding */;
             this.setAria(expanded);
         });
     }
@@ -300,33 +290,31 @@ export class TpAccordion {
              * make the decision on whether or not
              * to allow it.
              */
-            const expand = state === 1 /* AccordionState.Collapsed */ ||
-                state === 2 /* AccordionState.Collapsing */;
+            const expand = state === 1 /* AccordionState.Collapsed */ || state === 2 /* AccordionState.Collapsing */;
             accordionGroupEl.requestAccordionToggle(value, expand);
         }
     }
     render() {
         const { disabled, readonly } = this;
         const mode = getIonMode(this);
-        const expanded = this.state === 4 /* AccordionState.Expanded */ ||
-            this.state === 8 /* AccordionState.Expanding */;
-        const headerPart = expanded ? "header expanded" : "header";
-        const contentPart = expanded ? "content expanded" : "content";
+        const expanded = this.state === 4 /* AccordionState.Expanded */ || this.state === 8 /* AccordionState.Expanding */;
+        const headerPart = expanded ? 'header expanded' : 'header';
+        const contentPart = expanded ? 'content expanded' : 'content';
         this.setAria(expanded);
         return (h(Host, { class: {
                 [mode]: true,
-                "accordion-expanding": this.state === 8 /* AccordionState.Expanding */,
-                "accordion-expanded": this.state === 4 /* AccordionState.Expanded */,
-                "accordion-collapsing": this.state === 2 /* AccordionState.Collapsing */,
-                "accordion-collapsed": this.state === 1 /* AccordionState.Collapsed */,
-                "accordion-next": this.isNext,
-                "accordion-previous": this.isPrevious,
-                "accordion-disabled": disabled,
-                "accordion-readonly": readonly,
-                "accordion-animated": this.shouldAnimate(),
+                'accordion-expanding': this.state === 8 /* AccordionState.Expanding */,
+                'accordion-expanded': this.state === 4 /* AccordionState.Expanded */,
+                'accordion-collapsing': this.state === 2 /* AccordionState.Collapsing */,
+                'accordion-collapsed': this.state === 1 /* AccordionState.Collapsed */,
+                'accordion-next': this.isNext,
+                'accordion-previous': this.isPrevious,
+                'accordion-disabled': disabled,
+                'accordion-readonly': readonly,
+                'accordion-animated': this.shouldAnimate(),
             } }, h("div", { onClick: () => this.toggleExpanded(), id: "header", part: headerPart, "aria-controls": "content", ref: (headerEl) => (this.headerEl = headerEl) }, h("slot", { name: "header" })), h("div", { id: "content", part: contentPart, role: "region", "aria-labelledby": "header", ref: (contentEl) => (this.contentEl = contentEl) }, h("div", { id: "content-wrapper", ref: (contentElWrapper) => (this.contentElWrapper = contentElWrapper) }, h("slot", { name: "content" })))));
     }
-    static get is() { return "tp-accordion"; }
+    static get is() { return "med-accordion"; }
     static get encapsulation() { return "shadow"; }
     static get delegatesFocus() { return true; }
     static get originalStyleUrls() {
@@ -419,7 +407,7 @@ export class TpAccordion {
                 "type": "string",
                 "mutable": false,
                 "complexType": {
-                    "original": "\"start\" | \"end\"",
+                    "original": "'start' | 'end'",
                     "resolved": "\"end\" | \"start\"",
                     "references": {}
                 },
@@ -431,7 +419,7 @@ export class TpAccordion {
                 },
                 "attribute": "toggle-icon-slot",
                 "reflect": false,
-                "defaultValue": "\"end\""
+                "defaultValue": "'end'"
             }
         };
     }

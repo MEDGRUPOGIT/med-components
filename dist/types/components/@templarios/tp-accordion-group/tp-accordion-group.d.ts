@@ -1,5 +1,5 @@
-import type { ComponentInterface, EventEmitter } from "../../../stencil-public-runtime";
-import type { TpAccordionGroupChangeEventDetail } from "./tp-accordion-group-interface";
+import type { ComponentInterface, EventEmitter } from '../../../stencil-public-runtime';
+import type { TpAccordionGroupChangeEventDetail } from './tp-accordion-group-interface';
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
@@ -36,7 +36,7 @@ export declare class TpAccordionGroup implements ComponentInterface {
      * Possible values are `"compact"` and `"inset"`.
      * Defaults to `"compact"`.
      */
-    expand: "compact" | "inset";
+    expand: 'compact' | 'inset';
     /**
      * Emitted when the value property has changed
      * as a result of a user action such as a click.

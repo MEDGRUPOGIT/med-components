@@ -1,4 +1,4 @@
-import type { ComponentInterface } from "../../../stencil-public-runtime";
+import type { ComponentInterface } from '../../../stencil-public-runtime';
 declare const enum AccordionState {
     Collapsed = 1,
     Collapsing = 2,
@@ -54,7 +54,7 @@ export declare class TpAccordion implements ComponentInterface {
      * The slot inside of `ion-item` to
      * place the toggle icon. Defaults to `"end"`.
      */
-    toggleIconSlot: "start" | "end";
+    toggleIconSlot: 'start' | 'end';
     connectedCallback(): void;
     disconnectedCallback(): void;
     componentDidLoad(): void;

@@ -11,31 +11,31 @@ export class TpChartBar {
         this.labelSize = 10;
         this.height = 200;
         this.bar = {
-            color: "med-color-brand-4",
+            color: 'med-color-brand-4',
             value: 0,
         };
         this.hasMarker = false;
         this.deactivated = false;
         this.marker = {
-            color: "med-color-fb-caution",
+            color: 'med-color-fb-caution',
             value: 0,
         };
     }
     render() {
-        const { dsColor, dsName, label, labelSize, height, bar, hasMarker, deactivated, marker, } = this;
+        const { dsColor, dsName, label, labelSize, height, bar, hasMarker, deactivated, marker } = this;
         return (h(Host, { class: generateMedColor(dsColor, {
-                "tp-chart-bar": true,
-                "tp-chart-bar--no-marker": !hasMarker,
-                "tp-chart-bar--secondary": dsName === "secondary",
-                "tp-chart-bar--deactivated": deactivated,
+                'tp-chart-bar': true,
+                'tp-chart-bar--no-marker': !hasMarker,
+                'tp-chart-bar--secondary': dsName === 'secondary',
+                'tp-chart-bar--deactivated': deactivated,
             }), style: {
-                "--label-size": `${labelSize}px`,
-                "--height": `${height}px`,
-                "--value-bar": `${bar.value}%`,
-                "--value-marker": `${marker.value}%`,
-            } }, h("div", { class: "tp-chart-bar__bar-container" }, h("div", { class: { "tp-chart-bar__bar": true, [bar.color]: true } }), h("div", { class: { "tp-chart-bar__marker": true, [marker.color]: true } })), label && (h("ion-label", { class: "tp-chart-bar__label", "ds-color": "neutral-95" }, label))));
+                '--label-size': `${labelSize}px`,
+                '--height': `${height}px`,
+                '--value-bar': `${bar.value}%`,
+                '--value-marker': `${marker.value}%`,
+            } }, h("div", { class: "tp-chart-bar__bar-container" }, h("div", { class: { 'tp-chart-bar__bar': true, [bar.color]: true } }), h("div", { class: { 'tp-chart-bar__marker': true, [marker.color]: true } })), label && (h("ion-label", { class: "tp-chart-bar__label", "ds-color": "neutral-95" }, label))));
     }
-    static get is() { return "tp-chart-bar"; }
+    static get is() { return "med-chart-bar-2"; }
     static get encapsulation() { return "scoped"; }
     static get originalStyleUrls() {
         return {
@@ -76,7 +76,7 @@ export class TpChartBar {
                 "type": "string",
                 "mutable": false,
                 "complexType": {
-                    "original": "\"secondary\"",
+                    "original": "'secondary'",
                     "resolved": "\"secondary\" | undefined",
                     "references": {}
                 },
@@ -162,7 +162,7 @@ export class TpChartBar {
                     "tags": [],
                     "text": ""
                 },
-                "defaultValue": "{\n    color: \"med-color-brand-4\",\n    value: 0,\n  }"
+                "defaultValue": "{\n    color: 'med-color-brand-4',\n    value: 0,\n  }"
             },
             "hasMarker": {
                 "type": "boolean",
@@ -220,7 +220,7 @@ export class TpChartBar {
                     "tags": [],
                     "text": ""
                 },
-                "defaultValue": "{\n    color: \"med-color-fb-caution\",\n    value: 0,\n  }"
+                "defaultValue": "{\n    color: 'med-color-fb-caution',\n    value: 0,\n  }"
             }
         };
     }

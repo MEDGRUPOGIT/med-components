@@ -1,7 +1,7 @@
-import { MedColor } from "../../../@templarios/types/color.type";
+import { MedColor } from '../../../@templarios/types/color.type';
 export declare class TpLoader {
     dsColor?: MedColor;
     fixed: boolean;
-    dsName?: "secondary";
+    dsName?: 'secondary';
     render(): any;
 }

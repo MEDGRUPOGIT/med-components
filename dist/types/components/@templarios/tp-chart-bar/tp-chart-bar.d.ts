@@ -1,9 +1,9 @@
-import { MedColor } from "../../../@templarios/types/color.type";
-import { TpChartBarItem } from "../../../@templarios/interfaces/chart-bar.interface";
+import { MedColor } from '../../../@templarios/types/color.type';
+import { TpChartBarItem } from '../../../@templarios/interfaces/chart-bar.interface';
 export declare class TpChartBar {
     host: HTMLElement;
     dsColor?: MedColor;
-    dsName?: "secondary";
+    dsName?: 'secondary';
     label?: string;
     labelSize: number;
     height: number;

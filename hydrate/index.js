@@ -19939,7 +19939,7 @@ const isRTL = (hostEl) => {
   return (document === null || document === void 0 ? void 0 : document.dir.toLowerCase()) === 'rtl';
 };
 
-const iconCss = "/*!@:host*/.sc-ion-icon-h{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}/*!@:host .ionicon*/.sc-ion-icon-h .ionicon.sc-ion-icon{stroke:currentColor}/*!@.ionicon-fill-none*/.ionicon-fill-none.sc-ion-icon{fill:none}/*!@.ionicon-stroke-width*/.ionicon-stroke-width.sc-ion-icon{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}/*!@.icon-inner,\n.ionicon,\nsvg*/.icon-inner.sc-ion-icon,.ionicon.sc-ion-icon,svg.sc-ion-icon{display:block;height:100%;width:100%}@supports (background: -webkit-named-image(i)){/*!@:host(.icon-rtl) .icon-inner*/.icon-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}}@supports not selector(:dir(rtl)) and selector(:host-context([dir='rtl'])){/*!@:host(.icon-rtl) .icon-inner*/.icon-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}}/*!@:host(.flip-rtl):host-context([dir='rtl']) .icon-inner*/.flip-rtl.sc-ion-icon-h -no-combinator[dir='rtl'].sc-ion-icon-h .icon-inner.sc-ion-icon,[dir='rtl'] .sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}@supports selector(:dir(rtl)){/*!@:host(.flip-rtl:dir(rtl)) .icon-inner*/.flip-rtl.sc-ion-icon-h:dir(rtl) .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}/*!@:host(.flip-rtl:dir(ltr)) .icon-inner*/.flip-rtl.sc-ion-icon-h:dir(ltr) .icon-inner.sc-ion-icon{-webkit-transform:scaleX(1);transform:scaleX(1)}}/*!@:host(.icon-small)*/.icon-small.sc-ion-icon-h{font-size:1.125rem !important}/*!@:host(.icon-large)*/.icon-large.sc-ion-icon-h{font-size:2rem !important}/*!@:host(.ion-color)*/.ion-color.sc-ion-icon-h{color:var(--ion-color-base) !important}/*!@:host(.ion-color-primary)*/.ion-color-primary.sc-ion-icon-h{--ion-color-base:var(--ion-color-primary, #3880ff)}/*!@:host(.ion-color-secondary)*/.ion-color-secondary.sc-ion-icon-h{--ion-color-base:var(--ion-color-secondary, #0cd1e8)}/*!@:host(.ion-color-tertiary)*/.ion-color-tertiary.sc-ion-icon-h{--ion-color-base:var(--ion-color-tertiary, #f4a942)}/*!@:host(.ion-color-success)*/.ion-color-success.sc-ion-icon-h{--ion-color-base:var(--ion-color-success, #10dc60)}/*!@:host(.ion-color-warning)*/.ion-color-warning.sc-ion-icon-h{--ion-color-base:var(--ion-color-warning, #ffce00)}/*!@:host(.ion-color-danger)*/.ion-color-danger.sc-ion-icon-h{--ion-color-base:var(--ion-color-danger, #f14141)}/*!@:host(.ion-color-light)*/.ion-color-light.sc-ion-icon-h{--ion-color-base:var(--ion-color-light, #f4f5f8)}/*!@:host(.ion-color-medium)*/.ion-color-medium.sc-ion-icon-h{--ion-color-base:var(--ion-color-medium, #989aa2)}/*!@:host(.ion-color-dark)*/.ion-color-dark.sc-ion-icon-h{--ion-color-base:var(--ion-color-dark, #222428)}/*!@:host(.med-icon)*/.med-icon.sc-ion-icon-h{--ionicon-stroke-width:2;--fill:none;font-size:24px;stroke:inherit}/*!@:host(.med-icon) path*/.med-icon.sc-ion-icon-h path.sc-ion-icon{stroke-width:var(--ionicon-stroke-width, 32px);fill:var(--fill);stroke-linecap:round;stroke-linejoin:round;stroke:inherit}/*!@:host(.med-icon.fill)*/.med-icon.fill.sc-ion-icon-h{--fill:hsl(var(--med-color-neutral-10))}/*!@:host(.med-icon.med-color.fill) path*/.med-icon.med-color.fill.sc-ion-icon-h path.sc-ion-icon{--fill:hsl(var(--med-color-3))}/*!@:host(.med-icon.med-color-neutral.fill) path*/.med-icon.med-color-neutral.fill.sc-ion-icon-h path.sc-ion-icon{--fill:hsl(var(--med-color-neutral))}/*!@:host(.med-icon.med-color-feedback.fill) path*/.med-icon.med-color-feedback.fill.sc-ion-icon-h path.sc-ion-icon{--fill:hsl(var(--med-color-feedback))}/*!@:host(.med-icon.med-color)*/.med-icon.med-color.sc-ion-icon-h{color:hsl(var(--med-color-3)) !important;stroke:hsl(var(--med-color-3)) !important}/*!@:host(.med-icon.med-color-neutral)*/.med-icon.med-color-neutral.sc-ion-icon-h{color:hsl(var(--med-color-neutral)) !important;stroke:hsl(var(--med-color-neutral)) !important}/*!@:host(.med-icon.med-color-feedback)*/.med-icon.med-color-feedback.sc-ion-icon-h{color:hsl(var(--med-color-feedback)) !important;stroke:hsl(var(--med-color-feedback)) !important}/*!@:host(.med-icon.med-icon--xxs)*/.med-icon.med-icon--xxs.sc-ion-icon-h{font-size:12px}/*!@:host(.med-icon.med-icon--xs)*/.med-icon.med-icon--xs.sc-ion-icon-h{font-size:16px}/*!@:host(.med-icon.med-icon--sm)*/.med-icon.med-icon--sm.sc-ion-icon-h{font-size:24px}/*!@:host(.med-icon.med-icon--md)*/.med-icon.med-icon--md.sc-ion-icon-h{font-size:32px}/*!@:host(.med-icon.med-icon--lg)*/.med-icon.med-icon--lg.sc-ion-icon-h{font-size:48px}/*!@:host(.med-icon.med-icon--stroke-1)*/.med-icon.med-icon--stroke-1.sc-ion-icon-h{--ionicon-stroke-width:1}";
+const iconCss = "/*!@:host*/.sc-ion-icon-h{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}/*!@:host .ionicon*/.sc-ion-icon-h .ionicon.sc-ion-icon{stroke:currentColor}/*!@.ionicon-fill-none*/.ionicon-fill-none.sc-ion-icon{fill:none}/*!@.ionicon-stroke-width*/.ionicon-stroke-width.sc-ion-icon{stroke-width:32px;stroke-width:var(--ionicon-stroke-width, 32px)}/*!@.icon-inner,\n.ionicon,\nsvg*/.icon-inner.sc-ion-icon,.ionicon.sc-ion-icon,svg.sc-ion-icon{display:block;height:100%;width:100%}@supports (background: -webkit-named-image(i)){/*!@:host(.icon-rtl) .icon-inner*/.icon-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}}@supports not selector(:dir(rtl)) and selector(:host-context([dir='rtl'])){/*!@:host(.icon-rtl) .icon-inner*/.icon-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}}/*!@:host(.flip-rtl):host-context([dir='rtl']) .icon-inner*/.flip-rtl.sc-ion-icon-h -no-combinator[dir='rtl'].sc-ion-icon-h .icon-inner.sc-ion-icon,[dir='rtl'] .sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}@supports selector(:dir(rtl)){/*!@:host(.flip-rtl:dir(rtl)) .icon-inner*/.flip-rtl.sc-ion-icon-h:dir(rtl) .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}/*!@:host(.flip-rtl:dir(ltr)) .icon-inner*/.flip-rtl.sc-ion-icon-h:dir(ltr) .icon-inner.sc-ion-icon{-webkit-transform:scaleX(1);transform:scaleX(1)}}/*!@:host(.icon-small)*/.icon-small.sc-ion-icon-h{font-size:1.125rem !important}/*!@:host(.icon-large)*/.icon-large.sc-ion-icon-h{font-size:2rem !important}/*!@:host(.ion-color)*/.ion-color.sc-ion-icon-h{color:var(--ion-color-base) !important}/*!@:host(.ion-color-primary)*/.ion-color-primary.sc-ion-icon-h{--ion-color-base:var(--ion-color-primary, #3880ff)}/*!@:host(.ion-color-secondary)*/.ion-color-secondary.sc-ion-icon-h{--ion-color-base:var(--ion-color-secondary, #0cd1e8)}/*!@:host(.ion-color-tertiary)*/.ion-color-tertiary.sc-ion-icon-h{--ion-color-base:var(--ion-color-tertiary, #f4a942)}/*!@:host(.ion-color-success)*/.ion-color-success.sc-ion-icon-h{--ion-color-base:var(--ion-color-success, #10dc60)}/*!@:host(.ion-color-warning)*/.ion-color-warning.sc-ion-icon-h{--ion-color-base:var(--ion-color-warning, #ffce00)}/*!@:host(.ion-color-danger)*/.ion-color-danger.sc-ion-icon-h{--ion-color-base:var(--ion-color-danger, #f14141)}/*!@:host(.ion-color-light)*/.ion-color-light.sc-ion-icon-h{--ion-color-base:var(--ion-color-light, #f4f5f8)}/*!@:host(.ion-color-medium)*/.ion-color-medium.sc-ion-icon-h{--ion-color-base:var(--ion-color-medium, #989aa2)}/*!@:host(.ion-color-dark)*/.ion-color-dark.sc-ion-icon-h{--ion-color-base:var(--ion-color-dark, #222428)}";
 
 class Icon {
     constructor(hostRef) {
@@ -41089,9 +41089,9 @@ class ToolbarTitle {
     }; }
 }
 
-const tpAccordionIosCss = "/*!@:host*/.sc-tp-accordion-ios-h{display:block;position:relative;width:100%;background-color:var(--ion-background-color, #ffffff);overflow:hidden;z-index:0}/*!@:host(.accordion-expanding) ::slotted(ion-item[slot=header]),\n:host(.accordion-expanded) ::slotted(ion-item[slot=header])*/.sc-tp-accordion-ios-h.accordion-expanding .sc-tp-accordion-ios-s>ion-item[slot=header],.sc-tp-accordion-ios-h.accordion-expanded.sc-tp-accordion-ios-s>ion-item[slot=header],.sc-tp-accordion-ios-h.accordion-expanded .sc-tp-accordion-ios-s>ion-item[slot=header]{--border-width:0px}/*!@:host(.accordion-animated)*/.accordion-animated.sc-tp-accordion-ios-h{-webkit-transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@:host(.accordion-animated) #content*/.accordion-animated.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{-webkit-transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@#content*/#content.sc-tp-accordion-ios{overflow:hidden;will-change:max-height}/*!@:host(.accordion-collapsing) #content*/.accordion-collapsing.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{max-height:0 !important}/*!@:host(.accordion-collapsed) #content*/.accordion-collapsed.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{display:none}/*!@:host(.accordion-expanding) #content*/.accordion-expanding.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{max-height:0}/*!@:host(.accordion-expanding) #content-wrapper*/.accordion-expanding.sc-tp-accordion-ios-h #content-wrapper.sc-tp-accordion-ios{overflow:auto}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-readonly) #header,\n:host(.accordion-disabled) #content,\n:host(.accordion-readonly) #content*/.accordion-disabled.sc-tp-accordion-ios-h #header.sc-tp-accordion-ios,.accordion-readonly.sc-tp-accordion-ios-h #header.sc-tp-accordion-ios,.accordion-disabled.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios,.accordion-readonly.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{pointer-events:none}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-disabled) #content*/.accordion-disabled.sc-tp-accordion-ios-h #header.sc-tp-accordion-ios,.accordion-disabled.sc-tp-accordion-ios-h #content.sc-tp-accordion-ios{opacity:0.4}@media (prefers-reduced-motion: reduce){/*!@:host,\n  #content*/.sc-tp-accordion-ios-h,#content.sc-tp-accordion-ios{-webkit-transition:none !important;transition:none !important}}/*!@:host(.accordion-next) ::slotted(ion-item[slot=header])*/.sc-tp-accordion-ios-h.accordion-next .sc-tp-accordion-ios-s>ion-item[slot=header]{--border-width:0.55px 0px 0.55px 0px}";
+const tpAccordionIosCss = "/*!@:host*/.sc-med-accordion-ios-h{display:block;position:relative;width:100%;background-color:var(--ion-background-color, #ffffff);overflow:hidden;z-index:0}/*!@:host(.accordion-expanding) ::slotted(ion-item[slot=header]),\n:host(.accordion-expanded) ::slotted(ion-item[slot=header])*/.sc-med-accordion-ios-h.accordion-expanding .sc-med-accordion-ios-s>ion-item[slot=header],.sc-med-accordion-ios-h.accordion-expanded.sc-med-accordion-ios-s>ion-item[slot=header],.sc-med-accordion-ios-h.accordion-expanded .sc-med-accordion-ios-s>ion-item[slot=header]{--border-width:0px}/*!@:host(.accordion-animated)*/.accordion-animated.sc-med-accordion-ios-h{-webkit-transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@:host(.accordion-animated) #content*/.accordion-animated.sc-med-accordion-ios-h #content.sc-med-accordion-ios{-webkit-transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@#content*/#content.sc-med-accordion-ios{overflow:hidden;will-change:max-height}/*!@:host(.accordion-collapsing) #content*/.accordion-collapsing.sc-med-accordion-ios-h #content.sc-med-accordion-ios{max-height:0 !important}/*!@:host(.accordion-collapsed) #content*/.accordion-collapsed.sc-med-accordion-ios-h #content.sc-med-accordion-ios{display:none}/*!@:host(.accordion-expanding) #content*/.accordion-expanding.sc-med-accordion-ios-h #content.sc-med-accordion-ios{max-height:0}/*!@:host(.accordion-expanding) #content-wrapper*/.accordion-expanding.sc-med-accordion-ios-h #content-wrapper.sc-med-accordion-ios{overflow:auto}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-readonly) #header,\n:host(.accordion-disabled) #content,\n:host(.accordion-readonly) #content*/.accordion-disabled.sc-med-accordion-ios-h #header.sc-med-accordion-ios,.accordion-readonly.sc-med-accordion-ios-h #header.sc-med-accordion-ios,.accordion-disabled.sc-med-accordion-ios-h #content.sc-med-accordion-ios,.accordion-readonly.sc-med-accordion-ios-h #content.sc-med-accordion-ios{pointer-events:none}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-disabled) #content*/.accordion-disabled.sc-med-accordion-ios-h #header.sc-med-accordion-ios,.accordion-disabled.sc-med-accordion-ios-h #content.sc-med-accordion-ios{opacity:0.4}@media (prefers-reduced-motion: reduce){/*!@:host,\n  #content*/.sc-med-accordion-ios-h,#content.sc-med-accordion-ios{-webkit-transition:none !important;transition:none !important}}/*!@:host(.accordion-next) ::slotted(ion-item[slot=header])*/.sc-med-accordion-ios-h.accordion-next .sc-med-accordion-ios-s>ion-item[slot=header]{--border-width:0.55px 0px 0.55px 0px}";
 
-const tpAccordionMdCss = "/*!@:host*/.sc-tp-accordion-md-h{display:block;position:relative;width:100%;background-color:var(--ion-background-color, #ffffff);overflow:hidden;z-index:0}/*!@:host(.accordion-expanding) ::slotted(ion-item[slot=header]),\n:host(.accordion-expanded) ::slotted(ion-item[slot=header])*/.sc-tp-accordion-md-h.accordion-expanding .sc-tp-accordion-md-s>ion-item[slot=header],.sc-tp-accordion-md-h.accordion-expanded.sc-tp-accordion-md-s>ion-item[slot=header],.sc-tp-accordion-md-h.accordion-expanded .sc-tp-accordion-md-s>ion-item[slot=header]{--border-width:0px}/*!@:host(.accordion-animated)*/.accordion-animated.sc-tp-accordion-md-h{-webkit-transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@:host(.accordion-animated) #content*/.accordion-animated.sc-tp-accordion-md-h #content.sc-tp-accordion-md{-webkit-transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@#content*/#content.sc-tp-accordion-md{overflow:hidden;will-change:max-height}/*!@:host(.accordion-collapsing) #content*/.accordion-collapsing.sc-tp-accordion-md-h #content.sc-tp-accordion-md{max-height:0 !important}/*!@:host(.accordion-collapsed) #content*/.accordion-collapsed.sc-tp-accordion-md-h #content.sc-tp-accordion-md{display:none}/*!@:host(.accordion-expanding) #content*/.accordion-expanding.sc-tp-accordion-md-h #content.sc-tp-accordion-md{max-height:0}/*!@:host(.accordion-expanding) #content-wrapper*/.accordion-expanding.sc-tp-accordion-md-h #content-wrapper.sc-tp-accordion-md{overflow:auto}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-readonly) #header,\n:host(.accordion-disabled) #content,\n:host(.accordion-readonly) #content*/.accordion-disabled.sc-tp-accordion-md-h #header.sc-tp-accordion-md,.accordion-readonly.sc-tp-accordion-md-h #header.sc-tp-accordion-md,.accordion-disabled.sc-tp-accordion-md-h #content.sc-tp-accordion-md,.accordion-readonly.sc-tp-accordion-md-h #content.sc-tp-accordion-md{pointer-events:none}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-disabled) #content*/.accordion-disabled.sc-tp-accordion-md-h #header.sc-tp-accordion-md,.accordion-disabled.sc-tp-accordion-md-h #content.sc-tp-accordion-md{opacity:0.4}@media (prefers-reduced-motion: reduce){/*!@:host,\n  #content*/.sc-tp-accordion-md-h,#content.sc-tp-accordion-md{-webkit-transition:none !important;transition:none !important}}";
+const tpAccordionMdCss = "/*!@:host*/.sc-med-accordion-md-h{display:block;position:relative;width:100%;background-color:var(--ion-background-color, #ffffff);overflow:hidden;z-index:0}/*!@:host(.accordion-expanding) ::slotted(ion-item[slot=header]),\n:host(.accordion-expanded) ::slotted(ion-item[slot=header])*/.sc-med-accordion-md-h.accordion-expanding .sc-med-accordion-md-s>ion-item[slot=header],.sc-med-accordion-md-h.accordion-expanded.sc-med-accordion-md-s>ion-item[slot=header],.sc-med-accordion-md-h.accordion-expanded .sc-med-accordion-md-s>ion-item[slot=header]{--border-width:0px}/*!@:host(.accordion-animated)*/.accordion-animated.sc-med-accordion-md-h{-webkit-transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:all 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@:host(.accordion-animated) #content*/.accordion-animated.sc-med-accordion-md-h #content.sc-med-accordion-md{-webkit-transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:max-height 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}/*!@#content*/#content.sc-med-accordion-md{overflow:hidden;will-change:max-height}/*!@:host(.accordion-collapsing) #content*/.accordion-collapsing.sc-med-accordion-md-h #content.sc-med-accordion-md{max-height:0 !important}/*!@:host(.accordion-collapsed) #content*/.accordion-collapsed.sc-med-accordion-md-h #content.sc-med-accordion-md{display:none}/*!@:host(.accordion-expanding) #content*/.accordion-expanding.sc-med-accordion-md-h #content.sc-med-accordion-md{max-height:0}/*!@:host(.accordion-expanding) #content-wrapper*/.accordion-expanding.sc-med-accordion-md-h #content-wrapper.sc-med-accordion-md{overflow:auto}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-readonly) #header,\n:host(.accordion-disabled) #content,\n:host(.accordion-readonly) #content*/.accordion-disabled.sc-med-accordion-md-h #header.sc-med-accordion-md,.accordion-readonly.sc-med-accordion-md-h #header.sc-med-accordion-md,.accordion-disabled.sc-med-accordion-md-h #content.sc-med-accordion-md,.accordion-readonly.sc-med-accordion-md-h #content.sc-med-accordion-md{pointer-events:none}/*!@:host(.accordion-disabled) #header,\n:host(.accordion-disabled) #content*/.accordion-disabled.sc-med-accordion-md-h #header.sc-med-accordion-md,.accordion-disabled.sc-med-accordion-md-h #content.sc-med-accordion-md{opacity:0.4}@media (prefers-reduced-motion: reduce){/*!@:host,\n  #content*/.sc-med-accordion-md-h,#content.sc-med-accordion-md{-webkit-transition:none !important;transition:none !important}}";
 
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -41130,7 +41130,7 @@ class TpAccordion {
              * not explicitly overridden them
              */
             if (ionItem.lines === undefined) {
-                ionItem.lines = "full";
+                ionItem.lines = 'full';
             }
         };
         this.getSlottedHeaderIonItem = () => {
@@ -41142,14 +41142,14 @@ class TpAccordion {
              * Get the first ion-item
              * slotted in the header slot
              */
-            const slot = headerEl.querySelector("slot");
+            const slot = headerEl.querySelector('slot');
             if (!slot) {
                 return;
             }
             // This is not defined in unit tests
             if (slot.assignedElements === undefined)
                 return;
-            return slot.assignedElements().find((el) => el.tagName === "ION-ITEM");
+            return slot.assignedElements().find((el) => el.tagName === 'ION-ITEM');
         };
         this.setAria = (expanded = false) => {
             const ionItem = this.getSlottedHeaderIonItem();
@@ -41161,11 +41161,11 @@ class TpAccordion {
              * ion-item because that is what will be focused
              */
             const root = getElementRoot(ionItem);
-            const button = root.querySelector("button");
+            const button = root.querySelector('button');
             if (!button) {
                 return;
             }
-            button.setAttribute("aria-expanded", `${expanded}`);
+            button.setAttribute('aria-expanded', `${expanded}`);
         };
         this.slotToggleIcon = () => {
             const ionItem = this.getSlottedHeaderIonItem();
@@ -41177,23 +41177,21 @@ class TpAccordion {
              * Check if there already is a toggle icon.
              * If so, do not add another one.
              */
-            const existingToggleIcon = ionItem.querySelector(".ion-accordion-toggle-icon");
+            const existingToggleIcon = ionItem.querySelector('.ion-accordion-toggle-icon');
             if (existingToggleIcon) {
                 return;
             }
-            const iconEl = document.createElement("ion-icon");
+            const iconEl = document.createElement('ion-icon');
             iconEl.slot = toggleIconSlot;
             iconEl.lazy = false;
-            iconEl.classList.add("ion-accordion-toggle-icon");
+            iconEl.classList.add('ion-accordion-toggle-icon');
             iconEl.icon = toggleIcon;
-            iconEl.setAttribute("aria-hidden", "true");
+            iconEl.setAttribute('aria-hidden', 'true');
             //ionItem.appendChild(iconEl);
         };
         this.expandAccordion = (initialUpdate = false) => {
             const { contentEl, contentElWrapper } = this;
-            if (initialUpdate ||
-                contentEl === undefined ||
-                contentElWrapper === undefined) {
+            if (initialUpdate || contentEl === undefined || contentElWrapper === undefined) {
                 this.state = 4 /* AccordionState.Expanded */;
                 return;
             }
@@ -41209,10 +41207,10 @@ class TpAccordion {
                     this.currentRaf = raf(async () => {
                         const contentHeight = contentElWrapper.offsetHeight;
                         const waitForTransition = transitionEndAsync(contentEl, 2000);
-                        contentEl.style.setProperty("max-height", `${contentHeight}px`);
+                        contentEl.style.setProperty('max-height', `${contentHeight}px`);
                         await waitForTransition;
                         this.state = 4 /* AccordionState.Expanded */;
-                        contentEl.style.removeProperty("max-height");
+                        contentEl.style.removeProperty('max-height');
                     });
                 });
             }
@@ -41235,13 +41233,13 @@ class TpAccordion {
             if (this.shouldAnimate()) {
                 this.currentRaf = raf(async () => {
                     const contentHeight = contentEl.offsetHeight;
-                    contentEl.style.setProperty("max-height", `${contentHeight}px`);
+                    contentEl.style.setProperty('max-height', `${contentHeight}px`);
                     raf(async () => {
                         const waitForTransition = transitionEndAsync(contentEl, 2000);
                         this.state = 2 /* AccordionState.Collapsing */;
                         await waitForTransition;
                         this.state = 1 /* AccordionState.Collapsed */;
-                        contentEl.style.removeProperty("max-height");
+                        contentEl.style.removeProperty('max-height');
                     });
                 });
             }
@@ -41257,14 +41255,14 @@ class TpAccordion {
          * of what is set in the config.
          */
         this.shouldAnimate = () => {
-            if (typeof window === "undefined") {
+            if (typeof window === 'undefined') {
                 return false;
             }
-            const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
             if (prefersReducedMotion) {
                 return false;
             }
-            const animated = config.get("animated", true);
+            const animated = config.get('animated', true);
             if (!animated) {
                 return false;
             }
@@ -41280,9 +41278,7 @@ class TpAccordion {
                 return;
             }
             const value = accordionGroup.value;
-            const shouldExpand = Array.isArray(value)
-                ? value.includes(accordionValue)
-                : value === accordionValue;
+            const shouldExpand = Array.isArray(value) ? value.includes(accordionValue) : value === accordionValue;
             if (shouldExpand) {
                 this.expandAccordion(initialUpdate);
                 this.isNext = this.isPrevious = false;
@@ -41299,16 +41295,12 @@ class TpAccordion {
                 const nextAccordion = this.getNextSibling();
                 const nextAccordionValue = nextAccordion === null || nextAccordion === void 0 ? void 0 : nextAccordion.value;
                 if (nextAccordionValue !== undefined) {
-                    this.isPrevious = Array.isArray(value)
-                        ? value.includes(nextAccordionValue)
-                        : value === nextAccordionValue;
+                    this.isPrevious = Array.isArray(value) ? value.includes(nextAccordionValue) : value === nextAccordionValue;
                 }
                 const previousAccordion = this.getPreviousSibling();
                 const previousAccordionValue = previousAccordion === null || previousAccordion === void 0 ? void 0 : previousAccordion.value;
                 if (previousAccordionValue !== undefined) {
-                    this.isNext = Array.isArray(value)
-                        ? value.includes(previousAccordionValue)
-                        : value === previousAccordionValue;
+                    this.isNext = Array.isArray(value) ? value.includes(previousAccordionValue) : value === previousAccordionValue;
                 }
             }
         };
@@ -41317,7 +41309,7 @@ class TpAccordion {
                 return;
             }
             const nextSibling = this.el.nextElementSibling;
-            if ((nextSibling === null || nextSibling === void 0 ? void 0 : nextSibling.tagName) !== "ION-ACCORDION") {
+            if ((nextSibling === null || nextSibling === void 0 ? void 0 : nextSibling.tagName) !== 'ION-ACCORDION') {
                 return;
             }
             return nextSibling;
@@ -41327,7 +41319,7 @@ class TpAccordion {
                 return;
             }
             const previousSibling = this.el.previousElementSibling;
-            if ((previousSibling === null || previousSibling === void 0 ? void 0 : previousSibling.tagName) !== "ION-ACCORDION") {
+            if ((previousSibling === null || previousSibling === void 0 ? void 0 : previousSibling.tagName) !== 'ION-ACCORDION') {
                 return;
             }
             return previousSibling;
@@ -41339,24 +41331,23 @@ class TpAccordion {
         this.disabled = false;
         this.readonly = false;
         this.toggleIcon = chevronDown;
-        this.toggleIconSlot = "end";
+        this.toggleIconSlot = 'end';
     }
     valueChanged() {
         this.updateState();
     }
     connectedCallback() {
         var _a;
-        const accordionGroupEl = (this.accordionGroupEl =
-            (_a = this.el) === null || _a === void 0 ? void 0 : _a.closest("tp-accordion-group"));
+        const accordionGroupEl = (this.accordionGroupEl = (_a = this.el) === null || _a === void 0 ? void 0 : _a.closest('tp-accordion-group'));
         if (accordionGroupEl) {
             this.updateState(true);
-            addEventListener$1(accordionGroupEl, "ionValueChange", this.updateListener);
+            addEventListener$1(accordionGroupEl, 'ionValueChange', this.updateListener);
         }
     }
     disconnectedCallback() {
         const accordionGroupEl = this.accordionGroupEl;
         if (accordionGroupEl) {
-            removeEventListener(accordionGroupEl, "ionValueChange", this.updateListener);
+            removeEventListener(accordionGroupEl, 'ionValueChange', this.updateListener);
         }
     }
     componentDidLoad() {
@@ -41372,8 +41363,7 @@ class TpAccordion {
              * Set aria label on button inside of ion-item
              * once the inner content has been rendered.
              */
-            const expanded = this.state === 4 /* AccordionState.Expanded */ ||
-                this.state === 8 /* AccordionState.Expanding */;
+            const expanded = this.state === 4 /* AccordionState.Expanded */ || this.state === 8 /* AccordionState.Expanding */;
             this.setAria(expanded);
         });
     }
@@ -41388,30 +41378,28 @@ class TpAccordion {
              * make the decision on whether or not
              * to allow it.
              */
-            const expand = state === 1 /* AccordionState.Collapsed */ ||
-                state === 2 /* AccordionState.Collapsing */;
+            const expand = state === 1 /* AccordionState.Collapsed */ || state === 2 /* AccordionState.Collapsing */;
             accordionGroupEl.requestAccordionToggle(value, expand);
         }
     }
     render() {
         const { disabled, readonly } = this;
         const mode = getIonMode$1(this);
-        const expanded = this.state === 4 /* AccordionState.Expanded */ ||
-            this.state === 8 /* AccordionState.Expanding */;
-        const headerPart = expanded ? "header expanded" : "header";
-        const contentPart = expanded ? "content expanded" : "content";
+        const expanded = this.state === 4 /* AccordionState.Expanded */ || this.state === 8 /* AccordionState.Expanding */;
+        const headerPart = expanded ? 'header expanded' : 'header';
+        const contentPart = expanded ? 'content expanded' : 'content';
         this.setAria(expanded);
         return (hAsync(Host, { class: {
                 [mode]: true,
-                "accordion-expanding": this.state === 8 /* AccordionState.Expanding */,
-                "accordion-expanded": this.state === 4 /* AccordionState.Expanded */,
-                "accordion-collapsing": this.state === 2 /* AccordionState.Collapsing */,
-                "accordion-collapsed": this.state === 1 /* AccordionState.Collapsed */,
-                "accordion-next": this.isNext,
-                "accordion-previous": this.isPrevious,
-                "accordion-disabled": disabled,
-                "accordion-readonly": readonly,
-                "accordion-animated": this.shouldAnimate(),
+                'accordion-expanding': this.state === 8 /* AccordionState.Expanding */,
+                'accordion-expanded': this.state === 4 /* AccordionState.Expanded */,
+                'accordion-collapsing': this.state === 2 /* AccordionState.Collapsing */,
+                'accordion-collapsed': this.state === 1 /* AccordionState.Collapsed */,
+                'accordion-next': this.isNext,
+                'accordion-previous': this.isPrevious,
+                'accordion-disabled': disabled,
+                'accordion-readonly': readonly,
+                'accordion-animated': this.shouldAnimate(),
             } }, hAsync("div", { onClick: () => this.toggleExpanded(), id: "header", part: headerPart, "aria-controls": "content", ref: (headerEl) => (this.headerEl = headerEl) }, hAsync("slot", { name: "header" })), hAsync("div", { id: "content", part: contentPart, role: "region", "aria-labelledby": "header", ref: (contentEl) => (this.contentEl = contentEl) }, hAsync("div", { id: "content-wrapper", ref: (contentElWrapper) => (this.contentElWrapper = contentElWrapper) }, hAsync("slot", { name: "content" })))));
     }
     static get delegatesFocus() { return true; }
@@ -41425,7 +41413,7 @@ class TpAccordion {
     }; }
     static get cmpMeta() { return {
         "$flags$": 57,
-        "$tagName$": "tp-accordion",
+        "$tagName$": "med-accordion",
         "$members$": {
             "value": [1],
             "disabled": [4],
@@ -41443,9 +41431,9 @@ class TpAccordion {
 }
 let accordionIds = 0;
 
-const tpAccordionGroupIosCss = "/*!@:host*/.sc-tp-accordion-group-ios-h{display:block}/*!@:host(.accordion-group-expand-inset)*/.accordion-group-expand-inset.sc-tp-accordion-group-ios-h{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:16px;margin-bottom:16px}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanding),\n:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanded)*/.sc-tp-accordion-group-ios-h.accordion-group-expand-inset .sc-tp-accordion-group-ios-s>ion-accordion.accordion-expanding,.sc-tp-accordion-group-ios-h.accordion-group-expand-inset.sc-tp-accordion-group-ios-s>ion-accordion.accordion-expanded,.sc-tp-accordion-group-ios-h.accordion-group-expand-inset .sc-tp-accordion-group-ios-s>ion-accordion.accordion-expanded{border-bottom:none}";
+const tpAccordionGroupIosCss = "/*!@:host*/.sc-med-accordion-group-ios-h{display:block}/*!@:host(.accordion-group-expand-inset)*/.accordion-group-expand-inset.sc-med-accordion-group-ios-h{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:16px;margin-bottom:16px}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanding),\n:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanded)*/.sc-med-accordion-group-ios-h.accordion-group-expand-inset .sc-med-accordion-group-ios-s>ion-accordion.accordion-expanding,.sc-med-accordion-group-ios-h.accordion-group-expand-inset.sc-med-accordion-group-ios-s>ion-accordion.accordion-expanded,.sc-med-accordion-group-ios-h.accordion-group-expand-inset .sc-med-accordion-group-ios-s>ion-accordion.accordion-expanded{border-bottom:none}";
 
-const tpAccordionGroupMdCss = "/*!@:host*/.sc-tp-accordion-group-md-h{display:block}/*!@:host(.accordion-group-expand-inset)*/.accordion-group-expand-inset.sc-tp-accordion-group-md-h{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:16px;margin-bottom:16px}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion{-webkit-box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanding),\n:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanded)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-expanding,.sc-tp-accordion-group-md-h.accordion-group-expand-inset.sc-tp-accordion-group-md-s>ion-accordion.accordion-expanded,.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-expanded{margin-left:0;margin-right:0;margin-top:16px;margin-bottom:16px;border-radius:6px}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-previous)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous{border-bottom-right-radius:6px;border-bottom-left-radius:6px}/*!@:host-context([dir=rtl]):host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-previous), :host-context([dir=rtl]).accordion-group-expand-inset ::slotted(ion-accordion.accordion-previous)*/.sc-tp-accordion-group-md-h[dir=rtl].sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-tp-accordion-group-md-h.sc-tp-accordion-group-md-h.accordion-group-expand-inset.sc-tp-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-tp-accordion-group-md-h.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous,.sc-tp-accordion-group-md-h[dir=rtl].accordion-group-expand-inset.sc-tp-accordion-group-md-s>ion-accordion.accordion-previous,.sc-tp-accordion-group-md-h[dir=rtl].accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-tp-accordion-group-md-h.accordion-group-expand-inset.sc-tp-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous{border-bottom-right-radius:6px;border-bottom-left-radius:6px}@supports selector(:dir(rtl)){/*!@:host(.accordion-group-expand-inset:dir(rtl)) ::slotted(ion-accordion.accordion-previous)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset:dir(rtl) .sc-tp-accordion-group-md-s>ion-accordion.accordion-previous{border-bottom-right-radius:6px;border-bottom-left-radius:6px}}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-next)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next{border-top-left-radius:6px;border-top-right-radius:6px}/*!@:host-context([dir=rtl]):host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-next), :host-context([dir=rtl]).accordion-group-expand-inset ::slotted(ion-accordion.accordion-next)*/.sc-tp-accordion-group-md-h[dir=rtl].sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-tp-accordion-group-md-h.sc-tp-accordion-group-md-h.accordion-group-expand-inset.sc-tp-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-tp-accordion-group-md-h.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next,.sc-tp-accordion-group-md-h[dir=rtl].accordion-group-expand-inset.sc-tp-accordion-group-md-s>ion-accordion.accordion-next,.sc-tp-accordion-group-md-h[dir=rtl].accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-tp-accordion-group-md-h.accordion-group-expand-inset.sc-tp-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion.accordion-next{border-top-left-radius:6px;border-top-right-radius:6px}@supports selector(:dir(rtl)){/*!@:host(.accordion-group-expand-inset:dir(rtl)) ::slotted(ion-accordion.accordion-next)*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset:dir(rtl) .sc-tp-accordion-group-md-s>ion-accordion.accordion-next{border-top-left-radius:6px;border-top-right-radius:6px}}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion):first-of-type,\n:host(.accordion-group-expand-inset) ::slotted(ion-accordion):first-of-type*/.sc-tp-accordion-group-md-h.accordion-group-expand-inset.sc-tp-accordion-group-md-s>ion-accordion:first-of-type,.sc-tp-accordion-group-md-h.accordion-group-expand-inset .sc-tp-accordion-group-md-s>ion-accordion:first-of-type{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}";
+const tpAccordionGroupMdCss = "/*!@:host*/.sc-med-accordion-group-md-h{display:block}/*!@:host(.accordion-group-expand-inset)*/.accordion-group-expand-inset.sc-med-accordion-group-md-h{-webkit-margin-start:16px;margin-inline-start:16px;-webkit-margin-end:16px;margin-inline-end:16px;margin-top:16px;margin-bottom:16px}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion)*/.sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion{-webkit-box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanding),\n:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-expanded)*/.sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-expanding,.sc-med-accordion-group-md-h.accordion-group-expand-inset.sc-med-accordion-group-md-s>ion-accordion.accordion-expanded,.sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-expanded{margin-left:0;margin-right:0;margin-top:16px;margin-bottom:16px;border-radius:6px}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-previous)*/.sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-previous{border-bottom-right-radius:6px;border-bottom-left-radius:6px}/*!@:host-context([dir=rtl]):host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-previous), :host-context([dir=rtl]).accordion-group-expand-inset ::slotted(ion-accordion.accordion-previous)*/.sc-med-accordion-group-md-h[dir=rtl].sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-med-accordion-group-md-h.sc-med-accordion-group-md-h.accordion-group-expand-inset.sc-med-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-med-accordion-group-md-h.sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-previous,.sc-med-accordion-group-md-h[dir=rtl].accordion-group-expand-inset.sc-med-accordion-group-md-s>ion-accordion.accordion-previous,.sc-med-accordion-group-md-h[dir=rtl].accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-med-accordion-group-md-h.accordion-group-expand-inset.sc-med-accordion-group-md-s>ion-accordion.accordion-previous,[dir=rtl] .sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-previous{border-bottom-right-radius:6px;border-bottom-left-radius:6px}@supports selector(:dir(rtl)){/*!@:host(.accordion-group-expand-inset:dir(rtl)) ::slotted(ion-accordion.accordion-previous)*/.sc-med-accordion-group-md-h.accordion-group-expand-inset:dir(rtl) .sc-med-accordion-group-md-s>ion-accordion.accordion-previous{border-bottom-right-radius:6px;border-bottom-left-radius:6px}}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-next)*/.sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-next{border-top-left-radius:6px;border-top-right-radius:6px}/*!@:host-context([dir=rtl]):host(.accordion-group-expand-inset) ::slotted(ion-accordion.accordion-next), :host-context([dir=rtl]).accordion-group-expand-inset ::slotted(ion-accordion.accordion-next)*/.sc-med-accordion-group-md-h[dir=rtl].sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-med-accordion-group-md-h.sc-med-accordion-group-md-h.accordion-group-expand-inset.sc-med-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-med-accordion-group-md-h.sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-next,.sc-med-accordion-group-md-h[dir=rtl].accordion-group-expand-inset.sc-med-accordion-group-md-s>ion-accordion.accordion-next,.sc-med-accordion-group-md-h[dir=rtl].accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-med-accordion-group-md-h.accordion-group-expand-inset.sc-med-accordion-group-md-s>ion-accordion.accordion-next,[dir=rtl] .sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion.accordion-next{border-top-left-radius:6px;border-top-right-radius:6px}@supports selector(:dir(rtl)){/*!@:host(.accordion-group-expand-inset:dir(rtl)) ::slotted(ion-accordion.accordion-next)*/.sc-med-accordion-group-md-h.accordion-group-expand-inset:dir(rtl) .sc-med-accordion-group-md-s>ion-accordion.accordion-next{border-top-left-radius:6px;border-top-right-radius:6px}}/*!@:host(.accordion-group-expand-inset) ::slotted(ion-accordion):first-of-type,\n:host(.accordion-group-expand-inset) ::slotted(ion-accordion):first-of-type*/.sc-med-accordion-group-md-h.accordion-group-expand-inset.sc-med-accordion-group-md-s>ion-accordion:first-of-type,.sc-med-accordion-group-md-h.accordion-group-expand-inset .sc-med-accordion-group-md-s>ion-accordion:first-of-type{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}";
 
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
@@ -41460,7 +41448,7 @@ class TpAccordionGroup {
         this.value = undefined;
         this.disabled = false;
         this.readonly = false;
-        this.expand = "compact";
+        this.expand = 'compact';
     }
     valueChanged() {
         const { value, multiple } = this;
@@ -41475,7 +41463,7 @@ class TpAccordionGroup {
              */
             printIonWarning(`ion-accordion-group was passed an array of values, but multiple="false". This is incorrect usage and may result in unexpected behaviors. To dismiss this warning, pass a string to the "value" property when multiple="false".
 
-  Value Passed: [${value.map((v) => `'${v}'`).join(", ")}]
+  Value Passed: [${value.map((v) => `'${v}'`).join(', ')}]
 `, this.el);
         }
         /**
@@ -41513,13 +41501,11 @@ class TpAccordionGroup {
         if (!activeAccordionHeader) {
             return;
         }
-        const accordionEl = activeElement.tagName === "ION-ACCORDION"
-            ? activeElement
-            : activeElement.closest("ion-accordion");
+        const accordionEl = activeElement.tagName === 'ION-ACCORDION' ? activeElement : activeElement.closest('ion-accordion');
         if (!accordionEl) {
             return;
         }
-        const closestGroup = accordionEl.closest("ion-accordion-group");
+        const closestGroup = accordionEl.closest('ion-accordion-group');
         if (closestGroup !== this.el) {
             return;
         }
@@ -41530,16 +41516,16 @@ class TpAccordionGroup {
             return;
         }
         let accordion;
-        if (ev.key === "ArrowDown") {
+        if (ev.key === 'ArrowDown') {
             accordion = this.findNextAccordion(accordions, startingIndex);
         }
-        else if (ev.key === "ArrowUp") {
+        else if (ev.key === 'ArrowUp') {
             accordion = this.findPreviousAccordion(accordions, startingIndex);
         }
-        else if (ev.key === "Home") {
+        else if (ev.key === 'Home') {
             accordion = accordions[0];
         }
-        else if (ev.key === "End") {
+        else if (ev.key === 'End') {
             accordion = accordions[accordions.length - 1];
         }
         if (accordion !== undefined && accordion !== activeElement) {
@@ -41587,9 +41573,7 @@ class TpAccordionGroup {
              */
             if (multiple) {
                 const groupValue = value !== null && value !== void 0 ? value : [];
-                const processedValue = Array.isArray(groupValue)
-                    ? groupValue
-                    : [groupValue];
+                const processedValue = Array.isArray(groupValue) ? groupValue : [groupValue];
                 const valueExists = processedValue.find((v) => v === accordionValue);
                 if (valueExists === undefined && accordionValue !== undefined) {
                     this.setValue([...processedValue, accordionValue]);
@@ -41606,9 +41590,7 @@ class TpAccordionGroup {
              */
             if (multiple) {
                 const groupValue = value !== null && value !== void 0 ? value : [];
-                const processedValue = Array.isArray(groupValue)
-                    ? groupValue
-                    : [groupValue];
+                const processedValue = Array.isArray(groupValue) ? groupValue : [groupValue];
                 this.setValue(processedValue.filter((v) => v !== accordionValue));
             }
             else {
@@ -41634,15 +41616,15 @@ class TpAccordionGroup {
      * @internal
      */
     async getAccordions() {
-        return Array.from(this.el.querySelectorAll(":scope > ion-accordion"));
+        return Array.from(this.el.querySelectorAll(':scope > ion-accordion'));
     }
     render() {
         const { disabled, readonly, expand } = this;
         const mode = getIonMode$1(this);
         return (hAsync(Host, { class: {
                 [mode]: true,
-                "accordion-group-disabled": disabled,
-                "accordion-group-readonly": readonly,
+                'accordion-group-disabled': disabled,
+                'accordion-group-readonly': readonly,
                 [`accordion-group-expand-${expand}`]: true,
             }, role: "presentation" }, hAsync("slot", null)));
     }
@@ -41658,7 +41640,7 @@ class TpAccordionGroup {
     }; }
     static get cmpMeta() { return {
         "$flags$": 41,
-        "$tagName$": "tp-accordion-group",
+        "$tagName$": "med-accordion-group",
         "$members$": {
             "animated": [4],
             "multiple": [4],
@@ -41675,7 +41657,7 @@ class TpAccordionGroup {
     }; }
 }
 
-const tpChartBarCss = ".sc-tp-chart-bar-h{--background:hsl(var(--med-color-neutral-2));--label-color:hsl(var(--med-color-neutral-95))}.med-color.sc-tp-chart-bar-h{--label-color:hsl(var(--med-color-4))}.med-color-neutral.sc-tp-chart-bar-h{--label-color:hsl(var(--med-color-neutral))}.med-color-feedback.sc-tp-chart-bar-h{--label-color:hsl(var(--med-color-feedback))}.sc-tp-chart-bar-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;--label-size:10px;--height:200px;--value-bar:0%;--value-marker:0%;--display-marker:initial;--opacity:1}.tp-chart-bar__bar-container.sc-tp-chart-bar{position:relative;background:var(--background);height:var(--height);width:8px;margin:0 auto;border-radius:4px}.tp-chart-bar__bar.sc-tp-chart-bar{position:absolute;bottom:0;left:0;width:100%;height:0%;border-radius:4px;background:var(--color-bar);-webkit-animation:load-bar 1s forwards ease-in-out;animation:load-bar 1s forwards ease-in-out}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color\"].sc-tp-chart-bar{--color-bar:hsl(var(--med-color-4))}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color-neutral\"].sc-tp-chart-bar{--color-bar:hsl(var(--med-color-neutral))}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color-fb\"].sc-tp-chart-bar{--color-bar:hsl(var(--med-color-feedback))}.tp-chart-bar__marker.sc-tp-chart-bar{position:absolute;left:0;bottom:var(--value-marker);display:var(--display-marker);width:24px;height:6px;-webkit-transform:translate(-8px, 50%);transform:translate(-8px, 50%);border-radius:3px;background:var(--color-marker)}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color\"].sc-tp-chart-bar{--color-marker:hsl(var(--med-color-4))}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color-neutral\"].sc-tp-chart-bar{--color-marker:hsl(var(--med-color-neutral))}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color-fb\"].sc-tp-chart-bar{--color-marker:hsl(var(--med-color-feedback))}.tp-chart-bar__label.sc-tp-chart-bar{margin-top:10px;font-size:var(--label-size);line-height:1;color:var(--label-color) !important}.tp-chart-bar--no-marker.sc-tp-chart-bar-h{--display-marker:none}.tp-chart-bar--secondary.sc-tp-chart-bar-h{--background:hsl(var(--med-color-neutral-3))}.tp-chart-bar--deactivated.sc-tp-chart-bar-h{--background:hsl(var(--med-color-neutral-15))}.tp-chart-bar--deactivated.sc-tp-chart-bar-h .tp-chart-bar__bar.sc-tp-chart-bar{--color-bar:hsl(var(--med-color-neutral-5))}@-webkit-keyframes load-bar{from{height:0%}to{height:var(--value-bar)}}@keyframes load-bar{from{height:0%}to{height:var(--value-bar)}}";
+const tpChartBarCss = ".sc-med-chart-bar-2-h{--background:hsl(var(--med-color-neutral-2));--label-color:hsl(var(--med-color-neutral-95))}.med-color.sc-med-chart-bar-2-h{--label-color:hsl(var(--med-color-4))}.med-color-neutral.sc-med-chart-bar-2-h{--label-color:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-chart-bar-2-h{--label-color:hsl(var(--med-color-feedback))}.sc-med-chart-bar-2-h{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;--label-size:10px;--height:200px;--value-bar:0%;--value-marker:0%;--display-marker:initial;--opacity:1}.tp-chart-bar__bar-container.sc-med-chart-bar-2{position:relative;background:var(--background);height:var(--height);width:8px;margin:0 auto;border-radius:4px}.tp-chart-bar__bar.sc-med-chart-bar-2{position:absolute;bottom:0;left:0;width:100%;height:0%;border-radius:4px;background:var(--color-bar);-webkit-animation:load-bar 1s forwards ease-in-out;animation:load-bar 1s forwards ease-in-out}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color\"].sc-med-chart-bar-2{--color-bar:hsl(var(--med-color-4))}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color-neutral\"].sc-med-chart-bar-2{--color-bar:hsl(var(--med-color-neutral))}.tp-chart-bar__bar[class^=\"tp-chart-bar__bar med-color-fb\"].sc-med-chart-bar-2{--color-bar:hsl(var(--med-color-feedback))}.tp-chart-bar__marker.sc-med-chart-bar-2{position:absolute;left:0;bottom:var(--value-marker);display:var(--display-marker);width:24px;height:6px;-webkit-transform:translate(-8px, 50%);transform:translate(-8px, 50%);border-radius:3px;background:var(--color-marker)}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color\"].sc-med-chart-bar-2{--color-marker:hsl(var(--med-color-4))}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color-neutral\"].sc-med-chart-bar-2{--color-marker:hsl(var(--med-color-neutral))}.tp-chart-bar__marker[class^=\"tp-chart-bar__marker med-color-fb\"].sc-med-chart-bar-2{--color-marker:hsl(var(--med-color-feedback))}.tp-chart-bar__label.sc-med-chart-bar-2{margin-top:10px;font-size:var(--label-size);line-height:1;color:var(--label-color) !important}.tp-chart-bar--no-marker.sc-med-chart-bar-2-h{--display-marker:none}.tp-chart-bar--secondary.sc-med-chart-bar-2-h{--background:hsl(var(--med-color-neutral-3))}.tp-chart-bar--deactivated.sc-med-chart-bar-2-h{--background:hsl(var(--med-color-neutral-15))}.tp-chart-bar--deactivated.sc-med-chart-bar-2-h .tp-chart-bar__bar.sc-med-chart-bar-2{--color-bar:hsl(var(--med-color-neutral-5))}@-webkit-keyframes load-bar{from{height:0%}to{height:var(--value-bar)}}@keyframes load-bar{from{height:0%}to{height:var(--value-bar)}}";
 
 class TpChartBar {
     constructor(hostRef) {
@@ -41686,35 +41668,35 @@ class TpChartBar {
         this.labelSize = 10;
         this.height = 200;
         this.bar = {
-            color: "med-color-brand-4",
+            color: 'med-color-brand-4',
             value: 0,
         };
         this.hasMarker = false;
         this.deactivated = false;
         this.marker = {
-            color: "med-color-fb-caution",
+            color: 'med-color-fb-caution',
             value: 0,
         };
     }
     render() {
-        const { dsColor, dsName, label, labelSize, height, bar, hasMarker, deactivated, marker, } = this;
+        const { dsColor, dsName, label, labelSize, height, bar, hasMarker, deactivated, marker } = this;
         return (hAsync(Host, { class: generateMedColor(dsColor, {
-                "tp-chart-bar": true,
-                "tp-chart-bar--no-marker": !hasMarker,
-                "tp-chart-bar--secondary": dsName === "secondary",
-                "tp-chart-bar--deactivated": deactivated,
+                'tp-chart-bar': true,
+                'tp-chart-bar--no-marker': !hasMarker,
+                'tp-chart-bar--secondary': dsName === 'secondary',
+                'tp-chart-bar--deactivated': deactivated,
             }), style: {
-                "--label-size": `${labelSize}px`,
-                "--height": `${height}px`,
-                "--value-bar": `${bar.value}%`,
-                "--value-marker": `${marker.value}%`,
-            } }, hAsync("div", { class: "tp-chart-bar__bar-container" }, hAsync("div", { class: { "tp-chart-bar__bar": true, [bar.color]: true } }), hAsync("div", { class: { "tp-chart-bar__marker": true, [marker.color]: true } })), label && (hAsync("ion-label", { class: "tp-chart-bar__label", "ds-color": "neutral-95" }, label))));
+                '--label-size': `${labelSize}px`,
+                '--height': `${height}px`,
+                '--value-bar': `${bar.value}%`,
+                '--value-marker': `${marker.value}%`,
+            } }, hAsync("div", { class: "tp-chart-bar__bar-container" }, hAsync("div", { class: { 'tp-chart-bar__bar': true, [bar.color]: true } }), hAsync("div", { class: { 'tp-chart-bar__marker': true, [marker.color]: true } })), label && (hAsync("ion-label", { class: "tp-chart-bar__label", "ds-color": "neutral-95" }, label))));
     }
     get host() { return getElement(this); }
     static get style() { return tpChartBarCss; }
     static get cmpMeta() { return {
         "$flags$": 2,
-        "$tagName$": "tp-chart-bar",
+        "$tagName$": "med-chart-bar-2",
         "$members$": {
             "dsColor": [513, "ds-color"],
             "dsName": [513, "ds-name"],
@@ -41732,7 +41714,7 @@ class TpChartBar {
     }; }
 }
 
-const tpInputContainerCss = ".sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-2))}.sc-tp-input-container-h{position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background-color:var(--background);border-radius:8px;height:40px}.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-s>ion-icon[slot=end]{--color:hsl(var(--med-color-neutral-6)) !important;margin:0 8px 0 8px;stroke:hsl(var(--med-color-neutral-6))}.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-s>ion-icon[slot=end]{min-width:24px}.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-start.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-start.sc-tp-input-container-s>ion-select{--padding-start:0}.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp--has-button-end.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-end.sc-tp-input-container-s>ion-select{--padding-end:0}.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-button-both.sc-tp-input-container-s>ion-select,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--has-icon-both.sc-tp-input-container-s>ion-select{--padding-start:0;--padding-end:0}.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=start],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-button[slot=end],.sc-tp-input-container-h.tp-input-container--disabled.sc-tp-input-container-s>ion-icon[slot=end]{opacity:0.4}.tp-input-container--secondary.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral-3))}.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.tp-input-container--secondary.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3))}.tp-input-container.tp-input-container--select-popover-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:8px 8px 0 0 !important;-webkit-transition:border-radius 400ms ease-in-out;transition:border-radius 400ms ease-in-out;pointer-events:none}.sc-tp-input-container-h.tp-input-container.tp-input-container--inverted.sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.tp-input-container.tp-input-container--inverted.tp-input-container--select-popover-clicked.sc-tp-input-container-h:not(.tp-input-container--disabled){border-radius:0 0 8px 8px !important}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h{cursor:not-allowed}.tp-input-container.tp-input-container--with-select.sc-tp-input-container-h:not(.tp-input-container--disabled){cursor:pointer}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transition:-webkit-transform 400ms linear;transition:-webkit-transform 400ms linear;transition:transform 400ms linear;transition:transform 400ms linear, -webkit-transform 400ms linear}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.sc-tp-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked.tp-input-container--inverted:not(.tp-input-container--disabled).sc-tp-input-container-s>ion-icon{-webkit-transform:rotate(0deg);transform:rotate(0deg)}.med-color.sc-tp-input-container-h{--background:hsl(var(--med-color-3))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-3));--placeholder-color:hsl(var(--med-color-contrast-fixed));--color:hsl(var(--med-color-contrast-fixed))}.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-contrast-fixed)) !important;stroke:hsl(var(--med-color-contrast-fixed)) !important}.med-color-neutral.sc-tp-input-container-h{--background:hsl(var(--med-color-neutral))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-neutral));--placeholder-color:hsl(var(--med-color-neutral-contrast));--color:hsl(var(--med-color-neutral-contrast))}.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-neutral.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-neutral-contrast)) !important;stroke:hsl(var(--med-color-neutral-contrast)) !important}.med-color-feedback.sc-tp-input-container-h{--background:hsl(var(--med-color-feedback))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-input,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-select{--background:hsl(var(--med-color-feedback));--placeholder-color:hsl(var(--med-color-feedback-contrast));--color:hsl(var(--med-color-feedback-contrast))}.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-button,.sc-tp-input-container-h.med-color-feedback.sc-tp-input-container-s>ion-icon{--color:hsl(var(--med-color-feedback-contrast)) !important;stroke:hsl(var(--med-color-feedback-contrast)) !important}";
+const tpInputContainerCss = ".sc-med-input-container-h{--background:hsl(var(--med-color-neutral-2))}.sc-med-input-container-h{position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;background-color:var(--background);border-radius:8px;height:40px}.sc-med-input-container-s>ion-button[slot=start],.sc-med-input-container-s>ion-icon[slot=start],.sc-med-input-container-s>ion-button[slot=end],.sc-med-input-container-s>ion-icon[slot=end]{--color:hsl(var(--med-color-neutral-6)) !important;margin:0 8px 0 8px;stroke:hsl(var(--med-color-neutral-6))}.sc-med-input-container-s>ion-icon[slot=start],.sc-med-input-container-s>ion-icon[slot=end]{min-width:24px}.sc-med-input-container-h.tp-input-container--has-button-start.sc-med-input-container-s>ion-input,.sc-med-input-container-h.tp-input-container--has-button-start.sc-med-input-container-s>ion-select,.sc-med-input-container-h.tp-input-container--has-icon-start.sc-med-input-container-s>ion-input,.sc-med-input-container-h.tp-input-container--has-icon-start.sc-med-input-container-s>ion-select{--padding-start:0}.sc-med-input-container-h.tp--has-button-end.sc-med-input-container-s>ion-input,.sc-med-input-container-h.tp--has-button-end.sc-med-input-container-s>ion-select,.sc-med-input-container-h.tp-input-container--has-icon-end.sc-med-input-container-s>ion-input,.sc-med-input-container-h.tp-input-container--has-icon-end.sc-med-input-container-s>ion-select{--padding-end:0}.sc-med-input-container-h.tp-input-container--has-button-both.sc-med-input-container-s>ion-input,.sc-med-input-container-h.tp-input-container--has-button-both.sc-med-input-container-s>ion-select,.sc-med-input-container-h.tp-input-container--has-icon-both.sc-med-input-container-s>ion-input,.sc-med-input-container-h.tp-input-container--has-icon-both.sc-med-input-container-s>ion-select{--padding-start:0;--padding-end:0}.sc-med-input-container-h.tp-input-container--disabled.sc-med-input-container-s>ion-button[slot=start],.sc-med-input-container-h.tp-input-container--disabled.sc-med-input-container-s>ion-icon[slot=start],.sc-med-input-container-h.tp-input-container--disabled.sc-med-input-container-s>ion-button[slot=end],.sc-med-input-container-h.tp-input-container--disabled.sc-med-input-container-s>ion-icon[slot=end]{opacity:0.4}.tp-input-container--secondary.sc-med-input-container-h{--background:hsl(var(--med-color-neutral-3))}.sc-med-input-container-h.tp-input-container--secondary.sc-med-input-container-s>ion-input,.sc-med-input-container-h.tp-input-container--secondary.sc-med-input-container-s>ion-select{--background:hsl(var(--med-color-3))}.tp-input-container.tp-input-container--select-popover-clicked.sc-med-input-container-h:not(.tp-input-container--disabled){border-radius:8px 8px 0 0 !important;-webkit-transition:border-radius 400ms ease-in-out;transition:border-radius 400ms ease-in-out;pointer-events:none}.sc-med-input-container-h.tp-input-container.tp-input-container--inverted.sc-med-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.tp-input-container.tp-input-container--inverted.tp-input-container--select-popover-clicked.sc-med-input-container-h:not(.tp-input-container--disabled){border-radius:0 0 8px 8px !important}.tp-input-container.tp-input-container--with-select.sc-med-input-container-h{cursor:not-allowed}.tp-input-container.tp-input-container--with-select.sc-med-input-container-h:not(.tp-input-container--disabled){cursor:pointer}.sc-med-input-container-h.tp-input-container.tp-input-container--with-select:not(.tp-input-container--disabled).sc-med-input-container-s>ion-icon{-webkit-transition:-webkit-transform 400ms linear;transition:-webkit-transform 400ms linear;transition:transform 400ms linear;transition:transform 400ms linear, -webkit-transform 400ms linear}.sc-med-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked:not(.tp-input-container--disabled).sc-med-input-container-s>ion-icon{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.sc-med-input-container-h.tp-input-container.tp-input-container--with-select.tp-input-container--select-popover-clicked.tp-input-container--inverted:not(.tp-input-container--disabled).sc-med-input-container-s>ion-icon{-webkit-transform:rotate(0deg);transform:rotate(0deg)}.med-color.sc-med-input-container-h{--background:hsl(var(--med-color-3))}.sc-med-input-container-h.med-color.sc-med-input-container-s>ion-input,.sc-med-input-container-h.med-color.sc-med-input-container-s>ion-select{--background:hsl(var(--med-color-3));--placeholder-color:hsl(var(--med-color-contrast-fixed));--color:hsl(var(--med-color-contrast-fixed))}.sc-med-input-container-h.med-color.sc-med-input-container-s>ion-button,.sc-med-input-container-h.med-color.sc-med-input-container-s>ion-icon{--color:hsl(var(--med-color-contrast-fixed)) !important;stroke:hsl(var(--med-color-contrast-fixed)) !important}.med-color-neutral.sc-med-input-container-h{--background:hsl(var(--med-color-neutral))}.sc-med-input-container-h.med-color-neutral.sc-med-input-container-s>ion-input,.sc-med-input-container-h.med-color-neutral.sc-med-input-container-s>ion-select{--background:hsl(var(--med-color-neutral));--placeholder-color:hsl(var(--med-color-neutral-contrast));--color:hsl(var(--med-color-neutral-contrast))}.sc-med-input-container-h.med-color-neutral.sc-med-input-container-s>ion-button,.sc-med-input-container-h.med-color-neutral.sc-med-input-container-s>ion-icon{--color:hsl(var(--med-color-neutral-contrast)) !important;stroke:hsl(var(--med-color-neutral-contrast)) !important}.med-color-feedback.sc-med-input-container-h{--background:hsl(var(--med-color-feedback))}.sc-med-input-container-h.med-color-feedback.sc-med-input-container-s>ion-input,.sc-med-input-container-h.med-color-feedback.sc-med-input-container-s>ion-select{--background:hsl(var(--med-color-feedback));--placeholder-color:hsl(var(--med-color-feedback-contrast));--color:hsl(var(--med-color-feedback-contrast))}.sc-med-input-container-h.med-color-feedback.sc-med-input-container-s>ion-button,.sc-med-input-container-h.med-color-feedback.sc-med-input-container-s>ion-icon{--color:hsl(var(--med-color-feedback-contrast)) !important;stroke:hsl(var(--med-color-feedback-contrast)) !important}";
 
 class TpInputContainer {
     constructor(hostRef) {
@@ -41762,8 +41744,7 @@ class TpInputContainer {
         const ionSelect = this.host.querySelector('ion-select');
         const shouldOpenOverlay = this.host.contains(target) &&
             ionSelect.hasAttribute('interface') &&
-            (target.nodeName === 'ION-ICON' ||
-                target.nodeName === 'TP-INPUT-CONTAINER');
+            (target.nodeName === 'ION-ICON' || target.nodeName === 'TP-INPUT-CONTAINER');
         if (shouldOpenOverlay) {
             ionSelect.open(e);
         }
@@ -41828,7 +41809,7 @@ class TpInputContainer {
         }
     }
     render() {
-        const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon } = this;
+        const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon, } = this;
         return (hAsync(Host, { class: generateMedColor(dsColor, {
                 'tp-input-container': true,
                 'tp-input-container--with-select': pointerOnSelect,
@@ -41838,14 +41819,14 @@ class TpInputContainer {
                 'tp-input-container--feedback': feedback,
                 [`tp-input-container--${dsName}`]: dsName !== undefined,
                 [`tp-input-container--has-button-${hasButton}`]: hasButton !== undefined,
-                [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined
-            }) }, hAsync("slot", { name: 'start' }), hAsync("slot", null), hAsync("slot", { name: 'end' })));
+                [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined,
+            }) }, hAsync("slot", { name: "start" }), hAsync("slot", null), hAsync("slot", { name: "end" })));
     }
     get host() { return getElement(this); }
     static get style() { return tpInputContainerCss; }
     static get cmpMeta() { return {
         "$flags$": 6,
-        "$tagName$": "tp-input-container",
+        "$tagName$": "med-input-container",
         "$members$": {
             "dsColor": [513, "ds-color"],
             "dsName": [513, "ds-name"],
@@ -41864,7 +41845,7 @@ class TpInputContainer {
     }; }
 }
 
-const tpLoaderCss = ".sc-tp-loader-h{--stroke:hsl(var(--med-color-neutral-10));--background-secondary:hsl(var(--med-color-neutral-10))}.med-color.sc-tp-loader-h{--stroke:hsl(var(--med-color-4));--background-secondary:hsl(var(--med-color-4))}.med-color-neutral.sc-tp-loader-h{--stroke:hsl(var(--med-color-neutral));--background-secondary:hsl(var(--med-color-neutral))}.med-color-feedback.sc-tp-loader-h{--stroke:hsl(var(--med-color-feedback));--background-secondary:hsl(var(--med-color-feedback))}.sc-tp-loader-h:not(.tp-loader-secondary){display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:auto;height:100vh;min-height:100vh;background:var(--background, #1a1a1a)}.sc-tp-loader-h:not(.tp-loader-secondary) .loader-container.sc-tp-loader{display:block;height:94px;width:94px}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-circle].sc-tp-loader,.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-tp-loader,.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-tp-loader{fill:none;stroke:var(--stroke, hsl(var(--med-color-neutral-10)));stroke-width:6;stroke-miterlimit:10}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-rect].sc-tp-loader{fill:var(--stroke, hsl(var(--med-color-neutral-10)))}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-circle].sc-tp-loader{-webkit-animation:loadingcircle 1s linear infinite alternate, rotate 2s linear infinite;animation:loadingcircle 1s linear infinite alternate, rotate 2s linear infinite;stroke-dasharray:300;stroke-dashoffset:300;-webkit-transform-origin:50px 50px;transform-origin:50px 50px}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-tp-loader{-webkit-animation:loadingline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;animation:loadingline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;stroke-dasharray:25;stroke-dashoffset:25}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-tp-loader:nth-of-type(2){-webkit-animation-delay:0.1s;animation-delay:0.1s}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-tp-loader:nth-of-type(3){-webkit-animation-delay:0.2s;animation-delay:0.2s}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-tp-loader:nth-of-type(4){-webkit-animation-delay:0.3s;animation-delay:0.3s}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-tp-loader:nth-of-type(5){-webkit-animation-delay:0.4s;animation-delay:0.4s}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-tp-loader:nth-of-type(6){-webkit-animation-delay:0.5s;animation-delay:0.5s}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-tp-loader:nth-of-type(7){-webkit-animation-delay:0.6s;animation-delay:0.6s}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-tp-loader:nth-of-type(8){-webkit-animation-delay:0.7s;animation-delay:0.7s}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-tp-loader{-webkit-animation:loadingpolyline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;animation:loadingpolyline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;stroke-dasharray:50;stroke-dashoffset:50}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-tp-loader:nth-of-type(2){-webkit-animation-delay:0.2s;animation-delay:0.2s}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-tp-loader:nth-of-type(3){-webkit-animation-delay:0.4s;animation-delay:0.4s}.sc-tp-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-tp-loader:nth-of-type(4){-webkit-animation-delay:0.6s;animation-delay:0.6s}@-webkit-keyframes loadingline{0%{stroke-dashoffset:25}50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@keyframes loadingline{0%{stroke-dashoffset:25}50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@-webkit-keyframes loadingpolyline{0%{stroke-dashoffset:50}50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@keyframes loadingpolyline{0%{stroke-dashoffset:50}50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@-webkit-keyframes loadingcircle{to{stroke-dashoffset:0}}@keyframes loadingcircle{to{stroke-dashoffset:0}}@-webkit-keyframes rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.tp-loader--fixed.sc-tp-loader-h{position:fixed;top:0;left:0;width:100%}.tp-loader-secondary.sc-tp-loader-h{display:inline-block;position:relative;width:24px;height:24px}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader{-webkit-transform-origin:12px 12px;transform-origin:12px 12px;-webkit-animation:loader-spinner 0.8s linear infinite;animation:loader-spinner 0.8s linear infinite}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader::after{content:\" \";display:block;position:absolute;top:1px;left:11px;width:2px;height:6px;border-radius:10px;background:var(--background-secondary, hsl(var(--med-color-neutral-10)))}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(1){-webkit-transform:rotate(0deg);transform:rotate(0deg);-webkit-animation-delay:-0.7s;animation-delay:-0.7s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(2){-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation-delay:-0.6s;animation-delay:-0.6s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(3){-webkit-transform:rotate(90deg);transform:rotate(90deg);-webkit-animation-delay:-0.5s;animation-delay:-0.5s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(4){-webkit-transform:rotate(135deg);transform:rotate(135deg);-webkit-animation-delay:-0.4s;animation-delay:-0.4s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(5){-webkit-transform:rotate(180deg);transform:rotate(180deg);-webkit-animation-delay:-0.3s;animation-delay:-0.3s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(6){-webkit-transform:rotate(225deg);transform:rotate(225deg);-webkit-animation-delay:-0.2s;animation-delay:-0.2s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(7){-webkit-transform:rotate(270deg);transform:rotate(270deg);-webkit-animation-delay:-0.1s;animation-delay:-0.1s}.tp-loader-secondary.sc-tp-loader-h div.sc-tp-loader:nth-child(8){-webkit-transform:rotate(315deg);transform:rotate(315deg);-webkit-animation-delay:0s;animation-delay:0s}@-webkit-keyframes loader-spinner{0%{opacity:1}100%{opacity:0.3}}@keyframes loader-spinner{0%{opacity:1}100%{opacity:0.3}}";
+const tpLoaderCss = ".sc-med-loader-h{--stroke:hsl(var(--med-color-neutral-10));--background-secondary:hsl(var(--med-color-neutral-10))}.med-color.sc-med-loader-h{--stroke:hsl(var(--med-color-4));--background-secondary:hsl(var(--med-color-4))}.med-color-neutral.sc-med-loader-h{--stroke:hsl(var(--med-color-neutral));--background-secondary:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-loader-h{--stroke:hsl(var(--med-color-feedback));--background-secondary:hsl(var(--med-color-feedback))}.sc-med-loader-h:not(.tp-loader-secondary){display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:auto;height:100vh;min-height:100vh;background:var(--background, #1a1a1a)}.sc-med-loader-h:not(.tp-loader-secondary) .loader-container.sc-med-loader{display:block;height:94px;width:94px}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-circle].sc-med-loader,.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-med-loader,.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-med-loader{fill:none;stroke:var(--stroke, hsl(var(--med-color-neutral-10)));stroke-width:6;stroke-miterlimit:10}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-rect].sc-med-loader{fill:var(--stroke, hsl(var(--med-color-neutral-10)))}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-circle].sc-med-loader{-webkit-animation:loadingcircle 1s linear infinite alternate, rotate 2s linear infinite;animation:loadingcircle 1s linear infinite alternate, rotate 2s linear infinite;stroke-dasharray:300;stroke-dashoffset:300;-webkit-transform-origin:50px 50px;transform-origin:50px 50px}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-med-loader{-webkit-animation:loadingline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;animation:loadingline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;stroke-dasharray:25;stroke-dashoffset:25}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-med-loader:nth-of-type(2){-webkit-animation-delay:0.1s;animation-delay:0.1s}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-med-loader:nth-of-type(3){-webkit-animation-delay:0.2s;animation-delay:0.2s}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-med-loader:nth-of-type(4){-webkit-animation-delay:0.3s;animation-delay:0.3s}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-med-loader:nth-of-type(5){-webkit-animation-delay:0.4s;animation-delay:0.4s}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-med-loader:nth-of-type(6){-webkit-animation-delay:0.5s;animation-delay:0.5s}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-med-loader:nth-of-type(7){-webkit-animation-delay:0.6s;animation-delay:0.6s}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-line].sc-med-loader:nth-of-type(8){-webkit-animation-delay:0.7s;animation-delay:0.7s}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-med-loader{-webkit-animation:loadingpolyline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;animation:loadingpolyline 1s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate;stroke-dasharray:50;stroke-dashoffset:50}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-med-loader:nth-of-type(2){-webkit-animation-delay:0.2s;animation-delay:0.2s}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-med-loader:nth-of-type(3){-webkit-animation-delay:0.4s;animation-delay:0.4s}.sc-med-loader-h:not(.tp-loader-secondary) [tp-loader-polyline].sc-med-loader:nth-of-type(4){-webkit-animation-delay:0.6s;animation-delay:0.6s}@-webkit-keyframes loadingline{0%{stroke-dashoffset:25}50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@keyframes loadingline{0%{stroke-dashoffset:25}50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@-webkit-keyframes loadingpolyline{0%{stroke-dashoffset:50}50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@keyframes loadingpolyline{0%{stroke-dashoffset:50}50%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}@-webkit-keyframes loadingcircle{to{stroke-dashoffset:0}}@keyframes loadingcircle{to{stroke-dashoffset:0}}@-webkit-keyframes rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes rotate{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.tp-loader--fixed.sc-med-loader-h{position:fixed;top:0;left:0;width:100%}.tp-loader-secondary.sc-med-loader-h{display:inline-block;position:relative;width:24px;height:24px}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader{-webkit-transform-origin:12px 12px;transform-origin:12px 12px;-webkit-animation:loader-spinner 0.8s linear infinite;animation:loader-spinner 0.8s linear infinite}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader::after{content:\" \";display:block;position:absolute;top:1px;left:11px;width:2px;height:6px;border-radius:10px;background:var(--background-secondary, hsl(var(--med-color-neutral-10)))}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader:nth-child(1){-webkit-transform:rotate(0deg);transform:rotate(0deg);-webkit-animation-delay:-0.7s;animation-delay:-0.7s}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader:nth-child(2){-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation-delay:-0.6s;animation-delay:-0.6s}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader:nth-child(3){-webkit-transform:rotate(90deg);transform:rotate(90deg);-webkit-animation-delay:-0.5s;animation-delay:-0.5s}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader:nth-child(4){-webkit-transform:rotate(135deg);transform:rotate(135deg);-webkit-animation-delay:-0.4s;animation-delay:-0.4s}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader:nth-child(5){-webkit-transform:rotate(180deg);transform:rotate(180deg);-webkit-animation-delay:-0.3s;animation-delay:-0.3s}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader:nth-child(6){-webkit-transform:rotate(225deg);transform:rotate(225deg);-webkit-animation-delay:-0.2s;animation-delay:-0.2s}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader:nth-child(7){-webkit-transform:rotate(270deg);transform:rotate(270deg);-webkit-animation-delay:-0.1s;animation-delay:-0.1s}.tp-loader-secondary.sc-med-loader-h div.sc-med-loader:nth-child(8){-webkit-transform:rotate(315deg);transform:rotate(315deg);-webkit-animation-delay:0s;animation-delay:0s}@-webkit-keyframes loader-spinner{0%{opacity:1}100%{opacity:0.3}}@keyframes loader-spinner{0%{opacity:1}100%{opacity:0.3}}";
 
 class TpLoader {
     constructor(hostRef) {
@@ -41875,17 +41856,17 @@ class TpLoader {
     }
     render() {
         const { dsColor, fixed, dsName } = this;
-        return dsName === "secondary" ? (hAsync(Host, { "tp-loader-secondary": true, "ds-color": dsColor, class: generateMedColor(dsColor, {
-                "tp-loader-secondary": true,
+        return dsName === 'secondary' ? (hAsync(Host, { "tp-loader-secondary": true, "ds-color": dsColor, class: generateMedColor(dsColor, {
+                'tp-loader-secondary': true,
             }) }, hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null), hAsync("div", null))) : (hAsync(Host, { "tp-loader": true, "ds-color": dsColor, class: generateMedColor(dsColor, {
-                "tp-loader-secondary": false,
-                "tp-loader--fixed": fixed,
+                'tp-loader-secondary': false,
+                'tp-loader--fixed': fixed,
             }) }, hAsync("div", { class: "loader-container" }, hAsync("svg", { "tp-loader-svg": true, viewBox: "0 0 100 100", xmlns: "http://www.w3.org/2000/svg" }, hAsync("circle", { "tp-loader-circle": true, cx: "50", cy: "50", r: "47" }), hAsync("polyline", { "tp-loader-polyline": true, points: "85,37 63,37 63,15 " }), hAsync("polyline", { "tp-loader-polyline": true, points: "63,86 63,64 85,64 " }), hAsync("polyline", { "tp-loader-polyline": true, points: "14,64 36,64 36,86 " }), hAsync("polyline", { "tp-loader-polyline": true, points: "36,15 36,37 14,37 " }), hAsync("line", { "tp-loader-line": true, x1: "45", y1: "40", x2: "45", y2: "15" }), hAsync("line", { "tp-loader-line": true, x1: "54", y1: "40", x2: "54", y2: "15" }), hAsync("line", { "tp-loader-line": true, x1: "60", y1: "46", x2: "85", y2: "46" }), hAsync("line", { "tp-loader-line": true, x1: "60", y1: "55", x2: "85", y2: "55" }), hAsync("line", { "tp-loader-line": true, x1: "54", y1: "61", x2: "54", y2: "86" }), hAsync("line", { "tp-loader-line": true, x1: "45", y1: "61", x2: "45", y2: "86" }), hAsync("line", { "tp-loader-line": true, x1: "39", y1: "55", x2: "14", y2: "55" }), hAsync("line", { "tp-loader-line": true, x1: "39", y1: "46", x2: "14", y2: "46" }), hAsync("rect", { "tp-loader-rect": true, x: "42", y: "43", width: "6", height: "6" }), hAsync("rect", { "tp-loader-rect": true, x: "42", y: "52", width: "6", height: "6" }), hAsync("rect", { "tp-loader-rect": true, x: "51", y: "43", width: "6", height: "6" }), hAsync("rect", { "tp-loader-rect": true, x: "51", y: "52", width: "6", height: "6" })))));
     }
     static get style() { return tpLoaderCss; }
     static get cmpMeta() { return {
         "$flags$": 2,
-        "$tagName$": "tp-loader",
+        "$tagName$": "med-loader",
         "$members$": {
             "dsColor": [513, "ds-color"],
             "fixed": [516],

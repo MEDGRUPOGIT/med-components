@@ -1,7 +1,7 @@
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
-import { Host, h, } from "@stencil/core";
+import { Host, h } from "@stencil/core";
 import { getIonMode } from "../../../global/ionic-global";
 import { printIonWarning } from "../../../utils/logging";
 /**
@@ -14,7 +14,7 @@ export class TpAccordionGroup {
         this.value = undefined;
         this.disabled = false;
         this.readonly = false;
-        this.expand = "compact";
+        this.expand = 'compact';
     }
     valueChanged() {
         const { value, multiple } = this;
@@ -29,7 +29,7 @@ export class TpAccordionGroup {
              */
             printIonWarning(`ion-accordion-group was passed an array of values, but multiple="false". This is incorrect usage and may result in unexpected behaviors. To dismiss this warning, pass a string to the "value" property when multiple="false".
 
-  Value Passed: [${value.map((v) => `'${v}'`).join(", ")}]
+  Value Passed: [${value.map((v) => `'${v}'`).join(', ')}]
 `, this.el);
         }
         /**
@@ -67,13 +67,11 @@ export class TpAccordionGroup {
         if (!activeAccordionHeader) {
             return;
         }
-        const accordionEl = activeElement.tagName === "ION-ACCORDION"
-            ? activeElement
-            : activeElement.closest("ion-accordion");
+        const accordionEl = activeElement.tagName === 'ION-ACCORDION' ? activeElement : activeElement.closest('ion-accordion');
         if (!accordionEl) {
             return;
         }
-        const closestGroup = accordionEl.closest("ion-accordion-group");
+        const closestGroup = accordionEl.closest('ion-accordion-group');
         if (closestGroup !== this.el) {
             return;
         }
@@ -84,16 +82,16 @@ export class TpAccordionGroup {
             return;
         }
         let accordion;
-        if (ev.key === "ArrowDown") {
+        if (ev.key === 'ArrowDown') {
             accordion = this.findNextAccordion(accordions, startingIndex);
         }
-        else if (ev.key === "ArrowUp") {
+        else if (ev.key === 'ArrowUp') {
             accordion = this.findPreviousAccordion(accordions, startingIndex);
         }
-        else if (ev.key === "Home") {
+        else if (ev.key === 'Home') {
             accordion = accordions[0];
         }
-        else if (ev.key === "End") {
+        else if (ev.key === 'End') {
             accordion = accordions[accordions.length - 1];
         }
         if (accordion !== undefined && accordion !== activeElement) {
@@ -141,9 +139,7 @@ export class TpAccordionGroup {
              */
             if (multiple) {
                 const groupValue = value !== null && value !== void 0 ? value : [];
-                const processedValue = Array.isArray(groupValue)
-                    ? groupValue
-                    : [groupValue];
+                const processedValue = Array.isArray(groupValue) ? groupValue : [groupValue];
                 const valueExists = processedValue.find((v) => v === accordionValue);
                 if (valueExists === undefined && accordionValue !== undefined) {
                     this.setValue([...processedValue, accordionValue]);
@@ -160,9 +156,7 @@ export class TpAccordionGroup {
              */
             if (multiple) {
                 const groupValue = value !== null && value !== void 0 ? value : [];
-                const processedValue = Array.isArray(groupValue)
-                    ? groupValue
-                    : [groupValue];
+                const processedValue = Array.isArray(groupValue) ? groupValue : [groupValue];
                 this.setValue(processedValue.filter((v) => v !== accordionValue));
             }
             else {
@@ -188,19 +182,19 @@ export class TpAccordionGroup {
      * @internal
      */
     async getAccordions() {
-        return Array.from(this.el.querySelectorAll(":scope > ion-accordion"));
+        return Array.from(this.el.querySelectorAll(':scope > ion-accordion'));
     }
     render() {
         const { disabled, readonly, expand } = this;
         const mode = getIonMode(this);
         return (h(Host, { class: {
                 [mode]: true,
-                "accordion-group-disabled": disabled,
-                "accordion-group-readonly": readonly,
+                'accordion-group-disabled': disabled,
+                'accordion-group-readonly': readonly,
                 [`accordion-group-expand-${expand}`]: true,
             }, role: "presentation" }, h("slot", null)));
     }
-    static get is() { return "tp-accordion-group"; }
+    static get is() { return "med-accordion-group"; }
     static get encapsulation() { return "shadow"; }
     static get originalStyleUrls() {
         return {
@@ -308,7 +302,7 @@ export class TpAccordionGroup {
                 "type": "string",
                 "mutable": false,
                 "complexType": {
-                    "original": "\"compact\" | \"inset\"",
+                    "original": "'compact' | 'inset'",
                     "resolved": "\"compact\" | \"inset\"",
                     "references": {}
                 },
@@ -320,7 +314,7 @@ export class TpAccordionGroup {
                 },
                 "attribute": "expand",
                 "reflect": false,
-                "defaultValue": "\"compact\""
+                "defaultValue": "'compact'"
             }
         };
     }
