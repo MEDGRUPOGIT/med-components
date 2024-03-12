@@ -34,6 +34,19 @@ export { ToastOptions } from './components/toast/toast-interface';
 export { ToggleCustomEvent } from './components/toggle/toggle-interface';
 export { BackButtonEvent, BackButtonEventDetail } from './utils/hardware-back-button';
 
+// templarios
+export {
+  MedAlternativaInterface,
+  MedAlternativasInterface,
+  MedAlternativasInternoInterface,
+} from './@templarios/interfaces/alternativas.interface';
+export { MedChartRadiaItem } from './@templarios/interfaces/chart-radial.interface';
+export { headerResizeEventDetail } from './@templarios/interfaces/header.interface';
+export { MedImageZoomItemInterface, MedImageZoomInterface } from './@templarios/interfaces/image-zoom.interface';
+export { MedSemanaInterface, ItensInterface } from './@templarios/interfaces/semana.interface';
+export { MedTema } from './@templarios/interfaces/themes.interface';
+export { TpAccordionGroup } from './@templarios/interfaces/tp-accordion-group.interface';
+
 // Types from utils
 export {
   Animation,

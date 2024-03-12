@@ -1,0 +1,155 @@
+//
+// abstracts
+//
+@import "./variables/breakpoints";
+@import "./variables/color-ionic";
+@import "./variables/components";
+
+@import "./functions/breakpoints";
+@import "./functions/color-ionic";
+
+@import "./mixins/breakpoints";
+@import "./mixins/color-ionic";
+@import "./mixins/devices";
+
+//
+// components
+//
+
+// accordion
+@import "./components/ionic/ion-accordion/accordion";
+
+// alert
+@import "./components/ionic/ion-select-alert/select-alert";
+
+// avatar
+@import "./components/ionic/ion-avatar/avatar";
+
+// back button
+@import "./components/ionic/ion-back-button/back-button";
+
+// badge
+@import "./components/ionic/ion-badge/badge";
+
+// button
+@import "./components/ionic/ion-button/primary";
+@import "./components/ionic/ion-button/secondary";
+@import "./components/ionic/ion-button/tertiary";
+
+// checkbox
+@import "./components/ionic/ion-checkbox/checkbox";
+
+// chip
+@import "./components/ionic/ion-chip/chip";
+
+// datetime
+@import "./components/ionic/ion-datetime/datetime";
+@import "./components/ionic/ion-datetime/datetime-modal";
+
+// fab-button
+@import "./components/ionic/ion-fab-button/fab-button";
+
+// fab-list
+@import "./components/ionic/ion-fab-list/fab-list";
+
+// icon
+// @import './components/ionic/icon/icon';
+
+// input
+@import "./components/ionic/ion-input/input";
+
+// item
+@import "./components/ionic/ion-item/item";
+
+// label
+@import "./components/ionic/ion-label/label";
+
+// list
+@import "./components/ionic/ion-list/list";
+
+// modal
+@import "./components/ionic/ion-modal/dialog";
+@import "./components/ionic/ion-modal/modal";
+@import "./components/ionic/ion-modal/snackbar";
+
+// popover
+@import "./components/ionic/ion-select-popover/select-popover";
+
+// progress-bar
+@import "./components/ionic/ion-progress-bar/progress-bar";
+
+// radio
+@import "./components/ionic/ion-radio/radio";
+
+// range
+@import "./components/ionic/ion-range/range";
+
+// searchbar
+@import "./components/ionic/ion-searchbar/searchbar";
+
+// segment
+@import "./components/ionic/ion-segment/segment";
+
+// segment-button
+@import "./components/ionic/ion-segment-button/segment-button";
+
+// select
+@import "./components/ionic/ion-select/select";
+
+// skeleton-text
+@import "./components/ionic/ion-skeleton-text/skeleton-text";
+
+// tab-bar
+@import "./components/ionic/ion-tab-bar/tab-bar";
+
+// tab-button
+@import "./components/ionic/ion-tab-button/tab-button";
+
+// text
+@import "./components/ionic/ion-text/text";
+
+// textarea
+@import "./components/ionic/ion-textarea/textarea";
+
+// title
+@import "./components/ionic/ion-title/title";
+
+// toast
+@import "./components/ionic/ion-toast/toast";
+
+// toggle
+@import "./components/ionic/ion-toggle/toggle";
+
+//
+// legado
+//
+@import "./functions/color-stencil";
+
+// utils
+@import "./components/utils/utils";
+
+// global
+@import "./components/global/font-zoom-popover";
+@import "./components/global/intro-tooltip";
+@import "./components/global/picker";
+@import "./components/global/scrollbar";
+@import "./components/global/searchbar";
+@import "./components/global/sheet";
+@import "./components/global/time-stamp";
+
+// compositions
+@import "./components/compositions/accordion-list";
+@import "./components/compositions/card-assuntos-temas";
+@import "./components/compositions/chart-bar";
+@import "./components/compositions/context-menu";
+@import "./components/compositions/dialog";
+@import "./components/compositions/filtro-dashboard-modal";
+@import "./components/compositions/filtro-dashboard";
+@import "./components/compositions/header-counter";
+@import "./components/compositions/menu-mobile";
+@import "./components/compositions/tabs";
+
+// monta provas
+@import "./components/monta-provas/accordion-chart-monta-provas";
+@import "./components/monta-provas/filtros-monta-provas";
+@import "./components/monta-provas/footer-monta-provas";
