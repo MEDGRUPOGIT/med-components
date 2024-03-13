@@ -3568,15 +3568,6 @@ export namespace Components {
         "marcaAguaSuperior"?: string;
         "titulo"?: string;
     }
-    interface MedInputContainer {
-        "disabled": boolean;
-        "dsColor"?: MedColor;
-        "dsName"?: 'secondary';
-        "feedback": boolean;
-        "hasButton"?: 'start' | 'end' | 'both';
-        "hasIcon"?: 'start' | 'end' | 'both';
-        "inverted": boolean;
-    }
     interface MedItem {
         /**
           * If `true`, a button tag will be rendered and the item will be tappable.
@@ -5496,12 +5487,6 @@ declare global {
         prototype: HTMLMedImageZoomElement;
         new (): HTMLMedImageZoomElement;
     };
-    interface HTMLMedInputContainerElement extends Components.MedInputContainer, HTMLStencilElement {
-    }
-    var HTMLMedInputContainerElement: {
-        prototype: HTMLMedInputContainerElement;
-        new (): HTMLMedInputContainerElement;
-    };
     interface HTMLMedItemElement extends Components.MedItem, HTMLStencilElement {
     }
     var HTMLMedItemElement: {
@@ -5775,7 +5760,6 @@ declare global {
         "med-font-zoom": HTMLMedFontZoomElement;
         "med-header": HTMLMedHeaderElement;
         "med-image-zoom": HTMLMedImageZoomElement;
-        "med-input-container": HTMLMedInputContainerElement;
         "med-item": HTMLMedItemElement;
         "med-list": HTMLMedListElement;
         "med-list-item": HTMLMedListItemElement;
@@ -9308,15 +9292,6 @@ declare namespace LocalJSX {
         "marcaAguaSuperior"?: string;
         "titulo"?: string;
     }
-    interface MedInputContainer {
-        "disabled"?: boolean;
-        "dsColor"?: MedColor;
-        "dsName"?: 'secondary';
-        "feedback"?: boolean;
-        "hasButton"?: 'start' | 'end' | 'both';
-        "hasIcon"?: 'start' | 'end' | 'both';
-        "inverted"?: boolean;
-    }
     interface MedItem {
         /**
           * If `true`, a button tag will be rendered and the item will be tappable.
@@ -9620,7 +9595,6 @@ declare namespace LocalJSX {
         "med-font-zoom": MedFontZoom;
         "med-header": MedHeader;
         "med-image-zoom": MedImageZoom;
-        "med-input-container": MedInputContainer;
         "med-item": MedItem;
         "med-list": MedList;
         "med-list-item": MedListItem;
@@ -9768,7 +9742,6 @@ declare module "@stencil/core" {
             "med-font-zoom": LocalJSX.MedFontZoom & JSXBase.HTMLAttributes<HTMLMedFontZoomElement>;
             "med-header": LocalJSX.MedHeader & JSXBase.HTMLAttributes<HTMLMedHeaderElement>;
             "med-image-zoom": LocalJSX.MedImageZoom & JSXBase.HTMLAttributes<HTMLMedImageZoomElement>;
-            "med-input-container": LocalJSX.MedInputContainer & JSXBase.HTMLAttributes<HTMLMedInputContainerElement>;
             "med-item": LocalJSX.MedItem & JSXBase.HTMLAttributes<HTMLMedItemElement>;
             "med-list": LocalJSX.MedList & JSXBase.HTMLAttributes<HTMLMedListElement>;
             "med-list-item": LocalJSX.MedListItem & JSXBase.HTMLAttributes<HTMLMedListItemElement>;
