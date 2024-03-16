@@ -6,14 +6,13 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-b146ab44.js');
-const cubicBezier = require('./cubic-bezier-b395a59d.js');
-const helpers = require('./helpers-a2cc981d.js');
-const haptic = require('./haptic-bcc3abdf.js');
-const animation = require('./animation-a79926bc.js');
-const platform = require('./platform-df0a78a3.js');
-const index$1 = require('./index-bdb474dc.js');
-const spinnerConfigs = require('./spinner-configs-22eaa684.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const cubicBezier = require('./cubic-bezier-1060abff.js');
+const helpers = require('./helpers-4478bffd.js');
+const haptic = require('./haptic-c4a1d647.js');
+const animation = require('./animation-96c88a0a.js');
+const index$1 = require('./index-365d7fb3.js');
+const spinnerConfigs = require('./spinner-configs-eb498ea5.js');
 
 const getRefresherAnimationType = (contentEl) => {
   const previousSibling = contentEl.previousElementSibling;
@@ -152,7 +151,7 @@ const shouldUseNativeRefresher = async (referenceEl, mode) => {
   const refreshingSpinner = referenceEl.querySelector('ion-refresher-content .refresher-refreshing ion-spinner');
   return (pullingSpinner !== null &&
     refreshingSpinner !== null &&
-    ((mode === 'ios' && platform.isPlatform('mobile') && referenceEl.style.webkitOverflowScrolling !== undefined) ||
+    ((mode === 'ios' && ionicGlobal.isPlatform('mobile') && referenceEl.style.webkitOverflowScrolling !== undefined) ||
       mode === 'md'));
 };
 const transitionEndAsync = (el, expectedDuration = 0) => {
@@ -324,7 +323,7 @@ const Refresher = class {
       });
     };
     this.scrollEl.addEventListener('scroll', this.scrollListenerCallback);
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-ff2c537e.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-212d93af.js'); })).createGesture({
       el: this.scrollEl,
       gestureName: 'refresher',
       gesturePriority: 31,
@@ -376,7 +375,7 @@ const Refresher = class {
         refreshingCircle.style.setProperty('animation-delay', '-655ms');
       });
     }
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-ff2c537e.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-212d93af.js'); })).createGesture({
       el: this.scrollEl,
       gestureName: 'refresher',
       gesturePriority: 31,
@@ -481,7 +480,7 @@ const Refresher = class {
       this.setupNativeRefresher(contentEl);
     }
     else {
-      this.gesture = (await Promise.resolve().then(function () { return require('./index-ff2c537e.js'); })).createGesture({
+      this.gesture = (await Promise.resolve().then(function () { return require('./index-212d93af.js'); })).createGesture({
         el: contentEl,
         gestureName: 'refresher',
         gesturePriority: 31,
@@ -748,7 +747,7 @@ const RefresherContent = class {
     if (this.pullingIcon === undefined) {
       const mode = ionicGlobal.getIonMode(this);
       const overflowRefresher = this.el.style.webkitOverflowScrolling !== undefined ? 'lines' : 'arrow-down';
-      this.pullingIcon = ionicGlobal.config.get('refreshingIcon', mode === 'ios' && platform.isPlatform('mobile') ? ionicGlobal.config.get('spinner', overflowRefresher) : 'circular');
+      this.pullingIcon = ionicGlobal.config.get('refreshingIcon', mode === 'ios' && ionicGlobal.isPlatform('mobile') ? ionicGlobal.config.get('spinner', overflowRefresher) : 'circular');
     }
     if (this.refreshingSpinner === undefined) {
       const mode = ionicGlobal.getIonMode(this);

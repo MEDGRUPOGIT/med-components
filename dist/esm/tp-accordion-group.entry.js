@@ -2,8 +2,7 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { g as getIonMode } from './ionic-global-908d8380.js';
-import './platform-a3776365.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
 
 /**
  * Logs a warning to the console with an Ionic prefix

@@ -2,12 +2,11 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
-import { m as modalController } from './overlays-8f8e7296.js';
-import { s as sanitizeDOMString } from './index-45fd73fa.js';
-import './ionic-global-908d8380.js';
-import './platform-a3776365.js';
-import './hardware-back-button-e98bcc7d.js';
-import './helpers-7c8ceac4.js';
+import { m as modalController } from './overlays-52f7bca4.js';
+import { s as sanitizeDOMString } from './index-c841c933.js';
+import './ionic-global-e35a57a3.js';
+import './hardware-back-button-ace6a71b.js';
+import './helpers-d6be6e4a.js';
 
 const medAlertCss = ".sc-med-alert-h{display:block}";
 

@@ -6,15 +6,14 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-b146ab44.js');
-const frameworkDelegate = require('./framework-delegate-742b6da2.js');
-const overlays = require('./overlays-20fa7e5b.js');
-const theme = require('./theme-cef66eda.js');
-const index$1 = require('./index-bc955683.js');
-const animation = require('./animation-a79926bc.js');
-require('./platform-df0a78a3.js');
-require('./helpers-a2cc981d.js');
-require('./hardware-back-button-bef7bb33.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const frameworkDelegate = require('./framework-delegate-8b8d88ef.js');
+const overlays = require('./overlays-12a6887f.js');
+const theme = require('./theme-a4c4a7eb.js');
+const index$1 = require('./index-d49aaaa3.js');
+const animation = require('./animation-96c88a0a.js');
+require('./helpers-4478bffd.js');
+require('./hardware-back-button-a7dedc7d.js');
 
 /**
  * iOS Popover Enter Animation

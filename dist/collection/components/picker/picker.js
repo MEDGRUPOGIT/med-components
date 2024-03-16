@@ -275,7 +275,7 @@ export class Picker {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
+          "text": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
         },
         "attribute": "css-class",
         "reflect": false
@@ -462,9 +462,9 @@ export class Picker {
             }, {
               "tags": [{
                   "name": "param",
-                  "text": "role The role of the element that is dismissing the picker.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the picker.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                  "text": "role The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
                 }],
-              "text": "The role of the element that is dismissing the picker.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the picker.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
             }],
           "references": {
             "Promise": {
@@ -480,7 +480,7 @@ export class Picker {
               "text": "data Any data to emit in the dismiss events."
             }, {
               "name": "param",
-              "text": "role The role of the element that is dismissing the picker.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the picker.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
             }]
         }
       },

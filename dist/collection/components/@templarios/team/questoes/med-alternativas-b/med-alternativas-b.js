@@ -20,7 +20,6 @@ export class MedAlternativasB {
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
-    this.permiteDesmarcar = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
   }
@@ -300,24 +299,6 @@ export class MedAlternativasB {
         "attribute": "permite-riscar",
         "reflect": false,
         "defaultValue": "true"
-      },
-      "permiteDesmarcar": {
-        "type": "boolean",
-        "mutable": true,
-        "complexType": {
-          "original": "boolean",
-          "resolved": "boolean",
-          "references": {}
-        },
-        "required": false,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "todo"
-        },
-        "attribute": "permite-desmarcar",
-        "reflect": false,
-        "defaultValue": "false"
       }
     };
   }

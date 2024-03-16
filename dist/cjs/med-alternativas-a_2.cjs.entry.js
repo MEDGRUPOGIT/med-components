@@ -6,8 +6,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const color = require('./color-7939264c.js');
-const platform = require('./platform-df0a78a3.js');
+const color = require('./color-c29da9e4.js');
 
 function distanciaEuclidiana(pontoA, pontoB) {
   if (!pontoA || !pontoB)
@@ -45,8 +44,7 @@ class MedAlternativasBase {
     this.parent.permiteAlterar = true;
   }
   handleClick(event) {
-    if (!event.target.classList.contains('med-alternativas') &&
-      event.target.tagName !== 'MED-ALTERNATIVAS') {
+    if (!event.target.classList.contains('med-alternativas') && event.target.tagName !== 'MED-ALTERNATIVAS') {
       this.resetState();
     }
   }
@@ -57,10 +55,7 @@ class MedAlternativasBase {
   }
   onTouchStart(event, indice) {
     var _a;
-    if (platform.isPlatform('mobile') && event.type !== 'touchstart')
-      return;
-    if ((_a = event.target
-      .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
+    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
     }
     this.dataStart = new Date();
@@ -76,10 +71,7 @@ class MedAlternativasBase {
   }
   onTouchEnd(event, alternativa) {
     var _a;
-    if (platform.isPlatform('mobile') && event.type !== 'touchend')
-      return;
-    if ((_a = event.target
-      .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
+    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
     }
     const positionEnd = getPositionFromEvent(event);
@@ -93,26 +85,17 @@ class MedAlternativasBase {
     this.parent.permiteAlterar = true;
   }
   alterarAlternativa(item) {
-    var _a, _b;
+    var _a;
     const alternativa = item;
     if (alternativa.Riscada && this.parent.permiteRiscar) {
       return;
     }
-    if (this.parent.alternativaSelecionada === alternativa.Alternativa &&
-      this.parent.permiteDesmarcar) {
-      this.parent.alternativaSelecionada = '';
-      return (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(Object.assign(Object.assign({}, alternativa), { Alternativa: '' }));
-    }
     this.parent.alternativaSelecionada = alternativa.Alternativa;
-    (_b = this.parent.medChange) === null || _b === void 0 ? void 0 : _b.emit(alternativa);
+    (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
   }
   riscar(event, alternativa) {
     var _a;
     event.stopPropagation();
-    const naoRiscadas = this.parent.alternativas.filter((alt) => !alt.Riscada);
-    if (naoRiscadas.length === 1 &&
-      naoRiscadas.some((alt) => alternativa.Alternativa === alt.Alternativa))
-      return;
     alternativa[this.parent.keyRiscada] = !alternativa[this.parent.keyRiscada];
     this.parent.riscarAtivoIndice = -1;
     (_a = this.parent.medRiscada) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
@@ -148,7 +131,6 @@ const MedAlternativasA = class {
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
-    this.permiteDesmarcar = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
   }
@@ -217,7 +199,6 @@ const MedAlternativasB = class {
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
-    this.permiteDesmarcar = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
   }
