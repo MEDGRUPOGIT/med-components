@@ -2874,6 +2874,10 @@ export namespace Components {
         /**
           * todo
          */
+        "blockMouseEvents": boolean;
+        /**
+          * todo
+         */
         "dsColor"?: MedColor;
         /**
           * todo
@@ -2906,6 +2910,10 @@ export namespace Components {
         /**
           * todo
          */
+        "permiteDesmarcar": boolean;
+        /**
+          * todo
+         */
         "permiteRiscar": boolean;
         /**
           * todo
@@ -2921,6 +2929,10 @@ export namespace Components {
           * todo
          */
         "alternativas": MedAlternativaInterface | any;
+        /**
+          * todo
+         */
+        "blockMouseEvents": boolean;
         /**
           * todo
          */
@@ -2957,6 +2969,10 @@ export namespace Components {
           * todo
          */
         "mostraResposta": boolean;
+        /**
+          * todo
+         */
+        "permiteDesmarcar": boolean;
         /**
           * todo
          */
@@ -2978,6 +2994,10 @@ export namespace Components {
         /**
           * todo
          */
+        "blockMouseEvents": boolean;
+        /**
+          * todo
+         */
         "dsColor"?: MedColor;
         /**
           * todo
@@ -3011,6 +3031,10 @@ export namespace Components {
           * todo
          */
         "mostraResposta": boolean;
+        /**
+          * todo
+         */
+        "permiteDesmarcar": boolean;
         /**
           * todo
          */
@@ -8573,6 +8597,10 @@ declare namespace LocalJSX {
         /**
           * todo
          */
+        "blockMouseEvents"?: boolean;
+        /**
+          * todo
+         */
         "dsColor"?: MedColor;
         /**
           * todo
@@ -8605,6 +8633,10 @@ declare namespace LocalJSX {
         /**
           * todo
          */
+        "permiteDesmarcar"?: boolean;
+        /**
+          * todo
+         */
         "permiteRiscar"?: boolean;
         /**
           * todo
@@ -8620,6 +8652,10 @@ declare namespace LocalJSX {
           * todo
          */
         "alternativas"?: MedAlternativaInterface | any;
+        /**
+          * todo
+         */
+        "blockMouseEvents"?: boolean;
         /**
           * todo
          */
@@ -8671,6 +8707,10 @@ declare namespace LocalJSX {
         /**
           * todo
          */
+        "permiteDesmarcar"?: boolean;
+        /**
+          * todo
+         */
         "permiteRiscar"?: boolean;
         /**
           * todo
@@ -8686,6 +8726,10 @@ declare namespace LocalJSX {
           * todo
          */
         "alternativas"?: MedAlternativaInterface | any;
+        /**
+          * todo
+         */
+        "blockMouseEvents"?: boolean;
         /**
           * todo
          */
@@ -8734,6 +8778,10 @@ declare namespace LocalJSX {
           * todo
          */
         "onMedRiscada"?: (event: MedAlternativasBCustomEvent<MedAlternativaInterface>) => void;
+        /**
+          * todo
+         */
+        "permiteDesmarcar"?: boolean;
         /**
           * todo
          */

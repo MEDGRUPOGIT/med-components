@@ -49,5 +49,13 @@ export declare class MedAlternativas implements MedAlternativasInterface {
    * todo
    */
   permiteRiscar: boolean;
+  /**
+   * todo
+   */
+  permiteDesmarcar: boolean;
+  /**
+   * todo
+   */
+  blockMouseEvents: boolean;
   render(): any;
 }

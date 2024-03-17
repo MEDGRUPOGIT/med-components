@@ -1,4 +1,4 @@
-import { MedAlternativaInterface, MedAlternativasInternoInterface } from "../../../../../@templarios/interfaces/alternativas.interface";
+import { MedAlternativaInterface, MedAlternativasInternoInterface } from '../../../../../@templarios/interfaces/alternativas.interface';
 export declare class MedAlternativasBase {
   parent: MedAlternativasInternoInterface;
   private dataStart;
@@ -13,7 +13,7 @@ export declare class MedAlternativasBase {
   onAlternativasChanged(newValue: MedAlternativaInterface | any, oldValue: MedAlternativaInterface | any): void;
   onTouchStart(event: any, indice: number): void;
   onTouchEnd(event: any, alternativa: MedAlternativaInterface): void;
-  alterarAlternativa(item: any): void;
+  alterarAlternativa(item: any): CustomEvent<MedAlternativaInterface> | undefined;
   riscar(event: any, alternativa: any): void;
   imageRequest(event: any, alternativa: any): void;
 }

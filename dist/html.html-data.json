@@ -4883,6 +4883,10 @@
           "description": "todo"
         },
         {
+          "name": "block-mouse-events",
+          "description": "todo"
+        },
+        {
           "name": "ds-color",
           "description": "todo"
         },
@@ -4912,6 +4916,10 @@
         },
         {
           "name": "mostra-resposta",
+          "description": "todo"
+        },
+        {
+          "name": "permite-desmarcar",
           "description": "todo"
         },
         {
@@ -4946,6 +4954,10 @@
           "description": "todo"
         },
         {
+          "name": "block-mouse-events",
+          "description": "todo"
+        },
+        {
           "name": "ds-color",
           "description": "todo"
         },
@@ -4979,6 +4991,10 @@
         },
         {
           "name": "mostra-resposta",
+          "description": "todo"
+        },
+        {
+          "name": "permite-desmarcar",
           "description": "todo"
         },
         {
@@ -5013,6 +5029,10 @@
           "description": "todo"
         },
         {
+          "name": "block-mouse-events",
+          "description": "todo"
+        },
+        {
           "name": "ds-color",
           "description": "todo"
         },
@@ -5046,6 +5066,10 @@
         },
         {
           "name": "mostra-resposta",
+          "description": "todo"
+        },
+        {
+          "name": "permite-desmarcar",
           "description": "todo"
         },
         {

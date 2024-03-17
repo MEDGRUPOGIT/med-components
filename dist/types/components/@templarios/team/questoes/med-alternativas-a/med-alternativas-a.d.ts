@@ -59,6 +59,14 @@ export declare class MedAlternativasA implements MedAlternativasInternoInterface
   /**
    * todo
    */
+  permiteDesmarcar: boolean;
+  /**
+   * todo
+   */
+  blockMouseEvents: boolean;
+  /**
+   * todo
+   */
   medChange: EventEmitter<MedAlternativaInterface>;
   /**
    * todo

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-03-16T15:41:25",
+  "timestamp": "2024-03-16T18:04:32",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -20321,6 +20321,23 @@
           "required": false
         },
         {
+          "name": "blockMouseEvents",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "block-mouse-events",
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "dsColor",
           "type": "string | undefined",
           "mutable": false,
@@ -20457,6 +20474,23 @@
           "required": true
         },
         {
+          "name": "permiteDesmarcar",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "permite-desmarcar",
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "permiteRiscar",
           "type": "boolean",
           "mutable": true,
@@ -20556,6 +20590,23 @@
           "values": [
             {
               "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "blockMouseEvents",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "block-mouse-events",
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": false,
@@ -20712,6 +20763,23 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "permiteDesmarcar",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "permite-desmarcar",
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
         },
         {
           "name": "permiteRiscar",
@@ -20851,6 +20919,23 @@
           "required": false
         },
         {
+          "name": "blockMouseEvents",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "block-mouse-events",
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "dsColor",
           "type": "string | undefined",
           "mutable": false,
@@ -21001,6 +21086,23 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "permiteDesmarcar",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "permite-desmarcar",
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
         },
         {
           "name": "permiteRiscar",
