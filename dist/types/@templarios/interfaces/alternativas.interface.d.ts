@@ -7,8 +7,8 @@ export interface MedAlternativaInterface {
   Riscada?: boolean;
 }
 export interface MedAlternativasInterface {
-  blockMouseEvents: boolean;
-  permiteDesmarcar: boolean;
+  blockMouseEvents?: boolean;
+  permiteDesmarcar?: boolean;
   alternativas: MedAlternativaInterface[] | any[];
   keyAlternativa?: 'Alternativa' | string;
   keyEnunciado?: 'Enunciado' | string;
