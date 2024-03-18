@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-03-17T15:53:45",
+  "timestamp": "2024-03-18T17:03:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -20321,23 +20321,6 @@
           "required": false
         },
         {
-          "name": "blockMouseEvents",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "block-mouse-events",
-          "reflectToAttr": false,
-          "docs": "todo",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "dsColor",
           "type": "string | undefined",
           "mutable": false,
@@ -20590,23 +20573,6 @@
           "values": [
             {
               "type": "any"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "blockMouseEvents",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "block-mouse-events",
-          "reflectToAttr": false,
-          "docs": "todo",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,
@@ -20913,23 +20879,6 @@
           "values": [
             {
               "type": "any"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "blockMouseEvents",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "block-mouse-events",
-          "reflectToAttr": false,
-          "docs": "todo",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": false,

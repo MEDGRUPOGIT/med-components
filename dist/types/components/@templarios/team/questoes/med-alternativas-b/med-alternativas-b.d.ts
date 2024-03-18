@@ -63,10 +63,6 @@ export declare class MedAlternativasB implements MedAlternativasInternoInterface
   /**
    * todo
    */
-  blockMouseEvents: boolean;
-  /**
-   * todo
-   */
   medChange: EventEmitter<MedAlternativaInterface>;
   /**
    * todo
@@ -76,7 +72,17 @@ export declare class MedAlternativasB implements MedAlternativasInternoInterface
    * todo
    */
   medGalleryRequest: EventEmitter<MedAlternativaInterface>;
+  /**
+   * todo
+   */
+  blockMouseEvents: boolean;
+  /**
+   * todo
+   */
   permiteAlterar: boolean;
+  /**
+   * todo
+   */
   riscarAtivoIndice: number;
   baseClass: MedAlternativasBase;
   handleClick(event: any): void;

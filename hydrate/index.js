@@ -14874,7 +14874,7 @@ class MedAlternativas {
       "alternativaSelecionada": [1537, "alternativa-selecionada"],
       "permiteRiscar": [1028, "permite-riscar"],
       "permiteDesmarcar": [1028, "permite-desmarcar"],
-      "blockMouseEvents": [1028, "block-mouse-events"]
+      "blockMouseEvents": [32]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
@@ -14931,7 +14931,6 @@ class MedAlternativasBase {
   }
   onTouchStart(event, indice) {
     var _a;
-    console.log('onTouchStart event type:', event.type);
     if (event.type === 'mousedown' && this.parent.blockMouseEvents)
       return;
     if (event.type === 'touchstart') {
@@ -14954,7 +14953,6 @@ class MedAlternativasBase {
   }
   onTouchEnd(event, alternativa) {
     var _a;
-    console.log('onTouchEnd event type:', event.type);
     if (event.type === 'mouseup' && this.parent.blockMouseEvents) {
       this.parent.blockMouseEvents = false;
       return;
@@ -15121,7 +15119,7 @@ class MedAlternativasA {
       "alternativaSelecionada": [1537, "alternativa-selecionada"],
       "permiteRiscar": [1028, "permite-riscar"],
       "permiteDesmarcar": [1028, "permite-desmarcar"],
-      "blockMouseEvents": [1028, "block-mouse-events"],
+      "blockMouseEvents": [32],
       "permiteAlterar": [32],
       "riscarAtivoIndice": [32]
     },
@@ -15231,7 +15229,7 @@ class MedAlternativasB {
       "alternativaSelecionada": [1537, "alternativa-selecionada"],
       "permiteRiscar": [1028, "permite-riscar"],
       "permiteDesmarcar": [1028, "permite-desmarcar"],
-      "blockMouseEvents": [1028, "block-mouse-events"],
+      "blockMouseEvents": [32],
       "permiteAlterar": [32],
       "riscarAtivoIndice": [32]
     },

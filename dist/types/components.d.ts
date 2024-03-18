@@ -2874,10 +2874,6 @@ export namespace Components {
         /**
           * todo
          */
-        "blockMouseEvents": boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
         /**
           * todo
@@ -2929,10 +2925,6 @@ export namespace Components {
           * todo
          */
         "alternativas": MedAlternativaInterface | any;
-        /**
-          * todo
-         */
-        "blockMouseEvents": boolean;
         /**
           * todo
          */
@@ -2991,10 +2983,6 @@ export namespace Components {
           * todo
          */
         "alternativas": MedAlternativaInterface | any;
-        /**
-          * todo
-         */
-        "blockMouseEvents": boolean;
         /**
           * todo
          */
@@ -8597,10 +8585,6 @@ declare namespace LocalJSX {
         /**
           * todo
          */
-        "blockMouseEvents"?: boolean;
-        /**
-          * todo
-         */
         "dsColor"?: MedColor;
         /**
           * todo
@@ -8652,10 +8636,6 @@ declare namespace LocalJSX {
           * todo
          */
         "alternativas"?: MedAlternativaInterface | any;
-        /**
-          * todo
-         */
-        "blockMouseEvents"?: boolean;
         /**
           * todo
          */
@@ -8726,10 +8706,6 @@ declare namespace LocalJSX {
           * todo
          */
         "alternativas"?: MedAlternativaInterface | any;
-        /**
-          * todo
-         */
-        "blockMouseEvents"?: boolean;
         /**
           * todo
          */

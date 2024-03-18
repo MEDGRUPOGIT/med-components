@@ -26,7 +26,6 @@ export class MedAlternativasBase {
   }
   onTouchStart(event, indice) {
     var _a;
-    console.log('onTouchStart event type:', event.type);
     if (event.type === 'mousedown' && this.parent.blockMouseEvents)
       return;
     if (event.type === 'touchstart') {
@@ -49,7 +48,6 @@ export class MedAlternativasBase {
   }
   onTouchEnd(event, alternativa) {
     var _a;
-    console.log('onTouchEnd event type:', event.type);
     if (event.type === 'mouseup' && this.parent.blockMouseEvents) {
       this.parent.blockMouseEvents = false;
       return;

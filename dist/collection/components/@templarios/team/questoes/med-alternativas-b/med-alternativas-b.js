@@ -344,29 +344,12 @@ export class MedAlternativasB {
         "attribute": "permite-desmarcar",
         "reflect": false,
         "defaultValue": "false"
-      },
-      "blockMouseEvents": {
-        "type": "boolean",
-        "mutable": true,
-        "complexType": {
-          "original": "boolean",
-          "resolved": "boolean",
-          "references": {}
-        },
-        "required": false,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "todo"
-        },
-        "attribute": "block-mouse-events",
-        "reflect": false,
-        "defaultValue": "false"
       }
     };
   }
   static get states() {
     return {
+      "blockMouseEvents": {},
       "permiteAlterar": {},
       "riscarAtivoIndice": {}
     };
