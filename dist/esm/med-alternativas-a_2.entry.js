@@ -40,7 +40,8 @@ class MedAlternativasBase {
     this.parent.permiteAlterar = true;
   }
   handleClick(event) {
-    if (!event.target.classList.contains('med-alternativas') && event.target.tagName !== 'MED-ALTERNATIVAS') {
+    if (!event.target.classList.contains('med-alternativas') &&
+      event.target.tagName !== 'MED-ALTERNATIVAS') {
       this.resetState();
     }
   }
@@ -51,7 +52,13 @@ class MedAlternativasBase {
   }
   onTouchStart(event, indice) {
     var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
+    if (event.type === 'mousedown' && this.parent.blockMouseEvents)
+      return;
+    if (event.type === 'touchstart') {
+      this.parent.blockMouseEvents = true;
+    }
+    if ((_a = event.target
+      .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
     }
     this.dataStart = new Date();
@@ -67,7 +74,12 @@ class MedAlternativasBase {
   }
   onTouchEnd(event, alternativa) {
     var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
+    if (event.type === 'mouseup' && this.parent.blockMouseEvents) {
+      this.parent.blockMouseEvents = false;
+      return;
+    }
+    if ((_a = event.target
+      .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
     }
     const positionEnd = getPositionFromEvent(event);
@@ -81,17 +93,26 @@ class MedAlternativasBase {
     this.parent.permiteAlterar = true;
   }
   alterarAlternativa(item) {
-    var _a;
+    var _a, _b;
     const alternativa = item;
     if (alternativa.Riscada && this.parent.permiteRiscar) {
       return;
     }
+    if (this.parent.alternativaSelecionada === alternativa.Alternativa &&
+      this.parent.permiteDesmarcar) {
+      this.parent.alternativaSelecionada = '';
+      return (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(Object.assign(Object.assign({}, alternativa), { Alternativa: '' }));
+    }
     this.parent.alternativaSelecionada = alternativa.Alternativa;
-    (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
+    (_b = this.parent.medChange) === null || _b === void 0 ? void 0 : _b.emit(alternativa);
   }
   riscar(event, alternativa) {
     var _a;
     event.stopPropagation();
+    const naoRiscadas = this.parent.alternativas.filter((alt) => !alt.Riscada);
+    if (naoRiscadas.length === 1 &&
+      naoRiscadas.some((alt) => alternativa.Alternativa === alt.Alternativa))
+      return;
     alternativa[this.parent.keyRiscada] = !alternativa[this.parent.keyRiscada];
     this.parent.riscarAtivoIndice = -1;
     (_a = this.parent.medRiscada) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
@@ -127,6 +148,8 @@ const MedAlternativasA = class {
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
+    this.permiteDesmarcar = false;
+    this.blockMouseEvents = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
   }
@@ -147,24 +170,52 @@ const MedAlternativasA = class {
       });
     }
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
-        'med-alternativas': true,
+        'med-alternativas': true
       }) }, h("div", { class: `
            med-alternativas__list
            ${hasImage ? 'med-alternativas__list--has-image' : ''}
-           `, role: "list" }, this.alternativas.map((alternativa, indice) => (h("div", { role: "listitem", onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
+           `, role: 'list' }, this.alternativas.map((alternativa, indice) => (h("div", { role: 'listitem', onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
                 med-alternativas__item med-alternativas__item--${alternativa[this.keyAlternativa]}
                 ${permiteRiscar ? 'med-alternativas__item--permite-riscar' : ''}
-                ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__item--show' : ''}
-                ${alternativa[this.keyRiscada] && permiteRiscar ? 'med-alternativas__item--riscado' : ''}
-                ${exibeAcerto && alternativa[this.keyAlternativa] === this.respostaCorreta && this.respostaCorreta === this.alternativaSelecionada ? 'med-alternativas__item--correta' : ''}
-                ${exibeAcerto && alternativa[this.keyAlternativa] === this.respostaCorreta && this.respostaCorreta !== this.alternativaSelecionada ? 'med-alternativas__item--certa' : ''}
-                ${exibeAcerto && alternativa[this.keyAlternativa] !== this.respostaCorreta && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--incorreta' : ''}
-                ${!exibeAcerto && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--selecionada' : ''}
-              ` }, h("div", { class: "med-alternativas__wrapper" }, h("div", { class: "med-alternativas__container" }, h("div", { class: "med-alternativas__left" }, h("div", { class: "option" }, h("span", { class: "option__fake" }), h("span", { class: "option__letter" }, alternativa[this.keyAlternativa]))), h("div", { class: "med-alternativas__right" }, h("span", { class: "med-alternativas__span", innerHTML: alternativa[this.keyEnunciado] }), alternativa[this.keyImagem] &&
-      h("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, h("div", { class: 'image-container__wrapper' }, h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }))), h("med-chart-bar-horizontal", { label: true, class: `
+                ${indice === this.riscarAtivoIndice && permiteRiscar
+        ? 'med-alternativas__item--show'
+        : ''}
+                ${alternativa[this.keyRiscada] && permiteRiscar
+        ? 'med-alternativas__item--riscado'
+        : ''}
+                ${exibeAcerto &&
+        alternativa[this.keyAlternativa] === this.respostaCorreta &&
+        this.respostaCorreta === this.alternativaSelecionada
+        ? 'med-alternativas__item--correta'
+        : ''}
+                ${exibeAcerto &&
+        alternativa[this.keyAlternativa] === this.respostaCorreta &&
+        this.respostaCorreta !== this.alternativaSelecionada
+        ? 'med-alternativas__item--certa'
+        : ''}
+                ${exibeAcerto &&
+        alternativa[this.keyAlternativa] !== this.respostaCorreta &&
+        alternativa[this.keyAlternativa] ===
+          this.alternativaSelecionada
+        ? 'med-alternativas__item--incorreta'
+        : ''}
+                ${!exibeAcerto &&
+        alternativa[this.keyAlternativa] ===
+          this.alternativaSelecionada
+        ? 'med-alternativas__item--selecionada'
+        : ''}
+              ` }, h("div", { class: 'med-alternativas__wrapper' }, h("div", { class: 'med-alternativas__container' }, h("div", { class: 'med-alternativas__left' }, h("div", { class: 'option' }, h("span", { class: 'option__fake' }), h("span", { class: 'option__letter' }, alternativa[this.keyAlternativa]))), h("div", { class: 'med-alternativas__right' }, h("span", { class: 'med-alternativas__span', innerHTML: alternativa[this.keyEnunciado] }), alternativa[this.keyImagem] && (h("div", { class: `image-container ${alternativa[this.keyEnunciado]
+        ? 'image-container--margin'
+        : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, h("div", { class: 'image-container__wrapper' }, h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] })))), h("med-chart-bar-horizontal", { label: true, class: `
                       med-alternativas__progress-bar
-                      ${mostraResposta && alternativaSelecionada ? 'med-alternativas__progress-bar--toggle' : ''}
-                    `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })), h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => { this.baseClass.riscar(event, alternativa); } }, h("ion-icon", { class: "med-alternativas__riscar-icon med-icon", name: "med-riscar" }), h("div", { class: "med-alternativas__riscar-span" }, (alternativa[this.keyRiscada] ? 'Restaurar ' : 'Riscar '), h("span", { class: "med-alternativas__riscar-desktop" }, " alternativa")))))))))));
+                      ${mostraResposta && alternativaSelecionada
+        ? 'med-alternativas__progress-bar--toggle'
+        : ''}
+                    `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })), h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar
+        ? 'med-alternativas__riscar--show'
+        : ''}`, onClick: (event) => {
+        this.baseClass.riscar(event, alternativa);
+      } }, h("ion-icon", { class: 'med-alternativas__riscar-icon med-icon', name: 'med-riscar' }), h("div", { class: 'med-alternativas__riscar-span' }, alternativa[this.keyRiscada] ? 'Restaurar ' : 'Riscar ', h("span", { class: 'med-alternativas__riscar-desktop' }, ' ', "alternativa")))))))))));
   }
   get hostElement() { return getElement(this); }
   static get watchers() { return {
@@ -195,6 +246,8 @@ const MedAlternativasB = class {
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
+    this.permiteDesmarcar = false;
+    this.blockMouseEvents = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
   }
@@ -208,19 +261,44 @@ const MedAlternativasB = class {
     const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
-        'med-alternativas': true,
-      }) }, h("div", { class: "med-alternativas__list", role: "list" }, this.alternativas.map((alternativa, indice) => (h("div", { role: "listitem", onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
+        'med-alternativas': true
+      }) }, h("div", { class: 'med-alternativas__list', role: 'list' }, this.alternativas.map((alternativa, indice) => (h("div", { role: 'listitem', onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
                 med-alternativas__item med-alternativas__item--${alternativa[this.keyAlternativa]}
                 ${permiteRiscar ? 'med-alternativas__item--permite-riscar' : ''}
-                ${alternativa[this.keyRiscada] && permiteRiscar ? 'med-alternativas__item--riscado' : ''}
-                ${exibeAcerto && alternativa[this.keyAlternativa] === this.respostaCorreta && this.respostaCorreta === this.alternativaSelecionada ? 'med-alternativas__item--correta' : ''}
-                ${exibeAcerto && alternativa[this.keyAlternativa] === this.respostaCorreta && this.respostaCorreta !== this.alternativaSelecionada ? 'med-alternativas__item--certa' : ''}
-                ${exibeAcerto && alternativa[this.keyAlternativa] !== this.respostaCorreta && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--incorreta' : ''}
-                ${!exibeAcerto && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--selecionada' : ''}
-              ` }, h("div", { class: "med-alternativas__wrapper" }, h("div", { class: "med-alternativas__container" }, h("div", { class: "med-alternativas__left" }, alternativa[this.keyAlternativa]), h("div", { class: "med-alternativas__right", innerHTML: alternativa[this.keyEnunciado] }, alternativa[this.keyImagem] &&
-      h("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, h("div", { class: 'image-container__wrapper' }, h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }), h("div", { class: 'image-container__button' }, h("ion-icon", { class: "med-icon image-container__icon", name: "med-busca" }))))), h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') + ' alternativa'))), h("med-chart-bar-horizontal", { label: true, class: `
+                ${alternativa[this.keyRiscada] && permiteRiscar
+        ? 'med-alternativas__item--riscado'
+        : ''}
+                ${exibeAcerto &&
+        alternativa[this.keyAlternativa] === this.respostaCorreta &&
+        this.respostaCorreta === this.alternativaSelecionada
+        ? 'med-alternativas__item--correta'
+        : ''}
+                ${exibeAcerto &&
+        alternativa[this.keyAlternativa] === this.respostaCorreta &&
+        this.respostaCorreta !== this.alternativaSelecionada
+        ? 'med-alternativas__item--certa'
+        : ''}
+                ${exibeAcerto &&
+        alternativa[this.keyAlternativa] !== this.respostaCorreta &&
+        alternativa[this.keyAlternativa] ===
+          this.alternativaSelecionada
+        ? 'med-alternativas__item--incorreta'
+        : ''}
+                ${!exibeAcerto &&
+        alternativa[this.keyAlternativa] ===
+          this.alternativaSelecionada
+        ? 'med-alternativas__item--selecionada'
+        : ''}
+              ` }, h("div", { class: 'med-alternativas__wrapper' }, h("div", { class: 'med-alternativas__container' }, h("div", { class: 'med-alternativas__left' }, alternativa[this.keyAlternativa]), h("div", { class: 'med-alternativas__right', innerHTML: alternativa[this.keyEnunciado] }, alternativa[this.keyImagem] && (h("div", { class: `image-container ${alternativa[this.keyEnunciado]
+        ? 'image-container--margin'
+        : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, h("div", { class: 'image-container__wrapper' }, h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }), h("div", { class: 'image-container__button' }, h("ion-icon", { class: 'med-icon image-container__icon', name: 'med-busca' })))))), h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar
+        ? 'med-alternativas__riscar--show'
+        : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') +
+      ' alternativa'))), h("med-chart-bar-horizontal", { label: true, class: `
                 med-alternativas__progress-bar
-                ${mostraResposta && alternativaSelecionada ? 'med-alternativas__progress-bar--toggle' : ''}
+                ${mostraResposta && alternativaSelecionada
+        ? 'med-alternativas__progress-bar--toggle'
+        : ''}
               `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })))))));
   }
   get hostElement() { return getElement(this); }

@@ -20,6 +20,8 @@ export class MedAlternativasB {
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
+    this.permiteDesmarcar = false;
+    this.blockMouseEvents = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
   }
@@ -33,19 +35,44 @@ export class MedAlternativasB {
     const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
-        'med-alternativas': true,
-      }) }, h("div", { class: "med-alternativas__list", role: "list" }, this.alternativas.map((alternativa, indice) => (h("div", { role: "listitem", onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
+        'med-alternativas': true
+      }) }, h("div", { class: 'med-alternativas__list', role: 'list' }, this.alternativas.map((alternativa, indice) => (h("div", { role: 'listitem', onTouchStart: (event) => this.baseClass.onTouchStart(event, indice), onTouchEnd: (event) => this.baseClass.onTouchEnd(event, alternativa), onMouseDown: (event) => this.baseClass.onTouchStart(event, indice), onMouseUp: (event) => this.baseClass.onTouchEnd(event, alternativa), class: `
                 med-alternativas__item med-alternativas__item--${alternativa[this.keyAlternativa]}
                 ${permiteRiscar ? 'med-alternativas__item--permite-riscar' : ''}
-                ${alternativa[this.keyRiscada] && permiteRiscar ? 'med-alternativas__item--riscado' : ''}
-                ${exibeAcerto && alternativa[this.keyAlternativa] === this.respostaCorreta && this.respostaCorreta === this.alternativaSelecionada ? 'med-alternativas__item--correta' : ''}
-                ${exibeAcerto && alternativa[this.keyAlternativa] === this.respostaCorreta && this.respostaCorreta !== this.alternativaSelecionada ? 'med-alternativas__item--certa' : ''}
-                ${exibeAcerto && alternativa[this.keyAlternativa] !== this.respostaCorreta && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--incorreta' : ''}
-                ${!exibeAcerto && alternativa[this.keyAlternativa] === this.alternativaSelecionada ? 'med-alternativas__item--selecionada' : ''}
-              ` }, h("div", { class: "med-alternativas__wrapper" }, h("div", { class: "med-alternativas__container" }, h("div", { class: "med-alternativas__left" }, alternativa[this.keyAlternativa]), h("div", { class: "med-alternativas__right", innerHTML: alternativa[this.keyEnunciado] }, alternativa[this.keyImagem] &&
-      h("div", { class: `image-container ${alternativa[this.keyEnunciado] ? 'image-container--margin' : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, h("div", { class: 'image-container__wrapper' }, h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }), h("div", { class: 'image-container__button' }, h("ion-icon", { class: "med-icon image-container__icon", name: "med-busca" }))))), h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar ? 'med-alternativas__riscar--show' : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') + ' alternativa'))), h("med-chart-bar-horizontal", { label: true, class: `
+                ${alternativa[this.keyRiscada] && permiteRiscar
+        ? 'med-alternativas__item--riscado'
+        : ''}
+                ${exibeAcerto &&
+        alternativa[this.keyAlternativa] === this.respostaCorreta &&
+        this.respostaCorreta === this.alternativaSelecionada
+        ? 'med-alternativas__item--correta'
+        : ''}
+                ${exibeAcerto &&
+        alternativa[this.keyAlternativa] === this.respostaCorreta &&
+        this.respostaCorreta !== this.alternativaSelecionada
+        ? 'med-alternativas__item--certa'
+        : ''}
+                ${exibeAcerto &&
+        alternativa[this.keyAlternativa] !== this.respostaCorreta &&
+        alternativa[this.keyAlternativa] ===
+          this.alternativaSelecionada
+        ? 'med-alternativas__item--incorreta'
+        : ''}
+                ${!exibeAcerto &&
+        alternativa[this.keyAlternativa] ===
+          this.alternativaSelecionada
+        ? 'med-alternativas__item--selecionada'
+        : ''}
+              ` }, h("div", { class: 'med-alternativas__wrapper' }, h("div", { class: 'med-alternativas__container' }, h("div", { class: 'med-alternativas__left' }, alternativa[this.keyAlternativa]), h("div", { class: 'med-alternativas__right', innerHTML: alternativa[this.keyEnunciado] }, alternativa[this.keyImagem] && (h("div", { class: `image-container ${alternativa[this.keyEnunciado]
+        ? 'image-container--margin'
+        : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, h("div", { class: 'image-container__wrapper' }, h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] }), h("div", { class: 'image-container__button' }, h("ion-icon", { class: 'med-icon image-container__icon', name: 'med-busca' })))))), h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar
+        ? 'med-alternativas__riscar--show'
+        : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') +
+      ' alternativa'))), h("med-chart-bar-horizontal", { label: true, class: `
                 med-alternativas__progress-bar
-                ${mostraResposta && alternativaSelecionada ? 'med-alternativas__progress-bar--toggle' : ''}
+                ${mostraResposta && alternativaSelecionada
+        ? 'med-alternativas__progress-bar--toggle'
+        : ''}
               `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })))))));
   }
   static get is() { return "med-alternativas-b"; }
@@ -299,11 +326,30 @@ export class MedAlternativasB {
         "attribute": "permite-riscar",
         "reflect": false,
         "defaultValue": "true"
+      },
+      "permiteDesmarcar": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "permite-desmarcar",
+        "reflect": false,
+        "defaultValue": "false"
       }
     };
   }
   static get states() {
     return {
+      "blockMouseEvents": {},
       "permiteAlterar": {},
       "riscarAtivoIndice": {}
     };

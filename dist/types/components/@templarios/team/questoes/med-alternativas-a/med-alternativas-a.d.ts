@@ -1,7 +1,7 @@
 import { EventEmitter } from '../../../../../stencil-public-runtime';
+import { MedAlternativaInterface, MedAlternativasInternoInterface } from '../../../../../@templarios/interfaces/alternativas.interface';
 import { MedColor } from '../../../../../@templarios/types/color.type';
 import { MedAlternativasBase } from '../med-alternativas/med-alternativas-base';
-import { MedAlternativaInterface, MedAlternativasInternoInterface } from '../../../../../@templarios/interfaces/alternativas.interface';
 export declare class MedAlternativasA implements MedAlternativasInternoInterface {
   hostElement: HTMLElement;
   /**
@@ -59,6 +59,10 @@ export declare class MedAlternativasA implements MedAlternativasInternoInterface
   /**
    * todo
    */
+  permiteDesmarcar: boolean;
+  /**
+   * todo
+   */
   medChange: EventEmitter<MedAlternativaInterface>;
   /**
    * todo
@@ -68,7 +72,17 @@ export declare class MedAlternativasA implements MedAlternativasInternoInterface
    * todo
    */
   medGalleryRequest: EventEmitter<MedAlternativaInterface>;
+  /**
+   * todo
+   */
+  blockMouseEvents: boolean;
+  /**
+   * todo
+   */
   permiteAlterar: boolean;
+  /**
+   * todo
+   */
   riscarAtivoIndice: number;
   baseClass: MedAlternativasBase;
   handleClick(event: any): void;

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-03-16T15:41:25",
+  "timestamp": "2024-03-19T14:16:18",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -20457,6 +20457,23 @@
           "required": true
         },
         {
+          "name": "permiteDesmarcar",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "permite-desmarcar",
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "permiteRiscar",
           "type": "boolean",
           "mutable": true,
@@ -20712,6 +20729,23 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "permiteDesmarcar",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "permite-desmarcar",
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
         },
         {
           "name": "permiteRiscar",
@@ -21001,6 +21035,23 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "permiteDesmarcar",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "permite-desmarcar",
+          "reflectToAttr": false,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
         },
         {
           "name": "permiteRiscar",

@@ -13,7 +13,8 @@ export class MedAlternativasBase {
     this.parent.permiteAlterar = true;
   }
   handleClick(event) {
-    if (!event.target.classList.contains('med-alternativas') && event.target.tagName !== 'MED-ALTERNATIVAS') {
+    if (!event.target.classList.contains('med-alternativas') &&
+      event.target.tagName !== 'MED-ALTERNATIVAS') {
       this.resetState();
     }
   }
@@ -24,7 +25,13 @@ export class MedAlternativasBase {
   }
   onTouchStart(event, indice) {
     var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
+    if (event.type === 'mousedown' && this.parent.blockMouseEvents)
+      return;
+    if (event.type === 'touchstart') {
+      this.parent.blockMouseEvents = true;
+    }
+    if ((_a = event.target
+      .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
     }
     this.dataStart = new Date();
@@ -40,7 +47,12 @@ export class MedAlternativasBase {
   }
   onTouchEnd(event, alternativa) {
     var _a;
-    if ((_a = event.target.closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
+    if (event.type === 'mouseup' && this.parent.blockMouseEvents) {
+      this.parent.blockMouseEvents = false;
+      return;
+    }
+    if ((_a = event.target
+      .closest('.med-alternativas__riscar')) === null || _a === void 0 ? void 0 : _a.classList.contains('med-alternativas__riscar')) {
       return;
     }
     const positionEnd = getPositionFromEvent(event);
@@ -54,17 +66,26 @@ export class MedAlternativasBase {
     this.parent.permiteAlterar = true;
   }
   alterarAlternativa(item) {
-    var _a;
+    var _a, _b;
     const alternativa = item;
     if (alternativa.Riscada && this.parent.permiteRiscar) {
       return;
     }
+    if (this.parent.alternativaSelecionada === alternativa.Alternativa &&
+      this.parent.permiteDesmarcar) {
+      this.parent.alternativaSelecionada = '';
+      return (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(Object.assign(Object.assign({}, alternativa), { Alternativa: '' }));
+    }
     this.parent.alternativaSelecionada = alternativa.Alternativa;
-    (_a = this.parent.medChange) === null || _a === void 0 ? void 0 : _a.emit(alternativa);
+    (_b = this.parent.medChange) === null || _b === void 0 ? void 0 : _b.emit(alternativa);
   }
   riscar(event, alternativa) {
     var _a;
     event.stopPropagation();
+    const naoRiscadas = this.parent.alternativas.filter((alt) => !alt.Riscada);
+    if (naoRiscadas.length === 1 &&
+      naoRiscadas.some((alt) => alternativa.Alternativa === alt.Alternativa))
+      return;
     alternativa[this.parent.keyRiscada] = !alternativa[this.parent.keyRiscada];
     this.parent.riscarAtivoIndice = -1;
     (_a = this.parent.medRiscada) === null || _a === void 0 ? void 0 : _a.emit(alternativa);

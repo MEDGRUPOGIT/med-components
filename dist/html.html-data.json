@@ -4915,6 +4915,10 @@
           "description": "todo"
         },
         {
+          "name": "permite-desmarcar",
+          "description": "todo"
+        },
+        {
           "name": "permite-riscar",
           "description": "todo"
         },
@@ -4982,6 +4986,10 @@
           "description": "todo"
         },
         {
+          "name": "permite-desmarcar",
+          "description": "todo"
+        },
+        {
           "name": "permite-riscar",
           "description": "todo"
         },
@@ -5046,6 +5054,10 @@
         },
         {
           "name": "mostra-resposta",
+          "description": "todo"
+        },
+        {
+          "name": "permite-desmarcar",
           "description": "todo"
         },
         {
