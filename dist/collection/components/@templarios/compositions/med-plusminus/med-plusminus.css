@@ -25,16 +25,24 @@
   stroke: var(--color);
 }
 
-:host(.med-plusminus--disabled-minus) .med-plusminus__icon-minus,
-:host(.med-plusminus--disabled-plus) .med-plusminus__icon-plus {
+:host(.med-plusminus--disabled-minus) .med-plusminus__icon-minus {
   opacity: 0.5;
-  pointer-events: var(--pointer-events);
+  pointer-events: none;
 }
 
-:host(.med-plusminus--disabled-both) .med-plusminus__icon-minus,
+:host(.med-plusminus--disabled-plus) .med-plusminus__icon-plus {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+:host(.med-plusminus--disabled-both) .med-plusminus__icon-minus {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 :host(.med-plusminus--disabled-both) .med-plusminus__icon-plus {
   opacity: 0.5;
-  pointer-events: var(--pointer-events);
+  pointer-events: none;
 }
 
 :host(.med-plusminus--lg) {

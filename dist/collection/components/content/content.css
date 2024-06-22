@@ -28,6 +28,8 @@
   --width: 7px;
   --height: 7px;
   --padding: 10px;
+  --tp-display: block;
+  --tp-flex-direction: column;
   display: block;
   position: relative;
   flex: 1;
@@ -72,6 +74,8 @@
   color: var(--color);
   box-sizing: border-box;
   overflow: hidden;
+  display: var(--tp-display);
+  flex-direction: var(--tp-flex-direction);
 }
 @supports (margin-inline-start: 0) or (-webkit-margin-start: 0) {
   .inner-scroll {
@@ -190,6 +194,8 @@
 :host {
   --tp-scroll-color-content: hsl(var(--med-color-neutral-3));
   --tp-scroll-width: 9px;
+  --tp-display: block;
+  --tp-flex-direction: column;
   scroll-snap-type: both mandatory;
   scroll-padding-top: 30px;
   scroll-behavior: smooth;
@@ -205,6 +211,12 @@
     width: 0;
   }
 }
+@media (max-width: 576px) {
+  :host(.show-scroll-bar-modile) ::-webkit-scrollbar {
+    width: var(--tp-scroll-width);
+  }
+}
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }

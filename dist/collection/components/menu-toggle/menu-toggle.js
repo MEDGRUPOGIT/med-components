@@ -54,7 +54,7 @@ export class MenuToggle {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Optional property that maps to a Menu's `menuId` prop.\nCan also be `start` or `end` for the menu side.\nThis is used to find the correct menu to toggle.\n\nIf this property is not used, `ion-menu-toggle` will toggle the\nfirst menu that is active."
+          "text": "Optional property that maps to a Menu's `menuId` prop.\r\nCan also be `start` or `end` for the menu side.\r\nThis is used to find the correct menu to toggle.\r\n\r\nIf this property is not used, `ion-menu-toggle` will toggle the\r\nfirst menu that is active."
         },
         "attribute": "menu",
         "reflect": false
@@ -71,7 +71,7 @@ export class MenuToggle {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Automatically hides the content when the corresponding menu is not active.\n\nBy default, it's `true`. Change it to `false` in order to\nkeep `ion-menu-toggle` always visible regardless the state of the menu."
+          "text": "Automatically hides the content when the corresponding menu is not active.\r\n\r\nBy default, it's `true`. Change it to `false` in order to\r\nkeep `ion-menu-toggle` always visible regardless the state of the menu."
         },
         "attribute": "auto-hide",
         "reflect": false,

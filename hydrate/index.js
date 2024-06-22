@@ -10463,7 +10463,7 @@ class ConcursoModal {
   }; }
 }
 
-const contentCss = "/*!@:host*/.sc-ion-content-h{--background:var(--ion-background-color, #fff);--color:var(--ion-text-color, #000);--padding-top:0px;--padding-bottom:0px;--padding-start:0px;--padding-end:0px;--keyboard-offset:0px;--offset-top:0px;--offset-bottom:0px;--overflow:auto;--style:thin;--width:7px;--height:7px;--padding:10px;display:block;position:relative;-ms-flex:1;flex:1;width:100%;height:100%;margin:0 !important;padding:0 !important;font-family:var(--ion-font-family, inherit);contain:size style}/*!@:host(.ion-color) .inner-scroll*/.ion-color.sc-ion-content-h .inner-scroll.sc-ion-content{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(.outer-content)*/.outer-content.sc-ion-content-h{--background:var(--ion-color-step-50, #f2f2f2)}/*!@#background-content*/#background-content.sc-ion-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);position:absolute;background:var(--background)}/*!@.inner-scroll*/.inner-scroll.sc-ion-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:calc(var(--padding-top) + var(--offset-top));padding-bottom:calc(var(--padding-bottom) + var(--keyboard-offset) + var(--offset-bottom));position:absolute;color:var(--color);-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@.inner-scroll*/.inner-scroll.sc-ion-content{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@.scroll-y,\n.scroll-x*/.scroll-y.sc-ion-content,.scroll-x.sc-ion-content{-webkit-overflow-scrolling:touch;z-index:0;will-change:scroll-position}/*!@.scroll-y*/.scroll-y.sc-ion-content{-ms-touch-action:pan-y;touch-action:pan-y;overflow-y:var(--overflow);overscroll-behavior-y:contain}/*!@.scroll-x*/.scroll-x.sc-ion-content{-ms-touch-action:pan-x;touch-action:pan-x;overflow-x:var(--overflow);overscroll-behavior-x:contain}/*!@.scroll-x.scroll-y*/.scroll-x.scroll-y.sc-ion-content{-ms-touch-action:auto;touch-action:auto}/*!@.overscroll::before,\n.overscroll::after*/.overscroll.sc-ion-content::before,.overscroll.sc-ion-content::after{position:absolute;width:1px;height:1px;content:\"\"}/*!@.overscroll::before*/.overscroll.sc-ion-content::before{bottom:-1px}/*!@.overscroll::after*/.overscroll.sc-ion-content::after{top:-1px}/*!@:host(.content-sizing)*/.content-sizing.sc-ion-content-h{contain:none}/*!@:host(.content-sizing) .inner-scroll*/.content-sizing.sc-ion-content-h .inner-scroll.sc-ion-content{position:relative}/*!@.transition-effect*/.transition-effect.sc-ion-content{display:none;position:absolute;left:-100%;width:100%;height:100vh;opacity:0;pointer-events:none}/*!@.transition-cover*/.transition-cover.sc-ion-content{position:absolute;right:0;width:100%;height:100%;background:black;opacity:0.1}/*!@.transition-shadow*/.transition-shadow.sc-ion-content{display:block;position:absolute;right:0;width:10px;height:100%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAgCAYAAAAIXrg4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTE3MDgzRkQ5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTE3MDgzRkU5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMTcwODNGQjlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMTcwODNGQzlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmePEuQAAABNSURBVHjaYvz//z8DIxAwMDAwATGMhmFmPDQuOSZks0AMmoJBaQHjkPfB0Lfg/2gQjVow+HPy/yHvg9GiYjQfjMbBqAWjFgy/4hogwADYqwdzxy5BuwAAAABJRU5ErkJggg==);background-repeat:repeat-y;background-size:10px 16px}/*!@::slotted([slot=fixed])*/.sc-ion-content-s>[slot=fixed]{position:absolute}/*!@:host*/.sc-ion-content-h{--tp-scroll-color-content:hsl(var(--med-color-neutral-3));--tp-scroll-width:9px;-webkit-scroll-snap-type:both mandatory;-ms-scroll-snap-type:both mandatory;scroll-snap-type:both mandatory;scroll-padding-top:30px;scroll-behavior:smooth}/*!@::-webkit-scrollbar*/.sc-ion-content::-webkit-scrollbar{width:var(--tp-scroll-width);height:9px}@media (max-width: 576px){/*!@::-webkit-scrollbar*/.sc-ion-content::-webkit-scrollbar{width:0}}/*!@::-webkit-scrollbar-track*/.sc-ion-content::-webkit-scrollbar-track{background:transparent}/*!@::-webkit-scrollbar-thumb*/.sc-ion-content::-webkit-scrollbar-thumb{color:transparent}/*!@::-webkit-scrollbar-thumb:hover*/.sc-ion-content::-webkit-scrollbar-thumb:hover{background:var(--tp-scroll-color-content)}/*!@::-webkit-scrollbar-thumb*/.sc-ion-content::-webkit-scrollbar-thumb{background-clip:content-box;border:4px solid transparent;border-radius:7px;-webkit-box-shadow:inset 0 0 0 10px;box-shadow:inset 0 0 0 10px}/*!@::-webkit-scrollbar-button*/.sc-ion-content::-webkit-scrollbar-button{width:0;height:0;display:none}/*!@::-webkit-scrollbar-corner*/.sc-ion-content::-webkit-scrollbar-corner{background-color:transparent}/*!@.inner-scroll:hover::-webkit-scrollbar-thumb*/.inner-scroll.sc-ion-content:hover::-webkit-scrollbar-thumb{color:var(--tp-scroll-color-content)}";
+const contentCss = "/*!@:host*/.sc-ion-content-h{--background:var(--ion-background-color, #fff);--color:var(--ion-text-color, #000);--padding-top:0px;--padding-bottom:0px;--padding-start:0px;--padding-end:0px;--keyboard-offset:0px;--offset-top:0px;--offset-bottom:0px;--overflow:auto;--style:thin;--width:7px;--height:7px;--padding:10px;--tp-display:block;--tp-flex-direction:column;display:block;position:relative;-ms-flex:1;flex:1;width:100%;height:100%;margin:0 !important;padding:0 !important;font-family:var(--ion-font-family, inherit);contain:size style}/*!@:host(.ion-color) .inner-scroll*/.ion-color.sc-ion-content-h .inner-scroll.sc-ion-content{background:var(--ion-color-base);color:var(--ion-color-contrast)}/*!@:host(.outer-content)*/.outer-content.sc-ion-content-h{--background:var(--ion-color-step-50, #f2f2f2)}/*!@#background-content*/#background-content.sc-ion-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);position:absolute;background:var(--background)}/*!@.inner-scroll*/.inner-scroll.sc-ion-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:calc(var(--padding-top) + var(--offset-top));padding-bottom:calc(var(--padding-bottom) + var(--keyboard-offset) + var(--offset-bottom));position:absolute;color:var(--color);-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden;display:var(--tp-display);-ms-flex-direction:var(--tp-flex-direction);flex-direction:var(--tp-flex-direction)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){/*!@.inner-scroll*/.inner-scroll.sc-ion-content{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}/*!@.scroll-y,\n.scroll-x*/.scroll-y.sc-ion-content,.scroll-x.sc-ion-content{-webkit-overflow-scrolling:touch;z-index:0;will-change:scroll-position}/*!@.scroll-y*/.scroll-y.sc-ion-content{-ms-touch-action:pan-y;touch-action:pan-y;overflow-y:var(--overflow);overscroll-behavior-y:contain}/*!@.scroll-x*/.scroll-x.sc-ion-content{-ms-touch-action:pan-x;touch-action:pan-x;overflow-x:var(--overflow);overscroll-behavior-x:contain}/*!@.scroll-x.scroll-y*/.scroll-x.scroll-y.sc-ion-content{-ms-touch-action:auto;touch-action:auto}/*!@.overscroll::before,\n.overscroll::after*/.overscroll.sc-ion-content::before,.overscroll.sc-ion-content::after{position:absolute;width:1px;height:1px;content:\"\"}/*!@.overscroll::before*/.overscroll.sc-ion-content::before{bottom:-1px}/*!@.overscroll::after*/.overscroll.sc-ion-content::after{top:-1px}/*!@:host(.content-sizing)*/.content-sizing.sc-ion-content-h{contain:none}/*!@:host(.content-sizing) .inner-scroll*/.content-sizing.sc-ion-content-h .inner-scroll.sc-ion-content{position:relative}/*!@.transition-effect*/.transition-effect.sc-ion-content{display:none;position:absolute;left:-100%;width:100%;height:100vh;opacity:0;pointer-events:none}/*!@.transition-cover*/.transition-cover.sc-ion-content{position:absolute;right:0;width:100%;height:100%;background:black;opacity:0.1}/*!@.transition-shadow*/.transition-shadow.sc-ion-content{display:block;position:absolute;right:0;width:10px;height:100%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAgCAYAAAAIXrg4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTE3MDgzRkQ5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTE3MDgzRkU5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMTcwODNGQjlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMTcwODNGQzlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmePEuQAAABNSURBVHjaYvz//z8DIxAwMDAwATGMhmFmPDQuOSZks0AMmoJBaQHjkPfB0Lfg/2gQjVow+HPy/yHvg9GiYjQfjMbBqAWjFgy/4hogwADYqwdzxy5BuwAAAABJRU5ErkJggg==);background-repeat:repeat-y;background-size:10px 16px}/*!@::slotted([slot=fixed])*/.sc-ion-content-s>[slot=fixed]{position:absolute}/*!@:host*/.sc-ion-content-h{--tp-scroll-color-content:hsl(var(--med-color-neutral-3));--tp-scroll-width:9px;--tp-display:block;--tp-flex-direction:column;-webkit-scroll-snap-type:both mandatory;-ms-scroll-snap-type:both mandatory;scroll-snap-type:both mandatory;scroll-padding-top:30px;scroll-behavior:smooth}/*!@::-webkit-scrollbar*/.sc-ion-content::-webkit-scrollbar{width:var(--tp-scroll-width);height:9px}@media (max-width: 576px){/*!@::-webkit-scrollbar*/.sc-ion-content::-webkit-scrollbar{width:0}}@media (max-width: 576px){/*!@:host(.show-scroll-bar-modile) ::-webkit-scrollbar*/.show-scroll-bar-modile.sc-ion-content-h .sc-ion-content::-webkit-scrollbar{width:var(--tp-scroll-width)}}/*!@::-webkit-scrollbar-track*/.sc-ion-content::-webkit-scrollbar-track{background:transparent}/*!@::-webkit-scrollbar-thumb*/.sc-ion-content::-webkit-scrollbar-thumb{color:transparent}/*!@::-webkit-scrollbar-thumb:hover*/.sc-ion-content::-webkit-scrollbar-thumb:hover{background:var(--tp-scroll-color-content)}/*!@::-webkit-scrollbar-thumb*/.sc-ion-content::-webkit-scrollbar-thumb{background-clip:content-box;border:4px solid transparent;border-radius:7px;-webkit-box-shadow:inset 0 0 0 10px;box-shadow:inset 0 0 0 10px}/*!@::-webkit-scrollbar-button*/.sc-ion-content::-webkit-scrollbar-button{width:0;height:0;display:none}/*!@::-webkit-scrollbar-corner*/.sc-ion-content::-webkit-scrollbar-corner{background-color:transparent}/*!@.inner-scroll:hover::-webkit-scrollbar-thumb*/.inner-scroll.sc-ion-content:hover::-webkit-scrollbar-thumb{color:var(--tp-scroll-color-content)}";
 
 /**
  * @slot - Content is placed in the scrollable area if provided without a slot.
@@ -10489,7 +10489,7 @@ class Content {
     this.detail = {
       scrollTop: 0,
       scrollLeft: 0,
-      type: 'scroll',
+      type: "scroll",
       event: undefined,
       startX: 0,
       startY: 0,
@@ -10510,6 +10510,7 @@ class Content {
     this.scrollX = false;
     this.scrollY = true;
     this.scrollEvents = false;
+    this.showScrollBarMobile = false;
   }
   disconnectedCallback() {
     this.onScrollEnd();
@@ -10527,7 +10528,7 @@ class Content {
     const { forceOverscroll } = this;
     const mode = getIonMode$1(this);
     return forceOverscroll === undefined
-      ? mode === 'ios' && isPlatform('ios')
+      ? mode === "ios" && isPlatform("ios")
       : forceOverscroll;
   }
   resize() {
@@ -10559,7 +10560,7 @@ class Content {
     }
     if (!this.queued && this.scrollEvents) {
       this.queued = true;
-      readTask(ts => {
+      readTask((ts) => {
         this.queued = false;
         this.detail.event = ev;
         updateScrollDetail(this.detail, this.scrollEl, ts, shouldStart);
@@ -10625,20 +10626,20 @@ class Content {
     }
     let resolve;
     let startTime = 0;
-    const promise = new Promise(r => resolve = r);
+    const promise = new Promise((r) => (resolve = r));
     const fromY = el.scrollTop;
     const fromX = el.scrollLeft;
     const deltaY = y != null ? y - fromY : 0;
     const deltaX = x != null ? x - fromX : 0;
     // scroll loop
     const step = (timeStamp) => {
-      const linearTime = Math.min(1, ((timeStamp - startTime) / duration)) - 1;
+      const linearTime = Math.min(1, (timeStamp - startTime) / duration) - 1;
       const easedT = Math.pow(linearTime, 3) + 1;
       if (deltaY !== 0) {
-        el.scrollTop = Math.floor((easedT * deltaY) + fromY);
+        el.scrollTop = Math.floor(easedT * deltaY + fromY);
       }
       if (deltaX !== 0) {
-        el.scrollLeft = Math.floor((easedT * deltaX) + fromX);
+        el.scrollLeft = Math.floor(easedT * deltaX + fromX);
       }
       if (easedT < 1) {
         // do not use DomController here
@@ -10651,7 +10652,7 @@ class Content {
       }
     };
     // chill out for a frame first
-    requestAnimationFrame(ts => {
+    requestAnimationFrame((ts) => {
       startTime = ts;
       step(ts);
     });
@@ -10660,7 +10661,7 @@ class Content {
   onScrollStart() {
     this.isScrolling = true;
     this.ionScrollStart.emit({
-      isScrolling: true
+      isScrolling: true,
     });
     if (this.watchDog) {
       clearInterval(this.watchDog);
@@ -10678,29 +10679,32 @@ class Content {
     if (this.isScrolling) {
       this.isScrolling = false;
       this.ionScrollEnd.emit({
-        isScrolling: false
+        isScrolling: false,
       });
     }
   }
   render() {
-    const { scrollX, scrollY } = this;
+    const { scrollX, scrollY, showScrollBarMobile } = this;
     const mode = getIonMode$1(this);
     const forceOverscroll = this.shouldForceOverscroll();
-    const transitionShadow = (mode === 'ios' && config.getBoolean('experimentalTransitionShadow', true));
+    const transitionShadow = mode === "ios" && config.getBoolean("experimentalTransitionShadow", true);
     this.resize();
     return (hAsync(Host, { class: createColorClasses$1(this.color, {
         [mode]: true,
-        'content-sizing': hostContext('ion-popover', this.el),
-        'overscroll': forceOverscroll,
+        "content-sizing": hostContext("ion-popover", this.el),
+        overscroll: forceOverscroll,
+        // templarios
+        "show-scroll-bar-modile": showScrollBarMobile,
+        // ! templarios
       }), style: {
-        '--offset-top': `${this.cTop}px`,
-        '--offset-bottom': `${this.cBottom}px`,
+        "--offset-top": `${this.cTop}px`,
+        "--offset-bottom": `${this.cBottom}px`,
       } }, hAsync("div", { id: "background-content", part: "background" }), hAsync("main", { class: {
-        'inner-scroll': true,
-        'scroll-x': scrollX,
-        'scroll-y': scrollY,
-        'overscroll': (scrollX || scrollY) && forceOverscroll
-      }, ref: el => this.scrollEl = el, onScroll: (this.scrollEvents) ? ev => this.onScroll(ev) : undefined, part: "scroll" }, hAsync("slot", null)), transitionShadow ? (hAsync("div", { class: "transition-effect" }, hAsync("div", { class: "transition-cover" }), hAsync("div", { class: "transition-shadow" }))) : null, hAsync("slot", { name: "fixed" })));
+        "inner-scroll": true,
+        "scroll-x": scrollX,
+        "scroll-y": scrollY,
+        overscroll: (scrollX || scrollY) && forceOverscroll,
+      }, ref: (el) => (this.scrollEl = el), onScroll: this.scrollEvents ? (ev) => this.onScroll(ev) : undefined, part: "scroll" }, hAsync("slot", null)), transitionShadow ? (hAsync("div", { class: "transition-effect" }, hAsync("div", { class: "transition-cover" }), hAsync("div", { class: "transition-shadow" }))) : null, hAsync("slot", { name: "fixed" })));
   }
   get el() { return getElement(this); }
   static get style() { return contentCss; }
@@ -10714,6 +10718,7 @@ class Content {
       "scrollX": [4, "scroll-x"],
       "scrollY": [4, "scroll-y"],
       "scrollEvents": [4, "scroll-events"],
+      "showScrollBarMobile": [516, "show-scroll-bar-mobile"],
       "getScrollElement": [64],
       "scrollToTop": [64],
       "scrollToBottom": [64],
@@ -10722,7 +10727,7 @@ class Content {
     },
     "$listeners$": [[8, "appload", "onAppLoad"], [2, "click", "onClick"]],
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": []
+    "$attrsToReflect$": [["showScrollBarMobile", "show-scroll-bar-mobile"]]
   }; }
 }
 const getParentElement = (el) => {
@@ -10737,11 +10742,11 @@ const getParentElement = (el) => {
   return null;
 };
 const getPageElement = (el) => {
-  const tabs = el.closest('ion-tabs');
+  const tabs = el.closest("ion-tabs");
   if (tabs) {
     return tabs;
   }
-  const page = el.closest('ion-app,ion-page,.ion-page,page-inner');
+  const page = el.closest("ion-app,ion-page,.ion-page,page-inner");
   if (page) {
     return page;
   }
@@ -14840,21 +14845,22 @@ class MedAlternativas {
     this.dsColor = undefined;
     this.alternativas = [];
     this.dsSkinConfig = undefined;
-    this.keyAlternativa = 'Alternativa';
-    this.keyEnunciado = 'Enunciado';
-    this.keyImagem = 'Imagem';
-    this.keyPorcentagem = 'Porcentagem';
-    this.keyRiscada = 'Riscada';
+    this.keyAlternativa = "Alternativa";
+    this.keyEnunciado = "Enunciado";
+    this.keyImagem = "Imagem";
+    this.keyPorcentagem = "Porcentagem";
+    this.keyRiscada = "Riscada";
     this.respostaCorreta = undefined;
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteDesmarcar = false;
+    this.mostrarProgressBar = true;
     this.blockMouseEvents = false;
   }
   render() {
-    const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar, permiteDesmarcar } = this;
-    return (hAsync(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (hAsync("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar })), dsSkinConfig.alternativas === MedSkin.B && (hAsync("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar }))));
+    const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar, permiteDesmarcar, mostrarProgressBar, } = this;
+    return (hAsync(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (hAsync("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar, mostrarProgressBar: mostrarProgressBar })), dsSkinConfig.alternativas === MedSkin.B && (hAsync("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar, mostrarProgressBar: mostrarProgressBar }))));
   }
   static get style() { return medAlternativasCss; }
   static get cmpMeta() { return {
@@ -14874,11 +14880,12 @@ class MedAlternativas {
       "alternativaSelecionada": [1537, "alternativa-selecionada"],
       "permiteRiscar": [1028, "permite-riscar"],
       "permiteDesmarcar": [1028, "permite-desmarcar"],
+      "mostrarProgressBar": [1540, "mostrar-progress-bar"],
       "blockMouseEvents": [32]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["respostaCorreta", "resposta-correta"], ["mostraResposta", "mostra-resposta"], ["alternativaSelecionada", "alternativa-selecionada"]]
+    "$attrsToReflect$": [["respostaCorreta", "resposta-correta"], ["mostraResposta", "mostra-resposta"], ["alternativaSelecionada", "alternativa-selecionada"], ["mostrarProgressBar", "mostrar-progress-bar"]]
   }; }
 }
 
@@ -15027,6 +15034,7 @@ class MedAlternativasA {
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteDesmarcar = false;
+    this.mostrarProgressBar = true;
     this.blockMouseEvents = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
@@ -15038,7 +15046,7 @@ class MedAlternativasA {
     this.baseClass.onAlternativasChanged(newValue, oldValue);
   }
   render() {
-    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
+    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada, mostrarProgressBar } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
     let hasImage = false;
     if (this.alternativas) {
@@ -15086,7 +15094,9 @@ class MedAlternativasA {
         ? 'image-container--margin'
         : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, hAsync("div", { class: 'image-container__wrapper' }, hAsync("img", { class: 'image-container__image', src: alternativa[this.keyImagem] })))), hAsync("med-chart-bar-horizontal", { label: true, class: `
                       med-alternativas__progress-bar
-                      ${mostraResposta && alternativaSelecionada
+                      ${mostraResposta &&
+        alternativaSelecionada &&
+        mostrarProgressBar
         ? 'med-alternativas__progress-bar--toggle'
         : ''}
                     `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })), hAsync("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar
@@ -15118,13 +15128,14 @@ class MedAlternativasA {
       "alternativaSelecionada": [1537, "alternativa-selecionada"],
       "permiteRiscar": [1028, "permite-riscar"],
       "permiteDesmarcar": [1028, "permite-desmarcar"],
+      "mostrarProgressBar": [1540, "mostrar-progress-bar"],
       "blockMouseEvents": [32],
       "permiteAlterar": [32],
       "riscarAtivoIndice": [32]
     },
     "$listeners$": [[8, "click", "handleClick"]],
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["respostaCorreta", "resposta-correta"], ["mostraResposta", "mostra-resposta"], ["alternativaSelecionada", "alternativa-selecionada"]]
+    "$attrsToReflect$": [["respostaCorreta", "resposta-correta"], ["mostraResposta", "mostra-resposta"], ["alternativaSelecionada", "alternativa-selecionada"], ["mostrarProgressBar", "mostrar-progress-bar"]]
   }; }
 }
 
@@ -15151,6 +15162,7 @@ class MedAlternativasB {
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteDesmarcar = false;
+    this.mostrarProgressBar = true;
     this.blockMouseEvents = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
@@ -15162,7 +15174,7 @@ class MedAlternativasB {
     this.baseClass.onAlternativasChanged(newValue, oldValue);
   }
   render() {
-    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
+    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada, mostrarProgressBar } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
     return (hAsync(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-alternativas': true
@@ -15200,7 +15212,7 @@ class MedAlternativasB {
         : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') +
       ' alternativa'))), hAsync("med-chart-bar-horizontal", { label: true, class: `
                 med-alternativas__progress-bar
-                ${mostraResposta && alternativaSelecionada
+                ${mostraResposta && alternativaSelecionada && mostrarProgressBar
         ? 'med-alternativas__progress-bar--toggle'
         : ''}
               `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })))))));
@@ -15228,13 +15240,14 @@ class MedAlternativasB {
       "alternativaSelecionada": [1537, "alternativa-selecionada"],
       "permiteRiscar": [1028, "permite-riscar"],
       "permiteDesmarcar": [1028, "permite-desmarcar"],
+      "mostrarProgressBar": [1540, "mostrar-progress-bar"],
       "blockMouseEvents": [32],
       "permiteAlterar": [32],
       "riscarAtivoIndice": [32]
     },
     "$listeners$": [[8, "click", "handleClick"]],
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["respostaCorreta", "resposta-correta"], ["mostraResposta", "mostra-resposta"], ["alternativaSelecionada", "alternativa-selecionada"]]
+    "$attrsToReflect$": [["respostaCorreta", "resposta-correta"], ["mostraResposta", "mostra-resposta"], ["alternativaSelecionada", "alternativa-selecionada"], ["mostrarProgressBar", "mostrar-progress-bar"]]
   }; }
 }
 
@@ -16255,7 +16268,7 @@ class MedDropdownContainer {
   }; }
 }
 
-const medEnunciadoCss = "/*!@:host*/.sc-med-enunciado-h{--font-size:16px;--font-weight:400;--line-height:200%;--color:hsl(var(--med-color-neutral-10));--text-align:justify;--image-list-padding-top:16px;display:block;font-size:var(--font-size);font-weight:var(--font-weight);line-height:var(--line-height);color:var(--color);text-align:var(--text-align)}/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{padding:0;margin:0;list-style:none;display:-ms-flexbox;display:flex;-ms-flex-pack:space-evenly;justify-content:space-evenly;padding-top:var(--image-list-padding-top);-ms-flex-direction:column;flex-direction:column}@media (min-width: 768px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}@media (min-width: 992px){/*!@:host .list*/.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:100%;cursor:pointer;position:relative;max-height:250px;margin-bottom:15px}@media (min-width: 768px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:50%}}@media (min-width: 992px){/*!@:host .list__item*/.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:33.33%}}/*!@:host .list__image*/.sc-med-enunciado-h .list__image.sc-med-enunciado{width:100%;height:auto;display:block;max-height:250px}/*!@:host .list .image__zoom*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado{background:hsl(var(--med-color-brand-1));width:24px;height:24px;border-radius:50px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;position:absolute;bottom:4px;right:4px}/*!@:host .list .image__zoom .med-icon*/.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado .med-icon.sc-med-enunciado{stroke:hsl(var(--med-color-neutral-10));font-size:14px}/*!@:host(.med-enunciado--skin)*/.med-enunciado--skin.sc-med-enunciado-h{--font-size:14px;--line-height:line-height(14px)}";
+const medEnunciadoCss = ".sc-med-enunciado-h{--font-size:16px;--font-weight:400;--line-height:200%;--color:hsl(var(--med-color-neutral-10));--text-align:justify;--image-list-padding-top:16px;display:block;font-size:var(--font-size);font-weight:var(--font-weight);line-height:var(--line-height);color:var(--color);text-align:var(--text-align)}.sc-med-enunciado-h .list.sc-med-enunciado{padding:0;margin:0;list-style:none;display:-ms-flexbox;display:flex;-ms-flex-pack:space-evenly;justify-content:space-evenly;padding-top:var(--image-list-padding-top);-ms-flex-direction:column;flex-direction:column}@media (min-width: 768px){.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}@media (min-width: 992px){.sc-med-enunciado-h .list.sc-med-enunciado{-ms-flex-direction:row;flex-direction:row}}.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:100%;cursor:pointer;position:relative;max-height:250px;margin-bottom:15px}@media (min-width: 768px){.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:50%}}@media (min-width: 992px){.sc-med-enunciado-h .list__item.sc-med-enunciado{max-width:33.33%}}.sc-med-enunciado-h .list__image.sc-med-enunciado{width:100%;height:auto;display:block;max-height:250px}.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado{background:hsl(var(--med-color-brand-1));width:24px;height:24px;border-radius:50px;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;position:absolute;bottom:4px;right:4px}.sc-med-enunciado-h .list.sc-med-enunciado .image__zoom.sc-med-enunciado .med-icon.sc-med-enunciado{stroke:hsl(var(--med-color-neutral-10));font-size:14px}.med-enunciado--skin.sc-med-enunciado-h{--font-size:14px;--line-height:line-height(14px)}";
 
 class MedEnunciado {
   constructor(hostRef) {
@@ -16283,7 +16296,7 @@ class MedEnunciado {
   }
   static get style() { return medEnunciadoCss; }
   static get cmpMeta() { return {
-    "$flags$": 9,
+    "$flags$": 6,
     "$tagName$": "med-enunciado",
     "$members$": {
       "imagens": [1537],
@@ -16939,7 +16952,7 @@ class MedNavAccordion {
   }; }
 }
 
-const medNavItemCss = "/*!@:host*/.sc-med-nav-item-h{--stroke:hsl(var(--med-color-neutral-7));--margin-left-text:16px}/*!@:host*/.sc-med-nav-item-h{display:block}/*!@.med-nav-item__button*/.med-nav-item__button.sc-med-nav-item{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:8px;background:var(--background);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer;border-radius:8px;-webkit-transition:background-color 300ms ease-out;transition:background-color 300ms ease-out;border:0;width:100%}/*!@.med-nav-item__button::-moz-focus-inner*/.med-nav-item__button.sc-med-nav-item::-moz-focus-inner{border:0}/*!@.med-nav-item__icon*/.med-nav-item__icon.sc-med-nav-item{min-width:24px;stroke:var(--stroke);-webkit-transition:stroke 300ms ease-out;transition:stroke 300ms ease-out}/*!@.med-nav-item__text*/.med-nav-item__text.sc-med-nav-item{--color:hsl(var(--med-color-neutral-7));margin-left:var(--margin-left-text)}/*!@:host(.button-disabled)*/.button-disabled.sc-med-nav-item-h{opacity:0.5;pointer-events:none}/*!@:host(.med-nav-item--active)*/.med-nav-item--active.sc-med-nav-item-h{--background:hsl(var(--med-color-brand-1));--stroke:hsl(var(--med-color-neutral-10))}/*!@:host(.med-nav-item--active) .med-nav-item__text*/.med-nav-item--active.sc-med-nav-item-h .med-nav-item__text.sc-med-nav-item{--color:hsl(var(--med-color-neutral-10))}@media (any-hover: hover){/*!@:host(:hover)*/.sc-med-nav-item-h:hover{--background:hsl(var(--med-color-neutral-2));--stroke:hsl(var(--med-color-neutral-10))}/*!@:host(:hover) .med-nav-item__text*/.sc-med-nav-item-h:hover .med-nav-item__text.sc-med-nav-item{--color:hsl(var(--med-color-neutral-10))}}/*!@:host(.med-color.med-nav-item--active)*/.med-color.med-nav-item--active.sc-med-nav-item-h{--background:hsl(var(--med-color-2))}/*!@:host(.med-color-neutral.med-nav-item--active)*/.med-color-neutral.med-nav-item--active.sc-med-nav-item-h{--background:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback.med-nav-item--active)*/.med-color-feedback.med-nav-item--active.sc-med-nav-item-h{--background:hsl(var(--med-color-feedback))}";
+const medNavItemCss = "/*!@:host*/.sc-med-nav-item-h{--stroke:hsl(var(--med-color-neutral-7));--margin-left-text:16px}/*!@:host*/.sc-med-nav-item-h{display:block}/*!@.med-nav-item__button*/.med-nav-item__button.sc-med-nav-item{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin:0;padding:8px;background:var(--background);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;cursor:pointer;border-radius:8px;-webkit-transition:background-color 300ms ease-out;transition:background-color 300ms ease-out;border:0;width:100%;outline:initial}/*!@.med-nav-item__button::-moz-focus-inner*/.med-nav-item__button.sc-med-nav-item::-moz-focus-inner{border:0;outline:initial}/*!@.med-nav-item__button:focus*/.med-nav-item__button.sc-med-nav-item:focus{outline:initial}/*!@.med-nav-item__icon*/.med-nav-item__icon.sc-med-nav-item{min-width:24px;stroke:var(--stroke);-webkit-transition:stroke 300ms ease-out;transition:stroke 300ms ease-out}/*!@.med-nav-item__text*/.med-nav-item__text.sc-med-nav-item{--color:hsl(var(--med-color-neutral-7));margin-left:var(--margin-left-text) !important}/*!@:host(.button-disabled)*/.button-disabled.sc-med-nav-item-h{opacity:0.5;pointer-events:none}/*!@:host(.med-nav-item--active)*/.med-nav-item--active.sc-med-nav-item-h{--background:hsl(var(--med-color-brand-1));--stroke:hsl(var(--med-color-neutral-10))}/*!@:host(.med-nav-item--active) .med-nav-item__text*/.med-nav-item--active.sc-med-nav-item-h .med-nav-item__text.sc-med-nav-item{--color:hsl(var(--med-color-neutral-10))}@media (any-hover: hover){/*!@:host(:hover)*/.sc-med-nav-item-h:hover{--background:hsl(var(--med-color-neutral-2));--stroke:hsl(var(--med-color-neutral-10))}/*!@:host(:hover) .med-nav-item__text*/.sc-med-nav-item-h:hover .med-nav-item__text.sc-med-nav-item{--color:hsl(var(--med-color-neutral-10))}}/*!@:host(.med-color.med-nav-item--active)*/.med-color.med-nav-item--active.sc-med-nav-item-h{--background:hsl(var(--med-color-2))}/*!@:host(.med-color-neutral.med-nav-item--active)*/.med-color-neutral.med-nav-item--active.sc-med-nav-item-h{--background:hsl(var(--med-color-neutral))}/*!@:host(.med-color-feedback.med-nav-item--active)*/.med-color-feedback.med-nav-item--active.sc-med-nav-item-h{--background:hsl(var(--med-color-feedback))}";
 
 class MedNavItem {
   constructor(hostRef) {
@@ -18157,7 +18170,7 @@ class MedPiechart {
   }; }
 }
 
-const medPlusminusCss = ".sc-med-plusminus-h{--color:hsl(var(--med-color-neutral-10));--pointer-events:initial}.med-plusminus.sc-med-plusminus-h{font-size:32px;font-weight:600;line-height:32px;color:var(--color);max-height:400px;width:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}.med-plusminus.sc-med-plusminus-h .med-plusminus__icon-minus.sc-med-plusminus{margin-right:16px;cursor:pointer;stroke:var(--color)}.med-plusminus.sc-med-plusminus-h .med-plusminus__icon-plus.sc-med-plusminus{margin-left:16px;cursor:pointer;stroke:var(--color)}.med-plusminus--disabled-minus.sc-med-plusminus-h .med-plusminus__icon-minus.sc-med-plusminus,.med-plusminus--disabled-plus.sc-med-plusminus-h .med-plusminus__icon-plus.sc-med-plusminus{opacity:0.5;pointer-events:var(--pointer-events)}.med-plusminus--disabled-both.sc-med-plusminus-h .med-plusminus__icon-minus.sc-med-plusminus,.med-plusminus--disabled-both.sc-med-plusminus-h .med-plusminus__icon-plus.sc-med-plusminus{opacity:0.5;pointer-events:var(--pointer-events)}.med-plusminus--lg.sc-med-plusminus-h{font-size:48px}.med-plusminus--lg.sc-med-plusminus-h .med-icon.sc-med-plusminus{font-size:48px}.med-color.sc-med-plusminus-h{--color:hsl(var(--med-color-3));stroke:hsl(var(--med-color-3))}.med-color-neutral.sc-med-plusminus-h{--color:hsl(var(--med-color-neutral));stroke:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-plusminus-h{--color:hsl(var(--med-color-feedback));stroke:hsl(var(--med-color-feedback))}";
+const medPlusminusCss = ".sc-med-plusminus-h{--color:hsl(var(--med-color-neutral-10));--pointer-events:initial}.med-plusminus.sc-med-plusminus-h{font-size:32px;font-weight:600;line-height:32px;color:var(--color);max-height:400px;width:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}.med-plusminus.sc-med-plusminus-h .med-plusminus__icon-minus.sc-med-plusminus{margin-right:16px;cursor:pointer;stroke:var(--color)}.med-plusminus.sc-med-plusminus-h .med-plusminus__icon-plus.sc-med-plusminus{margin-left:16px;cursor:pointer;stroke:var(--color)}.med-plusminus--disabled-minus.sc-med-plusminus-h .med-plusminus__icon-minus.sc-med-plusminus{opacity:0.5;pointer-events:none}.med-plusminus--disabled-plus.sc-med-plusminus-h .med-plusminus__icon-plus.sc-med-plusminus{opacity:0.5;pointer-events:none}.med-plusminus--disabled-both.sc-med-plusminus-h .med-plusminus__icon-minus.sc-med-plusminus{opacity:0.5;pointer-events:none}.med-plusminus--disabled-both.sc-med-plusminus-h .med-plusminus__icon-plus.sc-med-plusminus{opacity:0.5;pointer-events:none}.med-plusminus--lg.sc-med-plusminus-h{font-size:48px}.med-plusminus--lg.sc-med-plusminus-h .med-icon.sc-med-plusminus{font-size:48px}.med-color.sc-med-plusminus-h{--color:hsl(var(--med-color-3));stroke:hsl(var(--med-color-3))}.med-color-neutral.sc-med-plusminus-h{--color:hsl(var(--med-color-neutral));stroke:hsl(var(--med-color-neutral))}.med-color-feedback.sc-med-plusminus-h{--color:hsl(var(--med-color-feedback));stroke:hsl(var(--med-color-feedback))}";
 
 class MedPlusminus {
   constructor(hostRef) {
@@ -18165,6 +18178,8 @@ class MedPlusminus {
     this.medChange = createEvent(this, "medChange", 7);
     this.medChangeAlt = createEvent(this, "medChangeAlt", 7);
     this.onClick = (status) => {
+      if (this.disabled === status)
+        return;
       if (this.min === undefined ||
         this.max === undefined ||
         this.value === undefined ||

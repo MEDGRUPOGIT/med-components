@@ -1,4 +1,4 @@
-import { EventEmitter } from "../../stencil-public-runtime";
+import { EventEmitter } from '../../stencil-public-runtime';
 export interface MedAlternativaInterface {
   Alternativa: string;
   Enunciado: string;
@@ -9,6 +9,7 @@ export interface MedAlternativaInterface {
 export interface MedAlternativasInterface {
   blockMouseEvents?: boolean;
   permiteDesmarcar?: boolean;
+  mostrarProgressBar?: boolean;
   alternativas: MedAlternativaInterface[] | any[];
   keyAlternativa?: 'Alternativa' | string;
   keyEnunciado?: 'Enunciado' | string;

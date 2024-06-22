@@ -366,6 +366,7 @@ ion-back-button[ds-size=sm] {
 ion-back-button[ds-size=xxs] {
   --min-width: 24px;
   --min-height: 24px;
+  max-height: 24px;
 }
 ion-back-button[ds-size=xxs] ion-icon {
   font-size: 24px;
@@ -3615,10 +3616,9 @@ ion-chip {
   --icon-background: hsl(var(--med-color-brand-3));
   border: 1px solid var(--border-color);
   font-weight: 600;
-  font-size: 12px;
-  line-height: 12px;
-  height: 28px;
-  padding: 7px;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 4px 12px;
 }
 ion-chip ion-label {
   color: var(--color);
@@ -3640,7 +3640,7 @@ ion-chip[ds-name=secondary] {
 }
 
 ion-chip[ds-size=md] {
-  height: 32px;
+  padding: 8px 16px;
 }
 ion-chip[ds-size=md] ion-label {
   font-weight: 600;
@@ -7553,6 +7553,12 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
   --width: 100% !important;
   --max-width: 640px !important;
   backdrop-filter: blur(10px);
+  padding: 32px;
+}
+@media (max-width: 575.98px) {
+  .tp-modal {
+    padding: 0;
+  }
 }
 .tp-modal ion-backdrop {
   --ion-backdrop-color: hsl(var(--med-color-neutral-1)) !important;
@@ -7574,6 +7580,9 @@ ion-list[ds-color=fb-success] ion-item ion-icon {
   .tp-modal {
     --max-width: 880px !important;
     --max-height: 600px !important;
+  }
+  .tp-modal--h800 {
+    --max-height: 800px !important;
   }
   .tp-modal .ion-page {
     left: unset;
@@ -11556,6 +11565,14 @@ ion-title[ds-color=fb-success] {
 .tp-toast.tp-toast--success {
   --background: hsl(var(--med-color-fb-success));
   --color: hsl(var(--med-color-neutral-1));
+}
+
+.tp-toast.tp-toast--icon-start .toast-button-group:first-child {
+  margin-left: 0;
+  margin-right: 8px;
+}
+.tp-toast.tp-toast--icon-start .toast-button-group:first-child .toast-button {
+  pointer-events: none;
 }
 
 ion-toggle {

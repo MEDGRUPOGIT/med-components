@@ -1,11 +1,11 @@
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
-import { Host, forceUpdate, h, readTask } from '@stencil/core';
-import { config } from '../../global/config';
-import { getIonMode } from '../../global/ionic-global';
-import { isPlatform } from '../../utils/platform';
-import { createColorClasses, hostContext } from '../../utils/theme';
+import { Host, forceUpdate, h, readTask, } from "@stencil/core";
+import { config } from "../../global/config";
+import { getIonMode } from "../../global/ionic-global";
+import { isPlatform } from "../../utils/platform";
+import { createColorClasses, hostContext } from "../../utils/theme";
 /**
  * @slot - Content is placed in the scrollable area if provided without a slot.
  * @slot fixed - Should be used for fixed content that should not scroll.
@@ -26,7 +26,7 @@ export class Content {
     this.detail = {
       scrollTop: 0,
       scrollLeft: 0,
-      type: 'scroll',
+      type: "scroll",
       event: undefined,
       startX: 0,
       startY: 0,
@@ -47,6 +47,7 @@ export class Content {
     this.scrollX = false;
     this.scrollY = true;
     this.scrollEvents = false;
+    this.showScrollBarMobile = false;
   }
   disconnectedCallback() {
     this.onScrollEnd();
@@ -64,7 +65,7 @@ export class Content {
     const { forceOverscroll } = this;
     const mode = getIonMode(this);
     return forceOverscroll === undefined
-      ? mode === 'ios' && isPlatform('ios')
+      ? mode === "ios" && isPlatform("ios")
       : forceOverscroll;
   }
   resize() {
@@ -96,7 +97,7 @@ export class Content {
     }
     if (!this.queued && this.scrollEvents) {
       this.queued = true;
-      readTask(ts => {
+      readTask((ts) => {
         this.queued = false;
         this.detail.event = ev;
         updateScrollDetail(this.detail, this.scrollEl, ts, shouldStart);
@@ -162,20 +163,20 @@ export class Content {
     }
     let resolve;
     let startTime = 0;
-    const promise = new Promise(r => resolve = r);
+    const promise = new Promise((r) => (resolve = r));
     const fromY = el.scrollTop;
     const fromX = el.scrollLeft;
     const deltaY = y != null ? y - fromY : 0;
     const deltaX = x != null ? x - fromX : 0;
     // scroll loop
     const step = (timeStamp) => {
-      const linearTime = Math.min(1, ((timeStamp - startTime) / duration)) - 1;
+      const linearTime = Math.min(1, (timeStamp - startTime) / duration) - 1;
       const easedT = Math.pow(linearTime, 3) + 1;
       if (deltaY !== 0) {
-        el.scrollTop = Math.floor((easedT * deltaY) + fromY);
+        el.scrollTop = Math.floor(easedT * deltaY + fromY);
       }
       if (deltaX !== 0) {
-        el.scrollLeft = Math.floor((easedT * deltaX) + fromX);
+        el.scrollLeft = Math.floor(easedT * deltaX + fromX);
       }
       if (easedT < 1) {
         // do not use DomController here
@@ -188,7 +189,7 @@ export class Content {
       }
     };
     // chill out for a frame first
-    requestAnimationFrame(ts => {
+    requestAnimationFrame((ts) => {
       startTime = ts;
       step(ts);
     });
@@ -197,7 +198,7 @@ export class Content {
   onScrollStart() {
     this.isScrolling = true;
     this.ionScrollStart.emit({
-      isScrolling: true
+      isScrolling: true,
     });
     if (this.watchDog) {
       clearInterval(this.watchDog);
@@ -215,29 +216,32 @@ export class Content {
     if (this.isScrolling) {
       this.isScrolling = false;
       this.ionScrollEnd.emit({
-        isScrolling: false
+        isScrolling: false,
       });
     }
   }
   render() {
-    const { scrollX, scrollY } = this;
+    const { scrollX, scrollY, showScrollBarMobile } = this;
     const mode = getIonMode(this);
     const forceOverscroll = this.shouldForceOverscroll();
-    const transitionShadow = (mode === 'ios' && config.getBoolean('experimentalTransitionShadow', true));
+    const transitionShadow = mode === "ios" && config.getBoolean("experimentalTransitionShadow", true);
     this.resize();
     return (h(Host, { class: createColorClasses(this.color, {
         [mode]: true,
-        'content-sizing': hostContext('ion-popover', this.el),
-        'overscroll': forceOverscroll,
+        "content-sizing": hostContext("ion-popover", this.el),
+        overscroll: forceOverscroll,
+        // templarios
+        "show-scroll-bar-modile": showScrollBarMobile,
+        // ! templarios
       }), style: {
-        '--offset-top': `${this.cTop}px`,
-        '--offset-bottom': `${this.cBottom}px`,
+        "--offset-top": `${this.cTop}px`,
+        "--offset-bottom": `${this.cBottom}px`,
       } }, h("div", { id: "background-content", part: "background" }), h("main", { class: {
-        'inner-scroll': true,
-        'scroll-x': scrollX,
-        'scroll-y': scrollY,
-        'overscroll': (scrollX || scrollY) && forceOverscroll
-      }, ref: el => this.scrollEl = el, onScroll: (this.scrollEvents) ? ev => this.onScroll(ev) : undefined, part: "scroll" }, h("slot", null)), transitionShadow ? (h("div", { class: "transition-effect" }, h("div", { class: "transition-cover" }), h("div", { class: "transition-shadow" }))) : null, h("slot", { name: "fixed" })));
+        "inner-scroll": true,
+        "scroll-x": scrollX,
+        "scroll-y": scrollY,
+        overscroll: (scrollX || scrollY) && forceOverscroll,
+      }, ref: (el) => (this.scrollEl = el), onScroll: this.scrollEvents ? (ev) => this.onScroll(ev) : undefined, part: "scroll" }, h("slot", null)), transitionShadow ? (h("div", { class: "transition-effect" }, h("div", { class: "transition-cover" }), h("div", { class: "transition-shadow" }))) : null, h("slot", { name: "fixed" })));
   }
   static get is() { return "ion-content"; }
   static get encapsulation() { return "shadow"; }
@@ -270,7 +274,7 @@ export class Content {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         "attribute": "color",
         "reflect": false
@@ -287,7 +291,7 @@ export class Content {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "If `true`, the content will scroll behind the headers\nand footers. This effect can easily be seen by setting the toolbar\nto transparent."
+          "text": "If `true`, the content will scroll behind the headers\r\nand footers. This effect can easily be seen by setting the toolbar\r\nto transparent."
         },
         "attribute": "fullscreen",
         "reflect": false,
@@ -305,7 +309,7 @@ export class Content {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, the does not disable the system bounce on iOS. That is an OS level setting."
+          "text": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\r\nIf the content exceeds the bounds of ionContent, nothing will change.\r\nNote, the does not disable the system bounce on iOS. That is an OS level setting."
         },
         "attribute": "force-overscroll",
         "reflect": false
@@ -358,10 +362,28 @@ export class Content {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\nand start listening from (ionScroll), set this property to `true`."
+          "text": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\r\nand start listening from (ionScroll), set this property to `true`."
         },
         "attribute": "scroll-events",
         "reflect": false,
+        "defaultValue": "false"
+      },
+      "showScrollBarMobile": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Show the scroll bar below breakpoint sm (576px)"
+        },
+        "attribute": "show-scroll-bar-mobile",
+        "reflect": true,
         "defaultValue": "false"
       }
     };
@@ -395,7 +417,7 @@ export class Content {
         "composed": true,
         "docs": {
           "tags": [],
-          "text": "Emitted while scrolling. This event is disabled by default.\nLook at the property: `scrollEvents`"
+          "text": "Emitted while scrolling. This event is disabled by default.\r\nLook at the property: `scrollEvents`"
         },
         "complexType": {
           "original": "ScrollDetail",
@@ -446,7 +468,7 @@ export class Content {
           "return": "Promise<HTMLElement>"
         },
         "docs": {
-          "text": "Get the element where the actual scrolling takes place.\nThis element can be used to subscribe to `scroll` events or manually modify\n`scrollTop`. However, it's recommended to use the API provided by `ion-content`:\n\ni.e. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events\nand `scrollToPoint()` to scroll the content into a certain point.",
+          "text": "Get the element where the actual scrolling takes place.\r\nThis element can be used to subscribe to `scroll` events or manually modify\r\n`scrollTop`. However, it's recommended to use the API provided by `ion-content`:\r\n\r\ni.e. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events\r\nand `scrollToPoint()` to scroll the content into a certain point.",
           "tags": []
         }
       },
@@ -617,11 +639,11 @@ const getParentElement = (el) => {
   return null;
 };
 const getPageElement = (el) => {
-  const tabs = el.closest('ion-tabs');
+  const tabs = el.closest("ion-tabs");
   if (tabs) {
     return tabs;
   }
-  const page = el.closest('ion-app,ion-page,.ion-page,page-inner');
+  const page = el.closest("ion-app,ion-page,.ion-page,page-inner");
   if (page) {
     return page;
   }

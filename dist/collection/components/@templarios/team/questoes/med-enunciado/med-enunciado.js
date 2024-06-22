@@ -26,7 +26,7 @@ export class MedEnunciado {
       h("span", { innerHTML: content }), imagens));
   }
   static get is() { return "med-enunciado"; }
-  static get encapsulation() { return "shadow"; }
+  static get encapsulation() { return "scoped"; }
   static get originalStyleUrls() {
     return {
       "$": ["med-enunciado.scss"]

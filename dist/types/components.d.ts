@@ -601,6 +601,10 @@ export namespace Components {
           * If you want to disable the content scrolling in the Y axis, set this property to `false`.
          */
         "scrollY": boolean;
+        /**
+          * Show the scroll bar below breakpoint sm (576px)
+         */
+        "showScrollBarMobile": boolean;
     }
     interface IonDatetime {
         /**
@@ -2906,6 +2910,10 @@ export namespace Components {
         /**
           * todo
          */
+        "mostrarProgressBar": boolean;
+        /**
+          * todo
+         */
         "permiteDesmarcar": boolean;
         /**
           * todo
@@ -2964,6 +2972,10 @@ export namespace Components {
         /**
           * todo
          */
+        "mostrarProgressBar": boolean;
+        /**
+          * todo
+         */
         "permiteDesmarcar": boolean;
         /**
           * todo
@@ -3019,6 +3031,10 @@ export namespace Components {
           * todo
          */
         "mostraResposta": boolean;
+        /**
+          * todo
+         */
+        "mostrarProgressBar": boolean;
         /**
           * todo
          */
@@ -6384,6 +6400,10 @@ declare namespace LocalJSX {
           * If you want to disable the content scrolling in the Y axis, set this property to `false`.
          */
         "scrollY"?: boolean;
+        /**
+          * Show the scroll bar below breakpoint sm (576px)
+         */
+        "showScrollBarMobile"?: boolean;
     }
     interface IonDatetime {
         /**
@@ -8617,6 +8637,10 @@ declare namespace LocalJSX {
         /**
           * todo
          */
+        "mostrarProgressBar"?: boolean;
+        /**
+          * todo
+         */
         "permiteDesmarcar"?: boolean;
         /**
           * todo
@@ -8672,6 +8696,10 @@ declare namespace LocalJSX {
           * todo
          */
         "mostraResposta": boolean;
+        /**
+          * todo
+         */
+        "mostrarProgressBar"?: boolean;
         /**
           * todo
          */
@@ -8742,6 +8770,10 @@ declare namespace LocalJSX {
           * todo
          */
         "mostraResposta": boolean;
+        /**
+          * todo
+         */
+        "mostrarProgressBar"?: boolean;
         /**
           * todo
          */

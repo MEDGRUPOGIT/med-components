@@ -63,6 +63,10 @@ export declare class MedAlternativasB implements MedAlternativasInternoInterface
   /**
    * todo
    */
+  mostrarProgressBar: boolean;
+  /**
+   * todo
+   */
   medChange: EventEmitter<MedAlternativaInterface>;
   /**
    * todo

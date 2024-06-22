@@ -1,13 +1,13 @@
-import { html } from 'lit-html';
-import { withDesign } from 'storybook-addon-designs';
-import { MedColors } from '../../../../../../@templarios/templarios';
+import { html } from "lit-html";
+import { withDesign } from "storybook-addon-designs";
+import { MedColors } from "../../../../../../@templarios/templarios";
 
 export default {
-  title: 'Components/Team/Questões/Alternativas',
+  title: "Components/Team/Questões/Alternativas",
   decorators: [withDesign],
 };
 
-const TemplateDefault = ({ alternativas, dsColor}) => {
+const TemplateDefault = ({ alternativas, dsColor }) => {
   const id = Math.random().toString(36).substr(2, 9);
   const dsSkinConfig = alternativas.dsSkinConfig;
 
@@ -23,82 +23,90 @@ const TemplateDefault = ({ alternativas, dsColor}) => {
   return html`
     <ion-app>
       <ion-content>
-
         <!-- component markdown -->
-        <med-alternativas id=${id} .dsColor=${dsColor} .dsSkinConfig=${dsSkinConfig}></med-alternativas>
+        <med-alternativas
+          id=${id}
+          .dsColor=${dsColor}
+          .dsSkinConfig=${dsSkinConfig}
+        ></med-alternativas>
         <!-- component markdown -->
-
       </ion-content>
     </ion-app>
-    `
-  }
+  `;
+};
 
 export const Alternativas = TemplateDefault.bind({});
 Alternativas.parameters = {
   design: {
-    type: 'figma',
-    url: '',
+    type: "figma",
+    url: "",
   },
   actions: {
-    handles: ['medChange','medClick', 'medGalleryRequest', 'medRiscada'],
+    handles: ["medChange", "medClick", "medGalleryRequest", "medRiscada"],
   },
-}
+};
 Alternativas.argTypes = {
   alternativas: {
     defaultValue: {
       alternativas: [
         {
-          Alternativa: 'A',
-          Enunciado: 'Enunciado B Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.',
-          Imagem: '',
+          Alternativa: "A",
+          Enunciado:
+            "Enunciado B Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.",
+          Imagem: "",
           Porcentagem: 0.55,
           Riscada: true,
         },
         {
-          Alternativa: 'B',
-          Enunciado: 'Enunciado B Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.',
+          Alternativa: "B",
+          Enunciado:
+            "Enunciado B Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.",
           Imagem: null,
-          Porcentagem: 0.55
+          Porcentagem: 0.55,
         },
         {
-          Alternativa: 'C',
-          Enunciado: 'Enunciado C Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.',
-          Imagem: '',
-          Porcentagem: 0.3
+          Alternativa: "C",
+          Enunciado:
+            "Enunciado C Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.",
+          Imagem: "",
+          Porcentagem: 0.3,
         },
         {
-          Alternativa: 'D',
-          Enunciado: 'Enunciado D Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.',
+          Alternativa: "D",
+          Enunciado:
+            "Enunciado D Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.",
           Imagem: null,
-          Porcentagem: 0.05
+          Porcentagem: 0.05,
         },
         {
-          Alternativa: 'E',
-          Enunciado: 'Enunciado E Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.',
-          Imagem: '',
-          Porcentagem: 0
+          Alternativa: "E",
+          Enunciado:
+            "Enunciado E Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>Dolores quae repellendus quidem nam.",
+          Imagem: "",
+          Porcentagem: 0,
         },
       ],
       alternativaSelecionada: null,
-      respostaCorreta: 'C',
+      respostaCorreta: "C",
       mostraResposta: true,
       permiteRiscar: true,
-      dsSkinConfig: { alternativas: 'A' }
+      dsSkinConfig: { alternativas: "A" },
+      mostrarProgressBar: true,
     },
-    control: { type: 'array' },
-    description: 'Define a listagem de alternativas.',
+    control: { type: "array" },
+    description: "Define a listagem de alternativas.",
     table: {
-      type:  { summary: 'MedAlternativaInterface[]' },
-      defaultValue: { summary: 'undefined' },
+      type: { summary: "MedAlternativaInterface[]" },
+      defaultValue: { summary: "undefined" },
     },
   },
   dsColor: {
     options: Object.values(MedColors),
-    control: { type: 'select'},
+    control: { type: "select" },
     description: "Define a cor do componente.",
     table: {
-      type:  { summary: Object.values(MedColors).join(' |') },
-      defaultValue: { summary: 'undefined' },
+      type: { summary: Object.values(MedColors).join(" |") },
+      defaultValue: { summary: "undefined" },
     },
   },
 };

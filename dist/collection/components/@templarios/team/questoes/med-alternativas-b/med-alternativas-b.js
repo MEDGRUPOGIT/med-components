@@ -21,6 +21,7 @@ export class MedAlternativasB {
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteDesmarcar = false;
+    this.mostrarProgressBar = true;
     this.blockMouseEvents = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
@@ -32,7 +33,7 @@ export class MedAlternativasB {
     this.baseClass.onAlternativasChanged(newValue, oldValue);
   }
   render() {
-    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
+    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada, mostrarProgressBar } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
     return (h(Host, { "from-stencil": true, class: generateMedColor(dsColor, {
         'med-alternativas': true
@@ -70,7 +71,7 @@ export class MedAlternativasB {
         : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') +
       ' alternativa'))), h("med-chart-bar-horizontal", { label: true, class: `
                 med-alternativas__progress-bar
-                ${mostraResposta && alternativaSelecionada
+                ${mostraResposta && alternativaSelecionada && mostrarProgressBar
         ? 'med-alternativas__progress-bar--toggle'
         : ''}
               `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })))))));
@@ -344,6 +345,24 @@ export class MedAlternativasB {
         "attribute": "permite-desmarcar",
         "reflect": false,
         "defaultValue": "false"
+      },
+      "mostrarProgressBar": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "mostrar-progress-bar",
+        "reflect": true,
+        "defaultValue": "true"
       }
     };
   }

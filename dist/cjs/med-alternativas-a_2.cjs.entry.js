@@ -6,7 +6,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const color = require('./color-c29da9e4.js');
+const color = require('./color-7939264c.js');
 
 function distanciaEuclidiana(pontoA, pontoB) {
   if (!pontoA || !pontoB)
@@ -153,6 +153,7 @@ const MedAlternativasA = class {
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteDesmarcar = false;
+    this.mostrarProgressBar = true;
     this.blockMouseEvents = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
@@ -164,7 +165,7 @@ const MedAlternativasA = class {
     this.baseClass.onAlternativasChanged(newValue, oldValue);
   }
   render() {
-    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
+    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada, mostrarProgressBar } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
     let hasImage = false;
     if (this.alternativas) {
@@ -212,7 +213,9 @@ const MedAlternativasA = class {
         ? 'image-container--margin'
         : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, index.h("div", { class: 'image-container__wrapper' }, index.h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] })))), index.h("med-chart-bar-horizontal", { label: true, class: `
                       med-alternativas__progress-bar
-                      ${mostraResposta && alternativaSelecionada
+                      ${mostraResposta &&
+        alternativaSelecionada &&
+        mostrarProgressBar
         ? 'med-alternativas__progress-bar--toggle'
         : ''}
                     `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })), index.h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar
@@ -251,6 +254,7 @@ const MedAlternativasB = class {
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteDesmarcar = false;
+    this.mostrarProgressBar = true;
     this.blockMouseEvents = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
@@ -262,7 +266,7 @@ const MedAlternativasB = class {
     this.baseClass.onAlternativasChanged(newValue, oldValue);
   }
   render() {
-    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
+    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada, mostrarProgressBar } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
     return (index.h(index.Host, { "from-stencil": true, class: color.generateMedColor(dsColor, {
         'med-alternativas': true
@@ -300,7 +304,7 @@ const MedAlternativasB = class {
         : ''}`, onClick: (event) => this.baseClass.riscar(event, alternativa) }, (alternativa[this.keyRiscada] ? 'Retomar' : 'Riscar') +
       ' alternativa'))), index.h("med-chart-bar-horizontal", { label: true, class: `
                 med-alternativas__progress-bar
-                ${mostraResposta && alternativaSelecionada
+                ${mostraResposta && alternativaSelecionada && mostrarProgressBar
         ? 'med-alternativas__progress-bar--toggle'
         : ''}
               `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })))))));

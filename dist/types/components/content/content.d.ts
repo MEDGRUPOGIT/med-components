@@ -1,5 +1,5 @@
-import { ComponentInterface, EventEmitter } from '../../stencil-public-runtime';
-import { Color, ScrollBaseDetail, ScrollDetail } from '../../interface';
+import { ComponentInterface, EventEmitter } from "../../stencil-public-runtime";
+import { Color, ScrollBaseDetail, ScrollDetail } from "../../interface";
 /**
  * @slot - Content is placed in the scrollable area if provided without a slot.
  * @slot fixed - Should be used for fixed content that should not scroll.
@@ -48,6 +48,10 @@ export declare class Content implements ComponentInterface {
    * and start listening from (ionScroll), set this property to `true`.
    */
   scrollEvents: boolean;
+  /**
+   * Show the scroll bar below breakpoint sm (576px)
+   */
+  showScrollBarMobile: boolean;
   /**
    * Emitted when the scroll has started.
    */

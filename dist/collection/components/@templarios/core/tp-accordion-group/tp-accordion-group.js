@@ -228,7 +228,7 @@ export class TpAccordionGroup {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "If `true`, all accordions inside of the\naccordion group will animate when expanding\nor collapsing."
+          "text": "If `true`, all accordions inside of the\r\naccordion group will animate when expanding\r\nor collapsing."
         },
         "attribute": "animated",
         "reflect": false,
@@ -246,7 +246,7 @@ export class TpAccordionGroup {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "If `true`, the accordion group can have multiple\naccordion components expanded at the same time."
+          "text": "If `true`, the accordion group can have multiple\r\naccordion components expanded at the same time."
         },
         "attribute": "multiple",
         "reflect": false
@@ -263,7 +263,7 @@ export class TpAccordionGroup {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The value of the accordion group. This controls which\naccordions are expanded.\nThis should be an array of strings only when `multiple=\"true\"`"
+          "text": "The value of the accordion group. This controls which\r\naccordions are expanded.\r\nThis should be an array of strings only when `multiple=\"true\"`"
         },
         "attribute": "value",
         "reflect": false
@@ -298,7 +298,7 @@ export class TpAccordionGroup {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "If `true`, the accordion group cannot be interacted with,\nbut does not alter the opacity."
+          "text": "If `true`, the accordion group cannot be interacted with,\r\nbut does not alter the opacity."
         },
         "attribute": "readonly",
         "reflect": false,
@@ -316,7 +316,7 @@ export class TpAccordionGroup {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Describes the expansion behavior for each accordion.\nPossible values are `\"compact\"` and `\"inset\"`.\nDefaults to `\"compact\"`."
+          "text": "Describes the expansion behavior for each accordion.\r\nPossible values are `\"compact\"` and `\"inset\"`.\r\nDefaults to `\"compact\"`."
         },
         "attribute": "expand",
         "reflect": false,
@@ -333,7 +333,7 @@ export class TpAccordionGroup {
         "composed": true,
         "docs": {
           "tags": [],
-          "text": "Emitted when the value property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically setting\nthe value property."
+          "text": "Emitted when the value property has changed\r\nas a result of a user action such as a click.\r\nThis event will not emit when programmatically setting\r\nthe value property."
         },
         "complexType": {
           "original": "TpAccordionGroupChangeEventDetail",
@@ -356,7 +356,7 @@ export class TpAccordionGroup {
               "name": "internal",
               "text": undefined
             }],
-          "text": "Emitted when the value property has changed.\nThis is used to ensure that ion-accordion can respond\nto any value property changes."
+          "text": "Emitted when the value property has changed.\r\nThis is used to ensure that ion-accordion can respond\r\nto any value property changes."
         },
         "complexType": {
           "original": "TpAccordionGroupChangeEventDetail",
@@ -390,7 +390,7 @@ export class TpAccordionGroup {
           "return": "Promise<void>"
         },
         "docs": {
-          "text": "This method is used to ensure that the value\nof ion-accordion-group is being set in a valid\nway. This method should only be called in\nresponse to a user generated action.",
+          "text": "This method is used to ensure that the value\r\nof ion-accordion-group is being set in a valid\r\nway. This method should only be called in\r\nresponse to a user generated action.",
           "tags": [{
               "name": "internal",
               "text": undefined

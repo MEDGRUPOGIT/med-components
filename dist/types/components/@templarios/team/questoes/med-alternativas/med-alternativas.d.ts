@@ -1,5 +1,5 @@
-import { MedAlternativaInterface, MedAlternativasInterface } from '../../../../../@templarios/interfaces/alternativas.interface';
-import { MedColor } from '../../../../../@templarios/types/color.type';
+import { MedAlternativaInterface, MedAlternativasInterface } from "../../../../../@templarios/interfaces/alternativas.interface";
+import { MedColor } from "../../../../../@templarios/types/color.type";
 export declare class MedAlternativas implements MedAlternativasInterface {
   /**
    * todo
@@ -53,6 +53,10 @@ export declare class MedAlternativas implements MedAlternativasInterface {
    * todo
    */
   permiteDesmarcar: boolean;
+  /**
+   * todo
+   */
+  mostrarProgressBar: boolean;
   /**
    * todo
    */

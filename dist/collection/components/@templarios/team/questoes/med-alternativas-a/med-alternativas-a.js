@@ -21,6 +21,7 @@ export class MedAlternativasA {
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteDesmarcar = false;
+    this.mostrarProgressBar = true;
     this.blockMouseEvents = false;
     this.permiteAlterar = true;
     this.riscarAtivoIndice = -1;
@@ -32,7 +33,7 @@ export class MedAlternativasA {
     this.baseClass.onAlternativasChanged(newValue, oldValue);
   }
   render() {
-    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada } = this;
+    const { dsColor, permiteRiscar, mostraResposta, alternativaSelecionada, mostrarProgressBar } = this;
     const exibeAcerto = this.alternativaSelecionada && mostraResposta;
     let hasImage = false;
     if (this.alternativas) {
@@ -80,7 +81,9 @@ export class MedAlternativasA {
         ? 'image-container--margin'
         : ''}`, onClick: (event) => this.baseClass.imageRequest(event, alternativa) }, h("div", { class: 'image-container__wrapper' }, h("img", { class: 'image-container__image', src: alternativa[this.keyImagem] })))), h("med-chart-bar-horizontal", { label: true, class: `
                       med-alternativas__progress-bar
-                      ${mostraResposta && alternativaSelecionada
+                      ${mostraResposta &&
+        alternativaSelecionada &&
+        mostrarProgressBar
         ? 'med-alternativas__progress-bar--toggle'
         : ''}
                     `, value: Math.round(alternativa[this.keyPorcentagem] * 100) })), h("div", { class: `med-alternativas__riscar ${indice === this.riscarAtivoIndice && permiteRiscar
@@ -358,6 +361,24 @@ export class MedAlternativasA {
         "attribute": "permite-desmarcar",
         "reflect": false,
         "defaultValue": "false"
+      },
+      "mostrarProgressBar": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "mostrar-progress-bar",
+        "reflect": true,
+        "defaultValue": "true"
       }
     };
   }

@@ -1,28 +1,29 @@
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
-import { h, Host } from '@stencil/core';
-import { MedSkin } from '../../../../../@templarios/templarios';
+import { h, Host } from "@stencil/core";
+import { MedSkin } from "../../../../../@templarios/templarios";
 export class MedAlternativas {
   constructor() {
     this.dsColor = undefined;
     this.alternativas = [];
     this.dsSkinConfig = undefined;
-    this.keyAlternativa = 'Alternativa';
-    this.keyEnunciado = 'Enunciado';
-    this.keyImagem = 'Imagem';
-    this.keyPorcentagem = 'Porcentagem';
-    this.keyRiscada = 'Riscada';
+    this.keyAlternativa = "Alternativa";
+    this.keyEnunciado = "Enunciado";
+    this.keyImagem = "Imagem";
+    this.keyPorcentagem = "Porcentagem";
+    this.keyRiscada = "Riscada";
     this.respostaCorreta = undefined;
     this.mostraResposta = undefined;
     this.alternativaSelecionada = undefined;
     this.permiteRiscar = true;
     this.permiteDesmarcar = false;
+    this.mostrarProgressBar = true;
     this.blockMouseEvents = false;
   }
   render() {
-    const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar, permiteDesmarcar } = this;
-    return (h(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (h("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar })), dsSkinConfig.alternativas === MedSkin.B && (h("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar }))));
+    const { dsSkinConfig, dsColor, alternativas, keyAlternativa, keyEnunciado, keyImagem, keyPorcentagem, keyRiscada, respostaCorreta, mostraResposta, alternativaSelecionada, permiteRiscar, permiteDesmarcar, mostrarProgressBar, } = this;
+    return (h(Host, { "from-stencil": true }, dsSkinConfig.alternativas === MedSkin.A && (h("med-alternativas-a", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar, mostrarProgressBar: mostrarProgressBar })), dsSkinConfig.alternativas === MedSkin.B && (h("med-alternativas-b", { dsSkinConfig: dsSkinConfig, dsColor: dsColor, alternativas: alternativas, keyAlternativa: keyAlternativa, keyEnunciado: keyEnunciado, keyImagem: keyImagem, keyPorcentagem: keyPorcentagem, keyRiscada: keyRiscada, respostaCorreta: respostaCorreta, mostraResposta: mostraResposta, alternativaSelecionada: alternativaSelecionada, permiteRiscar: permiteRiscar, permiteDesmarcar: permiteDesmarcar, mostrarProgressBar: mostrarProgressBar }))));
   }
   static get is() { return "med-alternativas"; }
   static get encapsulation() { return "shadow"; }
@@ -116,7 +117,7 @@ export class MedAlternativas {
         },
         "attribute": "key-alternativa",
         "reflect": false,
-        "defaultValue": "'Alternativa'"
+        "defaultValue": "\"Alternativa\""
       },
       "keyEnunciado": {
         "type": "string",
@@ -134,7 +135,7 @@ export class MedAlternativas {
         },
         "attribute": "key-enunciado",
         "reflect": false,
-        "defaultValue": "'Enunciado'"
+        "defaultValue": "\"Enunciado\""
       },
       "keyImagem": {
         "type": "string",
@@ -152,7 +153,7 @@ export class MedAlternativas {
         },
         "attribute": "key-imagem",
         "reflect": false,
-        "defaultValue": "'Imagem'"
+        "defaultValue": "\"Imagem\""
       },
       "keyPorcentagem": {
         "type": "string",
@@ -170,7 +171,7 @@ export class MedAlternativas {
         },
         "attribute": "key-porcentagem",
         "reflect": false,
-        "defaultValue": "'Porcentagem'"
+        "defaultValue": "\"Porcentagem\""
       },
       "keyRiscada": {
         "type": "string",
@@ -188,7 +189,7 @@ export class MedAlternativas {
         },
         "attribute": "key-riscada",
         "reflect": false,
-        "defaultValue": "'Riscada'"
+        "defaultValue": "\"Riscada\""
       },
       "respostaCorreta": {
         "type": "string",
@@ -276,6 +277,24 @@ export class MedAlternativas {
         "attribute": "permite-desmarcar",
         "reflect": false,
         "defaultValue": "false"
+      },
+      "mostrarProgressBar": {
+        "type": "boolean",
+        "mutable": true,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "mostrar-progress-bar",
+        "reflect": true,
+        "defaultValue": "true"
       }
     };
   }

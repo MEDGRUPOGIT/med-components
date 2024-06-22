@@ -7,6 +7,8 @@ import { PlusMinusStatus } from '../../../../@templarios/enums/plusminus.enum';
 export class MedPlusminus {
   constructor() {
     this.onClick = (status) => {
+      if (this.disabled === status)
+        return;
       if (this.min === undefined ||
         this.max === undefined ||
         this.value === undefined ||

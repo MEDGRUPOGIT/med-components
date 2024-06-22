@@ -148,6 +148,7 @@ export const MedIcons = [
 
   "med-fecharcirculo",
   "med-file-time",
+  "med-file-sheet",
   "med-filtro",
   "med-filter2",
   "med-financeiro",
@@ -175,6 +176,8 @@ export const MedIcons = [
   "med-informacao",
   "med-information",
 
+  "med-ia-circulo",
+  "med-ia-robo",
   "med-intensivao",
   "med-invisivel",
   "med-like",
@@ -280,6 +283,7 @@ export const MedIcons = [
 
   "med-top-temas",
   "med-trabalho",
+  "med-trendingdown",
   "med-trendingup",
   "med-trofeu",
   "med-usuario",

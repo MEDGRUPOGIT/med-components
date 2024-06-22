@@ -6,12 +6,12 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-8b32527f.js');
-const theme = require('./theme-a4c4a7eb.js');
-const helpers = require('./helpers-4478bffd.js');
-const cubicBezier = require('./cubic-bezier-1060abff.js');
-const frameworkDelegate = require('./framework-delegate-8b8d88ef.js');
-const index$1 = require('./index-d49aaaa3.js');
+const ionicGlobal = require('./ionic-global-31ae4345.js');
+const theme = require('./theme-cef66eda.js');
+const helpers = require('./helpers-a2cc981d.js');
+const cubicBezier = require('./cubic-bezier-b395a59d.js');
+const frameworkDelegate = require('./framework-delegate-742b6da2.js');
+const index$1 = require('./index-bc955683.js');
 
 const appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html.plt-mobile ion-app [contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
 
@@ -24,15 +24,15 @@ const App = class {
       rIC(async () => {
         const isHybrid = ionicGlobal.isPlatform(window, 'hybrid');
         if (!ionicGlobal.config.getBoolean('_testing')) {
-          Promise.resolve().then(function () { return require('./tap-click-fc536ae5.js'); }).then(module => module.startTapClick(ionicGlobal.config));
+          Promise.resolve().then(function () { return require('./tap-click-0f28ee0c.js'); }).then(module => module.startTapClick(ionicGlobal.config));
         }
         if (ionicGlobal.config.getBoolean('statusTap', isHybrid)) {
-          Promise.resolve().then(function () { return require('./status-tap-b1f8be21.js'); }).then(module => module.startStatusTap());
+          Promise.resolve().then(function () { return require('./status-tap-f18dff80.js'); }).then(module => module.startStatusTap());
         }
         if (ionicGlobal.config.getBoolean('inputShims', needInputShims())) {
-          Promise.resolve().then(function () { return require('./input-shims-14ccc849.js'); }).then(module => module.startInputShims(ionicGlobal.config));
+          Promise.resolve().then(function () { return require('./input-shims-acaaafe1.js'); }).then(module => module.startInputShims(ionicGlobal.config));
         }
-        const hardwareBackButtonModule = await Promise.resolve().then(function () { return require('./hardware-back-button-a7dedc7d.js'); });
+        const hardwareBackButtonModule = await Promise.resolve().then(function () { return require('./hardware-back-button-bef7bb33.js'); });
         if (ionicGlobal.config.getBoolean('hardwareBackButton', isHybrid)) {
           hardwareBackButtonModule.startHardwareBackButton();
         }
@@ -40,9 +40,9 @@ const App = class {
           hardwareBackButtonModule.blockHardwareBackButton();
         }
         if (typeof window !== 'undefined') {
-          Promise.resolve().then(function () { return require('./keyboard-e8851384.js'); }).then(module => module.startKeyboardAssist(window));
+          Promise.resolve().then(function () { return require('./keyboard-1bca37af.js'); }).then(module => module.startKeyboardAssist(window));
         }
-        Promise.resolve().then(function () { return require('./focus-visible-3e407af2.js'); }).then(module => module.startFocusVisible());
+        Promise.resolve().then(function () { return require('./focus-visible-18fc61f0.js'); }).then(module => module.startFocusVisible());
       });
     }
   }
@@ -91,7 +91,7 @@ Buttons.style = {
   md: buttonsMdCss
 };
 
-const contentCss = ":host{--background:var(--ion-background-color, #fff);--color:var(--ion-text-color, #000);--padding-top:0px;--padding-bottom:0px;--padding-start:0px;--padding-end:0px;--keyboard-offset:0px;--offset-top:0px;--offset-bottom:0px;--overflow:auto;--style:thin;--width:7px;--height:7px;--padding:10px;display:block;position:relative;-ms-flex:1;flex:1;width:100%;height:100%;margin:0 !important;padding:0 !important;font-family:var(--ion-font-family, inherit);contain:size style}:host(.ion-color) .inner-scroll{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.outer-content){--background:var(--ion-color-step-50, #f2f2f2)}#background-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);position:absolute;background:var(--background)}.inner-scroll{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:calc(var(--padding-top) + var(--offset-top));padding-bottom:calc(var(--padding-bottom) + var(--keyboard-offset) + var(--offset-bottom));position:absolute;color:var(--color);-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.inner-scroll{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.scroll-y,.scroll-x{-webkit-overflow-scrolling:touch;z-index:0;will-change:scroll-position}.scroll-y{-ms-touch-action:pan-y;touch-action:pan-y;overflow-y:var(--overflow);overscroll-behavior-y:contain}.scroll-x{-ms-touch-action:pan-x;touch-action:pan-x;overflow-x:var(--overflow);overscroll-behavior-x:contain}.scroll-x.scroll-y{-ms-touch-action:auto;touch-action:auto}.overscroll::before,.overscroll::after{position:absolute;width:1px;height:1px;content:\"\"}.overscroll::before{bottom:-1px}.overscroll::after{top:-1px}:host(.content-sizing){contain:none}:host(.content-sizing) .inner-scroll{position:relative}.transition-effect{display:none;position:absolute;left:-100%;width:100%;height:100vh;opacity:0;pointer-events:none}.transition-cover{position:absolute;right:0;width:100%;height:100%;background:black;opacity:0.1}.transition-shadow{display:block;position:absolute;right:0;width:10px;height:100%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAgCAYAAAAIXrg4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTE3MDgzRkQ5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTE3MDgzRkU5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMTcwODNGQjlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMTcwODNGQzlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmePEuQAAABNSURBVHjaYvz//z8DIxAwMDAwATGMhmFmPDQuOSZks0AMmoJBaQHjkPfB0Lfg/2gQjVow+HPy/yHvg9GiYjQfjMbBqAWjFgy/4hogwADYqwdzxy5BuwAAAABJRU5ErkJggg==);background-repeat:repeat-y;background-size:10px 16px}::slotted([slot=fixed]){position:absolute}:host{--tp-scroll-color-content:hsl(var(--med-color-neutral-3));--tp-scroll-width:9px;-webkit-scroll-snap-type:both mandatory;-ms-scroll-snap-type:both mandatory;scroll-snap-type:both mandatory;scroll-padding-top:30px;scroll-behavior:smooth}::-webkit-scrollbar{width:var(--tp-scroll-width);height:9px}@media (max-width: 576px){::-webkit-scrollbar{width:0}}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{color:transparent}::-webkit-scrollbar-thumb:hover{background:var(--tp-scroll-color-content)}::-webkit-scrollbar-thumb{background-clip:content-box;border:4px solid transparent;border-radius:7px;-webkit-box-shadow:inset 0 0 0 10px;box-shadow:inset 0 0 0 10px}::-webkit-scrollbar-button{width:0;height:0;display:none}::-webkit-scrollbar-corner{background-color:transparent}.inner-scroll:hover::-webkit-scrollbar-thumb{color:var(--tp-scroll-color-content)}";
+const contentCss = ":host{--background:var(--ion-background-color, #fff);--color:var(--ion-text-color, #000);--padding-top:0px;--padding-bottom:0px;--padding-start:0px;--padding-end:0px;--keyboard-offset:0px;--offset-top:0px;--offset-bottom:0px;--overflow:auto;--style:thin;--width:7px;--height:7px;--padding:10px;--tp-display:block;--tp-flex-direction:column;display:block;position:relative;-ms-flex:1;flex:1;width:100%;height:100%;margin:0 !important;padding:0 !important;font-family:var(--ion-font-family, inherit);contain:size style}:host(.ion-color) .inner-scroll{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.outer-content){--background:var(--ion-color-step-50, #f2f2f2)}#background-content{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);position:absolute;background:var(--background)}.inner-scroll{left:0px;right:0px;top:calc(var(--offset-top) * -1);bottom:calc(var(--offset-bottom) * -1);padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:calc(var(--padding-top) + var(--offset-top));padding-bottom:calc(var(--padding-bottom) + var(--keyboard-offset) + var(--offset-bottom));position:absolute;color:var(--color);-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden;display:var(--tp-display);-ms-flex-direction:var(--tp-flex-direction);flex-direction:var(--tp-flex-direction)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.inner-scroll{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.scroll-y,.scroll-x{-webkit-overflow-scrolling:touch;z-index:0;will-change:scroll-position}.scroll-y{-ms-touch-action:pan-y;touch-action:pan-y;overflow-y:var(--overflow);overscroll-behavior-y:contain}.scroll-x{-ms-touch-action:pan-x;touch-action:pan-x;overflow-x:var(--overflow);overscroll-behavior-x:contain}.scroll-x.scroll-y{-ms-touch-action:auto;touch-action:auto}.overscroll::before,.overscroll::after{position:absolute;width:1px;height:1px;content:\"\"}.overscroll::before{bottom:-1px}.overscroll::after{top:-1px}:host(.content-sizing){contain:none}:host(.content-sizing) .inner-scroll{position:relative}.transition-effect{display:none;position:absolute;left:-100%;width:100%;height:100vh;opacity:0;pointer-events:none}.transition-cover{position:absolute;right:0;width:100%;height:100%;background:black;opacity:0.1}.transition-shadow{display:block;position:absolute;right:0;width:10px;height:100%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAgCAYAAAAIXrg4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTE3MDgzRkQ5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTE3MDgzRkU5QTkyMTFFOUEwNzQ5MkJFREE1NUY2MjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMTcwODNGQjlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMTcwODNGQzlBOTIxMUU5QTA3NDkyQkVEQTU1RjYyNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmePEuQAAABNSURBVHjaYvz//z8DIxAwMDAwATGMhmFmPDQuOSZks0AMmoJBaQHjkPfB0Lfg/2gQjVow+HPy/yHvg9GiYjQfjMbBqAWjFgy/4hogwADYqwdzxy5BuwAAAABJRU5ErkJggg==);background-repeat:repeat-y;background-size:10px 16px}::slotted([slot=fixed]){position:absolute}:host{--tp-scroll-color-content:hsl(var(--med-color-neutral-3));--tp-scroll-width:9px;--tp-display:block;--tp-flex-direction:column;-webkit-scroll-snap-type:both mandatory;-ms-scroll-snap-type:both mandatory;scroll-snap-type:both mandatory;scroll-padding-top:30px;scroll-behavior:smooth}::-webkit-scrollbar{width:var(--tp-scroll-width);height:9px}@media (max-width: 576px){::-webkit-scrollbar{width:0}}@media (max-width: 576px){:host(.show-scroll-bar-modile) ::-webkit-scrollbar{width:var(--tp-scroll-width)}}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{color:transparent}::-webkit-scrollbar-thumb:hover{background:var(--tp-scroll-color-content)}::-webkit-scrollbar-thumb{background-clip:content-box;border:4px solid transparent;border-radius:7px;-webkit-box-shadow:inset 0 0 0 10px;box-shadow:inset 0 0 0 10px}::-webkit-scrollbar-button{width:0;height:0;display:none}::-webkit-scrollbar-corner{background-color:transparent}.inner-scroll:hover::-webkit-scrollbar-thumb{color:var(--tp-scroll-color-content)}";
 
 const Content = class {
   constructor(hostRef) {
@@ -110,7 +110,7 @@ const Content = class {
     this.detail = {
       scrollTop: 0,
       scrollLeft: 0,
-      type: 'scroll',
+      type: "scroll",
       event: undefined,
       startX: 0,
       startY: 0,
@@ -131,6 +131,7 @@ const Content = class {
     this.scrollX = false;
     this.scrollY = true;
     this.scrollEvents = false;
+    this.showScrollBarMobile = false;
   }
   disconnectedCallback() {
     this.onScrollEnd();
@@ -148,7 +149,7 @@ const Content = class {
     const { forceOverscroll } = this;
     const mode = ionicGlobal.getIonMode(this);
     return forceOverscroll === undefined
-      ? mode === 'ios' && ionicGlobal.isPlatform('ios')
+      ? mode === "ios" && ionicGlobal.isPlatform("ios")
       : forceOverscroll;
   }
   resize() {
@@ -180,7 +181,7 @@ const Content = class {
     }
     if (!this.queued && this.scrollEvents) {
       this.queued = true;
-      index.readTask(ts => {
+      index.readTask((ts) => {
         this.queued = false;
         this.detail.event = ev;
         updateScrollDetail(this.detail, this.scrollEl, ts, shouldStart);
@@ -246,20 +247,20 @@ const Content = class {
     }
     let resolve;
     let startTime = 0;
-    const promise = new Promise(r => resolve = r);
+    const promise = new Promise((r) => (resolve = r));
     const fromY = el.scrollTop;
     const fromX = el.scrollLeft;
     const deltaY = y != null ? y - fromY : 0;
     const deltaX = x != null ? x - fromX : 0;
     // scroll loop
     const step = (timeStamp) => {
-      const linearTime = Math.min(1, ((timeStamp - startTime) / duration)) - 1;
+      const linearTime = Math.min(1, (timeStamp - startTime) / duration) - 1;
       const easedT = Math.pow(linearTime, 3) + 1;
       if (deltaY !== 0) {
-        el.scrollTop = Math.floor((easedT * deltaY) + fromY);
+        el.scrollTop = Math.floor(easedT * deltaY + fromY);
       }
       if (deltaX !== 0) {
-        el.scrollLeft = Math.floor((easedT * deltaX) + fromX);
+        el.scrollLeft = Math.floor(easedT * deltaX + fromX);
       }
       if (easedT < 1) {
         // do not use DomController here
@@ -272,7 +273,7 @@ const Content = class {
       }
     };
     // chill out for a frame first
-    requestAnimationFrame(ts => {
+    requestAnimationFrame((ts) => {
       startTime = ts;
       step(ts);
     });
@@ -281,7 +282,7 @@ const Content = class {
   onScrollStart() {
     this.isScrolling = true;
     this.ionScrollStart.emit({
-      isScrolling: true
+      isScrolling: true,
     });
     if (this.watchDog) {
       clearInterval(this.watchDog);
@@ -299,29 +300,32 @@ const Content = class {
     if (this.isScrolling) {
       this.isScrolling = false;
       this.ionScrollEnd.emit({
-        isScrolling: false
+        isScrolling: false,
       });
     }
   }
   render() {
-    const { scrollX, scrollY } = this;
+    const { scrollX, scrollY, showScrollBarMobile } = this;
     const mode = ionicGlobal.getIonMode(this);
     const forceOverscroll = this.shouldForceOverscroll();
-    const transitionShadow = (mode === 'ios' && ionicGlobal.config.getBoolean('experimentalTransitionShadow', true));
+    const transitionShadow = mode === "ios" && ionicGlobal.config.getBoolean("experimentalTransitionShadow", true);
     this.resize();
     return (index.h(index.Host, { class: theme.createColorClasses(this.color, {
         [mode]: true,
-        'content-sizing': theme.hostContext('ion-popover', this.el),
-        'overscroll': forceOverscroll,
+        "content-sizing": theme.hostContext("ion-popover", this.el),
+        overscroll: forceOverscroll,
+        // templarios
+        "show-scroll-bar-modile": showScrollBarMobile,
+        // ! templarios
       }), style: {
-        '--offset-top': `${this.cTop}px`,
-        '--offset-bottom': `${this.cBottom}px`,
+        "--offset-top": `${this.cTop}px`,
+        "--offset-bottom": `${this.cBottom}px`,
       } }, index.h("div", { id: "background-content", part: "background" }), index.h("main", { class: {
-        'inner-scroll': true,
-        'scroll-x': scrollX,
-        'scroll-y': scrollY,
-        'overscroll': (scrollX || scrollY) && forceOverscroll
-      }, ref: el => this.scrollEl = el, onScroll: (this.scrollEvents) ? ev => this.onScroll(ev) : undefined, part: "scroll" }, index.h("slot", null)), transitionShadow ? (index.h("div", { class: "transition-effect" }, index.h("div", { class: "transition-cover" }), index.h("div", { class: "transition-shadow" }))) : null, index.h("slot", { name: "fixed" })));
+        "inner-scroll": true,
+        "scroll-x": scrollX,
+        "scroll-y": scrollY,
+        overscroll: (scrollX || scrollY) && forceOverscroll,
+      }, ref: (el) => (this.scrollEl = el), onScroll: this.scrollEvents ? (ev) => this.onScroll(ev) : undefined, part: "scroll" }, index.h("slot", null)), transitionShadow ? (index.h("div", { class: "transition-effect" }, index.h("div", { class: "transition-cover" }), index.h("div", { class: "transition-shadow" }))) : null, index.h("slot", { name: "fixed" })));
   }
   get el() { return index.getElement(this); }
 };
@@ -337,11 +341,11 @@ const getParentElement = (el) => {
   return null;
 };
 const getPageElement = (el) => {
-  const tabs = el.closest('ion-tabs');
+  const tabs = el.closest("ion-tabs");
   if (tabs) {
     return tabs;
   }
-  const page = el.closest('ion-app,ion-page,.ion-page,page-inner');
+  const page = el.closest("ion-app,ion-page,.ion-page,page-inner");
   if (page) {
     return page;
   }
@@ -678,7 +682,7 @@ const RouterOutlet = class {
     }
   }
   async connectedCallback() {
-    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-4a41436e.js'); })).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
+    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-a6ab66a5.js'); })).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
       if (this.ani) {
         this.animationEnabled = false;
         this.ani.onFinish(() => {
