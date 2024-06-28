@@ -90,7 +90,7 @@ export class RippleEffect {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Sets the type of ripple-effect:\r\n\r\n- `bounded`: the ripple effect expands from the user's click position\r\n- `unbounded`: the ripple effect expands from the center of the button and overflows the container.\r\n\r\nNOTE: Surfaces for bounded ripples should have the overflow property set to hidden,\r\nwhile surfaces for unbounded ripples should have it set to visible."
+          "text": "Sets the type of ripple-effect:\n\n- `bounded`: the ripple effect expands from the user's click position\n- `unbounded`: the ripple effect expands from the center of the button and overflows the container.\n\nNOTE: Surfaces for bounded ripples should have the overflow property set to hidden,\nwhile surfaces for unbounded ripples should have it set to visible."
         },
         "attribute": "type",
         "reflect": false,

@@ -3253,7 +3253,7 @@ ion-button[ds-color=fb-success][fill=clear]:hover ion-icon {
 
 ion-checkbox {
   --background: transparent;
-  --border-color: hsl(var(--med-color-brand-4));
+  --border-color: hsl(var(--med-color-neutral-35));
   --border-color-checked: hsl(var(--med-color-brand-4));
   --background-checked: hsl(var(--med-color-brand-4));
   --checkmark-color: hsl(var(--med-color-neutral-2));
@@ -3262,7 +3262,7 @@ ion-checkbox {
   --transition: background-color 300ms ease-out, border-color 300ms ease-out;
 }
 ion-checkbox:hover, ion-checkbox:focus {
-  --border-color: hsl(var(--med-color-brand-5));
+  --border-color: hsl(var(--med-color-neutral-35));
   --border-color-checked: hsl(var(--med-color-brand-5));
   --background-checked: hsl(var(--med-color-brand-5));
 }
@@ -11520,7 +11520,7 @@ ion-title[ds-color=fb-success] {
   --color: hsl(var(--med-color-neutral-10));
   --width: 100%;
   --start: 0;
-  --end: 0;
+  --end: calc(50% - 200px);
   --max-width: calc(100% - 32px);
   --spacing: 16px;
   --border-radius: 8px;
@@ -11530,7 +11530,7 @@ ion-title[ds-color=fb-success] {
     --border-radius: 0px;
     --max-width: 400px;
     --start: unset;
-    --end: 20px;
+    --end: calc(50% - 200px);
   }
 }
 .tp-toast.sc-ion-toast-md-h .toast-container {

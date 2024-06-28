@@ -420,7 +420,7 @@ export class Alert {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
+          "text": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
         },
         "attribute": "css-class",
         "reflect": false
@@ -476,7 +476,7 @@ export class Alert {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The main message to be displayed in the alert.\r\n`message` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+          "text": "The main message to be displayed in the alert.\n`message` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
         },
         "attribute": "message",
         "reflect": false
@@ -553,7 +553,7 @@ export class Alert {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "If `true`, the alert will be translucent.\r\nOnly applies when the mode is `\"ios\"` and the device supports\r\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
+          "text": "If `true`, the alert will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility)."
         },
         "attribute": "translucent",
         "reflect": false,
@@ -682,9 +682,9 @@ export class Alert {
             }, {
               "tags": [{
                   "name": "param",
-                  "text": "role The role of the element that is dismissing the alert.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the alert.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+                  "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
                 }],
-              "text": "The role of the element that is dismissing the alert.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the alert.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
             }],
           "references": {
             "Promise": {
@@ -700,7 +700,7 @@ export class Alert {
               "text": "data Any data to emit in the dismiss events."
             }, {
               "name": "param",
-              "text": "role The role of the element that is dismissing the alert.\r\nThis can be useful in a button handler for determining which button was\r\nclicked to dismiss the alert.\r\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
             }]
         }
       },
