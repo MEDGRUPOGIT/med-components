@@ -2,7 +2,7 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, k as forceUpdate, i as h, H as Host } from './index-336c66d9.js';
-import { b as getIonMode } from './ionic-global-790ea271.js';
+import { b as getIonMode } from './ionic-global-e35a57a3.js';
 
 const SIZE_TO_MEDIA = {
   'xs': '(min-width: 0px)',

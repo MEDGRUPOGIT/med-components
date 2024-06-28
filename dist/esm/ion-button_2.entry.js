@@ -2,9 +2,9 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { l as getAssetPath, r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { b as getIonMode$1 } from './ionic-global-790ea271.js';
-import { k as hasShadowDom, i as inheritAttributes } from './helpers-7c8ceac4.js';
-import { o as openURL, c as createColorClasses$1, h as hostContext } from './theme-d8e919ca.js';
+import { b as getIonMode$1 } from './ionic-global-e35a57a3.js';
+import { k as hasShadowDom, i as inheritAttributes } from './helpers-d6be6e4a.js';
+import { o as openURL, c as createColorClasses$1, h as hostContext } from './theme-a24ff1ad.js';
 
 let CACHED_MAP;
 const getIconMap = () => {

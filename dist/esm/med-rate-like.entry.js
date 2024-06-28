@@ -2,8 +2,8 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, i as h, H as Host } from './index-336c66d9.js';
-import { g as generateMedColor } from './color-1d14c71a.js';
-import { R as RateStatus } from './rate-like.enum-25c2a0be.js';
+import { g as generateMedColor } from './color-2567dca3.js';
+import { R as RateStatus } from './rate-like.enum-04fa254a.js';
 
 const medRateLikeCss = ":host{--spacing:16px;--color:hsl(var(--med-color-neutral-10));--color-like:hsl(var(--med-color-fb-success));--color-dislike:hsl(var(--med-color-fb-warning));display:block}:host .button{background:transparent;border:none;cursor:pointer;padding:0;outline:none}:host .button-spacing{padding-right:var(--spacing)}:host .rate{font-size:24px;stroke:var(--color);-webkit-transition:color 300ms;transition:color 300ms}:host .button--disabled{pointer-events:none;--color:hsl(var(--med-color-neutral-4))}:host .button--like .rate{stroke:var(--color-like)}:host .button--dislike .rate{stroke:var(--color-dislike)}";
 
