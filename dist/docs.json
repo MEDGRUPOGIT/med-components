@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-06-28T20:53:18",
+  "timestamp": "2024-07-23T19:54:30",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -28255,6 +28255,25 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "dsColor",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "ds-color",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {

@@ -3,6 +3,7 @@
  */
 import { Host, h } from "@stencil/core";
 import { chevronDown } from "ionicons/icons";
+import { generateMedColor } from "../../../../@templarios/utilities/color";
 import { config } from "../../../../global/config";
 import { getIonMode } from "../../../../global/ionic-global";
 import { addEventListener, getElementRoot, raf, removeEventListener, transitionEndAsync, } from "../../../../utils/helpers";
@@ -247,6 +248,7 @@ export class TpAccordion {
     this.state = 1 /* AccordionState.Collapsed */;
     this.isNext = false;
     this.isPrevious = false;
+    this.dsColor = undefined;
     this.value = `ion-accordion-${accordionIds++}`;
     this.disabled = false;
     this.readonly = false;
@@ -306,14 +308,14 @@ export class TpAccordion {
     }
   }
   render() {
-    const { disabled, readonly } = this;
+    const { disabled, readonly, dsColor } = this;
     const mode = getIonMode(this);
     const expanded = this.state === 4 /* AccordionState.Expanded */ ||
       this.state === 8 /* AccordionState.Expanding */;
     const headerPart = expanded ? "header expanded" : "header";
     const contentPart = expanded ? "content expanded" : "content";
     this.setAria(expanded);
-    return (h(Host, { class: {
+    return (h(Host, { class: generateMedColor(dsColor, {
         [mode]: true,
         "accordion-expanding": this.state === 8 /* AccordionState.Expanding */,
         "accordion-expanded": this.state === 4 /* AccordionState.Expanded */,
@@ -324,7 +326,7 @@ export class TpAccordion {
         "accordion-disabled": disabled,
         "accordion-readonly": readonly,
         "accordion-animated": this.shouldAnimate(),
-      } }, h("div", { onClick: () => this.toggleExpanded(), id: "header", part: headerPart, "aria-controls": "content", ref: (headerEl) => (this.headerEl = headerEl) }, h("slot", { name: "header" })), h("div", { id: "content", part: contentPart, role: "region", "aria-labelledby": "header", ref: (contentEl) => (this.contentEl = contentEl) }, h("div", { id: "content-wrapper", ref: (contentElWrapper) => (this.contentElWrapper = contentElWrapper) }, h("slot", { name: "content" })))));
+      }) }, h("div", { onClick: () => this.toggleExpanded(), id: "header", part: headerPart, "aria-controls": "content", ref: (headerEl) => (this.headerEl = headerEl) }, h("slot", { name: "header" })), h("div", { id: "content", part: contentPart, role: "region", "aria-labelledby": "header", ref: (contentEl) => (this.contentEl = contentEl) }, h("div", { id: "content-wrapper", ref: (contentElWrapper) => (this.contentElWrapper = contentElWrapper) }, h("slot", { name: "content" })))));
   }
   static get is() { return "tp-accordion"; }
   static get encapsulation() { return "shadow"; }
@@ -343,6 +345,28 @@ export class TpAccordion {
   }
   static get properties() {
     return {
+      "dsColor": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "MedColor",
+          "resolved": "string | undefined",
+          "references": {
+            "MedColor": {
+              "location": "import",
+              "path": "../../../../@templarios/types/color.type"
+            }
+          }
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "ds-color",
+        "reflect": true
+      },
       "value": {
         "type": "string",
         "mutable": false,

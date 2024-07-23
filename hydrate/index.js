@@ -10196,7 +10196,7 @@ class Checkbox {
       : hAsync("path", { d: "M5.9,12.5l3.8,3.8l8.8-8.8", part: "mark" });
     if (mode === 'md') {
       path = indeterminate
-        ? hAsync("path", { d: "M2 12H22", part: "mark" })
+        ? hAsync("path", { d: "M4 12H20", part: "mark" })
         : hAsync("path", { d: "M1.73,12.91 8.1,19.28 22.79,4.59", part: "mark" });
     }
     return (hAsync(Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: createColorClasses$1(color, {
@@ -29147,6 +29147,7 @@ class TpAccordion {
     this.state = 1 /* AccordionState.Collapsed */;
     this.isNext = false;
     this.isPrevious = false;
+    this.dsColor = undefined;
     this.value = `ion-accordion-${accordionIds++}`;
     this.disabled = false;
     this.readonly = false;
@@ -29206,14 +29207,14 @@ class TpAccordion {
     }
   }
   render() {
-    const { disabled, readonly } = this;
+    const { disabled, readonly, dsColor } = this;
     const mode = getIonMode$1(this);
     const expanded = this.state === 4 /* AccordionState.Expanded */ ||
       this.state === 8 /* AccordionState.Expanding */;
     const headerPart = expanded ? "header expanded" : "header";
     const contentPart = expanded ? "content expanded" : "content";
     this.setAria(expanded);
-    return (hAsync(Host, { class: {
+    return (hAsync(Host, { class: generateMedColor(dsColor, {
         [mode]: true,
         "accordion-expanding": this.state === 8 /* AccordionState.Expanding */,
         "accordion-expanded": this.state === 4 /* AccordionState.Expanded */,
@@ -29224,7 +29225,7 @@ class TpAccordion {
         "accordion-disabled": disabled,
         "accordion-readonly": readonly,
         "accordion-animated": this.shouldAnimate(),
-      } }, hAsync("div", { onClick: () => this.toggleExpanded(), id: "header", part: headerPart, "aria-controls": "content", ref: (headerEl) => (this.headerEl = headerEl) }, hAsync("slot", { name: "header" })), hAsync("div", { id: "content", part: contentPart, role: "region", "aria-labelledby": "header", ref: (contentEl) => (this.contentEl = contentEl) }, hAsync("div", { id: "content-wrapper", ref: (contentElWrapper) => (this.contentElWrapper = contentElWrapper) }, hAsync("slot", { name: "content" })))));
+      }) }, hAsync("div", { onClick: () => this.toggleExpanded(), id: "header", part: headerPart, "aria-controls": "content", ref: (headerEl) => (this.headerEl = headerEl) }, hAsync("slot", { name: "header" })), hAsync("div", { id: "content", part: contentPart, role: "region", "aria-labelledby": "header", ref: (contentEl) => (this.contentEl = contentEl) }, hAsync("div", { id: "content-wrapper", ref: (contentElWrapper) => (this.contentElWrapper = contentElWrapper) }, hAsync("slot", { name: "content" })))));
   }
   static get delegatesFocus() { return true; }
   get el() { return getElement(this); }
@@ -29239,6 +29240,7 @@ class TpAccordion {
     "$flags$": 57,
     "$tagName$": "tp-accordion",
     "$members$": {
+      "dsColor": [513, "ds-color"],
       "value": [1],
       "disabled": [4],
       "readonly": [4],
@@ -29250,7 +29252,7 @@ class TpAccordion {
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": []
+    "$attrsToReflect$": [["dsColor", "ds-color"]]
   }; }
 }
 let accordionIds = 0;

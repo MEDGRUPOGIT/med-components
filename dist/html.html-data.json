@@ -7333,6 +7333,10 @@
           "description": "If `true`, the accordion cannot be interacted with."
         },
         {
+          "name": "ds-color",
+          "description": "todo"
+        },
+        {
           "name": "mode",
           "description": "The mode determines which platform styles to use.",
           "values": [

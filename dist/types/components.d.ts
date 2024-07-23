@@ -4147,6 +4147,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * todo
+         */
+        "dsColor"?: MedColor;
+        /**
           * The mode determines which platform styles to use.
          */
         "mode"?: "ios" | "md";
@@ -9971,6 +9975,10 @@ declare namespace LocalJSX {
           * If `true`, the accordion cannot be interacted with.
          */
         "disabled"?: boolean;
+        /**
+          * todo
+         */
+        "dsColor"?: MedColor;
         /**
           * The mode determines which platform styles to use.
          */

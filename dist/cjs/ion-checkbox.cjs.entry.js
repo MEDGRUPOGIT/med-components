@@ -75,7 +75,7 @@ const Checkbox = class {
       : index.h("path", { d: "M5.9,12.5l3.8,3.8l8.8-8.8", part: "mark" });
     if (mode === 'md') {
       path = indeterminate
-        ? index.h("path", { d: "M2 12H22", part: "mark" })
+        ? index.h("path", { d: "M4 12H20", part: "mark" })
         : index.h("path", { d: "M1.73,12.91 8.1,19.28 22.79,4.59", part: "mark" });
     }
     return (index.h(index.Host, { onClick: this.onClick, "aria-labelledby": label ? labelId : null, "aria-checked": `${checked}`, "aria-hidden": disabled ? 'true' : null, role: "checkbox", class: theme.createColorClasses(color, {

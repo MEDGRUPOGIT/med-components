@@ -2,6 +2,7 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host, j as getElement } from './index-336c66d9.js';
+import { g as generateMedColor } from './color-2567dca3.js';
 import { c as config, b as getIonMode } from './ionic-global-e35a57a3.js';
 import { r as raf, t as transitionEndAsync, a as addEventListener, b as removeEventListener, g as getElementRoot } from './helpers-d6be6e4a.js';
 
@@ -241,6 +242,7 @@ const TpAccordion = class {
     this.state = 1 /* AccordionState.Collapsed */;
     this.isNext = false;
     this.isPrevious = false;
+    this.dsColor = undefined;
     this.value = `ion-accordion-${accordionIds++}`;
     this.disabled = false;
     this.readonly = false;
@@ -300,14 +302,14 @@ const TpAccordion = class {
     }
   }
   render() {
-    const { disabled, readonly } = this;
+    const { disabled, readonly, dsColor } = this;
     const mode = getIonMode(this);
     const expanded = this.state === 4 /* AccordionState.Expanded */ ||
       this.state === 8 /* AccordionState.Expanding */;
     const headerPart = expanded ? "header expanded" : "header";
     const contentPart = expanded ? "content expanded" : "content";
     this.setAria(expanded);
-    return (h(Host, { class: {
+    return (h(Host, { class: generateMedColor(dsColor, {
         [mode]: true,
         "accordion-expanding": this.state === 8 /* AccordionState.Expanding */,
         "accordion-expanded": this.state === 4 /* AccordionState.Expanded */,
@@ -318,7 +320,7 @@ const TpAccordion = class {
         "accordion-disabled": disabled,
         "accordion-readonly": readonly,
         "accordion-animated": this.shouldAnimate(),
-      } }, h("div", { onClick: () => this.toggleExpanded(), id: "header", part: headerPart, "aria-controls": "content", ref: (headerEl) => (this.headerEl = headerEl) }, h("slot", { name: "header" })), h("div", { id: "content", part: contentPart, role: "region", "aria-labelledby": "header", ref: (contentEl) => (this.contentEl = contentEl) }, h("div", { id: "content-wrapper", ref: (contentElWrapper) => (this.contentElWrapper = contentElWrapper) }, h("slot", { name: "content" })))));
+      }) }, h("div", { onClick: () => this.toggleExpanded(), id: "header", part: headerPart, "aria-controls": "content", ref: (headerEl) => (this.headerEl = headerEl) }, h("slot", { name: "header" })), h("div", { id: "content", part: contentPart, role: "region", "aria-labelledby": "header", ref: (contentEl) => (this.contentEl = contentEl) }, h("div", { id: "content-wrapper", ref: (contentElWrapper) => (this.contentElWrapper = contentElWrapper) }, h("slot", { name: "content" })))));
   }
   static get delegatesFocus() { return true; }
   get el() { return getElement(this); }
