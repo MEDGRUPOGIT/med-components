@@ -160,7 +160,7 @@ export class TpChartBar {
           "tags": [],
           "text": "todo"
         },
-        "defaultValue": "{\n    color: \"med-color-brand-4\",\n    value: 0,\n  }"
+        "defaultValue": "{\r\n    color: \"med-color-brand-4\",\r\n    value: 0,\r\n  }"
       },
       "hasMarker": {
         "type": "boolean",
@@ -217,7 +217,7 @@ export class TpChartBar {
           "tags": [],
           "text": "todo"
         },
-        "defaultValue": "{\n    color: \"med-color-fb-caution\",\n    value: 0,\n  }"
+        "defaultValue": "{\r\n    color: \"med-color-fb-caution\",\r\n    value: 0,\r\n  }"
       }
     };
   }

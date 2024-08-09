@@ -328,7 +328,7 @@ export class Searchbar {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         "attribute": "color",
         "reflect": false
@@ -404,7 +404,7 @@ export class Searchbar {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Set the cancel button icon. Only applies to `md` mode.\nDefaults to `\"arrow-back-sharp\"`."
+          "text": "Set the cancel button icon. Only applies to `md` mode.\r\nDefaults to `\"arrow-back-sharp\"`."
         },
         "attribute": "cancel-button-icon",
         "reflect": false,
@@ -493,7 +493,7 @@ export class Searchbar {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
+          "text": "A hint to the browser for which keyboard to display.\r\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\r\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`."
         },
         "attribute": "inputmode",
         "reflect": false
@@ -510,7 +510,7 @@ export class Searchbar {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`."
+          "text": "A hint to the browser for which enter key to display.\r\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\r\n`\"previous\"`, `\"search\"`, and `\"send\"`."
         },
         "attribute": "enterkeyhint",
         "reflect": false
@@ -527,7 +527,7 @@ export class Searchbar {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Set the input's placeholder.\n`placeholder` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
+          "text": "Set the input's placeholder.\r\n`placeholder` can accept either plaintext or HTML as a string.\r\nTo display characters normally reserved for HTML, they\r\nmust be escaped. For example `<Ionic>` would become\r\n`&lt;Ionic&gt;`\r\n\r\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)"
         },
         "attribute": "placeholder",
         "reflect": false,
@@ -545,7 +545,7 @@ export class Searchbar {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\n`ios` mode and `\"search-sharp\"` in `md` mode."
+          "text": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\r\n`ios` mode and `\"search-sharp\"` in `md` mode."
         },
         "attribute": "search-icon",
         "reflect": false
@@ -562,7 +562,7 @@ export class Searchbar {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\nSetting to `\"focus\"` shows the cancel button on focus.\nSetting to `\"never\"` hides the cancel button.\nSetting to `\"always\"` shows the cancel button regardless\nof focus state."
+          "text": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\r\nSetting to `\"focus\"` shows the cancel button on focus.\r\nSetting to `\"never\"` hides the cancel button.\r\nSetting to `\"always\"` shows the cancel button regardless\r\nof focus state."
         },
         "attribute": "show-cancel-button",
         "reflect": false,
@@ -580,7 +580,7 @@ export class Searchbar {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\nSetting to `\"focus\"` shows the clear button on focus if the\ninput is not empty.\nSetting to `\"never\"` hides the clear button.\nSetting to `\"always\"` shows the clear button regardless\nof focus state, but only if the input is not empty."
+          "text": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\r\nSetting to `\"focus\"` shows the clear button on focus if the\r\ninput is not empty.\r\nSetting to `\"never\"` hides the clear button.\r\nSetting to `\"always\"` shows the clear button regardless\r\nof focus state, but only if the input is not empty."
         },
         "attribute": "show-clear-button",
         "reflect": false,
@@ -787,7 +787,7 @@ export class Searchbar {
           "return": "Promise<void>"
         },
         "docs": {
-          "text": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\n`input.focus()`.",
+          "text": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\r\n`input.focus()`.",
           "tags": []
         }
       },

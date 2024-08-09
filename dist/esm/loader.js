@@ -3,8 +3,8 @@
  */
 import { C as CSS, p as plt, w as win, a as promiseResolve, b as bootstrapLazy } from './index-336c66d9.js';
 export { s as setNonce } from './index-336c66d9.js';
-import { g as globalScripts } from './app-globals-5994ef03.js';
-import './ionic-global-e35a57a3.js';
+import { g as globalScripts } from './app-globals-5a8bb47e.js';
+import './ionic-global-790ea271.js';
 
 /*
  Stencil Client Patch Esm v2.22.3 | MIT Licensed | https://stenciljs.com

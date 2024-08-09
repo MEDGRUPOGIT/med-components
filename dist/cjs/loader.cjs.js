@@ -6,8 +6,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const appGlobals = require('./app-globals-dddfc858.js');
-require('./ionic-global-8b32527f.js');
+const appGlobals = require('./app-globals-f12d1ed6.js');
+require('./ionic-global-31ae4345.js');
 
 /*
  Stencil Client Patch Esm v2.22.3 | MIT Licensed | https://stenciljs.com

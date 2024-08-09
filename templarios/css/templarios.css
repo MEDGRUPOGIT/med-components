@@ -4899,12 +4899,12 @@ ion-chip .med-icon {
   --icon-color: hsl(var(--med-color-neutral-7));
   --icon-background: transparent;
 }
-ion-chip[active] {
+ion-chip[active], ion-chip.ion-focused, ion-chip.ion-activated {
   --border-color: hsl(var(--med-color-neutral-7));
   --background: hsl(var(--med-color-neutral-7));
   --color: hsl(var(--med-color-neutral-2));
 }
-ion-chip[active] .med-icon {
+ion-chip[active] .med-icon, ion-chip.ion-focused .med-icon, ion-chip.ion-activated .med-icon {
   --icon-color: hsl(var(--med-color-neutral-2));
 }
 
