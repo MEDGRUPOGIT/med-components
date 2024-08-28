@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
+  background-color: red;
 }
 :host .wrapper {
   display: grid;
@@ -37,4 +38,7 @@
 :host .wrapper--flex {
   display: flex;
   flex-wrap: wrap;
+}
+:host .wrapper--justify-center {
+  justify-content: center;
 }

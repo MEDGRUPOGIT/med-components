@@ -3212,6 +3212,10 @@ export namespace Components {
           * Define a estilização do componente
          */
         "isFlex": boolean;
+        /**
+          * Define a estilização do componente
+         */
+        "justifyCenter": boolean;
     }
     interface MedChartBar {
         /**
@@ -8982,6 +8986,10 @@ declare namespace LocalJSX {
           * Define a estilização do componente
          */
         "isFlex"?: boolean;
+        /**
+          * Define a estilização do componente
+         */
+        "justifyCenter"?: boolean;
     }
     interface MedChartBar {
         /**

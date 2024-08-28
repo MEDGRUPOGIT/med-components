@@ -226,6 +226,7 @@ export const MedIcons = [
   "med-outros",
 
   "med-passaporte",
+  "med-pause-circle",
   "med-pix",
   "med-play",
   "med-plus",
