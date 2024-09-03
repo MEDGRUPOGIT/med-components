@@ -6,8 +6,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-31ae4345.js');
-const haptic = require('./haptic-bcc3abdf.js');
+const ionicGlobal = require('./ionic-global-8b32527f.js');
+const haptic = require('./haptic-c4a1d647.js');
 
 const reorderIosCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block;font-size:22px}.reorder-icon{font-size:34px;opacity:0.4}";
 
@@ -64,7 +64,7 @@ const ReorderGroup = class {
     if (contentEl) {
       this.scrollEl = await contentEl.getScrollElement();
     }
-    this.gesture = (await Promise.resolve().then(function () { return require('./index-ff2c537e.js'); })).createGesture({
+    this.gesture = (await Promise.resolve().then(function () { return require('./index-212d93af.js'); })).createGesture({
       el: this.el,
       gestureName: 'reorder',
       gesturePriority: 110,

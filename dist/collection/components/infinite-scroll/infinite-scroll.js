@@ -192,7 +192,7 @@ export class InfiniteScroll {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "The threshold distance from the bottom\r\nof the content to call the `infinite` output event when scrolled.\r\nThe threshold value can be either a percent, or\r\nin pixels. For example, use the value of `10%` for the `infinite`\r\noutput event to get called when the user has scrolled 10%\r\nfrom the bottom of the page. Use the value `100px` when the\r\nscroll is within 100 pixels from the bottom of the page."
+          "text": "The threshold distance from the bottom\nof the content to call the `infinite` output event when scrolled.\nThe threshold value can be either a percent, or\nin pixels. For example, use the value of `10%` for the `infinite`\noutput event to get called when the user has scrolled 10%\nfrom the bottom of the page. Use the value `100px` when the\nscroll is within 100 pixels from the bottom of the page."
         },
         "attribute": "threshold",
         "reflect": false,
@@ -210,7 +210,7 @@ export class InfiniteScroll {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "If `true`, the infinite scroll will be hidden and scroll event listeners\r\nwill be removed.\r\n\r\nSet this to true to disable the infinite scroll from actively\r\ntrying to receive new data while scrolling. This is useful\r\nwhen it is known that there is no more data that can be added, and\r\nthe infinite scroll is no longer needed."
+          "text": "If `true`, the infinite scroll will be hidden and scroll event listeners\nwill be removed.\n\nSet this to true to disable the infinite scroll from actively\ntrying to receive new data while scrolling. This is useful\nwhen it is known that there is no more data that can be added, and\nthe infinite scroll is no longer needed."
         },
         "attribute": "disabled",
         "reflect": false,
@@ -228,7 +228,7 @@ export class InfiniteScroll {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "The position of the infinite scroll element.\r\nThe value can be either `top` or `bottom`."
+          "text": "The position of the infinite scroll element.\nThe value can be either `top` or `bottom`."
         },
         "attribute": "position",
         "reflect": false,
@@ -250,7 +250,7 @@ export class InfiniteScroll {
         "composed": true,
         "docs": {
           "tags": [],
-          "text": "Emitted when the scroll reaches\r\nthe threshold distance. From within your infinite handler,\r\nyou must call the infinite scroll's `complete()` method when\r\nyour async operation has completed."
+          "text": "Emitted when the scroll reaches\nthe threshold distance. From within your infinite handler,\nyou must call the infinite scroll's `complete()` method when\nyour async operation has completed."
         },
         "complexType": {
           "original": "void",
@@ -273,7 +273,7 @@ export class InfiniteScroll {
           "return": "Promise<void>"
         },
         "docs": {
-          "text": "Call `complete()` within the `ionInfinite` output event handler when\r\nyour async operation has completed. For example, the `loading`\r\nstate is while the app is performing an asynchronous operation,\r\nsuch as receiving more data from an AJAX request to add more items\r\nto a data list. Once the data has been received and UI updated, you\r\nthen call this method to signify that the loading has completed.\r\nThis method will change the infinite scroll's state from `loading`\r\nto `enabled`.",
+          "text": "Call `complete()` within the `ionInfinite` output event handler when\nyour async operation has completed. For example, the `loading`\nstate is while the app is performing an asynchronous operation,\nsuch as receiving more data from an AJAX request to add more items\nto a data list. Once the data has been received and UI updated, you\nthen call this method to signify that the loading has completed.\nThis method will change the infinite scroll's state from `loading`\nto `enabled`.",
           "tags": []
         }
       }

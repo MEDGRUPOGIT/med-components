@@ -2,8 +2,8 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host, j as getElement, f as createEvent } from './index-336c66d9.js';
-import { a as attachComponent } from './framework-delegate-362ab783.js';
-import './helpers-7c8ceac4.js';
+import { a as attachComponent } from './framework-delegate-f297f7e6.js';
+import './helpers-d6be6e4a.js';
 
 const tabCss = ":host(.tab-hidden){display:none !important}";
 

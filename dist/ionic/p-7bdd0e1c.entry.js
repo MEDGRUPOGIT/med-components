@@ -1,4 +1,0 @@
-/*!
- * (C) Ionic http://ionicframework.com - MIT License
- */
-import{r,i as o,H as s,j as t}from"./p-d73a117d.js";import{g as d}from"./p-716fc783.js";const e=class{constructor(o){r(this,o)}async closeSlidingItems(){const r=this.el.querySelector("ion-item-sliding");return!(!r||!r.closeOpened)&&r.closeOpened()}render(){return o(s,{class:d(null,{"med-lista":!0})},o("slot",null))}get el(){return t(this)}};e.style={ios:":host{--border-radius:8px;--border-color:transparent;--border:1px solid var(--border-color)}:host{border-radius:var(--border-radius)}::slotted(med-item:not(:last-child)){border-bottom:var(--border)}",md:":host{--border-radius:8px;--border-color:transparent;--border:1px solid var(--border-color)}:host{border-radius:var(--border-radius)}::slotted(med-item:not(:last-child)){border-bottom:var(--border)}"};export{e as med_lista}

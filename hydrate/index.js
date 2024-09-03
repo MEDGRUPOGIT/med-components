@@ -15695,27 +15695,32 @@ class MedCartaoRespostaItem {
   }; }
 }
 
-const medCartaoRespostaListaCss = "/*!@:host*/.sc-med-cartao-resposta-lista-h{position:relative;padding:0px;width:100%;max-width:1200px;margin:0px auto}/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{display:grid;grid-template-columns:repeat(auto-fit, 10vw)}@media (max-width: 1199.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 10vw)}}@media (max-width: 991.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 13vw)}}@media (max-width: 767.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 14vw)}}@media (max-width: 575.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 17vw)}}@media (max-width: 379.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 19vw)}}/*!@:host .wrapper--flex*/.sc-med-cartao-resposta-lista-h .wrapper--flex.sc-med-cartao-resposta-lista{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}";
+const medCartaoRespostaListaCss = "/*!@:host*/.sc-med-cartao-resposta-lista-h{position:relative;padding:0px;width:100%;max-width:1200px;margin:0px auto}/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{display:grid;grid-template-columns:repeat(auto-fit, 10vw)}@media (max-width: 1199.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 10vw)}}@media (max-width: 991.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 13vw)}}@media (max-width: 767.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 14vw)}}@media (max-width: 575.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 17vw)}}@media (max-width: 379.98px){/*!@:host .wrapper*/.sc-med-cartao-resposta-lista-h .wrapper.sc-med-cartao-resposta-lista{grid-template-columns:repeat(auto-fit, 19vw)}}/*!@:host .wrapper--flex*/.sc-med-cartao-resposta-lista-h .wrapper--flex.sc-med-cartao-resposta-lista{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}/*!@:host .wrapper--justify-center*/.sc-med-cartao-resposta-lista-h .wrapper--justify-center.sc-med-cartao-resposta-lista{-ms-flex-pack:center;justify-content:center}";
 
 class MedCartaoRespostaLista {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.isFlex = false;
+    this.justifyCenter = false;
   }
   render() {
-    const { isFlex } = this;
-    return (hAsync(Host, { "from-stencil": true }, hAsync("div", { class: `wrapper ${isFlex ? 'wrapper--flex' : ''}` }, hAsync("slot", null))));
+    const { isFlex, justifyCenter } = this;
+    return (hAsync(Host, { "from-stencil": true }, hAsync("div", { class: `wrapper
+            ${isFlex ? "wrapper--flex" : ""}
+            ${justifyCenter ? "wrapper--justify-center" : ""}
+          ` }, hAsync("slot", null))));
   }
   static get style() { return medCartaoRespostaListaCss; }
   static get cmpMeta() { return {
     "$flags$": 9,
     "$tagName$": "med-cartao-resposta-lista",
     "$members$": {
-      "isFlex": [516, "is-flex"]
+      "isFlex": [516, "is-flex"],
+      "justifyCenter": [516, "justify-center"]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["isFlex", "is-flex"]]
+    "$attrsToReflect$": [["isFlex", "is-flex"], ["justifyCenter", "justify-center"]]
   }; }
 }
 
