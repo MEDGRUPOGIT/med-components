@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-09-03T13:36:18",
+  "timestamp": "2024-11-19T19:39:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -20071,6 +20071,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "canClose",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "can-close",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "cancelText",
           "type": "string | undefined",

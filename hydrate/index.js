@@ -14586,13 +14586,14 @@ class MedAlert {
     this.cancelText = undefined;
     this.confirmText = undefined;
     this.disableSanitize = false;
+    this.canClose = true;
   }
   dismiss(role) {
     modalController.dismiss(null, role);
   }
   render() {
-    const { heading, message, cancelText, confirmText, disableSanitize } = this;
-    return (hAsync(Host, null, hAsync("ion-header", { class: "tp-dialog-header" }, hAsync("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xxs", onClick: () => this.dismiss('close') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))), hAsync("div", { class: "tp-dialog-container" }, hAsync("med-type", { class: "tp-dialog-heading", token: "h20x", innerHTML: !disableSanitize ? sanitizeDOMString(heading) : heading }), hAsync("med-type", { "ds-color": "neutral-8", token: "h14x", innerHTML: !disableSanitize ? sanitizeDOMString(message) : message }), hAsync("div", { class: "tp-dialog-footer" }, cancelText && hAsync("ion-button", { mode: "ios", fill: "outline", onClick: () => this.dismiss('cancel') }, cancelText), confirmText && hAsync("ion-button", { mode: "ios", onClick: () => this.dismiss('confirm') }, confirmText)))));
+    const { heading, message, cancelText, confirmText, disableSanitize, canClose } = this;
+    return (hAsync(Host, null, canClose && hAsync("ion-header", { class: "tp-dialog-header" }, hAsync("ion-button", { mode: "ios", "icon-only": true, fill: "clear", "ds-size": "xxs", onClick: () => this.dismiss('close') }, hAsync("ion-icon", { slot: "icon-only", class: "med-icon", name: "med-fechar" }))), hAsync("div", { class: "tp-dialog-container" }, hAsync("med-type", { class: "tp-dialog-heading", token: "h20x", innerHTML: !disableSanitize ? sanitizeDOMString(heading) : heading }), hAsync("med-type", { "ds-color": "neutral-8", token: "h14x", innerHTML: !disableSanitize ? sanitizeDOMString(message) : message }), hAsync("div", { class: "tp-dialog-footer" }, cancelText && hAsync("ion-button", { mode: "ios", fill: "outline", onClick: () => this.dismiss('cancel') }, cancelText), confirmText && hAsync("ion-button", { mode: "ios", onClick: () => this.dismiss('confirm') }, confirmText)))));
   }
   static get style() { return medAlertCss; }
   static get cmpMeta() { return {
@@ -14603,11 +14604,12 @@ class MedAlert {
       "message": [1537],
       "cancelText": [1537, "cancel-text"],
       "confirmText": [1537, "confirm-text"],
-      "disableSanitize": [516, "disable-sanitize"]
+      "disableSanitize": [516, "disable-sanitize"],
+      "canClose": [516, "can-close"]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["heading", "heading"], ["message", "message"], ["cancelText", "cancel-text"], ["confirmText", "confirm-text"], ["disableSanitize", "disable-sanitize"]]
+    "$attrsToReflect$": [["heading", "heading"], ["message", "message"], ["cancelText", "cancel-text"], ["confirmText", "confirm-text"], ["disableSanitize", "disable-sanitize"], ["canClose", "can-close"]]
   }; }
 }
 

@@ -2830,6 +2830,10 @@ export namespace Components {
         /**
           * todo
          */
+        "canClose": boolean;
+        /**
+          * todo
+         */
         "cancelText"?: string;
         /**
           * todo
@@ -8562,6 +8566,10 @@ declare namespace LocalJSX {
         "labelDefault"?: string;
     }
     interface MedAlert {
+        /**
+          * todo
+         */
+        "canClose"?: boolean;
         /**
           * todo
          */

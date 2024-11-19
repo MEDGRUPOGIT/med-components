@@ -4805,6 +4805,10 @@
       },
       "attributes": [
         {
+          "name": "can-close",
+          "description": "todo"
+        },
+        {
           "name": "cancel-text",
           "description": "todo"
         },

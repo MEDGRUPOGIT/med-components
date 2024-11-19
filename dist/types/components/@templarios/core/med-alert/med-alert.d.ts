@@ -19,6 +19,10 @@ export declare class MedAlert {
    * todo
    */
   disableSanitize: boolean;
+  /**
+  * todo
+  */
+  canClose: boolean;
   dismiss(role: string): void;
   render(): any;
 }
