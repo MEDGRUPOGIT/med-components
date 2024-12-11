@@ -90,7 +90,7 @@ export class Img {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "This attribute defines the alternative text describing the image.\nUsers will see this text displayed if the image URL is wrong,\nthe image is not in one of the supported formats, or if the image is not yet downloaded."
+          "text": "This attribute defines the alternative text describing the image.\r\nUsers will see this text displayed if the image URL is wrong,\r\nthe image is not in one of the supported formats, or if the image is not yet downloaded."
         },
         "attribute": "alt",
         "reflect": false

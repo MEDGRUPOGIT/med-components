@@ -7130,6 +7130,260 @@ ion-label[token=p10b] {
   font-weight: 600;
   line-height: 12px;
 }
+@media (max-width: 767.98px) {
+  ion-label[token-md=h64] {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 64px;
+  }
+  ion-label[token-md=h48] {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+  }
+  ion-label[token-md=h48x] {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 64px;
+  }
+  ion-label[token-md=h32] {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  ion-label[token-md=h32x] {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+  ion-label[token-md=h24] {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  ion-label[token-md=h24x] {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  ion-label[token-md=h20] {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  ion-label[token-md=h20x] {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  ion-label[token-md=p18x] {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+  ion-label[token-md=p18xb] {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  ion-label[token-md=p16] {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  ion-label[token-md=p16b] {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+  ion-label[token-md=p16x] {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  ion-label[token-md=p16xb] {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  ion-label[token-md=p14] {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  ion-label[token-md=p14b] {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+  ion-label[token-md=p14x] {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  ion-label[token-md=p14xb] {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  ion-label[token-md=p12] {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+  }
+  ion-label[token-md=p12b] {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+  }
+  ion-label[token-md=p12x] {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  ion-label[token-md=p12xb] {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+  ion-label[token-md=p10] {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+  }
+  ion-label[token-md=p10b] {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+  }
+}
+@media (max-width: 575.98px) {
+  ion-label[token-sm=h64] {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 64px;
+  }
+  ion-label[token-sm=h48] {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+  }
+  ion-label[token-sm=h48x] {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 64px;
+  }
+  ion-label[token-sm=h32] {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  ion-label[token-sm=h32x] {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+  ion-label[token-sm=h24] {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  ion-label[token-sm=h24x] {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  ion-label[token-sm=h20] {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  ion-label[token-sm=h20x] {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  ion-label[token-sm=p18x] {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+  ion-label[token-sm=p18xb] {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  ion-label[token-sm=p16] {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  ion-label[token-sm=p16b] {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+  ion-label[token-sm=p16x] {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  ion-label[token-sm=p16xb] {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  ion-label[token-sm=p14] {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  ion-label[token-sm=p14b] {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+  ion-label[token-sm=p14x] {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  ion-label[token-sm=p14xb] {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  ion-label[token-sm=p12] {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+  }
+  ion-label[token-sm=p12b] {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+  }
+  ion-label[token-sm=p12x] {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  ion-label[token-sm=p12xb] {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+  ion-label[token-sm=p10] {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+  }
+  ion-label[token-sm=p10b] {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+  }
+}
 
 ion-label ~ ion-textarea.sc-ion-textarea-md-h,
 ion-label ~ ion-input.sc-ion-input-md-h,

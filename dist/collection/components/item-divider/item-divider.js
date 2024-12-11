@@ -57,7 +57,7 @@ export class ItemDivider {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         "attribute": "color",
         "reflect": false
@@ -74,7 +74,7 @@ export class ItemDivider {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "When it's set to `true`, the item-divider will stay visible when it reaches the top\nof the viewport until the next `ion-item-divider` replaces it.\n\nThis feature relies in `position:sticky`:\nhttps://caniuse.com/#feat=css-sticky"
+          "text": "When it's set to `true`, the item-divider will stay visible when it reaches the top\r\nof the viewport until the next `ion-item-divider` replaces it.\r\n\r\nThis feature relies in `position:sticky`:\r\nhttps://caniuse.com/#feat=css-sticky"
         },
         "attribute": "sticky",
         "reflect": false,

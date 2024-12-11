@@ -7,7 +7,7 @@ export default {
   decorators: [withDesign],
 };
 
-const createModalArrayIMG = async () => {
+const createModalArrayIMG = async (args) => {
   modalController.create({
     component: 'med-image-zoom',
     cssClass: 'med-image-zoom',
@@ -23,18 +23,20 @@ const createModalArrayIMG = async () => {
       marcaAguaSuperior: '123456',
       marcaAguaInferior: '1234567890',
       titulo:'Alternativas',
+      maxRatioDesktop: args.maxRatioDesktop,
+      maxRatioMobile: args.maxRatioMobile
     }
   }).then((modal)=>{
     modal.present()
   });
 }
 
-const TemplateMultiImagem = () => {
+const TemplateMultiImagem = (args) => {
   return html`
     <div style="text-align: center;">
 
       <!-- component -->
-      <ion-button ds-name="primary" @click="${createModalArrayIMG}">Abrir Zoom de Imagens</ion-button>
+      <ion-button ds-name="primary" @click="${() => createModalArrayIMG(args)}">Abrir Zoom de Imagens</ion-button>
       <!-- component -->
 
     </div>
@@ -48,3 +50,16 @@ ImageZoomMultiImagem.parameters = {
     url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=5325%3A44104',
   },
 }
+
+ImageZoomMultiImagem.argTypes = {
+  maxRatioDesktop: {
+    control: { type: 'number' },
+    description: "Zoom maximo na imagem em desktop",
+    defaultValue: 2,
+  },
+  maxRatioMobile: {
+    control: { type: 'number' },
+    description: "Zoom maximo na imagem em mobile",
+    defaultValue: 4,
+  },
+};

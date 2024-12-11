@@ -3,17 +3,23 @@
  */
 import { h, Host } from "@stencil/core";
 import { modalController } from "../../../../utils/overlays";
+import { isPlatform } from "../../../../utils/platform";
 export class MedImageZoom {
   constructor() {
-    this.defaultMaxRatio = 4;
     this.aplicandoZoom = false;
     this.imagens = [];
     this.marcaAguaSuperior = undefined;
     this.marcaAguaInferior = undefined;
     this.titulo = undefined;
     this.initialSlide = 0;
+    this.maxRatioDesktop = 2;
+    this.maxRatioMobile = 4;
     this.slider = undefined;
-    this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
+    this.sliderOpts = undefined;
+  }
+  componentWillLoad() {
+    const isDesktop = isPlatform('desktop');
+    this.sliderOpts = this.getSliderOpts(isDesktop ? +this.maxRatioDesktop : +this.maxRatioMobile);
   }
   getSliderOpts(maxRatio) {
     const sliderOpts = {
@@ -58,7 +64,7 @@ export class MedImageZoom {
         "type": "any",
         "mutable": true,
         "complexType": {
-          "original": "| MedImageZoomItemInterface[]\n    | any",
+          "original": "| MedImageZoomItemInterface[]\r\n    | any",
           "resolved": "any",
           "references": {
             "MedImageZoomItemInterface": {
@@ -145,6 +151,42 @@ export class MedImageZoom {
         "attribute": "initial-slide",
         "reflect": true,
         "defaultValue": "0"
+      },
+      "maxRatioDesktop": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Zoom maximo na imagem em desktop"
+        },
+        "attribute": "max-ratio-desktop",
+        "reflect": true,
+        "defaultValue": "2"
+      },
+      "maxRatioMobile": {
+        "type": "number",
+        "mutable": false,
+        "complexType": {
+          "original": "number",
+          "resolved": "number",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Zoom maximo na imagem em Mobile"
+        },
+        "attribute": "max-ratio-mobile",
+        "reflect": true,
+        "defaultValue": "4"
       }
     };
   }

@@ -21,20 +21,23 @@ export declare class MedImageZoom {
    */
   initialSlide?: number | undefined;
   /**
+   * Zoom maximo na imagem em desktop
+   */
+  maxRatioDesktop: number;
+  /**
+   * Zoom maximo na imagem em Mobile
+   */
+  maxRatioMobile: number;
+  /**
    * todo
    */
   slider: any;
-  defaultMaxRatio: number;
   aplicandoZoom: boolean;
   /**
    * todo
    */
-  sliderOpts: {
-    zoom: {
-      maxRatio: number;
-    };
-    initialSlide: number | undefined;
-  };
+  sliderOpts: any;
+  componentWillLoad(): void;
   getSliderOpts(maxRatio: number): {
     zoom: {
       maxRatio: number;

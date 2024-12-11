@@ -16471,15 +16471,20 @@ const medImageZoomCss = ".sc-med-image-zoom-h{display:-ms-flexbox;display:flex;-
 class MedImageZoom {
   constructor(hostRef) {
     registerInstance(this, hostRef);
-    this.defaultMaxRatio = 4;
     this.aplicandoZoom = false;
     this.imagens = [];
     this.marcaAguaSuperior = undefined;
     this.marcaAguaInferior = undefined;
     this.titulo = undefined;
     this.initialSlide = 0;
+    this.maxRatioDesktop = 2;
+    this.maxRatioMobile = 4;
     this.slider = undefined;
-    this.sliderOpts = this.getSliderOpts(this.defaultMaxRatio);
+    this.sliderOpts = undefined;
+  }
+  componentWillLoad() {
+    const isDesktop = isPlatform('desktop');
+    this.sliderOpts = this.getSliderOpts(isDesktop ? +this.maxRatioDesktop : +this.maxRatioMobile);
   }
   getSliderOpts(maxRatio) {
     const sliderOpts = {
@@ -16516,12 +16521,14 @@ class MedImageZoom {
       "marcaAguaInferior": [1537, "marca-agua-inferior"],
       "titulo": [1537],
       "initialSlide": [1538, "initial-slide"],
+      "maxRatioDesktop": [514, "max-ratio-desktop"],
+      "maxRatioMobile": [514, "max-ratio-mobile"],
       "slider": [32],
       "sliderOpts": [32]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["imagens", "imagens"], ["marcaAguaSuperior", "marca-agua-superior"], ["marcaAguaInferior", "marca-agua-inferior"], ["titulo", "titulo"], ["initialSlide", "initial-slide"]]
+    "$attrsToReflect$": [["imagens", "imagens"], ["marcaAguaSuperior", "marca-agua-superior"], ["marcaAguaInferior", "marca-agua-inferior"], ["titulo", "titulo"], ["initialSlide", "initial-slide"], ["maxRatioDesktop", "max-ratio-desktop"], ["maxRatioMobile", "max-ratio-mobile"]]
   }; }
 }
 

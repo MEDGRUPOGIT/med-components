@@ -3534,6 +3534,14 @@ export namespace Components {
          */
         "marcaAguaSuperior"?: string;
         /**
+          * Zoom maximo na imagem em desktop
+         */
+        "maxRatioDesktop": number;
+        /**
+          * Zoom maximo na imagem em Mobile
+         */
+        "maxRatioMobile": number;
+        /**
           * todo
          */
         "titulo"?: string;
@@ -9343,6 +9351,14 @@ declare namespace LocalJSX {
           * todo
          */
         "marcaAguaSuperior"?: string;
+        /**
+          * Zoom maximo na imagem em desktop
+         */
+        "maxRatioDesktop"?: number;
+        /**
+          * Zoom maximo na imagem em Mobile
+         */
+        "maxRatioMobile"?: number;
         /**
           * todo
          */

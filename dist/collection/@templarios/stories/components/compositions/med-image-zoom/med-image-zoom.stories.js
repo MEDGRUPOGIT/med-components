@@ -7,7 +7,7 @@ export default {
   decorators: [withDesign],
 };
 
-const createModal = async () => {
+const createModal = async (args) => {
   modalController.create({
     component: 'med-image-zoom',
     cssClass: 'med-image-zoom',
@@ -21,18 +21,20 @@ const createModal = async () => {
       marcaAguaSuperior: '1234567890',
       marcaAguaInferior: '1234567890',
       titulo:'Alternativa A',
+      maxRatioDesktop: args.maxRatioDesktop,
+      maxRatioMobile: args.maxRatioMobile
     }
   }).then((modal)=>{
     modal.present()
   });
 }
 
-const TemplateDefault = () => {
+const TemplateDefault = (args) => {
   return html`
     <div style="text-align: center;">
 
       <!-- component -->
-      <ion-button ds-name="primary" @click="${createModal}">Abrir Zoom de Imagens</ion-button>
+      <ion-button ds-name="primary" @click="${() => createModal(args)}">Abrir Zoom de Imagens</ion-button>
       <!-- component -->
 
     </div>
@@ -46,3 +48,16 @@ ImageZoom.parameters = {
     url: 'https://www.figma.com/file/2j9jNt3PmQXpzD3IQJkyZe/Componentes?node-id=5325%3A44104',
   },
 }
+
+ImageZoom.argTypes = {
+  maxRatioDesktop: {
+    control: { type: 'number' },
+    description: "Zoom maximo na imagem em desktop",
+    defaultValue: 2,
+  },
+  maxRatioMobile: {
+    control: { type: 'number' },
+    description: "Zoom maximo na imagem em mobile",
+    defaultValue: 4,
+  },
+};

@@ -2,7 +2,7 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, h as readTask, e as writeTask, k as forceUpdate, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { c as componentOnReady } from './helpers-d6be6e4a.js';
+import { c as componentOnReady } from './helpers-7c8ceac4.js';
 
 const CELL_TYPE_ITEM = 'item';
 const CELL_TYPE_HEADER = 'header';
