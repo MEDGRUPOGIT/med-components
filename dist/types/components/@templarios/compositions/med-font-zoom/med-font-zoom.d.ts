@@ -11,9 +11,12 @@ export declare class MedFontZoom {
    * todo
    */
   value: MedFontSize;
+  /**
+  * todo
+   */
+  step: boolean;
   readonly min: number;
   readonly max: number;
-  readonly step: number;
   fontSizeToValue: (fontSize: MedFontSize) => RangeValue;
   onRangeChange: (rangeValue: RangeValue) => void;
   fixPopover(): void;

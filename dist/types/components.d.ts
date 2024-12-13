@@ -3511,6 +3511,10 @@ export namespace Components {
         /**
           * todo
          */
+        "step": boolean;
+        /**
+          * todo
+         */
         "value": MedFontSize;
     }
     interface MedHeader {
@@ -9322,6 +9326,10 @@ declare namespace LocalJSX {
           * todo
          */
         "emitter": { emit: (value: MedFontSize) => void };
+        /**
+          * todo
+         */
+        "step"?: boolean;
         /**
           * todo
          */

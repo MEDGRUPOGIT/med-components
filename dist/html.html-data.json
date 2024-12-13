@@ -5967,6 +5967,10 @@
       },
       "attributes": [
         {
+          "name": "step",
+          "description": "todo"
+        },
+        {
           "name": "value",
           "description": "todo"
         }

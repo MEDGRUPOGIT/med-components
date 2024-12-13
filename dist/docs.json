@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-12-11T15:07:38",
+  "timestamp": "2024-12-13T17:46:38",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -23954,6 +23954,23 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "step",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
         },
         {
           "name": "value",

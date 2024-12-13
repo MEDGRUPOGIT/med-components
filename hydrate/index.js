@@ -16348,14 +16348,13 @@ class MedEnunciadoDiscursiva {
   }; }
 }
 
-const medFontZoomCss = ".sc-med-font-zoom-h{display:block;opacity:0;-webkit-transition:opacity 0.1s;transition:opacity 0.1s}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}";
+const medFontZoomCss = ".sc-med-font-zoom-h{display:block;opacity:0;-webkit-transition:opacity 0.1s;transition:opacity 0.1s}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}.sc-med-font-zoom-h .container.sc-med-font-zoom::part(tick-active),.sc-med-font-zoom-h .container.sc-med-font-zoom::part(tick){display:none}";
 
 class MedFontZoom {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.min = 1;
     this.max = 5;
-    this.step = 1;
     this.fontSizeToValue = (fontSize) => {
       switch (fontSize) {
         case MedFontSize.XXXS:
@@ -16396,6 +16395,7 @@ class MedFontZoom {
     };
     this.emitter = undefined;
     this.value = MedFontSize.XS;
+    this.step = false;
   }
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7
@@ -16409,7 +16409,7 @@ class MedFontZoom {
     popover.style.opacity = '1';
   }
   render() {
-    return (hAsync(Host, { "from-stencil": true }, hAsync("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }), hAsync("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
+    return (hAsync(Host, { "from-stencil": true }, hAsync("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step ? (this.max - this.min) / 4 : 1, snaps: this.step, value: this.fontSizeToValue(this.value), class: "container" }, hAsync("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }), hAsync("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
   }
   static get style() { return medFontZoomCss; }
   static get cmpMeta() { return {
@@ -16417,11 +16417,12 @@ class MedFontZoom {
     "$tagName$": "med-font-zoom",
     "$members$": {
       "emitter": [16],
-      "value": [1025]
+      "value": [1025],
+      "step": [516]
     },
     "$listeners$": [[16, "ionPopoverDidPresent", "fixPopover"]],
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": []
+    "$attrsToReflect$": [["step", "step"]]
   }; }
 }
 

@@ -7,7 +7,6 @@ export class MedFontZoom {
   constructor() {
     this.min = 1;
     this.max = 5;
-    this.step = 1;
     this.fontSizeToValue = (fontSize) => {
       switch (fontSize) {
         case MedFontSize.XXXS:
@@ -48,6 +47,7 @@ export class MedFontZoom {
     };
     this.emitter = undefined;
     this.value = MedFontSize.XS;
+    this.step = false;
   }
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7
@@ -61,7 +61,7 @@ export class MedFontZoom {
     popover.style.opacity = '1';
   }
   render() {
-    return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
+    return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step ? (this.max - this.min) / 4 : 1, snaps: this.step, value: this.fontSizeToValue(this.value), class: "container" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
   }
   static get is() { return "med-font-zoom"; }
   static get encapsulation() { return "scoped"; }
@@ -119,6 +119,24 @@ export class MedFontZoom {
         "attribute": "value",
         "reflect": false,
         "defaultValue": "MedFontSize.XS"
+      },
+      "step": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "step",
+        "reflect": true,
+        "defaultValue": "false"
       }
     };
   }

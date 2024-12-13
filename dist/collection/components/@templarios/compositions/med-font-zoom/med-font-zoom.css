@@ -6,3 +6,6 @@
 :host .med-icon {
   stroke: hsl(var(--med-color-neutral-8));
 }
+:host .container::part(tick-active), :host .container::part(tick) {
+  display: none;
+}

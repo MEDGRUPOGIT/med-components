@@ -6,14 +6,13 @@ import { h as MedFontSize } from './type.enum-ba70b4d0.js';
 import './plusminus.enum-dd6be4e3.js';
 import './rate-like.enum-25c2a0be.js';
 
-const medFontZoomCss = ".sc-med-font-zoom-h{display:block;opacity:0;-webkit-transition:opacity 0.1s;transition:opacity 0.1s}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}";
+const medFontZoomCss = ".sc-med-font-zoom-h{display:block;opacity:0;-webkit-transition:opacity 0.1s;transition:opacity 0.1s}.sc-med-font-zoom-h .med-icon.sc-med-font-zoom{stroke:hsl(var(--med-color-neutral-8))}.sc-med-font-zoom-h .container.sc-med-font-zoom::part(tick-active),.sc-med-font-zoom-h .container.sc-med-font-zoom::part(tick){display:none}";
 
 const MedFontZoom = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
     this.min = 1;
     this.max = 5;
-    this.step = 1;
     this.fontSizeToValue = (fontSize) => {
       switch (fontSize) {
         case MedFontSize.XXXS:
@@ -54,6 +53,7 @@ const MedFontZoom = class {
     };
     this.emitter = undefined;
     this.value = MedFontSize.XS;
+    this.step = false;
   }
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7
@@ -67,7 +67,7 @@ const MedFontZoom = class {
     popover.style.opacity = '1';
   }
   render() {
-    return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step, value: this.fontSizeToValue(this.value) }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
+    return (h(Host, { "from-stencil": true }, h("ion-range", { onIonChange: (ev) => this.onRangeChange(ev.detail.value), min: this.min, max: this.max, step: this.step ? (this.max - this.min) / 4 : 1, snaps: this.step, value: this.fontSizeToValue(this.value), class: "container" }, h("ion-icon", { class: "med-icon", slot: "start", name: "med-fontemenor" }), h("ion-icon", { class: "med-icon", slot: "end", name: "med-fontemaior" }))));
   }
 };
 MedFontZoom.style = medFontZoomCss;

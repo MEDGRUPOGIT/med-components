@@ -12,13 +12,15 @@ export default {
 let call = false;
 let currentPopover = null;
 
-const createPopover = async (ev, value) => {
+const createPopover = async (ev, value, step) => {
+  console.log(ev)
   popoverController
     .create({
       component: "med-font-zoom",
       cssClass: "med-popover med-popover--font-zoom",
       componentProps: {
         value,
+        step: step,
         emitter: {
           emit: (values) => {
             action("emitter")(values);
@@ -36,14 +38,14 @@ const createPopover = async (ev, value) => {
     });
 };
 
-const Template = ({ value }) => {
+const Template = ({ value, step }) => {
   return html`
     <ion-app>
       <ion-content>
         <div class="full-height-flex">
 
           <!-- component markdown -->
-          <ion-button mode="ios" icon-only fill="clear" ds-size="xs" @click="${(e) => createPopover(e, value)}">
+          <ion-button mode="ios" icon-only fill="clear" ds-size="xs" @click="${(e) => createPopover(e, value, step)}">
             <ion-icon class="med-icon" slot="icon-only" name="med-fontemaior"></ion-icon>
           </ion-button>
           <!-- component markdown -->
@@ -75,5 +77,10 @@ MedFontZoom.argTypes = {
       type: { summary: Object.values(MedFontSize).join(' |') },
       defaultValue: { summary: "MedFontSize.XS" },
     },
+  },
+  step: {
+    control: { type: "boolean" },
+    description: "Define o tamanho da fonte.",
+    defaultValue: false
   },
 };
