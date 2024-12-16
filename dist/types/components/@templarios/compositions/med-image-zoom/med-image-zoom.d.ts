@@ -29,6 +29,14 @@ export declare class MedImageZoom {
    */
   maxRatioMobile: number;
   /**
+   * Define o ajuste no bug da sobreposição do botão de zoom sobre a imagem (somente ios)
+   */
+  fixButtonOverlap: boolean;
+  /**
+   * Referência ao componente no DOM
+   */
+  host: HTMLElement;
+  /**
    * todo
    */
   slider: any;
@@ -38,6 +46,8 @@ export declare class MedImageZoom {
    */
   sliderOpts: any;
   componentWillLoad(): void;
+  componentDidLoad(): void;
+  updateZoomButton(): void;
   getSliderOpts(maxRatio: number): {
     zoom: {
       maxRatio: number;

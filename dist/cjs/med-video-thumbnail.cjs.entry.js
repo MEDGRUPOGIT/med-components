@@ -6,7 +6,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const color = require('./color-7939264c.js');
+const color = require('./color-c29da9e4.js');
 
 const medVideoThumbnailCss = ".sc-med-video-thumbnail-h{--width:112px;--height:64px}.sc-med-video-thumbnail-h{display:block;width:var(--width);height:var(--height);position:relative;overflow:hidden;border-radius:4px}.med-video-thumbnail__img.sc-med-video-thumbnail{width:100%;height:auto;display:block}.med-video-thumbnail__icon.sc-med-video-thumbnail{stroke:#fff;font-size:20px;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}.med-video-thumbnail__progress.sc-med-video-thumbnail{position:absolute;bottom:0;left:0}";
 

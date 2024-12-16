@@ -42,7 +42,7 @@ export class Buttons {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "If true, buttons will disappear when its\r\nparent toolbar has fully collapsed if the toolbar\r\nis not the first toolbar. If the toolbar is the\r\nfirst toolbar, the buttons will be hidden and will\r\nonly be shown once all toolbars have fully collapsed.\r\n\r\nOnly applies in `ios` mode with `collapse` set to\r\n`true` on `ion-header`.\r\n\r\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)"
+          "text": "If true, buttons will disappear when its\nparent toolbar has fully collapsed if the toolbar\nis not the first toolbar. If the toolbar is the\nfirst toolbar, the buttons will be hidden and will\nonly be shown once all toolbars have fully collapsed.\n\nOnly applies in `ios` mode with `collapse` set to\n`true` on `ion-header`.\n\nTypically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles)"
         },
         "attribute": "collapse",
         "reflect": false,
