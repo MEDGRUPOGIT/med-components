@@ -29,10 +29,6 @@ export declare class MedImageZoom {
    */
   maxRatioMobile: number;
   /**
-   * Define o ajuste no bug da sobreposição do botão de zoom sobre a imagem (somente ios)
-   */
-  fixButtonOverlap: boolean;
-  /**
    * Referência ao componente no DOM
    */
   host: HTMLElement;

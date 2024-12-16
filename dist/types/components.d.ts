@@ -3521,10 +3521,6 @@ export namespace Components {
     }
     interface MedImageZoom {
         /**
-          * Define o ajuste no bug da sobreposição do botão de zoom sobre a imagem (somente ios)
-         */
-        "fixButtonOverlap": boolean;
-        /**
           * todo
          */
         "imagens": | MedImageZoomItemInterface[]
@@ -9346,10 +9342,6 @@ declare namespace LocalJSX {
         "onMedResize"?: (event: MedHeaderCustomEvent<headerResizeEventDetail>) => void;
     }
     interface MedImageZoom {
-        /**
-          * Define o ajuste no bug da sobreposição do botão de zoom sobre a imagem (somente ios)
-         */
-        "fixButtonOverlap"?: boolean;
         /**
           * todo
          */

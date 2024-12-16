@@ -16480,7 +16480,6 @@ class MedImageZoom {
     this.initialSlide = 0;
     this.maxRatioDesktop = 2;
     this.maxRatioMobile = 4;
-    this.fixButtonOverlap = false;
     this.slider = undefined;
     this.sliderOpts = undefined;
   }
@@ -16493,7 +16492,7 @@ class MedImageZoom {
   }
   updateZoomButton() {
     const zoomButtonContainer = this.host.querySelector('.zoom-button-container');
-    if (zoomButtonContainer && this.fixButtonOverlap) {
+    if (zoomButtonContainer) {
       zoomButtonContainer.style.marginRight = '1px';
     }
   }
@@ -16535,13 +16534,12 @@ class MedImageZoom {
       "initialSlide": [1538, "initial-slide"],
       "maxRatioDesktop": [514, "max-ratio-desktop"],
       "maxRatioMobile": [514, "max-ratio-mobile"],
-      "fixButtonOverlap": [516, "fix-button-overlap"],
       "slider": [32],
       "sliderOpts": [32]
     },
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
-    "$attrsToReflect$": [["imagens", "imagens"], ["marcaAguaSuperior", "marca-agua-superior"], ["marcaAguaInferior", "marca-agua-inferior"], ["titulo", "titulo"], ["initialSlide", "initial-slide"], ["maxRatioDesktop", "max-ratio-desktop"], ["maxRatioMobile", "max-ratio-mobile"], ["fixButtonOverlap", "fix-button-overlap"]]
+    "$attrsToReflect$": [["imagens", "imagens"], ["marcaAguaSuperior", "marca-agua-superior"], ["marcaAguaInferior", "marca-agua-inferior"], ["titulo", "titulo"], ["initialSlide", "initial-slide"], ["maxRatioDesktop", "max-ratio-desktop"], ["maxRatioMobile", "max-ratio-mobile"]]
   }; }
 }
 

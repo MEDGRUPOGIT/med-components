@@ -6004,10 +6004,6 @@
       },
       "attributes": [
         {
-          "name": "fix-button-overlap",
-          "description": "Define o ajuste no bug da sobreposição do botão de zoom sobre a imagem (somente ios)"
-        },
-        {
           "name": "imagens",
           "description": "todo"
         },

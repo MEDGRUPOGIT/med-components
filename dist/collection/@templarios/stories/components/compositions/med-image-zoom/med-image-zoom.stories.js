@@ -22,8 +22,7 @@ const createModal = async (args) => {
       marcaAguaInferior: '1234567890',
       titulo:'Alternativa A',
       maxRatioDesktop: args.maxRatioDesktop,
-      maxRatioMobile: args.maxRatioMobile,
-      fixButtonOverlap: args.fixButtonOverlap
+      maxRatioMobile: args.maxRatioMobile
     }
   }).then((modal)=>{
     modal.present()
@@ -60,10 +59,5 @@ ImageZoom.argTypes = {
     control: { type: 'number' },
     description: "Zoom maximo na imagem em mobile",
     defaultValue: 4,
-  },
-  fixButtonOverlap: {
-    control: { type: 'boolean' },
-    description: "Define o ajuste no bug da sobreposição do botão de zoom sobre a imagem (somente ios)",
-    defaultValue: false,
   },
 };

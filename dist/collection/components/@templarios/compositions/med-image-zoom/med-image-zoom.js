@@ -14,7 +14,6 @@ export class MedImageZoom {
     this.initialSlide = 0;
     this.maxRatioDesktop = 2;
     this.maxRatioMobile = 4;
-    this.fixButtonOverlap = false;
     this.slider = undefined;
     this.sliderOpts = undefined;
   }
@@ -27,7 +26,7 @@ export class MedImageZoom {
   }
   updateZoomButton() {
     const zoomButtonContainer = this.host.querySelector('.zoom-button-container');
-    if (zoomButtonContainer && this.fixButtonOverlap) {
+    if (zoomButtonContainer) {
       zoomButtonContainer.style.marginRight = '1px';
     }
   }
@@ -197,24 +196,6 @@ export class MedImageZoom {
         "attribute": "max-ratio-mobile",
         "reflect": true,
         "defaultValue": "4"
-      },
-      "fixButtonOverlap": {
-        "type": "boolean",
-        "mutable": false,
-        "complexType": {
-          "original": "boolean",
-          "resolved": "boolean",
-          "references": {}
-        },
-        "required": false,
-        "optional": false,
-        "docs": {
-          "tags": [],
-          "text": "Define o ajuste no bug da sobreposi\u00E7\u00E3o do bot\u00E3o de zoom sobre a imagem (somente ios)"
-        },
-        "attribute": "fix-button-overlap",
-        "reflect": true,
-        "defaultValue": "false"
       }
     };
   }

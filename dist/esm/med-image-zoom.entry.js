@@ -20,7 +20,6 @@ const MedImageZoom = class {
     this.initialSlide = 0;
     this.maxRatioDesktop = 2;
     this.maxRatioMobile = 4;
-    this.fixButtonOverlap = false;
     this.slider = undefined;
     this.sliderOpts = undefined;
   }
@@ -33,7 +32,7 @@ const MedImageZoom = class {
   }
   updateZoomButton() {
     const zoomButtonContainer = this.host.querySelector('.zoom-button-container');
-    if (zoomButtonContainer && this.fixButtonOverlap) {
+    if (zoomButtonContainer) {
       zoomButtonContainer.style.marginRight = '1px';
     }
   }
