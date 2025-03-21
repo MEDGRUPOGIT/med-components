@@ -99,6 +99,10 @@
   height: 175px;
   width: 48px;
 }
+:host .zoom-button-container--will-change {
+  transform: translateZ(0);
+  will-change: transform;
+}
 :host .zoom-button {
   width: 48px;
   height: 48px;

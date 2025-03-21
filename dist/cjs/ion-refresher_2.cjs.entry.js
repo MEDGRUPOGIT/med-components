@@ -6,11 +6,12 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-31ae4345.js');
+const ionicGlobal = require('./ionic-global-b146ab44.js');
 const cubicBezier = require('./cubic-bezier-b395a59d.js');
 const helpers = require('./helpers-a2cc981d.js');
 const haptic = require('./haptic-bcc3abdf.js');
 const animation = require('./animation-a79926bc.js');
+const platform = require('./platform-df0a78a3.js');
 const index$1 = require('./index-bdb474dc.js');
 const spinnerConfigs = require('./spinner-configs-22eaa684.js');
 
@@ -151,7 +152,7 @@ const shouldUseNativeRefresher = async (referenceEl, mode) => {
   const refreshingSpinner = referenceEl.querySelector('ion-refresher-content .refresher-refreshing ion-spinner');
   return (pullingSpinner !== null &&
     refreshingSpinner !== null &&
-    ((mode === 'ios' && ionicGlobal.isPlatform('mobile') && referenceEl.style.webkitOverflowScrolling !== undefined) ||
+    ((mode === 'ios' && platform.isPlatform('mobile') && referenceEl.style.webkitOverflowScrolling !== undefined) ||
       mode === 'md'));
 };
 const transitionEndAsync = (el, expectedDuration = 0) => {
@@ -747,7 +748,7 @@ const RefresherContent = class {
     if (this.pullingIcon === undefined) {
       const mode = ionicGlobal.getIonMode(this);
       const overflowRefresher = this.el.style.webkitOverflowScrolling !== undefined ? 'lines' : 'arrow-down';
-      this.pullingIcon = ionicGlobal.config.get('refreshingIcon', mode === 'ios' && ionicGlobal.isPlatform('mobile') ? ionicGlobal.config.get('spinner', overflowRefresher) : 'circular');
+      this.pullingIcon = ionicGlobal.config.get('refreshingIcon', mode === 'ios' && platform.isPlatform('mobile') ? ionicGlobal.config.get('spinner', overflowRefresher) : 'circular');
     }
     if (this.refreshingSpinner === undefined) {
       const mode = ionicGlobal.getIonMode(this);

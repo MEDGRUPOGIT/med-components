@@ -82,6 +82,7 @@ export const MedIcons = [
   "med-baixo",
   "med-boleto",
   "med-bom",
+  "med-book-ia",
 
   "med-bonus",
   "med-busca-erro",
@@ -118,6 +119,7 @@ export const MedIcons = [
   "med-direita",
 
   "med-discursiva",
+  "med-discursiva2",
   "med-dislike",
   "med-download-mobile",
   "med-download",
@@ -147,6 +149,7 @@ export const MedIcons = [
   "med-fechar",
 
   "med-fecharcirculo",
+  "med-file-ia",
   "med-file-time",
   "med-file-sheet",
   "med-filtro",
@@ -281,6 +284,7 @@ export const MedIcons = [
   "med-texto",
   "med-textoselecionar",
   "med-textosublinhar",
+  "med-type-strike",
 
   "med-top-temas",
   "med-trabalho",

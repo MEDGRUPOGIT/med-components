@@ -2,12 +2,13 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { c as config, b as getIonMode } from './ionic-global-790ea271.js';
+import { c as config, g as getIonMode } from './ionic-global-908d8380.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-89e16b6a.js';
 import { G as GESTURE_CONTROLLER } from './gesture-controller-635d3a2b.js';
 import { m as isEndSide, l as assert, j as clamp } from './helpers-7c8ceac4.js';
-import { m as menuController } from './index-bb4b35b1.js';
+import { m as menuController } from './index-a67bd5a6.js';
 import { c as createColorClasses, h as hostContext } from './theme-d8e919ca.js';
+import './platform-a3776365.js';
 import './hardware-back-button-e98bcc7d.js';
 import './animation-f11d6630.js';
 

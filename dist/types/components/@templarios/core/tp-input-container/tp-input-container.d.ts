@@ -62,6 +62,7 @@ export declare class TpInputContainer {
   fixPopover(): void;
   unsetClikedState(): void;
   componentDidLoad(): void;
+  isLandscape(): boolean;
   setPopoverPosition(): void;
   render(): any;
 }

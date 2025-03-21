@@ -6,12 +6,13 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-31ae4345.js');
+const ionicGlobal = require('./ionic-global-b146ab44.js');
 const helpers = require('./helpers-a2cc981d.js');
-const overlays = require('./overlays-51bc752f.js');
+const overlays = require('./overlays-20fa7e5b.js');
 const theme = require('./theme-cef66eda.js');
 const animation = require('./animation-a79926bc.js');
 const haptic = require('./haptic-bcc3abdf.js');
+require('./platform-df0a78a3.js');
 require('./hardware-back-button-bef7bb33.js');
 
 /**

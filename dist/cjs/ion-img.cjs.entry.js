@@ -6,7 +6,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-31ae4345.js');
+const ionicGlobal = require('./ionic-global-b146ab44.js');
+require('./platform-df0a78a3.js');
 
 const imgCss = ":host{display:block;-o-object-fit:contain;object-fit:contain}img{display:block;width:100%;height:100%;-o-object-fit:inherit;object-fit:inherit;-o-object-position:inherit;object-position:inherit}";
 

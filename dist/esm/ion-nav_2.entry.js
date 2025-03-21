@@ -2,11 +2,12 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, i as h, j as getElement, H as Host } from './index-336c66d9.js';
-import { b as getIonMode, c as config } from './ionic-global-790ea271.js';
+import { g as getIonMode, c as config } from './ionic-global-908d8380.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-89e16b6a.js';
 import { l as assert } from './helpers-7c8ceac4.js';
 import { l as lifecycle, t as transition, s as setPageHidden, d as LIFECYCLE_WILL_UNLOAD, b as LIFECYCLE_WILL_LEAVE, c as LIFECYCLE_DID_LEAVE } from './index-a9257133.js';
 import { a as attachComponent } from './framework-delegate-362ab783.js';
+import './platform-a3776365.js';
 
 const VIEW_STATE_NEW = 1;
 const VIEW_STATE_ATTACHED = 2;

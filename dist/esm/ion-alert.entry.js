@@ -2,12 +2,13 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, k as forceUpdate, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { b as getIonMode } from './ionic-global-790ea271.js';
+import { g as getIonMode } from './ionic-global-908d8380.js';
 import { c as createButtonActiveGesture } from './button-active-268d6271.js';
-import { B as BACKDROP, i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-6a50a571.js';
+import { B as BACKDROP, i as isCancel, e as prepareOverlay, d as present, f as dismiss, g as eventMethod, s as safeCall } from './overlays-8f8e7296.js';
 import { s as sanitizeDOMString } from './index-45fd73fa.js';
 import { g as getClassMap } from './theme-d8e919ca.js';
 import { c as createAnimation } from './animation-f11d6630.js';
+import './platform-a3776365.js';
 import './haptic-b2698498.js';
 import './index-50c5db1b.js';
 import './gesture-controller-635d3a2b.js';

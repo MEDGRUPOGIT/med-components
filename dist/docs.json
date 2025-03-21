@@ -1,5 +1,5 @@
 {
-  "timestamp": "2024-12-13T17:46:38",
+  "timestamp": "2025-03-21T19:11:35",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -22383,7 +22383,7 @@
     },
     {
       "filePath": "./src/components/@templarios/core/med-chart-bar-horizontal/med-chart-bar-horizontal.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "med-chart-bar-horizontal",
       "readme": "# chart-bar-horizontal\r\n\r",
       "docs": "",

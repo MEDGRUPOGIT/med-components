@@ -21,6 +21,15 @@ export class MedImageZoom {
     const isDesktop = isPlatform('desktop');
     this.sliderOpts = this.getSliderOpts(isDesktop ? +this.maxRatioDesktop : +this.maxRatioMobile);
   }
+  componentDidLoad() {
+    this.updateZoomButton();
+  }
+  updateZoomButton() {
+    const zoomButtonContainer = this.host.querySelector('.zoom-button-container');
+    if (zoomButtonContainer) {
+      zoomButtonContainer.classList.add('zoom-button-container--will-change');
+    }
+  }
   getSliderOpts(maxRatio) {
     const sliderOpts = {
       zoom: {
@@ -196,4 +205,5 @@ export class MedImageZoom {
       "sliderOpts": {}
     };
   }
+  static get elementRef() { return "host"; }
 }

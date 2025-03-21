@@ -2,11 +2,12 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { e as writeTask, r as registerInstance, f as createEvent, h as readTask, i as h, j as getElement, H as Host } from './index-336c66d9.js';
-import { a as isPlatform, b as getIonMode, c as config } from './ionic-global-790ea271.js';
+import { g as getIonMode, c as config } from './ionic-global-908d8380.js';
 import { g as getTimeGivenProgression } from './cubic-bezier-89e16b6a.js';
 import { c as componentOnReady, j as clamp, g as getElementRoot, r as raf } from './helpers-7c8ceac4.js';
 import { d as hapticImpact } from './haptic-b2698498.js';
 import { c as createAnimation } from './animation-f11d6630.js';
+import { i as isPlatform } from './platform-a3776365.js';
 import { s as sanitizeDOMString } from './index-45fd73fa.js';
 import { S as SPINNERS } from './spinner-configs-807df2e2.js';
 

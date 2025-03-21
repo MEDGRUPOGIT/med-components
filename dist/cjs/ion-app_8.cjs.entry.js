@@ -6,7 +6,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-31ae4345.js');
+const ionicGlobal = require('./ionic-global-b146ab44.js');
+const platform = require('./platform-df0a78a3.js');
 const theme = require('./theme-cef66eda.js');
 const helpers = require('./helpers-a2cc981d.js');
 const cubicBezier = require('./cubic-bezier-b395a59d.js');
@@ -22,7 +23,7 @@ const App = class {
   componentDidLoad() {
     {
       rIC(async () => {
-        const isHybrid = ionicGlobal.isPlatform(window, 'hybrid');
+        const isHybrid = platform.isPlatform(window, 'hybrid');
         if (!ionicGlobal.config.getBoolean('_testing')) {
           Promise.resolve().then(function () { return require('./tap-click-0f28ee0c.js'); }).then(module => module.startTapClick(ionicGlobal.config));
         }
@@ -57,7 +58,7 @@ const App = class {
   get el() { return index.getElement(this); }
 };
 const needInputShims = () => {
-  return ionicGlobal.isPlatform(window, 'ios') && ionicGlobal.isPlatform(window, 'mobile');
+  return platform.isPlatform(window, 'ios') && platform.isPlatform(window, 'mobile');
 };
 const rIC = (callback) => {
   if ('requestIdleCallback' in window) {
@@ -149,7 +150,7 @@ const Content = class {
     const { forceOverscroll } = this;
     const mode = ionicGlobal.getIonMode(this);
     return forceOverscroll === undefined
-      ? mode === "ios" && ionicGlobal.isPlatform("ios")
+      ? mode === "ios" && platform.isPlatform("ios")
       : forceOverscroll;
   }
   resize() {

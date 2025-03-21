@@ -6,12 +6,13 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-31ae4345.js');
+const ionicGlobal = require('./ionic-global-b146ab44.js');
 const cubicBezier = require('./cubic-bezier-b395a59d.js');
 const gestureController = require('./gesture-controller-935821e0.js');
 const helpers = require('./helpers-a2cc981d.js');
-const index$1 = require('./index-e1c6c339.js');
+const index$1 = require('./index-6c13720c.js');
 const theme = require('./theme-cef66eda.js');
+require('./platform-df0a78a3.js');
 require('./hardware-back-button-bef7bb33.js');
 require('./animation-a79926bc.js');
 

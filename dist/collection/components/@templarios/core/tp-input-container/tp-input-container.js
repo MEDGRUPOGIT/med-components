@@ -3,6 +3,7 @@
  */
 import { h, Host } from '@stencil/core';
 import { generateMedColor } from '../../../../@templarios/utilities/color';
+import { isPlatform } from "../../../../utils/platform";
 export class TpInputContainer {
   constructor() {
     /**
@@ -82,13 +83,27 @@ export class TpInputContainer {
       }
     }
   }
+  isLandscape() {
+    return window.matchMedia("(orientation: landscape)").matches;
+  }
   setPopoverPosition() {
     const popoverElement = document.querySelector('.select-popover');
     const { top, bottom, left } = this.host.getBoundingClientRect();
+    const isIphone = isPlatform('iphone');
+    const isIpad = isPlatform('ipad');
+    const isLandscape = this.isLandscape();
     if (this.inverted) {
       popoverElement.classList.add('tp-popover--inverted');
       popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left}px`);
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top}px`);
+      if (isIphone) {
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', isLandscape ? `${window.innerHeight - top - 20}px` : `${window.innerHeight - top - 33}px`);
+      }
+      else if (isIpad) {
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top - 23}px`);
+      }
+      else {
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top}px`);
+      }
     }
     else {
       popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left + 1}px`);

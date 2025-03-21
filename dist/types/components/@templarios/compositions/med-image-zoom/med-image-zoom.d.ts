@@ -29,6 +29,10 @@ export declare class MedImageZoom {
    */
   maxRatioMobile: number;
   /**
+   * Referência ao componente no DOM
+   */
+  host: HTMLElement;
+  /**
    * todo
    */
   slider: any;
@@ -38,6 +42,8 @@ export declare class MedImageZoom {
    */
   sliderOpts: any;
   componentWillLoad(): void;
+  componentDidLoad(): void;
+  updateZoomButton(): void;
   getSliderOpts(maxRatio: number): {
     zoom: {
       maxRatio: number;

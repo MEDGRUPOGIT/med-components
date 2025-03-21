@@ -2,10 +2,11 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { c as config, b as getIonMode } from './ionic-global-790ea271.js';
+import { c as config, g as getIonMode } from './ionic-global-908d8380.js';
 import { j as clamp } from './helpers-7c8ceac4.js';
 import { g as generateMedColor } from './color-1d14c71a.js';
 import { h as hostContext } from './theme-d8e919ca.js';
+import './platform-a3776365.js';
 
 const iosProgressBarMedCss = ":host{--background:hsl(var(--med-color-brand-1));--progress-background:hsl(var(--med-color-brand-4));--buffer-background:transparent;--progress-correct-background:hsl(var(--med-color-fb-success));--height:4px;display:block;position:relative;contain:strict;overflow:hidden;width:100%;height:var(--height)}.progress-container{display:-ms-flexbox;display:flex;background-color:var(--background)}:host(.in-med-header) .progress-container{background:hsl(var(--med-color-neutral-8));border-radius:0}:host(.in-med-header) .progress--correct{background:hsl(var(--med-color-brand-4))}.progress{width:100%;height:100%;height:var(--height);background:var(--progress-background)}.progress--correct{background:var(--progress-correct-background)}:host(.med-color){--progress-background:hsl(var(--med-color-4));--background:hsl(var(--med-color-1))}:host(.med-color-neutral){--progress-background:hsl(var(--med-color-neutral));--background:hsl(var(--med-color-neutral-contrast))}:host(.med-color-feedback){--progress-background:hsl(var(--med-color-feedback));--background:hsl(var(--med-color-feedback-contrast))}";
 
