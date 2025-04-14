@@ -16,6 +16,7 @@
   top: var(--top);
   border-radius: var(--border-radius);
   width: 100%;
+  overflow-x: hidden !important;
 }
 
 ::slotted(med-item:not(:last-child)) {

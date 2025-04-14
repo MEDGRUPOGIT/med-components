@@ -16228,7 +16228,7 @@ class MedDownloadButton {
   }; }
 }
 
-const medDropdownCss = "/*!@:host*/.sc-med-dropdown-h{--background:hsl(var(--med-color-neutral-3));--z-index:1;--border-radius:0 0 8px 8px;--border-color:hsl(var(--med-color-neutral-4));--left:0;--top:0}/*!@:host*/.sc-med-dropdown-h{display:block;background-color:var(--background);position:absolute;z-index:1;left:var(--left);top:var(--top);border-radius:var(--border-radius);width:100%}/*!@::slotted(med-item:not(:last-child))*/.sc-med-dropdown-s>med-item:not(:last-child){border-bottom:1px solid var(--border-color)}/*!@:host(.med-dropdown--secondary)*/.med-dropdown--secondary.sc-med-dropdown-h{--background:hsl(var(--med-color-neutral-4));--border-color:hsl(var(--med-color-neutral-5))}";
+const medDropdownCss = "/*!@:host*/.sc-med-dropdown-h{--background:hsl(var(--med-color-neutral-3));--z-index:1;--border-radius:0 0 8px 8px;--border-color:hsl(var(--med-color-neutral-4));--left:0;--top:0}/*!@:host*/.sc-med-dropdown-h{display:block;background-color:var(--background);position:absolute;z-index:1;left:var(--left);top:var(--top);border-radius:var(--border-radius);width:100%;overflow-x:hidden !important}/*!@::slotted(med-item:not(:last-child))*/.sc-med-dropdown-s>med-item:not(:last-child){border-bottom:1px solid var(--border-color)}/*!@:host(.med-dropdown--secondary)*/.med-dropdown--secondary.sc-med-dropdown-h{--background:hsl(var(--med-color-neutral-4));--border-color:hsl(var(--med-color-neutral-5))}";
 
 class MedDropdown {
   constructor(hostRef) {
