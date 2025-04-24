@@ -232,6 +232,10 @@ export const MedIcons = [
 
   'med-passaporte',
   'med-pause-circle',
+  'med-picture-in-picture-activate',
+  'med-picture-in-picture-deactivate',
+  'med-pino',
+  'med-pino-x',
   'med-pix',
   'med-play',
   'med-plus',
