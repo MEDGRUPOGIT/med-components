@@ -10,6 +10,10 @@ export declare class TpInputContainer {
    */
   readonly selectAndPopoverDiffWidth: number;
   /**
+  * Tempo de renderização do popover
+  */
+  timePopover: any;
+  /**
    * Referência ao componente no DOM
    */
   host: HTMLElement;
@@ -54,6 +58,10 @@ export declare class TpInputContainer {
   /**
    * todo
    */
+  showPopoverWithDelay?: boolean | undefined;
+  /**
+   * todo
+   */
   hasIcon?: 'start' | 'end' | 'both';
   setClickTarget(e: MouseEvent): void;
   catchSelectIconClick(e: MouseEvent): void;
@@ -62,6 +70,8 @@ export declare class TpInputContainer {
   fixPopover(): void;
   unsetClikedState(): void;
   componentDidLoad(): void;
+  disconnectedCallback(): void;
+  timeDisabledInputContainer(): void;
   isLandscape(): boolean;
   setPopoverPosition(): void;
   render(): any;

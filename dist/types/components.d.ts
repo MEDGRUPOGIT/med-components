@@ -4293,6 +4293,10 @@ export namespace Components {
           * todo
          */
         "inverted": boolean;
+        /**
+          * todo
+         */
+        "showPopoverWithDelay"?: boolean | undefined;
     }
     interface TpLoader {
         "dsColor"?: MedColor;
@@ -10141,6 +10145,10 @@ declare namespace LocalJSX {
           * todo
          */
         "inverted"?: boolean;
+        /**
+          * todo
+         */
+        "showPopoverWithDelay"?: boolean | undefined;
     }
     interface TpLoader {
         "dsColor"?: MedColor;

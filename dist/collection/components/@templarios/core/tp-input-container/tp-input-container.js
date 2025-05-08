@@ -19,6 +19,7 @@ export class TpInputContainer {
     this.feedback = false;
     this.inverted = false;
     this.hasButton = undefined;
+    this.showPopoverWithDelay = false;
     this.hasIcon = undefined;
   }
   setClickTarget(e) {
@@ -35,6 +36,9 @@ export class TpInputContainer {
         target.nodeName === 'TP-INPUT-CONTAINER');
     if (shouldOpenOverlay) {
       ionSelect.open(e);
+    }
+    if (this.showPopoverWithDelay) {
+      this.timeDisabledInputContainer();
     }
   }
   setPopoverWidthOnResize() {
@@ -73,6 +77,9 @@ export class TpInputContainer {
   }
   unsetClikedState() {
     this.selectWithPopoverClicked = false;
+    if (this.showPopoverWithDelay) {
+      this.timeDisabledInputContainer();
+    }
   }
   componentDidLoad() {
     const ionSelect = this.host.querySelector('ION-SELECT');
@@ -82,6 +89,25 @@ export class TpInputContainer {
         ionSelect.interfaceOptions = { cssClass: 'tp-hide' };
       }
     }
+  }
+  disconnectedCallback() {
+    if (this.timePopover) {
+      clearTimeout(this.timePopover);
+    }
+  }
+  timeDisabledInputContainer() {
+    const tpInputContainer = this.host;
+    const ionPopover = document.querySelector('ion-popover');
+    tpInputContainer.style.pointerEvents = 'none';
+    if (ionPopover) {
+      ionPopover.style.pointerEvents = 'none';
+    }
+    this.timePopover = setTimeout(() => {
+      if (ionPopover) {
+        ionPopover.style.pointerEvents = 'auto';
+      }
+      tpInputContainer.style.pointerEvents = 'auto';
+    }, 450);
   }
   isLandscape() {
     return window.matchMedia("(orientation: landscape)").matches;
@@ -247,6 +273,24 @@ export class TpInputContainer {
         },
         "attribute": "has-button",
         "reflect": true
+      },
+      "showPopoverWithDelay": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean | undefined",
+          "resolved": "boolean | undefined",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": "todo"
+        },
+        "attribute": "show-popover-with-delay",
+        "reflect": true,
+        "defaultValue": "false"
       },
       "hasIcon": {
         "type": "string",

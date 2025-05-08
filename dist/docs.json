@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-04-24T13:54:57",
+  "timestamp": "2025-05-08T15:07:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -29010,6 +29010,26 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "showPopoverWithDelay",
+          "type": "boolean | undefined",
+          "mutable": false,
+          "attr": "show-popover-with-delay",
+          "reflectToAttr": true,
+          "docs": "todo",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
           "required": false
         }
       ],

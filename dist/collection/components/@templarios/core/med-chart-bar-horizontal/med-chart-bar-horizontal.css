@@ -33,6 +33,9 @@
   animation: start 300ms linear forwards;
   top: 0;
 }
+.med-chart-bar-horizontal__progress--hidden {
+  display: none;
+}
 .med-chart-bar-horizontal__track {
   background: var(--track-background);
 }

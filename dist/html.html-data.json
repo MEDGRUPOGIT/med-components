@@ -7568,6 +7568,10 @@
         {
           "name": "inverted",
           "description": "todo"
+        },
+        {
+          "name": "show-popover-with-delay",
+          "description": "todo"
         }
       ],
       "references": [

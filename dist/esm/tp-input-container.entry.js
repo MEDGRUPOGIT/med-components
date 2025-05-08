@@ -23,6 +23,7 @@ const TpInputContainer = class {
     this.feedback = false;
     this.inverted = false;
     this.hasButton = undefined;
+    this.showPopoverWithDelay = false;
     this.hasIcon = undefined;
   }
   setClickTarget(e) {
@@ -39,6 +40,9 @@ const TpInputContainer = class {
         target.nodeName === 'TP-INPUT-CONTAINER');
     if (shouldOpenOverlay) {
       ionSelect.open(e);
+    }
+    if (this.showPopoverWithDelay) {
+      this.timeDisabledInputContainer();
     }
   }
   setPopoverWidthOnResize() {
@@ -77,6 +81,9 @@ const TpInputContainer = class {
   }
   unsetClikedState() {
     this.selectWithPopoverClicked = false;
+    if (this.showPopoverWithDelay) {
+      this.timeDisabledInputContainer();
+    }
   }
   componentDidLoad() {
     const ionSelect = this.host.querySelector('ION-SELECT');
@@ -86,6 +93,25 @@ const TpInputContainer = class {
         ionSelect.interfaceOptions = { cssClass: 'tp-hide' };
       }
     }
+  }
+  disconnectedCallback() {
+    if (this.timePopover) {
+      clearTimeout(this.timePopover);
+    }
+  }
+  timeDisabledInputContainer() {
+    const tpInputContainer = this.host;
+    const ionPopover = document.querySelector('ion-popover');
+    tpInputContainer.style.pointerEvents = 'none';
+    if (ionPopover) {
+      ionPopover.style.pointerEvents = 'none';
+    }
+    this.timePopover = setTimeout(() => {
+      if (ionPopover) {
+        ionPopover.style.pointerEvents = 'auto';
+      }
+      tpInputContainer.style.pointerEvents = 'auto';
+    }, 450);
   }
   isLandscape() {
     return window.matchMedia("(orientation: landscape)").matches;

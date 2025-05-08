@@ -96,7 +96,6 @@
   position: fixed;
   bottom: 48px;
   right: 15px;
-  height: 175px;
   width: 48px;
 }
 :host .zoom-button-container--will-change {
