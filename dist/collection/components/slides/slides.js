@@ -386,7 +386,7 @@ export class Slides {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Options to pass to the swiper instance.\nSee http://idangero.us/swiper/api/ for valid options"
+          "text": "Options to pass to the swiper instance.\r\nSee http://idangero.us/swiper/api/ for valid options"
         },
         "attribute": "options",
         "reflect": false,
@@ -687,7 +687,7 @@ export class Slides {
           "return": "Promise<void>"
         },
         "docs": {
-          "text": "Update the underlying slider implementation. Call this if you've added or removed\nchild slides.",
+          "text": "Update the underlying slider implementation. Call this if you've added or removed\r\nchild slides.",
           "tags": []
         }
       },
@@ -709,7 +709,7 @@ export class Slides {
           "return": "Promise<void>"
         },
         "docs": {
-          "text": "Force swiper to update its height (when autoHeight is enabled) for the duration\nequal to 'speed' parameter.",
+          "text": "Force swiper to update its height (when autoHeight is enabled) for the duration\r\nequal to 'speed' parameter.",
           "tags": [{
               "name": "param",
               "text": "speed The transition duration (in ms)."
@@ -1026,7 +1026,7 @@ export class Slides {
           "return": "Promise<any>"
         },
         "docs": {
-          "text": "Get the Swiper instance.\nUse this to access the full Swiper API.\nSee https://idangero.us/swiper/api/ for all API options.",
+          "text": "Get the Swiper instance.\r\nUse this to access the full Swiper API.\r\nSee https://idangero.us/swiper/api/ for all API options.",
           "tags": []
         }
       }

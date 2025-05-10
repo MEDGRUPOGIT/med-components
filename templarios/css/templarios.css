@@ -8354,6 +8354,9 @@ ion-popover.tp-popover {
   --bottom: auto;
   --right: auto;
 }
+ion-popover.tp-popover .popover-arrow {
+  display: none !important;
+}
 ion-popover.tp-popover .popover-content {
   --background: hsl(var(--med-color-neutral-3));
   --border-radius: 0 0 8px 8px;

@@ -6,7 +6,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const helpers = require('./helpers-4478bffd.js');
+const helpers = require('./helpers-a2cc981d.js');
 
 const CELL_TYPE_ITEM = 'item';
 const CELL_TYPE_HEADER = 'header';

@@ -2,7 +2,7 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host } from './index-336c66d9.js';
-import { g as generateMedColor } from './color-2567dca3.js';
+import { g as generateMedColor } from './color-1d14c71a.js';
 
 const medVoteCss = ":host{--padding:16px 24px}:host{display:block;padding:var(--padding)}:host .med-vote__row{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;padding-bottom:16px;-ms-flex-align:center;align-items:center}:host .med-vote__icon-container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}:host .med-vote__icon{min-width:24px}:host .med-vote__icon--cabe{stroke:hsl(var(--med-color-fb-success))}:host .med-vote__icon--nao-cabe{stroke:hsl(var(--med-color-fb-warning))}:host .med-vote__heading{font-size:20px;line-height:20px;font-weight:600;color:hsl(var(--med-color-neutral-10));margin:0}:host .med-vote__badge{display:-ms-flexbox;display:flex;height:26px;border-radius:16px;font-size:16px;line-height:16px;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;font-weight:600;width:100%;padding:0 8px}:host .med-vote__badge--cabe{background-color:hsl(var(--med-color-fb-success));color:hsl(var(--med-color-neutral-1));margin-left:8px}:host .med-vote__badge--nao-cabe{background-color:hsl(var(--med-color-fb-warning));color:hsl(var(--med-color-neutral-1));margin-right:8px}:host .med-vote__chart{height:2px}:host .med-vote__chart--cabe{background-color:hsl(var(--med-color-fb-success));margin-right:4px}:host .med-vote__chart--nao-cabe{background-color:hsl(var(--med-color-fb-warning));margin-left:4px}";
 

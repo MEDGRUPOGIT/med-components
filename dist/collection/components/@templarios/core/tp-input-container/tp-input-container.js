@@ -1,8 +1,8 @@
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  */
-import { h, Host } from '@stencil/core';
-import { generateMedColor } from '../../../../@templarios/utilities/color';
+import { h, Host, } from "@stencil/core";
+import { generateMedColor } from "../../../../@templarios/utilities/color";
 import { isPlatform } from "../../../../utils/platform";
 export class TpInputContainer {
   constructor() {
@@ -29,11 +29,11 @@ export class TpInputContainer {
   }
   catchSelectIconClick(e) {
     const target = e.target;
-    const ionSelect = this.host.querySelector('ion-select');
+    const ionSelect = this.host.querySelector("ion-select");
     const shouldOpenOverlay = this.host.contains(target) &&
-      ionSelect.hasAttribute('interface') &&
-      (target.nodeName === 'ION-ICON' ||
-        target.nodeName === 'TP-INPUT-CONTAINER');
+      ionSelect.hasAttribute("interface") &&
+      (target.nodeName === "ION-ICON" ||
+        target.nodeName === "TP-INPUT-CONTAINER");
     if (shouldOpenOverlay) {
       ionSelect.open(e);
     }
@@ -44,8 +44,8 @@ export class TpInputContainer {
   setPopoverWidthOnResize() {
     if (!this.selectWithPopoverClicked)
       return;
-    const popoverElement = document.querySelector('.select-popover');
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--width', `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
+    const popoverElement = document.querySelector(".select-popover");
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
     this.setPopoverPosition();
   }
   setPopoverCharacteristics() {
@@ -53,16 +53,18 @@ export class TpInputContainer {
       return;
     this.selectWithPopoverClicked = true;
     this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
-    const popoverElement = document.querySelector('.select-popover');
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--width', `${this.hostWidth}px`);
-    if (this.dsName === 'secondary') {
-      popoverElement.classList.add('tp-popover--secondary');
+    console.log("width:", this.hostWidth);
+    const popoverElement = document.querySelector(".select-popover");
+    console.log("colocando width....", popoverElement);
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
+    if (this.dsName === "secondary") {
+      popoverElement.classList.add("tp-popover--secondary");
     }
     // colors
     if (this.dsColor) {
-      popoverElement.setAttribute('ds-color', this.dsColor);
+      popoverElement.setAttribute("ds-color", this.dsColor);
     }
-    if (popoverElement.classList.contains('popover-bottom')) {
+    if (popoverElement.classList.contains("popover-bottom")) {
       this.inverted = true;
     }
     this.setPopoverPosition();
@@ -70,23 +72,25 @@ export class TpInputContainer {
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7
   fixPopover() {
-    const popover = document.querySelector('ion-select-popover');
-    if (popover === null || popover === void 0 ? void 0 : popover.hasAttribute('popover')) {
-      popover.removeAttribute('popover');
+    const popover = document.querySelector("ion-select-popover");
+    if (popover === null || popover === void 0 ? void 0 : popover.hasAttribute("popover")) {
+      popover.removeAttribute("popover");
     }
   }
   unsetClikedState() {
+    console.log("ionPopoverWillDismiss");
     this.selectWithPopoverClicked = false;
     if (this.showPopoverWithDelay) {
       this.timeDisabledInputContainer();
     }
   }
   componentDidLoad() {
-    const ionSelect = this.host.querySelector('ION-SELECT');
+    console.log("componentDidLoad..............");
+    const ionSelect = this.host.querySelector("ION-SELECT");
     if (ionSelect) {
       this.pointerOnSelect = true;
-      if (!ionSelect.hasAttribute('interface')) {
-        ionSelect.interfaceOptions = { cssClass: 'tp-hide' };
+      if (!ionSelect.hasAttribute("interface")) {
+        ionSelect.interfaceOptions = { cssClass: "tp-hide" };
       }
     }
   }
@@ -97,58 +101,64 @@ export class TpInputContainer {
   }
   timeDisabledInputContainer() {
     const tpInputContainer = this.host;
-    const ionPopover = document.querySelector('ion-popover');
-    tpInputContainer.style.pointerEvents = 'none';
+    const ionPopover = document.querySelector("ion-popover");
+    tpInputContainer.style.pointerEvents = "none";
     if (ionPopover) {
-      ionPopover.style.pointerEvents = 'none';
+      ionPopover.style.pointerEvents = "none";
     }
     this.timePopover = setTimeout(() => {
       if (ionPopover) {
-        ionPopover.style.pointerEvents = 'auto';
+        ionPopover.style.pointerEvents = "auto";
       }
-      tpInputContainer.style.pointerEvents = 'auto';
-    }, 450);
+      tpInputContainer.style.pointerEvents = "auto";
+    }, 500);
   }
   isLandscape() {
     return window.matchMedia("(orientation: landscape)").matches;
   }
   setPopoverPosition() {
-    const popoverElement = document.querySelector('.select-popover');
+    const popoverElement = document.querySelector(".select-popover");
     const { top, bottom, left } = this.host.getBoundingClientRect();
-    const isIphone = isPlatform('iphone');
-    const isIpad = isPlatform('ipad');
+    const isIphone = isPlatform("iphone");
+    const isIpad = isPlatform("ipad");
     const isLandscape = this.isLandscape();
+    console.log("colocando posição....", popoverElement);
+    console.log("top:", top);
+    console.log("bottom:", bottom);
+    console.log("left:", left);
     if (this.inverted) {
-      popoverElement.classList.add('tp-popover--inverted');
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left}px`);
+      popoverElement.classList.add("tp-popover--inverted");
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
       if (isIphone) {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', isLandscape ? `${window.innerHeight - top - 20}px` : `${window.innerHeight - top - 33}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", isLandscape
+          ? `${window.innerHeight - top - 20}px`
+          : `${window.innerHeight - top - 33}px`);
       }
       else if (isIpad) {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top - 23}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top - 23}px`);
       }
       else {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
       }
     }
     else {
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left + 1}px`);
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--top', `${bottom}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left + 1}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--top", `${bottom}px`);
     }
   }
   render() {
-    const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon } = this;
+    const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon, } = this;
     return (h(Host, { class: generateMedColor(dsColor, {
-        'tp-input-container': true,
-        'tp-input-container--with-select': pointerOnSelect,
+        "tp-input-container": true,
+        "tp-input-container--with-select": pointerOnSelect,
         [`tp-input-container--select-popover-clicked`]: selectWithPopoverClicked,
         [`tp-input-container--inverted`]: inverted,
-        'tp-input-container--disabled': disabled,
-        'tp-input-container--feedback': feedback,
+        "tp-input-container--disabled": disabled,
+        "tp-input-container--feedback": feedback,
         [`tp-input-container--${dsName}`]: dsName !== undefined,
         [`tp-input-container--has-button-${hasButton}`]: hasButton !== undefined,
-        [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined
-      }) }, h("slot", { name: 'start' }), h("slot", null), h("slot", { name: 'end' })));
+        [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined,
+      }) }, h("slot", { name: "start" }), h("slot", null), h("slot", { name: "end" })));
   }
   static get is() { return "tp-input-container"; }
   static get encapsulation() { return "scoped"; }
@@ -190,7 +200,7 @@ export class TpInputContainer {
         "type": "string",
         "mutable": false,
         "complexType": {
-          "original": "'secondary'",
+          "original": "\"secondary\"",
           "resolved": "\"secondary\" | undefined",
           "references": {}
         },
@@ -261,7 +271,7 @@ export class TpInputContainer {
         "type": "string",
         "mutable": false,
         "complexType": {
-          "original": "'start' | 'end' | 'both'",
+          "original": "\"start\" | \"end\" | \"both\"",
           "resolved": "\"both\" | \"end\" | \"start\" | undefined",
           "references": {}
         },
@@ -296,7 +306,7 @@ export class TpInputContainer {
         "type": "string",
         "mutable": false,
         "complexType": {
-          "original": "'start' | 'end' | 'both'",
+          "original": "\"start\" | \"end\" | \"both\"",
           "resolved": "\"both\" | \"end\" | \"start\" | undefined",
           "references": {}
         },

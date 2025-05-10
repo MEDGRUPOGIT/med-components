@@ -463,7 +463,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The minimum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\nsuch as `1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the minimum could just be the year, such as `1994`.\nDefaults to the beginning of the year, 100 years ago from today."
+          "text": "The minimum datetime allowed. Value must be a date string\r\nfollowing the\r\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\r\nsuch as `1996-12-19`. The format does not have to be specific to an exact\r\ndatetime. For example, the minimum could just be the year, such as `1994`.\r\nDefaults to the beginning of the year, 100 years ago from today."
         },
         "attribute": "min",
         "reflect": false
@@ -480,7 +480,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The maximum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\n`1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the maximum could just be the year, such as `1994`.\nDefaults to the end of this year."
+          "text": "The maximum datetime allowed. Value must be a date string\r\nfollowing the\r\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\r\n`1996-12-19`. The format does not have to be specific to an exact\r\ndatetime. For example, the maximum could just be the year, such as `1994`.\r\nDefaults to the end of this year."
         },
         "attribute": "max",
         "reflect": false
@@ -497,7 +497,7 @@ export class Datetime {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "The display format of the date and time as text that shows\nwithin the item. When the `pickerFormat` input is not used, then the\n`displayFormat` is used for both display the formatted text, and determining\nthe datetime picker's columns. See the `pickerFormat` input description for\nmore info. Defaults to `MMM D, YYYY`."
+          "text": "The display format of the date and time as text that shows\r\nwithin the item. When the `pickerFormat` input is not used, then the\r\n`displayFormat` is used for both display the formatted text, and determining\r\nthe datetime picker's columns. See the `pickerFormat` input description for\r\nmore info. Defaults to `MMM D, YYYY`."
         },
         "attribute": "display-format",
         "reflect": false,
@@ -515,7 +515,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The timezone to use for display purposes only. See\n[Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)\nfor a list of supported timezones. If no value is provided, the\ncomponent will default to displaying times in the user's local timezone."
+          "text": "The timezone to use for display purposes only. See\r\n[Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)\r\nfor a list of supported timezones. If no value is provided, the\r\ncomponent will default to displaying times in the user's local timezone."
         },
         "attribute": "display-timezone",
         "reflect": false
@@ -532,7 +532,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The format of the date and time picker columns the user selects.\nA datetime input can have one or many datetime parts, each getting their\nown column which allow individual selection of that particular datetime part. For\nexample, year and month columns are two individually selectable columns which help\nchoose an exact date from the datetime picker. Each column follows the string\nparse format. Defaults to use `displayFormat`."
+          "text": "The format of the date and time picker columns the user selects.\r\nA datetime input can have one or many datetime parts, each getting their\r\nown column which allow individual selection of that particular datetime part. For\r\nexample, year and month columns are two individually selectable columns which help\r\nchoose an exact date from the datetime picker. Each column follows the string\r\nparse format. Defaults to use `displayFormat`."
         },
         "attribute": "picker-format",
         "reflect": false
@@ -585,7 +585,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2024,2020,2016,2012,2008\"`."
+          "text": "Values used to create the list of selectable years. By default\r\nthe year values range between the `min` and `max` datetime inputs. However, to\r\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\r\nof numbers, or string of comma separated numbers. For example, to show upcoming and\r\nrecent leap years, then this input's value would be `yearValues=\"2024,2020,2016,2012,2008\"`."
         },
         "attribute": "year-values",
         "reflect": false
@@ -602,7 +602,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Values used to create the list of selectable months. By default\nthe month values range from `1` to `12`. However, to control exactly which months to\ndisplay, the `monthValues` input can take a number, an array of numbers, or a string of\ncomma separated numbers. For example, if only summer months should be shown, then this\ninput value would be `monthValues=\"6,7,8\"`. Note that month numbers do *not* have a\nzero-based index, meaning January's value is `1`, and December's is `12`."
+          "text": "Values used to create the list of selectable months. By default\r\nthe month values range from `1` to `12`. However, to control exactly which months to\r\ndisplay, the `monthValues` input can take a number, an array of numbers, or a string of\r\ncomma separated numbers. For example, if only summer months should be shown, then this\r\ninput value would be `monthValues=\"6,7,8\"`. Note that month numbers do *not* have a\r\nzero-based index, meaning January's value is `1`, and December's is `12`."
         },
         "attribute": "month-values",
         "reflect": false
@@ -619,7 +619,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Values used to create the list of selectable days. By default\nevery day is shown for the given month. However, to control exactly which days of\nthe month to display, the `dayValues` input can take a number, an array of numbers, or\na string of comma separated numbers. Note that even if the array days have an invalid\nnumber for the selected month, like `31` in February, it will correctly not show\ndays which are not valid for the selected month."
+          "text": "Values used to create the list of selectable days. By default\r\nevery day is shown for the given month. However, to control exactly which days of\r\nthe month to display, the `dayValues` input can take a number, an array of numbers, or\r\na string of comma separated numbers. Note that even if the array days have an invalid\r\nnumber for the selected month, like `31` in February, it will correctly not show\r\ndays which are not valid for the selected month."
         },
         "attribute": "day-values",
         "reflect": false
@@ -636,7 +636,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Values used to create the list of selectable hours. By default\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\nto control exactly which hours to display, the `hourValues` input can take a number, an\narray of numbers, or a string of comma separated numbers."
+          "text": "Values used to create the list of selectable hours. By default\r\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\r\nto control exactly which hours to display, the `hourValues` input can take a number, an\r\narray of numbers, or a string of comma separated numbers."
         },
         "attribute": "hour-values",
         "reflect": false
@@ -653,7 +653,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Values used to create the list of selectable minutes. By default\nthe minutes range from `0` to `59`. However, to control exactly which minutes to display,\nthe `minuteValues` input can take a number, an array of numbers, or a string of comma\nseparated numbers. For example, if the minute selections should only be every 15 minutes,\nthen this input value would be `minuteValues=\"0,15,30,45\"`."
+          "text": "Values used to create the list of selectable minutes. By default\r\nthe minutes range from `0` to `59`. However, to control exactly which minutes to display,\r\nthe `minuteValues` input can take a number, an array of numbers, or a string of comma\r\nseparated numbers. For example, if the minute selections should only be every 15 minutes,\r\nthen this input value would be `minuteValues=\"0,15,30,45\"`."
         },
         "attribute": "minute-values",
         "reflect": false
@@ -670,7 +670,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Full names for each month name. This can be used to provide\nlocale month names. Defaults to English."
+          "text": "Full names for each month name. This can be used to provide\r\nlocale month names. Defaults to English."
         },
         "attribute": "month-names",
         "reflect": false
@@ -687,7 +687,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Short abbreviated names for each month name. This can be used to provide\nlocale month names. Defaults to English."
+          "text": "Short abbreviated names for each month name. This can be used to provide\r\nlocale month names. Defaults to English."
         },
         "attribute": "month-short-names",
         "reflect": false
@@ -704,7 +704,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Full day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English."
+          "text": "Full day of the week names. This can be used to provide\r\nlocale names for each day in the week. Defaults to English."
         },
         "attribute": "day-names",
         "reflect": false
@@ -721,7 +721,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Short abbreviated day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English.\nDefaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']`"
+          "text": "Short abbreviated day of the week names. This can be used to provide\r\nlocale names for each day in the week. Defaults to English.\r\nDefaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']`"
         },
         "attribute": "day-short-names",
         "reflect": false
@@ -743,7 +743,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Any additional options that the picker interface can accept.\nSee the [Picker API docs](../picker) for the picker options."
+          "text": "Any additional options that the picker interface can accept.\r\nSee the [Picker API docs](../picker) for the picker options."
         }
       },
       "placeholder": {
@@ -758,7 +758,7 @@ export class Datetime {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The text to display when there's no date selected yet.\nUsing lowercase to match the input attribute"
+          "text": "The text to display when there's no date selected yet.\r\nUsing lowercase to match the input attribute"
         },
         "attribute": "placeholder",
         "reflect": false

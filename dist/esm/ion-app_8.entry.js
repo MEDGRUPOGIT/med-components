@@ -2,13 +2,13 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host, j as getElement, f as createEvent, h as readTask, k as forceUpdate, e as writeTask } from './index-336c66d9.js';
-import { g as getIonMode, c as config } from './ionic-global-dca35eba.js';
-import { i as isPlatform } from './platform-1ec8424a.js';
-import { c as createColorClasses, h as hostContext } from './theme-a24ff1ad.js';
-import { j as clamp } from './helpers-d6be6e4a.js';
-import { g as getTimeGivenProgression } from './cubic-bezier-154a53a5.js';
-import { a as attachComponent, d as detachComponent } from './framework-delegate-f297f7e6.js';
-import { t as transition } from './index-9b38c108.js';
+import { g as getIonMode, c as config } from './ionic-global-908d8380.js';
+import { i as isPlatform } from './platform-a3776365.js';
+import { c as createColorClasses, h as hostContext } from './theme-d8e919ca.js';
+import { j as clamp } from './helpers-7c8ceac4.js';
+import { g as getTimeGivenProgression } from './cubic-bezier-89e16b6a.js';
+import { a as attachComponent, d as detachComponent } from './framework-delegate-362ab783.js';
+import { t as transition } from './index-a9257133.js';
 
 const appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html.plt-mobile ion-app [contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
 
@@ -21,15 +21,15 @@ const App = class {
       rIC(async () => {
         const isHybrid = isPlatform(window, 'hybrid');
         if (!config.getBoolean('_testing')) {
-          import('./tap-click-221208be.js').then(module => module.startTapClick(config));
+          import('./tap-click-ebbe4725.js').then(module => module.startTapClick(config));
         }
         if (config.getBoolean('statusTap', isHybrid)) {
-          import('./status-tap-47dce4f0.js').then(module => module.startStatusTap());
+          import('./status-tap-00e23a44.js').then(module => module.startStatusTap());
         }
         if (config.getBoolean('inputShims', needInputShims())) {
-          import('./input-shims-384f608b.js').then(module => module.startInputShims(config));
+          import('./input-shims-711bf658.js').then(module => module.startInputShims(config));
         }
-        const hardwareBackButtonModule = await import('./hardware-back-button-ace6a71b.js');
+        const hardwareBackButtonModule = await import('./hardware-back-button-e98bcc7d.js');
         if (config.getBoolean('hardwareBackButton', isHybrid)) {
           hardwareBackButtonModule.startHardwareBackButton();
         }
@@ -37,9 +37,9 @@ const App = class {
           hardwareBackButtonModule.blockHardwareBackButton();
         }
         if (typeof window !== 'undefined') {
-          import('./keyboard-808e4e15.js').then(module => module.startKeyboardAssist(window));
+          import('./keyboard-3c0ae5bd.js').then(module => module.startKeyboardAssist(window));
         }
-        import('./focus-visible-c97094a8.js').then(module => module.startFocusVisible());
+        import('./focus-visible-bdf8ba8c.js').then(module => module.startFocusVisible());
       });
     }
   }
@@ -679,7 +679,7 @@ const RouterOutlet = class {
     }
   }
   async connectedCallback() {
-    this.gesture = (await import('./swipe-back-fea11a4f.js')).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
+    this.gesture = (await import('./swipe-back-825606f3.js')).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
       if (this.ani) {
         this.animationEnabled = false;
         this.ani.onFinish(() => {

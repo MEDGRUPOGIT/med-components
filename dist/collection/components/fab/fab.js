@@ -112,7 +112,7 @@ export class Fab {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "If `true`, the fab will display on the edge of the header if\n`vertical` is `\"top\"`, and on the edge of the footer if\nit is `\"bottom\"`. Should be used with a `fixed` slot."
+          "text": "If `true`, the fab will display on the edge of the header if\r\n`vertical` is `\"top\"`, and on the edge of the footer if\r\nit is `\"bottom\"`. Should be used with a `fixed` slot."
         },
         "attribute": "edge",
         "reflect": false,
@@ -130,7 +130,7 @@ export class Fab {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "If `true`, both the `ion-fab-button` and all `ion-fab-list` inside `ion-fab` will become active.\nThat means `ion-fab-button` will become a `close` icon and `ion-fab-list` will become visible."
+          "text": "If `true`, both the `ion-fab-button` and all `ion-fab-list` inside `ion-fab` will become active.\r\nThat means `ion-fab-button` will become a `close` icon and `ion-fab-list` will become visible."
         },
         "attribute": "activated",
         "reflect": false,

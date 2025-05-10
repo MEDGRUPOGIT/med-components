@@ -230,7 +230,7 @@ export class RouterOutlet {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "By default `ion-nav` animates transition between pages based in the mode (ios or material design).\nHowever, this property allows to create custom transition using `AnimateBuilder` functions."
+          "text": "By default `ion-nav` animates transition between pages based in the mode (ios or material design).\r\nHowever, this property allows to create custom transition using `AnimateBuilder` functions."
         }
       },
       "swipeHandler": {

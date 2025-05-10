@@ -269,7 +269,7 @@ export class Router {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "By default `ion-router` will match the routes at the root path (\"/\").\nThat can be changed when"
+          "text": "By default `ion-router` will match the routes at the root path (\"/\").\r\nThat can be changed when"
         },
         "attribute": "root",
         "reflect": false,
@@ -287,7 +287,7 @@ export class Router {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the otherside hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs."
+          "text": "The router can work in two \"modes\":\r\n- With hash: `/index.html#/path/to/page`\r\n- Without hash: `/path/to/page`\r\n\r\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\r\n\r\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\r\nrequires additional server-side configuration in order to properly work.\r\n\r\nOn the otherside hash-navigation is much easier to deploy, it even works over the file protocol.\r\n\r\nBy default, this property is `true`, change to `false` to allow hash-less URLs."
         },
         "attribute": "use-hash",
         "reflect": false,

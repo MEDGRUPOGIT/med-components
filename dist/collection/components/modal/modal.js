@@ -325,7 +325,7 @@ export class Modal {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces."
+          "text": "Additional classes to apply for custom CSS. If multiple classes are\r\nprovided they should be separated by spaces."
         },
         "attribute": "css-class",
         "reflect": false
@@ -418,7 +418,7 @@ export class Modal {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The element that presented the modal. This is used for card presentation effects\nand for stacking multiple modals on top of each other. Only applies in iOS mode."
+          "text": "The element that presented the modal. This is used for card presentation effects\r\nand for stacking multiple modals on top of each other. Only applies in iOS mode."
         }
       }
     };

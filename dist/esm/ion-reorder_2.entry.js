@@ -2,9 +2,9 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host, j as getElement, f as createEvent } from './index-336c66d9.js';
-import { g as getIonMode } from './ionic-global-dca35eba.js';
-import { a as hapticSelectionStart, b as hapticSelectionChanged, h as hapticSelectionEnd } from './haptic-9a9aa7ec.js';
-import './platform-1ec8424a.js';
+import { g as getIonMode } from './ionic-global-908d8380.js';
+import { a as hapticSelectionStart, b as hapticSelectionChanged, h as hapticSelectionEnd } from './haptic-b2698498.js';
+import './platform-a3776365.js';
 
 const reorderIosCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block;font-size:22px}.reorder-icon{font-size:34px;opacity:0.4}";
 
@@ -61,7 +61,7 @@ const ReorderGroup = class {
     if (contentEl) {
       this.scrollEl = await contentEl.getScrollElement();
     }
-    this.gesture = (await import('./index-ad966da4.js')).createGesture({
+    this.gesture = (await import('./index-50c5db1b.js')).createGesture({
       el: this.el,
       gestureName: 'reorder',
       gesturePriority: 110,

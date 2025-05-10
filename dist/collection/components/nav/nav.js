@@ -845,7 +845,7 @@ export class Nav {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "By default `ion-nav` animates transition between pages based in the mode (ios or material design).\nHowever, this property allows to create custom transition using `AnimateBuilder` functions."
+          "text": "By default `ion-nav` animates transition between pages based in the mode (ios or material design).\r\nHowever, this property allows to create custom transition using `AnimateBuilder` functions."
         }
       },
       "rootParams": {
@@ -1000,7 +1000,7 @@ export class Nav {
           "return": "Promise<boolean>"
         },
         "docs": {
-          "text": "Push a new component onto the current navigation stack. Pass any additional\ninformation along as an object. This additional information is accessible\nthrough NavParams.",
+          "text": "Push a new component onto the current navigation stack. Pass any additional\r\ninformation along as an object. This additional information is accessible\r\nthrough NavParams.",
           "tags": [{
               "name": "param",
               "text": "component The component to push onto the navigation stack."
@@ -1077,7 +1077,7 @@ export class Nav {
           "return": "Promise<boolean>"
         },
         "docs": {
-          "text": "Inserts a component into the navigation stack at the specified index.\nThis is useful to add a component at any point in the navigation stack.",
+          "text": "Inserts a component into the navigation stack at the specified index.\r\nThis is useful to add a component at any point in the navigation stack.",
           "tags": [{
               "name": "param",
               "text": "insertIndex The index to insert the component at in the stack."
@@ -1148,7 +1148,7 @@ export class Nav {
           "return": "Promise<boolean>"
         },
         "docs": {
-          "text": "Inserts an array of components into the navigation stack at the specified index.\nThe last component in the array will become instantiated as a view, and animate\nin to become the active view.",
+          "text": "Inserts an array of components into the navigation stack at the specified index.\r\nThe last component in the array will become instantiated as a view, and animate\r\nin to become the active view.",
           "tags": [{
               "name": "param",
               "text": "insertIndex The index to insert the components at in the stack."
@@ -1196,7 +1196,7 @@ export class Nav {
           "return": "Promise<boolean>"
         },
         "docs": {
-          "text": "Pop a component off of the navigation stack. Navigates back from the current\ncomponent.",
+          "text": "Pop a component off of the navigation stack. Navigates back from the current\r\ncomponent.",
           "tags": [{
               "name": "param",
               "text": "opts The navigation options."
@@ -1484,7 +1484,7 @@ export class Nav {
           "return": "Promise<boolean>"
         },
         "docs": {
-          "text": "Set the views of the current navigation stack and navigate to the last view.\nBy default animations are disabled, but they can be enabled by passing options\nto the navigation controller. Navigation parameters can also be passed to the\nindividual pages in the array.",
+          "text": "Set the views of the current navigation stack and navigate to the last view.\r\nBy default animations are disabled, but they can be enabled by passing options\r\nto the navigation controller. Navigation parameters can also be passed to the\r\nindividual pages in the array.",
           "tags": [{
               "name": "param",
               "text": "views The list of views to set as the navigation stack."
