@@ -12127,9 +12127,11 @@ ion-title[ds-color=fb-success] {
 .tp-toast-medrobot.sc-ion-toast-md-h {
   --background: hsl(var(--med-color-neutral-2));
   --color: hsl(var(--med-color-neutral-10));
-  --width: 100%;
+  --width: auto;
   --max-width: 600px;
   --spacing: 24px;
+  --start: 0;
+  --end: 0;
   --border-radius: 8px;
 }
 @media (max-width: 767.98px) {
