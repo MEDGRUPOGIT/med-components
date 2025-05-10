@@ -12124,6 +12124,68 @@ ion-title[ds-color=fb-success] {
   pointer-events: none;
 }
 
+.tp-toast-medrobot.sc-ion-toast-md-h {
+  --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --width: 100%;
+  --max-width: 600px;
+  --spacing: 24px;
+  --border-radius: 8px;
+}
+@media (max-width: 767.98px) {
+  .tp-toast-medrobot.sc-ion-toast-md-h {
+    --max-width: 382px;
+    --spacing: 16px;
+  }
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-container {
+  padding: var(--spacing);
+}
+@media (max-width: 767.98px) {
+  .tp-toast-medrobot.sc-ion-toast-md-h .toast-container {
+    flex-direction: column;
+  }
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-content {
+  padding: 0;
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-header {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  margin: 0 0 16px 0;
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-message {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-button-group-end.sc-ion-toast-md {
+  margin: 0 0 0 16px;
+}
+@media (max-width: 767.98px) {
+  .tp-toast-medrobot.sc-ion-toast-md-h .toast-button-group-end.sc-ion-toast-md {
+    margin: 16px 0 0 0;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-button {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: hsl(var(--med-color-neutral-10));
+  text-transform: initial;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-button:hover {
+  background-color: transparent;
+}
+
 ion-toggle {
   --background: hsl(var(--med-color-neutral-4));
   --background-checked: hsl(var(--med-color-brand-3));

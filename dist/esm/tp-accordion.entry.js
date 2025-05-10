@@ -2,10 +2,10 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { g as generateMedColor } from './color-1d14c71a.js';
-import { c as config, g as getIonMode } from './ionic-global-908d8380.js';
-import { r as raf, t as transitionEndAsync, a as addEventListener, b as removeEventListener, g as getElementRoot } from './helpers-7c8ceac4.js';
-import './platform-a3776365.js';
+import { g as generateMedColor } from './color-2567dca3.js';
+import { c as config, g as getIonMode } from './ionic-global-dca35eba.js';
+import { r as raf, t as transitionEndAsync, a as addEventListener, b as removeEventListener, g as getElementRoot } from './helpers-d6be6e4a.js';
+import './platform-1ec8424a.js';
 
 /* Ionicons v5.5.4, ES Modules */
 const chevronDown = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Down</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M112 184l144 144 144-144' class='ionicon-fill-none'/></svg>";

@@ -139,7 +139,7 @@ export class SplitPane {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The `id` of the main content. When using\r\na router this is typically `ion-router-outlet`.\r\nWhen not using a router, this is typically\r\nyour main view's `ion-content`. This is not the\r\nid of the `ion-content` inside of your `ion-menu`."
+          "text": "The `id` of the main content. When using\na router this is typically `ion-router-outlet`.\nWhen not using a router, this is typically\nyour main view's `ion-content`. This is not the\nid of the `ion-content` inside of your `ion-menu`."
         },
         "attribute": "content-id",
         "reflect": true
@@ -174,7 +174,7 @@ export class SplitPane {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "When the split-pane should be shown.\r\nCan be a CSS media query expression, or a shortcut expression.\r\nCan also be a boolean expression."
+          "text": "When the split-pane should be shown.\nCan be a CSS media query expression, or a shortcut expression.\nCan also be a boolean expression."
         },
         "attribute": "when",
         "reflect": false,
