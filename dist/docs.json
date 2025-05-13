@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-05-08T15:07:29",
+  "timestamp": "2025-05-13T14:20:32",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -8956,6 +8956,7 @@
         "simulado-modal",
         "text-area-modal",
         "tp-chart-bar",
+        "tp-select-dropdown",
         "tutorial-modal",
         "unidades-modal"
       ],
@@ -9010,6 +9011,9 @@
           "ion-label"
         ],
         "tp-chart-bar": [
+          "ion-label"
+        ],
+        "tp-select-dropdown": [
           "ion-label"
         ],
         "tutorial-modal": [
@@ -29168,6 +29172,172 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/@templarios/core/tp-select-dropdown/select-dropdown.tsx",
+      "encapsulation": "scoped",
+      "tag": "tp-select-dropdown",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": true,
+          "docs": "Define a variação de cor do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": true,
+          "docs": "Define o nome do componente, agrupando as opções.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "numeric",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "numeric",
+          "reflectToAttr": true,
+          "docs": "Define se o componente representa valores numéricos.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "options",
+          "type": "TpSelectDropdownOption[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Define as opções de seleção do componente.",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "TpSelectDropdownOption[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": true,
+          "docs": "Define o placeholder do componente.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "null | number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Define o valor do componente.",
+          "docsTags": [],
+          "default": "null",
+          "values": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChange",
+          "detail": "number | string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Evento emitido quando há mudança no valor do componente.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "click",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "keydown",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [
+        {
+          "name": "--dropdown-max-height",
+          "annotation": "prop",
+          "docs": "Define a altura máxima do dropdown. Default: 220px (igual select-popover)."
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ion-label",
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "tp-select-dropdown": [
+          "ion-label",
+          "ion-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/@templarios/ionic-1-migracao/simulados/tutorial-modal/tutorial-modal.tsx",

@@ -194,7 +194,8 @@ export const MedIcons = [
   'med-logincode',
   'med-logo',
   'med-main',
-
+  'med-mao-aberta',
+  'med-mao-arrasta',
   'med-mais-circulo',
   'med-mais',
   'med-marcar',

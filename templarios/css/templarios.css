@@ -8354,6 +8354,9 @@ ion-popover.tp-popover {
   --bottom: auto;
   --right: auto;
 }
+ion-popover.tp-popover .popover-arrow {
+  display: none !important;
+}
 ion-popover.tp-popover .popover-content {
   --background: hsl(var(--med-color-neutral-3));
   --border-radius: 0 0 8px 8px;
@@ -12122,6 +12125,74 @@ ion-title[ds-color=fb-success] {
 }
 .tp-toast.tp-toast--icon-start .toast-button-group:first-child .toast-button {
   pointer-events: none;
+}
+
+.tp-toast-medrobot.sc-ion-toast-md-h {
+  --background: hsl(var(--med-color-neutral-2));
+  --color: hsl(var(--med-color-neutral-10));
+  --width: auto;
+  --max-width: 600px;
+  --spacing: 24px;
+  --start: calc(50% - 300px);
+  --end: 0;
+  --border-radius: 8px;
+}
+@media (max-width: 767.98px) {
+  .tp-toast-medrobot.sc-ion-toast-md-h {
+    --max-width: 382px;
+    --start: calc(50% - 191px);
+    --spacing: 16px;
+  }
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-wrapper {
+  margin: 0 24px;
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-container {
+  padding: var(--spacing);
+}
+@media (max-width: 767.98px) {
+  .tp-toast-medrobot.sc-ion-toast-md-h .toast-container {
+    flex-direction: column;
+  }
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-content {
+  padding: 0;
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-header {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  margin: 0 0 16px 0;
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-message {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-button-group-end.sc-ion-toast-md {
+  margin: 0 0 0 16px;
+}
+@media (max-width: 767.98px) {
+  .tp-toast-medrobot.sc-ion-toast-md-h .toast-button-group-end.sc-ion-toast-md {
+    margin: 16px 0 0 0;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-button {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: hsl(var(--med-color-neutral-10));
+  text-transform: initial;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+}
+.tp-toast-medrobot.sc-ion-toast-md-h .toast-button:hover {
+  background-color: transparent;
 }
 
 ion-toggle {

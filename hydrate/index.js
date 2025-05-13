@@ -29609,11 +29609,11 @@ class TpInputContainer {
   }
   catchSelectIconClick(e) {
     const target = e.target;
-    const ionSelect = this.host.querySelector('ion-select');
+    const ionSelect = this.host.querySelector("ion-select");
     const shouldOpenOverlay = this.host.contains(target) &&
-      ionSelect.hasAttribute('interface') &&
-      (target.nodeName === 'ION-ICON' ||
-        target.nodeName === 'TP-INPUT-CONTAINER');
+      ionSelect.hasAttribute("interface") &&
+      (target.nodeName === "ION-ICON" ||
+        target.nodeName === "TP-INPUT-CONTAINER");
     if (shouldOpenOverlay) {
       ionSelect.open(e);
     }
@@ -29624,8 +29624,8 @@ class TpInputContainer {
   setPopoverWidthOnResize() {
     if (!this.selectWithPopoverClicked)
       return;
-    const popoverElement = document.querySelector('.select-popover');
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--width', `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
+    const popoverElement = document.querySelector(".select-popover");
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
     this.setPopoverPosition();
   }
   setPopoverCharacteristics() {
@@ -29633,16 +29633,16 @@ class TpInputContainer {
       return;
     this.selectWithPopoverClicked = true;
     this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
-    const popoverElement = document.querySelector('.select-popover');
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--width', `${this.hostWidth}px`);
-    if (this.dsName === 'secondary') {
-      popoverElement.classList.add('tp-popover--secondary');
+    const popoverElement = document.querySelector(".select-popover");
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
+    if (this.dsName === "secondary") {
+      popoverElement.classList.add("tp-popover--secondary");
     }
     // colors
     if (this.dsColor) {
-      popoverElement.setAttribute('ds-color', this.dsColor);
+      popoverElement.setAttribute("ds-color", this.dsColor);
     }
-    if (popoverElement.classList.contains('popover-bottom')) {
+    if (popoverElement.classList.contains("popover-bottom")) {
       this.inverted = true;
     }
     this.setPopoverPosition();
@@ -29650,9 +29650,9 @@ class TpInputContainer {
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7
   fixPopover() {
-    const popover = document.querySelector('ion-select-popover');
-    if (popover === null || popover === void 0 ? void 0 : popover.hasAttribute('popover')) {
-      popover.removeAttribute('popover');
+    const popover = document.querySelector("ion-select-popover");
+    if (popover === null || popover === void 0 ? void 0 : popover.hasAttribute("popover")) {
+      popover.removeAttribute("popover");
     }
   }
   unsetClikedState() {
@@ -29662,11 +29662,11 @@ class TpInputContainer {
     }
   }
   componentDidLoad() {
-    const ionSelect = this.host.querySelector('ION-SELECT');
+    const ionSelect = this.host.querySelector("ION-SELECT");
     if (ionSelect) {
       this.pointerOnSelect = true;
-      if (!ionSelect.hasAttribute('interface')) {
-        ionSelect.interfaceOptions = { cssClass: 'tp-hide' };
+      if (!ionSelect.hasAttribute("interface")) {
+        ionSelect.interfaceOptions = { cssClass: "tp-hide" };
       }
     }
   }
@@ -29677,58 +29677,60 @@ class TpInputContainer {
   }
   timeDisabledInputContainer() {
     const tpInputContainer = this.host;
-    const ionPopover = document.querySelector('ion-popover');
-    tpInputContainer.style.pointerEvents = 'none';
+    const ionPopover = document.querySelector("ion-popover");
+    tpInputContainer.style.pointerEvents = "none";
     if (ionPopover) {
-      ionPopover.style.pointerEvents = 'none';
+      ionPopover.style.pointerEvents = "none";
     }
     this.timePopover = setTimeout(() => {
       if (ionPopover) {
-        ionPopover.style.pointerEvents = 'auto';
+        ionPopover.style.pointerEvents = "auto";
       }
-      tpInputContainer.style.pointerEvents = 'auto';
+      tpInputContainer.style.pointerEvents = "auto";
     }, 450);
   }
   isLandscape() {
     return window.matchMedia("(orientation: landscape)").matches;
   }
   setPopoverPosition() {
-    const popoverElement = document.querySelector('.select-popover');
+    const popoverElement = document.querySelector(".select-popover");
     const { top, bottom, left } = this.host.getBoundingClientRect();
-    const isIphone = isPlatform('iphone');
-    const isIpad = isPlatform('ipad');
+    const isIphone = isPlatform("iphone");
+    const isIpad = isPlatform("ipad");
     const isLandscape = this.isLandscape();
     if (this.inverted) {
-      popoverElement.classList.add('tp-popover--inverted');
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left}px`);
+      popoverElement.classList.add("tp-popover--inverted");
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
       if (isIphone) {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', isLandscape ? `${window.innerHeight - top - 20}px` : `${window.innerHeight - top - 33}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", isLandscape
+          ? `${window.innerHeight - top - 20}px`
+          : `${window.innerHeight - top - 33}px`);
       }
       else if (isIpad) {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top - 23}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top - 23}px`);
       }
       else {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
       }
     }
     else {
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left + 1}px`);
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--top', `${bottom}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left + 1}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--top", `${bottom}px`);
     }
   }
   render() {
-    const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon } = this;
+    const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon, } = this;
     return (hAsync(Host, { class: generateMedColor(dsColor, {
-        'tp-input-container': true,
-        'tp-input-container--with-select': pointerOnSelect,
+        "tp-input-container": true,
+        "tp-input-container--with-select": pointerOnSelect,
         [`tp-input-container--select-popover-clicked`]: selectWithPopoverClicked,
         [`tp-input-container--inverted`]: inverted,
-        'tp-input-container--disabled': disabled,
-        'tp-input-container--feedback': feedback,
+        "tp-input-container--disabled": disabled,
+        "tp-input-container--feedback": feedback,
         [`tp-input-container--${dsName}`]: dsName !== undefined,
         [`tp-input-container--has-button-${hasButton}`]: hasButton !== undefined,
-        [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined
-      }) }, hAsync("slot", { name: 'start' }), hAsync("slot", null), hAsync("slot", { name: 'end' })));
+        [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined,
+      }) }, hAsync("slot", { name: "start" }), hAsync("slot", null), hAsync("slot", { name: "end" })));
   }
   get host() { return getElement(this); }
   static get style() { return tpInputContainerCss; }
@@ -29784,6 +29786,90 @@ class TpLoader {
     "$listeners$": undefined,
     "$lazyBundleId$": "-",
     "$attrsToReflect$": [["dsColor", "ds-color"], ["fixed", "fixed"], ["dsName", "ds-name"]]
+  }; }
+}
+
+const selectDropdownCss = "@charset \"UTF-8\";.sc-tp-select-dropdown-h{position:relative;display:block;z-index:1}.tp-select-dropdown__container.sc-tp-select-dropdown{position:relative}.tp-select-dropdown__header.sc-tp-select-dropdown{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;gap:8px;height:40px;padding:12px 8px 12px 16px;background:hsl(var(--med-color-neutral-2));border-radius:8px;cursor:pointer;-webkit-transition:border-radius 200ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:border-radius 200ms cubic-bezier(0.25, 0.8, 0.5, 1)}.tp-select-dropdown__header-content.sc-tp-select-dropdown{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;gap:8px}.tp-select-dropdown__left.sc-tp-select-dropdown{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;gap:8px}.tp-select-dropdown__right.sc-tp-select-dropdown{-ms-flex:0 0 auto;flex:0 0 auto;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}.tp-select-dropdown__arrow.sc-tp-select-dropdown{display:-ms-flexbox;display:flex}.tp-select-dropdown__arrow.sc-tp-select-dropdown{-webkit-transition:-webkit-transform 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:-webkit-transform 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:transform 300ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:transform 300ms cubic-bezier(0.25, 0.8, 0.5, 1), -webkit-transform 300ms cubic-bezier(0.25, 0.8, 0.5, 1)}.tp-select-dropdown__arrow.sc-tp-select-dropdown ion-icon.sc-tp-select-dropdown{stroke:hsl(var(--med-color-neutral-6))}.tp-select-dropdown__label.sc-tp-select-dropdown{-ms-flex:1;flex:1;width:0;text-overflow:ellipsis;white-space:nowrap;color:hsl(var(--med-color-neutral-10));overflow:hidden}.tp-select-dropdown__label--placeholder.sc-tp-select-dropdown{color:hsl(var(--med-color-neutral-5)) !important}.tp-select-dropdown__accordion-group.sc-tp-select-dropdown{position:absolute;top:100%;left:0;width:100%;opacity:0;-webkit-transition:opacity 400ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:opacity 400ms cubic-bezier(0.25, 0.8, 0.5, 1);pointer-events:none}.tp-select-dropdown__accordion-group--open.sc-tp-select-dropdown{pointer-events:initial}.tp-select-dropdown__accordion.sc-tp-select-dropdown{background:transparent}.tp-select-dropdown__options.sc-tp-select-dropdown{--tp-scroll-color:hsl(var(--med-color-neutral-4));display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;max-height:var(--dropdown-max-height, 220px);padding:0 !important;overflow-y:auto;background:hsl(var(--med-color-neutral-3));border-radius:0 0 8px 8px}.tp-select-dropdown__option.sc-tp-select-dropdown{position:relative;display:-ms-flexbox;display:flex;padding:16px 12px;height:44px;min-height:44px;background:hsl(var(--med-color-neutral-3));overflow:hidden}.tp-select-dropdown__option.sc-tp-select-dropdown:not(:last-child):after{content:\"\";position:absolute;bottom:0;left:0;width:100%;border:1px solid hsl(var(--med-color-neutral-4))}.tp-select-dropdown__option.sc-tp-select-dropdown input.sc-tp-select-dropdown{position:absolute;top:0;left:0;width:100%;height:100%;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent;cursor:pointer}.tp-select-dropdown__option.sc-tp-select-dropdown .tp-select-dropdown__left.sc-tp-select-dropdown{gap:16px}.tp-select-dropdown--open.sc-tp-select-dropdown-h{z-index:20001}.tp-select-dropdown--open.sc-tp-select-dropdown-h .tp-select-dropdown__header.sc-tp-select-dropdown{border-radius:8px 8px 0 0;-webkit-transition:border-radius 200ms cubic-bezier(0.25, 0.8, 0.5, 1);transition:border-radius 200ms cubic-bezier(0.25, 0.8, 0.5, 1)}.tp-select-dropdown--open.sc-tp-select-dropdown-h .tp-select-dropdown__accordion-group.sc-tp-select-dropdown{opacity:1}.tp-select-dropdown--open.sc-tp-select-dropdown-h .tp-select-dropdown__arrow.sc-tp-select-dropdown{-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}.tp-select-dropdown.sc-tp-select-dropdown-h:not(.tp-select-dropdown--open) .tp-select-dropdown__header.sc-tp-select-dropdown:hover{cursor:pointer}";
+
+class TpSelectDropdown {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+    this.valueChange = createEvent(this, "valueChange", 7);
+    this.color = undefined;
+    this.name = undefined;
+    this.value = null;
+    this.options = [];
+    this.placeholder = undefined;
+    this.numeric = false;
+    this.open = false;
+    this.selectedOption = null;
+  }
+  closeOnOutsideClick(event) {
+    const target = event.target;
+    if (this.open && !this.host.contains(target)) {
+      this.open = false;
+    }
+  }
+  closeOnEscapeKey(event) {
+    if (this.open && event.key === "Escape") {
+      this.open = false;
+    }
+  }
+  handleChange(event) {
+    this.value =
+      event.target.value === ""
+        ? null
+        : this.numeric
+          ? Number(event.target.value)
+          : event.target.value;
+    this.valueChange.emit(this.value);
+    this.selectedOption = this.options.find(({ value }) => this.value === (value === null || this.numeric ? value : `${value}`));
+    if (this.open) {
+      this.open = false;
+    }
+  }
+  componentWillLoad() {
+    this.selectedOption = this.options.find(({ value }) => this.value === (value === null || this.numeric ? value : `${value}`));
+  }
+  render() {
+    const { color, name, value, options, placeholder, open, selectedOption } = this;
+    return (hAsync(Host, { class: generateMedColor(color, {
+        "tp-select-dropdown": true,
+        "tp-select-dropdown--open": open,
+      }) }, hAsync("div", { class: "tp-select-dropdown__container" }, hAsync("div", { class: "tp-select-dropdown__header", onClick: () => (this.open = !this.open) }, hAsync("div", { class: "tp-select-dropdown__header-content" }, hAsync("div", { class: "tp-select-dropdown__left" }, hAsync("ion-label", { class: {
+        "tp-select-dropdown__label": true,
+        "tp-select-dropdown__label--placeholder": !selectedOption,
+      },
+      // @ts-ignore
+      token: "p14" }, selectedOption ? selectedOption.label : placeholder))), hAsync("div", { class: "tp-select-dropdown__arrow" }, hAsync("ion-icon", { class: "med-icon", name: "med-baixo" }))), hAsync("ion-accordion-group", { class: {
+        "tp-select-dropdown__accordion-group": true,
+        "tp-select-dropdown__accordion-group--open": open,
+      }, value: open ? "open" : null }, hAsync("ion-accordion", { class: "tp-select-dropdown__accordion", value: "open" }, hAsync("div", { slot: "content", class: "tp-select-dropdown__options tp-scroll", "no-styling-content": true }, options.map(({ value: optionValue, label }) => (hAsync("label", { class: {
+        "tp-select-dropdown__option": true,
+        "tp-select-dropdown__option--selected": optionValue === value,
+      }, key: optionValue }, hAsync("input", { type: "radio", name: name, value: optionValue === null ? "" : optionValue, checked: optionValue === value, onChange: this.handleChange.bind(this) }), hAsync("div", { class: "tp-select-dropdown__left" }, hAsync("ion-label", { class: "tp-select-dropdown__label",
+      // @ts-ignore
+      token: "p14", "ds-color": "neutral-10" }, label)))))))))));
+  }
+  static get assetsDirs() { return ["assets"]; }
+  get host() { return getElement(this); }
+  static get style() { return selectDropdownCss; }
+  static get cmpMeta() { return {
+    "$flags$": 2,
+    "$tagName$": "tp-select-dropdown",
+    "$members$": {
+      "color": [513],
+      "name": [513],
+      "value": [1544],
+      "options": [16],
+      "placeholder": [513],
+      "numeric": [516],
+      "open": [32],
+      "selectedOption": [32]
+    },
+    "$listeners$": [[8, "click", "closeOnOutsideClick"], [8, "keydown", "closeOnEscapeKey"]],
+    "$lazyBundleId$": "-",
+    "$attrsToReflect$": [["color", "color"], ["name", "name"], ["value", "value"], ["placeholder", "placeholder"], ["numeric", "numeric"]]
   }; }
 }
 
@@ -30556,6 +30642,7 @@ registerComponents([
   TpChartBar,
   TpInputContainer,
   TpLoader,
+  TpSelectDropdown,
   TutorialModal,
   UnidadesModal,
   VirtualScroll,

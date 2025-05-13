@@ -7614,6 +7614,41 @@
       ]
     },
     {
+      "name": "tp-select-dropdown",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "color",
+          "description": "Define a variação de cor do componente."
+        },
+        {
+          "name": "name",
+          "description": "Define o nome do componente, agrupando as opções."
+        },
+        {
+          "name": "numeric",
+          "description": "Define se o componente representa valores numéricos."
+        },
+        {
+          "name": "placeholder",
+          "description": "Define o placeholder do componente."
+        },
+        {
+          "name": "value",
+          "description": "Define o valor do componente."
+        }
+      ],
+      "references": [
+        {
+          "name": "Source code",
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/@templarios/core/tp-select-dropdown/select-dropdown.tsx"
+        }
+      ]
+    },
+    {
       "name": "tutorial-modal",
       "description": {
         "kind": "markdown",

@@ -37,11 +37,11 @@ const TpInputContainer = class {
   }
   catchSelectIconClick(e) {
     const target = e.target;
-    const ionSelect = this.host.querySelector('ion-select');
+    const ionSelect = this.host.querySelector("ion-select");
     const shouldOpenOverlay = this.host.contains(target) &&
-      ionSelect.hasAttribute('interface') &&
-      (target.nodeName === 'ION-ICON' ||
-        target.nodeName === 'TP-INPUT-CONTAINER');
+      ionSelect.hasAttribute("interface") &&
+      (target.nodeName === "ION-ICON" ||
+        target.nodeName === "TP-INPUT-CONTAINER");
     if (shouldOpenOverlay) {
       ionSelect.open(e);
     }
@@ -52,8 +52,8 @@ const TpInputContainer = class {
   setPopoverWidthOnResize() {
     if (!this.selectWithPopoverClicked)
       return;
-    const popoverElement = document.querySelector('.select-popover');
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--width', `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
+    const popoverElement = document.querySelector(".select-popover");
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.host.clientWidth + this.selectAndPopoverDiffWidth}px`);
     this.setPopoverPosition();
   }
   setPopoverCharacteristics() {
@@ -61,16 +61,16 @@ const TpInputContainer = class {
       return;
     this.selectWithPopoverClicked = true;
     this.hostWidth = this.host.clientWidth + this.selectAndPopoverDiffWidth;
-    const popoverElement = document.querySelector('.select-popover');
-    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--width', `${this.hostWidth}px`);
-    if (this.dsName === 'secondary') {
-      popoverElement.classList.add('tp-popover--secondary');
+    const popoverElement = document.querySelector(".select-popover");
+    popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--width", `${this.hostWidth}px`);
+    if (this.dsName === "secondary") {
+      popoverElement.classList.add("tp-popover--secondary");
     }
     // colors
     if (this.dsColor) {
-      popoverElement.setAttribute('ds-color', this.dsColor);
+      popoverElement.setAttribute("ds-color", this.dsColor);
     }
-    if (popoverElement.classList.contains('popover-bottom')) {
+    if (popoverElement.classList.contains("popover-bottom")) {
       this.inverted = true;
     }
     this.setPopoverPosition();
@@ -78,9 +78,9 @@ const TpInputContainer = class {
   // fix para conflito com popover API do chrome
   // pode remover depois de migração pro ionic 7
   fixPopover() {
-    const popover = document.querySelector('ion-select-popover');
-    if (popover === null || popover === void 0 ? void 0 : popover.hasAttribute('popover')) {
-      popover.removeAttribute('popover');
+    const popover = document.querySelector("ion-select-popover");
+    if (popover === null || popover === void 0 ? void 0 : popover.hasAttribute("popover")) {
+      popover.removeAttribute("popover");
     }
   }
   unsetClikedState() {
@@ -90,11 +90,11 @@ const TpInputContainer = class {
     }
   }
   componentDidLoad() {
-    const ionSelect = this.host.querySelector('ION-SELECT');
+    const ionSelect = this.host.querySelector("ION-SELECT");
     if (ionSelect) {
       this.pointerOnSelect = true;
-      if (!ionSelect.hasAttribute('interface')) {
-        ionSelect.interfaceOptions = { cssClass: 'tp-hide' };
+      if (!ionSelect.hasAttribute("interface")) {
+        ionSelect.interfaceOptions = { cssClass: "tp-hide" };
       }
     }
   }
@@ -105,58 +105,60 @@ const TpInputContainer = class {
   }
   timeDisabledInputContainer() {
     const tpInputContainer = this.host;
-    const ionPopover = document.querySelector('ion-popover');
-    tpInputContainer.style.pointerEvents = 'none';
+    const ionPopover = document.querySelector("ion-popover");
+    tpInputContainer.style.pointerEvents = "none";
     if (ionPopover) {
-      ionPopover.style.pointerEvents = 'none';
+      ionPopover.style.pointerEvents = "none";
     }
     this.timePopover = setTimeout(() => {
       if (ionPopover) {
-        ionPopover.style.pointerEvents = 'auto';
+        ionPopover.style.pointerEvents = "auto";
       }
-      tpInputContainer.style.pointerEvents = 'auto';
+      tpInputContainer.style.pointerEvents = "auto";
     }, 450);
   }
   isLandscape() {
     return window.matchMedia("(orientation: landscape)").matches;
   }
   setPopoverPosition() {
-    const popoverElement = document.querySelector('.select-popover');
+    const popoverElement = document.querySelector(".select-popover");
     const { top, bottom, left } = this.host.getBoundingClientRect();
-    const isIphone = platform.isPlatform('iphone');
-    const isIpad = platform.isPlatform('ipad');
+    const isIphone = platform.isPlatform("iphone");
+    const isIpad = platform.isPlatform("ipad");
     const isLandscape = this.isLandscape();
     if (this.inverted) {
-      popoverElement.classList.add('tp-popover--inverted');
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left}px`);
+      popoverElement.classList.add("tp-popover--inverted");
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left}px`);
       if (isIphone) {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', isLandscape ? `${window.innerHeight - top - 20}px` : `${window.innerHeight - top - 33}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", isLandscape
+          ? `${window.innerHeight - top - 20}px`
+          : `${window.innerHeight - top - 33}px`);
       }
       else if (isIpad) {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top - 23}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top - 23}px`);
       }
       else {
-        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--bottom', `${window.innerHeight - top}px`);
+        popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--bottom", `${window.innerHeight - top}px`);
       }
     }
     else {
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--left', `${left + 1}px`);
-      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty('--top', `${bottom}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--left", `${left + 1}px`);
+      popoverElement === null || popoverElement === void 0 ? void 0 : popoverElement.style.setProperty("--top", `${bottom}px`);
     }
   }
   render() {
-    const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon } = this;
+    const { dsColor, dsName, selectWithPopoverClicked, pointerOnSelect, inverted, disabled, feedback, hasButton, hasIcon, } = this;
     return (index.h(index.Host, { class: color.generateMedColor(dsColor, {
-        'tp-input-container': true,
-        'tp-input-container--with-select': pointerOnSelect,
+        "tp-input-container": true,
+        "tp-input-container--with-select": pointerOnSelect,
         [`tp-input-container--select-popover-clicked`]: selectWithPopoverClicked,
         [`tp-input-container--inverted`]: inverted,
-        'tp-input-container--disabled': disabled,
-        'tp-input-container--feedback': feedback,
+        "tp-input-container--disabled": disabled,
+        "tp-input-container--feedback": feedback,
         [`tp-input-container--${dsName}`]: dsName !== undefined,
         [`tp-input-container--has-button-${hasButton}`]: hasButton !== undefined,
-        [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined
-      }) }, index.h("slot", { name: 'start' }), index.h("slot", null), index.h("slot", { name: 'end' })));
+        [`tp-input-container--has-icon-${hasIcon}`]: hasIcon !== undefined,
+      }) }, index.h("slot", { name: "start" }), index.h("slot", null), index.h("slot", { name: "end" })));
   }
   get host() { return index.getElement(this); }
 };
