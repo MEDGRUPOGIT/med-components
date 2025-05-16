@@ -66,6 +66,7 @@ export const MedIcons = [
 
   'med-alerta',
   'med-alerta2',
+  'med-alert-octagon',
   'med-anotacao',
   'med-anotar',
   'med-aperto-de-mao',
@@ -92,6 +93,7 @@ export const MedIcons = [
   'med-cards',
   'med-cartao-resposta',
   'med-cartao',
+  'med-chat-question',
   'med-chart3',
   'med-check-circle',
   'med-check',
@@ -304,7 +306,7 @@ export const MedIcons = [
   'med-visivel',
 
   'med-zap',
-  'med-prancheta'
+  'med-prancheta',
 ];
 
 export const MedLabels = ['stacked', 'helper'];

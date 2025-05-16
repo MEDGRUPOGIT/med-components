@@ -5,24 +5,24 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const animation = require('./animation-a79926bc.js');
-const ios_transition = require('./ios.transition-ac99481d.js');
-const md_transition = require('./md.transition-815c68bf.js');
-const cubicBezier = require('./cubic-bezier-b395a59d.js');
-const index = require('./index-ff2c537e.js');
-const ionicGlobal = require('./ionic-global-b146ab44.js');
-const helpers = require('./helpers-a2cc981d.js');
-const platform = require('./platform-df0a78a3.js');
-const index$1 = require('./index-bdb474dc.js');
-const index$2 = require('./index-bc955683.js');
-const index$3 = require('./index-6c13720c.js');
-const overlays = require('./overlays-20fa7e5b.js');
-const type_enum = require('./type.enum-d3bb3d86.js');
-const plusminus_enum = require('./plusminus.enum-c18744cc.js');
-const rateLike_enum = require('./rate-like.enum-13d0954f.js');
-require('./gesture-controller-935821e0.js');
+const animation = require('./animation-96c88a0a.js');
+const ios_transition = require('./ios.transition-0b294f15.js');
+const md_transition = require('./md.transition-f91ef87f.js');
+const cubicBezier = require('./cubic-bezier-1060abff.js');
+const index = require('./index-212d93af.js');
+const ionicGlobal = require('./ionic-global-429ed327.js');
+const helpers = require('./helpers-4478bffd.js');
+const platform = require('./platform-83f5a7f6.js');
+const index$1 = require('./index-365d7fb3.js');
+const index$2 = require('./index-d49aaaa3.js');
+const index$3 = require('./index-05a57b4b.js');
+const overlays = require('./overlays-e8c4f097.js');
+const type_enum = require('./type.enum-e1d14e46.js');
+const plusminus_enum = require('./plusminus.enum-a5f80cb9.js');
+const rateLike_enum = require('./rate-like.enum-3b51a6f0.js');
+require('./gesture-controller-3d1daf69.js');
 require('./index-a17b061b.js');
-require('./hardware-back-button-bef7bb33.js');
+require('./hardware-back-button-a7dedc7d.js');
 
 const setupConfig = (config) => {
   const win = window;

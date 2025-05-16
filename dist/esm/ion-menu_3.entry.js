@@ -2,15 +2,15 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { c as config, g as getIonMode } from './ionic-global-908d8380.js';
-import { g as getTimeGivenProgression } from './cubic-bezier-89e16b6a.js';
-import { G as GESTURE_CONTROLLER } from './gesture-controller-635d3a2b.js';
-import { m as isEndSide, l as assert, j as clamp } from './helpers-7c8ceac4.js';
-import { m as menuController } from './index-a67bd5a6.js';
-import { c as createColorClasses, h as hostContext } from './theme-d8e919ca.js';
-import './platform-a3776365.js';
-import './hardware-back-button-e98bcc7d.js';
-import './animation-f11d6630.js';
+import { c as config, g as getIonMode } from './ionic-global-dca35eba.js';
+import { g as getTimeGivenProgression } from './cubic-bezier-154a53a5.js';
+import { G as GESTURE_CONTROLLER } from './gesture-controller-68c023a4.js';
+import { m as isEndSide, l as assert, j as clamp } from './helpers-d6be6e4a.js';
+import { m as menuController } from './index-d4acc29b.js';
+import { c as createColorClasses, h as hostContext } from './theme-a24ff1ad.js';
+import './platform-1ec8424a.js';
+import './hardware-back-button-ace6a71b.js';
+import './animation-41df7b1a.js';
 
 const menuIosCss = ":host{--width:304px;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--background:var(--ion-background-color, #fff);left:0;right:0;top:0;bottom:0;display:none;position:absolute;contain:strict}:host(.show-menu){display:block}.menu-inner{left:0;right:auto;top:0;bottom:0;-webkit-transform:translate3d(-9999px,  0,  0);transform:translate3d(-9999px,  0,  0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:justify;justify-content:space-between;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:strict}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{left:unset;right:unset;left:auto;right:0}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{-webkit-transform:translate3d(calc(-1 * -9999px),  0,  0);transform:translate3d(calc(-1 * -9999px),  0,  0)}:host(.menu-side-start) .menu-inner{--ion-safe-area-right:0px;right:auto;left:0}:host(.menu-side-end) .menu-inner{--ion-safe-area-left:0px;right:0;left:auto;}ion-backdrop{display:none;opacity:0.01;z-index:-1}@media (max-width: 340px){.menu-inner{--width:264px}}:host(.menu-type-reveal){z-index:0}:host(.menu-type-reveal.show-menu) .menu-inner{-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0)}:host(.menu-type-overlay){z-index:1000}:host(.menu-type-overlay) .show-backdrop{display:block;cursor:pointer}:host(.menu-pane-visible){width:var(--width);min-width:var(--min-width);max-width:var(--max-width)}:host(.menu-pane-visible) .menu-inner{left:0;right:0;width:auto;-webkit-transform:none !important;transform:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}:host(.menu-pane-visible) ion-backdrop{display:hidden !important;}:host(.menu-type-push){z-index:1000}:host(.menu-type-push) .show-backdrop{display:block}";
 
@@ -102,7 +102,7 @@ AFTER:
     this.sideChanged();
     // register this menu with the app's menu controller
     menuController._register(this);
-    this.gesture = (await import('./index-50c5db1b.js')).createGesture({
+    this.gesture = (await import('./index-ad966da4.js')).createGesture({
       el: document,
       gestureName: 'menu-swipe',
       gesturePriority: 30,
