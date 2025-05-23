@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-05-13T14:20:32",
+  "timestamp": "2025-05-23T17:04:17",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.3",
@@ -29177,6 +29177,7 @@
       "filePath": "./src/components/@templarios/core/tp-select-dropdown/select-dropdown.tsx",
       "encapsulation": "scoped",
       "tag": "tp-select-dropdown",
+      "readme": "# tp-select-dropdown\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -29198,6 +29199,23 @@
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Define o estado disabled do componente.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
           "required": false
         },
         {

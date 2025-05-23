@@ -28,6 +28,10 @@ export declare class TpSelectDropdown {
    */
   numeric: boolean;
   /**
+   * Define o estado disabled do componente.
+   */
+  disabled: boolean;
+  /**
    * Evento emitido quando há mudança no valor do componente.
    */
   valueChange: EventEmitter<string | number>;

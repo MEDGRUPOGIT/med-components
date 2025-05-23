@@ -4310,6 +4310,10 @@ export namespace Components {
          */
         "color"?: MedColor;
         /**
+          * Define o estado disabled do componente.
+         */
+        "disabled": boolean;
+        /**
           * Define o nome do componente, agrupando as opções.
          */
         "name": string;
@@ -10198,6 +10202,10 @@ declare namespace LocalJSX {
           * Define a variação de cor do componente.
          */
         "color"?: MedColor;
+        /**
+          * Define o estado disabled do componente.
+         */
+        "disabled"?: boolean;
         /**
           * Define o nome do componente, agrupando as opções.
          */

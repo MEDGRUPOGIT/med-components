@@ -11,6 +11,7 @@ export class TpSelectDropdown {
     this.options = [];
     this.placeholder = undefined;
     this.numeric = false;
+    this.disabled = false;
     this.open = false;
     this.selectedOption = null;
   }
@@ -42,10 +43,11 @@ export class TpSelectDropdown {
     this.selectedOption = this.options.find(({ value }) => this.value === (value === null || this.numeric ? value : `${value}`));
   }
   render() {
-    const { color, name, value, options, placeholder, open, selectedOption } = this;
+    const { color, disabled, name, value, options, placeholder, open, selectedOption, } = this;
     return (h(Host, { class: generateMedColor(color, {
         "tp-select-dropdown": true,
         "tp-select-dropdown--open": open,
+        "tp-select-dropdown--disabled": disabled,
       }) }, h("div", { class: "tp-select-dropdown__container" }, h("div", { class: "tp-select-dropdown__header", onClick: () => (this.open = !this.open) }, h("div", { class: "tp-select-dropdown__header-content" }, h("div", { class: "tp-select-dropdown__left" }, h("ion-label", { class: {
         "tp-select-dropdown__label": true,
         "tp-select-dropdown__label--placeholder": !selectedOption,
@@ -186,6 +188,24 @@ export class TpSelectDropdown {
           "text": "Define se o componente representa valores num\u00E9ricos."
         },
         "attribute": "numeric",
+        "reflect": true,
+        "defaultValue": "false"
+      },
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "Define o estado disabled do componente."
+        },
+        "attribute": "disabled",
         "reflect": true,
         "defaultValue": "false"
       }

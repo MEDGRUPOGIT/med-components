@@ -138,3 +138,8 @@
 :host(.tp-select-dropdown:not(.tp-select-dropdown--open)) .tp-select-dropdown__header:hover {
   cursor: pointer;
 }
+
+:host(.tp-select-dropdown--disabled) {
+  pointer-events: none;
+  opacity: 0.4;
+}

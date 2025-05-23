@@ -7625,6 +7625,10 @@
           "description": "Define a variação de cor do componente."
         },
         {
+          "name": "disabled",
+          "description": "Define o estado disabled do componente."
+        },
+        {
           "name": "name",
           "description": "Define o nome do componente, agrupando as opções."
         },

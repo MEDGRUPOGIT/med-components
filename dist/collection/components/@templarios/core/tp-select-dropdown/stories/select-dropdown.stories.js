@@ -26,9 +26,6 @@ const Template = (_a) => {
     const teste1 = document.querySelector(".teste-1");
     // @ts-ignore
     teste1.options = MOCK_DROPDOWN_OPTIONS;
-    const teste2 = document.querySelector(".teste-2");
-    // @ts-ignore
-    teste2.options = MOCK_DROPDOWN_OPTIONS;
   }, 0);
   return html `
     <tp-select-dropdown
@@ -36,9 +33,22 @@ const Template = (_a) => {
       name="teste-1"
       color="${args.color}"
       placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      value="opt2"
+      value="opt1"
+      .disabled=${args.disabled}
     >
     </tp-select-dropdown>
   `;
 };
 export const Default = Template.bind({});
+// @ts-ignore
+Default.argTypes = {
+  disabled: {
+    disabled: false,
+    control: { type: "boolean" },
+    description: "Define o estado disabled do componente.",
+    table: {
+      type: { summary: "boolean" },
+      defaultValue: { summary: "undefined" },
+    },
+  },
+};
