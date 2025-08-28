@@ -2,7 +2,7 @@
   <img src=".github/assets/templarios.svg?raw=true" alt="Templarios Design System logo" width="150" height="150">
 </p>
 
-<h3 align="center">Med Components</h3>
+<h3 align="center">MED Components</h3>
 
 ## Sobre o Projeto
 
