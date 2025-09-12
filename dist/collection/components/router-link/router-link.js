@@ -59,7 +59,7 @@ export class RouterLink {
         "optional": true,
         "docs": {
           "tags": [],
-          "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
+          "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
         },
         "attribute": "color",
         "reflect": false
@@ -76,7 +76,7 @@ export class RouterLink {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Contains a URL or a URL fragment that the hyperlink points to.\r\nIf this property is set, an anchor tag will be rendered."
+          "text": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
         },
         "attribute": "href",
         "reflect": false
@@ -93,7 +93,7 @@ export class RouterLink {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Specifies the relationship of the target object to the link object.\r\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+          "text": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
         },
         "attribute": "rel",
         "reflect": false
@@ -115,7 +115,7 @@ export class RouterLink {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "When using a router, it specifies the transition direction when navigating to\r\nanother page using `href`."
+          "text": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`."
         },
         "attribute": "router-direction",
         "reflect": false,
@@ -138,7 +138,7 @@ export class RouterLink {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "When using a router, it specifies the transition animation when navigating to\r\nanother page using `href`."
+          "text": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`."
         }
       },
       "target": {
@@ -153,7 +153,7 @@ export class RouterLink {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": "Specifies where to display the linked URL.\r\nOnly applies when an `href` is provided.\r\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
+          "text": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
         },
         "attribute": "target",
         "reflect": false

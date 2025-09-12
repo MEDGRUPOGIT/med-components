@@ -6,8 +6,8 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-b146ab44.js');
-require('./platform-df0a78a3.js');
+const ionicGlobal = require('./ionic-global-429ed327.js');
+require('./platform-83f5a7f6.js');
 
 const SIZE_TO_MEDIA = {
   'xs': '(min-width: 0px)',

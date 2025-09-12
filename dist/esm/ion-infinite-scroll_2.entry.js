@@ -2,9 +2,9 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, e as writeTask, h as readTask, i as h, j as getElement, H as Host } from './index-336c66d9.js';
-import { g as getIonMode, c as config } from './ionic-global-908d8380.js';
-import { s as sanitizeDOMString } from './index-45fd73fa.js';
-import './platform-a3776365.js';
+import { g as getIonMode, c as config } from './ionic-global-dca35eba.js';
+import { s as sanitizeDOMString } from './index-c841c933.js';
+import './platform-1ec8424a.js';
 
 const infiniteScrollCss = "ion-infinite-scroll{display:none;width:100%}.infinite-scroll-enabled{display:block}";
 

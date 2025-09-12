@@ -23,6 +23,7 @@ import { MedTema } from "@templarios/interfaces/themes.interface";
 import { MedTypeTag, MedTypeToken } from "@templarios/types/type.type";
 import { TpAccordionGroupChangeEventDetail } from "./components/@templarios/core/tp-accordion-group/tp-accordion-group-interface";
 import { TpChartBarItem } from "@templarios/interfaces/chart-bar.interface";
+import { TpMultiSelectDropdownOption } from "./components/@templarios/core/tp-multi-select-dropdown/utils/multi-select-dropdown.types";
 import { TpSelectDropdownOption } from "./components/@templarios/core/tp-select-dropdown/utils/select-dropdown.types";
 export namespace Components {
     interface AjudaModal {
@@ -4304,6 +4305,32 @@ export namespace Components {
         "dsName"?: "secondary";
         "fixed": boolean;
     }
+    interface TpMultiSelectDropdown {
+        /**
+          * Define a variação de cor do componente.
+         */
+        "color"?: MedColor;
+        /**
+          * Define se o componente representa valores numéricos.
+         */
+        "numeric": boolean;
+        /**
+          * Define as opções de seleção do componente.
+         */
+        "options": TpMultiSelectDropdownOption[];
+        /**
+          * Define o placeholder do componente.
+         */
+        "placeholder"?: string;
+        /**
+          * Define o valor do componente.
+         */
+        "value": Array<string | number>;
+        /**
+          * Define a representação do valor selecionado caso o usuário do componente deseja não utilizar o default.
+         */
+        "valueLabel"?: string;
+    }
     interface TpSelectDropdown {
         /**
           * Define a variação de cor do componente.
@@ -4586,6 +4613,10 @@ export interface MedTooltipCustomEvent<T> extends CustomEvent<T> {
 export interface TpAccordionGroupCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLTpAccordionGroupElement;
+}
+export interface TpMultiSelectDropdownCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLTpMultiSelectDropdownElement;
 }
 export interface TpSelectDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -5684,6 +5715,12 @@ declare global {
         prototype: HTMLTpLoaderElement;
         new (): HTMLTpLoaderElement;
     };
+    interface HTMLTpMultiSelectDropdownElement extends Components.TpMultiSelectDropdown, HTMLStencilElement {
+    }
+    var HTMLTpMultiSelectDropdownElement: {
+        prototype: HTMLTpMultiSelectDropdownElement;
+        new (): HTMLTpMultiSelectDropdownElement;
+    };
     interface HTMLTpSelectDropdownElement extends Components.TpSelectDropdown, HTMLStencilElement {
     }
     var HTMLTpSelectDropdownElement: {
@@ -5885,6 +5922,7 @@ declare global {
         "tp-chart-bar": HTMLTpChartBarElement;
         "tp-input-container": HTMLTpInputContainerElement;
         "tp-loader": HTMLTpLoaderElement;
+        "tp-multi-select-dropdown": HTMLTpMultiSelectDropdownElement;
         "tp-select-dropdown": HTMLTpSelectDropdownElement;
         "tutorial-modal": HTMLTutorialModalElement;
         "unidades-modal": HTMLUnidadesModalElement;
@@ -10197,6 +10235,36 @@ declare namespace LocalJSX {
         "dsName"?: "secondary";
         "fixed"?: boolean;
     }
+    interface TpMultiSelectDropdown {
+        /**
+          * Define a variação de cor do componente.
+         */
+        "color"?: MedColor;
+        /**
+          * Define se o componente representa valores numéricos.
+         */
+        "numeric"?: boolean;
+        /**
+          * Evento emitido quando há mudança no valor do componente.
+         */
+        "onValueChange"?: (event: TpMultiSelectDropdownCustomEvent<Array<string | number>>) => void;
+        /**
+          * Define as opções de seleção do componente.
+         */
+        "options"?: TpMultiSelectDropdownOption[];
+        /**
+          * Define o placeholder do componente.
+         */
+        "placeholder"?: string;
+        /**
+          * Define o valor do componente.
+         */
+        "value"?: Array<string | number>;
+        /**
+          * Define a representação do valor selecionado caso o usuário do componente deseja não utilizar o default.
+         */
+        "valueLabel"?: string;
+    }
     interface TpSelectDropdown {
         /**
           * Define a variação de cor do componente.
@@ -10418,6 +10486,7 @@ declare namespace LocalJSX {
         "tp-chart-bar": TpChartBar;
         "tp-input-container": TpInputContainer;
         "tp-loader": TpLoader;
+        "tp-multi-select-dropdown": TpMultiSelectDropdown;
         "tp-select-dropdown": TpSelectDropdown;
         "tutorial-modal": TutorialModal;
         "unidades-modal": UnidadesModal;
@@ -10609,6 +10678,7 @@ declare module "@stencil/core" {
             "tp-chart-bar": LocalJSX.TpChartBar & JSXBase.HTMLAttributes<HTMLTpChartBarElement>;
             "tp-input-container": LocalJSX.TpInputContainer & JSXBase.HTMLAttributes<HTMLTpInputContainerElement>;
             "tp-loader": LocalJSX.TpLoader & JSXBase.HTMLAttributes<HTMLTpLoaderElement>;
+            "tp-multi-select-dropdown": LocalJSX.TpMultiSelectDropdown & JSXBase.HTMLAttributes<HTMLTpMultiSelectDropdownElement>;
             "tp-select-dropdown": LocalJSX.TpSelectDropdown & JSXBase.HTMLAttributes<HTMLTpSelectDropdownElement>;
             "tutorial-modal": LocalJSX.TutorialModal & JSXBase.HTMLAttributes<HTMLTutorialModalElement>;
             "unidades-modal": LocalJSX.UnidadesModal & JSXBase.HTMLAttributes<HTMLUnidadesModalElement>;

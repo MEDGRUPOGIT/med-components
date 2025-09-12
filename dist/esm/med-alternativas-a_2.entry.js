@@ -2,7 +2,7 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, i as h, H as Host, j as getElement } from './index-336c66d9.js';
-import { g as generateMedColor } from './color-1d14c71a.js';
+import { g as generateMedColor } from './color-2567dca3.js';
 
 function distanciaEuclidiana(pontoA, pontoB) {
   if (!pontoA || !pontoB)

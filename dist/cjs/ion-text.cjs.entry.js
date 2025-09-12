@@ -6,9 +6,9 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-b146ab44.js');
-const theme = require('./theme-cef66eda.js');
-require('./platform-df0a78a3.js');
+const ionicGlobal = require('./ionic-global-429ed327.js');
+const theme = require('./theme-a4c4a7eb.js');
+require('./platform-83f5a7f6.js');
 
 const textCss = ":host(.ion-color){color:var(--ion-color-base)}";
 

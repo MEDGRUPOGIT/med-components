@@ -2,10 +2,10 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, e as writeTask, i as h, H as Host, j as getElement, k as forceUpdate } from './index-336c66d9.js';
-import { c as config, g as getIonMode } from './ionic-global-908d8380.js';
-import { p as pointerCoord, a as addEventListener, b as removeEventListener } from './helpers-7c8ceac4.js';
-import { c as createColorClasses, h as hostContext } from './theme-d8e919ca.js';
-import './platform-a3776365.js';
+import { c as config, g as getIonMode } from './ionic-global-dca35eba.js';
+import { p as pointerCoord, a as addEventListener, b as removeEventListener } from './helpers-d6be6e4a.js';
+import { c as createColorClasses, h as hostContext } from './theme-a24ff1ad.js';
+import './platform-1ec8424a.js';
 
 const segmentIosCss = ":host{--ripple-color:currentColor;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:stretch;align-items:stretch;-ms-flex-pack:center;justify-content:center;width:100%;background:var(--background);font-family:var(--ion-font-family, inherit);text-align:center;contain:paint;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}:host(.segment-scrollable){-ms-flex-pack:start;justify-content:start;width:auto;overflow-x:auto}:host(.segment-scrollable::-webkit-scrollbar){display:none}:host{--background:rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.065);border-radius:8px;overflow:hidden;z-index:0}:host(.ion-color){background:rgba(var(--ion-color-base-rgb), 0.065)}:host(.in-toolbar){margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;width:auto}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host(.in-toolbar){margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}:host(.in-toolbar:not(.ion-color)){background:var(--ion-toolbar-segment-background, var(--background))}:host(.in-toolbar-color:not(.ion-color)){background:rgba(var(--ion-color-contrast-rgb), 0.11)}";
 
@@ -92,7 +92,7 @@ const Segment = class {
   }
   async componentDidLoad() {
     this.setCheckedClasses();
-    this.gesture = (await import('./index-50c5db1b.js')).createGesture({
+    this.gesture = (await import('./index-ad966da4.js')).createGesture({
       el: this.el,
       gestureName: 'segment',
       gesturePriority: 100,

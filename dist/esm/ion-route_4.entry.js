@@ -2,10 +2,10 @@
  * (C) Ionic http://ionicframework.com - MIT License
  */
 import { r as registerInstance, f as createEvent, j as getElement, i as h, H as Host } from './index-336c66d9.js';
-import { c as componentOnReady, n as debounce } from './helpers-7c8ceac4.js';
-import { g as getIonMode } from './ionic-global-908d8380.js';
-import { o as openURL, c as createColorClasses } from './theme-d8e919ca.js';
-import './platform-a3776365.js';
+import { c as componentOnReady, n as debounce } from './helpers-d6be6e4a.js';
+import { g as getIonMode } from './ionic-global-dca35eba.js';
+import { o as openURL, c as createColorClasses } from './theme-a24ff1ad.js';
+import './platform-1ec8424a.js';
 
 const Route = class {
   constructor(hostRef) {

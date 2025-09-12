@@ -63,6 +63,7 @@
     "./components/@templarios/core/tp-chart-bar/tp-chart-bar.js",
     "./components/@templarios/core/tp-input-container/tp-input-container.js",
     "./components/@templarios/core/tp-loader/tp-loader.js",
+    "./components/@templarios/core/tp-multi-select-dropdown/multi-select-dropdown.js",
     "./components/@templarios/core/tp-select-dropdown/select-dropdown.js",
     "./components/@templarios/ionic-1-migracao/apostila/informativo-modal/informativo-modal.js",
     "./components/@templarios/ionic-1-migracao/apostila/medreader-pro-modal/medreader-pro-modal.js",
