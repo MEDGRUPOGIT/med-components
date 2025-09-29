@@ -6,13 +6,13 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-a17b061b.js');
-const ionicGlobal = require('./ionic-global-429ed327.js');
-const platform = require('./platform-83f5a7f6.js');
-const theme = require('./theme-a4c4a7eb.js');
-const helpers = require('./helpers-4478bffd.js');
-const cubicBezier = require('./cubic-bezier-1060abff.js');
-const frameworkDelegate = require('./framework-delegate-8b8d88ef.js');
-const index$1 = require('./index-d49aaaa3.js');
+const ionicGlobal = require('./ionic-global-b146ab44.js');
+const platform = require('./platform-df0a78a3.js');
+const theme = require('./theme-cef66eda.js');
+const helpers = require('./helpers-a2cc981d.js');
+const cubicBezier = require('./cubic-bezier-b395a59d.js');
+const frameworkDelegate = require('./framework-delegate-742b6da2.js');
+const index$1 = require('./index-bc955683.js');
 
 const appCss = "html.plt-mobile ion-app{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html.plt-mobile ion-app [contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}ion-app.force-statusbar-padding{--ion-safe-area-top:20px}";
 
@@ -25,15 +25,15 @@ const App = class {
       rIC(async () => {
         const isHybrid = platform.isPlatform(window, 'hybrid');
         if (!ionicGlobal.config.getBoolean('_testing')) {
-          Promise.resolve().then(function () { return require('./tap-click-fc536ae5.js'); }).then(module => module.startTapClick(ionicGlobal.config));
+          Promise.resolve().then(function () { return require('./tap-click-0f28ee0c.js'); }).then(module => module.startTapClick(ionicGlobal.config));
         }
         if (ionicGlobal.config.getBoolean('statusTap', isHybrid)) {
-          Promise.resolve().then(function () { return require('./status-tap-b1f8be21.js'); }).then(module => module.startStatusTap());
+          Promise.resolve().then(function () { return require('./status-tap-f18dff80.js'); }).then(module => module.startStatusTap());
         }
         if (ionicGlobal.config.getBoolean('inputShims', needInputShims())) {
-          Promise.resolve().then(function () { return require('./input-shims-14ccc849.js'); }).then(module => module.startInputShims(ionicGlobal.config));
+          Promise.resolve().then(function () { return require('./input-shims-acaaafe1.js'); }).then(module => module.startInputShims(ionicGlobal.config));
         }
-        const hardwareBackButtonModule = await Promise.resolve().then(function () { return require('./hardware-back-button-a7dedc7d.js'); });
+        const hardwareBackButtonModule = await Promise.resolve().then(function () { return require('./hardware-back-button-bef7bb33.js'); });
         if (ionicGlobal.config.getBoolean('hardwareBackButton', isHybrid)) {
           hardwareBackButtonModule.startHardwareBackButton();
         }
@@ -41,9 +41,9 @@ const App = class {
           hardwareBackButtonModule.blockHardwareBackButton();
         }
         if (typeof window !== 'undefined') {
-          Promise.resolve().then(function () { return require('./keyboard-e8851384.js'); }).then(module => module.startKeyboardAssist(window));
+          Promise.resolve().then(function () { return require('./keyboard-1bca37af.js'); }).then(module => module.startKeyboardAssist(window));
         }
-        Promise.resolve().then(function () { return require('./focus-visible-3e407af2.js'); }).then(module => module.startFocusVisible());
+        Promise.resolve().then(function () { return require('./focus-visible-18fc61f0.js'); }).then(module => module.startFocusVisible());
       });
     }
   }
@@ -683,7 +683,7 @@ const RouterOutlet = class {
     }
   }
   async connectedCallback() {
-    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-4a41436e.js'); })).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
+    this.gesture = (await Promise.resolve().then(function () { return require('./swipe-back-a6ab66a5.js'); })).createSwipeBackGesture(this.el, () => !!this.swipeHandler && this.swipeHandler.canStart() && this.animationEnabled, () => this.swipeHandler && this.swipeHandler.onStart(), step => this.ani && this.ani.progressStep(step), (shouldComplete, step, dur) => {
       if (this.ani) {
         this.animationEnabled = false;
         this.ani.onFinish(() => {

@@ -89,6 +89,7 @@ export const MedIcons = [
   'med-busca-erro',
   'med-busca',
   'med-cadeado',
+  'med-camera',
 
   'med-cards',
   'med-cartao-resposta',
@@ -235,6 +236,7 @@ export const MedIcons = [
 
   'med-passaporte',
   'med-pause-circle',
+  'med-picture-face',
   'med-picture-in-picture-activate',
   'med-picture-in-picture-deactivate',
   'med-pino',

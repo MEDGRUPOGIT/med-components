@@ -73,7 +73,7 @@ export class MedImageZoom {
         "type": "any",
         "mutable": true,
         "complexType": {
-          "original": "| MedImageZoomItemInterface[]\n    | any",
+          "original": "| MedImageZoomItemInterface[]\r\n    | any",
           "resolved": "any",
           "references": {
             "MedImageZoomItemInterface": {
